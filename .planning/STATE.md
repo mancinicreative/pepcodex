@@ -2,48 +2,77 @@
 
 ## Current Phase
 
-**Phase 1: Site Foundation** — Fix build, complete core site structure
+**Phase 3: Pipeline Infrastructure** — QA scripts and source pack schema complete
 
 ## Active Plan
 
-**01-01: Fix build errors and verify site works**
-- Status: In Progress
-- Known issue: Content schema has `slug` field but Astro auto-generates from filename
+Plans 03-01, 03-02, 03-03 COMPLETE
 
 ## What's Done
 
-### Code Written (Previous Session)
-- Astro project initialized with Tailwind, MDX, sitemap
-- Directory structure created
-- Content collections schema (needs fix)
+### Phase 1: Site Foundation
+- Fixed content schema (removed `slug` field)
+- Fixed tirzepatide.mdx frontmatter
+- Fixed Pagefind dynamic import
+- Fixed [slug].astro dynamic route
+- Build passes: 11 pages generated
+- robots.txt added
+- Sitemap auto-generated
+
+### Phase 3: Pipeline Infrastructure (Partial)
+- **03-01:** Source pack JSON schema and validation script
+- **03-02:** QA validation scripts (banned content, citations, evidence labels)
+- **03-03:** QA orchestrator combining all validation
+
+### Existing Code
+- Astro project with Tailwind, MDX, sitemap
 - Layouts: BaseLayout, DossierLayout, HubLayout
 - Components: EvidenceBadge, CitationTable, SearchBar, NewsletterForm, PeptideCard, ComparisonCard, TableOfContents
 - Pages: homepage, peptides index, category hubs, trust core pages
-- Sample dossier: tirzepatide.mdx (needs fix)
-
-### What's Broken
-- Build fails: `slug: Required` error in content schema
-- Fix: Remove `slug` from schema and tirzepatide.mdx frontmatter
+- Sample dossier: tirzepatide.mdx
 
 ## What's Next
 
-1. Fix content schema (remove slug field)
-2. Fix tirzepatide.mdx (remove slug from frontmatter)
-3. Verify build passes
-4. Add robots.txt
-5. Mark Phase 1 complete
+**Phase 3 Remaining (n8n workflows):**
+- 03-04: Source Pack Builder n8n workflow
+- 03-05: Draft Generator + QA Gate n8n workflows
+
+**Phase 2: Content Templates** (can run in parallel)
+1. Enhance dossier template to full 12-section structure
+2. Create comparison page template
+3. Create "What is X" guide template
+4. Create safety page template
 
 ## Context for Resume
 
-The site structure is ~80% complete from a previous session. The main blocker is a build error where the content schema requires a `slug` field but Astro auto-generates this from the filename. After fixing the build, Phase 1 will be complete and we can move to Phase 2 (Content Templates) or Phase 3 (Pipeline Infrastructure).
+Phase 3 local scripts complete:
+- `scripts/validate-source-pack.js` - validates source pack JSON
+- `scripts/qa-banned-content.js` - scans for dosing/sourcing language
+- `scripts/qa-citations.js` - validates citations against source pack
+- `scripts/qa-evidence-labels.js` - checks animal/in-vitro labeling
+- `scripts/qa-validate.js` - orchestrates all QA checks
+
+Sample source pack exists: `data/source-packs/tirzepatide.json` with 12 real citations and 4 clinical trials.
+
+**Note:** Current tirzepatide.mdx fails QA due to dosing section - this is expected, content needs cleaning.
+
+## Decisions
+
+| Decision | Rationale | Date |
+|----------|-----------|------|
+| Use ajv for JSON Schema validation | Standard Node.js validator, supports draft-07 | 2026-01-19 |
+| Separate QA scripts for modularity | Each can run standalone and be combined | 2026-01-19 |
+| JSON output flag for machine use | Enables n8n/automation integration | 2026-01-19 |
 
 ## Blockers
 
-- [ ] Build error: slug field in content schema
+None
 
 ## Session Log
 
-- 2026-01-19: GSD structure initialized, capturing existing code state
+- 2026-01-19: GSD structure initialized
+- 2026-01-19: Phase 1 completed - build fixed, all pages rendering
+- 2026-01-19: Phase 3 plans 03-01, 03-02, 03-03 completed - QA scripts working
 
 ---
 *Last updated: 2026-01-19*

@@ -1,0 +1,24 @@
+---
+import { getCollection } from 'astro:content';
+import SafetyLayout from '../../layouts/SafetyLayout.astro';
+
+export async function getStaticPaths() {
+  const safety = await getCollection('safety');
+  return safety.map((item) => ({
+    params: { slug: item.slug },
+    props: { safety: item },
+  }));
+}
+
+const { safety } = Astro.props;
+const { Content } = await safety.render();
+---
+
+<SafetyLayout
+  title={safety.data.title}
+  peptides={safety.data.peptides}
+  lastUpdated={safety.data.lastUpdated}
+  summary={safety.data.summary}
+>
+  <Content />
+</SafetyLayout>

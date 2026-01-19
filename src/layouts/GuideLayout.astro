@@ -1,0 +1,129 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import TableOfContents from '../components/TableOfContents.astro';
+
+interface Props {
+  title: string;
+  peptide?: string;
+  category?: string;
+  lastUpdated: Date;
+  summary: string;
+}
+
+const { title, peptide, category, lastUpdated, summary } = Astro.props;
+
+const categoryLabels: Record<string, string> = {
+  'metabolic': 'Metabolic',
+  'repair-recovery': 'Repair & Recovery',
+  'hormonal': 'Hormonal',
+  'longevity': 'Longevity',
+  'other': 'Other',
+};
+
+const categoryColors: Record<string, string> = {
+  'metabolic': 'bg-blue-100 text-blue-800',
+  'repair-recovery': 'bg-green-100 text-green-800',
+  'hormonal': 'bg-purple-100 text-purple-800',
+  'longevity': 'bg-amber-100 text-amber-800',
+  'other': 'bg-slate-100 text-slate-800',
+};
+---
+
+<BaseLayout title={title} description={summary}>
+  <article class="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <header class="mb-8">
+      <div class="flex flex-wrap items-center gap-3 mb-4">
+        {category && (
+          <a
+            href={`/category/${category}`}
+            class={`inline-flex items-center rounded-full px-3 py-1 text-xs font-medium ${categoryColors[category] || categoryColors['other']}`}
+          >
+            {categoryLabels[category] || 'Other'}
+          </a>
+        )}
+        <span class="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-800">
+          Guide
+        </span>
+      </div>
+
+      <h1 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+        {title}
+      </h1>
+
+      <p class="mt-4 text-xl text-slate-700 leading-relaxed">
+        {summary}
+      </p>
+
+      {peptide && (
+        <div class="mt-4">
+          <a
+            href={`/peptides/${peptide}`}
+            class="inline-flex items-center text-blue-600 hover:text-blue-800 hover:underline text-sm font-medium"
+          >
+            View full {peptide} dossier
+            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      )}
+
+      <p class="mt-4 text-sm text-slate-500">
+        Last updated: {lastUpdated.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+      </p>
+    </header>
+
+    <div class="grid gap-8 lg:grid-cols-[1fr,250px]">
+      <!-- Main content -->
+      <div class="prose prose-slate prose-lg max-w-none">
+        <slot />
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="hidden lg:block">
+        <div class="sticky top-24 space-y-6">
+          <TableOfContents />
+
+          {peptide && (
+            <div class="rounded-lg border border-slate-200 bg-white p-4">
+              <h3 class="font-semibold text-slate-900 mb-3">Related Content</h3>
+              <ul class="space-y-2">
+                <li>
+                  <a
+                    href={`/peptides/${peptide}`}
+                    class="text-sm text-blue-600 hover:text-blue-800 hover:underline"
+                  >
+                    {peptide.charAt(0).toUpperCase() + peptide.slice(1)} Evidence Dossier
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={`/safety/glp1-safety-overview`}
+                    class="text-sm text-blue-600 hover:text-blue-800 hover:underline"
+                  >
+                    GLP-1 Safety Overview
+                  </a>
+                </li>
+              </ul>
+            </div>
+          )}
+
+          <div class="rounded-lg border border-amber-200 bg-amber-50 p-4">
+            <h3 class="font-semibold text-amber-900 mb-2">Important Notice</h3>
+            <p class="text-sm text-amber-800">
+              This guide is for educational purposes only. It is not medical advice. Consult a healthcare provider before making health decisions.
+            </p>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="mt-12 rounded-lg border border-amber-200 bg-amber-50 p-6">
+      <p class="text-amber-800 text-sm">
+        <strong>Disclaimer:</strong> This educational guide does not constitute medical advice. The information presented is based on current research but should not be used for diagnosis, treatment, or prevention of any disease. Always consult a qualified healthcare provider before making health decisions.
+      </p>
+    </div>
+  </article>
+</BaseLayout>

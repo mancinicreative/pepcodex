@@ -1,0 +1,156 @@
+---
+interface Props {
+  variant?: 'inline' | 'card' | 'full';
+  heading?: string;
+  description?: string;
+}
+
+const {
+  variant = 'card',
+  heading = 'Stay Evidence-Based',
+  description = 'Weekly synthesis of peptide research delivered to your inbox. No hype, just citations.'
+} = Astro.props;
+---
+
+{variant === 'inline' && (
+  <form
+    class="flex gap-2"
+    action="/api/subscribe"
+    method="POST"
+    data-newsletter-form
+  >
+    <input
+      type="email"
+      name="email"
+      placeholder="your@email.com"
+      required
+      class="flex-1 rounded-lg border border-slate-300 px-4 py-2 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none"
+    />
+    <button
+      type="submit"
+      class="rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800 transition-colors"
+    >
+      Subscribe
+    </button>
+  </form>
+)}
+
+{variant === 'card' && (
+  <div class="rounded-xl border border-slate-200 bg-white p-6">
+    <h3 class="text-lg font-semibold text-slate-900">{heading}</h3>
+    <p class="mt-2 text-sm text-slate-600">{description}</p>
+    <form
+      class="mt-4 flex gap-2"
+      action="/api/subscribe"
+      method="POST"
+      data-newsletter-form
+    >
+      <input
+        type="email"
+        name="email"
+        placeholder="your@email.com"
+        required
+        class="flex-1 rounded-lg border border-slate-300 px-4 py-2 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none"
+      />
+      <button
+        type="submit"
+        class="rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800 transition-colors"
+      >
+        Subscribe
+      </button>
+    </form>
+    <p class="mt-3 text-xs text-slate-500">No spam. Unsubscribe anytime.</p>
+  </div>
+)}
+
+{variant === 'full' && (
+  <div class="rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 p-8 text-white">
+    <div class="max-w-xl mx-auto text-center">
+      <h2 class="text-2xl font-bold">{heading}</h2>
+      <p class="mt-3 text-slate-300">{description}</p>
+      <form
+        class="mt-6 flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+        action="/api/subscribe"
+        method="POST"
+        data-newsletter-form
+      >
+        <input
+          type="email"
+          name="email"
+          placeholder="your@email.com"
+          required
+          class="flex-1 rounded-lg border border-slate-600 bg-slate-800 px-4 py-3 text-white placeholder-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none"
+        />
+        <button
+          type="submit"
+          class="rounded-lg bg-white px-6 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-100 transition-colors"
+        >
+          Subscribe Free
+        </button>
+      </form>
+      <p class="mt-4 text-xs text-slate-400">Join 1,000+ readers. Unsubscribe anytime.</p>
+    </div>
+  </div>
+)}
+
+<script>
+  document.querySelectorAll('[data-newsletter-form]').forEach(form => {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formEl = e.target as HTMLFormElement;
+      const email = new FormData(formEl).get('email');
+      const button = formEl.querySelector('button');
+      const originalButtonText = button?.textContent || 'Subscribe';
+
+      if (button) {
+        button.textContent = 'Subscribing...';
+        button.setAttribute('disabled', 'true');
+      }
+
+      try {
+        const res = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, source: 'website_form' }),
+        });
+
+        const data = await res.json();
+
+        if (data.success) {
+          // Success - show confirmation message
+          const successClass = formEl.closest('.bg-gradient-to-br')
+            ? 'text-green-300 font-medium py-2'
+            : 'text-green-600 font-medium py-2';
+          formEl.innerHTML = `<p class="${successClass}">${data.message}</p>`;
+        } else {
+          // API returned an error message
+          if (button) {
+            button.textContent = originalButtonText;
+            button.removeAttribute('disabled');
+          }
+          // Show error below the form
+          const existingError = formEl.querySelector('[data-error]');
+          if (existingError) existingError.remove();
+          const errorEl = document.createElement('p');
+          errorEl.setAttribute('data-error', 'true');
+          errorEl.className = 'text-red-500 text-sm mt-2';
+          errorEl.textContent = data.message;
+          formEl.appendChild(errorEl);
+        }
+      } catch (err) {
+        if (button) {
+          button.textContent = originalButtonText;
+          button.removeAttribute('disabled');
+        }
+        // Show generic error
+        const existingError = formEl.querySelector('[data-error]');
+        if (existingError) existingError.remove();
+        const errorEl = document.createElement('p');
+        errorEl.setAttribute('data-error', 'true');
+        errorEl.className = 'text-red-500 text-sm mt-2';
+        errorEl.textContent = 'Something went wrong. Please try again.';
+        formEl.appendChild(errorEl);
+      }
+    });
+  });
+</script>

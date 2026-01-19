@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-**Phase 3: Pipeline Infrastructure** — COMPLETE
+**Phase 4: Features + Polish** — COMPLETE
 
 ## Active Plan
 
-None — Phase 3 complete, ready for Phase 4 Content Production
+None — Phase 4 complete
 
 ## What's Done
 
@@ -41,19 +41,26 @@ None — Phase 3 complete, ready for Phase 4 Content Production
 - `publisher.json` - git add/commit/push with optional Vercel deploy
 - `batch-orchestrator.json` - loops peptide list through full pipeline
 
+### Phase 4: Features + Polish (COMPLETE)
+- **Beehiiv Newsletter Integration:** src/lib/beehiiv.ts, /api/subscribe endpoint, NewsletterForm component
+- **Pagefind Search:** postbuild indexing script, SearchBar integration (15 pages indexed)
+- **Trial Tracker Page:** /trials page with TrialTable component, filtering by status/phase/peptide
+- **Node Adapter:** Added @astrojs/node for API routes support
+
 ### Existing Code
-- Astro project with Tailwind, MDX, sitemap
+- Astro project with Tailwind, MDX, sitemap, Node adapter
 - Layouts: BaseLayout, DossierLayout, HubLayout, ComparisonLayout, GuideLayout, SafetyLayout
-- Components: EvidenceBadge, CitationTable, SearchBar, NewsletterForm, PeptideCard, ComparisonCard, TableOfContents
-- Pages: homepage, peptides index, category hubs, trust core pages, compare, guide, safety
+- Components: EvidenceBadge, CitationTable, SearchBar, NewsletterForm, PeptideCard, ComparisonCard, TableOfContents, TrialTable
+- Pages: homepage, peptides index, category hubs, trust core pages, compare, guide, safety, trials, newsletter
 - Sample dossier: tirzepatide.mdx (12 sections)
 
 ## What's Next
 
-**Phase 4: Content Production**
+**Ready for Production:**
 - Import n8n workflows and configure credentials
 - Run batch processing for initial peptide set
-- Review and publish generated content
+- Configure deployment (Vercel, Netlify, or self-hosted Node)
+- Set BEEHIIV_API_KEY and BEEHIIV_PUBLICATION_ID environment variables
 
 ## Context for Resume
 
@@ -89,14 +96,16 @@ Phase 3 complete with full automation pipeline:
 | Amber color accent for safety pages | Visual differentiation for safety-critical content | 2026-01-19 |
 | Webhook triggers for n8n workflows | Enables chaining and external invocation | 2026-01-19 |
 | Rate limiting between API calls | Respects PubMed/CT.gov rate limits | 2026-01-19 |
+| Node adapter for static+server | Enables API routes in static builds | 2026-01-19 |
+| Trial data from source packs | Single source of truth for peptide data | 2026-01-19 |
 
 ## Progress
 
 ```
 Phase 1: Site Foundation      [========] 100%
 Phase 2: Content Templates    [========] 100%
-Phase 3: Pipeline Infra       [========] 100%  <-- JUST COMPLETED
-Phase 4: Content Production   [--------]   0%
+Phase 3: Pipeline Infra       [========] 100%
+Phase 4: Features + Polish    [========] 100%  <-- JUST COMPLETED
 ```
 
 ## Blockers
@@ -110,6 +119,7 @@ None
 - 2026-01-19: Phase 3 plans 03-01, 03-02, 03-03 completed - QA scripts working
 - 2026-01-19: Phase 2 plan 02-01 completed - all 4 template types with sample content
 - 2026-01-19: Phase 3 n8n workflows completed - 5 workflow JSONs created
+- 2026-01-19: Phase 4 completed - Beehiiv, Pagefind, Trial Tracker features
 
 ---
 *Last updated: 2026-01-19*

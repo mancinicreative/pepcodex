@@ -1,0 +1,186 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://peptidelibrary.com/schemas/source-pack.schema.json",
+  "title": "Source Pack",
+  "description": "Schema for peptide research source packs containing citations and clinical trials",
+  "type": "object",
+  "required": ["peptide", "sources", "metadata"],
+  "properties": {
+    "peptide": {
+      "type": "object",
+      "required": ["name", "category"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Primary name of the peptide"
+        },
+        "aliases": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Alternative names, brand names, research codes"
+        },
+        "category": {
+          "type": "string",
+          "enum": ["metabolic", "repair-recovery", "hormonal", "cognitive", "other"],
+          "description": "Primary category for the peptide"
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "title", "year"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^(PMID:\\d+|DOI:.+|NCT\\d+)$",
+            "description": "Unique identifier (PMID:xxx, DOI:xxx, or NCTxxx)"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["pubmed", "europePMC", "clinicalTrials", "preprint"],
+            "description": "Source database type"
+          },
+          "title": {
+            "type": "string",
+            "description": "Title of the publication or study"
+          },
+          "authors": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "List of author names"
+          },
+          "journal": {
+            "type": "string",
+            "description": "Journal name or preprint server"
+          },
+          "year": {
+            "type": "integer",
+            "minimum": 1900,
+            "maximum": 2100,
+            "description": "Publication year"
+          },
+          "studyType": {
+            "type": "string",
+            "enum": ["RCT", "observational", "meta-analysis", "review", "case-series", "preclinical", "in-vitro"],
+            "description": "Type of study design"
+          },
+          "subjects": {
+            "type": "string",
+            "enum": ["human", "animal", "in-vitro"],
+            "description": "Type of subjects studied"
+          },
+          "sampleSize": {
+            "type": ["integer", "null"],
+            "minimum": 1,
+            "description": "Number of subjects/samples"
+          },
+          "openAccess": {
+            "type": "boolean",
+            "description": "Whether the full text is freely available"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Full URL to the source"
+          },
+          "abstract": {
+            "type": "string",
+            "description": "Abstract or summary of the publication"
+          }
+        }
+      }
+    },
+    "trials": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["nctId", "title", "status"],
+        "properties": {
+          "nctId": {
+            "type": "string",
+            "pattern": "^NCT\\d{8}$",
+            "description": "ClinicalTrials.gov identifier"
+          },
+          "title": {
+            "type": "string",
+            "description": "Official trial title"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["recruiting", "active", "completed", "terminated", "withdrawn", "not-yet-recruiting", "enrolling-by-invitation", "suspended", "unknown"],
+            "description": "Current recruitment/study status"
+          },
+          "phase": {
+            "type": "string",
+            "enum": ["1", "2", "3", "4", "1/2", "2/3", "not-applicable"],
+            "description": "Clinical trial phase"
+          },
+          "conditions": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Medical conditions being studied"
+          },
+          "interventions": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Interventions being tested"
+          },
+          "enrollmentTarget": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Target enrollment number"
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Study start date (ISO format)"
+          },
+          "completionDate": {
+            "type": ["string", "null"],
+            "format": "date",
+            "description": "Estimated or actual completion date"
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "required": ["generatedAt", "sourceCounts"],
+      "properties": {
+        "generatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When this source pack was generated"
+        },
+        "sourceCounts": {
+          "type": "object",
+          "required": ["total", "human", "preclinical", "openAccess"],
+          "properties": {
+            "total": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Total number of sources"
+            },
+            "human": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Number of human studies"
+            },
+            "preclinical": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Number of animal/in-vitro studies"
+            },
+            "openAccess": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Number of open access sources"
+            }
+          }
+        }
+      }
+    }
+  }
+}

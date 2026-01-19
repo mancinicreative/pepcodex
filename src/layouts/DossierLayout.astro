@@ -1,0 +1,269 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import EvidenceBadge from '../components/EvidenceBadge.astro';
+import TableOfContents from '../components/TableOfContents.astro';
+
+interface Props {
+  name: string;
+  aliases: string[];
+  category: string;
+  evidenceStrength: 'high' | 'moderate' | 'low' | 'very-low';
+  lastUpdated: Date;
+  summary: string;
+  sources: {
+    count: number;
+    human: number;
+    preclinical: number;
+    openAccess: number;
+  };
+  comparators: string[];
+  pharmacokinetics?: {
+    halfLife?: string;
+    bioavailability?: string;
+    metabolism?: string;
+  };
+  relatedPeptides?: string[];
+}
+
+const {
+  name,
+  aliases,
+  category,
+  evidenceStrength,
+  lastUpdated,
+  summary,
+  sources,
+  comparators,
+  pharmacokinetics,
+  relatedPeptides = []
+} = Astro.props;
+
+const categoryLabels: Record<string, string> = {
+  'metabolic': 'Metabolic',
+  'repair-recovery': 'Repair & Recovery',
+  'hormonal': 'Hormonal',
+  'longevity': 'Longevity',
+  'other': 'Other',
+};
+
+const categoryColors: Record<string, string> = {
+  'metabolic': 'bg-blue-100 text-blue-800',
+  'repair-recovery': 'bg-green-100 text-green-800',
+  'hormonal': 'bg-purple-100 text-purple-800',
+  'longevity': 'bg-amber-100 text-amber-800',
+  'other': 'bg-slate-100 text-slate-800',
+};
+
+// 12-section structure for navigation
+const sections = [
+  { id: 'overview', label: 'Overview' },
+  { id: 'mechanism-of-action', label: 'Mechanism of Action' },
+  { id: 'research-summary', label: 'Research Summary' },
+  { id: 'key-human-trials', label: 'Key Human Trials' },
+  { id: 'preclinical-evidence', label: 'Preclinical Evidence' },
+  { id: 'safety-profile', label: 'Safety Profile' },
+  { id: 'pharmacokinetics', label: 'Pharmacokinetics' },
+  { id: 'regulatory-status', label: 'Regulatory Status' },
+  { id: 'related-peptides', label: 'Related Peptides' },
+  { id: 'current-research-directions', label: 'Current Research Directions' },
+  { id: 'citation-table', label: 'Citation Table' },
+  { id: 'methodology-note', label: 'Methodology Note' },
+];
+---
+
+<BaseLayout title={name} description={summary}>
+  <article class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <header class="mb-8">
+      <div class="flex flex-wrap items-center gap-3 mb-4">
+        <a
+          href={`/category/${category}`}
+          class={`inline-flex items-center rounded-full px-3 py-1 text-xs font-medium ${categoryColors[category]}`}
+        >
+          {categoryLabels[category]}
+        </a>
+        <EvidenceBadge strength={evidenceStrength} />
+      </div>
+
+      <h1 class="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+        {name}
+      </h1>
+
+      {aliases.length > 0 && (
+        <p class="mt-2 text-lg text-slate-600">
+          Also known as: {aliases.join(', ')}
+        </p>
+      )}
+
+      <p class="mt-4 text-xl text-slate-700 leading-relaxed">
+        {summary}
+      </p>
+
+      <!-- Source stats -->
+      <div class="mt-6 flex flex-wrap gap-4">
+        <div class="rounded-lg bg-white border border-slate-200 px-4 py-3">
+          <div class="text-2xl font-bold text-slate-900">{sources.count}</div>
+          <div class="text-sm text-slate-600">Sources</div>
+        </div>
+        <div class="rounded-lg bg-white border border-slate-200 px-4 py-3">
+          <div class="text-2xl font-bold text-slate-900">{sources.human}</div>
+          <div class="text-sm text-slate-600">Human Studies</div>
+        </div>
+        <div class="rounded-lg bg-white border border-slate-200 px-4 py-3">
+          <div class="text-2xl font-bold text-slate-900">{sources.preclinical}</div>
+          <div class="text-sm text-slate-600">Preclinical</div>
+        </div>
+        <div class="rounded-lg bg-white border border-slate-200 px-4 py-3">
+          <div class="text-2xl font-bold text-green-600">{sources.openAccess}</div>
+          <div class="text-sm text-slate-600">Open Access</div>
+        </div>
+      </div>
+
+      <p class="mt-4 text-sm text-slate-500">
+        Last updated: {lastUpdated.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+      </p>
+    </header>
+
+    <div class="grid gap-8 lg:grid-cols-[1fr,280px]">
+      <!-- Main content -->
+      <div class="prose prose-slate prose-lg max-w-none">
+        <slot />
+
+        <!-- Methodology Note (always present) -->
+        <section id="methodology-note" class="mt-12 pt-8 border-t border-slate-200">
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">Methodology Note</h2>
+          <div class="rounded-lg bg-slate-50 border border-slate-200 p-6">
+            <p class="text-slate-700 mb-4">
+              This dossier synthesizes available evidence from peer-reviewed literature, regulatory documents, and clinical trial registries. Evidence strength ratings follow a modified GRADE approach:
+            </p>
+            <ul class="list-disc list-inside text-slate-700 space-y-2 mb-4">
+              <li><strong>High:</strong> Multiple large RCTs with consistent results</li>
+              <li><strong>Moderate:</strong> RCTs with limitations or consistent observational studies</li>
+              <li><strong>Low:</strong> Limited human data, primarily observational</li>
+              <li><strong>Very Low:</strong> Primarily preclinical or theoretical</li>
+            </ul>
+            <p class="text-slate-700">
+              For complete methodology details, see our <a href="/methodology" class="text-blue-600 hover:text-blue-800 hover:underline">Methodology page</a>.
+            </p>
+          </div>
+        </section>
+
+        <!-- Disclaimer -->
+        <div class="mt-8 rounded-lg border border-amber-200 bg-amber-50 p-6">
+          <p class="text-amber-800 text-sm">
+            <strong>Disclaimer:</strong> This dossier is for educational purposes only and does not constitute medical advice. The information presented reflects current research but should not be used for diagnosis, treatment, or prevention of any disease. Always consult a qualified healthcare provider before making health decisions.
+          </p>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="hidden lg:block">
+        <div class="sticky top-24 space-y-6">
+          <!-- Section Navigation -->
+          <nav class="rounded-lg border border-slate-200 bg-white p-4" aria-label="Dossier sections">
+            <h3 class="font-semibold text-slate-900 mb-3">Sections</h3>
+            <ul class="space-y-1 text-sm" id="section-nav">
+              {sections.map((section) => (
+                <li>
+                  <a
+                    href={`#${section.id}`}
+                    class="section-link block py-1 px-2 rounded text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors"
+                    data-section={section.id}
+                  >
+                    {section.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {comparators.length > 0 && (
+            <div class="rounded-lg border border-slate-200 bg-white p-4">
+              <h3 class="font-semibold text-slate-900 mb-3">Compare With</h3>
+              <ul class="space-y-2">
+                {comparators.map(comp => (
+                  <li>
+                    <a
+                      href={`/compare/${name.toLowerCase()}-vs-${comp.toLowerCase()}`}
+                      class="text-sm text-blue-600 hover:text-blue-800 hover:underline"
+                    >
+                      {name} vs {comp}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {relatedPeptides.length > 0 && (
+            <div class="rounded-lg border border-slate-200 bg-white p-4">
+              <h3 class="font-semibold text-slate-900 mb-3">Related Peptides</h3>
+              <ul class="space-y-2">
+                {relatedPeptides.map(peptide => (
+                  <li>
+                    <a
+                      href={`/peptides/${peptide.toLowerCase()}`}
+                      class="text-sm text-blue-600 hover:text-blue-800 hover:underline"
+                    >
+                      {peptide}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <div class="rounded-lg border border-amber-200 bg-amber-50 p-4">
+            <h3 class="font-semibold text-amber-900 mb-2">Important Notice</h3>
+            <p class="text-sm text-amber-800">
+              This content is for educational purposes only. It is not medical advice. Consult a healthcare provider before making health decisions.
+            </p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </article>
+</BaseLayout>
+
+<script>
+  // Highlight current section in navigation on scroll
+  document.addEventListener('DOMContentLoaded', () => {
+    const sectionLinks = document.querySelectorAll('.section-link');
+    const sections = document.querySelectorAll('h2[id], section[id]');
+
+    if (sectionLinks.length === 0 || sections.length === 0) return;
+
+    const observerOptions = {
+      rootMargin: '-100px 0px -66%',
+      threshold: 0
+    };
+
+    let currentActive: Element | null = null;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Remove active from previous
+          if (currentActive) {
+            currentActive.classList.remove('bg-slate-100', 'text-slate-900', 'font-medium');
+            currentActive.classList.add('text-slate-600');
+          }
+
+          // Find and highlight matching nav link
+          const id = entry.target.id;
+          const navLink = document.querySelector(`a[data-section="${id}"]`);
+
+          if (navLink) {
+            navLink.classList.add('bg-slate-100', 'text-slate-900', 'font-medium');
+            navLink.classList.remove('text-slate-600');
+            currentActive = navLink;
+          }
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+  });
+</script>

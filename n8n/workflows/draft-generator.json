@@ -1,0 +1,355 @@
+{
+  "name": "Draft Generator",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "generate-draft",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1.1,
+      "position": [240, 300],
+      "webhookId": "draft-generator-webhook"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "check-file",
+              "leftValue": "={{ $json.body?.sourcePackFile }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "isNotEmpty"
+              }
+            }
+          ]
+        }
+      },
+      "id": "validate-input",
+      "name": "Validate Input",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "operation": "read",
+        "fileSelector": "={{ $json.body.sourcePackFile }}",
+        "options": {}
+      },
+      "id": "read-source-pack",
+      "name": "Read Source Pack",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [680, 200]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse source pack and build Claude prompt\nconst sourcePack = JSON.parse($input.first().json.data);\nconst peptideName = sourcePack.peptide.name;\nconst aliases = sourcePack.peptide.aliases || [];\nconst category = sourcePack.peptide.category;\nconst sources = sourcePack.sources || [];\nconst trials = sourcePack.trials || [];\n\n// Build citations reference section\nlet citationsRef = 'Available Citations:\\n';\nfor (const source of sources) {\n  citationsRef += `- ${source.id}: \"${source.title}\" (${source.year}, ${source.studyType}, ${source.subjects})\\n`;\n}\n\n// Build trials reference section\nlet trialsRef = '\\nClinical Trials:\\n';\nfor (const trial of trials) {\n  trialsRef += `- ${trial.nctId}: \"${trial.title}\" (${trial.status}, Phase ${trial.phase})\\n`;\n}\n\n// The dossier template prompt\nconst systemPrompt = `You are a medical research writer creating evidence-based peptide dossiers for Peptide Library. \n\nRULES:\n1. NEVER include dosing information, injection instructions, or sourcing/purchasing guidance\n2. ALWAYS cite sources using [sourceId] format (e.g., [PMID:12345678])\n3. Label preclinical/animal studies with \"(animal study)\" or \"(in-vitro)\"\n4. Use hedged language: \"may,\" \"research suggests,\" \"studies indicate\"\n5. Include EvidenceBadge components with appropriate level (high/moderate/low/preclinical)\n6. Output valid MDX format with proper frontmatter\n\nCATEGORY DEFINITIONS:\n- metabolic: GLP-1 agonists, weight management, insulin sensitizers\n- repair-recovery: BPC-157, TB-500, tissue healing peptides\n- hormonal: Growth hormone secretagogues, hormone modulators\n- cognitive: Nootropics, neuroprotective peptides\n- other: Antimicrobial, cosmetic, other applications`;\n\nconst userPrompt = `Create a comprehensive research dossier for ${peptideName} (${category} category).\n\nAliases: ${aliases.join(', ') || 'None'}\n\n${citationsRef}\n${trialsRef}\n\nGenerate MDX with these 12 sections:\n\n1. **Frontmatter** (YAML):\n\\`\\`\\`yaml\n---\nlayout: ../../layouts/DossierLayout.astro\ntitle: \"${peptideName} Research Summary\"\npeptide: \"${peptideName}\"\ncategory: \"${category}\"\naliases: [${aliases.map(a => `\"${a}\"`).join(', ')}]\nlastUpdated: \"${new Date().toISOString().split('T')[0]}\"\nevidenceLevel: \"[high|moderate|low|preclinical]\"\nstudyCount: ${sources.length}\nhumanTrials: ${trials.filter(t => t.status === 'completed').length}\n---\n\\`\\`\\`\n\n2. **Quick Facts** - Summary box with key stats\n3. **What Is [Peptide]?** - Plain-language explanation of mechanism\n4. **Mechanism of Action** - Scientific explanation with receptor/pathway details\n5. **Research Applications** - Current research areas with evidence levels\n6. **Clinical Evidence** - Human trial summaries with citations\n7. **Preclinical Research** - Animal/in-vitro studies with clear labeling\n8. **Safety Profile** - Known side effects, contraindications from literature\n9. **Ongoing Research** - Active clinical trials from the trials list\n10. **Related Peptides** - Similar compounds in the same category\n11. **Citation Table** - Full reference list using CitationTable component\n12. **Medical Disclaimer** - Standard disclaimer about educational content\n\nIMPORTANT:\n- Use <EvidenceBadge level=\"high|moderate|low|preclinical\" /> component for evidence ratings\n- Use <CitationTable sources={[]} /> for the references section\n- Every claim must have a [citation] in brackets\n- Clearly distinguish human vs animal research\n- NO dosing, NO sourcing, NO medical advice`;\n\nreturn {\n  json: {\n    systemPrompt: systemPrompt,\n    userPrompt: userPrompt,\n    peptideName: peptideName,\n    outputFileName: `${peptideName.toLowerCase().replace(/\\s+/g, '-')}.mdx`,\n    sourcePack: sourcePack\n  }\n};"
+      },
+      "id": "build-claude-prompt",
+      "name": "Build Claude Prompt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [900, 200]
+    },
+    {
+      "parameters": {
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 8192,\n  \"system\": {{ JSON.stringify($json.systemPrompt) }},\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": {{ JSON.stringify($json.userPrompt) }}\n    }\n  ]\n}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          },
+          "timeout": 120000
+        }
+      },
+      "id": "call-claude-api",
+      "name": "Call Claude API",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1120, 200],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "ANTHROPIC_API_KEY",
+          "name": "Anthropic API Key"
+        }
+      },
+      "notes": "Configure ANTHROPIC_API_KEY credential with header name 'x-api-key'"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse Claude response and extract MDX content\nconst response = $input.first().json;\nconst previousData = $('Build Claude Prompt').first().json;\n\n// Extract content from Claude response\nlet mdxContent = '';\nif (response.content && response.content[0] && response.content[0].text) {\n  mdxContent = response.content[0].text;\n}\n\n// Clean up the MDX content\n// Remove any markdown code blocks wrapping the entire content\nif (mdxContent.startsWith('```mdx')) {\n  mdxContent = mdxContent.replace(/^```mdx\\n/, '').replace(/\\n```$/, '');\n} else if (mdxContent.startsWith('```')) {\n  mdxContent = mdxContent.replace(/^```\\n/, '').replace(/\\n```$/, '');\n}\n\n// Ensure frontmatter is properly formatted\nif (!mdxContent.startsWith('---')) {\n  // Try to find frontmatter in the content\n  const frontmatterMatch = mdxContent.match(/---[\\s\\S]*?---/);\n  if (frontmatterMatch) {\n    mdxContent = mdxContent.substring(mdxContent.indexOf('---'));\n  }\n}\n\nreturn {\n  json: {\n    mdxContent: mdxContent,\n    peptideName: previousData.peptideName,\n    outputFileName: previousData.outputFileName,\n    tokensUsed: response.usage?.output_tokens || 0,\n    model: response.model || 'claude-sonnet-4-20250514'\n  }\n};"
+      },
+      "id": "parse-mdx-output",
+      "name": "Parse MDX Output",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1340, 200]
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "={{ 'src/content/peptides/' + $json.outputFileName }}",
+        "fileContent": "={{ $json.mdxContent }}",
+        "options": {
+          "encoding": "utf8"
+        }
+      },
+      "id": "save-draft",
+      "name": "Save Draft",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [1560, 200]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "status",
+              "name": "status",
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "id": "message",
+              "name": "message",
+              "value": "=Draft generated: {{ $json.outputFileName }}",
+              "type": "string"
+            },
+            {
+              "id": "file",
+              "name": "outputFile",
+              "value": "={{ 'src/content/peptides/' + $json.outputFileName }}",
+              "type": "string"
+            },
+            {
+              "id": "tokens",
+              "name": "tokensUsed",
+              "value": "={{ $json.tokensUsed }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "success-output",
+      "name": "Success Output",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [1780, 200]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "status",
+              "name": "status",
+              "value": "error",
+              "type": "string"
+            },
+            {
+              "id": "message",
+              "name": "message",
+              "value": "Missing sourcePackFile in request body",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "validation-error",
+      "name": "Validation Error",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [680, 400]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "respond-success",
+      "name": "Respond Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [2000, 200]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {
+          "responseCode": 400
+        }
+      },
+      "id": "respond-error",
+      "name": "Respond Error",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [900, 400]
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Validate Input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Input": {
+      "main": [
+        [
+          {
+            "node": "Read Source Pack",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Validation Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Source Pack": {
+      "main": [
+        [
+          {
+            "node": "Build Claude Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Claude Prompt": {
+      "main": [
+        [
+          {
+            "node": "Call Claude API",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call Claude API": {
+      "main": [
+        [
+          {
+            "node": "Parse MDX Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse MDX Output": {
+      "main": [
+        [
+          {
+            "node": "Save Draft",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Draft": {
+      "main": [
+        [
+          {
+            "node": "Success Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Success Output": {
+      "main": [
+        [
+          {
+            "node": "Respond Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validation Error": {
+      "main": [
+        [
+          {
+            "node": "Respond Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "pinData": {},
+  "versionId": "1",
+  "triggerCount": 0,
+  "tags": [
+    {
+      "name": "peptide-library",
+      "id": "peptide-library"
+    },
+    {
+      "name": "draft-generator",
+      "id": "draft-generator"
+    }
+  ]
+}

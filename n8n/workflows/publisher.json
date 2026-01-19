@@ -1,0 +1,589 @@
+{
+  "name": "Publisher",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "publish",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1.1,
+      "position": [240, 300],
+      "webhookId": "publisher-webhook"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "check-mdx",
+              "leftValue": "={{ $json.body?.mdxFile }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "isNotEmpty"
+              }
+            }
+          ]
+        }
+      },
+      "id": "validate-input",
+      "name": "Validate Input",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Prepare file paths and commit message\nconst body = $input.first().json.body;\nconst mdxFile = body.mdxFile;\nconst sourcePackFile = body.sourcePackFile || '';\n\n// Extract peptide name from file path\nconst fileName = mdxFile.split('/').pop();\nconst peptideName = fileName.replace('.mdx', '').replace(/-/g, ' ');\n\n// Build commit message\nconst timestamp = new Date().toISOString();\nconst commitMessage = `content(peptide): add ${peptideName} dossier\n\n- Generated from source pack: ${sourcePackFile || 'manual'}\n- QA validation: passed\n- Generated at: ${timestamp}\n\nAutomated commit by Peptide Library Pipeline`;\n\nreturn {\n  json: {\n    mdxFile: mdxFile,\n    sourcePackFile: sourcePackFile,\n    peptideName: peptideName,\n    commitMessage: commitMessage,\n    timestamp: timestamp\n  }\n};"
+      },
+      "id": "prepare-commit",
+      "name": "Prepare Commit",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [680, 200]
+    },
+    {
+      "parameters": {
+        "command": "=git add \"{{ $json.mdxFile }}\"",
+        "cwd": "={{ $env.PROJECT_ROOT || process.cwd() }}",
+        "options": {}
+      },
+      "id": "git-add",
+      "name": "Git Add",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [900, 200]
+    },
+    {
+      "parameters": {
+        "command": "=git commit -m \"{{ $json.commitMessage.replace(/\"/g, '\\\\\"') }}\"",
+        "cwd": "={{ $env.PROJECT_ROOT || process.cwd() }}",
+        "options": {}
+      },
+      "id": "git-commit",
+      "name": "Git Commit",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [1120, 200],
+      "notes": "Commits with the prepared message"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Check if commit was successful\nconst output = $input.first().json;\nconst previousData = $('Prepare Commit').first().json;\n\nif (output.exitCode !== 0) {\n  // Check if it's a \"nothing to commit\" situation\n  if (output.stdout.includes('nothing to commit') || output.stderr.includes('nothing to commit')) {\n    return {\n      json: {\n        ...previousData,\n        commitStatus: 'no_changes',\n        commitHash: null,\n        shouldPush: false\n      }\n    };\n  }\n  \n  throw new Error(`Git commit failed: ${output.stderr || output.stdout}`);\n}\n\n// Extract commit hash from output\nconst hashMatch = output.stdout.match(/\\[\\w+\\s+([a-f0-9]+)\\]/);\nconst commitHash = hashMatch ? hashMatch[1] : 'unknown';\n\nreturn {\n  json: {\n    ...previousData,\n    commitStatus: 'success',\n    commitHash: commitHash,\n    shouldPush: true\n  }\n};"
+      },
+      "id": "check-commit",
+      "name": "Check Commit",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1340, 200]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "should-push",
+              "leftValue": "={{ $json.shouldPush }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ]
+        }
+      },
+      "id": "should-push",
+      "name": "Should Push?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1560, 200]
+    },
+    {
+      "parameters": {
+        "command": "git push origin HEAD",
+        "cwd": "={{ $env.PROJECT_ROOT || process.cwd() }}",
+        "options": {}
+      },
+      "id": "git-push",
+      "name": "Git Push",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [1780, 100],
+      "notes": "Push to remote repository"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Check push result\nconst output = $input.first().json;\nconst previousData = $('Check Commit').first().json;\n\nif (output.exitCode !== 0) {\n  return {\n    json: {\n      ...previousData,\n      pushStatus: 'failed',\n      pushError: output.stderr || output.stdout\n    }\n  };\n}\n\nreturn {\n  json: {\n    ...previousData,\n    pushStatus: 'success'\n  }\n};"
+      },
+      "id": "check-push",
+      "name": "Check Push",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2000, 100]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "check-vercel",
+              "leftValue": "={{ $env.VERCEL_DEPLOY_HOOK }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "isNotEmpty"
+              }
+            }
+          ]
+        }
+      },
+      "id": "has-vercel-hook",
+      "name": "Has Vercel Hook?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [2220, 100]
+    },
+    {
+      "parameters": {
+        "url": "={{ $env.VERCEL_DEPLOY_HOOK }}",
+        "authentication": "none",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          },
+          "timeout": 30000
+        }
+      },
+      "id": "trigger-vercel",
+      "name": "Trigger Vercel Deploy",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [2440, 0],
+      "notes": "Trigger Vercel deployment via deploy hook"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "status",
+              "name": "status",
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "id": "message",
+              "name": "message",
+              "value": "=Published {{ $('Prepare Commit').first().json.peptideName }} - commit {{ $('Check Commit').first().json.commitHash }}, Vercel deploy triggered",
+              "type": "string"
+            },
+            {
+              "id": "commit",
+              "name": "commitHash",
+              "value": "={{ $('Check Commit').first().json.commitHash }}",
+              "type": "string"
+            },
+            {
+              "id": "deployed",
+              "name": "vercelDeployed",
+              "value": true,
+              "type": "boolean"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "success-with-deploy",
+      "name": "Success with Deploy",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [2660, 0]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "status",
+              "name": "status",
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "id": "message",
+              "name": "message",
+              "value": "=Published {{ $('Prepare Commit').first().json.peptideName }} - commit {{ $('Check Commit').first().json.commitHash }} (no Vercel hook configured)",
+              "type": "string"
+            },
+            {
+              "id": "commit",
+              "name": "commitHash",
+              "value": "={{ $('Check Commit').first().json.commitHash }}",
+              "type": "string"
+            },
+            {
+              "id": "deployed",
+              "name": "vercelDeployed",
+              "value": false,
+              "type": "boolean"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "success-no-deploy",
+      "name": "Success No Deploy",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [2440, 200]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "status",
+              "name": "status",
+              "value": "no_changes",
+              "type": "string"
+            },
+            {
+              "id": "message",
+              "name": "message",
+              "value": "=No changes to publish for {{ $json.peptideName }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "no-changes-output",
+      "name": "No Changes Output",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [1780, 300]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "status",
+              "name": "status",
+              "value": "error",
+              "type": "string"
+            },
+            {
+              "id": "message",
+              "name": "message",
+              "value": "Missing mdxFile in request body",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "validation-error",
+      "name": "Validation Error",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [680, 400]
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineAll",
+        "options": {}
+      },
+      "id": "merge-success",
+      "name": "Merge Success",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2.1,
+      "position": [2880, 100]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "respond-success",
+      "name": "Respond Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [3100, 100]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "respond-no-changes",
+      "name": "Respond No Changes",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [2000, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {
+          "responseCode": 400
+        }
+      },
+      "id": "respond-error",
+      "name": "Respond Error",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [900, 400]
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Validate Input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Input": {
+      "main": [
+        [
+          {
+            "node": "Prepare Commit",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Validation Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Commit": {
+      "main": [
+        [
+          {
+            "node": "Git Add",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Git Add": {
+      "main": [
+        [
+          {
+            "node": "Git Commit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Git Commit": {
+      "main": [
+        [
+          {
+            "node": "Check Commit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Commit": {
+      "main": [
+        [
+          {
+            "node": "Should Push?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Should Push?": {
+      "main": [
+        [
+          {
+            "node": "Git Push",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Changes Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Git Push": {
+      "main": [
+        [
+          {
+            "node": "Check Push",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Push": {
+      "main": [
+        [
+          {
+            "node": "Has Vercel Hook?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Has Vercel Hook?": {
+      "main": [
+        [
+          {
+            "node": "Trigger Vercel Deploy",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Success No Deploy",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Trigger Vercel Deploy": {
+      "main": [
+        [
+          {
+            "node": "Success with Deploy",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Success with Deploy": {
+      "main": [
+        [
+          {
+            "node": "Merge Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Success No Deploy": {
+      "main": [
+        [
+          {
+            "node": "Merge Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Changes Output": {
+      "main": [
+        [
+          {
+            "node": "Respond No Changes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validation Error": {
+      "main": [
+        [
+          {
+            "node": "Respond Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Success": {
+      "main": [
+        [
+          {
+            "node": "Respond Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "pinData": {},
+  "versionId": "1",
+  "triggerCount": 0,
+  "tags": [
+    {
+      "name": "peptide-library",
+      "id": "peptide-library"
+    },
+    {
+      "name": "publisher",
+      "id": "publisher"
+    }
+  ]
+}

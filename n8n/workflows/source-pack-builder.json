@@ -1,0 +1,447 @@
+{
+  "name": "Source Pack Builder",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "trigger-manual",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "peptideName",
+              "stringValue": "={{ $json.peptideName || 'Tirzepatide' }}"
+            },
+            {
+              "name": "category",
+              "stringValue": "={{ $json.category || 'metabolic' }}"
+            },
+            {
+              "name": "aliases",
+              "stringValue": "={{ $json.aliases || '' }}"
+            },
+            {
+              "name": "maxResults",
+              "stringValue": "={{ $json.maxResults || '50' }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "set-input-params",
+      "name": "Set Input Parameters",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [440, 300]
+    },
+    {
+      "parameters": {
+        "url": "=https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term={{ encodeURIComponent($json.peptideName) }}[Title/Abstract]&retmax={{ $json.maxResults }}&retmode=json&sort=relevance",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          },
+          "timeout": 30000
+        }
+      },
+      "id": "pubmed-search",
+      "name": "PubMed Search",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [660, 180],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 2000
+    },
+    {
+      "parameters": {
+        "url": "=https://www.ebi.ac.uk/europepmc/webservices/rest/search?query={{ encodeURIComponent($json.peptideName) }}&format=json&pageSize={{ $json.maxResults }}&sort=CITED%20desc",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          },
+          "timeout": 30000
+        }
+      },
+      "id": "europe-pmc-search",
+      "name": "Europe PMC Search",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [660, 300],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 2000
+    },
+    {
+      "parameters": {
+        "url": "=https://clinicaltrials.gov/api/v2/studies?query.term={{ encodeURIComponent($json.peptideName) }}&pageSize={{ Math.min(parseInt($json.maxResults), 100) }}&format=json",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          },
+          "timeout": 30000
+        }
+      },
+      "id": "clinical-trials-search",
+      "name": "ClinicalTrials.gov Search",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [660, 420],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 2000
+    },
+    {
+      "parameters": {
+        "mode": "wait",
+        "time": 1,
+        "unit": "seconds"
+      },
+      "id": "rate-limit-1",
+      "name": "Rate Limit 1",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [880, 180]
+    },
+    {
+      "parameters": {
+        "mode": "wait",
+        "time": 1,
+        "unit": "seconds"
+      },
+      "id": "rate-limit-2",
+      "name": "Rate Limit 2",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [880, 300]
+    },
+    {
+      "parameters": {
+        "url": "=https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id={{ $('PubMed Search').item.json.esearchresult.idlist.join(',') }}&retmode=xml&rettype=abstract",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text"
+            }
+          },
+          "timeout": 60000
+        }
+      },
+      "id": "pubmed-fetch-details",
+      "name": "PubMed Fetch Details",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1100, 180],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 2000
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineAll",
+        "options": {}
+      },
+      "id": "merge-results",
+      "name": "Merge Results",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2.1,
+      "position": [1320, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Format Source Pack JSON\nconst inputParams = $('Set Input Parameters').first().json;\nconst peptideName = inputParams.peptideName;\nconst category = inputParams.category;\nconst aliasesStr = inputParams.aliases;\n\n// Parse aliases\nconst aliases = aliasesStr ? aliasesStr.split(',').map(a => a.trim()).filter(a => a) : [];\n\n// Get data from previous nodes\nlet pubmedXml = '';\nlet europepmcData = null;\nlet clinicalTrialsData = null;\n\ntry {\n  pubmedXml = $('PubMed Fetch Details').first().json.data || '';\n} catch (e) {\n  console.log('No PubMed data');\n}\n\ntry {\n  europepmcData = $('Europe PMC Search').first().json;\n} catch (e) {\n  console.log('No Europe PMC data');\n}\n\ntry {\n  clinicalTrialsData = $('ClinicalTrials.gov Search').first().json;\n} catch (e) {\n  console.log('No ClinicalTrials data');\n}\n\nconst sources = [];\nconst seenIds = new Set();\n\n// Parse PubMed XML (simplified - in production use proper XML parser)\nif (pubmedXml) {\n  const pmidMatches = pubmedXml.match(/<PMID[^>]*>(\\d+)<\\/PMID>/g) || [];\n  const titleMatches = pubmedXml.match(/<ArticleTitle>([^<]+)<\\/ArticleTitle>/g) || [];\n  const yearMatches = pubmedXml.match(/<PubDate>[\\s\\S]*?<Year>(\\d{4})<\\/Year>[\\s\\S]*?<\\/PubDate>/g) || [];\n  const journalMatches = pubmedXml.match(/<Title>([^<]+)<\\/Title>/g) || [];\n  \n  for (let i = 0; i < Math.min(pmidMatches.length, 20); i++) {\n    const pmid = pmidMatches[i]?.match(/<PMID[^>]*>(\\d+)<\\/PMID>/)?.[1];\n    const title = titleMatches[i]?.match(/<ArticleTitle>([^<]+)<\\/ArticleTitle>/)?.[1] || 'Unknown Title';\n    const year = yearMatches[i]?.match(/<Year>(\\d{4})<\\/Year>/)?.[1] || new Date().getFullYear();\n    const journal = journalMatches[i]?.match(/<Title>([^<]+)<\\/Title>/)?.[1] || 'Unknown Journal';\n    \n    if (pmid && !seenIds.has(`PMID:${pmid}`)) {\n      seenIds.add(`PMID:${pmid}`);\n      sources.push({\n        id: `PMID:${pmid}`,\n        type: 'pubmed',\n        title: title,\n        authors: [],\n        journal: journal,\n        year: parseInt(year),\n        studyType: 'review',\n        subjects: 'human',\n        sampleSize: null,\n        openAccess: false,\n        url: `https://pubmed.ncbi.nlm.nih.gov/${pmid}/`,\n        abstract: ''\n      });\n    }\n  }\n}\n\n// Parse Europe PMC results\nif (europepmcData?.resultList?.result) {\n  for (const article of europepmcData.resultList.result.slice(0, 10)) {\n    const id = article.pmid ? `PMID:${article.pmid}` : (article.doi ? `DOI:${article.doi}` : null);\n    if (id && !seenIds.has(id)) {\n      seenIds.add(id);\n      sources.push({\n        id: id,\n        type: 'europePMC',\n        title: article.title || 'Unknown Title',\n        authors: article.authorString ? article.authorString.split(', ').slice(0, 5) : [],\n        journal: article.journalTitle || 'Unknown Journal',\n        year: parseInt(article.pubYear) || new Date().getFullYear(),\n        studyType: article.pubType?.includes('review') ? 'review' : 'observational',\n        subjects: 'human',\n        sampleSize: null,\n        openAccess: article.isOpenAccess === 'Y',\n        url: article.pmid ? `https://pubmed.ncbi.nlm.nih.gov/${article.pmid}/` : `https://doi.org/${article.doi}`,\n        abstract: article.abstractText || ''\n      });\n    }\n  }\n}\n\n// Parse Clinical Trials\nconst trials = [];\nif (clinicalTrialsData?.studies) {\n  for (const study of clinicalTrialsData.studies.slice(0, 10)) {\n    const protocol = study.protocolSection;\n    if (protocol) {\n      const nctId = protocol.identificationModule?.nctId;\n      if (nctId) {\n        // Map status\n        const statusMap = {\n          'RECRUITING': 'recruiting',\n          'ACTIVE_NOT_RECRUITING': 'active',\n          'COMPLETED': 'completed',\n          'TERMINATED': 'terminated',\n          'WITHDRAWN': 'withdrawn',\n          'NOT_YET_RECRUITING': 'not-yet-recruiting',\n          'ENROLLING_BY_INVITATION': 'enrolling-by-invitation',\n          'SUSPENDED': 'suspended'\n        };\n        \n        const phaseMap = {\n          'PHASE1': '1',\n          'PHASE2': '2',\n          'PHASE3': '3',\n          'PHASE4': '4',\n          'PHASE1_PHASE2': '1/2',\n          'PHASE2_PHASE3': '2/3',\n          'NA': 'not-applicable'\n        };\n        \n        trials.push({\n          nctId: nctId,\n          title: protocol.identificationModule?.briefTitle || 'Unknown Trial',\n          status: statusMap[protocol.statusModule?.overallStatus] || 'unknown',\n          phase: phaseMap[protocol.designModule?.phases?.[0]] || 'not-applicable',\n          conditions: protocol.conditionsModule?.conditions || [],\n          interventions: protocol.armsInterventionsModule?.interventions?.map(i => i.name) || [],\n          enrollmentTarget: protocol.designModule?.enrollmentInfo?.count || 0,\n          startDate: protocol.statusModule?.startDateStruct?.date || null,\n          completionDate: protocol.statusModule?.completionDateStruct?.date || null\n        });\n      }\n    }\n  }\n}\n\n// Count sources\nconst humanStudies = sources.filter(s => s.subjects === 'human').length;\nconst preclinicalStudies = sources.filter(s => s.subjects === 'animal' || s.subjects === 'in-vitro').length;\nconst openAccessCount = sources.filter(s => s.openAccess).length;\n\n// Build source pack\nconst sourcePack = {\n  peptide: {\n    name: peptideName,\n    aliases: aliases,\n    category: category\n  },\n  sources: sources,\n  trials: trials,\n  metadata: {\n    generatedAt: new Date().toISOString(),\n    sourceCounts: {\n      total: sources.length,\n      human: humanStudies,\n      preclinical: preclinicalStudies,\n      openAccess: openAccessCount\n    }\n  }\n};\n\nreturn {\n  json: {\n    sourcePack: sourcePack,\n    peptideName: peptideName,\n    fileName: `${peptideName.toLowerCase().replace(/\\s+/g, '-')}.json`\n  }\n};"
+      },
+      "id": "format-source-pack",
+      "name": "Format Source Pack JSON",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1540, 300]
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "={{ $json.fileName }}",
+        "fileContent": "={{ JSON.stringify($json.sourcePack, null, 2) }}",
+        "options": {
+          "encoding": "utf8"
+        }
+      },
+      "id": "write-file",
+      "name": "Save Source Pack",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [1760, 300],
+      "notes": "Configure the base path in n8n settings or use absolute path"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "check-sources",
+              "leftValue": "={{ $json.sourcePack.sources.length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ]
+        }
+      },
+      "id": "if-has-sources",
+      "name": "Has Sources?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1980, 300]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "success",
+              "name": "status",
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "id": "message",
+              "name": "message",
+              "value": "=Source pack created: {{ $json.fileName }} with {{ $json.sourcePack.sources.length }} sources and {{ $json.sourcePack.trials.length }} trials",
+              "type": "string"
+            },
+            {
+              "id": "file",
+              "name": "outputFile",
+              "value": "={{ $json.fileName }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "success-output",
+      "name": "Success Output",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [2200, 200]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "error",
+              "name": "status",
+              "value": "error",
+              "type": "string"
+            },
+            {
+              "id": "error-message",
+              "name": "message",
+              "value": "=No sources found for peptide: {{ $('Set Input Parameters').first().json.peptideName }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "error-output",
+      "name": "Error Output",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [2200, 400]
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Set Input Parameters",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Input Parameters": {
+      "main": [
+        [
+          {
+            "node": "PubMed Search",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Europe PMC Search",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "ClinicalTrials.gov Search",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PubMed Search": {
+      "main": [
+        [
+          {
+            "node": "Rate Limit 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Europe PMC Search": {
+      "main": [
+        [
+          {
+            "node": "Rate Limit 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rate Limit 1": {
+      "main": [
+        [
+          {
+            "node": "PubMed Fetch Details",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rate Limit 2": {
+      "main": [
+        [
+          {
+            "node": "Merge Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ClinicalTrials.gov Search": {
+      "main": [
+        [
+          {
+            "node": "Merge Results",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "PubMed Fetch Details": {
+      "main": [
+        [
+          {
+            "node": "Merge Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Results": {
+      "main": [
+        [
+          {
+            "node": "Format Source Pack JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Source Pack JSON": {
+      "main": [
+        [
+          {
+            "node": "Save Source Pack",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Source Pack": {
+      "main": [
+        [
+          {
+            "node": "Has Sources?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Has Sources?": {
+      "main": [
+        [
+          {
+            "node": "Success Output",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Error Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "pinData": {},
+  "versionId": "1",
+  "triggerCount": 0,
+  "tags": [
+    {
+      "name": "peptide-library",
+      "id": "peptide-library"
+    },
+    {
+      "name": "source-pack",
+      "id": "source-pack"
+    }
+  ]
+}

@@ -1,0 +1,453 @@
+{
+  "name": "QA Gate",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "qa-validate",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1.1,
+      "position": [240, 300],
+      "webhookId": "qa-gate-webhook"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "check-mdx",
+              "leftValue": "={{ $json.body?.mdxFile }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "isNotEmpty"
+              }
+            },
+            {
+              "id": "check-source-pack",
+              "leftValue": "={{ $json.body?.sourcePackFile }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "isNotEmpty"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "validate-input",
+      "name": "Validate Input",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "command": "=node scripts/qa-validate.js \"{{ $json.body.mdxFile }}\" \"{{ $json.body.sourcePackFile }}\" --json",
+        "cwd": "={{ $env.PROJECT_ROOT || process.cwd() }}",
+        "options": {}
+      },
+      "id": "run-qa-script",
+      "name": "Run QA Validation",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [680, 200],
+      "notes": "Runs the qa-validate.js orchestrator script"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse QA results from script output\nconst output = $input.first().json;\nlet qaResult;\n\ntry {\n  // The script outputs JSON when --json flag is used\n  qaResult = JSON.parse(output.stdout);\n} catch (e) {\n  // If parsing fails, check stderr for errors\n  return {\n    json: {\n      passed: false,\n      error: 'Failed to parse QA output',\n      stderr: output.stderr,\n      stdout: output.stdout,\n      exitCode: output.exitCode\n    }\n  };\n}\n\n// Add execution metadata\nqaResult.executedAt = new Date().toISOString();\nqaResult.exitCode = output.exitCode;\n\nreturn {\n  json: qaResult\n};"
+      },
+      "id": "parse-qa-results",
+      "name": "Parse QA Results",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [900, 200]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "check-passed",
+              "leftValue": "={{ $json.passed }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ]
+        }
+      },
+      "id": "qa-passed",
+      "name": "QA Passed?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1120, 200]
+    },
+    {
+      "parameters": {
+        "url": "={{ $env.PUBLISHER_WEBHOOK_URL || 'http://localhost:5678/webhook/publish' }}",
+        "authentication": "none",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"mdxFile\": {{ JSON.stringify($json.mdxFile) }},\n  \"sourcePackFile\": {{ JSON.stringify($json.sourcePackFile) }},\n  \"qaReport\": {{ JSON.stringify($json) }}\n}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          },
+          "timeout": 30000
+        }
+      },
+      "id": "trigger-publisher",
+      "name": "Trigger Publisher",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1340, 100],
+      "notes": "Triggers the publisher workflow on QA pass"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Format failure notification\nconst qaResult = $input.first().json;\n\nconst issues = [];\n\n// Collect banned content issues\nif (qaResult.checks?.bannedContent?.banned?.length > 0) {\n  for (const item of qaResult.checks.bannedContent.banned) {\n    issues.push(`[BANNED] ${item.pattern}: ${item.matches.slice(0, 3).join(', ')}`);\n  }\n}\n\n// Collect citation issues\nif (qaResult.checks?.citations?.missing?.length > 0) {\n  issues.push(`[CITATIONS] Missing: ${qaResult.checks.citations.missing.join(', ')}`);\n}\n\n// Collect evidence label issues\nif (qaResult.checks?.evidenceLabels?.issues?.length > 0) {\n  for (const item of qaResult.checks.evidenceLabels.issues.slice(0, 5)) {\n    issues.push(`[EVIDENCE] ${item.sourceId}: needs ${item.missingLabel} label`);\n  }\n}\n\nreturn {\n  json: {\n    status: 'failed',\n    mdxFile: qaResult.mdxFile,\n    sourcePackFile: qaResult.sourcePackFile,\n    summary: {\n      errors: qaResult.summary?.errors || 0,\n      warnings: qaResult.summary?.warnings || 0\n    },\n    issues: issues,\n    fullReport: qaResult,\n    failedAt: new Date().toISOString()\n  }\n};"
+      },
+      "id": "format-failure",
+      "name": "Format Failure",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1340, 300]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "status",
+              "name": "status",
+              "value": "passed",
+              "type": "string"
+            },
+            {
+              "id": "message",
+              "name": "message",
+              "value": "=QA passed, publisher triggered for {{ $json.mdxFile }}",
+              "type": "string"
+            },
+            {
+              "id": "file",
+              "name": "mdxFile",
+              "value": "={{ $json.mdxFile }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "success-output",
+      "name": "Success Output",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [1560, 100]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "fileName": "=logs/qa-failures-{{ new Date().toISOString().split('T')[0] }}.json",
+        "fileContent": "={{ JSON.stringify($json, null, 2) + '\\n---\\n' }}",
+        "options": {}
+      },
+      "id": "log-failure",
+      "name": "Log Failure",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [1560, 300],
+      "notes": "Append failure to daily log file"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "status",
+              "name": "status",
+              "value": "failed",
+              "type": "string"
+            },
+            {
+              "id": "errors",
+              "name": "errors",
+              "value": "={{ $json.summary.errors }}",
+              "type": "number"
+            },
+            {
+              "id": "warnings",
+              "name": "warnings",
+              "value": "={{ $json.summary.warnings }}",
+              "type": "number"
+            },
+            {
+              "id": "issues",
+              "name": "issues",
+              "value": "={{ $json.issues }}",
+              "type": "array"
+            },
+            {
+              "id": "file",
+              "name": "mdxFile",
+              "value": "={{ $json.mdxFile }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "failure-output",
+      "name": "Failure Output",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [1780, 300]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "status",
+              "name": "status",
+              "value": "error",
+              "type": "string"
+            },
+            {
+              "id": "message",
+              "name": "message",
+              "value": "Missing mdxFile or sourcePackFile in request body",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "validation-error",
+      "name": "Validation Error",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [680, 400]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "respond-success",
+      "name": "Respond Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1780, 100]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {
+          "responseCode": 422
+        }
+      },
+      "id": "respond-failure",
+      "name": "Respond Failure",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [2000, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {
+          "responseCode": 400
+        }
+      },
+      "id": "respond-validation-error",
+      "name": "Respond Validation Error",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [900, 400]
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Validate Input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Input": {
+      "main": [
+        [
+          {
+            "node": "Run QA Validation",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Validation Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run QA Validation": {
+      "main": [
+        [
+          {
+            "node": "Parse QA Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse QA Results": {
+      "main": [
+        [
+          {
+            "node": "QA Passed?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "QA Passed?": {
+      "main": [
+        [
+          {
+            "node": "Trigger Publisher",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Format Failure",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Trigger Publisher": {
+      "main": [
+        [
+          {
+            "node": "Success Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Failure": {
+      "main": [
+        [
+          {
+            "node": "Log Failure",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Success Output": {
+      "main": [
+        [
+          {
+            "node": "Respond Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log Failure": {
+      "main": [
+        [
+          {
+            "node": "Failure Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Failure Output": {
+      "main": [
+        [
+          {
+            "node": "Respond Failure",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validation Error": {
+      "main": [
+        [
+          {
+            "node": "Respond Validation Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "pinData": {},
+  "versionId": "1",
+  "triggerCount": 0,
+  "tags": [
+    {
+      "name": "peptide-library",
+      "id": "peptide-library"
+    },
+    {
+      "name": "qa-gate",
+      "id": "qa-gate"
+    }
+  ]
+}

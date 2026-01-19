@@ -1,0 +1,626 @@
+{
+  "name": "Batch Orchestrator",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "trigger-manual",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "peptides",
+              "stringValue": "={{ $json.peptides || '[{\"name\": \"BPC-157\", \"category\": \"repair-recovery\", \"aliases\": \"Body Protection Compound-157\"}, {\"name\": \"TB-500\", \"category\": \"repair-recovery\", \"aliases\": \"Thymosin Beta-4\"}]' }}"
+            },
+            {
+              "name": "batchId",
+              "stringValue": "={{ 'batch-' + Date.now() }}"
+            },
+            {
+              "name": "startedAt",
+              "stringValue": "={{ new Date().toISOString() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "set-batch-params",
+      "name": "Set Batch Parameters",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse peptide list and prepare for processing\nconst input = $input.first().json;\nlet peptides;\n\ntry {\n  peptides = typeof input.peptides === 'string' \n    ? JSON.parse(input.peptides) \n    : input.peptides;\n} catch (e) {\n  throw new Error(`Invalid peptides JSON: ${e.message}`);\n}\n\nif (!Array.isArray(peptides) || peptides.length === 0) {\n  throw new Error('peptides must be a non-empty array');\n}\n\n// Return each peptide as a separate item for the loop\nreturn peptides.map((p, index) => ({\n  json: {\n    peptide: p,\n    index: index + 1,\n    total: peptides.length,\n    batchId: input.batchId,\n    startedAt: input.startedAt\n  }\n}));"
+      },
+      "id": "split-peptides",
+      "name": "Split Peptides",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "loop-peptides",
+      "name": "Loop Over Peptides",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Log progress\nconst item = $input.first().json;\nconsole.log(`[${item.batchId}] Processing ${item.index}/${item.total}: ${item.peptide.name}`);\n\nreturn {\n  json: {\n    ...item,\n    status: 'processing',\n    stepStarted: new Date().toISOString()\n  }\n};"
+      },
+      "id": "log-progress",
+      "name": "Log Progress",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1120, 300]
+    },
+    {
+      "parameters": {
+        "url": "={{ $env.SOURCE_PACK_BUILDER_URL || 'http://localhost:5678/webhook/source-pack-builder' }}",
+        "authentication": "none",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"peptideName\": {{ JSON.stringify($json.peptide.name) }},\n  \"category\": {{ JSON.stringify($json.peptide.category || 'other') }},\n  \"aliases\": {{ JSON.stringify($json.peptide.aliases || '') }},\n  \"maxResults\": \"50\"\n}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          },
+          "timeout": 120000
+        }
+      },
+      "id": "call-source-pack-builder",
+      "name": "Build Source Pack",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1340, 300],
+      "notes": "Calls the Source Pack Builder workflow",
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "check-status",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "success",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ]
+        }
+      },
+      "id": "source-pack-ok",
+      "name": "Source Pack OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1560, 300]
+    },
+    {
+      "parameters": {
+        "mode": "wait",
+        "time": 2,
+        "unit": "seconds"
+      },
+      "id": "rate-limit-draft",
+      "name": "Rate Limit",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [1780, 200]
+    },
+    {
+      "parameters": {
+        "url": "={{ $env.DRAFT_GENERATOR_URL || 'http://localhost:5678/webhook/generate-draft' }}",
+        "authentication": "none",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"sourcePackFile\": {{ JSON.stringify('data/source-packs/' + $('Build Source Pack').first().json.outputFile) }}\n}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          },
+          "timeout": 180000
+        }
+      },
+      "id": "call-draft-generator",
+      "name": "Generate Draft",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [2000, 200],
+      "notes": "Calls the Draft Generator workflow",
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 10000
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "check-draft",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "success",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ]
+        }
+      },
+      "id": "draft-ok",
+      "name": "Draft OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [2220, 200]
+    },
+    {
+      "parameters": {
+        "url": "={{ $env.QA_GATE_URL || 'http://localhost:5678/webhook/qa-validate' }}",
+        "authentication": "none",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"mdxFile\": {{ JSON.stringify($('Generate Draft').first().json.outputFile) }},\n  \"sourcePackFile\": {{ JSON.stringify('data/source-packs/' + $('Build Source Pack').first().json.outputFile) }}\n}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          },
+          "timeout": 60000
+        }
+      },
+      "id": "call-qa-gate",
+      "name": "Run QA Gate",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [2440, 100],
+      "notes": "Calls the QA Gate workflow"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Record step result\nconst loopItem = $('Log Progress').first().json;\nconst qaResult = $input.first().json;\n\nreturn {\n  json: {\n    peptide: loopItem.peptide.name,\n    index: loopItem.index,\n    total: loopItem.total,\n    batchId: loopItem.batchId,\n    status: qaResult.status === 'passed' ? 'published' : 'qa_failed',\n    sourcePackFile: $('Build Source Pack').first().json.outputFile,\n    mdxFile: $('Generate Draft').first().json.outputFile,\n    qaStatus: qaResult.status,\n    completedAt: new Date().toISOString()\n  }\n};"
+      },
+      "id": "record-success",
+      "name": "Record Success",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2660, 100]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Record failure at source pack step\nconst loopItem = $('Log Progress').first().json;\nconst errorResult = $input.first().json;\n\nreturn {\n  json: {\n    peptide: loopItem.peptide.name,\n    index: loopItem.index,\n    total: loopItem.total,\n    batchId: loopItem.batchId,\n    status: 'source_pack_failed',\n    error: errorResult.message || 'Source pack build failed',\n    completedAt: new Date().toISOString()\n  }\n};"
+      },
+      "id": "record-source-pack-failure",
+      "name": "Record Source Pack Failure",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1780, 400]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Record failure at draft step\nconst loopItem = $('Log Progress').first().json;\nconst errorResult = $input.first().json;\n\nreturn {\n  json: {\n    peptide: loopItem.peptide.name,\n    index: loopItem.index,\n    total: loopItem.total,\n    batchId: loopItem.batchId,\n    status: 'draft_failed',\n    sourcePackFile: $('Build Source Pack').first().json.outputFile,\n    error: errorResult.message || 'Draft generation failed',\n    completedAt: new Date().toISOString()\n  }\n};"
+      },
+      "id": "record-draft-failure",
+      "name": "Record Draft Failure",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2440, 300]
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineAll",
+        "options": {}
+      },
+      "id": "merge-results",
+      "name": "Merge Results",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2.1,
+      "position": [2880, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "has-more",
+              "leftValue": "={{ $('Loop Over Peptides').first().context.noItemsLeft }}",
+              "rightValue": false,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ]
+        }
+      },
+      "id": "has-more-peptides",
+      "name": "Has More?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [3100, 300]
+    },
+    {
+      "parameters": {
+        "mode": "wait",
+        "time": 5,
+        "unit": "seconds"
+      },
+      "id": "delay-between-peptides",
+      "name": "Delay Between Peptides",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [3320, 200],
+      "notes": "Rate limiting between peptides"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Compile final batch report\nconst allResults = $input.all().map(item => item.json);\n\nconst published = allResults.filter(r => r.status === 'published').length;\nconst failed = allResults.filter(r => r.status !== 'published').length;\nconst batchId = allResults[0]?.batchId || 'unknown';\n\nconst report = {\n  batchId: batchId,\n  completedAt: new Date().toISOString(),\n  summary: {\n    total: allResults.length,\n    published: published,\n    failed: failed,\n    successRate: Math.round((published / allResults.length) * 100) + '%'\n  },\n  results: allResults.map(r => ({\n    peptide: r.peptide,\n    status: r.status,\n    files: {\n      sourcePack: r.sourcePackFile || null,\n      mdx: r.mdxFile || null\n    },\n    error: r.error || null\n  }))\n};\n\nreturn {\n  json: report\n};"
+      },
+      "id": "compile-report",
+      "name": "Compile Batch Report",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3320, 400]
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "=logs/batch-{{ $json.batchId }}.json",
+        "fileContent": "={{ JSON.stringify($json, null, 2) }}",
+        "options": {}
+      },
+      "id": "save-report",
+      "name": "Save Batch Report",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [3540, 400]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "status",
+              "name": "status",
+              "value": "complete",
+              "type": "string"
+            },
+            {
+              "id": "batchId",
+              "name": "batchId",
+              "value": "={{ $json.batchId }}",
+              "type": "string"
+            },
+            {
+              "id": "total",
+              "name": "total",
+              "value": "={{ $json.summary.total }}",
+              "type": "number"
+            },
+            {
+              "id": "published",
+              "name": "published",
+              "value": "={{ $json.summary.published }}",
+              "type": "number"
+            },
+            {
+              "id": "failed",
+              "name": "failed",
+              "value": "={{ $json.summary.failed }}",
+              "type": "number"
+            },
+            {
+              "id": "successRate",
+              "name": "successRate",
+              "value": "={{ $json.summary.successRate }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "final-output",
+      "name": "Final Output",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [3760, 400]
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Set Batch Parameters",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Batch Parameters": {
+      "main": [
+        [
+          {
+            "node": "Split Peptides",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Peptides": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Peptides",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Peptides": {
+      "main": [
+        [
+          {
+            "node": "Log Progress",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Compile Batch Report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log Progress": {
+      "main": [
+        [
+          {
+            "node": "Build Source Pack",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Source Pack": {
+      "main": [
+        [
+          {
+            "node": "Source Pack OK?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Source Pack OK?": {
+      "main": [
+        [
+          {
+            "node": "Rate Limit",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Record Source Pack Failure",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rate Limit": {
+      "main": [
+        [
+          {
+            "node": "Generate Draft",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Draft": {
+      "main": [
+        [
+          {
+            "node": "Draft OK?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Draft OK?": {
+      "main": [
+        [
+          {
+            "node": "Run QA Gate",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Record Draft Failure",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run QA Gate": {
+      "main": [
+        [
+          {
+            "node": "Record Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Record Success": {
+      "main": [
+        [
+          {
+            "node": "Merge Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Record Source Pack Failure": {
+      "main": [
+        [
+          {
+            "node": "Merge Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Record Draft Failure": {
+      "main": [
+        [
+          {
+            "node": "Merge Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Results": {
+      "main": [
+        [
+          {
+            "node": "Has More?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Has More?": {
+      "main": [
+        [
+          {
+            "node": "Delay Between Peptides",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Compile Batch Report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delay Between Peptides": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Peptides",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Compile Batch Report": {
+      "main": [
+        [
+          {
+            "node": "Save Batch Report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Batch Report": {
+      "main": [
+        [
+          {
+            "node": "Final Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "pinData": {},
+  "versionId": "1",
+  "triggerCount": 0,
+  "tags": [
+    {
+      "name": "peptide-library",
+      "id": "peptide-library"
+    },
+    {
+      "name": "batch-orchestrator",
+      "id": "batch-orchestrator"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content';
+import ComparisonLayout from '../../layouts/ComparisonLayout.astro';
+
+export async function getStaticPaths() {
+  const comparisons = await getCollection('comparisons');
+  return comparisons.map((comparison) => ({
+    params: { slug: comparison.slug },
+    props: { comparison },
+  }));
+}
+
+const { comparison } = Astro.props;
+const { Content } = await comparison.render();
+
+// Map peptide slugs to display data
+// In a full implementation, this would fetch from the peptides collection
+const peptideData: Record<string, { name: string; evidenceStrength: 'high' | 'moderate' | 'low' | 'very-low' }> = {
+  'tirzepatide': { name: 'Tirzepatide', evidenceStrength: 'high' },
+  'semaglutide': { name: 'Semaglutide', evidenceStrength: 'high' },
+  'retatrutide': { name: 'Retatrutide', evidenceStrength: 'moderate' },
+  'liraglutide': { name: 'Liraglutide', evidenceStrength: 'high' },
+};
+
+const peptideA = {
+  name: peptideData[comparison.data.peptideA]?.name || comparison.data.peptideA,
+  slug: comparison.data.peptideA,
+  evidenceStrength: peptideData[comparison.data.peptideA]?.evidenceStrength || 'moderate' as const,
+};
+
+const peptideB = {
+  name: peptideData[comparison.data.peptideB]?.name || comparison.data.peptideB,
+  slug: comparison.data.peptideB,
+  evidenceStrength: peptideData[comparison.data.peptideB]?.evidenceStrength || 'moderate' as const,
+};
+---
+
+<ComparisonLayout
+  title={comparison.data.title}
+  peptideA={peptideA}
+  peptideB={peptideB}
+  category={comparison.data.category}
+  lastUpdated={comparison.data.lastUpdated}
+  summary={comparison.data.summary}
+>
+  <Content />
+</ComparisonLayout>

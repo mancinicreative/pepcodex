@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-**Phase 2: Content Templates** — COMPLETE
+**Phase 3: Pipeline Infrastructure** — COMPLETE
 
 ## Active Plan
 
-None — Phase 2 complete, ready for Phase 3 n8n workflows
+None — Phase 3 complete, ready for Phase 4 Content Production
 
 ## What's Done
 
@@ -28,10 +28,18 @@ None — Phase 2 complete, ready for Phase 3 n8n workflows
 - **Dynamic routes:** /compare/, /guide/, /safety/
 - Build passes: 14 pages generated
 
-### Phase 3: Pipeline Infrastructure (Partial)
+### Phase 3: Pipeline Infrastructure (COMPLETE)
 - **03-01:** Source pack JSON schema and validation script
 - **03-02:** QA validation scripts (banned content, citations, evidence labels)
 - **03-03:** QA orchestrator combining all validation
+- **03-04/05:** n8n workflow JSONs for full automation pipeline
+
+**n8n Workflows Created:**
+- `source-pack-builder.json` - PubMed/EuropePMC/ClinicalTrials API integration
+- `draft-generator.json` - Claude API with 12-section dossier template
+- `qa-gate.json` - runs qa-validate.js, triggers publisher on pass
+- `publisher.json` - git add/commit/push with optional Vercel deploy
+- `batch-orchestrator.json` - loops peptide list through full pipeline
 
 ### Existing Code
 - Astro project with Tailwind, MDX, sitemap
@@ -42,26 +50,32 @@ None — Phase 2 complete, ready for Phase 3 n8n workflows
 
 ## What's Next
 
-**Phase 3 Remaining (n8n workflows):**
-- 03-04: Source Pack Builder n8n workflow
-- 03-05: Draft Generator + QA Gate n8n workflows
+**Phase 4: Content Production**
+- Import n8n workflows and configure credentials
+- Run batch processing for initial peptide set
+- Review and publish generated content
 
 ## Context for Resume
 
-Phase 2 complete with all four template types:
-- DossierLayout: 12-section structure with sidebar navigation
-- ComparisonLayout: Side-by-side with evidence badges
-- GuideLayout: Educational format with related content
-- SafetyLayout: Clinical safety with prominent warnings
+Phase 3 complete with full automation pipeline:
 
-Phase 3 local scripts complete:
+**Local Scripts (Node.js):**
 - `scripts/validate-source-pack.js` - validates source pack JSON
 - `scripts/qa-banned-content.js` - scans for dosing/sourcing language
 - `scripts/qa-citations.js` - validates citations against source pack
 - `scripts/qa-evidence-labels.js` - checks animal/in-vitro labeling
 - `scripts/qa-validate.js` - orchestrates all QA checks
 
-Sample source pack exists: `data/source-packs/tirzepatide.json` with 12 real citations and 4 clinical trials.
+**n8n Workflows:**
+- Source Pack Builder: 3 API sources, auto-formats to schema
+- Draft Generator: Claude API with 12-section template, saves MDX
+- QA Gate: Runs validation, logs failures, triggers publisher
+- Publisher: Git workflow with optional Vercel deploy hook
+- Batch Orchestrator: Full pipeline with rate limiting and reporting
+
+**Sample Data:**
+- `data/source-packs/tirzepatide.json` with 12 real citations and 4 clinical trials
+- `data/schemas/source-pack.schema.json` for validation
 
 ## Decisions
 
@@ -73,13 +87,15 @@ Sample source pack exists: `data/source-packs/tirzepatide.json` with 12 real cit
 | 12-section dossier structure | Matches Prompt A requirements for comprehensive coverage | 2026-01-19 |
 | Scroll-based section highlighting | Improves navigation UX on long dossier pages | 2026-01-19 |
 | Amber color accent for safety pages | Visual differentiation for safety-critical content | 2026-01-19 |
+| Webhook triggers for n8n workflows | Enables chaining and external invocation | 2026-01-19 |
+| Rate limiting between API calls | Respects PubMed/CT.gov rate limits | 2026-01-19 |
 
 ## Progress
 
 ```
 Phase 1: Site Foundation      [========] 100%
-Phase 2: Content Templates    [========] 100%  <-- JUST COMPLETED
-Phase 3: Pipeline Infra       [====----]  60%  (local scripts done, n8n pending)
+Phase 2: Content Templates    [========] 100%
+Phase 3: Pipeline Infra       [========] 100%  <-- JUST COMPLETED
 Phase 4: Content Production   [--------]   0%
 ```
 
@@ -93,6 +109,7 @@ None
 - 2026-01-19: Phase 1 completed - build fixed, all pages rendering
 - 2026-01-19: Phase 3 plans 03-01, 03-02, 03-03 completed - QA scripts working
 - 2026-01-19: Phase 2 plan 02-01 completed - all 4 template types with sample content
+- 2026-01-19: Phase 3 n8n workflows completed - 5 workflow JSONs created
 
 ---
 *Last updated: 2026-01-19*

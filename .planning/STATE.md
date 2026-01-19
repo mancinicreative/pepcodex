@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-**Phase 3: Pipeline Infrastructure** — QA scripts and source pack schema complete
+**Phase 2: Content Templates** — COMPLETE
 
 ## Active Plan
 
-Plans 03-01, 03-02, 03-03 COMPLETE
+None — Phase 2 complete, ready for Phase 3 n8n workflows
 
 ## What's Done
 
@@ -19,6 +19,15 @@ Plans 03-01, 03-02, 03-03 COMPLETE
 - robots.txt added
 - Sitemap auto-generated
 
+### Phase 2: Content Templates (COMPLETE)
+- **DossierLayout:** Enhanced with 12-section navigation and scroll highlighting
+- **ComparisonLayout:** Side-by-side peptide comparison view
+- **GuideLayout:** Educational "What is X" format
+- **SafetyLayout:** Clinical trial safety information with warnings
+- **Sample content:** tirzepatide.mdx (12 sections), comparison, guide, safety pages
+- **Dynamic routes:** /compare/, /guide/, /safety/
+- Build passes: 14 pages generated
+
 ### Phase 3: Pipeline Infrastructure (Partial)
 - **03-01:** Source pack JSON schema and validation script
 - **03-02:** QA validation scripts (banned content, citations, evidence labels)
@@ -26,10 +35,10 @@ Plans 03-01, 03-02, 03-03 COMPLETE
 
 ### Existing Code
 - Astro project with Tailwind, MDX, sitemap
-- Layouts: BaseLayout, DossierLayout, HubLayout
+- Layouts: BaseLayout, DossierLayout, HubLayout, ComparisonLayout, GuideLayout, SafetyLayout
 - Components: EvidenceBadge, CitationTable, SearchBar, NewsletterForm, PeptideCard, ComparisonCard, TableOfContents
-- Pages: homepage, peptides index, category hubs, trust core pages
-- Sample dossier: tirzepatide.mdx
+- Pages: homepage, peptides index, category hubs, trust core pages, compare, guide, safety
+- Sample dossier: tirzepatide.mdx (12 sections)
 
 ## What's Next
 
@@ -37,13 +46,13 @@ Plans 03-01, 03-02, 03-03 COMPLETE
 - 03-04: Source Pack Builder n8n workflow
 - 03-05: Draft Generator + QA Gate n8n workflows
 
-**Phase 2: Content Templates** (can run in parallel)
-1. Enhance dossier template to full 12-section structure
-2. Create comparison page template
-3. Create "What is X" guide template
-4. Create safety page template
-
 ## Context for Resume
+
+Phase 2 complete with all four template types:
+- DossierLayout: 12-section structure with sidebar navigation
+- ComparisonLayout: Side-by-side with evidence badges
+- GuideLayout: Educational format with related content
+- SafetyLayout: Clinical safety with prominent warnings
 
 Phase 3 local scripts complete:
 - `scripts/validate-source-pack.js` - validates source pack JSON
@@ -54,8 +63,6 @@ Phase 3 local scripts complete:
 
 Sample source pack exists: `data/source-packs/tirzepatide.json` with 12 real citations and 4 clinical trials.
 
-**Note:** Current tirzepatide.mdx fails QA due to dosing section - this is expected, content needs cleaning.
-
 ## Decisions
 
 | Decision | Rationale | Date |
@@ -63,6 +70,18 @@ Sample source pack exists: `data/source-packs/tirzepatide.json` with 12 real cit
 | Use ajv for JSON Schema validation | Standard Node.js validator, supports draft-07 | 2026-01-19 |
 | Separate QA scripts for modularity | Each can run standalone and be combined | 2026-01-19 |
 | JSON output flag for machine use | Enables n8n/automation integration | 2026-01-19 |
+| 12-section dossier structure | Matches Prompt A requirements for comprehensive coverage | 2026-01-19 |
+| Scroll-based section highlighting | Improves navigation UX on long dossier pages | 2026-01-19 |
+| Amber color accent for safety pages | Visual differentiation for safety-critical content | 2026-01-19 |
+
+## Progress
+
+```
+Phase 1: Site Foundation      [========] 100%
+Phase 2: Content Templates    [========] 100%  <-- JUST COMPLETED
+Phase 3: Pipeline Infra       [====----]  60%  (local scripts done, n8n pending)
+Phase 4: Content Production   [--------]   0%
+```
 
 ## Blockers
 
@@ -73,6 +92,7 @@ None
 - 2026-01-19: GSD structure initialized
 - 2026-01-19: Phase 1 completed - build fixed, all pages rendering
 - 2026-01-19: Phase 3 plans 03-01, 03-02, 03-03 completed - QA scripts working
+- 2026-01-19: Phase 2 plan 02-01 completed - all 4 template types with sample content
 
 ---
 *Last updated: 2026-01-19*

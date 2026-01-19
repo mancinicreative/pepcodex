@@ -1,0 +1,320 @@
+---
+import HubLayout from '../../layouts/HubLayout.astro';
+import TrialTable from '../../components/TrialTable.astro';
+import fs from 'node:fs';
+import path from 'node:path';
+
+// Read all source pack JSON files to extract trials
+interface SourcePackTrial {
+  nctId: string;
+  title: string;
+  status: string;
+  phase: string;
+  conditions: string[];
+  interventions: string[];
+  enrollmentTarget?: number;
+  startDate?: string;
+  completionDate?: string;
+}
+
+interface SourcePack {
+  peptide: {
+    name: string;
+    aliases?: string[];
+    category: string;
+  };
+  trials?: SourcePackTrial[];
+}
+
+interface Trial extends SourcePackTrial {
+  peptide: string;
+}
+
+// Get the source-packs directory path
+const sourcePacksDir = path.join(process.cwd(), 'data', 'source-packs');
+
+// Read all JSON files from source-packs directory
+let allTrials: Trial[] = [];
+
+try {
+  const files = fs.readdirSync(sourcePacksDir);
+
+  for (const file of files) {
+    if (file.endsWith('.json')) {
+      const filePath = path.join(sourcePacksDir, file);
+      const content = fs.readFileSync(filePath, 'utf-8');
+      const sourcePack: SourcePack = JSON.parse(content);
+
+      if (sourcePack.trials && sourcePack.trials.length > 0) {
+        const peptideName = sourcePack.peptide.name;
+        const trialsWithPeptide = sourcePack.trials.map(trial => ({
+          ...trial,
+          peptide: peptideName
+        }));
+        allTrials.push(...trialsWithPeptide);
+      }
+    }
+  }
+} catch (error) {
+  console.error('Error reading source packs:', error);
+}
+
+// Sort by status (active first), then by completion date
+const statusOrder: Record<string, number> = {
+  'active': 0,
+  'recruiting': 1,
+  'not yet recruiting': 2,
+  'completed': 3,
+  'terminated': 4,
+  'withdrawn': 5,
+  'suspended': 6,
+};
+
+allTrials.sort((a, b) => {
+  const statusA = statusOrder[a.status.toLowerCase()] ?? 99;
+  const statusB = statusOrder[b.status.toLowerCase()] ?? 99;
+  if (statusA !== statusB) return statusA - statusB;
+
+  // Then sort by completion date
+  const dateA = a.completionDate ? new Date(a.completionDate).getTime() : Infinity;
+  const dateB = b.completionDate ? new Date(b.completionDate).getTime() : Infinity;
+  return dateA - dateB;
+});
+
+// Get unique values for filters
+const uniqueStatuses = [...new Set(allTrials.map(t => t.status.toLowerCase()))];
+const uniquePhases = [...new Set(allTrials.map(t => t.phase))].sort();
+const uniquePeptides = [...new Set(allTrials.map(t => t.peptide))].sort();
+
+// Count by status for stats
+const activeCount = allTrials.filter(t => t.status.toLowerCase() === 'active' || t.status.toLowerCase() === 'recruiting').length;
+const completedCount = allTrials.filter(t => t.status.toLowerCase() === 'completed').length;
+---
+
+<HubLayout
+  title="Clinical Trial Tracker"
+  description="Track ongoing and completed clinical trials for peptides. Filter by phase, status, and compound."
+>
+  <!-- Stats overview -->
+  <div class="mb-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
+    <div class="rounded-lg bg-white border border-slate-200 p-4">
+      <div class="text-2xl font-bold text-slate-900">{allTrials.length}</div>
+      <div class="text-sm text-slate-600">Total Trials</div>
+    </div>
+    <div class="rounded-lg bg-white border border-slate-200 p-4">
+      <div class="text-2xl font-bold text-green-600">{activeCount}</div>
+      <div class="text-sm text-slate-600">Active/Recruiting</div>
+    </div>
+    <div class="rounded-lg bg-white border border-slate-200 p-4">
+      <div class="text-2xl font-bold text-blue-600">{completedCount}</div>
+      <div class="text-sm text-slate-600">Completed</div>
+    </div>
+    <div class="rounded-lg bg-white border border-slate-200 p-4">
+      <div class="text-2xl font-bold text-slate-900">{uniquePeptides.length}</div>
+      <div class="text-sm text-slate-600">Peptides Tracked</div>
+    </div>
+  </div>
+
+  <!-- Filters -->
+  <div class="mb-6 flex flex-wrap gap-4">
+    <!-- Status filter -->
+    <div class="flex flex-wrap items-center gap-2">
+      <span class="text-sm font-medium text-slate-600">Status:</span>
+      <button
+        class="filter-btn rounded-full px-3 py-1 text-sm font-medium bg-slate-900 text-white"
+        data-filter="status"
+        data-value="all"
+      >
+        All
+      </button>
+      {uniqueStatuses.map((status) => (
+        <button
+          class="filter-btn rounded-full px-3 py-1 text-sm font-medium bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors"
+          data-filter="status"
+          data-value={status}
+        >
+          {status.charAt(0).toUpperCase() + status.slice(1)}
+        </button>
+      ))}
+    </div>
+
+    <!-- Phase filter -->
+    <div class="flex flex-wrap items-center gap-2">
+      <span class="text-sm font-medium text-slate-600">Phase:</span>
+      <button
+        class="filter-btn rounded-full px-3 py-1 text-sm font-medium bg-slate-900 text-white"
+        data-filter="phase"
+        data-value="all"
+      >
+        All
+      </button>
+      {uniquePhases.map((phase) => (
+        <button
+          class="filter-btn rounded-full px-3 py-1 text-sm font-medium bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors"
+          data-filter="phase"
+          data-value={phase}
+        >
+          Phase {phase}
+        </button>
+      ))}
+    </div>
+
+    <!-- Peptide filter (only show if multiple peptides) -->
+    {uniquePeptides.length > 1 && (
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="text-sm font-medium text-slate-600">Peptide:</span>
+        <button
+          class="filter-btn rounded-full px-3 py-1 text-sm font-medium bg-slate-900 text-white"
+          data-filter="peptide"
+          data-value="all"
+        >
+          All
+        </button>
+        {uniquePeptides.map((peptide) => (
+          <button
+            class="filter-btn rounded-full px-3 py-1 text-sm font-medium bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors"
+            data-filter="peptide"
+            data-value={peptide.toLowerCase()}
+          >
+            {peptide}
+          </button>
+        ))}
+      </div>
+    )}
+  </div>
+
+  <!-- Result count -->
+  <p class="mb-4 text-sm text-slate-600">
+    Showing <span id="trial-count">{allTrials.length}</span> of {allTrials.length} trials
+  </p>
+
+  <!-- Trial table -->
+  <div class="rounded-xl border border-slate-200 bg-white overflow-hidden">
+    <TrialTable trials={allTrials} />
+  </div>
+
+  <!-- Empty state (hidden by default) -->
+  <div id="empty-state" class="hidden py-16 text-center">
+    <svg class="mx-auto h-12 w-12 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+    <p class="mt-4 text-lg text-slate-600">No trials match your filters.</p>
+    <button
+      id="clear-filters"
+      class="mt-4 text-sm font-medium text-blue-600 hover:text-blue-700"
+    >
+      Clear all filters
+    </button>
+  </div>
+
+  <!-- Data source note -->
+  <div class="mt-8 rounded-lg bg-slate-50 border border-slate-200 p-4">
+    <p class="text-sm text-slate-600">
+      <strong>Data Source:</strong> Trial information is sourced from
+      <a href="https://clinicaltrials.gov" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">ClinicalTrials.gov</a>
+      and our curated source packs. Click any NCT ID to view the full trial record.
+    </p>
+  </div>
+</HubLayout>
+
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const trialRows = document.querySelectorAll('.trial-row');
+  const trialCards = document.querySelectorAll('.trial-card');
+  const trialCount = document.getElementById('trial-count');
+  const emptyState = document.getElementById('empty-state');
+  const tableContainer = document.querySelector('.rounded-xl.border');
+
+  let activeFilters: Record<string, string> = {
+    status: 'all',
+    phase: 'all',
+    peptide: 'all',
+  };
+
+  function applyFilters() {
+    let visibleCount = 0;
+
+    // Filter both rows and cards
+    const allElements = [...trialRows, ...trialCards];
+
+    allElements.forEach((item) => {
+      const el = item as HTMLElement;
+      const status = el.dataset.status;
+      const phase = el.dataset.phase;
+      const peptide = el.dataset.peptide;
+
+      const matchesStatus = activeFilters.status === 'all' || status === activeFilters.status;
+      const matchesPhase = activeFilters.phase === 'all' || phase === activeFilters.phase;
+      const matchesPeptide = activeFilters.peptide === 'all' || peptide === activeFilters.peptide;
+
+      if (matchesStatus && matchesPhase && matchesPeptide) {
+        el.classList.remove('hidden');
+        // Only count unique items (avoid double counting row + card)
+        if (el.classList.contains('trial-row')) {
+          visibleCount++;
+        }
+      } else {
+        el.classList.add('hidden');
+      }
+    });
+
+    // If only cards visible (mobile), count those instead
+    if (visibleCount === 0) {
+      trialCards.forEach((card) => {
+        if (!card.classList.contains('hidden')) {
+          visibleCount++;
+        }
+      });
+    }
+
+    // Update count
+    if (trialCount) trialCount.textContent = String(visibleCount);
+
+    // Show/hide empty state
+    if (visibleCount === 0) {
+      emptyState?.classList.remove('hidden');
+      tableContainer?.classList.add('hidden');
+    } else {
+      emptyState?.classList.add('hidden');
+      tableContainer?.classList.remove('hidden');
+    }
+  }
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const el = btn as HTMLElement;
+      const filterType = el.dataset.filter as string;
+      const value = el.dataset.value || 'all';
+
+      // Update active filter
+      activeFilters[filterType] = value;
+
+      // Update button styles
+      document.querySelectorAll(`[data-filter="${filterType}"]`).forEach((b) => {
+        b.classList.remove('bg-slate-900', 'text-white');
+        b.classList.add('bg-slate-100', 'text-slate-700');
+      });
+      el.classList.remove('bg-slate-100', 'text-slate-700');
+      el.classList.add('bg-slate-900', 'text-white');
+
+      applyFilters();
+    });
+  });
+
+  document.getElementById('clear-filters')?.addEventListener('click', () => {
+    activeFilters = { status: 'all', phase: 'all', peptide: 'all' };
+
+    filterBtns.forEach((btn) => {
+      const el = btn as HTMLElement;
+      if (el.dataset.value === 'all') {
+        el.classList.remove('bg-slate-100', 'text-slate-700');
+        el.classList.add('bg-slate-900', 'text-white');
+      } else {
+        el.classList.remove('bg-slate-900', 'text-white');
+        el.classList.add('bg-slate-100', 'text-slate-700');
+      }
+    });
+
+    applyFilters();
+  });
+</script>

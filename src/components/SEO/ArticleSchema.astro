@@ -1,0 +1,45 @@
+---
+import JsonLd from './JsonLd.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  url: string;
+  datePublished?: Date;
+  dateModified: Date;
+  image?: string;
+}
+
+const { title, description, url, datePublished, dateModified, image } = Astro.props;
+
+const articleData = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "url": url,
+  "datePublished": datePublished?.toISOString() || dateModified.toISOString(),
+  "dateModified": dateModified.toISOString(),
+  ...(image && { "image": image }),
+  "author": {
+    "@type": "Organization",
+    "name": "PepCodex",
+    "url": "https://pepcodex.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "PepCodex",
+    "url": "https://pepcodex.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://pepcodex.com/logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": url
+  }
+};
+---
+
+<JsonLd data={articleData} />

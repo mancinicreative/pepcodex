@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const guides = await getCollection('guides');
+
+// Sort by title
+const sortedGuides = guides.sort((a, b) =>
+  a.data.title.localeCompare(b.data.title)
+);
+
+const categoryColors: Record<string, string> = {
+  'metabolic': 'var(--primary)',
+  'repair-recovery': 'var(--accent)',
+  'hormonal': 'hsl(280 80% 60%)',
+  'longevity': 'hsl(45 90% 55%)',
+  'other': 'var(--muted-foreground)',
+};
+
+const categoryLabels: Record<string, string> = {
+  'metabolic': 'Metabolic',
+  'repair-recovery': 'Repair & Recovery',
+  'hormonal': 'Hormonal',
+  'longevity': 'Longevity',
+  'other': 'Other',
+};
+---
+
+<BaseLayout
+  title="Peptide Guides"
+  description="Educational guides explaining what different peptides are and how they work."
+>
+  <!-- Hero -->
+  <div class="relative overflow-hidden border-b border-white/5">
+    <div class="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/10 via-transparent to-transparent"></div>
+    <div class="absolute top-0 right-0 w-96 h-96 bg-[var(--primary)]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl" style="font-family: var(--font-display);">
+        Peptide Guides
+      </h1>
+      <p class="mt-6 max-w-2xl text-xl text-white/80 leading-relaxed">
+        Educational guides explaining what different peptides are and how they work.
+      </p>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <p class="mb-8 text-white/70">
+      Showing <span class="text-white font-bold">{sortedGuides.length}</span> guides
+    </p>
+
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {sortedGuides.map((guide) => {
+        const color = guide.data.category
+          ? categoryColors[guide.data.category] || categoryColors.other
+          : categoryColors.other;
+        return (
+          <a
+            href={`/guide/${guide.slug}`}
+            class="glass-card-interactive p-6 group"
+          >
+            <div class="flex items-start justify-between gap-4">
+              <div class="flex-1 min-w-0">
+                {guide.data.category && (
+                  <span
+                    class="inline-flex items-center rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider border mb-3"
+                    style={`color: ${color}; background: ${color}15; border-color: ${color}30;`}
+                  >
+                    {categoryLabels[guide.data.category]}
+                  </span>
+                )}
+                <h2 class="text-lg font-bold text-white group-hover:text-[var(--primary)] transition-colors">
+                  {guide.data.title}
+                </h2>
+                <p class="mt-2 text-sm text-white/70 line-clamp-2">
+                  {guide.data.summary}
+                </p>
+                {guide.data.peptide && (
+                  <div class="mt-4 flex items-center gap-2 text-xs text-white/70">
+                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>About {guide.data.peptide}</span>
+                  </div>
+                )}
+              </div>
+              <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-[var(--primary)]/10 group-hover:border-[var(--primary)]/30 transition-all flex-shrink-0">
+                <svg class="h-5 w-5 text-white/60 group-hover:text-[var(--primary)] group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</BaseLayout>

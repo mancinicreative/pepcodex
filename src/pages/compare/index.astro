@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const comparisons = await getCollection('comparisons');
+
+// Sort by title
+const sortedComparisons = comparisons.sort((a, b) =>
+  a.data.title.localeCompare(b.data.title)
+);
+
+const categoryColors: Record<string, string> = {
+  'metabolic': 'var(--primary)',
+  'repair-recovery': 'var(--accent)',
+  'hormonal': 'hsl(280 80% 60%)',
+  'longevity': 'hsl(45 90% 55%)',
+  'other': 'var(--muted-foreground)',
+};
+
+const categoryLabels: Record<string, string> = {
+  'metabolic': 'Metabolic',
+  'repair-recovery': 'Repair & Recovery',
+  'hormonal': 'Hormonal',
+  'longevity': 'Longevity',
+  'other': 'Other',
+};
+---
+
+<BaseLayout
+  title="Peptide Comparisons"
+  description="Side-by-side comparisons of popular peptides. Understand the differences between similar compounds."
+>
+  <!-- Hero -->
+  <div class="relative overflow-hidden border-b border-white/5">
+    <div class="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/10 via-transparent to-transparent"></div>
+    <div class="absolute top-0 right-0 w-96 h-96 bg-[var(--primary)]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl" style="font-family: var(--font-display);">
+        Peptide Comparisons
+      </h1>
+      <p class="mt-6 max-w-2xl text-xl text-white/80 leading-relaxed">
+        Side-by-side evidence comparisons to help you understand the differences between similar compounds.
+      </p>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <p class="mb-8 text-white/70">
+      Showing <span class="text-white font-bold">{sortedComparisons.length}</span> comparisons
+    </p>
+
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {sortedComparisons.map((comparison) => {
+        const color = categoryColors[comparison.data.category] || categoryColors.other;
+        return (
+          <a
+            href={`/compare/${comparison.slug}`}
+            class="glass-card-interactive p-6 group"
+          >
+            <div class="flex items-start justify-between gap-4">
+              <div class="flex-1 min-w-0">
+                <span
+                  class="inline-flex items-center rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider border mb-3"
+                  style={`color: ${color}; background: ${color}15; border-color: ${color}30;`}
+                >
+                  {categoryLabels[comparison.data.category]}
+                </span>
+                <h2 class="text-lg font-bold text-white group-hover:text-[var(--primary)] transition-colors">
+                  {comparison.data.title}
+                </h2>
+                <p class="mt-2 text-sm text-white/70 line-clamp-2">
+                  {comparison.data.summary}
+                </p>
+                <div class="mt-4 flex items-center gap-2 text-xs text-white/70">
+                  <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                  </svg>
+                  <span>{comparison.data.peptideA} vs {comparison.data.peptideB}</span>
+                </div>
+              </div>
+              <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-[var(--primary)]/10 group-hover:border-[var(--primary)]/30 transition-all flex-shrink-0">
+                <svg class="h-5 w-5 text-white/60 group-hover:text-[var(--primary)] group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</BaseLayout>

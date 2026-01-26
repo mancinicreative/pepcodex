@@ -7,7 +7,7 @@ import node from '@astrojs/node';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://peptide-library.com', // Update with actual domain
+  site: 'https://pepcodex.com',
   output: 'static', // Static site with server endpoints via prerender: false
   adapter: node({
     mode: 'standalone'

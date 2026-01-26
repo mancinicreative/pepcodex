@@ -1,0 +1,245 @@
+---
+import HubLayout from '../../layouts/HubLayout.astro';
+import SearchBar from '../../components/SearchBar.astro';
+import PeptideCard from '../../components/PeptideCard.astro';
+import { getCollection } from 'astro:content';
+
+const allPeptides = await getCollection('peptides');
+const peptides = allPeptides.sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+// Group by first letter for A-Z navigation
+const grouped = peptides.reduce((acc, peptide) => {
+  const letter = peptide.data.name[0].toUpperCase();
+  if (!acc[letter]) acc[letter] = [];
+  acc[letter].push(peptide);
+  return acc;
+}, {} as Record<string, typeof peptides>);
+
+const letters = Object.keys(grouped).sort();
+const categories = ['metabolic', 'repair-recovery', 'hormonal', 'longevity'];
+const evidenceLevels = ['high', 'moderate', 'low', 'very-low'];
+---
+
+<HubLayout
+  title="All Peptides"
+  description="Browse our complete library of evidence-based peptide dossiers, organized A-Z with evidence grading."
+>
+  <!-- Search and filters -->
+  <div class="mb-8">
+    <SearchBar placeholder="Search peptides..." />
+
+    <div class="mt-8 space-y-4">
+      <!-- Category filter -->
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="text-xs font-bold uppercase tracking-[0.15em] text-[var(--primary)]">Category:</span>
+        <button
+          class="filter-btn px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 bg-[var(--primary)] text-white border border-[var(--primary)]/50"
+          data-filter="category"
+          data-value="all"
+        >
+          All
+        </button>
+        {categories.map((cat) => (
+          <button
+            class="filter-btn px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 bg-white/5 text-white/70 border border-white/10 hover:bg-white/10 hover:text-white hover:border-white/20"
+            data-filter="category"
+            data-value={cat}
+          >
+            {cat.replace('-', ' & ').replace(/\b\w/g, l => l.toUpperCase())}
+          </button>
+        ))}
+      </div>
+
+      <!-- Evidence filter -->
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="text-xs font-bold uppercase tracking-[0.15em] text-[var(--primary)]">Evidence:</span>
+        <button
+          class="filter-btn px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 bg-[var(--primary)] text-white border border-[var(--primary)]/50"
+          data-filter="evidence"
+          data-value="all"
+        >
+          All
+        </button>
+        {evidenceLevels.map((level) => (
+          <button
+            class="filter-btn px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 bg-white/5 text-white/70 border border-white/10 hover:bg-white/10 hover:text-white hover:border-white/20"
+            data-filter="evidence"
+            data-value={level}
+          >
+            {level.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}
+          </button>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- A-Z Navigation -->
+  <div class="mb-8 glass-card-default p-4">
+    <div class="flex flex-wrap gap-1 justify-center">
+      {[...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'].map((letter) => (
+        <a
+          href={letters.includes(letter) ? `#letter-${letter}` : undefined}
+          class={`w-9 h-9 flex items-center justify-center rounded-lg text-sm font-bold transition-all duration-300 ${
+            letters.includes(letter)
+              ? 'bg-white/10 text-white hover:bg-[var(--primary)] hover:text-white border border-white/10 hover:border-[var(--primary)]/50'
+              : 'bg-white/5 text-white/30 cursor-not-allowed border border-white/10'
+          }`}
+        >
+          {letter}
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <!-- Peptide count -->
+  <div class="mb-8 flex items-center justify-between">
+    <p class="text-sm text-white/70">
+      Showing <span id="peptide-count" class="text-white font-bold">{peptides.length}</span> peptides
+    </p>
+  </div>
+
+  <!-- Peptide list by letter -->
+  <div id="peptide-list" class="space-y-16">
+    {letters.map((letter) => (
+      <section id={`letter-${letter}`} class="scroll-mt-24">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 rounded-xl bg-[var(--primary)]/10 border border-[var(--primary)]/20 flex items-center justify-center">
+            <span class="text-2xl font-bold text-[var(--primary)]">{letter}</span>
+          </div>
+          <div class="flex-1 h-px bg-gradient-to-r from-white/10 to-transparent"></div>
+        </div>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {grouped[letter].map((peptide) => (
+            <div
+              class="peptide-item"
+              data-category={peptide.data.category}
+              data-evidence={peptide.data.evidenceStrength}
+              data-name={peptide.data.name.toLowerCase()}
+            >
+              <PeptideCard
+                name={peptide.data.name}
+                slug={peptide.slug}
+                category={peptide.data.category}
+                evidenceStrength={peptide.data.evidenceStrength}
+                summary={peptide.data.summary}
+                aliases={peptide.data.aliases}
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+
+  <!-- Empty state -->
+  <div id="empty-state" class="hidden py-20 text-center">
+    <div class="glass-card-default p-12 max-w-md mx-auto">
+      <div class="w-16 h-16 rounded-2xl bg-[var(--primary)]/10 border border-[var(--primary)]/20 flex items-center justify-center mx-auto mb-6">
+        <svg class="w-8 h-8 text-[var(--primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </div>
+      <p class="text-lg text-white mb-2">No peptides match your filters</p>
+      <p class="text-sm text-white/70 mb-6">Try adjusting your filter criteria</p>
+      <button
+        id="clear-filters"
+        class="btn btn-primary btn-md"
+      >
+        Clear all filters
+      </button>
+    </div>
+  </div>
+</HubLayout>
+
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const peptideItems = document.querySelectorAll('.peptide-item');
+  const peptideCount = document.getElementById('peptide-count');
+  const emptyState = document.getElementById('empty-state');
+  const peptideList = document.getElementById('peptide-list');
+
+  let activeFilters = {
+    category: 'all',
+    evidence: 'all',
+  };
+
+  function applyFilters() {
+    let visibleCount = 0;
+
+    peptideItems.forEach((item) => {
+      const el = item as HTMLElement;
+      const category = el.dataset.category;
+      const evidence = el.dataset.evidence;
+
+      const matchesCategory = activeFilters.category === 'all' || category === activeFilters.category;
+      const matchesEvidence = activeFilters.evidence === 'all' || evidence === activeFilters.evidence;
+
+      if (matchesCategory && matchesEvidence) {
+        el.classList.remove('hidden');
+        visibleCount++;
+      } else {
+        el.classList.add('hidden');
+      }
+    });
+
+    // Update count
+    if (peptideCount) peptideCount.textContent = String(visibleCount);
+
+    // Show/hide empty state
+    if (visibleCount === 0) {
+      emptyState?.classList.remove('hidden');
+      peptideList?.classList.add('hidden');
+    } else {
+      emptyState?.classList.add('hidden');
+      peptideList?.classList.remove('hidden');
+    }
+
+    // Hide empty letter sections
+    document.querySelectorAll('#peptide-list > section').forEach((section) => {
+      const visibleItems = section.querySelectorAll('.peptide-item:not(.hidden)');
+      if (visibleItems.length === 0) {
+        section.classList.add('hidden');
+      } else {
+        section.classList.remove('hidden');
+      }
+    });
+  }
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const el = btn as HTMLElement;
+      const filterType = el.dataset.filter as 'category' | 'evidence';
+      const value = el.dataset.value || 'all';
+
+      // Update active filter
+      activeFilters[filterType] = value;
+
+      // Update button styles for dark theme
+      document.querySelectorAll(`[data-filter="${filterType}"]`).forEach((b) => {
+        b.classList.remove('bg-[var(--primary)]', 'text-white', 'border-[var(--primary)]/50');
+        b.classList.add('bg-white/5', 'text-white/70', 'border-white/10');
+      });
+      el.classList.remove('bg-white/5', 'text-white/70', 'border-white/10');
+      el.classList.add('bg-[var(--primary)]', 'text-white', 'border-[var(--primary)]/50');
+
+      applyFilters();
+    });
+  });
+
+  document.getElementById('clear-filters')?.addEventListener('click', () => {
+    activeFilters = { category: 'all', evidence: 'all' };
+
+    filterBtns.forEach((btn) => {
+      const el = btn as HTMLElement;
+      if (el.dataset.value === 'all') {
+        el.classList.remove('bg-white/5', 'text-white/70', 'border-white/10');
+        el.classList.add('bg-[var(--primary)]', 'text-white', 'border-[var(--primary)]/50');
+      } else {
+        el.classList.remove('bg-[var(--primary)]', 'text-white', 'border-[var(--primary)]/50');
+        el.classList.add('bg-white/5', 'text-white/70', 'border-white/10');
+      }
+    });
+
+    applyFilters();
+  });
+</script>

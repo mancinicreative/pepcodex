@@ -1,0 +1,122 @@
+---
+term: "Pharmacodynamics"
+definition: "is the study of how a drug affects the body, including its mechanism of action, therapeutic effects, and side effects. Pharmacodynamics answers 'what the drug does to the body' and complements pharmacokinetics to provide a complete picture of drug behavior."
+aliases: ["PD", "Drug dynamics"]
+relatedPeptides: ["semaglutide", "tirzepatide", "ipamorelin"]
+relatedTerms: ["pharmacokinetics", "receptor-agonist", "mechanism-of-action"]
+category: "research"
+lastUpdated: 2026-01-21
+metaTitle: "What is Pharmacodynamics? Definition | PepCodex"
+metaDescription: "Pharmacodynamics studies what drugs do to the body. Learn about mechanisms of action and how PD guides peptide drug development."
+---
+
+## Pharmacodynamics vs Pharmacokinetics
+
+| Aspect | Pharmacokinetics (PK) | Pharmacodynamics (PD) |
+|--------|----------------------|----------------------|
+| Question | What does body do to drug? | What does drug do to body? |
+| Focus | Drug concentration | Drug effect |
+| Measures | ADME, half-life, AUC | Efficacy, potency, response |
+| Variables | Time, concentration | Dose, response |
+
+## Key Pharmacodynamic Concepts
+
+### Receptor Binding
+- Drug must bind to target (receptor, enzyme, etc.)
+- Affinity: how strongly it binds
+- Selectivity: which receptors it prefers
+
+### Dose-Response Relationship
+- Describes relationship between dose and effect
+- Usually follows sigmoid curve
+- Key parameters: EC50, Emax
+
+### Therapeutic Index
+- Range between therapeutic and toxic doses
+- Wider = safer drug
+- Narrow index requires careful monitoring
+
+## Important PD Parameters
+
+| Parameter | Definition | Significance |
+|-----------|------------|--------------|
+| EC50 | Dose producing 50% max effect | Measure of potency |
+| Emax | Maximum achievable effect | Ceiling of drug response |
+| ED50 | Dose effective in 50% of subjects | Clinical effectiveness |
+| IC50 | Concentration inhibiting 50% | For inhibitors |
+| Therapeutic window | Range of effective, safe doses | Guides dosing decisions |
+
+## Peptide Pharmacodynamics Examples
+
+### GLP-1 Agonists (Semaglutide)
+**Targets**: GLP-1 receptor
+**Effects**:
+- Enhanced insulin secretion (glucose-dependent)
+- Suppressed glucagon
+- Slowed gastric emptying
+- Reduced appetite (CNS effects)
+
+### Growth Hormone Secretagogues (Ipamorelin)
+**Targets**: GHS-R (ghrelin receptor)
+**Effects**:
+- Stimulates pituitary GH release
+- Increases IGF-1 (downstream)
+- Minimal cortisol/prolactin effects (selectivity)
+
+## Dose-Response Curves
+
+```
+Effect
+   ↑     ___________
+   |    /
+   |   /
+   |  /  ← EC50 (50% effect)
+   | /
+   |/_______________
+        Dose →
+```
+
+### Curve Interpretation
+- **Left shift**: More potent (works at lower doses)
+- **Right shift**: Less potent (needs higher doses)
+- **Steeper curve**: Narrow dosing range
+- **Plateau height**: Maximum possible effect
+
+## PD in Drug Development
+
+### Preclinical Studies
+- Cell studies (receptor binding, activation)
+- Animal studies (effects, dose-finding)
+- Establish mechanism of action
+
+### Clinical Studies
+- Phase II: Find optimal dose
+- Phase III: Confirm efficacy
+- Monitor expected and unexpected effects
+
+## PK/PD Modeling
+
+Modern drug development combines both:
+
+```
+Dose → PK (Concentration) → PD (Effect) → Outcome
+```
+
+Understanding this relationship helps:
+- Optimize dosing regimens
+- Predict drug interactions
+- Individualize therapy
+
+## Frequently Asked Questions
+
+### Why might two people respond differently to the same dose?
+
+Pharmacodynamic variability includes differences in receptor density, receptor sensitivity, downstream signaling, and individual physiology. Even with identical drug levels (PK), the effect (PD) can vary between individuals.
+
+### What does "potent" mean for a drug?
+
+Potency refers to the dose needed to produce an effect. A more potent drug produces the same effect at a lower dose. Potency doesn't equal effectiveness—a less potent drug at adequate dose can be equally effective.
+
+### How do side effects relate to pharmacodynamics?
+
+Side effects occur when a drug affects systems beyond the intended target. This can be due to: receptor presence in multiple tissues (on-target/off-tissue), activity at unintended receptors (off-target), or downstream pathway effects.

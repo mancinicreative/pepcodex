@@ -1,0 +1,166 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Methodology"
+  description="How we research, verify, and present peptide evidence. Our standards for citation, evidence grading, and editorial integrity."
+>
+  <article class="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+    <header class="mb-12 relative">
+      <div class="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/10 via-transparent to-transparent rounded-2xl -z-10"></div>
+      <div class="p-6">
+        <h1 class="text-4xl font-bold tracking-tight text-white">Our Methodology</h1>
+        <p class="mt-4 text-xl text-white/80">
+          How we research, verify, and present peptide evidence with integrity.
+        </p>
+      </div>
+    </header>
+
+    <div class="prose prose-invert prose-lg max-w-none">
+      <h2 id="mission">Our Mission</h2>
+      <p>
+        Peptide Library exists to make peptide research accessible and understandable. We synthesize
+        scientific literature so you can make informed decisions based on evidence, not marketing claims.
+      </p>
+      <p>
+        We do <strong>not</strong> provide medical advice, dosing protocols, or sourcing information.
+        Our role is to organize and present what the research says—and critically, what it doesn't say.
+      </p>
+
+      <h2 id="source-selection">Source Selection</h2>
+      <p>We prioritize primary sources in this order:</p>
+      <ol>
+        <li>
+          <strong>Peer-reviewed human studies</strong> — Randomized controlled trials (RCTs),
+          observational studies, case series
+        </li>
+        <li>
+          <strong>Clinical trial registries</strong> — ClinicalTrials.gov, EU Clinical Trials Register,
+          WHO ICTRP
+        </li>
+        <li>
+          <strong>Regulatory documents</strong> — FDA, EMA, MHRA approval documents, safety warnings
+        </li>
+        <li>
+          <strong>Preclinical studies</strong> — Animal and in vitro research (always clearly labeled)
+        </li>
+        <li>
+          <strong>Systematic reviews and meta-analyses</strong> — When available from reputable sources
+        </li>
+      </ol>
+
+      <h3>Global Coverage</h3>
+      <p>
+        We search beyond English-language databases to include international research. This includes:
+      </p>
+      <ul>
+        <li>PubMed / MEDLINE (global, primarily English)</li>
+        <li>Europe PMC (European focus, open access flagging)</li>
+        <li>Russian databases (eLIBRARY.ru, CyberLeninka) when relevant</li>
+        <li>Regional registries and regulatory bodies</li>
+      </ul>
+      <p>
+        For non-English sources, we provide translated titles and note the original language.
+      </p>
+
+      <h2 id="evidence-grading">Evidence Grading</h2>
+      <p>
+        Every peptide dossier includes an evidence strength badge. Here's what each level means:
+      </p>
+
+      <div class="not-prose my-8 space-y-4">
+        <div class="flex items-start gap-4 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4 backdrop-blur-sm">
+          <span class="inline-flex items-center rounded-full bg-emerald-500/30 px-3 py-1 text-sm font-medium text-emerald-300 border border-emerald-500/40">
+            High Evidence
+          </span>
+          <div>
+            <p class="text-white/80">
+              Multiple high-quality human RCTs with consistent results. Clear safety profile from
+              substantial clinical experience.
+            </p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 rounded-xl border border-[var(--primary)]/30 bg-[var(--primary)]/10 p-4 backdrop-blur-sm">
+          <span class="inline-flex items-center rounded-full bg-[var(--primary)]/30 px-3 py-1 text-sm font-medium text-purple-300 border border-[var(--primary)]/40">
+            Moderate Evidence
+          </span>
+          <div>
+            <p class="text-white/80">
+              Human studies exist but with limitations: smaller sample sizes, shorter follow-up,
+              or inconsistent results across studies.
+            </p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 rounded-xl border border-amber-500/30 bg-amber-500/10 p-4 backdrop-blur-sm">
+          <span class="inline-flex items-center rounded-full bg-amber-500/30 px-3 py-1 text-sm font-medium text-amber-300 border border-amber-500/40">
+            Low Evidence
+          </span>
+          <div>
+            <p class="text-white/80">
+              Limited human data. Evidence primarily from case reports, preclinical studies,
+              or very early-phase trials.
+            </p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 rounded-xl border border-red-500/30 bg-red-500/10 p-4 backdrop-blur-sm">
+          <span class="inline-flex items-center rounded-full bg-red-500/30 px-3 py-1 text-sm font-medium text-red-300 border border-red-500/40">
+            Very Low Evidence
+          </span>
+          <div>
+            <p class="text-white/80">
+              Minimal or no human data. Evidence is theoretical, mechanistic, or limited to
+              animal/in vitro studies.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="citation-standards">Citation Standards</h2>
+      <p>
+        Every factual claim in our dossiers is backed by at least one citation. We follow these rules:
+      </p>
+      <ul>
+        <li>Citations link to the original source (PubMed, DOI, trial registry)</li>
+        <li>We note whether sources are open access or paywalled</li>
+        <li>We never cite secondary sources when the primary is available</li>
+        <li>If we make an inference, we label it clearly as an inference with our confidence level</li>
+      </ul>
+
+      <h2 id="what-we-dont-do">What We Don't Do</h2>
+      <p>
+        To maintain trust and avoid harm, we explicitly exclude certain content:
+      </p>
+      <ul>
+        <li>
+          <strong>No dosing or protocols</strong> — We don't provide instructions on how to use any peptide
+        </li>
+        <li>
+          <strong>No sourcing information</strong> — We don't recommend where to buy anything
+        </li>
+        <li>
+          <strong>No medical advice</strong> — We're researchers, not doctors
+        </li>
+        <li>
+          <strong>No overclaims</strong> — We don't say something is "proven" unless the evidence is overwhelming
+        </li>
+      </ul>
+
+      <h2 id="updates">How We Update</h2>
+      <p>
+        Peptide research evolves. Our dossiers are living documents:
+      </p>
+      <ul>
+        <li>Each page shows a "Last Updated" date</li>
+        <li>Major updates (new trials, safety signals) trigger revisions</li>
+        <li>We maintain a changelog for significant changes</li>
+      </ul>
+
+      <h2 id="feedback">Feedback & Corrections</h2>
+      <p>
+        If you find an error, outdated information, or have a source we should include, please
+        contact us. We take corrections seriously and credit contributors.
+      </p>
+    </div>
+  </article>
+</BaseLayout>

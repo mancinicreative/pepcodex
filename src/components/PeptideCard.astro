@@ -1,0 +1,88 @@
+---
+import EvidenceBadge from './EvidenceBadge.astro';
+
+interface Props {
+  name: string;
+  slug: string;
+  category: string;
+  evidenceStrength: 'high' | 'moderate' | 'low' | 'very-low';
+  summary: string;
+  aliases?: string[];
+}
+
+const { name, slug, category, evidenceStrength, summary, aliases = [] } = Astro.props;
+
+const categoryLabels: Record<string, string> = {
+  'metabolic': 'Metabolic',
+  'repair-recovery': 'Repair & Recovery',
+  'hormonal': 'Hormonal',
+  'longevity': 'Longevity',
+  'other': 'Other',
+};
+---
+
+<a
+  href={`/peptides/${slug}`}
+  class="glass-card glass-card--interactive group relative block h-full"
+>
+  <!-- Purple gradient overlay for visual interest -->
+  <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-cyan-500/5 opacity-50 group-hover:opacity-100 transition-opacity"></div>
+
+  <!-- Decorative icon in corner -->
+  <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity text-primary">
+    <svg class="w-24 h-24 rotate-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2" />
+      <path d="M8.5 2h7" />
+      <path d="M7 16h10" />
+    </svg>
+  </div>
+
+  <div class="relative z-10 p-6 flex flex-col h-full">
+    <!-- Category badge and evidence badge -->
+    <div class="flex flex-wrap items-center gap-2 mb-4">
+      <span class="badge badge--primary text-xs">
+        {categoryLabels[category] || category}
+      </span>
+      <EvidenceBadge strength={evidenceStrength} showLabel={false} />
+    </div>
+
+    <!-- Title -->
+    <h3 class="text-2xl font-bold group-hover:text-primary transition-colors font-display" style="color: var(--text-high);">
+      {name}
+    </h3>
+
+    <!-- Aliases -->
+    {aliases.length > 0 && (
+      <p class="mt-1.5 text-xs" style="color: var(--text-low);">
+        {aliases.slice(0, 3).join(', ')}{aliases.length > 3 && ` +${aliases.length - 3} more`}
+      </p>
+    )}
+
+    <!-- Description -->
+    <p class="mt-3 text-sm line-clamp-3 leading-relaxed flex-grow" style="color: var(--text-medium);">
+      {summary}
+    </p>
+
+    <!-- Bottom section with tags area -->
+    <div class="pt-4 mt-4" style="border-top: 1px solid var(--border-glass);">
+      <div class="flex items-center justify-between">
+        <div class="flex flex-wrap gap-2">
+          <span class="badge badge--muted text-xs">
+            #{category}
+          </span>
+        </div>
+
+        <!-- Arrow indicator -->
+        <svg
+          class="h-4 w-4 group-hover:text-primary group-hover:translate-x-1 transition-all"
+          style="color: var(--text-low);"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+      </div>
+    </div>
+  </div>
+</a>

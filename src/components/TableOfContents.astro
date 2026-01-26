@@ -1,0 +1,45 @@
+---
+// Table of Contents - auto-generates from page headings via client JS
+---
+
+<nav class="rounded-xl border border-white/10 bg-gradient-to-b from-[var(--primary)]/10 to-transparent p-4 backdrop-blur-sm" id="toc" aria-label="Table of contents">
+  <h2 class="font-semibold text-white mb-3">On This Page</h2>
+  <ul class="space-y-2 text-sm" id="toc-list">
+    <!-- Populated by JavaScript -->
+  </ul>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tocList = document.getElementById('toc-list');
+    const article = document.querySelector('article');
+
+    if (!tocList || !article) return;
+
+    const headings = article.querySelectorAll('h2, h3');
+
+    headings.forEach((heading, index) => {
+      // Ensure heading has an ID
+      if (!heading.id) {
+        heading.id = `heading-${index}`;
+      }
+
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+
+      a.href = `#${heading.id}`;
+      a.textContent = heading.textContent;
+      a.className = heading.tagName === 'H3'
+        ? 'text-white/60 hover:text-[var(--primary)] pl-4 block transition-colors'
+        : 'text-white/80 hover:text-[var(--primary)] font-medium block transition-colors';
+
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
+
+    // Hide TOC if no headings
+    if (headings.length === 0) {
+      document.getElementById('toc')?.classList.add('hidden');
+    }
+  });
+</script>

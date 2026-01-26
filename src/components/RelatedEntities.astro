@@ -1,0 +1,186 @@
+---
+/**
+ * RelatedEntities Component
+ * Displays internal links to related content for SEO and user navigation.
+ * Used at the bottom of content pages to improve internal linking.
+ */
+import { getCollection } from 'astro:content';
+
+interface Props {
+  // Current peptide slug (if on a peptide page)
+  currentPeptide?: string;
+  // Category to filter by
+  category?: string;
+  // Explicit list of related peptide slugs
+  relatedPeptides?: string[];
+  // Explicit list of related guide slugs
+  relatedGuides?: string[];
+  // Maximum items per section
+  maxItems?: number;
+}
+
+const {
+  currentPeptide,
+  category,
+  relatedPeptides = [],
+  relatedGuides = [],
+  maxItems = 3
+} = Astro.props;
+
+// Fetch collections
+const allPeptides = await getCollection('peptides');
+const allGuides = await getCollection('guides');
+const allComparisons = await getCollection('comparisons');
+
+// Get related peptides
+let peptidesToShow: typeof allPeptides = [];
+
+if (relatedPeptides.length > 0) {
+  // Use explicit list
+  peptidesToShow = relatedPeptides
+    .map(slug => allPeptides.find(p => p.slug === slug))
+    .filter((p): p is NonNullable<typeof p> => p !== undefined)
+    .slice(0, maxItems);
+} else if (category) {
+  // Filter by category, excluding current
+  peptidesToShow = allPeptides
+    .filter(p => p.data.category === category && p.slug !== currentPeptide)
+    .slice(0, maxItems);
+} else if (currentPeptide) {
+  // Get comparators from current peptide
+  const current = allPeptides.find(p => p.slug === currentPeptide);
+  if (current?.data.comparators) {
+    peptidesToShow = current.data.comparators
+      .map(slug => allPeptides.find(p => p.slug === slug))
+      .filter((p): p is NonNullable<typeof p> => p !== undefined)
+      .slice(0, maxItems);
+  }
+}
+
+// Get related guides
+let guidesToShow: typeof allGuides = [];
+
+if (relatedGuides.length > 0) {
+  guidesToShow = relatedGuides
+    .map(slug => allGuides.find(g => g.slug === slug))
+    .filter((g): g is NonNullable<typeof g> => g !== undefined)
+    .slice(0, 2);
+} else if (currentPeptide) {
+  // Find guides about this peptide
+  guidesToShow = allGuides
+    .filter(g => g.data.peptide === currentPeptide)
+    .slice(0, 2);
+}
+
+// Get related comparisons
+let comparisonsToShow: typeof allComparisons = [];
+
+if (currentPeptide) {
+  comparisonsToShow = allComparisons
+    .filter(c => c.data.peptideA === currentPeptide || c.data.peptideB === currentPeptide)
+    .slice(0, 2);
+}
+
+const hasContent = peptidesToShow.length > 0 || guidesToShow.length > 0 || comparisonsToShow.length > 0;
+
+const categoryLabels: Record<string, string> = {
+  'metabolic': 'Metabolic',
+  'repair-recovery': 'Repair & Recovery',
+  'hormonal': 'Hormonal',
+  'longevity': 'Longevity',
+  'cognitive': 'Cognitive',
+  'immune': 'Immune',
+  'other': 'Other',
+};
+---
+
+{hasContent && (
+  <section class="mt-12 pt-8 border-t border-white/10">
+    <h2 class="text-xl font-bold text-white mb-6" style="font-family: var(--font-display);">
+      Related Content
+    </h2>
+
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {/* Related Peptides */}
+      {peptidesToShow.map((peptide) => (
+        <a
+          href={`/peptides/${peptide.slug}`}
+          class="glass-card-interactive p-4 group"
+        >
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-lg bg-[var(--primary)]/10 border border-[var(--primary)]/30 flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--primary)]/20 transition-all">
+              <svg class="w-5 h-5 text-[var(--primary)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2" />
+              </svg>
+            </div>
+            <div class="min-w-0">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--primary)]">
+                Peptide
+              </span>
+              <h3 class="font-bold text-white group-hover:text-[var(--primary)] transition-colors truncate">
+                {peptide.data.name}
+              </h3>
+              <p class="text-xs text-white/60 mt-1">
+                {categoryLabels[peptide.data.category]} · {peptide.data.evidenceStrength} evidence
+              </p>
+            </div>
+          </div>
+        </a>
+      ))}
+
+      {/* Related Guides */}
+      {guidesToShow.map((guide) => (
+        <a
+          href={`/guide/${guide.slug}`}
+          class="glass-card-interactive p-4 group"
+        >
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500/20 transition-all">
+              <svg class="w-5 h-5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+              </svg>
+            </div>
+            <div class="min-w-0">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400">
+                Guide
+              </span>
+              <h3 class="font-bold text-white group-hover:text-emerald-400 transition-colors truncate">
+                {guide.data.title}
+              </h3>
+              <p class="text-xs text-white/60 mt-1 line-clamp-1">
+                {guide.data.summary.slice(0, 60)}...
+              </p>
+            </div>
+          </div>
+        </a>
+      ))}
+
+      {/* Related Comparisons */}
+      {comparisonsToShow.map((comparison) => (
+        <a
+          href={`/compare/${comparison.slug}`}
+          class="glass-card-interactive p-4 group"
+        >
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center flex-shrink-0 group-hover:bg-amber-500/20 transition-all">
+              <svg class="w-5 h-5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 3h5v5M8 3H3v5M21 3L14 10M3 3l7 7M21 21l-7-7M3 21l7-7M16 21h5v-5M8 21H3v-5" />
+              </svg>
+            </div>
+            <div class="min-w-0">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-amber-400">
+                Comparison
+              </span>
+              <h3 class="font-bold text-white group-hover:text-amber-400 transition-colors truncate">
+                {comparison.data.title}
+              </h3>
+              <p class="text-xs text-white/60 mt-1">
+                View side-by-side analysis
+              </p>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+)}

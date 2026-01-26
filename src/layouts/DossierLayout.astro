@@ -1,7 +1,8 @@
 ---
 import BaseLayout from './BaseLayout.astro';
-import EvidenceBadge from '../components/EvidenceBadge.astro';
-import TableOfContents from '../components/TableOfContents.astro';
+import ArticleSchema from '../components/SEO/ArticleSchema.astro';
+import BreadcrumbSchema from '../components/SEO/BreadcrumbSchema.astro';
+import RelatedEntities from '../components/RelatedEntities.astro';
 
 interface Props {
   name: string;
@@ -46,224 +47,467 @@ const categoryLabels: Record<string, string> = {
   'other': 'Other',
 };
 
-const categoryColors: Record<string, string> = {
-  'metabolic': 'bg-blue-100 text-blue-800',
-  'repair-recovery': 'bg-green-100 text-green-800',
-  'hormonal': 'bg-purple-100 text-purple-800',
-  'longevity': 'bg-amber-100 text-amber-800',
-  'other': 'bg-slate-100 text-slate-800',
+const evidenceConfig: Record<string, { dots: number; label: string; color: string }> = {
+  'high': { dots: 4, label: 'High Evidence', color: 'hsl(142 70% 45%)' },
+  'moderate': { dots: 3, label: 'Moderate Evidence', color: 'var(--primary)' },
+  'low': { dots: 2, label: 'Low Evidence', color: 'hsl(45 90% 55%)' },
+  'very-low': { dots: 1, label: 'Very Low Evidence', color: 'hsl(0 70% 55%)' },
 };
 
-// 12-section structure for navigation
+const currentEvidence = evidenceConfig[evidenceStrength];
+
+// Section navigation for the Research Dossier
+// These IDs must match the h2 id attributes in the MDX content
 const sections = [
-  { id: 'overview', label: 'Overview' },
-  { id: 'mechanism-of-action', label: 'Mechanism of Action' },
-  { id: 'research-summary', label: 'Research Summary' },
-  { id: 'key-human-trials', label: 'Key Human Trials' },
-  { id: 'preclinical-evidence', label: 'Preclinical Evidence' },
-  { id: 'safety-profile', label: 'Safety Profile' },
-  { id: 'pharmacokinetics', label: 'Pharmacokinetics' },
-  { id: 'regulatory-status', label: 'Regulatory Status' },
-  { id: 'related-peptides', label: 'Related Peptides' },
-  { id: 'current-research-directions', label: 'Current Research Directions' },
-  { id: 'citation-table', label: 'Citation Table' },
-  { id: 'methodology-note', label: 'Methodology Note' },
+  { id: 'overview', label: 'Overview', num: '01' },
+  { id: 'mechanism-of-action', label: 'Mechanism', num: '02' },
+  { id: 'research-summary', label: 'Research', num: '03' },
+  { id: 'key-human-trials', label: 'Human Trials', num: '04' },
+  { id: 'preclinical-evidence', label: 'Preclinical', num: '05' },
+  { id: 'safety-profile', label: 'Safety', num: '06' },
+  { id: 'pharmacokinetics', label: 'Pharmacokinetics', num: '07' },
+  { id: 'regulatory-status', label: 'Regulatory', num: '08' },
+  { id: 'related-peptides', label: 'Related', num: '09' },
+  { id: 'citation-table', label: 'Citations', num: '10' },
 ];
+
+// Tags from category and evidence
+const tags = [categoryLabels[category], currentEvidence.label, `${sources.count} Sources`];
+
+// SEO: Breadcrumb data
+const breadcrumbItems = [
+  { name: 'Home', url: Astro.site?.toString() || 'https://pepcodex.com' },
+  { name: 'Peptides', url: `${Astro.site || 'https://pepcodex.com'}peptides/` },
+  { name: name, url: Astro.url.toString() }
+];
+
+// SEO: Article URL
+const articleUrl = Astro.url.toString();
 ---
 
 <BaseLayout title={name} description={summary}>
-  <article class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-    <!-- Header -->
-    <header class="mb-8">
-      <div class="flex flex-wrap items-center gap-3 mb-4">
-        <a
-          href={`/category/${category}`}
-          class={`inline-flex items-center rounded-full px-3 py-1 text-xs font-medium ${categoryColors[category]}`}
-        >
-          {categoryLabels[category]}
-        </a>
-        <EvidenceBadge strength={evidenceStrength} />
+  <!-- Structured Data -->
+  <ArticleSchema
+    title={`${name}: Evidence Dossier`}
+    description={summary}
+    url={articleUrl}
+    dateModified={lastUpdated}
+  />
+  <BreadcrumbSchema items={breadcrumbItems} />
+
+  <div class="max-w-7xl mx-auto pb-20">
+    <!-- Header with Navigation -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-12">
+      <a href="/peptides" class="group flex items-center text-sm font-medium text-white/70 hover:text-white transition-all">
+        <div class="mr-3 w-8 h-8 rounded-full border border-white/10 flex items-center justify-center group-hover:border-[var(--primary)]/50 group-hover:bg-[var(--primary)]/5 transition-all">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m12 19-7-7 7-7"/>
+            <path d="M19 12H5"/>
+          </svg>
+        </div>
+        Back to Library
+      </a>
+      <div class="flex items-center gap-2">
+        <span class="bg-[var(--primary)]/5 border border-[var(--primary)]/20 text-[var(--primary)] px-3 py-1 rounded-full uppercase tracking-widest text-[10px] font-bold">
+          ID: {name.toUpperCase().replace(/\s+/g, '-')}
+        </span>
+        <span class="bg-white/5 border border-white/10 text-white/70 px-3 py-1 rounded-full uppercase tracking-widest text-[10px] font-bold">
+          STATUS: ACTIVE
+        </span>
       </div>
-
-      <h1 class="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
-        {name}
-      </h1>
-
-      {aliases.length > 0 && (
-        <p class="mt-2 text-lg text-slate-600">
-          Also known as: {aliases.join(', ')}
-        </p>
-      )}
-
-      <p class="mt-4 text-xl text-slate-700 leading-relaxed">
-        {summary}
-      </p>
-
-      <!-- Source stats -->
-      <div class="mt-6 flex flex-wrap gap-4">
-        <div class="rounded-lg bg-white border border-slate-200 px-4 py-3">
-          <div class="text-2xl font-bold text-slate-900">{sources.count}</div>
-          <div class="text-sm text-slate-600">Sources</div>
-        </div>
-        <div class="rounded-lg bg-white border border-slate-200 px-4 py-3">
-          <div class="text-2xl font-bold text-slate-900">{sources.human}</div>
-          <div class="text-sm text-slate-600">Human Studies</div>
-        </div>
-        <div class="rounded-lg bg-white border border-slate-200 px-4 py-3">
-          <div class="text-2xl font-bold text-slate-900">{sources.preclinical}</div>
-          <div class="text-sm text-slate-600">Preclinical</div>
-        </div>
-        <div class="rounded-lg bg-white border border-slate-200 px-4 py-3">
-          <div class="text-2xl font-bold text-green-600">{sources.openAccess}</div>
-          <div class="text-sm text-slate-600">Open Access</div>
-        </div>
-      </div>
-
-      <p class="mt-4 text-sm text-slate-500">
-        Last updated: {lastUpdated.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-      </p>
-    </header>
-
-    <div class="grid gap-8 lg:grid-cols-[1fr,280px]">
-      <!-- Main content -->
-      <div class="prose prose-slate prose-lg max-w-none">
-        <slot />
-
-        <!-- Methodology Note (always present) -->
-        <section id="methodology-note" class="mt-12 pt-8 border-t border-slate-200">
-          <h2 class="text-2xl font-bold text-slate-900 mb-4">Methodology Note</h2>
-          <div class="rounded-lg bg-slate-50 border border-slate-200 p-6">
-            <p class="text-slate-700 mb-4">
-              This dossier synthesizes available evidence from peer-reviewed literature, regulatory documents, and clinical trial registries. Evidence strength ratings follow a modified GRADE approach:
-            </p>
-            <ul class="list-disc list-inside text-slate-700 space-y-2 mb-4">
-              <li><strong>High:</strong> Multiple large RCTs with consistent results</li>
-              <li><strong>Moderate:</strong> RCTs with limitations or consistent observational studies</li>
-              <li><strong>Low:</strong> Limited human data, primarily observational</li>
-              <li><strong>Very Low:</strong> Primarily preclinical or theoretical</li>
-            </ul>
-            <p class="text-slate-700">
-              For complete methodology details, see our <a href="/methodology" class="text-blue-600 hover:text-blue-800 hover:underline">Methodology page</a>.
-            </p>
-          </div>
-        </section>
-
-        <!-- Disclaimer -->
-        <div class="mt-8 rounded-lg border border-amber-200 bg-amber-50 p-6">
-          <p class="text-amber-800 text-sm">
-            <strong>Disclaimer:</strong> This dossier is for educational purposes only and does not constitute medical advice. The information presented reflects current research but should not be used for diagnosis, treatment, or prevention of any disease. Always consult a qualified healthcare provider before making health decisions.
-          </p>
-        </div>
-      </div>
-
-      <!-- Sidebar -->
-      <aside class="hidden lg:block">
-        <div class="sticky top-24 space-y-6">
-          <!-- Section Navigation -->
-          <nav class="rounded-lg border border-slate-200 bg-white p-4" aria-label="Dossier sections">
-            <h3 class="font-semibold text-slate-900 mb-3">Sections</h3>
-            <ul class="space-y-1 text-sm" id="section-nav">
-              {sections.map((section) => (
-                <li>
-                  <a
-                    href={`#${section.id}`}
-                    class="section-link block py-1 px-2 rounded text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors"
-                    data-section={section.id}
-                  >
-                    {section.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          {comparators.length > 0 && (
-            <div class="rounded-lg border border-slate-200 bg-white p-4">
-              <h3 class="font-semibold text-slate-900 mb-3">Compare With</h3>
-              <ul class="space-y-2">
-                {comparators.map(comp => (
-                  <li>
-                    <a
-                      href={`/compare/${name.toLowerCase()}-vs-${comp.toLowerCase()}`}
-                      class="text-sm text-blue-600 hover:text-blue-800 hover:underline"
-                    >
-                      {name} vs {comp}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {relatedPeptides.length > 0 && (
-            <div class="rounded-lg border border-slate-200 bg-white p-4">
-              <h3 class="font-semibold text-slate-900 mb-3">Related Peptides</h3>
-              <ul class="space-y-2">
-                {relatedPeptides.map(peptide => (
-                  <li>
-                    <a
-                      href={`/peptides/${peptide.toLowerCase()}`}
-                      class="text-sm text-blue-600 hover:text-blue-800 hover:underline"
-                    >
-                      {peptide}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          <div class="rounded-lg border border-amber-200 bg-amber-50 p-4">
-            <h3 class="font-semibold text-amber-900 mb-2">Important Notice</h3>
-            <p class="text-sm text-amber-800">
-              This content is for educational purposes only. It is not medical advice. Consult a healthcare provider before making health decisions.
-            </p>
-          </div>
-        </div>
-      </aside>
     </div>
-  </article>
+
+    <!-- Hero Layout - 12 column grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
+      <!-- Left: Title and description (7 columns) -->
+      <div class="lg:col-span-7">
+        <h1 class="text-6xl md:text-8xl font-bold text-white mb-6 tracking-tighter leading-tight text-glow" style="font-family: var(--font-display);">
+          {name}
+        </h1>
+
+        <!-- Aliases -->
+        {aliases.length > 0 && (
+          <p class="text-lg text-white/70 mb-4">
+            Also known as: <span class="font-medium text-white">{aliases.join(', ')}</span>
+          </p>
+        )}
+
+        <p class="text-xl md:text-2xl text-white/80 leading-relaxed max-w-2xl">
+          {summary}
+        </p>
+
+        <!-- Tags -->
+        <div class="flex flex-wrap gap-3 mt-8">
+          <!-- Category tag - purple -->
+          <span class="px-4 py-2 rounded-full bg-gradient-to-r from-[var(--primary)]/20 to-purple-600/20 border border-[var(--primary)]/40 text-sm font-medium text-white shadow-[0_0_15px_rgba(139,92,246,0.2)]">
+            {categoryLabels[category]}
+          </span>
+          <!-- Evidence tag - colored by level -->
+          <span
+            class="px-4 py-2 rounded-full text-sm font-medium text-white border"
+            style={`background: linear-gradient(135deg, ${currentEvidence.color}20, ${currentEvidence.color}10); border-color: ${currentEvidence.color}60; box-shadow: 0 0 15px ${currentEvidence.color}30;`}
+          >
+            {currentEvidence.label}
+          </span>
+          <!-- Sources tag - cyan accent -->
+          <span class="px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/40 text-sm font-medium text-white shadow-[0_0_15px_rgba(34,211,238,0.2)]">
+            {sources.count} Sources
+          </span>
+        </div>
+      </div>
+
+      <!-- Right: Molecular Specifications Card (5 columns) -->
+      <div class="lg:col-span-5">
+        <div class="glass-card-default p-8 h-full flex flex-col justify-between overflow-hidden relative group">
+          <!-- Decorative flask icon -->
+          <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+            <svg class="w-48 h-48 rotate-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+              <path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2" />
+              <path d="M8.5 2h7" />
+              <path d="M7 16h10" />
+            </svg>
+          </div>
+
+          <div class="relative z-10 space-y-6">
+            <h3 class="text-xs font-bold text-white uppercase tracking-[0.2em]">Research Statistics</h3>
+            <div class="space-y-4">
+              <!-- Stats rows -->
+              <div class="flex items-center justify-between group/item">
+                <div class="flex items-center gap-3 text-white/70 group-hover/item:text-white transition-colors">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                    <polyline points="14,2 14,8 20,8"/>
+                  </svg>
+                  <span class="text-sm">Total Sources</span>
+                </div>
+                <span class="font-mono text-sm text-white">{sources.count}</span>
+              </div>
+
+              <div class="flex items-center justify-between group/item">
+                <div class="flex items-center gap-3 text-white/70 group-hover/item:text-white transition-colors">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                  </svg>
+                  <span class="text-sm">Human Studies</span>
+                </div>
+                <span class="font-mono text-sm" style="color: hsl(142 70% 45%);">{sources.human}</span>
+              </div>
+
+              <div class="flex items-center justify-between group/item">
+                <div class="flex items-center gap-3 text-white/70 group-hover/item:text-white transition-colors">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/>
+                    <path d="M8.5 2h7"/>
+                  </svg>
+                  <span class="text-sm">Preclinical</span>
+                </div>
+                <span class="font-mono text-sm" style="color: hsl(280 80% 60%);">{sources.preclinical}</span>
+              </div>
+
+              <div class="flex items-center justify-between group/item">
+                <div class="flex items-center gap-3 text-white/70 group-hover/item:text-white transition-colors">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+                  </svg>
+                  <span class="text-sm">Evidence Level</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="flex gap-1">
+                    {[1, 2, 3, 4].map((n) => (
+                      <div
+                        class="w-2 h-2 rounded-full"
+                        style={`background: ${n <= currentEvidence.dots ? currentEvidence.color : currentEvidence.color + '40'}`}
+                      ></div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action buttons -->
+          <div class="mt-12 flex gap-4 relative z-10">
+            <button class="flex-1 bg-white text-black font-bold py-4 rounded-xl text-sm uppercase tracking-widest hover:bg-[var(--primary)] hover:text-white transition-all duration-500">
+              Download Dossier
+            </button>
+            <button class="px-6 border border-white/10 rounded-xl hover:bg-white/5 transition-colors">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="18" cy="5" r="3"/>
+                <circle cx="6" cy="12" r="3"/>
+                <circle cx="18" cy="19" r="3"/>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Research Dossier Section -->
+    <section class="space-y-8">
+      <div class="flex items-center justify-between border-b border-white/10 pb-4">
+        <h2 class="text-2xl font-bold" style="font-family: var(--font-display);">Research Dossier</h2>
+        <div class="flex items-center gap-4 text-sm text-white/70 font-medium">
+          <span class="text-[var(--primary)]" id="current-section">01</span>
+          <span class="opacity-30">/</span>
+          <span>{sections.length}</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <!-- Section Navigation (4 columns) -->
+        <div class="lg:col-span-4 space-y-2 lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto scrollbar-none">
+          {sections.map((section, index) => (
+            <a
+              href={`#${section.id}`}
+              data-section-btn={section.id}
+              data-section-num={section.num}
+              class="section-btn w-full text-left px-6 py-6 rounded-2xl transition-all duration-500 flex items-center justify-between group text-white/70 hover:text-white hover:bg-white/5 border border-transparent"
+            >
+              <div class="flex items-center gap-4">
+                <span class="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold border bg-white/5 border-white/10 text-white/60 section-num">
+                  {section.num}
+                </span>
+                <span class="font-bold uppercase tracking-wider text-sm">{section.label}</span>
+              </div>
+              <svg class="w-4 h-4 transition-transform opacity-0 group-hover:opacity-100 section-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m9 18 6-6-6-6"/>
+              </svg>
+            </a>
+          ))}
+        </div>
+
+        <!-- Main Content (8 columns) -->
+        <div class="lg:col-span-8">
+          <div class="glass-card-default p-10 md:p-16 relative overflow-hidden min-h-[500px]">
+            <div class="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-[var(--primary)]/5 to-transparent pointer-events-none"></div>
+
+            <div class="relative z-10 prose prose-invert prose-lg max-w-none">
+              <slot />
+
+              <!-- Methodology Note -->
+              <section id="methodology-note" class="mt-12 pt-8 border-t border-white/10">
+                <div class="space-y-2 mb-8">
+                  <h3 class="text-3xl font-bold text-white tracking-tight" style="font-family: var(--font-display);">
+                    Methodology Note
+                  </h3>
+                  <div class="h-1 w-20 bg-[var(--primary)] rounded-full"></div>
+                </div>
+
+                <div class="rounded-2xl bg-white/5 border border-white/10 p-6">
+                  <p class="text-white/80 mb-4">
+                    This dossier synthesizes available evidence from peer-reviewed literature, regulatory documents, and clinical trial registries. Evidence strength ratings follow a modified GRADE approach.
+                  </p>
+                  <p class="text-white/80">
+                    For complete methodology details, see our <a href="/methodology" class="font-medium text-[var(--primary)] hover:underline">Methodology page</a>.
+                  </p>
+                </div>
+              </section>
+
+              <!-- Disclaimer -->
+              <div class="mt-8 rounded-2xl border border-[var(--accent)]/30 bg-[var(--accent)]/5 p-6">
+                <div class="flex gap-4">
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--accent)]/10 text-[var(--accent)]">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-[var(--accent)] mb-1 text-base">Important Disclaimer</h4>
+                    <p class="text-white/80 text-sm leading-relaxed">
+                      This dossier is for <strong class="text-white">educational purposes only</strong> and does not constitute medical advice. Always consult a qualified healthcare provider before making health decisions.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compare Section -->
+    {comparators.length > 0 && (
+      <section class="mt-20">
+        <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-8">
+          <h2 class="text-2xl font-bold" style="font-family: var(--font-display);">Compare {name}</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {comparators.map(comp => (
+            <a
+              href={`/compare/${name.toLowerCase().replace(/\s+/g, '-')}-vs-${comp.toLowerCase().replace(/\s+/g, '-')}`}
+              class="glass-card-hoverable p-6 flex items-center gap-4 group"
+            >
+              <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-[var(--primary)]/10 group-hover:border-[var(--primary)]/30 transition-all">
+                <svg class="w-6 h-6 text-[var(--muted-foreground)] group-hover:text-[var(--primary)] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M16 3h5v5M8 3H3v5M21 3L14 10M3 3l7 7M21 21l-7-7M3 21l7-7M16 21h5v-5M8 21H3v-5" />
+                </svg>
+              </div>
+              <div>
+                <div class="font-bold text-white group-hover:text-[var(--primary)] transition-colors">{name} vs {comp}</div>
+                <div class="text-sm text-white/70">View comparison</div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Related Content (Internal Linking) -->
+    <RelatedEntities
+      currentPeptide={name.toLowerCase().replace(/\s+/g, '-')}
+      category={category}
+      relatedPeptides={comparators.map(c => c.toLowerCase().replace(/\s+/g, '-'))}
+    />
+  </div>
 </BaseLayout>
 
+<style>
+  .section-btn.active {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.25), rgba(139, 92, 246, 0.15), rgba(147, 51, 234, 0.1));
+    border-color: rgba(139, 92, 246, 0.5);
+    color: white;
+    box-shadow:
+      0 0 20px rgba(139, 92, 246, 0.3),
+      0 0 40px rgba(139, 92, 246, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .section-btn.active .section-num {
+    background: linear-gradient(135deg, var(--primary), rgba(147, 51, 234, 1));
+    border-color: rgba(139, 92, 246, 0.7);
+    color: white;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+  }
+
+  .section-btn.active .section-chevron {
+    opacity: 1;
+    transform: rotate(90deg);
+    color: white;
+  }
+</style>
+
 <script>
-  // Highlight current section in navigation on scroll
+  // Section highlighting based on scroll
   document.addEventListener('DOMContentLoaded', () => {
-    const sectionLinks = document.querySelectorAll('.section-link');
-    const sections = document.querySelectorAll('h2[id], section[id]');
+    const sectionBtns = document.querySelectorAll('.section-btn');
+    const currentSectionDisplay = document.getElementById('current-section');
 
-    if (sectionLinks.length === 0 || sections.length === 0) return;
+    if (sectionBtns.length === 0) return;
 
-    const observerOptions = {
-      rootMargin: '-100px 0px -66%',
-      threshold: 0
-    };
+    // Get section IDs that actually exist in both the sidebar AND the content
+    const validSections: { id: string; element: Element; btn: Element }[] = [];
+    sectionBtns.forEach(btn => {
+      const id = btn.getAttribute('data-section-btn');
+      if (id) {
+        const element = document.getElementById(id);
+        if (element) {
+          validSections.push({ id, element, btn });
+        }
+      }
+    });
 
-    let currentActive: Element | null = null;
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Remove active from previous
-          if (currentActive) {
-            currentActive.classList.remove('bg-slate-100', 'text-slate-900', 'font-medium');
-            currentActive.classList.add('text-slate-600');
-          }
-
-          // Find and highlight matching nav link
-          const id = entry.target.id;
-          const navLink = document.querySelector(`a[data-section="${id}"]`);
-
-          if (navLink) {
-            navLink.classList.add('bg-slate-100', 'text-slate-900', 'font-medium');
-            navLink.classList.remove('text-slate-600');
-            currentActive = navLink;
+    // If no valid sections found, try to match buttons to actual h2 elements
+    if (validSections.length === 0) {
+      const allH2s = document.querySelectorAll('.prose-invert h2[id]');
+      allH2s.forEach((h2, index) => {
+        const id = h2.getAttribute('id');
+        if (id) {
+          const btn = document.querySelector(`[data-section-btn="${id}"]`);
+          if (btn) {
+            validSections.push({ id, element: h2, btn });
           }
         }
       });
-    }, observerOptions);
+    }
 
-    sections.forEach((section) => {
-      observer.observe(section);
+    if (validSections.length === 0) return;
+
+    let currentActive: Element | null = validSections[0]?.btn || null;
+    if (currentActive) currentActive.classList.add('active');
+
+    // Scroll-based section detection
+    function updateActiveSection() {
+      const scrollY = window.scrollY;
+      const offset = window.innerHeight * 0.4; // Trigger at 40% from top
+
+      let activeSection: typeof validSections[0] | null = null;
+
+      // Find which section is currently in view (iterate backwards to find the last one that's passed)
+      for (let i = validSections.length - 1; i >= 0; i--) {
+        const section = validSections[i];
+        const rect = section.element.getBoundingClientRect();
+        const sectionTop = rect.top + scrollY - offset;
+
+        if (scrollY >= sectionTop) {
+          activeSection = section;
+          break;
+        }
+      }
+
+      // Default to first section if at top
+      if (!activeSection && validSections.length > 0) {
+        activeSection = validSections[0];
+      }
+
+      if (activeSection && activeSection.btn !== currentActive) {
+        if (currentActive) {
+          currentActive.classList.remove('active');
+        }
+        activeSection.btn.classList.add('active');
+        currentActive = activeSection.btn;
+
+        // Update the counter
+        const num = activeSection.btn.getAttribute('data-section-num');
+        if (currentSectionDisplay && num) {
+          currentSectionDisplay.textContent = num;
+        }
+
+        // Scroll the active button into view in the sidebar if needed
+        const sidebar = activeSection.btn.closest('.lg\\:overflow-y-auto');
+        if (sidebar) {
+          const btnRect = activeSection.btn.getBoundingClientRect();
+          const sidebarRect = sidebar.getBoundingClientRect();
+
+          if (btnRect.top < sidebarRect.top || btnRect.bottom > sidebarRect.bottom) {
+            activeSection.btn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        }
+      }
+    }
+
+    // Throttle scroll events for performance
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateActiveSection();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    // Initial check
+    updateActiveSection();
+
+    // Smooth scroll on click
+    sectionBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const href = (btn as HTMLAnchorElement).getAttribute('href');
+        if (href) {
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            history.pushState(null, '', href);
+          }
+        }
+      });
     });
   });
 </script>

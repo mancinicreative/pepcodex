@@ -1,0 +1,185 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { getCollection } from 'astro:content';
+
+// Get all blog posts, sorted by date (newest first)
+const allPosts = await getCollection('blog');
+const sortedPosts = allPosts.sort((a, b) =>
+  b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+
+// Separate featured posts
+const featuredPosts = sortedPosts.filter(post => post.data.featured);
+const regularPosts = sortedPosts.filter(post => !post.data.featured);
+
+// Get unique categories for filtering
+const categories = [...new Set(allPosts.map(post => post.data.category))];
+
+const categoryLabels: Record<string, string> = {
+  'weekly-briefing': 'Weekly Briefing',
+  'research-digest': 'Research Digest',
+  'deep-dive': 'Deep Dive',
+  'regulatory': 'Regulatory',
+  'explainer': 'Explainer',
+};
+---
+
+<BaseLayout
+  title="Blog"
+  description="Weekly peptide research briefings, regulatory updates, and deep dives into the latest clinical trials and discoveries."
+>
+  <div class="space-y-12">
+    <!-- Hero Section -->
+    <header class="relative">
+      <div class="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/20 via-transparent to-cyan-500/10 rounded-2xl -z-10"></div>
+      <div class="p-8 lg:p-12">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-lg bg-[var(--primary)]/20 flex items-center justify-center border border-[var(--primary)]/30">
+            <svg class="w-5 h-5 text-[var(--primary)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/>
+              <path d="M18 14h-8"/>
+              <path d="M18 18h-8"/>
+              <path d="M18 10h-8"/>
+            </svg>
+          </div>
+          <span class="text-sm font-medium text-[var(--primary)] uppercase tracking-wider">Research Blog</span>
+        </div>
+
+        <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4" style="font-family: var(--font-display);">
+          Peptide Research Briefings
+        </h1>
+
+        <p class="text-xl text-white/80 max-w-3xl leading-relaxed">
+          Weekly updates on clinical trials, regulatory developments, and breakthrough research in peptide therapeutics. Evidence-based analysis with full citations.
+        </p>
+
+        <!-- Stats -->
+        <div class="mt-8 flex flex-wrap gap-8">
+          <div>
+            <div class="text-3xl font-bold text-[var(--primary)]">{allPosts.length}</div>
+            <div class="text-sm text-white/60">Articles</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold text-emerald-400">{categories.length}</div>
+            <div class="text-sm text-white/60">Categories</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold text-cyan-400">Weekly</div>
+            <div class="text-sm text-white/60">Updates</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Category Filters -->
+    <div class="flex flex-wrap gap-2">
+      <button
+        class="filter-btn filter-btn--active"
+        data-category="all"
+      >
+        All Posts
+      </button>
+      {categories.map(category => (
+        <button
+          class="filter-btn"
+          data-category={category}
+        >
+          {categoryLabels[category] || category}
+        </button>
+      ))}
+    </div>
+
+    <!-- Featured Posts -->
+    {featuredPosts.length > 0 && (
+      <section>
+        <h2 class="section-header mb-6">Featured</h2>
+        <div class="grid gap-6 md:grid-cols-2">
+          {featuredPosts.slice(0, 2).map(post => (
+            <BlogCard
+              title={post.data.title}
+              slug={post.slug}
+              category={post.data.category}
+              publishDate={post.data.publishDate}
+              excerpt={post.data.excerpt}
+              author={post.data.author}
+              tags={post.data.tags}
+              featured={true}
+            />
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- All Posts Grid -->
+    <section>
+      <h2 class="section-header mb-6">Latest Posts</h2>
+      <div id="posts-grid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {regularPosts.map(post => (
+          <div data-category={post.data.category}>
+            <BlogCard
+              title={post.data.title}
+              slug={post.slug}
+              category={post.data.category}
+              publishDate={post.data.publishDate}
+              excerpt={post.data.excerpt}
+              author={post.data.author}
+              tags={post.data.tags}
+            />
+          </div>
+        ))}
+      </div>
+
+      {sortedPosts.length === 0 && (
+        <div class="text-center py-12">
+          <svg class="w-16 h-16 mx-auto text-white/20 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/>
+          </svg>
+          <h3 class="text-xl font-semibold text-white/60 mb-2">No posts yet</h3>
+          <p class="text-white/40">Check back soon for peptide research updates.</p>
+        </div>
+      )}
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="rounded-2xl border border-[var(--primary)]/30 bg-gradient-to-br from-[var(--primary)]/20 via-transparent to-transparent p-8 lg:p-12">
+      <div class="max-w-2xl">
+        <h2 class="text-2xl lg:text-3xl font-bold text-white mb-4" style="font-family: var(--font-display);">
+          Never Miss a Briefing
+        </h2>
+        <p class="text-white/70 mb-6">
+          Subscribe to receive weekly peptide research updates, regulatory news, and clinical trial analysis directly in your inbox.
+        </p>
+        <a href="/newsletter" class="btn btn-primary">
+          Subscribe to Newsletter
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Client-side filtering script -->
+  <script>
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const postsGrid = document.getElementById('posts-grid');
+    const postItems = postsGrid?.querySelectorAll('[data-category]');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const category = button.getAttribute('data-category');
+
+        // Update active state
+        filterButtons.forEach(btn => btn.classList.remove('filter-btn--active'));
+        button.classList.add('filter-btn--active');
+
+        // Filter posts
+        postItems?.forEach(item => {
+          if (category === 'all' || item.getAttribute('data-category') === category) {
+            (item as HTMLElement).style.display = '';
+          } else {
+            (item as HTMLElement).style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</BaseLayout>

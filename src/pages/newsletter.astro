@@ -1,0 +1,151 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+---
+
+<BaseLayout
+  title="Newsletter"
+  description="Subscribe to the Peptide Library newsletter for weekly evidence synthesis delivered to your inbox."
+>
+  <!-- Hero Section -->
+  <div class="relative">
+    <div class="mx-auto max-w-4xl px-4 py-20 sm:px-6 lg:px-8">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--primary)]/10 border border-[var(--primary)]/30 text-sm font-medium text-white mb-6">
+          <svg class="w-4 h-4 text-[var(--primary)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          Weekly Newsletter
+        </div>
+        <h1 class="text-5xl md:text-6xl font-bold tracking-tight text-white" style="font-family: var(--font-display);">
+          Stay <span class="bg-gradient-to-r from-[var(--primary)] via-purple-400 to-[var(--primary)] bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(139,92,246,0.5)]">Evidence-Based</span>
+        </h1>
+        <p class="mt-6 text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
+          Weekly synthesis of peptide research delivered to your inbox. No hype, just citations.
+        </p>
+      </div>
+
+      <!-- Newsletter Form (Full variant with purple glassmorphism) -->
+      <div class="max-w-2xl mx-auto">
+        <NewsletterForm variant="full" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <div class="mx-auto max-w-5xl px-4 py-20 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl font-bold text-white" style="font-family: var(--font-display);">What You'll Get</h2>
+      <div class="mt-2 h-1 w-16 bg-gradient-to-r from-[var(--primary)] to-purple-400 rounded-full mx-auto"></div>
+    </div>
+
+    <div class="grid gap-6 sm:grid-cols-3">
+      <!-- Feature 1 - Purple -->
+      <div class="relative group">
+        <div class="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/20 to-purple-600/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative glass-card-default p-8 text-center h-full">
+          <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-[var(--primary)]/20 to-purple-600/10 border border-[var(--primary)]/30 text-[var(--primary)] shadow-[0_0_20px_rgba(139,92,246,0.2)]">
+            <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <h3 class="mt-6 text-lg font-bold text-white">New Research</h3>
+          <p class="mt-3 text-sm text-white/70 leading-relaxed">
+            The most important peptide studies from the past week, summarized and cited.
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature 2 - Cyan -->
+      <div class="relative group">
+        <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative glass-card-default p-8 text-center h-full">
+          <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/10 border border-cyan-400/30 text-cyan-400 shadow-[0_0_20px_rgba(34,211,238,0.2)]">
+            <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+            </svg>
+          </div>
+          <h3 class="mt-6 text-lg font-bold text-white">Trial Updates</h3>
+          <p class="mt-3 text-sm text-white/70 leading-relaxed">
+            Clinical trial progress, new registrations, and regulatory developments.
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature 3 - Green -->
+      <div class="relative group">
+        <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-green-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative glass-card-default p-8 text-center h-full">
+          <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500/20 to-green-500/10 border border-emerald-400/30 text-emerald-400 shadow-[0_0_20px_rgba(52,211,153,0.2)]">
+            <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="mt-6 text-lg font-bold text-white">Deep Dives</h3>
+          <p class="mt-3 text-sm text-white/70 leading-relaxed">
+            Occasional long-form analysis of complex topics and emerging research areas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- What to Expect Section -->
+  <div class="mx-auto max-w-4xl px-4 pb-20 sm:px-6 lg:px-8">
+    <div class="relative">
+      <!-- Decorative glow -->
+      <div class="absolute inset-0 bg-gradient-to-r from-[var(--primary)]/5 via-purple-500/5 to-cyan-500/5 rounded-2xl blur-2xl"></div>
+
+      <div class="relative glass-card-default p-8 md:p-10">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--primary)]/20 to-purple-600/10 border border-[var(--primary)]/30 flex items-center justify-center">
+            <svg class="w-5 h-5 text-[var(--primary)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white" style="font-family: var(--font-display);">What to Expect</h3>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-3">
+          <div class="flex items-start gap-3 p-4 rounded-xl bg-white/5 border border-white/5">
+            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center">
+              <svg class="h-4 w-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div>
+              <span class="text-white font-medium text-sm">Weekly delivery</span>
+              <p class="text-white/60 text-xs mt-1">Every Tuesday morning</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3 p-4 rounded-xl bg-white/5 border border-white/5">
+            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center">
+              <svg class="h-4 w-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div>
+              <span class="text-white font-medium text-sm">No spam</span>
+              <p class="text-white/60 text-xs mt-1">We never sell your data</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3 p-4 rounded-xl bg-white/5 border border-white/5">
+            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center">
+              <svg class="h-4 w-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div>
+              <span class="text-white font-medium text-sm">Easy unsubscribe</span>
+              <p class="text-white/60 text-xs mt-1">One click, anytime</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

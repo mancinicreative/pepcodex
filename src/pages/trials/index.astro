@@ -6,6 +6,28 @@ import path from 'node:path';
 
 // Read all source pack JSON files to extract trials
 interface SourcePackTrial {
+  id?: string;
+  nctId?: string;
+  title: string;
+  status?: string;
+  phase?: string;
+  conditions?: string[];
+  interventions?: string[];
+  enrollmentTarget?: number;
+  startDate?: string;
+  completionDate?: string;
+}
+
+interface SourcePack {
+  peptide: string | {
+    name: string;
+    aliases?: string[];
+    category: string;
+  };
+  trials?: SourcePackTrial[];
+}
+
+interface Trial {
   nctId: string;
   title: string;
   status: string;
@@ -15,18 +37,6 @@ interface SourcePackTrial {
   enrollmentTarget?: number;
   startDate?: string;
   completionDate?: string;
-}
-
-interface SourcePack {
-  peptide: {
-    name: string;
-    aliases?: string[];
-    category: string;
-  };
-  trials?: SourcePackTrial[];
-}
-
-interface Trial extends SourcePackTrial {
   peptide: string;
 }
 
@@ -46,9 +56,20 @@ try {
       const sourcePack: SourcePack = JSON.parse(content);
 
       if (sourcePack.trials && sourcePack.trials.length > 0) {
-        const peptideName = sourcePack.peptide.name;
+        // Handle peptide being either string or object
+        const peptideName = typeof sourcePack.peptide === 'string'
+          ? sourcePack.peptide
+          : sourcePack.peptide.name;
         const trialsWithPeptide = sourcePack.trials.map(trial => ({
-          ...trial,
+          nctId: trial.nctId || trial.id || 'Unknown',
+          title: trial.title,
+          status: trial.status || 'unknown',
+          phase: trial.phase || 'N/A',
+          conditions: trial.conditions || [],
+          interventions: trial.interventions || [],
+          enrollmentTarget: trial.enrollmentTarget,
+          startDate: trial.startDate,
+          completionDate: trial.completionDate,
           peptide: peptideName
         }));
         allTrials.push(...trialsWithPeptide);
@@ -71,8 +92,8 @@ const statusOrder: Record<string, number> = {
 };
 
 allTrials.sort((a, b) => {
-  const statusA = statusOrder[a.status.toLowerCase()] ?? 99;
-  const statusB = statusOrder[b.status.toLowerCase()] ?? 99;
+  const statusA = statusOrder[(a.status || '').toLowerCase()] ?? 99;
+  const statusB = statusOrder[(b.status || '').toLowerCase()] ?? 99;
   if (statusA !== statusB) return statusA - statusB;
 
   // Then sort by completion date
@@ -82,13 +103,13 @@ allTrials.sort((a, b) => {
 });
 
 // Get unique values for filters
-const uniqueStatuses = [...new Set(allTrials.map(t => t.status.toLowerCase()))];
-const uniquePhases = [...new Set(allTrials.map(t => t.phase))].sort();
+const uniqueStatuses = [...new Set(allTrials.map(t => (t.status || 'unknown').toLowerCase()))];
+const uniquePhases = [...new Set(allTrials.map(t => t.phase || 'N/A'))].sort();
 const uniquePeptides = [...new Set(allTrials.map(t => t.peptide))].sort();
 
 // Count by status for stats
-const activeCount = allTrials.filter(t => t.status.toLowerCase() === 'active' || t.status.toLowerCase() === 'recruiting').length;
-const completedCount = allTrials.filter(t => t.status.toLowerCase() === 'completed').length;
+const activeCount = allTrials.filter(t => (t.status || '').toLowerCase() === 'active' || (t.status || '').toLowerCase() === 'recruiting').length;
+const completedCount = allTrials.filter(t => (t.status || '').toLowerCase() === 'completed').length;
 ---
 
 <HubLayout
@@ -97,128 +118,115 @@ const completedCount = allTrials.filter(t => t.status.toLowerCase() === 'complet
 >
   <!-- Stats overview -->
   <div class="mb-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
-    <div class="rounded-lg bg-white border border-slate-200 p-4">
-      <div class="text-2xl font-bold text-slate-900">{allTrials.length}</div>
-      <div class="text-sm text-slate-600">Total Trials</div>
+    <div class="rounded-xl border border-white/10 bg-gradient-to-br from-[var(--primary)]/10 to-transparent p-4 backdrop-blur-sm">
+      <div class="text-2xl font-bold text-white">{allTrials.length}</div>
+      <div class="text-sm text-white/70">Total Trials</div>
     </div>
-    <div class="rounded-lg bg-white border border-slate-200 p-4">
-      <div class="text-2xl font-bold text-green-600">{activeCount}</div>
-      <div class="text-sm text-slate-600">Active/Recruiting</div>
+    <div class="rounded-xl border border-emerald-500/20 bg-emerald-500/10 p-4 backdrop-blur-sm">
+      <div class="text-2xl font-bold text-emerald-400">{activeCount}</div>
+      <div class="text-sm text-white/70">Active/Recruiting</div>
     </div>
-    <div class="rounded-lg bg-white border border-slate-200 p-4">
-      <div class="text-2xl font-bold text-blue-600">{completedCount}</div>
-      <div class="text-sm text-slate-600">Completed</div>
+    <div class="rounded-xl border border-blue-500/20 bg-blue-500/10 p-4 backdrop-blur-sm">
+      <div class="text-2xl font-bold text-blue-400">{completedCount}</div>
+      <div class="text-sm text-white/70">Completed</div>
     </div>
-    <div class="rounded-lg bg-white border border-slate-200 p-4">
-      <div class="text-2xl font-bold text-slate-900">{uniquePeptides.length}</div>
-      <div class="text-sm text-slate-600">Peptides Tracked</div>
+    <div class="rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+      <div class="text-2xl font-bold text-white">{uniquePeptides.length}</div>
+      <div class="text-sm text-white/70">Peptides Tracked</div>
     </div>
   </div>
 
   <!-- Filters -->
-  <div class="mb-6 flex flex-wrap gap-4">
+  <div class="mb-6 flex flex-wrap items-center gap-4">
     <!-- Status filter -->
-    <div class="flex flex-wrap items-center gap-2">
-      <span class="text-sm font-medium text-slate-600">Status:</span>
-      <button
-        class="filter-btn rounded-full px-3 py-1 text-sm font-medium bg-slate-900 text-white"
-        data-filter="status"
-        data-value="all"
+    <div class="flex items-center gap-2">
+      <label for="filter-status" class="text-sm font-medium text-white/70">Status:</label>
+      <select
+        id="filter-status"
+        class="filter-select rounded-lg bg-white/10 border border-white/20 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent cursor-pointer"
       >
-        All
-      </button>
-      {uniqueStatuses.map((status) => (
-        <button
-          class="filter-btn rounded-full px-3 py-1 text-sm font-medium bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors"
-          data-filter="status"
-          data-value={status}
-        >
-          {status.charAt(0).toUpperCase() + status.slice(1)}
-        </button>
-      ))}
+        <option value="all">All Statuses</option>
+        {uniqueStatuses.map((status) => (
+          <option value={status}>{status.charAt(0).toUpperCase() + status.slice(1)}</option>
+        ))}
+      </select>
     </div>
 
     <!-- Phase filter -->
-    <div class="flex flex-wrap items-center gap-2">
-      <span class="text-sm font-medium text-slate-600">Phase:</span>
-      <button
-        class="filter-btn rounded-full px-3 py-1 text-sm font-medium bg-slate-900 text-white"
-        data-filter="phase"
-        data-value="all"
+    <div class="flex items-center gap-2">
+      <label for="filter-phase" class="text-sm font-medium text-white/70">Phase:</label>
+      <select
+        id="filter-phase"
+        class="filter-select rounded-lg bg-white/10 border border-white/20 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent cursor-pointer"
       >
-        All
-      </button>
-      {uniquePhases.map((phase) => (
-        <button
-          class="filter-btn rounded-full px-3 py-1 text-sm font-medium bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors"
-          data-filter="phase"
-          data-value={phase}
-        >
-          Phase {phase}
-        </button>
-      ))}
+        <option value="all">All Phases</option>
+        {uniquePhases.map((phase) => (
+          <option value={phase}>{phase}</option>
+        ))}
+      </select>
     </div>
 
-    <!-- Peptide filter (only show if multiple peptides) -->
-    {uniquePeptides.length > 1 && (
-      <div class="flex flex-wrap items-center gap-2">
-        <span class="text-sm font-medium text-slate-600">Peptide:</span>
-        <button
-          class="filter-btn rounded-full px-3 py-1 text-sm font-medium bg-slate-900 text-white"
-          data-filter="peptide"
-          data-value="all"
-        >
-          All
-        </button>
+    <!-- Peptide filter -->
+    <div class="flex items-center gap-2">
+      <label for="filter-peptide" class="text-sm font-medium text-white/70">Peptide:</label>
+      <select
+        id="filter-peptide"
+        class="filter-select rounded-lg bg-white/10 border border-white/20 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent cursor-pointer"
+      >
+        <option value="all">All Peptides</option>
         {uniquePeptides.map((peptide) => (
-          <button
-            class="filter-btn rounded-full px-3 py-1 text-sm font-medium bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors"
-            data-filter="peptide"
-            data-value={peptide.toLowerCase()}
-          >
-            {peptide}
-          </button>
+          <option value={peptide.toLowerCase()}>{peptide}</option>
         ))}
-      </div>
-    )}
+      </select>
+    </div>
+
+    <!-- Clear filters button -->
+    <button
+      id="clear-filters"
+      class="text-sm font-medium text-white/50 hover:text-white transition-colors"
+    >
+      Clear filters
+    </button>
   </div>
 
   <!-- Result count -->
-  <p class="mb-4 text-sm text-slate-600">
+  <p class="mb-4 text-sm text-white/70">
     Showing <span id="trial-count">{allTrials.length}</span> of {allTrials.length} trials
   </p>
 
   <!-- Trial table -->
-  <div class="rounded-xl border border-slate-200 bg-white overflow-hidden">
+  <div class="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden">
     <TrialTable trials={allTrials} />
   </div>
 
   <!-- Empty state (hidden by default) -->
   <div id="empty-state" class="hidden py-16 text-center">
-    <svg class="mx-auto h-12 w-12 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <svg class="mx-auto h-12 w-12 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
     </svg>
-    <p class="mt-4 text-lg text-slate-600">No trials match your filters.</p>
+    <p class="mt-4 text-lg text-white/60">No trials match your filters.</p>
     <button
-      id="clear-filters"
-      class="mt-4 text-sm font-medium text-blue-600 hover:text-blue-700"
+      id="clear-filters-empty"
+      class="mt-4 text-sm font-medium text-[var(--primary)] hover:text-[var(--accent)] transition-colors"
     >
       Clear all filters
     </button>
   </div>
 
   <!-- Data source note -->
-  <div class="mt-8 rounded-lg bg-slate-50 border border-slate-200 p-4">
-    <p class="text-sm text-slate-600">
-      <strong>Data Source:</strong> Trial information is sourced from
-      <a href="https://clinicaltrials.gov" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">ClinicalTrials.gov</a>
+  <div class="mt-8 rounded-xl border border-white/10 bg-gradient-to-r from-[var(--primary)]/5 to-transparent p-4 backdrop-blur-sm">
+    <p class="text-sm text-white/70">
+      <strong class="text-white">Data Source:</strong> Trial information is sourced from
+      <a href="https://clinicaltrials.gov" target="_blank" rel="noopener noreferrer" class="text-[var(--primary)] hover:text-[var(--accent)] hover:underline transition-colors">ClinicalTrials.gov</a>
       and our curated source packs. Click any NCT ID to view the full trial record.
     </p>
   </div>
 </HubLayout>
 
 <script>
-  const filterBtns = document.querySelectorAll('.filter-btn');
+  const statusSelect = document.getElementById('filter-status') as HTMLSelectElement;
+  const phaseSelect = document.getElementById('filter-phase') as HTMLSelectElement;
+  const peptideSelect = document.getElementById('filter-peptide') as HTMLSelectElement;
   const trialRows = document.querySelectorAll('.trial-row');
   const trialCards = document.querySelectorAll('.trial-card');
   const trialCount = document.getElementById('trial-count');
@@ -280,41 +288,40 @@ const completedCount = allTrials.filter(t => t.status.toLowerCase() === 'complet
     }
   }
 
-  filterBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const el = btn as HTMLElement;
-      const filterType = el.dataset.filter as string;
-      const value = el.dataset.value || 'all';
-
-      // Update active filter
-      activeFilters[filterType] = value;
-
-      // Update button styles
-      document.querySelectorAll(`[data-filter="${filterType}"]`).forEach((b) => {
-        b.classList.remove('bg-slate-900', 'text-white');
-        b.classList.add('bg-slate-100', 'text-slate-700');
-      });
-      el.classList.remove('bg-slate-100', 'text-slate-700');
-      el.classList.add('bg-slate-900', 'text-white');
-
-      applyFilters();
-    });
-  });
-
-  document.getElementById('clear-filters')?.addEventListener('click', () => {
-    activeFilters = { status: 'all', phase: 'all', peptide: 'all' };
-
-    filterBtns.forEach((btn) => {
-      const el = btn as HTMLElement;
-      if (el.dataset.value === 'all') {
-        el.classList.remove('bg-slate-100', 'text-slate-700');
-        el.classList.add('bg-slate-900', 'text-white');
-      } else {
-        el.classList.remove('bg-slate-900', 'text-white');
-        el.classList.add('bg-slate-100', 'text-slate-700');
-      }
-    });
-
+  // Add event listeners to select dropdowns
+  statusSelect?.addEventListener('change', () => {
+    activeFilters.status = statusSelect.value;
     applyFilters();
   });
+
+  phaseSelect?.addEventListener('change', () => {
+    activeFilters.phase = phaseSelect.value;
+    applyFilters();
+  });
+
+  peptideSelect?.addEventListener('change', () => {
+    activeFilters.peptide = peptideSelect.value;
+    applyFilters();
+  });
+
+  // Clear filters function
+  function clearAllFilters() {
+    activeFilters = { status: 'all', phase: 'all', peptide: 'all' };
+    if (statusSelect) statusSelect.value = 'all';
+    if (phaseSelect) phaseSelect.value = 'all';
+    if (peptideSelect) peptideSelect.value = 'all';
+    applyFilters();
+  }
+
+  // Clear filters buttons (main and empty state)
+  document.getElementById('clear-filters')?.addEventListener('click', clearAllFilters);
+  document.getElementById('clear-filters-empty')?.addEventListener('click', clearAllFilters);
 </script>
+
+<style>
+  /* Style select dropdown options for dark theme */
+  .filter-select option {
+    background-color: hsl(230 45% 8%);
+    color: white;
+  }
+</style>

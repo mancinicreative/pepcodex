@@ -1,0 +1,494 @@
+---
+interface Props {
+  placeholder?: string;
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const { placeholder = 'Search peptides by name or condition...', size = 'md' } = Astro.props;
+
+const sizeClasses = {
+  sm: 'px-3 py-2 text-sm',
+  md: 'px-4 py-3 text-base',
+  lg: 'px-5 py-4 text-lg',
+};
+---
+
+<div class="relative" id="search-container">
+  <div class="relative">
+    <input
+      type="search"
+      id="search-input"
+      placeholder={placeholder}
+      class={`w-full rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl ${sizeClasses[size]} pl-11 pr-4 text-white placeholder-white/40 focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--primary)]/20 outline-none transition-all`}
+    />
+    <svg
+      class="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-white/60"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+      />
+    </svg>
+    <!-- Loading spinner -->
+    <div id="search-spinner" class="absolute right-4 top-1/2 -translate-y-1/2 hidden">
+      <svg class="animate-spin h-5 w-5 text-[var(--primary)]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Search results dropdown -->
+  <div
+    id="search-results"
+    class="absolute top-full left-0 right-0 mt-2 rounded-xl border border-white/10 bg-[#0a0a0f]/95 backdrop-blur-xl shadow-2xl hidden z-50 max-h-[70vh] overflow-auto"
+  >
+    <div class="p-4 text-center text-[var(--muted-foreground)]" id="search-loading">
+      Searching peptide dossiers...
+    </div>
+    <ul id="search-results-list" class="divide-y divide-white/10">
+      <!-- Populated by JavaScript -->
+    </ul>
+  </div>
+</div>
+
+<script>
+  interface PeptideSearchItem {
+    slug: string;
+    name: string;
+    aliases: string[];
+    category: string;
+    evidenceStrength: string;
+    summary: string;
+    content: string;
+    keyTerms?: string[];
+    url: string;
+    sources: {
+      count: number;
+      human: number;
+      preclinical: number;
+      openAccess: number;
+    };
+  }
+
+  interface SearchResult {
+    peptide: PeptideSearchItem;
+    score: number;
+    matchType: 'name' | 'alias' | 'summary' | 'content';
+    matchContext?: string;
+  }
+
+  let peptideIndex: PeptideSearchItem[] | null = null;
+  let pagefind: any = null;
+
+  // Category labels and colors
+  const categoryConfig: Record<string, { label: string; color: string }> = {
+    'metabolic': { label: 'Metabolic', color: 'hsl(45 90% 55%)' },
+    'repair-recovery': { label: 'Repair', color: 'hsl(142 70% 45%)' },
+    'hormonal': { label: 'Hormonal', color: 'hsl(280 80% 60%)' },
+    'longevity': { label: 'Longevity', color: 'hsl(200 80% 55%)' },
+    'cognitive': { label: 'Cognitive', color: 'hsl(320 70% 55%)' },
+    'immune': { label: 'Immune', color: 'hsl(30 80% 55%)' },
+    'other': { label: 'Other', color: 'hsl(220 15% 60%)' },
+  };
+
+  const evidenceConfig: Record<string, { label: string; color: string }> = {
+    'high': { label: 'High Evidence', color: 'hsl(142 70% 45%)' },
+    'moderate': { label: 'Moderate', color: 'var(--primary)' },
+    'low': { label: 'Low Evidence', color: 'hsl(45 90% 55%)' },
+    'very-low': { label: 'Very Low', color: 'hsl(0 70% 55%)' },
+  };
+
+  // Load the peptide search index
+  async function loadPeptideIndex(): Promise<PeptideSearchItem[]> {
+    if (peptideIndex) return peptideIndex;
+
+    try {
+      const response = await fetch('/api/peptide-search.json');
+      if (response.ok) {
+        peptideIndex = await response.json();
+        return peptideIndex!;
+      }
+    } catch (e) {
+      console.log('Peptide search index not available');
+    }
+    return [];
+  }
+
+  // Initialize Pagefind as fallback
+  async function initPagefind() {
+    try {
+      const pagefindPath = '/pagefind/pagefind.js';
+      pagefind = await import(/* @vite-ignore */ pagefindPath);
+      await pagefind.init();
+    } catch (e) {
+      console.log('Pagefind not available (normal during development)');
+    }
+  }
+
+  // Search through peptide content
+  function searchPeptides(query: string, index: PeptideSearchItem[]): SearchResult[] {
+    const normalizedQuery = query.toLowerCase().trim();
+    const queryWords = normalizedQuery.split(/\s+/);
+    const results: SearchResult[] = [];
+
+    for (const peptide of index) {
+      let score = 0;
+      let matchType: SearchResult['matchType'] = 'content';
+      let matchContext: string | undefined;
+
+      // Check name (highest priority)
+      const nameLower = peptide.name.toLowerCase();
+      if (nameLower === normalizedQuery) {
+        score = 1000;
+        matchType = 'name';
+      } else if (nameLower.includes(normalizedQuery)) {
+        score = 800;
+        matchType = 'name';
+      } else if (queryWords.some(w => nameLower.includes(w))) {
+        score = 600;
+        matchType = 'name';
+      }
+
+      // Check aliases (high priority)
+      if (score < 500) {
+        for (const alias of peptide.aliases) {
+          const aliasLower = alias.toLowerCase();
+          if (aliasLower === normalizedQuery) {
+            score = 700;
+            matchType = 'alias';
+            matchContext = `Also known as: ${alias}`;
+            break;
+          } else if (aliasLower.includes(normalizedQuery)) {
+            score = Math.max(score, 500);
+            matchType = 'alias';
+            matchContext = `Also known as: ${alias}`;
+          }
+        }
+      }
+
+      // Check summary (medium priority)
+      if (score < 400) {
+        const summaryLower = peptide.summary.toLowerCase();
+        if (queryWords.every(w => summaryLower.includes(w))) {
+          score = Math.max(score, 400);
+          matchType = 'summary';
+          matchContext = highlightMatch(peptide.summary, normalizedQuery);
+        } else if (queryWords.some(w => summaryLower.includes(w))) {
+          score = Math.max(score, 200);
+          matchType = 'summary';
+          matchContext = highlightMatch(peptide.summary, normalizedQuery);
+        }
+      }
+
+      // Check key medical terms (high priority for condition searches like "PCOS")
+      if (score < 300 && peptide.keyTerms?.length) {
+        const keyTermsStr = peptide.keyTerms.join(' ').toLowerCase();
+        if (queryWords.every(w => keyTermsStr.includes(w))) {
+          score = Math.max(score, 300);
+          matchType = 'content';
+          const matchedTerms = peptide.keyTerms.filter(t =>
+            queryWords.some(w => t.toLowerCase().includes(w))
+          );
+          matchContext = `Related to: ${matchedTerms.slice(0, 5).join(', ')}`;
+        } else if (queryWords.some(w => keyTermsStr.includes(w))) {
+          score = Math.max(score, 250);
+          matchType = 'content';
+          const matchedTerms = peptide.keyTerms.filter(t =>
+            queryWords.some(w => t.toLowerCase().includes(w))
+          );
+          matchContext = `Related to: ${matchedTerms.slice(0, 5).join(', ')}`;
+        }
+      }
+
+      // Check full content (lower priority but important for condition searches like "PCOS")
+      if (score < 200) {
+        const contentLower = peptide.content.toLowerCase();
+        const matchCount = queryWords.filter(w => contentLower.includes(w)).length;
+
+        if (matchCount === queryWords.length) {
+          // All query words found in content
+          score = Math.max(score, 150 + matchCount * 20);
+          matchType = 'content';
+          matchContext = matchContext || extractMatchContext(peptide.content, normalizedQuery);
+        } else if (matchCount > 0) {
+          score = Math.max(score, 50 + matchCount * 10);
+          matchType = 'content';
+          matchContext = matchContext || extractMatchContext(peptide.content, queryWords[0]);
+        }
+      }
+
+      if (score > 0) {
+        results.push({ peptide, score, matchType, matchContext });
+      }
+    }
+
+    // Sort by score (highest first)
+    return results.sort((a, b) => b.score - a.score).slice(0, 10);
+  }
+
+  // Extract context around the match
+  function extractMatchContext(content: string, query: string): string {
+    const lowerContent = content.toLowerCase();
+    const index = lowerContent.indexOf(query.toLowerCase());
+
+    if (index === -1) {
+      // Find any word match
+      const words = query.split(/\s+/);
+      for (const word of words) {
+        const wordIndex = lowerContent.indexOf(word);
+        if (wordIndex !== -1) {
+          const start = Math.max(0, wordIndex - 60);
+          const end = Math.min(content.length, wordIndex + word.length + 80);
+          let excerpt = content.slice(start, end).trim();
+          if (start > 0) excerpt = '...' + excerpt;
+          if (end < content.length) excerpt = excerpt + '...';
+          return excerpt;
+        }
+      }
+      return content.slice(0, 150) + '...';
+    }
+
+    const start = Math.max(0, index - 60);
+    const end = Math.min(content.length, index + query.length + 80);
+    let excerpt = content.slice(start, end).trim();
+    if (start > 0) excerpt = '...' + excerpt;
+    if (end < content.length) excerpt = excerpt + '...';
+    return excerpt;
+  }
+
+  // Highlight the matched term (basic)
+  function highlightMatch(text: string, query: string): string {
+    const maxLength = 180;
+    const lowerText = text.toLowerCase();
+    const lowerQuery = query.toLowerCase();
+    const index = lowerText.indexOf(lowerQuery);
+
+    if (text.length <= maxLength) {
+      return text;
+    }
+
+    if (index !== -1) {
+      const start = Math.max(0, index - 40);
+      const end = Math.min(text.length, start + maxLength);
+      let excerpt = text.slice(start, end).trim();
+      if (start > 0) excerpt = '...' + excerpt;
+      if (end < text.length) excerpt = excerpt + '...';
+      return excerpt;
+    }
+
+    return text.slice(0, maxLength) + '...';
+  }
+
+  // Escape HTML
+  function escapeHtml(text: string): string {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
+  // Highlight query terms in text
+  function highlightTerms(text: string, query: string): string {
+    const escaped = escapeHtml(text);
+    const words = query.toLowerCase().split(/\s+/).filter(w => w.length > 1);
+    let result = escaped;
+
+    for (const word of words) {
+      const regex = new RegExp(`(${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+      result = result.replace(regex, '<mark class="bg-[var(--primary)]/30 text-white px-0.5 rounded">$1</mark>');
+    }
+
+    return result;
+  }
+
+  // Render search results
+  function renderResults(results: SearchResult[], query: string): string {
+    if (results.length === 0) {
+      return `
+        <li class="p-6 text-center">
+          <div class="text-[var(--muted-foreground)] mb-2">No peptides found for "${escapeHtml(query)}"</div>
+          <a href="/peptides" class="text-[var(--primary)] hover:underline text-sm">Browse all peptides</a>
+        </li>
+      `;
+    }
+
+    return results.map(({ peptide, matchType, matchContext }) => {
+      const cat = categoryConfig[peptide.category] || categoryConfig['other'];
+      const evidence = evidenceConfig[peptide.evidenceStrength] || evidenceConfig['low'];
+
+      // Match type indicator
+      const matchBadge = matchType === 'content'
+        ? `<span class="text-xs text-[var(--primary)] bg-[var(--primary)]/10 px-2 py-0.5 rounded-full">Found in dossier</span>`
+        : '';
+
+      // Show context or summary
+      const displayText = matchContext || peptide.summary;
+
+      return `
+        <li class="group/item">
+          <a href="${peptide.url}" class="block p-4 relative rounded-lg overflow-hidden transition-all duration-300 hover:bg-gradient-to-r hover:from-[var(--primary)]/40 hover:to-purple-600/30">
+            <div class="flex items-start justify-between gap-3 mb-2">
+              <div class="font-semibold text-white transition-colors">
+                ${highlightTerms(peptide.name, query)}
+              </div>
+              <div class="flex items-center gap-2 flex-shrink-0">
+                <span class="text-[10px] px-2 py-0.5 rounded-full border font-medium"
+                      style="color: ${cat.color}; border-color: ${cat.color}40; background: ${cat.color}15;">
+                  ${cat.label}
+                </span>
+              </div>
+            </div>
+            ${peptide.aliases.length > 0 ? `
+              <div class="text-xs text-white/50 mb-2">
+                ${peptide.aliases.slice(0, 3).join(' · ')}${peptide.aliases.length > 3 ? ' · ...' : ''}
+              </div>
+            ` : ''}
+            <div class="text-sm text-white/70 line-clamp-2 mb-2">
+              ${highlightTerms(displayText, query)}
+            </div>
+            <div class="flex items-center gap-3 text-xs text-white/50">
+              <span>${peptide.sources.count} sources</span>
+              <span>·</span>
+              <span>${peptide.sources.human} human studies</span>
+              ${matchBadge}
+            </div>
+          </a>
+        </li>
+      `;
+    }).join('');
+  }
+
+  // Initialize
+  loadPeptideIndex();
+  initPagefind();
+
+  const searchInput = document.getElementById('search-input') as HTMLInputElement;
+  const searchResults = document.getElementById('search-results');
+  const searchResultsList = document.getElementById('search-results-list');
+  const searchLoading = document.getElementById('search-loading');
+  const searchSpinner = document.getElementById('search-spinner');
+
+  let debounceTimer: ReturnType<typeof setTimeout>;
+
+  searchInput?.addEventListener('input', (e) => {
+    const query = (e.target as HTMLInputElement).value;
+
+    clearTimeout(debounceTimer);
+
+    if (query.length < 2) {
+      searchResults?.classList.add('hidden');
+      searchSpinner?.classList.add('hidden');
+      return;
+    }
+
+    searchResults?.classList.remove('hidden');
+    searchLoading?.classList.remove('hidden');
+    searchSpinner?.classList.remove('hidden');
+    if (searchResultsList) searchResultsList.innerHTML = '';
+
+    debounceTimer = setTimeout(async () => {
+      // Try peptide index first
+      const index = await loadPeptideIndex();
+
+      if (index.length > 0) {
+        const results = searchPeptides(query, index);
+        searchLoading?.classList.add('hidden');
+        searchSpinner?.classList.add('hidden');
+
+        if (searchResultsList) {
+          searchResultsList.innerHTML = renderResults(results, query);
+        }
+      } else if (pagefind) {
+        // Fallback to Pagefind
+        const search = await pagefind.search(query);
+        const results = await Promise.all(
+          search.results.slice(0, 8).map((r: any) => r.data())
+        );
+
+        searchLoading?.classList.add('hidden');
+        searchSpinner?.classList.add('hidden');
+
+        if (results.length === 0) {
+          if (searchResultsList) {
+            searchResultsList.innerHTML = `
+              <li class="p-4 text-center text-[var(--muted-foreground)]">No results found for "${escapeHtml(query)}"</li>
+            `;
+          }
+          return;
+        }
+
+        if (searchResultsList) {
+          searchResultsList.innerHTML = results.map((result: any) => `
+            <li>
+              <a href="${result.url}" class="block p-4 hover:bg-white/5 transition-colors">
+                <div class="font-medium text-white">${result.meta?.title || 'Untitled'}</div>
+                <div class="mt-1 text-sm text-[var(--muted-foreground)] line-clamp-2">${result.excerpt}</div>
+              </a>
+            </li>
+          `).join('');
+        }
+      } else {
+        // No search available
+        searchLoading?.classList.add('hidden');
+        searchSpinner?.classList.add('hidden');
+        if (searchResultsList) {
+          searchResultsList.innerHTML = `
+            <li class="p-4 text-center text-[var(--muted-foreground)]">
+              <div class="mb-2">Search index loading...</div>
+              <a href="/peptides" class="text-[var(--primary)] hover:underline">Browse all peptides</a>
+            </li>
+          `;
+        }
+      }
+    }, 300);
+  });
+
+  // Close on click outside
+  document.addEventListener('click', (e) => {
+    if (!document.getElementById('search-container')?.contains(e.target as Node)) {
+      searchResults?.classList.add('hidden');
+    }
+  });
+
+  // Close on escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      searchResults?.classList.add('hidden');
+      searchInput?.blur();
+    }
+  });
+
+  // Keyboard navigation
+  searchInput?.addEventListener('keydown', (e) => {
+    const items = searchResultsList?.querySelectorAll('a');
+    if (!items?.length) return;
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      (items[0] as HTMLElement).focus();
+    }
+  });
+
+  searchResultsList?.addEventListener('keydown', (e) => {
+    const items = Array.from(searchResultsList.querySelectorAll('a'));
+    const currentIndex = items.indexOf(document.activeElement as HTMLAnchorElement);
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      const nextIndex = Math.min(currentIndex + 1, items.length - 1);
+      (items[nextIndex] as HTMLElement).focus();
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (currentIndex === 0) {
+        searchInput?.focus();
+      } else {
+        (items[currentIndex - 1] as HTMLElement).focus();
+      }
+    }
+  });
+</script>

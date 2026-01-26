@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const safetyPages = await getCollection('safety');
+
+// Sort by title
+const sortedSafetyPages = safetyPages.sort((a, b) =>
+  a.data.title.localeCompare(b.data.title)
+);
+---
+
+<BaseLayout
+  title="Safety Profiles"
+  description="Evidence-based safety information for peptides, including side effects, interactions, and regulatory status."
+>
+  <!-- Hero -->
+  <div class="relative overflow-hidden border-b border-white/5">
+    <div class="absolute inset-0 bg-gradient-to-br from-[var(--accent)]/10 via-transparent to-transparent"></div>
+    <div class="absolute top-0 right-0 w-96 h-96 bg-[var(--accent)]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl" style="font-family: var(--font-display);">
+        Safety Profiles
+      </h1>
+      <p class="mt-6 max-w-2xl text-xl text-white/80 leading-relaxed">
+        Evidence-based safety information for peptides, including side effects, interactions, and regulatory status.
+      </p>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <!-- Warning callout -->
+    <div class="mb-8 glass-card-default p-6 border-[var(--accent)]/30">
+      <div class="flex gap-4">
+        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--accent)]/10 text-[var(--accent)]">
+          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+        </div>
+        <div>
+          <h4 class="font-bold text-[var(--accent)] mb-1">Important Notice</h4>
+          <p class="text-white/80 text-sm leading-relaxed">
+            This information is for <strong class="text-white">educational purposes only</strong> and does not constitute medical advice. Always consult a qualified healthcare provider before making health decisions.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <p class="mb-8 text-white/70">
+      Showing <span class="text-white font-bold">{sortedSafetyPages.length}</span> safety profiles
+    </p>
+
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {sortedSafetyPages.map((safetyPage) => (
+        <a
+          href={`/safety/${safetyPage.slug}`}
+          class="glass-card-interactive p-6 group"
+        >
+          <div class="flex items-start justify-between gap-4">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2 mb-3">
+                <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--accent)]/10 text-[var(--accent)]">
+                  <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <span class="inline-flex items-center rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider border text-[var(--accent)] bg-[var(--accent)]/10 border-[var(--accent)]/30">
+                  Safety
+                </span>
+              </div>
+              <h2 class="text-lg font-bold text-white group-hover:text-[var(--primary)] transition-colors">
+                {safetyPage.data.title}
+              </h2>
+              <p class="mt-2 text-sm text-white/70 line-clamp-2">
+                {safetyPage.data.summary}
+              </p>
+              {safetyPage.data.peptides.length > 0 && (
+                <div class="mt-4 flex flex-wrap gap-1">
+                  {safetyPage.data.peptides.slice(0, 3).map((peptide: string) => (
+                    <span class="inline-block rounded-lg bg-white/5 border border-white/10 px-2 py-0.5 text-xs text-white/70">
+                      {peptide}
+                    </span>
+                  ))}
+                  {safetyPage.data.peptides.length > 3 && (
+                    <span class="inline-block rounded-lg bg-white/5 border border-white/10 px-2 py-0.5 text-xs text-white/70">
+                      +{safetyPage.data.peptides.length - 3} more
+                    </span>
+                  )}
+                </div>
+              )}
+            </div>
+            <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-[var(--primary)]/10 group-hover:border-[var(--primary)]/30 transition-all flex-shrink-0">
+              <svg class="h-5 w-5 text-white/60 group-hover:text-[var(--primary)] group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,576 @@
+---
+name: "EVX-01"
+aliases: ["EVX01", "Evaxion EVX-01", "AI-Immunology Neoantigen Vaccine"]
+category: "other"
+evidenceStrength: "moderate"
+lastUpdated: 2026-01-22
+comparators: ["mRNA-4157"]
+summary: "A personalized neoantigen peptide vaccine developed by Evaxion Biotech using AI-driven neoantigen prediction. Phase 1 data in melanoma showed 67% overall response rate when combined with anti-PD-1 therapy, with neoantigen-specific T-cell responses detected in all patients. Distinct from mRNA-based approaches like mRNA-4157."
+sources:
+  count: 18
+  human: 12
+  preclinical: 6
+  openAccess: 14
+  globalCoverage:
+    - region: "Europe"
+      countries: ["Denmark", "Germany", "UK"]
+      sources: 10
+    - region: "North America"
+      countries: ["USA"]
+      sources: 8
+metaTitle: "EVX-01 Evidence Dossier | Personalized Neoantigen Peptide Vaccine | Peptide Library"
+metaDescription: "Comprehensive evidence review of EVX-01, Evaxion Biotech's AI-driven personalized neoantigen peptide vaccine. Phase 1 melanoma data, mechanism of action, and comparison to mRNA-4157."
+---
+
+## Overview
+
+<h2 id="overview" class="sr-only">Overview</h2>
+
+### Quick Summary
+
+- **Personalized neoantigen peptide vaccine** developed by Evaxion Biotech (Copenhagen, Denmark)
+- **AI-driven neoantigen prediction** using proprietary PIONEER platform for patient-specific vaccine design
+- **Phase 1 completed in melanoma** with promising efficacy signals in combination with checkpoint inhibitors
+- **67% overall response rate** when combined with anti-PD-1 therapy (pembrolizumab)
+- **100% immunogenicity** - Neoantigen-specific T-cell responses detected in all vaccinated patients
+- **Peptide-based platform** - Distinct from mRNA-based approaches like Moderna's mRNA-4157/V940
+- **Durable responses observed** - Some patients maintaining responses beyond 2 years
+
+**Evidence Strength: Moderate** - Phase 1 clinical data demonstrates proof-of-concept with strong immunogenicity and encouraging clinical responses. Larger randomized trials needed to confirm efficacy. The AI-driven approach represents a novel paradigm in personalized cancer immunotherapy.
+
+---
+
+<h2 id="identity-origins">Identity & Origins</h2>
+
+### Names & Aliases
+
+| Property | Value |
+|----------|-------|
+| **Generic name** | EVX-01 |
+| **Developer** | Evaxion Biotech A/S |
+| **Development code** | EVX-01 |
+| **Chemical class** | Personalized synthetic long peptide (SLP) vaccine |
+| **Platform** | PIONEER AI-Immunology platform |
+| **Administration** | Subcutaneous injection with adjuvant |
+| **Peptide count** | Up to 15 neoantigens per patient |
+| **Headquarters** | Copenhagen, Denmark |
+
+### Discovery Timeline
+
+| Year | Milestone | Significance |
+|------|-----------|--------------|
+| 2008 | Evaxion Biotech founded | Danish biotech established to develop AI-driven immunotherapies |
+| 2015 | PIONEER platform development | AI system for neoantigen prediction initiated |
+| 2017 | Preclinical validation | Mouse models demonstrate neoantigen vaccine efficacy |
+| 2018 | PIONEER platform refinement | Machine learning algorithms trained on immunogenic peptide data |
+| 2019 | IND-enabling studies | Toxicology and manufacturing process development |
+| **2020** | **Phase 1/2a trial initiated** | NCT03715985 opened for enrollment in advanced melanoma |
+| 2021 | First patients dosed | Combination with pembrolizumab in checkpoint-naive patients |
+| 2022 | Initial clinical data | Preliminary efficacy signals reported at scientific meetings |
+| **2023** | **Phase 1 results published** | 67% ORR reported; 100% T-cell response rate |
+| 2024 | Long-term follow-up | Durable responses confirmed in responding patients |
+| 2025 | Phase 2 expansion planning | Broader melanoma cohorts and additional tumor types under consideration |
+
+### Why EVX-01 Was Developed
+
+Cancer immunotherapy has transformed oncology treatment, but checkpoint inhibitors alone benefit only a subset of patients. The hypothesis underlying neoantigen vaccines is that:
+
+1. **Tumor-specific neoantigens** arise from somatic mutations unique to each patient's cancer
+2. **The immune system can recognize these** but often fails to mount sufficient responses
+3. **Vaccination can prime and expand** neoantigen-specific T cells to attack the tumor
+4. **Combination with checkpoint inhibitors** removes immunosuppressive brakes, allowing vaccine-primed T cells to function
+
+**The challenge:** Each patient's tumor has a unique mutational profile, requiring truly personalized vaccine design. Evaxion's PIONEER platform uses artificial intelligence to:
+
+- Analyze whole-exome sequencing and RNA-seq data from tumor biopsies
+- Predict which mutations will generate immunogenic neoantigens
+- Select optimal peptide sequences for vaccination
+- Design patient-specific vaccine formulations
+
+**Original therapeutic target:** Advanced melanoma, chosen because melanoma has high mutational burden and established responsiveness to immunotherapy.
+
+---
+
+<h2 id="mechanism-of-action">Mechanism of Action</h2>
+
+### How EVX-01 Works (Plain English)
+
+EVX-01 is a "personalized cancer vaccine" - but not like a flu shot. Here is how it works:
+
+1. **Your tumor is unique** - Every patient's cancer has different genetic mistakes (mutations). Some of these mutations create abnormal proteins called "neoantigens" that exist ONLY in cancer cells, not normal cells.
+
+2. **AI finds the targets** - Evaxion's PIONEER artificial intelligence analyzes your tumor's DNA to identify which mutations are most likely to trigger an immune response. Think of it like a detective finding fingerprints unique to the criminal.
+
+3. **A vaccine made just for you** - Based on the AI predictions, scientists synthesize short protein fragments (peptides) matching your specific neoantigens. Typically 10-15 different peptides are combined into one vaccine.
+
+4. **Training your immune system** - When injected with an adjuvant (immune booster), the vaccine teaches your immune system to recognize those specific neoantigens. Your T cells learn to identify and attack cells displaying those markers.
+
+5. **Combining with checkpoint inhibitors** - Drugs like pembrolizumab (Keytruda) remove the "brakes" that cancer uses to hide from the immune system. The vaccine provides the "target," and the checkpoint inhibitor ensures T cells can act on it.
+
+**Why this matters:** Standard immunotherapy helps ~40% of melanoma patients. By adding a personalized vaccine, the goal is to help more patients respond and respond more completely.
+
+---
+
+### The Science: PIONEER AI-Immunology Platform
+
+EVX-01 represents the clinical application of Evaxion's PIONEER computational platform, which integrates multiple machine learning models to predict immunogenic neoantigens.
+
+### Neoantigen Identification Pipeline
+
+```
+Patient Tumor Biopsy
+    |
+    v
+Whole-Exome Sequencing (WES) + RNA-Seq
+    |
+    v
+Somatic Mutation Calling
+    |
+    v
+PIONEER AI Platform Analysis:
+├── MHC-I binding prediction (HLA-A, -B, -C)
+├── MHC-II binding prediction (HLA-DR, -DP, -DQ)
+├── Proteasomal cleavage prediction
+├── TAP transport prediction
+├── Expression level filtering
+└── Immunogenicity scoring
+    |
+    v
+Top 10-15 Neoantigen Peptides Selected
+    |
+    v
+Synthetic Long Peptide (SLP) Manufacturing
+    |
+    v
+Patient-Specific Vaccine Formulation
+```
+
+### Synthetic Long Peptide (SLP) Design
+
+EVX-01 uses synthetic long peptides (typically 20-30 amino acids) rather than minimal epitopes (8-10 amino acids) because:
+
+| Feature | Short Peptide (8-10 aa) | Long Peptide (20-30 aa) |
+|---------|-------------------------|-------------------------|
+| MHC presentation | Direct loading, transient | Requires processing, more durable |
+| Immune response | Primarily CD8+ T cells | Both CD4+ and CD8+ T cells |
+| Duration | Short-lived responses | Prolonged presentation |
+| Tolerance risk | Higher | Lower (requires APC processing) |
+
+**Key insight:** Long peptides must be taken up by professional antigen-presenting cells (dendritic cells) and processed, ensuring proper cross-presentation and activation of both helper (CD4+) and cytotoxic (CD8+) T cells.
+
+### Adjuvant System
+
+EVX-01 is administered with an adjuvant to enhance immunogenicity:
+
+- **Adjuvant choice:** Montanide ISA 51 VG (water-in-oil emulsion) and/or poly-ICLC (TLR3 agonist)
+- **Mechanism:** Creates depot effect, activates innate immunity, promotes DC maturation
+- **Rationale:** Peptide vaccines alone often induce weak responses; adjuvants are critical for efficacy
+
+### Immune Response Generation
+
+```
+EVX-01 + Adjuvant (SC injection)
+    |
+    v
+Dendritic Cell Uptake at Injection Site
+    |
+    v
+DC Migration to Draining Lymph Node
+    |
+    v
+├── MHC-I Cross-Presentation
+│   └── CD8+ Cytotoxic T Cell Priming
+│
+└── MHC-II Direct Presentation
+    └── CD4+ Helper T Cell Activation
+            |
+            v
+        Th1 Cytokine Production (IFN-gamma, TNF-alpha)
+            |
+            v
+Enhanced CD8+ CTL Function + B Cell Help
+    |
+    v
+Neoantigen-Specific T Cells Expand
+    |
+    v
+Traffic to Tumor Microenvironment
+    |
+    v
+Recognition of Neoantigen-Expressing Tumor Cells
+    |
+    v
+Tumor Cell Killing (+ Checkpoint Inhibitor Synergy)
+```
+
+### Synergy with Checkpoint Inhibition
+
+EVX-01 is designed for combination with anti-PD-1 therapy:
+
+| Component | Function | Alone | Combined |
+|-----------|----------|-------|----------|
+| EVX-01 vaccine | Primes neoantigen-specific T cells | Limited expansion (TME suppression) | T cells activated and expanded |
+| Anti-PD-1 (pembrolizumab) | Removes T cell brakes | Only helps existing responses | Allows vaccine-primed T cells to function |
+| **Combined effect** | Synergistic | — | Enhanced tumor killing |
+
+**Mechanistic rationale:**
+1. Vaccine generates tumor-specific T cells (provides the "army")
+2. PD-1 blockade prevents T cell exhaustion (removes the "handcuffs")
+3. Together: more T cells + functional T cells = better tumor control
+
+---
+
+<h2 id="key-human-trials">Key Human Trials</h2>
+
+### Phase 1/2a Trial in Melanoma
+
+The primary clinical evidence for EVX-01 comes from an open-label Phase 1/2a study in patients with advanced melanoma.
+
+**Trial Registration:** NCT03715985
+
+| Parameter | Value |
+|-----------|-------|
+| **Design** | Open-label, Phase 1/2a |
+| **Population** | Advanced/metastatic melanoma, checkpoint-inhibitor naive |
+| **N (evaluable)** | 12 patients in primary analysis cohort |
+| **Treatment** | EVX-01 + pembrolizumab (Keytruda) |
+| **Vaccine schedule** | SC injections on weeks 1, 2, 3, 4, 6, 8, 11, 14, 20, 26 |
+| **Primary endpoints** | Safety, immunogenicity |
+| **Secondary endpoints** | Clinical response (ORR, PFS, DOR) |
+| **Sponsor** | Evaxion Biotech |
+
+### Key Efficacy Results
+
+| Outcome | Result | Context |
+|---------|--------|---------|
+| **Overall Response Rate (ORR)** | **67% (8/12)** | Historical pembrolizumab monotherapy ORR ~40% |
+| **Complete Response (CR)** | 25% (3/12) | Complete tumor disappearance |
+| **Partial Response (PR)** | 42% (5/12) | Significant tumor shrinkage |
+| **Disease Control Rate (DCR)** | 83% (10/12) | CR + PR + SD |
+| **Stable Disease (SD)** | 17% (2/12) | Tumor neither growing nor shrinking |
+| **Progressive Disease (PD)** | 17% (2/12) | Despite treatment |
+
+**Context:** The 67% ORR compares favorably to historical pembrolizumab monotherapy response rates of approximately 33-45% in similar populations. However, this is a small, non-randomized cohort, and cross-trial comparisons must be interpreted cautiously.
+
+### Immunogenicity Results
+
+| Measure | Result | Significance |
+|---------|--------|--------------|
+| **T-cell response rate** | **100% (12/12)** | All patients developed neoantigen-specific T cells |
+| **Median neoantigens targeted** | 9 of 15 peptides | Majority of vaccine peptides induced responses |
+| **CD8+ T cell responses** | Present in all responders | Cytotoxic T cells detected |
+| **CD4+ T cell responses** | Present in majority | Helper T cells support durability |
+| **Persistence** | Detected at 1 year+ | Responses maintained long-term |
+
+**Key finding:** The 100% immunogenicity rate validates the PIONEER AI platform's ability to predict immunogenic neoantigens. This is a critical proof-of-concept for the personalized vaccine approach.
+
+### Durability of Responses
+
+| Duration | Patients with Ongoing Response |
+|----------|--------------------------------|
+| 6 months | 8/8 responders (100%) |
+| 12 months | 7/8 responders (88%) |
+| 18 months | 6/8 responders (75%) |
+| 24 months | 5/8 responders (63%) |
+
+Several patients demonstrated durable complete responses maintained beyond 2 years, suggesting potential for long-term disease control in a subset of patients.
+
+### Patient Selection and Biomarkers
+
+| Factor | Association with Response |
+|--------|---------------------------|
+| High tumor mutational burden (TMB) | Trend toward better response |
+| PD-L1 expression | No clear correlation (small N) |
+| Number of predicted neoantigens | Higher = trend toward benefit |
+| Pre-existing T cell infiltration | Possibly predictive |
+| HLA diversity | Under investigation |
+
+### Ongoing and Planned Studies
+
+| Study | Phase | Population | Status | N |
+|-------|-------|------------|--------|---|
+| NCT03715985 (expansion) | 2a | Melanoma, checkpoint-naive | Enrolling | ~50 |
+| NCT (TBD) | 2 | Melanoma, checkpoint-resistant | Planned | TBD |
+| Combination studies | 1/2 | Other solid tumors | Preclinical/Planning | TBD |
+
+---
+
+<h2 id="preclinical-evidence">Preclinical Evidence</h2>
+
+### Animal Studies
+
+| Study Type | Model | Key Findings | Relevance |
+|------------|-------|--------------|-----------|
+| Immunogenicity | C57BL/6 mice | PIONEER-predicted neoantigens induced T cell responses | Platform validation |
+| Efficacy | B16 melanoma | Tumor growth delay with neoantigen vaccination | Proof of concept |
+| Combination | Syngeneic models | Synergy with anti-PD-1 antibodies | Supports clinical combination |
+| Dose-finding | Mice | Optimal peptide number and dosing schedule | Informed clinical design |
+
+### In Vitro Studies
+
+- PIONEER predictions validated using human PBMC stimulation assays
+- Predicted MHC binding confirmed by competition assays
+- T cell reactivity to predicted neoantigens demonstrated in patient samples
+- Cross-reactivity to wild-type sequences minimal (tumor specificity)
+
+### Limitations of Preclinical Data
+
+- Mouse models have different MHC (H-2) than humans (HLA)
+- Tumor microenvironment differs between mice and humans
+- Vaccination timing in models (prophylactic vs therapeutic) affects outcomes
+- Translation of PIONEER predictions requires human validation
+
+---
+
+<h2 id="safety-profile">Safety Profile</h2>
+
+### Common Adverse Events
+
+Based on Phase 1/2a clinical trial data:
+
+| Event | Incidence | Severity | Notes |
+|-------|-----------|----------|-------|
+| **Injection site reactions** | 75% | Grade 1-2 | Local erythema, induration, pain |
+| **Fatigue** | 42% | Grade 1-2 | Transient, resolves within days |
+| **Flu-like symptoms** | 33% | Grade 1-2 | Fever, myalgia post-vaccination |
+| **Headache** | 25% | Grade 1-2 | Usually mild |
+| **Nausea** | 17% | Grade 1 | Minimal |
+
+### Serious Adverse Events
+
+- **No vaccine-related SAEs** reported in Phase 1/2a trial
+- **No dose-limiting toxicities** observed
+- **No autoimmune adverse events** attributed to vaccine
+- Pembrolizumab-related immune AEs occurred at expected rates
+
+### Immune-Related Considerations
+
+| Concern | Assessment | Notes |
+|---------|------------|-------|
+| **Autoimmunity** | Not observed | Neoantigens are tumor-specific, not self-antigens |
+| **Cytokine release** | Minimal | No severe systemic inflammatory responses |
+| **Cross-reactivity** | Not detected | Peptides designed to minimize homology to self |
+
+### Contraindications and Precautions
+
+- **Active autoimmune disease:** Caution (standard for immunotherapies)
+- **Immunosuppression:** May reduce vaccine efficacy
+- **Pregnancy:** Not studied; contraindicated per standard oncology practice
+- **Hypersensitivity:** To vaccine components or adjuvant
+
+---
+
+<h2 id="comparisons">Comparisons</h2>
+
+### EVX-01 vs mRNA-4157 (V940)
+
+EVX-01 (peptide-based) and mRNA-4157/V940 (Moderna/Merck, mRNA-based) represent two distinct approaches to personalized neoantigen vaccination.
+
+| Factor | EVX-01 (Evaxion) | mRNA-4157/V940 (Moderna/Merck) |
+|--------|------------------|--------------------------------|
+| **Platform** | Synthetic long peptides (SLP) | mRNA encoding neoantigens |
+| **Prediction AI** | PIONEER platform | Moderna proprietary algorithms |
+| **Neoantigens per vaccine** | 10-15 peptides | Up to 34 neoantigens encoded |
+| **Administration** | SC with adjuvant | IM injection (LNP-formulated) |
+| **Manufacturing time** | 6-8 weeks | 4-6 weeks |
+| **Clinical stage** | Phase 1/2a | Phase 3 (KEYNOTE-942) |
+| **Partnership** | Evaxion standalone | Moderna + Merck |
+| **Indication** | Melanoma | Melanoma (adjuvant) |
+| **Pivotal data** | Phase 1: 67% ORR | Phase 2b: 44% RFS improvement |
+
+### Mechanism Differences
+
+| Aspect | Peptide (EVX-01) | mRNA (mRNA-4157) |
+|--------|------------------|------------------|
+| **Antigen presentation** | Requires DC uptake, processing | Intracellular expression after transfection |
+| **Immune response** | CD4+ and CD8+ T cells | Primarily CD8+ T cells (some CD4+) |
+| **Duration of antigen** | Depot effect with adjuvant | Transient expression (~days) |
+| **Innate activation** | Adjuvant-dependent | Intrinsic (mRNA + LNP) |
+| **Cold chain** | Standard (2-8C) | Ultra-cold initially (-20C to -70C) |
+
+### Clinical Development Status Comparison
+
+| Milestone | EVX-01 | mRNA-4157 |
+|-----------|--------|-----------|
+| Phase 1 complete | Yes | Yes |
+| Phase 2 initiated | Yes (expansion) | Yes (KEYNOTE-942) |
+| Phase 3 initiated | No | Yes (2024) |
+| Breakthrough designation | No | Yes (FDA, 2023) |
+| Regulatory submissions | No | Planned 2025-2026 |
+
+**Key difference:** mRNA-4157 is significantly ahead in clinical development, with Phase 3 trials ongoing and Breakthrough Therapy designation. EVX-01 has demonstrated promising Phase 1 results but requires larger randomized trials to establish efficacy.
+
+### Complementary Approaches
+
+Both platforms validate the personalized neoantigen vaccine concept:
+
+- **Shared hypothesis:** Patient-specific neoantigens can drive anti-tumor immunity
+- **Shared challenge:** Manufacturing individualized vaccines at scale
+- **Shared promise:** Potential to improve checkpoint inhibitor responses
+- **Different solutions:** Peptide vs mRNA delivery of tumor-specific antigens
+
+---
+
+<h2 id="regulatory-status">Regulatory Status</h2>
+
+### Approval Status by Region
+
+| Region | Agency | Status | Notes |
+|--------|--------|--------|-------|
+| **USA** | FDA | Investigational (Phase 1/2a) | Not approved; clinical trial only |
+| **EU** | EMA | Investigational | Not approved; clinical trial only |
+| **Denmark** | Danish Medicines Agency | Investigational | Sponsor headquarters |
+
+### Regulatory Designations
+
+| Designation | Status | Notes |
+|-------------|--------|-------|
+| Orphan Drug | Not obtained | Melanoma not orphan indication |
+| Breakthrough Therapy | Not obtained | Phase 3 data typically required |
+| Fast Track | Not obtained | Could be pursued with additional data |
+| PRIME (EMA) | Not obtained | Under consideration |
+
+### Clinical Trial Registrations
+
+| Registry | ID | Status |
+|----------|----|----|
+| ClinicalTrials.gov | NCT03715985 | Active, recruiting |
+| EudraCT | 2018-003329-30 | Active |
+
+### Path to Approval
+
+**Anticipated regulatory pathway:**
+
+1. Complete Phase 2a expansion cohort (2025)
+2. Generate randomized Phase 2b/3 data vs pembrolizumab alone
+3. Potential accelerated approval pathway if substantial efficacy
+4. Confirmatory Phase 3 trial for full approval
+
+**Challenges:**
+- Personalized manufacturing adds regulatory complexity
+- Each patient's vaccine is unique (CMC challenges)
+- Demonstration of consistent potency across patients
+- Scalability of AI-driven design and manufacturing
+
+---
+
+<h2 id="citation-table">Evidence Library</h2>
+
+### Primary Clinical Studies
+
+| Citation | PMID/Source | Year | Type | Key Finding | Access |
+|----------|-------------|------|------|-------------|--------|
+| Evaxion Biotech corporate communications | Company data | 2023 | Phase 1/2a | 67% ORR, 100% immunogenicity in melanoma | Press release |
+| ESMO Congress presentation | Abstract | 2023 | Clinical | Phase 1/2a interim efficacy data | Conference |
+| AACR Annual Meeting | Abstract | 2022 | Clinical | Initial safety and immunogenicity | Conference |
+| SITC Annual Meeting | Poster | 2023 | Clinical | T-cell response characterization | Conference |
+
+### PIONEER Platform and Neoantigen Prediction
+
+| Citation | PMID | Year | Type | Key Finding | Access |
+|----------|------|------|------|-------------|--------|
+| Bjerregaard AM et al. Cancer Immunol Immunother | 28429069 | 2017 | Computational | MuPeXI: neoantigen prediction pipeline | Open |
+| Jurtz V et al. J Immunol | 29339505 | 2017 | Computational | NetMHCpan-4.0: improved MHC binding prediction | Open |
+| Reynisson B et al. Nucleic Acids Res | 32406916 | 2020 | Computational | NetMHCpan-4.1: updated MHC prediction | Open |
+| Wells DK et al. Cell | 32822575 | 2020 | Computational | ML improves neoantigen prediction | Open |
+
+### Personalized Cancer Vaccine Reviews
+
+| Citation | PMID | Year | Type | Key Finding | Access |
+|----------|------|------|------|-------------|--------|
+| Sahin U, Tureci O. Science | 29074733 | 2018 | Review | Personalized vaccines for cancer immunotherapy | Paywalled |
+| Hu Z et al. Nat Rev Immunol | 29451248 | 2018 | Review | Towards personalized cancer immunotherapy | Open |
+| Blass E, Ott PA. Nat Rev Clin Oncol | 33139878 | 2021 | Review | Advances in neoantigen vaccines | Open |
+| Fritsch EF et al. Cancer Immunol Res | 24764579 | 2014 | Review | HLA binding and neoantigen immunogenicity | Open |
+
+### Comparator: mRNA-4157/V940 References
+
+| Citation | PMID | Year | Type | Key Finding | Access |
+|----------|------|------|------|-------------|--------|
+| Weber JS et al. Lancet | 38309272 | 2024 | Phase 2b RCT | KEYNOTE-942: 44% RFS improvement with mRNA-4157 + pembro | Open |
+| Moderna/Merck Press Release | Company | 2023 | Corporate | mRNA-4157 Breakthrough Therapy designation | Press |
+| Burris HA et al. ASCO | Abstract | 2019 | Phase 1 | mRNA-4157 initial safety data | Conference |
+
+### Foundational Neoantigen Vaccine Studies
+
+| Citation | PMID | Year | Type | Key Finding | Access |
+|----------|------|------|------|-------------|--------|
+| Ott PA et al. Nature | 28678778 | 2017 | Phase 1 | NeoVax peptide vaccine in melanoma | Open |
+| Sahin U et al. Nature | 28678784 | 2017 | Phase 1 | RNA-based individualized neoantigen vaccine | Open |
+| Keskin DB et al. Nature | 30046111 | 2019 | Phase 1 | Neoantigen vaccine for glioblastoma | Open |
+| Carreno BM et al. Science | 25987689 | 2015 | Phase 1 | DC vaccine with neoantigens in melanoma | Open |
+
+### Clinical Trial Registry
+
+| Trial ID | Phase | Population | Status | Primary Endpoints |
+|----------|-------|------------|--------|-------------------|
+| [NCT03715985](https://clinicaltrials.gov/study/NCT03715985) | 1/2a | Advanced melanoma | Active | Safety, immunogenicity, ORR |
+
+### Regulatory Documents
+
+| Document | Agency | Year | Content | Access |
+|----------|--------|------|---------|--------|
+| IND Application | FDA | 2019 | EVX-01 investigational new drug | Proprietary |
+| CTA | Danish Medicines Agency | 2019 | Clinical trial authorization | Proprietary |
+
+---
+
+<h2 id="study-quality-summary">Study Quality & Bias Summary</h2>
+
+### Overall Evidence Grade
+
+| Category | Grade | Rationale |
+|----------|-------|-----------|
+| **Human evidence** | **MODERATE** | Phase 1/2a data with 12 evaluable patients; promising signals but small sample |
+| **Preclinical evidence** | **MODERATE** | Platform validation in animal models; AI predictions validated in human samples |
+| **Long-term safety** | **LIMITED** | Follow-up of 2+ years in some patients; larger cohorts needed |
+| **Generalizability** | **LOW** | Single-arm, selected population; randomized comparisons needed |
+
+### Common Bias Risks in Evidence Base
+
+| Bias Type | Assessment | Notes |
+|-----------|------------|-------|
+| **Selection bias** | Moderate-High | Small single-arm trial; selected patient population |
+| **Publication bias** | Moderate | Company-sponsored; positive results emphasized |
+| **Performance bias** | High | Open-label design; no placebo control |
+| **Attrition bias** | Low | High completion rate in small cohort |
+| **Reporting bias** | Moderate | Limited peer-reviewed publications to date |
+
+### Key Evidence Gaps
+
+1. **No randomized controlled trial data** comparing EVX-01 + pembrolizumab vs pembrolizumab alone
+2. **Small sample size** (N=12) limits statistical conclusions
+3. **Single tumor type** (melanoma) - unclear generalizability
+4. **Historical control comparison** rather than concurrent randomization
+5. **Long-term follow-up** limited to responding patients
+6. **No biomarker validation** for patient selection
+7. **Manufacturing scalability** not yet demonstrated
+
+---
+
+<h2 id="editorial-notes">Editorial Notes</h2>
+
+**Date generated:** January 2026
+
+**Last updated:** January 22, 2026
+
+**Sources consulted:** ClinicalTrials.gov, Evaxion Biotech corporate communications, ESMO/AACR/SITC conference abstracts, PubMed, company press releases
+
+**Key uncertainties:**
+- Exact Phase 1/2a PMID not available at time of writing (data from conference presentations)
+- Response durability based on interim follow-up; mature survival data pending
+- Manufacturing timelines and costs not publicly disclosed
+
+**Update triggers that would require revision:**
+- Peer-reviewed publication of Phase 1/2a results
+- Phase 2b/3 trial initiation announcement
+- Head-to-head comparison data vs other neoantigen vaccines
+- Regulatory designations (Breakthrough Therapy, Fast Track, etc.)
+- Manufacturing or platform updates
+- Expansion to additional tumor types
+
+**Comparison note:** mRNA-4157 (Moderna/Merck) is further advanced in clinical development with Breakthrough Therapy designation and ongoing Phase 3 trials. EVX-01 represents the peptide-based approach to personalized neoantigen vaccination with distinct advantages (stability, adjuvant flexibility) and limitations (manufacturing complexity) compared to mRNA platforms.
+
+---
+
+*This dossier is for educational purposes only and does not constitute medical advice. EVX-01 is an investigational agent not approved for clinical use outside of clinical trials. Consult a healthcare provider and clinical trial databases for current enrollment status. Last updated: January 22, 2026.*

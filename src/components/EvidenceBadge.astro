@@ -1,0 +1,64 @@
+---
+interface Props {
+  strength: 'high' | 'moderate' | 'low' | 'very-low';
+  showLabel?: boolean;
+}
+
+const { strength, showLabel = true } = Astro.props;
+
+const config = {
+  'high': {
+    color: 'hsl(142 70% 45%)',
+    bgOpacity: '30',
+    borderOpacity: '50',
+    icon: '●●●●',
+    label: 'High Evidence',
+    description: 'Multiple high-quality human RCTs with consistent results',
+  },
+  'moderate': {
+    color: 'hsl(260 80% 65%)',
+    bgOpacity: '30',
+    borderOpacity: '50',
+    icon: '●●●○',
+    label: 'Moderate Evidence',
+    description: 'Human studies exist but with limitations or inconsistencies',
+  },
+  'low': {
+    color: 'hsl(45 90% 55%)',
+    bgOpacity: '30',
+    borderOpacity: '50',
+    icon: '●●○○',
+    label: 'Low Evidence',
+    description: 'Limited human data; primarily preclinical evidence',
+  },
+  'very-low': {
+    color: 'hsl(0 70% 55%)',
+    bgOpacity: '30',
+    borderOpacity: '50',
+    icon: '●○○○',
+    label: 'Very Low Evidence',
+    description: 'Minimal or no human data; mostly theoretical or animal studies',
+  },
+};
+
+const { color, bgOpacity, borderOpacity, icon, label, description } = config[strength];
+---
+
+<div class="group relative inline-flex items-center">
+  <span
+    class="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold border shadow-sm"
+    style={`color: ${color}; background: ${color.replace(')', ` / 0.${bgOpacity})`).replace('hsl(', 'hsla(')}; border-color: ${color.replace(')', ` / 0.${borderOpacity})`).replace('hsl(', 'hsla(')};`}
+    role="status"
+    aria-label={`Evidence strength: ${label}`}
+  >
+    <span class="font-mono text-[11px] tracking-tight drop-shadow-sm" aria-hidden="true">{icon}</span>
+    {showLabel && <span class="drop-shadow-sm">{label}</span>}
+  </span>
+
+  <!-- Tooltip -->
+  <div class="absolute left-0 top-full z-10 mt-2 hidden w-64 rounded-xl glass-card p-4 text-sm shadow-xl group-hover:block">
+    <div class="font-bold text-white mb-1">{label}</div>
+    <div class="text-white/70">{description}</div>
+    <div class="absolute -top-1.5 left-4 h-3 w-3 rotate-45 bg-white/5 border-l border-t border-white/10"></div>
+  </div>
+</div>

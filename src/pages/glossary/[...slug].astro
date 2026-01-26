@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import GlossaryLayout from '../../layouts/GlossaryLayout.astro';
+
+export async function getStaticPaths() {
+  const glossary = await getCollection('glossary');
+  return glossary.map((term) => ({
+    params: { slug: term.slug },
+    props: { term },
+  }));
+}
+
+const { term } = Astro.props;
+const { Content } = await term.render();
+---
+
+<GlossaryLayout
+  term={term.data.term}
+  definition={term.data.definition}
+  aliases={term.data.aliases}
+  relatedPeptides={term.data.relatedPeptides}
+  relatedTerms={term.data.relatedTerms}
+  category={term.data.category}
+  lastUpdated={term.data.lastUpdated}
+>
+  <Content />
+</GlossaryLayout>

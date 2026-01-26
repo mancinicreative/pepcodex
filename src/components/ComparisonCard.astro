@@ -1,0 +1,46 @@
+---
+interface Props {
+  title: string;
+  slug: string;
+  peptideA: string;
+  peptideB: string;
+  summary: string;
+}
+
+const { title, slug, peptideA, peptideB, summary } = Astro.props;
+---
+
+<a
+  href={`/compare/${slug}`}
+  class="glass-card glass-card--hover group block p-6"
+>
+  <div class="flex items-center gap-3 mb-3">
+    <span class="badge badge--primary text-sm">
+      {peptideA}
+    </span>
+    <span style="color: var(--text-medium);">vs</span>
+    <span class="badge badge--accent text-sm">
+      {peptideB}
+    </span>
+  </div>
+
+  <h3 class="text-lg font-semibold group-hover:text-primary transition-colors" style="color: var(--text-high);">
+    {title}
+  </h3>
+
+  <p class="mt-2 text-sm line-clamp-2" style="color: var(--text-medium);">
+    {summary}
+  </p>
+
+  <div class="mt-4 flex items-center text-sm font-medium text-primary group-hover:text-accent">
+    Read comparison
+    <svg
+      class="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+    </svg>
+  </div>
+</a>

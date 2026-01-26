@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="About"
+  description="About Peptide Library - our mission, team, and commitment to evidence-based peptide education."
+>
+  <article class="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+    <header class="mb-12 relative">
+      <div class="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/10 via-transparent to-transparent rounded-2xl -z-10"></div>
+      <div class="p-6">
+        <h1 class="text-4xl font-bold tracking-tight text-white">About Peptide Library</h1>
+        <p class="mt-4 text-xl text-white/80">
+          Making peptide research accessible, understandable, and trustworthy.
+        </p>
+      </div>
+    </header>
+
+    <div class="prose prose-invert prose-lg max-w-none">
+      <h2>Our Mission</h2>
+      <p>
+        Peptide Library exists because understanding peptide research shouldn't require a PhD.
+        We believe everyone deserves access to accurate, well-organized scientific information
+        to make informed decisions about their health.
+      </p>
+      <p>
+        We synthesize research from peer-reviewed journals, clinical trials, and regulatory
+        sources into comprehensive, readable dossiers. Every claim is cited. Every uncertainty
+        is acknowledged.
+      </p>
+
+      <h2>What Makes Us Different</h2>
+      <div class="not-prose my-8 grid gap-6 sm:grid-cols-2">
+        <div class="rounded-xl border border-white/10 bg-gradient-to-br from-[var(--primary)]/10 to-transparent p-6 backdrop-blur-sm">
+          <h3 class="text-lg font-semibold text-white">Citation-First</h3>
+          <p class="mt-2 text-white/70">
+            Every factual claim links to a primary source. No vague references to "studies show."
+          </p>
+        </div>
+        <div class="rounded-xl border border-white/10 bg-gradient-to-br from-cyan-500/10 to-transparent p-6 backdrop-blur-sm">
+          <h3 class="text-lg font-semibold text-white">Evidence Grading</h3>
+          <p class="mt-2 text-white/70">
+            Clear ratings help you understand the quality and strength of available evidence.
+          </p>
+        </div>
+        <div class="rounded-xl border border-white/10 bg-gradient-to-br from-emerald-500/10 to-transparent p-6 backdrop-blur-sm">
+          <h3 class="text-lg font-semibold text-white">Global Coverage</h3>
+          <p class="mt-2 text-white/70">
+            We include international research, not just US-centric sources.
+          </p>
+        </div>
+        <div class="rounded-xl border border-white/10 bg-gradient-to-br from-amber-500/10 to-transparent p-6 backdrop-blur-sm">
+          <h3 class="text-lg font-semibold text-white">No Hype</h3>
+          <p class="mt-2 text-white/70">
+            Neutral language. No miracle claims. We tell you what's known and what isn't.
+          </p>
+        </div>
+      </div>
+
+      <h2>What We Don't Do</h2>
+      <p>
+        We're explicit about our boundaries:
+      </p>
+      <ul>
+        <li>
+          <strong>We don't give medical advice.</strong> Consult a healthcare provider for
+          personal medical decisions.
+        </li>
+        <li>
+          <strong>We don't provide dosing protocols.</strong> That's between you and your doctor.
+        </li>
+        <li>
+          <strong>We don't recommend sources.</strong> We're not a purchasing guide.
+        </li>
+      </ul>
+
+      <h2>Our Standards</h2>
+      <p>
+        Read our <a href="/methodology">Methodology</a> for details on how we research,
+        our <a href="/editorial-policy">Editorial Policy</a> for our content standards,
+        and our <a href="/advertising-policy">Advertising Policy</a> for how we maintain
+        editorial independence.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Questions, corrections, or feedback? We'd love to hear from you.
+      </p>
+      <p>
+        Email: <a href="mailto:hello@peptide-library.com">hello@peptide-library.com</a>
+      </p>
+
+      <p class="mt-8 text-sm text-white/70">
+        Peptide Library launched in January 2026.
+      </p>
+    </div>
+  </article>
+</BaseLayout>

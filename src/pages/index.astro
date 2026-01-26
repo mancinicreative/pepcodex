@@ -1,0 +1,239 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SearchBar from '../components/SearchBar.astro';
+import PeptideCard from '../components/PeptideCard.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+import { getCollection } from 'astro:content';
+
+const peptides = await getCollection('peptides');
+const featuredPeptides = peptides.slice(0, 6);
+
+const categories = [
+  {
+    name: 'Metabolic',
+    slug: 'metabolic',
+    description: 'GLP-1 agonists and metabolic regulators',
+    icon: 'M',
+  },
+  {
+    name: 'Recovery',
+    slug: 'repair-recovery',
+    description: 'Healing and tissue regeneration',
+    icon: 'R',
+  },
+  {
+    name: 'Hormonal',
+    slug: 'hormonal',
+    description: 'Growth hormone secretagogues',
+    icon: 'H',
+  },
+  {
+    name: 'Longevity',
+    slug: 'longevity',
+    description: 'Anti-aging bioregulators',
+    icon: 'L',
+  },
+];
+
+const stats = [
+  { value: '45+', label: 'Peptide Dossiers', description: 'In-depth research profiles' },
+  { value: '500+', label: 'Cited Sources', description: 'Peer-reviewed papers' },
+  { value: 'Global', label: 'Research Coverage', description: 'International literature' },
+  { value: 'Weekly', label: 'Updates', description: 'Fresh insights' },
+];
+---
+
+<BaseLayout title="Evidence-Based Peptide Research">
+  <!-- Hero Section -->
+  <section class="relative py-16 md:py-20 text-center">
+    <div class="relative z-10">
+      <!-- Badge at top -->
+      <div class="badge badge--primary mb-6 backdrop-blur-sm">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/>
+        </svg>
+        <span>The Future of Bioresearch</span>
+      </div>
+
+      <!-- Large heading with gradient - Display size -->
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-glow font-display" style="color: var(--text-high);">
+        Peptide Intelligence <br/>
+        <span class="text-primary drop-shadow-[0_0_30px_rgba(139,92,246,0.6)]">Synthesized.</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-xl max-w-2xl mx-auto mb-10 leading-relaxed" style="color: var(--text-medium);">
+        Comprehensive library of bioregulators and synthetic peptides.
+        Evidence-based dossiers synthesizing peer-reviewed literature.
+      </p>
+
+      <!-- Search Box with Glow Effect -->
+      <div class="max-w-xl mx-auto relative group">
+        <!-- Outer glow -->
+        <div class="absolute -inset-1 bg-gradient-to-r from-primary to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+        <!-- Inner container with SearchBar -->
+        <div class="relative">
+          <SearchBar placeholder="Search peptides by name or condition..." size="lg" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category Cards Grid -->
+  <section class="py-12 md:py-16">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      {categories.map((cat) => (
+        <a href={`/category/${cat.slug}`} class="glass-card glass-card--hover p-6 text-center group">
+          <!-- Icon circle -->
+          <div class="w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-3 group-hover:bg-primary/20 group-hover:text-primary transition-colors" style="background: var(--surface-glass); border: 1px solid var(--border-glass);">
+            <span class="text-lg font-bold font-display">{cat.icon}</span>
+          </div>
+          <h3 class="font-semibold font-display" style="color: var(--text-high);">{cat.name}</h3>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Featured Peptides Section -->
+  {featuredPeptides.length > 0 && (
+    <section class="py-12 md:py-16">
+      <!-- Section header -->
+      <div class="flex items-center justify-between mb-8">
+        <div class="section-header mb-0">
+          <span class="section-header__bar"></span>
+          <h2 class="section-header__title">Featured Peptides</h2>
+        </div>
+        <a href="/peptides" class="btn btn-ghost btn-sm flex items-center gap-2">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+          </svg>
+          View All
+        </a>
+      </div>
+
+      <!-- Peptide cards grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {featuredPeptides.map((peptide) => (
+          <PeptideCard
+            name={peptide.data.name}
+            slug={peptide.slug}
+            category={peptide.data.category}
+            evidenceStrength={peptide.data.evidenceStrength}
+            summary={peptide.data.summary}
+            aliases={peptide.data.aliases}
+          />
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- Trust Signals / Stats -->
+  <section class="relative border-y border-white/5 bg-black/40 backdrop-blur-lg py-12">
+    <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
+      {stats.map((stat) => (
+        <div class="text-center group">
+          <div class="text-4xl font-bold group-hover:text-primary transition-colors font-display" style="color: var(--text-high);">
+            {stat.value}
+          </div>
+          <div class="mt-1 text-sm font-medium" style="color: var(--text-high);">{stat.label}</div>
+          <div class="text-xs" style="color: var(--text-low);">{stat.description}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="py-12 md:py-16">
+    <!-- Section header -->
+    <div class="section-header mb-12">
+      <span class="section-header__bar"></span>
+      <h2 class="section-header__title">How We Work</h2>
+    </div>
+
+    <div class="grid gap-8 md:grid-cols-3 pt-6">
+      <div class="relative group">
+        <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center text-white font-bold text-sm z-10" style="box-shadow: var(--shadow-glow-md);">1</div>
+        <div class="glass-card p-8 pt-10 text-center h-full">
+          <div class="w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors" style="background: var(--surface-glass); border: 1px solid var(--border-glass);">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <h4 class="text-lg font-semibold mb-3 font-display" style="color: var(--text-high);">Primary Sources</h4>
+          <p class="text-sm leading-relaxed" style="color: var(--text-medium);">
+            Every claim is backed by peer-reviewed studies, clinical trials, or regulatory documents.
+          </p>
+        </div>
+      </div>
+
+      <div class="relative group">
+        <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center text-white font-bold text-sm z-10" style="box-shadow: var(--shadow-glow-md);">2</div>
+        <div class="glass-card p-8 pt-10 text-center h-full">
+          <div class="w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors" style="background: var(--surface-glass); border: 1px solid var(--border-glass);">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h4 class="text-lg font-semibold mb-3 font-display" style="color: var(--text-high);">Global Coverage</h4>
+          <p class="text-sm leading-relaxed" style="color: var(--text-medium);">
+            We include international research, including non-English sources, to give you the full picture.
+          </p>
+        </div>
+      </div>
+
+      <div class="relative group">
+        <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center text-white font-bold text-sm z-10" style="box-shadow: var(--shadow-glow-md);">3</div>
+        <div class="glass-card p-8 pt-10 text-center h-full">
+          <div class="w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors" style="background: var(--surface-glass); border: 1px solid var(--border-glass);">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+          </div>
+          <h4 class="text-lg font-semibold mb-3 font-display" style="color: var(--text-high);">Evidence Grading</h4>
+          <p class="text-sm leading-relaxed" style="color: var(--text-medium);">
+            Clear evidence ratings help you understand the strength and quality of available research.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter CTA -->
+  <section class="py-12 md:py-16">
+    <div class="mx-auto max-w-3xl">
+      <NewsletterForm variant="full" />
+    </div>
+  </section>
+
+  <!-- Disclaimer -->
+  <section class="py-12">
+    <div class="mx-auto max-w-4xl">
+      <div class="glass-card p-6" style="border-color: hsla(190, 100%, 50%, 0.3);">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--surface-glass); border: 1px solid var(--border-glass);">
+            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-bold text-accent uppercase tracking-wider mb-2">Important Disclaimer</h3>
+            <p class="text-sm leading-relaxed" style="color: var(--text-medium);">
+              This website provides educational information only. It is not medical advice and should not be used to diagnose, treat, or prevent any condition. Always consult a qualified healthcare provider before making health decisions. We do not provide dosing, protocols, or sourcing information.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Keyboard shortcut for search (Cmd+K)
+  document.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      e.preventDefault();
+      const searchInput = document.getElementById('search-input') as HTMLInputElement;
+      searchInput?.focus();
+    }
+  });
+</script>

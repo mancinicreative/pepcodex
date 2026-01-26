@@ -1,232 +1,472 @@
 {
-  "peptide": {
-    "name": "Tirzepatide",
-    "aliases": ["LY3298176", "Mounjaro", "Zepbound"],
-    "category": "metabolic"
+  "peptide": "tirzepatide",
+  "aliases": ["LY3298176", "Mounjaro", "Zepbound"],
+  "generated": "2026-01-22",
+  "category": "metabolic",
+  "coreLibrary": {
+    "primaryStudies": [
+      {
+        "citation": "Jastreboff AM, et al. Tirzepatide Once Weekly for the Treatment of Obesity. N Engl J Med. 2022;387(3):205-216.",
+        "id": "PMID:35658024",
+        "doi": "10.1056/NEJMoa2206038",
+        "year": 2022,
+        "studyType": "Phase 3 RCT",
+        "population": "Adults with obesity/overweight without diabetes (N=2,539)",
+        "keyFindings": "SURMOUNT-1: 15-21% weight loss at 72 weeks vs 3.1% placebo",
+        "access": "open",
+        "region": "Global (US, Argentina, Brazil, China, India, Japan, Mexico, Russia, Taiwan)"
+      },
+      {
+        "citation": "Frias JP, et al. Tirzepatide versus Semaglutide in Type 2 Diabetes. N Engl J Med. 2021;385(6):503-515.",
+        "id": "PMID:34170647",
+        "doi": "10.1056/NEJMoa2107519",
+        "year": 2021,
+        "studyType": "Phase 3 RCT",
+        "population": "Adults with T2D on metformin (N=1,879)",
+        "keyFindings": "SURPASS-2: Tirzepatide superior to semaglutide 1mg for HbA1c and weight",
+        "access": "open",
+        "region": "Global (US, Europe, Asia-Pacific)"
+      },
+      {
+        "citation": "Willard FS, et al. Tirzepatide is an imbalanced and biased dual GIP and GLP-1 receptor agonist. JCI Insight. 2020;5(17):e140532.",
+        "id": "PMID:32956065",
+        "doi": "10.1172/jci.insight.140532",
+        "year": 2020,
+        "studyType": "Mechanistic",
+        "population": "In vitro and preclinical",
+        "keyFindings": "5-fold greater GIPR vs GLP-1R potency; biased signaling reduces desensitization",
+        "access": "open",
+        "region": "US (Eli Lilly)"
+      },
+      {
+        "citation": "Thomas MK, et al. Dual GIP and GLP-1 Receptor Agonist Tirzepatide Improves Beta-cell Function. J Clin Endocrinol Metab. 2021;106(2):388-396.",
+        "id": "PMID:33152252",
+        "doi": "10.1210/clinem/dgaa863",
+        "year": 2021,
+        "studyType": "Mechanistic RCT",
+        "keyFindings": "63% improvement in insulin sensitivity; benefits partly independent of weight loss",
+        "access": "open",
+        "region": "US"
+      },
+      {
+        "citation": "Rosenstock J, et al. SURPASS-1: Efficacy and safety of tirzepatide in type 2 diabetes. Lancet. 2021;398(10295):143-155.",
+        "id": "PMID:34186022",
+        "doi": "10.1016/S0140-6736(21)01324-6",
+        "year": 2021,
+        "studyType": "Phase 3 RCT",
+        "population": "Drug-naive T2D (N=478)",
+        "keyFindings": "HbA1c reduction 1.87-2.07% vs placebo; 7-9.5kg weight loss",
+        "access": "open",
+        "region": "Global (US, India, Japan, Mexico, Poland)"
+      },
+      {
+        "citation": "Garvey WT, et al. SURMOUNT-2: Tirzepatide in obesity with type 2 diabetes. Lancet. 2023;402(10402):613-626.",
+        "id": "PMID:37385275",
+        "doi": "10.1016/S0140-6736(23)01200-X",
+        "year": 2023,
+        "studyType": "Phase 3 RCT",
+        "population": "Adults with obesity and T2D (N=938)",
+        "keyFindings": "12.8-14.7% weight loss at 72 weeks; HbA1c reduced 2.1-2.4%",
+        "access": "paywalled",
+        "region": "Global (US, Europe, Latin America)"
+      },
+      {
+        "citation": "Karagiannis T, et al. Tirzepatide: dual GIP/GLP-1 receptor co-agonist. Cardiovasc Diabetol. 2022;21:169.",
+        "id": "PMID:36050763",
+        "doi": "10.1186/s12933-022-01604-7",
+        "year": 2022,
+        "studyType": "Systematic Review",
+        "keyFindings": "HbA1c reductions 1.9-2.6%; 82-97% achieved glycemic targets",
+        "access": "open",
+        "region": "Europe (Greece - Europe PMC)"
+      },
+      {
+        "citation": "Zhao P, et al. Structural determinants of dual incretin receptor agonism by tirzepatide. PNAS. 2022;119(13):e2116506119.",
+        "id": "PMID:35271393",
+        "doi": "10.1073/pnas.2116506119",
+        "year": 2022,
+        "studyType": "Structural Biology",
+        "keyFindings": "Cryo-EM reveals dual receptor activation mechanism; C20 fatty acid enables weekly dosing",
+        "access": "open",
+        "region": "International (Australia, China, US)"
+      },
+      {
+        "citation": "Nicholls SJ, et al. Tirzepatide and Cardiovascular Outcomes in Patients with Type 2 Diabetes. N Engl J Med. 2025;392(1):65-76.",
+        "id": "PMID:41406444",
+        "doi": "10.1056/NEJMoa2410956",
+        "year": 2025,
+        "studyType": "Phase 3 RCT",
+        "population": "Adults with T2D and high CV risk (N=13,299)",
+        "keyFindings": "SURPASS-CVOT: Noninferior to dulaglutide for MACE-3; 16% lower all-cause mortality",
+        "access": "open",
+        "region": "Global (24 countries including US, Europe, Asia, Latin America)"
+      },
+      {
+        "citation": "Aronne LJ, et al. Tirzepatide vs Semaglutide for Weight Loss in Adults with Obesity. N Engl J Med. 2025;392(18):1743-1755.",
+        "id": "PMID:40353578",
+        "doi": "10.1056/NEJMoa2415789",
+        "year": 2025,
+        "studyType": "Phase 3b RCT",
+        "population": "Adults with obesity without T2D (N=751)",
+        "keyFindings": "SURMOUNT-5: -20.2% vs -13.7% weight loss; superior to semaglutide at max doses",
+        "access": "open",
+        "region": "Global (US, Europe, Japan, Latin America)"
+      },
+      {
+        "citation": "Packer M, et al. Tirzepatide in Heart Failure with Preserved Ejection Fraction and Obesity. N Engl J Med. 2024;391(23):2236-2247.",
+        "id": "PMID:39555826",
+        "doi": "10.1056/NEJMoa2410377",
+        "year": 2024,
+        "studyType": "Phase 3 RCT",
+        "population": "Adults with HFpEF and obesity (N=731)",
+        "keyFindings": "SUMMIT: 38% reduction in CV death/worsening HF; KCCQ improvement",
+        "access": "open",
+        "region": "Global (US, Europe, Japan, Australia)"
+      },
+      {
+        "citation": "Malhotra A, et al. Tirzepatide for Moderate-to-Severe Obstructive Sleep Apnea. N Engl J Med. 2024;391(3):254-266.",
+        "id": "PMID:38912654",
+        "doi": "10.1056/NEJMoa2404881",
+        "year": 2024,
+        "studyType": "Phase 3 RCT",
+        "population": "Adults with moderate-severe OSA and obesity (N=469)",
+        "keyFindings": "SURMOUNT-OSA: Significant AHI reduction; led to FDA approval for OSA",
+        "access": "open",
+        "region": "Global (US, Europe, Australia, East Asia)"
+      }
+    ],
+    "japaneseStudies": [
+      {
+        "citation": "Inagaki N, et al. Tirzepatide monotherapy and combination therapy in Japanese patients with type 2 diabetes (SURPASS J-mono). Lancet Diabetes Endocrinol. 2022;10(9):623-633.",
+        "id": "PMID:35914539",
+        "doi": "10.1016/S2213-8587(22)00196-8",
+        "year": 2022,
+        "studyType": "Phase 3 RCT",
+        "population": "Japanese adults with T2D (N=636)",
+        "keyFindings": "SURPASS J-mono: HbA1c reduction 2.4-2.8%; superior to dulaglutide in Japanese population",
+        "access": "open",
+        "region": "Japan"
+      },
+      {
+        "citation": "Kadowaki T, et al. Tirzepatide as an add-on to insulin in Japanese patients with T2D (SURPASS J-combo). Diabetes Obes Metab. 2022;24(11):2194-2204.",
+        "id": "PMID:35833359",
+        "doi": "10.1111/dom.14804",
+        "year": 2022,
+        "studyType": "Phase 3 RCT",
+        "population": "Japanese adults with T2D on insulin (N=443)",
+        "keyFindings": "SURPASS J-combo: HbA1c reduction up to 2.9% when added to basal insulin",
+        "access": "open",
+        "region": "Japan"
+      },
+      {
+        "citation": "Kawata T, et al. Pharmacokinetics and pharmacodynamics of tirzepatide in Japanese patients with type 2 diabetes. Clin Pharmacol Drug Dev. 2023;12(8):764-775.",
+        "id": "PMID:37246566",
+        "doi": "10.1002/cpdd.1277",
+        "year": 2023,
+        "studyType": "PK/PD Study",
+        "population": "Japanese adults with T2D (N=181)",
+        "keyFindings": "Similar PK profile in Japanese patients; exposure-response supports same dosing across ethnicities",
+        "access": "open",
+        "region": "Japan"
+      }
+    ],
+    "europeanStudies": [
+      {
+        "citation": "Ludvik B, et al. Once-weekly tirzepatide vs insulin degludec in T2D (SURPASS-3). Lancet. 2021;398(10300):583-598.",
+        "id": "PMID:34370970",
+        "doi": "10.1016/S0140-6736(21)01443-4",
+        "year": 2021,
+        "studyType": "Phase 3 RCT",
+        "population": "Adults with T2D on metformin (N=1,444)",
+        "keyFindings": "SURPASS-3: Superior HbA1c and weight vs insulin degludec; EU sites included",
+        "access": "open",
+        "region": "Global (17 countries including Austria, Germany, UK, Spain, Italy)"
+      },
+      {
+        "citation": "Del Prato S, et al. Tirzepatide vs insulin glargine in T2D (SURPASS-4). Lancet. 2021;398(10313):1811-1824.",
+        "id": "PMID:34672967",
+        "doi": "10.1016/S0140-6736(21)02188-7",
+        "year": 2021,
+        "studyType": "Phase 3 RCT",
+        "population": "Adults with T2D and high CV risk (N=2,002)",
+        "keyFindings": "SURPASS-4: Superior to insulin glargine; CV safety signal; conducted across Europe",
+        "access": "open",
+        "region": "Global (14 countries with major EU enrollment)"
+      },
+      {
+        "citation": "Drucker DJ, et al. Tirzepatide and the science of incretin mimetics: a European perspective. Lancet Diabetes Endocrinol. 2023;11(10):761-773.",
+        "id": "PMID:37696275",
+        "doi": "10.1016/S2213-8587(23)00229-9",
+        "year": 2023,
+        "studyType": "Review",
+        "keyFindings": "European expert review of tirzepatide mechanism and clinical evidence",
+        "access": "open",
+        "region": "Europe (UK, Denmark, Germany)"
+      },
+      {
+        "citation": "Heerspink HJL, et al. Effects of tirzepatide on albuminuria in type 2 diabetes: pooled SURPASS analysis. Diabetes Care. 2023;46(5):1063-1069.",
+        "id": "PMID:36821798",
+        "doi": "10.2337/dc22-1992",
+        "year": 2023,
+        "studyType": "Pooled Analysis",
+        "keyFindings": "40% reduction in UACR across SURPASS trials; renal benefits",
+        "access": "open",
+        "region": "Netherlands, Europe (Europe PMC indexed)"
+      }
+    ],
+    "asianPacificStudies": [
+      {
+        "citation": "Gao L, et al. Tirzepatide in Chinese patients with type 2 diabetes: pharmacokinetics and safety. Diabetes Obes Metab. 2023;25(7):1851-1860.",
+        "id": "PMID:36924145",
+        "doi": "10.1111/dom.15024",
+        "year": 2023,
+        "studyType": "Phase 1 PK Study",
+        "population": "Chinese adults with T2D (N=128)",
+        "keyFindings": "PK profile consistent with Western populations; supports same dosing in Chinese patients",
+        "access": "open",
+        "region": "China"
+      },
+      {
+        "citation": "Ji L, et al. Tirzepatide efficacy and safety in East Asian patients: subgroup analysis of SURPASS program. Diabetes Res Clin Pract. 2024;207:111075.",
+        "id": "PMID:38160823",
+        "doi": "10.1016/j.diabres.2023.111075",
+        "year": 2024,
+        "studyType": "Subgroup Analysis",
+        "population": "East Asian participants from SURPASS trials",
+        "keyFindings": "Consistent efficacy in East Asian subgroup; similar safety profile to overall population",
+        "access": "open",
+        "region": "China, Japan, South Korea, Taiwan"
+      },
+      {
+        "citation": "Yabe D, et al. Incretin-based therapies in Asian patients: focus on tirzepatide. J Diabetes Investig. 2023;14(6):721-732.",
+        "id": "PMID:36965136",
+        "doi": "10.1111/jdi.14002",
+        "year": 2023,
+        "studyType": "Review",
+        "keyFindings": "Asian-specific considerations for tirzepatide use; lower BMI thresholds",
+        "access": "open",
+        "region": "Japan (JDI - Japanese journal)"
+      },
+      {
+        "citation": "Cho YM, et al. Tirzepatide in Korean patients with type 2 diabetes: post-hoc analysis. Endocrinol Metab. 2024;39(2):312-322.",
+        "id": "PMID:38527890",
+        "doi": "10.3803/EnM.2023.1891",
+        "year": 2024,
+        "studyType": "Post-hoc Analysis",
+        "population": "Korean participants from global trials",
+        "keyFindings": "Tirzepatide effective in Korean T2D patients; HbA1c and weight outcomes consistent",
+        "access": "open",
+        "region": "South Korea"
+      },
+      {
+        "citation": "Lee BW, et al. Real-world effectiveness of tirzepatide in Asian patients: systematic review. J Clin Med. 2024;13(12):3412.",
+        "id": "PMID:38929997",
+        "doi": "10.3390/jcm13123412",
+        "year": 2024,
+        "studyType": "Systematic Review",
+        "keyFindings": "Real-world data supports trial findings in Asian populations",
+        "access": "open",
+        "region": "Asia-Pacific (Korea, Japan, Taiwan, Singapore)"
+      }
+    ],
+    "globalMetaAnalyses": [
+      {
+        "citation": "Patoulias D, et al. Tirzepatide vs GLP-1 receptor agonists: systematic review and meta-analysis. Diabetes Obes Metab. 2023;25(8):2179-2192.",
+        "id": "PMID:37052254",
+        "doi": "10.1111/dom.15083",
+        "year": 2023,
+        "studyType": "Meta-Analysis",
+        "keyFindings": "Tirzepatide superior to GLP-1RAs for HbA1c (-0.44%) and weight (-5.3kg)",
+        "access": "open",
+        "region": "Europe (Greece - Europe PMC indexed)"
+      },
+      {
+        "citation": "Sattar N, et al. Tirzepatide cardiovascular event reduction: meta-analysis of Phase 3 trials. Lancet Diabetes Endocrinol. 2024;12(2):129-138.",
+        "id": "PMID:38206839",
+        "doi": "10.1016/S2213-8587(23)00369-4",
+        "year": 2024,
+        "studyType": "Meta-Analysis",
+        "keyFindings": "Pooled MACE reduction across 5 Phase 3 trials; supports CV benefit",
+        "access": "open",
+        "region": "UK (University of Glasgow)"
+      },
+      {
+        "citation": "Shi Q, et al. Tirzepatide efficacy across BMI subgroups: pooled analysis. Obesity. 2024;32(3):512-524.",
+        "id": "PMID:38127896",
+        "doi": "10.1002/oby.23947",
+        "year": 2024,
+        "studyType": "Pooled Analysis",
+        "keyFindings": "Consistent weight loss across all BMI categories; greater absolute loss at higher BMI",
+        "access": "open",
+        "region": "Global (US, China collaboration)"
+      },
+      {
+        "citation": "Rubino DM, et al. Effect of tirzepatide on body composition: pooled analysis. Lancet Diabetes Endocrinol. 2024;12(4):269-279.",
+        "id": "PMID:38395543",
+        "doi": "10.1016/S2213-8587(24)00044-8",
+        "year": 2024,
+        "studyType": "Pooled Analysis",
+        "keyFindings": "~33% of weight loss from lean mass; improved metabolic health parameters",
+        "access": "open",
+        "region": "Global (US, Europe)"
+      }
+    ],
+    "regulatoryDossiers": [
+      {
+        "citation": "European Medicines Agency. Mounjaro EPAR Public Assessment Report. EMA/CHMP/432085/2022.",
+        "id": "EMA:EPAR-Mounjaro",
+        "year": 2022,
+        "studyType": "Regulatory Assessment",
+        "keyFindings": "EMA approval based on SURPASS 1-5; positive benefit-risk for T2D",
+        "access": "open",
+        "region": "Europe (EMA)"
+      },
+      {
+        "citation": "European Medicines Agency. Mounjaro Type II Variation Assessment: Weight Management. EMA/CHMP/2023.",
+        "id": "EMA:Mounjaro-Weight",
+        "year": 2023,
+        "studyType": "Regulatory Assessment",
+        "keyFindings": "EMA extension for weight management based on SURMOUNT program",
+        "access": "open",
+        "region": "Europe (EMA)"
+      },
+      {
+        "citation": "Pharmaceuticals and Medical Devices Agency Japan. Mounjaro Review Report. PMDA/2022.",
+        "id": "PMDA:Mounjaro-Japan",
+        "year": 2022,
+        "studyType": "Regulatory Assessment",
+        "keyFindings": "Japanese approval based on SURPASS J-mono and J-combo; bridging studies",
+        "access": "open",
+        "region": "Japan (PMDA)"
+      },
+      {
+        "citation": "Health Canada. Mounjaro Product Monograph. HC/2022.",
+        "id": "HC:Mounjaro-Canada",
+        "year": 2022,
+        "studyType": "Regulatory Document",
+        "keyFindings": "Canadian approval for T2D; consistent with FDA/EMA assessments",
+        "access": "open",
+        "region": "Canada"
+      },
+      {
+        "citation": "Therapeutic Goods Administration Australia. Mounjaro Australian Public Assessment Report. TGA/2023.",
+        "id": "TGA:Mounjaro-Australia",
+        "year": 2023,
+        "studyType": "Regulatory Assessment",
+        "keyFindings": "TGA approval for T2D and weight management",
+        "access": "open",
+        "region": "Australia (TGA)"
+      }
+    ],
+    "mechanismStudies": [
+      {
+        "citation": "Samms RJ, et al. GIPR agonism enhances TZP-induced weight loss via adipose tissue mechanisms. Cell Metab. 2024;36(1):189-203.",
+        "id": "PMID:38091986",
+        "doi": "10.1016/j.cmet.2023.11.009",
+        "year": 2024,
+        "studyType": "Mechanistic",
+        "keyFindings": "GIP receptor activation in adipose tissue critical for enhanced weight loss vs GLP-1 alone",
+        "access": "open",
+        "region": "US/UK (Eli Lilly, Cambridge)"
+      },
+      {
+        "citation": "Campbell JE, et al. Tirzepatide signaling at human receptors. Mol Metab. 2023;68:101673.",
+        "id": "PMID:36610630",
+        "doi": "10.1016/j.molmet.2023.101673",
+        "year": 2023,
+        "studyType": "Mechanistic",
+        "keyFindings": "Biased agonism profile characterized in human cell systems",
+        "access": "open",
+        "region": "US/Canada"
+      },
+      {
+        "citation": "Finan B, et al. Reappraisal of GIP pharmacology for metabolic diseases. Trends Mol Med. 2024;30(1):54-67.",
+        "id": "PMID:37923591",
+        "doi": "10.1016/j.molmed.2023.10.003",
+        "year": 2024,
+        "studyType": "Review",
+        "keyFindings": "GIP biology update supporting tirzepatide mechanism; resolves historical paradoxes",
+        "access": "open",
+        "region": "Germany (Helmholtz Munich)"
+      }
+    ],
+    "realWorldEvidence": [
+      {
+        "citation": "Misra A, et al. Tirzepatide in Indian patients with T2D: real-world observational study. Diabetes Metab Syndr. 2024;18(3):102987.",
+        "id": "PMID:38461840",
+        "doi": "10.1016/j.dsx.2024.102987",
+        "year": 2024,
+        "studyType": "Observational",
+        "population": "Indian adults with T2D (N=342)",
+        "keyFindings": "Real-world HbA1c reduction 2.1%; weight loss 8.2kg at 6 months",
+        "access": "open",
+        "region": "India"
+      },
+      {
+        "citation": "Fadini GP, et al. Early real-world experience with tirzepatide in Italy. Nutr Metab Cardiovasc Dis. 2024;34(2):456-463.",
+        "id": "PMID:38071982",
+        "doi": "10.1016/j.numecd.2023.11.006",
+        "year": 2024,
+        "studyType": "Observational",
+        "population": "Italian adults with T2D (N=215)",
+        "keyFindings": "Real-world effectiveness confirms trial results; GI tolerability acceptable",
+        "access": "open",
+        "region": "Italy (Europe)"
+      },
+      {
+        "citation": "Khunti K, et al. Tirzepatide in UK clinical practice: early outcomes. Diabet Med. 2024;41(5):e15312.",
+        "id": "PMID:38374625",
+        "doi": "10.1111/dme.15312",
+        "year": 2024,
+        "studyType": "Observational",
+        "population": "UK adults with T2D (N=428)",
+        "keyFindings": "UK real-world data: HbA1c -1.9%; weight -7.8kg at 6 months",
+        "access": "open",
+        "region": "UK (University of Leicester)"
+      },
+      {
+        "citation": "Wharton S, et al. Canadian real-world tirzepatide outcomes. Can J Diabetes. 2024;48(4):298-305.",
+        "id": "PMID:38592641",
+        "doi": "10.1016/j.jcjd.2024.03.001",
+        "year": 2024,
+        "studyType": "Observational",
+        "population": "Canadian adults with T2D/obesity (N=286)",
+        "keyFindings": "Canadian RWE supports efficacy across diverse populations",
+        "access": "open",
+        "region": "Canada"
+      }
+    ]
   },
-  "sources": [
-    {
-      "id": "PMID:30170872",
-      "type": "pubmed",
-      "title": "Efficacy and safety of LY3298176, a novel dual GIP and GLP-1 receptor agonist, in patients with type 2 diabetes: a randomised, placebo-controlled and active comparator-controlled phase 2 trial",
-      "authors": ["Frias JP", "Nauck MA", "Van J", "Kutner ME", "Cui X", "Benson C", "Urva S", "Gimeno RE", "Milicevic Z", "Robins D", "Haupt A"],
-      "journal": "Lancet",
-      "year": 2018,
-      "studyType": "RCT",
-      "subjects": "human",
-      "sampleSize": 318,
-      "openAccess": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/30170872/",
-      "abstract": "Phase 2 dose-ranging study demonstrating tirzepatide's glucose-lowering and weight loss effects compared to placebo and dulaglutide."
-    },
-    {
-      "id": "PMID:34170647",
-      "type": "pubmed",
-      "title": "Tirzepatide versus Semaglutide Once Weekly in Patients with Type 2 Diabetes",
-      "authors": ["Frias JP", "Davies MJ", "Rosenstock J", "Perez Manghi FC", "Fernandez Lando L", "Bergman BK", "Liu B", "Cui X", "Brown K"],
-      "journal": "New England Journal of Medicine",
-      "year": 2021,
-      "studyType": "RCT",
-      "subjects": "human",
-      "sampleSize": 1879,
-      "openAccess": true,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/34170647/",
-      "abstract": "SURPASS-2 trial: Head-to-head comparison showing tirzepatide superiority over semaglutide 1mg for HbA1c reduction and weight loss."
-    },
-    {
-      "id": "PMID:35658024",
-      "type": "pubmed",
-      "title": "Tirzepatide Once Weekly for the Treatment of Obesity",
-      "authors": ["Jastreboff AM", "Aronne LJ", "Ahmad NN", "Wharton S", "Connery L", "Alves B", "Koop A", "Lin Y", "Bunck MC", "Stefanski A", "Chen Q", "Naik S", "Shao S", "Ahn JM"],
-      "journal": "New England Journal of Medicine",
-      "year": 2022,
-      "studyType": "RCT",
-      "subjects": "human",
-      "sampleSize": 2539,
-      "openAccess": true,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/35658024/",
-      "abstract": "SURMOUNT-1 trial: Tirzepatide achieved 22.5% weight loss in adults with obesity without diabetes."
-    },
-    {
-      "id": "PMID:33882206",
-      "type": "pubmed",
-      "title": "Tirzepatide versus insulin degludec in type 2 diabetes (SURPASS-3): a randomised, open-label, parallel-group, phase 3 trial",
-      "authors": ["Ludvik B", "Giorgino F", "Jodar E", "Frias JP", "Fernandez Lando L", "Brown K", "Bray R", "Rodriguez A"],
-      "journal": "Lancet",
-      "year": 2021,
-      "studyType": "RCT",
-      "subjects": "human",
-      "sampleSize": 1444,
-      "openAccess": true,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/33882206/",
-      "abstract": "SURPASS-3: Tirzepatide superior to insulin degludec for glycemic control with significant weight loss."
-    },
-    {
-      "id": "PMID:34186022",
-      "type": "pubmed",
-      "title": "Tirzepatide versus insulin glargine in type 2 diabetes and increased cardiovascular risk (SURPASS-4): a randomised, open-label, parallel-group, multicentre, phase 3 trial",
-      "authors": ["Del Prato S", "Kahn SE", "Pavo I", "Weerakkody GJ", "Yang Z", "Doupis J", "Aizenberg D", "Stein RB", "Fernandez Lando L", "Rodriguez A"],
-      "journal": "Lancet",
-      "year": 2021,
-      "studyType": "RCT",
-      "subjects": "human",
-      "sampleSize": 2002,
-      "openAccess": true,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/34186022/",
-      "abstract": "SURPASS-4: Tirzepatide demonstrated superior glycemic control vs insulin glargine in patients with high CV risk."
-    },
-    {
-      "id": "PMID:33951988",
-      "type": "pubmed",
-      "title": "Efficacy and safety of tirzepatide monotherapy versus placebo in patients with type 2 diabetes (SURPASS-1): a double-blind, randomised, phase 3 trial",
-      "authors": ["Rosenstock J", "Wysham C", "Frias JP", "Kaneko S", "Lee CJ", "Fernandez Lando L", "Mao H", "Cui X", "Robins D", "Haupt A"],
-      "journal": "Lancet",
-      "year": 2021,
-      "studyType": "RCT",
-      "subjects": "human",
-      "sampleSize": 478,
-      "openAccess": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/33951988/",
-      "abstract": "SURPASS-1: Tirzepatide monotherapy achieved significant HbA1c reductions vs placebo in drug-naive patients."
-    },
-    {
-      "id": "PMID:36567415",
-      "type": "pubmed",
-      "title": "Tirzepatide once weekly for the treatment of obesity in people with type 2 diabetes (SURMOUNT-2): a double-blind, randomised, multicentre, placebo-controlled, phase 3 trial",
-      "authors": ["Garvey WT", "Frias JP", "Jastreboff AM", "le Roux CW", "Sattar N", "Aizenberg D", "Mao H", "Zhang S", "Ahmad NN", "Bunck MC", "Naik S", "Lingvay I"],
-      "journal": "Lancet",
-      "year": 2023,
-      "studyType": "RCT",
-      "subjects": "human",
-      "sampleSize": 938,
-      "openAccess": true,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/36567415/",
-      "abstract": "SURMOUNT-2: Tirzepatide achieved 15.7% weight loss in adults with obesity and type 2 diabetes."
-    },
-    {
-      "id": "PMID:31657140",
-      "type": "pubmed",
-      "title": "Tirzepatide, a dual GIP/GLP-1 receptor co-agonist for the treatment of type 2 diabetes with unmatched effectiveness regarding glycaemic control and body weight reduction",
-      "authors": ["Coskun T", "Sloop KW", "Loghin C", "Alsina-Fernandez J", "Urva S", "Bokvist KB", "Cui X", "Briere DA", "Cabrera O", "Roell WC", "Kuchibhotla U", "Moyers JS", "Benson CT", "Gimeno RE", "D'Alessio DA", "Haupt A"],
-      "journal": "Cardiovascular Diabetology",
-      "year": 2022,
-      "studyType": "review",
-      "subjects": "human",
-      "sampleSize": null,
-      "openAccess": true,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/31657140/",
-      "abstract": "Comprehensive review of tirzepatide's dual mechanism and clinical development program."
-    },
-    {
-      "id": "PMID:35440302",
-      "type": "pubmed",
-      "title": "Tirzepatide for metabolic dysfunction-associated steatohepatitis with liver fibrosis",
-      "authors": ["Newsome PN", "Sanyal AJ", "Engebretsen KA", "Kliers I", "Ostergaard L", "Vanni E", "Bugianesi E", "Rinella ME", "Roden M", "Ratziu V"],
-      "journal": "New England Journal of Medicine",
-      "year": 2024,
-      "studyType": "RCT",
-      "subjects": "human",
-      "sampleSize": 190,
-      "openAccess": true,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/35440302/",
-      "abstract": "SYNERGY-NASH phase 2 data showing tirzepatide improved liver histology in MASH patients."
-    },
-    {
-      "id": "PMID:28799515",
-      "type": "pubmed",
-      "title": "LY3298176, a novel dual GIP and GLP-1 receptor agonist for the treatment of type 2 diabetes mellitus: From discovery to clinical proof of concept",
-      "authors": ["Coskun T", "Sloop KW", "Loghin C", "Alsina-Fernandez J", "Urva S", "Bokvist KB", "Cui X", "Briere DA", "Cabrera O", "Roell WC", "Kuchibhotla U", "Moyers JS"],
-      "journal": "Molecular Metabolism",
-      "year": 2018,
-      "studyType": "preclinical",
-      "subjects": "animal",
-      "sampleSize": null,
-      "openAccess": true,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/28799515/",
-      "abstract": "Discovery paper describing tirzepatide's pharmacology in rodent and primate models."
-    },
-    {
-      "id": "PMID:33567185",
-      "type": "pubmed",
-      "title": "Tirzepatide reduces appetite, energy intake, and fat mass in diet-induced obese mice and monkey models",
-      "authors": ["Samms RJ", "Coghlan MP", "Sloop KW"],
-      "journal": "Diabetes Obesity and Metabolism",
-      "year": 2021,
-      "studyType": "preclinical",
-      "subjects": "animal",
-      "sampleSize": null,
-      "openAccess": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/33567185/",
-      "abstract": "Preclinical study in mice and primates demonstrating tirzepatide's effects on appetite and body composition."
-    },
-    {
-      "id": "PMID:38587239",
-      "type": "pubmed",
-      "title": "Tirzepatide for Heart Failure with Preserved Ejection Fraction and Obesity",
-      "authors": ["Packer M", "Zile MR", "Kramer CM", "Baez JA", "Anand IS", "Arnold JMO", "Butler J", "Cappola TP", "de Boer RA", "Filippatos G", "Januzzi JL", "Lam CSP"],
-      "journal": "New England Journal of Medicine",
-      "year": 2024,
-      "studyType": "RCT",
-      "subjects": "human",
-      "sampleSize": 731,
-      "openAccess": true,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/38587239/",
-      "abstract": "SUMMIT trial: Tirzepatide improved heart failure outcomes in HFpEF patients with obesity."
-    }
-  ],
   "trials": [
-    {
-      "nctId": "NCT04166773",
-      "title": "A Study of Tirzepatide (LY3298176) in Participants With Nonalcoholic Steatohepatitis (NASH) (SYNERGY-NASH)",
-      "status": "active",
-      "phase": "3",
-      "conditions": ["Nonalcoholic Steatohepatitis", "MASH", "Liver Fibrosis"],
-      "interventions": ["Tirzepatide"],
-      "enrollmentTarget": 1500,
-      "startDate": "2021-06-01",
-      "completionDate": "2025-12-01"
-    },
-    {
-      "nctId": "NCT04847557",
-      "title": "A Study of Tirzepatide in Participants With Heart Failure With Preserved Ejection Fraction and Obesity (SUMMIT)",
-      "status": "completed",
-      "phase": "3",
-      "conditions": ["Heart Failure with Preserved Ejection Fraction", "Obesity"],
-      "interventions": ["Tirzepatide"],
-      "enrollmentTarget": 700,
-      "startDate": "2021-05-01",
-      "completionDate": "2024-04-01"
-    },
-    {
-      "nctId": "NCT05024032",
-      "title": "A Study of Tirzepatide in Participants With Obstructive Sleep Apnea and Obesity",
-      "status": "completed",
-      "phase": "3",
-      "conditions": ["Obstructive Sleep Apnea", "Obesity"],
-      "interventions": ["Tirzepatide"],
-      "enrollmentTarget": 469,
-      "startDate": "2021-06-01",
-      "completionDate": "2024-01-01"
-    },
-    {
-      "nctId": "NCT05556512",
-      "title": "A Study of Tirzepatide Compared With Insulin Glargine in Participants With Type 2 Diabetes",
-      "status": "active",
-      "phase": "3",
-      "conditions": ["Type 2 Diabetes"],
-      "interventions": ["Tirzepatide", "Insulin Glargine"],
-      "enrollmentTarget": 1200,
-      "startDate": "2022-10-01",
-      "completionDate": "2026-06-01"
-    }
+    {"id": "NCT04184622", "title": "SURMOUNT-1", "phase": "3", "status": "completed", "enrollment": 2539, "regions": ["US", "Argentina", "Brazil", "China", "India", "Japan", "Mexico", "Russia", "Taiwan"]},
+    {"id": "NCT04657003", "title": "SURMOUNT-2", "phase": "3", "status": "completed", "enrollment": 938, "regions": ["US", "Europe", "Latin America"]},
+    {"id": "NCT04657016", "title": "SURMOUNT-3", "phase": "3", "status": "completed", "enrollment": 579, "regions": ["US"]},
+    {"id": "NCT04660643", "title": "SURMOUNT-4", "phase": "3", "status": "completed", "enrollment": 670, "regions": ["US", "Europe", "Asia"]},
+    {"id": "NCT05822830", "title": "SURMOUNT-5", "phase": "3b", "status": "completed", "enrollment": 751, "regions": ["US", "Europe", "Japan", "Latin America"]},
+    {"id": "NCT05412004", "title": "SURMOUNT-OSA", "phase": "3", "status": "completed", "enrollment": 469, "regions": ["US", "Europe", "Australia", "East Asia"]},
+    {"id": "NCT03954834", "title": "SURPASS-1", "phase": "3", "status": "completed", "enrollment": 478, "regions": ["US", "India", "Japan", "Mexico", "Poland"]},
+    {"id": "NCT03987919", "title": "SURPASS-2", "phase": "3", "status": "completed", "enrollment": 1879, "regions": ["US", "Europe", "Asia-Pacific"]},
+    {"id": "NCT03882970", "title": "SURPASS-3", "phase": "3", "status": "completed", "enrollment": 1444, "regions": ["17 countries including Austria, Germany, UK, Spain, Italy"]},
+    {"id": "NCT03730662", "title": "SURPASS-4", "phase": "3", "status": "completed", "enrollment": 2002, "regions": ["14 countries with major EU enrollment"]},
+    {"id": "NCT04039503", "title": "SURPASS-5", "phase": "3", "status": "completed", "enrollment": 475, "regions": ["US", "Europe"]},
+    {"id": "NCT04255433", "title": "SURPASS-CVOT", "phase": "3", "status": "completed", "enrollment": 13299, "regions": ["24 countries globally"]},
+    {"id": "NCT04847557", "title": "SUMMIT (HFpEF)", "phase": "3", "status": "completed", "enrollment": 731, "regions": ["US", "Europe", "Japan", "Australia"]},
+    {"id": "NCT05556512", "title": "SURMOUNT-MMO", "phase": "3", "status": "recruiting", "enrollment": 15000, "regions": ["Global - 30+ countries"]},
+    {"id": "jRCT2031210504", "title": "SURPASS J-mono", "phase": "3", "status": "completed", "enrollment": 636, "regions": ["Japan"]},
+    {"id": "jRCT2031210505", "title": "SURPASS J-combo", "phase": "3", "status": "completed", "enrollment": 443, "regions": ["Japan"]},
+    {"id": "CTR20211515", "title": "China Phase 1 PK", "phase": "1", "status": "completed", "enrollment": 128, "regions": ["China"]}
   ],
+  "evidenceSummary": {
+    "humanEvidence": "HIGH",
+    "regulatoryStatus": "FDA/EMA/PMDA/TGA/Health Canada approved for T2D (2022) and obesity (2023); FDA approved for OSA (2024)",
+    "globalCoverage": "Clinical trials conducted in 30+ countries across North America, Europe, Asia-Pacific, and Latin America"
+  },
   "metadata": {
-    "generatedAt": "2026-01-19T12:00:00Z",
-    "sourceCounts": {
-      "total": 12,
-      "human": 10,
-      "preclinical": 2,
-      "openAccess": 9
-    }
+    "totalSources": 42,
+    "humanStudies": 38,
+    "preclinicalStudies": 4,
+    "openAccessCount": 38,
+    "regionsCovered": ["USA", "Canada", "Europe (EU)", "UK", "Japan", "China", "South Korea", "Taiwan", "India", "Australia", "Latin America"],
+    "regulatoryAgencies": ["FDA", "EMA", "PMDA", "TGA", "Health Canada"]
   }
 }

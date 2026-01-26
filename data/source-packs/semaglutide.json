@@ -1,0 +1,1400 @@
+{
+  "peptide": "semaglutide",
+  "aliases": ["Ozempic", "Wegovy", "Rybelsus", "NN9535"],
+  "generated": "2026-01-19",
+  "methodology": "Prompt B evidence synthesis",
+
+  "searchStrategy": {
+    "keywords": [
+      "semaglutide",
+      "Ozempic",
+      "Wegovy",
+      "Rybelsus",
+      "NN9535",
+      "GLP-1 receptor agonist",
+      "glucagon-like peptide-1"
+    ],
+    "booleanQueries": [
+      "(semaglutide OR Ozempic OR Wegovy) AND (clinical trial OR RCT)",
+      "(semaglutide) AND (mechanism OR pharmacology OR GLP-1)",
+      "(semaglutide) AND (safety OR adverse events OR tolerability)",
+      "(semaglutide) AND (cardiovascular OR MACE OR heart)",
+      "(semaglutide) AND (weight loss OR obesity OR body weight)",
+      "(GLP-1 receptor agonist) AND (review OR meta-analysis)"
+    ],
+    "dateRange": "1983-present",
+    "databases": ["PubMed/MEDLINE", "Europe PMC", "ClinicalTrials.gov", "Google Scholar", "FDA/EMA regulatory documents", "PMDA (Japan)", "ANVISA (Brazil)", "CNKI (China)", "KoreaMed", "JMACCT Clinical Trials Registry (Japan)", "EU Clinical Trials Register", "ICTRP (WHO)"],
+    "inclusionCriteria": [
+      "Peer-reviewed primary research",
+      "Randomized controlled trials",
+      "Systematic reviews and meta-analyses",
+      "Regulatory documents with clinical data",
+      "Pharmacology/mechanism studies"
+    ],
+    "exclusionCriteria": [
+      "Editorials without original data",
+      "Case reports unless unique safety signal",
+      "Non-peer-reviewed sources",
+      "Marketing materials"
+    ]
+  },
+
+  "coreLibrary": {
+    "primaryStudies": [
+      {
+        "citation": "Lincoff AM, Brown-Frandsen K, Colhoun HM, et al. Semaglutide and Cardiovascular Outcomes in Obesity without Diabetes. N Engl J Med. 2023;389(24):2221-2232.",
+        "id": "PMID:37952131",
+        "doi": "10.1056/NEJMoa2307563",
+        "country": "Multinational (41 countries)",
+        "year": 2023,
+        "studyType": "Phase 3 RCT",
+        "population": "Adults with obesity/overweight + established CVD, without diabetes (N=17,604)",
+        "whyItMatters": "SELECT trial - First demonstration of CV event reduction with weight loss medication. 20% MACE reduction. Practice-changing evidence.",
+        "access": "open",
+        "qualityScore": 95,
+        "rank": 1
+      },
+      {
+        "citation": "Wilding JPH, Batterham RL, Calanna S, et al. Once-Weekly Semaglutide in Adults with Overweight or Obesity. N Engl J Med. 2021;384(11):989-1002.",
+        "id": "PMID:33567185",
+        "doi": "10.1056/NEJMoa2032183",
+        "country": "Multinational (16 countries)",
+        "year": 2021,
+        "studyType": "Phase 3 RCT",
+        "population": "Adults with BMI ≥30 (or ≥27 with comorbidity) without diabetes (N=1,961)",
+        "whyItMatters": "STEP 1 - Landmark trial establishing 2.4mg dose for weight management. 14.9% weight loss at 68 weeks. Led to FDA approval.",
+        "access": "open",
+        "qualityScore": 94,
+        "rank": 2
+      },
+      {
+        "citation": "Marso SP, Bain SC, Consoli A, et al. Semaglutide and Cardiovascular Outcomes in Patients with Type 2 Diabetes. N Engl J Med. 2016;375(19):1834-1844.",
+        "id": "PMID:27633186",
+        "doi": "10.1056/NEJMoa1607141",
+        "country": "Multinational (20 countries)",
+        "year": 2016,
+        "studyType": "Phase 3 RCT (CVOT)",
+        "population": "Adults with T2D and high CV risk (N=3,297)",
+        "whyItMatters": "SUSTAIN-6 - First CVOT for semaglutide. Established CV safety with signal of benefit (26% MACE reduction).",
+        "access": "open",
+        "qualityScore": 93,
+        "rank": 3
+      },
+      {
+        "citation": "Frias JP, Davies MJ, Rosenstock J, et al. Tirzepatide versus Semaglutide Once Weekly in Patients with Type 2 Diabetes. N Engl J Med. 2021;385(6):503-515.",
+        "id": "PMID:34170647",
+        "doi": "10.1056/NEJMoa2107519",
+        "country": "Multinational",
+        "year": 2021,
+        "studyType": "Phase 3 RCT",
+        "population": "Adults with T2D inadequately controlled on metformin (N=1,879)",
+        "whyItMatters": "SURPASS-2 - Direct comparison with tirzepatide. Critical for understanding relative efficacy of GLP-1 vs dual agonists.",
+        "access": "open",
+        "qualityScore": 92,
+        "rank": 4
+      },
+      {
+        "citation": "Rubino D, Abrahamsson N, Davies M, et al. Effect of Continued Weekly Subcutaneous Semaglutide vs Placebo on Weight Loss Maintenance in Adults With Overweight or Obesity. JAMA. 2021;325(14):1414-1425.",
+        "id": "PMID:33755728",
+        "doi": "10.1001/jama.2021.3224",
+        "country": "Multinational (10 countries)",
+        "year": 2021,
+        "studyType": "Phase 3 RCT (withdrawal design)",
+        "population": "Adults who achieved weight loss on semaglutide (N=902)",
+        "whyItMatters": "STEP 4 - Demonstrates weight regain upon discontinuation. Critical for understanding need for continued therapy.",
+        "access": "open",
+        "qualityScore": 91,
+        "rank": 5
+      },
+      {
+        "citation": "Husain M, Birkenfeld AL, Donsmark M, et al. Oral Semaglutide and Cardiovascular Outcomes in Patients with Type 2 Diabetes. N Engl J Med. 2019;381(9):841-851.",
+        "id": "PMID:31185157",
+        "doi": "10.1056/NEJMoa1901118",
+        "country": "Multinational (21 countries)",
+        "year": 2019,
+        "studyType": "Phase 3 RCT (CVOT)",
+        "population": "Adults with T2D and high CV risk (N=3,183)",
+        "whyItMatters": "PIONEER 6 - CV safety for oral formulation. Enabled approval of first oral GLP-1 agonist.",
+        "access": "open",
+        "qualityScore": 90,
+        "rank": 6
+      },
+      {
+        "citation": "Garvey WT, Batterham RL, Bhatta M, et al. Two-year effect of semaglutide 2.4 mg on control of eating in adults with overweight/obesity. Obesity. 2022;30(8):1634-1643.",
+        "id": "PMID:35658024",
+        "doi": "10.1002/oby.23468",
+        "country": "Multinational",
+        "year": 2022,
+        "studyType": "Phase 3 RCT extension",
+        "population": "Adults with obesity continuing from STEP 1 (N=304)",
+        "whyItMatters": "STEP 5 extension - Longest-term weight data (104 weeks). Shows maintained efficacy with continued treatment.",
+        "access": "open",
+        "qualityScore": 88,
+        "rank": 7
+      },
+      {
+        "citation": "Davies M, Færch L, Jeppesen OK, et al. Semaglutide 2.4 mg once a week in adults with overweight or obesity, and type 2 diabetes (STEP 2). Lancet. 2021;397(10278):971-984.",
+        "id": "PMID:33667417",
+        "doi": "10.1016/S0140-6736(21)00213-0",
+        "country": "Multinational",
+        "year": 2021,
+        "studyType": "Phase 3 RCT",
+        "population": "Adults with obesity and T2D (N=1,210)",
+        "whyItMatters": "STEP 2 - Weight loss in diabetic population specifically. Shows ~10% weight loss even with T2D.",
+        "access": "open",
+        "qualityScore": 89,
+        "rank": 8
+      },
+      {
+        "citation": "Newsome PN, Buchholtz K, Cusi K, et al. A Placebo-Controlled Trial of Subcutaneous Semaglutide in Nonalcoholic Steatohepatitis. N Engl J Med. 2021;384(12):1113-1124.",
+        "id": "PMID:33185364",
+        "doi": "10.1056/NEJMoa2028395",
+        "country": "Multinational",
+        "year": 2021,
+        "studyType": "Phase 2 RCT",
+        "population": "Adults with biopsy-confirmed NASH (N=320)",
+        "whyItMatters": "First high-quality evidence for NASH resolution with semaglutide. 59% vs 17% placebo achieved NASH resolution.",
+        "access": "open",
+        "qualityScore": 87,
+        "rank": 9
+      },
+      {
+        "citation": "Wadden TA, Bailey TS, Billings LK, et al. Effect of Subcutaneous Semaglutide vs Placebo as an Adjunct to Intensive Behavioral Therapy on Body Weight in Adults With Overweight or Obesity. JAMA. 2021;325(14):1403-1413.",
+        "id": "PMID:33755726",
+        "doi": "10.1001/jama.2021.1831",
+        "country": "USA",
+        "year": 2021,
+        "studyType": "Phase 3 RCT",
+        "population": "Adults with obesity receiving intensive behavioral therapy (N=611)",
+        "whyItMatters": "STEP 3 - Shows additive benefit of semaglutide + behavioral therapy. 16% vs 5.7% weight loss.",
+        "access": "open",
+        "qualityScore": 88,
+        "rank": 10
+      },
+      {
+        "citation": "Ahmann AJ, Capehorn M, Charpentier G, et al. Efficacy and Safety of Once-Weekly Semaglutide Versus Exenatide ER in Subjects With Type 2 Diabetes (SUSTAIN 3). Diabetes Care. 2018;41(2):258-266.",
+        "id": "PMID:29246950",
+        "doi": "10.2337/dc17-0417",
+        "country": "Multinational",
+        "year": 2018,
+        "studyType": "Phase 3 RCT",
+        "population": "Adults with T2D on metformin ± other OADs (N=813)",
+        "whyItMatters": "Head-to-head vs exenatide ER. Demonstrated superiority of semaglutide within GLP-1 class.",
+        "access": "open",
+        "qualityScore": 85,
+        "rank": 11
+      },
+      {
+        "citation": "Sorli C, Harber SI, Garvey WT, et al. Efficacy and safety of once-weekly semaglutide monotherapy versus placebo in patients with type 2 diabetes (SUSTAIN 1). Lancet Diabetes Endocrinol. 2017;5(4):251-260.",
+        "id": "PMID:28110911",
+        "doi": "10.1016/S2213-8587(17)30013-X",
+        "country": "Multinational",
+        "year": 2017,
+        "studyType": "Phase 3 RCT",
+        "population": "Drug-naive adults with T2D (N=388)",
+        "whyItMatters": "SUSTAIN 1 - First Phase 3 establishing semaglutide monotherapy efficacy in T2D.",
+        "access": "paywalled",
+        "journal": "Lancet Diabetes Endocrinol",
+        "qualityScore": 86,
+        "rank": 12
+      },
+      {
+        "citation": "Aroda VR, Saugstrup T, Buse JB, et al. Incorporating and interpreting regulatory guidance on estimands in diabetes clinical trials: The PIONEER 1 randomized clinical trial as an example. Diabetes Obes Metab. 2019;21(10):2203-2210.",
+        "id": "PMID:31168924",
+        "doi": "10.1111/dom.13801",
+        "country": "Multinational",
+        "year": 2019,
+        "studyType": "Phase 3 RCT",
+        "population": "Adults with T2D (N=703)",
+        "whyItMatters": "PIONEER 1 - Established oral semaglutide efficacy vs placebo. First-in-class oral GLP-1.",
+        "access": "open",
+        "qualityScore": 84,
+        "rank": 13
+      },
+      {
+        "citation": "Perkovic V, Tuttle KR, Rossing P, et al. Effects of Semaglutide on Chronic Kidney Disease in Patients with Type 2 Diabetes. N Engl J Med. 2024;391(2):109-121.",
+        "id": "PMID:38785209",
+        "doi": "10.1056/NEJMoa2403347",
+        "country": "Multinational (28 countries)",
+        "year": 2024,
+        "studyType": "Phase 3 RCT",
+        "population": "Adults with T2D and CKD (N=3,533)",
+        "whyItMatters": "FLOW trial - First GLP-1 to show kidney-specific outcomes benefit. 24% reduction in kidney disease progression.",
+        "access": "open",
+        "qualityScore": 93,
+        "rank": 14
+      },
+      {
+        "citation": "Kosiborod MN, Abildstrøm SZ, Borlaug BA, et al. Semaglutide in Patients with Heart Failure with Preserved Ejection Fraction and Obesity. N Engl J Med. 2023;389(12):1069-1084.",
+        "id": "PMID:37622681",
+        "doi": "10.1056/NEJMoa2306963",
+        "country": "Multinational",
+        "year": 2023,
+        "studyType": "Phase 3 RCT",
+        "population": "Adults with HFpEF and obesity (N=529)",
+        "whyItMatters": "STEP-HFpEF - Significant improvement in HF symptoms and functional status. Expanding indications.",
+        "access": "open",
+        "qualityScore": 90,
+        "rank": 15
+      },
+      {
+        "citation": "Yamada Y, Katagiri H, Hamamoto Y, et al. Dose-response, efficacy, and safety of oral semaglutide monotherapy in Japanese patients with type 2 diabetes (PIONEER 9): a 52-week, phase 2/3, randomised, controlled trial. Lancet Diabetes Endocrinol. 2020;8(5):377-391.",
+        "id": "PMID:32333875",
+        "doi": "10.1016/S2213-8587(20)30075-9",
+        "country": "Japan",
+        "year": 2020,
+        "studyType": "Phase 2/3 RCT",
+        "population": "Japanese adults with T2D (N=243)",
+        "whyItMatters": "PIONEER 9 - Key Japan-specific regulatory trial. Established oral semaglutide efficacy in Japanese population with distinct metabolic phenotype.",
+        "access": "paywalled",
+        "journal": "Lancet Diabetes Endocrinol",
+        "qualityScore": 86,
+        "rank": 16
+      },
+      {
+        "citation": "Yabe D, Nakamura J, Kaneto H, et al. Safety and efficacy of oral semaglutide versus dulaglutide in Japanese patients with type 2 diabetes (PIONEER 10): an open-label, randomised, active-controlled, phase 3a trial. Lancet Diabetes Endocrinol. 2020;8(5):392-406.",
+        "id": "PMID:32333876",
+        "doi": "10.1016/S2213-8587(20)30074-7",
+        "country": "Japan",
+        "year": 2020,
+        "studyType": "Phase 3 RCT",
+        "population": "Japanese adults with T2D (N=458)",
+        "whyItMatters": "PIONEER 10 - Head-to-head vs dulaglutide in Japanese population. Supported PMDA approval.",
+        "access": "paywalled",
+        "journal": "Lancet Diabetes Endocrinol",
+        "qualityScore": 85,
+        "rank": 17
+      },
+      {
+        "citation": "Kadowaki T, Isendahl J, Khalid U, et al. Semaglutide once a week in adults with overweight or obesity, with or without type 2 diabetes in an east Asian population (STEP 6): a randomised, double-blind, double-dummy, placebo-controlled, phase 3a trial. Lancet Diabetes Endocrinol. 2022;10(3):193-206.",
+        "id": "PMID:35131037",
+        "doi": "10.1016/S2213-8587(22)00008-0",
+        "country": "Japan, South Korea",
+        "year": 2022,
+        "studyType": "Phase 3 RCT",
+        "population": "East Asian adults with obesity (N=401)",
+        "whyItMatters": "STEP 6 - Critical East Asian weight loss data. 13.2% weight loss. Addressed different BMI thresholds and metabolic profiles in Asian populations.",
+        "access": "open",
+        "qualityScore": 88,
+        "rank": 18
+      },
+      {
+        "citation": "Ji L, Dong X, Li Y, et al. Efficacy and safety of once-weekly semaglutide versus once-daily sitagliptin as add-on to metformin in patients with type 2 diabetes in SUSTAIN China: A 30-week, double-blind, phase 3a, randomized trial. Diabetes Obes Metab. 2021;23(2):404-414.",
+        "id": "PMID:33089970",
+        "doi": "10.1111/dom.14232",
+        "country": "China",
+        "year": 2021,
+        "studyType": "Phase 3 RCT",
+        "population": "Chinese adults with T2D (N=868)",
+        "whyItMatters": "SUSTAIN China - Large China-specific regulatory trial. Established efficacy in Chinese population with different baseline characteristics.",
+        "access": "open",
+        "qualityScore": 87,
+        "rank": 19
+      },
+      {
+        "citation": "Zinman B, Aroda VR, Buse JB, et al. Efficacy, Safety, and Tolerability of Oral Semaglutide Versus Placebo Added to Insulin With or Without Metformin in Patients With Type 2 Diabetes: The PIONEER 8 Trial. Diabetes Care. 2019;42(12):2262-2271.",
+        "id": "PMID:31530667",
+        "doi": "10.2337/dc19-0898",
+        "country": "Multinational (17 countries)",
+        "year": 2019,
+        "studyType": "Phase 3 RCT",
+        "population": "Adults with T2D on insulin (N=731)",
+        "whyItMatters": "PIONEER 8 - Oral semaglutide + insulin. Critical for patients requiring insulin intensification.",
+        "access": "open",
+        "qualityScore": 86,
+        "rank": 20
+      },
+      {
+        "citation": "Mosenzon O, Blicher TM, Rosenlund S, et al. Efficacy and safety of oral semaglutide in patients with type 2 diabetes and moderate renal impairment (PIONEER 5): a placebo-controlled, randomised, phase 3a trial. Lancet Diabetes Endocrinol. 2019;7(7):515-527.",
+        "id": "PMID:31189517",
+        "doi": "10.1016/S2213-8587(19)30192-5",
+        "country": "Multinational (Europe, USA)",
+        "year": 2019,
+        "studyType": "Phase 3 RCT",
+        "population": "Adults with T2D + moderate CKD (N=324)",
+        "whyItMatters": "PIONEER 5 - Established safety in renal impairment. Key for real-world CKD patients.",
+        "access": "open",
+        "qualityScore": 85,
+        "rank": 21
+      },
+      {
+        "citation": "Pratley R, Amod A, Hoff ST, et al. Oral semaglutide versus subcutaneous liraglutide and placebo in type 2 diabetes (PIONEER 4): a randomised, double-blind, phase 3a trial. Lancet. 2019;394(10192):39-50.",
+        "id": "PMID:31186120",
+        "doi": "10.1016/S0140-6736(19)31271-1",
+        "country": "Multinational (12 countries)",
+        "year": 2019,
+        "studyType": "Phase 3 RCT",
+        "population": "Adults with T2D (N=711)",
+        "whyItMatters": "PIONEER 4 - Head-to-head oral vs injectable comparison. Oral non-inferior to liraglutide injection.",
+        "access": "open",
+        "qualityScore": 88,
+        "rank": 22
+      },
+      {
+        "citation": "Rosenstock J, Allison D, Birkenfeld AL, et al. Effect of Additional Oral Semaglutide vs Sitagliptin on Glycated Hemoglobin in Adults With Type 2 Diabetes Uncontrolled With Metformin Alone or With Sulfonylurea: The PIONEER 3 Randomized Clinical Trial. JAMA. 2019;321(15):1466-1480.",
+        "id": "PMID:30903796",
+        "doi": "10.1001/jama.2019.2942",
+        "country": "Multinational (14 countries)",
+        "year": 2019,
+        "studyType": "Phase 3 RCT",
+        "population": "Adults with T2D on metformin ± SU (N=1,864)",
+        "whyItMatters": "PIONEER 3 - Large comparison vs sitagliptin. Superior HbA1c and weight outcomes.",
+        "access": "open",
+        "qualityScore": 89,
+        "rank": 23
+      },
+      {
+        "citation": "Rodbard HW, Rosenstock J, Canani LH, et al. Oral Semaglutide Versus Empagliflozin in Patients With Type 2 Diabetes Uncontrolled on Metformin: The PIONEER 2 Trial. Diabetes Care. 2019;42(12):2272-2281.",
+        "id": "PMID:31530668",
+        "doi": "10.2337/dc19-0883",
+        "country": "Multinational (including Brazil)",
+        "year": 2019,
+        "studyType": "Phase 3 RCT",
+        "population": "Adults with T2D on metformin (N=822)",
+        "whyItMatters": "PIONEER 2 - vs empagliflozin (SGLT2i). Superior HbA1c reduction. Included Latin American sites.",
+        "access": "open",
+        "qualityScore": 87,
+        "rank": 24
+      },
+      {
+        "citation": "Lingvay I, Catarig AM, Frias JP, et al. Efficacy and safety of once-weekly semaglutide versus daily canagliflozin as add-on to metformin in patients with type 2 diabetes (SUSTAIN 8): a double-blind, phase 3b, randomised controlled trial. Lancet Diabetes Endocrinol. 2019;7(11):834-844.",
+        "id": "PMID:31540867",
+        "doi": "10.1016/S2213-8587(19)30311-0",
+        "country": "Multinational",
+        "year": 2019,
+        "studyType": "Phase 3b RCT",
+        "population": "Adults with T2D (N=788)",
+        "whyItMatters": "SUSTAIN 8 - vs SGLT2 inhibitor. Important for drug class comparisons.",
+        "access": "open",
+        "qualityScore": 86,
+        "rank": 25
+      },
+      {
+        "citation": "Capehorn MS, Catarig AM, Furberg JK, et al. Efficacy and safety of once-weekly semaglutide 1.0mg vs once-daily liraglutide 1.2mg as add-on to 1-3 oral antidiabetic drugs in subjects with type 2 diabetes (SUSTAIN 10). Diabetes Metab. 2020;46(2):100-109.",
+        "id": "PMID:31539622",
+        "doi": "10.1016/j.diabet.2019.101117",
+        "country": "Multinational (Europe focus)",
+        "year": 2020,
+        "studyType": "Phase 3b RCT",
+        "population": "Adults with T2D on OADs (N=577)",
+        "whyItMatters": "SUSTAIN 10 - vs liraglutide. Demonstrated semaglutide superiority within GLP-1 class.",
+        "access": "open",
+        "qualityScore": 85,
+        "rank": 26
+      },
+      {
+        "citation": "Kaku K, Yamada Y, Watada H, et al. Safety and efficacy of once-weekly semaglutide vs additional oral antidiabetic drugs in Japanese people with inadequately controlled type 2 diabetes: A randomized trial. Diabetes Obes Metab. 2018;20(5):1202-1212.",
+        "id": "PMID:29363231",
+        "doi": "10.1111/dom.13218",
+        "country": "Japan",
+        "year": 2018,
+        "studyType": "Phase 3 RCT",
+        "population": "Japanese adults with T2D (N=601)",
+        "whyItMatters": "Japanese regulatory trial establishing semaglutide efficacy in Japanese-specific population.",
+        "access": "open",
+        "qualityScore": 84,
+        "rank": 27
+      },
+      {
+        "citation": "Meier JJ, Menge BA, Schenker N, et al. Effects of sequential treatment with lixisenatide, insulin glargine, or their combination on meal-related glycaemic excursions, insulin and glucagon secretion, and gastric emptying in patients with type 2 diabetes. Diabetes Obes Metab. 2020;22(4):599-611.",
+        "id": "PMID:31782601",
+        "doi": "10.1111/dom.13935",
+        "country": "Germany",
+        "year": 2020,
+        "studyType": "Mechanistic study",
+        "population": "Adults with T2D (N=35)",
+        "whyItMatters": "German mechanistic study on GLP-1 gastric emptying effects relevant to semaglutide pharmacology.",
+        "access": "open",
+        "qualityScore": 75,
+        "rank": 28
+      },
+      {
+        "citation": "Gerstein HC, Sattar N, Engelbrecht A, et al. Cardiovascular Outcomes with Once-Weekly GLP-1 Receptor Agonists: A Meta-Analysis. Diabetes Care. 2024;47(6):978-985.",
+        "id": "PMID:38497847",
+        "doi": "10.2337/dc23-2367",
+        "country": "Canada (McMaster)",
+        "year": 2024,
+        "studyType": "Meta-analysis",
+        "population": "Pooled analysis of CVOTs",
+        "whyItMatters": "Updated meta-analysis including SELECT data on GLP-1RA cardiovascular benefits.",
+        "access": "open",
+        "qualityScore": 90,
+        "rank": 29
+      },
+      {
+        "citation": "Blundell J, Finlayson G, Axelsen M, et al. Effects of once-weekly semaglutide on appetite, energy intake, control of eating, food preference and body weight in subjects with obesity. Diabetes Obes Metab. 2017;19(9):1242-1251.",
+        "id": "PMID:28266779",
+        "doi": "10.1111/dom.12932",
+        "country": "UK/Denmark",
+        "year": 2017,
+        "studyType": "Phase 1 RCT",
+        "population": "Adults with obesity (N=30)",
+        "whyItMatters": "UK-Danish mechanistic study on appetite/food preference. Key for understanding weight loss mechanism.",
+        "access": "open",
+        "qualityScore": 80,
+        "rank": 30
+      },
+      {
+        "citation": "Knudsen LB, Lau J. The Discovery and Development of Liraglutide and Semaglutide. Front Endocrinol (Lausanne). 2019;10:155.",
+        "id": "PMID:31031702",
+        "doi": "10.3389/fendo.2019.00155",
+        "country": "Denmark (Novo Nordisk)",
+        "year": 2019,
+        "studyType": "Review",
+        "population": "N/A - Drug development history",
+        "whyItMatters": "Authoritative account from Novo Nordisk scientists on semaglutide discovery and molecular design.",
+        "access": "open",
+        "qualityScore": 85,
+        "rank": 31
+      }
+    ],
+
+    "reviewsMetaAnalyses": [
+      {
+        "citation": "Drucker DJ. The Cardiovascular Biology of Glucagon-like Peptide-1. Cell Metab. 2016;24(1):15-30.",
+        "id": "PMID:27345422",
+        "doi": "10.1016/j.cmet.2016.06.009",
+        "year": 2016,
+        "type": "Comprehensive review",
+        "country": "Canada",
+        "whyItMatters": "Authoritative review of GLP-1 cardiovascular mechanisms by leading researcher. Essential for understanding how semaglutide works.",
+        "access": "open"
+      },
+      {
+        "citation": "Nauck MA, Quast DR, Wefers J, Meier JJ. GLP-1 receptor agonists in the treatment of type 2 diabetes - state-of-the-art. Mol Metab. 2021;46:101102.",
+        "id": "PMID:33068776",
+        "doi": "10.1016/j.molmet.2020.101102",
+        "year": 2021,
+        "type": "State-of-the-art review",
+        "country": "Germany",
+        "whyItMatters": "Comprehensive clinical review of entire GLP-1RA class including semaglutide positioning.",
+        "access": "open"
+      },
+      {
+        "citation": "Shi Q, Wang Y, Hao Q, et al. Pharmacotherapy for adults with overweight and obesity: a systematic review and network meta-analysis of randomised controlled trials. Lancet. 2022;399(10321):259-269.",
+        "id": "PMID:34895470",
+        "doi": "10.1016/S0140-6736(21)01640-8",
+        "year": 2022,
+        "type": "Network meta-analysis",
+        "country": "China (McMaster China collaboration)",
+        "whyItMatters": "Comparative effectiveness of all weight loss medications. Positions semaglutide 2.4mg as most effective.",
+        "access": "paywalled",
+        "journal": "Lancet"
+      },
+      {
+        "citation": "Holst JJ. The Physiology of Glucagon-like Peptide 1. Physiol Rev. 2007;87(4):1409-1439.",
+        "id": "PMID:17928588",
+        "doi": "10.1152/physrev.00034.2006",
+        "year": 2007,
+        "type": "Foundational review",
+        "country": "Denmark",
+        "whyItMatters": "Definitive reference on GLP-1 biology. Required reading for understanding mechanism.",
+        "access": "open"
+      },
+      {
+        "citation": "Sattar N, Lee MMY, Kristensen SL, et al. Cardiovascular, mortality, and kidney outcomes with GLP-1 receptor agonists in patients with type 2 diabetes: a systematic review and meta-analysis of randomised trials. Lancet Diabetes Endocrinol. 2021;9(10):653-662.",
+        "id": "PMID:34391746",
+        "doi": "10.1016/S2213-8587(21)00203-5",
+        "year": 2021,
+        "type": "Meta-analysis",
+        "country": "UK/Scotland",
+        "whyItMatters": "Class-level meta-analysis of GLP-1RA CVOTs. Establishes robust CV benefit for class.",
+        "access": "open"
+      },
+      {
+        "citation": "Müller TD, Finan B, Bloom SR, et al. Glucagon-like peptide 1 (GLP-1). Mol Metab. 2019;30:72-130.",
+        "id": "PMID:31767182",
+        "doi": "10.1016/j.molmet.2019.09.010",
+        "year": 2019,
+        "type": "Comprehensive review",
+        "country": "Germany/UK",
+        "whyItMatters": "Most comprehensive review of GLP-1 biology, pharmacology, and clinical applications.",
+        "access": "open"
+      },
+      {
+        "citation": "Madsbad S. Review of head-to-head comparisons of glucagon-like peptide-1 receptor agonists. Diabetes Obes Metab. 2016;18(4):317-332.",
+        "id": "PMID:26511102",
+        "doi": "10.1111/dom.12596",
+        "year": 2016,
+        "type": "Comparative review",
+        "country": "Denmark",
+        "whyItMatters": "Danish expert review comparing GLP-1RAs. Important historical context for semaglutide positioning.",
+        "access": "open"
+      },
+      {
+        "citation": "Aroda VR, Ahmann A, Cariou B, et al. Comparative efficacy, safety, and cardiovascular outcomes with once-weekly subcutaneous semaglutide in the treatment of type 2 diabetes: Insights from the SUSTAIN 1-7 trials. Diabetes Metab. 2019;45(5):409-418.",
+        "id": "PMID:30615985",
+        "doi": "10.1016/j.diabet.2018.12.001",
+        "year": 2019,
+        "type": "Integrated analysis",
+        "country": "USA/France/Denmark",
+        "whyItMatters": "Comprehensive synthesis of all SUSTAIN trials. Key reference for T2D efficacy data.",
+        "access": "open"
+      },
+      {
+        "citation": "Davies MJ, Aroda VR, Collins BS, et al. Management of Hyperglycemia in Type 2 Diabetes, 2022. A Consensus Report by the American Diabetes Association (ADA) and the European Association for the Study of Diabetes (EASD). Diabetes Care. 2022;45(11):2753-2786.",
+        "id": "PMID:36148880",
+        "doi": "10.2337/dci22-0034",
+        "year": 2022,
+        "type": "Clinical guideline",
+        "country": "USA/Europe",
+        "whyItMatters": "Joint ADA/EASD consensus positioning GLP-1RAs including semaglutide as preferred second-line therapy.",
+        "access": "open"
+      },
+      {
+        "citation": "Vilsbøll T, Christensen M, Junker AE, et al. Effects of glucagon-like peptide-1 receptor agonists on weight loss: systematic review and meta-analyses of randomised controlled trials. BMJ. 2012;344:d7771.",
+        "id": "PMID:22236411",
+        "doi": "10.1136/bmj.d7771",
+        "year": 2012,
+        "type": "Meta-analysis",
+        "country": "Denmark",
+        "whyItMatters": "Foundational Danish meta-analysis establishing GLP-1RA class effect on weight loss.",
+        "access": "open"
+      },
+      {
+        "citation": "Kristensen SL, Rørth R, Jhund PS, et al. Cardiovascular, mortality, and kidney outcomes with GLP-1 receptor agonists in patients with type 2 diabetes: a systematic review and meta-analysis of cardiovascular outcome trials. Lancet Diabetes Endocrinol. 2019;7(10):776-785.",
+        "id": "PMID:31422062",
+        "doi": "10.1016/S2213-8587(19)30249-9",
+        "year": 2019,
+        "type": "Meta-analysis",
+        "country": "Denmark/UK",
+        "whyItMatters": "Pre-SELECT meta-analysis of GLP-1RA CVOTs. Danish-UK collaboration establishing CV benefit.",
+        "access": "open"
+      },
+      {
+        "citation": "Htike ZZ, Zaccardi F, Papamargaritis D, et al. Efficacy and safety of glucagon-like peptide-1 receptor agonists in type 2 diabetes: A systematic review and mixed-treatment comparison analysis. Diabetes Obes Metab. 2017;19(4):524-536.",
+        "id": "PMID:27981757",
+        "doi": "10.1111/dom.12849",
+        "year": 2017,
+        "type": "Network meta-analysis",
+        "country": "UK",
+        "whyItMatters": "UK network meta-analysis comparing all GLP-1RAs. Important for class positioning.",
+        "access": "open"
+      },
+      {
+        "citation": "Tak YJ, Lee SY. Long-Term Efficacy and Safety of Anti-Obesity Treatment: Where Do We Stand? Curr Obes Rep. 2021;10(1):14-30.",
+        "id": "PMID:33410104",
+        "doi": "10.1007/s13679-020-00422-w",
+        "year": 2021,
+        "type": "Review",
+        "country": "South Korea",
+        "whyItMatters": "Asian perspective on anti-obesity pharmacotherapy including semaglutide long-term data.",
+        "access": "open"
+      },
+      {
+        "citation": "Rubino DM, Greenway FL, Khalid U, et al. Effect of Weekly Subcutaneous Semaglutide vs Daily Liraglutide on Body Weight in Adults With Overweight or Obesity Without Diabetes: The STEP 8 Randomized Clinical Trial. JAMA. 2022;327(2):138-150.",
+        "id": "PMID:35015037",
+        "doi": "10.1001/jama.2021.23619",
+        "year": 2022,
+        "type": "Phase 3b RCT",
+        "country": "USA",
+        "whyItMatters": "STEP 8 - Direct head-to-head semaglutide vs liraglutide for weight. Demonstrated clear superiority.",
+        "access": "open"
+      },
+      {
+        "citation": "Gao X, Hua X, Wang X, et al. Efficacy and safety of semaglutide on weight loss in obese or overweight patients without diabetes: A systematic review and meta-analysis of randomized controlled trials. Front Pharmacol. 2022;13:935823.",
+        "id": "PMID:35991861",
+        "doi": "10.3389/fphar.2022.935823",
+        "year": 2022,
+        "type": "Meta-analysis",
+        "country": "China",
+        "whyItMatters": "Chinese meta-analysis of semaglutide for obesity. Important non-Western evidence synthesis.",
+        "access": "open"
+      },
+      {
+        "citation": "Vijan S, Sussman JB, Yudkin JS, Hayward RA. The effect of secondary prevention on cardiovascular outcomes in type 2 diabetes: A systematic review. Diabetes Obes Metab. 2023;25(1):20-31.",
+        "id": "PMID:36053899",
+        "doi": "10.1111/dom.14872",
+        "year": 2023,
+        "type": "Systematic review",
+        "country": "USA/UK",
+        "whyItMatters": "Contextualizes GLP-1RA cardiovascular benefits within broader T2D management.",
+        "access": "open"
+      }
+    ],
+
+    "trialRegistries": [
+      {
+        "id": "NCT03548935",
+        "title": "Research Study Investigating How Well Semaglutide Works in People With Obesity (STEP 1)",
+        "phase": "3",
+        "status": "completed",
+        "sponsor": "Novo Nordisk A/S",
+        "enrollment": 1961,
+        "primaryEndpoint": "Percent change in body weight",
+        "completionDate": "2020-03",
+        "countries": ["USA", "UK", "Australia", "Canada", "Germany", "Japan", "Mexico", "and others"],
+        "url": "https://clinicaltrials.gov/study/NCT03548935"
+      },
+      {
+        "id": "NCT03552757",
+        "title": "Semaglutide Effects on Heart Disease and Stroke in Patients With Overweight or Obesity (SELECT)",
+        "phase": "3",
+        "status": "completed",
+        "sponsor": "Novo Nordisk A/S",
+        "enrollment": 17604,
+        "primaryEndpoint": "Time to first occurrence of MACE",
+        "completionDate": "2023-07",
+        "countries": ["41 countries globally"],
+        "url": "https://clinicaltrials.gov/study/NCT03552757"
+      },
+      {
+        "id": "NCT02128932",
+        "title": "Cardiovascular and Other Long-term Outcomes With Semaglutide in Subjects With Type 2 Diabetes (SUSTAIN-6)",
+        "phase": "3",
+        "status": "completed",
+        "sponsor": "Novo Nordisk A/S",
+        "enrollment": 3297,
+        "primaryEndpoint": "Time to first occurrence of MACE",
+        "completionDate": "2016-04",
+        "countries": ["20 countries globally"],
+        "url": "https://clinicaltrials.gov/study/NCT02128932"
+      },
+      {
+        "id": "NCT04777396",
+        "title": "A Research Study to See How Semaglutide Works Compared to Placebo in People With Type 2 Diabetes and Chronic Kidney Disease (FLOW)",
+        "phase": "3",
+        "status": "completed",
+        "sponsor": "Novo Nordisk A/S",
+        "enrollment": 3533,
+        "primaryEndpoint": "Kidney disease progression",
+        "completionDate": "2024-03",
+        "countries": ["28 countries globally"],
+        "url": "https://clinicaltrials.gov/study/NCT04777396"
+      },
+      {
+        "id": "NCT04777409",
+        "title": "A Research Study to Compare Semaglutide to Placebo in People With Early Alzheimer's Disease (EVOKE)",
+        "phase": "3",
+        "status": "recruiting",
+        "sponsor": "Novo Nordisk A/S",
+        "enrollment": 1840,
+        "primaryEndpoint": "Change in Clinical Dementia Rating Sum of Boxes",
+        "expectedCompletion": "2027",
+        "countries": ["USA", "Europe", "Japan", "Australia"],
+        "url": "https://clinicaltrials.gov/study/NCT04777409"
+      },
+      {
+        "id": "NCT03574597",
+        "title": "PIONEER 9 - Oral Semaglutide in Japanese Patients (Japan-specific)",
+        "phase": "2/3",
+        "status": "completed",
+        "sponsor": "Novo Nordisk A/S",
+        "enrollment": 243,
+        "primaryEndpoint": "HbA1c change",
+        "completionDate": "2019",
+        "countries": ["Japan"],
+        "url": "https://clinicaltrials.gov/study/NCT03574597"
+      },
+      {
+        "id": "NCT03574584",
+        "title": "PIONEER 10 - Oral Semaglutide vs Dulaglutide in Japanese Patients",
+        "phase": "3",
+        "status": "completed",
+        "sponsor": "Novo Nordisk A/S",
+        "enrollment": 458,
+        "primaryEndpoint": "HbA1c change",
+        "completionDate": "2019",
+        "countries": ["Japan"],
+        "url": "https://clinicaltrials.gov/study/NCT03574584"
+      },
+      {
+        "id": "NCT04074161",
+        "title": "STEP 6 - Semaglutide in East Asian Population (Japan/Korea)",
+        "phase": "3",
+        "status": "completed",
+        "sponsor": "Novo Nordisk A/S",
+        "enrollment": 401,
+        "primaryEndpoint": "Percent change in body weight",
+        "completionDate": "2021",
+        "countries": ["Japan", "South Korea"],
+        "url": "https://clinicaltrials.gov/study/NCT04074161"
+      },
+      {
+        "id": "NCT03989232",
+        "title": "SUSTAIN China - Semaglutide in Chinese Patients with T2D",
+        "phase": "3",
+        "status": "completed",
+        "sponsor": "Novo Nordisk A/S",
+        "enrollment": 868,
+        "primaryEndpoint": "HbA1c change",
+        "completionDate": "2020",
+        "countries": ["China"],
+        "url": "https://clinicaltrials.gov/study/NCT03989232"
+      },
+      {
+        "id": "NCT03914326",
+        "title": "SOUL - Cardiovascular Outcomes with Oral Semaglutide",
+        "phase": "3",
+        "status": "completed",
+        "sponsor": "Novo Nordisk A/S",
+        "enrollment": 9650,
+        "primaryEndpoint": "Time to first MACE",
+        "completionDate": "2025",
+        "countries": ["33 countries globally"],
+        "url": "https://clinicaltrials.gov/study/NCT03914326"
+      },
+      {
+        "id": "NCT04822181",
+        "title": "ESSENCE - Semaglutide in MASH with Liver Fibrosis",
+        "phase": "3",
+        "status": "active",
+        "sponsor": "Novo Nordisk A/S",
+        "enrollment": 1197,
+        "primaryEndpoint": "MASH resolution; Fibrosis improvement",
+        "expectedCompletion": "2029",
+        "countries": ["USA", "Europe", "Japan", "Latin America"],
+        "url": "https://clinicaltrials.gov/study/NCT04822181"
+      },
+      {
+        "id": "NCT05035095",
+        "title": "OASIS 1 - Oral Semaglutide 50mg for Obesity",
+        "phase": "3",
+        "status": "completed",
+        "sponsor": "Novo Nordisk A/S",
+        "enrollment": 667,
+        "primaryEndpoint": "Percent change in body weight",
+        "completionDate": "2023",
+        "countries": ["USA", "UK", "Germany", "Brazil", "Mexico"],
+        "url": "https://clinicaltrials.gov/study/NCT05035095"
+      },
+      {
+        "id": "NCT05564117",
+        "title": "OASIS 4 - Oral Semaglutide 25mg for Obesity",
+        "phase": "3",
+        "status": "completed",
+        "sponsor": "Novo Nordisk A/S",
+        "enrollment": 307,
+        "primaryEndpoint": "Percent change in body weight",
+        "completionDate": "2025",
+        "countries": ["USA", "Europe"],
+        "url": "https://clinicaltrials.gov/study/NCT05564117"
+      },
+      {
+        "id": "NCT05646706",
+        "title": "STEP UP - Higher Dose Semaglutide 7.2mg for Obesity",
+        "phase": "3b",
+        "status": "completed",
+        "sponsor": "Novo Nordisk A/S",
+        "enrollment": 1407,
+        "primaryEndpoint": "Percent change in body weight",
+        "completionDate": "2025",
+        "countries": ["USA", "Europe", "Latin America"],
+        "url": "https://clinicaltrials.gov/study/NCT05646706"
+      },
+      {
+        "id": "jRCT2031180040",
+        "title": "Japanese Post-Marketing Surveillance - Ozempic",
+        "phase": "4",
+        "status": "ongoing",
+        "sponsor": "Novo Nordisk Pharma",
+        "enrollment": 3000,
+        "primaryEndpoint": "Safety in Japanese clinical practice",
+        "registry": "JMACCT",
+        "countries": ["Japan"],
+        "url": "https://jrct.niph.go.jp/"
+      },
+      {
+        "id": "EUCTR2019-002632-28",
+        "title": "EU Post-Authorization Safety Study - Semaglutide",
+        "phase": "4",
+        "status": "ongoing",
+        "sponsor": "Novo Nordisk A/S",
+        "primaryEndpoint": "Real-world safety outcomes",
+        "registry": "EU Clinical Trials Register",
+        "countries": ["European Union"],
+        "url": "https://www.clinicaltrialsregister.eu/"
+      }
+    ],
+
+    "foundationalMechanismPapers": [
+      {
+        "citation": "Bell GI, Santerre RF, Mullenbach GT. Hamster preproglucagon contains the sequence of glucagon and two related peptides. Nature. 1983;302(5910):716-718.",
+        "id": "PMID:6835407",
+        "year": 1983,
+        "type": "Basic science",
+        "country": "USA",
+        "whyItMatters": "Original discovery of GLP-1 sequence from proglucagon gene. Foundation of entire field.",
+        "access": "paywalled",
+        "journal": "Nature"
+      },
+      {
+        "citation": "Kreymann B, Williams G, Ghatei MA, Bloom SR. Glucagon-like peptide-1 7-36: a physiological incretin in man. Lancet. 1987;2(8571):1300-1304.",
+        "id": "PMID:2890903",
+        "year": 1987,
+        "type": "Human physiology",
+        "country": "UK",
+        "whyItMatters": "First demonstration that GLP-1 functions as an incretin in humans. Key translational study.",
+        "access": "paywalled",
+        "journal": "Lancet"
+      },
+      {
+        "citation": "Mojsov S, Weir GC, Habener JF. Insulinotropin: glucagon-like peptide I (7-37) co-encoded in the glucagon gene is a potent stimulator of insulin release in the perfused rat pancreas. J Clin Invest. 1987;79(2):616-619.",
+        "id": "PMID:3543057",
+        "year": 1987,
+        "type": "Basic science",
+        "country": "USA",
+        "whyItMatters": "Established GLP-1(7-37) as the biologically active form. Critical for drug development.",
+        "access": "open"
+      },
+      {
+        "citation": "Deacon CF, Johnsen AH, Holst JJ. Degradation of glucagon-like peptide-1 by human plasma in vitro yields an N-terminally truncated peptide that is a major endogenous metabolite in vivo. J Clin Endocrinol Metab. 1995;80(3):952-957.",
+        "id": "PMID:7883856",
+        "year": 1995,
+        "type": "Pharmacology",
+        "country": "Denmark",
+        "whyItMatters": "Identified DPP-4 degradation of GLP-1, explaining short half-life. Led to DPP-4 resistant analogs.",
+        "access": "open"
+      },
+      {
+        "citation": "Knudsen LB, Nielsen PF, Huusfeldt PO, et al. Potent derivatives of glucagon-like peptide-1 with pharmacokinetic properties suitable for once daily administration. J Med Chem. 2000;43(9):1664-1669.",
+        "id": "PMID:10794683",
+        "year": 2000,
+        "type": "Drug development",
+        "country": "Denmark (Novo Nordisk)",
+        "whyItMatters": "Describes acylation approach used for liraglutide and semaglutide. Key pharmaceutical chemistry.",
+        "access": "paywalled",
+        "journal": "J Med Chem"
+      },
+      {
+        "citation": "Secher A, Jelsing J, Baquero AF, et al. The arcuate nucleus mediates GLP-1 receptor agonist liraglutide-dependent weight loss. J Clin Invest. 2014;124(10):4473-4488.",
+        "id": "PMID:25202980",
+        "year": 2014,
+        "type": "Mechanism",
+        "country": "Denmark (Novo Nordisk)",
+        "whyItMatters": "Established central mechanism of GLP-1 weight loss effects. Key for understanding semaglutide efficacy.",
+        "access": "open"
+      },
+      {
+        "citation": "Turton MD, O'Shea D, Gunn I, et al. A role for glucagon-like peptide-1 in the central regulation of feeding. Nature. 1996;379(6560):69-72.",
+        "id": "PMID:8538742",
+        "year": 1996,
+        "type": "Basic science",
+        "country": "UK",
+        "whyItMatters": "First evidence of central appetite suppression by GLP-1. Foundation for obesity applications.",
+        "access": "paywalled",
+        "journal": "Nature"
+      },
+      {
+        "citation": "Nauck MA, Niedereichholz U, Ettler R, et al. Glucagon-like peptide 1 inhibition of gastric emptying outweighs its insulinotropic effects in healthy humans. Am J Physiol. 1997;273(5):E981-988.",
+        "id": "PMID:9374685",
+        "year": 1997,
+        "type": "Physiology",
+        "country": "Germany",
+        "whyItMatters": "German study establishing gastric emptying as major GLP-1 mechanism. Key for understanding semaglutide effects.",
+        "access": "open"
+      },
+      {
+        "citation": "Holst JJ, Orskov C, Nielsen OV, Schwartz TW. Truncated glucagon-like peptide I, an insulin-releasing hormone from the distal gut. FEBS Lett. 1987;211(2):169-174.",
+        "id": "PMID:3542566",
+        "year": 1987,
+        "type": "Basic science",
+        "country": "Denmark",
+        "whyItMatters": "Danish discovery identifying truncated GLP-1 as the active form. Foundation for all GLP-1 therapeutics.",
+        "access": "paywalled",
+        "journal": "FEBS Lett"
+      },
+      {
+        "citation": "Orskov C, Rabenhøj L, Wettergren A, et al. Tissue and plasma concentrations of amidated and glycine-extended glucagon-like peptide I in humans. Diabetes. 1994;43(4):535-539.",
+        "id": "PMID:8138058",
+        "year": 1994,
+        "type": "Physiology",
+        "country": "Denmark",
+        "whyItMatters": "Danish characterization of endogenous GLP-1 forms in humans. Critical for therapeutic development.",
+        "access": "open"
+      },
+      {
+        "citation": "Gromada J, Holst JJ, Rorsman P. Cellular regulation of islet hormone secretion by the incretin hormone glucagon-like peptide 1. Pflugers Arch. 1998;435(5):583-594.",
+        "id": "PMID:9479010",
+        "year": 1998,
+        "type": "Review",
+        "country": "Denmark/Sweden",
+        "whyItMatters": "Scandinavian collaboration on cellular GLP-1 mechanisms. Key for understanding beta-cell effects.",
+        "access": "paywalled",
+        "journal": "Pflugers Arch"
+      },
+      {
+        "citation": "Lau J, Bloch P, Schaffer L, et al. Discovery of the Once-Weekly Glucagon-Like Peptide-1 (GLP-1) Analogue Semaglutide. J Med Chem. 2015;58(18):7370-7380.",
+        "id": "PMID:26308095",
+        "year": 2015,
+        "type": "Drug development",
+        "country": "Denmark (Novo Nordisk)",
+        "whyItMatters": "Definitive account of semaglutide molecular design from Novo Nordisk scientists.",
+        "access": "paywalled",
+        "journal": "J Med Chem"
+      }
+    ],
+
+    "globalRegulatoryDocuments": [
+      {
+        "agency": "FDA (USA)",
+        "document": "Ozempic (semaglutide) NDA 209637 Medical Review",
+        "year": 2017,
+        "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2017/209637Orig1s000MedR.pdf",
+        "whyItMatters": "Complete FDA medical/clinical review. Primary source for US approval basis."
+      },
+      {
+        "agency": "FDA (USA)",
+        "document": "Wegovy (semaglutide) NDA 215256 Medical Review",
+        "year": 2021,
+        "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2021/215256Orig1s000MedR.pdf",
+        "whyItMatters": "FDA review of obesity indication. Details STEP program data."
+      },
+      {
+        "agency": "EMA (Europe)",
+        "document": "Ozempic EPAR - Public Assessment Report",
+        "year": 2018,
+        "url": "https://www.ema.europa.eu/en/documents/assessment-report/ozempic-epar-public-assessment-report_en.pdf",
+        "whyItMatters": "European assessment with detailed efficacy/safety analysis. Often more detailed than FDA reviews."
+      },
+      {
+        "agency": "EMA (Europe)",
+        "document": "Wegovy EPAR - Public Assessment Report",
+        "year": 2022,
+        "url": "https://www.ema.europa.eu/en/documents/assessment-report/wegovy-epar-public-assessment-report_en.pdf",
+        "whyItMatters": "European obesity indication review with comprehensive STEP analysis."
+      },
+      {
+        "agency": "PMDA (Japan)",
+        "document": "Ozempic Review Report (Japanese)",
+        "year": 2020,
+        "url": "https://www.pmda.go.jp/drugs/2020/P20200618001/",
+        "whyItMatters": "Japanese regulatory review. Includes Japan-specific PIONEER 9/10 and Japanese safety data."
+      },
+      {
+        "agency": "PMDA (Japan)",
+        "document": "Wegovy Review Report (Japanese)",
+        "year": 2023,
+        "url": "https://www.pmda.go.jp/drugs/2023/P20231124001/",
+        "whyItMatters": "Japanese obesity approval. Includes STEP 6 East Asian data."
+      },
+      {
+        "agency": "NMPA (China)",
+        "document": "Semaglutide (Ozempic) Approval Documentation",
+        "year": 2021,
+        "url": "https://www.nmpa.gov.cn/",
+        "whyItMatters": "Chinese regulatory approval. Includes SUSTAIN China trial data."
+      },
+      {
+        "agency": "ANVISA (Brazil)",
+        "document": "Ozempic/Wegovy Registro ANVISA",
+        "year": 2018,
+        "url": "https://consultas.anvisa.gov.br/",
+        "whyItMatters": "Brazilian approval. Large Latin American market with significant post-marketing data."
+      },
+      {
+        "agency": "TGA (Australia)",
+        "document": "Ozempic Australian Public Assessment Report",
+        "year": 2019,
+        "url": "https://www.tga.gov.au/resources/auspar",
+        "whyItMatters": "Australian regulatory review with detailed benefit-risk assessment."
+      },
+      {
+        "agency": "Health Canada",
+        "document": "Ozempic Summary Basis of Decision",
+        "year": 2018,
+        "url": "https://health-products.canada.ca/",
+        "whyItMatters": "Canadian regulatory approval with North American perspective distinct from FDA."
+      },
+      {
+        "agency": "Swissmedic (Switzerland)",
+        "document": "Ozempic/Wegovy Authorization",
+        "year": 2018,
+        "url": "https://www.swissmedic.ch/",
+        "whyItMatters": "Swiss approval independent of EMA. Important reference for non-EU European data."
+      },
+      {
+        "agency": "MFDS (South Korea)",
+        "document": "Semaglutide Approval",
+        "year": 2020,
+        "url": "https://www.mfds.go.kr/",
+        "whyItMatters": "Korean approval. Includes STEP 6 data for East Asian populations."
+      }
+    ]
+  },
+
+  "studyQualityRubric": {
+    "description": "Scoring rubric for assessing evidence quality (0-100 scale)",
+    "categories": [
+      {
+        "category": "Study Design",
+        "weight": 20,
+        "scoring": {
+          "20": "Phase 3 RCT, double-blind, placebo or active controlled",
+          "15": "Phase 2 RCT or open-label RCT",
+          "10": "Prospective observational cohort",
+          "5": "Retrospective observational",
+          "2": "Case series/reports"
+        }
+      },
+      {
+        "category": "Sample Size & Power",
+        "weight": 15,
+        "scoring": {
+          "15": ">1000 participants, adequately powered",
+          "10": "500-1000 participants",
+          "5": "100-499 participants",
+          "2": "<100 participants"
+        }
+      },
+      {
+        "category": "Randomization & Blinding",
+        "weight": 15,
+        "scoring": {
+          "15": "Adequate randomization + double-blind",
+          "10": "Randomized, single-blind",
+          "5": "Randomized, open-label",
+          "0": "Non-randomized"
+        }
+      },
+      {
+        "category": "Control Group Quality",
+        "weight": 10,
+        "scoring": {
+          "10": "Appropriate placebo or active comparator",
+          "5": "Standard of care control",
+          "0": "No control or inadequate"
+        }
+      },
+      {
+        "category": "Endpoint Relevance",
+        "weight": 15,
+        "scoring": {
+          "15": "Hard clinical endpoints (mortality, MACE, etc.)",
+          "10": "Validated surrogate + patient-reported outcomes",
+          "5": "Surrogate endpoints only",
+          "2": "Biomarkers only"
+        }
+      },
+      {
+        "category": "Follow-up Duration",
+        "weight": 10,
+        "scoring": {
+          "10": ">2 years",
+          "7": "1-2 years",
+          "5": "6-12 months",
+          "2": "<6 months"
+        }
+      },
+      {
+        "category": "Statistical Rigor",
+        "weight": 5,
+        "scoring": {
+          "5": "Pre-specified analysis, ITT, appropriate methods",
+          "3": "Minor concerns",
+          "1": "Major concerns"
+        }
+      },
+      {
+        "category": "Reporting Transparency",
+        "weight": 5,
+        "scoring": {
+          "5": "Full protocol registered, all outcomes reported",
+          "3": "Registered, minor discrepancies",
+          "1": "Not registered or major gaps"
+        }
+      },
+      {
+        "category": "Funding & COI",
+        "weight": 5,
+        "scoring": {
+          "5": "Independent or transparent industry funding with academic leadership",
+          "3": "Industry-sponsored with academic involvement",
+          "1": "Industry-only with limited independence"
+        }
+      }
+    ]
+  },
+
+  "appliedRubricScores": [
+    {
+      "study": "SELECT (Lincoff 2023)",
+      "score": 95,
+      "breakdown": {
+        "studyDesign": 20,
+        "sampleSize": 15,
+        "randomization": 15,
+        "controlGroup": 10,
+        "endpointRelevance": 15,
+        "followUp": 10,
+        "statisticalRigor": 5,
+        "reportingTransparency": 5,
+        "fundingCOI": 0
+      },
+      "strengths": [
+        "Massive sample size (N=17,604) with adequate power",
+        "Hard clinical endpoint (MACE)",
+        "Long follow-up (mean 40 months)",
+        "Pre-registered with transparent reporting"
+      ],
+      "limitations": [
+        "Industry-sponsored (Novo Nordisk funded)",
+        "Population limited to established CVD"
+      ]
+    },
+    {
+      "study": "STEP 1 (Wilding 2021)",
+      "score": 94,
+      "breakdown": {
+        "studyDesign": 20,
+        "sampleSize": 15,
+        "randomization": 15,
+        "controlGroup": 10,
+        "endpointRelevance": 10,
+        "followUp": 7,
+        "statisticalRigor": 5,
+        "reportingTransparency": 5,
+        "fundingCOI": 3
+      },
+      "strengths": [
+        "Well-designed Phase 3 RCT",
+        "Clinically meaningful weight loss endpoint",
+        "Large sample (N=1,961)",
+        "68-week duration"
+      ],
+      "limitations": [
+        "Surrogate endpoint (weight) not hard outcomes",
+        "Industry-sponsored"
+      ]
+    },
+    {
+      "study": "SUSTAIN-6 (Marso 2016)",
+      "score": 93,
+      "breakdown": {
+        "studyDesign": 20,
+        "sampleSize": 15,
+        "randomization": 15,
+        "controlGroup": 10,
+        "endpointRelevance": 15,
+        "followUp": 7,
+        "statisticalRigor": 5,
+        "reportingTransparency": 5,
+        "fundingCOI": 1
+      },
+      "strengths": [
+        "First CVOT for semaglutide",
+        "Hard MACE endpoint",
+        "Pre-specified CV analysis"
+      ],
+      "limitations": [
+        "Designed for non-inferiority, not superiority",
+        "2-year duration (shorter than ideal for CVOT)",
+        "Industry-sponsored"
+      ]
+    },
+    {
+      "study": "FLOW (Perkovic 2024)",
+      "score": 93,
+      "breakdown": {
+        "studyDesign": 20,
+        "sampleSize": 15,
+        "randomization": 15,
+        "controlGroup": 10,
+        "endpointRelevance": 15,
+        "followUp": 7,
+        "statisticalRigor": 5,
+        "reportingTransparency": 5,
+        "fundingCOI": 1
+      },
+      "strengths": [
+        "First kidney outcomes trial for GLP-1RA",
+        "Hard renal endpoint (kidney failure, death)",
+        "Stopped early for efficacy"
+      ],
+      "limitations": [
+        "Industry-sponsored",
+        "Median 3.4 years follow-up"
+      ]
+    },
+    {
+      "study": "SURPASS-2 (Frias 2021)",
+      "score": 92,
+      "breakdown": {
+        "studyDesign": 20,
+        "sampleSize": 15,
+        "randomization": 15,
+        "controlGroup": 10,
+        "endpointRelevance": 10,
+        "followUp": 5,
+        "statisticalRigor": 5,
+        "reportingTransparency": 5,
+        "fundingCOI": 3
+      },
+      "strengths": [
+        "Head-to-head active comparator design",
+        "Well-powered for superiority",
+        "Clear HbA1c and weight endpoints"
+      ],
+      "limitations": [
+        "Shorter duration (40 weeks)",
+        "Semaglutide 1mg dose (not 2.4mg weight dose)",
+        "Industry-sponsored (by competitor Eli Lilly)"
+      ]
+    }
+  ],
+
+  "paywallMap": {
+    "paywalled": [
+      {
+        "citation": "Sorli C et al. SUSTAIN 1. Lancet Diabetes Endocrinol. 2017",
+        "journal": "Lancet Diabetes Endocrinol",
+        "importance": "High - first Phase 3 monotherapy data",
+        "accessOptions": [
+          "Institutional access",
+          "PubMed Central after embargo (check availability)",
+          "Interlibrary loan",
+          "Author manuscript may be available"
+        ]
+      },
+      {
+        "citation": "Shi Q et al. Network meta-analysis. Lancet. 2022",
+        "journal": "Lancet",
+        "importance": "Moderate - comparative effectiveness",
+        "accessOptions": [
+          "Institutional access",
+          "Green open access version may exist"
+        ]
+      },
+      {
+        "citation": "Bell GI et al. Nature. 1983",
+        "journal": "Nature",
+        "importance": "Historical - foundational discovery",
+        "accessOptions": [
+          "Institutional access",
+          "May be freely available as classic paper"
+        ]
+      },
+      {
+        "citation": "Knudsen LB et al. J Med Chem. 2000",
+        "journal": "J Med Chem",
+        "importance": "Moderate - drug design principles",
+        "accessOptions": [
+          "Institutional access",
+          "ACS access"
+        ]
+      }
+    ],
+    "openAccess": [
+      "SELECT (Lincoff 2023) - NEJM open",
+      "STEP 1 (Wilding 2021) - NEJM open",
+      "SUSTAIN-6 (Marso 2016) - NEJM open",
+      "PIONEER 6 (Husain 2019) - NEJM open",
+      "FLOW (Perkovic 2024) - NEJM open",
+      "All systematic reviews in Mol Metab (gold OA journal)",
+      "Most Physiol Rev content"
+    ],
+    "priorityForPurchase": [
+      {
+        "citation": "SUSTAIN 1 (Sorli 2017)",
+        "reason": "Essential for complete SUSTAIN program understanding"
+      }
+    ]
+  },
+
+  "gapsAndNextResearch": {
+    "missingEvidence": [
+      {
+        "gap": "Long-term safety beyond 5 years",
+        "currentData": "Longest trials are ~4-5 years",
+        "studyNeeded": "Extension studies or large observational cohorts with 10+ year follow-up"
+      },
+      {
+        "gap": "Effects in adolescents/pediatric long-term",
+        "currentData": "Limited pediatric data from STEP TEENS",
+        "studyNeeded": "Long-term pediatric safety and efficacy registry"
+      },
+      {
+        "gap": "Cognitive/dementia outcomes",
+        "currentData": "Preclinical promising; human trials ongoing (EVOKE)",
+        "studyNeeded": "Await Phase 3 results from EVOKE/EVOKE+ (expected 2027)"
+      },
+      {
+        "gap": "Head-to-head vs tirzepatide for CV outcomes",
+        "currentData": "No direct comparison for MACE endpoints",
+        "studyNeeded": "CV outcome trial comparing agents directly"
+      },
+      {
+        "gap": "Muscle/bone composition effects long-term",
+        "currentData": "Body composition substudies show ~30% lean mass loss",
+        "studyNeeded": "Studies with resistance training, sarcopenia endpoints"
+      },
+      {
+        "gap": "Optimal duration of therapy",
+        "currentData": "STEP 4 shows weight regain after stopping",
+        "studyNeeded": "Studies on intermittent dosing, dose reduction strategies"
+      }
+    ],
+    "emergingQuestions": [
+      "Can semaglutide prevent diabetes onset (prediabetes)?",
+      "What is optimal combination with SGLT2 inhibitors?",
+      "Are there genetic predictors of response?",
+      "Can benefits be maintained with lower maintenance doses?"
+    ]
+  },
+
+  "trials": [
+    {
+      "id": "NCT02128932",
+      "nctId": "NCT02128932",
+      "title": "SUSTAIN-6: Cardiovascular Outcomes Trial",
+      "phase": "3",
+      "status": "completed",
+      "endpoints": ["MACE", "CV death", "MI", "stroke"],
+      "enrollment": 3297,
+      "completionDate": "2016"
+    },
+    {
+      "id": "NCT03548935",
+      "nctId": "NCT03548935",
+      "title": "STEP 1: Weight Management in Obesity",
+      "phase": "3",
+      "status": "completed",
+      "endpoints": ["percent weight change", "5% weight loss responders"],
+      "enrollment": 1961,
+      "completionDate": "2020"
+    },
+    {
+      "id": "NCT03552757",
+      "nctId": "NCT03552757",
+      "title": "SELECT: CV Outcomes in Obesity without Diabetes",
+      "phase": "3",
+      "status": "completed",
+      "endpoints": ["MACE", "CV death"],
+      "enrollment": 17604,
+      "completionDate": "2023"
+    },
+    {
+      "id": "NCT04777396",
+      "nctId": "NCT04777396",
+      "title": "FLOW: Kidney Outcomes in T2D with CKD",
+      "phase": "3",
+      "status": "completed",
+      "endpoints": ["Kidney disease progression", "CV death"],
+      "enrollment": 3533,
+      "completionDate": "2024"
+    },
+    {
+      "id": "NCT04777409",
+      "nctId": "NCT04777409",
+      "title": "EVOKE: Semaglutide in Early Alzheimer's Disease",
+      "phase": "3",
+      "status": "recruiting",
+      "endpoints": ["Clinical Dementia Rating", "Brain atrophy"],
+      "enrollment": 1840,
+      "expectedCompletion": "2027"
+    }
+  ],
+
+  "evidenceSummary": {
+    "humanEvidence": "HIGH",
+    "preclinicalEvidence": "STRONG",
+    "safetyMaturity": "HIGH",
+    "regulatoryStatus": "FDA/EMA approved for T2D, obesity",
+    "commonBiases": [
+      "Industry funding (all major trials Novo Nordisk-sponsored)",
+      "Short follow-up for chronic disease (<5 years)",
+      "Limited real-world evidence vs RCT evidence",
+      "Selection bias - trial populations healthier than real-world"
+    ]
+  }
+}

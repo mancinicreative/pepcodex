@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import DossierLayout from '../../layouts/DossierLayout.astro';
+
+export async function getStaticPaths() {
+  const peptides = await getCollection('peptides');
+  return peptides.map((peptide) => ({
+    params: { slug: peptide.slug },
+    props: { peptide },
+  }));
+}
+
+const { peptide } = Astro.props;
+const { Content } = await peptide.render();
+---
+
+<DossierLayout
+  name={peptide.data.name}
+  aliases={peptide.data.aliases}
+  category={peptide.data.category}
+  evidenceStrength={peptide.data.evidenceStrength}
+  lastUpdated={peptide.data.lastUpdated}
+  summary={peptide.data.summary}
+  sources={peptide.data.sources}
+  comparators={peptide.data.comparators}
+>
+  <Content />
+</DossierLayout>

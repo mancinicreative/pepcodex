@@ -1,0 +1,35 @@
+---
+import JsonLd from './JsonLd.astro';
+
+interface ListItem {
+  name: string;
+  url: string;
+  description?: string;
+  position?: number;
+}
+
+interface Props {
+  name: string;
+  description: string;
+  items: ListItem[];
+}
+
+const { name, description, items } = Astro.props;
+
+const itemListData = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": name,
+  "description": description,
+  "numberOfItems": items.length,
+  "itemListElement": items.map((item, index) => ({
+    "@type": "ListItem",
+    "position": item.position || index + 1,
+    "url": item.url,
+    "name": item.name,
+    ...(item.description && { "description": item.description })
+  }))
+};
+---
+
+<JsonLd data={itemListData} />

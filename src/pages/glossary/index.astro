@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../../components/SEO/BreadcrumbSchema.astro';
+import ItemListSchema from '../../components/SEO/ItemListSchema.astro';
+import { getCollection } from 'astro:content';
+
+const glossary = await getCollection('glossary');
+
+// Sort alphabetically
+const sortedGlossary = glossary.sort((a, b) =>
+  a.data.term.localeCompare(b.data.term)
+);
+
+// Group by first letter
+const groupedGlossary = sortedGlossary.reduce((acc, term) => {
+  const letter = term.data.term.charAt(0).toUpperCase();
+  if (!acc[letter]) {
+    acc[letter] = [];
+  }
+  acc[letter].push(term);
+  return acc;
+}, {} as Record<string, typeof sortedGlossary>);
+
+const letters = Object.keys(groupedGlossary).sort();
+
+const categoryColors: Record<string, string> = {
+  'mechanism': 'var(--primary)',
+  'administration': 'hsl(210 80% 60%)',
+  'research': 'hsl(142 70% 45%)',
+  'regulatory': 'hsl(45 90% 55%)',
+  'general': 'var(--muted-foreground)',
+};
+
+const categoryLabels: Record<string, string> = {
+  'mechanism': 'Mechanism',
+  'administration': 'Administration',
+  'research': 'Research',
+  'regulatory': 'Regulatory',
+  'general': 'General',
+};
+
+// SEO
+const breadcrumbItems = [
+  { name: 'Home', url: Astro.site?.toString() || 'https://pepcodex.com' },
+  { name: 'Glossary', url: Astro.url.toString() }
+];
+
+const itemListData = sortedGlossary.map((term, index) => ({
+  name: term.data.term,
+  url: `${Astro.site || 'https://pepcodex.com'}glossary/${term.slug}/`,
+  description: term.data.definition.slice(0, 100),
+  position: index + 1
+}));
+---
+
+<BaseLayout
+  title="Peptide Glossary"
+  description="Comprehensive glossary of peptide terminology. Clear definitions of scientific terms, mechanisms, and concepts."
+>
+  <BreadcrumbSchema items={breadcrumbItems} />
+  <ItemListSchema
+    name="Peptide Glossary"
+    description="Comprehensive glossary of peptide terminology and definitions"
+    items={itemListData}
+  />
+
+  <!-- Hero -->
+  <div class="relative overflow-hidden border-b border-white/5">
+    <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-transparent"></div>
+    <div class="absolute top-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="inline-flex items-center rounded-full bg-cyan-500/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-cyan-400 border border-cyan-500/30">
+          Reference
+        </span>
+      </div>
+      <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl" style="font-family: var(--font-display);">
+        Peptide Glossary
+      </h1>
+      <p class="mt-6 max-w-2xl text-xl text-white/80 leading-relaxed">
+        Clear definitions of peptide terminology, scientific concepts, and research terms.
+      </p>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <!-- Letter Navigation -->
+    <nav class="mb-8 flex flex-wrap gap-2">
+      {letters.map((letter) => (
+        <a
+          href={`#${letter}`}
+          class="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 text-white/80 hover:bg-[var(--primary)]/20 hover:border-[var(--primary)]/30 hover:text-white transition-all font-bold"
+        >
+          {letter}
+        </a>
+      ))}
+    </nav>
+
+    <p class="mb-8 text-white/70">
+      Showing <span class="text-white font-bold">{sortedGlossary.length}</span> terms
+    </p>
+
+    <!-- Glossary Sections -->
+    <div class="space-y-12">
+      {letters.map((letter) => (
+        <section id={letter}>
+          <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-4" style="font-family: var(--font-display);">
+            <span class="w-12 h-12 rounded-xl bg-[var(--primary)]/20 border border-[var(--primary)]/30 flex items-center justify-center text-[var(--primary)]">
+              {letter}
+            </span>
+          </h2>
+          <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {groupedGlossary[letter].map((term) => {
+              const color = categoryColors[term.data.category] || categoryColors.general;
+              return (
+                <a
+                  href={`/glossary/${term.slug}`}
+                  class="glass-card-interactive p-5 group"
+                >
+                  <div class="flex items-start justify-between gap-3">
+                    <div class="flex-1 min-w-0">
+                      <span
+                        class="inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider border mb-2"
+                        style={`color: ${color}; background: ${color}15; border-color: ${color}30;`}
+                      >
+                        {categoryLabels[term.data.category]}
+                      </span>
+                      <h3 class="font-bold text-white group-hover:text-[var(--primary)] transition-colors">
+                        {term.data.term}
+                      </h3>
+                      <p class="mt-1 text-sm text-white/60 line-clamp-2">
+                        {term.data.definition.slice(0, 120)}...
+                      </p>
+                    </div>
+                    <div class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-[var(--primary)]/10 group-hover:border-[var(--primary)]/30 transition-all flex-shrink-0">
+                      <svg class="h-4 w-4 text-white/60 group-hover:text-[var(--primary)] transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        </section>
+      ))}
+    </div>
+
+    {sortedGlossary.length === 0 && (
+      <div class="text-center py-12">
+        <p class="text-white/60 text-lg">No glossary terms yet. Check back soon!</p>
+      </div>
+    )}
+  </div>
+</BaseLayout>

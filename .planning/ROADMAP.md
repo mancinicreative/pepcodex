@@ -1,129 +1,84 @@
-# Roadmap: Peptide Library
+# Roadmap: PepCodex
 
 ## Overview
 
-Build evidence-based peptide education site with automated content pipeline. Existing code provides head start on site foundation. Focus remaining work on fixing build, completing features, and building n8n pipeline.
+v2.0 Production Launch — Deploy the 188-page peptide research library to production, configure analytics and SEO tools, and establish development workflow.
 
-## Phases
+## Milestones
 
-- [~] **Phase 1: Site Foundation** - Fix build, complete core site structure
-- [ ] **Phase 2: Content Templates** - Full dossier template, comparison/guide templates
-- [ ] **Phase 3: Pipeline Infrastructure** - n8n workflows for automated content generation
-- [ ] **Phase 4: Features + Polish** - Search, trial tracker, sponsor pages
-- [ ] **Phase 5: First Content Batch** - 45 pages live
+### v1.0 Content Foundation (COMPLETE)
+- [x] **Phase 1: Site Foundation** - Fix build, complete core site structure
+- [x] **Phase 2: Content Templates** - Full dossier template, comparison/guide templates
+- [x] **Phase 3: Pipeline Infrastructure** - n8n workflows for automated content generation
+- [x] **Phase 4: Features + Polish** - Search, trial tracker, sponsor pages
+- [x] **Phase 5: First Content Batch** - 188 pages indexed (exceeded 45 target)
+
+### v2.0 Production Launch (ACTIVE)
+- [ ] **Phase 6: Deploy Infrastructure** - GitHub, Vercel, DNS, development workflow
+- [ ] **Phase 7: Analytics Setup** - GA4, Google Search Console
+- [ ] **Phase 8: Production Verification** - Test all features on live site
+
+---
 
 ## Phase Details
 
-### Phase 1: Site Foundation
-**Goal**: Working Astro site with all pages rendering correctly
-**Depends on**: Nothing (first phase)
-**Requirements**: SITE-01 through SITE-08, TMPL-05, TMPL-06, FEAT-01 (partial), DEPLOY-02
-**Status**: ~80% complete from previous session
+### Phase 6: Deploy Infrastructure
+**Goal**: Site live at pepcodex.com with proper development workflow
+**Depends on**: Phase 5 (content ready)
+**Requirements**: INFRA-01 through INFRA-06
 **Success Criteria** (what must be TRUE):
-  1. `npm run build` succeeds with zero errors
-  2. All trust core pages render (methodology, editorial, about, ads policy, newsletter)
-  3. Category hubs display placeholder content
-  4. A-Z index page works
-  5. Sample peptide dossier (tirzepatide) renders with evidence badge and citations
-
-**Remaining Work:**
-- Fix content schema (remove `slug` field - Astro auto-generates)
-- Remove `slug` from tirzepatide.mdx frontmatter
-- Verify build passes
-- Add robots.txt
+  1. Code pushed to GitHub repository
+  2. Vercel deployment accessible at preview URL
+  3. pepcodex.com serves the site over HTTPS
+  4. DNS configured correctly in Squarespace
+  5. develop branch exists with preview deployments enabled
+  6. Environment variables (Beehiiv, GA) configured in Vercel
 
 Plans:
-- [~] 01-01: Fix build errors and verify site works
+- [ ] 06-01: Push to GitHub, deploy to Vercel, configure DNS
 
-### Phase 2: Content Templates
-**Goal**: Complete templates for all content types matching production requirements
-**Depends on**: Phase 1 (site must build)
-**Requirements**: TMPL-01, TMPL-02, TMPL-03, TMPL-04
+### Phase 7: Analytics Setup
+**Goal**: Tracking and SEO tools configured
+**Depends on**: Phase 6 (site must be live)
+**Requirements**: ANLY-01 through ANLY-04
 **Success Criteria** (what must be TRUE):
-  1. Dossier template has all 12 sections from Prompt A
-  2. Comparison template renders side-by-side peptide data
-  3. Guide template works for "What is X" pages
-  4. Safety template displays clinical trial information
+  1. GA4 property created and tracking code deployed
+  2. GA4 receiving page view data
+  3. Google Search Console verified
+  4. Sitemap submitted and indexing started
 
 Plans:
-- [ ] 02-01: Enhance dossier template to full 12-section structure
-- [ ] 02-02: Create comparison and guide templates
+- [ ] 07-01: Configure GA4 and Google Search Console
 
-### Phase 3: Pipeline Infrastructure
-**Goal**: n8n workflows that automate source gathering, draft generation, and QA
-**Depends on**: Phase 2 (need templates for drafts to target)
-**Requirements**: PIPE-01 through PIPE-06, QA-01 through QA-04
+### Phase 8: Production Verification
+**Goal**: Verify all features work correctly on production
+**Depends on**: Phase 7 (analytics configured)
+**Requirements**: VERF-01 through VERF-05
 **Success Criteria** (what must be TRUE):
-  1. Source pack workflow fetches from PubMed, Europe PMC, ClinicalTrials.gov
-  2. Draft generator produces valid MDX from source packs via Claude API
-  3. QA gate catches missing citations and banned content
-  4. Publisher commits and triggers Vercel deploy
-  5. Full pipeline tested end-to-end with 1 peptide
+  1. All 188 pages load without errors
+  2. Search returns relevant results
+  3. Newsletter form submits successfully
+  4. Mobile experience is responsive
+  5. PageSpeed score > 70
 
 Plans:
-- [ ] 03-01: Create source pack schema and builder workflow
-- [ ] 03-02: Create draft generator workflow with Claude API
-- [ ] 03-03: Create QA gate and publisher workflows
+- [ ] 08-01: Run verification tests on production
 
-### Phase 4: Features + Polish
-**Goal**: Search, trial tracker, and sponsor pages complete
-**Depends on**: Phase 1 (site foundation)
-**Requirements**: FEAT-01 (complete), FEAT-02, FEAT-03, FEAT-04
-**Success Criteria** (what must be TRUE):
-  1. Beehiiv newsletter captures subscribers
-  2. Pagefind search returns relevant results
-  3. Trial tracker displays clinical trial data
-  4. Sponsor page template ready
-
-Plans:
-- [ ] 04-01: Complete Beehiiv API integration
-- [ ] 04-02: Implement Pagefind search
-- [ ] 04-03: Build trial tracker with Turso
-
-### Phase 5: First Content Batch
-**Goal**: 45 pages live - 15 dossiers + 30 long-tail
-**Depends on**: Phase 3 (pipeline), Phase 4 (features)
-**Requirements**: CONT-01, CONT-02, CONT-03, DEPLOY-01, DEPLOY-03
-**Success Criteria** (what must be TRUE):
-  1. 15 peptide dossiers published (GLP-1 cluster priority)
-  2. 30 long-tail pages published (10 each: what-is, comparisons, safety)
-  3. All pages pass QA validation
-  4. Site deployed to Vercel
-  5. Sitemap includes all 45+ pages
-
-Plans:
-- [ ] 05-01: Generate source packs for first 15 peptides
-- [ ] 05-02: Run pipeline for all content
-- [ ] 05-03: Deploy to Vercel
+---
 
 ## Progress
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Site Foundation | 0/1 | In Progress | - |
-| 2. Content Templates | 0/2 | Not started | - |
-| 3. Pipeline Infrastructure | 0/3 | Not started | - |
-| 4. Features + Polish | 0/3 | Not started | - |
-| 5. First Content Batch | 0/3 | Not started | - |
-
-## First 15 Peptides (Priority Order)
-
-1. **Tirzepatide** (Mounjaro/Zepbound) - sample exists
-2. **Semaglutide** (Ozempic/Wegovy)
-3. **Retatrutide** - emerging GLP-1
-4. **BPC-157** - high search, recovery
-5. **TB-500** - pairs with BPC-157
-6. **Ipamorelin** - growth hormone
-7. **CJC-1295** - GH releasing
-8. **Tesamorelin** - FDA approved GH
-9. **PT-141** - sexual health
-10. **Melanotan II** - tanning/libido
-11. **AOD-9604** - fat loss peptide
-12. **GHRP-6** - GH secretagogue
-13. **Sermorelin** - GH releasing
-14. **Epithalon** - longevity interest
-15. **GHK-Cu** - skin/healing
+| 1. Site Foundation | 1/1 | Complete | 2026-01-19 |
+| 2. Content Templates | 2/2 | Complete | 2026-01-19 |
+| 3. Pipeline Infrastructure | 5/5 | Complete | 2026-01-19 |
+| 4. Features + Polish | 3/3 | Complete | 2026-01-19 |
+| 5. First Content Batch | 2/2 | Complete | 2026-01-19 |
+| 6. Deploy Infrastructure | 0/1 | **Active** | — |
+| 7. Analytics Setup | 0/1 | Pending | — |
+| 8. Production Verification | 0/1 | Pending | — |
 
 ---
 *Created: 2026-01-19*
-*Target: 45 pages Week 1*
+*Updated: 2026-01-26 for v2.0 milestone*

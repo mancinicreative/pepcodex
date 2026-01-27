@@ -44,7 +44,7 @@ const config = {
 const { color, bgOpacity, borderOpacity, icon, label, description } = config[strength];
 ---
 
-<div class="group relative inline-flex items-center">
+<div class="relative inline-flex items-center">
   <span
     class="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold border shadow-sm"
     style={`color: ${color}; background: ${color.replace(')', ` / 0.${bgOpacity})`).replace('hsl(', 'hsla(')}; border-color: ${color.replace(')', ` / 0.${borderOpacity})`).replace('hsl(', 'hsla(')};`}
@@ -54,11 +54,4 @@ const { color, bgOpacity, borderOpacity, icon, label, description } = config[str
     <span class="font-mono text-[11px] tracking-tight drop-shadow-sm" aria-hidden="true">{icon}</span>
     {showLabel && <span class="drop-shadow-sm">{label}</span>}
   </span>
-
-  <!-- Tooltip -->
-  <div class="absolute left-0 top-full z-10 mt-2 hidden w-64 rounded-xl glass-card p-4 text-sm shadow-xl group-hover:block">
-    <div class="font-bold text-white mb-1">{label}</div>
-    <div class="text-white/70">{description}</div>
-    <div class="absolute -top-1.5 left-4 h-3 w-3 rotate-45 bg-white/5 border-l border-t border-white/10"></div>
-  </div>
 </div>

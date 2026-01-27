@@ -8,7 +8,7 @@ import vercel from '@astrojs/vercel';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://pepcodex.com',
-  output: 'server',
+  output: 'hybrid',
   adapter: vercel({
     imageService: true,
   }),

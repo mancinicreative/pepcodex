@@ -15,7 +15,18 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { email, source } = req.body || {};
+    // Parse body - Vercel should handle this automatically but let's be safe
+    let body = req.body;
+    if (typeof body === 'string') {
+      try {
+        body = JSON.parse(body);
+      } catch (e) {
+        body = {};
+      }
+    }
+
+    const email = body?.email;
+    const source = body?.source;
 
     // Validate environment variables
     const apiKey = process.env.BEEHIIV_API_KEY;
@@ -25,6 +36,7 @@ export default async function handler(req, res) {
       console.error('Missing Beehiiv credentials:', {
         hasApiKey: !!apiKey,
         hasPubId: !!publicationId,
+        envKeys: Object.keys(process.env).filter(k => k.startsWith('BEEHIIV'))
       });
       return res.status(500).json({
         success: false,
@@ -43,29 +55,27 @@ export default async function handler(req, res) {
     }
 
     // Call Beehiiv API
-    const response = await fetch(
-      `https://api.beehiiv.com/v2/publications/${publicationId}/subscriptions`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${apiKey}`,
-        },
-        body: JSON.stringify({
-          email: email.toLowerCase().trim(),
-          reactivate_existing: true,
-          send_welcome_email: true,
-          utm_source: source || 'website',
-          utm_medium: 'organic',
-          utm_campaign: 'pepcodex',
-          referring_site: 'https://pepcodex.com',
-        }),
-      }
-    );
+    const beehiivUrl = `https://api.beehiiv.com/v2/publications/${publicationId}/subscriptions`;
+
+    const response = await fetch(beehiivUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        email: email.toLowerCase().trim(),
+        reactivate_existing: true,
+        send_welcome_email: true,
+        utm_source: source || 'website',
+        utm_medium: 'organic',
+        utm_campaign: 'pepcodex',
+        referring_site: 'https://pepcodex.com',
+      }),
+    });
 
     // Success
     if (response.ok) {
-      const data = await response.json();
       return res.status(200).json({
         success: true,
         message: 'Successfully subscribed! Check your email.',
@@ -81,13 +91,14 @@ export default async function handler(req, res) {
     }
 
     // Other errors
-    console.error('Beehiiv API error:', response.status);
+    const errorText = await response.text();
+    console.error('Beehiiv API error:', response.status, errorText);
     return res.status(500).json({
       success: false,
       message: 'Something went wrong. Please try again.',
     });
   } catch (error) {
-    console.error('Subscribe error:', error);
+    console.error('Subscribe error:', error.message, error.stack);
     return res.status(500).json({
       success: false,
       message: 'Server error. Please try again.',

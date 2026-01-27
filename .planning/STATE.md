@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-**Phase 6: Deploy Infrastructure** — IN PROGRESS
+**Phase 7: Analytics Setup** — IN PROGRESS
 
 ## Active Plan
 
-06-01: Push to GitHub, deploy to Vercel, configure DNS
+07-01: Configure GA4 and Google Search Console
 
 ## What's Done
 
@@ -18,22 +18,23 @@
 - Phase 5: First Content Batch ✓ (188 pages indexed)
 
 ### v2.0 Production Launch (IN PROGRESS)
-- Google Analytics code added to BaseLayout.astro
-- LAUNCH-OPERATIONS.md created with full operations plan
-- PROJECT.md updated for v2.0 milestone
-- REQUIREMENTS.md updated with v2 requirements
-- ROADMAP.md updated with Phases 6-8
+- Phase 6: Deploy Infrastructure ✓
+  - GitHub repo: mancinicreative/pepcodex
+  - Vercel project: mancinicreative-pepcodex
+  - Live at: https://pepcodex.com
+  - Beehiiv newsletter integration working
+  - develop branch created for staging
+  - Environment variables configured
 
 ## What's Next
 
-**Phase 6 Tasks:**
-1. Commit all files to git
-2. Create GitHub repository (pepcodex)
-3. Push code to GitHub
-4. Create Vercel account and deploy
-5. Configure custom domain (pepcodex.com)
-6. Set up Squarespace DNS → Vercel
-7. Create develop branch for staging workflow
+**Phase 7 Tasks:**
+1. Create GA4 property (if not exists)
+2. Add GA tracking ID to Vercel env vars
+3. Verify GA4 receiving page view data
+4. Set up Google Search Console
+5. Verify site ownership
+6. Submit sitemap and start indexing
 
 ## Context for Resume
 
@@ -67,8 +68,8 @@ Phase 4: Features + Polish    [████████] 100%
 Phase 5: First Content Batch  [████████] 100%
 
 v2.0 Phases:
-Phase 6: Deploy Infrastructure [░░░░░░░░] 0%  <-- ACTIVE
-Phase 7: Analytics Setup       [░░░░░░░░] 0%
+Phase 6: Deploy Infrastructure [████████] 100% ✓
+Phase 7: Analytics Setup       [░░░░░░░░] 0%  <-- ACTIVE
 Phase 8: Production Verify     [░░░░░░░░] 0%
 ```
 
@@ -82,6 +83,8 @@ None
 - 2026-01-26: v2.0 milestone started — production launch
 - 2026-01-26: GA4 tracking code added to BaseLayout
 - 2026-01-26: Planning docs updated for v2.0
+- 2026-01-27: Phase 6 complete — site live at pepcodex.com
+- 2026-01-27: Beehiiv newsletter integration fixed
 
 ---
-*Last updated: 2026-01-26*
+*Last updated: 2026-01-27*

@@ -6,7 +6,20 @@ import NewsletterForm from '../components/NewsletterForm.astro';
 import { getCollection } from 'astro:content';
 
 const peptides = await getCollection('peptides');
-const featuredPeptides = peptides.slice(0, 6);
+
+// Top Google searched peptides - manually curated for relevance
+const topPeptideSlugs = [
+  'semaglutide',    // GLP-1 (Ozempic/Wegovy) - highest search volume
+  'tirzepatide',    // GIP/GLP-1 (Mounjaro/Zepbound) - weight loss trend
+  'bpc-157',        // Popular recovery peptide
+  'tb-500',         // Healing/recovery
+  'pt-141',         // Sexual health (Bremelanotide)
+  'ghk-cu',         // Skin/hair/longevity
+];
+
+const featuredPeptides = topPeptideSlugs
+  .map(slug => peptides.find(p => p.slug === slug))
+  .filter(Boolean);
 
 const categories = [
   {

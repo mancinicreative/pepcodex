@@ -96,7 +96,7 @@ const {
           Subscribe
         </button>
       </form>
-      <p class="mt-4 text-xs" style="color: var(--text-high);">Join 1,000+ readers. Unsubscribe anytime.</p>
+      <p class="mt-4 text-xs" style="color: var(--text-high);">Join and learn the latest news. Unsubscribe anytime.</p>
     </div>
   </div>
 )}
@@ -126,7 +126,7 @@ const {
 
         if (data.success) {
           // Success - show confirmation message
-          formEl.innerHTML = `<p class="text-white font-bold py-2">${data.message}</p>`;
+          formEl.innerHTML = `<p class="text-white font-bold py-3 text-center w-full">${data.message}</p>`;
         } else {
           // API returned an error message
           if (button) {

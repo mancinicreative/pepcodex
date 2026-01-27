@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Directory - Coming Soon"
+  description="Trusted health clinics, telehealth providers, and resources for peptide therapy. Coming soon to PepCodex."
+>
+  <!-- Hero Section -->
+  <div class="relative">
+    <div class="mx-auto max-w-4xl px-4 py-20 sm:px-6 lg:px-8">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/30 text-sm font-medium text-amber-400 mb-6">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          Coming Soon
+        </div>
+        <h1 class="text-5xl md:text-6xl font-bold tracking-tight text-white" style="font-family: var(--font-display);">
+          Trusted <span class="bg-gradient-to-r from-[var(--primary)] via-purple-400 to-[var(--primary)] bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(139,92,246,0.5)]">Directory</span>
+        </h1>
+        <p class="mt-6 text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
+          A curated list of verified health clinics, telehealth providers, and peptide therapy resources.
+        </p>
+      </div>
+
+      <!-- Coming Soon Card -->
+      <div class="max-w-2xl mx-auto">
+        <div class="relative rounded-2xl border border-[var(--primary)]/30 bg-gradient-to-br from-[var(--primary)]/10 via-purple-600/5 to-transparent backdrop-blur-xl p-8 overflow-hidden" style="box-shadow: var(--shadow-glow-sm);">
+          <!-- Decorative glows -->
+          <div class="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/20 via-transparent to-transparent pointer-events-none"></div>
+          <div class="absolute -top-24 -right-24 w-48 h-48 bg-[var(--primary)]/20 rounded-full blur-3xl"></div>
+
+          <div class="relative">
+            <h2 class="text-2xl font-bold text-white mb-4" style="font-family: var(--font-display);">What's Coming</h2>
+
+            <div class="space-y-4 mb-8">
+              <div class="flex items-start gap-3">
+                <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center">
+                  <svg class="w-4 h-4 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-white font-semibold">Verified Health Clinics</h3>
+                  <p class="text-white/60 text-sm mt-1">Trusted clinics offering legitimate peptide therapy with proper medical oversight.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center">
+                  <svg class="w-4 h-4 text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                    <path d="M12 18h.01"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-white font-semibold">Telehealth Providers</h3>
+                  <p class="text-white/60 text-sm mt-1">Remote consultations with licensed physicians specializing in peptide protocols.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-purple-500/20 border border-purple-500/30 flex items-center justify-center">
+                  <svg class="w-4 h-4 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-white font-semibold">Educational Resources</h3>
+                  <p class="text-white/60 text-sm mt-1">Guides, courses, and materials to deepen your understanding of peptide science.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-6">
+              <h3 class="text-lg font-semibold text-white mb-3">Want to be listed?</h3>
+              <p class="text-white/70 text-sm mb-4">
+                If you're a clinic, telehealth provider, or resource that wants to be included in our directory, we'd love to hear from you.
+              </p>
+              <a
+                href="/contact"
+                class="inline-flex items-center gap-2 btn btn-primary btn-md"
+              >
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Newsletter CTA -->
+  <div class="mx-auto max-w-4xl px-4 pb-20 sm:px-6 lg:px-8">
+    <div class="relative glass-card-default p-8 text-center">
+      <h3 class="text-xl font-bold text-white mb-3" style="font-family: var(--font-display);">Get Notified When We Launch</h3>
+      <p class="text-white/70 mb-6">Subscribe to our newsletter and be the first to know when the directory goes live.</p>
+      <a href="/newsletter" class="btn btn-primary btn-md">
+        Subscribe to Newsletter
+      </a>
+    </div>
+  </div>
+</BaseLayout>

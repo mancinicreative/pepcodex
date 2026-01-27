@@ -1,6 +1,4 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
-
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(req, res) {
   // Set CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -16,14 +14,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ success: false, message: 'Method not allowed' });
   }
 
-  // Validate content type
-  const contentType = req.headers['content-type'];
-  if (!contentType?.includes('application/json')) {
-    return res.status(400).json({ success: false, message: 'Invalid content type' });
-  }
-
   try {
-    const { email, source } = req.body;
+    const { email, source } = req.body || {};
 
     // Validate environment variables
     const apiKey = process.env.BEEHIIV_API_KEY;
@@ -36,7 +28,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       });
       return res.status(500).json({
         success: false,
-        message: 'Newsletter service not configured. Please try again later.',
+        message: 'Newsletter service not configured.',
       });
     }
 
@@ -47,7 +39,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return res.status(400).json({ success: false, message: 'Please enter a valid email address.' });
+      return res.status(400).json({ success: false, message: 'Please enter a valid email.' });
     }
 
     // Call Beehiiv API
@@ -57,7 +49,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${apiKey}`,
+          'Authorization': `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
           email: email.toLowerCase().trim(),
@@ -71,17 +63,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       }
     );
 
-    // Handle success (201 Created)
+    // Success
     if (response.ok) {
       const data = await response.json();
       return res.status(200).json({
         success: true,
-        message: 'Successfully subscribed! Check your email to confirm.',
-        subscriberId: data.data?.id,
+        message: 'Successfully subscribed! Check your email.',
       });
     }
 
-    // Handle already subscribed (409 Conflict)
+    // Already subscribed
     if (response.status === 409) {
       return res.status(200).json({
         success: true,
@@ -89,41 +80,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       });
     }
 
-    // Handle bad request (400)
-    if (response.status === 400) {
-      const errorData = await response.json();
-      const errorMessage = errorData.errors?.[0]?.message || 'Invalid request';
-      return res.status(400).json({ success: false, message: errorMessage });
-    }
-
-    // Handle auth errors (401, 403)
-    if (response.status === 401 || response.status === 403) {
-      console.error('Beehiiv API authentication failed:', response.status);
-      return res.status(500).json({
-        success: false,
-        message: 'Newsletter service error. Please try again later.',
-      });
-    }
-
-    // Handle rate limit (429)
-    if (response.status === 429) {
-      return res.status(429).json({
-        success: false,
-        message: 'Too many requests. Please wait a moment and try again.',
-      });
-    }
-
-    // Handle other errors
-    console.error(`Beehiiv API error: ${response.status}`);
+    // Other errors
+    console.error('Beehiiv API error:', response.status);
     return res.status(500).json({
       success: false,
       message: 'Something went wrong. Please try again.',
     });
   } catch (error) {
-    console.error('Subscribe handler error:', error);
+    console.error('Subscribe error:', error);
     return res.status(500).json({
       success: false,
-      message: 'Network error. Please check your connection and try again.',
+      message: 'Server error. Please try again.',
     });
   }
 }

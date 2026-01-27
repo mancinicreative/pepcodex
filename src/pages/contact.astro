@@ -32,9 +32,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <form
             id="contact-form"
             class="space-y-6"
-            action="https://formspree.io/f/xdoqkpvz"
+            action="https://formsubmit.co/info@pepcodex.com"
             method="POST"
           >
+            <!-- FormSubmit configuration -->
+            <input type="hidden" name="_subject" value="New Contact Form Submission - PepCodex">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="_honey" style="display:none">
+
             <!-- Name -->
             <div>
               <label for="name" class="block text-sm font-medium text-white mb-2">Name</label>
@@ -74,12 +80,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.15);"
               >
                 <option value="" disabled selected style="background: #1a1a2e;">Select a topic</option>
-                <option value="general" style="background: #1a1a2e;">General Inquiry</option>
-                <option value="directory" style="background: #1a1a2e;">Directory Listing Request</option>
-                <option value="feedback" style="background: #1a1a2e;">Feedback</option>
-                <option value="partnership" style="background: #1a1a2e;">Partnership / Collaboration</option>
-                <option value="correction" style="background: #1a1a2e;">Content Correction</option>
-                <option value="other" style="background: #1a1a2e;">Other</option>
+                <option value="General Inquiry" style="background: #1a1a2e;">General Inquiry</option>
+                <option value="Directory Listing Request" style="background: #1a1a2e;">Directory Listing Request</option>
+                <option value="Feedback" style="background: #1a1a2e;">Feedback</option>
+                <option value="Partnership / Collaboration" style="background: #1a1a2e;">Partnership / Collaboration</option>
+                <option value="Content Correction" style="background: #1a1a2e;">Content Correction</option>
+                <option value="Other" style="background: #1a1a2e;">Other</option>
               </select>
             </div>
 

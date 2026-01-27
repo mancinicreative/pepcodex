@@ -9,7 +9,9 @@ import vercel from '@astrojs/vercel';
 export default defineConfig({
   site: 'https://pepcodex.com',
   output: 'hybrid',
-  adapter: vercel(),
+  adapter: vercel({
+    imageService: true,
+  }),
   vite: {
     plugins: [tailwindcss()]
   },

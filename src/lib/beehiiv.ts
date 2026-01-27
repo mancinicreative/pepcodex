@@ -39,8 +39,8 @@ export async function subscribeEmail(
   email: string,
   source?: string
 ): Promise<SubscribeResult> {
-  const apiKey = import.meta.env.BEEHIIV_API_KEY;
-  const publicationId = import.meta.env.BEEHIIV_PUBLICATION_ID;
+  const apiKey = process.env.BEEHIIV_API_KEY;
+  const publicationId = process.env.BEEHIIV_PUBLICATION_ID;
 
   // Validate environment variables
   if (!apiKey || !publicationId) {

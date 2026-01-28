@@ -23,7 +23,7 @@ const categoryLabels: Record<string, string> = {
     <div class="mb-8">
       <div class="relative">
         <div class="w-32 h-32 rounded-full bg-[var(--primary)]/10 flex items-center justify-center border border-[var(--primary)]/20">
-          <svg class="w-16 h-16 text-[var(--primary)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <svg class="w-16 h-16 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2" />
             <path d="M8.5 2h7" />
             <path d="M7 16h10" />
@@ -71,7 +71,7 @@ const categoryLabels: Record<string, string> = {
             href={`/peptides/${peptide.slug}`}
             class="glass-card-interactive p-4 text-left group"
           >
-            <div class="font-bold text-white group-hover:text-[var(--primary)] transition-colors">
+            <div class="font-bold text-white group-hover:text-primary transition-colors">
               {peptide.data.name}
             </div>
             <div class="text-xs text-white/60 mt-1">

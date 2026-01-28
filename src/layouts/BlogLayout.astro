@@ -46,7 +46,7 @@ const categoryLabels: Record<string, string> = {
 };
 
 const categoryColors: Record<string, string> = {
-  'weekly-briefing': 'bg-[var(--primary)]/20 text-[var(--primary)] border border-[var(--primary)]/30',
+  'weekly-briefing': 'bg-[var(--primary)]/20 text-primary border border-[var(--primary)]/30',
   'research-digest': 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30',
   'deep-dive': 'bg-amber-500/20 text-amber-400 border border-amber-500/30',
   'regulatory': 'bg-blue-500/20 text-blue-400 border border-blue-500/30',
@@ -80,9 +80,9 @@ const readingTime = Math.ceil(excerpt.length / 200) + 5; // Base estimate
       <div class="p-6">
         <!-- Breadcrumb -->
         <nav class="mb-4 text-sm" style="color: var(--text-low);">
-          <a href="/" class="hover:text-[var(--primary)] transition-colors">Home</a>
+          <a href="/" class="hover:text-primary transition-colors">Home</a>
           <span class="mx-2">/</span>
-          <a href="/blog" class="hover:text-[var(--primary)] transition-colors">Blog</a>
+          <a href="/blog" class="hover:text-primary transition-colors">Blog</a>
           <span class="mx-2">/</span>
           <span style="color: var(--text-medium);">{title.slice(0, 40)}...</span>
         </nav>
@@ -152,7 +152,7 @@ const readingTime = Math.ceil(excerpt.length / 200) + 5; // Base estimate
         {sources.length > 0 && (
           <section class="mt-12 not-prose">
             <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2" style="font-family: var(--font-display);">
-              <svg class="w-5 h-5 text-[var(--primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
               </svg>
               Sources & Citations
@@ -162,7 +162,7 @@ const readingTime = Math.ceil(excerpt.length / 200) + 5; // Base estimate
                 {sources.map((source, index) => (
                   <li class="p-4 hover:bg-white/5 transition-colors">
                     <div class="flex items-start gap-3">
-                      <span class="flex-shrink-0 w-6 h-6 rounded-full bg-[var(--primary)]/20 text-[var(--primary)] text-xs flex items-center justify-center font-medium">
+                      <span class="flex-shrink-0 w-6 h-6 rounded-full bg-[var(--primary)]/20 text-primary text-xs flex items-center justify-center font-medium">
                         {index + 1}
                       </span>
                       <div class="flex-grow min-w-0">
@@ -179,7 +179,7 @@ const readingTime = Math.ceil(excerpt.length / 200) + 5; // Base estimate
                             href={source.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="text-[var(--primary)] hover:text-[var(--accent)] hover:underline transition-colors"
+                            class="text-primary hover:text-[var(--accent)] hover:underline transition-colors"
                           >
                             {source.title}
                           </a>
@@ -206,7 +206,7 @@ const readingTime = Math.ceil(excerpt.length / 200) + 5; // Base estimate
           {relatedPeptides.length > 0 && (
             <div class="rounded-xl border border-white/10 bg-gradient-to-b from-[var(--primary)]/10 to-transparent p-4 backdrop-blur-sm">
               <h3 class="font-semibold text-white mb-3 flex items-center gap-2">
-                <svg class="w-4 h-4 text-[var(--primary)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <svg class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2" />
                 </svg>
                 Related Peptides
@@ -216,7 +216,7 @@ const readingTime = Math.ceil(excerpt.length / 200) + 5; // Base estimate
                   <li>
                     <a
                       href={`/peptides/${peptide}`}
-                      class="text-sm text-[var(--primary)] hover:text-[var(--accent)] hover:underline transition-colors"
+                      class="text-sm text-primary hover:text-[var(--accent)] hover:underline transition-colors"
                     >
                       {peptide.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
                     </a>
@@ -250,7 +250,7 @@ const readingTime = Math.ceil(excerpt.length / 200) + 5; // Base estimate
 
           <!-- Newsletter CTA -->
           <div class="rounded-xl border border-[var(--primary)]/30 bg-[var(--primary)]/10 p-4 backdrop-blur-sm">
-            <h3 class="font-semibold text-[var(--primary)] mb-2">Stay Updated</h3>
+            <h3 class="font-semibold text-primary mb-2">Stay Updated</h3>
             <p class="text-sm text-white/70 mb-3">
               Get weekly peptide research briefings delivered to your inbox.
             </p>
@@ -282,7 +282,7 @@ const readingTime = Math.ceil(excerpt.length / 200) + 5; // Base estimate
 
     <!-- Post Navigation -->
     <div class="mt-8 flex justify-between items-center">
-      <a href="/blog" class="inline-flex items-center text-[var(--primary)] hover:text-[var(--accent)] transition-colors">
+      <a href="/blog" class="inline-flex items-center text-primary hover:text-[var(--accent)] transition-colors">
         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
         </svg>

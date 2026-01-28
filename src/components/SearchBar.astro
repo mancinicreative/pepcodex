@@ -36,7 +36,7 @@ const sizeClasses = {
     </svg>
     <!-- Loading spinner -->
     <div id="search-spinner" class="absolute right-4 top-1/2 -translate-y-1/2 hidden">
-      <svg class="animate-spin h-5 w-5 text-[var(--primary)]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+      <svg class="animate-spin h-5 w-5 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
       </svg>
@@ -46,7 +46,7 @@ const sizeClasses = {
   <!-- Search results dropdown -->
   <div
     id="search-results"
-    class="absolute top-full left-0 right-0 mt-2 rounded-xl border border-white/10 bg-[#0a0a0f]/95 backdrop-blur-xl shadow-2xl hidden z-50 max-h-[70vh] overflow-auto"
+    class="absolute top-full left-0 right-0 mt-2 rounded-xl border border-white/10 bg-[#0a0a0f]/95 backdrop-blur-xl shadow-2xl hidden z-50 max-h-[70vh] overflow-auto text-left"
   >
     <div class="p-4 text-center text-[var(--muted-foreground)]" id="search-loading">
       Searching peptide dossiers...
@@ -312,7 +312,7 @@ const sizeClasses = {
       return `
         <li class="p-6 text-center">
           <div class="text-[var(--muted-foreground)] mb-2">No peptides found for "${escapeHtml(query)}"</div>
-          <a href="/peptides" class="text-[var(--primary)] hover:underline text-sm">Browse all peptides</a>
+          <a href="/peptides" class="text-primary hover:underline text-sm">Browse all peptides</a>
         </li>
       `;
     }
@@ -323,7 +323,7 @@ const sizeClasses = {
 
       // Match type indicator
       const matchBadge = matchType === 'content'
-        ? `<span class="text-xs text-[var(--primary)] bg-[var(--primary)]/10 px-2 py-0.5 rounded-full">Found in dossier</span>`
+        ? `<span class="text-xs text-primary bg-[var(--primary)]/10 px-2 py-0.5 rounded-full">Found in dossier</span>`
         : '';
 
       // Show context or summary
@@ -344,14 +344,14 @@ const sizeClasses = {
               </div>
             </div>
             ${peptide.aliases.length > 0 ? `
-              <div class="text-xs text-white/50 mb-2">
+              <div class="text-xs text-white/50 mb-2" style="text-align: left;">
                 ${peptide.aliases.slice(0, 3).join(' · ')}${peptide.aliases.length > 3 ? ' · ...' : ''}
               </div>
             ` : ''}
-            <div class="text-sm text-white/70 line-clamp-2 mb-2">
+            <div class="text-sm text-white/70 line-clamp-2 mb-2" style="text-align: left;">
               ${highlightTerms(displayText, query)}
             </div>
-            <div class="flex items-center gap-3 text-xs text-white/50">
+            <div class="flex items-center gap-3 text-xs text-white/50" style="text-align: left;">
               <span>${peptide.sources.count} sources</span>
               <span>·</span>
               <span>${peptide.sources.human} human studies</span>
@@ -440,7 +440,7 @@ const sizeClasses = {
           searchResultsList.innerHTML = `
             <li class="p-4 text-center text-[var(--muted-foreground)]">
               <div class="mb-2">Search index loading...</div>
-              <a href="/peptides" class="text-[var(--primary)] hover:underline">Browse all peptides</a>
+              <a href="/peptides" class="text-primary hover:underline">Browse all peptides</a>
             </li>
           `;
         }

@@ -106,7 +106,7 @@ const itemListData = sortedGlossary.map((term, index) => ({
       {letters.map((letter) => (
         <section id={letter}>
           <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-4" style="font-family: var(--font-display);">
-            <span class="w-12 h-12 rounded-xl bg-[var(--primary)]/20 border border-[var(--primary)]/30 flex items-center justify-center text-[var(--primary)]">
+            <span class="w-12 h-12 rounded-xl bg-[var(--primary)]/20 border border-[var(--primary)]/30 flex items-center justify-center text-primary">
               {letter}
             </span>
           </h2>
@@ -126,7 +126,7 @@ const itemListData = sortedGlossary.map((term, index) => ({
                       >
                         {categoryLabels[term.data.category]}
                       </span>
-                      <h3 class="font-bold text-white group-hover:text-[var(--primary)] transition-colors">
+                      <h3 class="font-bold text-white group-hover:text-primary transition-colors">
                         {term.data.term}
                       </h3>
                       <p class="mt-1 text-sm text-white/60 line-clamp-2">
@@ -134,7 +134,7 @@ const itemListData = sortedGlossary.map((term, index) => ({
                       </p>
                     </div>
                     <div class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-[var(--primary)]/10 group-hover:border-[var(--primary)]/30 transition-all flex-shrink-0">
-                      <svg class="h-4 w-4 text-white/60 group-hover:text-[var(--primary)] transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg class="h-4 w-4 text-white/60 group-hover:text-primary transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                       </svg>
                     </div>

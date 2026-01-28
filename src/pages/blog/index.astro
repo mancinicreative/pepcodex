@@ -36,14 +36,14 @@ const categoryLabels: Record<string, string> = {
       <div class="p-8 lg:p-12">
         <div class="flex items-center gap-3 mb-4">
           <div class="w-10 h-10 rounded-lg bg-[var(--primary)]/20 flex items-center justify-center border border-[var(--primary)]/30">
-            <svg class="w-5 h-5 text-[var(--primary)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/>
               <path d="M18 14h-8"/>
               <path d="M18 18h-8"/>
               <path d="M18 10h-8"/>
             </svg>
           </div>
-          <span class="text-sm font-medium text-[var(--primary)] uppercase tracking-wider">Research Blog</span>
+          <span class="text-sm font-medium text-primary uppercase tracking-wider">Research Blog</span>
         </div>
 
         <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4" style="font-family: var(--font-display);">
@@ -57,11 +57,11 @@ const categoryLabels: Record<string, string> = {
         <!-- Stats -->
         <div class="mt-8 flex flex-wrap gap-8">
           <div>
-            <div class="text-3xl font-bold text-[var(--primary)]">{allPosts.length}</div>
+            <div class="text-3xl font-bold text-white">{allPosts.length}</div>
             <div class="text-sm text-white/60">Articles</div>
           </div>
           <div>
-            <div class="text-3xl font-bold text-emerald-400">{categories.length}</div>
+            <div class="text-3xl font-bold text-white">{categories.length}</div>
             <div class="text-sm text-white/60">Categories</div>
           </div>
           <div>
@@ -75,14 +75,14 @@ const categoryLabels: Record<string, string> = {
     <!-- Category Filters -->
     <div class="flex flex-wrap gap-2">
       <button
-        class="filter-btn filter-btn--active"
+        class="filter-btn filter-btn--active px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 bg-[var(--primary)] text-white border border-[var(--primary)]/50"
         data-category="all"
       >
         All Posts
       </button>
       {categories.map(category => (
         <button
-          class="filter-btn"
+          class="filter-btn px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 bg-white/5 text-white/70 border border-white/10 hover:bg-white/10 hover:text-white hover:border-white/20"
           data-category={category}
         >
           {categoryLabels[category] || category}
@@ -93,7 +93,7 @@ const categoryLabels: Record<string, string> = {
     <!-- Featured Posts -->
     {featuredPosts.length > 0 && (
       <section>
-        <h2 class="section-header mb-6">Featured</h2>
+        <h2 class="text-xl font-bold text-white mb-6">Featured</h2>
         <div class="grid gap-6 md:grid-cols-2">
           {featuredPosts.slice(0, 2).map(post => (
             <BlogCard
@@ -113,7 +113,7 @@ const categoryLabels: Record<string, string> = {
 
     <!-- All Posts Grid -->
     <section>
-      <h2 class="section-header mb-6">Latest Posts</h2>
+      <h2 class="text-xl font-bold text-white mb-6">Latest Posts</h2>
       <div id="posts-grid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {regularPosts.map(post => (
           <div data-category={post.data.category}>
@@ -150,7 +150,7 @@ const categoryLabels: Record<string, string> = {
         <p class="text-white/70 mb-6">
           Subscribe to receive weekly peptide research updates, regulatory news, and clinical trial analysis directly in your inbox.
         </p>
-        <a href="/newsletter" class="btn btn-primary">
+        <a href="/newsletter" class="btn btn-primary btn-md">
           Subscribe to Newsletter
         </a>
       </div>
@@ -163,13 +163,20 @@ const categoryLabels: Record<string, string> = {
     const postsGrid = document.getElementById('posts-grid');
     const postItems = postsGrid?.querySelectorAll('[data-category]');
 
+    const activeClasses = ['bg-[var(--primary)]', 'text-white', 'border-[var(--primary)]/50'];
+    const inactiveClasses = ['bg-white/5', 'text-white/70', 'border-white/10', 'hover:bg-white/10', 'hover:text-white', 'hover:border-white/20'];
+
     filterButtons.forEach(button => {
       button.addEventListener('click', () => {
         const category = button.getAttribute('data-category');
 
-        // Update active state
-        filterButtons.forEach(btn => btn.classList.remove('filter-btn--active'));
-        button.classList.add('filter-btn--active');
+        // Update active state - swap classes
+        filterButtons.forEach(btn => {
+          btn.classList.remove('filter-btn--active', ...activeClasses);
+          btn.classList.add(...inactiveClasses);
+        });
+        button.classList.add('filter-btn--active', ...activeClasses);
+        button.classList.remove(...inactiveClasses);
 
         // Filter posts
         postItems?.forEach(item => {

@@ -31,7 +31,7 @@ const evidenceLevels = ['high', 'moderate', 'low', 'very-low'];
     <div class="mt-8 space-y-4">
       <!-- Category filter -->
       <div class="flex flex-wrap items-center gap-3">
-        <span class="text-xs font-bold uppercase tracking-[0.15em] text-[var(--primary)]">Category:</span>
+        <span class="text-xs font-bold uppercase tracking-[0.15em] text-primary">Category:</span>
         <button
           class="filter-btn px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 bg-[var(--primary)] text-white border border-[var(--primary)]/50"
           data-filter="category"
@@ -52,7 +52,7 @@ const evidenceLevels = ['high', 'moderate', 'low', 'very-low'];
 
       <!-- Evidence filter -->
       <div class="flex flex-wrap items-center gap-3">
-        <span class="text-xs font-bold uppercase tracking-[0.15em] text-[var(--primary)]">Evidence:</span>
+        <span class="text-xs font-bold uppercase tracking-[0.15em] text-primary">Evidence:</span>
         <button
           class="filter-btn px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 bg-[var(--primary)] text-white border border-[var(--primary)]/50"
           data-filter="evidence"
@@ -104,7 +104,7 @@ const evidenceLevels = ['high', 'moderate', 'low', 'very-low'];
       <section id={`letter-${letter}`} class="scroll-mt-24">
         <div class="flex items-center gap-4 mb-6">
           <div class="w-12 h-12 rounded-xl bg-[var(--primary)]/10 border border-[var(--primary)]/20 flex items-center justify-center">
-            <span class="text-2xl font-bold text-[var(--primary)]">{letter}</span>
+            <span class="text-2xl font-bold text-primary">{letter}</span>
           </div>
           <div class="flex-1 h-px bg-gradient-to-r from-white/10 to-transparent"></div>
         </div>
@@ -135,7 +135,7 @@ const evidenceLevels = ['high', 'moderate', 'low', 'very-low'];
   <div id="empty-state" class="hidden py-20 text-center">
     <div class="glass-card-default p-12 max-w-md mx-auto">
       <div class="w-16 h-16 rounded-2xl bg-[var(--primary)]/10 border border-[var(--primary)]/20 flex items-center justify-center mx-auto mb-6">
-        <svg class="w-8 h-8 text-[var(--primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
       </div>

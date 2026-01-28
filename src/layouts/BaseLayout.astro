@@ -79,15 +79,13 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
         <!-- Logo -->
         <a href="/" class="flex items-center gap-2 group">
           <div class="relative w-8 h-8 flex items-center justify-center bg-[var(--primary)]/10 rounded-lg group-hover:bg-[var(--primary)]/20 transition-colors border border-[var(--primary)]/20">
-            <svg class="w-5 h-5 text-[var(--primary)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2" />
               <path d="M8.5 2h7" />
               <path d="M7 16h10" />
             </svg>
           </div>
-          <span class="font-bold text-xl tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary)] via-purple-400 to-[var(--primary)]" style="font-family: var(--font-display);">
-            PEPCODEX
-          </span>
+          <span class="font-bold text-lg bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-primary" style="font-family: var(--font-display);">PEPCODEX</span>
         </a>
 
         <!-- Desktop Nav -->
@@ -214,7 +212,7 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
             class:list={[
               "flex items-center gap-3 px-4 py-3 rounded-xl text-lg font-medium transition-colors",
               isActive('/peptides')
-                ? "bg-[var(--primary)]/10 text-[var(--primary)] border border-[var(--primary)]/20"
+                ? "bg-[var(--primary)]/10 text-primary border border-[var(--primary)]/20"
                 : "text-white/85 hover:text-white hover:bg-white/5"
             ]}
           >
@@ -228,7 +226,7 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
             class:list={[
               "flex items-center gap-3 px-4 py-3 rounded-xl text-lg font-medium transition-colors",
               isActive('/trials')
-                ? "bg-[var(--primary)]/10 text-[var(--primary)] border border-[var(--primary)]/20"
+                ? "bg-[var(--primary)]/10 text-primary border border-[var(--primary)]/20"
                 : "text-white/85 hover:text-white hover:bg-white/5"
             ]}
           >
@@ -242,7 +240,7 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
             class:list={[
               "flex items-center gap-3 px-4 py-3 rounded-xl text-lg font-medium transition-colors",
               isActive('/glossary')
-                ? "bg-[var(--primary)]/10 text-[var(--primary)] border border-[var(--primary)]/20"
+                ? "bg-[var(--primary)]/10 text-primary border border-[var(--primary)]/20"
                 : "text-white/85 hover:text-white hover:bg-white/5"
             ]}
           >
@@ -256,7 +254,7 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
             class:list={[
               "flex items-center gap-3 px-4 py-3 rounded-xl text-lg font-medium transition-colors",
               isActive('/blog')
-                ? "bg-[var(--primary)]/10 text-[var(--primary)] border border-[var(--primary)]/20"
+                ? "bg-[var(--primary)]/10 text-primary border border-[var(--primary)]/20"
                 : "text-white/85 hover:text-white hover:bg-white/5"
             ]}
           >
@@ -273,7 +271,7 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
             class:list={[
               "flex items-center gap-3 px-4 py-3 rounded-xl text-lg font-medium transition-colors",
               isActive('/directory')
-                ? "bg-[var(--primary)]/10 text-[var(--primary)] border border-[var(--primary)]/20"
+                ? "bg-[var(--primary)]/10 text-primary border border-[var(--primary)]/20"
                 : "text-white/85 hover:text-white hover:bg-white/5"
             ]}
           >

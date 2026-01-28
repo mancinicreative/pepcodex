@@ -99,7 +99,7 @@ const stats = [
         <a href={`/category/${cat.slug}`} class="glass-card glass-card--hover p-6 text-center group">
           <!-- Icon circle -->
           <div class="w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-3 group-hover:bg-primary/20 group-hover:text-primary transition-colors" style="background: var(--surface-glass); border: 1px solid var(--border-glass);">
-            <span class="text-lg font-bold font-display">{cat.icon}</span>
+            <span class="text-lg font-bold font-display text-white group-hover:text-primary">{cat.icon}</span>
           </div>
           <h3 class="font-semibold font-display" style="color: var(--text-high);">{cat.name}</h3>
         </a>
@@ -141,7 +141,7 @@ const stats = [
   )}
 
   <!-- Trust Signals / Stats -->
-  <section class="relative border-y border-white/5 bg-black/40 backdrop-blur-lg py-12">
+  <section class="relative border-y border-white/5 bg-gradient-to-r from-[var(--primary)]/20 via-purple-900/30 to-[var(--primary)]/20 backdrop-blur-lg py-12">
     <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
       {stats.map((stat) => (
         <div class="text-center group">

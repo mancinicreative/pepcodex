@@ -3,6 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import ArticleSchema from '../components/SEO/ArticleSchema.astro';
 import BreadcrumbSchema from '../components/SEO/BreadcrumbSchema.astro';
 import RelatedEntities from '../components/RelatedEntities.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
 
 interface Props {
   name: string;
@@ -108,7 +109,7 @@ const articleUrl = Astro.url.toString();
         Back to Library
       </a>
       <div class="flex items-center gap-2">
-        <span class="bg-[var(--primary)]/5 border border-[var(--primary)]/20 text-[var(--primary)] px-3 py-1 rounded-full uppercase tracking-widest text-[10px] font-bold">
+        <span class="bg-[var(--primary)]/5 border border-[var(--primary)]/20 text-primary px-3 py-1 rounded-full uppercase tracking-widest text-[10px] font-bold">
           ID: {name.toUpperCase().replace(/\s+/g, '-')}
         </span>
         <span class="bg-white/5 border border-white/10 text-white/70 px-3 py-1 rounded-full uppercase tracking-widest text-[10px] font-bold">
@@ -228,12 +229,12 @@ const articleUrl = Astro.url.toString();
             </div>
           </div>
 
-          <!-- Action buttons -->
-          <div class="mt-12 flex gap-4 relative z-10">
-            <button class="flex-1 bg-white text-black font-bold py-4 rounded-xl text-sm uppercase tracking-widest hover:bg-[var(--primary)] hover:text-white transition-all duration-500">
-              Download Dossier
-            </button>
-            <button class="px-6 border border-white/10 rounded-xl hover:bg-white/5 transition-colors">
+          <!-- Share button -->
+          <div class="mt-12 relative z-10">
+            <button
+              id="share-btn"
+              class="w-full flex items-center justify-center gap-3 bg-white text-black font-bold py-4 rounded-xl text-sm uppercase tracking-widest hover:bg-[var(--primary)] hover:text-white transition-all duration-500"
+            >
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="18" cy="5" r="3"/>
                 <circle cx="6" cy="12" r="3"/>
@@ -241,6 +242,7 @@ const articleUrl = Astro.url.toString();
                 <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
                 <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
               </svg>
+              <span id="share-text">Share Dossier</span>
             </button>
           </div>
         </div>
@@ -250,9 +252,9 @@ const articleUrl = Astro.url.toString();
     <!-- Research Dossier Section -->
     <section class="space-y-8">
       <div class="flex items-center justify-between border-b border-white/10 pb-4">
-        <h2 class="text-2xl font-bold" style="font-family: var(--font-display);">Research Dossier</h2>
+        <h2 class="text-2xl font-bold text-white" style="font-family: var(--font-display);">Research Dossier</h2>
         <div class="flex items-center gap-4 text-sm text-white/70 font-medium">
-          <span class="text-[var(--primary)]" id="current-section">01</span>
+          <span class="text-primary" id="current-section">01</span>
           <span class="opacity-30">/</span>
           <span>{sections.length}</span>
         </div>
@@ -303,7 +305,7 @@ const articleUrl = Astro.url.toString();
                     This dossier synthesizes available evidence from peer-reviewed literature, regulatory documents, and clinical trial registries. Evidence strength ratings follow a modified GRADE approach.
                   </p>
                   <p class="text-white/80">
-                    For complete methodology details, see our <a href="/methodology" class="font-medium text-[var(--primary)] hover:underline">Methodology page</a>.
+                    For complete methodology details, see our <a href="/methodology" class="font-medium text-primary hover:underline">Methodology page</a>.
                   </p>
                 </div>
               </section>
@@ -330,6 +332,15 @@ const articleUrl = Astro.url.toString();
       </div>
     </section>
 
+    <!-- Newsletter CTA -->
+    <section class="mt-20">
+      <NewsletterForm
+        variant="full"
+        heading="Get Research Alerts"
+        description="New dossiers and major study summaries delivered to your inbox. Evidence-graded, citation-backed research you can trust."
+      />
+    </section>
+
     <!-- Compare Section -->
     {comparators.length > 0 && (
       <section class="mt-20">
@@ -343,12 +354,12 @@ const articleUrl = Astro.url.toString();
               class="glass-card-hoverable p-6 flex items-center gap-4 group"
             >
               <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-[var(--primary)]/10 group-hover:border-[var(--primary)]/30 transition-all">
-                <svg class="w-6 h-6 text-[var(--muted-foreground)] group-hover:text-[var(--primary)] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <svg class="w-6 h-6 text-[var(--muted-foreground)] group-hover:text-primary transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M16 3h5v5M8 3H3v5M21 3L14 10M3 3l7 7M21 21l-7-7M3 21l7-7M16 21h5v-5M8 21H3v-5" />
                 </svg>
               </div>
               <div>
-                <div class="font-bold text-white group-hover:text-[var(--primary)] transition-colors">{name} vs {comp}</div>
+                <div class="font-bold text-white group-hover:text-primary transition-colors">{name} vs {comp}</div>
                 <div class="text-sm text-white/70">View comparison</div>
               </div>
             </a>
@@ -509,5 +520,49 @@ const articleUrl = Astro.url.toString();
         }
       });
     });
+
+    // Share button functionality
+    const shareBtn = document.getElementById('share-btn');
+    const shareText = document.getElementById('share-text');
+
+    if (shareBtn && shareText) {
+      shareBtn.addEventListener('click', async () => {
+        const url = window.location.href;
+        const title = document.title;
+
+        // Try native share API first (mobile)
+        if (navigator.share) {
+          try {
+            await navigator.share({ title, url });
+            return;
+          } catch (err) {
+            // User cancelled or share failed, fall back to clipboard
+          }
+        }
+
+        // Fall back to clipboard copy
+        try {
+          await navigator.clipboard.writeText(url);
+          shareText.textContent = 'Link Copied!';
+          shareBtn.classList.add('bg-green-500');
+          setTimeout(() => {
+            shareText.textContent = 'Share Dossier';
+            shareBtn.classList.remove('bg-green-500');
+          }, 2000);
+        } catch (err) {
+          // Fallback for older browsers
+          const textArea = document.createElement('textarea');
+          textArea.value = url;
+          document.body.appendChild(textArea);
+          textArea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textArea);
+          shareText.textContent = 'Link Copied!';
+          setTimeout(() => {
+            shareText.textContent = 'Share Dossier';
+          }, 2000);
+        }
+      });
+    }
   });
 </script>

@@ -45,7 +45,7 @@ const categoryColors: Record<string, string> = {
               {categoryLabels[category] || 'Other'}
             </a>
           )}
-          <span class="inline-flex items-center rounded-full bg-[var(--primary)]/20 px-3 py-1 text-xs font-medium text-[var(--primary)] border border-[var(--primary)]/30">
+          <span class="inline-flex items-center rounded-full bg-[var(--primary)]/20 px-3 py-1 text-xs font-medium text-primary border border-[var(--primary)]/30">
             Guide
           </span>
         </div>
@@ -62,7 +62,7 @@ const categoryColors: Record<string, string> = {
           <div class="mt-4">
             <a
               href={`/peptides/${peptide}`}
-              class="inline-flex items-center text-[var(--primary)] hover:text-[var(--accent)] hover:underline text-sm font-medium transition-colors"
+              class="inline-flex items-center text-primary hover:text-[var(--accent)] hover:underline text-sm font-medium transition-colors"
             >
               View full {peptide} dossier
               <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -96,7 +96,7 @@ const categoryColors: Record<string, string> = {
                 <li>
                   <a
                     href={`/peptides/${peptide}`}
-                    class="text-sm text-[var(--primary)] hover:text-[var(--accent)] hover:underline transition-colors"
+                    class="text-sm text-primary hover:text-[var(--accent)] hover:underline transition-colors"
                   >
                     {peptide.charAt(0).toUpperCase() + peptide.slice(1)} Evidence Dossier
                   </a>
@@ -104,7 +104,7 @@ const categoryColors: Record<string, string> = {
                 <li>
                   <a
                     href={`/safety/glp1-safety-overview`}
-                    class="text-sm text-[var(--primary)] hover:text-[var(--accent)] hover:underline transition-colors"
+                    class="text-sm text-primary hover:text-[var(--accent)] hover:underline transition-colors"
                   >
                     GLP-1 Safety Overview
                   </a>

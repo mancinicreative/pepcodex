@@ -30,7 +30,7 @@ const categoryLabels: Record<string, string> = {
 };
 
 const categoryColors: Record<string, string> = {
-  'weekly-briefing': 'bg-[var(--primary)]/20 text-[var(--primary)] border-[var(--primary)]/30',
+  'weekly-briefing': 'bg-[var(--primary)]/20 text-primary border-[var(--primary)]/30',
   'research-digest': 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
   'deep-dive': 'bg-amber-500/20 text-amber-400 border-amber-500/30',
   'regulatory': 'bg-blue-500/20 text-blue-400 border-blue-500/30',
@@ -49,11 +49,11 @@ const readingTime = Math.ceil(excerpt.length / 200) + 5;
   ]}
 >
   <!-- Gradient overlay -->
-  <div class="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/10 via-transparent to-cyan-500/5 opacity-50 group-hover:opacity-100 transition-opacity rounded-xl"></div>
+  <div class="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/10 via-[var(--primary)]/5 to-cyan-500/5 opacity-50 group-hover:opacity-100 group-hover:from-[var(--primary)]/25 group-hover:via-[var(--primary)]/15 transition-all duration-300 rounded-xl"></div>
 
   <!-- Featured badge -->
   {featured && (
-    <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-0">
+    <div class="absolute top-5 right-4 z-20">
       <span class="inline-flex items-center rounded-full bg-[var(--primary)] px-3 py-1 text-xs font-medium text-white shadow-lg">
         Featured
       </span>
@@ -61,7 +61,7 @@ const readingTime = Math.ceil(excerpt.length / 200) + 5;
   )}
 
   <!-- Decorative icon -->
-  <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity text-[var(--primary)]">
+  <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity text-primary">
     <svg class="w-20 h-20 rotate-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
       <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/>
       <path d="M18 14h-8"/>
@@ -82,7 +82,7 @@ const readingTime = Math.ceil(excerpt.length / 200) + 5;
     </div>
 
     <!-- Title -->
-    <h3 class="text-xl font-bold group-hover:text-[var(--primary)] transition-colors line-clamp-2" style="color: var(--text-high); font-family: var(--font-display);">
+    <h3 class="text-xl font-bold group-hover:text-primary transition-colors line-clamp-2" style="color: var(--text-high); font-family: var(--font-display);">
       {title}
     </h3>
 
@@ -116,7 +116,7 @@ const readingTime = Math.ceil(excerpt.length / 200) + 5;
 
       <!-- Arrow -->
       <svg
-        class="h-4 w-4 group-hover:text-[var(--primary)] group-hover:translate-x-1 transition-all"
+        class="h-4 w-4 group-hover:text-primary group-hover:translate-x-1 transition-all"
         style="color: var(--text-low);"
         fill="none"
         stroke="currentColor"

@@ -1,0 +1,101 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/peptide/:slug",
+      "destination": "/peptides/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/peptide",
+      "destination": "/peptides",
+      "permanent": true
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/sitemap-index.xml",
+      "permanent": false
+    },
+    {
+      "source": "/guides",
+      "destination": "/guide",
+      "permanent": true
+    },
+    {
+      "source": "/guides/:slug",
+      "destination": "/guide/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/comparisons",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/comparisons/:slug",
+      "destination": "/compare/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/categories/:slug",
+      "destination": "/category/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/semaglutide",
+      "destination": "/peptides/semaglutide",
+      "permanent": true
+    },
+    {
+      "source": "/tirzepatide",
+      "destination": "/peptides/tirzepatide",
+      "permanent": true
+    },
+    {
+      "source": "/ozempic",
+      "destination": "/guide/what-is-ozempic",
+      "permanent": true
+    },
+    {
+      "source": "/wegovy",
+      "destination": "/guide/what-is-wegovy",
+      "permanent": true
+    },
+    {
+      "source": "/mounjaro",
+      "destination": "/guide/what-is-mounjaro",
+      "permanent": true
+    },
+    {
+      "source": "/zepbound",
+      "destination": "/guide/what-is-zepbound",
+      "permanent": true
+    },
+    {
+      "source": "/bpc-157",
+      "destination": "/peptides/bpc-157",
+      "permanent": true
+    },
+    {
+      "source": "/tb-500",
+      "destination": "/peptides/tb-500",
+      "permanent": true
+    },
+    {
+      "source": "/retatrutide",
+      "destination": "/peptides/retatrutide",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
+        }
+      ]
+    }
+  ]
+}

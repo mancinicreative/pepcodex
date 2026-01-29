@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import OrganizationSchema from '../components/SEO/OrganizationSchema.astro';
+import { Analytics } from '@vercel/analytics/astro';
 
 interface Props {
   title: string;
@@ -71,6 +72,9 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
         </script>
       </>
     )}
+
+    <!-- Vercel Web Analytics -->
+    <Analytics />
   </head>
   <body class="min-h-screen text-[var(--foreground)] antialiased selection:bg-[var(--primary)]/30" style="font-family: var(--font-sans);">
     <!-- Header -->

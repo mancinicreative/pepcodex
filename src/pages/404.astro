@@ -117,6 +117,24 @@ const categoryLabels: Record<string, string> = {
 </BaseLayout>
 
 <script>
+  // Track 404 error with the attempted URL for analytics
+  (function() {
+    const attemptedUrl = window.location.pathname + window.location.search;
+    const referrer = document.referrer || 'direct';
+
+    // Send to GA4 as custom event
+    if (typeof gtag === 'function') {
+      gtag('event', '404_error', {
+        'page_path': attemptedUrl,
+        'page_referrer': referrer,
+        'page_location': window.location.href
+      });
+    }
+
+    // Also log to console for debugging
+    console.log('404 Error:', { attemptedUrl, referrer });
+  })();
+
   // Basic search redirect
   const searchInput = document.getElementById('search-404') as HTMLInputElement;
   if (searchInput) {

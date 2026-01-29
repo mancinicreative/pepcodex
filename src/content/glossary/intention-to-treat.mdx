@@ -1,0 +1,111 @@
+---
+term: "Intention-to-Treat"
+definition: "is a clinical trial analysis method where all participants are analyzed in the groups to which they were originally randomized, regardless of whether they completed treatment, switched groups, or adhered to the protocol. ITT analysis preserves randomization benefits and reflects real-world effectiveness."
+aliases: ["ITT", "ITT analysis", "Intent-to-treat"]
+relatedPeptides: ["semaglutide", "tirzepatide", "liraglutide"]
+relatedTerms: ["clinical-trial", "randomized-controlled-trial", "primary-endpoint"]
+category: "research"
+lastUpdated: 2026-01-28
+metaTitle: "Intention-to-Treat (ITT) Analysis Definition | PepCodex Glossary"
+metaDescription: "What is intention-to-treat analysis? Definition and relevance to peptide clinical trial interpretation."
+---
+
+## How Intention-to-Treat Works
+
+### The ITT Principle
+"Once randomized, always analyzed"
+
+| Situation | ITT Approach |
+|-----------|--------------|
+| Patient stops taking drug | Still counted in drug group |
+| Patient switches to other arm | Counted in original group |
+| Patient lost to follow-up | Included with imputation |
+| Patient violates protocol | Remains in assigned group |
+
+### Why ITT Matters
+
+**Preserves Randomization**
+Randomization creates comparable groups. Excluding patients based on post-randomization events can reintroduce bias and make groups incomparable.
+
+**Reflects Reality**
+In real practice, patients:
+- Skip doses
+- Stop medications
+- Don't follow instructions perfectly
+
+ITT results better predict real-world effectiveness.
+
+## Relevance to Peptides
+
+### ITT in GLP-1 Agonist Trials
+
+**STEP 1 Analysis Populations**
+
+| Population | Definition | Weight Loss |
+|------------|------------|-------------|
+| ITT | All randomized | -14.9% |
+| Per-protocol | Completed as designed | Higher |
+| Completers | Finished study | Higher still |
+
+### Why Different Populations Show Different Results
+
+Patients who:
+- Stop due to side effects: Often had less weight loss
+- Drop out early: Weight regain not captured
+- Complete study: Generally better adherence, better results
+
+ITT provides the most conservative (and realistic) estimate.
+
+### Handling Missing Data
+
+| Method | Approach |
+|--------|----------|
+| Last observation carried forward | Use last measured value |
+| Multiple imputation | Statistically estimate missing values |
+| Mixed models | Account for all available data |
+| Worst-case scenario | Assume no benefit for dropouts |
+
+## ITT vs Per-Protocol Analysis
+
+### Comparison
+
+| Aspect | ITT | Per-Protocol |
+|--------|-----|--------------|
+| Includes | All randomized | Protocol completers only |
+| Preserves | Randomization | Theoretical drug effect |
+| Estimates | Effectiveness | Efficacy |
+| Bias risk | Lower | Higher |
+| Real-world relevance | Higher | Lower |
+
+### When Each is Used
+- **ITT**: Primary analysis for regulatory decisions
+- **Per-protocol**: Supportive analysis showing maximal effect
+- **Both reported**: Provides complete picture
+
+## Understanding Trial Reports
+
+### What to Look For
+
+"In the intention-to-treat population (n=1,961), mean weight change was -14.9% for semaglutide vs -2.4% for placebo"
+
+This tells you:
+- All randomized patients included
+- Results represent real-world expectation
+- Drug effect is 12.5 percentage points
+
+### Comparing ITT to Completers
+
+If ITT shows 15% weight loss but completers show 18%:
+- 15% is more realistic expectation
+- 18% represents those who tolerate and adhere
+- The 3% gap reflects dropout impact
+
+## Frequently Asked Questions
+
+### Isn't it unfair to count patients who stopped taking the drug?
+
+ITT actually provides a fairer test. If a drug has intolerable side effects causing many patients to stop, that's important information. Excluding those patients would make the drug look better than it performs in reality. ITT captures both efficacy and tolerability.
+
+### Which results should I believe - ITT or per-protocol?
+
+ITT is generally more reliable for predicting real-world outcomes. Per-protocol shows what happens under ideal conditions. For making treatment decisions, ITT is more relevant because it accounts for the reality that not everyone tolerates or adheres to treatment perfectly.

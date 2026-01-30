@@ -2,7 +2,7 @@
 
 ## Overview
 
-v3.0 Operations & Growth — Build sustainable operational systems that maximize views and revenue while maintaining research quality and trust.
+v4.0 Competitive Enhancement + SEO Domination — Close feature gaps with competitors while maintaining credibility positioning, then dominate SEO with programmatic pages.
 
 ## Milestones
 
@@ -16,170 +16,254 @@ v3.0 Operations & Growth — Build sustainable operational systems that maximize
 ### v2.0 Production Launch (COMPLETE)
 - [x] **Phase 6: Deploy Infrastructure** - GitHub, Vercel, DNS, development workflow
 - [x] **Phase 7: Analytics Setup** - GA4, Google Search Console
-- [ ] **Phase 8: Production Verification** - Test all features on live site (in progress)
+- [ ] **Phase 8: Production Verification** - Test all features on live site (partial)
 
-### v3.0 Operations & Growth (ACTIVE)
+### v3.0 Operations & Growth (ON HOLD)
+*Paused to prioritize v4.0 competitive features. Resume after v4.0.*
 - [ ] **Phase 9: Operations Infrastructure** - Templates, calendars, SOPs
 - [ ] **Phase 10: Content Production System** - Batch workflow, repurposing
 - [ ] **Phase 11: Distribution System** - Instagram, email capture, newsletters
 - [ ] **Phase 12: Monetization Foundation** - Directory, pricing, outreach
 
----
-
-## Phase Details
-
-### Phase 6: Deploy Infrastructure ✓
-**Goal**: Site live at pepcodex.com with proper development workflow
-**Status**: COMPLETE
-**Completed**: 2026-01-27
-
-### Phase 7: Analytics Setup ✓
-**Goal**: Tracking and SEO tools configured
-**Status**: COMPLETE
-**Completed**: 2026-01-27
-- GA4: G-1M56CNL8CK
-- Search Console: Verified, sitemap submitted
-
-### Phase 8: Production Verification
-**Goal**: Verify all features work correctly on production
-**Status**: In Progress (separate agent)
-**Requirements**: VERF-01 through VERF-05
+### v4.0 Competitive Enhancement + SEO Domination (ACTIVE)
+- [ ] **Phase 13: Legal Foundation** - 5 essential pages + disclaimers
+- [ ] **Phase 14: Calculator Suite** - Reconstitution, blend, accumulation
+- [ ] **Phase 15: Peptide Interactions** - Synergy matrix with color coding
+- [ ] **Phase 16: Dossier UX Overhaul** - Molecular viz, evidence chains
+- [ ] **Phase 17: Content Migration** - Guides/safety → blog with redirects
+- [ ] **Phase 18: Multi-Peptide Protocols** - Research-based protocol pages
+- [ ] **Phase 19: Enhanced UX** - Timeline, quality checklist
+- [ ] **Phase 20: Programmatic SEO - Conditions** - [Peptide] + [Condition] pages
+- [ ] **Phase 21: Location SEO - Cities** - Peptide clinics in [City] pages
+- [ ] **Phase 22: SEO Polish + Launch** - Schema markup, internal linking, launch
 
 ---
 
-## v3.0 Phase Details
+## v4.0 Phase Details
 
-### Phase 9: Operations Infrastructure
-**Goal**: Create foundational systems that make consistent execution possible
+### Phase 13: Legal Foundation
+**Goal**: Essential legal protection for the site
+**Requirements**: LEGL-01 through LEGL-07 (7 requirements)
+**Success Criteria**:
+1. All 5 legal pages exist and are accessible
+2. Disclaimer banner visible on every page
+3. Cookie consent popup appears on first visit
+
+**Deliverables**:
+- `/disclaimer` - General + medical disclaimer
+- `/privacy` - Privacy policy
+- `/terms` - Terms of service
+- `/fda-notice` - FDA compliance notice
+- `/cookie-policy` - Cookie/tracking disclosure
+- `DisclaimerBanner.astro` component
+- `CookieConsent.astro` component
+
+---
+
+### Phase 14: Calculator Suite
+**Goal**: Practical calculation tools without dosing advice
+**Requirements**: CALC-01 through CALC-05 (5 requirements)
 **Depends on**: None
-**Requirements**: OPS-01 through OPS-07
-**Success Criteria** (what must be TRUE):
-  1. Content calendar exists with 4 weeks populated
-  2. All templates created (carousel, story, newsletter, blog)
-  3. Weekly operations checklist defined
-  4. First week of content scheduled in advance
+**Success Criteria**:
+1. User can calculate reconstitution with visual syringe
+2. User can calculate blend concentrations
+3. User can calculate accumulation curves
+4. All calculators show research disclaimer
 
-**Plans:** 1 plan
-- [ ] 09-01-PLAN.md — Create remaining templates (story, newsletter, blog)
-
-**Already Complete (7-day sprint):**
-- [x] OPS-01: Content calendar template (CONTENT-CALENDAR.md)
-- [x] OPS-02: Instagram carousel template (INSTAGRAM-CAROUSELS.md)
-- [x] OPS-06: Weekly operations checklist (WEEKLY-OPS-CHECKLIST.md)
-- [x] OPS-07: Editorial calendar with 4 weeks (CONTENT-CALENDAR.md)
-
-### Phase 10: Content Production System
-**Goal**: Build repeatable workflow for creating and scheduling content
-**Depends on**: Phase 9 (templates ready)
-**Requirements**: PROD-01 through PROD-05
-**Success Criteria** (what must be TRUE):
-  1. Batch workflow documented and tested
-  2. 2 weeks of content created in advance
-  3. Researcher identification criteria defined
-  4. Content backlog with 20+ topic ideas
-
-**Plans:**
-- [ ] 10-01: Document batch content workflow
-- [ ] 10-02: Build content idea backlog
-
-### Phase 11: Distribution System
-**Goal**: Launch presence on Instagram, establish email capture, set up YouTube
-**Depends on**: Phase 9 (templates ready)
-**Requirements**: DIST-01 through DIST-11
-**Success Criteria** (what must be TRUE):
-  1. Instagram posting consistently (3x/week minimum)
-  2. Exit-intent popup live and converting
-  3. PDF lead magnet created and promoted
-  4. Welcome email sequence active
-  5. YouTube channel created (video deferred)
-
-**Plans:**
-- [ ] 11-01: Launch Instagram with first 10 posts
-- [ ] 11-02: Implement email capture (popup, inline CTAs)
-- [ ] 11-03: Create lead magnet and welcome sequence
-
-### Phase 12: Monetization Foundation
-**Goal**: Build revenue infrastructure, ready to activate immediately
-**Depends on**: None (parallel with Phase 9)
-**Requirements**: MNTZ-01 through MNTZ-17
-**Success Criteria** (what must be TRUE):
-  1. Media kit created with mockups
-  2. Directory page shows real listings (10 seeded)
-  3. Pricing tiers finalized
-  4. Outreach templates ready
-  5. CRM pipeline set up
-  6. 50+ prospects identified
-
-**Plans:**
-- [ ] 12-01: Create media kit and sponsor proof assets
-- [ ] 12-02: Build out directory with seed listings
-- [ ] 12-03: Set up CRM and prospect list
-- [ ] 12-04: Launch outreach campaign
+**Deliverables**:
+- `/calculator/reconstitution` page with visual syringe
+- `/calculator/blend` page for multi-peptide math
+- `/calculator/accumulation` page for half-life tracking
+- Calculator hub page at `/calculator`
 
 ---
 
-## 7-Day Sprint (Immediate Priority)
+### Phase 15: Peptide Interactions
+**Goal**: Show research-based peptide synergies
+**Requirements**: INTR-01 through INTR-03 (3 requirements)
+**Depends on**: None
+**Success Criteria**:
+1. Schema supports interactions array
+2. Dossier pages show color-coded interaction matrix
+3. Top 20 peptides have interaction data
 
-| Day | Focus | Deliverables | Phase |
-|-----|-------|--------------|-------|
-| 1 | Sponsor Readiness | Media kit, mockups, pricing one-pager | 12 |
-| 2 | Directory Seed | 10 free clinic listings manually added | 12 |
-| 3 | Lead Magnet | "Top 10 Peptides" PDF created | 11 |
-| 4 | Email Capture | Exit-intent popup, inline CTAs added | 11 |
-| 5 | Prospect List | 50 clinics + 20 sponsors identified | 12 |
-| 6 | Outreach Launch | First 20 clinic emails sent | 12 |
-| 7 | Instagram Launch | First 5 carousels posted, bio optimized | 11 |
+**Deliverables**:
+- Updated `peptideSchema` in content/config.ts
+- `InteractionMatrix.astro` component
+- Interaction data for 20 peptides
 
 ---
 
-## 30-Day Sprint
+### Phase 16: Dossier UX Overhaul
+**Goal**: Match/exceed competitor organization + evidence transparency
+**Requirements**: DOSS-01 through DOSS-05 (5 requirements)
+**Depends on**: None
+**Success Criteria**:
+1. Molecular structure visualization on dossier pages
+2. Evidence-chained benefits showing study breakdown
+3. Reorganized dossier sections for better flow
 
-| Week | Outreach | Content | Growth |
-|------|----------|---------|--------|
-| 1 | 20 clinic + 5 sponsor emails | 5 IG carousels | Popup live |
-| 2 | 20 + 5 emails, follow-ups | 5 carousels, 1 blog | Track conversion |
-| 3 | 20 + 5 emails, follow-ups | 5 carousels, 1 blog | First newsletter (if 50+ subs) |
-| 4 | Close push: calls | 5 carousels, 1 blog | Optimize top 10 SEO pages |
+**Deliverables**:
+- `MolecularStructure.astro` component
+- `EvidenceChain.astro` component
+- Updated `DossierLayout.astro`
+- Schema additions for molecular and evidence data
 
-**Day 30 KPIs:**
-- 100 cold emails sent
-- 5-10 replies (5-10% reply rate)
-- 1 listing closed
-- 100 email subscribers
-- 1,000 monthly traffic
+---
+
+### Phase 17: Content Migration
+**Goal**: Consolidate guides/safety into blog with redirects
+**Requirements**: MIGR-01 through MIGR-06 (6 requirements)
+**Depends on**: None
+**Success Criteria**:
+1. All 22 pages migrated to blog format
+2. Blog categories working (Guides, Safety, Research Digest)
+3. 301 redirects preserving old URLs
+4. No broken internal links
+
+**Deliverables**:
+- 11 guide pages reformatted
+- 11 safety pages reformatted
+- Blog category system
+- Redirect configuration
+- Updated internal links
+
+---
+
+### Phase 18: Multi-Peptide Protocols
+**Goal**: Document research combinations (NOT dosing advice)
+**Requirements**: PROT-01 through PROT-04 (4 requirements)
+**Depends on**: None
+**Success Criteria**:
+1. Protocols content collection exists
+2. At least 3 protocol pages with study citations
+3. Clear distinction from dosing recommendations
+
+**Deliverables**:
+- `protocols` content collection
+- BPC-157 + TB-500 Research Overview
+- CJC-1295 + Ipamorelin Research
+- GH Secretagogue Combinations
+
+---
+
+### Phase 19: Enhanced UX
+**Goal**: Better user experience components
+**Requirements**: ENUX-01 through ENUX-05 (5 requirements)
+**Depends on**: Phase 16 (Dossier UX)
+**Success Criteria**:
+1. Timeline component showing study-based expectations
+2. Quality checklist with traffic light styling
+3. Top 10 peptides have this data
+
+**Deliverables**:
+- `Timeline.astro` component
+- `QualityChecklist.astro` component
+- Data for 10 peptides
+
+---
+
+### Phase 20: Programmatic SEO - Conditions
+**Goal**: Generate 100+ condition-specific pages
+**Requirements**: PSEO-01 through PSEO-05 (5 requirements)
+**Depends on**: Phase 16 (schema work)
+**Success Criteria**:
+1. Condition page template works
+2. At least 100 pages generated
+3. Bidirectional linking working
+
+**Deliverables**:
+- `conditions` schema addition
+- `/peptides/[peptide]/[condition].astro` template
+- 100+ generated pages
+- Internal linking system
+
+---
+
+### Phase 21: Location SEO - Cities
+**Goal**: Generate 50+ city pages for clinic monetization
+**Requirements**: LSEO-01 through LSEO-04 (4 requirements)
+**Depends on**: None
+**Success Criteria**:
+1. City page template works
+2. At least 50 city pages generated
+3. Featured listing system ready
+
+**Deliverables**:
+- `clinics` content collection
+- `/clinics/[city].astro` template
+- 50+ city pages
+- Featured listing component
+
+---
+
+### Phase 22: SEO Polish + Launch
+**Goal**: Final optimization and v4.0 launch
+**Requirements**: SPOL-01 through SPOL-06 (6 requirements)
+**Depends on**: All previous phases
+**Success Criteria**:
+1. Schema markup on all relevant pages
+2. Internal linking audit complete
+3. Sitemap includes all new pages
+4. Core Web Vitals passing
+
+**Deliverables**:
+- FAQPage, HowTo, LocalBusiness schema
+- Internal linking fixes
+- Updated sitemap
+- Performance optimizations
+- v4.0 launch
+
+---
+
+## Timeline
+
+| Week | Focus | Phases |
+|------|-------|--------|
+| 1-2 | Foundation | 13 (Legal), 14 (Calculators) |
+| 3-4 | Content System | 15 (Interactions), 16 (Dossier UX), 17 (Migration) |
+| 5 | Protocols & UX | 18 (Protocols), 19 (Enhanced UX) |
+| 6-8 | SEO Expansion | 20 (Conditions), 21 (Cities), 22 (Polish + Launch) |
+
+**Total: 10 phases over 8 weeks**
 
 ---
 
 ## Progress
 
-| Phase | Plans Complete | Status | Completed |
-|-------|----------------|--------|-----------|
-| 1. Site Foundation | 1/1 | Complete | 2026-01-19 |
-| 2. Content Templates | 2/2 | Complete | 2026-01-19 |
-| 3. Pipeline Infrastructure | 5/5 | Complete | 2026-01-19 |
-| 4. Features + Polish | 3/3 | Complete | 2026-01-19 |
-| 5. First Content Batch | 2/2 | Complete | 2026-01-19 |
-| 6. Deploy Infrastructure | 1/1 | Complete | 2026-01-27 |
-| 7. Analytics Setup | 1/1 | Complete | 2026-01-27 |
-| 8. Production Verification | 0/1 | In Progress | — |
-| 9. Operations Infrastructure | 0/1 | **Ready** | — |
-| 10. Content Production | 0/2 | Pending | — |
-| 11. Distribution System | 0/3 | Pending | — |
-| 12. Monetization Foundation | 0/4 | **Active** | — |
-
-**Note:** Phase 12 starts in parallel with Phase 9 per Red Team recommendation (outreach Day 1).
+| Phase | Status | Requirements | Completed |
+|-------|--------|--------------|-----------|
+| 1. Site Foundation | Complete | 8/8 | 2026-01-19 |
+| 2. Content Templates | Complete | 6/6 | 2026-01-19 |
+| 3. Pipeline Infrastructure | Complete | 6/6 | 2026-01-19 |
+| 4. Features + Polish | Complete | 4/4 | 2026-01-19 |
+| 5. First Content Batch | Complete | 3/3 | 2026-01-19 |
+| 6. Deploy Infrastructure | Complete | 6/6 | 2026-01-27 |
+| 7. Analytics Setup | Complete | 4/4 | 2026-01-27 |
+| 8. Production Verification | Partial | 0/5 | — |
+| 9-12. v3.0 Operations | On Hold | 0/40 | — |
+| 13. Legal Foundation | **Pending** | 0/7 | — |
+| 14. Calculator Suite | Pending | 0/5 | — |
+| 15. Peptide Interactions | Pending | 0/3 | — |
+| 16. Dossier UX Overhaul | Pending | 0/5 | — |
+| 17. Content Migration | Pending | 0/6 | — |
+| 18. Multi-Peptide Protocols | Pending | 0/4 | — |
+| 19. Enhanced UX | Pending | 0/5 | — |
+| 20. Condition Pages | Pending | 0/5 | — |
+| 21. City Pages | Pending | 0/4 | — |
+| 22. SEO Polish + Launch | Pending | 0/6 | — |
 
 ---
 
-## Revenue Milestones
+## Key Decisions
 
-| Target | Traffic | Subs | Listings | Sponsors | Revenue |
-|--------|---------|------|----------|----------|---------|
-| Day 30 | 1,000 | 100 | 1 | 0 | $50 |
-| Day 60 | 2,500 | 300 | 3-5 | 1 | $500-1,000 |
-| Day 90 | 5,000 | 500 | 8-10 | 2 | $1,500-2,500 |
+| Decision | Rationale | Date |
+|----------|-----------|------|
+| Skip dosing in v4.0 | Maintains credibility, avoids weak sources | 2026-01-30 |
+| Calculators as utility | Provides value without liability | 2026-01-30 |
+| Evidence-chained benefits | Differentiates from competitor's bold claims | 2026-01-30 |
+| Pause v3.0 for v4.0 | Competitive features more urgent than operations | 2026-01-30 |
 
 ---
 *Created: 2026-01-19*
-*Updated: 2026-01-27 for v3.0 milestone*
-*Updated: 2026-01-27 Phase 9 planning complete*
+*Updated: 2026-01-30 for v4.0 milestone*

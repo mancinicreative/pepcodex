@@ -1,0 +1,29 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import ConditionLayout from '../../layouts/ConditionLayout.astro';
+
+export async function getStaticPaths() {
+  const conditions = await getCollection('conditions');
+
+  return conditions.map((condition) => ({
+    params: { slug: condition.slug },
+    props: { condition },
+  }));
+}
+
+const { condition } = Astro.props;
+const { Content } = await condition.render();
+---
+
+<ConditionLayout
+  title={condition.data.title}
+  conditionName={condition.data.conditionName}
+  conditionSlug={condition.data.conditionSlug}
+  description={condition.data.description}
+  researchOverview={condition.data.researchOverview}
+  category={condition.data.category}
+  relatedConditions={condition.data.relatedConditions}
+  lastUpdated={condition.data.lastUpdated}
+>
+  <Content />
+</ConditionLayout>

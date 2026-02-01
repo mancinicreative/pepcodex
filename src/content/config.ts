@@ -246,6 +246,22 @@ const cities = defineCollection({
   }),
 });
 
+// NEW: Condition Hub collection for standalone condition pages (Phase 23)
+const conditionHubs = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),                    // "Peptides for Weight Loss"
+    conditionName: z.string(),            // "Weight Loss"
+    conditionSlug: z.string(),            // "weight-loss"
+    description: z.string(),              // SEO-focused description
+    researchOverview: z.string(),         // 2-3 paragraphs about research landscape
+    category: category,                   // metabolic, repair-recovery, etc.
+    relatedConditions: z.array(z.string()).default([]), // other condition slugs
+    lastUpdated: z.coerce.date(),
+    ...seoFields,
+  }),
+});
+
 // NEW: Protocols collection for multi-peptide research overviews
 const studyType = z.enum(['human-rct', 'human-observational', 'animal', 'in-vitro']);
 
@@ -284,4 +300,5 @@ export const collections = {
   clinics,
   cities,
   protocols,
+  conditions: conditionHubs,
 };

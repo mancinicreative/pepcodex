@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import ComparisonLayout from '../../layouts/ComparisonLayout.astro';
 
 export async function getStaticPaths() {
@@ -10,7 +10,17 @@ export async function getStaticPaths() {
   }));
 }
 
-const { comparison } = Astro.props;
+// Support both static and SSR modes
+let comparison = Astro.props.comparison;
+if (!comparison) {
+  const { slug } = Astro.params;
+  comparison = await getEntry('comparisons', slug as string);
+}
+
+if (!comparison) {
+  return Astro.redirect('/404');
+}
+
 const { Content } = await comparison.render();
 
 // Map peptide slugs to display data

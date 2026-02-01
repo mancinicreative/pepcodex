@@ -1,0 +1,383 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ClinicCard from '../../components/ClinicCard.astro';
+import FeaturedClinicCard from '../../components/FeaturedClinicCard.astro';
+import BreadcrumbSchema from '../../components/SEO/BreadcrumbSchema.astro';
+import FAQSchema from '../../components/SEO/FAQSchema.astro';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const cities = await getCollection('cities');
+  return cities.map((city) => ({
+    params: { city: city.id },
+    props: { city }
+  }));
+}
+
+const { city } = Astro.props;
+const { name, state, stateAbbr, metaDescription, content, population } = city.data;
+
+// Get clinics for this city
+const allClinics = await getCollection('clinics');
+const cityClinics = allClinics.filter(
+  clinic => clinic.data.city.toLowerCase() === name.toLowerCase()
+);
+
+// Separate featured and regular clinics
+const featuredClinics = cityClinics.filter(c => c.data.featured);
+const regularClinics = cityClinics.filter(c => !c.data.featured);
+
+// Get nearby cities (same state, excluding current)
+const allCities = await getCollection('cities');
+const nearbyCities = allCities
+  .filter(c => c.data.state === state && c.id !== city.id)
+  .slice(0, 6);
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Peptide Clinics', url: '/clinics' },
+  { name: `${name}, ${stateAbbr}`, url: `/clinics/${city.id}` }
+];
+
+// FAQ items for schema markup
+const faqItems = [
+  {
+    question: `What peptide clinics are available in ${name}, ${stateAbbr}?`,
+    answer: `${name} has ${cityClinics.length > 0 ? cityClinics.length : 'multiple'} peptide therapy clinics offering services including BPC-157, semaglutide, and growth hormone secretagogues. Use our directory to find verified providers in your area.`
+  },
+  {
+    question: `How do I choose a peptide clinic in ${name}?`,
+    answer: `When choosing a peptide clinic in ${name}, look for licensed medical professionals, quality peptide sourcing from registered compounding pharmacies, comprehensive initial consultations with lab work, and transparent pricing. Verified listings in our directory have been vetted for these criteria.`
+  },
+  {
+    question: `What peptide therapies are commonly offered in ${name}?`,
+    answer: `Peptide clinics in ${name} typically offer BPC-157 for tissue repair, semaglutide and tirzepatide for metabolic health, CJC-1295 with ipamorelin for growth hormone support, and various other research peptides depending on patient needs.`
+  },
+  {
+    question: `Do I need a prescription for peptide therapy in ${name}?`,
+    answer: `Yes, most peptide therapies require a prescription from a licensed healthcare provider. Reputable peptide clinics in ${name} will conduct a thorough medical evaluation and order necessary lab work before prescribing any peptide therapy.`
+  },
+  {
+    question: `How much does peptide therapy cost in ${name}?`,
+    answer: `Peptide therapy costs in ${name} vary depending on the specific peptides, dosing, and treatment duration. Initial consultations typically range from $100-$300, with monthly peptide costs varying by type. Contact clinics directly for specific pricing.`
+  }
+];
+
+// Common peptides for SEO content
+const commonPeptides = [
+  { name: 'BPC-157', use: 'tissue repair and gut health' },
+  { name: 'Semaglutide', use: 'metabolic health and weight management' },
+  { name: 'Tirzepatide', use: 'metabolic optimization' },
+  { name: 'CJC-1295', use: 'growth hormone support' },
+  { name: 'Ipamorelin', use: 'growth hormone release' },
+  { name: 'PT-141', use: 'sexual health and wellness' },
+  { name: 'Thymosin Beta-4', use: 'tissue healing' }
+];
+---
+
+<BaseLayout
+  title={`Peptide Clinics in ${name}, ${stateAbbr}`}
+  description={metaDescription}
+>
+  <BreadcrumbSchema items={breadcrumbs} />
+  <FAQSchema items={faqItems} />
+
+  <!-- Hero Section -->
+  <section class="mb-12">
+    <nav class="text-sm mb-6" style="color: var(--text-low);">
+      <ol class="flex items-center gap-2 flex-wrap">
+        {breadcrumbs.map((crumb, i) => (
+          <li class="flex items-center gap-2">
+            {i > 0 && <span>/</span>}
+            {i === breadcrumbs.length - 1 ? (
+              <span style="color: var(--text-medium);">{crumb.name}</span>
+            ) : (
+              <a href={crumb.url} class="hover:text-primary transition-colors">{crumb.name}</a>
+            )}
+          </li>
+        ))}
+      </ol>
+    </nav>
+
+    <div class="max-w-4xl">
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-display" style="color: var(--text-high);">
+        Peptide Clinics in <span class="gradient-text">{name}, {state}</span>
+      </h1>
+      <p class="text-lg leading-relaxed mb-6" style="color: var(--text-medium);">
+        {content}
+      </p>
+
+      <!-- Quick Stats -->
+      <div class="flex flex-wrap gap-4">
+        <div class="badge badge--primary">
+          {cityClinics.length} {cityClinics.length === 1 ? 'Clinic' : 'Clinics'} Listed
+        </div>
+        {featuredClinics.length > 0 && (
+          <div class="badge badge--accent">
+            {featuredClinics.length} Featured {featuredClinics.length === 1 ? 'Partner' : 'Partners'}
+          </div>
+        )}
+        {population && (
+          <div class="badge badge--muted">
+            Pop. {(population / 1000000).toFixed(1)}M+
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Clinics Section -->
+  {featuredClinics.length > 0 && (
+    <section class="mb-12">
+      <div class="section-header">
+        <div class="section-header__bar"></div>
+        <h2 class="section-header__title">Featured Clinics in {name}</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {featuredClinics.map((clinic) => (
+          <FeaturedClinicCard
+            name={clinic.data.name}
+            slug={clinic.id}
+            city={clinic.data.city}
+            state={clinic.data.state}
+            address={clinic.data.address}
+            phone={clinic.data.phone}
+            website={clinic.data.website}
+            services={clinic.data.services}
+            peptides={clinic.data.peptides}
+            verifiedListing={clinic.data.verifiedListing}
+            description={clinic.data.description}
+          />
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- All Clinics Section -->
+  {regularClinics.length > 0 && (
+    <section class="mb-12">
+      <div class="section-header">
+        <div class="section-header__bar"></div>
+        <h2 class="section-header__title">
+          {featuredClinics.length > 0 ? 'More Clinics' : 'Clinics'} in {name}
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {regularClinics.map((clinic) => (
+          <ClinicCard
+            name={clinic.data.name}
+            slug={clinic.id}
+            city={clinic.data.city}
+            state={clinic.data.state}
+            address={clinic.data.address}
+            phone={clinic.data.phone}
+            website={clinic.data.website}
+            services={clinic.data.services}
+            peptides={clinic.data.peptides}
+            verifiedListing={clinic.data.verifiedListing}
+            description={clinic.data.description}
+          />
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- No Clinics Yet Message -->
+  {cityClinics.length === 0 && (
+    <section class="mb-12">
+      <div class="glass-card p-8 text-center">
+        <svg class="w-16 h-16 mx-auto mb-4 text-primary opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        <h2 class="text-xl font-bold mb-3" style="color: var(--text-high);">
+          No Clinics Listed Yet in {name}
+        </h2>
+        <p class="mb-6" style="color: var(--text-medium);">
+          We're actively building our directory for {name}, {state}. Check back soon or contact us
+          if you know of a clinic that should be listed.
+        </p>
+        <a href="/contact" class="btn btn-primary btn-md">
+          Suggest a Clinic
+        </a>
+      </div>
+    </section>
+  )}
+
+  <!-- What to Look For Section -->
+  <section class="mb-12">
+    <div class="section-header">
+      <div class="section-header__bar"></div>
+      <h2 class="section-header__title">Choosing a Peptide Clinic in {name}</h2>
+    </div>
+
+    <div class="glass-card p-6 md:p-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-bold text-lg mb-3" style="color: var(--text-high);">
+            What to Look For
+          </h3>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 shrink-0 text-green-400 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span style="color: var(--text-medium);">Licensed medical professionals (MD, DO, NP, PA)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 shrink-0 text-green-400 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span style="color: var(--text-medium);">Peptides from FDA-registered compounding pharmacies</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 shrink-0 text-green-400 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span style="color: var(--text-medium);">Comprehensive initial consultation with lab work</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 shrink-0 text-green-400 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span style="color: var(--text-medium);">Ongoing monitoring and follow-up care</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg mb-3" style="color: var(--text-high);">
+            Red Flags to Avoid
+          </h3>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 shrink-0 text-red-400 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+              <span style="color: var(--text-medium);">No medical consultation or evaluation</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 shrink-0 text-red-400 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+              <span style="color: var(--text-medium);">Unclear sourcing of peptides</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 shrink-0 text-red-400 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+              <span style="color: var(--text-medium);">High-pressure sales tactics</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 shrink-0 text-red-400 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+              <span style="color: var(--text-medium);">No follow-up or monitoring plan</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Common Peptides Section -->
+  <section class="mb-12">
+    <div class="section-header">
+      <div class="section-header__bar"></div>
+      <h2 class="section-header__title">Common Peptides Offered in {name}</h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      {commonPeptides.map((peptide) => (
+        <a
+          href={`/peptides/${peptide.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
+          class="glass-card glass-card--interactive p-4"
+        >
+          <h3 class="font-semibold mb-1" style="color: var(--text-high);">
+            {peptide.name}
+          </h3>
+          <p class="text-sm" style="color: var(--text-medium);">
+            For {peptide.use}
+          </p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="mb-12">
+    <div class="section-header">
+      <div class="section-header__bar"></div>
+      <h2 class="section-header__title">FAQs About Peptide Clinics in {name}</h2>
+    </div>
+
+    <div class="glass-card p-6 md:p-8 space-y-6">
+      {faqItems.map((faq, index) => (
+        <div class:list={[index > 0 && "pt-6 border-t border-white/10"]}>
+          <h3 class="font-bold mb-2" style="color: var(--text-high);">
+            {faq.question}
+          </h3>
+          <p class="text-sm leading-relaxed" style="color: var(--text-medium);">
+            {faq.answer}
+          </p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Nearby Cities Section -->
+  {nearbyCities.length > 0 && (
+    <section class="mb-12">
+      <div class="section-header">
+        <div class="section-header__bar"></div>
+        <h2 class="section-header__title">Peptide Clinics in Other {state} Cities</h2>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        {nearbyCities.map((nearbyCity) => (
+          <a
+            href={`/clinics/${nearbyCity.id}`}
+            class="glass-card glass-card--interactive p-4 text-center"
+          >
+            <h3 class="font-semibold text-sm" style="color: var(--text-high);">
+              {nearbyCity.data.name}
+            </h3>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- CTA for Clinic Owners -->
+  <section class="mb-12">
+    <div class="glass-card p-8 md:p-12 text-center border-2 border-primary/20 relative overflow-hidden">
+      <div class="absolute -top-20 -right-20 w-60 h-60 bg-primary/10 rounded-full blur-3xl"></div>
+      <div class="absolute -bottom-20 -left-20 w-60 h-60 bg-cyan-500/10 rounded-full blur-3xl"></div>
+
+      <div class="relative z-10">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4 font-display" style="color: var(--text-high);">
+          Own a Peptide Clinic in {name}?
+        </h2>
+        <p class="text-lg mb-6 max-w-2xl mx-auto" style="color: var(--text-medium);">
+          Get your clinic listed in our {name} directory and connect with patients searching for
+          peptide therapy services. Featured listings appear at the top with enhanced visibility.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="btn btn-primary btn-lg">
+            Get Listed Free
+          </a>
+          <a href="/advertising-policy" class="btn btn-secondary btn-lg">
+            Featured Listing Options
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

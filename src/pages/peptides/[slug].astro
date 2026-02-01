@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import DossierLayout from '../../layouts/DossierLayout.astro';
 
 export async function getStaticPaths() {
@@ -10,7 +10,17 @@ export async function getStaticPaths() {
   }));
 }
 
-const { peptide } = Astro.props;
+// Support both static and SSR modes
+let peptide = Astro.props.peptide;
+if (!peptide) {
+  const { slug } = Astro.params;
+  peptide = await getEntry('peptides', slug as string);
+}
+
+if (!peptide) {
+  return Astro.redirect('/404');
+}
+
 const { Content } = await peptide.render();
 ---
 
@@ -23,6 +33,11 @@ const { Content } = await peptide.render();
   summary={peptide.data.summary}
   sources={peptide.data.sources}
   comparators={peptide.data.comparators}
+  interactions={peptide.data.interactions}
+  molecularInfo={peptide.data.molecularInfo}
+  evidenceChainedBenefits={peptide.data.evidenceChainedBenefits}
+  timeline={peptide.data.timeline}
+  qualityChecklist={peptide.data.qualityChecklist}
 >
   <Content />
 </DossierLayout>

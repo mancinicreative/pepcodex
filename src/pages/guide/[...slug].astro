@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import GuideLayout from '../../layouts/GuideLayout.astro';
 
 export async function getStaticPaths() {
@@ -10,7 +10,17 @@ export async function getStaticPaths() {
   }));
 }
 
-const { guide } = Astro.props;
+// Support both static and SSR modes
+let guide = Astro.props.guide;
+if (!guide) {
+  const { slug } = Astro.params;
+  guide = await getEntry('guides', slug as string);
+}
+
+if (!guide) {
+  return Astro.redirect('/404');
+}
+
 const { Content } = await guide.render();
 ---
 

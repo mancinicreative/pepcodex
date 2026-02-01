@@ -1,6 +1,6 @@
 ---
 import BlogLayout from '../../layouts/BlogLayout.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -10,7 +10,17 @@ export async function getStaticPaths() {
   }));
 }
 
-const { post } = Astro.props;
+// Support both static and SSR modes
+let post = Astro.props.post;
+if (!post) {
+  const { slug } = Astro.params;
+  post = await getEntry('blog', slug as string);
+}
+
+if (!post) {
+  return Astro.redirect('/404');
+}
+
 const { Content } = await post.render();
 ---
 

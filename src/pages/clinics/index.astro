@@ -1,0 +1,267 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../../components/SEO/BreadcrumbSchema.astro';
+
+// Get all cities sorted by population (largest first)
+const cities = await getCollection('cities');
+const sortedCities = cities.sort((a, b) => (b.data.population || 0) - (a.data.population || 0));
+
+// Get all clinics to count per city
+const clinics = await getCollection('clinics');
+const clinicCountByCity = clinics.reduce((acc, clinic) => {
+  const citySlug = clinic.data.city.toLowerCase().replace(/\s+/g, '-');
+  acc[citySlug] = (acc[citySlug] || 0) + 1;
+  return acc;
+}, {} as Record<string, number>);
+
+// Get featured clinics count
+const featuredCount = clinics.filter(c => c.data.featured).length;
+
+// Group cities by state
+const citiesByState = sortedCities.reduce((acc, city) => {
+  const state = city.data.state;
+  if (!acc[state]) acc[state] = [];
+  acc[state].push(city);
+  return acc;
+}, {} as Record<string, typeof sortedCities>);
+
+// Sort states alphabetically
+const sortedStates = Object.keys(citiesByState).sort();
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Peptide Clinics', url: '/clinics' }
+];
+---
+
+<BaseLayout
+  title="Find Peptide Clinics Near You"
+  description="Discover verified peptide therapy clinics in your city. Browse our directory of clinics offering BPC-157, Semaglutide, and other research peptides across the United States."
+>
+  <BreadcrumbSchema items={breadcrumbs} />
+
+  <!-- Hero Section -->
+  <section class="mb-16">
+    <div class="text-center max-w-4xl mx-auto">
+      <div class="inline-flex items-center gap-2 badge badge--primary mb-6">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        Clinic Directory
+      </div>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display" style="color: var(--text-high);">
+        Find <span class="gradient-text">Peptide Clinics</span> Near You
+      </h1>
+      <p class="text-lg md:text-xl leading-relaxed mb-8" style="color: var(--text-medium);">
+        Browse our growing directory of peptide therapy clinics across the United States.
+        Find verified clinics offering research peptides, hormone optimization, and regenerative therapies.
+      </p>
+
+      <!-- Stats -->
+      <div class="flex flex-wrap justify-center gap-6 md:gap-12">
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-primary">{sortedCities.length}</div>
+          <div class="text-sm" style="color: var(--text-medium);">Cities Covered</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-primary">{clinics.length}</div>
+          <div class="text-sm" style="color: var(--text-medium);">Clinics Listed</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-primary">{featuredCount}</div>
+          <div class="text-sm" style="color: var(--text-medium);">Featured Partners</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search Section -->
+  <section class="mb-12">
+    <div class="glass-card p-6 md:p-8 max-w-3xl mx-auto">
+      <h2 class="text-xl font-bold mb-4 text-center font-display" style="color: var(--text-high);">
+        Find Clinics by Location
+      </h2>
+      <div class="relative">
+        <input
+          type="text"
+          id="city-search"
+          placeholder="Search for a city..."
+          class="w-full px-5 py-4 rounded-xl text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-primary"
+          style="background: var(--surface-glass); border: 1px solid var(--border-glass);"
+        />
+        <svg class="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5" style="color: var(--text-low);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.3-4.3" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Cities Section -->
+  <section class="mb-16">
+    <div class="section-header">
+      <div class="section-header__bar"></div>
+      <h2 class="section-header__title">Popular Cities</h2>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4" id="city-grid">
+      {sortedCities.slice(0, 20).map((city) => (
+        <a
+          href={`/clinics/${city.id}`}
+          class="glass-card glass-card--interactive p-4 text-center city-card"
+          data-city={city.data.name.toLowerCase()}
+          data-state={city.data.state.toLowerCase()}
+        >
+          <h3 class="font-semibold mb-1" style="color: var(--text-high);">
+            {city.data.name}
+          </h3>
+          <p class="text-xs mb-2" style="color: var(--text-low);">
+            {city.data.stateAbbr}
+          </p>
+          {clinicCountByCity[city.id] && (
+            <span class="badge badge--primary text-xs">
+              {clinicCountByCity[city.id]} clinics
+            </span>
+          )}
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Browse by State Section -->
+  <section class="mb-16">
+    <div class="section-header">
+      <div class="section-header__bar"></div>
+      <h2 class="section-header__title">Browse by State</h2>
+    </div>
+
+    <div class="glass-card p-6 md:p-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {sortedStates.map((state) => (
+          <div class="state-section" data-state={state.toLowerCase()}>
+            <h3 class="font-bold text-lg mb-3 pb-2 border-b border-white/10 font-display" style="color: var(--text-high);">
+              {state}
+            </h3>
+            <ul class="space-y-2">
+              {citiesByState[state].map((city) => (
+                <li>
+                  <a
+                    href={`/clinics/${city.id}`}
+                    class="text-sm hover:text-primary transition-colors flex items-center justify-between city-link"
+                    style="color: var(--text-medium);"
+                    data-city={city.data.name.toLowerCase()}
+                  >
+                    <span>{city.data.name}</span>
+                    {clinicCountByCity[city.id] && (
+                      <span class="text-xs px-2 py-0.5 rounded-full" style="background: var(--surface-glass);">
+                        {clinicCountByCity[city.id]}
+                      </span>
+                    )}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA for Clinics -->
+  <section class="mb-16">
+    <div class="glass-card p-8 md:p-12 text-center border-2 border-primary/20 relative overflow-hidden">
+      <!-- Background glow -->
+      <div class="absolute -top-20 -right-20 w-60 h-60 bg-primary/10 rounded-full blur-3xl"></div>
+      <div class="absolute -bottom-20 -left-20 w-60 h-60 bg-cyan-500/10 rounded-full blur-3xl"></div>
+
+      <div class="relative z-10">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4 font-display" style="color: var(--text-high);">
+          Own a Peptide Clinic?
+        </h2>
+        <p class="text-lg mb-6 max-w-2xl mx-auto" style="color: var(--text-medium);">
+          Get your clinic listed in our directory and reach thousands of potential patients
+          searching for peptide therapy services. Featured listings get priority placement.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="btn btn-primary btn-lg">
+            Get Listed Free
+          </a>
+          <a href="/advertising-policy" class="btn btn-secondary btn-lg">
+            Learn About Featured Listings
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO Content Section -->
+  <section class="mb-16">
+    <div class="prose-invert max-w-4xl mx-auto">
+      <h2>About Our Peptide Clinic Directory</h2>
+      <p>
+        Finding a qualified peptide therapy clinic can be challenging. Our directory helps you
+        locate clinics in your area that specialize in research peptides, hormone optimization,
+        and regenerative medicine. We verify listings to ensure you're connecting with legitimate
+        healthcare providers.
+      </p>
+
+      <h3>What to Look for in a Peptide Clinic</h3>
+      <ul>
+        <li><strong>Licensed medical professionals:</strong> Ensure the clinic is staffed by licensed physicians, nurse practitioners, or physician assistants with experience in peptide therapy.</li>
+        <li><strong>Quality sourcing:</strong> Reputable clinics source their peptides from FDA-registered compounding pharmacies or manufacturers with proper certifications.</li>
+        <li><strong>Comprehensive consultations:</strong> Look for clinics that offer thorough initial consultations, including lab work and medical history review.</li>
+        <li><strong>Ongoing monitoring:</strong> Quality clinics provide follow-up appointments and regular lab testing to monitor your response to therapy.</li>
+        <li><strong>Transparent pricing:</strong> Avoid clinics that aren't upfront about costs or pressure you into expensive packages.</li>
+      </ul>
+
+      <h3>Common Peptides Offered at Clinics</h3>
+      <p>
+        Most peptide clinics offer a range of research peptides depending on your health goals:
+      </p>
+      <ul>
+        <li><strong>BPC-157:</strong> Often used for tissue repair and recovery support</li>
+        <li><strong>Semaglutide/Tirzepatide:</strong> GLP-1 agonists for metabolic health</li>
+        <li><strong>CJC-1295/Ipamorelin:</strong> Growth hormone secretagogue combinations</li>
+        <li><strong>PT-141:</strong> For sexual health and wellness</li>
+        <li><strong>Thymosin Beta-4:</strong> For tissue healing and recovery</li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Simple city search functionality
+  const searchInput = document.getElementById('city-search') as HTMLInputElement;
+  const cityCards = document.querySelectorAll('.city-card');
+  const cityLinks = document.querySelectorAll('.city-link');
+  const stateSections = document.querySelectorAll('.state-section');
+
+  searchInput?.addEventListener('input', (e) => {
+    const query = (e.target as HTMLInputElement).value.toLowerCase();
+
+    // Filter city cards
+    cityCards.forEach((card) => {
+      const city = card.getAttribute('data-city') || '';
+      const state = card.getAttribute('data-state') || '';
+      const matches = city.includes(query) || state.includes(query);
+      (card as HTMLElement).style.display = matches ? '' : 'none';
+    });
+
+    // Filter state sections and city links
+    stateSections.forEach((section) => {
+      const stateMatches = (section.getAttribute('data-state') || '').includes(query);
+      let hasVisibleCities = false;
+
+      section.querySelectorAll('.city-link').forEach((link) => {
+        const cityName = link.getAttribute('data-city') || '';
+        const matches = cityName.includes(query) || stateMatches;
+        (link.parentElement as HTMLElement).style.display = matches ? '' : 'none';
+        if (matches) hasVisibleCities = true;
+      });
+
+      (section as HTMLElement).style.display = hasVisibleCities || stateMatches ? '' : 'none';
+    });
+  });
+</script>

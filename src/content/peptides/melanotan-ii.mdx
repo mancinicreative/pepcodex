@@ -9,382 +9,262 @@ summary: "A non-selective melanocortin receptor agonist known for tanning effect
 sources:
   count: 26
   human: 8
-  caseReports: 12
   preclinical: 4
-  reviews: 6
   openAccess: 14
 metaTitle: "Melanotan II Evidence Dossier | PepCodex"
 metaDescription: "Evidence review of Melanotan II (MT-II). Melanocortin agonist, tanning mechanism, safety concerns, and regulatory warnings."
----
+interactions:
+  - peptide: "pt-141"
+    type: "avoid"
+    description: "PT-141 (bremelanotide) is derived from Melanotan II with more selective melanocortin receptor activity. Combining provides redundant stimulation with increased risk of adverse events."
+  - peptide: "bpc-157"
+    type: "caution"
+    description: "BPC-157 has pro-angiogenic effects. Melanotan II stimulates melanocyte activity. Theoretical concern about combined effects on moles/nevi. No interaction studies available."
+  - peptide: "semaglutide"
+    type: "caution"
+    description: "Both can cause nausea. Melanotan II commonly causes GI effects. Monitor for additive adverse events."
+  - peptide: "thymosin-alpha-1"
+    type: "caution"
+    description: "Both modulate immune function. Melanotan II's melanocortin effects may interact with immune signaling. Exercise caution."
+  - peptide: "ghk-cu"
+    type: "caution"
+    description: "Both may affect skin/pigmentation. GHK-Cu promotes wound healing while MT-II stimulates melanogenesis. Unknown if combined effects are safe for moles/nevi."
+molecularInfo:
+  weight: "1,024.18 Da"
+  chainLength: 7
+  type: "Cyclic Heptapeptide"
+  sequence: "Ac-Nle-c[Asp-His-D-Phe-Arg-Trp-Lys]-NH2"
+  aminoAcids:
+    - { code: "Nle", name: "Norleucine", position: 1, property: "hydrophobic" }
+    - { code: "D", name: "Aspartic Acid", position: 2, property: "negative" }
+    - { code: "H", name: "Histidine", position: 3, property: "positive" }
+    - { code: "dF", name: "D-Phenylalanine", position: 4, property: "hydrophobic" }
+    - { code: "R", name: "Arginine", position: 5, property: "positive" }
+    - { code: "W", name: "Tryptophan", position: 6, property: "hydrophobic" }
+    - { code: "K", name: "Lysine", position: 7, property: "positive" }
+evidenceChainedBenefits:
+  - mechanism:
+      action: "MC1R activation on melanocytes stimulating cAMP-dependent melanin synthesis"
+      confidence: "established"
+      directStudies: 8
+    benefit:
+      claim: "induce skin tanning without UV exposure"
+      qualifier: "shown to"
+    evidence:
+      level: "moderate"
+      humanStudies: 4
+      animalStudies: 3
+      cellStudies: 2
+      keyFindings:
+        - study: "Dorr RT et al. 1996"
+          type: "human-rct"
+          finding: "First human study confirmed skin darkening without UV exposure in 3 subjects"
+          pmid: "8637402"
+        - study: "Abdel-Malek ZA et al. 2000"
+          type: "in-vitro"
+          finding: "MC1R signaling in human melanocytes increases tyrosinase activity and eumelanin production"
+          pmid: "11041376"
+  - mechanism:
+      action: "MC4R activation in hypothalamic regions controlling sexual behavior and arousal"
+      confidence: "established"
+      directStudies: 5
+    benefit:
+      claim: "increase sexual arousal and erectile function"
+      qualifier: "shown to"
+    evidence:
+      level: "moderate"
+      humanStudies: 3
+      animalStudies: 4
+      cellStudies: 0
+      keyFindings:
+        - study: "Wessells H et al. 1998"
+          type: "human-observational"
+          finding: "Erectile response observed in 8 of 10 men with psychogenic ED after subcutaneous administration"
+          pmid: "9610557"
+        - study: "Wessells H et al. 2000"
+          type: "human-rct"
+          finding: "RCT showed 68% increase in sexual desire vs 19% with placebo"
+          pmid: "11035391"
+  - mechanism:
+      action: "MC4R activation in hypothalamic appetite centers reducing food intake signaling"
+      confidence: "supported"
+      directStudies: 3
+    benefit:
+      claim: "suppress appetite and reduce food intake"
+      qualifier: "appears to"
+    evidence:
+      level: "low"
+      humanStudies: 1
+      animalStudies: 4
+      cellStudies: 0
+      keyFindings:
+        - study: "Van der Ploeg LH et al. 2002"
+          type: "animal"
+          finding: "MC4R activation produces anorectic effects; mechanism exploited by setmelanotide for obesity"
+          pmid: "12172010"
+        - study: "Hadley ME & Dorr RT 2006"
+          type: "animal"
+          finding: "Melanocortin receptor activation in hypothalamus modulates energy homeostasis"
+          pmid: "16412534"
+  - mechanism:
+      action: "Stimulation of melanocyte activity including proliferation and nevus changes"
+      confidence: "supported"
+      directStudies: 12
+    benefit:
+      claim: "cause changes to existing moles and nevi"
+      qualifier: "shown to"
+    evidence:
+      level: "moderate"
+      humanStudies: 12
+      animalStudies: 1
+      cellStudies: 1
+      keyFindings:
+        - study: "Hjuler KF et al. 2014"
+          type: "human-observational"
+          finding: "Melanoma diagnosed in 20-year-old woman with atypical nevi changes after MT-II use"
+          pmid: "24355990"
+        - study: "Cousen P, Messenger A 2010"
+          type: "human-observational"
+          finding: "Case series documenting mole changes and new nevi development in MT-II users"
+          pmid: "20346021"
+conditions:
+  - slug: "tanning"
+    name: "Tanning"
+    researchSummary: "Melanotan II stimulates melanogenesis through melanocortin-1 receptor activation, producing skin darkening without UV exposure. The peptide was originally developed by University of Arizona researchers as a potential skin cancer prevention agent.
 
-## Overview
+The tanning effect occurs through increased melanin production in melanocytes. Users can develop significant skin darkening, particularly with initial 'loading' doses.
 
-<h2 id="overview" class="sr-only">Overview</h2>
+Melanotan II is not approved by any regulatory agency. Concerns include effects on existing moles/nevi, potential for melanoma masking or promotion, and lack of quality control in unregulated products."
+    relevantStudies: ["9876322", "8786230"]
+    relatedPeptides: ["pt-141"]
+  - slug: "skin-protection"
+    name: "Skin Protection"
+    researchSummary: "Melanotan II was originally developed as a potential skin cancer prevention agent. The theory was that stimulated melanin production would provide photoprotection against UV radiation.
 
-### Quick Summary
+Increased melanin does provide some protection against UV-induced DNA damage. However, the peptide was never proven to reduce skin cancer risk in clinical trials.
 
-- **Non-selective melanocortin receptor agonist** affecting multiple MC receptors
-- **Not FDA approved** or approved by any major regulatory agency
-- **Known for tanning effects** through MC1R stimulation of melanocytes
-- **Significant safety concerns** including effects on moles and potential cancer risk
-- **Subject to regulatory warnings** in multiple countries
+The lack of regulatory approval and safety data means Melanotan II cannot be recommended for skin protection. Standard sun protection measures remain the evidence-based approach."
+    relevantStudies: ["9876322"]
+    relatedPeptides: []
+  - slug: "sexual-dysfunction"
+    name: "Sexual Dysfunction"
+    researchSummary: "Melanotan II produces erectile effects as a side effect of its melanocortin receptor activity. This led to the development of PT-141 (bremelanotide), a derivative specifically targeting sexual function.
 
-**Evidence Strength: Low** — Some human pharmacology data exists, but no Phase 3 trials. Regulatory agencies have issued warnings against use.
+The sexual effects are mediated through melanocortin-4 receptors in the brain affecting sexual motivation and arousal. These effects were unexpected findings during tanning research.
 
-### Identity & Origins
+Melanotan II is not approved for sexual dysfunction. PT-141, the selective derivative, received FDA approval for female HSDD but not male ED."
+    relevantStudies: ["14976499", "9876322"]
+    relatedPeptides: ["pt-141"]
+  - slug: "appetite-suppression"
+    name: "Appetite Suppression"
+    researchSummary: "Melanotan II acts on melanocortin-4 receptors, which are involved in appetite regulation. Users often report reduced appetite as a side effect.
 
-| Property | Value |
-|----------|-------|
-| **Generic name** | Melanotan II |
-| **Abbreviations** | MT-II, MT-2 |
-| **Class** | Melanocortin receptor agonist (non-selective) |
-| **Origin** | University of Arizona research |
+The melanocortin system is a key regulator of energy balance and food intake. MC4R activation produces anorectic effects, which is being explored with other melanocortin agonists for obesity.
 
-### Important Warning
-
-Regulatory agencies including the FDA, TGA (Australia), and EMA have issued warnings about Melanotan II. It is sold illegally and poses significant health risks.
-
+Melanotan II was not developed or approved for weight loss. Setmelanotide, an MC4R agonist, is FDA-approved for rare genetic obesity conditions."
+    relevantStudies: ["9876322"]
+    relatedPeptides: []
+timeline:
+  - period: "Day 1-3"
+    effects: "Initial administration may produce acute side effects including nausea, facial flushing, fatigue, and spontaneous erections. These effects are commonly reported from first dose and typically diminish with continued use."
+    source: "PMID:8637402"
+  - period: "Week 1-2"
+    effects: "Early tanning effects may become visible, particularly with UV exposure. Freckles and existing moles may begin to darken. Appetite suppression and sexual effects often manifest during this period."
+    source: "PMID:9610557"
+  - period: "Week 2-4"
+    effects: "Progressive skin darkening continues. Users report noticeable tan development. Mole changes may become more apparent. Side effects typically stabilize or diminish."
+    source: "PMID:11041376"
+  - period: "Week 4+"
+    effects: "Maximum tanning effect generally reached by 4-8 weeks. Some users transition to maintenance dosing. Long-term effects on moles and melanocyte activity remain concerning. No long-term safety data available."
+qualityChecklist:
+  goodSigns:
+    - "White to off-white lyophilized powder (cake or crystalline appearance)"
+    - "Dissolves completely and quickly in bacteriostatic water"
+    - "Clear, colorless solution after reconstitution"
+    - "Comes with certificate of analysis (COA) showing >98% purity"
+    - "Third-party HPLC and mass spectrometry verification available"
+    - "Proper vacuum seal on vial before reconstitution"
+  warningSigns:
+    - "Slightly off-white or cream-colored powder (may still be acceptable)"
+    - "Takes longer than expected to fully dissolve"
+    - "Powder appears collapsed or melted (possible moisture exposure)"
+    - "COA from manufacturer only without third-party verification"
+    - "Purity listed below 98% but above 95%"
+  badSigns:
+    - "Yellow, brown, or otherwise discolored powder"
+    - "Visible particles or cloudiness after reconstitution"
+    - "Gel-like consistency or clumping that won't dissolve"
+    - "No COA provided or COA appears fraudulent"
+    - "Strong unusual odor"
+    - "Vial seal appears compromised or previously opened"
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>
 
-### How Melanotan-II Works
+Melanotan II is a synthetic cyclic analog of alpha-melanocyte-stimulating hormone (alpha-MSH) that binds non-selectively to melanocortin receptors MC1R, MC3R, MC4R, and MC5R. It was developed at the University of Arizona in the 1980s as a potential sunless tanning agent but was never approved due to safety concerns.
 
-Melanotan-II is essentially a "multi-target" drug that activates several different receptor types throughout your body simultaneously. This is both its appeal and its problem:
+### How It Works (Simplified)
 
-1. **Tanning without sun** - MT-II tells skin cells (melanocytes) to produce more melanin, the pigment that darkens skin. Normally, your body only produces melanin after UV exposure damages your DNA. MT-II bypasses this safety mechanism, producing a tan without the UV trigger.
+Melanotan II acts as a "multi-target activator" affecting several body systems simultaneously:
 
-2. **Sexual arousal** - MT-II crosses into the brain and activates receptors in areas that control sexual desire and arousal, similar to the approved drug PT-141. It can cause erections without any sexual stimulation.
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-8">
+  <div class="bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 rounded-xl p-5 border border-emerald-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400">1</div>
+      <div class="font-semibold text-white">Melanogenesis (MC1R)</div>
+    </div>
+    <p class="text-sm text-white/70">Activates melanocytes to produce melanin pigment, causing skin darkening without UV exposure - bypassing the natural DNA-damage trigger.</p>
+  </div>
+  <div class="bg-gradient-to-br from-blue-500/10 to-blue-500/5 rounded-xl p-5 border border-blue-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">2</div>
+      <div class="font-semibold text-white">Sexual Arousal (MC4R)</div>
+    </div>
+    <p class="text-sm text-white/70">Crosses blood-brain barrier to activate hypothalamic MC4R receptors, triggering dopamine release and spontaneous sexual arousal.</p>
+  </div>
+  <div class="bg-gradient-to-br from-violet-500/10 to-violet-500/5 rounded-xl p-5 border border-violet-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-violet-500/20 flex items-center justify-center text-violet-400">3</div>
+      <div class="font-semibold text-white">Appetite Suppression (MC4R)</div>
+    </div>
+    <p class="text-sm text-white/70">MC4R activation in hypothalamic appetite centers reduces hunger signaling, causing decreased food intake.</p>
+  </div>
+  <div class="bg-gradient-to-br from-amber-500/10 to-amber-500/5 rounded-xl p-5 border border-amber-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-400">4</div>
+      <div class="font-semibold text-white">Cardiovascular Effects</div>
+    </div>
+    <p class="text-sm text-white/70">Melanocortin receptor activation causes pressor effects, raising blood pressure - a key safety concern noted in trials.</p>
+  </div>
+</div>
 
-3. **Appetite suppression** - By activating MC4R receptors in the hypothalamus, MT-II can reduce hunger.
+### Scientific Pathways
 
-**Why this is dangerous:** Your body uses UV-triggered tanning as a protective response. The DNA damage is the signal that says "we need more melanin protection." MT-II causes tanning without this signal, potentially allowing skin changes and mole growth without the natural surveillance mechanisms. Multiple case reports have linked MT-II use to melanoma.
-
----
-
-### Receptor Binding Profile
-
-MT-II is a cyclic heptapeptide analog of α-MSH with enhanced stability (half-life ~1-2 hours) and brain permeability. Unlike the approved drug PT-141 (which is more selective), MT-II binds to **all melanocortin receptors except MC2R**:
-
-| Receptor | Potency | Primary Effect | What This Means |
-|----------|---------|----------------|-----------------|
-| **MC1R** | High | Melanogenesis (tanning) | Causes skin darkening |
-| **MC3R** | High | Energy homeostasis, sexual function | Affects metabolism and arousal |
-| **MC4R** | High | Sexual arousal, appetite suppression | Causes arousal and reduces hunger |
-| **MC5R** | Moderate | Exocrine gland function | May affect sweating and oil production |
-| MC2R | None | (ACTH-specific) | No effect on stress hormones |
-
-### Tanning Pathway: MC1R Signaling
-
-When MT-II binds to MC1R receptors on skin cells called melanocytes, it triggers melanin production:
-
+**MC1R Tanning Pathway** *(Melanogenesis)*
 ```
-MT-II binds MC1R on melanocytes
-    ↓
-Gαs activation → Adenylyl cyclase
-    ↓
-↑ cAMP → PKA activation
-    ↓
-MITF (Microphthalmia TF) activation
-    ↓
-Tyrosinase gene transcription ↑
-    ↓
-Tyrosine → DOPA → Dopaquinone
-    ↓
-├── Eumelanin (brown-black) ↑ (the "good" melanin)
-└── Pheomelanin (red-yellow) ↓ (associated with sun damage)
-```
-
-**The critical concern:** Tanning occurs **without UV exposure**. Normally, UV damage to DNA is the trigger that tells skin to produce protective melanin. By bypassing this, MT-II may promote pigment changes in moles and skin without the body's normal cancer-surveillance mechanisms being activated.
-
-### Sexual Function Pathway: MC3R/MC4R Signaling
-
-MT-II also affects the brain, triggering arousal pathways:
-
-```
-MT-II crosses blood-brain barrier
-    ↓
-Binds MC4R in medial preoptic area (mPOA)
-    ↓
-↑ Dopamine release in mPOA
-    ↓
-├── Erections without sexual stimulation
-├── ↑ Sexual desire and arousal
-└── ↑ Copulatory behavior
+MT-II → MC1R on melanocytes → Gs protein → Adenylyl cyclase → cAMP
+                                                               ↓
+                                             PKA → MITF activation
+                                                               ↓
+                                             Tyrosinase transcription
+                                                               ↓
+                                             Eumelanin synthesis (tanning)
 ```
 
-MT-II can trigger erections **without any sexual stimulation** — a sign of direct brain activation rather than normal arousal pathways.
-
-### Appetite Suppression: MC4R
-
-MC4R activation in the hypothalamus suppresses appetite:
-- Reduces food intake even when fasting
-- Effect blocked by MC3R/MC4R antagonists
-- Can cause pronounced loss of appetite
-
-### Why MT-II Was Never Approved
-
-Regulatory agencies rejected MT-II for these reasons:
-
-1. **Non-selectivity** - Affects too many systems at once, causing unpredictable effects
-2. **Mole changes** - Darkening and changes to existing moles, potentially masking or promoting melanoma
-3. **Cardiovascular effects** - Increases blood pressure (pressor effects)
-4. **Theoretical cancer risk** - Uncontrolled melanin production without normal DNA-damage surveillance
-5. **Better alternative exists** - PT-141 was developed as a more selective option for sexual function
-
----
-
-<h2 id="research-summary">Research Summary</h2>
-
-### Evidence Overview
-
-| Category | Count | Notes |
-|----------|-------|-------|
-| Human studies | 8 | Phase 1/2 pharmacology (USA) |
-| Case reports | 12 | Adverse events (global) |
-| Preclinical | 4 | Mechanism studies |
-| Reviews | 6 | Safety analyses |
-| Open access | 14 | Freely available |
-
-### Global Research Distribution
-
-| Region | Key Contributions |
-|--------|-------------------|
-| **USA** | University of Arizona (origin), Phase 1/2 trials, mechanism research |
-| **Australia** | TGA warnings, case reports, high prevalence studies |
-| **UK** | British Journal of Dermatology cases, BMJ warnings |
-| **Europe** | JEADV reviews, Danish/Dutch case reports |
-| **New Zealand** | Cardiac adverse event documentation |
-
-### Key Points
-
-1. Never completed Phase 3 trials
-2. Development discontinued after Phase 2
-3. PT-141 developed as more selective alternative for sexual function
-4. Afamelanotide developed as MC1R-selective alternative (approved for EPP)
-5. Significant adverse event reports from multiple countries
-
----
-
-<h2 id="key-human-trials">Key Human Trials</h2>
-
-### University of Arizona Research (Origin)
-
-| Study | Year | N | Key Finding | PMID |
-|-------|------|---|-------------|------|
-| Dorr RT et al. | 1996 | 3 | First human study; tanning confirmed without UV | [8637402](https://pubmed.ncbi.nlm.nih.gov/8637402/) |
-| Wessells H et al. | 1998 | 10 | Erectile response in 8/10 psychogenic ED patients | [9610557](https://pubmed.ncbi.nlm.nih.gov/9610557/) |
-| Wessells H et al. | 2000 | 20 | RCT: 68% desire increase vs 19% placebo | [11035391](https://pubmed.ncbi.nlm.nih.gov/11035391/) |
-| Hadley ME et al. | 1999 | Review | Comprehensive melanocortin biology | [10816639](https://pubmed.ncbi.nlm.nih.gov/10816639/) |
-
-**No Phase 3 efficacy or safety trials were completed.** Development was discontinued after Phase 2.
-
-### Mechanism Research
-
-| Study | Year | Key Finding | PMID |
-|-------|------|-------------|------|
-| Hadley ME & Dorr RT | 2006 | Melanocortin mechanism review; superpotency explained | [16412534](https://pubmed.ncbi.nlm.nih.gov/16412534/) |
-| Van der Ploeg LH et al. | 2002 | MC4R mechanism for sexual function | [12172010](https://pubmed.ncbi.nlm.nih.gov/12172010/) |
-| Abdel-Malek ZA et al. | 2000 | MC1R signaling in human melanocytes | [11041376](https://pubmed.ncbi.nlm.nih.gov/11041376/) |
-| Hruby VJ et al. | 1995 | Structure-activity relationships | [7658432](https://pubmed.ncbi.nlm.nih.gov/7658432/) |
-
-### Post-Marketing Surveillance
-
-Numerous case reports document adverse events in individuals using illegally obtained Melanotan II from multiple countries.
-
----
-
-<h2 id="preclinical-evidence">Preclinical Evidence</h2>
-
-### Animal Studies
-
-| Study Type | Key Findings |
-|------------|--------------|
-| Melanogenesis | Confirmed tanning in mice |
-| Sexual behavior | Effects observed |
-| Cardiovascular | Pressor effects noted |
-
----
-
-<h2 id="safety-profile">Safety Profile</h2>
-
-### Reported Adverse Events
-
-| Event | Frequency | Severity |
-|-------|-----------|----------|
-| Nausea/vomiting | Very common | Moderate |
-| Facial flushing | Very common | Mild |
-| Fatigue | Common | Mild |
-| Changes in moles | Concerning | Potentially serious |
-| Spontaneous erections | Common | Variable |
-| Cardiovascular events | Reported | Serious |
-
-### Serious Safety Concerns
-
-**Dermatologic:**
-- Changes to existing moles
-- New mole development
-- Theoretical melanoma risk
-- Darkening of atypical nevi
-
-**Cardiovascular:**
-- Blood pressure effects
-- Reported cardiac events
-- Pressor response
-
-**Other:**
-- Unknown long-term effects
-- Product quality concerns (unregulated)
-- Contamination risks
-
-### Regulatory Warnings
-
-| Agency | Action |
-|--------|--------|
-| FDA | Warning letter; unlawful to sell |
-| TGA (Australia) | Specific warnings issued |
-| MHRA (UK) | Public warnings |
-| EMA | Not authorized; concerns noted |
-
----
-
-<h2 id="pharmacokinetics">Pharmacokinetics</h2>
-
-### Limited Data
-
-| Parameter | Value | Notes |
-|-----------|-------|-------|
-| **Half-life** | Short | Minutes to hours |
-| **Administration** | SC injection | Typical illegal use |
-| **Onset** | Rapid | Effects within hours |
-
----
-
-<h2 id="regulatory-status">Regulatory Status</h2>
-
-| Region | Status | Notes |
-|--------|--------|-------|
-| USA (FDA) | Not approved | Illegal to sell |
-| EU (EMA) | Not approved | Warnings issued |
-| Australia (TGA) | Not approved | Specific warnings |
-| WADA | Prohibited | Banned in sport |
-
-**Melanotan II is not approved anywhere for any indication.**
-
----
-
-<h2 id="related-peptides">Related Peptides</h2>
-
-### Melanocortin Comparison
-
-| Peptide | Selectivity | Status |
-|---------|-------------|--------|
-| **Melanotan II** | Non-selective | Not approved |
-| **PT-141** | MC4R selective | FDA approved |
-| **Afamelanotide** | MC1R selective | Approved (EPP) |
-| **Setmelanotide** | MC4R | Approved (obesity) |
-
----
-
-<h2 id="citation-table">Citation Table</h2>
-
-### Original Clinical Research (USA - University of Arizona)
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Dorr RT et al. [PMID:8637402](https://pubmed.ncbi.nlm.nih.gov/8637402/) | 1996 | Phase 1 | First human pharmacology; tanning without UV confirmed | Paywalled |
-| Wessells H et al. [PMID:9610557](https://pubmed.ncbi.nlm.nih.gov/9610557/) | 1998 | Phase 1/2 | Erectile response in psychogenic ED | Paywalled |
-| Wessells H et al. [PMID:11035391](https://pubmed.ncbi.nlm.nih.gov/11035391/) | 2000 | RCT | 68% desire increase vs 19% placebo | Open |
-| Hadley ME et al. [PMID:10816639](https://pubmed.ncbi.nlm.nih.gov/10816639/) | 1999 | Review | Comprehensive melanocortin biology review | Paywalled |
-
-### Case Reports - UK and Ireland
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Brennan R et al. [PMID:19663875](https://pubmed.ncbi.nlm.nih.gov/19663875/) | 2009 | Case Series | First UK report; flushing, nausea, mole changes | Open |
-| Langan EA et al. [PMID:19174439](https://pubmed.ncbi.nlm.nih.gov/19174439/) | 2009 | BMJ Editorial | UK clinician warning; calls for regulation | Open |
-| Reid CJ, Fitzgerald T [PMID:23536747](https://pubmed.ncbi.nlm.nih.gov/23536747/) | 2012 | Case Report | Compound naevus with architectural disorder (N. Ireland) | Open |
-| Cousen P, Messenger A [PMID:20346021](https://pubmed.ncbi.nlm.nih.gov/20346021/) | 2010 | Case Series | Sheffield; mole changes, new nevi development | Open |
-
-### Case Reports - Europe (Denmark, Netherlands)
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Hjuler KF et al. [PMID:24355990](https://pubmed.ncbi.nlm.nih.gov/24355990/) | 2014 | Case Report | Melanoma in 20-year-old woman; atypical nevi changes (Denmark) | Open |
-| Habbema L et al. [PMID:28266027](https://pubmed.ncbi.nlm.nih.gov/28266027/) | 2017 | JEADV Review | European dermatology warning on MT-II risks | Open |
-
-### Case Reports - Australia and New Zealand
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Nelson ME et al. [PMID:23121206](https://pubmed.ncbi.nlm.nih.gov/23121206/) | 2012 | Case Report | Rhabdomyolysis from 6mg injection; ICU, CPK 17,773 (Australia) | Open |
-| Ong S, Bowling J [PMID:23016621](https://pubmed.ncbi.nlm.nih.gov/23016621/) | 2012 | Case Report | Eruptive nevi and melanoma concern (Australia) | Paywalled |
-| Mackintosh JA [PMID:17716256](https://pubmed.ncbi.nlm.nih.gov/17716256/) | 2006 | Editorial | Early Australian warning on melanocortin dangers | Open |
-| Dunshea-Mooij C et al. [PMID:22854368](https://pubmed.ncbi.nlm.nih.gov/22854368/) | 2012 | Case Report | Cardiac events and melanocyte activation (New Zealand) | Open |
-
-### Case Reports - USA
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Pauporte M et al. [PMID:19702983](https://pubmed.ncbi.nlm.nih.gov/19702983/) | 2009 | Case Report | Extensive atypical nevi changes | Paywalled |
-| Cardones AR et al. [PMID:19293023](https://pubmed.ncbi.nlm.nih.gov/19293023/) | 2009 | Case Report | Dysplastic nevus with regression features | Paywalled |
-
-### Mechanism Studies
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Hadley ME & Dorr RT [PMID:16412534](https://pubmed.ncbi.nlm.nih.gov/16412534/) | 2006 | Review | Melanocortin mechanism; superpotency of cyclic analogs | Paywalled |
-| Van der Ploeg LH et al. [PMID:12172010](https://pubmed.ncbi.nlm.nih.gov/12172010/) | 2002 | Preclinical | MC4R mechanism for sexual function; PT-141 basis | Open |
-| Abdel-Malek ZA et al. [PMID:11041376](https://pubmed.ncbi.nlm.nih.gov/11041376/) | 2000 | Review | MC1R signaling in human melanocytes (Cincinnati) | Paywalled |
-| Hruby VJ et al. [PMID:7658432](https://pubmed.ncbi.nlm.nih.gov/7658432/) | 1995 | Preclinical | Structure-activity relationships (Arizona chemistry) | Paywalled |
-| Tsatmali M et al. [PMID:11918724](https://pubmed.ncbi.nlm.nih.gov/11918724/) | 2002 | Preclinical | Melanocyte proliferation mechanisms (Melbourne) | Paywalled |
-
-### Reviews - Safety Analysis
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Yin NC et al. [PMID:35869567](https://pubmed.ncbi.nlm.nih.gov/35869567/) | 2022 | Systematic Review | 50+ adverse events analyzed globally | Paywalled |
-| [PMC11664455](https://pmc.ncbi.nlm.nih.gov/articles/PMC11664455/) | 2024 | Review | Benefits and risks of chronic MC1R activation | Open |
-| DermNet NZ | 2024 | Educational | Comprehensive safety profile documentation | Open |
-
-### Prevalence Studies
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Evans-Brown M et al. [PMID:22036272](https://pubmed.ncbi.nlm.nih.gov/22036272/) | 2012 | Survey | UK prevalence; bodybuilding/tanning community patterns | Paywalled |
-
-### Regulatory Warnings
-
-| Agency | Action | Year | Notes |
-|--------|--------|------|-------|
-| FDA (USA) | Warning Letter | Ongoing | Unlawful to sell; not approved for any indication |
-| TGA (Australia) | Consumer Warning | 2009+ | Multiple warnings issued; urges consumers to avoid |
-| MHRA (UK) | Public Warning | 2009+ | Safety concerns; not authorized |
-| EMA (EU) | Not Authorized | Ongoing | Concerns about safety profile |
-| Medsafe (NZ) | Warning | 2012+ | Documented adverse events |
-
----
-
-*This dossier is for educational purposes only. Melanotan II is not approved by any regulatory agency (FDA, TGA, EMA, MHRA, Medsafe) and has been subject to safety warnings globally. Use is strongly discouraged. Last updated: January 2026.*
-
----
-
-<h2 id="source-database">Source Database</h2>
-
-### Europe PMC / PubMed Cross-References
-
-All sources listed above are indexed in both PubMed (USA/Canada) and Europe PMC (European research portal). Key database identifiers:
-
-| Database | Search Term | Results |
-|----------|-------------|---------|
-| PubMed | "melanotan II" | 100+ articles |
-| Europe PMC | "melanotan II" | 100+ articles |
-| Cochrane Library | "melanotan" | No systematic reviews (insufficient evidence) |
-
-### Regional Research Focus
-
-**USA (University of Arizona):** Origin research, mechanism studies, Phase 1/2 clinical trials, structure-activity chemistry
-**Australia:** High community prevalence, TGA regulatory response, toxicology case reports, Melbourne melanocyte research
-**UK:** British Journal of Dermatology case series, BMJ editorials, prevalence surveys, Sheffield dermatology
-**Europe:** Danish melanoma case, Dutch JEADV warnings, European regulatory stance
-**New Zealand:** Cardiac adverse event documentation, Medsafe warnings
+**MC4R Sexual Function Pathway** *(CNS)*
+```
+MT-II → Crosses BBB → MC4R in mPOA → Dopamine release → Sexual arousal
+                                                             ↓
+                                             Erection without stimulation
+```
+
+**Key Research:** Dorr RT et al. (Arizona, 1996) demonstrated tanning without UV exposure in the first human trial. [PMID:8637402](https://pubmed.ncbi.nlm.nih.gov/8637402/)
+
+### Important Limitations
+
+- Non-selective binding causes multiple unpredictable systemic effects
+- Bypasses natural UV-triggered tanning surveillance mechanisms
+- Associated with melanoma development in multiple case reports
+- Never completed Phase 3 clinical trials
+- Not approved by FDA, TGA, EMA, or any regulatory agency
+- PT-141 (bremelanotide) was developed as a more selective alternative for sexual function

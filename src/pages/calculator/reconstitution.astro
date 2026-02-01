@@ -1,0 +1,462 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Reconstitution Calculator" description="Calculate peptide concentrations and draw volumes with visual syringe display.">
+  <!-- Breadcrumb -->
+  <nav class="flex items-center gap-2 text-sm mb-8" style="color: var(--text-medium);">
+    <a href="/calculator" class="hover:text-primary transition-colors">Calculators</a>
+    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="m9 18 6-6-6-6"/>
+    </svg>
+    <span style="color: var(--text-high);">Reconstitution</span>
+  </nav>
+
+  <!-- Header -->
+  <section class="mb-12">
+    <div class="flex items-center gap-4 mb-6">
+      <div class="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center">
+        <svg class="w-7 h-7 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4.5 3h15"/>
+          <path d="M6 3v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V3"/>
+          <path d="M6 14h12"/>
+        </svg>
+      </div>
+      <div>
+        <h1 class="text-3xl font-bold font-display" style="color: var(--text-high);">Reconstitution Calculator</h1>
+        <p class="text-sm" style="color: var(--text-medium);">Calculate concentrations and draw volumes</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator Layout -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+    <!-- Input Panel -->
+    <div class="glass-card p-8">
+      <h2 class="text-lg font-bold mb-6 font-display" style="color: var(--text-high);">Input Values</h2>
+
+      <div class="space-y-6">
+        <!-- Peptide Amount -->
+        <div>
+          <label class="block text-sm font-medium mb-2" style="color: var(--text-high);">
+            Peptide Amount (mg)
+          </label>
+          <input
+            type="number"
+            id="peptideAmount"
+            value="10"
+            min="0.1"
+            step="0.1"
+            class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all"
+            placeholder="e.g., 10"
+          />
+          <p class="text-xs mt-1" style="color: var(--text-low);">Total peptide in vial (typically 5-10mg)</p>
+        </div>
+
+        <!-- BAC Water Volume -->
+        <div>
+          <label class="block text-sm font-medium mb-2" style="color: var(--text-high);">
+            Bacteriostatic Water (mL)
+          </label>
+          <input
+            type="number"
+            id="waterVolume"
+            value="2"
+            min="0.1"
+            step="0.1"
+            class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all"
+            placeholder="e.g., 2"
+          />
+          <p class="text-xs mt-1" style="color: var(--text-low);">Volume of BAC water to add</p>
+        </div>
+
+        <!-- Desired Dose -->
+        <div>
+          <label class="block text-sm font-medium mb-2" style="color: var(--text-high);">
+            Desired Dose (mcg)
+          </label>
+          <input
+            type="number"
+            id="desiredDose"
+            value="250"
+            min="1"
+            step="1"
+            class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all"
+            placeholder="e.g., 250"
+          />
+          <p class="text-xs mt-1" style="color: var(--text-low);">Target dose per injection (in micrograms)</p>
+        </div>
+
+        <!-- Syringe Size Selection -->
+        <div>
+          <label class="block text-sm font-medium mb-2" style="color: var(--text-high);">
+            Syringe Size
+          </label>
+          <div class="grid grid-cols-3 gap-2">
+            <button type="button" data-syringe="0.3" class="syringe-btn active px-4 py-2 rounded-lg text-sm font-medium border transition-all">
+              0.3 mL (30u)
+            </button>
+            <button type="button" data-syringe="0.5" class="syringe-btn px-4 py-2 rounded-lg text-sm font-medium border transition-all">
+              0.5 mL (50u)
+            </button>
+            <button type="button" data-syringe="1.0" class="syringe-btn px-4 py-2 rounded-lg text-sm font-medium border transition-all">
+              1.0 mL (100u)
+            </button>
+          </div>
+        </div>
+
+        <!-- Quick Presets -->
+        <div>
+          <label class="block text-sm font-medium mb-2" style="color: var(--text-high);">
+            Quick Presets
+          </label>
+          <div class="flex flex-wrap gap-2">
+            <button type="button" data-preset="bpc157" class="preset-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all">
+              BPC-157 (5mg)
+            </button>
+            <button type="button" data-preset="tb500" class="preset-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all">
+              TB-500 (5mg)
+            </button>
+            <button type="button" data-preset="semaglutide" class="preset-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all">
+              Semaglutide (3mg)
+            </button>
+            <button type="button" data-preset="ghkcu" class="preset-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all">
+              GHK-Cu (50mg)
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Panel -->
+    <div class="glass-card p-8">
+      <h2 class="text-lg font-bold mb-6 font-display" style="color: var(--text-high);">Results</h2>
+
+      <!-- Results Grid -->
+      <div class="grid grid-cols-2 gap-4 mb-8">
+        <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+          <p class="text-xs uppercase tracking-wider mb-1" style="color: var(--text-low);">Concentration</p>
+          <p class="text-2xl font-bold text-primary" id="resultConcentration">5.00</p>
+          <p class="text-xs" style="color: var(--text-medium);">mg/mL</p>
+        </div>
+        <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+          <p class="text-xs uppercase tracking-wider mb-1" style="color: var(--text-low);">Doses Per Vial</p>
+          <p class="text-2xl font-bold text-cyan-400" id="resultDoses">40</p>
+          <p class="text-xs" style="color: var(--text-medium);">at selected dose</p>
+        </div>
+        <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+          <p class="text-xs uppercase tracking-wider mb-1" style="color: var(--text-low);">Draw Volume</p>
+          <p class="text-2xl font-bold text-purple-400" id="resultVolume">0.05</p>
+          <p class="text-xs" style="color: var(--text-medium);">mL per dose</p>
+        </div>
+        <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+          <p class="text-xs uppercase tracking-wider mb-1" style="color: var(--text-low);">Syringe Units</p>
+          <p class="text-2xl font-bold text-green-400" id="resultUnits">5</p>
+          <p class="text-xs" style="color: var(--text-medium);">units to draw</p>
+        </div>
+      </div>
+
+      <!-- Visual Syringe -->
+      <div>
+        <h3 class="text-sm font-medium mb-4" style="color: var(--text-high);">Visual Guide</h3>
+        <div class="flex justify-center">
+          <svg id="syringeSvg" viewBox="0 0 120 380" class="w-32 h-auto">
+            <!-- Syringe Body -->
+            <defs>
+              <linearGradient id="syringeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color: rgba(255,255,255,0.1)"/>
+                <stop offset="50%" style="stop-color: rgba(255,255,255,0.2)"/>
+                <stop offset="100%" style="stop-color: rgba(255,255,255,0.1)"/>
+              </linearGradient>
+              <linearGradient id="liquidGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color: rgba(139,92,246,0.6)"/>
+                <stop offset="50%" style="stop-color: rgba(139,92,246,0.8)"/>
+                <stop offset="100%" style="stop-color: rgba(139,92,246,0.6)"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Plunger Handle -->
+            <rect x="20" y="5" width="80" height="20" rx="4" fill="rgba(255,255,255,0.3)"/>
+            <rect x="35" y="25" width="50" height="15" rx="2" fill="rgba(255,255,255,0.2)"/>
+
+            <!-- Plunger Shaft -->
+            <rect x="50" y="40" width="20" height="60" fill="rgba(255,255,255,0.15)"/>
+
+            <!-- Syringe Barrel -->
+            <rect x="25" y="100" width="70" height="220" rx="4" fill="url(#syringeGradient)" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+
+            <!-- Graduation Marks and Labels -->
+            <g id="graduationMarks" class="text-xs" fill="rgba(255,255,255,0.7)">
+              <!-- Will be populated by JS based on syringe size -->
+            </g>
+
+            <!-- Liquid Fill (animated) -->
+            <rect id="liquidFill" x="27" y="318" width="66" height="0" fill="url(#liquidGradient)" rx="2"/>
+
+            <!-- Target Line -->
+            <line id="targetLine" x1="20" y1="318" x2="100" y2="318" stroke="#22c55e" stroke-width="2" stroke-dasharray="4,2"/>
+            <text id="targetLabel" x="105" y="322" fill="#22c55e" class="text-xs font-bold">0u</text>
+
+            <!-- Needle Hub -->
+            <rect x="45" y="320" width="30" height="25" rx="2" fill="rgba(255,255,255,0.2)"/>
+
+            <!-- Needle -->
+            <rect x="57" y="345" width="6" height="30" fill="rgba(255,255,255,0.4)"/>
+            <polygon points="57,375 63,375 60,385" fill="rgba(255,255,255,0.5)"/>
+          </svg>
+        </div>
+
+        <!-- Legend -->
+        <div class="flex justify-center gap-6 mt-4 text-xs">
+          <div class="flex items-center gap-2">
+            <div class="w-3 h-3 rounded bg-primary/60"></div>
+            <span style="color: var(--text-medium);">Liquid level</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="w-3 h-1 bg-green-500"></div>
+            <span style="color: var(--text-medium);">Target line</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Formula Reference -->
+  <section class="mb-12">
+    <div class="glass-card p-6">
+      <h3 class="text-sm font-bold uppercase tracking-wider mb-4" style="color: var(--text-high);">Formula Reference</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm" style="color: var(--text-medium);">
+        <div class="p-4 rounded-lg bg-white/5">
+          <p class="font-mono text-primary mb-1">Concentration = Peptide (mg) / Water (mL)</p>
+          <p class="text-xs" style="color: var(--text-low);">Result in mg/mL</p>
+        </div>
+        <div class="p-4 rounded-lg bg-white/5">
+          <p class="font-mono text-cyan-400 mb-1">Volume = Dose (mcg) / (Concentration x 1000)</p>
+          <p class="text-xs" style="color: var(--text-low);">Result in mL</p>
+        </div>
+        <div class="p-4 rounded-lg bg-white/5">
+          <p class="font-mono text-purple-400 mb-1">Units = Volume (mL) x 100</p>
+          <p class="text-xs" style="color: var(--text-low);">For insulin syringes</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Disclaimer -->
+  <section class="py-8">
+    <div class="glass-card p-6" style="border-color: hsla(45, 90%, 55%, 0.3);">
+      <div class="flex items-start gap-4">
+        <div class="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 bg-yellow-500/20 border border-yellow-500/30">
+          <svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-sm font-bold text-yellow-400 uppercase tracking-wider mb-2">For Research Purposes Only</h3>
+          <p class="text-sm leading-relaxed" style="color: var(--text-medium);">
+            This calculator is provided for educational and research purposes only. It is not intended for medical use. Always consult qualified healthcare professionals before making any medical decisions. Results assume ideal reconstitution conditions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .syringe-btn {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.7);
+  }
+  .syringe-btn:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.2);
+    color: white;
+  }
+  .syringe-btn.active {
+    background: rgba(139,92,246,0.2);
+    border-color: rgba(139,92,246,0.5);
+    color: rgb(139,92,246);
+  }
+</style>
+
+<script>
+  // Calculator state
+  let currentSyringeSize = 0.3; // mL
+
+  // DOM elements
+  const peptideInput = document.getElementById('peptideAmount') as HTMLInputElement;
+  const waterInput = document.getElementById('waterVolume') as HTMLInputElement;
+  const doseInput = document.getElementById('desiredDose') as HTMLInputElement;
+
+  const resultConcentration = document.getElementById('resultConcentration')!;
+  const resultDoses = document.getElementById('resultDoses')!;
+  const resultVolume = document.getElementById('resultVolume')!;
+  const resultUnits = document.getElementById('resultUnits')!;
+
+  const liquidFill = document.getElementById('liquidFill')!;
+  const targetLine = document.getElementById('targetLine')!;
+  const targetLabel = document.getElementById('targetLabel')!;
+  const graduationMarks = document.getElementById('graduationMarks')!;
+
+  // Presets
+  const presets: Record<string, { peptide: number; water: number; dose: number }> = {
+    bpc157: { peptide: 5, water: 2, dose: 250 },
+    tb500: { peptide: 5, water: 2, dose: 2500 },
+    semaglutide: { peptide: 3, water: 3, dose: 250 },
+    ghkcu: { peptide: 50, water: 5, dose: 500 },
+  };
+
+  // Calculate and update display
+  function calculate() {
+    const peptideMg = parseFloat(peptideInput.value) || 0;
+    const waterMl = parseFloat(waterInput.value) || 0;
+    const doseMcg = parseFloat(doseInput.value) || 0;
+
+    if (peptideMg <= 0 || waterMl <= 0) {
+      resultConcentration.textContent = '0.00';
+      resultDoses.textContent = '0';
+      resultVolume.textContent = '0.000';
+      resultUnits.textContent = '0';
+      updateSyringe(0);
+      return;
+    }
+
+    // Calculate concentration (mg/mL)
+    const concentration = peptideMg / waterMl;
+    resultConcentration.textContent = concentration.toFixed(2);
+
+    // Calculate doses per vial
+    const totalMcg = peptideMg * 1000;
+    const doses = doseMcg > 0 ? Math.floor(totalMcg / doseMcg) : 0;
+    resultDoses.textContent = doses.toString();
+
+    // Calculate draw volume (mL)
+    const volumeMl = doseMcg > 0 ? doseMcg / (concentration * 1000) : 0;
+    resultVolume.textContent = volumeMl.toFixed(4);
+
+    // Calculate units (for insulin syringe: 100 units = 1 mL)
+    const units = volumeMl * 100;
+    resultUnits.textContent = units.toFixed(1);
+
+    // Update syringe visualization
+    updateSyringe(units);
+  }
+
+  // Update syringe visualization
+  function updateSyringe(units: number) {
+    const maxUnits = currentSyringeSize * 100;
+    const barrelHeight = 218; // pixels
+    const barrelTop = 102; // top of barrel
+    const barrelBottom = 318; // bottom of barrel
+
+    // Clamp units to syringe capacity
+    const clampedUnits = Math.min(units, maxUnits);
+
+    // Calculate fill height
+    const fillPercent = clampedUnits / maxUnits;
+    const fillHeight = fillPercent * barrelHeight;
+    const fillY = barrelBottom - fillHeight;
+
+    // Update liquid fill
+    liquidFill.setAttribute('y', fillY.toString());
+    liquidFill.setAttribute('height', fillHeight.toString());
+
+    // Update target line
+    targetLine.setAttribute('y1', fillY.toString());
+    targetLine.setAttribute('y2', fillY.toString());
+    targetLabel.setAttribute('y', (fillY + 4).toString());
+    targetLabel.textContent = `${clampedUnits.toFixed(1)}u`;
+
+    // Update graduation marks based on syringe size
+    updateGraduationMarks(maxUnits);
+  }
+
+  // Update graduation marks
+  function updateGraduationMarks(maxUnits: number) {
+    graduationMarks.innerHTML = '';
+
+    const barrelTop = 102;
+    const barrelBottom = 318;
+    const barrelHeight = barrelBottom - barrelTop;
+
+    // Determine step size based on syringe
+    let majorStep, minorStep;
+    if (maxUnits === 30) {
+      majorStep = 5;
+      minorStep = 1;
+    } else if (maxUnits === 50) {
+      majorStep = 10;
+      minorStep = 2;
+    } else {
+      majorStep = 20;
+      minorStep = 5;
+    }
+
+    for (let i = 0; i <= maxUnits; i += minorStep) {
+      const y = barrelBottom - (i / maxUnits) * barrelHeight;
+      const isMajor = i % majorStep === 0;
+
+      // Draw tick mark
+      const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      line.setAttribute('x1', isMajor ? '20' : '22');
+      line.setAttribute('x2', '25');
+      line.setAttribute('y1', y.toString());
+      line.setAttribute('y2', y.toString());
+      line.setAttribute('stroke', 'rgba(255,255,255,0.5)');
+      line.setAttribute('stroke-width', isMajor ? '2' : '1');
+      graduationMarks.appendChild(line);
+
+      // Add label for major ticks
+      if (isMajor) {
+        const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        text.setAttribute('x', '15');
+        text.setAttribute('y', (y + 3).toString());
+        text.setAttribute('text-anchor', 'end');
+        text.setAttribute('fill', 'rgba(255,255,255,0.7)');
+        text.setAttribute('font-size', '10');
+        text.textContent = i.toString();
+        graduationMarks.appendChild(text);
+      }
+    }
+  }
+
+  // Event listeners for inputs
+  peptideInput.addEventListener('input', calculate);
+  waterInput.addEventListener('input', calculate);
+  doseInput.addEventListener('input', calculate);
+
+  // Syringe size buttons
+  document.querySelectorAll('.syringe-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const target = e.currentTarget as HTMLButtonElement;
+
+      // Update active state
+      document.querySelectorAll('.syringe-btn').forEach(b => b.classList.remove('active'));
+      target.classList.add('active');
+
+      // Update syringe size
+      currentSyringeSize = parseFloat(target.dataset.syringe || '0.3');
+      calculate();
+    });
+  });
+
+  // Preset buttons
+  document.querySelectorAll('.preset-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const target = e.currentTarget as HTMLButtonElement;
+      const presetKey = target.dataset.preset;
+
+      if (presetKey && presets[presetKey]) {
+        const preset = presets[presetKey];
+        peptideInput.value = preset.peptide.toString();
+        waterInput.value = preset.water.toString();
+        doseInput.value = preset.dose.toString();
+        calculate();
+      }
+    });
+  });
+
+  // Initial calculation
+  calculate();
+</script>

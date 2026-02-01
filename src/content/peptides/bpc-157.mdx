@@ -13,172 +13,236 @@ sources:
   openAccess: 18
 metaTitle: "BPC-157 Evidence Dossier | PepCodex"
 metaDescription: "Evidence review of BPC-157 (Body Protection Compound). Preclinical research, proposed mechanisms, safety considerations, and citations."
----
-
-## Overview
-
-<h2 id="overview" class="sr-only">Overview</h2>
-
-### Quick Summary
-
-- **Synthetic pentadecapeptide** (15 amino acids) derived from human gastric juice protein
-- **Not FDA approved** for any indication; not approved by any major regulatory agency
-- **Preclinical evidence only** - nearly all studies are in animal models or cell cultures
-- **High interest in fitness/recovery communities** despite limited human data
-- **Safety profile in humans is not established** through rigorous clinical trials
-
-**Evidence Strength: Low** - Extensive preclinical research but minimal human clinical trial data. Most evidence comes from a single research group.
-
-### Identity & Origins
-
-| Property | Value |
-|----------|-------|
-| **Generic name** | BPC-157 |
-| **Chemical name** | Pentadecapeptide BPC 157 |
-| **Research codes** | PL 14736, PL-10, PLD-116 |
-| **Class** | Gastric pentadecapeptide |
-| **Origin** | Derived from human BPC protein fragment |
-| **Amino acid sequence** | Gly-Glu-Pro-Pro-Pro-Gly-Lys-Pro-Ala-Asp-Asp-Ala-Gly-Leu-Val |
-
-### Research Timeline
-
-- **1990s:** Initial isolation and characterization from gastric juice (Croatian researchers)
-- **1993-present:** Preclinical studies primarily from Croatian research group (Sikiric et al.)
-- **2000s:** Pliva pharmaceutical company develops PL 14736 for IBD trials
-- **2006:** Phase I/II IBD trials referenced but results never fully published
-- **2010s:** Independent Taiwanese and Chinese research groups publish supportive findings
-- **2016:** Phase I trial (NCT02637284) terminated; no results disclosed
-- **2019:** Korean systematic review; UK independent review published
-- **2023:** FDA classifies as Category 2 bulk drug substance
-- **2024-2025:** First small human pilot studies published; multiple systematic reviews
-- **Current:** No completed Phase 3 trials; only 2-3 small pilot human studies
-
+interactions:
+  - peptide: "tb-500"
+    type: "synergistic"
+    description: "Commonly combined in research for tissue repair. BPC-157's angiogenic and cytoprotective mechanisms may complement TB-500's actin-regulating and cell migration effects. No direct clinical studies on combination."
+  - peptide: "ghk-cu"
+    type: "compatible"
+    description: "Different mechanisms of action (BPC-157 systemic cytoprotection vs GHK-Cu copper-mediated signaling). No known contraindications; both target wound healing pathways through distinct routes."
+  - peptide: "thymosin-alpha-1"
+    type: "compatible"
+    description: "Non-overlapping mechanisms. BPC-157 focuses on tissue repair while Thymosin Alpha-1 modulates immune function. Theoretical complementary benefits for recovery."
+  - peptide: "ll-37"
+    type: "compatible"
+    description: "LL-37's antimicrobial properties may complement BPC-157's tissue repair effects in wound healing contexts. No interaction studies available."
+  - peptide: "semaglutide"
+    type: "caution"
+    description: "Both affect GI function. BPC-157 is gastroprotective while semaglutide slows gastric emptying. Unclear if effects interact; monitor GI symptoms if combined."
+  - peptide: "melanotan-ii"
+    type: "caution"
+    description: "Both act on various receptor systems. Limited data on interactions. Exercise caution due to lack of combined safety data."
+molecularInfo:
+  weight: "1,419.53 Da"
+  chainLength: 15
+  type: "Pentadecapeptide"
+  sequence: "GEPPPGKPADDAGLV"
+  aminoAcids:
+    - { code: "G", name: "Glycine", position: 1, property: "polar" }
+    - { code: "E", name: "Glutamic Acid", position: 2, property: "negative" }
+    - { code: "P", name: "Proline", position: 3, property: "hydrophobic" }
+    - { code: "P", name: "Proline", position: 4, property: "hydrophobic" }
+    - { code: "P", name: "Proline", position: 5, property: "hydrophobic" }
+    - { code: "G", name: "Glycine", position: 6, property: "polar" }
+    - { code: "K", name: "Lysine", position: 7, property: "positive" }
+    - { code: "P", name: "Proline", position: 8, property: "hydrophobic" }
+    - { code: "A", name: "Alanine", position: 9, property: "hydrophobic" }
+    - { code: "D", name: "Aspartic Acid", position: 10, property: "negative" }
+    - { code: "D", name: "Aspartic Acid", position: 11, property: "negative" }
+    - { code: "A", name: "Alanine", position: 12, property: "hydrophobic" }
+    - { code: "G", name: "Glycine", position: 13, property: "polar" }
+    - { code: "L", name: "Leucine", position: 14, property: "hydrophobic" }
+    - { code: "V", name: "Valine", position: 15, property: "hydrophobic" }
+evidenceChainedBenefits:
+  - mechanism:
+      action: "VEGF/VEGFR2 pathway activation promoting angiogenesis"
+      confidence: "supported"
+      directStudies: 6
+    benefit:
+      claim: "accelerate wound and tissue healing"
+      qualifier: "may"
+    evidence:
+      level: "low"
+      humanStudies: 0
+      animalStudies: 5
+      cellStudies: 3
+      keyFindings:
+        - study: "Hsieh MJ et al. 2017"
+          type: "animal"
+          finding: "BPC-157 promoted angiogenesis and wound healing via VEGFR2 activation in ischemic wound model"
+          pmid: "28013436"
+        - study: "Sikiric P et al. 2014"
+          type: "animal"
+          finding: "Demonstrated NO system interactions enhancing vasodilation and blood flow"
+          pmid: "23772940"
+  - mechanism:
+      action: "FAK-paxillin pathway activation promoting cell migration"
+      confidence: "supported"
+      directStudies: 4
+    benefit:
+      claim: "improve tendon and ligament repair"
+      qualifier: "may"
+    evidence:
+      level: "low"
+      humanStudies: 0
+      animalStudies: 4
+      cellStudies: 2
+      keyFindings:
+        - study: "Chang CH et al. 2011"
+          type: "animal"
+          finding: "FAK-paxillin phosphorylation increased in tendon fibroblasts, promoting cell migration"
+          pmid: "21030672"
+        - study: "Chang CH et al. 2014"
+          type: "in-vitro"
+          finding: "GHR upregulation enhanced collagen synthesis in tendon fibroblasts"
+          pmid: "25415472"
+  - mechanism:
+      action: "Nitric oxide system modulation (Nos1/3 upregulation, Nos2 downregulation)"
+      confidence: "supported"
+      directStudies: 5
+    benefit:
+      claim: "protect gastric mucosa from NSAID damage"
+      qualifier: "appears to"
+    evidence:
+      level: "low"
+      humanStudies: 0
+      animalStudies: 6
+      cellStudies: 2
+      keyFindings:
+        - study: "Xue XC et al. 2004"
+          type: "animal"
+          finding: "Accelerated gastric ulcer healing with increased PGE2 production"
+          pmid: "15052688"
+        - study: "Wang XY et al. 2019"
+          type: "animal"
+          finding: "Demonstrated GI and hepatic cytoprotection mechanisms"
+          pmid: "31371774"
+  - mechanism:
+      action: "D2 receptor partial agonism and dopaminergic modulation"
+      confidence: "emerging"
+      directStudies: 3
+    benefit:
+      claim: "provide neuroprotective effects"
+      qualifier: "suggested to"
+    evidence:
+      level: "very-low"
+      humanStudies: 0
+      animalStudies: 4
+      cellStudies: 1
+      keyFindings:
+        - study: "Sikiric P et al. 2016"
+          type: "animal"
+          finding: "Brain-gut axis effects with dopaminergic, serotonergic, GABAergic modulation"
+          pmid: "27306034"
+        - study: "Sikiric P et al. 2022"
+          type: "animal"
+          finding: "Detailed CNS effects including dopamine system interactions"
+          pmid: "34766891"
+conditions:
+  - slug: "tendonitis"
+    name: "Tendonitis"
+    researchSummary: "BPC-157 has been studied for its potential effects on tendon healing in preclinical models. Research from Taiwanese laboratories demonstrated that BPC-157 promotes tendon fibroblast proliferation and migration through FAK-paxillin pathway activation (Chang et al., 2011). However, all available evidence is preclinical. No human clinical trials have evaluated BPC-157 for tendonitis."
+    relevantStudies: ["21030672", "25415472", "20225319"]
+    relatedPeptides: ["tb-500", "ghk-cu"]
+  - slug: "muscle-tears"
+    name: "Muscle Tears"
+    researchSummary: "Preclinical studies from Croatian researchers have examined BPC-157's effects on muscle injury repair. In rat quadriceps transection models, BPC-157 administration was associated with improved functional recovery and increased myofiber density compared to controls. These findings remain limited to animal models."
+    relevantStudies: ["16609966", "18668315", "20388964"]
+    relatedPeptides: ["tb-500"]
+  - slug: "gut-healing"
+    name: "Gut Healing"
+    researchSummary: "BPC-157 was originally isolated from human gastric juice, and its effects on gastrointestinal tissue have been extensively studied in animal models. Multiple studies demonstrate gastroprotective effects, including protection against NSAID-induced mucosal damage."
+    relevantStudies: ["15052688", "31371774", "22950504", "21548867"]
+    relatedPeptides: ["kpv", "ll-37"]
+timeline:
+  - period: "Week 1-2"
+    effects: "Based on preclinical observations: Initial angiogenic signaling may begin. Animal studies show early VEGF/VEGFR2 pathway activation within days of administration. No human timeline data available."
+    source: "PMID:28013436"
+  - period: "Week 2-4"
+    effects: "Animal studies suggest ongoing tissue repair processes. In rat tendon models, improved collagen organization observed by 2-4 weeks. Gastric healing acceleration noted in ulcer models within this timeframe."
+    source: "PMID:21030672"
+  - period: "Week 4-8"
+    effects: "Preclinical models show continued tissue remodeling. Rat studies demonstrated improved biomechanical properties of healing tendons. Muscle injury models showed functional recovery improvements."
+    source: "PMID:25415472"
+  - period: "Week 8+"
+    effects: "Long-term animal studies suggest sustained effects on tissue repair pathways. However, human pharmacokinetics, duration of effect, and optimal treatment length are completely unknown."
+qualityChecklist:
+  goodSigns:
+    - "White to off-white lyophilized powder (cake or crystalline appearance)"
+    - "Dissolves completely and quickly in bacteriostatic water"
+    - "Clear, colorless solution after reconstitution"
+    - "Comes with certificate of analysis (COA) showing >98% purity"
+    - "Third-party HPLC and mass spectrometry verification available"
+    - "Proper vacuum seal on vial before reconstitution"
+  warningSigns:
+    - "Slightly off-white or cream-colored powder (may still be acceptable)"
+    - "Takes longer than expected to fully dissolve"
+    - "Powder appears collapsed or melted (possible moisture exposure)"
+    - "COA from manufacturer only without third-party verification"
+    - "Purity listed below 98% but above 95%"
+  badSigns:
+    - "Yellow, brown, or otherwise discolored powder"
+    - "Visible particles or cloudiness after reconstitution"
+    - "Gel-like consistency or clumping that won't dissolve"
+    - "No COA provided or COA appears fraudulent"
+    - "Strong unusual odor"
+    - "Vial seal appears compromised or previously opened"
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>
 
 The proposed mechanisms of BPC-157 are based primarily on animal and in vitro studies. Human mechanistic data is lacking.
 
-### How BPC-157 Works
+### How It Works (Simplified)
 
-Think of BPC-157 as a potential "repair signal" that may tell your body to:
+BPC-157 appears to act as a "repair signal" through several pathways:
 
-1. **Build new blood vessels** - Like creating new roads to deliver supplies to a construction site, new blood vessels bring oxygen and nutrients to injured areas so they can heal faster.
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-8">
+  <div class="bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 rounded-xl p-5 border border-emerald-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400">1</div>
+      <div class="font-semibold text-white">Angiogenesis</div>
+    </div>
+    <p class="text-sm text-white/70">Promotes new blood vessel formation via VEGF/VEGFR2 pathway activation, improving nutrient delivery to healing tissues.</p>
+  </div>
+  <div class="bg-gradient-to-br from-blue-500/10 to-blue-500/5 rounded-xl p-5 border border-blue-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">2</div>
+      <div class="font-semibold text-white">Cell Migration</div>
+    </div>
+    <p class="text-sm text-white/70">Activates FAK-paxillin pathway, helping repair cells move to injury sites and attach to healing tissue.</p>
+  </div>
+  <div class="bg-gradient-to-br from-violet-500/10 to-violet-500/5 rounded-xl p-5 border border-violet-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-violet-500/20 flex items-center justify-center text-violet-400">3</div>
+      <div class="font-semibold text-white">NO Modulation</div>
+    </div>
+    <p class="text-sm text-white/70">Modulates nitric oxide system - upregulating beneficial vasodilation while reducing inflammatory damage.</p>
+  </div>
+  <div class="bg-gradient-to-br from-amber-500/10 to-amber-500/5 rounded-xl p-5 border border-amber-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-400">4</div>
+      <div class="font-semibold text-white">Cytoprotection</div>
+    </div>
+    <p class="text-sm text-white/70">Protects gut lining and other tissues from damage, particularly from NSAIDs and other stressors.</p>
+  </div>
+</div>
 
-2. **Reduce harmful inflammation** - Your body's inflammatory response is like a fire alarm. It's helpful at first, but if it keeps going, it causes more damage. BPC-157 may help turn down this alarm once it's no longer needed.
+### Scientific Pathways
 
-3. **Help repair cells move to injuries** - When you have a wound, cells need to migrate (travel) to the damaged area to fix it. BPC-157 may help cells "unstick" from where they are and move to where they're needed.
-
-4. **Protect the gut lining** - The stomach and intestines have a protective barrier. NSAIDs (like ibuprofen) can damage this barrier. In animal studies, BPC-157 helped maintain this protective layer.
-
-**Important caveat:** These effects have mainly been seen in rats and cell cultures, not in rigorous human studies.
-
----
-
-### Scientific Pathways *(Preclinical Evidence Only)*
-
-**1. VEGF/VEGFR2 Pathway (Angiogenesis)**
+**VEGF/VEGFR2 Pathway** *(Angiogenesis)*
 ```
-BPC-157 → VEGFR2 upregulation & endocytosis
-    ↓
-PI3K activation
-    ↓
-AKT phosphorylation
-    ↓
-eNOS activation → Nitric Oxide
-    ↓
-├── New blood vessel formation
-├── Vasodilation
-└── Vascular stability
-```
-
-In simpler terms, BPC-157 appears to increase receptors for a growth factor called VEGF. This triggers a chain reaction inside cells that produces nitric oxide - a molecule that relaxes blood vessels and promotes the growth of new ones. More blood vessels = better nutrient delivery to healing tissues.
-
-**Key supporting research:** Hsieh MJ et al. (Taiwan, 2017) demonstrated VEGFR2 activation in ischemic wound models. [PMID:28013436]
-
-**2. Nitric Oxide System (Dual Pathways)**
-- **VEGF-dependent**: VEGFR2-PI3K-Akt-eNOS cascade
-- **VEGF-independent**: Src-caveolin-1-eNOS pathway
-- Disrupts caveolin-1 inhibition of eNOS → more NO production
-- Nos1/Nos3 genes upregulated (vasodilation, blood flow)
-- Nos2 downregulated (reduces excessive inflammation)
-
-Nitric oxide (NO) acts like a traffic controller for blood vessels. It tells them to widen so more blood can flow through. BPC-157 may boost the "good" NO that improves blood flow while reducing the "bad" NO that causes excessive inflammation.
-
-**Key supporting research:** Sikiric P et al. (Croatia, 2014) detailed NO system interactions. [PMID:23772940]
-
-**3. FAK-Paxillin Pathway (Cell Migration)**
-```
-BPC-157 → FAK/Paxillin phosphorylation
-    ↓
-├── Cell attachment to surfaces
-├── Cell migration to injury sites
-└── Cell survival under stress
+BPC-157 → VEGFR2 upregulation → PI3K → AKT → eNOS → Nitric Oxide
+                                                      ↓
+                                          New blood vessel formation
 ```
 
-FAK and paxillin are proteins that act like "feet" for cells, helping them grip surfaces and move. When you injure a tendon, the repair cells (fibroblasts) need to travel to the injury site. BPC-157 may activate these cellular "feet," making it easier for repair cells to reach and fix the damage.
-
-**Key supporting research:** Chang CH et al. (Taiwan, 2011) demonstrated FAK-paxillin activation in tendon fibroblasts. [PMID:21030672]
-
-**4. Growth Hormone Receptor (GHR) Pathway**
+**FAK-Paxillin Pathway** *(Cell Migration)*
 ```
-BPC-157 → GHR upregulation
-    ↓
-JAK2 phosphorylation
-    ↓
-STAT5 activation
-    ↓
-├── Enhanced growth factor signaling
-├── Increased collagen synthesis
-└── Tissue regeneration
+BPC-157 → FAK/Paxillin phosphorylation → Cell attachment → Migration to injury
 ```
 
-**Key supporting research:** Chang CH et al. (Taiwan, 2014) demonstrated GHR upregulation in tendon fibroblasts. [PMID:25415472]
-
-**5. ERK/MAPK Signaling**
-- Upregulates ERK1/2 phosphorylation
-- Activates downstream transcription factors: c-Fos, c-Jun, Egr-1
-- Promotes cell growth, migration, and angiogenesis
-
-ERK/MAPK is essentially an "on switch" for cell growth and repair. When activated, cells get the signal to multiply, move, and build new structures. BPC-157 may flip this switch on.
-
-**Key supporting research:** Tkalcevic VI et al. (Croatia, 2007) showed Egr-1 involvement in wound healing. [PMID:17628535]
-
-### Gene Expression Effects
-
-| Effect | Result | What It Means |
-|--------|--------|---------------|
-| Nos1/Nos3 ↑ | More nitric oxide → vasodilation | Blood vessels relax and widen, improving blood flow |
-| Nos2 ↓ | Less inflammatory damage | Reduces tissue damage from excessive inflammation |
-| VEGFR2 ↑ | More VEGF receptors → angiogenesis | Cells become more responsive to signals that build new blood vessels |
-| GHR ↑ | Enhanced tissue repair signaling | Tissues may respond better to growth and repair signals |
-| Egr-1 ↑ | Improved collagen organization | Better wound healing and tissue structure |
-
-### Cytoprotection (Cell Protection)
-
-- Rescued NSAID-cytotoxicity by stabilizing intestinal permeability
-- First demonstration of NO generation in gastric mucosa → antiulcer effect
-- Hepatoprotective effects in toxin-challenged animal models
-- Endothelial protection from high-glucose damage (diabetic model)
-
-In animal studies, BPC-157 helped protect the gut lining from damage caused by common painkillers like ibuprofen and aspirin. It also appeared to protect liver cells from toxins. The gut has a delicate barrier that keeps stomach acid and bacteria from leaking into your body. BPC-157 may help maintain this barrier.
-
-**Key supporting research:**
-- Chinese studies (Xue XC et al., 2004; Wang XY et al., 2019) demonstrated GI and hepatic cytoprotection
-- Sun L et al. (China, 2016) showed endothelial protection from hyperglycemia [PMID:27551776]
-
-### Neurotransmitter Interactions
-
-Recent research has explored BPC-157's effects on neurotransmitter systems:
-
-| System | Effect | Model |
-|--------|--------|-------|
-| Dopaminergic | D2 receptor partial agonism | Rat behavioral models |
-| Serotonergic | Modulation of serotonin synthesis | Rat stress models |
-| GABAergic | Enhanced GABA signaling | Rat anxiety models |
-| NO system | Complex bidirectional modulation | Multiple models |
-
-**Key supporting research:** Sikiric P et al. (Croatia, 2016, 2022) detailed brain-gut axis and CNS effects. [PMID:27306034, PMID:34766891]
+**Key Research:** Hsieh MJ et al. (Taiwan, 2017) demonstrated VEGFR2 activation in wound models. [PMID:28013436](https://pubmed.ncbi.nlm.nih.gov/28013436/)
 
 ### Important Limitations
 
@@ -186,350 +250,4 @@ Recent research has explored BPC-157's effects on neurotransmitter systems:
 - Translation to human physiology is **unconfirmed**
 - Optimal administration route for systemic effects unknown
 - Bioavailability and pharmacokinetics in humans not characterized
-- FDA prohibits sale as drug, supplement, or food ingredient
 
----
-
-<h2 id="research-summary">Research Summary</h2>
-
-### Evidence Overview
-
-| Category | Count | Notes |
-|----------|-------|-------|
-| Human pilot studies | 3 | Small N; safety endpoints only |
-| Systematic reviews | 4 | 2024-2025; highlight lack of human data |
-| Narrative reviews | 12+ | Mostly from Croatian group |
-| Preclinical studies | 29+ | Primarily rodent models |
-| Total sources | 32+ | 18 open access |
-
-### Key Evidence Highlights
-
-1. **Gastric Protection:** Rodent and Chinese studies show ulcer healing acceleration [PMID:15052688]
-2. **Tendon/Ligament:** Taiwanese studies show improved healing markers [PMID:21030672, PMID:25415472]
-3. **Muscle Injury:** Croatian animal models suggest faster recovery [PMID:16609966, PMID:18668315]
-4. **Corneal Healing:** Taiwan/China study showed accelerated wound healing [PMID:25995620]
-5. **Neuroprotection:** Croatian reviews detail dopaminergic system effects [PMID:27306034]
-
-**Critical Note:** The overwhelming majority of BPC-157 research comes from one research group in Croatia, and independent replication is limited. Taiwanese, Chinese, and Korean groups have published supportive findings, but these also remain preclinical.
-
----
-
-<h2 id="global-research-landscape">Global Research Landscape</h2>
-
-### Geographic Distribution of Research
-
-| Region | Studies | Key Institutions | Focus Areas |
-|--------|---------|------------------|-------------|
-| **Croatia** | 15+ | University of Zagreb (Sikiric et al.) | All areas; primary research origin |
-| **Taiwan** | 4 | Chang Gung Memorial Hospital | Tendon, angiogenesis, GHR |
-| **China** | 4 | Multiple institutions | GI protection, wound healing, safety |
-| **South Korea** | 1 | Seoul National University | Systematic review, antioxidant |
-| **USA** | 3 | Various | Human pilots, reviews |
-| **UK** | 1 | Loughborough University | Independent review |
-
-### Database Coverage
-
-| Database | Coverage | Notes |
-|----------|----------|-------|
-| **PubMed/MEDLINE** | Primary | All major studies indexed |
-| **Europe PMC** | Comprehensive | Full-text access for many |
-| **CNKI (China)** | Some | Chinese-language studies on wound healing |
-| **KoreaMed** | Limited | Korean systematic reviews |
-| **J-STAGE (Japan)** | Minimal | Few Japanese studies |
-| **Hrčak (Croatia)** | Some | Croatian-language proceedings |
-
-### Key Research Groups
-
-**1. University of Zagreb (Croatia) - Sikiric et al.**
-- Primary research origin since 1990s
-- >100 publications on BPC-157
-- Covers nearly all mechanistic and preclinical work
-- Limitation: Limited independent replication
-
-**2. Chang Gung Memorial Hospital (Taiwan) - Chang, Tsai, Pang et al.**
-- Independent confirmation of tendon healing effects
-- Characterized GHR and VEGFR2 pathways
-- Published in international peer-reviewed journals
-
-**3. Chinese Institutions**
-- Multiple groups studying cytoprotection
-- Preclinical safety evaluations
-- Wound healing models
-
-**4. Korean Research**
-- Seoul National University systematic review (2019)
-- Comprehensive antioxidant mechanism analysis
-
----
-
-<h2 id="key-human-trials">Key Human Trials</h2>
-
-### Available Human Data
-
-Human clinical trial data for BPC-157 is extremely limited:
-
-| Study | Year | Population | Findings | Limitations |
-|-------|------|------------|----------|-------------|
-| Lee JV et al. [PMID:40131143] | 2025 | 2 healthy adults | IV up to 20mg safe; no adverse events | N=2 only |
-| Lee JV et al. [PMID:38330234] | 2024 | 10 IC patients | Symptom improvement | Small pilot |
-| Pliva IBD trials | 2000s | UC/Crohn's | Referenced but unpublished | No data access |
-
-**No large-scale randomized controlled trials have been completed for any indication.**
-
-### Registered/Referenced Trials
-
-| Trial ID | Phase | Status | Notes |
-|----------|-------|--------|-------|
-| NCT02637284 | 1 | Terminated 2016 | 42 enrolled; PK study; no results published |
-| PL-10/PLD-116 (Pliva) | 1-2 | Completed | IBD trials; referenced in 2006 paper; data never published |
-
----
-
-<h2 id="preclinical-evidence">Preclinical Evidence</h2>
-
-### Animal Studies by Tissue Type
-
-| Tissue | Model | Key Findings | Source |
-|--------|-------|--------------|--------|
-| **Tendon** | Rat Achilles | FAK-paxillin activation; faster healing | Taiwan [PMID:21030672] |
-| **Ligament** | Rat MCL | Increased collagen I; better biomechanics | Croatia [PMID:20225319] |
-| **Muscle (transection)** | Rat quadriceps | Improved function; myofiber density | Croatia [PMID:16609966] |
-| **Muscle (crush)** | Rat gastrocnemius | Accelerated healing | Croatia [PMID:18668315] |
-| **Gastric ulcer** | Rat | Faster healing; PGE2 increase | China [PMID:15052688] |
-| **Cornea** | Rabbit alkali burn | Faster epithelialization | Taiwan/China [PMID:25995620] |
-| **Nerve** | Rat transection | Enhanced regeneration | Croatia [various] |
-| **Bone** | Rat fracture | Improved healing | Croatia [various] |
-| **Vascular** | Rat IVC ligation | Prevented complications | Croatia [PMID:29940329] |
-
-### In Vitro Studies
-
-| Cell Type | Findings | Source |
-|-----------|----------|--------|
-| Tendon fibroblasts | Proliferation, migration, GHR upregulation | Taiwan |
-| HUVECs | Protection from high glucose; angiogenesis | China |
-| Endothelial cells | VEGFR2 activation; migration | Taiwan |
-| Gastric epithelium | Cytoprotection from NSAIDs | Croatia |
-
-### Preclinical Safety Data
-
-| Finding | Source | Notes |
-|---------|--------|-------|
-| No acute toxicity | China [PMID:26992810] | Comprehensive safety evaluation |
-| No genotoxicity | China [PMID:26992810] | Standard battery tests |
-| No local irritation | China [PMID:26992810] | Injection site |
-| Tolerated orally | Multiple | Human PK unknown |
-
-### Limitations of Preclinical Data
-
-- **Single research group:** Most studies from Croatian laboratory
-- **Limited replication:** Few independent confirmations (Taiwan, China provide some)
-- **Animal models:** May not translate to humans
-- **Route of administration:** Varies widely across studies
-- **Publication bias:** Negative studies may not be published
-- **Lack of head-to-head comparisons:** No studies comparing to standard treatments
-
----
-
-<h2 id="safety-profile">Safety Profile</h2>
-
-### Known Information
-
-**The safety profile of BPC-157 in humans is not established through rigorous clinical evaluation.**
-
-### Human Safety Data
-
-| Study | Finding |
-|-------|---------|
-| Lee 2025 [PMID:40131143] | IV up to 20mg in 2 adults: no adverse events, normal biomarkers |
-| Lee 2024 [PMID:38330234] | 10 IC patients: no serious adverse events reported |
-
-### Preclinical Safety Data
-
-| Finding | Source | Notes |
-|---------|--------|-------|
-| No acute toxicity | China [PMID:26992810] | Rodent and rabbit models |
-| No mutagenicity | In vitro assays | Standard Ames test |
-| No genotoxicity | China [PMID:26992810] | Micronucleus test |
-| Tolerated orally | Rodent studies | Human PK unknown |
-| No teratogenicity | Limited data | Not fully characterized |
-
-### Potential Concerns
-
-- **Unknown long-term effects:** No chronic human exposure data
-- **Growth factor effects:** Theoretical cancer concerns with pro-angiogenic agents
-- **Quality control:** Unregulated products may vary in purity
-- **Drug interactions:** Not studied
-- **Contraindications:** Not established
-- **Receptor activity:** D2 receptor agonism may have CNS implications
-
-### Important Warning
-
-Products sold as BPC-157 are not regulated pharmaceutical products. Purity, identity, and safety cannot be assured for non-pharmaceutical sources.
-
----
-
-<h2 id="pharmacokinetics">Pharmacokinetics</h2>
-
-### Known Parameters
-
-| Parameter | Value | Notes |
-|-----------|-------|-------|
-| **Half-life** | Unknown in humans | Not characterized |
-| **Bioavailability** | Unknown | Route-dependent |
-| **Metabolism** | Presumed proteolytic | Not studied |
-| **Distribution** | Unknown | Not characterized |
-| **Protein binding** | Unknown | Not studied |
-
-### Research Gaps
-
-Human pharmacokinetic data is essentially absent. Basic parameters like absorption, distribution, metabolism, and elimination have not been characterized in human subjects.
-
-The terminated Phase I trial (NCT02637284) was designed to assess PK parameters but results were never published.
-
----
-
-<h2 id="regulatory-status">Regulatory Status</h2>
-
-| Region | Status | Notes |
-|--------|--------|-------|
-| USA (FDA) | Not approved | Category 2 bulk drug substance (2023); insufficient safety data |
-| EU (EMA) | Not approved | Not authorized |
-| WADA | Prohibited | Banned in competition (S0 category) |
-| USADA | Prohibited | Banned in all sports |
-| Australia (TGA) | Not approved | Not listed |
-| Canada | Not approved | Not authorized |
-| UK (MHRA) | Not approved | Not authorized |
-
-**Important:** BPC-157 is prohibited by the World Anti-Doping Agency (WADA) under the category of peptide hormones and growth factors. Athletes testing positive face sanctions.
-
----
-
-<h2 id="related-peptides">Related Peptides</h2>
-
-### Recovery/Repair Category
-
-| Peptide | Mechanism | Evidence Level |
-|---------|-----------|----------------|
-| **TB-500** | Thymosin beta-4 fragment | Low (preclinical) |
-| **GHK-Cu** | Copper peptide | Moderate (topical) |
-| **Thymosin Beta-4** | Parent compound of TB-500 | Moderate |
-
-### BPC-157 vs TB-500
-
-Both are marketed for recovery but have different proposed mechanisms:
-
-| Aspect | BPC-157 | TB-500 |
-|--------|---------|--------|
-| Origin | Gastric protein | Thymosin beta-4 |
-| Primary pathway | VEGF/NO/GHR | Actin sequestration |
-| Primary studies | Croatian group | Multiple groups |
-| Human trials | Minimal (2-3 pilots) | Minimal |
-| WADA status | Prohibited | Prohibited |
-
----
-
-<h2 id="current-research-directions">Current Research Directions</h2>
-
-### Areas of Investigation
-
-- Inflammatory bowel disease (IBD)
-- Tendon and ligament injuries
-- Muscle healing
-- Gastric ulcer healing
-- Neuroprotection and brain-gut axis
-- Vascular protection
-- Diabetic wound healing
-
-### Key Unknowns
-
-- Human pharmacokinetics
-- Optimal administration route
-- Effective human doses (if any)
-- Long-term safety
-- Efficacy in any human condition
-- Drug interactions
-- Cancer risk with chronic pro-angiogenic exposure
-
----
-
-<h2 id="citation-table">Citation Table</h2>
-
-### Human Studies
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Lee JV, Burgess MS [PMID:40131143](https://pubmed.ncbi.nlm.nih.gov/40131143/) | 2025 | Pilot Safety | IV infusions up to 20mg safe in 2 healthy adults; no adverse events | Open |
-| Lee JV et al. [PMID:38330234](https://pubmed.ncbi.nlm.nih.gov/38330234/) | 2024 | Pilot | Effect on interstitial cystitis symptoms | Paywalled |
-
-### Systematic Reviews (2024-2025)
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Vasireddi N et al. [PMID:40756949](https://pubmed.ncbi.nlm.nih.gov/40756949/) | 2025 | Systematic Review | 36 studies reviewed (35 preclinical, 1 clinical); enhances GHR, angiogenesis | Open |
-| [PMC12446177](https://pmc.ncbi.nlm.nih.gov/articles/PMC12446177/) | 2025 | Narrative Review | "Regeneration or Risk?" - No clinical safety data found | Open |
-| [PMC12313605](https://pmc.ncbi.nlm.nih.gov/articles/PMC12313605/) | 2025 | Systematic Review | Sports medicine applications; recommends against clinical use | Open |
-| Kang EA et al. [PMID:31636233](https://pubmed.ncbi.nlm.nih.gov/31636233/) | 2019 | Systematic Review | Korean review; antioxidant and anti-inflammatory mechanisms | Open |
-
-### Croatian Research (Primary Group - Sikiric et al.)
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| [PMID:34766891](https://pubmed.ncbi.nlm.nih.gov/34766891/) | 2022 | Review | CNS effects; dopaminergic/serotonergic/GABAergic modulation | Open |
-| [PMID:35299751](https://pubmed.ncbi.nlm.nih.gov/35299751/) | 2022 | Review | Comprehensive wound healing mechanisms | Open |
-| [PMID:29998800](https://pubmed.ncbi.nlm.nih.gov/29998800/) | 2018 | Review | BPC-157 and angiogenic growth factors in tissue healing | Paywalled |
-| [PMID:27306034](https://pubmed.ncbi.nlm.nih.gov/27306034/) | 2016 | Review | Brain-gut axis effects; neuroprotection | Open |
-| [PMID:23772940](https://pubmed.ncbi.nlm.nih.gov/23772940/) | 2014 | Mechanistic | NO system interactions | Paywalled |
-| [PMID:22950504](https://pubmed.ncbi.nlm.nih.gov/22950504/) | 2013 | Review | NSAID toxicity counteraction | Paywalled |
-| [PMID:21548867](https://pubmed.ncbi.nlm.nih.gov/21548867/) | 2011 | Review | GI tract therapeutic effects | Paywalled |
-| [PMID:20388964](https://pubmed.ncbi.nlm.nih.gov/20388964/) | 2010 | Preclinical | VEGF upregulation; angiogenesis in healing | Open |
-| [PMID:20225319](https://pubmed.ncbi.nlm.nih.gov/20225319/) | 2010 | Preclinical | Ligament healing improvement | Paywalled |
-| [PMID:18946152](https://pubmed.ncbi.nlm.nih.gov/18946152/) | 2008 | Preclinical | Multiple organ dysfunction protection | Open |
-| [PMID:18668315](https://pubmed.ncbi.nlm.nih.gov/18668315/) | 2008 | Preclinical | Muscle crush injury healing | Paywalled |
-| [PMID:17628535](https://pubmed.ncbi.nlm.nih.gov/17628535/) | 2007 | Preclinical | Wound healing; Egr-1 pathway | Paywalled |
-| [PMID:17242490](https://pubmed.ncbi.nlm.nih.gov/17242490/) | 2006 | Review | IBD trial summary; D2 receptor agonism | Paywalled |
-| [PMID:16609966](https://pubmed.ncbi.nlm.nih.gov/16609966/) | 2006 | Preclinical | Quadriceps muscle transection healing | Paywalled |
-| [PMID:11978189](https://pubmed.ncbi.nlm.nih.gov/11978189/) | 2002 | Preclinical | Amphetamine-induced behavior attenuation | Open |
-
-### Taiwanese Research (Independent Confirmation)
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Hsieh MJ et al. [PMID:28013436](https://pubmed.ncbi.nlm.nih.gov/28013436/) | 2017 | Preclinical | VEGFR2 activation; ischemic wound healing | Paywalled |
-| Huang T et al. [PMID:25995620](https://pubmed.ncbi.nlm.nih.gov/25995620/) | 2015 | Preclinical | Corneal burn healing; endothelial effects | Open |
-| Chang CH et al. [PMID:25415472](https://pubmed.ncbi.nlm.nih.gov/25415472/) | 2014 | In vitro | GHR upregulation in tendon fibroblasts | Open |
-| Chang CH et al. [PMID:21030672](https://pubmed.ncbi.nlm.nih.gov/21030672/) | 2011 | Preclinical | Tendon healing via FAK-paxillin pathway | Open |
-
-### Chinese Research
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Wang XY et al. [PMID:31371774](https://pubmed.ncbi.nlm.nih.gov/31371774/) | 2019 | Review | GI and liver cytoprotection mechanisms | Open |
-| Sun L et al. [PMID:27551776](https://pubmed.ncbi.nlm.nih.gov/27551776/) | 2016 | In vitro | Endothelial protection from high glucose | Paywalled |
-| Xu C et al. [PMID:26992810](https://pubmed.ncbi.nlm.nih.gov/26992810/) | 2016 | Safety | Preclinical safety evaluation; no toxicity | Paywalled |
-| Xue XC et al. [PMID:15052688](https://pubmed.ncbi.nlm.nih.gov/15052688/) | 2004 | Preclinical | Gastric ulcer protection; PGE2 increase | Open |
-
-### UK/International Research
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Gwyer D et al. [PMID:31076862](https://pubmed.ncbi.nlm.nih.gov/31076862/) | 2019 | Review | Independent UK review; musculoskeletal evidence | Open |
-| [PMC11053547](https://pmc.ncbi.nlm.nih.gov/articles/PMC11053547/) | 2024 | Review | Pleiotropic activity; neurotransmitter relations | Open |
-
-### Cancelled Clinical Trials
-
-| Trial ID | Status | Notes |
-|----------|--------|-------|
-| [NCT02637284](https://clinicaltrials.gov/study/NCT02637284) | Terminated 2016 | Phase I safety/PK study; 42 enrolled; no results ever published |
-
-### Important Notes on Literature
-
-- Majority of publications from single research group (Croatian researchers - Sikiric et al.)
-- Independent replication from Taiwan, China, and Korea provides some confirmation
-- Only 2-3 small human pilot studies published (2024-2025)
-- FDA classified as Category 2 bulk drug substance (2023) - insufficient safety evidence
-- Prohibited by WADA/USADA in competitive sports
-- 2025 systematic reviews recommend against clinical use pending human trials
-
----
-
-*This dossier is for educational purposes only and does not constitute medical advice. BPC-157 is not approved by the FDA or other major regulatory agencies for any indication. Last updated: January 2026.*

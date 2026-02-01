@@ -1,0 +1,655 @@
+---
+/**
+ * EvidenceChain.astro
+ * Visual display of evidence-chained benefits with mechanism -> benefit -> evidence breakdown
+ * Features: collapsible key findings, study type breakdown, confidence indicators
+ */
+
+interface KeyFinding {
+  study: string;
+  type: 'human-rct' | 'human-observational' | 'animal' | 'in-vitro';
+  finding: string;
+  pmid?: string;
+}
+
+interface EvidenceChainedBenefit {
+  mechanism: {
+    action: string;
+    confidence: 'established' | 'supported' | 'emerging';
+    directStudies: number;
+  };
+  benefit: {
+    claim: string;
+    qualifier: 'may' | 'appears to' | 'suggested to' | 'shown to';
+  };
+  evidence: {
+    level: 'high' | 'moderate' | 'low' | 'very-low';
+    humanStudies: number;
+    animalStudies: number;
+    cellStudies: number;
+    keyFindings: KeyFinding[];
+  };
+}
+
+interface Props {
+  benefits: EvidenceChainedBenefit[];
+  peptideName: string;
+}
+
+const { benefits, peptideName } = Astro.props;
+
+// Confidence configuration
+const confidenceConfig: Record<string, { label: string; dots: number; color: string; bgColor: string }> = {
+  'established': { label: 'Established', dots: 3, color: 'rgb(34, 197, 94)', bgColor: 'rgba(34, 197, 94, 0.15)' },
+  'supported': { label: 'Supported', dots: 2, color: 'rgb(59, 130, 246)', bgColor: 'rgba(59, 130, 246, 0.15)' },
+  'emerging': { label: 'Emerging', dots: 1, color: 'rgb(251, 191, 36)', bgColor: 'rgba(251, 191, 36, 0.15)' },
+};
+
+// Evidence level configuration
+const evidenceLevelConfig: Record<string, { label: string; bars: number; color: string; bgColor: string }> = {
+  'high': { label: 'High', bars: 4, color: 'rgb(34, 197, 94)', bgColor: 'rgba(34, 197, 94, 0.15)' },
+  'moderate': { label: 'Moderate', bars: 3, color: 'rgb(59, 130, 246)', bgColor: 'rgba(59, 130, 246, 0.15)' },
+  'low': { label: 'Low', bars: 2, color: 'rgb(251, 191, 36)', bgColor: 'rgba(251, 191, 36, 0.15)' },
+  'very-low': { label: 'Very Low', bars: 1, color: 'rgb(239, 68, 68)', bgColor: 'rgba(239, 68, 68, 0.15)' },
+};
+
+// Qualifier styling
+const qualifierConfig: Record<string, { icon: string; color: string }> = {
+  'shown to': { icon: 'check-circle', color: 'rgb(34, 197, 94)' },
+  'appears to': { icon: 'arrow-up-circle', color: 'rgb(59, 130, 246)' },
+  'suggested to': { icon: 'help-circle', color: 'rgb(251, 191, 36)' },
+  'may': { icon: 'circle-dashed', color: 'rgb(156, 163, 175)' },
+};
+
+// Study type configuration
+const studyTypeConfig: Record<string, { label: string; abbrev: string; color: string }> = {
+  'human-rct': { label: 'Human RCT', abbrev: 'RCT', color: 'rgb(34, 197, 94)' },
+  'human-observational': { label: 'Human Observational', abbrev: 'OBS', color: 'rgb(59, 130, 246)' },
+  'animal': { label: 'Animal Study', abbrev: 'ANI', color: 'rgb(251, 191, 36)' },
+  'in-vitro': { label: 'In Vitro', abbrev: 'IVT', color: 'rgb(168, 85, 247)' },
+};
+---
+
+<div class="evidence-chain-container" data-component="evidence-chain">
+  <div class="flex items-center justify-between mb-6">
+    <div>
+      <h3 class="text-xl font-bold text-white" style="font-family: var(--font-display);">
+        Evidence-Chained Benefits
+      </h3>
+      <p class="text-sm text-white/60 mt-1">
+        Research findings linked to mechanisms and clinical outcomes
+      </p>
+    </div>
+
+    <!-- Summary badge -->
+    <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-white/5 rounded-lg border border-white/10">
+      <span class="text-xs text-white/50">{benefits.length} chains</span>
+    </div>
+  </div>
+
+  <!-- Evidence chains -->
+  <div class="space-y-4">
+    {benefits.map((benefit, index) => {
+      const conf = confidenceConfig[benefit.mechanism.confidence];
+      const evLvl = evidenceLevelConfig[benefit.evidence.level];
+      const qual = qualifierConfig[benefit.benefit.qualifier];
+
+      return (
+        <div
+          class="evidence-chain-card"
+          data-chain-index={index}
+        >
+          <!-- Chain header with flow visualization -->
+          <div class="chain-flow">
+            <!-- Mechanism -->
+            <div class="chain-node mechanism-node">
+              <div class="node-icon">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="3"/>
+                  <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/>
+                </svg>
+              </div>
+              <div class="node-content">
+                <span class="node-label">Mechanism</span>
+                <span class="node-value">{benefit.mechanism.action}</span>
+                <div class="confidence-indicator">
+                  <div class="confidence-dots" title={conf.label}>
+                    {[1, 2, 3].map(n => (
+                      <span
+                        class="confidence-dot"
+                        style={`background: ${n <= conf.dots ? conf.color : 'rgba(255,255,255,0.2)'};`}
+                      ></span>
+                    ))}
+                  </div>
+                  <span class="confidence-label" style={`color: ${conf.color};`}>
+                    {conf.label}
+                  </span>
+                  <span class="studies-count">
+                    {benefit.mechanism.directStudies} direct {benefit.mechanism.directStudies === 1 ? 'study' : 'studies'}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Arrow -->
+            <div class="chain-arrow">
+              <svg class="w-6 h-6 text-white/30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m9 18 6-6-6-6"/>
+              </svg>
+            </div>
+
+            <!-- Benefit -->
+            <div class="chain-node benefit-node">
+              <div class="node-icon" style={`color: ${qual.color};`}>
+                {qual.icon === 'check-circle' && (
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                  </svg>
+                )}
+                {qual.icon === 'arrow-up-circle' && (
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="16 12 12 8 8 12"/>
+                    <line x1="12" y1="16" x2="12" y2="8"/>
+                  </svg>
+                )}
+                {qual.icon === 'help-circle' && (
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                  </svg>
+                )}
+                {qual.icon === 'circle-dashed' && (
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" stroke-dasharray="4 4"/>
+                  </svg>
+                )}
+              </div>
+              <div class="node-content">
+                <span class="node-label">Benefit</span>
+                <span class="node-value">
+                  <span class="qualifier-badge" style={`color: ${qual.color};`}>
+                    {benefit.benefit.qualifier}
+                  </span>
+                  {benefit.benefit.claim}
+                </span>
+              </div>
+            </div>
+
+            <!-- Arrow -->
+            <div class="chain-arrow">
+              <svg class="w-6 h-6 text-white/30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m9 18 6-6-6-6"/>
+              </svg>
+            </div>
+
+            <!-- Evidence summary -->
+            <div class="chain-node evidence-node">
+              <div class="node-icon" style={`color: ${evLvl.color};`}>
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                </svg>
+              </div>
+              <div class="node-content">
+                <span class="node-label">Evidence Level</span>
+                <div class="evidence-level-display">
+                  <div class="evidence-bars" title={evLvl.label}>
+                    {[1, 2, 3, 4].map(n => (
+                      <span
+                        class="evidence-bar"
+                        style={`background: ${n <= evLvl.bars ? evLvl.color : 'rgba(255,255,255,0.15)'};`}
+                      ></span>
+                    ))}
+                  </div>
+                  <span class="evidence-label" style={`color: ${evLvl.color};`}>
+                    {evLvl.label}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Study breakdown -->
+          <div class="study-breakdown">
+            <div class="study-types">
+              {benefit.evidence.humanStudies > 0 && (
+                <div class="study-type-badge" style="--badge-color: rgb(34, 197, 94);">
+                  <span class="badge-count">{benefit.evidence.humanStudies}</span>
+                  <span class="badge-label">Human</span>
+                </div>
+              )}
+              {benefit.evidence.animalStudies > 0 && (
+                <div class="study-type-badge" style="--badge-color: rgb(251, 191, 36);">
+                  <span class="badge-count">{benefit.evidence.animalStudies}</span>
+                  <span class="badge-label">Animal</span>
+                </div>
+              )}
+              {benefit.evidence.cellStudies > 0 && (
+                <div class="study-type-badge" style="--badge-color: rgb(168, 85, 247);">
+                  <span class="badge-count">{benefit.evidence.cellStudies}</span>
+                  <span class="badge-label">In Vitro</span>
+                </div>
+              )}
+            </div>
+
+            <!-- Collapsible key findings -->
+            <button
+              class="findings-toggle"
+              data-toggle-findings={index}
+              aria-expanded="false"
+            >
+              <span class="toggle-text">
+                View {benefit.evidence.keyFindings.length} key {benefit.evidence.keyFindings.length === 1 ? 'finding' : 'findings'}
+              </span>
+              <svg class="toggle-icon w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m6 9 6 6 6-6"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Key findings (collapsible) -->
+          <div class="key-findings-panel hidden" data-findings-panel={index}>
+            <div class="findings-list">
+              {benefit.evidence.keyFindings.map(finding => {
+                const typeConfig = studyTypeConfig[finding.type];
+                return (
+                  <div class="finding-item">
+                    <div class="finding-header">
+                      <span
+                        class="study-type-tag"
+                        style={`background: ${typeConfig.color}20; color: ${typeConfig.color}; border-color: ${typeConfig.color}40;`}
+                      >
+                        {typeConfig.abbrev}
+                      </span>
+                      <span class="finding-study">{finding.study}</span>
+                      {finding.pmid && (
+                        <a
+                          href={`https://pubmed.ncbi.nlm.nih.gov/${finding.pmid}/`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="pmid-link"
+                        >
+                          PMID:{finding.pmid}
+                        </a>
+                      )}
+                    </div>
+                    <p class="finding-text">{finding.finding}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      );
+    })}
+  </div>
+
+  <!-- Legend -->
+  <div class="evidence-legend mt-8 pt-6 border-t border-white/10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <!-- Confidence levels -->
+      <div>
+        <div class="text-xs text-white/50 uppercase tracking-wider mb-3">Mechanism Confidence</div>
+        <div class="space-y-2">
+          {Object.entries(confidenceConfig).map(([key, config]) => (
+            <div class="flex items-center gap-3">
+              <div class="flex gap-1">
+                {[1, 2, 3].map(n => (
+                  <span
+                    class="w-2 h-2 rounded-full"
+                    style={`background: ${n <= config.dots ? config.color : 'rgba(255,255,255,0.2)'};`}
+                  ></span>
+                ))}
+              </div>
+              <span class="text-xs text-white/70">{config.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Evidence levels -->
+      <div>
+        <div class="text-xs text-white/50 uppercase tracking-wider mb-3">Evidence Level</div>
+        <div class="space-y-2">
+          {Object.entries(evidenceLevelConfig).map(([key, config]) => (
+            <div class="flex items-center gap-3">
+              <div class="flex gap-0.5 items-end">
+                {[1, 2, 3, 4].map(n => (
+                  <span
+                    class="rounded-sm"
+                    style={`
+                      width: 4px;
+                      height: ${6 + n * 3}px;
+                      background: ${n <= config.bars ? config.color : 'rgba(255,255,255,0.15)'};
+                    `}
+                  ></span>
+                ))}
+              </div>
+              <span class="text-xs text-white/70">{config.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .evidence-chain-container {
+    background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .evidence-chain-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 1rem;
+    padding: 1.25rem;
+    transition: all 0.3s ease;
+  }
+
+  .evidence-chain-card:hover {
+    border-color: rgba(139, 92, 246, 0.3);
+    background: rgba(139, 92, 246, 0.03);
+  }
+
+  .chain-flow {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: 1024px) {
+    .chain-flow {
+      flex-wrap: nowrap;
+    }
+  }
+
+  .chain-node {
+    flex: 1;
+    min-width: 180px;
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: rgba(255,255,255,0.03);
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .chain-arrow {
+    display: none;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 1024px) {
+    .chain-arrow {
+      display: flex;
+    }
+  }
+
+  .node-icon {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    background: rgba(255,255,255,0.05);
+    padding: 0.375rem;
+    color: var(--primary);
+  }
+
+  .node-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .node-label {
+    display: block;
+    font-size: 0.625rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 0.25rem;
+  }
+
+  .node-value {
+    display: block;
+    font-size: 0.8125rem;
+    color: white;
+    line-height: 1.4;
+  }
+
+  .qualifier-badge {
+    font-style: italic;
+    font-size: 0.75rem;
+    margin-right: 0.25rem;
+  }
+
+  .confidence-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .confidence-dots {
+    display: flex;
+    gap: 3px;
+  }
+
+  .confidence-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+
+  .confidence-label {
+    font-size: 0.625rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .studies-count {
+    font-size: 0.625rem;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .evidence-level-display {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+  }
+
+  .evidence-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+  }
+
+  .evidence-bar {
+    width: 5px;
+    border-radius: 1px;
+  }
+
+  .evidence-bar:nth-child(1) { height: 6px; }
+  .evidence-bar:nth-child(2) { height: 10px; }
+  .evidence-bar:nth-child(3) { height: 14px; }
+  .evidence-bar:nth-child(4) { height: 18px; }
+
+  .evidence-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .study-breakdown {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .study-types {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .study-type-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.375rem 0.625rem;
+    background: color-mix(in srgb, var(--badge-color) 15%, transparent);
+    border: 1px solid color-mix(in srgb, var(--badge-color) 30%, transparent);
+    border-radius: 9999px;
+  }
+
+  .badge-count {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--badge-color);
+  }
+
+  .badge-label {
+    font-size: 0.625rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .findings-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 0.5rem;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .findings-toggle:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+
+  .findings-toggle[aria-expanded="true"] .toggle-icon {
+    transform: rotate(180deg);
+  }
+
+  .toggle-icon {
+    transition: transform 0.2s ease;
+  }
+
+  .key-findings-panel {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(0,0,0,0.2);
+    border-radius: 0.75rem;
+  }
+
+  .key-findings-panel.hidden {
+    display: none;
+  }
+
+  .findings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .finding-item {
+    padding: 0.75rem;
+    background: rgba(255,255,255,0.02);
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .finding-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+  }
+
+  .study-type-tag {
+    padding: 0.125rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    border: 1px solid;
+  }
+
+  .finding-study {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+  }
+
+  .pmid-link {
+    font-size: 0.625rem;
+    color: var(--primary);
+    text-decoration: none;
+    padding: 0.125rem 0.375rem;
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 0.25rem;
+  }
+
+  .pmid-link:hover {
+    background: rgba(139, 92, 246, 0.2);
+    text-decoration: underline;
+  }
+
+  .finding-text {
+    font-size: 0.8125rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.5;
+    margin: 0;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const containers = document.querySelectorAll('[data-component="evidence-chain"]');
+
+    containers.forEach(container => {
+      const toggleBtns = container.querySelectorAll('[data-toggle-findings]');
+
+      toggleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const index = btn.getAttribute('data-toggle-findings');
+          const panel = container.querySelector(`[data-findings-panel="${index}"]`);
+          const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+          if (panel) {
+            panel.classList.toggle('hidden');
+            btn.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
+          }
+        });
+      });
+    });
+  });
+</script>

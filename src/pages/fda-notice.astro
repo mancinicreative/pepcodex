@@ -1,0 +1,327 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="FDA Notice"
+  description="Important FDA compliance notice. The content on PepCodex has not been evaluated by the FDA and is for educational purposes only."
+>
+  <article class="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+    <header class="mb-12 relative">
+      <div class="absolute inset-0 bg-gradient-to-br from-red-500/10 via-transparent to-transparent rounded-2xl -z-10"></div>
+      <div class="p-6">
+        <h1 class="text-4xl font-bold tracking-tight text-white">FDA Notice</h1>
+        <p class="mt-4 text-xl text-white/80">
+          Important regulatory compliance information.
+        </p>
+        <p class="mt-2 text-sm text-white/60">Last updated: January 2026</p>
+      </div>
+    </header>
+
+    <div class="prose prose-invert prose-lg max-w-none">
+      <!-- Main FDA Notice -->
+      <section id="fda-disclaimer">
+        <div class="not-prose my-8 rounded-xl border border-red-500/30 bg-red-500/10 p-6 backdrop-blur-sm">
+          <div class="flex items-start gap-4">
+            <svg class="w-8 h-8 text-red-400 flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
+              <path d="M12 9v4"/>
+              <path d="M12 17h.01"/>
+            </svg>
+            <div>
+              <h2 class="text-xl font-bold text-red-300 mb-3">FDA Disclaimer</h2>
+              <p class="text-white/90 text-lg leading-relaxed">
+                The statements and information on this website have <strong>not been evaluated by the
+                Food and Drug Administration (FDA)</strong>. The content is not intended to diagnose,
+                treat, cure, or prevent any disease.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h2>Understanding This Notice</h2>
+        <p>
+          PepCodex is an educational platform that synthesizes and presents information from
+          published scientific research. This notice clarifies our relationship with the U.S.
+          Food and Drug Administration (FDA) and the regulatory status of the content we provide.
+        </p>
+      </section>
+
+      <!-- Not FDA Approved -->
+      <section id="not-approved" class="mt-12">
+        <h2>Not FDA Approved or Evaluated</h2>
+        <p>
+          The information presented on PepCodex:
+        </p>
+        <ul>
+          <li>
+            <strong>Has not been submitted to the FDA</strong> for evaluation or approval
+          </li>
+          <li>
+            <strong>Does not constitute FDA-approved claims</strong> about any substance or product
+          </li>
+          <li>
+            <strong>Should not be interpreted</strong> as FDA endorsement of any peptide, supplement,
+            or treatment
+          </li>
+          <li>
+            <strong>Does not replace</strong> official FDA guidance or approved product labeling
+          </li>
+        </ul>
+
+        <h3>What "Not Evaluated by the FDA" Means</h3>
+        <p>
+          When we state that content has not been evaluated by the FDA, we mean that:
+        </p>
+        <ul>
+          <li>
+            The FDA has not reviewed our website content or summaries of research
+          </li>
+          <li>
+            The research we discuss may or may not have been reviewed by the FDA
+          </li>
+          <li>
+            The substances discussed may have varying regulatory statuses
+          </li>
+          <li>
+            Our educational content does not carry FDA approval or endorsement
+          </li>
+        </ul>
+      </section>
+
+      <!-- Regulatory Status of Peptides -->
+      <section id="regulatory-status" class="mt-12">
+        <h2>Regulatory Status of Peptides</h2>
+        <p>
+          Peptides discussed on PepCodex may have different regulatory statuses in the United States:
+        </p>
+
+        <div class="not-prose my-8 grid gap-4">
+          <div class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-5 backdrop-blur-sm">
+            <h3 class="text-lg font-semibold text-emerald-300 mb-2">FDA-Approved Medications</h3>
+            <p class="text-white/80 text-sm">
+              Some peptides are approved by the FDA as prescription medications for specific
+              conditions. These are available only through licensed healthcare providers and
+              pharmacies.
+            </p>
+          </div>
+
+          <div class="rounded-xl border border-amber-500/30 bg-amber-500/10 p-5 backdrop-blur-sm">
+            <h3 class="text-lg font-semibold text-amber-300 mb-2">Investigational Substances</h3>
+            <p class="text-white/80 text-sm">
+              Many peptides are currently being studied in clinical trials but have not yet
+              received FDA approval. These are available only through clinical trial participation.
+            </p>
+          </div>
+
+          <div class="rounded-xl border border-red-500/30 bg-red-500/10 p-5 backdrop-blur-sm">
+            <h3 class="text-lg font-semibold text-red-300 mb-2">Research Chemicals</h3>
+            <p class="text-white/80 text-sm">
+              Some peptides are sold as "research chemicals" or "not for human consumption."
+              These have not undergone FDA safety review and are not approved for human use.
+            </p>
+          </div>
+
+          <div class="rounded-xl border border-white/20 bg-white/5 p-5 backdrop-blur-sm">
+            <h3 class="text-lg font-semibold text-white/90 mb-2">Dietary Supplements</h3>
+            <p class="text-white/80 text-sm">
+              Some substances may be sold as dietary supplements. Under DSHEA (1994), supplements
+              are not required to receive FDA approval before being sold, but manufacturers are
+              responsible for safety and claims.
+            </p>
+          </div>
+        </div>
+
+        <p>
+          <strong>We do not provide information about where to obtain any substance</strong> or
+          make recommendations about their use. Always verify the regulatory status and legality
+          of any substance in your jurisdiction.
+        </p>
+      </section>
+
+      <!-- Clinical Trials -->
+      <section id="clinical-trials" class="mt-12">
+        <h2>FDA and Clinical Trials</h2>
+        <p>
+          We frequently reference clinical trials in our content. It is important to understand:
+        </p>
+        <ul>
+          <li>
+            Clinical trials are conducted under FDA oversight through the Investigational New
+            Drug (IND) application process
+          </li>
+          <li>
+            Participation in a clinical trial does not mean a substance is FDA-approved
+          </li>
+          <li>
+            Positive results in early-phase trials do not guarantee FDA approval
+          </li>
+          <li>
+            The FDA approval process typically requires multiple phases of clinical trials
+            demonstrating safety and efficacy
+          </li>
+        </ul>
+        <p>
+          When we discuss clinical trial results, we are reporting on research findings, not
+          making claims about FDA-approved uses.
+        </p>
+      </section>
+
+      <!-- Not Medical Advice -->
+      <section id="not-medical-advice" class="mt-12">
+        <h2>Not Medical Advice</h2>
+        <p>
+          The educational information on PepCodex:
+        </p>
+        <ul>
+          <li>
+            <strong>Is not intended to diagnose</strong> any medical condition
+          </li>
+          <li>
+            <strong>Is not intended to treat</strong> any disease or health problem
+          </li>
+          <li>
+            <strong>Is not intended to cure</strong> any illness
+          </li>
+          <li>
+            <strong>Is not intended to prevent</strong> any disease
+          </li>
+        </ul>
+        <p>
+          If you have a medical condition or health concern, please consult a qualified
+          healthcare professional. Only a licensed healthcare provider can diagnose conditions,
+          prescribe treatments, and provide medical advice specific to your situation.
+        </p>
+      </section>
+
+      <!-- Consult Healthcare Providers -->
+      <section id="healthcare-providers" class="mt-12">
+        <h2>Consult Healthcare Providers</h2>
+        <p>
+          Before considering any health-related decisions based on information found on this
+          website:
+        </p>
+        <ul>
+          <li>
+            <strong>Consult your physician</strong> or other qualified healthcare provider
+          </li>
+          <li>
+            <strong>Discuss all options</strong> including FDA-approved treatments
+          </li>
+          <li>
+            <strong>Review potential risks</strong> and benefits with your healthcare team
+          </li>
+          <li>
+            <strong>Never discontinue</strong> prescribed medications without medical supervision
+          </li>
+          <li>
+            <strong>Report any adverse events</strong> to your healthcare provider and the FDA
+          </li>
+        </ul>
+
+        <h3>FDA Adverse Event Reporting</h3>
+        <p>
+          If you experience an adverse event related to any drug, supplement, or medical product,
+          you can report it to the FDA through:
+        </p>
+        <ul>
+          <li>
+            <strong>MedWatch:</strong> <a href="https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program" target="_blank" rel="noopener noreferrer">FDA Safety Reporting Portal</a>
+          </li>
+          <li>
+            <strong>Phone:</strong> 1-800-FDA-1088
+          </li>
+          <li>
+            <strong>Mail:</strong> MedWatch, 5600 Fishers Lane, Rockville, MD 20852-9787
+          </li>
+        </ul>
+      </section>
+
+      <!-- International Readers -->
+      <section id="international" class="mt-12">
+        <h2>International Readers</h2>
+        <p>
+          The FDA is a United States regulatory agency. If you are outside the United States:
+        </p>
+        <ul>
+          <li>
+            Different regulatory agencies govern pharmaceuticals and supplements in your country
+          </li>
+          <li>
+            Regulatory status and approval may differ from the United States
+          </li>
+          <li>
+            Legal status of substances may vary by jurisdiction
+          </li>
+          <li>
+            Consult your local regulatory authority for applicable rules
+          </li>
+        </ul>
+        <p>
+          Examples of other regulatory bodies include:
+        </p>
+        <ul>
+          <li><strong>EMA</strong> - European Medicines Agency (European Union)</li>
+          <li><strong>MHRA</strong> - Medicines and Healthcare products Regulatory Agency (UK)</li>
+          <li><strong>Health Canada</strong> - (Canada)</li>
+          <li><strong>TGA</strong> - Therapeutic Goods Administration (Australia)</li>
+        </ul>
+      </section>
+
+      <!-- Legal Compliance -->
+      <section id="legal-compliance" class="mt-12">
+        <h2>Our Commitment to Compliance</h2>
+        <p>
+          PepCodex is committed to operating in compliance with applicable laws and regulations:
+        </p>
+        <ul>
+          <li>
+            We do not make therapeutic claims about any substance
+          </li>
+          <li>
+            We clearly distinguish between approved medications and research compounds
+          </li>
+          <li>
+            We cite primary scientific sources for all factual claims
+          </li>
+          <li>
+            We do not sell any products or provide sourcing information
+          </li>
+          <li>
+            We clearly label the regulatory status of substances when known
+          </li>
+          <li>
+            We maintain this FDA notice prominently on our website
+          </li>
+        </ul>
+      </section>
+
+      <!-- Questions -->
+      <section id="questions" class="mt-12">
+        <h2>Questions</h2>
+        <p>
+          If you have questions about this FDA Notice or the regulatory information on our
+          website, please contact us:
+        </p>
+        <p>
+          Email: <a href="mailto:legal@pepcodex.com">legal@pepcodex.com</a>
+        </p>
+        <p>
+          For questions about FDA regulations, approvals, or reporting adverse events, please
+          contact the FDA directly at <a href="https://www.fda.gov" target="_blank" rel="noopener noreferrer">www.fda.gov</a>.
+        </p>
+      </section>
+
+      <!-- Related Pages -->
+      <section id="related" class="mt-12 pt-8 border-t border-white/10">
+        <h2>Related Legal Pages</h2>
+        <ul>
+          <li><a href="/disclaimer">Disclaimer</a></li>
+          <li><a href="/terms">Terms of Service</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/cookie-policy">Cookie Policy</a></li>
+        </ul>
+      </section>
+    </div>
+  </article>
+</BaseLayout>

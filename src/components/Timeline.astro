@@ -1,0 +1,156 @@
+---
+/**
+ * Timeline.astro - "What to Expect" timeline based on study observations
+ * Displays a visual timeline showing expected effects at different periods
+ * All data is based on published research, not anecdotal reports
+ */
+
+interface TimelineEntry {
+  period: string;           // "Week 1-2"
+  effects: string;          // "Based on study observations..."
+  source?: string;          // PMID reference
+}
+
+interface Props {
+  timeline: TimelineEntry[];
+  peptideName: string;
+}
+
+const { timeline, peptideName } = Astro.props;
+
+// Don't render if no timeline data
+if (!timeline || timeline.length === 0) {
+  return null;
+}
+---
+
+<section class="timeline-section my-12">
+  <div class="space-y-2 mb-8">
+    <h3 class="text-2xl font-bold text-white tracking-tight flex items-center gap-3" style="font-family: var(--font-display);">
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 flex items-center justify-center">
+        <svg class="w-5 h-5 text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12,6 12,12 16,14"></polyline>
+        </svg>
+      </div>
+      What to Expect
+    </h3>
+    <p class="text-white/60 text-sm ml-13 pl-0.5">
+      Timeline based on observations from published studies. Individual responses may vary.
+    </p>
+  </div>
+
+  <!-- Timeline Container -->
+  <div class="relative pl-4 md:pl-8">
+    <!-- Vertical Line -->
+    <div class="absolute left-0 md:left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-500/50 via-blue-500/50 to-purple-500/50 rounded-full"></div>
+
+    <!-- Timeline Entries -->
+    <div class="space-y-6">
+      {timeline.map((entry, index) => (
+        <div class="relative pl-8 md:pl-12 group" data-timeline-entry>
+          <!-- Timeline Node -->
+          <div class="absolute left-[-4px] md:left-[12px] top-2 w-4 h-4 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 border-2 border-[var(--card-bg)] shadow-[0_0_12px_rgba(34,211,238,0.4)] group-hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-shadow duration-300 z-10">
+            <div class="absolute inset-1 rounded-full bg-white/30"></div>
+          </div>
+
+          <!-- Content Card -->
+          <div class="glass-card-default p-5 rounded-xl border border-white/10 hover:border-cyan-400/30 transition-all duration-300 group-hover:bg-white/[0.03]">
+            <!-- Period Header -->
+            <div class="flex items-center justify-between mb-3">
+              <span class="inline-flex items-center px-3 py-1.5 rounded-lg bg-gradient-to-r from-cyan-500/15 to-blue-500/15 border border-cyan-400/25 text-cyan-300 text-sm font-bold tracking-wide">
+                <svg class="w-3.5 h-3.5 mr-2 opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                {entry.period}
+              </span>
+
+              {entry.source && (
+                <a
+                  href={`https://pubmed.ncbi.nlm.nih.gov/${entry.source.replace('PMID:', '').trim()}/`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-xs text-white/40 hover:text-cyan-400 transition-colors flex items-center gap-1.5 group/link"
+                  title="View study on PubMed"
+                >
+                  <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                    <polyline points="14,2 14,8 20,8"></polyline>
+                  </svg>
+                  <span class="group-hover/link:underline">{entry.source}</span>
+                </a>
+              )}
+            </div>
+
+            <!-- Effects Description -->
+            <p class="text-white/80 leading-relaxed text-[15px]">
+              {entry.effects}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Disclaimer -->
+  <div class="mt-8 p-4 rounded-xl bg-amber-500/5 border border-amber-400/20">
+    <div class="flex gap-3">
+      <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center">
+        <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+          <line x1="12" y1="9" x2="12" y2="13"></line>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+      </div>
+      <div>
+        <p class="text-amber-200/90 text-sm font-medium mb-1">Research-Based Observations</p>
+        <p class="text-white/60 text-xs leading-relaxed">
+          This timeline reflects observations from published clinical and preclinical studies.
+          Individual responses may vary significantly. This is not a guarantee of effects or a dosing schedule.
+          Consult qualified healthcare providers for personalized guidance.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .timeline-section [data-timeline-entry] {
+    opacity: 0;
+    transform: translateX(-10px);
+    animation: timeline-fade-in 0.5s ease-out forwards;
+  }
+
+  .timeline-section [data-timeline-entry]:nth-child(1) { animation-delay: 0.1s; }
+  .timeline-section [data-timeline-entry]:nth-child(2) { animation-delay: 0.2s; }
+  .timeline-section [data-timeline-entry]:nth-child(3) { animation-delay: 0.3s; }
+  .timeline-section [data-timeline-entry]:nth-child(4) { animation-delay: 0.4s; }
+  .timeline-section [data-timeline-entry]:nth-child(5) { animation-delay: 0.5s; }
+  .timeline-section [data-timeline-entry]:nth-child(6) { animation-delay: 0.6s; }
+  .timeline-section [data-timeline-entry]:nth-child(7) { animation-delay: 0.7s; }
+  .timeline-section [data-timeline-entry]:nth-child(8) { animation-delay: 0.8s; }
+
+  @keyframes timeline-fade-in {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Pulse animation for timeline nodes on hover */
+  .timeline-section [data-timeline-entry]:hover .rounded-full {
+    animation: node-pulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes node-pulse {
+    0%, 100% {
+      box-shadow: 0 0 12px rgba(34, 211, 238, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 24px rgba(34, 211, 238, 0.7);
+    }
+  }
+</style>

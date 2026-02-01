@@ -1,0 +1,81 @@
+---
+/**
+ * SafetyBanner.astro
+ * Prominent safety warning displayed at the top of dossier pages
+ */
+
+interface Props {
+  peptideName: string;
+  evidenceStrength: 'high' | 'moderate' | 'low' | 'very-low';
+  keyWarnings?: string[];
+  fdaStatus?: string;
+  wadaStatus?: string;
+}
+
+const {
+  peptideName,
+  evidenceStrength,
+  keyWarnings = [],
+  fdaStatus = 'Not FDA approved',
+  wadaStatus
+} = Astro.props;
+
+const evidenceColors = {
+  'high': { bg: 'from-emerald-500/10 to-emerald-500/5', border: 'border-emerald-500/30', text: 'text-emerald-400', icon: '✓' },
+  'moderate': { bg: 'from-violet-500/10 to-violet-500/5', border: 'border-violet-500/30', text: 'text-violet-400', icon: '~' },
+  'low': { bg: 'from-amber-500/10 to-amber-500/5', border: 'border-amber-500/30', text: 'text-amber-400', icon: '!' },
+  'very-low': { bg: 'from-red-500/10 to-red-500/5', border: 'border-red-500/30', text: 'text-red-400', icon: '!!' },
+};
+
+const config = evidenceColors[evidenceStrength];
+
+const defaultWarnings = [
+  'Not approved for human use by any regulatory agency',
+  'Limited human clinical trial data',
+  'Consult a healthcare provider before use',
+];
+
+const warnings = keyWarnings.length > 0 ? keyWarnings : defaultWarnings;
+---
+
+<div class={`safety-banner rounded-2xl bg-gradient-to-r ${config.bg} ${config.border} border p-4 mb-8`}>
+  <div class="flex flex-col lg:flex-row lg:items-center gap-4">
+    <!-- Evidence Level Indicator -->
+    <div class="flex items-center gap-3 shrink-0">
+      <div class={`w-10 h-10 rounded-xl ${config.border} border-2 flex items-center justify-center ${config.text} font-bold text-lg`}>
+        {config.icon}
+      </div>
+      <div>
+        <div class="text-[10px] uppercase tracking-wider text-white/50 font-semibold">Evidence Level</div>
+        <div class={`font-bold ${config.text} capitalize`}>{evidenceStrength.replace('-', ' ')}</div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="hidden lg:block w-px h-10 bg-white/10"></div>
+
+    <!-- Key Warnings -->
+    <div class="flex-1 flex flex-wrap items-center gap-x-4 gap-y-2">
+      {warnings.slice(0, 3).map((warning) => (
+        <div class="flex items-center gap-2 text-sm text-white/70">
+          <svg class="w-4 h-4 text-amber-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+          <span>{warning}</span>
+        </div>
+      ))}
+    </div>
+
+    <!-- Status Badges -->
+    <div class="flex items-center gap-2 shrink-0">
+      <span class="px-2.5 py-1 rounded-lg bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-semibold">
+        {fdaStatus}
+      </span>
+      {wadaStatus && (
+        <span class="px-2.5 py-1 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold">
+          {wadaStatus}
+        </span>
+      )}
+    </div>
+  </div>
+</div>

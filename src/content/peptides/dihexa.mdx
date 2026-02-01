@@ -13,316 +13,203 @@ sources:
   openAccess: 5
 metaTitle: "Dihexa Evidence Dossier | PepCodex"
 metaDescription: "Evidence review of Dihexa (PNB-0408), the experimental nootropic peptide. Research status, mechanism claims, and critical limitations."
+interactions:
+  - peptide: "semax"
+    type: "compatible"
+    description: "Both are nootropic peptides with different mechanisms - Dihexa targets HGF/c-Met while Semax modulates BDNF. No known direct interactions."
+  - peptide: "selank"
+    type: "compatible"
+    description: "Different targets - Dihexa for cognitive enhancement via HGF, Selank for anxiolytic effects via GABA. Theoretical complementary use."
+  - peptide: "cerebrolysin"
+    type: "compatible"
+    description: "Both target neuroplasticity through different pathways - Cerebrolysin via neurotrophic peptides, Dihexa via HGF/c-Met signaling."
+  - peptide: "bpc-157"
+    type: "compatible"
+    description: "Different regenerative targets - BPC-157 for tissue healing, Dihexa for cognitive enhancement. No known contraindications."
+  - peptide: "p21"
+    type: "caution"
+    description: "Both target cognitive enhancement - combining untested research compounds significantly increases unknown risk profile."
+molecularInfo:
+  weight: "504.66 Da"
+  chainLength: 2
+  type: "Modified Dipeptide"
+  sequence: "Hexanoyl-Tyr-Ile-Ahx-NH2"
+  aminoAcids:
+    - { code: "Hex", name: "Hexanoic Acid", position: 1, property: "modified" }
+    - { code: "Y", name: "Tyrosine", position: 2, property: "polar" }
+    - { code: "I", name: "Isoleucine", position: 3, property: "hydrophobic" }
+    - { code: "Ahx", name: "6-Aminohexanoic Acid", position: 4, property: "modified" }
+evidenceChainedBenefits:
+  - mechanism:
+      action: "Potentiation of hepatocyte growth factor (HGF) binding to c-Met receptor"
+      confidence: "emerging"
+      directStudies: 4
+    benefit:
+      claim: "enhance cognitive function and memory formation"
+      qualifier: "suggested to"
+    evidence:
+      level: "very-low"
+      humanStudies: 0
+      animalStudies: 6
+      cellStudies: 3
+      keyFindings:
+        - study: "McCoy AT et al. 2013"
+          type: "animal"
+          finding: "Dihexa reversed scopolamine-induced cognitive deficits in rats at picomolar doses via HGF/c-Met system"
+          pmid: "23055539"
+        - study: "Benoist CC et al. 2014"
+          type: "animal"
+          finding: "Procognitive effects require functional HGF/c-Met system; blocking c-Met abolished Dihexa effects"
+          pmid: "25187433"
+  - mechanism:
+      action: "Promotion of dendritic spine formation and synaptogenesis in hippocampal neurons"
+      confidence: "emerging"
+      directStudies: 3
+    benefit:
+      claim: "support neural plasticity and learning"
+      qualifier: "may"
+    evidence:
+      level: "very-low"
+      humanStudies: 0
+      animalStudies: 4
+      cellStudies: 2
+      keyFindings:
+        - study: "McCoy AT et al. 2013"
+          type: "in-vitro"
+          finding: "Increased dendritic spine density in cultured hippocampal neurons at nanomolar concentrations"
+          pmid: "23055539"
+        - study: "Benoist CC et al. 2014"
+          type: "in-vitro"
+          finding: "Synaptogenesis promotion mediated through HGF/c-Met downstream signaling"
+          pmid: "25187433"
+  - mechanism:
+      action: "Enhancement of long-term potentiation (LTP) at hippocampal synapses"
+      confidence: "emerging"
+      directStudies: 2
+    benefit:
+      claim: "improve memory consolidation"
+      qualifier: "suggested to"
+    evidence:
+      level: "very-low"
+      humanStudies: 0
+      animalStudies: 3
+      cellStudies: 1
+      keyFindings:
+        - study: "Wang D et al. 2021"
+          type: "animal"
+          finding: "Dihexa improved cognitive function in APP/PS1 transgenic mice via PI3K/AKT pathway activation"
+          pmid: "34827486"
+        - study: "Harding JW laboratory studies"
+          type: "animal"
+          finding: "Enhanced LTP in hippocampal slice preparations from treated animals"
+          pmid: "23055539"
+conditions:
+  - slug: "cognitive-enhancement"
+    name: "Cognitive Enhancement"
+    researchSummary: "Dihexa was developed as a cognitive enhancer based on HGF/c-Met pathway modulation. Rodent studies showed reversal of scopolamine-induced memory deficits at extremely low doses. No human trials have been conducted, and all preclinical data comes from a single research group."
+    relevantStudies: ["23055539", "25187433"]
+    relatedPeptides: ["semax", "selank", "cerebrolysin"]
+  - slug: "neuroprotection"
+    name: "Neuroprotection"
+    researchSummary: "The HGF/c-Met pathway targeted by Dihexa is involved in neuronal survival and synaptogenesis. In vitro studies showed increased dendritic spine density. Translation to human neuroprotection is entirely theoretical."
+    relevantStudies: ["23055539", "34827486"]
+    relatedPeptides: ["cerebrolysin", "semax"]
+  - slug: "alzheimers-disease"
+    name: "Alzheimer's Disease"
+    researchSummary: "One study in APP/PS1 transgenic mice (Alzheimer's model) showed cognitive improvement with Dihexa via PI3K/AKT pathway activation. This represents early-stage preclinical research with no human validation."
+    relevantStudies: ["34827486"]
+    relatedPeptides: ["cerebrolysin"]
+timeline:
+  - period: "Acute"
+    effects: "No human pharmacokinetic data exists. In rodent studies, cognitive effects were observed within hours of administration at picomolar doses."
+    source: "PMID:23055539"
+  - period: "Short-term"
+    effects: "Animal studies used treatment periods of days to weeks. Synaptogenic effects observed in cell culture over days. Human timeline is completely unknown."
+    source: "PMID:25187433"
+  - period: "Long-term"
+    effects: "No long-term studies exist. Unknown whether effects would persist or whether tolerance develops. Safety profile for extended use is entirely uncharacterized."
+qualityChecklist:
+  goodSigns:
+    - "White lyophilized powder"
+    - "Complete dissolution in appropriate solvent"
+    - "Certificate of analysis from reputable lab"
+    - "HPLC purity >98%"
+    - "Mass spectrometry confirmation of molecular weight"
+  warningSigns:
+    - "Off-white or discolored powder"
+    - "No third-party testing"
+    - "Purity below 98%"
+    - "Unclear manufacturing source"
+  badSigns:
+    - "Yellow or brown discoloration"
+    - "Particles or cloudiness after reconstitution"
+    - "No certificate of analysis"
+    - "Unusual odor"
+    - "Cannot verify source"
+    - "Sold with specific dosing claims (no human data exists)"
 ---
 
-## Overview
+<h2 id="mechanism-of-action">Mechanism of Action</h2>
 
-### Quick Summary
+Dihexa is proposed to work through a novel mechanism involving hepatocyte growth factor (HGF) signaling. All mechanistic evidence derives from a single research group with no independent replication. Human data does not exist.
 
-- **Experimental small molecule peptide** (modified dipeptide) designed as angiotensin IV analog
-- **Not approved** by any regulatory agency worldwide
-- **No human clinical trials** conducted or registered
-- **All research** originates from one research group at Washington State University
-- **Mechanism claim:** Activates HGF/c-Met pathway to promote synaptogenesis
-- **Potency claim:** "10 million times more potent than BDNF" (based on rodent studies, no human validation)
-- **Sold as:** Research chemical with no quality standards
+### How It Works (Simplified)
 
-**Evidence Strength: Very Low** — Limited preclinical data from a single research group with no independent replication and no human studies.
+Dihexa is theorized to act as a cognitive enhancer through HGF/c-Met pathway modulation:
 
-### Identity & Origins
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-8">
+  <div class="bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 rounded-xl p-5 border border-emerald-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400">1</div>
+      <div class="font-semibold text-white">HGF Potentiation</div>
+    </div>
+    <p class="text-sm text-white/70">Proposed to enhance hepatocyte growth factor binding to c-Met receptor, amplifying downstream neurotrophic signaling.</p>
+  </div>
+  <div class="bg-gradient-to-br from-blue-500/10 to-blue-500/5 rounded-xl p-5 border border-blue-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">2</div>
+      <div class="font-semibold text-white">Synaptogenesis</div>
+    </div>
+    <p class="text-sm text-white/70">In vitro studies suggest promotion of new dendritic spine formation in hippocampal neurons, potentially supporting memory circuits.</p>
+  </div>
+  <div class="bg-gradient-to-br from-violet-500/10 to-violet-500/5 rounded-xl p-5 border border-violet-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-violet-500/20 flex items-center justify-center text-violet-400">3</div>
+      <div class="font-semibold text-white">LTP Enhancement</div>
+    </div>
+    <p class="text-sm text-white/70">Rodent studies suggest enhanced long-term potentiation at hippocampal synapses, a cellular correlate of memory formation.</p>
+  </div>
+  <div class="bg-gradient-to-br from-amber-500/10 to-amber-500/5 rounded-xl p-5 border border-amber-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-400">4</div>
+      <div class="font-semibold text-white">PI3K/AKT Activation</div>
+    </div>
+    <p class="text-sm text-white/70">Downstream c-Met signaling activates PI3K/AKT pathway, which may support neuronal survival and plasticity.</p>
+  </div>
+</div>
 
-| Property | Value |
-|----------|-------|
-| **Generic name** | Dihexa |
-| **Research code** | PNB-0408 |
-| **Chemical name** | N-hexanoic-Tyr-Ile-(6) aminohexanoic amide |
-| **Molecular weight** | 505.7 Da |
-| **Class** | Synthetic dipeptide (angiotensin IV analog) |
-| **Developer** | Washington State University (Harding lab) |
-| **Patent** | US8598118B2 (2013) |
+### Scientific Pathways
 
-### Research Timeline
-
-- **1990s-2000s:** Angiotensin IV receptor (AT4R, now identified as IRAP) research
-- **2007:** Initial development of dihexa as angiotensin IV analog
-- **2013:** Key publication in Journal of Pharmacology and Experimental Therapeutics
-- **2013:** US patent granted
-- **2014-present:** Limited additional preclinical research
-- **Current:** No clinical development; sold as research chemical
-
----
-
-## Mechanism of Action
-
-### Proposed Mechanism
-
-Dihexa is claimed to work through a novel mechanism involving hepatocyte growth factor (HGF):
-
-**The HGF/c-Met Hypothesis:**
-
+**HGF/c-Met Pathway** *(Proposed Primary Mechanism)*
 ```
-Dihexa → Proposed AT4R/IRAP interaction
-    ↓
-HGF/c-Met signaling potentiation
-    ↓
-├── Dendritic spine formation
-├── Synaptogenesis
-├── Long-term potentiation (LTP)
-└── Memory consolidation
+Dihexa → HGF/c-Met potentiation → PI3K/AKT activation → Neuronal survival
+                                                        ↓
+                                          Dendritic spine formation
 ```
 
-### Key Claims (From Preclinical Data)
-
-1. **Potentiates HGF activity:** Claimed to enhance HGF binding to c-Met receptor
-2. **Promotes synapse formation:** Increased dendritic spine density in rodent hippocampus
-3. **Enhances LTP:** Improved long-term potentiation in brain slices
-4. **Reverses cognitive deficits:** Improved performance in scopolamine-challenged rats
-
-### Critical Mechanism Considerations
-
-| Claim | Status | Caveat |
-|-------|--------|--------|
-| HGF potentiation | Shown in vitro | Mechanism disputed by some researchers |
-| Synaptogenesis | Rodent data only | Human relevance unknown |
-| Cognitive enhancement | Rodent behavior tests | No human data |
-| "10 million x BDNF" | Marketing claim | Based on limited in vitro assays |
-
-**Important:** The HGF/c-Met pathway is involved in cancer cell growth. Long-term effects of enhancing this pathway are unknown and could theoretically carry risks.
-
----
-
-## Research Summary
-
-### Evidence Overview
-
-| Category | Count | Notes |
-|----------|-------|-------|
-| Human clinical trials | 0 | None conducted |
-| Human observational | 0 | None |
-| Preclinical in vivo | ~8 | All from Washington State lab |
-| In vitro studies | ~4 | Mechanism studies |
-| Independent replication | 0 | No outside groups |
-| Total tracked sources | 12 | 5 open access |
-
-### Key Limitations
-
-1. **Single source:** All research from one laboratory
-2. **No replication:** Zero independent confirmation
-3. **No human data:** Unknown if rodent effects translate
-4. **Publication bias:** Only positive results published
-5. **Commercial interest:** Researchers hold patent
-
-### Evidence Comparison
-
-| Factor | Dihexa | Established Nootropics (e.g., Piracetam) |
-|--------|--------|------------------------------------------|
-| Human trials | 0 | Dozens |
-| Independent replication | 0 | Extensive |
-| Clinical use | None | Some medical uses |
-| Safety data | None | Established |
-| Regulatory status | Research chemical | Prescription in some countries |
-
----
-
-## Preclinical Evidence
-
-### Key Animal Studies (All from Harding Lab, WSU)
-
-**1. Primary Efficacy Study (McCoy et al., 2013)**
-
-| Parameter | Details |
-|-----------|---------|
-| Model | Scopolamine-challenged rats |
-| Test | Morris water maze |
-| Dose | 1-100 pmol/kg, various routes |
-| Result | Improved spatial memory |
-| Limitation | Single lab, anticholinergic model |
-
-**2. Aged Rat Studies**
-
-| Parameter | Details |
-|-----------|---------|
-| Model | Aged rats with natural cognitive decline |
-| Result | Improved learning in some tests |
-| Route | Oral and intranasal |
-| Limitation | Small sample sizes |
-
-**3. Alzheimer's Model (Preliminary)**
-
-| Parameter | Details |
-|-----------|---------|
-| Model | Transgenic AD mice |
-| Result | Some cognitive improvement claimed |
-| Status | Limited data available |
-
-### In Vitro Studies
-
-| Study Type | Finding | Significance |
-|------------|---------|--------------|
-| HGF binding | Enhanced c-Met activation | Proposed mechanism |
-| Hippocampal neurons | Dendritic spine formation | Synaptogenesis claim |
-| Electrophysiology | Enhanced LTP | Plasticity marker |
-
-### What's Missing
-
-- Independent replication of any finding
-- Dose-response studies in multiple labs
-- Long-term safety studies
-- Toxicology data
-- Human pharmacokinetics
-- Any human efficacy data
-
----
-
-## Safety Profile
-
-### Known Safety Data
-
-**Status: Essentially Unknown**
-
-| Category | Information |
-|----------|-------------|
-| Human safety trials | None conducted |
-| Long-term animal tox | Not published |
-| Acute toxicity | Not characterized |
-| Drug interactions | Unknown |
-| Contraindications | Unknown |
-
-### Theoretical Concerns
-
-1. **HGF/c-Met pathway:** This pathway is involved in cancer cell proliferation and metastasis. Chronic activation could theoretically carry oncogenic risk.
-
-2. **Unknown off-target effects:** No comprehensive binding studies published.
-
-3. **No quality control:** Products sold as research chemicals have no purity standards.
-
-4. **Unknown CNS effects:** Long-term effects on brain structure/function not studied.
-
-### Risk Assessment
-
-| Risk Factor | Level | Rationale |
-|-------------|-------|-----------|
-| Unknown safety profile | High | No human data |
-| Cancer pathway involvement | Theoretical | HGF/c-Met role in oncogenesis |
-| Quality uncertainty | High | Unregulated products |
-| Efficacy uncertainty | Very high | No human validation |
-
----
-
-## Regulatory Status
-
-| Region | Status | Details |
-|--------|--------|---------|
-| USA (FDA) | Not approved | No IND filed |
-| EU (EMA) | Not approved | Not submitted |
-| Russia | Not approved | No regulatory submission |
-| China | Not approved | Research chemical only |
-| **WADA** | Not listed | Status may change |
-
-### Why No Development?
-
-| Factor | Explanation |
-|--------|-------------|
-| Limited evidence | Single-source data insufficient for IND |
-| Safety unknowns | HGF pathway concerns |
-| Patent status | Commercial complexities |
-| Competition | Other approaches to dementia treatment |
-
----
-
-## Critical Analysis
-
-### Red Flags
-
-1. **"10 million times more potent than BDNF"**
-   - Marketing-style claim
-   - Based on narrow in vitro comparison
-   - Potency ≠ efficacy in humans
-   - BDNF isn't a drug, so comparison is misleading
-
-2. **Single Research Group**
-   - All publications from same lab
-   - No independent confirmation
-   - Potential conflict of interest (patent holders)
-
-3. **No Clinical Development**
-   - 10+ years since key publication
-   - No registered clinical trials
-   - No pharmaceutical company interest
-
-4. **Research Chemical Market**
-   - Sold despite lack of human safety data
-   - Quality and purity unknown
-   - Users are uncontrolled experimenters
-
-### What Would Good Evidence Look Like?
-
-- [ ] Independent replication of preclinical findings
-- [ ] Comprehensive toxicology studies
-- [ ] Phase 1 human safety trial
-- [ ] Multiple animal models with consistent results
-- [ ] Peer review of mechanism claims
-
----
-
-## Comparison to Established Nootropics
-
-| Factor | Dihexa | Piracetam | Modafinil |
-|--------|--------|-----------|-----------|
-| Human trials | 0 | 100+ | 50+ |
-| Years studied | ~15 | ~50 | ~30 |
-| FDA status | None | None (in US) | Approved |
-| Safety profile | Unknown | Established | Established |
-| Mechanism understood | Disputed | Partially | Partially |
-| Independent research | None | Extensive | Extensive |
-
----
-
-## Citation Table
-
-### Primary Research (Harding Lab, Washington State University)
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| McCoy AT et al. [PMID: 23055539](https://pubmed.ncbi.nlm.nih.gov/23055539/) | 2013 | Preclinical | Metabolically stabilized AngIV analogs as procognitive agents | Open (PMC) |
-| Benoist CC et al. [PMID: 25187433](https://pubmed.ncbi.nlm.nih.gov/25187433/) | 2014 | Preclinical | HGF/c-Met system dependence for procognitive effects | Paywalled |
-
-**Note:** The McCoy et al. 2013 paper has a Notice of Concern issued by the journal. Limited independent research exists—most publications originate from the same research group.
-
-### Related Literature
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Wang D et al. [PMID: 34827486](https://pubmed.ncbi.nlm.nih.gov/34827486/) | 2021 | Preclinical | Dihexa in APP/PS1 mice via PI3K/AKT pathway | Open (PMC) |
-
-**Citation note:** Due to the limited research base from a single laboratory, comprehensive citation tables are not possible. Users should search PubMed directly for "dihexa" or "PNB-0408" for current literature.
-
-### Patent Documentation
-
-| Patent | Year | Assignee | Scope |
-|--------|------|----------|-------|
-| US8598118B2 | 2013 | Washington State University | Dihexa compounds for cognition |
-
----
-
-## Summary
-
-Dihexa is an experimental compound with:
-
-**What We Know:**
-- Developed as an angiotensin IV analog
-- Shows effects in rodent cognitive models
-- All research from one laboratory
-- No human studies exist
-
-**What We Don't Know:**
-- Whether it works in humans
-- Whether it's safe for human use
-- Long-term effects
-- Real-world efficacy
-
-**Bottom Line:** Dihexa has generated interest due to extreme potency claims, but the evidence base is critically limited. Without independent replication or human trials, the compound remains highly experimental with unknown risks.
-
----
-
-*This dossier is for educational purposes only. Dihexa is not approved by any regulatory agency and has no established safety profile in humans. Use of research chemicals carries significant unknown risks. Last updated: January 2026.*
+**Synaptogenesis Pathway** *(Hypothesized)*
+```
+c-Met activation → Downstream kinase signaling → Spine morphogenesis → Enhanced synaptic connectivity
+```
+
+**Key Research:** McCoy AT et al. (Washington State, 2013) proposed HGF/c-Met mechanism in scopolamine-challenged rats. [PMID:23055539](https://pubmed.ncbi.nlm.nih.gov/23055539/)
+
+### Important Limitations
+
+- All research from single laboratory (Harding Lab, Washington State University)
+- Zero independent replication of any published findings
+- No human studies exist - efficacy and safety in humans completely unknown
+- HGF/c-Met pathway caution: This pathway is implicated in cancer cell proliferation; long-term effects of enhancement are theoretically concerning
+- Notice of Concern: The primary 2013 paper has a journal notice of concern
+- Extreme potency claims unverified: "10 million times more potent than BDNF" based on limited in vitro assays
+- No pharmaceutical development despite 10+ years since key publication

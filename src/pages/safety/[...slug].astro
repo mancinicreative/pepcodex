@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import SafetyLayout from '../../layouts/SafetyLayout.astro';
 
 export async function getStaticPaths() {
@@ -10,7 +10,17 @@ export async function getStaticPaths() {
   }));
 }
 
-const { safety } = Astro.props;
+// Support both static and SSR modes
+let safety = Astro.props.safety;
+if (!safety) {
+  const { slug } = Astro.params;
+  safety = await getEntry('safety', slug as string);
+}
+
+if (!safety) {
+  return Astro.redirect('/404');
+}
+
 const { Content } = await safety.render();
 ---
 

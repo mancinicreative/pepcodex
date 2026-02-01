@@ -1,0 +1,137 @@
+---
+interface Props {
+  name: string;
+  slug: string;
+  city: string;
+  state: string;
+  address?: string;
+  phone?: string;
+  website?: string;
+  services: string[];
+  peptides?: string[];
+  verifiedListing?: boolean;
+  description?: string;
+}
+
+const {
+  name,
+  slug,
+  city,
+  state,
+  address,
+  phone,
+  website,
+  services,
+  peptides = [],
+  verifiedListing = false,
+  description
+} = Astro.props;
+---
+
+<div class="glass-card group relative block h-full">
+  <div class="relative z-10 p-6 flex flex-col h-full">
+    <!-- Header with name and verified badge -->
+    <div class="flex items-start justify-between gap-4 mb-3">
+      <h3 class="text-xl font-bold group-hover:text-primary transition-colors font-display" style="color: var(--text-high);">
+        {name}
+      </h3>
+      {verifiedListing && (
+        <span class="badge badge--success flex items-center gap-1 shrink-0">
+          <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+          Verified
+        </span>
+      )}
+    </div>
+
+    <!-- Location -->
+    <div class="flex items-center gap-2 mb-3" style="color: var(--text-medium);">
+      <svg class="w-4 h-4 shrink-0 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+        <circle cx="12" cy="10" r="3"/>
+      </svg>
+      <span class="text-sm">{city}, {state}</span>
+    </div>
+
+    <!-- Address if available -->
+    {address && (
+      <p class="text-sm mb-2" style="color: var(--text-low);">
+        {address}
+      </p>
+    )}
+
+    <!-- Description -->
+    {description && (
+      <p class="text-sm line-clamp-2 mb-4" style="color: var(--text-medium);">
+        {description}
+      </p>
+    )}
+
+    <!-- Services -->
+    <div class="mb-4">
+      <p class="text-xs uppercase tracking-wider mb-2 font-semibold" style="color: var(--text-low);">Services</p>
+      <div class="flex flex-wrap gap-1.5">
+        {services.slice(0, 4).map((service) => (
+          <span class="badge badge--muted text-xs normal-case">
+            {service}
+          </span>
+        ))}
+        {services.length > 4 && (
+          <span class="badge badge--muted text-xs normal-case">
+            +{services.length - 4} more
+          </span>
+        )}
+      </div>
+    </div>
+
+    <!-- Peptides offered -->
+    {peptides.length > 0 && (
+      <div class="mb-4">
+        <p class="text-xs uppercase tracking-wider mb-2 font-semibold" style="color: var(--text-low);">Peptides Offered</p>
+        <div class="flex flex-wrap gap-1.5">
+          {peptides.slice(0, 3).map((peptide) => (
+            <span class="badge badge--primary text-xs normal-case">
+              {peptide}
+            </span>
+          ))}
+          {peptides.length > 3 && (
+            <span class="badge badge--primary text-xs normal-case">
+              +{peptides.length - 3} more
+            </span>
+          )}
+        </div>
+      </div>
+    )}
+
+    <!-- Contact Actions -->
+    <div class="mt-auto pt-4 flex flex-wrap gap-2" style="border-top: 1px solid var(--border-glass);">
+      {phone && (
+        <a
+          href={`tel:${phone.replace(/[^0-9+]/g, '')}`}
+          class="btn btn-secondary btn-sm flex-1 min-w-[100px]"
+        >
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          Call
+        </a>
+      )}
+      {website && (
+        <a
+          href={website}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-secondary btn-sm flex-1 min-w-[100px]"
+        >
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          Website
+        </a>
+      )}
+    </div>
+  </div>
+</div>

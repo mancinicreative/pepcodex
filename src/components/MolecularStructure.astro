@@ -1,0 +1,424 @@
+---
+/**
+ * MolecularStructure.astro
+ * Displays peptide amino acid sequence with color-coded properties
+ * Features: hover tooltips, one-letter/three-letter code toggle
+ */
+
+interface AminoAcid {
+  code: string;
+  name: string;
+  position: number;
+  property: 'hydrophobic' | 'polar' | 'positive' | 'negative' | 'modified';
+}
+
+interface Props {
+  molecularInfo: {
+    weight: string;
+    chainLength: number;
+    type: string;
+    sequence: string;
+    aminoAcids: AminoAcid[];
+  };
+  peptideName: string;
+}
+
+const { molecularInfo, peptideName } = Astro.props;
+
+// Three-letter codes for amino acids
+const threeLetterCodes: Record<string, string> = {
+  'G': 'Gly', 'A': 'Ala', 'V': 'Val', 'L': 'Leu', 'I': 'Ile',
+  'M': 'Met', 'F': 'Phe', 'W': 'Trp', 'P': 'Pro', 'S': 'Ser',
+  'T': 'Thr', 'C': 'Cys', 'Y': 'Tyr', 'N': 'Asn', 'Q': 'Gln',
+  'D': 'Asp', 'E': 'Glu', 'K': 'Lys', 'R': 'Arg', 'H': 'His',
+  'Aib': 'Aib', 'Nal': 'Nal', 'dF': 'dPhe', 'dW': 'dTrp'
+};
+
+// Property colors
+const propertyColors: Record<string, { bg: string; border: string; text: string; label: string }> = {
+  'hydrophobic': {
+    bg: 'rgba(251, 146, 60, 0.15)',
+    border: 'rgba(251, 146, 60, 0.5)',
+    text: 'rgb(251, 146, 60)',
+    label: 'Hydrophobic'
+  },
+  'polar': {
+    bg: 'rgba(59, 130, 246, 0.15)',
+    border: 'rgba(59, 130, 246, 0.5)',
+    text: 'rgb(59, 130, 246)',
+    label: 'Polar'
+  },
+  'positive': {
+    bg: 'rgba(34, 197, 94, 0.15)',
+    border: 'rgba(34, 197, 94, 0.5)',
+    text: 'rgb(34, 197, 94)',
+    label: 'Positive Charge'
+  },
+  'negative': {
+    bg: 'rgba(239, 68, 68, 0.15)',
+    border: 'rgba(239, 68, 68, 0.5)',
+    text: 'rgb(239, 68, 68)',
+    label: 'Negative Charge'
+  },
+  'modified': {
+    bg: 'rgba(168, 85, 247, 0.15)',
+    border: 'rgba(168, 85, 247, 0.5)',
+    text: 'rgb(168, 85, 247)',
+    label: 'Modified'
+  }
+};
+---
+
+<div class="molecular-structure-container" data-component="molecular-structure">
+  <!-- Header with stats -->
+  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+    <div>
+      <h3 class="text-xl font-bold text-white mb-1" style="font-family: var(--font-display);">
+        Molecular Structure
+      </h3>
+      <p class="text-sm text-white/60">
+        {molecularInfo.type} ({molecularInfo.chainLength} amino acids)
+      </p>
+    </div>
+
+    <!-- Code toggle -->
+    <div class="flex items-center gap-2 bg-white/5 rounded-lg p-1">
+      <button
+        class="code-toggle-btn active px-3 py-1.5 rounded-md text-xs font-bold uppercase tracking-wider transition-all"
+        data-code-type="one"
+      >
+        1-Letter
+      </button>
+      <button
+        class="code-toggle-btn px-3 py-1.5 rounded-md text-xs font-bold uppercase tracking-wider transition-all"
+        data-code-type="three"
+      >
+        3-Letter
+      </button>
+    </div>
+  </div>
+
+  <!-- Molecular specs grid -->
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
+    <div class="bg-white/5 rounded-xl p-4 border border-white/10">
+      <div class="text-xs text-white/50 uppercase tracking-wider mb-1">Weight</div>
+      <div class="text-lg font-mono font-bold text-white">{molecularInfo.weight}</div>
+    </div>
+    <div class="bg-white/5 rounded-xl p-4 border border-white/10">
+      <div class="text-xs text-white/50 uppercase tracking-wider mb-1">Chain Length</div>
+      <div class="text-lg font-mono font-bold text-white">{molecularInfo.chainLength} aa</div>
+    </div>
+    <div class="bg-white/5 rounded-xl p-4 border border-white/10 overflow-hidden">
+      <div class="text-xs text-white/50 uppercase tracking-wider mb-1">Type</div>
+      <div class="text-xs font-bold text-white truncate" title={molecularInfo.type}>{molecularInfo.type}</div>
+    </div>
+    <div class="bg-white/5 rounded-xl p-4 border border-white/10">
+      <div class="text-xs text-white/50 uppercase tracking-wider mb-1">Sequence</div>
+      <div class="text-xs font-mono text-white/80 truncate" title={molecularInfo.sequence}>
+        {molecularInfo.sequence}
+      </div>
+    </div>
+  </div>
+
+  <!-- Amino acid sequence visualization -->
+  <div class="sequence-container">
+    <div class="text-xs text-white/50 uppercase tracking-wider mb-3">Amino Acid Sequence</div>
+
+    <div class="sequence-display flex flex-wrap gap-1.5" data-sequence-display>
+      {molecularInfo.aminoAcids.map((aa, index) => {
+        const colors = propertyColors[aa.property];
+        const threeCode = threeLetterCodes[aa.code] || aa.code;
+        return (
+          <div
+            class="amino-acid-unit group relative"
+            data-position={aa.position}
+            data-property={aa.property}
+            data-one-letter={aa.code}
+            data-three-letter={threeCode}
+            data-name={aa.name}
+            style={`
+              background: ${colors.bg};
+              border: 1px solid ${colors.border};
+            `}
+          >
+            <span class="aa-code one-letter" style={`color: ${colors.text};`}>
+              {aa.code}
+            </span>
+            <span class="aa-code three-letter hidden" style={`color: ${colors.text};`}>
+              {threeCode}
+            </span>
+
+            <!-- Position indicator -->
+            <span class="position-badge">{aa.position}</span>
+
+            <!-- Tooltip -->
+            <div class="aa-tooltip">
+              <div class="tooltip-header">
+                <span class="tooltip-code" style={`color: ${colors.text};`}>{aa.code}</span>
+                <span class="tooltip-name">{aa.name}</span>
+              </div>
+              <div class="tooltip-info">
+                <span class="tooltip-position">Position {aa.position}</span>
+                <span class="tooltip-property" style={`color: ${colors.text};`}>
+                  {colors.label}
+                </span>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+
+  <!-- Legend -->
+  <div class="legend mt-6 pt-6 border-t border-white/10">
+    <div class="text-xs text-white/50 uppercase tracking-wider mb-3">Property Legend</div>
+    <div class="flex flex-wrap gap-3">
+      {Object.entries(propertyColors).map(([key, colors]) => (
+        <div class="flex items-center gap-2">
+          <div
+            class="w-3 h-3 rounded"
+            style={`background: ${colors.bg}; border: 1px solid ${colors.border};`}
+          ></div>
+          <span class="text-xs text-white/70">{colors.label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Connection lines visualization (optional enhancement) -->
+  <div class="chain-visualization mt-6">
+    <div class="text-xs text-white/50 uppercase tracking-wider mb-3">Peptide Bond Chain</div>
+    <div class="chain-line flex items-center overflow-x-auto pb-2">
+      <span class="text-xs text-white/40 mr-2">N-terminus</span>
+      {molecularInfo.aminoAcids.map((aa, index) => {
+        const colors = propertyColors[aa.property];
+        const isLast = index === molecularInfo.aminoAcids.length - 1;
+        return (
+          <div class="flex items-center">
+            <div
+              class="chain-node"
+              style={`background: ${colors.text}; box-shadow: 0 0 8px ${colors.text}40;`}
+              title={`${aa.name} (${aa.code})`}
+            ></div>
+            {!isLast && <div class="chain-bond"></div>}
+          </div>
+        );
+      })}
+      <span class="text-xs text-white/40 ml-2">C-terminus</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .molecular-structure-container {
+    background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .code-toggle-btn {
+    color: rgba(255,255,255,0.5);
+  }
+
+  .code-toggle-btn.active {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+  }
+
+  .code-toggle-btn:not(.active):hover {
+    background: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.8);
+  }
+
+  .amino-acid-unit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    padding: 0 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+
+  .amino-acid-unit:hover {
+    transform: translateY(-2px) scale(1.05);
+    z-index: 10;
+  }
+
+  .aa-code {
+    font-family: var(--font-mono, monospace);
+    font-weight: 700;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+  }
+
+  .aa-code.three-letter {
+    font-size: 0.7rem;
+  }
+
+  .position-badge {
+    position: absolute;
+    bottom: -0.25rem;
+    right: -0.25rem;
+    background: rgba(0,0,0,0.8);
+    color: rgba(255,255,255,0.6);
+    font-size: 0.5rem;
+    font-weight: 700;
+    padding: 0.1rem 0.25rem;
+    border-radius: 0.25rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .amino-acid-unit:hover .position-badge {
+    opacity: 1;
+  }
+
+  /* Tooltip styles */
+  .aa-tooltip {
+    position: absolute;
+    bottom: calc(100% + 0.75rem);
+    left: 50%;
+    transform: translateX(-50%) scale(0.9);
+    background: rgba(15, 15, 20, 0.98);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+    min-width: 140px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    z-index: 100;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    pointer-events: none;
+  }
+
+  .aa-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: rgba(255,255,255,0.15);
+  }
+
+  .amino-acid-unit:hover .aa-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) scale(1);
+  }
+
+  .tooltip-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .tooltip-code {
+    font-family: var(--font-mono, monospace);
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+
+  .tooltip-name {
+    color: white;
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+
+  .tooltip-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .tooltip-position {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.7rem;
+  }
+
+  .tooltip-property {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Chain visualization */
+  .chain-node {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .chain-bond {
+    width: 12px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+    flex-shrink: 0;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .amino-acid-unit {
+      min-width: 2rem;
+      height: 2rem;
+    }
+
+    .aa-code {
+      font-size: 0.75rem;
+    }
+
+    .aa-code.three-letter {
+      font-size: 0.6rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const containers = document.querySelectorAll('[data-component="molecular-structure"]');
+
+    containers.forEach(container => {
+      const toggleBtns = container.querySelectorAll('.code-toggle-btn');
+      const sequenceDisplay = container.querySelector('[data-sequence-display]');
+
+      if (!toggleBtns.length || !sequenceDisplay) return;
+
+      toggleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const codeType = btn.getAttribute('data-code-type');
+
+          // Update button states
+          toggleBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          // Update displayed codes
+          const units = sequenceDisplay.querySelectorAll('.amino-acid-unit');
+          units.forEach(unit => {
+            const oneLetter = unit.querySelector('.one-letter');
+            const threeLetter = unit.querySelector('.three-letter');
+
+            if (codeType === 'three') {
+              oneLetter?.classList.add('hidden');
+              threeLetter?.classList.remove('hidden');
+            } else {
+              oneLetter?.classList.remove('hidden');
+              threeLetter?.classList.add('hidden');
+            }
+          });
+        });
+      });
+    });
+  });
+</script>

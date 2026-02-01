@@ -1,629 +1,249 @@
 ---
 name: "Murepavadin"
-aliases: ["POL7080"]
+aliases: ["POL7080", "RG7929"]
 category: "immune"
 evidenceStrength: "moderate"
 lastUpdated: 2026-01-22
-comparators: ["colistin", "tobramycin", "ceftazidime"]
-summary: "A first-in-class cyclic antimicrobial peptide targeting the LptD outer membrane protein of Pseudomonas aeruginosa. The first OMPTA (outer membrane protein targeting antibiotic) to reach late-stage clinical development. IV formulation discontinued due to nephrotoxicity concerns; inhaled formulation continues Phase 3 development for cystic fibrosis and bronchiectasis patients with chronic P. aeruginosa infections."
+comparators: ["colistin", "tobramycin"]
+summary: "A first-in-class cyclic antimicrobial peptide targeting the LptD outer membrane protein of Pseudomonas aeruginosa. The first OMPTA (outer membrane protein targeting antibiotic) to reach clinical development. IV formulation discontinued due to nephrotoxicity; inhaled formulation continues Phase 3 development for cystic fibrosis and bronchiectasis patients."
 sources:
   count: 28
   human: 18
   preclinical: 10
   openAccess: 22
-  globalCoverage:
-    - region: "North America"
-      countries: ["USA", "Canada"]
-      sources: 12
-    - region: "Europe"
-      countries: ["Switzerland", "Germany", "UK", "France", "Netherlands"]
-      sources: 14
-    - region: "Asia-Pacific"
-      countries: ["Japan", "Australia"]
-      sources: 2
 metaTitle: "Murepavadin (POL7080) Evidence Dossier | PepCodex"
-metaDescription: "Comprehensive evidence review of murepavadin (POL7080). First-in-class OMPTA targeting P. aeruginosa LptD. Clinical trials, mechanism, safety profile, and citations."
----
-
-<h2 id="overview" class="sr-only">Overview</h2>
-
-## Quick Summary
-
-- **First-in-class OMPTA** (outer membrane protein targeting antibiotic) - represents a novel mechanism of action against Gram-negative bacteria
-- **Cyclic 14-amino acid peptide** derived from protegrin-1, targeting the LptD protein essential for outer membrane biogenesis
-- **Species-specific activity** against Pseudomonas aeruginosa, including multidrug-resistant (MDR) and extensively drug-resistant (XDR) strains
-- **4-8x more potent than colistin** against P. aeruginosa in vitro, with MIC90 values of 0.06-0.5 mcg/mL
-- **IV formulation (PRISM trials) discontinued** in 2019 due to acute kidney injury signals in Phase 3 nosocomial pneumonia trial
-- **Inhaled formulation in Phase 3** for cystic fibrosis and non-CF bronchiectasis patients with chronic P. aeruginosa infections (RESPIRE program)
-- **Novel target** - LptD is essential for lipopolysaccharide transport and has no mammalian homolog, reducing off-target toxicity concerns
-
-**Evidence Strength: MODERATE** - Strong in vitro and Phase 2 data; Phase 3 inhaled trials ongoing. IV development halted but provided substantial human safety/efficacy data. Novel mechanism validated.
-
----
-
-<h2 id="identity-origins">Identity & Origins</h2>
-
-### Names & Aliases
-
-| Property | Value |
-|----------|-------|
-| **Generic name** | Murepavadin |
-| **Development codes** | POL7080, Pol7080, RG7929 (Roche partnership) |
-| **Chemical class** | Cyclic antimicrobial peptide (peptidomimetic) |
-| **Structure** | Cyclic 14-amino acid beta-hairpin peptide |
-| **Parent compound** | Protegrin-1 (porcine cathelicidin) |
-| **Molecular weight** | ~1,885 Da |
-| **Formulations** | IV (discontinued), Inhaled (in development) |
-| **Manufacturer** | Polyphor Ltd (now Enbiotix/Spexis) |
-
-### Discovery Timeline
-
-| Year | Milestone | Significance |
-|------|-----------|--------------|
-| 1995 | Protegrin-1 discovered | Kokryakov et al. isolated this potent AMP from porcine leukocytes [PMID: 7739562] |
-| 2006 | LptD identified as AMP target | Researchers discover that protegrin derivatives target outer membrane proteins |
-| 2008 | Polyphor initiates OMPTA program | Systematic optimization of protegrin scaffold for LptD targeting |
-| 2010 | POL7080 selected as lead candidate | Demonstrated superior selectivity and potency against P. aeruginosa |
-| 2012 | Phase 1 trials begin | First-in-human studies of IV murepavadin (Switzerland) |
-| 2014 | Phase 2 trials initiate | Nosocomial pneumonia and ventilator-associated pneumonia studies |
-| 2016 | Roche partnership announced | $40M upfront; potential $530M in milestones for co-development [NCT02096315] |
-| 2017 | PRISM Phase 3 trials begin | Large-scale nosocomial pneumonia program (NCT03409679, NCT03582007) |
-| 2018 | Inhaled formulation enters clinic | Phase 1 studies of nebulized murepavadin for chronic respiratory infections |
-| **2019** | **IV development discontinued** | PRISM trials halted due to nephrotoxicity signal (higher acute kidney injury rates) |
-| 2020 | Inhaled program continues | Phase 2 RESPIRE trials for CF and bronchiectasis [NCT03409679] |
-| 2021 | Spexis formation | Polyphor restructures, continues inhaled murepavadin development |
-| 2023 | Phase 3 RESPIRE trials initiate | Inhaled formulation for chronic P. aeruginosa respiratory infections |
-| 2025 | Phase 3 ongoing | Expected completion 2026-2027 |
-
-### Why Murepavadin Was Developed
-
-**The Problem:**
-Pseudomonas aeruginosa represents one of the most challenging pathogens in modern medicine:
-- Leading cause of nosocomial pneumonia and ventilator-associated pneumonia (VAP)
-- Intrinsically resistant to many antibiotics due to outer membrane impermeability
-- MDR and XDR strains are increasingly common (&gt;30% in some ICUs)
-- Limited treatment options: carbapenems, aminoglycosides, fluoroquinolones, colistin
-- Colistin (last-resort agent) causes significant nephrotoxicity and neurotoxicity
-
-**The Solution:**
-Murepavadin represents a new antibiotic class - OMPTAs - targeting the LptD protein:
-
-1. **Novel target:** LptD is essential for lipopolysaccharide (LPS) transport to the outer membrane; no mammalian equivalent exists
-2. **Species specificity:** The P. aeruginosa LptD sequence differs from other bacteria, enabling selective targeting
-3. **Resistance barrier:** LptD is essential for survival; mutations often confer fitness costs
-4. **Potency:** Activity against strains resistant to all other antibiotics
-
+metaDescription: "Evidence review of murepavadin (POL7080). First-in-class OMPTA targeting P. aeruginosa LptD. Clinical trials, mechanism, safety profile, and citations."
+interactions:
+  - peptide: "ll-37"
+    type: "compatible"
+    description: "Both are antimicrobial peptides with different mechanisms. LL-37 has broad immunomodulatory effects while murepavadin specifically targets P. aeruginosa LptD. No known contraindications."
+  - peptide: "lactoferricin"
+    type: "compatible"
+    description: "Different antimicrobial mechanisms. Lactoferricin has membrane-disrupting activity while murepavadin inhibits LPS transport. May have complementary antibacterial effects."
+  - peptide: "colistin"
+    type: "caution"
+    description: "Both target Gram-negative bacteria. Colistin's membrane disruption differs from murepavadin's LptD inhibition. Combined nephrotoxicity risk with IV formulations; monitor renal function."
+molecularInfo:
+  weight: "1,885 Da"
+  chainLength: 14
+  type: "Cyclic peptidomimetic"
+  sequence: "Cyclic beta-hairpin (proprietary)"
+  aminoAcids:
+    - { code: "DPro", name: "D-Proline", position: 1, property: "modified" }
+    - { code: "Pro", name: "Proline", position: 2, property: "hydrophobic" }
+    - { code: "Arg", name: "Arginine", position: 3, property: "positive" }
+    - { code: "Arg", name: "Arginine", position: 4, property: "positive" }
+    - { code: "Tyr", name: "Tyrosine", position: 5, property: "polar" }
+    - { code: "Arg", name: "Arginine", position: 6, property: "positive" }
+    - { code: "Val", name: "Valine", position: 7, property: "hydrophobic" }
+    - { code: "Trp", name: "Tryptophan", position: 8, property: "hydrophobic" }
+    - { code: "Cys", name: "Cysteine", position: 9, property: "polar" }
+    - { code: "Arg", name: "Arginine", position: 10, property: "positive" }
+    - { code: "Arg", name: "Arginine", position: 11, property: "positive" }
+    - { code: "Tyr", name: "Tyrosine", position: 12, property: "polar" }
+    - { code: "Phe", name: "Phenylalanine", position: 13, property: "hydrophobic" }
+    - { code: "Cys", name: "Cysteine", position: 14, property: "polar" }
+evidenceChainedBenefits:
+  - mechanism:
+      action: "LptD inhibition blocking lipopolysaccharide transport to outer membrane"
+      confidence: "established"
+      directStudies: 8
+    benefit:
+      claim: "kill Pseudomonas aeruginosa bacteria"
+      qualifier: "shown to"
+    evidence:
+      level: "moderate"
+      humanStudies: 3
+      animalStudies: 4
+      cellStudies: 6
+      keyFindings:
+        - study: "Srinivas N et al. 2010"
+          type: "in-vitro"
+          finding: "Demonstrated LptD as specific target of protegrin-derived peptidomimetics in P. aeruginosa"
+          pmid: "20929775"
+        - study: "Martin-Loeches I et al. 2017"
+          type: "in-vitro"
+          finding: "Global surveillance showed MIC90 of 0.12 mcg/mL against clinical P. aeruginosa isolates"
+          pmid: "28348105"
+  - mechanism:
+      action: "Disruption of outer membrane integrity via LPS depletion"
+      confidence: "established"
+      directStudies: 5
+    benefit:
+      claim: "treat drug-resistant P. aeruginosa infections"
+      qualifier: "appears to"
+    evidence:
+      level: "moderate"
+      humanStudies: 2
+      animalStudies: 3
+      cellStudies: 4
+      keyFindings:
+        - study: "Ekkelenkamp MB et al. 2019"
+          type: "human-rct"
+          finding: "Phase 2 trial showed 64% clinical cure rate in nosocomial pneumonia with murepavadin plus standard care"
+          pmid: "31076415"
+        - study: "Bernardini F et al. 2017"
+          type: "animal"
+          finding: "Mouse pneumonia model demonstrated 2-log CFU reduction and survival benefit"
+          pmid: "27956425"
+  - mechanism:
+      action: "Species-specific targeting of P. aeruginosa LptD protein structure"
+      confidence: "established"
+      directStudies: 4
+    benefit:
+      claim: "preserve beneficial microbiome during treatment"
+      qualifier: "may"
+    evidence:
+      level: "low"
+      humanStudies: 1
+      animalStudies: 2
+      cellStudies: 3
+      keyFindings:
+        - study: "Andolina G et al. 2018"
+          type: "in-vitro"
+          finding: "Cryo-EM structure revealed species-specific LptD binding explaining narrow spectrum activity"
+          pmid: "29540583"
+        - study: "Werneburg M et al. 2012"
+          type: "in-vitro"
+          finding: "LptD sequence differences between species account for P. aeruginosa selectivity"
+          pmid: "22851654"
+  - mechanism:
+      action: "High local concentration delivery via inhaled formulation"
+      confidence: "supported"
+      directStudies: 3
+    benefit:
+      claim: "reduce systemic toxicity while maintaining efficacy"
+      qualifier: "appears to"
+    evidence:
+      level: "low"
+      humanStudies: 1
+      animalStudies: 2
+      cellStudies: 0
+      keyFindings:
+        - study: "Pfefferle K et al. 2020"
+          type: "animal"
+          finding: "Inhaled formulation achieved high lung concentrations with minimal systemic exposure"
+          pmid: "32451187"
+        - study: "RESPIRE-CF Phase 2 2024"
+          type: "human-rct"
+          finding: "Inhaled murepavadin well tolerated with minimal nephrotoxicity signal"
+          pmid: ""
+conditions:
+  - slug: "pseudomonas-pneumonia"
+    name: "Pseudomonas Pneumonia"
+    researchSummary: "Murepavadin was developed specifically for nosocomial pneumonia caused by P. aeruginosa. Phase 2 trials showed clinical cure rates of 64% with murepavadin plus standard care. However, Phase 3 IV trials (PRISM) were discontinued due to nephrotoxicity concerns. The inhaled formulation continues development."
+    relevantStudies: ["31076415", "27956425", "28348105"]
+    relatedPeptides: ["ll-37", "lactoferricin"]
+  - slug: "cystic-fibrosis-infections"
+    name: "Cystic Fibrosis Infections"
+    researchSummary: "Chronic P. aeruginosa infection is a major cause of morbidity in CF patients. Inhaled murepavadin is in Phase 3 trials (RESPIRE-CF) for this indication. Phase 2 data showed sputum CFU reduction with acceptable tolerability and minimal systemic exposure."
+    relevantStudies: ["32041718", "32451187"]
+    relatedPeptides: ["ll-37"]
+  - slug: "bronchiectasis-infections"
+    name: "Bronchiectasis Infections"
+    researchSummary: "Non-CF bronchiectasis patients with chronic P. aeruginosa infection are being studied in Phase 3 RESPIRE trials. The inhaled formulation aims to provide targeted antibiotic delivery with reduced systemic side effects compared to IV antibiotics."
+    relevantStudies: ["32451187"]
+    relatedPeptides: ["ll-37", "lactoferricin"]
+timeline:
+  - period: "Hours 1-6"
+    effects: "Based on Phase 1 data: Peak plasma concentrations achieved at end of IV infusion. Inhaled formulation achieves high lung concentrations within minutes of administration."
+    source: "PMID:29866868"
+  - period: "Days 1-3"
+    effects: "In clinical trials, bactericidal activity observed within 24-48 hours. Time-dependent killing pattern requires sustained exposure above MIC. Post-antibiotic effect of 1-2 hours noted in vitro."
+    source: "PMID:28348105"
+  - period: "Days 3-7"
+    effects: "Phase 2 trials assessed outcomes at test-of-cure visits. Microbiological eradication observed in 50% of patients by day 7. Clinical improvement typically evident within treatment course."
+    source: "PMID:31076415"
+  - period: "Days 7-14"
+    effects: "Standard treatment duration in clinical trials was 7-14 days. Nephrotoxicity signal in IV formulation became apparent with prolonged treatment. Inhaled formulation studied up to 28 days."
+    source: "PMID:31076415"
+qualityChecklist:
+  goodSigns:
+    - "Clear, colorless solution after reconstitution"
+    - "Proper temperature-controlled shipping (cold chain)"
+    - "Certificate of analysis from pharmaceutical manufacturer"
+    - "GMP-compliant manufacturing documentation"
+    - "Intact vial seal and sterility indicators"
+    - "Within expiration date with appropriate lot tracking"
+  warningSigns:
+    - "Slight turbidity after reconstitution"
+    - "Temperature excursion during shipping"
+    - "Missing batch documentation"
+    - "Near expiration date"
+    - "Storage conditions unclear or non-compliant"
+  badSigns:
+    - "Visible particles or discoloration"
+    - "Compromised vial seal"
+    - "No certificate of analysis or GMP documentation"
+    - "Expired product"
+    - "Unknown or unverified source"
+    - "Evidence of freeze-thaw cycles"
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>
 
-### How Murepavadin Works (Plain English)
+Murepavadin is the first-in-class Outer Membrane Protein Targeting Antibiotic (OMPTA), specifically targeting the LptD protein in Pseudomonas aeruginosa. Its mechanism is supported by extensive structural and biochemical studies including cryo-EM confirmation of its binding site.
 
-Murepavadin works completely differently from traditional antibiotics. Here's the key insight:
+### How It Works (Simplified)
 
-1. **Targets a specific transport system** - Gram-negative bacteria like Pseudomonas have a double-layered cell envelope. The outer membrane is covered with a sugar-fat complex called lipopolysaccharide (LPS). Without LPS, bacteria die because their outer membrane falls apart.
+Murepavadin acts as a precision weapon against P. aeruginosa by blocking a critical transport system:
 
-2. **Blocks the LPS assembly line** - A protein called LptD acts like a doorway that inserts LPS into the outer membrane from the inside. Murepavadin plugs this doorway, preventing new LPS from being added.
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-8">
+  <div class="bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 rounded-xl p-5 border border-emerald-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400">1</div>
+      <div class="font-semibold text-white">LptD Binding</div>
+    </div>
+    <p class="text-sm text-white/70">Binds to the N-terminal plug domain of LptD, the outer membrane protein that inserts lipopolysaccharide (LPS) into the bacterial membrane.</p>
+  </div>
+  <div class="bg-gradient-to-br from-blue-500/10 to-blue-500/5 rounded-xl p-5 border border-blue-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">2</div>
+      <div class="font-semibold text-white">LPS Transport Block</div>
+    </div>
+    <p class="text-sm text-white/70">Locks LptD in a non-functional conformation, preventing new LPS from being inserted into the outer membrane.</p>
+  </div>
+  <div class="bg-gradient-to-br from-violet-500/10 to-violet-500/5 rounded-xl p-5 border border-violet-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-violet-500/20 flex items-center justify-center text-violet-400">3</div>
+      <div class="font-semibold text-white">Membrane Disruption</div>
+    </div>
+    <p class="text-sm text-white/70">Without new LPS, the bacterial outer membrane loses integrity and becomes asymmetric, leading to cell death.</p>
+  </div>
+  <div class="bg-gradient-to-br from-amber-500/10 to-amber-500/5 rounded-xl p-5 border border-amber-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-400">4</div>
+      <div class="font-semibold text-white">Species Selectivity</div>
+    </div>
+    <p class="text-sm text-white/70">Only P. aeruginosa LptD has the specific structure murepavadin targets, preserving other bacteria and having no effect on human cells.</p>
+  </div>
+</div>
 
-3. **The outer membrane breaks down** - Without new LPS being inserted, the bacterial outer membrane loses integrity. The bacterium effectively has a fatal structural defect and dies.
+### Scientific Pathways
 
-4. **Only works on P. aeruginosa** - The doorway (LptD) has a slightly different shape in different bacterial species. Murepavadin fits perfectly into the P. aeruginosa version but not others. This specificity is both an advantage (minimal effect on normal bacteria in your gut) and limitation (only treats one pathogen).
-
-5. **Hard for bacteria to become resistant** - Changing the LptD doorway to avoid murepavadin often makes it work poorly, so resistant bacteria have difficulty surviving. This is different from many antibiotics where resistance mutations have minimal fitness cost.
-
-**Why this matters:** This is the first antibiotic class to target outer membrane protein assembly. It works against Pseudomonas strains that are resistant to all other antibiotics, providing a potential lifeline for patients with untreatable infections.
-
----
-
-### The Science: LptD and Lipopolysaccharide Transport
-
-Murepavadin is the prototype of a new antibiotic class: **Outer Membrane Protein Targeting Antibiotics (OMPTAs)**.
-
-### The LptD Target: Why It Matters
-
-**Lipopolysaccharide (LPS) Biology:**
-- LPS is the major component of the Gram-negative outer membrane outer leaflet
-- Essential for membrane integrity, impermeability, and immune evasion
-- LPS synthesis occurs in the cytoplasm; must be transported to outer membrane
-- The Lpt (Lipopolysaccharide transport) pathway is essential for viability
-
-**The Lpt Pathway:**
+**Lpt Transport Pathway** *(LPS Assembly)*
 ```
-LPS synthesis (inner membrane)
-    |
-    v
-LptBFGC (ABC transporter - inner membrane)
-    |
-    v
-LptA (periplasmic bridge protein)
-    |
-    v
-LptDE (outer membrane insertase complex) <-- Murepavadin target
-    |
-    v
-LPS inserted into outer membrane outer leaflet
+LPS synthesis (inner membrane) → LptBFGC (ABC transporter)
+                                         ↓
+                                   LptA (periplasm)
+                                         ↓
+                     Murepavadin ⟶ LptDE (blocked) ⟶ X No LPS insertion
+                                         ↓
+                                 Outer membrane failure
 ```
 
-### Murepavadin's Mechanism: Blocking the Final Step
+**Bactericidal Mechanism** *(Cell Death)*
+```
+LptD inhibition → LPS accumulation in periplasm → Membrane asymmetry → Cell lysis
+```
 
-**Target:** LptD-LptE complex (specifically the LptD beta-barrel protein)
+**Key Research:** Andolina G et al. (Switzerland, 2018) confirmed LptD binding mechanism via cryo-EM structure. [PMID:29540583](https://pubmed.ncbi.nlm.nih.gov/29540583/)
 
-**Binding Site:**
-- Murepavadin binds to the N-terminal plug domain of LptD
-- This plug normally opens transiently to accept LPS from LptA
-- Murepavadin locks the plug in a non-functional conformation
+### Important Limitations
 
-**Consequence:**
-1. LPS cannot be inserted into outer membrane
-2. Newly synthesized LPS accumulates in periplasm
-3. Outer membrane becomes asymmetric (loses LPS coverage)
-4. Membrane integrity fails; bacterium dies
+- IV formulation development **discontinued** due to nephrotoxicity in Phase 3 trials
+- Only active against P. aeruginosa (not useful for polymicrobial infections)
+- Inhaled formulation still in Phase 3 trials (not yet approved)
+- Long-term safety data beyond 28 days of treatment not available
+- Resistance mechanisms exist (LptD mutations) though frequency is low
 
-### Structure-Activity Relationship
-
-Murepavadin was derived from protegrin-1 through rational design:
-
-| Feature | Protegrin-1 | Murepavadin |
-|---------|-------------|-------------|
-| **Mechanism** | Membrane disruption (lytic) | LptD inhibition (specific) |
-| **Specificity** | Broad-spectrum | P. aeruginosa selective |
-| **Toxicity** | Hemolytic, nephrotoxic | Reduced (improved therapeutic index) |
-| **Structure** | 18 AA, 2 disulfides | 14 AA, cyclic beta-hairpin |
-
-**Key modifications:**
-- Cyclization through D-proline-L-proline template
-- Removal of lytic activity through sequence optimization
-- Retention of beta-hairpin structure for LptD binding
-- Introduction of non-natural amino acids for stability
-
-### Species Selectivity: Why Only P. aeruginosa?
-
-| Organism | LptD Homology | Murepavadin Activity |
-|----------|---------------|---------------------|
-| **P. aeruginosa** | 100% | MIC 0.06-0.5 mcg/mL (active) |
-| **A. baumannii** | ~45% | MIC &gt;64 mcg/mL (inactive) |
-| **K. pneumoniae** | ~40% | MIC &gt;64 mcg/mL (inactive) |
-| **E. coli** | ~38% | MIC &gt;64 mcg/mL (inactive) |
-| **Human cells** | No homolog | No target |
-
-The P. aeruginosa LptD N-terminal plug domain has unique structural features that murepavadin exploits. This narrow spectrum is:
-- **Advantage:** Preserves microbiome; selective pressure limited to one species
-- **Disadvantage:** Not useful for polymicrobial infections; empiric use limited
-
-### Resistance Mechanisms and Barrier
-
-**Known resistance mechanisms:**
-- LptD mutations in plug domain (reduce binding)
-- LptD expression changes
-- Efflux pump upregulation (minimal effect)
-
-**Resistance frequency:** 10^-9 to 10^-10 (very low)
-
-**Why resistance is rare:**
-- LptD is essential; most mutations impair function
-- Fitness cost associated with resistance mutations
-- Single-target mechanism limits resistance pathways
-
----
-
-<h2 id="key-human-trials">Key Human Trials</h2>
-
-### Phase 1 Studies (IV Formulation)
-
-| Study | Population | N | Key Findings |
-|-------|------------|---|--------------|
-| Single ascending dose | Healthy volunteers | 56 | Linear PK; half-life ~3 hours; doses up to 5 mg/kg tolerated |
-| Multiple ascending dose | Healthy volunteers | 48 | Steady state by day 2; renal elimination; well tolerated |
-
-**Key PK Parameters (IV):**
-- Half-life: 2.8-3.5 hours
-- Volume of distribution: 0.2-0.3 L/kg (primarily extracellular)
-- Renal elimination: ~80% unchanged in urine
-- Protein binding: ~85%
-
-### Phase 2 Trials (IV Formulation)
-
-**Study: Nosocomial Pneumonia Phase 2 [NCT02096315]**
-
-| Parameter | Value |
-|-----------|-------|
-| **Design** | Randomized, double-blind, active-controlled |
-| **Population** | Nosocomial pneumonia due to P. aeruginosa |
-| **Comparator** | Standard of care (SOC): ceftazidime, meropenem, or colistin |
-| **N** | 25 (murepavadin + SOC) vs 22 (SOC alone) |
-| **Duration** | 7-14 days treatment |
-| **Primary endpoint** | Clinical cure at test-of-cure visit |
-
-**Results [PMID: 31076415]:**
-- Clinical cure: 64% (murepavadin + SOC) vs 59% (SOC alone)
-- Microbiological eradication: 50% vs 32%
-- Adverse events: Similar between groups
-- Nephrotoxicity signal: Not apparent at this sample size
-
-### Phase 3 PRISM Program (IV - Discontinued)
-
-**PRISM-MDR [NCT03409679] and PRISM-UDR [NCT03582007]**
-
-| Parameter | PRISM-MDR | PRISM-UDR |
-|-----------|-----------|-----------|
-| **Design** | Randomized, double-blind | Randomized, double-blind |
-| **Population** | P. aeruginosa nosocomial pneumonia (MDR strains) | P. aeruginosa nosocomial pneumonia (non-MDR) |
-| **Comparator** | Meropenem + colistin | Meropenem |
-| **Planned N** | 300 | 300 |
-| **Primary endpoint** | All-cause mortality day 28 |
-
-**Discontinuation (September 2019):**
-- Data Safety Monitoring Board (DSMB) recommended stopping enrollment
-- Higher rate of acute kidney injury in murepavadin arms
-- Specific data not fully published; company announcement indicated "higher than expected" renal events
-- All-cause mortality appeared similar, but renal safety signal precluded continuation
-
-**Analysis:**
-The nephrotoxicity likely related to:
-- High renal elimination of murepavadin (80% unchanged)
-- Tubular accumulation at therapeutic doses
-- Combination with other nephrotoxic agents (colistin in comparator arm adds complexity)
-
-### Phase 2 RESPIRE Program (Inhaled Formulation - Ongoing)
-
-The inhaled formulation was developed to:
-- Deliver high local concentrations to airways
-- Minimize systemic exposure and nephrotoxicity risk
-- Target chronic respiratory P. aeruginosa infections
-
-**RESPIRE-CF [NCT04324528]**
-
-| Parameter | Value |
-|-----------|-------|
-| **Design** | Randomized, double-blind, placebo-controlled |
-| **Population** | Cystic fibrosis patients with chronic P. aeruginosa |
-| **Formulation** | Nebulized murepavadin |
-| **N** | ~120 |
-| **Duration** | 28 days treatment, 28 days follow-up |
-| **Primary endpoint** | Change in FEV1 from baseline |
-
-**Preliminary Results (2024):**
-- Inhaled formulation well tolerated
-- Systemic exposure minimal (reduces nephrotoxicity risk)
-- Microbiological activity demonstrated (sputum CFU reduction)
-- Efficacy signals supportive of Phase 3 progression
-
-**RESPIRE-Bronchiectasis [NCT04451083]**
-
-| Parameter | Value |
-|-----------|-------|
-| **Design** | Randomized, double-blind, placebo-controlled |
-| **Population** | Non-CF bronchiectasis with chronic P. aeruginosa |
-| **N** | ~90 |
-| **Duration** | 28 days treatment |
-| **Primary endpoint** | Change in P. aeruginosa density in sputum |
-
-### Phase 3 RESPIRE Program (Ongoing)
-
-**Current Status (2025-2026):**
-- Phase 3 trials initiated for both CF and non-CF bronchiectasis populations
-- Primary endpoints: pulmonary exacerbation rate, FEV1 change, quality of life
-- Expected completion: 2026-2027
-- Regulatory path: FDA and EMA engagement ongoing
-
----
-
-<h2 id="preclinical-evidence">Preclinical Evidence</h2>
-
-### In Vitro Activity
-
-**MIC Data Against P. aeruginosa:**
-
-| Strain Type | MIC50 (mcg/mL) | MIC90 (mcg/mL) | Comparison to Colistin |
-|-------------|----------------|----------------|------------------------|
-| Wild-type | 0.06 | 0.12 | 4-8x more potent |
-| MDR | 0.12 | 0.25 | 4-8x more potent |
-| XDR | 0.25 | 0.5 | 4-8x more potent |
-| Colistin-resistant | 0.12 | 0.5 | Active where colistin fails |
-
-**Key In Vitro Findings [PMID: 28348105, 29540583]:**
-- Bactericidal activity (MBC = MIC for most strains)
-- Time-dependent killing (optimal with continuous exposure)
-- No cross-resistance with other antibiotic classes
-- Active against biofilm-embedded P. aeruginosa (relevant for CF)
-- Post-antibiotic effect: 1-2 hours
-
-### Animal Models
-
-| Model | Outcome | Reference |
-|-------|---------|-----------|
-| **Mouse pneumonia** | 2-log CFU reduction; survival benefit | [PMID: 27956425] |
-| **Mouse thigh infection** | Dose-dependent efficacy | [PMID: 28348105] |
-| **Mouse sepsis** | Improved survival with IV murepavadin | Polyphor data |
-| **Rat lung deposition** | Inhaled formulation achieves high ELF concentrations | [PMID: 32451187] |
-
-### PK/PD Parameters
-
-| Parameter | Value | Clinical Implication |
-|-----------|-------|---------------------|
-| **fAUC/MIC target** | 20-30 | Guides IV dosing (achieved at 2-5 mg/kg) |
-| **Protein binding** | ~85% | Free drug drives efficacy |
-| **Lung penetration** | ELF/plasma ~0.5 (IV) | Adequate for pneumonia |
-| **Lung concentration (inhaled)** | >>MIC | High local exposure |
-
----
-
-<h2 id="safety-profile">Safety Profile</h2>
-
-### IV Formulation Safety (PRISM Trials - Discontinued)
-
-**Nephrotoxicity Signal:**
-- Higher rates of acute kidney injury (AKI) vs comparators
-- Mechanism: likely tubular toxicity from renal accumulation
-- Dose-dependent; more common with prolonged treatment
-- Led to program discontinuation
-
-**Other Adverse Events (Phase 1-2):**
-
-| Event | Incidence | Severity |
-|-------|-----------|----------|
-| Infusion site reactions | 10-15% | Mild |
-| Nausea | 5-10% | Mild |
-| Headache | 5-8% | Mild |
-| Elevated creatinine | 15-25% | Variable (concern) |
-| Diarrhea | 5% | Mild |
-
-### Inhaled Formulation Safety (Phase 2)
-
-**Preliminary Safety Data:**
-- Local tolerability good (cough, bronchospasm rare)
-- Systemic exposure minimal (~1-5% of IV exposure)
-- No significant nephrotoxicity signal
-- Airway irritation in some patients
-
-| Event | Incidence | Notes |
-|-------|-----------|-------|
-| Cough | 10-15% | Usually transient |
-| Dysgeusia (taste disturbance) | 5-10% | Common with inhaled peptides |
-| Bronchospasm | &lt;5% | Pre-treatment with bronchodilator recommended |
-| Systemic AEs | Rare | Minimal systemic exposure |
-
-### Theoretical Safety Concerns
-
-**Immunogenicity:**
-- Peptide drugs can generate anti-drug antibodies (ADAs)
-- Limited data on murepavadin immunogenicity
-- Chronic inhaled use may increase risk
-
-**Microbiome Effects:**
-- Narrow spectrum minimizes gut microbiome disruption
-- Inhaled delivery further reduces systemic exposure
-- Long-term effects on lung microbiome unknown
-
-### Contraindications and Precautions
-
-**Based on IV experience:**
-- Significant renal impairment (theoretical concern)
-- Concurrent nephrotoxic drugs
-- Known hypersensitivity to peptide drugs
-
-**For inhaled formulation:**
-- Active pulmonary hemorrhage
-- Severe bronchospasm history
-
----
-
-<h2 id="pharmacokinetics">Pharmacokinetics</h2>
-
-### IV Formulation (Historical)
-
-| Parameter | Value | Notes |
-|-----------|-------|-------|
-| **Cmax (2 mg/kg)** | ~30 mcg/mL | End of infusion |
-| **Half-life** | 2.8-3.5 hours | Short; requires frequent dosing |
-| **Vd** | 0.2-0.3 L/kg | Primarily extracellular |
-| **Protein binding** | ~85% | Albumin |
-| **Clearance** | ~2 mL/min/kg | Predominantly renal |
-| **Renal excretion** | ~80% unchanged | High renal burden |
-| **Metabolism** | Minimal | Peptide cleavage |
-
-### Inhaled Formulation
-
-| Parameter | Value | Notes |
-|-----------|-------|-------|
-| **Lung deposition** | 30-50% of nebulized dose | Dependent on device and technique |
-| **ELF concentration** | >>MIC | High local exposure |
-| **Systemic absorption** | ~1-5% of IV AUC | Minimal systemic exposure |
-| **Plasma Cmax** | ~0.5-1 mcg/mL | Well below nephrotoxic threshold |
-
----
-
-<h2 id="regulatory-status">Regulatory Status</h2>
-
-### Approval Status by Region
-
-| Region | Formulation | Status | Notes |
-|--------|-------------|--------|-------|
-| **USA (FDA)** | IV | Discontinued | Phase 3 halted 2019 |
-| **USA (FDA)** | Inhaled | Phase 3 | RESPIRE program ongoing |
-| **EU (EMA)** | IV | Discontinued | Phase 3 halted 2019 |
-| **EU (EMA)** | Inhaled | Phase 3 | RESPIRE program ongoing |
-| **Switzerland (Swissmedic)** | Inhaled | Clinical trial | Polyphor headquarters |
-
-### Regulatory Designations
-
-| Designation | Agency | Year | Formulation |
-|-------------|--------|------|-------------|
-| **QIDP** (Qualified Infectious Disease Product) | FDA | 2016 | IV |
-| **Fast Track** | FDA | 2017 | IV |
-| **Orphan Drug** | EMA | 2018 | Inhaled (CF indication) |
-| **PRIME** (Priority Medicines) | EMA | 2020 | Inhaled |
-
-### Active Clinical Trials
-
-| Trial | NCT ID | Phase | Status | Indication |
-|-------|--------|-------|--------|------------|
-| RESPIRE-CF Phase 3 | NCT05569082 | 3 | Recruiting | CF with chronic P. aeruginosa |
-| RESPIRE-NCFB Phase 3 | NCT05602831 | 3 | Recruiting | Non-CF bronchiectasis with P. aeruginosa |
-| PK/PD optimization | NCT04987541 | 2 | Completed | Dose optimization for inhaled formulation |
-
----
-
-<h2 id="comparisons">Comparisons</h2>
-
-### Murepavadin vs Colistin
-
-| Factor | Murepavadin | Colistin |
-|--------|-------------|----------|
-| **Mechanism** | LptD inhibitor (OMPTA) | Membrane disruption |
-| **Spectrum** | P. aeruginosa only | Broad Gram-negative |
-| **P. aeruginosa MIC90** | 0.12-0.5 mcg/mL | 0.5-2 mcg/mL |
-| **Potency** | 4-8x more potent | Baseline |
-| **Activity vs colistin-R strains** | Retained | None |
-| **Nephrotoxicity (IV)** | Significant (discontinued) | Significant (30-60%) |
-| **Nephrotoxicity (inhaled)** | Minimal | Minimal |
-| **Neurotoxicity** | Not reported | Common |
-| **Resistance frequency** | 10^-9 to 10^-10 | 10^-7 to 10^-8 |
-
-### Murepavadin vs Tobramycin (Inhaled)
-
-| Factor | Murepavadin (inhaled) | Tobramycin (TOBI) |
-|--------|----------------------|-------------------|
-| **Mechanism** | LptD inhibition | Ribosome inhibition |
-| **Spectrum** | P. aeruginosa only | Gram-negative |
-| **Approved indications** | None (Phase 3) | CF with P. aeruginosa |
-| **Dosing** | TBD (likely BID) | BID, 28-day on/off cycles |
-| **Resistance development** | Low risk | Moderate (aminoglycoside resistance) |
-| **Ototoxicity** | Not expected | Possible |
-| **Nephrotoxicity** | Minimal | Minimal (inhaled) |
-
-### Murepavadin vs Novel P. aeruginosa Agents
-
-| Agent | Class | Stage | Mechanism |
-|-------|-------|-------|-----------|
-| **Murepavadin** | OMPTA | Phase 3 (inhaled) | LptD inhibition |
-| **Cefiderocol** | Siderophore cephalosporin | Approved | PBP inhibition |
-| **Imipenem-relebactam** | Carbapenem + BLI | Approved | PBP inhibition |
-| **Ceftolozane-tazobactam** | Cephalosporin + BLI | Approved | PBP inhibition |
-
----
-
-<h2 id="citation-table">Evidence Library</h2>
-
-### Primary Mechanism Studies
-
-| Citation | PMID | Year | Type | Key Finding | Access |
-|----------|------|------|------|-------------|--------|
-| Werneburg M et al. mBio [PMID: 22851654](https://pubmed.ncbi.nlm.nih.gov/22851654/) | 22851654 | 2012 | Mechanistic | LptD identified as murepavadin target | Open |
-| Andolina G et al. ACS Chem Biol [PMID: 29540583](https://pubmed.ncbi.nlm.nih.gov/29540583/) | 29540583 | 2018 | Mechanistic | Cryo-EM structure of LptD-murepavadin complex | Open |
-| Srinivas N et al. Science [PMID: 20929775](https://pubmed.ncbi.nlm.nih.gov/20929775/) | 20929775 | 2010 | Drug discovery | Peptidomimetic antibiotics targeting LptD | Open |
-
-### In Vitro Activity Studies
-
-| Citation | PMID | Year | Type | Key Finding | Access |
-|----------|------|------|------|-------------|--------|
-| Martin-Loeches I et al. JAC [PMID: 28348105](https://pubmed.ncbi.nlm.nih.gov/28348105/) | 28348105 | 2017 | In vitro | Global surveillance: MIC90 0.12 mcg/mL | Open |
-| Zeng M et al. AAC [PMID: 32041718](https://pubmed.ncbi.nlm.nih.gov/32041718/) | 32041718 | 2020 | In vitro | Activity against CF P. aeruginosa isolates | Open |
-| Romano KP et al. AAC [PMID: 31061155](https://pubmed.ncbi.nlm.nih.gov/31061155/) | 31061155 | 2019 | In vitro | Resistance mechanisms and frequency | Open |
-
-### Animal Studies
-
-| Citation | PMID | Year | Type | Key Finding | Access |
-|----------|------|------|------|-------------|--------|
-| Bernardini F et al. AAC [PMID: 27956425](https://pubmed.ncbi.nlm.nih.gov/27956425/) | 27956425 | 2017 | Animal | Mouse pneumonia model efficacy | Open |
-| Sader HS et al. AAC [PMID: 30012758](https://pubmed.ncbi.nlm.nih.gov/30012758/) | 30012758 | 2018 | PK/PD | PK/PD target determination | Open |
-| Pfefferle K et al. AAC [PMID: 32451187](https://pubmed.ncbi.nlm.nih.gov/32451187/) | 32451187 | 2020 | Animal | Inhaled formulation lung PK | Open |
-
-### Clinical Studies
-
-| Citation | PMID | Year | Type | Key Finding | Access |
-|----------|------|------|------|-------------|--------|
-| Ekkelenkamp MB et al. JAC [PMID: 31076415](https://pubmed.ncbi.nlm.nih.gov/31076415/) | 31076415 | 2019 | Phase 2 RCT | Nosocomial pneumonia: clinical cure 64% | Open |
-| Wach A et al. AAC [PMID: 29866868](https://pubmed.ncbi.nlm.nih.gov/29866868/) | 29866868 | 2018 | Phase 1 | PK in healthy volunteers | Open |
-| Dale GE et al. Ann NY Acad Sci [PMID: 29446149](https://pubmed.ncbi.nlm.nih.gov/29446149/) | 29446149 | 2018 | Review | Clinical development overview | Open |
-
-### Reviews and Commentary
-
-| Citation | PMID | Year | Type | Key Finding | Access |
-|----------|------|------|------|-------------|--------|
-| Robinson JA. Curr Opin Chem Biol [PMID: 31035003](https://pubmed.ncbi.nlm.nih.gov/31035003/) | 31035003 | 2019 | Review | OMPTA class overview | Open |
-| Luther A et al. Bioorg Med Chem [PMID: 29705081](https://pubmed.ncbi.nlm.nih.gov/29705081/) | 29705081 | 2018 | Review | Beta-hairpin peptidomimetics | Open |
-| Magee TV et al. Curr Opin Drug Disc Dev [PMID: 20567256](https://pubmed.ncbi.nlm.nih.gov/20567256/) | 20567256 | 2010 | Review | Protegrin-derived antimicrobials | Open |
-
-### Clinical Trial Registries
-
-| Trial | NCT ID | Phase | Status | Indication |
-|-------|--------|-------|--------|------------|
-| Phase 2 Nosocomial Pneumonia | [NCT02096315](https://clinicaltrials.gov/study/NCT02096315) | 2 | Completed | Hospital-acquired pneumonia |
-| PRISM-MDR (IV) | [NCT03409679](https://clinicaltrials.gov/study/NCT03409679) | 3 | Terminated | P. aeruginosa pneumonia (MDR) |
-| PRISM-UDR (IV) | [NCT03582007](https://clinicaltrials.gov/study/NCT03582007) | 3 | Terminated | P. aeruginosa pneumonia (non-MDR) |
-| RESPIRE-CF Phase 2 | [NCT04324528](https://clinicaltrials.gov/study/NCT04324528) | 2 | Completed | CF with chronic P. aeruginosa |
-| RESPIRE-Bronchiectasis Phase 2 | [NCT04451083](https://clinicaltrials.gov/study/NCT04451083) | 2 | Completed | Non-CF bronchiectasis |
-| RESPIRE-CF Phase 3 | [NCT05569082](https://clinicaltrials.gov/study/NCT05569082) | 3 | Recruiting | CF with chronic P. aeruginosa |
-| RESPIRE-NCFB Phase 3 | [NCT05602831](https://clinicaltrials.gov/study/NCT05602831) | 3 | Recruiting | Non-CF bronchiectasis |
-
----
-
-<h2 id="study-quality-summary">Study Quality & Bias Summary</h2>
-
-### Overall Evidence Grade
-
-| Category | Grade | Rationale |
-|----------|-------|-----------|
-| **Mechanism** | **HIGH** | Cryo-EM structure; target validated in multiple studies |
-| **In vitro activity** | **HIGH** | Extensive MIC data; global surveillance |
-| **Animal efficacy** | **HIGH** | Multiple models; PK/PD characterized |
-| **Human safety (IV)** | **MODERATE** | Phase 3 discontinued; nephrotoxicity limiting |
-| **Human safety (inhaled)** | **LOW-MODERATE** | Phase 2 data only; Phase 3 ongoing |
-| **Human efficacy** | **MODERATE** | Phase 2 positive; Phase 3 inhaled ongoing |
-
-### Key Unknowns
-
-1. **Phase 3 inhaled efficacy** - Results expected 2026-2027
-2. **Long-term safety of chronic inhaled use** - No data beyond 28 days
-3. **Immunogenicity with repeated dosing** - Limited data
-4. **Optimal dosing regimen** - Being refined in Phase 3
-5. **Resistance development in clinical use** - Low in vitro; real-world data pending
-
----
-
-<h2 id="further-reading">What to Read Next</h2>
-
-### Essential Primary Sources
-
-1. **Mechanism Discovery** - Srinivas N et al. Science 2010 [PMID: 20929775](https://pubmed.ncbi.nlm.nih.gov/20929775/) - Original LptD targeting paper
-2. **Structural Biology** - Andolina G et al. ACS Chem Biol 2018 [PMID: 29540583](https://pubmed.ncbi.nlm.nih.gov/29540583/) - Cryo-EM structure
-3. **Phase 2 Clinical** - Ekkelenkamp MB et al. JAC 2019 [PMID: 31076415](https://pubmed.ncbi.nlm.nih.gov/31076415/) - Nosocomial pneumonia trial
-4. **Surveillance Data** - Martin-Loeches I et al. JAC 2017 [PMID: 28348105](https://pubmed.ncbi.nlm.nih.gov/28348105/) - Global MIC data
-
-### Best Reviews
-
-1. **OMPTA Class** - Robinson JA. Curr Opin Chem Biol 2019 [PMID: 31035003](https://pubmed.ncbi.nlm.nih.gov/31035003/)
-2. **LptD Biology** - Sperandeo P et al. Biochim Biophys Acta 2017 [PMID: 27404576](https://pubmed.ncbi.nlm.nih.gov/27404576/)
-3. **P. aeruginosa Resistance** - Pang Z et al. Biotechnol Adv 2019 [PMID: 30797899](https://pubmed.ncbi.nlm.nih.gov/30797899/)
-
----
-
-<h2 id="editorial-notes">Editorial Notes</h2>
-
-**Date generated:** January 2026
-
-**Last updated:** January 22, 2026
-
-**Sources consulted:** PubMed, ClinicalTrials.gov, FDA, EMA, Polyphor/Spexis press releases, conference abstracts
-
-**Key developments to watch:**
-- Phase 3 RESPIRE trial results (2026-2027)
-- Regulatory submissions for inhaled formulation
-- Long-term safety data from chronic dosing studies
-
-**Limitations of this dossier:**
-- IV formulation data is historical (development discontinued)
-- Phase 3 inhaled data not yet available
-- Some company data available only as press releases/abstracts
-- Nephrotoxicity mechanism not fully characterized
-
-**Update triggers:**
-- Phase 3 RESPIRE trial results publication
-- Regulatory decisions (FDA/EMA) on inhaled formulation
-- Any safety signals from ongoing trials
-- Publication of full PRISM discontinuation analysis
-
----
-
-*This dossier is for educational purposes only and does not constitute medical advice. Murepavadin is an investigational drug not approved for any indication. Consult a healthcare provider for medical decisions. Last updated: January 22, 2026.*

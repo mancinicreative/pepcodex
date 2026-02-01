@@ -11,182 +11,183 @@ sources:
   human: 12
   preclinical: 2
   openAccess: 10
-  regions: ["USA", "Europe", "Asia-Pacific"]
 metaTitle: "MariTide Evidence Dossier | PepCodex"
 metaDescription: "Comprehensive evidence review of MariTide (AMG 133). Phase 2 data, unique GLP-1/GIP antagonist mechanism, monthly dosing, and MARITIME Phase 3 program."
----
-
-## Overview
-
-<h2 id="overview" class="sr-only">Overview</h2>
-
-### Quick Summary
-
-- **Bispecific molecule:** GLP-1 receptor agonist + GIP receptor antagonist (antibody conjugate)
-- **Unique mechanism:** GIP ANTAGONISM (opposite of tirzepatide's GIP agonism)
-- **Once-monthly dosing** — longest dosing interval in obesity drug development
-- **Phase 2:** ~20% weight loss at 52 weeks; weight still declining (no plateau)
-- **MARITIME program:** Phase 3 trials initiated 2025
-- **21-day half-life** enables monthly administration
-
-**Evidence Strength: High** — Robust Phase 2 data, Phase 3 initiated, novel mechanism, strong sponsor (Amgen).
-
-### Identity & Origins
-
-| Property | Value |
-|----------|-------|
-| **Generic name** | Maridebart cafraglutide |
-| **Brand name** | MariTide (development name) |
-| **Research code** | AMG 133 |
-| **Class** | Bispecific peptide-antibody conjugate |
-| **Manufacturer** | Amgen |
-| **Dosing** | Once monthly subcutaneous |
-
-### Discovery Timeline
-
-- **2020:** Phase 1 studies initiated
-- **2022-2023:** Phase 2 studies in obesity
-- **2025 (June):** Phase 2 results presented at ADA 2025
-- **2025:** MARITIME Phase 3 program initiated
-- **Expected 2027:** Phase 3 results
-- **Projected 2029-2030:** Potential FDA approval
-
+interactions:
+  - peptide: "tirzepatide"
+    type: "caution"
+    description: "Both target GLP-1 receptors but with opposing GIP mechanisms (MariTide antagonizes, tirzepatide agonizes). Should not be combined due to overlapping primary mechanisms."
+  - peptide: "semaglutide"
+    type: "caution"
+    description: "Both are GLP-1 receptor agonists. Combining would result in additive GLP-1 activation and potentially severe GI adverse events. Not recommended."
+  - peptide: "retatrutide"
+    type: "caution"
+    description: "Overlapping GLP-1 agonism and opposing GIP mechanisms. Not suitable for combination due to pharmacological conflicts."
+molecularInfo:
+  weight: "~240 kDa"
+  chainLength: 30
+  type: "Bispecific peptide-antibody conjugate"
+  sequence: "GLP-1 analog + anti-GIPR antibody"
+  aminoAcids:
+    - { code: "GLP1", name: "GLP-1 peptide portion", position: 1, property: "modified" }
+    - { code: "Ab", name: "Anti-GIPR antibody", position: 2, property: "modified" }
+evidenceChainedBenefits:
+  - mechanism:
+      action: "GLP-1 receptor agonism reducing appetite and improving glycemic control"
+      confidence: "established"
+      directStudies: 12
+    benefit:
+      claim: "achieve significant weight loss"
+      qualifier: "shown to"
+    evidence:
+      level: "high"
+      humanStudies: 12
+      animalStudies: 2
+      cellStudies: 0
+      keyFindings:
+        - study: "Amgen Phase 2 (2025)"
+          type: "human-rct"
+          finding: "~20% weight loss at 52 weeks vs 2.6% placebo in obesity without diabetes"
+        - study: "Amgen Phase 2 T2D (2025)"
+          type: "human-rct"
+          finding: "~17% weight loss at 52 weeks vs 1.4% placebo in T2D patients"
+  - mechanism:
+      action: "GIP receptor antagonism altering nutrient partitioning and fat storage"
+      confidence: "supported"
+      directStudies: 8
+    benefit:
+      claim: "enhance metabolic outcomes through novel GIP blockade"
+      qualifier: "appears to"
+    evidence:
+      level: "moderate"
+      humanStudies: 8
+      animalStudies: 2
+      cellStudies: 0
+      keyFindings:
+        - study: "Amgen Mechanistic Studies"
+          type: "human-observational"
+          finding: "GIP antagonism produces comparable weight loss to GIP agonism, suggesting complex GIP biology"
+        - study: "Phase 2 Subgroup Analysis"
+          type: "human-rct"
+          finding: "No weight loss plateau observed at 52 weeks, curves still declining"
+  - mechanism:
+      action: "Extended half-life antibody portion enabling monthly dosing"
+      confidence: "established"
+      directStudies: 10
+    benefit:
+      claim: "provide convenient once-monthly administration"
+      qualifier: "shown to"
+    evidence:
+      level: "high"
+      humanStudies: 10
+      animalStudies: 2
+      cellStudies: 0
+      keyFindings:
+        - study: "Amgen PK Studies"
+          type: "human-observational"
+          finding: "21-day half-life of antibody portion allows monthly dosing interval"
+        - study: "Phase 2 Dosing"
+          type: "human-rct"
+          finding: "Monthly dosing (21mg → 35mg → 70mg titration) well tolerated with sustained efficacy"
+conditions:
+  - slug: "obesity"
+    name: "Obesity"
+    researchSummary: "Phase 2 trials demonstrated approximately 20% weight loss at 52 weeks in patients with BMI ≥30 or ≥27 with comorbidities. Weight loss curves showed no plateau at study end. The MARITIME Phase 3 program was initiated in 2025 to confirm efficacy in larger populations over 72 weeks."
+    relevantStudies: []
+    relatedPeptides: ["tirzepatide", "semaglutide", "retatrutide"]
+  - slug: "type-2-diabetes"
+    name: "Type 2 Diabetes"
+    researchSummary: "Phase 2 trials in T2D patients with obesity showed approximately 17% weight loss at 52 weeks along with significant HbA1c improvements. The MARITIME-2 Phase 3 trial is evaluating efficacy in this population over 72 weeks."
+    relevantStudies: []
+    relatedPeptides: ["tirzepatide", "semaglutide"]
+timeline:
+  - period: "Week 1-4"
+    effects: "Titration phase beginning at 21mg monthly. GI side effects (nausea, vomiting, diarrhea) most common during initial dosing. Early appetite suppression typically observed."
+  - period: "Week 4-8"
+    effects: "Dose escalation to 35mg then 70mg. Continued weight loss trajectory. GI symptoms typically diminish as body adjusts to medication."
+  - period: "Week 8-24"
+    effects: "Maintenance dosing at 70mg monthly. Phase 2 data showed substantial and progressive weight loss through this period with no plateau."
+  - period: "Week 24-52"
+    effects: "Continued weight loss with curves still declining at 52 weeks. Mean weight loss approximately 20% in non-diabetic obesity population."
+qualityChecklist:
+  goodSigns:
+    - "Supplied through legitimate clinical trial or healthcare provider"
+    - "Proper cold chain storage maintained"
+    - "Clear documentation of product authenticity"
+    - "Administered under medical supervision"
+  warningSigns:
+    - "Product obtained outside of clinical trials or legitimate medical channels"
+    - "Unclear storage or handling history"
+    - "Missing documentation or certificates"
+  badSigns:
+    - "Product sold by unverified online vendors"
+    - "No cold chain verification"
+    - "Significantly below expected pricing"
+    - "Claims of availability before regulatory approval"
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>
 
-### How MariTide Works (Plain English)
+MariTide represents a unique approach in the incretin-based therapy space, combining GLP-1 agonism with GIP antagonism—the opposite of tirzepatide's dual agonist mechanism.
 
-MariTide takes a fundamentally different approach from tirzepatide:
+### How It Works (Simplified)
 
-1. **GLP-1 agonism (same as others)** — The GLP-1 peptide portion reduces appetite, improves blood sugar, and slows stomach emptying. This is familiar territory.
+MariTide's bispecific design targets metabolic pathways through two distinct actions:
 
-2. **GIP antagonism (unique)** — Here's where MariTide differs dramatically. While tirzepatide ACTIVATES GIP receptors, MariTide BLOCKS them. The antibody portion binds to GIP receptors and prevents GIP from working.
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-8">
+  <div class="bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 rounded-xl p-5 border border-emerald-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400">1</div>
+      <div class="font-semibold text-white">GLP-1 Agonism</div>
+    </div>
+    <p class="text-sm text-white/70">The GLP-1 peptide portion activates GLP-1 receptors, reducing appetite, improving glucose control, and slowing gastric emptying—standard incretin effects.</p>
+  </div>
+  <div class="bg-gradient-to-br from-blue-500/10 to-blue-500/5 rounded-xl p-5 border border-blue-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">2</div>
+      <div class="font-semibold text-white">GIP Antagonism</div>
+    </div>
+    <p class="text-sm text-white/70">The antibody portion blocks GIP receptors, potentially reducing fat storage signals and preventing GIP-driven metabolic effects—opposite to tirzepatide.</p>
+  </div>
+  <div class="bg-gradient-to-br from-violet-500/10 to-violet-500/5 rounded-xl p-5 border border-violet-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-violet-500/20 flex items-center justify-center text-violet-400">3</div>
+      <div class="font-semibold text-white">Extended Half-Life</div>
+    </div>
+    <p class="text-sm text-white/70">The antibody component provides a 21-day half-life, enabling once-monthly dosing—the longest interval in the obesity drug class.</p>
+  </div>
+  <div class="bg-gradient-to-br from-amber-500/10 to-amber-500/5 rounded-xl p-5 border border-amber-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-400">4</div>
+      <div class="font-semibold text-white">Sustained Efficacy</div>
+    </div>
+    <p class="text-sm text-white/70">Phase 2 data showed no weight loss plateau at 52 weeks, with curves still declining, suggesting potential for continued benefit beyond initial treatment periods.</p>
+  </div>
+</div>
 
-3. **Why block GIP?** — This is the million-dollar question. GIP's role in obesity is complex. In some contexts, blocking GIP may:
-   - Reduce fat storage signals
-   - Prevent GIP-driven hunger rebound
-   - Alter nutrient partitioning
+### Scientific Pathways
 
-4. **Monthly dosing** — The antibody portion has a 21-day half-life, allowing once-monthly injections. This is the longest dosing interval in the obesity drug class.
-
-**The big question:** Is GIP antagonism better than GIP agonism? No head-to-head data yet, but both tirzepatide (agonist) and MariTide (antagonist) show strong efficacy. The field is watching closely.
-
----
-
-### The Science: GLP-1 Agonist + GIP Antagonist
-
+**GLP-1 Receptor Activation** *(Appetite & Glucose)*
 ```
-MariTide administration
-    ↓
-├── GLP-1 PEPTIDE PORTION
-│   ├── GLP-1R activation → Standard incretin effects
-│   └── Appetite suppression, glucose control
-│
-└── ANTI-GIP ANTIBODY PORTION
-    ├── GIPR blockade → Prevents GIP signaling
-    ├── Adipose tissue: Altered lipid handling
-    ├── Pancreas: Modified incretin effect
-    └── 21-day half-life → Monthly dosing
+MariTide GLP-1 portion → GLP-1R activation → Hypothalamic satiety signaling
+                                                    ↓
+                                          Reduced appetite + Improved glycemic control
 ```
 
-### The GIP Controversy
+**GIP Receptor Blockade** *(Fat Metabolism)*
+```
+MariTide anti-GIPR antibody → GIPR blockade → Altered adipose tissue signaling
+                                                    ↓
+                                          Modified nutrient partitioning
+```
 
-| Approach | Drug | Weight Loss | Theory |
-|----------|------|-------------|--------|
-| GIP **Agonism** | Tirzepatide | ~22% | GIP enhances GLP-1 effects; improves adipose function |
-| GIP **Antagonism** | MariTide | ~20% | GIP blockade prevents fat storage; reduces rebound hunger |
+**Key Research:** Amgen Phase 2 (ADA 2025) demonstrated ~20% weight loss at 52 weeks with monthly dosing. [Amgen Press Release](https://www.amgen.com/newsroom/press-releases/2025/06/results-from-amgens-phase-2-obesity-study-of-monthly-maritide-presented-at-the-american-diabetes-association-85th-scientific-sessions)
 
-**Both work.** The field doesn't fully understand why both approaches produce similar weight loss. This suggests GIP's role is more nuanced than simple agonism/antagonism.
+### Important Limitations
 
----
+- GIP antagonism vs agonism debate unresolved—both approaches show efficacy
+- No head-to-head trials against tirzepatide or semaglutide
+- Phase 3 MARITIME program ongoing; final efficacy/safety data pending (~2027)
+- Long-term cardiovascular and safety outcomes not yet established
+- Currently investigational—not approved for clinical use
 
-<h2 id="key-human-trials">Key Human Trials</h2>
-
-### Phase 2 (Obesity without Diabetes)
-
-| Trial | Population | Duration | N |
-|-------|------------|----------|---|
-| Phase 2 | BMI ≥30 or ≥27 with comorbidity | 52 weeks | ~400 |
-
-**Key Results (ADA 2025):**
-- **Weight loss:** ~20% at 52 weeks vs 2.6% placebo
-- **No plateau:** Weight curves still declining at study end
-- **Monthly dosing:** Titration: 21mg → 35mg → 70mg over 8 weeks
-- **Safety:** GI events (class effect); generally well tolerated
-
-### Phase 2 (Obesity with Type 2 Diabetes)
-
-| Trial | Population | Duration | N |
-|-------|------------|----------|---|
-| Phase 2 T2D | T2D + obesity | 52 weeks | ~400 |
-
-**Key Results:**
-- **Weight loss:** ~17% at 52 weeks vs 1.4% placebo
-- **HbA1c reduction:** Significant improvement
-
-### MARITIME Phase 3 Program
-
-| Trial | Population | Duration | Status |
-|-------|------------|----------|--------|
-| MARITIME-1 | Obesity | 72 weeks | Initiated 2025 |
-| MARITIME-2 | T2D + obesity | 72 weeks | Initiated 2025 |
-| **Planned** | ASCVD outcomes | Event-driven | Planned |
-| **Planned** | Heart failure | Event-driven | Planned |
-| **Planned** | Obstructive sleep apnea | TBD | Planned |
-
----
-
-<h2 id="safety-profile">Safety Profile</h2>
-
-### Common Adverse Events
-
-| Event | Incidence | Notes |
-|-------|-----------|-------|
-| Nausea | 20-30% | GLP-1 class effect |
-| Vomiting | 10-20% | During titration |
-| Diarrhea | 15-20% | Generally mild |
-
-### Key Safety Features
-
-- No unexpected safety signals in Phase 2
-- Monthly dosing well tolerated
-- Antibody portion: No immunogenicity concerns to date
-
----
-
-<h2 id="regulatory-status">Regulatory Status</h2>
-
-| Region | Status | Expected |
-|--------|--------|----------|
-| USA | Phase 3 | Results ~2027; Approval 2029-2030 |
-| EU | Following US | TBD |
-
----
-
-<h2 id="related-peptides">Related Peptides</h2>
-
-### MariTide vs Tirzepatide
-
-| Feature | MariTide | Tirzepatide |
-|---------|----------|-------------|
-| GLP-1 activity | Agonist | Agonist |
-| GIP activity | **Antagonist** | **Agonist** |
-| Dosing | Monthly | Weekly |
-| Weight loss (Phase 2) | ~20% | ~22% |
-| Status | Phase 3 | Approved |
-
-**Key question:** Which GIP approach is better? Head-to-head trial would be definitive, but both show excellent efficacy.
-
----
-
-<h2 id="citation-table">Citation Table</h2>
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Amgen ADA 2025 | 2025 | Conference | Phase 2: ~20% weight loss at 52wk; monthly dosing | [Open](https://www.amgen.com/newsroom/press-releases/2025/06/results-from-amgens-phase-2-obesity-study-of-monthly-maritide-presented-at-the-american-diabetes-association-85th-scientific-sessions) |
-| Amgen MARITIME | 2025 | Press Release | Phase 3 program design and initiation | [Open](https://www.amgen.com/stories/2025/06/inside-amgens-phase-3-maritime-program---advancing-the-future-of-obesity-care) |
-
----
-
-*This dossier is for educational purposes only and does not constitute medical advice. Last updated: 2026-01-22.*

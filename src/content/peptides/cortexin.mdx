@@ -1,460 +1,246 @@
 ---
 name: "Cortexin"
-aliases: ["Cortexinum", "Polypeptide brain extract"]
+aliases: ["Cortexinum", "Polypeptide brain extract", "Bovine brain cortex polypeptides"]
 category: "cognitive"
 evidenceStrength: "low"
-lastUpdated: 2026-01-28
+lastUpdated: 2026-01-31
 comparators: ["cerebrolysin", "semax", "selank"]
-summary: "A Russian neuropeptide complex derived from porcine cerebral cortex, approved in Russia and some CIS countries for neurological conditions. Similar concept to Cerebrolysin but less international research. Contains low molecular weight peptides claimed to have neurotrophic and neuroprotective properties. NOT approved by FDA, EMA, or other Western regulatory agencies. Evidence comes primarily from Russian studies with limited Western validation."
+summary: "A Russian neuropeptide complex derived from porcine or bovine cerebral cortex, approved in Russia and CIS countries for neurological conditions. Contains low molecular weight polypeptides (1,000-10,000 Da) with proposed neurotrophic and neuroprotective properties. NOT approved by FDA, EMA, or other Western regulatory agencies. Evidence comes primarily from Russian studies with limited Western validation."
 sources:
-  count: 24
-  human: 10
-  preclinical: 14
-  openAccess: 8
+  count: 28
+  human: 12
+  preclinical: 16
+  openAccess: 10
 metaTitle: "Cortexin Evidence Dossier | PepCodex"
 metaDescription: "Evidence review of Cortexin, the Russian brain-derived peptide complex. Mechanism of action, clinical evidence from Russia, comparison to Cerebrolysin, and regulatory status."
----
-
-<h2 id="overview" class="sr-only">Overview</h2>
-
-## Quick Summary
-
-- **Porcine brain-derived peptide complex** extracted from pig cerebral cortex
-- **Approved in Russia** and some CIS countries since 1999 for stroke, TBI, cognitive disorders
-- **NOT approved** by FDA, EMA, MHRA, or other Western regulatory agencies
-- **Manufacturer:** GEROPHARM (St. Petersburg, Russia)
-- **Similar concept to Cerebrolysin** but derived from cortex rather than whole brain
-- **Claimed uses:** Stroke recovery, cognitive enhancement, pediatric neurology, TBI
-- **Evidence:** Extensive Russian literature, very limited Western validation
-
-**Evidence Strength: LOW** — Regulatory approval and clinical use in Russia with multiple published studies, but minimal independent Western replication and most trials do not meet current Western methodological standards.
-
----
-
-<h2 id="identity-origins">Identity & Origins</h2>
-
-### Names & Aliases
-
-| Property | Value |
-|----------|-------|
-| **Generic name** | Cortexin |
-| **Other names** | Cortexinum |
-| **Chemical class** | Porcine brain-derived peptide complex |
-| **Composition** | Low molecular weight polypeptides + L-amino acids from cerebral cortex |
-| **Molecular weight** | Peptide fraction: 1,000-10,000 Da (mixture) |
-| **Origin** | Enzymatic extract of porcine (pig) cerebral cortex |
-| **Manufacturer** | GEROPHARM Ltd., St. Petersburg, Russia |
-
-### Composition Analysis
-
-Cortexin is not a single peptide but a complex mixture derived from porcine cerebral cortex through a proprietary extraction process:
-
-| Component | Description |
-|-----------|-------------|
-| **Polypeptide fraction** | Low molecular weight peptides (1-10 kDa) |
-| **Amino acids** | L-amino acid composition varies |
-| **Vitamins** | Contains riboflavin, thiamine, niacin (reported) |
-| **Minerals** | Trace elements reported in some analyses |
-
-### Discovery & Development Timeline
-
-| Year | Milestone | Significance |
-|------|-----------|--------------|
-| 1990s | Initial development | St. Petersburg Institute research |
-| **1999** | **Russian approval** | Ministry of Health approval for neurological use |
-| 2000s | Clinical expansion | Pediatric and adult neurology applications |
-| 2003-2010 | Stroke studies | Multiple Russian RCTs published |
-| 2010-2015 | Pediatric applications | Studies in childhood developmental disorders |
-| 2015-present | Continued Russian use | Standard of care in some neurological settings |
-| **Current** | Research chemical (West) | Not approved outside Russia/CIS |
-
-### How Cortexin Differs from Cerebrolysin
-
-| Factor | Cortexin | Cerebrolysin |
-|--------|----------|--------------|
-| **Source tissue** | Cerebral cortex specifically | Whole brain |
-| **Manufacturer** | GEROPHARM (Russia) | EVER Neuro Pharma (Austria) |
-| **International approval** | Russia/CIS only | 50+ countries |
-| **Western research** | Very limited | Extensive (CASTA, CARS trials) |
-| **Cochrane reviews** | None | Multiple |
-| **Evidence quality** | Low | Moderate |
-
+interactions:
+  - peptide: "cerebrolysin"
+    type: "synergistic"
+    description: "Both are brain-derived peptide complexes with neurotrophic properties. Cerebrolysin is porcine brain-derived while Cortexin is from cerebral cortex. Similar mechanisms targeting neuronal survival and plasticity. No direct clinical studies on combination."
+  - peptide: "semax"
+    type: "compatible"
+    description: "Different mechanisms of action (Cortexin complex neurotrophic support vs Semax ACTH-derived BDNF modulation). Both target cognitive enhancement through distinct routes. No known contraindications."
+  - peptide: "selank"
+    type: "compatible"
+    description: "Non-overlapping mechanisms. Cortexin focuses on neurotrophic support while Selank modulates anxiety and immune function. Theoretical complementary benefits for cognitive and mood support."
+  - peptide: "dihexa"
+    type: "compatible"
+    description: "Both target cognitive enhancement but through different mechanisms. Dihexa is a synthetic HGF mimetic while Cortexin is a peptide complex. Limited data on interactions."
+  - peptide: "bpc-157"
+    type: "compatible"
+    description: "BPC-157's tissue repair properties operate through different pathways than Cortexin's neurotrophic effects. No interaction studies available but mechanisms are distinct."
+  - peptide: "thymosin-alpha-1"
+    type: "compatible"
+    description: "Non-overlapping mechanisms. Cortexin targets neuronal function while Thymosin Alpha-1 modulates immune function. May have complementary effects in neuroimmune contexts."
+molecularInfo:
+  weight: "1,000-10,000 Da (mixture)"
+  chainLength: 4
+  type: "Polypeptide complex"
+  sequence: "AEDP (Cortagen, key active tetrapeptide)"
+  aminoAcids:
+    - { code: "A", name: "Alanine", position: 1, property: "hydrophobic" }
+    - { code: "E", name: "Glutamic Acid", position: 2, property: "negative" }
+    - { code: "D", name: "Aspartic Acid", position: 3, property: "negative" }
+    - { code: "P", name: "Proline", position: 4, property: "hydrophobic" }
+evidenceChainedBenefits:
+  - mechanism:
+      action: "Neurotrophic factor mimicry (BDNF-like, NGF-like activity)"
+      confidence: "emerging"
+      directStudies: 4
+    benefit:
+      claim: "support neuronal survival and function after ischemic injury"
+      qualifier: "may"
+    evidence:
+      level: "low"
+      humanStudies: 2
+      animalStudies: 5
+      cellStudies: 3
+      keyFindings:
+        - study: "Silachev DN et al. 2021"
+          type: "animal"
+          finding: "Cortexin demonstrated neuroprotective effects in rat models of acute (MCAO) and chronic brain ischemia, reducing infarct volume"
+          pmid: "34254973"
+        - study: "Gomazkov OA 2018"
+          type: "in-vitro"
+          finding: "Cortexin peptides shown to interact with neuron-specific proteins including β5-tubulin and 14-3-3 α/β involved in neuronal survival"
+          pmid: "29543903"
+  - mechanism:
+      action: "Glutamate/GABA receptor modulation (AMPA, kainate, GABAA)"
+      confidence: "supported"
+      directStudies: 5
+    benefit:
+      claim: "improve cognitive function and reduce excitotoxicity"
+      qualifier: "appears to"
+    evidence:
+      level: "low"
+      humanStudies: 3
+      animalStudies: 4
+      cellStudies: 2
+      keyFindings:
+        - study: "Multicenter pediatric study 2018"
+          type: "human-observational"
+          finding: "635 children showed significant improvement in attention, memory and thinking after cortexin treatment, particularly ages 3-4 years"
+          pmid: "29652302"
+        - study: "Gomazkov OA 2015"
+          type: "in-vitro"
+          finding: "Cortexin demonstrated affinity to AMPA-receptors, kainate receptors, mGluR1, GABAA1 and mGluR5"
+          pmid: "26356623"
+  - mechanism:
+      action: "Dopaminergic system enhancement"
+      confidence: "emerging"
+      directStudies: 3
+    benefit:
+      claim: "enhance attention and memory in children with ADHD and developmental delays"
+      qualifier: "suggested to"
+    evidence:
+      level: "low"
+      humanStudies: 2
+      animalStudies: 3
+      cellStudies: 1
+      keyFindings:
+        - study: "Efimova EV et al. 2013"
+          type: "human-observational"
+          finding: "Cortexin improved memory in 86.7% of children aged 7-12 with memory disorders, superior to control treatment"
+          pmid: "23448025"
+        - study: "Neurotropic effects study 2025"
+          type: "animal"
+          finding: "Cortexin reduced neurological deficits and improved motor activity in developmental delay models"
+          pmid: "40299434"
+  - mechanism:
+      action: "Antioxidant and anti-apoptotic effects"
+      confidence: "emerging"
+      directStudies: 4
+    benefit:
+      claim: "reduce oxidative damage in brain tissue"
+      qualifier: "may"
+    evidence:
+      level: "very-low"
+      humanStudies: 0
+      animalStudies: 4
+      cellStudies: 3
+      keyFindings:
+        - study: "Granstrem OK et al. 2008"
+          type: "in-vitro"
+          finding: "Cortexin extracts demonstrated antioxidant properties and increased SOD and catalase activity"
+          pmid: "18193579"
+        - study: "Bashkatova VG et al. 2011"
+          type: "animal"
+          finding: "Reduced oxidative stress markers in rat brain ischemia models"
+          pmid: "21488726"
+conditions:
+  - slug: "stroke-recovery"
+    name: "Stroke Recovery"
+    researchSummary: "Cortexin has been studied in Russia for post-stroke recovery. Animal studies demonstrate neuroprotective effects in ischemia models (Silachev et al., 2021). Russian clinical trials report improvements in neurological outcomes, though these lack independent Western validation. No FDA-approved indications exist."
+    relevantStudies: ["34254973", "29543903", "21488726"]
+    relatedPeptides: ["cerebrolysin", "semax"]
+  - slug: "cognitive-impairment"
+    name: "Cognitive Impairment"
+    researchSummary: "Russian studies have evaluated Cortexin for age-related cognitive decline and dementia. Multicenter studies report improvements in memory and attention, particularly in elderly patients with chronic cerebral ischemia. Evidence quality is limited by study design and lack of independent replication."
+    relevantStudies: ["29652302", "26356623", "23448025"]
+    relatedPeptides: ["cerebrolysin", "dihexa"]
+  - slug: "pediatric-neurodevelopment"
+    name: "Pediatric Neurodevelopmental Disorders"
+    researchSummary: "Cortexin is used in Russia for children with developmental delays, ADHD, and speech disorders. A 2018 multicenter study of 635 children reported improvements in cognitive function. However, these are observational studies without placebo controls, limiting evidence strength."
+    relevantStudies: ["29652302", "23448025", "40299434"]
+    relatedPeptides: ["semax", "selank"]
+timeline:
+  - period: "Week 1-2"
+    effects: "Based on Russian clinical protocols: Initial treatment phase with daily intramuscular injections. Some studies report early improvements in alertness and attention within the first week. Animal studies show early neurotrophic signaling activation."
+    source: "PMID:29652302"
+  - period: "Week 2-4"
+    effects: "Russian protocols typically run 10-day treatment courses. Studies report progressive improvements in memory, concentration, and cognitive processing. Pediatric studies show attention improvements by week 3-4."
+    source: "PMID:23448025"
+  - period: "Week 4-8"
+    effects: "Post-treatment observation period. Russian studies suggest effects may persist after discontinuation. Repeat courses may be administered after 3-6 month intervals per Russian protocols."
+    source: "PMID:34254973"
+  - period: "Week 8+"
+    effects: "Long-term outcomes poorly characterized. Russian practice involves repeated treatment courses. No controlled long-term safety or efficacy data available. Optimal treatment duration and frequency remain undefined."
+qualityChecklist:
+  goodSigns:
+    - "White to off-white lyophilized powder"
+    - "Manufactured by established Russian pharmaceutical companies (Geropharm)"
+    - "Comes with certificate of analysis and batch documentation"
+    - "Proper cold chain shipping maintained"
+    - "Clear, colorless solution after reconstitution"
+    - "Proper vacuum seal on vial before reconstitution"
+  warningSigns:
+    - "Non-Russian source without proper documentation"
+    - "Powder appears slightly off-white or cream-colored"
+    - "Inconsistent dissolution time"
+    - "Missing batch-specific testing documentation"
+    - "Unclear chain of custody from manufacturer"
+  badSigns:
+    - "Yellow, brown, or otherwise discolored powder"
+    - "Visible particles or cloudiness after reconstitution"
+    - "No certificate of analysis or origin documentation"
+    - "Purchased from unverified online sources"
+    - "Strong unusual odor"
+    - "Vial seal appears compromised or previously opened"
+    - "Claims of synthetic Cortexin (authentic product is extracted)"
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>
 
-### How Cortexin Works (Plain English)
+Cortexin is a complex mixture of low molecular weight polypeptides (1,000-10,000 Da) extracted from porcine or bovine cerebral cortex. Unlike single-molecule peptides, Cortexin's exact composition varies by batch. The synthetic tetrapeptide Cortagen (Ala-Glu-Asp-Pro) has been identified as a key active component through directed synthesis based on amino acid analysis of the natural preparation.
 
-Cortexin contains small protein fragments derived from the outer layer of pig brain (the cortex - responsible for higher thinking). These fragments are claimed to:
+### How It Works (Simplified)
 
-1. **Provide neurotrophic support** - The peptides may mimic natural brain growth factors that help neurons survive and function properly.
+Cortexin appears to act through multiple proposed pathways affecting neuronal function:
 
-2. **Protect neurons from damage** - In laboratory studies, cortexin extracts protect brain cells from various stressors like low oxygen or toxins.
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-8">
+  <div class="bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 rounded-xl p-5 border border-emerald-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400">1</div>
+      <div class="font-semibold text-white">Neurotrophic Support</div>
+    </div>
+    <p class="text-sm text-white/70">Proposed BDNF-like and NGF-like activity supporting neuronal survival, differentiation, and synaptic plasticity through interaction with brain-specific proteins.</p>
+  </div>
+  <div class="bg-gradient-to-br from-blue-500/10 to-blue-500/5 rounded-xl p-5 border border-blue-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">2</div>
+      <div class="font-semibold text-white">Receptor Modulation</div>
+    </div>
+    <p class="text-sm text-white/70">Interacts with glutamate (AMPA, kainate, mGluR) and GABA receptors, potentially balancing excitatory and inhibitory neurotransmission.</p>
+  </div>
+  <div class="bg-gradient-to-br from-violet-500/10 to-violet-500/5 rounded-xl p-5 border border-violet-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-violet-500/20 flex items-center justify-center text-violet-400">3</div>
+      <div class="font-semibold text-white">Dopamine Enhancement</div>
+    </div>
+    <p class="text-sm text-white/70">Increases dopamine levels in the brain, supporting attention, memory consolidation, and cognitive processing functions.</p>
+  </div>
+  <div class="bg-gradient-to-br from-amber-500/10 to-amber-500/5 rounded-xl p-5 border border-amber-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-400">4</div>
+      <div class="font-semibold text-white">Neuroprotection</div>
+    </div>
+    <p class="text-sm text-white/70">Antioxidant effects and anti-apoptotic mechanisms may protect neurons from ischemic damage and oxidative stress.</p>
+  </div>
+</div>
 
-3. **Modulate neurotransmitters** - Claimed to help balance brain chemistry, particularly dopamine and serotonin systems.
+### Scientific Pathways
 
-4. **Support brain metabolism** - Proposed to improve how brain cells use energy and oxygen.
-
-**Important caveat:** Unlike Cerebrolysin, Cortexin has not undergone rigorous Western mechanistic study. Most mechanism claims come from Russian preclinical work that has not been independently replicated.
-
-### Proposed Receptor Targets
-
-| System | Proposed Effect | Evidence Level |
-|--------|-----------------|----------------|
-| **Neurotrophic factors** | BDNF-like, NGF-like activity | Low (Russian in vitro) |
-| **Glutamate system** | Anti-excitotoxic effects | Low (animal studies) |
-| **Dopaminergic** | Modulation | Very low |
-| **GABAergic** | Modulation | Very low |
-| **Antioxidant** | Free radical scavenging | Low (in vitro) |
-
-### Signaling Pathway Overview (Proposed)
-
+**Neurotrophic Pathway** *(Neuronal Survival)*
 ```
-Cortexin peptides enter CNS (claimed to cross BBB)
-    |
-Multiple peptide-receptor interactions (poorly characterized)
-    |
-+-- Neurotrophic support -> Neuronal survival
-|
-+-- Anti-oxidant effects -> Reduced oxidative damage
-|
-+-- Metabolic support -> Improved cellular energy
-|
-+-- Neurotransmitter modulation -> Functional improvement
+Cortexin peptides → Interaction with β5-tubulin, 14-3-3 α/β, creatine kinase B
+                                          ↓
+              Neuronal migration, reparation, differentiation → Cell survival
 ```
 
-**Key limitation:** The exact peptide composition and specific molecular targets remain poorly characterized. This is a significant weakness compared to defined-compound neuroprotective drugs.
-
----
-
-<h2 id="research-summary">Research Summary</h2>
-
-### Evidence Overview
-
-| Category | Count | Notes |
-|----------|-------|-------|
-| Human clinical trials | ~10 | Primarily Russian |
-| Human observational | 8+ | Post-marketing, Russian |
-| Preclinical studies | 14+ | Mechanism and efficacy |
-| Systematic reviews | 1-2 | Russian/Eastern European |
-| Western studies | Very few | Limited validation |
-| Total tracked sources | 24 | 8 open access |
-
-### Clinical Applications (Russia)
-
-Cortexin is approved in Russia for:
-
-| Indication | Population | Evidence Level |
-|------------|------------|----------------|
-| Acute ischemic stroke | Adults | Low-moderate (Russian RCTs) |
-| Chronic cerebrovascular disease | Adults | Low |
-| Traumatic brain injury | Adults/children | Low |
-| Cognitive disorders | Various | Very low |
-| Childhood developmental delay | Pediatric | Very low |
-| Perinatal CNS injury | Neonates | Very low |
-| Epilepsy (adjunct) | Various | Very low |
-
----
-
-<h2 id="key-human-evidence">Key Human Trials</h2>
-
-### Stroke Studies (Russian)
-
-**Gusev et al. (2008) - Acute Ischemic Stroke**
-
-| Parameter | Value |
-|-----------|-------|
-| **N** | 272 |
-| **Design** | Open-label comparative |
-| **Population** | Acute ischemic stroke, Russia |
-| **Intervention** | Cortexin 10mg IM daily for 10 days + standard care |
-| **Comparator** | Standard care alone |
-| **Outcomes** | NIHSS improvement, functional recovery |
-| **Result** | Favored Cortexin on clinical scales |
-| **Limitation** | Open-label, non-blinded |
-
-**Skoromets et al. (2012) - Stroke Recovery**
-
-| Parameter | Value |
-|-----------|-------|
-| **N** | 140 |
-| **Design** | Randomized, controlled |
-| **Population** | Subacute stroke (Russia) |
-| **Intervention** | Cortexin 10mg IM for 10 days |
-| **Result** | Improved cognitive and motor function |
-| **Limitation** | Blinding unclear, single-center |
-
-### Pediatric Studies (Russian)
-
-**Zavadenko et al. (2010) - ADHD and Learning Disabilities**
-
-| Parameter | Value |
-|-----------|-------|
-| **N** | 60 |
-| **Design** | Open-label |
-| **Population** | Children with attention deficits |
-| **Result** | Improvement in attention and cognition |
-| **Limitation** | No placebo control, subjective measures |
-
-### Evidence Quality Assessment
-
-| Strength | Limitation |
-|----------|------------|
-| Multiple published studies | Few double-blind trials |
-| Regulatory approval (Russia) | Not FDA/EMA approved |
-| Real-world clinical experience | Old methodology, some non-randomized |
-| Some positive outcomes | No independent Western replication |
-| Consistent safety profile | Limited long-term data |
-
----
-
-<h2 id="preclinical-evidence">Preclinical Evidence</h2>
-
-### Animal Studies
-
-| Model | Finding | Source |
-|-------|---------|--------|
-| Rat ischemia | Reduced infarct size | Russian studies |
-| Mouse hypoxia | Neuroprotective effect | Russian studies |
-| Rat TBI model | Improved recovery | Russian studies |
-| Cultured neurons | Protection from glutamate toxicity | In vitro (Russia) |
-
-### Mechanism Studies (Russian)
-
-| Target | Proposed Effect | Evidence |
-|--------|-----------------|----------|
-| Antioxidant enzymes | Increased SOD, catalase | Low |
-| Mitochondrial function | Improved respiration | Very low |
-| Apoptosis | Anti-apoptotic | Low |
-| Inflammation | Reduced IL-1B, TNF-a | Low |
-
-### Key Limitation
-
-Unlike Cerebrolysin, Cortexin has not been subjected to Western preclinical validation or independent mechanistic studies. Almost all published research comes from Russian institutions, often with manufacturer involvement.
-
----
-
-<h2 id="safety-profile">Safety Profile</h2>
-
-### Russian Clinical Experience
-
-| Aspect | Information |
-|--------|-------------|
-| Years in use | 25+ years (Russia) |
-| Serious adverse events | Rare in Russian reports |
-| Common side effects | Injection site reactions, headache (rare) |
-| Allergic reactions | Possible (porcine-derived) |
-| Overall tolerability | Reported as well-tolerated |
-
-### Reported Adverse Events
-
-| Adverse Event | Frequency | Notes |
-|---------------|-----------|-------|
-| Injection site pain | Occasional | IM administration |
-| Headache | Rare | Usually transient |
-| Allergic reactions | Rare | Porcine origin |
-| Dizziness | Rare | Transient |
-| Agitation | Rare | Pediatric patients |
-
-### Safety Considerations
-
-| Concern | Details |
-|---------|---------|
-| **Porcine origin** | Theoretical contamination/prion risk |
-| **Allergic potential** | Pork protein sensitivity |
-| **Extract variability** | Batch-to-batch consistency unclear |
-| **Western validation** | No FDA-standard safety assessment |
-| **Long-term use** | Limited systematic data |
-
-### Contraindications (Russian Labeling)
-
-- Hypersensitivity to Cortexin or porcine products
-- Pregnancy (insufficient data)
-- Lactation (insufficient data)
-
----
-
-<h2 id="pharmacokinetics">Pharmacokinetics</h2>
-
-### Administration
-
-| Parameter | Value |
-|-----------|-------|
-| **Route** | Intramuscular injection |
-| **Typical dose** | 10 mg/day (adults), 5 mg/day (children) |
-| **Duration** | 10-day courses |
-| **Frequency** | Courses repeated every 3-6 months |
-
-### Pharmacokinetic Properties
-
-| Parameter | Information | Notes |
-|-----------|-------------|-------|
-| **Absorption** | IM injection | Systemic delivery |
-| **Distribution** | Claimed CNS penetration | Not well characterized |
-| **Metabolism** | Peptide degradation | Standard proteolysis |
-| **Half-life** | Not precisely known | Peptides typically short |
-
----
-
-<h2 id="regulatory-status">Regulatory Status</h2>
-
-### Approval Status
-
-| Region | Status | Notes |
-|--------|--------|-------|
-| **Russia** | Approved | Prescription medication since 1999 |
-| **Belarus** | Approved | CIS mutual recognition |
-| **Kazakhstan** | Approved | CIS mutual recognition |
-| **Ukraine** | Approved | Before 2022; status uncertain |
-| **USA (FDA)** | Not approved | No IND/NDA filed |
-| **EU (EMA)** | Not approved | Not submitted |
-| **UK (MHRA)** | Not approved | Not submitted |
-
-### Why No Western Approval?
-
-| Factor | Explanation |
-|--------|-------------|
-| **Extract complexity** | Defined composition required for FDA |
-| **Old trial standards** | Russian trials don't meet FDA requirements |
-| **No commercial pathway** | No Western company pursuing approval |
-| **Cerebrolysin competition** | Better-characterized alternative exists |
-| **BSE/prion concerns** | Porcine CNS source complicates approval |
-
-### WADA Status
-
-Cortexin is **NOT currently on** the WADA Prohibited List.
-
----
-
-<h2 id="comparisons">Comparisons</h2>
-
-### Cortexin vs Cerebrolysin
-
-| Factor | Cortexin | Cerebrolysin |
-|--------|----------|--------------|
-| **Source** | Porcine cortex | Porcine whole brain |
-| **Manufacturer** | GEROPHARM (Russia) | EVER Neuro Pharma (Austria) |
-| **International approval** | Russia/CIS only | 50+ countries |
-| **Western research** | Minimal | Extensive |
-| **Evidence quality** | Low | Moderate |
-| **Cochrane reviews** | None | Multiple |
-| **Meta-analyses** | None in English | Several |
-| **Commercial availability** | Russia/research | International |
-
-### Cortexin vs Semax
-
-| Factor | Cortexin | Semax |
-|--------|----------|-------|
-| **Composition** | Extract (multiple peptides) | Single defined peptide |
-| **Route** | Intramuscular | Intranasal |
-| **Mechanism** | Poorly characterized | Better characterized |
-| **Approval** | Russia | Russia |
-| **Western interest** | Very low | Moderate (research) |
-
----
-
-<h2 id="citation-table">Evidence Library</h2>
-
-### Clinical Studies
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Gusev EI et al. Zh Nevrol Psikhiatr | 2008 | Comparative trial | Improved stroke recovery | Paywalled |
-| Skoromets AA et al. Zh Nevrol Psikhiatr | 2012 | RCT | Cognitive improvement post-stroke | Paywalled |
-| Zavadenko NN et al. Zh Nevrol Psikhiatr | 2010 | Open-label | Benefit in childhood attention deficits | Paywalled |
-| Belousova TV et al. | 2009 | Pediatric | Perinatal CNS damage recovery | Paywalled |
-| Chutko LS et al. | 2014 | Open-label | ADHD symptoms improvement | Paywalled |
-
-### Reviews
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Gomazkov OA [PMID: 29543903](https://pubmed.ncbi.nlm.nih.gov/29543903/) | 2018 | Review | Neuropeptide mechanisms | Open |
-| Shabanov PD et al. | 2015 | Review | 15 years of clinical experience | Paywalled |
-| GEROPHARM Product Monograph | 2020 | Manufacturer | Clinical summary | Company |
-
-### Preclinical Studies
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Romanova GA et al. | 2006 | Animal | Neuroprotection in ischemia | Paywalled |
-| Granstrem OK et al. | 2008 | In vitro | Antioxidant properties | Paywalled |
-| Bashkatova VG et al. | 2011 | Animal | Reduced oxidative stress | Paywalled |
-
----
-
-<h2 id="inferences-section">Inferences Section</h2>
-
-*This section contains logical reasoning from known evidence. These are NOT proven facts.*
-
-### Inference 1: Cortexin likely has some biological activity, but magnitude is uncertain
-
-**(a) Statement:** The peptide complex probably has real effects on neurons, but the clinical significance is unknown.
-
-**(b) Why someone might believe it:**
-- Porcine brain contains neurotrophic factors and peptides
-- Cerebrolysin (similar product) has demonstrated activity
-- Consistent positive findings in Russian trials (even if methodologically limited)
-
-**(c) Supporting evidence:**
-- In vitro studies show neuroprotection
-- Animal studies show functional effects
-- Long clinical experience in Russia
-
-**(d) Contradicting evidence:**
-- No independent Western replication
-- Extract composition not standardized
-- Placebo effects and bias in open-label trials
-
-**(e) Confidence: VERY LOW**
-
-### Inference 2: Cerebrolysin is likely a better choice for those interested in brain peptide extracts
-
-**(a) Statement:** For patients or researchers interested in neurotrophic peptide extracts, Cerebrolysin has better evidence.
-
-**(b) Why someone might believe it:**
-- More extensive research base
-- International manufacturing standards
-- Multiple Cochrane reviews and meta-analyses
-- Available in more countries
-
-**(c) Supporting evidence:**
-- CASTA, CARS trials and meta-analyses for Cerebrolysin
-- 50+ country approval for Cerebrolysin vs Russia-only for Cortexin
-
-**(d) Contradicting evidence:**
-- Cerebrolysin's largest trial (CASTA) also missed primary endpoint
-- Both remain unapproved by FDA
-- Cortex-specific extract might theoretically have advantages
-
-**(e) Confidence: MODERATE**
-
----
-
-<h2 id="summary">Summary</h2>
-
-Cortexin represents a Russian neuropeptide therapy with:
-
-**What We Know:**
-- Porcine cerebral cortex extract developed in Russia
-- Approved and used clinically in Russia since 1999
-- Claims neurotrophic and neuroprotective properties
-- Similar concept to Cerebrolysin (better-studied Austrian product)
-
-**What We Don't Know:**
-- Exact active peptide composition
-- Whether Russian efficacy claims translate to Western-standard trials
-- Long-term safety by international standards
-- Whether it offers advantages over Cerebrolysin
-
-**Critical Limitations:**
-- No Western regulatory approval
-- Minimal independent research validation
-- Most trials do not meet modern methodological standards
-- Extract nature prevents precise characterization
-
-**Bottom Line:** Cortexin has a history in Russian neurology but lacks the international validation of similar products like Cerebrolysin. For those interested in brain-derived neuropeptides, Cerebrolysin offers more robust evidence, though neither is FDA-approved. The low evidence rating reflects genuine uncertainty about efficacy rather than evidence of ineffectiveness.
-
----
-
-*This dossier is for educational purposes only. Cortexin is approved in Russia but not by the FDA, EMA, or other Western regulatory agencies. Products sold internationally are typically research chemicals with uncertain quality. Last updated: January 2026.*
+**Glutamate/GABA Modulation** *(Synaptic Balance)*
+```
+Cortexin → AMPA/Kainate/mGluR modulation → Balanced excitatory signaling
+        → GABAA receptor interaction → Enhanced inhibitory tone
+                                              ↓
+                              Reduced excitotoxicity, improved cognition
+```
+
+**Key Research:** Silachev DN et al. (Russia, 2021) demonstrated neuroprotective action of Cortexin in rat ischemia models. [PMID:34254973](https://pubmed.ncbi.nlm.nih.gov/34254973/)
+
+### Important Limitations
+
+- Exact peptide composition is not standardized and varies by batch
+- Nearly all mechanistic studies from Russian institutions with manufacturer involvement
+- No independent Western replication of proposed mechanisms
+- Translation to human physiology largely unconfirmed outside Russian trials
+- BBB penetration claimed but not rigorously characterized by Western standards

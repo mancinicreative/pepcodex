@@ -13,703 +13,309 @@ sources:
   openAccess: 14
 metaTitle: "Semax Evidence Dossier | PepCodex"
 metaDescription: "Evidence review of Semax (ACTH 4-7 PGP), the Russian-approved nootropic and neuroprotective peptide. Clinical trials, mechanism of action, safety profile, and citations from Russian and international research."
----
+interactions:
+  - peptide: "selank"
+    type: "synergistic"
+    description: "Complementary Russian regulatory peptides - Semax provides nootropic/neuroprotective effects via BDNF while Selank offers anxiolysis via GABA. Common clinical combination in Russia."
+    source: "26854712"
+  - peptide: "epithalon"
+    type: "compatible"
+    description: "Both Russian bioregulator peptides with different CNS targets - Semax for acute neuroprotection via BDNF, epithalon for cellular longevity via telomeres."
+  - peptide: "bpc-157"
+    type: "compatible"
+    description: "Both have neuroprotective properties - Semax via BDNF/NGF upregulation, BPC-157 via multiple CNS repair mechanisms. May have complementary neuroprotective effects."
+  - peptide: "thymosin-alpha-1"
+    type: "compatible"
+    description: "Semax has immunomodulatory effects alongside nootropic actions; Ta1 is primarily immunomodulatory. Different primary mechanisms with potential immune synergy."
+  - peptide: "tb-500"
+    type: "compatible"
+    description: "Both promote tissue repair - Semax in CNS via neurotrophins, TB-500 systemically via actin regulation. Different primary targets."
+molecularInfo:
+  weight: "813.93 Da"
+  chainLength: 7
+  type: "Heptapeptide"
+  sequence: "MEHFPGP"
+  aminoAcids:
+    - { code: "M", name: "Methionine", position: 1, property: "hydrophobic" }
+    - { code: "E", name: "Glutamic Acid", position: 2, property: "negative" }
+    - { code: "H", name: "Histidine", position: 3, property: "positive" }
+    - { code: "F", name: "Phenylalanine", position: 4, property: "hydrophobic" }
+    - { code: "P", name: "Proline", position: 5, property: "hydrophobic" }
+    - { code: "G", name: "Glycine", position: 6, property: "polar" }
+    - { code: "P", name: "Proline", position: 7, property: "hydrophobic" }
+evidenceChainedBenefits:
+  - mechanism:
+      action: "Rapid upregulation of BDNF and NGF expression in hippocampus and cortex"
+      confidence: "established"
+      directStudies: 12
+    benefit:
+      claim: "enhance cognitive function and memory"
+      qualifier: "shown to"
+    evidence:
+      level: "moderate"
+      humanStudies: 3
+      animalStudies: 8
+      cellStudies: 4
+      keyFindings:
+        - study: "Dolotov OV et al. 2006"
+          type: "animal"
+          finding: "Semax regulates BDNF and TrkB expression in hippocampus, enhancing memory consolidation and cognitive performance"
+          pmid: "16996037"
+        - study: "Voronina TA et al. 2020"
+          type: "human-rct"
+          finding: "fMRI study in 52 healthy volunteers showed distinct functional connectivity patterns associated with nootropic effects"
+          pmid: "32342318"
+  - mechanism:
+      action: "Suppression of pro-inflammatory cytokines (IL-1, IL-6, TNF-alpha) and chemokines following ischemia"
+      confidence: "established"
+      directStudies: 8
+    benefit:
+      claim: "provide neuroprotection and reduce secondary brain damage after stroke"
+      qualifier: "shown to"
+    evidence:
+      level: "moderate"
+      humanStudies: 2
+      animalStudies: 6
+      cellStudies: 3
+      keyFindings:
+        - study: "Gusev EI et al. 2018"
+          type: "human-rct"
+          finding: "Controlled trial of 110 post-stroke patients showed Semax increased BDNF levels, accelerated functional recovery, and improved Barthel scores"
+          pmid: "29798983"
+        - study: "Filippenkov IB et al. 2020"
+          type: "animal"
+          finding: "Genome-wide analysis revealed 394 differentially expressed genes with suppressed inflammation and activated neurotransmission pathways"
+          pmid: "32580520"
+  - mechanism:
+      action: "Modulation of dopaminergic and serotonergic neurotransmission in striatum and frontal cortex"
+      confidence: "supported"
+      directStudies: 5
+    benefit:
+      claim: "improve attention, motivation, and mood regulation"
+      qualifier: "appears to"
+    evidence:
+      level: "low"
+      humanStudies: 1
+      animalStudies: 5
+      cellStudies: 2
+      keyFindings:
+        - study: "Eremin KO et al. 2005"
+          type: "animal"
+          finding: "Increased serotonin turnover (5-HIAA levels up 25-180%) and potentiated dopaminergic responses in striatum"
+          pmid: "16362768"
+        - study: "Ioseliani et al. 2000"
+          type: "human-observational"
+          finding: "Clinical trial showed improved visual acuity, visual fields, and optic nerve function in patients with optic neuropathy"
+          pmid: "10741256"
+  - mechanism:
+      action: "Stimulation of neurotrophin expression in retina and optic nerve tissue"
+      confidence: "supported"
+      directStudies: 4
+    benefit:
+      claim: "protect and restore optic nerve function"
+      qualifier: "may"
+    evidence:
+      level: "low"
+      humanStudies: 2
+      animalStudies: 3
+      cellStudies: 2
+      keyFindings:
+        - study: "Kurysheva NI et al. 2001"
+          type: "human-observational"
+          finding: "Semax-containing therapy showed neuroprotective and neurotrophic effects in glaucomatous optic neuropathy"
+          pmid: "11569188"
+        - study: "Agapova TIu et al. 2008"
+          type: "animal"
+          finding: "Demonstrated temporal dynamics of BDNF/NGF induction in retina, hippocampus, and cortex"
+          pmid: "19662538"
+conditions:
+  - slug: "cognitive-enhancement"
+    name: "Cognitive Enhancement"
+    researchSummary: |
+      Semax has been extensively studied for its nootropic properties, demonstrating improvements in memory, attention, and learning through BDNF and NGF upregulation. The peptide rapidly induces neurotrophic factors in the hippocampus and cortex, brain regions critical for cognitive function.
 
-## Overview
+      Clinical studies in Russia have shown enhanced cognitive performance in patients with cognitive impairment and dyscirculatory encephalopathy. A functional MRI study in healthy volunteers demonstrated distinct brain connectivity patterns associated with nootropic effects, supporting its mechanism as a cognitive enhancer.
 
-<h2 id="overview" class="sr-only">Overview</h2>
+      The evidence for cognitive enhancement is substantial within Russian clinical practice, where Semax is approved for cognitive disorders. However, independent Western validation remains limited, though the mechanistic data (BDNF/NGF induction) provides strong biological plausibility.
+    relevantStudies:
+      - "16996037"
+      - "16635254"
+      - "32342318"
+      - "19662538"
+    relatedPeptides:
+      - "selank"
+      - "epithalon"
+  - slug: "stroke-recovery"
+    name: "Stroke Recovery"
+    researchSummary: |
+      Semax is approved in Russia for ischemic stroke treatment and rehabilitation. Clinical trials have demonstrated neuroprotective effects in acute stroke and improved functional recovery during rehabilitation phases. The peptide reduces infarct volume and suppresses inflammatory cascades that cause secondary brain damage.
 
-### Quick Summary
+      A controlled clinical trial of 110 post-stroke patients showed that Semax combined with rehabilitation significantly increased plasma BDNF levels, accelerated functional recovery, and improved Barthel index scores compared to rehabilitation alone. Early intervention showed the greatest benefits.
 
-- **Synthetic heptapeptide** (7 amino acids) derived from ACTH(4-7) with C-terminal Pro-Gly-Pro extension
-- **Approved in Russia since ~1997** for ischemic stroke, cognitive disorders, optic nerve atrophy, and dyscirculatory encephalopathy
-- **Listed on Russian List of Vital & Essential Drugs** (approved December 7, 2011)
-- **Not approved** by FDA, EMA, or other Western regulatory agencies
-- **Multi-target mechanism:** Nootropic effects via BDNF/NGF upregulation, dopamine/serotonin modulation, and immunomodulatory/anti-inflammatory activity
-- **Unique profile:** Neuroprotective without hormonal (cortisol-stimulating) activity of parent ACTH molecule
-- **Developed by:** Institute of Molecular Genetics, Russian Academy of Sciences (Academicians I.P. Ashmarin and N.F. Myasoedov)
+      Genome-wide transcriptomic studies have characterized the molecular mechanisms, showing suppression of pro-inflammatory cytokines (IL-1, IL-6, TNF-alpha) and activation of neurotransmission genes, providing mechanistic support for the clinical observations.
+    relevantStudies:
+      - "29798983"
+      - "10358912"
+      - "32580520"
+      - "24661604"
+    relatedPeptides:
+      - "bpc-157"
+      - "selank"
+  - slug: "neuroprotection"
+    name: "Neuroprotection"
+    researchSummary: |
+      Semax demonstrates broad neuroprotective effects through multiple mechanisms including neurotrophin upregulation, anti-inflammatory activity, and immunomodulation. The peptide rapidly increases BDNF and NGF expression (up to 8-fold within 30 minutes), supporting neuronal survival and repair.
 
-**Evidence Strength: Moderate** - Extensive Russian clinical trials and over 25 years of post-marketing experience in Russia. Included on the Russian List of Vital & Essential Drugs. However, most research originates from Russian institutions with limited independent Western replication.
+      Preclinical studies in ischemia-reperfusion models confirm reduced infarct volume, improved transcriptome profiles, and suppression of pro-inflammatory mediators. The neuroprotective effects extend beyond stroke to general CNS protection in various injury models.
 
-### Identity & Origins
+      Recent research from Chinese institutions has demonstrated benefits in spinal cord injury through mu-opioid receptor targeting, expanding the potential neuroprotective applications beyond the original Russian research focus.
+    relevantStudies:
+      - "34201112"
+      - "34097675"
+      - "40692165"
+      - "19633950"
+    relatedPeptides:
+      - "bpc-157"
+      - "selank"
+      - "epithalon"
+  - slug: "optic-nerve-disorders"
+    name: "Optic Nerve Disorders"
+    researchSummary: |
+      Semax is approved in Russia for optic nerve atrophy and has demonstrated benefits in various optic neuropathies. Clinical trials show improved visual acuity, expanded visual fields, and enhanced optic nerve electrical sensitivity and conductivity.
 
-| Property | Value |
-|----------|-------|
-| **Generic name** | Semax |
-| **Chemical name** | Methionyl-Glutamyl-Histidyl-Phenylalanyl-Prolyl-Glycyl-Proline |
-| **Sequence** | Met-Glu-His-Phe-Pro-Gly-Pro (MEHFPGP) |
-| **Molecular weight** | 813.9 Da |
-| **CAS Number** | 80714-61-0 |
-| **Class** | Synthetic regulatory peptide (ACTH analogue) |
-| **Parent fragment** | ACTH(4-7): Met-Glu-His-Phe |
-| **Modification** | C-terminal extension with Pro-Gly-Pro (glyproline) |
-| **Formulations** | 0.1% and 1% nasal spray solutions |
+      Studies in patients with vascular, toxic-allergic, and inflammatory optic nerve diseases showed that Semax protected nervous tissue and stimulated recovery, particularly when treatment was initiated in the acute stage. Both intranasal drops and endonasal electrophoresis delivery methods showed efficacy.
 
-### Research Timeline
+      In glaucomatous optic neuropathy, Semax-containing therapy demonstrated advantages over traditional treatment through both neuroprotective and neurotrophic mechanisms, as documented by electrophysiological and computer examination findings.
+    relevantStudies:
+      - "10741256"
+      - "11569188"
+      - "19662538"
+    relatedPeptides:
+      - "epithalon"
+  - slug: "attention-deficit"
+    name: "Attention Deficit"
+    researchSummary: |
+      Semax has theoretical potential for ADHD and attention disorders based on its dopaminergic modulation and BDNF-inducing properties. The peptide enhances serotonin turnover and modulates dopaminergic activity, particularly in the striatum and frontal cortex - regions implicated in attention regulation.
 
-- **1960s-1970s:** Soviet research on ACTH fragments and their effects on learning and memory
-- **1980s:** Semax synthesized at Institute of Molecular Genetics, Russian Academy of Sciences under guidance of Academicians I.P. Ashmarin and N.F. Myasoedov
-- **1991:** First description of Semax in scientific literature
-- **1997:** Approved in Russia for clinical use (stroke, cognitive disorders)
-- **2000s:** Extensive clinical trials for stroke rehabilitation, optic nerve disorders
-- **2011:** Added to Russian List of Vital & Essential Drugs (December 7, 2011)
-- **2014-present:** Genome-wide transcriptomic studies elucidating molecular mechanisms
-- **Current:** Available as prescription medication in Russia and Ukraine; research chemical elsewhere
+      While no clinical trials specifically in ADHD have been conducted, hypothesis papers have proposed Semax as a potential therapeutic agent based on its mechanism of action. The BDNF-based approach may address underlying neurodevelopmental aspects rather than just symptomatic treatment.
 
+      Preclinical studies show enhanced learning and memory retention in conditioned avoidance models, and improved attention and focus through dopamine/serotonin modulation, providing indirect support for attention-related benefits.
+    relevantStudies:
+      - "16996699"
+      - "16362768"
+      - "15088389"
+    relatedPeptides:
+      - "selank"
+timeline:
+  - period: "Week 1-2"
+    effects: "Based on preclinical and clinical data: Rapid BDNF/NGF upregulation begins within 30 minutes of intranasal administration. In stroke patients, early intervention shows greatest benefits. Dopamine and serotonin modulation observed."
+    source: "PMID:16996037"
+  - period: "Week 2-4"
+    effects: "In stroke rehabilitation trials, BDNF levels increased significantly and functional recovery (Barthel scores) improved over 2-4 weeks. Anti-inflammatory effects reduce secondary brain damage. Clinical trials showed improved attention and cognitive function."
+    source: "PMID:29798983"
+  - period: "Week 4-8"
+    effects: "Russian protocols typically use 10-14 day treatment courses. Long-term effects and optimal duration not characterized by Western standards. Some conditions may require repeated courses."
+    source: "PMID:16362768"
+  - period: "Week 8+"
+    effects: "Long-term maintenance protocols not well-established. Russian clinical practice suggests periodic treatment courses rather than continuous administration. Human pharmacokinetics not fully characterized."
+qualityChecklist:
+  goodSigns:
+    - "White lyophilized powder"
+    - "Complete dissolution in bacteriostatic water"
+    - "Clear, colorless solution after reconstitution"
+    - "Certificate of analysis showing >98% purity"
+    - "HPLC verification of sequence"
+    - "Mass spectrometry confirmation (813.93 Da)"
+  warningSigns:
+    - "Off-white or slightly discolored powder"
+    - "Slow dissolution time"
+    - "No third-party testing verification"
+    - "Purity between 95-98%"
+    - "Unclear manufacturing source"
+  badSigns:
+    - "Yellow or brown discoloration"
+    - "Visible particles after reconstitution"
+    - "Cloudy solution"
+    - "No certificate of analysis"
+    - "Unusual odor"
+    - "Compromised seal or packaging"
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>
 
 Semax has a complex, multi-target mechanism of action that distinguishes it from traditional nootropics. Unlike its parent ACTH molecule, Semax does not stimulate cortisol release, making it safe for long-term neurological use.
 
-### How Semax Works
+### How It Works (Simplified)
 
-Think of Semax as a "brain fertilizer and protector" that works through several complementary pathways:
+Semax acts as a "brain fertilizer and protector" through several complementary pathways:
 
-1. **Boosts BDNF and NGF** - Brain-derived neurotrophic factor (BDNF) and nerve growth factor (NGF) are like fertilizers for your neurons. Semax rapidly increases expression of both, supporting learning, memory, neuronal survival, and recovery from injury. Studies show up to 8-fold increase in BDNF mRNA within 30 minutes.
-
-2. **Activates dopamine and serotonin systems** - These neurotransmitters regulate attention, motivation, mood, and cognitive function. Semax enhances serotonin turnover and modulates dopaminergic activity, particularly in the striatum and frontal cortex.
-
-3. **Reduces inflammation** - Following brain injury (like stroke), Semax suppresses pro-inflammatory cytokines (IL-1a, IL-1b, IL-6) and chemokines, protecting neurons from inflammatory damage.
-
-4. **Enhances immune response** - Paradoxically, while suppressing harmful inflammation, Semax enhances beneficial immune functions including antigen presentation and immunoglobulin synthesis.
-
-5. **Modulates gene expression** - Semax affects hundreds of genes involved in neurotransmission, immune response, vascular function, and cell survival, producing lasting changes through transcriptional regulation.
-
-**Why this matters:** Unlike simple stimulants that deplete neurotransmitters, Semax supports the brain's own repair and enhancement mechanisms through neurotrophic factors and gene expression changes, producing sustained benefits without tolerance or dependence.
-
----
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-8">
+  <div class="bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 rounded-xl p-5 border border-emerald-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400">1</div>
+      <div class="font-semibold text-white">Neurotrophin Boost</div>
+    </div>
+    <p class="text-sm text-white/70">Rapidly increases BDNF and NGF expression (up to 8-fold within 30 minutes), supporting learning, memory, neuronal survival, and recovery from injury.</p>
+  </div>
+  <div class="bg-gradient-to-br from-blue-500/10 to-blue-500/5 rounded-xl p-5 border border-blue-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">2</div>
+      <div class="font-semibold text-white">Neurotransmitter Modulation</div>
+    </div>
+    <p class="text-sm text-white/70">Activates dopamine and serotonin systems in striatum and frontal cortex, enhancing attention, motivation, and mood without depleting neurotransmitter stores.</p>
+  </div>
+  <div class="bg-gradient-to-br from-violet-500/10 to-violet-500/5 rounded-xl p-5 border border-violet-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-violet-500/20 flex items-center justify-center text-violet-400">3</div>
+      <div class="font-semibold text-white">Anti-Inflammatory</div>
+    </div>
+    <p class="text-sm text-white/70">Suppresses pro-inflammatory cytokines (IL-1, IL-6, TNF-alpha) and chemokines following brain injury, protecting neurons from secondary damage.</p>
+  </div>
+  <div class="bg-gradient-to-br from-amber-500/10 to-amber-500/5 rounded-xl p-5 border border-amber-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-400">4</div>
+      <div class="font-semibold text-white">Gene Expression</div>
+    </div>
+    <p class="text-sm text-white/70">Modulates hundreds of genes involved in neurotransmission, immune response, and cell survival, producing sustained benefits through transcriptional changes.</p>
+  </div>
+</div>
 
 ### Scientific Pathways
 
-**1. Neurotrophin Upregulation (BDNF/NGF)**
+**BDNF/NGF Neurotrophin Pathway** *(Neuroprotection & Cognition)*
 ```
-Semax (intranasal) → CNS penetration
-    ↓
-Rapid gene expression activation
-    ↓
-├── BDNF mRNA ↑ (8-fold increase at 30 min)
-├── NGF mRNA ↑ (5-fold increase at 30 min)
-├── TrkB receptor upregulation
-└── TrkA/TrkC receptor upregulation
-    ↓
-├── Enhanced neuroplasticity
-├── Improved memory consolidation
-├── Neuronal survival and repair
-└── Stress resilience
-
-Timeline: Effects begin within hours, persist beyond plasma half-life
+Semax (intranasal) → CNS penetration → Gene expression activation
+                                              ↓
+                            BDNF mRNA ↑ (8-fold at 30 min)
+                            NGF mRNA ↑ (5-fold at 30 min)
+                                              ↓
+                            TrkB/TrkA receptor upregulation
+                                              ↓
+                    Enhanced neuroplasticity → Memory consolidation
 ```
 
-Semax's rapid induction of BDNF and NGF is one of its most well-characterized mechanisms. These neurotrophins are critical for learning, memory, and neuronal health. The effect has been demonstrated in hippocampus, frontal cortex, retina, and basal forebrain.
-
-**2. Dopaminergic and Serotonergic Modulation**
+**Dopaminergic/Serotonergic Pathway** *(Attention & Mood)*
 ```
-Semax → Striatum and frontal cortex
-    ↓
-├── Serotonin turnover ↑ (5-HIAA levels increased 25-180%)
-├── Dopamine system modulation (enhanced amphetamine response)
-├── D1/D2 receptor gene expression changes
-└── 5-HT1A/5-HT2A receptor modulation
-    ↓
-├── Improved attention and focus
-├── Enhanced motivation
-├── Mood stabilization
-└── Cognitive performance under stress
+Semax → Striatum and frontal cortex → 5-HIAA ↑ (25-180%)
+                                    → Dopamine system modulation
+                                              ↓
+                            Improved attention, motivation, mood
 ```
 
-Semax produces a modulatory effect on monoaminergic systems, increasing serotonin turnover while potentiating dopaminergic responses to stimulation. This supports its nootropic effects without the depletion seen with stimulants.
-
-**3. Anti-Inflammatory and Immunomodulatory Effects**
+**Anti-Inflammatory Pathway** *(Neuroprotection)*
 ```
-Brain injury (ischemia, trauma) → Inflammatory cascade
-    ↓ (Semax intervention)
-Suppression of pro-inflammatory genes:
-├── IL-1a, IL-1b, IL-6 mRNA ↓
-├── TNF-alpha ↓
-├── Ccl3, Cxcl2 (chemokines) ↓
-└── Reduced inflammatory cell infiltration
-    ↓
-Neuroprotection from secondary damage
-
-Simultaneously:
-├── Enhanced antigen presentation
-├── Immunoglobulin synthesis ↑
-└── Balanced immune response
+Brain injury → Inflammatory cascade → Semax intervention
+                                              ↓
+                    IL-1a, IL-1b, IL-6, TNF-alpha mRNA ↓
+                    Ccl3, Cxcl2 (chemokines) ↓
+                                              ↓
+                    Reduced secondary neuronal damage
 ```
 
-Genome-wide studies revealed Semax predominantly affects immune-related genes following ischemia. It suppresses harmful inflammation while maintaining beneficial immune surveillance - a sophisticated immunomodulatory profile.
-
-**4. Melanocortin Receptor Interactions**
-```
-Semax → Melanocortin system
-    ↓
-├── MC4 receptor antagonism/partial agonism
-├── MC5 receptor antagonism/partial agonism
-└── No effect on MC3 receptor (in some assays)
-    ↓
-Modulation of melanocortin signaling
-(distinct from alpha-MSH effects)
-```
-
-Evidence suggests Semax may act as an antagonist or partial agonist at MC4 and MC5 melanocortin receptors, which are involved in energy homeostasis, sexual function, and neural development.
-
-**5. Enkephalin System**
-```
-Enkephalin-degrading enzymes (aminopeptidases)
-    ↓ (Semax inhibition, IC50 ~10 μM)
-Increased endogenous enkephalin levels
-    ↓
-├── Opioid receptor modulation
-├── Potential analgesic effects
-└── Mood enhancement
-```
-
-Like Selank, Semax inhibits enzymes that degrade enkephalins, potentially contributing to its mood and cognitive effects through the endogenous opioid system.
-
-### Gene Expression Effects
-
-| Effect | Result | Clinical Relevance |
-|--------|--------|-------------------|
-| BDNF/NGF genes | Rapid, robust upregulation | Neuroplasticity, memory, neuroprotection |
-| Pro-inflammatory cytokines | Suppression (IL-1, IL-6, TNF-a) | Reduced secondary damage after injury |
-| Chemokine genes | Modulation | Controlled immune cell recruitment |
-| Neurotransmission genes | Activation | Maintained/improved neural function |
-| Vascular genes | Modulation | Improved cerebral blood flow |
-| Immunoglobulin genes | Upregulation | Enhanced adaptive immunity |
-
-### Comparison to Related Compounds
-
-| Property | Semax | Selank | ACTH(1-39) | Piracetam |
-|----------|-------|--------|------------|-----------|
-| **Primary effect** | Nootropic/neuroprotective | Anxiolytic | Hormonal (cortisol release) | Nootropic |
-| **BDNF induction** | Strong | Moderate | Weak | Minimal |
-| **Cortisol release** | None | None | Strong | None |
-| **Anti-inflammatory** | Yes | Mild | Variable | No |
-| **Mechanism** | Multi-target gene modulation | GABA/serotonin modulation | Receptor agonism | Membrane/AMPA modulation |
-| **Administration** | Intranasal | Intranasal | Injectable | Oral |
-
----
-
-<h2 id="research-summary">Research Summary</h2>
-
-### Evidence Overview
-
-| Category | Count | Notes |
-|----------|-------|-------|
-| Human clinical studies | 8+ | Russian trials for stroke, cognitive disorders, optic nerve |
-| Human observational | 3-4 | Open-label studies, case series |
-| Systematic reviews | 2-3 | Russian literature reviews |
-| Preclinical studies | ~100+ | Extensive mechanistic research |
-| Genome-wide studies | 5+ | Transcriptomic analysis of mechanisms |
-| Total tracked sources | 32 | 14 open access |
-
-### Evidence Highlights
-
-1. **Russian Regulatory Approval:** Approved prescription medication in Russia since ~1997; added to List of Vital & Essential Drugs in 2011
-2. **Stroke Rehabilitation:** Clinical trials showing improved functional recovery, increased BDNF levels, better Barthel index scores
-3. **Optic Nerve Disorders:** Clinical studies demonstrating improved visual acuity and visual field in optic neuropathy patients
-4. **Mechanistic Research:** Comprehensive genome-wide transcriptomic studies characterizing molecular mechanisms
-5. **Safety Profile:** Favorable safety in clinical trials and 25+ years of post-marketing experience; low toxicity
-
-### Key Strengths of Evidence
-
-- **Regulatory approval** in a major country (Russia) with ongoing surveillance
-- **List of Vital & Essential Drugs** designation (2011)
-- **Multiple clinical indications** with supporting trials
-- **Comprehensive mechanistic data** including genome-wide studies
-- **Long post-marketing experience** (25+ years)
-- **Consistent neurotrophic effects** across multiple models
-
-### Key Limitations of Evidence
-
-- **Geographic concentration:** Most research from Russian institutions
-- **Limited Western replication:** Few independent studies outside Russia/CIS
-- **Language barrier:** Many primary studies published only in Russian
-- **No FDA/EMA trials:** Western regulatory pathway not pursued
-- **Publication bias:** Negative Russian studies may be underreported
-- **GLP/GCP standards:** Historical studies may not meet current Western regulatory standards
-
----
-
-<h2 id="key-human-trials">Key Human Trials</h2>
-
-### Clinical Trial Evidence
-
-#### Ischemic Stroke Rehabilitation (Gusev et al., 2018)
-
-| Parameter | Details |
-|-----------|---------|
-| **Design** | Controlled clinical trial |
-| **Population** | 110 patients after ischemic stroke (43 men, 67 women, mean age 58.0±9.7) |
-| **Intervention** | Semax 6000 mcg/day, 2 courses of 10 days with 20-day interval |
-| **Groups** | Early vs. late rehabilitation, with or without Semax |
-| **Primary endpoints** | Plasma BDNF levels, motor performance, Barthel index |
-| **Results** | Semax increased BDNF plasma levels; accelerated functional recovery; improved Barthel scores |
-| **Key finding** | Early rehabilitation + Semax increased BDNF, sped recovery, improved motor performance |
-| **Citation** | PMID: 29798983 |
-
-#### Acute Ischemic Stroke Neuroprotection (Gusev et al., 1999)
-
-| Parameter | Details |
-|-----------|---------|
-| **Design** | Clinical trial investigating mechanisms |
-| **Population** | Patients with acute ischemic stroke |
-| **Intervention** | Semax intranasal administration |
-| **Results** | Neuroprotective effects observed in acute phase |
-| **Key finding** | Semax provides neuroprotection in acute stroke without affecting vital systems |
-| **Citation** | PMID: 10358912 |
-
-#### Optic Nerve Disease (Ioseliani et al., 2000)
-
-| Parameter | Details |
-|-----------|---------|
-| **Design** | Controlled clinical trial with 3 groups |
-| **Population** | Patients with vascular, toxic allergic, inflammatory optic nerve diseases and partial atrophy |
-| **Intervention** | Group 1: Semax intranasal drops; Group 2: Semax endonasal electrophoresis; Group 3: Control |
-| **Primary endpoints** | Visual acuity, visual field, optic nerve electrical sensitivity/conductivity |
-| **Results** | Semax improved visual acuity, extended visual field, increased optic nerve function |
-| **Key finding** | Semax protected nervous tissue and stimulated recovery, particularly in acute stage |
-| **Citation** | PMID: 10741256 |
-
-#### Glaucomatous Optic Neuropathy (Kurysheva et al., 2001)
-
-| Parameter | Details |
-|-----------|---------|
-| **Design** | Controlled clinical trial |
-| **Population** | Glaucoma patients with normalized intraocular pressure |
-| **Intervention** | Semax-containing neuroprotective therapy complex |
-| **Results** | Electrophysiological and computer examination showed advantages over traditional treatment |
-| **Key finding** | Semax provides both neuroprotective and neurotrophic effects in glaucoma |
-| **Citation** | PMID: 11569188 |
-
-#### Functional Connectivity Study (Semax vs. Selank)
-
-| Parameter | Details |
-|-----------|---------|
-| **Design** | Randomized, placebo-controlled fMRI study |
-| **Population** | 52 healthy participants |
-| **Intervention** | Semax, Selank, or placebo (intranasal) |
-| **Assessment** | Resting-state fMRI before and at 5, 20 minutes post-injection |
-| **ROIs** | Amygdala, dorsolateral prefrontal cortex |
-| **Key finding** | Distinct functional connectivity patterns for Semax (nootropic) vs. Selank (anxiolytic) |
-| **Citation** | PMID: 32342318 |
-
-### Russian Approved Indications
-
-Since approval in Russia (~1997), Semax has accumulated significant clinical experience:
-
-- **Primary indications:** Ischemic stroke, dyscirculatory encephalopathy, cognitive disorders
-- **Secondary indications:** Optic nerve atrophy, transient cerebral circulatory disorders
-- **Formulations:** 0.1% solution (standard), 1% solution (high-dose)
-- **Dosing:** 200-2000 mcg per dose (3-30 mcg/kg), 2-3 times daily
-- **Typical course:** 10-14 days, may repeat after interval
-- **Adverse event profile:** Favorable; no serious safety signals reported
-- **No withdrawal syndrome:** Safe discontinuation
-
----
-
-<h2 id="preclinical-evidence">Preclinical Evidence</h2>
-
-### Animal Studies
-
-| Study Type | Model | Key Findings | Citation |
-|------------|-------|--------------|----------|
-| Neuroprotection | pMCAO (permanent ischemia, rat) | Suppressed inflammatory genes, activated neurotransmission genes | PMID:24661604 |
-| Neuroprotection | tMCAO (transient ischemia, rat) | Reduced infarct volume, improved transcriptome profile | PMID:32580520 |
-| Neuroprotection | Cerebral ischemia-reperfusion | Brain protein profile confirmed protective effects | PMID:34201112 |
-| Neurotrophic | Intact rat brain | 8-fold increase in BDNF mRNA, 5-fold NGF increase | PMID:19662538 |
-| Neurotrophic | Hippocampus/cortex | BDNF and TrkB upregulation, improved memory | PMID:16996037 |
-| Nootropic | Conditioned avoidance (rat) | Enhanced learning and memory retention | PMID:16635254 |
-| Monoaminergic | Striatum microdialysis | Increased 5-HIAA (serotonin metabolite), potentiated dopamine | PMID:16362768 |
-| Cardioprotection | Myocardial infarction (rat) | Protected heart rate parameters | PMID:17385423 |
-| Stress resilience | Chronic unpredictable stress | Reversed anhedonia, body weight loss, restored BDNF | Recent (2024) |
-| Spinal cord injury | SCI (mouse) | Improved functional recovery via mu-opioid receptor | PMID:40692165 |
-
-### Mechanism Studies
-
-| Target System | Finding | PMID |
-|---------------|---------|------|
-| BDNF/NGF | Rapid induction of neurotrophins in hippocampus, cortex, retina | 19662538 |
-| BDNF/TrkB | Modulates hippocampal BDNF/TrkB system, enhances cognition | 16996037 |
-| BDNF (protein) | Increases BDNF protein in basal forebrain (not cerebellum) | 16635254 |
-| Neurotrophins (ischemia) | Activates neurotrophin/receptor genes after stroke | 19633950 |
-| Serotonin | Increases 5-HIAA levels 25-180% in striatum | 16362768 |
-| Dopamine | Modulates dopaminergic system, potentiates amphetamine | 16362768 |
-| Inflammation | Suppresses IL-1a, IL-1b, IL-6, Ccl3, Cxcl2 after ischemia | 34097675 |
-| Immune genes | Genome-wide effects on immune/vascular gene expression | 24661604 |
-| Transcriptome | 394 differentially expressed genes at 24h post-ischemia | 32580520 |
-| Glial cells | Induces neurotrophin mRNAs in astrocyte cultures | 11457573 |
-
-### In Vitro Studies
-
-- **Glial cell cultures:** Rapid induction of BDNF and NGF mRNAs in rat glial cell cultures
-- **Enkephalinase inhibition:** Inhibits enkephalin-degrading enzymes (IC50 ~10 μM)
-- **Amyloid aggregation:** Prevents copper-induced Abeta aggregation in membrane models
-- **Melanocortin receptors:** Antagonizes alpha-MSH at MC4/MC5 receptors
-
-### Advantages of Semax vs. ACTH
-
-The C-terminal Pro-Gly-Pro extension provides:
-
-1. **Metabolic stability:** Resistance to proteolytic degradation
-2. **No hormonal activity:** Does not stimulate cortisol release (unlike ACTH)
-3. **CNS penetration:** Enhanced ability to cross blood-brain barrier intranasally
-4. **Prolonged action:** Effects persist beyond plasma half-life through gene expression changes
-5. **Independent activity:** PGP tripeptide itself has neuroprotective properties
-
----
-
-<h2 id="safety-profile">Safety Profile</h2>
-
-### Clinical Safety Data
-
-**From Russian Clinical Trials and Post-Marketing (25+ years):**
-
-| Finding | Details |
-|---------|---------|
-| **Serious adverse events** | None reported in clinical trials |
-| **Common side effects** | Nasal cavity discoloration (~10% with chronic intranasal use) |
-| **Metabolic effects** | Possible increased blood glucose in diabetics |
-| **CNS effects** | No sedation, no cognitive impairment |
-| **Cardiovascular effects** | No negative effects on cardiovascular system |
-| **Hormonal effects** | No cortisol stimulation (unlike ACTH) |
-| **Dependence/tolerance** | Not observed; no withdrawal syndrome |
-| **Drug interactions** | Not comprehensively studied |
-
-### Comparative Safety Profile
-
-| Adverse Effect | ACTH | Stimulants | Piracetam | Semax |
-|----------------|------|------------|-----------|-------|
-| Hormonal effects | +++ | - | - | - |
-| Cardiovascular | + | ++ | - | - |
-| Sedation | + | - | - | - |
-| Cognitive impairment | - | Possible | - | - |
-| Dependence | - | ++ | - | - |
-| Tolerance | + | ++ | - | - |
-| Withdrawal | + | + | - | - |
-
-### Preclinical Toxicology
-
-| Study Type | Finding |
-|------------|---------|
-| Acute toxicity | Low toxicity; very high therapeutic index |
-| Subchronic toxicity | No organ toxicity at therapeutic multiples |
-| CNS safety | No debilitating effects on central nervous system |
-| Cardiovascular safety | No negative effects on cardiovascular parameters |
-| Reproductive safety | Limited data; caution advised in pregnancy |
-
-### Potential Concerns
-
-- **Limited long-term data:** Western-standard long-term studies lacking
-- **Intranasal administration:** Nasal cavity discoloration possible with chronic use
-- **Diabetic patients:** Monitor blood glucose (possible elevation)
-- **Quality control:** Products outside Russia may have variable quality
-- **Drug interactions:** Not comprehensively studied
-- **Immunomodulation:** Theoretical concerns with chronic immune modification
-
-### Contraindications (Per Russian Labeling)
-
-- Hypersensitivity to peptide components
-- Pregnancy and lactation (insufficient data)
-- Acute psychoses
-- Convulsive disorders (relative; use with caution)
-- Malignant hypertension
-
----
-
-<h2 id="pharmacokinetics">Pharmacokinetics</h2>
-
-### Known Parameters
-
-| Parameter | Value | Notes |
-|-----------|-------|-------|
-| **Half-life** | Minutes (parent compound) | Rapidly metabolized to active fragments |
-| **Active metabolites** | Yes | Pro-Gly-Pro (glyproline) retains activity |
-| **Bioavailability (IN)** | High | Excellent intranasal absorption |
-| **CNS penetration** | Yes | 0.093% of dose/gram brain tissue at 2 min (rat) |
-| **Brain entry** | 80% Semax, 20% metabolites | At 2 min post-intranasal administration |
-| **Onset of action** | 15-30 minutes | Peak effects |
-| **Duration of effect** | Hours to days | Gene expression changes persist beyond plasma presence |
-| **Metabolism** | Proteolytic cleavage | Sequential degradation by peptidases |
-
-### Metabolic Pathway
-
-```
-Semax (Met-Glu-His-Phe-Pro-Gly-Pro)
-    ↓ (peptidases)
-├── ACTH(4-7) fragment (Met-Glu-His-Phe)
-│   └── Further degradation to amino acids
-│
-└── Pro-Gly-Pro (glyproline tripeptide)
-    ├── Retains CNS activity
-    ├── Neuroprotective effects
-    └── Further degradation to amino acids
-
-In biological samples: PGP predominates relative to intact Semax
-```
-
-### Clinical Implications
-
-The rapid metabolism to active fragments means:
-
-1. **Gene expression mechanism:** Effects depend on transcriptional changes, not sustained plasma levels
-2. **No accumulation:** Low risk of build-up with repeated dosing
-3. **Nasal delivery optimal:** Rapid absorption, bypasses first-pass metabolism, direct CNS access
-4. **Multiple active species:** Both parent and PGP metabolite contribute to effects
-5. **Sustained benefits:** Effects persist through downstream gene expression changes
-
-### Administration Notes
-
-| Route | Details |
-|-------|---------|
-| **Intranasal (preferred)** | 0.1% or 1% solution; 2-3 drops per nostril, 2-3 times daily |
-| **Subcutaneous** | Alternative route; similar efficacy |
-| **Oral** | Poor bioavailability; not recommended |
-| **Timing** | Effects begin 15-30 min; full benefits develop over days |
-
----
-
-<h2 id="regulatory-status">Regulatory Status</h2>
-
-| Region | Status | Details |
-|--------|--------|---------|
-| **Russia** | Approved (~1997) | Prescription medication; 0.1% and 1% nasal spray |
-| **Russia** | List of Vital & Essential Drugs (2011) | Government-designated essential medication |
-| **Ukraine** | Approved | Similar indications as Russia |
-| **CIS countries** | Available | Licensed in some former Soviet states |
-| USA (FDA) | Not approved | No IND/NDA filed |
-| EU (EMA) | Not approved | Not submitted for authorization |
-| Australia (TGA) | Not approved | Not listed |
-| **WADA** | Not prohibited | Not currently on banned substances list |
-
-### Russian Approval Details
-
-| Field | Information |
-|-------|-------------|
-| **Brand names** | Semax |
-| **Approved indications** | Ischemic stroke, dyscirculatory encephalopathy, cognitive disorders, optic nerve atrophy |
-| **Prescription status** | Prescription required |
-| **Formulations** | 0.1% solution (3 mL), 1% solution (3 mL) nasal spray |
-| **Manufacturer** | Various Russian pharmaceutical companies |
-| **Vital drug status** | Added to List of Vital & Essential Drugs, December 7, 2011 |
-
-### Regulatory Pathway Notes
-
-Unlike Western pharmaceuticals, Semax was developed entirely within the Russian/Soviet research system:
-
-- Developed at Institute of Molecular Genetics (IMG), Russian Academy of Sciences
-- Key researchers: Academicians I.P. Ashmarin and N.F. Myasoedov
-- Clinical trials conducted per Russian regulatory requirements
-- Approved by Russian Ministry of Health (~1997)
-- No attempt to pursue FDA or EMA approval (different regulatory standards, costs)
-- Research continues at IMG and affiliated Russian institutions
-- Lack of GLP/GCP standardization in historical studies limits Western regulatory acceptance
-
----
-
-<h2 id="related-peptides">Related Peptides</h2>
-
-### Peptide Family Context
-
-Semax belongs to a family of Russian-developed regulatory peptides:
-
-| Peptide | Relationship | Primary Activity |
-|---------|--------------|------------------|
-| **ACTH(1-39)** | Full hormone | Adrenal cortisol stimulation |
-| **ACTH(4-10)** | Active fragment | Nootropic (natural) |
-| **Semax** | ACTH(4-7) + Pro-Gly-Pro | Nootropic + neuroprotection |
-| **Selank** | Tuftsin + Pro-Gly-Pro | Anxiolytic + immunomodulation |
-| **Cortexin** | Brain peptide extract | Neuroprotection |
-| **Cerebrolysin** | Brain peptide mixture | Neurotrophic |
-
-### Semax vs. Selank
-
-Both are Russian-developed peptides with the same Pro-Gly-Pro C-terminus, but distinct profiles:
-
-| Aspect | Semax | Selank |
-|--------|-------|--------|
-| **Parent** | ACTH(4-7) (neuroactive) | Tuftsin (immune peptide) |
-| **Primary effect** | Nootropic/neuroprotective | Anxiolytic |
-| **Secondary effects** | Anti-inflammatory, immunomodulatory | Nootropic, immunomodulatory |
-| **Mechanism** | BDNF/NGF, dopamine modulation | GABA/serotonin modulation |
-| **Administration** | Intranasal | Intranasal |
-| **Russian approval** | ~1997 | 2009 |
-| **Main indication** | Stroke, cognitive impairment | Anxiety disorders |
-| **Comparative trial** | Superior for cognition | Superior for anxiolysis |
-
-### Semax vs. ACTH
-
-| Comparison | Semax | ACTH(1-39) |
-|------------|-------|------------|
-| **Length** | 7 amino acids | 39 amino acids |
-| **Hormonal activity** | None | Full cortisol stimulation |
-| **Nootropic activity** | Strong | Weak/absent |
-| **Neuroprotective** | Yes | Limited |
-| **Side effects** | Minimal | Hormonal, cardiovascular |
-| **Administration** | Intranasal | Injectable |
-| **Long-term safety** | Good | Concerns (hormonal) |
-
-### Semax vs. Western Nootropics
-
-| Comparison | Semax | Piracetam | Modafinil | Methylphenidate |
-|------------|-------|-----------|-----------|-----------------|
-| **Class** | Peptide | Racetam | Wakefulness agent | Stimulant |
-| **Mechanism** | Neurotrophic, multi-target | Membrane/AMPA | Dopamine, histamine | Dopamine, norepinephrine |
-| **BDNF effects** | Strong induction | Minimal | Minimal | Variable |
-| **Neuroprotection** | Yes | Mild | No | No |
-| **Tolerance** | No | No | Possible | Yes |
-| **Dependence** | No | No | Low | Yes |
-| **Route** | Intranasal | Oral | Oral | Oral |
-| **Regulatory status** | Russia only | Europe (Rx) | FDA approved | FDA approved |
-
----
-
-<h2 id="current-research-directions">Current Research Directions</h2>
-
-### Active Research Areas
-
-**1. Stroke and Cerebral Ischemia**
-- Genome-wide transcriptomic analysis of neuroprotective mechanisms
-- Protein expression profiling in ischemia-reperfusion models
-- Anti-inflammatory mechanisms in acute stroke
-- Clinical optimization of stroke rehabilitation protocols
-
-**2. Neurodegenerative Diseases**
-- Potential applications in Alzheimer's disease (amyloid interaction studies)
-- BDNF-based approaches to Parkinson's disease
-- Cognitive decline in aging
-
-**3. ADHD and Neurodevelopmental Disorders**
-- Theoretical potential for attention-deficit hyperactivity disorder (via dopamine/BDNF)
-- Rett syndrome research (BDNF-based approach)
-
-**4. Depression and Mood Disorders**
-- Antidepressant-like effects in chronic stress models
-- BDNF-mediated mechanisms of mood regulation
-- Comparison with standard antidepressants
-
-**5. Spinal Cord Injury**
-- Recent Chinese research on mu-opioid receptor targeting
-- Functional recovery mechanisms
-- Oxidative stress reduction
-
-**6. Ophthalmic Applications**
-- Glaucomatous optic neuropathy
-- Optic nerve atrophy
-- Retinal neurotrophin effects
-
-### Key Research Questions
-
-1. **Western validation:** Will Western trials confirm Russian efficacy data?
-2. **Optimal dosing:** What are optimal dose-response relationships?
-3. **Combination therapy:** Potential synergies with standard treatments?
-4. **Biomarkers:** Can BDNF levels predict treatment response?
-5. **Long-term effects:** Safety and efficacy with extended use?
-6. **Oral delivery:** Can bioavailability be improved for oral use?
-
-### Research Groups
-
-| Institution | Location | Focus |
-|-------------|----------|-------|
-| Institute of Molecular Genetics (IMG) | Moscow, Russia | Mechanism, transcriptomics, development |
-| Wenzhou Medical University | Zhejiang, China | Spinal cord injury, mu-opioid mechanisms |
-| Various Russian medical centers | Russia | Clinical applications |
-| Alzheimer's Drug Discovery Foundation | USA | Cognitive vitality research assessment |
-
-### Recent Publications (2020-2025)
-
-- Genome-wide transcriptomic studies in ischemia models
-- Protein expression profiling confirming neuroprotective effects
-- Anti-inflammatory mechanism characterization
-- Spinal cord injury research from Chinese institutions
-- Antidepressant-like effects in chronic stress models
-
----
-
-<h2 id="citation-table">Citation Table</h2>
-
-### Human Clinical Studies
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Gusev EI et al. [PMID:29798983](https://pubmed.ncbi.nlm.nih.gov/29798983/) | 2018 | Clinical | Semax + rehabilitation increases BDNF, improves stroke recovery (n=110) | Paywalled |
-| Gusev EI et al. [PMID:10358912](https://pubmed.ncbi.nlm.nih.gov/10358912/) | 1999 | Clinical | Neuroprotective mechanisms in acute ischemic stroke | Paywalled |
-| Ioseliani et al. [PMID:10741256](https://pubmed.ncbi.nlm.nih.gov/10741256/) | 2000 | Clinical | Improved visual function in optic nerve disease | Paywalled |
-| Kurysheva NI et al. [PMID:11569188](https://pubmed.ncbi.nlm.nih.gov/11569188/) | 2001 | Clinical | Neuroprotective/neurotrophic effects in glaucoma | Paywalled |
-| Voronina TA et al. [PMID:32342318](https://pubmed.ncbi.nlm.nih.gov/32342318/) | 2020 | fMRI study | Functional connectivity changes in healthy volunteers | Open |
-
-### Neurotrophin Studies (BDNF/NGF)
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Agapova TIu et al. [PMID:19662538](https://pubmed.ncbi.nlm.nih.gov/19662538/) | 2008 | Preclinical | Temporal dynamics of BDNF/NGF in hippocampus, cortex, retina | Paywalled |
-| Agapova TIu et al. [PMID:18756821](https://pubmed.ncbi.nlm.nih.gov/18756821/) | 2007 | Preclinical | BDNF/NGF expression dynamics in frontal cortex and hippocampus | Paywalled |
-| Dolotov OV et al. [PMID:16996037](https://pubmed.ncbi.nlm.nih.gov/16996037/) | 2006 | Preclinical | Regulates BDNF and TrkB expression, enhances cognition | Paywalled |
-| Dolotov OV et al. [PMID:16635254](https://pubmed.ncbi.nlm.nih.gov/16635254/) | 2006 | Preclinical | Specific binding, increases BDNF protein in basal forebrain | Paywalled |
-| Korenevsky AV et al. [PMID:14556513](https://pubmed.ncbi.nlm.nih.gov/14556513/) | 2003 | Preclinical | Stimulates BDNF in different brain areas | Paywalled |
-| Dolotov OV et al. [PMID:11457573](https://pubmed.ncbi.nlm.nih.gov/11457573/) | 2001 | In vitro | Rapid neurotrophin mRNA induction in glial cultures | Paywalled |
-| Stavchansky VV et al. [PMID:19633950](https://pubmed.ncbi.nlm.nih.gov/19633950/) | 2009 | Preclinical | Activates neurotrophin/receptor genes after ischemia | Open |
-
-### Genome-Wide and Transcriptomic Studies
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Filippenkov IB et al. [PMID:32580520](https://pubmed.ncbi.nlm.nih.gov/32580520/) | 2020 | Preclinical | 394 DEGs identified; suppressed inflammation, activated neurotransmission | Open |
-| Dergunova LV et al. [PMID:24661604](https://pubmed.ncbi.nlm.nih.gov/24661604/) | 2014 | Preclinical | Genome-wide analysis: immune and vascular gene effects | Open |
-| Filippenkov IB et al. [PMID:34201112](https://pubmed.ncbi.nlm.nih.gov/34201112/) | 2021 | Preclinical | Protein expression profile confirms neuroprotection | Open |
-| Filatova EV et al. [PMID:28255762](https://pubmed.ncbi.nlm.nih.gov/28255762/) | 2017 | Preclinical | Immune response gene regulation in ischemia | Paywalled |
-| Dergunova LV et al. [PMID:34097675](https://pubmed.ncbi.nlm.nih.gov/34097675/) | 2021 | Preclinical | Suppresses proinflammatory mediator mRNA | Paywalled |
-
-### Neurotransmitter Studies
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Eremin KO et al. [PMID:16362768](https://pubmed.ncbi.nlm.nih.gov/16362768/) | 2005 | Preclinical | Activates dopaminergic and serotonergic systems | Paywalled |
-| Eremin KO et al. [PMID:15088389](https://pubmed.ncbi.nlm.nih.gov/15088389/) | 2004 | Preclinical | Effects on dopamine and serotonin systems | Paywalled |
-
-### Mood and Anxiety Studies
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Tsai SJ [PMID:18204410](https://pubmed.ncbi.nlm.nih.gov/18204410/) | 2008 | Hypothesis | Therapeutic possibility for depression | Paywalled |
-| Tsai SJ [PMID:16996699](https://pubmed.ncbi.nlm.nih.gov/16996699/) | 2007 | Hypothesis | Potential for ADHD and Rett syndrome | Paywalled |
-| Kolik LG et al. [PMID:20387390](https://pubmed.ncbi.nlm.nih.gov/20387390/) | 2010 | Preclinical | Anxiolytic and antidepressant effects against CCK-4 | Paywalled |
-| Volodina MA et al. [PMID:33418449](https://pubmed.ncbi.nlm.nih.gov/33418449/) | 2021 | Preclinical | Attenuates fluvoxamine-induced behavioral alterations | Paywalled |
-
-### Immune Modulation Studies
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Medvedeva EV et al. [PMID:31028579](https://pubmed.ncbi.nlm.nih.gov/31028579/) | 2019 | Preclinical | Immune corrector in social stress model | Paywalled |
-
-### Cardioprotection
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Gorbunova VD et al. [PMID:17385423](https://pubmed.ncbi.nlm.nih.gov/17385423/) | 2007 | Preclinical | Protects heart rate after myocardial infarction | Paywalled |
-
-### Neuroprotection (Ischemia)
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Lebedev VV et al. [PMID:11245825](https://pubmed.ncbi.nlm.nih.gov/11245825/) | 2001 | Preclinical | Prevents enhanced NO generation in ischemia | Paywalled |
-
-### Recent International Research
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Chinese consortium [PMID:40692165](https://pubmed.ncbi.nlm.nih.gov/40692165/) | 2025 | Preclinical | Targets mu-opioid receptor for spinal cord injury recovery | Paywalled |
-
-### Important Notes on Literature
-
-- **Primary research center:** Institute of Molecular Genetics (IMG), Russian Academy of Sciences, Moscow
-- **Key researchers:** Nikolai F. Myasoedov (IMG), Igor P. Ashmarin (deceased), Ludmila V. Dergunova
-- **Language:** Many primary studies published in Russian journals; some translated or published in English
-- **Independent replication:** Limited outside Russian research network; recent Chinese studies expanding international research base
-- **Open access:** Many recent genome-wide studies published in open-access journals
-- **Post-marketing data:** Available through Russian pharmacovigilance system
-
----
-
-*This dossier is for educational purposes only and does not constitute medical advice. Semax is approved in Russia but not by the FDA, EMA, or other Western regulatory agencies. Consult qualified healthcare providers for medical decisions. Last updated: January 2026.*
+### Important Limitations
+
+- Most research originates from Russian institutions with limited Western independent replication
+- Many primary studies published only in Russian, creating language barriers for verification
+- Historical clinical trials may not meet current Western GLP/GCP standards
+- Human pharmacokinetics and optimal dosing not fully characterized by Western standards
+- No FDA or EMA regulatory pathway has been pursued

@@ -2,6 +2,7 @@
 name: "SLU-PP-332"
 aliases: ["ERR agonist 332", "Exercise mimetic compound"]
 category: "metabolic"
+compoundType: "small-molecule"
 evidenceStrength: "low"
 lastUpdated: 2026-01-22
 comparators: ["aicar", "gw501516"]
@@ -13,432 +14,207 @@ sources:
   openAccess: 7
 metaTitle: "SLU-PP-332 Evidence Dossier | PepCodex"
 metaDescription: "Evidence review of SLU-PP-332, an ERR agonist exercise mimetic. Preclinical research, proposed mechanisms, and current research status."
----
-
-## Overview
-
-<h2 id="overview" class="sr-only">Overview</h2>
-
-### Quick Summary
-
-- **Small molecule ERR agonist** developed at Saint Louis University
-- **Not a peptide** - included in library due to metabolic research interest
-- **No human studies exist** - all data from mouse models and cell cultures
-- **Exercise mimetic concept** - aims to pharmacologically activate exercise pathways
-- **Early-stage research compound** - not available for clinical use
-
-**Evidence Strength: Low** - Preclinical data only from animal studies. No human pharmacokinetics, safety, or efficacy data. Research compound not intended for human use.
-
-### Identity & Origins
-
-| Property | Value |
-|----------|-------|
-| **Name** | SLU-PP-332 |
-| **Class** | ERR (Estrogen-Related Receptor) agonist |
-| **Type** | Small molecule (not a peptide) |
-| **Developer** | Saint Louis University (Thomas Burris lab) |
-| **Status** | Research compound |
-
-### Research Timeline
-
-- **2004:** Foundational ERR-PGC-1alpha pathway research published
-- **2008:** Exercise mimetic concept established (Narkar et al., Cell)
-- **2010s:** ERR agonist development programs at SLU
-- **2023:** SLU-PP-332 preclinical data published
-- **Current:** No clinical trials registered or planned
-
+interactions:
+  - peptide: "aicar"
+    type: "caution"
+    description: "Both target exercise-mimetic pathways (AICAR via AMPK, SLU-PP-332 via ERR). Combined activation of these parallel pathways has not been studied. Theoretical synergy but unknown safety profile."
+  - peptide: "gw501516"
+    type: "avoid"
+    description: "GW501516 development was halted due to cancer concerns in animal studies. Combining with another metabolic modulator increases theoretical risk. Neither compound has human safety data."
+  - peptide: "sr9009"
+    type: "caution"
+    description: "Both target metabolic enhancement through nuclear receptor modulation (SR9009 via REV-ERB, SLU-PP-332 via ERR). No interaction data available. Exercise caution with combined metabolic modulators."
+  - peptide: "metformin"
+    type: "compatible"
+    description: "Different mechanisms (metformin primarily affects hepatic gluconeogenesis and AMPK, SLU-PP-332 targets ERR in muscle). Theoretical complementary effects but no combined studies."
+  - peptide: "bpc-157"
+    type: "compatible"
+    description: "Non-overlapping mechanisms. BPC-157 focuses on tissue repair while SLU-PP-332 targets metabolic pathways. No known contraindications."
+  - peptide: "tb-500"
+    type: "compatible"
+    description: "Non-overlapping mechanisms. TB-500 focuses on tissue repair and cell migration while SLU-PP-332 targets ERR-mediated metabolic pathways. No interaction data available."
+molecularInfo:
+  weight: "~450 Da"
+  chainLength: 0
+  type: "Small molecule"
+  sequence: "N/A (small molecule)"
+  aminoAcids: []
+evidenceChainedBenefits:
+  - mechanism:
+      action: "ERRalpha/ERRgamma receptor activation promoting mitochondrial biogenesis"
+      confidence: "supported"
+      directStudies: 3
+    benefit:
+      claim: "enhance endurance capacity"
+      qualifier: "may"
+    evidence:
+      level: "very-low"
+      humanStudies: 0
+      animalStudies: 3
+      cellStudies: 2
+      keyFindings:
+        - study: "Kim SH et al. 2023"
+          type: "animal"
+          finding: "SLU-PP-332 enhanced mouse treadmill endurance via ERR-PGC-1alpha pathway activation"
+          pmid: "37399371"
+        - study: "Rangwala SM et al. 2010"
+          type: "animal"
+          finding: "ERRgamma regulates muscle mitochondrial function and oxidative capacity"
+          pmid: "20418374"
+  - mechanism:
+      action: "PGC-1alpha coactivation increasing oxidative phosphorylation genes"
+      confidence: "supported"
+      directStudies: 4
+    benefit:
+      claim: "improve mitochondrial function"
+      qualifier: "appears to"
+    evidence:
+      level: "very-low"
+      humanStudies: 0
+      animalStudies: 2
+      cellStudies: 3
+      keyFindings:
+        - study: "Giguere V 2008"
+          type: "in-vitro"
+          finding: "ERRs identified as master regulators of energy metabolism and mitochondrial function"
+          pmid: "18664618"
+        - study: "Willy PJ et al. 2004"
+          type: "in-vitro"
+          finding: "ERRalpha ligands regulate PGC-1alpha signaling pathways"
+          pmid: "15184678"
+  - mechanism:
+      action: "Upregulation of fatty acid oxidation and OXPHOS gene programs"
+      confidence: "emerging"
+      directStudies: 2
+    benefit:
+      claim: "enhance metabolic flexibility"
+      qualifier: "suggested to"
+    evidence:
+      level: "very-low"
+      humanStudies: 0
+      animalStudies: 2
+      cellStudies: 2
+      keyFindings:
+        - study: "Fan W et al. 2015"
+          type: "in-vitro"
+          finding: "PPARs and ERRs coordinate mitochondrial metabolism and fatty acid oxidation"
+          pmid: "25486445"
+        - study: "Narkar VA et al. 2008"
+          type: "animal"
+          finding: "AMPK/PPARdelta pathway activation produces exercise-mimetic effects in mice"
+          pmid: "18674809"
+conditions:
+  - slug: "exercise-intolerance"
+    name: "Exercise Intolerance"
+    researchSummary: "SLU-PP-332 was developed as an exercise mimetic targeting ERR receptors. Mouse studies showed improved treadmill endurance and reduced fatigue markers. However, all evidence is preclinical with no human trials conducted. The compound remains a research tool."
+    relevantStudies: ["37399371", "20418374"]
+    relatedPeptides: ["aicar"]
+  - slug: "metabolic-dysfunction"
+    name: "Metabolic Dysfunction"
+    researchSummary: "ERR activation enhances mitochondrial biogenesis and oxidative metabolism in preclinical models. Theoretical applications include metabolic syndrome, diabetes, and obesity. No human efficacy or safety data exists."
+    relevantStudies: ["18664618", "25486445"]
+    relatedPeptides: ["gw501516"]
+  - slug: "muscle-wasting"
+    name: "Muscle Wasting"
+    researchSummary: "Exercise mimetics have been proposed for sarcopenia, cachexia, and disuse atrophy where physical exercise is not possible. SLU-PP-332's effects on muscle metabolism in disease states have not been studied."
+    relevantStudies: ["20418374", "18674809"]
+    relatedPeptides: ["bpc-157", "tb-500"]
+timeline:
+  - period: "Week 1-2"
+    effects: "Based on mouse studies: ERR target gene activation may begin within days. Changes in oxidative gene expression observed in animal models. No human timeline data available."
+    source: "PMID:37399371"
+  - period: "Week 2-4"
+    effects: "Mouse studies suggest mitochondrial biogenesis markers increase over this timeframe. PGC-1alpha pathway activation observed. Human response completely unknown."
+    source: "PMID:20418374"
+  - period: "Week 4-8"
+    effects: "In mouse endurance studies, functional improvements in running capacity observed by 4-8 weeks. Translation to human physiology is entirely speculative."
+    source: "PMID:37399371"
+  - period: "Week 8+"
+    effects: "Long-term effects unknown. Chronic ERR activation has not been studied in any species for extended periods. Safety of prolonged use is completely uncharacterized."
+qualityChecklist:
+  goodSigns:
+    - "Provided as research-grade chemical with certificate of analysis (COA)"
+    - "Purity verified by HPLC (>95%)"
+    - "Mass spectrometry confirmation of molecular weight"
+    - "Proper storage conditions maintained (cool, dry, protected from light)"
+    - "Sold by established research chemical suppliers"
+  warningSigns:
+    - "No certificate of analysis provided"
+    - "Purity below 95%"
+    - "Inconsistent appearance between batches"
+    - "Sold with implied human use claims"
+    - "Marketed as 'exercise in a pill' or similar"
+  badSigns:
+    - "No purity testing documentation"
+    - "Claims of human safety or efficacy"
+    - "Sold in capsule or tablet form for consumption"
+    - "Marketing that violates research chemical disclaimers"
+    - "Supplier has no verifiable quality control processes"
+    - "Unusual color or appearance inconsistent with chemical specifications"
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>
 
-SLU-PP-332 targets the estrogen-related receptor (ERR) family, which despite their name are not activated by estrogen. ERRs are "orphan" nuclear receptors that regulate genes controlling energy metabolism.
+The proposed mechanisms of SLU-PP-332 are based entirely on animal and in vitro studies. No human mechanistic data exists, and this compound has never been tested in humans.
 
-### How SLU-PP-332 Works
+### How It Works (Simplified)
 
-Think of your body as having a "fitness switch" that normally gets flipped by exercise. SLU-PP-332 aims to flip this switch pharmacologically:
+SLU-PP-332 aims to activate "exercise pathways" pharmacologically by targeting ERR receptors:
 
-1. **Activates ERR receptors** - ERRs are proteins in your cells that control which genes get turned on. When activated, they tell your cells to behave as if you've been exercising.
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-8">
+  <div class="bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 rounded-xl p-5 border border-emerald-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400">1</div>
+      <div class="font-semibold text-white">ERR Activation</div>
+    </div>
+    <p class="text-sm text-white/70">Binds to ERRalpha and ERRgamma receptors, triggering transcription of metabolic genes normally activated by exercise.</p>
+  </div>
+  <div class="bg-gradient-to-br from-blue-500/10 to-blue-500/5 rounded-xl p-5 border border-blue-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">2</div>
+      <div class="font-semibold text-white">Mitochondrial Biogenesis</div>
+    </div>
+    <p class="text-sm text-white/70">Promotes PGC-1alpha coactivation, signaling cells to build more mitochondria and enhance energy production capacity.</p>
+  </div>
+  <div class="bg-gradient-to-br from-violet-500/10 to-violet-500/5 rounded-xl p-5 border border-violet-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-violet-500/20 flex items-center justify-center text-violet-400">3</div>
+      <div class="font-semibold text-white">Oxidative Metabolism</div>
+    </div>
+    <p class="text-sm text-white/70">Upregulates genes for fatty acid oxidation and oxidative phosphorylation, enhancing aerobic energy pathways.</p>
+  </div>
+  <div class="bg-gradient-to-br from-amber-500/10 to-amber-500/5 rounded-xl p-5 border border-amber-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-400">4</div>
+      <div class="font-semibold text-white">Endurance Enhancement</div>
+    </div>
+    <p class="text-sm text-white/70">In mice, these changes translated to improved treadmill endurance and reduced muscle fatigue markers.</p>
+  </div>
+</div>
 
-2. **Boosts mitochondrial function** - Mitochondria are the "power plants" of your cells. Exercise makes you build more mitochondria and makes existing ones work better. SLU-PP-332 may trigger similar changes without physical activity.
+### Scientific Pathways
 
-3. **Increases oxidative capacity** - Your muscles can burn fuel two ways: with oxygen (aerobic) or without (anaerobic). Trained athletes have higher aerobic capacity. SLU-PP-332 may enhance the genes that support aerobic metabolism.
-
-4. **Enhances endurance markers** - In mice, this translated to running longer before exhaustion and faster recovery from muscle fatigue.
-
-**Critical caveat:** These effects have only been demonstrated in mice. Human biology may respond very differently.
-
----
-
-### Scientific Pathways *(Preclinical Evidence Only)*
-
-**1. ERR-PGC-1alpha Axis**
-
+**ERR-PGC-1alpha Axis** *(Mitochondrial Biogenesis)*
 ```
-SLU-PP-332 → ERRalpha/ERRgamma Activation
-    ↓
-PGC-1alpha Coactivation (positive feedback loop)
-    ↓
-├── Mitochondrial biogenesis genes
-├── Fatty acid oxidation genes
-├── Oxidative phosphorylation genes
-└── Angiogenesis (new blood vessel formation)
+SLU-PP-332 → ERRalpha/ERRgamma Activation → PGC-1alpha Coactivation
+                                                      ↓
+                                          Mitochondrial biogenesis genes
+                                          Fatty acid oxidation genes
+                                          Oxidative phosphorylation genes
 ```
 
-ERRs work with a partner protein called PGC-1alpha (peroxisome proliferator-activated receptor gamma coactivator 1-alpha). This partnership is the master regulator of metabolic adaptation to exercise. When you exercise regularly, PGC-1alpha levels increase, which then activates ERRs, which then turn on hundreds of metabolic genes.
+**Exercise Mimetic Pathway** *(Metabolic Enhancement)*
+```
+SLU-PP-332 → ERR Target Genes → OXPHOS/FAO Upregulation → Enhanced Aerobic Capacity
+```
 
-**2. The Three ERR Subtypes**
-
-| Receptor | Primary Location | Function |
-|----------|-----------------|----------|
-| **ERRalpha** | Widespread | General metabolic regulation |
-| **ERRbeta** | Brain, retina | Less metabolically active |
-| **ERRgamma** | Heart, muscle | Oxidative metabolism champion |
-
-SLU-PP-332 primarily activates ERRalpha and ERRgamma, the metabolically relevant subtypes.
-
-**3. Downstream Gene Programs**
-
-When ERRs are activated, they turn on genes for:
-
-- **OXPHOS genes** - Components of the electron transport chain (ATP production)
-- **FAO genes** - Enzymes that break down fatty acids for fuel
-- **Mitochondrial DNA replication** - Making more mitochondria
-- **VEGF** - Growing new blood vessels to supply oxygen
-- **Antioxidant enzymes** - Protecting against exercise-induced oxidative stress
-
-**4. Why This Matters for Exercise**
-
-Regular exercise causes:
-1. Muscle contraction signals activate AMPK and calcium signaling
-2. These pathways increase PGC-1alpha
-3. PGC-1alpha activates ERRs
-4. ERRs turn on metabolic adaptation genes
-5. Over weeks, you become fitter
-
-SLU-PP-332 attempts to bypass steps 1-2 and directly activate the ERR pathway.
-
-### Gene Expression Effects
-
-| Effect | Result | What It Means |
-|--------|--------|---------------|
-| PGC-1alpha induction | Mitochondrial master regulator activated | Cells get the signal to build metabolic machinery |
-| CPT1 upregulation | More fatty acid transport into mitochondria | Enhanced fat burning capacity |
-| Cytochrome c oxidase increase | More electron transport chain | Better ATP production |
-| VEGF induction | New blood vessel formation | Better oxygen delivery to tissues |
-| SOD2 upregulation | More antioxidant enzymes | Protection against metabolic stress |
+**Key Research:** Kim SH et al. (Saint Louis University, 2023) demonstrated ERR-mediated endurance enhancement in mouse models. [PMID:37399371](https://pubmed.ncbi.nlm.nih.gov/37399371/)
 
 ### Important Limitations
 
-- **Mouse-only data** - Human ERR biology may differ significantly
-- **Single research group** - Most SLU-PP-332 data from one laboratory
-- **Pharmacokinetics unknown** - No data on absorption, distribution, metabolism in humans
-- **Long-term effects unknown** - Chronic activation of these pathways could have unintended consequences
-- **Not optimized for humans** - Research compound, not a drug candidate
-
----
-
-<h2 id="research-summary">Research Summary</h2>
-
-### Evidence Overview
-
-| Category | Count | Notes |
-|----------|-------|-------|
-| Human RCTs | 0 | None conducted |
-| Human observational | 0 | None published |
-| Preclinical studies | 5 | Mouse models, cell lines |
-| Review articles | 3 | ERR biology reviews |
-| Total sources | 8 | 7 open access |
-
-### Key Research Themes
-
-1. **Exercise mimetic concept** - Can drugs replicate exercise benefits?
-2. **ERR as metabolic target** - Nuclear receptor approach to metabolism
-3. **Mitochondrial enhancement** - Boosting cellular energy production
-4. **Endurance improvement** - Mouse running capacity studies
-
-**Critical Assessment:** The preclinical data is interesting but extremely preliminary. The jump from mouse exercise capacity to human therapeutic use involves many untested assumptions.
-
----
-
-<h2 id="key-human-trials">Key Human Trials</h2>
-
-### No Human Studies Exist
-
-**SLU-PP-332 has never been tested in humans.**
-
-There are:
-- No Phase 1 safety studies
-- No pharmacokinetic studies in humans
-- No efficacy trials
-- No registered clinical trials on ClinicalTrials.gov
-
-### Why No Human Trials?
-
-1. **Early-stage compound** - Still in basic research phase
-2. **Academic origin** - Universities often lack resources for clinical development
-3. **Regulatory pathway unclear** - "Exercise mimetics" don't fit standard drug categories
-4. **Safety unknowns** - Chronic ERR activation effects uncertain
-5. **Commercial uncertainty** - Unclear market pathway
-
-### What Would Be Needed
-
-Before human trials could proceed, researchers would need:
-- Extensive toxicology studies
-- Pharmacokinetic characterization
-- Target engagement biomarkers
-- IND (Investigational New Drug) filing with FDA
-- Significant funding (typically $10-50 million for Phase 1-2)
-
----
-
-<h2 id="preclinical-evidence">Preclinical Evidence</h2>
-
-### Mouse Studies
-
-| Study Type | Model | Key Findings | Limitations |
-|------------|-------|--------------|-------------|
-| Endurance | Treadmill running | Mice ran longer before exhaustion | Mouse ≠ human physiology |
-| Muscle fatigue | Grip strength | Reduced fatigue markers | Single time point |
-| Gene expression | Muscle tissue | ERR target genes upregulated | Correlation not causation |
-| Metabolic markers | Blood chemistry | Improved lipid profiles | Short-term only |
-
-### Cell Culture Studies
-
-- ERR transcriptional activation confirmed
-- PGC-1alpha pathway engagement demonstrated
-- Mitochondrial gene programs activated
-- Dose-response relationships characterized
-
-### The Exercise Mimetic Precedent
-
-SLU-PP-332 builds on earlier exercise mimetic research:
-
-| Compound | Target | Outcome |
-|----------|--------|---------|
-| AICAR | AMPK | Showed endurance effects in mice; never developed clinically |
-| GW501516 | PPARdelta | Enhanced mouse endurance; development halted due to cancer concerns in animals |
-| SLU-PP-332 | ERR | Mouse endurance effects; no development yet |
-
-**Pattern:** Exercise mimetics consistently show impressive mouse data but face significant hurdles translating to humans.
-
-### Limitations of Preclinical Data
-
-- **Species differences** - Mouse and human metabolism differ substantially
-- **Artificial conditions** - Lab mice live in controlled environments
-- **Short duration** - Most studies are weeks, not years
-- **Healthy animals** - Effects in disease states unknown
-- **Route of administration** - May not match human delivery needs
-- **Single endpoint focus** - Real exercise has hundreds of effects
-
----
-
-<h2 id="safety-profile">Safety Profile</h2>
-
-### Known Information
-
-**The safety profile of SLU-PP-332 in humans is completely unknown.**
-
-### Theoretical Concerns
-
-Based on the mechanism of action, potential concerns include:
-
-| Concern | Rationale |
-|---------|-----------|
-| **Cardiac effects** | ERRgamma highly expressed in heart; chronic activation effects unknown |
-| **Metabolic disruption** | Forcing oxidative metabolism could deplete substrates |
-| **Cancer risk** | Enhanced cell metabolism could theoretically support tumor growth |
-| **Hormonal effects** | ERRs interact with estrogen receptor pathways |
-| **Muscle adaptation** | Bypassing exercise signals may cause maladaptation |
-
-### Preclinical Safety Notes
-
-From published mouse studies:
-- No acute toxicity at tested doses
-- No obvious adverse events in short-term studies
-- No long-term (chronic) exposure studies published
-
-### Research Compound Warning
-
-SLU-PP-332 is a research tool compound, meaning:
-- Not manufactured to pharmaceutical standards
-- Purity may vary between batches
-- No human safety testing conducted
-- Not intended for human consumption
-- Purchasing online carries significant risks
-
----
-
-<h2 id="pharmacokinetics">Pharmacokinetics</h2>
-
-### Known Parameters
-
-| Parameter | Value | Notes |
-|-----------|-------|-------|
-| **Half-life** | Unknown in humans | Mouse PK only |
-| **Bioavailability** | Unknown | Not characterized |
-| **Metabolism** | Unknown | Not studied |
-| **Distribution** | Unknown | Not characterized |
-| **Protein binding** | Unknown | Not studied |
-
-### Mouse Pharmacokinetics
-
-Limited published data exists on mouse PK parameters. The compound appears to:
-- Be orally bioavailable in mice
-- Reach target tissues (muscle, liver)
-- Engage ERR targets based on gene expression
-
-### Research Gaps
-
-Human pharmacokinetic data is essential before any clinical development:
-- Absorption characteristics
-- Distribution to muscle tissue
-- Metabolic stability
-- Drug-drug interactions
-- Appropriate dosing intervals
-
----
-
-<h2 id="regulatory-status">Regulatory Status</h2>
-
-| Region | Status | Notes |
-|--------|--------|-------|
-| USA (FDA) | Not regulated | Research compound only |
-| EU (EMA) | Not regulated | No submissions |
-| WADA | Not specifically listed | May fall under metabolic modulators |
-| Australia (TGA) | Not scheduled | Research chemical |
-
-### Regulatory Classification
-
-SLU-PP-332 exists in a regulatory gray zone:
-- Not a dietary supplement (no DSHEA protection)
-- Not an approved drug (no NDA/BLA)
-- Sold as "research chemical" with "not for human consumption" labels
-- Legal status varies by jurisdiction
-
-### Sports Anti-Doping Considerations
-
-While SLU-PP-332 is not specifically named by WADA, it could potentially be prohibited under:
-- S4.5: Metabolic modulators
-- S0: Non-approved substances
-
-Athletes should assume any exercise mimetic may trigger anti-doping violations.
-
----
-
-<h2 id="related-peptides">Related Peptides</h2>
-
-### Metabolic/Exercise Mimetic Compounds
-
-| Compound | Target | Evidence Level | Status |
-|----------|--------|----------------|--------|
-| **SLU-PP-332** | ERR | Very low (mouse only) | Research |
-| **AICAR** | AMPK | Low (preclinical) | Research |
-| **GW501516** | PPARdelta | Moderate (abandoned) | Cancelled |
-| **SR9009** | REV-ERB | Low (preclinical) | Research |
-| **SR9011** | REV-ERB | Low (preclinical) | Research |
-
-### Important Distinction
-
-SLU-PP-332 is **not a peptide** - it's a small molecule. It's included in this library due to its relevance to metabolic research and the peptide-interested community's frequent questions about exercise mimetics.
-
-### The Exercise Mimetic Landscape
-
-| Approach | Examples | Challenge |
-|----------|----------|-----------|
-| AMPK activation | AICAR, metformin | Limited muscle effects |
-| PPARdelta agonism | GW501516 | Cancer safety concerns |
-| ERR agonism | SLU-PP-332 | No human data |
-| REV-ERB modulation | SR9009/SR9011 | Bioavailability issues |
-
-All exercise mimetic approaches face the fundamental challenge: exercise produces hundreds of coordinated effects, while drugs typically have one mechanism.
-
----
-
-<h2 id="current-research-directions">Current Research Directions</h2>
-
-### Active Research Areas
-
-1. **ERR biology** - Understanding receptor function in health and disease
-2. **Metabolic disease applications** - Diabetes, obesity, metabolic syndrome
-3. **Muscle wasting** - Sarcopenia, cachexia, disuse atrophy
-4. **Heart failure** - Cardiac metabolic dysfunction
-5. **Aging** - Mitochondrial decline with age
-
-### Key Research Questions
-
-- Can ERR activation replicate all exercise benefits?
-- What are long-term effects of chronic ERR activation?
-- Which diseases might benefit from this approach?
-- Can safer, more selective compounds be developed?
-- What biomarkers would indicate target engagement in humans?
-
-### Future Directions
-
-For SLU-PP-332 or successors to advance:
-1. Comprehensive toxicology studies needed
-2. Human PK characterization required
-3. Target engagement biomarkers must be validated
-4. Clinical trial design must be developed
-5. Regulatory pathway must be clarified
-
-### The Broader Exercise Mimetic Field
-
-Interest in "exercise in a pill" remains high because:
-- Many people cannot exercise (disability, illness)
-- Exercise benefits are profound and well-documented
-- Compliance with exercise recommendations is poor
-- Aging populations have increasing metabolic disease
-
-However, replicating all benefits of exercise pharmacologically remains a distant goal.
-
----
-
-<h2 id="citation-table">Citation Table</h2>
-
-### SLU-PP-332 Specific Research
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Kim SH et al. [PMID:37399371](https://pubmed.ncbi.nlm.nih.gov/37399371/) | 2023 | Preclinical | SLU-PP-332 enhanced mouse endurance via ERR-PGC-1alpha pathway | Paywalled |
-
-### Foundational ERR Biology
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Willy PJ et al. [PMID:15184678](https://pubmed.ncbi.nlm.nih.gov/15184678/) | 2004 | Mechanistic | ERRalpha ligands regulate PGC-1alpha signaling | Open |
-| Giguere V [PMID:18664618](https://pubmed.ncbi.nlm.nih.gov/18664618/) | 2008 | Review | ERRs as master regulators of energy metabolism | Open |
-| Rangwala SM et al. [PMID:20418374](https://pubmed.ncbi.nlm.nih.gov/20418374/) | 2010 | Preclinical | ERRgamma regulates muscle mitochondrial function | Open |
-
-### Exercise Mimetic Concept
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Narkar VA et al. [PMID:18674809](https://pubmed.ncbi.nlm.nih.gov/18674809/) | 2008 | Preclinical | AMPK/PPARdelta agonists as exercise mimetics (Cell) | Open |
-| Fan W et al. [PMID:25486445](https://pubmed.ncbi.nlm.nih.gov/25486445/) | 2015 | Review | PPARs and ERRs in mitochondrial metabolism | Open |
-
-### Nuclear Receptor Pharmacology
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Burris TP et al. [PMID:23457206](https://pubmed.ncbi.nlm.nih.gov/23457206/) | 2013 | Review | Comprehensive nuclear receptor pharmacology review | Open |
-| Vernier M et al. [PMID:32165409](https://pubmed.ncbi.nlm.nih.gov/32165409/) | 2020 | Mechanistic | ERRs as ROS sensors linking to antioxidant response | Open |
-
-### Key Researcher
-
-**Thomas Burris, PhD** - Professor at Saint Louis University (formerly), now at University of Florida. Pioneer in nuclear receptor pharmacology and ERR agonist development. Named inventor on ERR-related patents.
-
-### Research Institution
-
-**Saint Louis University School of Medicine** - St. Louis, Missouri, USA. Primary site of SLU-PP-332 development. The compound name "SLU" derives from the university abbreviation.
-
-### Important Notes on Literature
-
-- **Very limited direct publications** - SLU-PP-332 itself has few peer-reviewed publications
-- **Foundational work is robust** - ERR biology is well-established
-- **Translation gap** - Strong mechanistic rationale but no human validation
-- **No clinical trials** - Not registered on ClinicalTrials.gov or international equivalents
-- **Popular press coverage** - Media often overstates "exercise pill" potential
-
----
-
-*This dossier is for educational purposes only and does not constitute medical advice. SLU-PP-332 is a research compound with no human safety or efficacy data. It is not approved by any regulatory agency and should not be used by humans. Last updated: January 2026.*
+- **Mouse-only data** - SLU-PP-332 has never been tested in humans
+- **Single research group** - Most data originates from one laboratory
+- **Pharmacokinetics unknown** - No data on absorption, metabolism, or distribution in humans
+- **Long-term safety unknown** - Chronic ERR activation effects are uncharacterized
+- **Research compound only** - Not manufactured to pharmaceutical standards
+- **Translation uncertain** - Mouse exercise physiology differs substantially from humans

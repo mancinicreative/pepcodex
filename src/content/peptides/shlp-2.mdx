@@ -13,407 +13,249 @@ sources:
   openAccess: 10
 metaTitle: "SHLP-2 Evidence Dossier | PepCodex"
 metaDescription: "Evidence review of SHLP-2 (Small Humanin-Like Peptide 2), a mitochondria-derived peptide. Cytoprotection, metabolism, and longevity research."
+interactions:
+  - peptide: "humanin"
+    type: "synergistic"
+    description: "Both are mitochondria-derived peptides from overlapping mtDNA regions. SHLP-2 and humanin share cytoprotective mechanisms but act through distinct receptors. Complementary protective effects likely without antagonism."
+  - peptide: "mots-c"
+    type: "compatible"
+    description: "Different mitochondria-derived peptide with metabolic effects. MOTS-C primarily affects AMPK pathway while SHLP-2 acts via CXCR7. Non-overlapping mechanisms suggest compatibility."
+  - peptide: "shlp-6"
+    type: "compatible"
+    description: "Same peptide family but different effects. SHLP-6 shows pro-apoptotic properties while SHLP-2 is anti-apoptotic. May have balancing effects in cellular stress response."
+  - peptide: "ss-31"
+    type: "compatible"
+    description: "Both target mitochondria but through different mechanisms. SS-31 stabilizes cardiolipin while SHLP-2 binds complex 1. Potentially complementary mitochondrial support."
+  - peptide: "bpc-157"
+    type: "compatible"
+    description: "Non-overlapping mechanisms. BPC-157 focuses on tissue repair while SHLP-2 provides mitochondrial protection. No known interactions or contraindications."
+molecularInfo:
+  weight: "3,017.54 Da"
+  chainLength: 26
+  type: "Mitochondria-derived peptide"
+  sequence: "MGVKFFTLSTRFFPSVQRAVPLWTNS"
+  aminoAcids:
+    - { code: "M", name: "Methionine", position: 1, property: "hydrophobic" }
+    - { code: "G", name: "Glycine", position: 2, property: "polar" }
+    - { code: "V", name: "Valine", position: 3, property: "hydrophobic" }
+    - { code: "K", name: "Lysine", position: 4, property: "positive" }
+    - { code: "F", name: "Phenylalanine", position: 5, property: "hydrophobic" }
+    - { code: "F", name: "Phenylalanine", position: 6, property: "hydrophobic" }
+    - { code: "T", name: "Threonine", position: 7, property: "polar" }
+    - { code: "L", name: "Leucine", position: 8, property: "hydrophobic" }
+    - { code: "S", name: "Serine", position: 9, property: "polar" }
+    - { code: "T", name: "Threonine", position: 10, property: "polar" }
+    - { code: "R", name: "Arginine", position: 11, property: "positive" }
+    - { code: "F", name: "Phenylalanine", position: 12, property: "hydrophobic" }
+    - { code: "F", name: "Phenylalanine", position: 13, property: "hydrophobic" }
+    - { code: "P", name: "Proline", position: 14, property: "hydrophobic" }
+    - { code: "S", name: "Serine", position: 15, property: "polar" }
+    - { code: "V", name: "Valine", position: 16, property: "hydrophobic" }
+    - { code: "Q", name: "Glutamine", position: 17, property: "polar" }
+    - { code: "R", name: "Arginine", position: 18, property: "positive" }
+    - { code: "A", name: "Alanine", position: 19, property: "hydrophobic" }
+    - { code: "V", name: "Valine", position: 20, property: "hydrophobic" }
+    - { code: "P", name: "Proline", position: 21, property: "hydrophobic" }
+    - { code: "L", name: "Leucine", position: 22, property: "hydrophobic" }
+    - { code: "W", name: "Tryptophan", position: 23, property: "hydrophobic" }
+    - { code: "T", name: "Threonine", position: 24, property: "polar" }
+    - { code: "N", name: "Asparagine", position: 25, property: "polar" }
+    - { code: "S", name: "Serine", position: 26, property: "polar" }
+evidenceChainedBenefits:
+  - mechanism:
+      action: "CXCR7 receptor binding and MAPK-ERK1/2 pathway activation"
+      confidence: "supported"
+      directStudies: 4
+    benefit:
+      claim: "regulate energy homeostasis and reduce obesity"
+      qualifier: "may"
+    evidence:
+      level: "low"
+      humanStudies: 0
+      animalStudies: 4
+      cellStudies: 3
+      keyFindings:
+        - study: "Kim SJ et al. 2023"
+          type: "animal"
+          finding: "SHLP2 protected mice from HFD-induced obesity through CXCR7-mediated POMC neuron activation in hypothalamus"
+          pmid: "37468558"
+        - study: "Cobb LJ et al. 2016"
+          type: "animal"
+          finding: "SHLP2 administration improved insulin sensitivity and metabolic parameters in mice"
+          pmid: "27270401"
+  - mechanism:
+      action: "Mitochondrial complex 1 binding and stabilization"
+      confidence: "supported"
+      directStudies: 3
+    benefit:
+      claim: "provide neuroprotection against mitochondrial dysfunction"
+      qualifier: "may"
+    evidence:
+      level: "low"
+      humanStudies: 1
+      animalStudies: 2
+      cellStudies: 2
+      keyFindings:
+        - study: "Yen K et al. 2024"
+          type: "human-observational"
+          finding: "K4R variant of SHLP2 associated with 50% reduced Parkinson's disease risk in Europeans"
+          pmid: "38167865"
+        - study: "Yen K et al. 2024"
+          type: "animal"
+          finding: "SHLP2 and K4R variant protected against PD-inducing toxin (complex 1 inhibitor) in mouse model"
+          pmid: "38167865"
+  - mechanism:
+      action: "Chaperone-like activity preventing protein misfolding and aggregation"
+      confidence: "emerging"
+      directStudies: 2
+    benefit:
+      claim: "inhibit amyloid protein aggregation"
+      qualifier: "suggested to"
+    evidence:
+      level: "very-low"
+      humanStudies: 0
+      animalStudies: 0
+      cellStudies: 3
+      keyFindings:
+        - study: "Gupta R et al. 2017"
+          type: "in-vitro"
+          finding: "SHLP2 exhibited chaperone-like activity, blocking amyloid seeding and binding misfolded IAPP species"
+          pmid: "28827638"
+        - study: "Gupta R et al. 2017"
+          type: "in-vitro"
+          finding: "MDPs specifically target misfolded amyloid seeds to inhibit protein misfolding"
+          pmid: "28827638"
+  - mechanism:
+      action: "Anti-apoptotic signaling via BAX reduction and BCL-2 upregulation"
+      confidence: "supported"
+      directStudies: 4
+    benefit:
+      claim: "protect cells from oxidative stress-induced death"
+      qualifier: "appears to"
+    evidence:
+      level: "low"
+      humanStudies: 0
+      animalStudies: 2
+      cellStudies: 5
+      keyFindings:
+        - study: "Sreekumar PG et al. 2018"
+          type: "in-vitro"
+          finding: "SHLP2 increased mtDNA copy numbers by 40% and PGC-1a expression by 308% in AMD cybrids"
+          pmid: "30310092"
+        - study: "Cobb LJ et al. 2016"
+          type: "in-vitro"
+          finding: "SHLP2 protected cells against serum starvation, oxidative stress, and ER stress-induced death"
+          pmid: "27270401"
+conditions:
+  - slug: "metabolic-syndrome"
+    name: "Metabolic Syndrome"
+    researchSummary: "SHLP-2 has been studied for its metabolic regulatory effects in preclinical models. Research demonstrated that SHLP-2 activates CXCR7 receptors in hypothalamic POMC neurons, regulating appetite and energy expenditure (Kim et al., 2023). Mouse studies showed protection against high-fat diet-induced obesity. However, all available evidence is preclinical with no human therapeutic trials."
+    relevantStudies: ["37468558", "27270401"]
+    relatedPeptides: ["mots-c", "humanin"]
+  - slug: "parkinsons-disease"
+    name: "Parkinson's Disease"
+    researchSummary: "Observational human genetic studies found that a naturally occurring SHLP-2 variant (K4R) is associated with significantly reduced Parkinson's disease risk. Mechanistic studies showed SHLP-2 binds and stabilizes mitochondrial complex 1, which is dysfunctional in PD. Animal models demonstrated protection against PD-inducing toxins. No therapeutic trials in humans."
+    relevantStudies: ["38167865"]
+    relatedPeptides: ["humanin", "ss-31"]
+  - slug: "age-related-macular-degeneration"
+    name: "Age-Related Macular Degeneration"
+    researchSummary: "In vitro studies using retinal pigment epithelium cells from AMD patients showed SHLP-2 improved mitochondrial function, increased mtDNA copy numbers, and enhanced PGC-1a expression. These findings suggest potential for mitochondrial-targeted AMD therapy, but remain limited to cell culture models."
+    relevantStudies: ["30310092"]
+    relatedPeptides: ["humanin", "shlp-6"]
+timeline:
+  - period: "Week 1-2"
+    effects: "Based on preclinical observations: Initial receptor binding and signaling cascade activation may begin. Animal studies show metabolic parameter changes within days of administration. No human timeline data available."
+    source: "PMID:37468558"
+  - period: "Week 2-4"
+    effects: "Animal studies suggest ongoing metabolic and mitochondrial effects. Mouse models showed improved insulin sensitivity and reduced weight gain during this period. Cytoprotective signaling likely established."
+    source: "PMID:27270401"
+  - period: "Week 4-8"
+    effects: "Preclinical models show sustained metabolic improvements. Studies demonstrate continued mitochondrial biogenesis enhancement and maintained cytoprotective effects over several weeks of treatment."
+    source: "PMID:30310092"
+  - period: "Week 8+"
+    effects: "Long-term animal studies suggest persistent effects on mitochondrial function and metabolism. However, human pharmacokinetics, duration of effect, and optimal treatment length are completely unknown."
+qualityChecklist:
+  goodSigns:
+    - "White to off-white lyophilized powder (cake or crystalline appearance)"
+    - "Dissolves completely and quickly in bacteriostatic water"
+    - "Clear, colorless solution after reconstitution"
+    - "Comes with certificate of analysis (COA) showing >95% purity"
+    - "Third-party HPLC and mass spectrometry verification available"
+    - "Proper vacuum seal on vial before reconstitution"
+  warningSigns:
+    - "Slightly off-white or cream-colored powder (may still be acceptable)"
+    - "Takes longer than expected to fully dissolve"
+    - "Powder appears collapsed or melted (possible moisture exposure)"
+    - "COA from manufacturer only without third-party verification"
+    - "Purity listed below 95% but above 90%"
+  badSigns:
+    - "Yellow, brown, or otherwise discolored powder"
+    - "Visible particles or cloudiness after reconstitution"
+    - "Gel-like consistency or clumping that won't dissolve"
+    - "No COA provided or COA appears fraudulent"
+    - "Strong unusual odor"
+    - "Vial seal appears compromised or previously opened"
 ---
 
-## Overview
+<h2 id="mechanism-of-action">Mechanism of Action</h2>
 
-### Quick Summary
+The proposed mechanisms of SHLP-2 are based primarily on animal and in vitro studies. Human therapeutic data is lacking, though observational studies have identified protective genetic variants.
 
-- **Mitochondria-derived peptide (MDP)** — discovered 2016 by Cohen laboratory
-- **26 amino acids** in length, encoded in mitochondrial 16S rRNA region
-- **Sister peptide to humanin** — from same genomic region but distinct sequence
-- **Not approved** by any regulatory agency
-- **Key effects (preclinical):** Cytoprotection, metabolic regulation, chaperone-like activity
-- **Status:** Early research phase with limited data
+### How It Works (Simplified)
 
-**Evidence Strength: Low** — SHLP-2 was discovered in 2016 and has limited published research compared to humanin or MOTS-c. Promising preclinical signals but minimal human data beyond biomarker correlations.
+SHLP-2 appears to act as a mitochondrial signaling molecule through several pathways:
 
-### Identity & Origins
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-8">
+  <div class="bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 rounded-xl p-5 border border-emerald-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400">1</div>
+      <div class="font-semibold text-white">CXCR7 Receptor Binding</div>
+    </div>
+    <p class="text-sm text-white/70">Binds to chemokine receptor CXCR7, activating MAPK-ERK1/2 signaling cascade that regulates hypothalamic POMC neurons controlling appetite and thermogenesis.</p>
+  </div>
+  <div class="bg-gradient-to-br from-blue-500/10 to-blue-500/5 rounded-xl p-5 border border-blue-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">2</div>
+      <div class="font-semibold text-white">Mitochondrial Complex 1</div>
+    </div>
+    <p class="text-sm text-white/70">Directly binds to mitochondrial complex 1, stabilizing this critical enzyme and protecting against dysfunction linked to neurodegeneration.</p>
+  </div>
+  <div class="bg-gradient-to-br from-violet-500/10 to-violet-500/5 rounded-xl p-5 border border-violet-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-violet-500/20 flex items-center justify-center text-violet-400">3</div>
+      <div class="font-semibold text-white">Chaperone Activity</div>
+    </div>
+    <p class="text-sm text-white/70">Exhibits chaperone-like properties, binding to misfolded protein seeds and preventing amyloid aggregation associated with metabolic and neurodegenerative diseases.</p>
+  </div>
+  <div class="bg-gradient-to-br from-amber-500/10 to-amber-500/5 rounded-xl p-5 border border-amber-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-400">4</div>
+      <div class="font-semibold text-white">Cytoprotection</div>
+    </div>
+    <p class="text-sm text-white/70">Activates anti-apoptotic pathways by reducing BAX/p53 and increasing BCL-2, while enhancing mitochondrial biogenesis through PGC-1a upregulation.</p>
+  </div>
+</div>
 
-| Property | Value |
-|----------|-------|
-| **Name** | SHLP-2 (Small Humanin-Like Peptide 2) |
-| **Source** | Mitochondrial DNA (16S rRNA region) |
-| **Sequence** | MGVKFFTLSTRFFPSVQRAVPLWTNS |
-| **Length** | 26 amino acids |
-| **Molecular weight** | ~3,017 Da |
-| **Class** | Mitochondria-derived peptide (MDP) |
-| **Discovery** | Cobb et al., 2016 (USC, Cohen lab) |
+### Scientific Pathways
 
-### The SHLP Family
-
-SHLP-2 is part of a family of six small humanin-like peptides:
-
-| Peptide | Size | Key Feature |
-|---------|------|-------------|
-| SHLP-1 | 20 aa | Least characterized |
-| **SHLP-2** | 26 aa | Most potent/studied |
-| SHLP-3 | 21 aa | Mitochondrial effects |
-| SHLP-4 | 18 aa | Metabolic effects |
-| SHLP-5 | 14 aa | Least characterized |
-| SHLP-6 | 22 aa | Pro-apoptotic (unlike others) |
-
-### Research Timeline
-
-- **2001:** Humanin discovered as first MDP
-- **2015:** MOTS-c discovered as metabolic MDP
-- **2016:** SHLP family (1-6) discovered by Cobb et al. at USC
-- **2016-present:** Characterization studies ongoing
-- **Current:** Early research phase; no clinical development
-
----
-
-## Mechanism of Action
-
-### Discovery Context
-
-The SHLPs were discovered through bioinformatic analysis of the mitochondrial 16S rRNA region:
-
+**CXCR7-MAPK Pathway** *(Energy Homeostasis)*
 ```
-Mitochondrial DNA → 16S rRNA gene
-    ↓
-Open reading frame search
-    ↓
-├── Humanin (discovered 2001)
-├── SHLP-1 through SHLP-6 (discovered 2016)
-└── Novel mitochondrial-encoded peptides
+SHLP-2 → CXCR7 binding → MAPK-ERK1/2 phosphorylation → POMC neuron activation
+                                                              ↓
+                                          Appetite suppression + Thermogenesis
 ```
 
-### Primary Mechanisms (Preclinical)
-
-**1. Chaperone-Like Activity:**
-
+**Mitochondrial Protection** *(Neuroprotection)*
 ```
-SHLP-2 → Protein interaction
-    ↓
-├── Prevents protein aggregation
-├── Stabilizes protein folding
-├── Reduces ER stress
-└── Proteostasis support
+SHLP-2 → Complex 1 binding → Enzyme stabilization → Preserved mitochondrial function
 ```
 
-**2. Cytoprotective Effects:**
-
-| Mechanism | Evidence |
-|-----------|----------|
-| Anti-apoptotic | Protects cells from death signals |
-| Mitochondrial function | Supports mitochondrial health |
-| Oxidative stress | Reduces ROS-induced damage |
-| ER stress protection | Reduces unfolded protein response |
-
-**3. Metabolic Effects:**
-
-```
-SHLP-2 → Metabolic regulation
-    ↓
-├── Improved insulin sensitivity
-├── Enhanced glucose metabolism
-├── Mitochondrial efficiency
-└── Cellular energy homeostasis
-```
-
-### Comparison to Humanin
-
-| Feature | SHLP-2 | Humanin |
-|---------|--------|---------|
-| Size | 26 aa | 24 aa |
-| Cytoprotection | Yes | Yes (stronger) |
-| BAX binding | Unknown | Yes (key mechanism) |
-| Metabolic effects | Yes | Yes |
-| Research volume | Lower | Much higher |
-
----
-
-## Research Summary
-
-### Evidence Overview
-
-| Category | Count | Notes |
-|----------|-------|-------|
-| Human biomarker studies | 3 | Correlative data |
-| Preclinical in vivo | 10 | Rodent studies |
-| In vitro studies | 15+ | Mechanism work |
-| Original discovery paper | 1 | Cobb et al., 2016 |
-| Total tracked sources | 20 | 10 open access |
-
-### Research Centers
-
-| Institution | Focus |
-|-------------|-------|
-| USC (Cohen lab) | Discovery, characterization |
-| Limited other groups | Emerging interest |
-
-### Key Distinguishing Features
-
-SHLP-2 research differs from more established peptides:
-
-1. **Recent discovery** — Only since 2016
-2. **Limited independent replication** — Mostly from discovery lab
-3. **Part of family** — Six SHLPs provide biological context
-4. **Built on humanin foundation** — Leverages established MDP biology
-
----
-
-## Key Human Evidence
-
-### Biomarker Studies
-
-**1. Aging Correlations:**
-
-| Finding | Details | Citation |
-|---------|---------|----------|
-| Age-related decline | SHLP-2 levels decrease with age | Cobb 2016 |
-| Centenarian studies | Higher levels in some long-lived individuals | Limited data |
-
-**2. Metabolic Correlations:**
-
-| Population | Finding |
-|------------|---------|
-| Obesity | Inverse correlation (lower in obesity) |
-| Insulin resistance | Negative association |
-| Metabolic syndrome | Altered levels |
-
-**3. Prostate Cancer:**
-
-| Study | Finding |
-|-------|---------|
-| Biomarker analysis | SHLP-2 levels associated with cancer risk/outcomes |
-| Mechanism studies | Potential role in cell survival |
+**Key Research:** Kim SJ et al. (Nature Communications, 2023) identified CXCR7 as the receptor for SHLP-2 and demonstrated its role in hypothalamic energy regulation. [PMID:37468558](https://pubmed.ncbi.nlm.nih.gov/37468558/)
 
 ### Important Limitations
 
-**All human data is correlational:**
-- No cause-effect established
-- No therapeutic administration in humans
-- Biomarker associations may not imply therapeutic utility
-
----
-
-## Preclinical Evidence
-
-### Original Discovery Studies (Cobb et al., 2016)
-
-| Assay | SHLP-2 Effect |
-|-------|---------------|
-| Cellular ATP levels | Increased |
-| Cell viability (stress) | Improved |
-| Apoptosis markers | Reduced |
-| Mitochondrial function | Enhanced |
-
-### Metabolic Studies
-
-| Model | Finding |
-|-------|---------|
-| Adipocytes | Improved insulin signaling |
-| Hepatocytes | Enhanced glucose metabolism |
-| Diet-induced obesity | Metabolic improvement |
-
-### Cytoprotection Studies
-
-| Stressor | SHLP-2 Effect |
-|----------|---------------|
-| Serum starvation | Protected cell viability |
-| Oxidative stress | Reduced cell death |
-| ER stress | Attenuated UPR activation |
-
-### Comparison Within SHLP Family
-
-| Peptide | Cytoprotective | Metabolic | Pro-apoptotic |
-|---------|---------------|-----------|---------------|
-| SHLP-1 | Weak | Unknown | No |
-| **SHLP-2** | Strong | Yes | No |
-| SHLP-3 | Moderate | Yes | No |
-| SHLP-4 | Weak | Yes | No |
-| SHLP-5 | Unknown | Unknown | No |
-| SHLP-6 | No | Unknown | Yes (unique) |
-
----
-
-## Safety Profile
-
-### Preclinical Safety
-
-| Aspect | Information |
-|--------|-------------|
-| Acute toxicity | Not observed at research doses |
-| Chronic toxicity | Not characterized |
-| Immunogenicity | Not assessed |
-| Off-target effects | Not mapped |
-
-### Theoretical Considerations
-
-| Concern | Rationale |
-|---------|-----------|
-| Anti-apoptotic effects | Could theoretically promote cancer |
-| Metabolic effects | May interact with diabetes treatments |
-| Long-term use | Unknown effects |
-| Pro-survival in wrong context | Cancer concern |
-
-### No Human Safety Data
-
-SHLP-2 has not been administered to humans in any formal study. Safety profile is entirely based on preclinical work.
-
----
-
-## Pharmacology
-
-### Endogenous vs. Exogenous
-
-| Source | Context |
-|--------|---------|
-| Endogenous | Produced by mitochondria, circulates |
-| Exogenous | Synthetic peptide for research |
-
-### Administration (Research Only)
-
-| Route | Use |
-|-------|-----|
-| Intraperitoneal | Rodent studies |
-| Cell culture | In vitro studies |
-| No human routes | Not tested |
-
-### Pharmacokinetics (Limited Data)
-
-| Parameter | Information |
-|-----------|-------------|
-| Half-life | Not characterized |
-| Distribution | Assumed systemic |
-| Metabolism | Proteolytic degradation expected |
-| CNS penetration | Unknown |
-
----
-
-## Regulatory Status
-
-| Region | Status | Details |
-|--------|--------|---------|
-| USA (FDA) | Not approved | No IND filed |
-| EU (EMA) | Not approved | Not submitted |
-| **All regions** | Research compound | No regulatory pathway |
-| **WADA** | Not listed | Current status |
-
-### Clinical Development Status
-
-| Aspect | Status |
-|--------|--------|
-| IND applications | None |
-| Clinical trials | None |
-| Commercial development | None |
-| Academic interest | Growing |
-
----
-
-## Comparison to Other MDPs
-
-### Mitochondria-Derived Peptide Family
-
-| Peptide | Discovery | Size | Primary Effect | Evidence Level |
-|---------|-----------|------|----------------|----------------|
-| **Humanin** | 2001 | 24 aa | Cytoprotection | Moderate |
-| **MOTS-c** | 2015 | 16 aa | Metabolic | Moderate |
-| **SHLP-2** | 2016 | 26 aa | Cytoprotection | Low |
-| **SHLP-6** | 2016 | 22 aa | Pro-apoptotic | Low |
-
-### SHLP-2 vs. Humanin
-
-| Factor | SHLP-2 | Humanin |
-|--------|--------|---------|
-| Discovery | 2016 | 2001 |
-| Publications | ~20 | 1,500+ |
-| Mechanism detail | Limited | Extensive |
-| Human data | Minimal | Biomarker studies |
-| BAX binding | Unknown | Yes |
-| Potency | Lower | Higher |
-
-### SHLP-2 vs. MOTS-c
-
-| Factor | SHLP-2 | MOTS-c |
-|--------|--------|--------|
-| Primary effect | Cytoprotection | Metabolic |
-| Gene region | 16S rRNA | 12S rRNA |
-| Exercise studies | None | Yes |
-| Human data | Correlative | Correlative |
-| Research interest | Lower | Higher |
-
----
-
-## Critical Analysis
-
-### Strengths
-
-1. **Discovery rigor** — From established MDP research group (Cohen lab)
-2. **Family context** — Six SHLPs provide biological redundancy/context
-3. **Builds on humanin** — Leverages established biology
-4. **Consistent effects** — Cytoprotection replicated across assays
-
-### Limitations
-
-1. **Very recent** — Only 8 years of research
-2. **Limited replication** — Mostly from discovery laboratory
-3. **No clinical data** — Zero human therapeutic administration
-4. **Mechanism unclear** — No defined receptor or binding partner
-5. **Low publication volume** — ~20 papers total
-
-### Key Questions
-
-| Question | Status |
-|----------|--------|
-| What is SHLP-2's receptor? | Unknown |
-| Does it bind BAX like humanin? | Not demonstrated |
-| What are in vivo kinetics? | Not characterized |
-| Therapeutic potential? | Highly speculative |
-
----
-
-## Citation Table
-
-### Discovery Papers
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Cobb LJ et al. [PMID: 27270401](https://pubmed.ncbi.nlm.nih.gov/27270401/) | 2016 | Discovery | SHLP family characterization | Open |
-
-### MDP Reviews (Context)
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Kim SJ et al. [PMID: 32069953](https://pubmed.ncbi.nlm.nih.gov/32069953/) | 2020 | Review | MDPs in physiology | Open |
-| Yen K et al. [PMID: 32669423](https://pubmed.ncbi.nlm.nih.gov/32669423/) | 2020 | Review | MDPs and mitochondria | Open |
-| Miller B et al. [PMID: 32887940](https://pubmed.ncbi.nlm.nih.gov/32887940/) | 2020 | Review | Mitochondrial-derived peptides | Open |
-
-### Related Human Studies
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Zempo H et al. [PMID: 28916789](https://pubmed.ncbi.nlm.nih.gov/28916789/) | 2017 | Human | MDPs and longevity | Paywalled |
-
-### Metabolic Studies
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Reynolds JC et al. [PMID: 33022002](https://pubmed.ncbi.nlm.nih.gov/33022002/) | 2021 | Review | MDPs in metabolic health | Open |
-
----
-
-## Summary
-
-SHLP-2 represents an early-stage research peptide in the emerging MDP field:
-
-**What We Know:**
-- 26-amino acid peptide from mitochondrial 16S rRNA region
-- Discovered 2016 as part of SHLP family
-- Shows cytoprotective and metabolic effects in preclinical models
-- Part of growing understanding of mitochondrial-derived signaling
-
-**What We Don't Know:**
-- Molecular mechanism (no defined receptor)
-- In vivo pharmacokinetics
-- Safety profile
-- Therapeutic potential in humans
-- Whether effects translate to clinical benefit
-
-**Bottom Line:** SHLP-2 is scientifically interesting as part of the expanding MDP field that humanin opened. The discovery of six SHLPs from the same genomic region as humanin suggests significant biological signaling complexity from mitochondria. However, SHLP-2 specifically has minimal research compared to humanin or MOTS-c. Any claims of therapeutic benefit are highly speculative at this stage. The evidence strength is "low" reflecting genuine scientific interest but insufficient data for clinical application.
-
----
-
-*This dossier is for educational purposes only. SHLP-2 is not approved for therapeutic use by any regulatory agency. Research continues in academic settings. Last updated: January 2026.*
+- Research is recent (discovery in 2016) with limited independent replication
+- Most studies from a single research group (USC Cohen lab)
+- No human therapeutic administration studies exist
+- Translation from animal models to human physiology is **unconfirmed**
+- Pharmacokinetics and bioavailability in humans not characterized

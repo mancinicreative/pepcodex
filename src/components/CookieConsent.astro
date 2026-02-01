@@ -1,0 +1,336 @@
+---
+/**
+ * CookieConsent.astro
+ *
+ * A GDPR/ePrivacy compliant cookie consent popup that appears on first visit.
+ * Users can accept all cookies, decline non-essential cookies, or manage preferences.
+ *
+ * Uses localStorage to remember user's consent choice.
+ * Integrates with Google Analytics to respect user preferences.
+ */
+---
+
+<!-- Cookie Consent Popup -->
+<div
+  id="cookie-consent"
+  class="fixed inset-0 z-50 hidden"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="cookie-consent-title"
+>
+  <!-- Backdrop -->
+  <div class="fixed inset-0 bg-black/60 backdrop-blur-sm" aria-hidden="true"></div>
+
+  <!-- Modal -->
+  <div class="fixed inset-0 flex items-end sm:items-center justify-center p-4">
+    <div class="relative w-full max-w-lg bg-[var(--background)] border border-white/10 rounded-2xl shadow-2xl overflow-hidden">
+      <!-- Gradient accent -->
+      <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--primary)] via-cyan-500 to-[var(--primary)]"></div>
+
+      <div class="p-6">
+        <!-- Header -->
+        <div class="flex items-start gap-4 mb-4">
+          <div class="flex-shrink-0 p-2 bg-[var(--primary)]/10 rounded-xl">
+            <svg
+              class="w-6 h-6 text-primary"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/>
+              <path d="M8.5 8.5v.01"/>
+              <path d="M16 15.5v.01"/>
+              <path d="M12 12v.01"/>
+              <path d="M11 17v.01"/>
+              <path d="M7 14v.01"/>
+            </svg>
+          </div>
+          <div>
+            <h2 id="cookie-consent-title" class="text-xl font-bold text-white">
+              Cookie Preferences
+            </h2>
+            <p class="text-sm text-white/60 mt-1">
+              We respect your privacy
+            </p>
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="mb-6 text-sm text-white/80 leading-relaxed">
+          <p>
+            We use cookies to enhance your browsing experience and analyze site traffic.
+            You can choose to accept all cookies or only essential ones.
+          </p>
+          <a
+            href="/cookie-policy"
+            class="inline-flex items-center gap-1 text-primary hover:text-purple-300 transition-colors mt-2"
+          >
+            Learn more about our cookies
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"/>
+              <path d="m12 5 7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Cookie Categories (Expandable) -->
+        <div id="cookie-details" class="hidden mb-6 space-y-3">
+          <!-- Essential Cookies -->
+          <div class="p-4 bg-white/5 rounded-xl border border-white/10">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+                  <path d="m9 12 2 2 4-4"/>
+                </svg>
+                <div>
+                  <h3 class="text-sm font-semibold text-white">Essential</h3>
+                  <p class="text-xs text-white/60">Required for website to function</p>
+                </div>
+              </div>
+              <span class="text-xs text-emerald-400 font-medium">Always On</span>
+            </div>
+          </div>
+
+          <!-- Analytics Cookies -->
+          <div class="p-4 bg-white/5 rounded-xl border border-white/10">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 3v18h18"/>
+                  <path d="m19 9-5 5-4-4-3 3"/>
+                </svg>
+                <div>
+                  <h3 class="text-sm font-semibold text-white">Analytics</h3>
+                  <p class="text-xs text-white/60">Help us improve our website</p>
+                </div>
+              </div>
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input
+                  type="checkbox"
+                  id="analytics-toggle"
+                  class="sr-only peer"
+                  checked
+                />
+                <div class="w-11 h-6 bg-white/10 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-[var(--primary)] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[var(--primary)]"></div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Show/Hide Details Toggle -->
+        <button
+          id="toggle-cookie-details"
+          type="button"
+          class="w-full mb-6 py-2 text-sm text-white/60 hover:text-white transition-colors flex items-center justify-center gap-2"
+        >
+          <span id="details-toggle-text">Show cookie details</span>
+          <svg id="details-toggle-icon" class="w-4 h-4 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m6 9 6 6 6-6"/>
+          </svg>
+        </button>
+
+        <!-- Actions -->
+        <div class="flex flex-col sm:flex-row gap-3">
+          <button
+            id="decline-cookies"
+            type="button"
+            class="flex-1 px-4 py-3 text-sm font-medium text-white/80 hover:text-white border border-white/20 hover:border-white/40 rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-white/20"
+          >
+            Essential Only
+          </button>
+          <button
+            id="accept-cookies"
+            type="button"
+            class="flex-1 px-4 py-3 text-sm font-medium text-white bg-[var(--primary)] hover:bg-[var(--primary)]/90 rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:ring-offset-2 focus:ring-offset-[var(--background)]"
+          >
+            Accept All
+          </button>
+        </div>
+
+        <!-- Privacy Links -->
+        <div class="mt-4 pt-4 border-t border-white/10 flex flex-wrap justify-center gap-4 text-xs text-white/50">
+          <a href="/privacy" class="hover:text-white transition-colors">Privacy Policy</a>
+          <span>|</span>
+          <a href="/terms" class="hover:text-white transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  interface CookieConsent {
+    essential: boolean;
+    analytics: boolean;
+    timestamp: number;
+  }
+
+  const STORAGE_KEY = 'pepcodex_cookie_consent';
+
+  function getStoredConsent(): CookieConsent | null {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored) {
+        return JSON.parse(stored);
+      }
+    } catch (e) {
+      // localStorage not available or parsing failed
+    }
+    return null;
+  }
+
+  function setConsent(consent: CookieConsent): void {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(consent));
+    } catch (e) {
+      // localStorage not available
+    }
+  }
+
+  function applyConsent(consent: CookieConsent): void {
+    // Google Analytics consent mode
+    if (typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', {
+        'analytics_storage': consent.analytics ? 'granted' : 'denied'
+      });
+    }
+
+    // If analytics was denied, try to remove GA cookies
+    if (!consent.analytics) {
+      // Delete GA cookies
+      const cookies = document.cookie.split(';');
+      cookies.forEach(cookie => {
+        const name = cookie.split('=')[0].trim();
+        if (name.startsWith('_ga') || name.startsWith('_gid') || name.startsWith('_gat')) {
+          document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;`;
+          document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=.${window.location.hostname};`;
+        }
+      });
+    }
+  }
+
+  function showConsentPopup(): void {
+    const popup = document.getElementById('cookie-consent');
+    if (popup) {
+      popup.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+
+      // Focus trap
+      const firstFocusable = popup.querySelector('button, [href], input') as HTMLElement;
+      if (firstFocusable) {
+        firstFocusable.focus();
+      }
+    }
+  }
+
+  function hideConsentPopup(): void {
+    const popup = document.getElementById('cookie-consent');
+    if (popup) {
+      popup.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+  }
+
+  function initCookieConsent(): void {
+    const existingConsent = getStoredConsent();
+
+    // If consent already given, apply it and don't show popup
+    if (existingConsent) {
+      applyConsent(existingConsent);
+      return;
+    }
+
+    // Set initial consent mode to denied until user consents
+    if (typeof window.gtag === 'function') {
+      window.gtag('consent', 'default', {
+        'analytics_storage': 'denied'
+      });
+    }
+
+    // Show the popup
+    showConsentPopup();
+
+    // Get UI elements
+    const acceptBtn = document.getElementById('accept-cookies');
+    const declineBtn = document.getElementById('decline-cookies');
+    const toggleBtn = document.getElementById('toggle-cookie-details');
+    const detailsSection = document.getElementById('cookie-details');
+    const toggleText = document.getElementById('details-toggle-text');
+    const toggleIcon = document.getElementById('details-toggle-icon');
+    const analyticsToggle = document.getElementById('analytics-toggle') as HTMLInputElement;
+
+    // Toggle details visibility
+    if (toggleBtn && detailsSection && toggleText && toggleIcon) {
+      toggleBtn.addEventListener('click', () => {
+        const isHidden = detailsSection.classList.contains('hidden');
+        detailsSection.classList.toggle('hidden');
+        toggleText.textContent = isHidden ? 'Hide cookie details' : 'Show cookie details';
+        toggleIcon.style.transform = isHidden ? 'rotate(180deg)' : '';
+      });
+    }
+
+    // Accept all cookies
+    if (acceptBtn) {
+      acceptBtn.addEventListener('click', () => {
+        const consent: CookieConsent = {
+          essential: true,
+          analytics: true,
+          timestamp: Date.now()
+        };
+        setConsent(consent);
+        applyConsent(consent);
+        hideConsentPopup();
+      });
+    }
+
+    // Decline non-essential (save preferences from toggles)
+    if (declineBtn) {
+      declineBtn.addEventListener('click', () => {
+        const analyticsEnabled = analyticsToggle ? analyticsToggle.checked : false;
+        const consent: CookieConsent = {
+          essential: true,
+          analytics: false, // Essential only means no analytics
+          timestamp: Date.now()
+        };
+        setConsent(consent);
+        applyConsent(consent);
+        hideConsentPopup();
+      });
+    }
+
+    // Handle escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        // Don't close on escape - user must make a choice
+      }
+    });
+  }
+
+  // Extend window for gtag
+  declare global {
+    interface Window {
+      gtag: (...args: any[]) => void;
+      dataLayer: any[];
+    }
+  }
+
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCookieConsent);
+  } else {
+    initCookieConsent();
+  }
+
+  // Also handle View Transitions (Astro)
+  document.addEventListener('astro:page-load', () => {
+    // Only check consent on page load, don't show popup again
+    const existingConsent = getStoredConsent();
+    if (existingConsent) {
+      applyConsent(existingConsent);
+    }
+  });
+</script>

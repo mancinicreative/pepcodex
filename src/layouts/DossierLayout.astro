@@ -4,11 +4,90 @@ import ArticleSchema from '../components/SEO/ArticleSchema.astro';
 import BreadcrumbSchema from '../components/SEO/BreadcrumbSchema.astro';
 import RelatedEntities from '../components/RelatedEntities.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
+import SafetyBanner from '../components/SafetyBanner.astro';
+import OverviewSection from '../components/OverviewSection.astro';
+import EvidenceChain from '../components/EvidenceChain.astro';
+import InteractionMatrix from '../components/InteractionMatrix.astro';
+import Timeline from '../components/Timeline.astro';
+import QualityChecklist from '../components/QualityChecklist.astro';
+
+// Type definitions for peptide interactions
+interface Interaction {
+  peptide: string;
+  type: 'synergistic' | 'compatible' | 'caution' | 'avoid';
+  description: string;
+  source?: string;
+}
+
+// Type definitions for new schemas
+interface AminoAcid {
+  code: string;
+  name: string;
+  position: number;
+  property: 'hydrophobic' | 'polar' | 'positive' | 'negative' | 'modified';
+}
+
+interface MolecularInfo {
+  weight: string;
+  chainLength: number;
+  type: string;
+  sequence: string;
+  aminoAcids: AminoAcid[];
+}
+
+interface KeyFinding {
+  study: string;
+  type: 'human-rct' | 'human-observational' | 'animal' | 'in-vitro';
+  finding: string;
+  pmid?: string;
+}
+
+interface EvidenceChainedBenefit {
+  mechanism: {
+    action: string;
+    confidence: 'established' | 'supported' | 'emerging';
+    directStudies: number;
+  };
+  benefit: {
+    claim: string;
+    qualifier: 'may' | 'appears to' | 'suggested to' | 'shown to';
+  };
+  evidence: {
+    level: 'high' | 'moderate' | 'low' | 'very-low';
+    humanStudies: number;
+    animalStudies: number;
+    cellStudies: number;
+    keyFindings: KeyFinding[];
+  };
+}
+
+// Timeline entry for "What to Expect" section
+interface TimelineEntry {
+  period: string;
+  effects: string;
+  source?: string;
+}
+
+// Quality Checklist for evaluating peptide products
+interface QualityChecklistData {
+  goodSigns: string[];
+  warningSigns: string[];
+  badSigns: string[];
+}
+
+// Safety warnings for banner
+interface SafetyInfo {
+  keyWarnings?: string[];
+  fdaStatus?: string;
+  wadaStatus?: string;
+}
 
 interface Props {
   name: string;
   aliases: string[];
   category: string;
+  // Safety info for banner
+  safetyInfo?: SafetyInfo;
   evidenceStrength: 'high' | 'moderate' | 'low' | 'very-low';
   lastUpdated: Date;
   summary: string;
@@ -25,6 +104,16 @@ interface Props {
     metabolism?: string;
   };
   relatedPeptides?: string[];
+  // NEW: Molecular information for structure display
+  molecularInfo?: MolecularInfo;
+  // NEW: Evidence-chained benefits for detailed research breakdown
+  evidenceChainedBenefits?: EvidenceChainedBenefit[];
+  // NEW: Peptide interactions
+  interactions?: Interaction[];
+  // NEW: Timeline for "What to Expect" section
+  timeline?: TimelineEntry[];
+  // NEW: Quality checklist for product evaluation
+  qualityChecklist?: QualityChecklistData;
 }
 
 const {
@@ -37,7 +126,12 @@ const {
   sources,
   comparators,
   pharmacokinetics,
-  relatedPeptides = []
+  relatedPeptides = [],
+  molecularInfo,
+  evidenceChainedBenefits,
+  interactions = [],
+  timeline,
+  qualityChecklist
 } = Astro.props;
 
 const categoryLabels: Record<string, string> = {
@@ -57,20 +151,32 @@ const evidenceConfig: Record<string, { dots: number; label: string; color: strin
 
 const currentEvidence = evidenceConfig[evidenceStrength];
 
-// Section navigation for the Research Dossier
-// These IDs must match the h2 id attributes in the MDX content
-const sections = [
-  { id: 'overview', label: 'Overview', num: '01' },
-  { id: 'mechanism-of-action', label: 'Mechanism', num: '02' },
-  { id: 'research-summary', label: 'Research', num: '03' },
-  { id: 'key-human-trials', label: 'Human Trials', num: '04' },
-  { id: 'preclinical-evidence', label: 'Preclinical', num: '05' },
-  { id: 'safety-profile', label: 'Safety', num: '06' },
-  { id: 'pharmacokinetics', label: 'Pharmacokinetics', num: '07' },
-  { id: 'regulatory-status', label: 'Regulatory', num: '08' },
-  { id: 'related-peptides', label: 'Related', num: '09' },
-  { id: 'citation-table', label: 'Citations', num: '10' },
+// Section navigation - CONSOLIDATED STRUCTURE
+// Order: Overview (includes molecular) → Mechanism → Evidence → Timeline → Quality → Interactions → References
+const allSections = [
+  { id: 'overview', label: 'Overview', always: true },
+  { id: 'mechanism-of-action', label: 'Mechanism', always: true },
+  { id: 'evidence-chain', label: 'Evidence', requires: 'evidenceChainedBenefits' },
+  { id: 'timeline', label: 'What to Expect', requires: 'timeline' },
+  { id: 'quality-checklist', label: 'Quality', requires: 'qualityChecklist' },
+  { id: 'peptide-interactions', label: 'Interactions', requires: 'interactions' },
+  { id: 'references', label: 'References', always: true },
 ];
+
+// Filter sections based on available data and assign numbers
+const dataAvailability: Record<string, boolean> = {
+  timeline: Boolean(timeline && timeline.length > 0),
+  evidenceChainedBenefits: Boolean(evidenceChainedBenefits && evidenceChainedBenefits.length > 0),
+  interactions: Boolean(interactions && interactions.length > 0),
+  qualityChecklist: Boolean(qualityChecklist),
+};
+
+const sections = allSections
+  .filter(section => section.always || (section.requires && dataAvailability[section.requires]))
+  .map((section, index) => ({
+    ...section,
+    num: String(index + 1).padStart(2, '0'),
+  }));
 
 // Tags from category and evidence
 const tags = [categoryLabels[category], currentEvidence.label, `${sources.count} Sources`];
@@ -249,6 +355,14 @@ const articleUrl = Astro.url.toString();
       </div>
     </div>
 
+    <!-- Safety Banner -->
+    <SafetyBanner
+      peptideName={name}
+      evidenceStrength={evidenceStrength}
+      fdaStatus="Not FDA Approved"
+      wadaStatus="WADA Prohibited"
+    />
+
     <!-- Research Dossier Section -->
     <section class="space-y-8">
       <div class="flex items-center justify-between border-b border-white/10 pb-4">
@@ -260,36 +374,172 @@ const articleUrl = Astro.url.toString();
         </div>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        <!-- Section Navigation (4 columns) -->
-        <div class="lg:col-span-4 space-y-2 lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto scrollbar-none">
+      <div class="grid grid-cols-1 lg:grid-cols-[200px_1fr] xl:grid-cols-[220px_1fr] gap-8">
+        <!-- Section Navigation (fixed width narrow column) -->
+        <div class="space-y-1 lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto scrollbar-none">
           {sections.map((section, index) => (
             <a
               href={`#${section.id}`}
               data-section-btn={section.id}
               data-section-num={section.num}
-              class="section-btn w-full text-left px-6 py-6 rounded-2xl transition-all duration-500 flex items-center justify-between group text-white/70 hover:text-white hover:bg-white/5 border border-transparent"
+              class="section-btn w-full text-left px-3 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-3 group text-white/60 hover:text-white hover:bg-white/5 border border-transparent"
             >
-              <div class="flex items-center gap-4">
-                <span class="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold border bg-white/5 border-white/10 text-white/60 section-num">
-                  {section.num}
+              <span class="w-7 h-7 rounded-md flex items-center justify-center text-[10px] font-bold border bg-white/5 border-white/10 text-white/50 section-num shrink-0">
+                {section.num}
+              </span>
+              <span class="font-semibold uppercase tracking-wide text-[11px] truncate">{section.label}</span>
+              {section.isNew && (
+                <span class="px-1 py-0.5 text-[8px] font-bold uppercase bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 rounded shrink-0">
+                  New
                 </span>
-                <span class="font-bold uppercase tracking-wider text-sm">{section.label}</span>
-              </div>
-              <svg class="w-4 h-4 transition-transform opacity-0 group-hover:opacity-100 section-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="m9 18 6-6-6-6"/>
-              </svg>
+              )}
             </a>
           ))}
         </div>
 
-        <!-- Main Content (8 columns) -->
-        <div class="lg:col-span-8">
+        <!-- Main Content (takes remaining width) -->
+        <div>
           <div class="glass-card-default p-10 md:p-16 relative overflow-hidden min-h-[500px]">
             <div class="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-[var(--primary)]/5 to-transparent pointer-events-none"></div>
 
             <div class="relative z-10 prose prose-invert prose-lg max-w-none">
+              <!-- Overview Section (includes molecular info) -->
+              <OverviewSection
+                peptideName={name}
+                summary={summary}
+                aliases={aliases}
+                category={category}
+                molecularInfo={molecularInfo}
+              />
+
+              <!-- MDX content contains: Mechanism section -->
               <slot />
+
+              <!-- ENHANCED SECTIONS (rendered after MDX content) -->
+              <!-- Order: Evidence → Timeline → Quality → Interactions → References -->
+
+              <!-- Evidence-Chained Benefits -->
+              {evidenceChainedBenefits && evidenceChainedBenefits.length > 0 && (
+                <section id="evidence-chain" class="not-prose mt-12 pt-8 border-t border-white/10">
+                  <div class="space-y-2 mb-8">
+                    <h2 class="text-3xl font-bold text-white tracking-tight" style="font-family: var(--font-display);">
+                      Evidence-Chained Benefits
+                    </h2>
+                    <div class="h-1 w-20 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full"></div>
+                  </div>
+                  <EvidenceChain benefits={evidenceChainedBenefits} peptideName={name} />
+                </section>
+              )}
+
+              <!-- Timeline "What to Expect" -->
+              {timeline && timeline.length > 0 && (
+                <section id="timeline" class="not-prose mt-12 pt-8 border-t border-white/10">
+                  <Timeline timeline={timeline} peptideName={name} />
+                </section>
+              )}
+
+              <!-- Quality Checklist -->
+              {qualityChecklist && (
+                <section id="quality-checklist" class="not-prose mt-12 pt-8 border-t border-white/10">
+                  <QualityChecklist checklist={qualityChecklist} peptideName={name} />
+                </section>
+              )}
+
+              <!-- Peptide Interactions -->
+              {interactions && interactions.length > 0 && (
+                <section id="peptide-interactions" class="not-prose mt-12 pt-8 border-t border-white/10">
+                  <InteractionMatrix interactions={interactions} currentPeptide={name} />
+                </section>
+              )}
+
+              <!-- References Section -->
+              <section id="references" class="not-prose mt-12 pt-8 border-t border-white/10">
+                <div class="space-y-2 mb-8">
+                  <h2 class="text-3xl font-bold text-white tracking-tight" style="font-family: var(--font-display);">
+                    References
+                  </h2>
+                  <div class="h-1 w-20 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full"></div>
+                </div>
+
+                <div class="rounded-2xl bg-white/5 border border-white/10 p-6">
+                  <div class="flex items-center gap-4 mb-6">
+                    <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
+                      <svg class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      <span class="text-sm font-medium text-emerald-400">{sources.count} Sources</span>
+                    </div>
+                    <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20">
+                      <svg class="w-4 h-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                      <span class="text-sm font-medium text-blue-400">{sources.human} Human</span>
+                    </div>
+                    <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-violet-500/10 border border-violet-500/20">
+                      <svg class="w-4 h-4 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                      </svg>
+                      <span class="text-sm font-medium text-violet-400">{sources.preclinical} Preclinical</span>
+                    </div>
+                  </div>
+
+                  {evidenceChainedBenefits && evidenceChainedBenefits.length > 0 && (
+                    <div class="space-y-4">
+                      <h3 class="text-lg font-semibold text-white">Key Studies Cited</h3>
+                      <div class="grid gap-2">
+                        {(() => {
+                          // Collect unique studies from evidence chain
+                          const studies = new Map();
+                          evidenceChainedBenefits.forEach(benefit => {
+                            benefit.evidence.keyFindings.forEach(finding => {
+                              if (finding.pmid && !studies.has(finding.pmid)) {
+                                studies.set(finding.pmid, {
+                                  study: finding.study,
+                                  type: finding.type,
+                                  finding: finding.finding,
+                                  pmid: finding.pmid
+                                });
+                              }
+                            });
+                          });
+                          return Array.from(studies.values()).map(study => (
+                            <a
+                              href={`https://pubmed.ncbi.nlm.nih.gov/${study.pmid}/`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              class="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/10 hover:border-primary/30 hover:bg-white/10 transition-all group"
+                            >
+                              <div class="flex items-center gap-3">
+                                <span class={`px-2 py-0.5 text-[10px] font-bold uppercase rounded ${
+                                  study.type === 'human-rct' ? 'bg-emerald-500/20 text-emerald-400' :
+                                  study.type === 'human-observational' ? 'bg-blue-500/20 text-blue-400' :
+                                  study.type === 'animal' ? 'bg-violet-500/20 text-violet-400' :
+                                  'bg-amber-500/20 text-amber-400'
+                                }`}>
+                                  {study.type === 'human-rct' ? 'RCT' :
+                                   study.type === 'human-observational' ? 'Human' :
+                                   study.type === 'animal' ? 'Animal' : 'In Vitro'}
+                                </span>
+                                <span class="text-sm text-white font-medium">{study.study}</span>
+                              </div>
+                              <div class="flex items-center gap-2 text-white/50 group-hover:text-primary">
+                                <span class="text-xs">PMID:{study.pmid}</span>
+                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                              </div>
+                            </a>
+                          ));
+                        })()}
+                      </div>
+                    </div>
+                  )}
+
+                  <p class="mt-6 text-sm text-white/50">
+                    Full reference list available on request. All citations link to PubMed for verification.
+                  </p>
+                </div>
+              </section>
 
               <!-- Methodology Note -->
               <section id="methodology-note" class="mt-12 pt-8 border-t border-white/10">
@@ -379,26 +629,17 @@ const articleUrl = Astro.url.toString();
 
 <style>
   .section-btn.active {
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.25), rgba(139, 92, 246, 0.15), rgba(147, 51, 234, 0.1));
-    border-color: rgba(139, 92, 246, 0.5);
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(139, 92, 246, 0.1));
+    border-color: rgba(139, 92, 246, 0.4);
     color: white;
-    box-shadow:
-      0 0 20px rgba(139, 92, 246, 0.3),
-      0 0 40px rgba(139, 92, 246, 0.15),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.2);
   }
 
   .section-btn.active .section-num {
-    background: linear-gradient(135deg, var(--primary), rgba(147, 51, 234, 1));
-    border-color: rgba(139, 92, 246, 0.7);
+    background: var(--primary);
+    border-color: var(--primary);
     color: white;
-    box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
-  }
-
-  .section-btn.active .section-chevron {
-    opacity: 1;
-    transform: rotate(90deg);
-    color: white;
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.4);
   }
 </style>
 

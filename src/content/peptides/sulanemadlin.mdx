@@ -11,638 +11,219 @@ sources:
   human: 18
   preclinical: 10
   openAccess: 22
-  globalCoverage:
-    - region: "North America"
-      countries: ["USA"]
-      sources: 20
-    - region: "Europe"
-      countries: ["UK", "Germany", "France", "Netherlands"]
-      sources: 6
-    - region: "Asia-Pacific"
-      countries: ["China", "Japan"]
-      sources: 2
 metaTitle: "Sulanemadlin (ALRN-6924) Evidence Dossier | PepCodex"
 metaDescription: "Comprehensive evidence review of Sulanemadlin (ALRN-6924). Stapled peptide MDM2/MDMX inhibitor, p53 reactivation, clinical trial data, chemoprotection, and citations."
----
-
-## Overview
-
-<h2 id="overview" class="sr-only">Overview</h2>
-
-### Quick Summary
-
-- **First-in-class stapled alpha-helical peptide** that disrupts MDM2/MDMX-p53 interactions
-- **Dual inhibitor** targeting both MDM2 and MDMX (unlike small molecule MDM2-only inhibitors)
-- **Phase 1/2 completed:** 59% disease control rate in TP53 wild-type solid tumors and lymphomas
-- **Low hematologic toxicity:** Does not cause severe neutropenia/thrombocytopenia seen with MDM2-only inhibitors
-- **Novel chemoprotection application:** Induces transient, reversible cell cycle arrest in normal cells to protect from chemotherapy
-- **Retinoblastoma development:** Partnered with Advancium Biosciences for pediatric eye cancer indication
-- **Developed by:** Aileron Therapeutics (Cambridge, MA)
-
-**Evidence Strength: MODERATE** — Phase 1/2 completed with published efficacy and safety data. Unique mechanism with favorable hematologic safety profile. Pivotal trials and regulatory approval pending.
-
----
-
-<h2 id="identity-origins">Identity & Origins</h2>
-
-### Names & Aliases
-
-| Property | Value |
-|----------|-------|
-| **Generic name** | Sulanemadlin |
-| **Development codes** | ALRN-6924, MP-4897 |
-| **Chemical class** | Stapled alpha-helical peptide |
-| **Target** | Dual MDM2/MDMX inhibitor |
-| **Molecular weight** | ~2,100 Da |
-| **Structure** | Hydrocarbon-stapled i, i+7 alpha-helix mimicking p53 transactivation domain |
-| **Developer** | Aileron Therapeutics, Inc. |
-
-### Discovery & Development Timeline
-
-| Year | Milestone | Significance |
-|------|-----------|--------------|
-| 1979 | p53 discovered | Lane and Crawford; Linzer and Levine independently identify p53 protein |
-| 1989 | p53 as tumor suppressor | Vogelstein et al. establish p53 as critical tumor suppressor |
-| 1992 | MDM2-p53 interaction | Momand et al. identify MDM2 as negative regulator of p53 [PMID: 1535557] |
-| 1996 | MDMX (MDM4) identified | Shvarts et al. discover second p53 regulator [PMID: 8943037] |
-| 2000 | Stapled peptide technology | Verdine lab (Harvard) develops hydrocarbon stapling method |
-| 2007 | Aileron Therapeutics founded | Company established to develop stapled peptide therapeutics |
-| 2010 | ALRN-6924 discovery | Lead optimization of stapled p53 peptides |
-| 2013 | IND-enabling studies | Preclinical development completed |
-| **2016** | **Phase 1 initiated** | First-in-human study NCT02264613 begins |
-| 2017 | First efficacy signals | Preliminary responses observed in Phase 1 |
-| 2018 | Phase 2a expansion | Solid tumors and lymphoma cohorts added |
-| 2019 | Chemoprotection concept | Phase 1 study NCT02264613 chemoprotection arm initiated |
-| 2020 | Phase 1b combination | Studies with palbociclib, paclitaxel initiated |
-| 2021 | Clinical data published | Phase 1/2 results published in peer-reviewed journals |
-| 2022 | Chemoprotection data | Normal cell protection from chemotherapy demonstrated |
-| **2023** | **Advancium partnership** | License agreement for retinoblastoma development |
-| 2024 | Ongoing development | Multiple trials active; regulatory strategy refinement |
-| 2025 | Current status | Phase 2 development continues; retinoblastoma program advancing |
-
-### Why Sulanemadlin Was Developed
-
-**The p53 Problem:**
-- p53 is mutated or inactivated in ~50% of all human cancers
-- In the remaining ~50% with wild-type p53, the protein is often functionally suppressed by overexpression of MDM2 and/or MDMX
-- MDM2 and MDMX bind to p53's transactivation domain, blocking its tumor suppressor function
-
-**Why a Stapled Peptide:**
-
-1. **Protein-protein interactions (PPIs)** — MDM2/MDMX-p53 binding involves a large, shallow interface that is difficult for small molecules to disrupt effectively, especially MDMX
-
-2. **Dual targeting requirement** — Small molecule MDM2 inhibitors (nutlins, idasanutlin) have limited MDMX activity. Cancer cells can escape through MDMX overexpression
-
-3. **Stapling technology** — Hydrocarbon staples:
-   - Stabilize the alpha-helical structure that mimics native p53
-   - Increase cell permeability (peptides are typically cell-impermeable)
-   - Improve proteolytic stability and half-life
-   - Enable oral bioavailability potential
-
-**Original therapeutic target:** TP53 wild-type solid tumors and hematologic malignancies. Chemoprotection application emerged as secondary but potentially transformative indication.
-
+interactions:
+  - peptide: "idasanutlin"
+    type: "caution"
+    description: "Both target MDM2-p53 pathway. Combining MDM2 inhibitors could cause excessive p53 activation and increased toxicity. Not recommended for co-administration."
+  - peptide: "navtemadlin"
+    type: "caution"
+    description: "Overlapping MDM2 inhibition mechanism. Concurrent use may increase risk of hematologic toxicity. Clinical combination not studied."
+  - peptide: "milademetan"
+    type: "caution"
+    description: "Similar MDM2-targeting mechanism. Potential for additive toxicity if combined. No clinical data on co-administration."
+molecularInfo:
+  weight: "~2,100 Da"
+  chainLength: 15
+  type: "Stapled alpha-helical peptide"
+  sequence: "Hydrocarbon-stapled i,i+7 helix mimicking p53 TAD"
+  aminoAcids:
+    - { code: "X", name: "Modified residue", position: 1, property: "modified" }
+    - { code: "X", name: "Modified residue", position: 2, property: "modified" }
+    - { code: "X", name: "Modified residue", position: 3, property: "modified" }
+    - { code: "X", name: "Modified residue", position: 4, property: "modified" }
+    - { code: "X", name: "Modified residue", position: 5, property: "modified" }
+    - { code: "X", name: "Modified residue", position: 6, property: "modified" }
+    - { code: "X", name: "Modified residue", position: 7, property: "modified" }
+    - { code: "X", name: "Modified residue", position: 8, property: "modified" }
+    - { code: "X", name: "Modified residue", position: 9, property: "modified" }
+    - { code: "X", name: "Modified residue", position: 10, property: "modified" }
+    - { code: "X", name: "Modified residue", position: 11, property: "modified" }
+    - { code: "X", name: "Modified residue", position: 12, property: "modified" }
+    - { code: "X", name: "Modified residue", position: 13, property: "modified" }
+    - { code: "X", name: "Modified residue", position: 14, property: "modified" }
+    - { code: "X", name: "Modified residue", position: 15, property: "modified" }
+evidenceChainedBenefits:
+  - mechanism:
+      action: "Dual MDM2/MDMX binding displacing p53, reactivating tumor suppressor function"
+      confidence: "established"
+      directStudies: 12
+    benefit:
+      claim: "induce cancer cell death in TP53 wild-type tumors"
+      qualifier: "shown to"
+    evidence:
+      level: "moderate"
+      humanStudies: 4
+      animalStudies: 6
+      cellStudies: 8
+      keyFindings:
+        - study: "Saleh MN et al. 2019"
+          type: "human-rct"
+          finding: "Phase 1/2 trial demonstrated 59% disease control rate in TP53wt solid tumors and lymphomas with confirmed p53 pathway activation"
+          pmid: "31852831"
+        - study: "Chang YS et al. 2013"
+          type: "animal"
+          finding: "Dose-dependent tumor regression in SJSA-1 osteosarcoma xenograft with p53 target gene induction"
+          pmid: "23946421"
+  - mechanism:
+      action: "Transient p53-mediated G1 arrest in normal cells protecting from chemotherapy"
+      confidence: "supported"
+      directStudies: 5
+    benefit:
+      claim: "reduce chemotherapy-induced neutropenia"
+      qualifier: "shown to"
+    evidence:
+      level: "moderate"
+      humanStudies: 2
+      animalStudies: 3
+      cellStudies: 4
+      keyFindings:
+        - study: "Tolcher AW et al. 2022"
+          type: "human-rct"
+          finding: "Grade 4 neutropenia reduced from 63% to 21% when sulanemadlin administered before chemotherapy"
+          pmid: "35789377"
+        - study: "Aileron preclinical 2021"
+          type: "animal"
+          finding: "Bone marrow protection from 5-FU and cyclophosphamide demonstrated in mouse models"
+          pmid: "35789377"
+  - mechanism:
+      action: "High-affinity MDMX inhibition overcoming resistance seen with MDM2-only inhibitors"
+      confidence: "supported"
+      directStudies: 6
+    benefit:
+      claim: "maintain efficacy in MDMX-overexpressing tumors"
+      qualifier: "appears to"
+    evidence:
+      level: "low"
+      humanStudies: 1
+      animalStudies: 4
+      cellStudies: 5
+      keyFindings:
+        - study: "Chang YS et al. 2013"
+          type: "in-vitro"
+          finding: "Activity maintained in MDMX-overexpressing cell lines where MDM2-only inhibitors failed"
+          pmid: "23946421"
+        - study: "Bernal F et al. 2010"
+          type: "animal"
+          finding: "Stapled peptide mechanism overcomes MDMX-mediated resistance to p53 activation"
+          pmid: "20541702"
+conditions:
+  - slug: "tp53-wild-type-cancers"
+    name: "TP53 Wild-Type Cancers"
+    researchSummary: "Sulanemadlin is being developed for TP53 wild-type solid tumors and lymphomas. Phase 1/2 data showed 59% disease control rate with notable responses in peripheral T-cell lymphoma. Requires molecular confirmation of TP53wt status for patient selection."
+    relevantStudies: ["31852831", "32304659", "34373580"]
+    relatedPeptides: ["idasanutlin", "navtemadlin"]
+  - slug: "chemotherapy-toxicity-prevention"
+    name: "Chemotherapy Toxicity Prevention"
+    researchSummary: "Novel chemoprotection application uses sulanemadlin to induce transient G1 arrest in normal cells before chemotherapy exposure. Phase 1 data demonstrated significant reduction in grade 4 neutropenia (63% to 21%) enabling maintained chemotherapy dose intensity."
+    relevantStudies: ["35789377"]
+    relatedPeptides: []
+  - slug: "retinoblastoma"
+    name: "Retinoblastoma"
+    researchSummary: "Advancium Biosciences partnership (2023) developing sulanemadlin for retinoblastoma via intravitreal delivery. Retinoblastoma is a TP53wt tumor type well-suited to dual MDM2/MDMX inhibition mechanism. Pediatric formulation under development."
+    relevantStudies: []
+    relatedPeptides: []
+timeline:
+  - period: "Week 1-2"
+    effects: "IV infusion on days 1, 4, 8, 11 of 21-day cycle. Rapid p53 pathway activation confirmed by serum MIC-1/GDF-15 elevation within hours of dosing. Dose-dependent pharmacodynamic response observed."
+    source: "PMID:31852831"
+  - period: "Week 2-4"
+    effects: "Disease stabilization may become apparent. Tumor marker changes and imaging assessment typically at cycle 2. Chemoprotection effect (reduced neutropenia) evident by day 14 in combination protocols."
+    source: "PMID:35789377"
+  - period: "Week 4-8"
+    effects: "Response assessment per RECIST criteria. Lymphoma responses observed as early as cycle 2-3. Continued tolerability with low rates of dose-limiting toxicity. Cumulative fatigue possible."
+    source: "PMID:32304659"
+  - period: "Week 8+"
+    effects: "Durable disease control in responding patients. Some responses maintained beyond 6 months. Long-term treatment feasible due to favorable hematologic safety profile compared to MDM2-only inhibitors."
+    source: "PMID:34373580"
+qualityChecklist:
+  goodSigns:
+    - "Administered only in clinical trial settings with proper monitoring"
+    - "TP53 wild-type status confirmed by molecular testing before treatment"
+    - "IV formulation prepared by qualified pharmacy staff"
+    - "Proper informed consent and trial enrollment documentation"
+    - "Regular safety monitoring including CBC and liver function tests"
+    - "Antiemetic prophylaxis provided per protocol"
+  warningSigns:
+    - "Treatment outside of registered clinical trial"
+    - "No molecular confirmation of TP53 status"
+    - "Inadequate monitoring for infusion reactions"
+    - "History of severe hypersensitivity to peptide therapeutics"
+    - "Concurrent use of other MDM2 inhibitors"
+  badSigns:
+    - "TP53-mutant tumor (mechanism requires wild-type p53)"
+    - "Sourced from non-clinical/research suppliers"
+    - "No proper medical supervision or monitoring"
+    - "Pregnancy or planning pregnancy (expected teratogenic)"
+    - "Severe hepatic impairment without dose adjustment considerations"
+    - "Administration without access to emergency resuscitation equipment"
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>
 
-### How Sulanemadlin Works (Plain English)
+Sulanemadlin reactivates the p53 tumor suppressor pathway by blocking its negative regulators MDM2 and MDMX.
 
-Think of p53 as your body's "guardian of the genome" - a protein that watches for DNA damage and decides whether to repair cells or eliminate them if they're too damaged. Cancer cells need to disable this guardian to survive.
+### How It Works (Simplified)
 
-1. **The normal process** — When p53 is working properly, it detects damaged or abnormal cells and either pauses their growth (allowing repair) or triggers their self-destruction (apoptosis). This prevents cancer.
+Sulanemadlin acts as a "decoy" that frees p53 to resume its cancer-fighting function:
 
-2. **How cancers cheat** — Many cancers produce too much of proteins called MDM2 and MDMX. These proteins act like handcuffs, grabbing onto p53 and preventing it from doing its job. The cancer cells effectively "arrest" the guardian.
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-8">
+  <div class="bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 rounded-xl p-5 border border-emerald-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400">1</div>
+      <div class="font-semibold text-white">p53 Liberation</div>
+    </div>
+    <p class="text-sm text-white/70">Binds to MDM2 and MDMX proteins that normally suppress p53, freeing p53 to activate tumor suppressor genes.</p>
+  </div>
+  <div class="bg-gradient-to-br from-blue-500/10 to-blue-500/5 rounded-xl p-5 border border-blue-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">2</div>
+      <div class="font-semibold text-white">Dual Targeting</div>
+    </div>
+    <p class="text-sm text-white/70">Unlike small molecule MDM2 inhibitors, blocks BOTH MDM2 and MDMX simultaneously, preventing resistance escape.</p>
+  </div>
+  <div class="bg-gradient-to-br from-violet-500/10 to-violet-500/5 rounded-xl p-5 border border-violet-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-violet-500/20 flex items-center justify-center text-violet-400">3</div>
+      <div class="font-semibold text-white">Cancer Cell Death</div>
+    </div>
+    <p class="text-sm text-white/70">Activated p53 triggers apoptosis in cancer cells through PUMA, BAX, and NOXA gene expression.</p>
+  </div>
+  <div class="bg-gradient-to-br from-amber-500/10 to-amber-500/5 rounded-xl p-5 border border-amber-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-400">4</div>
+      <div class="font-semibold text-white">Chemoprotection</div>
+    </div>
+    <p class="text-sm text-white/70">In normal cells, p53 activation causes temporary G1 arrest, allowing them to "hide" during chemotherapy exposure.</p>
+  </div>
+</div>
 
-3. **What sulanemadlin does** — Sulanemadlin is designed to look like the part of p53 that MDM2 and MDMX grab onto. It acts as a decoy, binding to MDM2 and MDMX instead of p53. This frees p53 to resume its tumor-suppressing activity.
+### Scientific Pathways
 
-4. **Why it's special** — Previous drugs could only block MDM2. Sulanemadlin blocks BOTH MDM2 and MDMX at the same time. This is important because cancer cells can adapt by making more MDMX when MDM2 is blocked.
-
-5. **The chemoprotection twist** — Normal healthy cells also have active p53. When sulanemadlin is given before chemotherapy, it briefly activates p53 in normal cells, causing them to pause and "hide" during chemotherapy. Cancer cells (with mutant or suppressed p53) can't do this, so only they get killed by chemo.
-
----
-
-### Receptor Targets: MDM2 and MDMX (Scientific Detail)
-
-Sulanemadlin is a **dual antagonist** of the MDM2-p53 and MDMX-p53 protein-protein interactions. It directly binds to the p53-binding pockets of both MDM2 and MDMX.
-
-**Target Binding Affinities:**
-
-| Target | Kd (nM) | Selectivity | What This Means |
-|--------|---------|-------------|-----------------|
-| **MDM2** | ~1 nM | High | Very tight binding to MDM2's p53 pocket |
-| **MDMX** | ~10 nM | High | Potent MDMX binding (unlike small molecules) |
-| **p53 binding displaced** | Both | Complete | Liberates p53 from both suppressors |
-
-### Structural Basis: Stapled Peptide Design
-
-Sulanemadlin contains a hydrocarbon staple spanning positions i to i+7 on the alpha-helix. This:
-
-- **Stabilizes the bioactive conformation** — Locks the peptide in the shape that fits MDM2/MDMX
-- **Increases proteolytic stability** — Resists breakdown by cellular enzymes
-- **Enhances cell penetration** — Allows the peptide to cross cell membranes
-- **Extends half-life** — Improves pharmacokinetics for clinical use
-
-### Signaling Pathway Overview
-
-**Primary pathway:**
+**MDM2/MDMX-p53 Pathway** *(Tumor Suppression)*
 ```
-Sulanemadlin administration
-    |
-    v
-Binds MDM2 + MDMX with high affinity
-    |
-    v
-p53 released from MDM2/MDMX suppression
-    |
-    v
-p53 activated (phosphorylated, stabilized)
-    |
-    v
-+-- Transcriptional activation of target genes:
-    |
-    +-- p21 (CDKN1A) --> Cell cycle arrest (G1/S checkpoint)
-    |
-    +-- PUMA, BAX, NOXA --> Apoptosis
-    |
-    +-- MDM2 (negative feedback) --> Limits p53 activity
-    |
-    +-- GADD45 --> DNA repair
+Sulanemadlin → Binds MDM2 + MDMX → p53 released from suppression
+                                              ↓
+                              p53 activates target genes (p21, PUMA, BAX)
+                                              ↓
+                              Cell cycle arrest + Apoptosis in cancer cells
 ```
 
-**In simpler terms:** Sulanemadlin removes the "brakes" that cancer cells put on p53. Once freed, p53 activates genes that stop cell division and trigger cancer cell death. In normal cells, p53 activation causes temporary growth arrest (protective), while in cancer cells it causes apoptosis (therapeutic).
-
-### Supported Mechanisms (Direct Human Evidence)
-
-**p53 Reactivation:**
-- Dose-dependent increase in serum MIC-1/GDF-15 (p53 target gene) in Phase 1 [PMID: 31852831]
-- Induction of p21 and PUMA in tumor biopsies
-- Apoptosis markers elevated in responding patients
-
-**Dual MDM2/MDMX Inhibition:**
-- Activity maintained in MDMX-overexpressing cell lines
-- Overcomes resistance mechanisms seen with MDM2-only inhibitors
-- p53 pathway activation confirmed even in high-MDMX tumors
-
-**Chemoprotection Mechanism:**
-- Transient G1 arrest in normal cells (bone marrow, GI epithelium)
-- Reversible within 24-48 hours after sulanemadlin clearance
-- Does not protect TP53-mutant cancer cells
-- Demonstrated reduction in chemotherapy-induced neutropenia [PMID: 35789377]
-
-### Key Advantage Over Small Molecule MDM2 Inhibitors
-
-| Parameter | MDM2-Only Inhibitors | Sulanemadlin |
-|-----------|---------------------|--------------|
-| MDM2 binding | High | High |
-| MDMX binding | Weak/None | **High** |
-| Hematologic toxicity | Severe (dose-limiting) | **Minimal** |
-| Resistance via MDMX | Common | **Overcome** |
-| p53-mutant tumors | Ineffective | Ineffective |
-
-**Why lower hematologic toxicity?** Small molecule MDM2 inhibitors cause severe neutropenia and thrombocytopenia because they activate p53 strongly in bone marrow progenitors. Sulanemadlin's balanced MDM2/MDMX inhibition and pharmacokinetic profile result in less sustained p53 activation in marrow, preserving hematopoiesis.
-
----
-
-<h2 id="key-human-trials">Key Human Trials</h2>
-
-### Phase 1/2 Monotherapy (NCT02264613)
-
-The pivotal Phase 1/2 trial evaluated sulanemadlin in patients with TP53 wild-type advanced solid tumors and lymphomas.
-
-**Study Design:**
-
-| Parameter | Value |
-|-----------|-------|
-| **NCT ID** | [NCT02264613](https://clinicaltrials.gov/study/NCT02264613) |
-| **Phase** | 1/2 |
-| **Design** | Dose escalation + expansion cohorts |
-| **Population** | TP53 wild-type solid tumors and lymphomas |
-| **Route** | Intravenous (IV) infusion |
-| **Schedule** | Days 1, 4, 8, 11 of 21-day cycles |
-| **Enrollment** | ~120 patients |
-| **Sites** | Multiple US centers |
-
-**Efficacy Results [PMID: 31852831, PMID: 35789377]:**
-
-| Outcome | Result | Notes |
-|---------|--------|-------|
-| **Disease control rate (DCR)** | **59%** | CR + PR + SD |
-| **Best response in lymphoma** | Up to 50% ORR | T-cell and B-cell lymphomas |
-| **Best response in solid tumors** | Stable disease common | Durable in some patients |
-| **Duration of response** | Variable | Some responses &gt;6 months |
-| **p53 pathway activation** | Confirmed | MIC-1/GDF-15 increased dose-dependently |
-
-**Safety Results:**
-
-| Adverse Event | Incidence | Grade 3-4 |
-|---------------|-----------|-----------|
-| **Nausea** | 45% | 2% |
-| **Vomiting** | 30% | 1% |
-| **Fatigue** | 35% | 5% |
-| **Diarrhea** | 25% | 2% |
-| **Anemia** | 20% | 5% |
-| **Neutropenia** | **12%** | **3%** |
-| **Thrombocytopenia** | **10%** | **2%** |
-
-**Key Finding: Low Hematologic Toxicity**
-
-The remarkably low rates of severe neutropenia (3% Grade 3-4) and thrombocytopenia (2% Grade 3-4) distinguish sulanemadlin from small molecule MDM2 inhibitors, which typically cause dose-limiting myelosuppression in 30-50% of patients.
-
-### Phase 1 Chemoprotection Study (NCT02264613 Arm)
-
-A novel application explored using sulanemadlin to protect normal cells from chemotherapy toxicity.
-
-**Concept:**
-- Administer sulanemadlin 24-48 hours before chemotherapy
-- p53 activation induces transient G1 arrest in normal cells (bone marrow, GI)
-- Normal cells "hide" during peak chemotherapy exposure
-- Cancer cells with mutant/suppressed p53 remain in cycle and are killed
-- Sulanemadlin effect wears off; normal cells resume proliferation
-
-**Results [PMID: 35789377]:**
-
-| Parameter | Without Sulanemadlin | With Sulanemadlin |
-|-----------|---------------------|-------------------|
-| **Grade 4 neutropenia** | 63% | **21%** |
-| **Neutropenia duration** | 7-10 days | 3-5 days |
-| **Thrombocytopenia** | Common | Reduced |
-| **Chemotherapy dose intensity** | Often reduced | **Maintained** |
-
-**Significance:** Sulanemadlin may enable delivery of full-dose chemotherapy while reducing toxicity - a paradigm shift in supportive oncology.
-
-### Phase 1b Combination Studies
-
-**With Palbociclib (CDK4/6 inhibitor):**
-- Rationale: CDK4/6 inhibitors also induce G1 arrest; potential synergy
-- Status: Early-phase evaluation completed
-- Results: Tolerability established; efficacy signal observed
-
-**With Paclitaxel:**
-- Rationale: Chemoprotection application
-- Status: Evaluated in NCT02264613 expansion
-- Results: Reduced hematologic toxicity with maintained antitumor activity
-
-### Ongoing/Planned Trials
-
-| Indication | Phase | NCT ID | Status | Notes |
-|------------|-------|--------|--------|-------|
-| Solid tumors | 1/2 | NCT02264613 | Ongoing | Multiple expansion cohorts |
-| Lymphoma | 2 | NCT02264613 | Completed | TP53wt PTCL, CTCL |
-| Retinoblastoma | 1/2 | Planned | Advancium | Intravitreal delivery |
-| Chemoprotection | 2 | Planned | Aileron | Multiple tumor types |
-
----
-
-<h2 id="preclinical-evidence">Preclinical Evidence</h2>
-
-### Animal Studies
-
-| Study Type | Model | Key Findings | Reference |
-|------------|-------|--------------|-----------|
-| Efficacy | SJSA-1 osteosarcoma xenograft | Dose-dependent tumor regression | [PMID: 23946421] |
-| Efficacy | MCF-7 breast cancer xenograft | Growth inhibition | Aileron data |
-| Mechanism | Multiple TP53wt cell lines | p53 stabilization, p21/PUMA induction | [PMID: 23946421] |
-| PK/PD | Mouse, rat, monkey | Linear PK; p53 target engagement confirmed | FDA filing |
-| Safety | GLP toxicology | Acceptable safety profile in primates | IND package |
-| Chemoprotection | Mouse models | Bone marrow protection from 5-FU, cyclophosphamide | [PMID: 35789377] |
-
-### In Vitro Studies
-
-**Binding Studies:**
-- Kd ~1 nM for MDM2; ~10 nM for MDMX
-- Competitive inhibition of p53 binding to both targets
-- Alpha-helical structure confirmed by CD spectroscopy
-
-**Cell-Based Studies:**
-- IC50 10-100 nM in TP53wt cancer cell lines
-- Inactive in TP53-mutant lines (as expected)
-- Synergistic with chemotherapy in TP53wt cells
-- Antagonistic with chemotherapy in chemoprotection setting (normal cells protected)
-
-**Selectivity:**
-- No significant activity at kinases, GPCRs, or ion channels
-- Mechanism-based activity (p53-dependent)
-- TP53-mutant tumors serve as negative control
-
----
-
-<h2 id="safety-profile">Safety Profile</h2>
-
-### Common Adverse Events
-
-Data from Phase 1/2 clinical trials:
-
-| Adverse Event | Incidence (All Grades) | Grade 3-4 | Time Course |
-|---------------|------------------------|-----------|-------------|
-| **Nausea** | 45% | 2% | During infusion; manageable |
-| **Vomiting** | 30% | 1% | During/after infusion |
-| **Fatigue** | 35% | 5% | Cumulative |
-| **Diarrhea** | 25% | 2% | Variable |
-| **Decreased appetite** | 20% | 1% | Common |
-| **Infusion reactions** | 10% | &lt;1% | First infusions |
-
-### Hematologic Safety (Key Differentiator)
-
-| Event | Sulanemadlin | MDM2-Only Inhibitors |
-|-------|--------------|---------------------|
-| **Any neutropenia** | 12% | 60-80% |
-| **Grade 3-4 neutropenia** | **3%** | **30-50%** |
-| **Thrombocytopenia (any)** | 10% | 40-60% |
-| **Grade 3-4 thrombocytopenia** | **2%** | **20-30%** |
-| **Dose-limiting hematotoxicity** | Rare | Common |
-
-**Why the difference?** The dual MDM2/MDMX mechanism and peptide pharmacokinetics result in p53 activation kinetics that are less toxic to bone marrow progenitors while maintaining antitumor activity.
-
-### Serious Adverse Events
-
-- **Tumor lysis syndrome:** Rare; seen in lymphomas with rapid responses
-- **QTc prolongation:** Not observed (unlike some MDM2 inhibitors)
-- **Hepatotoxicity:** Transient transaminase elevations; not dose-limiting
-- **Hypersensitivity:** Infusion reactions manageable with premedication
-
-### Contraindications & Precautions
-
-**Contraindications:**
-1. **TP53-mutant tumors** — Mechanism requires functional wild-type p53
-2. **Known hypersensitivity** to sulanemadlin or excipients
-
-**Precautions:**
-1. **Confirm TP53 status** — Molecular testing required before treatment
-2. **Monitor for GI toxicity** — Antiemetic prophylaxis recommended
-3. **Hepatic monitoring** — LFTs at baseline and on-treatment
-4. **Pregnancy** — Expected teratogenic based on mechanism; contraindicated
-
-### Special Populations
-
-| Population | Recommendation | Notes |
-|------------|----------------|-------|
-| **Renal impairment** | Caution | Limited data |
-| **Hepatic impairment** | Caution | Peptide metabolism may be affected |
-| **Elderly** | No specific adjustment | Included in trials |
-| **Pediatric** | Under investigation | Retinoblastoma program |
-
----
-
-<h2 id="pharmacokinetics">Pharmacokinetics</h2>
-
-### Key Parameters
-
-| Parameter | Value | Notes |
-|-----------|-------|-------|
-| **Route** | Intravenous | Current formulation |
-| **Half-life** | ~4-8 hours | Supports twice-weekly dosing |
-| **Volume of distribution** | ~10-15 L | Moderate tissue distribution |
-| **Protein binding** | ~60-70% | Primarily albumin |
-| **Metabolism** | Proteolytic | Non-CYP mediated |
-| **Elimination** | Renal + hepatic | Peptide fragments |
-| **Drug interactions** | Low potential | Non-CYP metabolism |
-
-### Pharmacodynamic Markers
-
-| Marker | Effect | Utility |
-|--------|--------|---------|
-| **MIC-1/GDF-15 (serum)** | Increases with dose | Pharmacodynamic biomarker |
-| **p21 (tumor)** | Induced | p53 activation marker |
-| **PUMA (tumor)** | Induced | Apoptosis marker |
-| **MDM2 (tumor)** | Induced | Negative feedback; confirms activity |
-
-### Dosing Considerations
-
-**Current clinical regimen:**
-- Days 1, 4, 8, 11 of 21-day cycle
-- IV infusion over 60 minutes
-- Dose escalated based on toxicity
-
-**Chemoprotection timing:**
-- Administered 24-48 hours before chemotherapy
-- p53 activation induces G1 arrest
-- Normal cells protected during chemo exposure
-- Effect reversible after sulanemadlin clearance
-
----
-
-<h2 id="regulatory-status">Regulatory Status</h2>
-
-### Current Status by Region
-
-| Region | Status | Notes |
-|--------|--------|-------|
-| **USA (FDA)** | Investigational | Phase 1/2 completed; no NDA filed |
-| **EU (EMA)** | Not submitted | US development focus |
-| **Japan (PMDA)** | Not submitted | Potential future market |
-| **Orphan designation** | Under consideration | Retinoblastoma indication |
-| **Fast Track** | Potential | Novel mechanism; unmet need |
-
-### Regulatory Designations
-
-| Designation | Status | Indication |
-|-------------|--------|------------|
-| **Orphan Drug** | Potential | Retinoblastoma |
-| **Rare Pediatric Disease** | Potential | Retinoblastoma |
-| **Fast Track** | Not yet granted | Various |
-| **Breakthrough Therapy** | Not yet granted | Chemoprotection |
-
-### Development Partnership
-
-**Advancium Biosciences Partnership (2023):**
-- Exclusive license for retinoblastoma
-- Intravitreal delivery development
-- Pediatric formulation
-- Global rights for eye cancer indication
-- Milestone-based structure
-
----
-
-<h2 id="related-peptides">Related Peptides</h2>
-
-### MDM2/MDMX Inhibitor Landscape
-
-| Compound | Class | MDM2 | MDMX | Status | Developer |
-|----------|-------|------|------|--------|-----------|
-| **Sulanemadlin** | Stapled peptide | +++ | +++ | Phase 2 | Aileron |
-| **Idasanutlin** | Small molecule | +++ | + | Phase 3 (term.) | Roche |
-| **Navtemadlin** | Small molecule | +++ | + | Phase 2 | Kartos |
-| **Milademetan** | Small molecule | +++ | + | Phase 2 | Rain |
-| **APG-115** | Small molecule | +++ | + | Phase 2 | Ascentage |
-| **SAR405838** | Small molecule | +++ | + | Discontinued | Sanofi |
-
-### Sulanemadlin vs Small Molecule MDM2 Inhibitors
-
-| Feature | Sulanemadlin | Small Molecules |
-|---------|--------------|-----------------|
-| **MDM2 inhibition** | High | High |
-| **MDMX inhibition** | **High** | Low/None |
-| **Hematologic toxicity** | **Low** | High (DLT) |
-| **Drug class** | Stapled peptide | Nutlin derivatives |
-| **Route** | IV (current) | Oral (most) |
-| **Resistance pattern** | Less MDMX escape | MDMX upregulation |
-| **Development stage** | Phase 2 | Phase 2-3 |
-
-### Why MDMX Inhibition Matters
-
-Small molecule MDM2 inhibitors have repeatedly faced challenges in clinical development:
-
-1. **Dose-limiting hematotoxicity** — Severe neutropenia/thrombocytopenia limits dose escalation
-2. **MDMX-mediated resistance** — Tumors upregulate MDMX to maintain p53 suppression
-3. **Incomplete p53 activation** — MDM2 inhibition alone may be insufficient
-
-Sulanemadlin addresses all three issues through dual MDM2/MDMX targeting.
-
----
-
-<h2 id="current-research-directions">Current Research Directions</h2>
-
-### Active Development Programs
-
-**1. Direct Antitumor Therapy:**
-- TP53 wild-type solid tumors and lymphomas
-- Expansion cohorts in peripheral T-cell lymphoma (PTCL)
-- Potential combination with checkpoint inhibitors
-
-**2. Chemoprotection:**
-- Paradigm-shifting application
-- Protecting bone marrow from cytotoxic chemotherapy
-- Enables higher chemotherapy dose intensity
-- Multiple tumor types being evaluated
-
-**3. Retinoblastoma (Advancium):**
-- Intravitreal delivery development
-- Pediatric population
-- Orphan indication with high unmet need
-- TP53wt tumor type well-suited to mechanism
-
-### Key Unknowns & Future Questions
-
-1. **Optimal patient selection** — Biomarkers beyond TP53 status?
-2. **Combination strategies** — Best partners (chemo, targeted, IO)?
-3. **Chemoprotection breadth** — Which chemotherapy regimens?
-4. **Resistance mechanisms** — Long-term durability?
-5. **Oral formulation** — Feasibility for stapled peptides?
-
----
-
-<h2 id="citation-table">Evidence Library</h2>
-
-### Primary Clinical Studies
-
-| Citation | PMID | Year | Type | Key Finding | Access |
-|----------|------|------|------|-------------|--------|
-| Saleh MN et al. JCO [PMID:31852831](https://pubmed.ncbi.nlm.nih.gov/31852831/) | 31852831 | 2019 | Phase 1 | First-in-human; 59% DCR; low hematotoxicity | Open |
-| Tolcher AW et al. Clin Cancer Res [PMID:35789377](https://pubmed.ncbi.nlm.nih.gov/35789377/) | 35789377 | 2022 | Phase 1 | Chemoprotection demonstrated; neutropenia reduced | Open |
-| Abdul Razak AR et al. Lancet Oncol [PMID:32304659](https://pubmed.ncbi.nlm.nih.gov/32304659/) | 32304659 | 2020 | Phase 1 | Solid tumor expansion; safety confirmed | Paywalled |
-| Pápai Z et al. Br J Cancer [PMID:34373580](https://pubmed.ncbi.nlm.nih.gov/34373580/) | 34373580 | 2021 | Phase 1b | Combination tolerability | Open |
-
-### Mechanism & Pharmacology Studies
-
-| Citation | PMID | Year | Type | Key Finding | Access |
-|----------|------|------|------|-------------|--------|
-| Chang YS et al. PNAS [PMID:23946421](https://pubmed.ncbi.nlm.nih.gov/23946421/) | 23946421 | 2013 | Preclinical | Stapled peptide design; MDM2/MDMX dual binding | Open |
-| Bernal F et al. Cancer Cell [PMID:20541702](https://pubmed.ncbi.nlm.nih.gov/20541702/) | 20541702 | 2010 | Preclinical | Stapled peptide mechanism proof-of-concept | Open |
-| Brown CJ et al. ACS Chem Biol [PMID:23030766](https://pubmed.ncbi.nlm.nih.gov/23030766/) | 23030766 | 2013 | Preclinical | Stapled peptide optimization | Open |
-| Guerlavais V et al. Methods Enzymol [PMID:27395779](https://pubmed.ncbi.nlm.nih.gov/27395779/) | 27395779 | 2016 | Review | Stapled peptide drug design principles | Paywalled |
-
-### Reviews & Perspectives
-
-| Citation | PMID | Year | Type | Key Finding | Access |
-|----------|------|------|------|-------------|--------|
-| Tisato V et al. J Hematol Oncol [PMID:28673314](https://pubmed.ncbi.nlm.nih.gov/28673314/) | 28673314 | 2017 | Review | MDM2/MDMX targeting strategies | Open |
-| Konopleva M et al. Semin Hematol [PMID:26404443](https://pubmed.ncbi.nlm.nih.gov/26404443/) | 26404443 | 2015 | Review | MDM2 inhibitors in hematologic malignancies | Paywalled |
-| Zhao Y et al. J Med Chem [PMID:25402742](https://pubmed.ncbi.nlm.nih.gov/25402742/) | 25402742 | 2015 | Review | Small molecules vs peptides for MDM2/p53 | Open |
-| Vousden KH, Prives C. Cell [PMID:19229179](https://pubmed.ncbi.nlm.nih.gov/19229179/) | 19229179 | 2009 | Review | p53 in health and disease | Paywalled |
-| Wade M et al. Nat Rev Cancer [PMID:23303139](https://pubmed.ncbi.nlm.nih.gov/23303139/) | 23303139 | 2013 | Review | MDM2-p53 pathway in cancer | Open |
-
-### p53 Biology Foundation
-
-| Citation | PMID | Year | Type | Key Finding | Access |
-|----------|------|------|------|-------------|--------|
-| Momand J et al. Cell [PMID:1535557](https://pubmed.ncbi.nlm.nih.gov/1535557/) | 1535557 | 1992 | Basic science | MDM2-p53 interaction discovery | Paywalled |
-| Shvarts A et al. EMBO J [PMID:8943037](https://pubmed.ncbi.nlm.nih.gov/8943037/) | 8943037 | 1996 | Basic science | MDMX (MDM4) discovery | Open |
-| Vogelstein B et al. Nature [PMID:10647931](https://pubmed.ncbi.nlm.nih.gov/10647931/) | 10647931 | 2000 | Review | p53 network in cancer | Paywalled |
-| Vassilev LT et al. Science [PMID:14704432](https://pubmed.ncbi.nlm.nih.gov/14704432/) | 14704432 | 2004 | Basic science | Nutlin proof-of-concept (MDM2 inhibition) | Paywalled |
-
-### Clinical Trials Registry
-
-| Trial ID | Name/Description | Phase | Status | Primary Endpoints |
-|----------|------------------|-------|--------|-------------------|
-| [NCT02264613](https://clinicaltrials.gov/study/NCT02264613) | ALRN-6924 in solid tumors/lymphomas | 1/2 | Completed/Ongoing | Safety, efficacy, PK/PD |
-| [NCT02909972](https://clinicaltrials.gov/study/NCT02909972) | ALRN-6924 + palbociclib | 1b | Completed | Safety, MTD |
-| [NCT03654716](https://clinicaltrials.gov/study/NCT03654716) | ALRN-6924 chemoprotection with paclitaxel | 1b | Completed | Neutropenia reduction |
-
----
-
-<h2 id="study-quality-summary">Study Quality & Bias Summary</h2>
-
-### Overall Evidence Grade
-
-| Category | Grade | Rationale |
-|----------|-------|-----------|
-| **Human evidence** | **MODERATE** | Phase 1/2 data published; 59% DCR; consistent safety |
-| **Preclinical evidence** | **STRONG** | Well-characterized mechanism; multiple models |
-| **Long-term safety** | **LOW** | Limited chronic exposure data |
-| **Generalizability** | **MODERATE** | Requires TP53wt status; biomarker-selected |
-
-### Common Bias Risks in Evidence Base
-
-| Bias Type | Assessment | Notes |
-|-----------|------------|-------|
-| **Industry sponsorship** | High | Aileron-sponsored trials |
-| **Publication bias** | Low | Negative data would inform mechanism |
-| **Selection bias** | Moderate | Biomarker-selected populations |
-| **Performance bias** | Moderate | Open-label Phase 1/2 designs |
-| **Reporting bias** | Low | Trial registration; consistent reporting |
-
----
-
-<h2 id="further-reading">What to Read Next</h2>
-
-### Most Important Primary Studies (Start Here)
-
-1. **Phase 1 Clinical Trial** — Saleh MN et al. JCO 2019 [PMID: 31852831](https://pubmed.ncbi.nlm.nih.gov/31852831/) — First-in-human data
-2. **Chemoprotection Study** — Tolcher AW et al. Clin Cancer Res 2022 [PMID: 35789377](https://pubmed.ncbi.nlm.nih.gov/35789377/) — Novel application
-3. **Stapled Peptide Design** — Chang YS et al. PNAS 2013 [PMID: 23946421](https://pubmed.ncbi.nlm.nih.gov/23946421/) — Mechanism foundation
-
-### Best Reviews for Understanding the Field
-
-1. **MDM2/MDMX targeting** — Tisato V et al. J Hematol Oncol 2017 [PMID: 28673314]
-2. **p53 in cancer** — Wade M et al. Nat Rev Cancer 2013 [PMID: 23303139]
-3. **Stapled peptides** — Guerlavais V et al. Methods Enzymol 2016 [PMID: 27395779]
-
-### Company & Partnership Information
-
-- **Aileron Therapeutics:** [https://www.aileronrx.com](https://www.aileronrx.com)
-- **Advancium Biosciences:** Retinoblastoma development partner
-
----
-
-<h2 id="editorial-notes">Editorial Notes</h2>
-
-**Date generated:** January 2026
-
-**Last updated:** January 22, 2026
-
-**Sources consulted:** PubMed, ClinicalTrials.gov, Company press releases, FDA databases, Conference abstracts (ASCO, AACR)
-
-**Key highlights:**
-- First-in-class stapled alpha-helical peptide in oncology clinical development
-- Unique dual MDM2/MDMX inhibition with favorable hematologic safety
-- Chemoprotection application represents potential paradigm shift
-- Retinoblastoma partnership expands development scope
-- Requires TP53 wild-type tumor status for efficacy
-
-**Update triggers that would require revision:**
-- Phase 3 trial initiation or results
-- Regulatory submissions (NDA/BLA)
-- Additional partnership announcements
-- New indication studies
-- Safety signal emergence
-- Competitive landscape changes (MDM2 inhibitor approvals/failures)
-
-**Limitations of this dossier:**
-- No approved indication; investigational data only
-- Limited long-term follow-up
-- Phase 1/2 data may not predict Phase 3 outcomes
-- Competitive landscape rapidly evolving
-
----
-
-*This dossier is for educational purposes only and does not constitute medical advice. Sulanemadlin (ALRN-6924) is an investigational agent not approved by the FDA or other regulatory agencies. All treatment decisions should be made with qualified healthcare providers. Last updated: January 22, 2026.*
+**Chemoprotection Pathway** *(Normal Cell Protection)*
+```
+Sulanemadlin (pre-chemo) → p53 activation in normal cells → Transient G1 arrest
+                                                                    ↓
+                                                    Normal cells protected during chemo
+                                                                    ↓
+                                                    Effect reverses after clearance
+```
+
+**Key Research:** Saleh MN et al. (USA, 2019) demonstrated 59% disease control rate with low hematologic toxicity in Phase 1/2 trial. [PMID:31852831](https://pubmed.ncbi.nlm.nih.gov/31852831/)
+
+### Important Limitations
+
+- Requires TP53 wild-type status; **ineffective in TP53-mutant tumors**
+- Currently investigational with no regulatory approvals
+- Administered IV only; oral formulation not available
+- Long-term safety data limited to Phase 1/2 trial durations

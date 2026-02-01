@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import GlossaryLayout from '../../layouts/GlossaryLayout.astro';
 
 export async function getStaticPaths() {
@@ -10,7 +10,17 @@ export async function getStaticPaths() {
   }));
 }
 
-const { term } = Astro.props;
+// Support both static and SSR modes
+let term = Astro.props.term;
+if (!term) {
+  const { slug } = Astro.params;
+  term = await getEntry('glossary', slug as string);
+}
+
+if (!term) {
+  return Astro.redirect('/404');
+}
+
 const { Content } = await term.render();
 ---
 

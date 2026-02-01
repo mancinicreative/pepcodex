@@ -1,0 +1,225 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Disclaimer"
+  description="Important legal disclaimers regarding the educational content on PepCodex. Not medical advice."
+>
+  <article class="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+    <header class="mb-12 relative">
+      <div class="absolute inset-0 bg-gradient-to-br from-amber-500/10 via-transparent to-transparent rounded-2xl -z-10"></div>
+      <div class="p-6">
+        <h1 class="text-4xl font-bold tracking-tight text-white">Disclaimer</h1>
+        <p class="mt-4 text-xl text-white/80">
+          Important information about the content on PepCodex.
+        </p>
+        <p class="mt-2 text-sm text-white/60">Last updated: January 2026</p>
+      </div>
+    </header>
+
+    <div class="prose prose-invert prose-lg max-w-none">
+      <!-- General Disclaimer -->
+      <section id="general-disclaimer">
+        <h2>General Disclaimer</h2>
+        <p>
+          The information provided on PepCodex ("the Website") is for <strong>educational and research
+          purposes only</strong>. The content is intended to provide general information about peptide
+          research based on published scientific literature.
+        </p>
+        <p>
+          While we strive to provide accurate and up-to-date information, PepCodex makes no representations
+          or warranties of any kind, express or implied, about the completeness, accuracy, reliability,
+          suitability, or availability of the information, products, services, or related graphics
+          contained on the Website for any purpose.
+        </p>
+        <p>
+          Any reliance you place on such information is therefore strictly at your own risk. In no event
+          will PepCodex be liable for any loss or damage including without limitation, indirect or
+          consequential loss or damage, or any loss or damage whatsoever arising from loss of data or
+          profits arising out of, or in connection with, the use of this Website.
+        </p>
+      </section>
+
+      <!-- Medical Disclaimer -->
+      <section id="medical-disclaimer" class="mt-12">
+        <h2>Medical Disclaimer</h2>
+
+        <div class="not-prose my-8 rounded-xl border border-amber-500/30 bg-amber-500/10 p-6 backdrop-blur-sm">
+          <div class="flex items-start gap-4">
+            <svg class="w-6 h-6 text-amber-400 flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
+              <path d="M12 9v4"/>
+              <path d="M12 17h.01"/>
+            </svg>
+            <div>
+              <h3 class="text-lg font-semibold text-amber-300 mb-2">This Is Not Medical Advice</h3>
+              <p class="text-white/80">
+                The content on PepCodex does not constitute medical advice, diagnosis, or treatment.
+                Always seek the advice of your physician or other qualified healthcare provider with
+                any questions you may have regarding a medical condition.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h3>No Doctor-Patient Relationship</h3>
+        <p>
+          Use of PepCodex does not create a doctor-patient, therapist-patient, or other healthcare
+          professional relationship between you and PepCodex, its owners, contributors, or any other
+          party. The information provided on this Website should not be used as a substitute for
+          professional medical advice, diagnosis, or treatment.
+        </p>
+
+        <h3>Consult Healthcare Professionals</h3>
+        <p>
+          Before making any decisions about your health based on information found on this Website,
+          you should:
+        </p>
+        <ul>
+          <li>Consult with a qualified healthcare professional</li>
+          <li>Inform your healthcare provider of all medications and supplements you are taking</li>
+          <li>Discuss the potential risks and benefits of any treatment option</li>
+          <li>Never disregard professional medical advice because of something you have read on this Website</li>
+          <li>Never delay seeking medical advice because of something you have read on this Website</li>
+        </ul>
+
+        <h3>No Diagnosis or Treatment</h3>
+        <p>
+          PepCodex does not diagnose, treat, cure, or prevent any disease or health condition. The
+          content is not intended to be a substitute for professional medical advice. If you think
+          you may have a medical emergency, call your doctor or emergency services immediately.
+        </p>
+
+        <h3>Individual Results May Vary</h3>
+        <p>
+          The information presented on this Website describes research findings and scientific
+          literature. Individual responses to any substance can vary significantly based on genetics,
+          health status, other medications, and numerous other factors. Research results may not
+          translate directly to individual outcomes.
+        </p>
+      </section>
+
+      <!-- Research Information Disclaimer -->
+      <section id="research-disclaimer" class="mt-12">
+        <h2>Research Information Disclaimer</h2>
+        <p>
+          The peptide research information presented on PepCodex is derived exclusively from:
+        </p>
+        <ul>
+          <li>Peer-reviewed scientific journals</li>
+          <li>Clinical trial registries (ClinicalTrials.gov, EU Clinical Trials Register, etc.)</li>
+          <li>Regulatory agency documents (FDA, EMA, MHRA, etc.)</li>
+          <li>Published systematic reviews and meta-analyses</li>
+        </ul>
+        <p>
+          While we make every effort to accurately represent the findings of published research,
+          scientific understanding evolves over time. New research may contradict or modify
+          previously published findings. We recommend consulting the original sources and staying
+          informed about the latest research developments.
+        </p>
+
+        <h3>Preclinical vs. Clinical Research</h3>
+        <p>
+          We clearly distinguish between preclinical (animal/in vitro) research and human clinical
+          trials. Results from preclinical studies may not translate to humans. Where human data
+          is limited or absent, we clearly indicate this limitation.
+        </p>
+      </section>
+
+      <!-- User Responsibility -->
+      <section id="user-responsibility" class="mt-12">
+        <h2>User Responsibility</h2>
+        <p>
+          By using PepCodex, you acknowledge and agree that:
+        </p>
+        <ul>
+          <li>
+            <strong>You assume all responsibility</strong> for how you use the information provided on this Website
+          </li>
+          <li>
+            You will <strong>not use this information to self-diagnose</strong> or self-treat any health condition
+          </li>
+          <li>
+            You will <strong>consult appropriate healthcare professionals</strong> before making any health-related decisions
+          </li>
+          <li>
+            You understand that this Website is for <strong>educational purposes only</strong>
+          </li>
+          <li>
+            You will comply with all applicable laws and regulations in your jurisdiction
+          </li>
+        </ul>
+      </section>
+
+      <!-- No Endorsement -->
+      <section id="no-endorsement" class="mt-12">
+        <h2>No Endorsement</h2>
+        <p>
+          PepCodex does not endorse, recommend, or advocate for the use of any specific peptide,
+          supplement, medication, or treatment. The presence of information about any substance on
+          this Website should not be interpreted as an endorsement or recommendation for its use.
+        </p>
+        <p>
+          We do not provide:
+        </p>
+        <ul>
+          <li>Dosing recommendations or protocols</li>
+          <li>Sourcing information or purchasing guidance</li>
+          <li>Recommendations for or against any specific product or supplier</li>
+          <li>Medical advice for specific health conditions</li>
+        </ul>
+      </section>
+
+      <!-- External Links -->
+      <section id="external-links" class="mt-12">
+        <h2>External Links</h2>
+        <p>
+          This Website may contain links to external websites, including scientific journals,
+          clinical trial registries, and regulatory agencies. These links are provided for
+          convenience and informational purposes only. PepCodex does not control and is not
+          responsible for the content, privacy policies, or practices of any third-party websites.
+        </p>
+        <p>
+          The inclusion of any link does not imply endorsement by PepCodex of the linked site
+          or any association with its operators.
+        </p>
+      </section>
+
+      <!-- Changes to Disclaimer -->
+      <section id="changes" class="mt-12">
+        <h2>Changes to This Disclaimer</h2>
+        <p>
+          PepCodex reserves the right to update or modify this Disclaimer at any time without
+          prior notice. Your continued use of the Website after any changes indicates your
+          acceptance of the modified Disclaimer.
+        </p>
+        <p>
+          We encourage you to review this page periodically to stay informed of any updates.
+        </p>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="mt-12">
+        <h2>Contact Us</h2>
+        <p>
+          If you have questions about this Disclaimer, please contact us at:
+        </p>
+        <p>
+          Email: <a href="mailto:legal@pepcodex.com">legal@pepcodex.com</a>
+        </p>
+      </section>
+
+      <!-- Related Pages -->
+      <section id="related" class="mt-12 pt-8 border-t border-white/10">
+        <h2>Related Legal Pages</h2>
+        <ul>
+          <li><a href="/terms">Terms of Service</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/fda-notice">FDA Notice</a></li>
+          <li><a href="/cookie-policy">Cookie Policy</a></li>
+        </ul>
+      </section>
+    </div>
+  </article>
+</BaseLayout>

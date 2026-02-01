@@ -5,12 +5,13 @@ interface Props {
   name: string;
   slug: string;
   category: string;
+  compoundType?: 'peptide' | 'small-molecule' | 'mrna' | 'protein' | 'glycoprotein';
   evidenceStrength: 'high' | 'moderate' | 'low' | 'very-low';
   summary: string;
   aliases?: string[];
 }
 
-const { name, slug, category, evidenceStrength, summary, aliases = [] } = Astro.props;
+const { name, slug, category, compoundType = 'peptide', evidenceStrength, summary, aliases = [] } = Astro.props;
 
 const categoryLabels: Record<string, string> = {
   'metabolic': 'Metabolic',
@@ -19,6 +20,16 @@ const categoryLabels: Record<string, string> = {
   'longevity': 'Longevity',
   'other': 'Other',
 };
+
+// Compound type styling - only show for non-peptides
+const compoundTypeConfig: Record<string, { label: string; bg: string; border: string; text: string }> = {
+  'small-molecule': { label: 'Small Molecule', bg: 'bg-amber-500/20', border: 'border-amber-500/30', text: 'text-amber-400' },
+  'mrna': { label: 'mRNA', bg: 'bg-pink-500/20', border: 'border-pink-500/30', text: 'text-pink-400' },
+  'protein': { label: 'Protein', bg: 'bg-cyan-500/20', border: 'border-cyan-500/30', text: 'text-cyan-400' },
+  'glycoprotein': { label: 'Glycoprotein', bg: 'bg-teal-500/20', border: 'border-teal-500/30', text: 'text-teal-400' },
+};
+const showCompoundType = compoundType !== 'peptide';
+const compoundStyle = compoundTypeConfig[compoundType];
 ---
 
 <a
@@ -38,11 +49,16 @@ const categoryLabels: Record<string, string> = {
   </div>
 
   <div class="relative z-10 p-6 flex flex-col h-full">
-    <!-- Category badge and evidence badge -->
+    <!-- Category badge, compound type badge, and evidence badge -->
     <div class="flex flex-wrap items-center gap-2 mb-4">
       <span class="badge badge--primary text-xs">
         {categoryLabels[category] || category}
       </span>
+      {showCompoundType && compoundStyle && (
+        <span class={`px-2 py-0.5 rounded-md text-xs font-medium ${compoundStyle.bg} ${compoundStyle.border} ${compoundStyle.text} border`}>
+          {compoundStyle.label}
+        </span>
+      )}
       <EvidenceBadge strength={evidenceStrength} showLabel={false} />
     </div>
 

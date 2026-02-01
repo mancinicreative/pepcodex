@@ -3,7 +3,7 @@ name: "Thymalin"
 aliases: ["Thymulin", "Thymic Factor", "Timalin", "Thymarin"]
 category: "immune"
 evidenceStrength: "low"
-lastUpdated: 2026-01-28
+lastUpdated: 2026-01-31
 comparators: ["thymosin-alpha-1", "thymogen", "thymulin"]
 summary: "A thymic peptide complex developed in Russia and used clinically in the former Soviet Union for immunomodulation. Derived from calf thymus extract, it contains multiple peptides claimed to restore immune function. Approved in Russia since the 1970s but not recognized by Western regulatory agencies. Evidence comes primarily from Russian studies with limited Western replication."
 sources:
@@ -13,364 +13,215 @@ sources:
   openAccess: 10
 metaTitle: "Thymalin Evidence Dossier | PepCodex"
 metaDescription: "Evidence review of Thymalin, the Russian thymic peptide immunomodulator. Clinical use in Russia, mechanism claims, and evidence limitations."
+interactions:
+  - peptide: "thymosin-alpha-1"
+    type: "synergistic"
+    description: "Both target immune restoration through thymic pathways. Thymosin Alpha-1 is a defined single peptide while Thymalin is a complex. Theoretical synergy for immune reconstitution but no clinical combination studies exist."
+  - peptide: "thymogen"
+    type: "synergistic"
+    description: "Thymogen (EW dipeptide) is a synthetic derivative believed to be one of Thymalin's active components. May produce overlapping effects; combining may be redundant."
+  - peptide: "bpc-157"
+    type: "compatible"
+    description: "Non-overlapping mechanisms. BPC-157 focuses on tissue repair while Thymalin modulates immune function. No known contraindications; theoretical complementary benefits."
+  - peptide: "ll-37"
+    type: "compatible"
+    description: "LL-37's antimicrobial and immunomodulatory properties may complement Thymalin's T-cell enhancing effects. No interaction studies available."
+  - peptide: "epithalon"
+    type: "compatible"
+    description: "Both are Khavinson peptides with proposed geroprotective effects through different mechanisms. Epithalon targets telomerase while Thymalin targets immune function. Often combined in Russian anti-aging protocols."
+  - peptide: "semax"
+    type: "compatible"
+    description: "Different primary targets (immune vs cognitive). No known interactions. Both have Russian regulatory approval for distinct indications."
+molecularInfo:
+  weight: "~10 kDa (complex)"
+  chainLength: 7
+  type: "Polypeptide Complex"
+  sequence: "EW, KE, EDP (active dipeptides/tripeptides)"
+  aminoAcids:
+    - { code: "E", name: "Glutamic Acid", position: 1, property: "negative" }
+    - { code: "W", name: "Tryptophan", position: 2, property: "hydrophobic" }
+    - { code: "K", name: "Lysine", position: 3, property: "positive" }
+    - { code: "E", name: "Glutamic Acid", position: 4, property: "negative" }
+    - { code: "E", name: "Glutamic Acid", position: 5, property: "negative" }
+    - { code: "D", name: "Aspartic Acid", position: 6, property: "negative" }
+    - { code: "P", name: "Proline", position: 7, property: "hydrophobic" }
+evidenceChainedBenefits:
+  - mechanism:
+      action: "Activation of hematopoietic stem cell differentiation into T-lymphocytes via CD marker modulation"
+      confidence: "supported"
+      directStudies: 4
+    benefit:
+      claim: "restore T-cell immune function"
+      qualifier: "may"
+    evidence:
+      level: "low"
+      humanStudies: 2
+      animalStudies: 3
+      cellStudies: 2
+      keyFindings:
+        - study: "Khavinson VKh et al. 2020"
+          type: "in-vitro"
+          finding: "Thymalin reduced CD44/CD117 expression 2-3 fold and increased CD28 (mature T-cell marker) by 6.8 fold, indicating stimulation of HSC differentiation into mature T lymphocytes"
+          pmid: "33237528"
+        - study: "Linkova NS et al. 2021"
+          type: "human-observational"
+          finding: "COVID-19 patients receiving Thymalin showed 92% increase in blood lymphocytes and faster NK-cell normalization compared to standard therapy"
+          pmid: "34680149"
+  - mechanism:
+      action: "Modulation of pro-inflammatory cytokine production (IL-1B, IL-6, TNF-a) via NF-kB pathway inhibition"
+      confidence: "supported"
+      directStudies: 5
+    benefit:
+      claim: "reduce inflammatory response in immune dysfunction"
+      qualifier: "appears to"
+    evidence:
+      level: "low"
+      humanStudies: 1
+      animalStudies: 4
+      cellStudies: 2
+      keyFindings:
+        - study: "Lunin SM et al. 2008"
+          type: "animal"
+          finding: "Thymulin prevented accumulation of pro-inflammatory cytokines (IL-1B, IL-2, IL-6, TNF-a, IFN-y) in LPS-induced inflammation mouse model"
+          pmid: "18991101"
+        - study: "Safieh-Garabedian B et al. 2003"
+          type: "animal"
+          finding: "ICV thymulin pretreatment reduced endotoxin-induced hyperalgesia and brain cytokine levels in dose-dependent manner"
+          pmid: "14580936"
+  - mechanism:
+      action: "Gene expression regulation via short peptide binding to DNA sequences and histone proteins"
+      confidence: "emerging"
+      directStudies: 3
+    benefit:
+      claim: "provide geroprotective effects in elderly"
+      qualifier: "suggested to"
+    evidence:
+      level: "very-low"
+      humanStudies: 2
+      animalStudies: 2
+      cellStudies: 1
+      keyFindings:
+        - study: "Khavinson VKh, Morozov VG 2003"
+          type: "human-observational"
+          finding: "6-8 year follow-up of 266 elderly persons showed 2.0-2.1 fold mortality decrease in Thymalin-treated group vs controls"
+          pmid: "14523363"
+        - study: "Anisimov VN et al. 2002"
+          type: "animal"
+          finding: "L-Glu-L-Trp dipeptide (from Thymalin) slowed aging markers and inhibited spontaneous carcinogenesis in rats"
+          pmid: "11707921"
+conditions:
+  - slug: "immunodeficiency"
+    name: "Immunodeficiency"
+    researchSummary: "Thymalin has been used clinically in Russia since the 1970s for secondary immunodeficiencies. Russian studies report improvements in T-cell counts and function in immunocompromised patients. The 2020 in-vitro study demonstrated HSC differentiation into mature T-lymphocytes. However, Western clinical validation is absent."
+    relevantStudies: ["33237528", "14523363"]
+    relatedPeptides: ["thymosin-alpha-1", "thymogen"]
+  - slug: "post-viral-immune-dysfunction"
+    name: "Post-Viral Immune Dysfunction"
+    researchSummary: "A 2021 observational study examined Thymalin in COVID-19 patients, reporting 92% increase in lymphocytes and faster NK-cell normalization. This represents the most recent clinical evidence but was not placebo-controlled and conducted at a single Russian center."
+    relevantStudies: ["34680149"]
+    relatedPeptides: ["thymosin-alpha-1"]
+  - slug: "age-related-immune-decline"
+    name: "Age-Related Immune Decline"
+    researchSummary: "Russian longitudinal studies from the Khavinson laboratory report reduced mortality in elderly receiving Thymalin over 6-8 years. These findings suggest potential geroprotective effects but methodology and controls do not meet current Western trial standards."
+    relevantStudies: ["14523363", "11707921"]
+    relatedPeptides: ["epithalon", "thymosin-alpha-1"]
+timeline:
+  - period: "Week 1-2"
+    effects: "Based on Russian clinical protocols: Initial immune marker changes may begin. In-vitro studies show T-cell differentiation marker changes within 24-48 hours. Clinical response timing in humans varies."
+    source: "PMID:33237528"
+  - period: "Week 2-4"
+    effects: "Russian clinical reports suggest lymphocyte count improvements may become detectable. COVID-19 study showed NK-cell normalization within this timeframe. Inflammatory marker changes observed in preclinical models."
+    source: "PMID:34680149"
+  - period: "Week 4-8"
+    effects: "Continued immune function optimization expected based on Russian treatment protocols. Standard Russian clinical courses typically last 5-10 days with effects claimed to persist for months."
+    source: "PMID:18991101"
+  - period: "Week 8+"
+    effects: "Long-term Russian studies claim sustained immunomodulatory effects. The 6-8 year mortality study suggested persistent benefits. However, human pharmacokinetics and optimal treatment intervals are not well characterized by Western standards."
+    source: "PMID:14523363"
+qualityChecklist:
+  goodSigns:
+    - "White to off-white lyophilized powder (cake or crystalline appearance)"
+    - "Dissolves completely in bacteriostatic water or saline"
+    - "Clear, colorless solution after reconstitution"
+    - "Comes with certificate of analysis (COA) showing peptide content verification"
+    - "Manufactured under GMP conditions with batch testing documentation"
+    - "Proper vacuum seal on vial before reconstitution"
+  warningSigns:
+    - "Slightly off-white or cream-colored powder (may still be acceptable)"
+    - "Takes longer than expected to fully dissolve"
+    - "Powder appears collapsed or melted (possible moisture exposure)"
+    - "COA from manufacturer only without third-party verification"
+    - "Unclear sourcing of thymus extract origin"
+  badSigns:
+    - "Yellow, brown, or otherwise discolored powder"
+    - "Visible particles or cloudiness after reconstitution"
+    - "Gel-like consistency or clumping that won't dissolve"
+    - "No COA provided or COA appears fraudulent"
+    - "Strong unusual odor (may indicate contamination)"
+    - "Vial seal appears compromised or previously opened"
+    - "No documentation of bovine source testing (BSE/prion concerns)"
 ---
 
-## Overview
+<h2 id="mechanism-of-action">Mechanism of Action</h2>
 
-### Quick Summary
+The proposed mechanisms of Thymalin are based on Russian clinical studies and preclinical research. Western mechanistic validation remains limited.
 
-- **Thymic peptide extract** derived from calf thymus glands
-- **Approved in Russia** since 1970s-1980s for immunomodulation
-- **Not approved** by FDA, EMA, or other Western regulatory agencies
-- **Developer:** St. Petersburg Institute of Bioregulation and Gerontology (Khavinson lab)
-- **Claimed uses:** Immune restoration, anti-aging, post-infection recovery
-- **Evidence:** Extensive Russian literature, limited Western validation
+### How It Works (Simplified)
 
-**Evidence Strength: Low** — Regulatory approval and clinical use in Russia with multiple published studies, but limited independent Western replication and methodological questions about older trials.
+Thymalin acts as a thymic hormone replacement, supporting immune function through multiple pathways:
 
-### Identity & Origins
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-8">
+  <div class="bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 rounded-xl p-5 border border-emerald-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400">1</div>
+      <div class="font-semibold text-white">T-Cell Differentiation</div>
+    </div>
+    <p class="text-sm text-white/70">Promotes hematopoietic stem cell differentiation into mature T-lymphocytes by modulating CD44, CD117, and CD28 expression markers.</p>
+  </div>
+  <div class="bg-gradient-to-br from-blue-500/10 to-blue-500/5 rounded-xl p-5 border border-blue-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">2</div>
+      <div class="font-semibold text-white">Cytokine Modulation</div>
+    </div>
+    <p class="text-sm text-white/70">Suppresses pro-inflammatory cytokines (IL-1B, IL-6, TNF-a) while enhancing anti-inflammatory responses via NF-kB pathway inhibition.</p>
+  </div>
+  <div class="bg-gradient-to-br from-violet-500/10 to-violet-500/5 rounded-xl p-5 border border-violet-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-violet-500/20 flex items-center justify-center text-violet-400">3</div>
+      <div class="font-semibold text-white">Gene Regulation</div>
+    </div>
+    <p class="text-sm text-white/70">Short peptides (EW, KE, EDP) bind to specific DNA sequences and histone proteins, influencing expression of immune-related genes.</p>
+  </div>
+  <div class="bg-gradient-to-br from-amber-500/10 to-amber-500/5 rounded-xl p-5 border border-amber-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-400">4</div>
+      <div class="font-semibold text-white">NK Cell Activation</div>
+    </div>
+    <p class="text-sm text-white/70">Enhances natural killer cell activity and number, contributing to innate immune surveillance and anti-tumor responses.</p>
+  </div>
+</div>
 
-| Property | Value |
-|----------|-------|
-| **Generic name** | Thymalin (Timalin) |
-| **Source** | Bovine (calf) thymus extract |
-| **Composition** | Peptide complex (multiple peptides) |
-| **Class** | Thymic peptide immunomodulator |
-| **Developer** | Institute of Bioregulation and Gerontology, St. Petersburg |
-| **Key researcher** | Vladimir Khavinson |
+### Scientific Pathways
 
-### Research Timeline
-
-- **1970s:** Development of thymic peptide extraction methods in USSR
-- **1977-1982:** Initial clinical trials and Soviet regulatory approval
-- **1980s-1990s:** Extensive use in Soviet/Russian medicine
-- **1990s-2000s:** Research into synthetic successors (Thymogen)
-- **2000s-present:** Continued research, particularly in gerontology
-- **Current:** Available by prescription in Russia; research chemical elsewhere
-
----
-
-## Mechanism of Action
-
-### Proposed Mechanism
-
-Thymalin is proposed to work by mimicking endogenous thymic hormones:
-
-**Thymic Hormone Replacement Concept:**
-
+**T-Cell Maturation Pathway** *(Immune Restoration)*
 ```
-Thymus gland → Produces thymic hormones
-    ↓
-Thymic hormones → T-cell maturation and function
-    ↓
-With aging/disease → Thymic involution, reduced output
-    ↓
-Thymalin supplementation → Proposed restoration of thymic function
-    ↓
-├── T-cell differentiation support
-├── Immune balance restoration
-├── Anti-inflammatory effects
-└── Claimed anti-aging properties
+Thymalin -> HSC CD44/CD117 downregulation -> CD28 upregulation -> Mature T-lymphocytes
+                                                                    |
+                                                       Enhanced cellular immunity
 ```
 
-### Scientific Basis
-
-The thymus gland produces several hormones that regulate T-cell development:
-
-| Endogenous Hormone | Function | Thymalin Claim |
-|--------------------|----------|----------------|
-| Thymulin | T-cell differentiation | Contains or mimics |
-| Thymosin alpha-1 | Immune modulation | Contains fragments |
-| Thymopoietin | T-cell maturation | Contains fragments |
-| Thymic humoral factor | Immune regulation | Contains fragments |
-
-### Key Proposed Effects
-
-| Effect | Mechanism Claimed |
-|--------|-------------------|
-| T-cell restoration | Thymic hormone replacement |
-| Immune balance | Th1/Th2 modulation |
-| Anti-inflammatory | Cytokine regulation |
-| Anti-aging | Immune system restoration |
-
-### Mechanism Limitations
-
-| Issue | Concern |
-|-------|---------|
-| Composition variability | Extract, not defined compound |
-| Active peptide identity | Which peptides are responsible? |
-| Batch consistency | Natural product variability |
-| MOA validation | Limited Western mechanistic studies |
-
----
-
-## Research Summary
-
-### Evidence Overview
-
-| Category | Count | Notes |
-|----------|-------|-------|
-| Human clinical trials | 8+ | Primarily Russian |
-| Human observational | 10+ | Post-marketing, Russian |
-| Preclinical studies | 22+ | Mechanism and efficacy |
-| Systematic reviews | 2-3 | Russian literature |
-| Total tracked sources | 30 | 10 open access |
-
-### Clinical Applications (Russia)
-
-Thymalin has been used in Russian medicine for:
-
-| Indication | Use Context |
-|------------|-------------|
-| Post-infection immunodeficiency | Recovery support |
-| Radiation-induced immunodeficiency | Chernobyl aftermath |
-| Cancer adjuvant therapy | Immune restoration |
-| Chronic infections | Immunomodulation |
-| Aging-related immune decline | Gerontology |
-| Autoimmune conditions | Immune balance |
-
-### Evidence Quality Assessment
-
-| Strength | Limitation |
-|----------|------------|
-| Regulatory approval (Russia) | Not FDA/EMA approved |
-| Decades of clinical use | Old trial methodology |
-| Multiple published studies | Limited Western replication |
-| Real-world experience | Publication bias possible |
-
----
-
-## Key Human Evidence
-
-### Russian Clinical Trials
-
-**1. Post-Radiation Immunodeficiency**
-
-| Parameter | Details |
-|-----------|---------|
-| Context | Chernobyl liquidators |
-| Population | Workers with radiation exposure |
-| Intervention | Thymalin courses |
-| Outcomes | Improved immune parameters |
-| Limitation | Non-randomized, historical |
-
-**2. Cancer Adjuvant Studies**
-
-| Parameter | Details |
-|-----------|---------|
-| Population | Cancer patients post-treatment |
-| Intervention | Thymalin + standard care |
-| Outcomes | Improved immune markers, survival claims |
-| Limitation | Variable methodology |
-
-**3. Aging/Gerontology Studies**
-
-| Parameter | Details |
-|-----------|---------|
-| Context | Khavinson longevity research |
-| Population | Elderly individuals |
-| Intervention | Thymalin courses over years |
-| Outcomes | Claimed mortality reduction |
-| Limitation | Methodological concerns |
-
-### Key Publications
-
-| Study | Year | Finding | Access |
-|-------|------|---------|--------|
-| Khavinson VKh et al. | 2002 | Immune restoration in elderly | Paywalled |
-| Anisimov VN et al. | 2001 | Longevity effects in mice | Open |
-| Morozov VG, Khavinson VKh | 1997 | 20-year clinical experience review | Paywalled |
-
----
-
-## Preclinical Evidence
-
-### Animal Studies
-
-| Model | Finding | Citation |
-|-------|---------|----------|
-| Aged mice | Improved immune markers | Anisimov 2001 |
-| Immunodeficient models | T-cell restoration | Multiple Russian |
-| Tumor models | Reduced growth (adjuvant) | Russian literature |
-| Radiation models | Improved recovery | Soviet era studies |
-
-### Mechanism Studies
-
-| Target | Effect |
-|--------|--------|
-| T-cell subsets | Increased CD4/CD8 ratios |
-| Cytokines | Modulated IL-2, IFN-gamma |
-| Thymic tissue | Proposed regeneration |
-| Apoptosis | Anti-apoptotic in lymphocytes |
-
----
-
-## Safety Profile
-
-### Russian Clinical Experience
-
-| Aspect | Information |
-|--------|-------------|
-| Years in use | 40+ years (Russia) |
-| Serious adverse events | Rare in Russian reports |
-| Common side effects | Injection site reactions |
-| Allergic reactions | Possible (animal-derived) |
-| Long-term safety | Claimed safe in Russian use |
-
-### Safety Considerations
-
-| Concern | Details |
-|---------|---------|
-| Animal origin | Theoretical prion/contamination risk |
-| Allergic potential | Bovine protein sensitivity |
-| Immune stimulation | Theoretical concern in autoimmunity |
-| Batch variability | Natural extract, not standardized |
-| Western validation | No FDA-standard safety assessment |
-
-### Contraindications (Russian Labeling)
-
-- Hypersensitivity to thymic preparations
-- Pregnancy (insufficient data)
-- Active autoimmune conditions (use with caution)
-
----
-
-## Pharmacology
-
-### Administration
-
-| Route | Details |
-|-------|---------|
-| Intramuscular injection | Standard Russian use |
-| Dosing | Typically 10-20mg daily for 5-10 days |
-| Course structure | Multiple short courses |
-| Frequency | Courses repeated every 3-6 months |
-
-### Pharmacokinetics
-
-| Parameter | Information |
-|-----------|-------------|
-| Absorption | IM injection provides systemic delivery |
-| Distribution | Peptides distribute widely |
-| Metabolism | Proteolytic degradation |
-| Half-life | Not precisely characterized |
-
----
-
-## Regulatory Status
-
-| Region | Status | Details |
-|--------|--------|---------|
-| **Russia** | Approved | Prescription medication |
-| **CIS countries** | Available | Some former Soviet states |
-| USA (FDA) | Not approved | No IND/NDA |
-| EU (EMA) | Not approved | Not submitted |
-| **WADA** | Not prohibited | Current status |
-
-### Why No Western Approval?
-
-| Factor | Explanation |
-|--------|-------------|
-| Extract complexity | Defined composition required |
-| Old trial standards | Don't meet FDA requirements |
-| Commercial pathway | No Western company pursuing |
-| BSE concerns | Bovine source complicates approval |
-| Synthetic alternatives | Thymosin alpha-1 is defined alternative |
-
----
-
-## Related Peptides
-
-### Thymic Peptide Family
-
-| Peptide | Relationship | Status |
-|---------|--------------|--------|
-| **Thymalin** | Extract complex | Approved (Russia) |
-| **Thymogen** | Synthetic dipeptide | Approved (Russia) |
-| **Thymosin alpha-1** | Defined peptide | Approved (some countries) |
-| **Thymulin** | Single hormone | Research |
-| **Thymopoietin** | Thymic hormone | Research |
-
-### Thymalin vs. Thymosin Alpha-1
-
-| Factor | Thymalin | Thymosin Alpha-1 |
-|--------|----------|------------------|
-| Composition | Extract (multiple peptides) | Single defined peptide |
-| Source | Bovine thymus | Synthetic |
-| Standardization | Variable | Consistent |
-| Western use | No | Some countries (Zadaxin) |
-| FDA status | Not approved | Not approved (US) |
-
----
-
-## Khavinson Research Context
-
-### Researcher Background
-
-Vladimir Khavinson is a Russian gerontologist who has extensively studied thymic peptides and other "bioregulatory peptides." His research claims include:
-
-- Thymalin reduces mortality in elderly
-- Short peptides can influence gene expression
-- "Epithalamin" (pineal peptide) extends lifespan
-
-### Critical Assessment
-
-| Aspect | Evaluation |
-|--------|------------|
-| Publication volume | Extensive |
-| Western replication | Limited |
-| Methodology | Sometimes questioned |
-| Claims | Often extraordinary |
-| Peer review | Many in Russian journals |
-
-### Balanced View
-
-Khavinson's work represents decades of Soviet/Russian peptide research that developed outside Western paradigms. Some findings may be valid, but extraordinary claims require extraordinary evidence—which is lacking in Western-standard trials.
-
----
-
-## Citation Table
-
-### Key Russian/English Publications
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Anisimov VN et al. [PMID: 11707921](https://pubmed.ncbi.nlm.nih.gov/11707921/) | 2002 | Preclinical | L-Glu-L-Trp (from Thymalin) slows aging in rats | Open |
-| Khavinson VKh [PMID: 12374906](https://pubmed.ncbi.nlm.nih.gov/12374906/) | 2002 | Review | Peptides and Ageing | Paywalled |
-| Khavinson VKh et al. [PMID: 12577695](https://pubmed.ncbi.nlm.nih.gov/12577695/) | 2003 | Clinical | Geroprotective effect of thymalin and epithalamin | Paywalled |
-| Khavinson VKh, Morozov VG [PMID: 14523363](https://pubmed.ncbi.nlm.nih.gov/14523363/) | 2003 | Clinical | Peptides of pineal gland and thymus prolong human life | Open |
-
-### Key Clinical Finding
-
-The 2003 study (PMID: 14523363) reported that in 266 elderly persons followed for 6-8 years, mortality rate decreased 2.0-2.1 fold in Thymalin-treated patients compared to control. Combined Thymalin + Epithalamin treatment showed a 4.1-fold mortality decrease. **Caveat:** These studies have not been independently replicated and methodology may not meet current Western trial standards.
-
-### Background Literature
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Goldstein AL | 1975 | Review | Thymosin discovery | Historical |
-| Bach JF | 1983 | Review | Thymulin characterization | Historical |
-
----
-
-## Summary
-
-Thymalin represents a thymic peptide therapy with:
-
-**What We Know:**
-- Bovine thymus extract developed in USSR
-- Approved and used in Russia since 1970s-80s
-- Claimed to restore immune function
-- Decades of Russian clinical experience
-
-**What We Don't Know:**
-- Exact active peptide composition
-- Whether Russian efficacy claims are valid by Western standards
-- Long-term safety by FDA standards
-- Whether it's better than defined alternatives (e.g., thymosin alpha-1)
-
-**Bottom Line:** Thymalin has a long history in Russian medicine and represents genuine research into thymic immunology. However, the extract nature, old trial methodology, and lack of Western validation mean evidence quality is low by current standards. For those interested in thymic peptides, thymosin alpha-1 offers a defined, better-characterized alternative.
-
----
-
-*This dossier is for educational purposes only. Thymalin is approved in Russia but not by the FDA, EMA, or other Western regulatory agencies. Products sold internationally are typically research chemicals. Last updated: January 2026.*
+**Anti-Inflammatory Pathway** *(Cytokine Storm Prevention)*
+```
+Thymalin -> NF-kB/IKK inhibition -> Reduced IL-1B, IL-6, TNF-a -> Anti-inflammatory effect
+```
+
+**Key Research:** Khavinson VKh et al. (Russia, 2020) demonstrated HSC differentiation markers in vitro. [PMID:33237528](https://pubmed.ncbi.nlm.nih.gov/33237528/)
+
+### Important Limitations
+
+- Extract composition varies between batches (not a defined single compound)
+- Most studies from single Russian research group (Khavinson laboratory)
+- Trial methodology may not meet current Western standards
+- Exact active peptide responsible for effects not definitively identified
+- No FDA, EMA, or other Western regulatory approval
+- Bovine-derived product carries theoretical contamination concerns

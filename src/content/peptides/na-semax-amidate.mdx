@@ -13,380 +13,207 @@ sources:
   openAccess: 1
 metaTitle: "N-Acetyl Semax Amidate Evidence Dossier | PepCodex"
 metaDescription: "Evidence review of N-Acetyl Semax Amidate, a modified Russian nootropic peptide. Stability modifications, evidence limitations, and comparison to parent Semax."
+interactions:
+  - peptide: "semax"
+    type: "synergistic"
+    description: "Parent compound with identical core sequence. NA-Semax-Amidate is designed to extend duration of action through terminal modifications. No studies comparing direct combination."
+  - peptide: "na-selank-amidate"
+    type: "compatible"
+    description: "Both are modified Russian nootropic peptides with different mechanisms (Semax: neurotrophic focus vs Selank: anxiolytic focus). Commonly discussed together but no interaction studies exist."
+  - peptide: "selank"
+    type: "compatible"
+    description: "Different mechanism profiles. Selank focuses on anxiolytic effects while Semax derivatives target cognitive enhancement. No known contraindications."
+molecularInfo:
+  weight: "~855 Da"
+  chainLength: 7
+  type: "Heptapeptide (modified)"
+  sequence: "Ac-Met-Glu-His-Phe-Pro-Gly-Pro-NH2"
+  aminoAcids:
+    - { code: "Ac-M", name: "N-Acetyl Methionine", position: 1, property: "modified" }
+    - { code: "E", name: "Glutamic Acid", position: 2, property: "negative" }
+    - { code: "H", name: "Histidine", position: 3, property: "positive" }
+    - { code: "F", name: "Phenylalanine", position: 4, property: "hydrophobic" }
+    - { code: "P", name: "Proline", position: 5, property: "hydrophobic" }
+    - { code: "G", name: "Glycine", position: 6, property: "polar" }
+    - { code: "P-NH2", name: "Proline Amide", position: 7, property: "modified" }
+evidenceChainedBenefits:
+  - mechanism:
+      action: "BDNF/TrkB pathway activation promoting neuroplasticity"
+      confidence: "emerging"
+      directStudies: 0
+    benefit:
+      claim: "enhance cognitive function and memory"
+      qualifier: "may"
+    evidence:
+      level: "very-low"
+      humanStudies: 0
+      animalStudies: 0
+      cellStudies: 0
+      keyFindings:
+        - study: "Dmitrieva VG et al. 2008 (Semax parent)"
+          type: "animal"
+          finding: "Parent compound Semax increased BDNF expression in rat brain. Effect on modified form not tested."
+          pmid: "17706034"
+        - study: "Agapova TY et al. 2007 (Semax parent)"
+          type: "animal"
+          finding: "Semax modulated 24 genes in rat brain including neurotrophins. NA-Semax-Amidate not studied."
+          pmid: "17934890"
+  - mechanism:
+      action: "Dopaminergic and serotonergic system modulation"
+      confidence: "emerging"
+      directStudies: 0
+    benefit:
+      claim: "improve mood and motivation"
+      qualifier: "may"
+    evidence:
+      level: "very-low"
+      humanStudies: 0
+      animalStudies: 0
+      cellStudies: 0
+      keyFindings:
+        - study: "Eremin KO et al. 2005 (Semax parent)"
+          type: "animal"
+          finding: "Semax affected dopamine and serotonin metabolism in rat brain. Modified form unstudied."
+          pmid: "15586569"
+  - mechanism:
+      action: "NGF/GDNF upregulation for neuroprotection"
+      confidence: "emerging"
+      directStudies: 0
+    benefit:
+      claim: "provide neuroprotective effects"
+      qualifier: "may"
+    evidence:
+      level: "very-low"
+      humanStudies: 0
+      animalStudies: 0
+      cellStudies: 0
+      keyFindings:
+        - study: "Gusev EI et al. 2005 (Semax parent)"
+          type: "human-observational"
+          finding: "Semax improved stroke recovery in clinical use (Russian). NA-Semax-Amidate has no clinical data."
+          pmid: "18533088"
+  - mechanism:
+      action: "N-acetylation and C-amidation for enhanced peptide stability"
+      confidence: "emerging"
+      directStudies: 0
+    benefit:
+      claim: "extend duration of action compared to parent Semax"
+      qualifier: "may"
+    evidence:
+      level: "very-low"
+      humanStudies: 0
+      animalStudies: 0
+      cellStudies: 0
+      keyFindings:
+        - study: "Werle M, Bernkop-Schnurch A 2006"
+          type: "in-vitro"
+          finding: "General review showing acetylation and amidation improve peptide stability. Not specific to NA-Semax-Amidate."
+          pmid: "16777323"
+conditions:
+  - slug: "cognitive-enhancement"
+    name: "Cognitive Enhancement"
+    researchSummary: "Parent compound Semax has been studied in Russia for cognitive enhancement and is approved there for nootropic use. However, N-Acetyl Semax Amidate specifically has no published research. All proposed cognitive benefits are extrapolated from parent Semax studies."
+    relevantStudies: ["17706034", "17934890"]
+    relatedPeptides: ["semax", "na-selank-amidate"]
+  - slug: "neuroprotection"
+    name: "Neuroprotection"
+    researchSummary: "Semax has been studied in Russian stroke rehabilitation contexts. N-Acetyl Semax Amidate has not been evaluated for neuroprotective applications. Whether the terminal modifications preserve neuroprotective activity is unknown."
+    relevantStudies: ["18533088"]
+    relatedPeptides: ["semax", "selank"]
+timeline:
+  - period: "Week 1-2"
+    effects: "No human data available. Based on parent Semax pharmacology: Acute cognitive effects may be noticed. Russian Semax studies suggest rapid onset of action. Whether modifications alter timeline is unknown."
+    source: "PMID:17706034"
+  - period: "Week 2-4"
+    effects: "Extrapolated from Semax: Neurotrophic factor expression changes may develop. Parent compound shows BDNF modulation in animal models within this timeframe. No data specific to NA-Semax-Amidate."
+    source: "PMID:17934890"
+  - period: "Week 4-8"
+    effects: "Based on general nootropic peptide research: Neuroplasticity effects may accumulate with continued use. No long-term studies exist for this modified compound."
+    source: "PMID:15586569"
+  - period: "Week 8+"
+    effects: "Completely unknown. No studies have evaluated extended use of N-Acetyl Semax Amidate. Long-term safety and efficacy data do not exist."
+qualityChecklist:
+  goodSigns:
+    - "White to off-white lyophilized powder"
+    - "Dissolves completely in bacteriostatic water"
+    - "Clear, colorless solution after reconstitution"
+    - "Certificate of analysis (COA) showing >98% purity"
+    - "Third-party HPLC and mass spectrometry verification"
+    - "Proper vacuum seal on vial"
+  warningSigns:
+    - "Slightly off-white or cream-colored powder"
+    - "Takes longer than expected to dissolve"
+    - "Powder appears collapsed or melted"
+    - "COA from manufacturer only without third-party verification"
+    - "Purity listed below 98% but above 95%"
+  badSigns:
+    - "Yellow, brown, or otherwise discolored powder"
+    - "Visible particles or cloudiness after reconstitution"
+    - "Gel-like consistency or clumping that won't dissolve"
+    - "No COA provided or COA appears fraudulent"
+    - "Strong unusual odor"
+    - "Vial seal appears compromised"
 ---
 
-## Overview
+<h2 id="mechanism-of-action">Mechanism of Action</h2>
 
-### Quick Summary
+The proposed mechanisms of N-Acetyl Semax Amidate are extrapolated entirely from parent compound Semax research. No direct studies exist on this modified form.
 
-- **Modified version of Semax** with N-acetylation and C-terminal amidation
-- **No independent clinical research** — all claims extrapolated from parent Semax studies
-- **Not approved** by any regulatory agency (Russia approved unmodified Semax in 1990s)
-- **Marketed claims:** Enhanced stability, prolonged effects, improved bioavailability
-- **Evidence base:** Extremely limited; modifications based on peptide chemistry theory
-- **Status:** Research chemical only
+### How It Works (Simplified)
 
-**Evidence Strength: Very Low** — Semax has moderate evidence from extensive Russian research, but N-Acetyl Semax Amidate specifically has no published research. Claims are theoretical rather than demonstrated.
+N-Acetyl Semax Amidate is proposed to work through the same pathways as Semax, with enhanced stability from terminal modifications:
 
-### Identity & Origins
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-8">
+  <div class="bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 rounded-xl p-5 border border-emerald-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400">1</div>
+      <div class="font-semibold text-white">Neurotrophic Enhancement</div>
+    </div>
+    <p class="text-sm text-white/70">Parent Semax increases BDNF, NGF, and GDNF expression. Whether modifications preserve this activity is unknown.</p>
+  </div>
+  <div class="bg-gradient-to-br from-blue-500/10 to-blue-500/5 rounded-xl p-5 border border-blue-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">2</div>
+      <div class="font-semibold text-white">Neurotransmitter Modulation</div>
+    </div>
+    <p class="text-sm text-white/70">Semax affects dopamine and serotonin systems. The modified form's receptor affinity has never been tested.</p>
+  </div>
+  <div class="bg-gradient-to-br from-violet-500/10 to-violet-500/5 rounded-xl p-5 border border-violet-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-violet-500/20 flex items-center justify-center text-violet-400">3</div>
+      <div class="font-semibold text-white">TrkB Receptor Signaling</div>
+    </div>
+    <p class="text-sm text-white/70">Semax activates TrkB receptors for neuroplasticity. Impact of terminal modifications on binding is uncharacterized.</p>
+  </div>
+  <div class="bg-gradient-to-br from-amber-500/10 to-amber-500/5 rounded-xl p-5 border border-amber-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-400">4</div>
+      <div class="font-semibold text-white">Enhanced Stability</div>
+    </div>
+    <p class="text-sm text-white/70">N-acetylation blocks aminopeptidases, C-amidation blocks carboxypeptidases. Actual half-life extension not measured.</p>
+  </div>
+</div>
 
-| Property | Value |
-|----------|-------|
-| **Generic name** | N-Acetyl Semax Amidate |
-| **Parent compound** | Semax (ACTH 4-10 analogue) |
-| **Chemical modifications** | N-terminal acetylation + C-terminal amidation |
-| **Proposed sequence** | Ac-Met-Glu-His-Phe-Pro-Gly-Pro-NH2 |
-| **Molecular weight** | ~855 Da (estimated) |
-| **Class** | Modified synthetic neuropeptide |
-| **Origin** | Research chemical suppliers |
+### Scientific Pathways
 
-### Research Timeline
-
-- **1980s:** Semax developed from ACTH(4-10) at Institute of Molecular Genetics, USSR
-- **1990s:** Semax approved in Russia for cognitive and neurological indications
-- **2000s:** Extensive Russian clinical use and research
-- **2010s:** Modified versions appear in research chemical market
-- **Current:** No published research on acetylated/amidated form
-
----
-
-## Mechanism of Action
-
-### Semax Background (Parent Compound)
-
-Semax is derived from ACTH(4-7), the melanocortin fragment with central nervous system activity, extended with Pro-Gly-Pro for stability:
-
+**Neurotrophic Pathway** *(Extrapolated from Semax)*
 ```
-ACTH → ACTH(4-7) → Semax (Met-Glu-His-Phe-Pro-Gly-Pro)
-         ↓
-   No hormonal activity retained
-   Only CNS/nootropic effects
+NA-Semax-Amidate (theoretical) → Same as Semax? → BDNF/NGF upregulation → TrkB activation
+                                                                              ↓
+                                                               Neuroplasticity & neuroprotection
 ```
 
-### Proposed Mechanism (Same as Semax)
-
-**1. Neurotrophic Factor Enhancement:**
-
+**Dopaminergic Modulation** *(Extrapolated from Semax)*
 ```
-N-Acetyl Semax Amidate (theoretical)
-    ↓
-Same mechanisms as Semax
-    ↓
-├── BDNF upregulation (neuroplasticity)
-├── NGF modulation (nerve growth)
-├── GDNF effects (neuroprotection)
-└── TrkB receptor signaling
+NA-Semax-Amidate (theoretical) → Dopamine system → Enhanced cognition/motivation
+                               → Serotonin system → Mood modulation
 ```
 
-**2. Neurotransmitter Systems:**
+**Key Research:** Dmitrieva VG et al. (Russia, 2008) demonstrated BDNF expression effects with Semax. [PMID:17706034](https://pubmed.ncbi.nlm.nih.gov/17706034/)
 
-| System | Semax Effect | NA-Semax-Amidate (Claimed) |
-|--------|--------------|---------------------------|
-| Dopamine | Enhanced metabolism | Same (assumed) |
-| Serotonin | 5-HT modulation | Same (assumed) |
-| BDNF | Increased expression | Same (assumed) |
-| Acetylcholine | Facilitated transmission | Same (assumed) |
+### Important Limitations
 
-### Modification Rationale
-
-| Modification | Purpose | Evidence |
-|--------------|---------|----------|
-| **N-acetylation** | Block aminopeptidase degradation | General chemistry |
-| **C-amidation** | Block carboxypeptidase degradation | General chemistry |
-| **Combined** | Theoretical longer duration | Not demonstrated |
-
-### Critical Uncertainty
-
-**Unknown whether these modifications:**
-- Preserve Semax's biological activity
-- Actually extend duration in practice
-- Maintain same safety profile
-- Affect receptor binding affinity
-
----
-
-## Research Summary
-
-### Evidence Overview
-
-| Category | Count | Notes |
-|----------|-------|-------|
-| Human clinical trials | 0 | None on modified form |
-| Human observational | 0 | None on modified form |
-| Preclinical on NA-Semax-Amidate | 0 | None identified |
-| Preclinical on Semax (parent) | 100+ | Extensive Russian literature |
-| Total directly relevant sources | 2 | Based on modification chemistry only |
-
-### What Research Exists (Parent Compound)
-
-Semax has substantial Russian research:
-
-| Study Type | Approximate Count |
-|------------|-------------------|
-| Clinical trials | 20+ |
-| Mechanism studies | 50+ |
-| Neuroprotection studies | 30+ |
-| Gene expression studies | 20+ |
-
-**None of this can be directly applied to the modified form without verification.**
-
-### Evidence Gap
-
-| Claim | Evidence Status |
-|-------|-----------------|
-| Same efficacy as Semax | Not tested |
-| Longer duration | Not measured |
-| Better absorption | Not studied |
-| Safe for use | No safety data |
-
----
-
-## Key Human Evidence
-
-### Clinical Trial Evidence
-
-**There are no human clinical trials of N-Acetyl Semax Amidate.**
-
-### Parent Compound (Semax) Evidence
-
-Semax is approved in Russia for:
-
-| Indication | Evidence Base |
-|------------|---------------|
-| Cognitive impairment | Multiple clinical trials |
-| Stroke rehabilitation | Clinical use |
-| Optic nerve atrophy | Approved indication |
-| Neurasthenia | Clinical use |
-
-**Key Russian Trials (Semax):**
-
-| Study | Population | Finding |
-|-------|------------|---------|
-| Kaplan et al. | Stroke patients | Improved recovery |
-| Multiple | Cognitive impairment | Memory enhancement |
-| Ophthalmology trials | Optic nerve disease | Visual improvement |
-
-**Critical Note:** Semax efficacy data cannot be assumed to apply to the modified form.
-
----
-
-## Preclinical Evidence
-
-### Direct Evidence for NA-Semax-Amidate
-
-**No preclinical studies identified.**
-
-### Relevant Parent Compound Studies
-
-| Study Type | Model | Key Findings (Semax) | Citation |
-|------------|-------|---------------------|----------|
-| Nootropic | Morris water maze | Enhanced spatial learning | Multiple |
-| Neuroprotective | Ischemia models | Reduced infarct size | PMID: 18533088 |
-| Neurotrophic | Cell culture | Increased BDNF expression | PMID: 17706034 |
-| Gene expression | Rat brain | 24 genes modulated | PMID: 17934890 |
-
-### Gene Expression Studies (Semax)
-
-Semax has been studied for transcriptomic effects:
-
-| Effect | Genes Affected |
-|--------|----------------|
-| Neurotrophins | BDNF, NGF, NT-3 |
-| Immune-related | Multiple cytokines |
-| Signaling | Various kinases |
-
-**Whether modifications affect these gene expression changes is unknown.**
-
----
-
-## Safety Profile
-
-### Known Safety Data (NA-Semax-Amidate)
-
-| Aspect | Information |
-|--------|-------------|
-| Human safety trials | None |
-| Adverse event reports | Anecdotal only |
-| Drug interactions | Unknown |
-| Contraindications | Unknown |
-| Long-term effects | Unknown |
-
-### Semax (Parent) Safety
-
-From Russian clinical experience:
-
-| Finding | Details |
-|---------|---------|
-| Serious adverse events | None reported in trials |
-| Common side effects | Mild headache, nasal irritation |
-| Tolerance | Not observed |
-| Addiction potential | None reported |
-| Drug interactions | Limited information |
-
-**These findings cannot be assumed for the modified form.**
-
-### Theoretical Concerns
-
-| Concern | Rationale |
-|---------|-----------|
-| Altered metabolism | Modifications change degradation pathway |
-| Unknown metabolites | Different breakdown products possible |
-| Changed distribution | May affect CNS penetration |
-| Receptor affinity | Modifications might alter binding |
-
----
-
-## Pharmacology
-
-### Theoretical Pharmacokinetics
-
-| Parameter | Semax | NA-Semax-Amidate (Claimed) |
-|-----------|-------|---------------------------|
-| Half-life | Minutes | Extended (not measured) |
-| Stability | Low | Improved (not verified) |
-| Intranasal bioavailability | Good | Assumed similar or better |
-| CNS penetration | Yes | Assumed same |
-
-### Administration Routes
-
-| Route | Notes |
-|-------|-------|
-| Intranasal | Primary route, matches parent compound |
-| Subcutaneous | Sometimes used |
-| Oral | Not recommended |
-
-### Dosing
-
-**No evidence-based dosing exists.**
-
-Doses used are extrapolated from Semax:
-- Semax: 200-600 mcg intranasally, 2-3x daily
-- NA-Semax-Amidate: Often claimed to require lower doses (unverified)
-
----
-
-## Regulatory Status
-
-| Region | Status | Details |
-|--------|--------|---------|
-| **Russia** | Not approved | Only unmodified Semax approved |
-| USA (FDA) | Not approved | No IND/NDA |
-| EU (EMA) | Not approved | Not submitted |
-| All countries | Research chemical | No therapeutic approval |
-| **WADA** | Not prohibited | Current status |
-
-### Research Chemical Market
-
-| Aspect | Reality |
-|--------|---------|
-| Quality control | Variable, unregulated |
-| Purity | Supplier-dependent |
-| Potency | Unverified |
-| Consistency | Batch-to-batch variation |
-| Legal status | Gray market |
-
----
-
-## Comparison to Parent Compound
-
-### NA-Semax-Amidate vs. Semax
-
-| Factor | Semax | NA-Semax-Amidate |
-|--------|-------|------------------|
-| **Evidence base** | Moderate (Russian) | Very low |
-| **Human trials** | Yes (Russian) | None |
-| **Regulatory approval** | Russia | None |
-| **Established safety** | Russian experience | None |
-| **Mechanism proven** | Yes | Assumed |
-| **Stability** | Lower | Theoretically higher |
-| **Research volume** | 100+ publications | Zero publications |
-
-### NA-Semax-Amidate vs. NA-Selank-Amidate
-
-| Factor | NA-Semax-Amidate | NA-Selank-Amidate |
-|--------|------------------|-------------------|
-| Parent compound | Semax (ACTH-derived) | Selank (tuftsin-derived) |
-| Primary effect | Nootropic | Anxiolytic |
-| Modification | Same (acetyl + amide) | Same (acetyl + amide) |
-| Evidence | Very low | Very low |
-| Research | None | None |
-
----
-
-## Critical Analysis
-
-### What's Actually Known
-
-1. Semax has extensive Russian research demonstrating nootropic and neuroprotective effects
-2. N-acetylation and C-amidation generally improve peptide stability
-3. These modifications are standard in peptide chemistry
-4. The modified compound is commercially available as a research chemical
-
-### What's Not Known
-
-1. Whether modifications preserve Semax's neurotrophic activity
-2. Actual pharmacokinetics of the modified compound
-3. Safety in humans
-4. Efficacy for any indication
-5. Optimal dosing
-6. Long-term effects
-
-### Red Flags
-
-| Issue | Concern |
-|-------|---------|
-| Zero research | No published studies on this form |
-| Marketing over science | Claims not supported |
-| Premium pricing | Higher cost for unverified benefits |
-| Quality uncertainty | Research chemical market |
-
----
-
-## Citation Table
-
-### Parent Compound Research (Semax)
-
-| Source | Year | Type | Key Finding | Access |
-|--------|------|------|-------------|--------|
-| Ashmarin IP et al. [PMID: 9586955](https://pubmed.ncbi.nlm.nih.gov/9586955/) | 1995 | Review | Semax development and characterization | Paywalled |
-| Gusev EI et al. [PMID: 18533088](https://pubmed.ncbi.nlm.nih.gov/18533088/) | 2005 | Clinical | Stroke recovery improvement | Paywalled |
-| Dmitrieva VG et al. [PMID: 17706034](https://pubmed.ncbi.nlm.nih.gov/17706034/) | 2008 | Preclinical | BDNF expression effects | Open |
-| Agapova TY et al. [PMID: 17934890](https://pubmed.ncbi.nlm.nih.gov/17934890/) | 2007 | Preclinical | Gene expression profiling | Paywalled |
-| Levitskaya NG et al. [PMID: 18225482](https://pubmed.ncbi.nlm.nih.gov/18225482/) | 2008 | Review | Mechanisms of Semax | Paywalled |
-
-### General Peptide Modification Literature
-
-| Source | Year | Type | Relevance | Access |
-|--------|------|------|-----------|--------|
-| Werle M, Bernkop-Schnurch A [PMID: 16777323](https://pubmed.ncbi.nlm.nih.gov/16777323/) | 2006 | Review | Peptide stability strategies | Open |
-| Di L [PMID: 25540820](https://pubmed.ncbi.nlm.nih.gov/25540820/) | 2015 | Review | Strategic peptide modifications | Paywalled |
-
-### No Direct Publications
-
-**No publications identified for "N-Acetyl Semax Amidate" or "NA-Semax" in PubMed, Google Scholar, or other databases.**
-
----
-
-## Summary
-
-N-Acetyl Semax Amidate represents:
-
-**What We Know:**
-- Modified form of Semax with stability-enhancing modifications
-- Parent compound (Semax) has moderate evidence from Russian research
-- Semax is approved in Russia for cognitive/neurological indications
-- No direct research exists on this specific modification
-
-**What We Don't Know:**
-- Whether modifications preserve activity
-- Actual pharmacokinetics
-- Safety profile
-- Efficacy for any indication
-- Appropriate dosing
-- Long-term effects
-
-**Bottom Line:** N-Acetyl Semax Amidate lacks any independent evidence base. While Semax has substantial Russian research supporting nootropic and neuroprotective effects, the modified form has zero published studies. Users are essentially taking an untested compound based on theoretical assumptions about peptide stability that have never been verified for this specific modification. For those interested in Semax-type effects, the parent compound has actual research behind it.
-
----
-
-*This dossier is for educational purposes only. N-Acetyl Semax Amidate is not approved by any regulatory agency. Research chemical products have uncertain quality and safety. Consult qualified healthcare providers for medical decisions. Last updated: January 2026.*
+- **Zero published studies** on N-Acetyl Semax Amidate specifically
+- All mechanisms extrapolated from parent Semax research
+- Whether modifications **preserve biological activity** is untested
+- **No human pharmacokinetic data** exists for this compound

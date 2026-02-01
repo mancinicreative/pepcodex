@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
 import OrganizationSchema from '../components/SEO/OrganizationSchema.astro';
+import DisclaimerBanner from '../components/DisclaimerBanner.astro';
+import CookieConsent from '../components/CookieConsent.astro';
 
 interface Props {
   title: string;
@@ -119,18 +121,22 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
             Trials
           </a>
           <a
-            href="/glossary"
+            href="/calculator"
             class:list={[
               "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300",
-              isActive('/glossary')
+              isActive('/calculator')
                 ? "bg-white/10 text-white shadow-[0_0_15px_rgba(255,255,255,0.1)] border border-white/10"
                 : "text-white/85 hover:text-white hover:bg-white/5"
             ]}
           >
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+              <rect x="4" y="2" width="16" height="20" rx="2"/>
+              <line x1="8" y1="6" x2="16" y2="6"/>
+              <line x1="8" y1="10" x2="16" y2="10"/>
+              <line x1="8" y1="14" x2="11" y2="14"/>
+              <line x1="8" y1="18" x2="11" y2="18"/>
             </svg>
-            Glossary
+            Calculators
           </a>
           <a
             href="/blog"
@@ -236,18 +242,22 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
             Trials
           </a>
           <a
-            href="/glossary"
+            href="/calculator"
             class:list={[
               "flex items-center gap-3 px-4 py-3 rounded-xl text-lg font-medium transition-colors",
-              isActive('/glossary')
+              isActive('/calculator')
                 ? "bg-[var(--primary)]/10 text-primary border border-[var(--primary)]/20"
                 : "text-white/85 hover:text-white hover:bg-white/5"
             ]}
           >
             <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+              <rect x="4" y="2" width="16" height="20" rx="2"/>
+              <line x1="8" y1="6" x2="16" y2="6"/>
+              <line x1="8" y1="10" x2="16" y2="10"/>
+              <line x1="8" y1="14" x2="11" y2="14"/>
+              <line x1="8" y1="18" x2="11" y2="18"/>
             </svg>
-            Glossary
+            Calculators
           </a>
           <a
             href="/blog"
@@ -346,6 +356,8 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
               <li><a href="/compare" class="hover:text-primary transition-colors">Comparisons</a></li>
               <li><a href="/guide" class="hover:text-primary transition-colors">Guides</a></li>
               <li><a href="/safety" class="hover:text-primary transition-colors">Safety Profiles</a></li>
+              <li><a href="/glossary" class="hover:text-primary transition-colors">Glossary</a></li>
+              <li><a href="/calculator" class="hover:text-primary transition-colors">Calculators</a></li>
               <li><a href="/blog" class="hover:text-primary transition-colors">Blog</a></li>
             </ul>
           </div>
@@ -359,7 +371,18 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
           </div>
         </div>
 
-        <div class="pt-8 border-t border-white/5 text-center md:text-left flex flex-col md:flex-row justify-between items-center text-xs" style="color: var(--text-low);">
+        <!-- Legal Links -->
+        <div class="pt-8 border-t border-white/5 mb-6">
+          <div class="flex flex-wrap justify-center gap-4 text-xs" style="color: var(--text-low);">
+            <a href="/disclaimer" class="hover:text-white transition-colors">Disclaimer</a>
+            <a href="/privacy" class="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="/terms" class="hover:text-white transition-colors">Terms of Service</a>
+            <a href="/fda-notice" class="hover:text-white transition-colors">FDA Notice</a>
+            <a href="/cookie-policy" class="hover:text-white transition-colors">Cookie Policy</a>
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-white/5 text-center md:text-left flex flex-col md:flex-row justify-between items-center text-xs" style="color: var(--text-low);">
           <p>&copy; {new Date().getFullYear()} PepCodex. All rights reserved.</p>
           <div class="flex gap-4 mt-4 md:mt-0">
             <a href="/about" class="hover:text-white transition-colors">About</a>
@@ -369,6 +392,10 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
         </div>
       </div>
     </footer>
+
+    <!-- Legal Components -->
+    <DisclaimerBanner />
+    <CookieConsent />
 
     <!-- Mobile menu script -->
     <script>

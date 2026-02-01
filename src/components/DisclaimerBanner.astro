@@ -1,0 +1,162 @@
+---
+/**
+ * DisclaimerBanner.astro
+ *
+ * A persistent disclaimer banner that appears on all pages to inform visitors
+ * that content is for educational purposes only and not medical advice.
+ *
+ * Uses localStorage to remember when user has dismissed the banner.
+ * The banner reappears if localStorage is cleared or after 7 days.
+ */
+---
+
+<div
+  id="disclaimer-banner"
+  class="fixed bottom-0 left-0 right-0 z-40 transform translate-y-full transition-transform duration-500 ease-out"
+  role="alert"
+  aria-live="polite"
+>
+  <div class="bg-gradient-to-r from-amber-900/95 via-amber-800/95 to-amber-900/95 backdrop-blur-lg border-t border-amber-500/30 shadow-lg shadow-amber-900/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <!-- Icon and Message -->
+        <div class="flex items-start sm:items-center gap-3 flex-1">
+          <div class="flex-shrink-0 p-1.5 bg-amber-500/20 rounded-lg">
+            <svg
+              class="w-5 h-5 text-amber-400"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
+              <path d="M12 9v4"/>
+              <path d="M12 17h.01"/>
+            </svg>
+          </div>
+          <p class="text-sm text-amber-100/90 leading-snug">
+            <strong class="text-amber-200">Educational content only.</strong>
+            <span class="hidden sm:inline"> Not medical advice. Consult a healthcare professional before making health decisions.</span>
+            <span class="sm:hidden"> Not medical advice.</span>
+            <a
+              href="/disclaimer"
+              class="underline underline-offset-2 hover:text-white transition-colors ml-1"
+            >
+              Learn more
+            </a>
+          </p>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex items-center gap-2 flex-shrink-0 ml-8 sm:ml-0">
+          <a
+            href="/fda-notice"
+            class="text-xs text-amber-300/80 hover:text-amber-200 underline underline-offset-2 transition-colors hidden md:inline-block"
+          >
+            FDA Notice
+          </a>
+          <button
+            id="dismiss-disclaimer"
+            type="button"
+            class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-amber-900 bg-amber-400 hover:bg-amber-300 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-amber-900"
+            aria-label="Acknowledge and dismiss disclaimer"
+          >
+            <span class="hidden sm:inline">I Understand</span>
+            <span class="sm:hidden">OK</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const STORAGE_KEY = 'pepcodex_disclaimer_dismissed';
+  const EXPIRY_DAYS = 7;
+
+  function getStoredDismissal(): { dismissed: boolean; timestamp: number } | null {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored) {
+        return JSON.parse(stored);
+      }
+    } catch (e) {
+      // localStorage not available or parsing failed
+    }
+    return null;
+  }
+
+  function setDismissal(): void {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        dismissed: true,
+        timestamp: Date.now()
+      }));
+    } catch (e) {
+      // localStorage not available
+    }
+  }
+
+  function isDismissalValid(): boolean {
+    const stored = getStoredDismissal();
+    if (!stored || !stored.dismissed) {
+      return false;
+    }
+
+    const expiryMs = EXPIRY_DAYS * 24 * 60 * 60 * 1000;
+    const isExpired = Date.now() - stored.timestamp > expiryMs;
+
+    return !isExpired;
+  }
+
+  function showBanner(): void {
+    const banner = document.getElementById('disclaimer-banner');
+    if (banner) {
+      // Small delay to ensure smooth animation
+      setTimeout(() => {
+        banner.classList.remove('translate-y-full');
+        banner.classList.add('translate-y-0');
+      }, 500);
+    }
+  }
+
+  function hideBanner(): void {
+    const banner = document.getElementById('disclaimer-banner');
+    if (banner) {
+      banner.classList.remove('translate-y-0');
+      banner.classList.add('translate-y-full');
+    }
+  }
+
+  function initDisclaimerBanner(): void {
+    const dismissBtn = document.getElementById('dismiss-disclaimer');
+
+    // Check if already dismissed
+    if (isDismissalValid()) {
+      return; // Don't show the banner
+    }
+
+    // Show the banner
+    showBanner();
+
+    // Handle dismiss button click
+    if (dismissBtn) {
+      dismissBtn.addEventListener('click', () => {
+        setDismissal();
+        hideBanner();
+      });
+    }
+  }
+
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDisclaimerBanner);
+  } else {
+    initDisclaimerBanner();
+  }
+
+  // Also handle View Transitions (Astro)
+  document.addEventListener('astro:page-load', initDisclaimerBanner);
+</script>

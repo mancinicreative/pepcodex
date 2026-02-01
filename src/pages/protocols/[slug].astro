@@ -1,0 +1,39 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import ProtocolLayout from '../../layouts/ProtocolLayout.astro';
+
+export async function getStaticPaths() {
+  const protocols = await getCollection('protocols');
+  return protocols.map((protocol) => ({
+    params: { slug: protocol.data.slug },
+    props: { protocol },
+  }));
+}
+
+// Support both static and SSR modes
+let protocol = Astro.props.protocol;
+if (!protocol) {
+  const { slug } = Astro.params;
+  protocol = await getEntry('protocols', slug as string);
+}
+
+if (!protocol) {
+  return Astro.redirect('/404');
+}
+
+const { Content } = await protocol.render();
+---
+
+<ProtocolLayout
+  title={protocol.data.title}
+  description={protocol.data.description}
+  peptides={protocol.data.peptides}
+  researchSummary={protocol.data.researchSummary}
+  studies={protocol.data.studies}
+  mechanism={protocol.data.mechanism}
+  safetyNotes={protocol.data.safetyNotes}
+  disclaimer={protocol.data.disclaimer}
+  lastUpdated={protocol.data.lastUpdated}
+>
+  <Content />
+</ProtocolLayout>

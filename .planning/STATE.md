@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-**Phase 23: Comparisons Batch 1 + Condition Hubs** — PENDING (first phase of v4.0 Content Expansion)
+**Phase 24: Schema Deployments** — PENDING (next phase of v4.0 Content Expansion)
 
 ## Active Work
 
@@ -19,15 +19,15 @@
 
 ### Phase Execution Order
 
-| Phase | Focus | Pages Added |
-|-------|-------|-------------|
-| 23 | Comparisons Batch 1 + Condition Hubs | +70 |
-| 24 | Schema Deployments | +0 (enhancement) |
-| 25 | Glossary Expansion | +141 |
-| 26 | Bioregulators Batch 1 | +11 |
-| 27 | Bioregulators Batch 2 | +10 |
-| 28 | Weekly News Blog | +78 |
-| 29 | Comparisons Batch 2 + Calculators | +229 |
+| Phase | Focus | Pages Added | Status |
+|-------|-------|-------------|--------|
+| 23 | Comparisons Batch 1 + Condition Hubs | +70 | ✓ COMPLETE |
+| 24 | Schema Deployments | +0 (enhancement) | PENDING |
+| 25 | Glossary Expansion | +141 | Pending |
+| 26 | Bioregulators Batch 1 | +11 | Pending |
+| 27 | Bioregulators Batch 2 | +10 | Pending |
+| 28 | Weekly News Blog | +78 | Pending |
+| 29 | Comparisons Batch 2 + Calculators | +229 | Pending |
 
 ## What's Done
 
@@ -55,6 +55,30 @@
 *Paused to prioritize v4.0 content expansion.*
 - Phase 9-12: Operations, Content, Distribution, Monetization — On Hold
 
+### v4.0 Content Expansion (IN PROGRESS)
+
+**Phase 23: Comparisons Batch 1 + Condition Hubs ✓ COMPLETE**
+- ✓ ConditionLayout.astro template created
+- ✓ conditions content collection added to config.ts
+- ✓ /conditions/ routing (index + [slug])
+- ✓ 15 condition hub pages created
+  - weight-loss, fat-loss, muscle-growth (metabolic)
+  - healing, injury-recovery, joint-pain, skin, hair-growth, gut-health (repair-recovery)
+  - anti-aging, longevity (longevity)
+  - cognition, sleep (cognitive)
+  - inflammation, immune-support (immune)
+- ✓ 55 new high-priority comparison pages
+  - GLP-1: 10 comparisons (survodutide, mazdutide, cagrilintide, amycretin, etc.)
+  - Growth Hormone: 10 comparisons (tesamorelin, ghrp-2, hexarelin, cjc-1295, etc.)
+  - Healing: 5 comparisons (bpc-157, tb-500, ghk variants)
+  - Cognitive: 5 comparisons (semax, selank, dihexa, cortexin)
+  - Bioregulators: 5 comparisons (epithalon, thymalin, thymogen)
+  - Longevity: 5 comparisons (mots-c, humanin, ss-31, foxo4-dri)
+  - Metabolic: 5 comparisons (5-amino-1mq, aod-9604, liraglutide)
+  - Immune: 5 comparisons (thymosin-alpha-1, ll-37, thymulin)
+  - Additional: 5 comparisons (pt-141, dsip, pasireotide, hcg, glutathione)
+- Total comparisons: 45 → 100 (+55)
+
 ### Pre-existing Assets (v4.0)
 - ✓ Calculators (reconstitution, blend, accumulation)
 - ✓ Legal pages (disclaimer, privacy, terms)
@@ -64,23 +88,22 @@
 
 ## What's Next (v4.0)
 
-### Phase 23: Comparisons Batch 1 + Condition Hubs
-**Goal:** URL multiplication with highest-value comparison pages and condition hubs
-
-**Deliverables:**
-- 55 high-priority comparison pages
-- ConditionLayout.astro template
-- 15 condition hub pages
-
-**Requirements:** COMP-01, COND-01 through COND-16
-
 ### Phase 24: Schema Deployments
-**Goal:** SERP feature eligibility
+**Goal:** SERP feature eligibility through structured data
 
 **Deliverables:**
-- FAQSchema deployed to top 20 peptides
-- HowToSchema component + deployment
-- DrugSchema component + deployment
+- FAQSchema deployed to top 20 peptide dossiers
+- HowToSchema component + deployment to calculators
+- DrugSchema component + deployment to dossiers
+- FAQs added to comparison pages
+
+**Requirements:** SCHEMA-01 through SCHEMA-06
+
+### Phase 25: Glossary Expansion
+**Goal:** Authority building through comprehensive terminology
+
+**Deliverables:**
+- 141 new glossary terms across 5 categories
 
 ## Cut List (Deferred to v5.0)
 
@@ -94,21 +117,23 @@ Per content expansion pivot decision:
 
 ## Context for Resume
 
-v4.0 Content Expansion milestone initialized. Site is live with ~593 pages at pepcodex.com.
+v4.0 Content Expansion milestone in progress. Phase 23 complete.
 
-**Current State:**
-- ~593 pages live and indexed
-- Calculators and legal pages exist
-- ComparisonLayout and FAQSchema exist
-- 72 peptide dossiers, 45 comparisons, 99 glossary terms
+**Current State (after Phase 23):**
+- ~663 pages (593 + 55 comparisons + 15 condition hubs)
+- 72 peptide dossiers
+- 100 comparisons (45 + 55 new)
+- 99 glossary terms
+- 15 condition hub pages (NEW)
+- ConditionLayout template (NEW)
 
 **Target State (v4.0):**
 - ~1,132 pages
 - 92 peptide dossiers (+20 bioregulators)
-- 280 comparisons (+235)
+- 280 comparisons (+180 more in Phase 29)
 - 240 glossary terms (+141)
 - 151 blog posts (+78 weekly news)
-- 15 condition hubs
+- 15 condition hubs ✓
 - 53 calculator URLs (+50)
 
 **Key Documents:**
@@ -137,8 +162,8 @@ v3.0 Phases (ON HOLD):
 Phase 9-12: Operations         [░░░░░░░░] ON HOLD
 
 v4.0 Phases (ACTIVE):
-Phase 23: Comparisons + Hubs   [░░░░░░░░] 0%  <-- START HERE
-Phase 24: Schema Deployments   [░░░░░░░░] 0%
+Phase 23: Comparisons + Hubs   [████████] 100% ✓
+Phase 24: Schema Deployments   [░░░░░░░░] 0%  <-- NEXT
 Phase 25: Glossary Expansion   [░░░░░░░░] 0%
 Phase 26: Bioregulators 1      [░░░░░░░░] 0%
 Phase 27: Bioregulators 2      [░░░░░░░░] 0%
@@ -163,6 +188,7 @@ None
 - 2026-02-01: v4.0 pivoted — content expansion over features
 - 2026-02-01: GSD planning complete — 7 phases, 62 requirements
 - 2026-02-01: Planning docs updated (PROJECT.md, REQUIREMENTS.md, ROADMAP.md, STATE.md)
+- 2026-02-01: Phase 23 COMPLETE — 55 comparisons + 15 condition hubs + ConditionLayout
 
 ---
 *Last updated: 2026-02-01*

@@ -1,6 +1,6 @@
 # Requirements: PepCodex
 
-**Defined:** 2026-01-19 | **Updated:** 2026-01-30
+**Defined:** 2026-01-19 | **Updated:** 2026-02-01
 **Core Value:** Become the authoritative, citation-heavy resource for peptide research — no dosing, no protocols, no sourcing. Pure evidence synthesis.
 
 ---
@@ -92,7 +92,7 @@ Production launch completed in Phases 6-8.
 
 ## v3 Requirements (ON HOLD)
 
-*v3.0 Operations & Growth paused to prioritize v4.0 competitive features. Resume after v4.0.*
+*v3.0 Operations & Growth paused to prioritize v4.0 content expansion. Resume after v4.0.*
 
 ### Phase 9: Operations Infrastructure (Paused)
 
@@ -112,99 +112,117 @@ See `.planning/_archive/v3-requirements.md` for full v3 requirements.
 
 ## v4 Requirements (ACTIVE)
 
-Competitive Enhancement + SEO Domination. Maps to Phases 13-22.
+**Content Expansion for SEO Domination. Maps to Phases 23-29.**
 
-### Phase 13: Legal Foundation
+Goal: Scale from ~593 to ~1,132 high-quality indexable pages.
 
-- [ ] **LEGL-01**: Site has disclaimer page covering educational purpose, no medical advice, no doctor-patient relationship
-- [ ] **LEGL-02**: Site has privacy policy page covering analytics, cookies, data handling
-- [ ] **LEGL-03**: Site has terms of service page
-- [ ] **LEGL-04**: Site has FDA notice page stating products not FDA approved/evaluated
-- [ ] **LEGL-05**: Site has cookie policy page for EU compliance
-- [ ] **LEGL-06**: Site displays persistent disclaimer banner on all pages
-- [ ] **LEGL-07**: Site shows cookie consent popup on first visit
+### COMP — Comparison Pages (+235)
 
-### Phase 14: Calculator Suite
+- [ ] **COMP-01**: Generate 55 high-priority comparison pages (GLP-1, GH, healing, cognitive)
+- [ ] **COMP-02**: Generate 180 additional comparison pages (all valid pairs)
+- [ ] **COMP-03**: Add FAQs to each comparison for schema markup
+- [ ] **COMP-04**: Cross-link comparisons to both peptide dossiers
 
-- [ ] **CALC-01**: User can calculate reconstitution (peptide mg + water mL → concentration)
-- [ ] **CALC-02**: Reconstitution calculator shows visual syringe with draw volume
-- [ ] **CALC-03**: User can calculate blend concentrations for multi-peptide combinations
-- [ ] **CALC-04**: User can calculate accumulation based on half-life
-- [ ] **CALC-05**: All calculators display "for research purposes only" disclaimer
+### GLOSS — Glossary Expansion (+141)
 
-### Phase 15: Peptide Interactions
+- [ ] **GLOSS-01**: Add 40 mechanism terms (receptor agonism, signal transduction, etc.)
+- [ ] **GLOSS-02**: Add 20 study type terms (meta-analysis, RCT, cohort, etc.)
+- [ ] **GLOSS-03**: Add 30 peptide terms (bioavailability, reconstitution, etc.)
+- [ ] **GLOSS-04**: Add 20 regulatory terms (IND, NDA, Phase I/II/III, etc.)
+- [ ] **GLOSS-05**: Add 31 chemistry terms (amino acid, N-terminus, etc.)
 
-- [ ] **INTR-01**: Peptide schema supports interactions array (peptide, type, description, source)
-- [ ] **INTR-02**: Dossier pages display interaction matrix with color-coded badges
-- [ ] **INTR-03**: Top 20 peptides have interaction data populated
+### BIOREG — Bioregulator Dossiers (+20)
 
-### Phase 16: Dossier UX Overhaul
+- [ ] **BIOREG-01**: Create Vilon dossier (thymus dipeptide Lys-Glu)
+- [ ] **BIOREG-02**: Create Prostatilen dossier (prostate peptide complex)
+- [ ] **BIOREG-03**: Create Retinalamin dossier (retinal peptide)
+- [ ] **BIOREG-04**: Create Livagen dossier (liver tripeptide Lys-Glu-Asp)
+- [ ] **BIOREG-05**: Create Kristagen dossier (immune tripeptide Glu-Asp-Gly)
+- [ ] **BIOREG-06**: Create Vesugen dossier (vascular tripeptide Lys-Glu-Asp)
+- [ ] **BIOREG-07**: Create Cardiogen dossier (cardiac tripeptide Ala-Glu-Asp)
+- [ ] **BIOREG-08**: Create Bronchogen dossier (bronchial tripeptide Ala-Glu-Asp-Leu)
+- [ ] **BIOREG-09**: Create Chonluten dossier (GI tract tripeptide Glu-Asp-Gly)
+- [ ] **BIOREG-10**: Create Testagen dossier (testicular tripeptide)
+- [ ] **BIOREG-11**: Create Ovagen dossier (hepatic tripeptide Glu-Asp-Leu)
+- [ ] **BIOREG-12**: Create Pancragen dossier (pancreatic tripeptide Lys-Glu-Asp-Trp)
+- [ ] **BIOREG-13**: Create Stamakort dossier (gastric mucosa peptide)
+- [ ] **BIOREG-14**: Create Vladonix dossier (thymus cytamin)
+- [ ] **BIOREG-15**: Create Endoluten dossier (pineal cytamin)
+- [ ] **BIOREG-16**: Create Cerluten dossier (brain cytamin)
+- [ ] **BIOREG-17**: Create Ventfort dossier (vascular cytamin)
+- [ ] **BIOREG-18**: Create Svetinorm dossier (liver cytamin)
+- [ ] **BIOREG-19**: Create Suprefort dossier (pancreatic cytamin)
+- [ ] **BIOREG-20**: Create Sigumir dossier (cartilage cytamin)
+- [ ] **BIOREG-21**: Create bioregulators category page
 
-- [ ] **DOSS-01**: Peptide schema supports molecular info (weight, chain length, sequence, amino acids)
-- [ ] **DOSS-02**: Dossier pages display molecular structure visualization with color-coded amino acids
-- [ ] **DOSS-03**: Peptide schema supports evidence-chained benefits (mechanism, benefit, evidence breakdown)
-- [ ] **DOSS-04**: Dossier pages display evidence chain component showing study type breakdown
-- [ ] **DOSS-05**: Dossier page sections reorganized for better flow
+### BLOG — Weekly News Posts (+78)
 
-### Phase 17: Content Migration
+- [ ] **BLOG-01**: Research and write 36 posts for weeks 1-12 (months 1-3 back)
+- [ ] **BLOG-02**: Research and write 42 posts for weeks 13-26 (months 4-6 back)
+- [ ] **BLOG-03**: Backdate all posts appropriately (Mon/Wed/Fri per week)
+- [ ] **BLOG-04**: Cross-link posts to relevant peptide dossiers
+- [ ] **BLOG-05**: Add peptide tags and category frontmatter
 
-- [ ] **MIGR-01**: 11 guide pages reformatted to blog post format
-- [ ] **MIGR-02**: 11 safety pages reformatted to blog post format
-- [ ] **MIGR-03**: Blog has categories (Guides, Safety, Research Digest)
-- [ ] **MIGR-04**: 301 redirects work from /guide/[slug] to /blog/[slug]
-- [ ] **MIGR-05**: 301 redirects work from /safety/[slug] to /blog/[slug]
-- [ ] **MIGR-06**: All internal links updated to new URLs
+### COND — Condition Hub Pages (+15)
 
-### Phase 18: Multi-Peptide Protocols
+- [ ] **COND-01**: Create ConditionLayout template
+- [ ] **COND-02**: Create peptides-for-weight-loss hub
+- [ ] **COND-03**: Create peptides-for-muscle-growth hub
+- [ ] **COND-04**: Create peptides-for-healing hub
+- [ ] **COND-05**: Create peptides-for-anti-aging hub
+- [ ] **COND-06**: Create peptides-for-sleep hub
+- [ ] **COND-07**: Create peptides-for-gut-health hub
+- [ ] **COND-08**: Create peptides-for-hair-growth hub
+- [ ] **COND-09**: Create peptides-for-skin hub
+- [ ] **COND-10**: Create peptides-for-inflammation hub
+- [ ] **COND-11**: Create peptides-for-joint-pain hub
+- [ ] **COND-12**: Create peptides-for-cognition hub
+- [ ] **COND-13**: Create peptides-for-immune-support hub
+- [ ] **COND-14**: Create peptides-for-fat-loss hub
+- [ ] **COND-15**: Create peptides-for-injury-recovery hub
+- [ ] **COND-16**: Create peptides-for-longevity hub
 
-- [ ] **PROT-01**: Protocols content collection exists with proper schema
-- [ ] **PROT-02**: BPC-157 + TB-500 Research Overview page exists with study citations
-- [ ] **PROT-03**: CJC-1295 + Ipamorelin Research page exists with study citations
-- [ ] **PROT-04**: GH Secretagogue Combinations page exists with study citations
+### SCHEMA — Schema Deployments
 
-### Phase 19: Enhanced UX
+- [ ] **SCHEMA-01**: Deploy FAQSchema to top 20 peptide dossiers
+- [ ] **SCHEMA-02**: Create HowToSchema component for calculators
+- [ ] **SCHEMA-03**: Deploy HowToSchema to all 3 calculators
+- [ ] **SCHEMA-04**: Create DrugSchema component for dossiers
+- [ ] **SCHEMA-05**: Deploy DrugSchema to all peptide dossiers
+- [ ] **SCHEMA-06**: Add FAQs to comparison pages for schema
 
-- [ ] **ENUX-01**: Peptide schema supports timeline array (period, effects based on studies)
-- [ ] **ENUX-02**: Dossier pages display "What to Expect" timeline component
-- [ ] **ENUX-03**: Peptide schema supports quality checklist (good/warning/bad signs)
-- [ ] **ENUX-04**: Dossier pages display quality checklist with traffic light styling
-- [ ] **ENUX-05**: Top 10 peptides have timeline and checklist data
+### CALC — Calculator Dynamic Routes (+50)
 
-### Phase 20: Programmatic SEO - Conditions
-
-- [ ] **PSEO-01**: Peptide schema supports conditions array (slug, name, research summary, studies)
-- [ ] **PSEO-02**: Condition page template exists at /peptides/[peptide]/[condition]
-- [ ] **PSEO-03**: At least 100 condition pages generated
-- [ ] **PSEO-04**: Peptide pages link to their condition pages
-- [ ] **PSEO-05**: Condition pages link back to peptide and related peptides
-
-### Phase 21: Location SEO - Cities
-
-- [ ] **LSEO-01**: Clinic content collection exists with proper schema
-- [ ] **LSEO-02**: City page template exists at /clinics/[city]
-- [ ] **LSEO-03**: At least 50 city pages generated
-- [ ] **LSEO-04**: City pages support featured listings for monetization
-
-### Phase 22: SEO Polish + Launch
-
-- [ ] **SPOL-01**: FAQPage schema markup on peptide Q&A sections
-- [ ] **SPOL-02**: HowTo schema markup on calculator/reconstitution pages
-- [ ] **SPOL-03**: LocalBusiness schema markup on clinic pages
-- [ ] **SPOL-04**: Internal linking audit complete with fixes applied
-- [ ] **SPOL-05**: Sitemap includes all new pages (1000+)
-- [ ] **SPOL-06**: Core Web Vitals pass on mobile
+- [ ] **CALC-01**: Create /calculator/reconstitution/[peptide].astro
+- [ ] **CALC-02**: Create /calculator/blend/[peptide].astro
+- [ ] **CALC-03**: Create /calculator/accumulation/[peptide].astro
+- [ ] **CALC-04**: Implement getStaticPaths for top 50 peptides
+- [ ] **CALC-05**: Add internal links from dossier pages
 
 ---
 
 ## v5 Requirements (Deferred)
 
-### Community Features
+*Original v4.0 features + Community deferred to v5.0 to prioritize content expansion.*
 
-- **COMM-01**: User can create account with email/password
-- **COMM-02**: User can submit experiences per peptide
-- **COMM-03**: Aggregated community results display on dossier pages
-- **COMM-04**: User can participate in discussion threads
-- **COMM-05**: Moderation queue for admin review
+### Original v4.0 Features (Deferred)
+
+- [ ] **LEGL-01** to **LEGL-07**: Legal pages (disclaimer, privacy, terms, FDA, cookie) — *Already exists*
+- [ ] **CALC-01** to **CALC-05**: Calculator features — *Already exists*
+- [ ] **INTR-01** to **INTR-03**: Peptide interactions matrix
+- [ ] **DOSS-01** to **DOSS-05**: Dossier UX overhaul (molecular viz, evidence chains)
+- [ ] **MIGR-01** to **MIGR-06**: Content migration (guides/safety → blog)
+- [ ] **PROT-01** to **PROT-04**: Multi-peptide protocols
+- [ ] **ENUX-01** to **ENUX-05**: Enhanced UX (timelines, quality checklists)
+- [ ] **LSEO-01** to **LSEO-04**: City pages (location SEO)
+
+### Community Features (Deferred)
+
+- [ ] **COMM-01**: User can create account with email/password
+- [ ] **COMM-02**: User can submit experiences per peptide
+- [ ] **COMM-03**: Aggregated community results display on dossier pages
+- [ ] **COMM-04**: User can participate in discussion threads
+- [ ] **COMM-05**: Moderation queue for admin review
 
 ---
 
@@ -229,32 +247,26 @@ Competitive Enhancement + SEO Domination. Maps to Phases 13-22.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| LEGL-01 to LEGL-07 | Phase 13 | Pending |
-| CALC-01 to CALC-05 | Phase 14 | Pending |
-| INTR-01 to INTR-03 | Phase 15 | Pending |
-| DOSS-01 to DOSS-05 | Phase 16 | Pending |
-| MIGR-01 to MIGR-06 | Phase 17 | Pending |
-| PROT-01 to PROT-04 | Phase 18 | Pending |
-| ENUX-01 to ENUX-05 | Phase 19 | Pending |
-| PSEO-01 to PSEO-05 | Phase 20 | Pending |
-| LSEO-01 to LSEO-04 | Phase 21 | Pending |
-| SPOL-01 to SPOL-06 | Phase 22 | Pending |
+| COMP-01, COND-01 to COND-16 | Phase 23 | Pending |
+| SCHEMA-01 to SCHEMA-06 | Phase 24 | Pending |
+| GLOSS-01 to GLOSS-05 | Phase 25 | Pending |
+| BIOREG-01 to BIOREG-10, BIOREG-21 | Phase 26 | Pending |
+| BIOREG-11 to BIOREG-20 | Phase 27 | Pending |
+| BLOG-01 to BLOG-05 | Phase 28 | Pending |
+| COMP-02 to COMP-04, CALC-01 to CALC-05 | Phase 29 | Pending |
 
 **Coverage:**
-- v4 requirements: 48 total
-- Phase 13: 7 requirements (Legal)
-- Phase 14: 5 requirements (Calculators)
-- Phase 15: 3 requirements (Interactions)
-- Phase 16: 5 requirements (Dossier UX)
-- Phase 17: 6 requirements (Migration)
-- Phase 18: 4 requirements (Protocols)
-- Phase 19: 5 requirements (Enhanced UX)
-- Phase 20: 5 requirements (Condition SEO)
-- Phase 21: 4 requirements (City SEO)
-- Phase 22: 6 requirements (SEO Polish)
+- v4 requirements: 62 total
+- Phase 23: 17 requirements (Comparisons Batch 1 + Condition Hubs)
+- Phase 24: 6 requirements (Schema Deployments)
+- Phase 25: 5 requirements (Glossary Expansion)
+- Phase 26: 12 requirements (Bioregulators Batch 1)
+- Phase 27: 10 requirements (Bioregulators Batch 2)
+- Phase 28: 5 requirements (Weekly News Blog)
+- Phase 29: 9 requirements (Comparisons Batch 2 + Calculators)
 - Unmapped: 0 ✓
 
 ---
 
 *Requirements defined: 2026-01-19*
-*Last updated: 2026-01-30 after v4.0 milestone start*
+*Last updated: 2026-02-01 after v4.0 Content Expansion pivot*

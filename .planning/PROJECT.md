@@ -2,26 +2,26 @@
 
 ## What This Is
 
-An evidence-based peptide education website that synthesizes research from PubMed, clinical trials, and global literature into comprehensive dossiers. 188 pages live with automated content pipeline using n8n workflows.
+An evidence-based peptide education website that synthesizes research from PubMed, clinical trials, and global literature into comprehensive dossiers. ~593 pages live with automated content pipeline using n8n workflows.
 
 ## Core Value
 
 **Become the authoritative, citation-heavy resource for peptide research** — no dosing, no protocols, no sourcing. Pure evidence synthesis that researchers, clinicians, and educated consumers can trust.
 
-## Current Milestone: v4.0 Competitive Enhancement + SEO Domination
+## Current Milestone: v4.0 Content Expansion
 
-**Goal:** Close feature gaps with competitors while maintaining credibility positioning, then dominate SEO with programmatic pages.
+**Goal:** Scale from ~593 to ~1,132 high-quality indexable pages through massive content expansion while maintaining evidence-first standards.
 
-**Key Decision:** Skip dosing information entirely — calculators provide utility without liability, evidence-chained benefits provide transparency competitors lack.
+**Key Decision:** Replace original competitive feature focus (interactions, UX overhaul) with aggressive content expansion strategy for SEO dominance.
 
 **Target features:**
-- Legal foundation (5 essential pages + disclaimers)
-- Calculator suite (reconstitution, blend, accumulation)
-- Peptide interactions matrix
-- Dossier UX overhaul (molecular viz, evidence chains)
-- Content migration (guides/safety → blog)
-- Multi-peptide protocols (research-based, NOT dosing)
-- Programmatic SEO (condition pages, city pages)
+- 235 new comparison pages
+- 141 new glossary terms
+- 20 bioregulator dossiers (Khavinson peptides)
+- 78 weekly news blog posts (6 months backdated)
+- 15 condition hub pages
+- 50 calculator URL routes
+- Schema deployments (FAQ, HowTo, Drug)
 
 ## Requirements
 
@@ -48,80 +48,66 @@ An evidence-based peptide education website that synthesizes research from PubMe
 - ✓ Establish main/develop branch workflow — Phase 6
 - ✓ Beehiiv newsletter integration working — Phase 6
 
+### Validated (v4.0 Pre-existing)
+
+- ✓ Legal pages (disclaimer, privacy, terms) — exists
+- ✓ Calculators (reconstitution, blend, accumulation) — exists
+- ✓ FAQSchema component — exists (not deployed)
+- ✓ ComparisonLayout template — exists
+
 ### On Hold (v3.0 Operations & Growth)
 
-*Paused to prioritize competitive features. Resume after v4.0.*
+*Paused to prioritize content expansion. Resume after v4.0.*
 
 - [ ] Operations infrastructure (templates, calendars, SOPs)
 - [ ] Content production system (batch workflow, repurposing)
 - [ ] Distribution system (Instagram, newsletter growth)
 - [ ] Monetization foundation (directory, pricing, outreach)
 
-### Active (v4.0)
+### Active (v4.0 Content Expansion)
 
-**Phase 13: Legal Foundation**
-- [ ] Disclaimer page (general + medical combined)
-- [ ] Privacy policy page
-- [ ] Terms of service page
-- [ ] FDA notice page
-- [ ] Cookie policy page
-- [ ] Site-wide disclaimer banner component
-- [ ] Cookie consent popup component
+**Phase 23: Comparisons Batch 1 + Condition Hubs**
+- [ ] COMP-01: Generate 55 high-priority comparison pages
+- [ ] COND-01: Create ConditionLayout template
+- [ ] COND-02 through COND-16: Create 15 condition hub pages
 
-**Phase 14: Calculator Suite**
-- [ ] Reconstitution calculator with syringe visual
-- [ ] Blend calculator for multi-peptide combinations
-- [ ] Accumulation calculator for half-life tracking
-- [ ] Calculator disclaimer component
+**Phase 24: Schema Deployments**
+- [ ] SCHEMA-01: Deploy FAQSchema to top 20 peptide dossiers
+- [ ] SCHEMA-02: Create HowToSchema component
+- [ ] SCHEMA-03: Deploy HowToSchema to calculators
+- [ ] SCHEMA-04: Create DrugSchema component
+- [ ] SCHEMA-05: Deploy DrugSchema to dossiers
+- [ ] SCHEMA-06: Add FAQs to comparison pages
 
-**Phase 15: Peptide Interactions**
-- [ ] Interactions schema (synergistic/compatible/caution/avoid)
-- [ ] InteractionMatrix component with color coding
-- [ ] Populate interaction data for major peptides
+**Phase 25: Glossary Expansion**
+- [ ] GLOSS-01 through GLOSS-05: Add 141 glossary terms
 
-**Phase 16: Dossier UX Overhaul**
-- [ ] MolecularStructure component (amino acid visualization)
-- [ ] EvidenceChain component (mechanism → benefit → evidence)
-- [ ] Reorganize dossier page sections
-- [ ] Add molecular data to peptide schema
-- [ ] Add evidence-chained benefits to peptide schema
+**Phase 26: Bioregulators Batch 1**
+- [ ] BIOREG-01 through BIOREG-10: Create 10 bioregulator dossiers
+- [ ] BIOREG-21: Create bioregulators category page
 
-**Phase 17: Content Migration**
-- [ ] Reformat 11 guide pages to blog format
-- [ ] Reformat 11 safety pages to blog format
-- [ ] Create blog categories (Guides, Safety, Research Digest)
-- [ ] Set up 301 redirects from old URLs
-- [ ] Update internal links site-wide
+**Phase 27: Bioregulators Batch 2**
+- [ ] BIOREG-11 through BIOREG-20: Create 10 more bioregulator dossiers
 
-**Phase 18: Multi-Peptide Protocols**
-- [ ] Create protocols content collection
-- [ ] BPC-157 + TB-500 Research Overview page
-- [ ] CJC-1295 + Ipamorelin Research page
-- [ ] GH Secretagogue Combinations page
+**Phase 28: Weekly News Blog**
+- [ ] BLOG-01: Write 36 posts (months 1-3 back)
+- [ ] BLOG-02: Write 42 posts (months 4-6 back)
+- [ ] BLOG-03 through BLOG-05: Backdate, cross-link, tag
 
-**Phase 19: Enhanced UX**
-- [ ] Timeline component ("What to Expect" based on studies)
-- [ ] QualityChecklist component
-- [ ] Add timeline/checklist data to top peptides
+**Phase 29: Comparisons Batch 2 + Calculators**
+- [ ] COMP-02: Generate 180 additional comparisons
+- [ ] COMP-03, COMP-04: FAQs and cross-linking
+- [ ] CALC-01 through CALC-05: Calculator dynamic routes
 
-**Phase 20: Programmatic SEO - Conditions**
-- [ ] Add condition mappings to peptide schema
-- [ ] Create condition page template
-- [ ] Generate [Peptide] + [Condition] pages (500-1000+)
-- [ ] Internal linking automation
+### Deferred (Original v4.0 → v5.0)
 
-**Phase 21: Location SEO - Cities**
-- [ ] Create clinic content collection
-- [ ] Create city page template
-- [ ] Generate top 100 US city pages
-- [ ] Featured listing system for monetization
+*Original v4.0 features deferred to focus on content expansion:*
 
-**Phase 22: SEO Polish + Launch**
-- [ ] Schema markup (FAQPage, HowTo, LocalBusiness)
-- [ ] Internal linking audit
-- [ ] Sitemap optimization for 1000+ pages
-- [ ] Core Web Vitals optimization
-- [ ] Launch v4.0
+- [ ] Peptide interactions matrix
+- [ ] Dossier UX overhaul (molecular viz, evidence chains)
+- [ ] Content migration (guides/safety → blog)
+- [ ] Multi-peptide protocols
+- [ ] City pages (location SEO)
 
 ### Out of Scope
 
@@ -141,15 +127,19 @@ An evidence-based peptide education website that synthesizes research from PubMe
 - GitHub: mancinicreative/pepcodex
 
 **Current State:**
-- 188 pages live and indexed
-- Competitive analysis complete (vs Peptide-db.com)
-- Key differentiator: Evidence transparency + no dosing = credibility
+- ~593 pages live and indexed
+- Calculators and legal pages exist
+- ComparisonLayout and FAQSchema exist
+- 72 peptide dossiers, 45 comparisons, 99 glossary terms
 
-**Competitor Analysis (Peptide-db.com):**
-- 95 peptides vs our 188 (we have 2x content)
-- They have: dosing, calculators, community, interactions
-- We have: more content, better evidence grading, source quality scores
-- Our strategy: Close feature gaps EXCEPT dosing to maintain credibility edge
+**Target State (v4.0):**
+- ~1,132 pages
+- 92 peptide dossiers (+20 bioregulators)
+- 280 comparisons (+235)
+- 240 glossary terms (+141)
+- 151 blog posts (+78 weekly news)
+- 15 condition hubs
+- 53 calculator URLs (+50)
 
 **Markets:** US + Canada first → Global
 **Time Budget:** 10+ hours/week
@@ -166,7 +156,7 @@ An evidence-based peptide education website that synthesizes research from PubMe
 - Citations: PMID, DOI, NCT identifiers with paywall flags
 
 **Safety Gates (HARD REQUIREMENTS):**
-- NO dosing, protocols, cycles, stacks (MAINTAINED in v4.0)
+- NO dosing, protocols, cycles, stacks
 - NO sourcing, vendors, where to buy
 - NO medical advice, treatment recommendations
 - All animal/in-vitro studies clearly labeled
@@ -186,6 +176,7 @@ An evidence-based peptide education website that synthesizes research from PubMe
 - **Citation Integrity**: Every claim must map to source pack
 - **Evidence Labeling**: Animal/in-vitro studies must be marked
 - **Automation First**: Pipeline must scale to 100+ pages
+- **No Thin Content**: Every page must provide unique value
 
 ## Key Decisions
 
@@ -195,10 +186,11 @@ An evidence-based peptide education website that synthesizes research from PubMe
 | MDX Content Collections | Git-based, perfect for programmatic generation | ✓ Good |
 | n8n over custom scripts | Visual workflows, native integrations | ✓ Good |
 | Vercel for hosting | Free tier, preview URLs, easy custom domains | ✓ Good |
-| Skip dosing in v4.0 | Maintains credibility, avoids weak sources | — Pending |
-| Calculators as utility | Provides value without liability | — Pending |
-| Evidence-chained benefits | Differentiates from competitor's bold claims | — Pending |
-| Programmatic SEO | Scale to 1000+ pages for traffic | — Pending |
+| Skip dosing permanently | Maintains credibility, avoids weak sources | ✓ Good |
+| Calculators as utility | Provides value without liability | ✓ Good |
+| Content expansion over features | SEO dominance through scale | — Pending |
+| Bioregulator module | Niche authority in Khavinson peptides | — Pending |
+| Weekly news backdating | Fresh content signal for SEO | — Pending |
 
 ---
-*Last updated: 2026-01-30 after v4.0 milestone start*
+*Last updated: 2026-02-01 after v4.0 Content Expansion milestone pivot*

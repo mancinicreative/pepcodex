@@ -2,26 +2,32 @@
 
 ## Current Phase
 
-**Phase 13: Legal Foundation** — PENDING (first phase of v4.0)
+**Phase 23: Comparisons Batch 1 + Condition Hubs** — PENDING (first phase of v4.0 Content Expansion)
 
 ## Active Work
 
-### v4.0 Competitive Enhancement + SEO Domination
+### v4.0 Content Expansion
 
-**Strategy:** Close feature gaps with competitors (Peptide-db.com) while maintaining credibility positioning through:
-1. Skip dosing entirely (maintains "pure evidence synthesis" positioning)
-2. Add calculators as utility tools (value without liability)
-3. Add evidence-chained benefits (transparency competitors lack)
-4. Programmatic SEO for massive page count (1000+)
+**Strategy:** Scale from ~593 to ~1,132 high-quality indexable pages through:
+1. 235 new comparison pages (+URL multiplication)
+2. 20 bioregulator dossiers (+niche authority)
+3. 78 weekly news blog posts (+fresh content)
+4. 141 glossary terms (+authority signals)
+5. 15 condition hub pages (+topic coverage)
+6. 50 calculator dynamic routes (+utility SEO)
+7. Schema deployments (+SERP features)
 
-### 8-Week Timeline
+### Phase Execution Order
 
-| Week | Focus | Phases |
-|------|-------|--------|
-| 1-2 | Foundation | 13 (Legal), 14 (Calculators) |
-| 3-4 | Content System | 15 (Interactions), 16 (Dossier UX), 17 (Migration) |
-| 5 | Protocols & UX | 18 (Protocols), 19 (Enhanced UX) |
-| 6-8 | SEO Expansion | 20 (Conditions), 21 (Cities), 22 (Polish + Launch) |
+| Phase | Focus | Pages Added |
+|-------|-------|-------------|
+| 23 | Comparisons Batch 1 + Condition Hubs | +70 |
+| 24 | Schema Deployments | +0 (enhancement) |
+| 25 | Glossary Expansion | +141 |
+| 26 | Bioregulators Batch 1 | +11 |
+| 27 | Bioregulators Batch 2 | +10 |
+| 28 | Weekly News Blog | +78 |
+| 29 | Comparisons Batch 2 + Calculators | +229 |
 
 ## What's Done
 
@@ -46,58 +52,71 @@
 - Phase 8: Production Verification — Partial (can be completed during v4.0)
 
 ### v3.0 Operations & Growth (ON HOLD)
-*Paused to prioritize v4.0 competitive features.*
+*Paused to prioritize v4.0 content expansion.*
 - Phase 9-12: Operations, Content, Distribution, Monetization — On Hold
+
+### Pre-existing Assets (v4.0)
+- ✓ Calculators (reconstitution, blend, accumulation)
+- ✓ Legal pages (disclaimer, privacy, terms)
+- ✓ ComparisonLayout template
+- ✓ FAQSchema component (not deployed)
+- ✓ 5 existing bioregulator dossiers (epithalon, thymalin, thymogen, cortexin, pinealon)
 
 ## What's Next (v4.0)
 
-### Phase 13: Legal Foundation
-**Goal:** Essential legal protection
+### Phase 23: Comparisons Batch 1 + Condition Hubs
+**Goal:** URL multiplication with highest-value comparison pages and condition hubs
 
 **Deliverables:**
-- 5 legal pages (disclaimer, privacy, terms, FDA notice, cookie policy)
-- DisclaimerBanner.astro component
-- CookieConsent.astro component
+- 55 high-priority comparison pages
+- ConditionLayout.astro template
+- 15 condition hub pages
 
-**Requirements:** LEGL-01 through LEGL-07
+**Requirements:** COMP-01, COND-01 through COND-16
 
-### Phase 14: Calculator Suite
-**Goal:** Practical calculation tools without dosing advice
+### Phase 24: Schema Deployments
+**Goal:** SERP feature eligibility
 
 **Deliverables:**
-- Reconstitution calculator with visual syringe
-- Blend calculator for multi-peptide math
-- Accumulation calculator for half-life tracking
+- FAQSchema deployed to top 20 peptides
+- HowToSchema component + deployment
+- DrugSchema component + deployment
 
-## Cut List (Deferred)
+## Cut List (Deferred to v5.0)
 
-Per competitive analysis decision:
-- **Dosing protocols** — Skip entirely (maintains credibility)
-- **Community features** — Defer to v5.0 (reduces liability)
-- **User-generated content** — Defer to v5.0
-
-Per v3.0 pause:
-- Operations infrastructure
-- Instagram/distribution system
-- Monetization foundation
-- Newsletter sending
+Per content expansion pivot decision:
+- **Peptide interactions matrix** — Defer to v5.0
+- **Dossier UX overhaul** — Defer to v5.0
+- **Content migration (guides/safety → blog)** — Defer to v5.0
+- **Multi-peptide protocols** — Defer to v5.0
+- **City pages (location SEO)** — Defer to v5.0
+- **Community features** — Defer to v5.0
 
 ## Context for Resume
 
-v4.0 milestone initialized. Site is live with 188 pages at pepcodex.com.
+v4.0 Content Expansion milestone initialized. Site is live with ~593 pages at pepcodex.com.
 
-**Competitive Position:**
-- PepCodex: 188 peptides, evidence grading, no dosing
-- Peptide-db: 95 peptides, dosing info, calculators, community
-- Strategy: Close feature gaps (calculators, interactions, UX) WITHOUT adding dosing
+**Current State:**
+- ~593 pages live and indexed
+- Calculators and legal pages exist
+- ComparisonLayout and FAQSchema exist
+- 72 peptide dossiers, 45 comparisons, 99 glossary terms
 
-**Key Differentiator:**
-Evidence-chained benefits system showing transparent Mechanism → Benefit → Evidence Level → Study Breakdown (vs competitor's bold claims backed by unlabeled animal studies)
+**Target State (v4.0):**
+- ~1,132 pages
+- 92 peptide dossiers (+20 bioregulators)
+- 280 comparisons (+235)
+- 240 glossary terms (+141)
+- 151 blog posts (+78 weekly news)
+- 15 condition hubs
+- 53 calculator URLs (+50)
 
 **Key Documents:**
-- Competitive analysis: `C:\Users\manci\.claude\plans\ethereal-fluttering-naur.md`
+- Plan: `C:\Users\manci\.claude\plans\piped-crunching-stardust.md`
 - Requirements: `.planning/REQUIREMENTS.md`
 - Roadmap: `.planning/ROADMAP.md`
+- Bioregulator module spec: `style influence/Peptide-Glass/.../Pasted-BIOREGULATORS-MODULE-MUST-INCLUDE...`
+- Research resources: `.planning/RESEARCH-LOG.md`, `.planning/CONTENT-BACKLOG.md`
 
 ## Progress
 
@@ -118,16 +137,13 @@ v3.0 Phases (ON HOLD):
 Phase 9-12: Operations         [░░░░░░░░] ON HOLD
 
 v4.0 Phases (ACTIVE):
-Phase 13: Legal Foundation     [░░░░░░░░] 0%  <-- START HERE
-Phase 14: Calculator Suite     [░░░░░░░░] 0%
-Phase 15: Peptide Interactions [░░░░░░░░] 0%
-Phase 16: Dossier UX Overhaul  [░░░░░░░░] 0%
-Phase 17: Content Migration    [░░░░░░░░] 0%
-Phase 18: Multi-Peptide Proto  [░░░░░░░░] 0%
-Phase 19: Enhanced UX          [░░░░░░░░] 0%
-Phase 20: Condition Pages      [░░░░░░░░] 0%
-Phase 21: City Pages           [░░░░░░░░] 0%
-Phase 22: SEO Polish + Launch  [░░░░░░░░] 0%
+Phase 23: Comparisons + Hubs   [░░░░░░░░] 0%  <-- START HERE
+Phase 24: Schema Deployments   [░░░░░░░░] 0%
+Phase 25: Glossary Expansion   [░░░░░░░░] 0%
+Phase 26: Bioregulators 1      [░░░░░░░░] 0%
+Phase 27: Bioregulators 2      [░░░░░░░░] 0%
+Phase 28: Weekly News Blog     [░░░░░░░░] 0%
+Phase 29: Comparisons + Calc   [░░░░░░░░] 0%
 ```
 
 ## Blockers
@@ -143,8 +159,10 @@ None
 - 2026-01-27: v3.0 milestone started — operations & growth
 - 2026-01-30: v3.0 paused — competitive analysis prioritized
 - 2026-01-30: Competitive analysis complete (vs Peptide-db.com)
-- 2026-01-30: v4.0 milestone initialized — 10 phases, 48 requirements
-- 2026-01-30: Key decision: Skip dosing, add calculators, evidence chains
+- 2026-01-30: v4.0 milestone initialized — competitive features focus
+- 2026-02-01: v4.0 pivoted — content expansion over features
+- 2026-02-01: GSD planning complete — 7 phases, 62 requirements
+- 2026-02-01: Planning docs updated (PROJECT.md, REQUIREMENTS.md, ROADMAP.md, STATE.md)
 
 ---
-*Last updated: 2026-01-30*
+*Last updated: 2026-02-01*

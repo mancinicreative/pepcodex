@@ -2,7 +2,7 @@
 
 ## Overview
 
-v4.0 Competitive Enhancement + SEO Domination — Close feature gaps with competitors while maintaining credibility positioning, then dominate SEO with programmatic pages.
+v4.0 Content Expansion — Scale from ~593 to ~1,132 high-quality indexable pages through strategic content multiplication.
 
 ## Milestones
 
@@ -19,213 +19,220 @@ v4.0 Competitive Enhancement + SEO Domination — Close feature gaps with compet
 - [ ] **Phase 8: Production Verification** - Test all features on live site (partial)
 
 ### v3.0 Operations & Growth (ON HOLD)
-*Paused to prioritize v4.0 competitive features. Resume after v4.0.*
+*Paused to prioritize v4.0 content expansion. Resume after v4.0.*
 - [ ] **Phase 9: Operations Infrastructure** - Templates, calendars, SOPs
 - [ ] **Phase 10: Content Production System** - Batch workflow, repurposing
 - [ ] **Phase 11: Distribution System** - Instagram, email capture, newsletters
 - [ ] **Phase 12: Monetization Foundation** - Directory, pricing, outreach
 
-### v4.0 Competitive Enhancement + SEO Domination (ACTIVE)
-- [ ] **Phase 13: Legal Foundation** - 5 essential pages + disclaimers
-- [ ] **Phase 14: Calculator Suite** - Reconstitution, blend, accumulation
-- [ ] **Phase 15: Peptide Interactions** - Synergy matrix with color coding
-- [ ] **Phase 16: Dossier UX Overhaul** - Molecular viz, evidence chains
-- [ ] **Phase 17: Content Migration** - Guides/safety → blog with redirects
-- [ ] **Phase 18: Multi-Peptide Protocols** - Research-based protocol pages
-- [ ] **Phase 19: Enhanced UX** - Timeline, quality checklist
-- [ ] **Phase 20: Programmatic SEO - Conditions** - [Peptide] + [Condition] pages
-- [ ] **Phase 21: Location SEO - Cities** - Peptide clinics in [City] pages
-- [ ] **Phase 22: SEO Polish + Launch** - Schema markup, internal linking, launch
+### v4.0 Content Expansion (ACTIVE)
+- [ ] **Phase 23: Comparisons Batch 1 + Condition Hubs** - 55 comparisons + 15 condition hubs
+- [ ] **Phase 24: Schema Deployments** - FAQ, HowTo, Drug schema markup
+- [ ] **Phase 25: Glossary Expansion** - 141 new glossary terms
+- [ ] **Phase 26: Bioregulators Batch 1** - 10 Khavinson peptide dossiers + category page
+- [ ] **Phase 27: Bioregulators Batch 2** - 10 more bioregulator dossiers
+- [ ] **Phase 28: Weekly News Blog** - 78 backdated news posts (6 months)
+- [ ] **Phase 29: Comparisons Batch 2 + Calculators** - 180 comparisons + 50 calculator URLs
+
+### v5.0 Feature Enhancement (DEFERRED)
+*Original v4.0 features deferred to prioritize content expansion.*
+- [ ] **Phase 30+: Peptide Interactions** - Synergy matrix with color coding
+- [ ] **Phase 31+: Dossier UX Overhaul** - Molecular viz, evidence chains
+- [ ] **Phase 32+: Content Migration** - Guides/safety → blog with redirects
+- [ ] **Phase 33+: Multi-Peptide Protocols** - Research-based protocol pages
+- [ ] **Phase 34+: Enhanced UX** - Timeline, quality checklist
+- [ ] **Phase 35+: City Pages** - Location SEO for monetization
 
 ---
 
 ## v4.0 Phase Details
 
-### Phase 13: Legal Foundation
-**Goal**: Essential legal protection for the site
-**Requirements**: LEGL-01 through LEGL-07 (7 requirements)
+### Phase 23: Comparisons Batch 1 + Condition Hubs
+**Goal**: URL multiplication with highest-value comparison pages and condition hubs
+**Requirements**: COMP-01, COND-01 through COND-16 (17 requirements)
 **Success Criteria**:
-1. All 5 legal pages exist and are accessible
-2. Disclaimer banner visible on every page
-3. Cookie consent popup appears on first visit
+1. All 55 high-priority comparisons build successfully
+2. ConditionLayout template created and working
+3. All 15 condition hubs link to relevant peptide dossiers
+4. Internal cross-linking verified
 
 **Deliverables**:
-- `/disclaimer` - General + medical disclaimer
-- `/privacy` - Privacy policy
-- `/terms` - Terms of service
-- `/fda-notice` - FDA compliance notice
-- `/cookie-policy` - Cookie/tracking disclosure
-- `DisclaimerBanner.astro` component
-- `CookieConsent.astro` component
+- 55 comparison pages (GLP-1, GH, healing, cognitive categories)
+- `ConditionLayout.astro` template
+- 15 condition hub pages (weight-loss, muscle-growth, healing, etc.)
+- Cross-links to peptide dossiers
+
+**High-Priority Comparison Pairs**:
+- GLP-1: retatrutide-vs-tirzepatide, survodutide-vs-semaglutide, mazdutide-vs-semaglutide
+- Growth Hormone: ghrp-6-vs-ghrp-2, tesamorelin-vs-sermorelin, cjc-1295-vs-sermorelin
+- Healing: bpc-157-vs-tb-500, bpc-157-vs-ghk-cu, tb-500-vs-thymosin-alpha-1
+- Cognitive: semax-vs-na-semax-amidate, selank-vs-na-selank-amidate, dihexa-vs-semax
+- Bioregulators: epithalon-vs-pinealon, thymalin-vs-thymogen
 
 ---
 
-### Phase 14: Calculator Suite
-**Goal**: Practical calculation tools without dosing advice
-**Requirements**: CALC-01 through CALC-05 (5 requirements)
+### Phase 24: Schema Deployments
+**Goal**: SERP feature eligibility through structured data
+**Requirements**: SCHEMA-01 through SCHEMA-06 (6 requirements)
+**Depends on**: Phase 23 (comparisons for FAQs)
+**Success Criteria**:
+1. FAQSchema deployed to top 20 peptide dossiers
+2. HowToSchema deployed to all 3 calculators
+3. DrugSchema deployed to all peptide dossiers
+4. Google Rich Results Test passes for sample pages
+
+**Deliverables**:
+- FAQ frontmatter added to top 20 peptides
+- `HowToSchema.astro` component
+- `DrugSchema.astro` component
+- Schema validation passing
+
+---
+
+### Phase 25: Glossary Expansion
+**Goal**: Authority building through comprehensive terminology coverage
+**Requirements**: GLOSS-01 through GLOSS-05 (5 requirements)
 **Depends on**: None
 **Success Criteria**:
-1. User can calculate reconstitution with visual syringe
-2. User can calculate blend concentrations
-3. User can calculate accumulation curves
-4. All calculators show research disclaimer
+1. All 141 new glossary terms created
+2. Terms follow existing glossary MDX format
+3. Cross-links to relevant dossiers included
+4. Build completes without errors
 
 **Deliverables**:
-- `/calculator/reconstitution` page with visual syringe
-- `/calculator/blend` page for multi-peptide math
-- `/calculator/accumulation` page for half-life tracking
-- Calculator hub page at `/calculator`
+- 40 mechanism terms (receptor agonism, signal transduction, etc.)
+- 20 study type terms (meta-analysis, RCT, cohort, etc.)
+- 30 peptide terms (bioavailability, reconstitution, etc.)
+- 20 regulatory terms (IND, NDA, Phase I/II/III, etc.)
+- 31 chemistry terms (amino acid, N-terminus, etc.)
 
 ---
 
-### Phase 15: Peptide Interactions
-**Goal**: Show research-based peptide synergies
-**Requirements**: INTR-01 through INTR-03 (3 requirements)
+### Phase 26: Bioregulators Batch 1
+**Goal**: Establish niche authority with Khavinson peptide coverage
+**Requirements**: BIOREG-01 through BIOREG-10, BIOREG-21 (12 requirements)
 **Depends on**: None
 **Success Criteria**:
-1. Schema supports interactions array
-2. Dossier pages show color-coded interaction matrix
-3. Top 20 peptides have interaction data
+1. 10 bioregulator dossiers follow existing template structure
+2. Evidence limitations properly flagged (small trials, non-indexed sources)
+3. Russian/CIS sources cited with appropriate trust labeling
+4. Bioregulators category page links to all entries
 
 **Deliverables**:
-- Updated `peptideSchema` in content/config.ts
-- `InteractionMatrix.astro` component
-- Interaction data for 20 peptides
+- Vilon dossier (thymus dipeptide Lys-Glu)
+- Prostatilen dossier (prostate peptide complex)
+- Retinalamin dossier (retinal peptide)
+- Livagen dossier (liver tripeptide)
+- Kristagen dossier (immune tripeptide)
+- Vesugen dossier (vascular tripeptide)
+- Cardiogen dossier (cardiac tripeptide)
+- Bronchogen dossier (bronchial tripeptide)
+- Chonluten dossier (GI tract tripeptide)
+- Testagen dossier (testicular tripeptide)
+- `/bioregulators` category page
+
+**Research Sources**:
+- PubMed/Europe PMC for indexed studies
+- Khavinson publications (khavinson.info/publications)
+- Search terms: "пептидные биорегуляторы", "Хавинсон пептиды"
 
 ---
 
-### Phase 16: Dossier UX Overhaul
-**Goal**: Match/exceed competitor organization + evidence transparency
-**Requirements**: DOSS-01 through DOSS-05 (5 requirements)
+### Phase 27: Bioregulators Batch 2
+**Goal**: Complete bioregulator module
+**Requirements**: BIOREG-11 through BIOREG-20 (10 requirements)
+**Depends on**: Phase 26 (category page exists)
+**Success Criteria**:
+1. 10 more bioregulator dossiers complete
+2. All 20 bioregulators linked from category page
+3. Bioregulator comparisons added to comparison network
+
+**Deliverables**:
+- Ovagen dossier (hepatic tripeptide)
+- Pancragen dossier (pancreatic tripeptide)
+- Stamakort dossier (gastric mucosa peptide)
+- Vladonix dossier (thymus cytamin)
+- Endoluten dossier (pineal cytamin)
+- Cerluten dossier (brain cytamin)
+- Ventfort dossier (vascular cytamin)
+- Svetinorm dossier (liver cytamin)
+- Suprefort dossier (pancreatic cytamin)
+- Sigumir dossier (cartilage cytamin)
+
+---
+
+### Phase 28: Weekly News Blog
+**Goal**: Fresh content with traffic potential through news synthesis
+**Requirements**: BLOG-01 through BLOG-05 (5 requirements)
 **Depends on**: None
 **Success Criteria**:
-1. Molecular structure visualization on dossier pages
-2. Evidence-chained benefits showing study breakdown
-3. Reorganized dossier sections for better flow
+1. 78 blog posts created (3/week × 26 weeks)
+2. All posts follow "What [news] means for [peptide/industry]" format
+3. Dates properly backdated and ordered on blog index
+4. Cross-links to relevant peptide dossiers included
+5. No duplicate topics
 
 **Deliverables**:
-- `MolecularStructure.astro` component
-- `EvidenceChain.astro` component
-- Updated `DossierLayout.astro`
-- Schema additions for molecular and evidence data
+- 36 posts (weeks 1-12, months 1-3 back)
+- 42 posts (weeks 13-26, months 4-6 back)
+- Mon/Wed/Fri publishing schedule per week
+- Peptide tags and category frontmatter
+
+**Content Sources**:
+- `.planning/RESEARCH-LOG.md` — 200+ PMIDs
+- `.planning/CONTENT-BACKLOG.md` — Topic ideas
+- `.planning/CONTENT-IDEA-BACKLOG.md` — Detailed plans
 
 ---
 
-### Phase 17: Content Migration
-**Goal**: Consolidate guides/safety into blog with redirects
-**Requirements**: MIGR-01 through MIGR-06 (6 requirements)
-**Depends on**: None
+### Phase 29: Comparisons Batch 2 + Calculators
+**Goal**: Complete URL multiplication
+**Requirements**: COMP-02 through COMP-04, CALC-01 through CALC-05 (9 requirements)
+**Depends on**: Phase 23 (comparison template working)
 **Success Criteria**:
-1. All 22 pages migrated to blog format
-2. Blog categories working (Guides, Safety, Research Digest)
-3. 301 redirects preserving old URLs
-4. No broken internal links
+1. 180 additional comparison pages generated
+2. All comparisons have FAQs for schema
+3. Calculator dynamic routes working for 50 peptides
+4. Total page count exceeds 1,100
+5. Build completes successfully
 
 **Deliverables**:
-- 11 guide pages reformatted
-- 11 safety pages reformatted
-- Blog category system
-- Redirect configuration
-- Updated internal links
+- 180 comparison pages (all valid peptide pairs)
+- FAQs added to all comparisons
+- Cross-linking audit complete
+- `/calculator/reconstitution/[peptide].astro`
+- `/calculator/blend/[peptide].astro`
+- `/calculator/accumulation/[peptide].astro`
+- getStaticPaths for top 50 peptides
 
 ---
 
-### Phase 18: Multi-Peptide Protocols
-**Goal**: Document research combinations (NOT dosing advice)
-**Requirements**: PROT-01 through PROT-04 (4 requirements)
-**Depends on**: None
-**Success Criteria**:
-1. Protocols content collection exists
-2. At least 3 protocol pages with study citations
-3. Clear distinction from dosing recommendations
+## Page Count Projection
 
-**Deliverables**:
-- `protocols` content collection
-- BPC-157 + TB-500 Research Overview
-- CJC-1295 + Ipamorelin Research
-- GH Secretagogue Combinations
-
----
-
-### Phase 19: Enhanced UX
-**Goal**: Better user experience components
-**Requirements**: ENUX-01 through ENUX-05 (5 requirements)
-**Depends on**: Phase 16 (Dossier UX)
-**Success Criteria**:
-1. Timeline component showing study-based expectations
-2. Quality checklist with traffic light styling
-3. Top 10 peptides have this data
-
-**Deliverables**:
-- `Timeline.astro` component
-- `QualityChecklist.astro` component
-- Data for 10 peptides
+| Content Type | Current | Add | Target |
+|--------------|---------|-----|--------|
+| Peptide dossiers | 72 | +20 | 92 |
+| Blog posts | 73 | +78 | 151 |
+| Comparisons | 45 | +235 | 280 |
+| Glossary | 99 | +141 | 240 |
+| Condition subpages | 255 | — | 255 |
+| Condition hubs | 0 | +15 | 15 |
+| Calculator URLs | 3 | +50 | 53 |
+| Supporting pages | ~46 | — | 46 |
+| **TOTAL** | **~593** | **+539** | **~1,132** |
 
 ---
 
-### Phase 20: Programmatic SEO - Conditions
-**Goal**: Generate 100+ condition-specific pages
-**Requirements**: PSEO-01 through PSEO-05 (5 requirements)
-**Depends on**: Phase 16 (schema work)
-**Success Criteria**:
-1. Condition page template works
-2. At least 100 pages generated
-3. Bidirectional linking working
+## Execution Sequence
 
-**Deliverables**:
-- `conditions` schema addition
-- `/peptides/[peptide]/[condition].astro` template
-- 100+ generated pages
-- Internal linking system
-
----
-
-### Phase 21: Location SEO - Cities
-**Goal**: Generate 50+ city pages for clinic monetization
-**Requirements**: LSEO-01 through LSEO-04 (4 requirements)
-**Depends on**: None
-**Success Criteria**:
-1. City page template works
-2. At least 50 city pages generated
-3. Featured listing system ready
-
-**Deliverables**:
-- `clinics` content collection
-- `/clinics/[city].astro` template
-- 50+ city pages
-- Featured listing component
-
----
-
-### Phase 22: SEO Polish + Launch
-**Goal**: Final optimization and v4.0 launch
-**Requirements**: SPOL-01 through SPOL-06 (6 requirements)
-**Depends on**: All previous phases
-**Success Criteria**:
-1. Schema markup on all relevant pages
-2. Internal linking audit complete
-3. Sitemap includes all new pages
-4. Core Web Vitals passing
-
-**Deliverables**:
-- FAQPage, HowTo, LocalBusiness schema
-- Internal linking fixes
-- Updated sitemap
-- Performance optimizations
-- v4.0 launch
-
----
-
-## Timeline
-
-| Week | Focus | Phases |
-|------|-------|--------|
-| 1-2 | Foundation | 13 (Legal), 14 (Calculators) |
-| 3-4 | Content System | 15 (Interactions), 16 (Dossier UX), 17 (Migration) |
-| 5 | Protocols & UX | 18 (Protocols), 19 (Enhanced UX) |
-| 6-8 | SEO Expansion | 20 (Conditions), 21 (Cities), 22 (Polish + Launch) |
-
-**Total: 10 phases over 8 weeks**
+```
+Phase 23 → 24 → 25 → 26 → 27 → 28 → 29
+   │        │      │      │      │      │      │
+   └─ URL   └─SERP └─Auth └─Niche└─Depth└─Fresh└─Complete
+     mult.  features ority        │      content  mult.
+                                  └──────┘
+                              Bioregulators
+```
 
 ---
 
@@ -242,16 +249,24 @@ v4.0 Competitive Enhancement + SEO Domination — Close feature gaps with compet
 | 7. Analytics Setup | Complete | 4/4 | 2026-01-27 |
 | 8. Production Verification | Partial | 0/5 | — |
 | 9-12. v3.0 Operations | On Hold | 0/40 | — |
-| 13. Legal Foundation | **Pending** | 0/7 | — |
-| 14. Calculator Suite | Pending | 0/5 | — |
-| 15. Peptide Interactions | Pending | 0/3 | — |
-| 16. Dossier UX Overhaul | Pending | 0/5 | — |
-| 17. Content Migration | Pending | 0/6 | — |
-| 18. Multi-Peptide Protocols | Pending | 0/4 | — |
-| 19. Enhanced UX | Pending | 0/5 | — |
-| 20. Condition Pages | Pending | 0/5 | — |
-| 21. City Pages | Pending | 0/4 | — |
-| 22. SEO Polish + Launch | Pending | 0/6 | — |
+| 23. Comparisons + Conditions | **Pending** | 0/17 | — |
+| 24. Schema Deployments | Pending | 0/6 | — |
+| 25. Glossary Expansion | Pending | 0/5 | — |
+| 26. Bioregulators Batch 1 | Pending | 0/12 | — |
+| 27. Bioregulators Batch 2 | Pending | 0/10 | — |
+| 28. Weekly News Blog | Pending | 0/5 | — |
+| 29. Comparisons + Calculators | Pending | 0/9 | — |
+
+---
+
+## Quality Gates
+
+1. **No thin content** — Every page provides unique value
+2. **Evidence grading** — All claims maintain grading system
+3. **No banned patterns** — No dosing, sourcing, medical advice
+4. **Schema validation** — Google Rich Results Test passes
+5. **Build success** — `npm run build` completes without errors
+6. **Internal linking** — All cross-links resolve
 
 ---
 
@@ -259,11 +274,13 @@ v4.0 Competitive Enhancement + SEO Domination — Close feature gaps with compet
 
 | Decision | Rationale | Date |
 |----------|-----------|------|
-| Skip dosing in v4.0 | Maintains credibility, avoids weak sources | 2026-01-30 |
+| Skip dosing permanently | Maintains credibility, avoids weak sources | 2026-01-30 |
 | Calculators as utility | Provides value without liability | 2026-01-30 |
-| Evidence-chained benefits | Differentiates from competitor's bold claims | 2026-01-30 |
-| Pause v3.0 for v4.0 | Competitive features more urgent than operations | 2026-01-30 |
+| Content expansion over features | SEO dominance through scale | 2026-02-01 |
+| Bioregulator module | Niche authority in Khavinson peptides | 2026-02-01 |
+| Weekly news backdating | Fresh content signal for SEO | 2026-02-01 |
+| Defer interactions/UX to v5.0 | Content scale more impactful than features | 2026-02-01 |
 
 ---
 *Created: 2026-01-19*
-*Updated: 2026-01-30 for v4.0 milestone*
+*Updated: 2026-02-01 for v4.0 Content Expansion pivot*

@@ -1,8 +1,38 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import HowToSchema from '../../components/SEO/HowToSchema.astro';
+
+const howToSteps = [
+  {
+    name: "Enter peptide amount",
+    text: "Input the total peptide amount in milligrams (mg) as shown on the vial label. Typical amounts are 5mg or 10mg."
+  },
+  {
+    name: "Enter bacteriostatic water volume",
+    text: "Input the volume of bacteriostatic water you will add to reconstitute the peptide. Common volumes are 1-2mL."
+  },
+  {
+    name: "Enter desired dose",
+    text: "Input your target dose per injection in micrograms (mcg). The calculator will determine the corresponding draw volume."
+  },
+  {
+    name: "Select syringe size",
+    text: "Choose your insulin syringe size (0.3mL, 0.5mL, or 1.0mL) to see the visual representation of your dose."
+  },
+  {
+    name: "Read the results",
+    text: "The calculator displays your concentration (mcg/mL) and the exact volume to draw for your desired dose, with a visual syringe guide."
+  }
+];
 ---
 
 <BaseLayout title="Reconstitution Calculator" description="Calculate peptide concentrations and draw volumes with visual syringe display.">
+  <HowToSchema
+    name="How to Calculate Peptide Reconstitution"
+    description="Step-by-step guide to calculating peptide reconstitution concentrations and draw volumes using the PepCodex calculator."
+    totalTime="PT2M"
+    steps={howToSteps}
+  />
   <!-- Breadcrumb -->
   <nav class="flex items-center gap-2 text-sm mb-8" style="color: var(--text-medium);">
     <a href="/calculator" class="hover:text-primary transition-colors">Calculators</a>

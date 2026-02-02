@@ -106,6 +106,11 @@ const peptides = defineCollection({
     }).optional(),
     // Conditions for programmatic SEO pages (Phase 20)
     conditions: z.array(conditionSchema).optional(),
+    // FAQ Schema for rich results (Phase 24)
+    faqs: z.array(z.object({
+      question: z.string(),
+      answer: z.string(),
+    })).optional(),
     // SEO fields
     ...seoFields,
   }),
@@ -120,6 +125,11 @@ const comparisons = defineCollection({
     category: category,
     lastUpdated: z.coerce.date(),
     summary: z.string(),
+    // FAQ Schema for rich results (Phase 24)
+    faqs: z.array(z.object({
+      question: z.string(),
+      answer: z.string(),
+    })).optional(),
     ...seoFields,
   }),
 });

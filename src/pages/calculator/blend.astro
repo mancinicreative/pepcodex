@@ -1,8 +1,34 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import HowToSchema from '../../components/SEO/HowToSchema.astro';
+
+const howToSteps = [
+  {
+    name: "Add peptides to the blend",
+    text: "Click 'Add Peptide' to add each peptide you want in your blend. Enter the name, amount in mg, reconstitution water volume in mL, and desired dose in mcg for each."
+  },
+  {
+    name: "Or use a preset blend",
+    text: "Select a common preset like 'Healing Stack (BPC + TB)' or 'GH Secretagogue' to automatically populate typical peptide combinations."
+  },
+  {
+    name: "Review the blend summary",
+    text: "The calculator shows total peptides, total bacteriostatic water needed, total draw volume, and total syringe units for the combined blend."
+  },
+  {
+    name: "Check per-peptide breakdown",
+    text: "View the individual draw volume for each peptide in the blend to understand the contribution of each compound."
+  }
+];
 ---
 
 <BaseLayout title="Blend Calculator" description="Calculate volumes for multi-peptide blends and determine individual draw amounts.">
+  <HowToSchema
+    name="How to Calculate Multi-Peptide Blend Volumes"
+    description="Step-by-step guide to calculating volumes for multi-peptide blends using the PepCodex blend calculator."
+    totalTime="PT3M"
+    steps={howToSteps}
+  />
   <!-- Breadcrumb -->
   <nav class="flex items-center gap-2 text-sm mb-8" style="color: var(--text-medium);">
     <a href="/calculator" class="hover:text-primary transition-colors">Calculators</a>

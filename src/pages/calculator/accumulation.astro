@@ -1,8 +1,38 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import HowToSchema from '../../components/SEO/HowToSchema.astro';
+
+const howToSteps = [
+  {
+    name: "Enter the compound half-life",
+    text: "Input the half-life of the compound in hours or days. This is the time it takes for the concentration to decrease by half."
+  },
+  {
+    name: "Enter dose amount",
+    text: "Input the dose amount per administration in mcg, mg, or IU depending on the compound."
+  },
+  {
+    name: "Set dosing frequency",
+    text: "Enter how often the compound is administered: times per day, times per week, or times per hour."
+  },
+  {
+    name: "Review pharmacokinetic results",
+    text: "The calculator displays the accumulation ratio, time to steady state, peak and trough concentrations, and other pharmacokinetic parameters."
+  },
+  {
+    name: "Analyze the concentration chart",
+    text: "View the concentration over time graph showing how the compound builds up over multiple doses until reaching steady state."
+  }
+];
 ---
 
 <BaseLayout title="Accumulation Calculator" description="Track compound buildup based on half-life. Calculate steady-state concentrations and accumulation ratios.">
+  <HowToSchema
+    name="How to Calculate Peptide Accumulation and Steady State"
+    description="Step-by-step guide to understanding peptide accumulation based on half-life and dosing frequency using the PepCodex accumulation calculator."
+    totalTime="PT3M"
+    steps={howToSteps}
+  />
   <!-- Breadcrumb -->
   <nav class="flex items-center gap-2 text-sm mb-8" style="color: var(--text-medium);">
     <a href="/calculator" class="hover:text-primary transition-colors">Calculators</a>

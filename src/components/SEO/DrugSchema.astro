@@ -1,0 +1,91 @@
+---
+import JsonLd from './JsonLd.astro';
+
+interface Props {
+  name: string;
+  alternateName?: string[];
+  description: string;
+  drugClass?: string;
+  mechanismOfAction?: string;
+  activeIngredient?: string;
+  administrationRoute?: string;
+  legalStatus?: string;
+  manufacturer?: string;
+  nonProprietaryName?: string;
+  molecularWeight?: string;
+  url: string;
+}
+
+const {
+  name,
+  alternateName = [],
+  description,
+  drugClass,
+  mechanismOfAction,
+  activeIngredient,
+  administrationRoute,
+  legalStatus,
+  manufacturer,
+  nonProprietaryName,
+  molecularWeight,
+  url
+} = Astro.props;
+
+const drugData: Record<string, unknown> = {
+  "@context": "https://schema.org",
+  "@type": "Drug",
+  "name": name,
+  "description": description,
+  "url": url
+};
+
+// Add optional fields only if provided
+if (alternateName.length > 0) {
+  drugData["alternateName"] = alternateName;
+}
+
+if (drugClass) {
+  drugData["drugClass"] = {
+    "@type": "DrugClass",
+    "name": drugClass
+  };
+}
+
+if (mechanismOfAction) {
+  drugData["mechanismOfAction"] = mechanismOfAction;
+}
+
+if (activeIngredient) {
+  drugData["activeIngredient"] = activeIngredient;
+}
+
+if (administrationRoute) {
+  drugData["administrationRoute"] = administrationRoute;
+}
+
+if (legalStatus) {
+  drugData["legalStatus"] = legalStatus;
+}
+
+if (manufacturer) {
+  drugData["manufacturer"] = {
+    "@type": "Organization",
+    "name": manufacturer
+  };
+}
+
+if (nonProprietaryName) {
+  drugData["nonProprietaryName"] = nonProprietaryName;
+}
+
+// Add molecular weight as additional property
+if (molecularWeight) {
+  drugData["additionalProperty"] = {
+    "@type": "PropertyValue",
+    "name": "Molecular Weight",
+    "value": molecularWeight
+  };
+}
+---
+
+<JsonLd data={drugData} />

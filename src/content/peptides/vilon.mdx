@@ -1,0 +1,235 @@
+---
+name: "Vilon"
+aliases: ["KE", "Lys-Glu", "Dilysine", "KE dipeptide"]
+category: "immune"
+evidenceStrength: "very-low"
+lastUpdated: 2026-02-01
+comparators: ["thymalin", "thymogen", "thymosin-alpha-1"]
+summary: "A synthetic dipeptide (Lys-Glu) developed by Russian scientist Vladimir Khavinson as part of the peptide bioregulation framework. Claimed to support thymus gland function and immune modulation. No Western clinical validation exists; all research originates from Russian institutes."
+sources:
+  count: 15
+  human: 2
+  preclinical: 10
+  openAccess: 5
+metaTitle: "Vilon Evidence Dossier | PepCodex"
+metaDescription: "Evidence review of Vilon (KE dipeptide). Comprehensive analysis of Russian bioregulator research, thymus support claims, and critical evaluation of immunomodulatory evidence."
+interactions:
+  - peptide: "thymalin"
+    type: "compatible"
+    description: "Both target thymus function - thymalin is a complex thymic extract while Vilon is a simplified synthetic dipeptide. May have overlapping mechanisms in immune modulation."
+  - peptide: "thymogen"
+    type: "compatible"
+    description: "Fellow thymic bioregulator peptides from Russian research. Thymogen (EW) and Vilon (KE) represent different dipeptide approaches to thymus support."
+  - peptide: "thymosin-alpha-1"
+    type: "compatible"
+    description: "Both target immune function - Ta1 is a 28-amino acid peptide with FDA orphan drug status, while Vilon is a minimal dipeptide approach. Different evidence quality levels."
+  - peptide: "epithalon"
+    type: "compatible"
+    description: "Both Khavinson bioregulator peptides with distinct targets - Vilon for thymus/immune, epithalon for pineal/longevity. Often used together in Russian protocols."
+  - peptide: "selank"
+    type: "compatible"
+    description: "Both Russian peptides with immune-related effects - Selank primarily anxiolytic with secondary immune modulation, Vilon specifically targets thymic function."
+molecularInfo:
+  weight: "275.30 Da"
+  chainLength: 2
+  type: "Dipeptide"
+  sequence: "KE"
+  aminoAcids:
+    - { code: "K", name: "Lysine", position: 1, property: "positive" }
+    - { code: "E", name: "Glutamic Acid", position: 2, property: "negative" }
+evidenceChainedBenefits:
+  - mechanism:
+      action: "Thymus gland stimulation promoting T-cell maturation and differentiation"
+      confidence: "emerging"
+      directStudies: 4
+    benefit:
+      claim: "support immune system function"
+      qualifier: "may"
+    evidence:
+      level: "very-low"
+      humanStudies: 1
+      animalStudies: 3
+      cellStudies: 2
+      keyFindings:
+        - study: "Khavinson VK et al. 2002"
+          type: "animal"
+          finding: "Vilon administration in aged rats showed restoration of thymic structure and increased thymocyte proliferation"
+          pmid: "12108814"
+        - study: "Khavinson VK et al. 2003"
+          type: "in-vitro"
+          finding: "KE dipeptide demonstrated ability to penetrate cell nuclei and interact with chromatin in thymocyte cultures"
+          pmid: "12937682"
+  - mechanism:
+      action: "Epigenetic modulation via chromatin interaction in immune cells"
+      confidence: "emerging"
+      directStudies: 3
+    benefit:
+      claim: "restore age-related decline in immune gene expression"
+      qualifier: "suggested to"
+    evidence:
+      level: "very-low"
+      humanStudies: 1
+      animalStudies: 2
+      cellStudies: 2
+      keyFindings:
+        - study: "Khavinson VK et al. 2004"
+          type: "in-vitro"
+          finding: "Short peptides including KE demonstrated heterochromatin decondensation in lymphocytes, suggesting epigenetic regulation capacity"
+          pmid: "14994469"
+        - study: "Khavinson VK et al. 2005"
+          type: "animal"
+          finding: "Vilon treatment in aging mice associated with changes in immune-related gene expression patterns"
+          pmid: "15977108"
+  - mechanism:
+      action: "Cytokine modulation affecting inflammatory balance"
+      confidence: "emerging"
+      directStudies: 2
+    benefit:
+      claim: "modulate inflammatory responses"
+      qualifier: "may"
+    evidence:
+      level: "very-low"
+      humanStudies: 0
+      animalStudies: 2
+      cellStudies: 1
+      keyFindings:
+        - study: "Morozov VG et al. 2000"
+          type: "animal"
+          finding: "Vilon administration in immunocompromised animals showed changes in cytokine profiles including IL-2 and interferon levels"
+          pmid: "10838520"
+        - study: "Khavinson VK et al. 2001"
+          type: "in-vitro"
+          finding: "KE peptide treatment of cultured splenocytes demonstrated dose-dependent effects on cytokine production"
+          pmid: "11441290"
+conditions:
+  - slug: "immune-support"
+    name: "Immune Support"
+    researchSummary: "Vilon is marketed primarily for immune support based on claimed thymus gland stimulation and T-cell modulation. Russian research reports restoration of thymic architecture and immune cell function in aged animals. No controlled human clinical trials have evaluated immune outcomes in healthy or immunocompromised populations."
+    relevantStudies: ["12108814", "10838520"]
+    relatedPeptides: ["thymalin", "thymogen", "thymosin-alpha-1"]
+  - slug: "thymus-function"
+    name: "Thymus Function"
+    researchSummary: "The thymus gland atrophies with age, reducing T-cell production. Vilon is proposed to counteract this involution through direct thymic stimulation. Russian animal studies show structural restoration of thymic tissue, but translation to human thymic regeneration is completely unconfirmed."
+    relevantStudies: ["12108814", "15977108"]
+    relatedPeptides: ["thymalin", "thymogen"]
+  - slug: "immunosenescence"
+    name: "Immunosenescence"
+    researchSummary: "Age-related immune decline (immunosenescence) is a proposed target for Vilon. Russian preclinical studies suggest potential to restore immune parameters in aged animals. No human clinical trials have evaluated effects on age-related immune decline."
+    relevantStudies: ["12108814", "14994469"]
+    relatedPeptides: ["thymosin-alpha-1", "thymalin"]
+timeline:
+  - period: "Week 1-2"
+    effects: "Based on preclinical data: Initial interactions with thymic tissue may begin. In vitro studies suggest rapid cellular uptake and chromatin interaction. Any immune parameter changes would not be detectable this early."
+    source: "PMID:12937682"
+  - period: "Week 2-4"
+    effects: "Russian protocols suggest continued treatment during this period. Animal studies show progressive changes in thymic architecture over weeks. Gene expression modifications may develop."
+    source: "PMID:12108814"
+  - period: "Week 4-8"
+    effects: "Extended treatment in animal models shows more pronounced effects on immune cell populations. Thymocyte counts and T-cell subsets reportedly affected. Human response timeline is unknown."
+    source: "PMID:15977108"
+  - period: "Week 8+"
+    effects: "Long-term effects based on Russian animal studies using cyclical treatment protocols. Optimal human treatment duration and cycling are not established. Sustained immune benefits are unconfirmed."
+faqs:
+  - question: "What is Vilon?"
+    answer: "Vilon is a synthetic dipeptide (Lys-Glu or KE) developed by Russian scientist Vladimir Khavinson as part of the peptide bioregulation framework. It is claimed to support thymus gland function and immune modulation."
+  - question: "Is Vilon FDA approved?"
+    answer: "No, Vilon is not approved by the FDA or any Western regulatory agency. It has never undergone controlled human clinical trials outside of Russia. All research originates from Russian institutes."
+  - question: "What is the evidence for Vilon?"
+    answer: "Evidence is very low quality, consisting entirely of Russian preclinical studies and limited observational human research. No independent Western validation exists. No controlled human clinical trials have evaluated immune outcomes."
+  - question: "How does Vilon compare to Thymosin Alpha-1?"
+    answer: "Thymosin alpha-1 is a 28-amino acid peptide with FDA orphan drug designation and extensive clinical research. Vilon is a simple dipeptide with only Russian preclinical data. The evidence quality difference is substantial."
+  - question: "Is Vilon research legitimate?"
+    answer: "All Vilon research originates from Russian institutes, primarily the St. Petersburg Institute of Bioregulation and Gerontology. No independent Western replication has been conducted. The proposed mechanisms are biologically plausible but clinically unvalidated."
+qualityChecklist:
+  goodSigns:
+    - "White lyophilized powder"
+    - "Dissolves readily in bacteriostatic water"
+    - "Clear, colorless solution after reconstitution"
+    - "Certificate of analysis showing >98% purity"
+    - "HPLC verification of sequence"
+    - "Mass spectrometry confirmation (~275 Da)"
+    - "Proper vacuum seal on vial"
+  warningSigns:
+    - "Off-white or slightly discolored powder"
+    - "Slow dissolution time"
+    - "No third-party testing verification"
+    - "Purity between 95-98%"
+    - "Unclear manufacturing source"
+  badSigns:
+    - "Yellow or brown discoloration"
+    - "Visible particles after reconstitution"
+    - "Cloudy solution"
+    - "No certificate of analysis"
+    - "Unusual odor"
+    - "Compromised seal or packaging"
+    - "Cannot verify source authenticity"
+---
+
+<h2 id="mechanism-of-action">Mechanism of Action</h2>
+
+The proposed mechanisms of Vilon are based entirely on Russian research. No independent Western validation or controlled human clinical trials exist.
+
+### How It Works (Simplified)
+
+Vilon targets immune function through thymus gland modulation:
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-8">
+  <div class="bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 rounded-xl p-5 border border-emerald-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400">1</div>
+      <div class="font-semibold text-white">Thymus Stimulation</div>
+    </div>
+    <p class="text-sm text-white/70">Proposed to stimulate thymus gland function, promoting thymocyte proliferation and T-cell maturation that typically decline with age.</p>
+  </div>
+  <div class="bg-gradient-to-br from-blue-500/10 to-blue-500/5 rounded-xl p-5 border border-blue-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">2</div>
+      <div class="font-semibold text-white">Chromatin Interaction</div>
+    </div>
+    <p class="text-sm text-white/70">Short peptides like KE are claimed to penetrate cell nuclei and interact with DNA/chromatin, potentially affecting immune-related gene expression.</p>
+  </div>
+  <div class="bg-gradient-to-br from-violet-500/10 to-violet-500/5 rounded-xl p-5 border border-violet-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-violet-500/20 flex items-center justify-center text-violet-400">3</div>
+      <div class="font-semibold text-white">T-Cell Modulation</div>
+    </div>
+    <p class="text-sm text-white/70">Russian studies claim effects on T-cell subpopulations, including helper and cytotoxic T-cells, though mechanisms are not well characterized.</p>
+  </div>
+  <div class="bg-gradient-to-br from-amber-500/10 to-amber-500/5 rounded-xl p-5 border border-amber-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-400">4</div>
+      <div class="font-semibold text-white">Cytokine Effects</div>
+    </div>
+    <p class="text-sm text-white/70">Proposed to modulate cytokine production including IL-2 and interferons, potentially affecting inflammatory and immune responses.</p>
+  </div>
+</div>
+
+### Scientific Pathways
+
+**Thymus Stimulation Pathway** *(Immune Support)*
+```
+Vilon (KE) → Thymus Gland Interaction → Thymocyte Proliferation
+                                              ↓
+                              T-Cell Maturation & Differentiation
+                                              ↓
+                              Enhanced T-Cell Mediated Immunity
+```
+
+**Epigenetic Modulation Pathway** *(Gene Expression)*
+```
+Vilon → Nuclear Penetration → Chromatin/Histone Interaction → Heterochromatin Decondensation
+                                                                        ↓
+                                                        Immune Gene Expression Changes
+```
+
+**Note:** These pathways are theoretical constructs based on Russian preclinical research. No independent Western validation confirms these mechanisms in humans.
+
+### Important Limitations
+
+- 100% of research from Russian institutes (primarily St. Petersburg Institute of Bioregulation and Gerontology)
+- No independent Western replication or validation studies
+- No controlled human clinical trials demonstrating immune benefits
+- Mechanism of action for a simple dipeptide affecting thymus function is not fully characterized
+- Pharmacokinetics, bioavailability, and optimal dosing in humans are unknown
+- Comparison to established immunomodulators (like Thymosin alpha-1) shows substantial evidence gap
+- Translation from animal studies to human immune benefits is **completely unconfirmed**

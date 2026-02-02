@@ -1,0 +1,206 @@
+---
+import HubLayout from '../layouts/HubLayout.astro';
+import PeptideCard from '../components/PeptideCard.astro';
+import { getCollection } from 'astro:content';
+
+// List of known bioregulator peptide slugs
+const bioregulatorSlugs = [
+  'epithalon',
+  'thymalin',
+  'thymogen',
+  'cortexin',
+  'pinealon',
+  'vilon',
+  'livagen',
+  'vesugen',
+  'cardiogen',
+  'kristagen',
+  'prostatilen',
+  'retinalamin',
+  'bronchogen',
+  'chonluten',
+  'testagen',
+];
+
+const allPeptides = await getCollection('peptides');
+const peptides = allPeptides
+  .filter(p => bioregulatorSlugs.includes(p.slug))
+  .sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+// Group by type for display
+const syntheticPeptides = peptides.filter(p =>
+  ['epithalon', 'vilon', 'livagen', 'vesugen', 'cardiogen', 'kristagen', 'bronchogen', 'chonluten', 'testagen', 'pinealon', 'thymalin', 'thymogen', 'cortexin'].includes(p.slug)
+);
+const extractPeptides = peptides.filter(p =>
+  ['prostatilen', 'retinalamin'].includes(p.slug)
+);
+---
+
+<HubLayout
+  title="Bioregulator Peptides"
+  description="Khavinson bioregulators: Russian peptide bioregulation research. Evidence dossiers on epithalon, thymalin, cortexin, and synthetic tripeptides."
+  category="longevity"
+>
+  <div class="mb-12">
+    <p class="text-lg text-white/80 max-w-3xl leading-relaxed mb-6">
+      Bioregulator peptides are short peptides developed primarily by Russian scientist Vladimir Khavinson
+      and colleagues at the St. Petersburg Institute of Bioregulation and Gerontology. These compounds
+      are claimed to regulate gene expression in specific tissues through epigenetic mechanisms.
+    </p>
+
+    <div class="glass-card-amber p-6 rounded-xl">
+      <p class="text-amber-200 text-sm">
+        <strong class="text-amber-400">Evidence Note:</strong> Most bioregulator research originates from
+        a single Russian institute with limited independent Western validation. Evidence quality for most
+        compounds is very low. The 2025 UK replication of epithalon's telomerase effects was the first
+        significant independent confirmation.
+      </p>
+    </div>
+  </div>
+
+  <div class="mb-12">
+    <h2 class="text-2xl font-bold text-white mb-6">Synthetic Bioregulators</h2>
+    <p class="text-white/70 mb-6">
+      Defined amino acid sequences synthesized to mimic tissue-specific peptide signals.
+    </p>
+    {syntheticPeptides.length > 0 ? (
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {syntheticPeptides.map((peptide) => (
+          <PeptideCard
+            name={peptide.data.name}
+            slug={peptide.slug}
+            category={peptide.data.category}
+            evidenceStrength={peptide.data.evidenceStrength}
+            summary={peptide.data.summary}
+            aliases={peptide.data.aliases}
+          />
+        ))}
+      </div>
+    ) : (
+      <p class="text-white/50">No synthetic bioregulators found.</p>
+    )}
+  </div>
+
+  {extractPeptides.length > 0 && (
+    <div class="mb-12">
+      <h2 class="text-2xl font-bold text-white mb-6">Tissue Extract Complexes</h2>
+      <p class="text-white/70 mb-6">
+        Peptide mixtures extracted from animal tissues rather than synthesized. These are not single
+        defined compounds but complex mixtures.
+      </p>
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {extractPeptides.map((peptide) => (
+          <PeptideCard
+            name={peptide.data.name}
+            slug={peptide.slug}
+            category={peptide.data.category}
+            evidenceStrength={peptide.data.evidenceStrength}
+            summary={peptide.data.summary}
+            aliases={peptide.data.aliases}
+          />
+        ))}
+      </div>
+    </div>
+  )}
+
+  <div class="mt-16 glass-card-default p-8">
+    <h3 class="font-bold text-white mb-4 text-lg">About Bioregulator Research</h3>
+    <div class="prose prose-invert prose-sm max-w-none text-white/80">
+      <p>
+        The bioregulation theory proposes that short peptides (2-4 amino acids) can selectively
+        regulate gene expression in specific tissues by interacting with DNA and chromatin.
+        Khavinson's research claims these peptides can "normalize" tissue function and reverse
+        age-related changes.
+      </p>
+      <p>
+        While intriguing, these claims require significant further validation. The proposed
+        mechanisms—that a simple dipeptide like KE (Vilon) can selectively target thymus tissue
+        while EDG (Kristagen) targets immune cells and the same EDG sequence in Chonluten targets
+        the GI tract—lack a clear scientific explanation for tissue specificity.
+      </p>
+      <p>
+        Consumers should understand that most bioregulators have very low evidence quality,
+        are not approved by any Western regulatory agency, and claims are based primarily on
+        Russian research that has not been independently replicated.
+      </p>
+    </div>
+  </div>
+
+  <div class="mt-8 glass-card-default p-8">
+    <h3 class="font-bold text-white mb-4 text-lg">Quick Reference: Bioregulator Sequences</h3>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-left text-white/60 border-b border-white/10">
+            <th class="pb-3 pr-4">Name</th>
+            <th class="pb-3 pr-4">Sequence</th>
+            <th class="pb-3 pr-4">Target Tissue</th>
+            <th class="pb-3">Type</th>
+          </tr>
+        </thead>
+        <tbody class="text-white/80">
+          <tr class="border-b border-white/5">
+            <td class="py-3 pr-4 font-medium text-white">Epithalon</td>
+            <td class="py-3 pr-4 font-mono text-primary">AEDG</td>
+            <td class="py-3 pr-4">Pineal gland</td>
+            <td class="py-3">Tetrapeptide</td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="py-3 pr-4 font-medium text-white">Vilon</td>
+            <td class="py-3 pr-4 font-mono text-primary">KE</td>
+            <td class="py-3 pr-4">Thymus</td>
+            <td class="py-3">Dipeptide</td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="py-3 pr-4 font-medium text-white">Livagen</td>
+            <td class="py-3 pr-4 font-mono text-primary">KED</td>
+            <td class="py-3 pr-4">Liver</td>
+            <td class="py-3">Tripeptide</td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="py-3 pr-4 font-medium text-white">Vesugen</td>
+            <td class="py-3 pr-4 font-mono text-primary">KED</td>
+            <td class="py-3 pr-4">Blood vessels</td>
+            <td class="py-3">Tripeptide</td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="py-3 pr-4 font-medium text-white">Cardiogen</td>
+            <td class="py-3 pr-4 font-mono text-primary">AED</td>
+            <td class="py-3 pr-4">Heart</td>
+            <td class="py-3">Tripeptide</td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="py-3 pr-4 font-medium text-white">Kristagen</td>
+            <td class="py-3 pr-4 font-mono text-primary">EDG</td>
+            <td class="py-3 pr-4">Immune system</td>
+            <td class="py-3">Tripeptide</td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="py-3 pr-4 font-medium text-white">Chonluten</td>
+            <td class="py-3 pr-4 font-mono text-primary">EDG</td>
+            <td class="py-3 pr-4">GI tract</td>
+            <td class="py-3">Tripeptide</td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="py-3 pr-4 font-medium text-white">Bronchogen</td>
+            <td class="py-3 pr-4 font-mono text-primary">AEDL</td>
+            <td class="py-3 pr-4">Bronchi/lungs</td>
+            <td class="py-3">Tetrapeptide</td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="py-3 pr-4 font-medium text-white">Pinealon</td>
+            <td class="py-3 pr-4 font-mono text-primary">EDR</td>
+            <td class="py-3 pr-4">Brain/pineal</td>
+            <td class="py-3">Tripeptide</td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="py-3 pr-4 font-medium text-white">Cortexin</td>
+            <td class="py-3 pr-4 font-mono text-white/50">Complex</td>
+            <td class="py-3 pr-4">Brain</td>
+            <td class="py-3">Extract</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</HubLayout>

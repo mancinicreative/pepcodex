@@ -1,0 +1,237 @@
+---
+name: "Bronchogen"
+aliases: ["AEDL", "Ala-Glu-Asp-Leu", "Bronchial tetrapeptide", "Respiratory peptide"]
+category: "other"
+evidenceStrength: "very-low"
+lastUpdated: 2026-02-01
+comparators: ["epithalon", "thymalin", "vilon"]
+summary: "A synthetic tetrapeptide (Ala-Glu-Asp-Leu) developed by Russian scientist Vladimir Khavinson for bronchial and respiratory tissue support. Claimed to modulate bronchial epithelium gene expression and provide respiratory protective effects. No Western clinical validation; all evidence from Russian bioregulator research."
+sources:
+  count: 12
+  human: 2
+  preclinical: 8
+  openAccess: 4
+metaTitle: "Bronchogen Evidence Dossier | PepCodex"
+metaDescription: "Evidence review of Bronchogen (AEDL peptide). Comprehensive analysis of Russian bioregulator research on bronchial tissue support and respiratory claims."
+interactions:
+  - peptide: "epithalon"
+    type: "compatible"
+    description: "Both Khavinson bioregulator peptides with distinct tissue targets - epithalon for pineal/longevity, bronchogen for bronchial epithelium. No known direct interactions."
+  - peptide: "thymalin"
+    type: "compatible"
+    description: "Thymalin targets thymic immune function while bronchogen targets respiratory epithelium. May have complementary effects for respiratory immune support."
+  - peptide: "vilon"
+    type: "compatible"
+    description: "Both short Russian bioregulator peptides - vilon for immune modulation, bronchogen for bronchial tissue. Different tissue targets with no known contraindications."
+  - peptide: "thymosin-alpha-1"
+    type: "compatible"
+    description: "Ta1 provides broad immune modulation while bronchogen targets bronchial tissue specifically. May complement each other for respiratory health."
+  - peptide: "bpc-157"
+    type: "compatible"
+    description: "BPC-157 provides systemic tissue healing while bronchogen targets bronchial epithelium specifically. No known contraindications in combination."
+molecularInfo:
+  weight: "446.45 Da"
+  chainLength: 4
+  type: "Tetrapeptide"
+  sequence: "AEDL"
+  aminoAcids:
+    - { code: "A", name: "Alanine", position: 1, property: "hydrophobic" }
+    - { code: "E", name: "Glutamic Acid", position: 2, property: "negative" }
+    - { code: "D", name: "Aspartic Acid", position: 3, property: "negative" }
+    - { code: "L", name: "Leucine", position: 4, property: "hydrophobic" }
+evidenceChainedBenefits:
+  - mechanism:
+      action: "Modulation of bronchial epithelium gene expression via epigenetic interactions"
+      confidence: "emerging"
+      directStudies: 3
+    benefit:
+      claim: "support bronchial tissue function"
+      qualifier: "may"
+    evidence:
+      level: "very-low"
+      humanStudies: 1
+      animalStudies: 2
+      cellStudies: 3
+      keyFindings:
+        - study: "Khavinson VK et al. 2011"
+          type: "in-vitro"
+          finding: "AEDL peptide demonstrated selective binding to DNA sequences in bronchial tissue, suggesting gene regulatory activity"
+          pmid: "21809118"
+        - study: "Khavinson VK et al. 2014"
+          type: "in-vitro"
+          finding: "Bronchogen showed tissue-specific effects on bronchial epithelial cell gene expression in culture"
+          pmid: "24799441"
+  - mechanism:
+      action: "Stimulation of bronchial mucosal regeneration and repair"
+      confidence: "emerging"
+      directStudies: 2
+    benefit:
+      claim: "promote respiratory tissue repair"
+      qualifier: "suggested to"
+    evidence:
+      level: "very-low"
+      humanStudies: 1
+      animalStudies: 2
+      cellStudies: 1
+      keyFindings:
+        - study: "Khavinson VK et al. 2009"
+          type: "animal"
+          finding: "Administration of bronchogen to aged rats showed restoration of bronchial epithelium morphology"
+          pmid: "19489741"
+        - study: "Trofimova SV et al. 2010"
+          type: "human-observational"
+          finding: "Elderly patients with chronic bronchitis showed improved respiratory function markers after bronchogen treatment in open-label observation"
+          pmid: "20597340"
+  - mechanism:
+      action: "Regulation of local immune responses in respiratory mucosa"
+      confidence: "emerging"
+      directStudies: 2
+    benefit:
+      claim: "support respiratory immune function"
+      qualifier: "may"
+    evidence:
+      level: "very-low"
+      humanStudies: 0
+      animalStudies: 2
+      cellStudies: 2
+      keyFindings:
+        - study: "Khavinson VK et al. 2012"
+          type: "animal"
+          finding: "Bronchogen administration modulated cytokine profiles in bronchial lavage fluid of treated animals"
+          pmid: "22616891"
+        - study: "Linkova NS et al. 2013"
+          type: "in-vitro"
+          finding: "AEDL peptide influenced expression of immune-related genes in bronchial epithelial cell cultures"
+          pmid: "23844712"
+conditions:
+  - slug: "chronic-bronchitis"
+    name: "Chronic Bronchitis"
+    researchSummary: "Bronchogen was developed specifically for bronchial conditions. Russian observational studies report improvements in respiratory function markers in elderly patients with chronic bronchitis. No controlled clinical trials exist. All evidence is from single research group without independent replication."
+    relevantStudies: ["20597340", "19489741"]
+    relatedPeptides: ["thymalin", "thymosin-alpha-1"]
+  - slug: "respiratory-aging"
+    name: "Respiratory Aging"
+    researchSummary: "Russian research suggests bronchogen may address age-related decline in bronchial tissue function. Animal studies show restoration of bronchial epithelium morphology in aged subjects. Claims of gene expression modulation for tissue maintenance. No Western validation of these effects."
+    relevantStudies: ["19489741", "21809118"]
+    relatedPeptides: ["epithalon", "vilon"]
+  - slug: "copd"
+    name: "Chronic Obstructive Pulmonary Disease"
+    researchSummary: "Some Russian studies have examined bronchogen in the context of COPD as part of combination bioregulator protocols. Evidence is extremely limited, observational only, and not replicated outside Russia. Should not be considered as COPD treatment."
+    relevantStudies: ["20597340"]
+    relatedPeptides: ["thymalin"]
+timeline:
+  - period: "Week 1-2"
+    effects: "Based on Russian protocols: Initial effects on bronchial tissue gene expression may begin. Cell culture studies suggest peptide-DNA interactions occur within days. No validated human pharmacokinetic data."
+    source: "PMID:21809118"
+  - period: "Week 2-4"
+    effects: "Russian protocols typically involve treatment courses of 10-20 days. Claimed effects on bronchial mucosal regeneration may develop. Immune modulation in respiratory tract suggested."
+    source: "PMID:19489741"
+  - period: "Week 4-8"
+    effects: "Extended treatment in Russian studies shows claimed improvements in respiratory function markers. Tissue regeneration effects reported in animal models. Human response timelines are speculative."
+    source: "PMID:20597340"
+  - period: "Week 8+"
+    effects: "Long-term effects based on Russian observational studies in elderly populations. Cyclical treatment protocols often recommended (treatment courses with rest periods). Optimal duration unknown."
+faqs:
+  - question: "What is Bronchogen?"
+    answer: "Bronchogen is a synthetic tetrapeptide (Ala-Glu-Asp-Leu) developed by Russian scientist Vladimir Khavinson as part of his bioregulator peptide research. It is claimed to specifically target bronchial and respiratory tissue to support function and repair."
+  - question: "Is Bronchogen FDA approved?"
+    answer: "No, Bronchogen is not approved by the FDA or any Western regulatory agency. It is part of the Russian bioregulator peptide class that has not undergone controlled clinical trials by Western standards."
+  - question: "What is the evidence for Bronchogen?"
+    answer: "Evidence is very low quality, consisting entirely of Russian preclinical and observational studies from the St. Petersburg Institute of Bioregulation and Gerontology. No independent Western replication or controlled human clinical trials exist."
+  - question: "Does Bronchogen improve respiratory function?"
+    answer: "Russian observational studies claim improvements in respiratory function markers in elderly patients with chronic bronchitis. However, these are uncontrolled observations without placebo comparison, and have not been replicated outside Russia."
+  - question: "How does Bronchogen compare to other bioregulator peptides?"
+    answer: "Bronchogen is one of many tissue-specific bioregulator peptides developed by Khavinson. Like epithalon (pineal), thymalin (thymus), and others, it is claimed to target specific tissue gene expression. All share the same evidence limitations."
+qualityChecklist:
+  goodSigns:
+    - "White lyophilized powder"
+    - "Dissolves readily in bacteriostatic water"
+    - "Clear, colorless solution after reconstitution"
+    - "Certificate of analysis showing >98% purity"
+    - "HPLC verification of sequence"
+    - "Mass spectrometry confirmation (~446 Da)"
+    - "Proper vacuum seal on vial"
+  warningSigns:
+    - "Off-white or slightly discolored powder"
+    - "Slow dissolution time"
+    - "No third-party testing verification"
+    - "Purity between 95-98%"
+    - "Unclear manufacturing source"
+  badSigns:
+    - "Yellow or brown discoloration"
+    - "Visible particles after reconstitution"
+    - "Cloudy solution"
+    - "No certificate of analysis"
+    - "Unusual odor"
+    - "Compromised seal or packaging"
+    - "Cannot verify source authenticity"
+---
+
+<h2 id="mechanism-of-action">Mechanism of Action</h2>
+
+The proposed mechanisms of Bronchogen are based entirely on Russian bioregulator research from the St. Petersburg Institute of Bioregulation and Gerontology. No independent Western validation exists for any claimed mechanisms.
+
+### How It Works (Simplified)
+
+Bronchogen is claimed to target bronchial tissue through gene expression modulation:
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-8">
+  <div class="bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 rounded-xl p-5 border border-emerald-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400">1</div>
+      <div class="font-semibold text-white">Gene Expression Modulation</div>
+    </div>
+    <p class="text-sm text-white/70">Claimed to selectively bind bronchial tissue DNA sequences and modulate gene expression patterns relevant to respiratory function.</p>
+  </div>
+  <div class="bg-gradient-to-br from-blue-500/10 to-blue-500/5 rounded-xl p-5 border border-blue-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">2</div>
+      <div class="font-semibold text-white">Epithelial Repair</div>
+    </div>
+    <p class="text-sm text-white/70">Proposed to stimulate bronchial mucosal regeneration and support repair of respiratory epithelium, particularly in aged tissue.</p>
+  </div>
+  <div class="bg-gradient-to-br from-violet-500/10 to-violet-500/5 rounded-xl p-5 border border-violet-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-violet-500/20 flex items-center justify-center text-violet-400">3</div>
+      <div class="font-semibold text-white">Local Immune Support</div>
+    </div>
+    <p class="text-sm text-white/70">Claimed to modulate cytokine profiles and immune responses within respiratory mucosa for improved local defense.</p>
+  </div>
+  <div class="bg-gradient-to-br from-amber-500/10 to-amber-500/5 rounded-xl p-5 border border-amber-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-400">4</div>
+      <div class="font-semibold text-white">Tissue-Specific Targeting</div>
+    </div>
+    <p class="text-sm text-white/70">Part of Khavinson's bioregulator theory that short peptides can selectively target specific tissue types through sequence-specific DNA binding.</p>
+  </div>
+</div>
+
+### Scientific Pathways
+
+**Proposed Bronchial Targeting Pathway** *(Tissue-Specific)*
+```
+Bronchogen (AEDL) → Cell Penetration → Nuclear Entry
+                                            ↓
+                          Bronchial-Specific DNA Binding → Gene Expression Changes
+                                                                   ↓
+                                               Epithelial Repair & Function Genes ↑
+```
+
+**Proposed Mucosal Regeneration Pathway** *(Repair)*
+```
+Bronchogen → Bronchial Epithelial Cells → Regeneration Gene Activation
+                                                      ↓
+                                    Mucosal Repair → Improved Barrier Function
+```
+
+**Note:** These pathways are based on Russian bioregulator theory and have not been independently validated by Western research.
+
+### Important Limitations
+
+- 100% of research from single institute (St. Petersburg Institute of Bioregulation and Gerontology)
+- No independent Western replication of any claimed effects
+- No controlled human clinical trials with placebo comparison
+- Pharmacokinetics, bioavailability, and optimal dosing completely uncharacterized
+- Mechanism of tissue-specific targeting is theoretical and unvalidated
+- Claims of gene expression modulation lack rigorous molecular characterization
+- Translation from Russian observational studies to therapeutic benefit is unconfirmed

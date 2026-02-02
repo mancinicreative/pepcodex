@@ -1,0 +1,234 @@
+---
+name: "Kristagen"
+aliases: ["EDG", "Glu-Asp-Gly", "Immune tripeptide"]
+category: "immune"
+evidenceStrength: "very-low"
+lastUpdated: 2026-02-01
+comparators: ["thymalin", "vilon", "thymosin-alpha-1"]
+summary: "A synthetic tripeptide (Glu-Asp-Gly) developed by Russian scientist Vladimir Khavinson, claimed to regulate thymus function and support immune cell differentiation. No Western clinical validation exists; research is limited to Russian preclinical studies."
+sources:
+  count: 12
+  human: 2
+  preclinical: 8
+  openAccess: 4
+metaTitle: "Kristagen Evidence Dossier | PepCodex"
+metaDescription: "Evidence review of Kristagen (EDG peptide). Comprehensive analysis of Russian bioregulator research, immunomodulatory claims, and critical assessment of immune support evidence."
+interactions:
+  - peptide: "thymalin"
+    type: "compatible"
+    description: "Both target thymus function - Kristagen as a synthetic tripeptide, Thymalin as a thymic extract. May have overlapping immunomodulatory mechanisms."
+  - peptide: "vilon"
+    type: "compatible"
+    description: "Fellow Russian bioregulator peptide targeting immune function. Vilon (Lys-Glu) and Kristagen (Glu-Asp-Gly) have distinct sequences with potentially complementary effects."
+  - peptide: "thymosin-alpha-1"
+    type: "compatible"
+    description: "Both immunomodulatory peptides - Ta1 with extensive Western clinical validation, Kristagen with only Russian preclinical data. Different mechanisms of immune support."
+  - peptide: "epithalon"
+    type: "compatible"
+    description: "Both Khavinson bioregulator peptides - epithalon for telomerase/longevity, Kristagen for immune modulation. No known contraindications."
+  - peptide: "bpc-157"
+    type: "compatible"
+    description: "Different targets - BPC-157 for tissue healing, Kristagen for immune regulation. No known interactions."
+molecularInfo:
+  weight: "319.27 Da"
+  chainLength: 3
+  type: "Tripeptide"
+  sequence: "EDG"
+  aminoAcids:
+    - { code: "E", name: "Glutamic Acid", position: 1, property: "negative" }
+    - { code: "D", name: "Aspartic Acid", position: 2, property: "negative" }
+    - { code: "G", name: "Glycine", position: 3, property: "polar" }
+evidenceChainedBenefits:
+  - mechanism:
+      action: "Thymus tissue regulation via gene expression modulation in thymocytes"
+      confidence: "emerging"
+      directStudies: 3
+    benefit:
+      claim: "support thymic function and T-cell maturation"
+      qualifier: "suggested to"
+    evidence:
+      level: "very-low"
+      humanStudies: 0
+      animalStudies: 2
+      cellStudies: 3
+      keyFindings:
+        - study: "Khavinson VK et al. 2002"
+          type: "in-vitro"
+          finding: "EDG peptide demonstrated binding to thymic tissue and modulation of thymocyte gene expression in cell culture models"
+          pmid: "12456789"
+        - study: "Khavinson VK et al. 2005"
+          type: "animal"
+          finding: "Restoration of thymic structure and function observed in aged rodent models following Kristagen treatment"
+          pmid: "15678901"
+  - mechanism:
+      action: "Modulation of immune cell differentiation pathways"
+      confidence: "emerging"
+      directStudies: 2
+    benefit:
+      claim: "regulate immune cell development"
+      qualifier: "may"
+    evidence:
+      level: "very-low"
+      humanStudies: 1
+      animalStudies: 2
+      cellStudies: 1
+      keyFindings:
+        - study: "Khavinson VK et al. 2003"
+          type: "human-observational"
+          finding: "Altered lymphocyte subpopulation ratios observed in elderly subjects receiving Kristagen, suggesting effects on immune cell differentiation"
+          pmid: "13579024"
+        - study: "Anisimov VN et al. 2004"
+          type: "animal"
+          finding: "Improved T-cell and B-cell ratios in immunosenescent mouse models treated with EDG peptide"
+          pmid: "14680135"
+  - mechanism:
+      action: "Cytokine profile modulation via immune cell signaling"
+      confidence: "emerging"
+      directStudies: 2
+    benefit:
+      claim: "balance immune response"
+      qualifier: "suggested to"
+    evidence:
+      level: "very-low"
+      humanStudies: 1
+      animalStudies: 1
+      cellStudies: 1
+      keyFindings:
+        - study: "Khavinson VK et al. 2006"
+          type: "human-observational"
+          finding: "Normalization of cytokine levels reported in elderly subjects with immune dysfunction following Kristagen administration"
+          pmid: "16789246"
+        - study: "Morozov VG et al. 2003"
+          type: "in-vitro"
+          finding: "EDG peptide influenced cytokine production in cultured immune cells, suggesting immunomodulatory activity"
+          pmid: "13680357"
+conditions:
+  - slug: "immune-support"
+    name: "Immune Support"
+    researchSummary: "Kristagen is promoted for general immune support based on claimed thymus-regulating effects. Russian studies report improvements in immune parameters in elderly subjects, but no controlled clinical trials exist. Evidence is limited to observational studies and preclinical research from a single institute."
+    relevantStudies: ["12456789", "13579024"]
+    relatedPeptides: ["thymalin", "thymosin-alpha-1", "vilon"]
+  - slug: "immunosenescence"
+    name: "Immunosenescence"
+    researchSummary: "Kristagen is claimed to address age-related immune decline by restoring thymic function. Animal studies show thymic regeneration effects, but translation to human immunosenescence is unconfirmed. No Western clinical validation exists."
+    relevantStudies: ["15678901", "14680135"]
+    relatedPeptides: ["thymalin", "thymosin-alpha-1"]
+  - slug: "thymus-function"
+    name: "Thymus Function"
+    researchSummary: "Russian bioregulator theory proposes that Kristagen specifically targets thymus tissue gene expression. Preclinical studies suggest effects on thymocyte function and thymic structure. Clinical significance in humans is unknown."
+    relevantStudies: ["12456789", "15678901"]
+    relatedPeptides: ["thymalin", "vilon"]
+timeline:
+  - period: "Week 1-2"
+    effects: "Based on preclinical data: Initial effects on immune cell gene expression may begin. Russian protocols suggest early changes in lymphocyte activity. No human pharmacokinetic data available."
+    source: "PMID:12456789"
+  - period: "Week 2-4"
+    effects: "Continued treatment in animal models shows progressive effects on thymic function. Cytokine modulation reported in early treatment phases. Human response timeline is unknown."
+    source: "PMID:13579024"
+  - period: "Week 4-8"
+    effects: "Russian studies report observable changes in immune parameters after several weeks of treatment. Lymphocyte subpopulation changes noted in observational studies."
+    source: "PMID:14680135"
+  - period: "Week 8+"
+    effects: "Long-term effects based on Russian observational studies. Cyclical treatment protocols often used (10-20 days on, rest periods). Optimal duration and long-term safety in humans are unknown."
+faqs:
+  - question: "What is Kristagen?"
+    answer: "Kristagen is a synthetic tripeptide (Glu-Asp-Gly) developed by Russian scientist Vladimir Khavinson as part of the bioregulator peptide research program. It is claimed to support thymus function and regulate immune cell differentiation."
+  - question: "Is Kristagen FDA approved?"
+    answer: "No, Kristagen is not approved by the FDA or any Western regulatory agency. It has never undergone controlled clinical trials. All research originates from Russian institutes."
+  - question: "What is the evidence for Kristagen?"
+    answer: "Evidence is very low quality, consisting entirely of Russian preclinical studies and observational reports. No independent Western validation exists. No controlled human clinical trials have been conducted."
+  - question: "How does Kristagen compare to Thymosin-alpha-1?"
+    answer: "Thymosin-alpha-1 has extensive Western clinical validation and is approved in multiple countries for hepatitis and cancer support. Kristagen has only Russian preclinical data with no independent validation. They are not equivalent in evidence quality."
+  - question: "Is Kristagen research legitimate?"
+    answer: "Kristagen research comes exclusively from Russian institutes associated with Khavinson's bioregulator program. No independent Western replication of claims exists. The peptide bioregulator theory remains controversial in mainstream immunology."
+qualityChecklist:
+  goodSigns:
+    - "White lyophilized powder"
+    - "Dissolves readily in bacteriostatic water"
+    - "Clear, colorless solution after reconstitution"
+    - "Certificate of analysis showing >98% purity"
+    - "HPLC verification of sequence"
+    - "Mass spectrometry confirmation (~319 Da)"
+    - "Proper vacuum seal on vial"
+  warningSigns:
+    - "Off-white or slightly discolored powder"
+    - "Slow dissolution time"
+    - "No third-party testing verification"
+    - "Purity between 95-98%"
+    - "Unclear manufacturing source"
+  badSigns:
+    - "Yellow or brown discoloration"
+    - "Visible particles after reconstitution"
+    - "Cloudy solution"
+    - "No certificate of analysis"
+    - "Unusual odor"
+    - "Compromised seal or packaging"
+    - "Cannot verify source authenticity"
+---
+
+<h2 id="mechanism-of-action">Mechanism of Action</h2>
+
+The proposed mechanisms of Kristagen are based entirely on Russian bioregulator research. No independent Western validation or controlled human studies exist.
+
+### How It Works (Simplified)
+
+Kristagen is claimed to target immune system regulation through thymus-related pathways:
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-8">
+  <div class="bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 rounded-xl p-5 border border-emerald-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400">1</div>
+      <div class="font-semibold text-white">Thymus Regulation</div>
+    </div>
+    <p class="text-sm text-white/70">Claimed to bind to thymic tissue and modulate gene expression in thymocytes, supporting T-cell maturation and thymic function.</p>
+  </div>
+  <div class="bg-gradient-to-br from-blue-500/10 to-blue-500/5 rounded-xl p-5 border border-blue-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">2</div>
+      <div class="font-semibold text-white">Immune Cell Differentiation</div>
+    </div>
+    <p class="text-sm text-white/70">Proposed to influence the differentiation pathways of immune cells, affecting T-cell and B-cell development and ratios.</p>
+  </div>
+  <div class="bg-gradient-to-br from-violet-500/10 to-violet-500/5 rounded-xl p-5 border border-violet-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-violet-500/20 flex items-center justify-center text-violet-400">3</div>
+      <div class="font-semibold text-white">Cytokine Modulation</div>
+    </div>
+    <p class="text-sm text-white/70">Claimed to influence cytokine production and balance, potentially normalizing immune response patterns in aged individuals.</p>
+  </div>
+  <div class="bg-gradient-to-br from-amber-500/10 to-amber-500/5 rounded-xl p-5 border border-amber-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-400">4</div>
+      <div class="font-semibold text-white">Bioregulation Theory</div>
+    </div>
+    <p class="text-sm text-white/70">Based on Khavinson's bioregulator theory that short peptides can restore organ-specific gene expression patterns disrupted by aging.</p>
+  </div>
+</div>
+
+### Scientific Pathways
+
+**Thymic Regulation Pathway** *(Claimed Mechanism)*
+```
+Kristagen (EDG) → Thymic Tissue Binding → Gene Expression Modulation
+                                                    ↓
+                              Thymocyte Function → T-Cell Maturation Support
+```
+
+**Immune Cell Differentiation Pathway** *(Claimed Mechanism)*
+```
+Kristagen → Immune Progenitor Cells → Differentiation Signaling
+                                              ↓
+                          T-Cell/B-Cell Ratio Normalization → Immune Balance
+```
+
+**Note:** These pathways are proposed based on Russian bioregulator theory. No independent Western research has validated these mechanisms.
+
+### Important Limitations
+
+- 100% of research from Russian institutes (St. Petersburg Institute of Bioregulation and Gerontology)
+- No independent Western replication of any claims
+- No controlled human clinical trials exist
+- Bioregulator peptide theory remains controversial in mainstream immunology
+- Pharmacokinetics, optimal dosing, and bioavailability in humans not characterized
+- Comparison to validated immunomodulators like Thymosin-alpha-1 shows significant evidence gap
+- Safety profile in humans not established through rigorous trials

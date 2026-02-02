@@ -1,0 +1,140 @@
+---
+term: "Selectivity"
+definition: "is the ability of a drug to preferentially affect one molecular target over others, measured as the ratio of activity at the primary target versus off-targets. High selectivity reduces side effects by minimizing interactions with unintended receptors, enzymes, or pathways."
+aliases: ["Target selectivity", "Receptor selectivity", "Pharmacological selectivity"]
+relatedPeptides: ["ipamorelin", "semaglutide", "tirzepatide"]
+relatedTerms: ["specificity", "binding-affinity", "potency", "ec50"]
+category: "mechanism"
+lastUpdated: 2026-02-01
+metaTitle: "What is Drug Selectivity? Definition | PepCodex"
+metaDescription: "Selectivity measures how preferentially a drug affects its target versus others. Learn why selectivity matters for peptide safety and efficacy."
+---
+
+## Understanding Selectivity
+
+Selectivity quantifies target preference:
+
+```
+                    High selectivity: 1000x
+                    ┌─────────────────────┐
+                    ↓                     ↓
+Target A: EC50 = 1 nM            Target B: EC50 = 1000 nM
+(intended)                       (off-target)
+```
+
+### Calculating Selectivity Ratio
+
+Selectivity = EC50 (or IC50) off-target / EC50 target
+
+| Drug | Target EC50 | Off-target EC50 | Selectivity |
+|------|-------------|-----------------|-------------|
+| Highly selective | 1 nM | 10,000 nM | 10,000x |
+| Moderately selective | 1 nM | 100 nM | 100x |
+| Non-selective | 1 nM | 2 nM | 2x |
+
+## Selectivity vs Specificity
+
+These terms are often confused:
+
+| Aspect | Selectivity | Specificity |
+|--------|-------------|-------------|
+| Definition | Preference for one target over others | Ability to bind only the intended target |
+| Measurement | Ratio of potencies | Binding to target vs non-target |
+| Spectrum | Degrees (10x, 100x, 1000x) | Often binary (specific vs non-specific) |
+| Clinical implication | Reduced side effects at therapeutic doses | Predictable, targeted action |
+
+**Key insight**: A selective drug interacts more strongly with its target but may still affect others at high concentrations. A specific drug exclusively affects its target.
+
+## Why Selectivity Matters
+
+### Therapeutic Window
+
+```
+Effect
+    |    Target      Off-target
+    |      /            /
+    |     /            /
+    |    /            /
+    |___/______|_____/____
+               ↑
+         Therapeutic
+           Window
+```
+
+Higher selectivity widens the therapeutic window - the dose range where you get benefit without side effects.
+
+### Side Effect Profile
+
+| Selectivity Level | Typical Side Effect Profile |
+|-------------------|----------------------------|
+| 1000x+ | Minimal off-target effects |
+| 100-1000x | Some effects at high doses |
+| 10-100x | Significant off-target potential |
+| Under 10x | Expected off-target effects |
+
+## Selectivity in Peptide Research
+
+### Growth Hormone Secretagogues
+
+| Peptide | GHS-R | Other Targets | Selectivity |
+|---------|-------|---------------|-------------|
+| Ipamorelin | High | Minimal cortisol/prolactin | High |
+| GHRP-6 | High | Increases cortisol, prolactin | Moderate |
+| GHRP-2 | High | Some cortisol effect | Moderate |
+
+**Ipamorelin's selectivity** makes it preferred for users wanting GH release without hormonal side effects.
+
+### GLP-1/GIP Agonists
+
+| Agonist | GLP-1R | GIPR | Design Intent |
+|---------|--------|------|---------------|
+| Semaglutide | High | None | GLP-1 selective |
+| Tirzepatide | High | High | Intentional dual agonist |
+| Native GLP-1 | High | None | Naturally selective |
+
+**Tirzepatide** is intentionally non-selective between GLP-1R and GIPR - dual activation provides enhanced efficacy.
+
+## Achieving Selectivity in Drug Design
+
+### Structural Approaches
+
+| Strategy | Mechanism | Example |
+|----------|-----------|---------|
+| Subtype selectivity | Target receptor subtypes | Beta-1 vs Beta-2 selective |
+| Tissue selectivity | Tissue-specific expression | SARM compounds |
+| Kinetic selectivity | Different binding kinetics | Slow off-rate at target |
+
+### Limitations
+
+Even highly selective drugs may affect off-targets when:
+- Used at high doses
+- Accumulated in specific tissues
+- Metabolized to non-selective compounds
+- Receptor expression changes in disease states
+
+## Measuring Selectivity
+
+### Selectivity Panel
+
+Standard drug development includes testing against panels of related targets:
+
+| Target Type | Purpose |
+|-------------|---------|
+| Related receptors | Direct competition for binding |
+| Receptor subtypes | Subtype preference |
+| Off-target enzymes | Metabolic interactions |
+| Ion channels | Safety (cardiac, neurological) |
+
+## Frequently Asked Questions
+
+### Can a drug be too selective?
+
+Rarely, but yes. Some conditions benefit from multi-target drugs. Depression often responds better to drugs affecting multiple neurotransmitter systems. Cancer therapies increasingly combine mechanisms. Tirzepatide's dual GLP-1/GIP action outperforms highly selective GLP-1 agonists.
+
+### How is selectivity determined?
+
+By measuring potency (EC50/IC50) at the target and at a panel of potential off-targets. The ratio of these values gives selectivity. Comprehensive panels may test 50-100+ potential off-targets.
+
+### Does selectivity guarantee no side effects?
+
+No. Side effects can arise from on-target activity in unintended tissues (the target receptor exists elsewhere in the body), downstream pathway effects, or individual variation. Selectivity reduces but doesn't eliminate side effect risk.

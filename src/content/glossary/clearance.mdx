@@ -1,0 +1,157 @@
+---
+term: "Clearance"
+definition: "is the volume of plasma completely cleared of a drug per unit time, representing the body's efficiency at eliminating a substance. Expressed in liters per hour (L/h) or milliliters per minute (mL/min), clearance is a fundamental pharmacokinetic parameter that determines maintenance dosing requirements and drug accumulation patterns."
+aliases: ["Drug clearance", "CL", "Total clearance", "Systemic clearance", "Plasma clearance"]
+relatedPeptides: ["semaglutide", "tirzepatide", "liraglutide"]
+relatedTerms: ["half-life", "volume-of-distribution", "steady-state", "area-under-curve", "maintenance-dose"]
+category: "administration"
+lastUpdated: 2026-02-01
+metaTitle: "What is Drug Clearance? Elimination Rate Explained | PepCodex"
+metaDescription: "Clearance measures how efficiently the body eliminates drugs. Learn how clearance affects peptide dosing and drug accumulation."
+---
+
+## Understanding Clearance
+
+Clearance (CL) describes the body's ability to remove a drug from circulation. Rather than measuring the amount of drug eliminated, clearance expresses elimination as a volume of plasma completely cleared of drug per unit time.
+
+| Concept | Description |
+|---------|-------------|
+| Definition | Volume of plasma cleared per unit time |
+| Units | L/h, mL/min, or L/h/kg |
+| Meaning | Higher clearance = faster elimination |
+
+### Conceptual Understanding
+
+If a drug has a clearance of 10 L/h:
+- Each hour, 10 liters of plasma are completely cleared of that drug
+- The drug in those 10 liters is removed (metabolized or excreted)
+- This continues regardless of the plasma concentration
+
+## Types of Clearance
+
+### Total Body Clearance
+Sum of all elimination pathways:
+
+**CL(total) = CL(renal) + CL(hepatic) + CL(other)**
+
+| Pathway | Mechanism | Factors Affecting |
+|---------|-----------|-------------------|
+| Renal clearance | Kidney excretion | GFR, tubular secretion/reabsorption |
+| Hepatic clearance | Liver metabolism | Blood flow, enzyme activity, protein binding |
+| Other clearance | Hydrolysis, tissue metabolism | Drug-specific pathways |
+
+### Organ-Specific Clearance
+
+| Organ | How It Clears Drugs |
+|-------|-------------------|
+| Kidneys | Filtration and active secretion |
+| Liver | Metabolism by enzymes (CYP450, etc.) |
+| Lungs | Exhalation (volatile drugs) |
+| Tissues | Local enzymatic degradation |
+
+## Clearance and Other Parameters
+
+### Relationship to Half-Life
+
+Half-life is determined by both clearance and volume of distribution:
+
+**t1/2 = (0.693 x Vd) / CL**
+
+| Scenario | Effect on Half-Life |
+|----------|-------------------|
+| Higher clearance, same Vd | Shorter half-life |
+| Lower clearance, same Vd | Longer half-life |
+| Same clearance, higher Vd | Longer half-life |
+
+### Relationship to AUC
+
+**AUC = Dose / CL** (for IV administration)
+**AUC = (F x Dose) / CL** (for other routes)
+
+Higher clearance results in lower total drug exposure (AUC).
+
+## Clearance in Peptide Therapy
+
+### Peptide Elimination Mechanisms
+
+Peptides are typically cleared through:
+
+1. **Enzymatic degradation** - Proteases break peptide bonds
+2. **Receptor-mediated endocytosis** - Cells internalize bound drug
+3. **Renal filtration** - Small peptides filtered by kidneys
+4. **Non-specific proteolysis** - Plasma and tissue enzymes
+
+### GLP-1 Agonist Clearance
+
+**Semaglutide characteristics:**
+- Very low clearance (~0.05 L/h)
+- Contributes to extended half-life (~168 hours)
+- Primarily cleared through proteolysis, not renal
+- No dose adjustment needed for renal impairment
+
+### Strategies to Reduce Clearance
+
+Peptide modifications that extend half-life by reducing clearance:
+
+| Strategy | Mechanism | Example |
+|----------|-----------|---------|
+| Fatty acid conjugation | Albumin binding reduces access to enzymes | Semaglutide |
+| PEGylation | Increased size reduces filtration | Pegfilgrastim |
+| Amino acid substitution | Protease resistance | Modified GLP-1 analogs |
+| Fc fusion | Extended circulation via FcRn recycling | Dulaglutide |
+
+## Factors Affecting Clearance
+
+### Physiological Factors
+
+| Factor | Effect on Clearance |
+|--------|-------------------|
+| Renal function (GFR) | Decreased GFR = lower renal clearance |
+| Hepatic function | Liver disease = lower hepatic clearance |
+| Age | Elderly often have reduced clearance |
+| Body weight | May affect clearance (drug-dependent) |
+| Cardiac output | Affects hepatic blood flow |
+
+### Drug-Related Factors
+
+| Factor | Effect |
+|--------|--------|
+| Protein binding | High binding may reduce clearance |
+| Saturable metabolism | Clearance decreases at high concentrations |
+| Drug interactions | Inhibitors decrease, inducers increase clearance |
+
+## Clinical Implications
+
+### Dosing Adjustments
+
+Clearance directly determines maintenance dose requirements:
+
+**Maintenance Dose = CL x Target Concentration x Dosing Interval**
+
+| Population | Typical Adjustment |
+|------------|-------------------|
+| Renal impairment | Reduce dose for renally cleared drugs |
+| Hepatic impairment | Reduce dose for hepatically cleared drugs |
+| Elderly | Often require lower doses |
+| Drug interactions | Adjust based on interaction magnitude |
+
+### Drug Accumulation
+
+Lower clearance leads to greater drug accumulation with repeated dosing:
+- Steady-state concentrations are inversely proportional to clearance
+- Patients with reduced clearance reach higher levels on same dose
+- May require dose reduction to avoid toxicity
+
+## Frequently Asked Questions
+
+### Why doesn't semaglutide require dose adjustment for kidney impairment?
+
+Semaglutide is primarily cleared through enzymatic degradation (proteolysis) rather than renal excretion. The kidneys play a minimal role in its elimination, so reduced kidney function doesn't significantly affect clearance or drug levels.
+
+### How do I know if my drug clearance is normal?
+
+Clearance isn't routinely measured in clinical practice. For most medications, dosing is based on clinical response or standard recommendations. Drug level monitoring (when available) can indirectly suggest clearance issues if levels are unexpectedly high or low.
+
+### What's the difference between clearance and elimination?
+
+Clearance is a rate constant (volume/time) describing how efficiently the body removes drug. Elimination refers to the actual process of drug removal. Clearance determines the rate of elimination but expresses it relative to plasma volume rather than drug amount.

@@ -1,0 +1,139 @@
+---
+term: "Mass Spectrometry"
+definition: "is an analytical technique that measures the mass-to-charge ratio (m/z) of ions to identify and characterize molecules. For peptides, mass spectrometry provides definitive molecular weight confirmation, sequence verification, and detection of modifications or impurities. It is the gold standard for peptide identity testing."
+aliases: ["MS", "Mass spec", "Mass spectroscopy"]
+relatedPeptides: ["semaglutide", "bpc-157", "tb-500"]
+relatedTerms: ["hplc", "purity", "liquid-chromatography", "amino-acid-sequence"]
+category: "general"
+lastUpdated: 2026-02-01
+metaTitle: "What is Mass Spectrometry? Definition | PepCodex"
+metaDescription: "Mass spectrometry identifies peptides by measuring molecular mass. Learn how MS confirms peptide identity, purity, and sequence for research applications."
+---
+
+## How Mass Spectrometry Works
+
+The process involves three main steps:
+
+1. **Ionization** - Convert molecules to charged ions
+2. **Mass analysis** - Separate ions by mass-to-charge ratio
+3. **Detection** - Count ions at each m/z value
+
+| Component | Function | Peptide Application |
+|-----------|----------|---------------------|
+| Ion source | Creates charged molecules | ESI or MALDI |
+| Mass analyzer | Separates by m/z | Quadrupole, TOF, Orbitrap |
+| Detector | Counts ions | Generates spectrum |
+| Data system | Processes results | Calculates molecular weight |
+
+## Ionization Methods for Peptides
+
+### Electrospray Ionization (ESI)
+
+| Aspect | Details |
+|--------|---------|
+| Sample state | Liquid solution |
+| Coupling | Directly with HPLC (LC-MS) |
+| Charge states | Multiple (z = +2 to +10+) |
+| Mass range | Excellent for peptides |
+| Advantages | Soft ionization, quantitative |
+
+### MALDI (Matrix-Assisted Laser Desorption/Ionization)
+
+| Aspect | Details |
+|--------|---------|
+| Sample state | Crystallized with matrix |
+| Coupling | Usually offline |
+| Charge states | Typically singly charged |
+| Mass range | Very high (proteins) |
+| Advantages | Tolerates salts, rapid screening |
+
+## Mass Analyzers Compared
+
+| Analyzer | Resolution | Mass Accuracy | Speed | Cost |
+|----------|------------|---------------|-------|------|
+| Quadrupole | Low | 0.1 Da | Fast | Low |
+| Time-of-Flight (TOF) | High | 5-20 ppm | Fast | Medium |
+| Orbitrap | Very high | Less than 5 ppm | Medium | High |
+| Ion trap | Medium | 0.1 Da | Medium | Medium |
+| Q-TOF | High | 5 ppm | Fast | High |
+
+## Peptide Identification by MS
+
+### Molecular Weight Confirmation
+
+| Peptide | Calculated MW | Measured MW | Match? |
+|---------|---------------|-------------|--------|
+| BPC-157 | 1419.53 Da | 1419.54 Da | Yes |
+| Semaglutide | 4113.58 Da | 4113.60 Da | Yes |
+| TB-500 | 4963.44 Da | 4963.45 Da | Yes |
+
+Acceptable mass accuracy: within 0.1% or 10 ppm
+
+### Detecting Impurities
+
+| Impurity Type | MS Detection | Example |
+|---------------|--------------|---------|
+| Deletion peptide | -MW of missing AA | -131 Da (Met) |
+| Oxidation | +16 Da | Met sulfoxide |
+| Deamidation | +1 Da | Asn to Asp |
+| Truncation | Shorter sequence | Missing terminal AA |
+| Aggregation | 2x or 3x MW | Dimer, trimer |
+
+## Tandem Mass Spectrometry (MS/MS)
+
+For sequence verification:
+
+1. **Precursor selection** - Isolate peptide ion
+2. **Fragmentation** - Break peptide bonds (CID, HCD, ETD)
+3. **Product analysis** - Detect fragment ions
+4. **Sequence assembly** - Match fragments to sequence
+
+| Fragment Type | Cleavage Site | Contains |
+|---------------|---------------|----------|
+| b-ions | N-terminal | N-terminus |
+| y-ions | C-terminal | C-terminus |
+| a-ions | CO loss from b | N-terminus |
+| c/z-ions | ETD fragments | N/C-terminus |
+
+## LC-MS Coupling
+
+The combination of HPLC and MS provides:
+
+| Capability | Benefit |
+|------------|---------|
+| Separation + identification | Resolve then identify |
+| Quantification | Peak area = amount |
+| Impurity profiling | Identify all species |
+| Stability testing | Monitor degradation |
+
+### Typical LC-MS Workflow
+
+1. Inject sample onto HPLC column
+2. Separate by reverse-phase gradient
+3. Elute into ESI source
+4. Acquire MS spectra continuously
+5. Generate chromatogram with MS data
+
+## Quality Control Applications
+
+| Test | MS Method | Information |
+|------|-----------|-------------|
+| Identity | Full scan | Correct MW? |
+| Purity | LC-MS | Related substances |
+| Sequence | MS/MS | Correct sequence? |
+| Modifications | High-res MS | PTMs, degradants |
+| Quantification | LC-MS/MS | Amount present |
+
+## Frequently Asked Questions
+
+### Why is mass spectrometry essential for peptides?
+
+Mass spectrometry provides unambiguous molecular weight confirmation that no other technique can match. While HPLC can show purity as a percentage, MS proves the peptide is actually the correct molecule. For research peptides, MS data is the definitive identity test.
+
+### What do multiple charge states mean?
+
+In ESI, peptides acquire multiple protons, creating ions like [M+2H]2+, [M+3H]3+, etc. Multiple charge states help confirm identity (all should calculate to same MW) and extend the mass range of the analyzer. The pattern also helps distinguish peptides from other compounds.
+
+### How accurate does molecular weight need to be?
+
+For peptide identity, mass accuracy within 0.1% is typically acceptable. High-resolution instruments achieve under 5 ppm (0.0005%), enabling detection of modifications like single deamidation (+1 Da) even on large peptides. Research-grade peptides should have MS data within 0.1 Da of calculated mass.

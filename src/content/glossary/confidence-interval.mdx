@@ -1,0 +1,178 @@
+---
+term: "Confidence Interval"
+definition: "is a statistical range of values that likely contains the true population parameter with a specified probability, typically 95%. A confidence interval provides more information than a single point estimate by showing the precision of the measurement and the range within which the true effect is reasonably expected to fall based on study data."
+aliases: ["CI", "95% CI", "Interval estimate", "Confidence range"]
+relatedPeptides: ["semaglutide", "tirzepatide", "retatrutide"]
+relatedTerms: ["statistical-significance", "clinical-trial", "meta-analysis", "p-value"]
+category: "research"
+lastUpdated: 2026-02-01
+metaTitle: "What is a Confidence Interval? Statistical Precision Explained | PepCodex"
+metaDescription: "Confidence intervals show the range of plausible values for study results. Learn how to interpret CIs in peptide research and clinical trial data."
+---
+
+## Understanding Confidence Intervals
+
+### The Basic Concept
+
+A confidence interval represents uncertainty in a measurement:
+
+| Component | Meaning |
+|-----------|---------|
+| Point estimate | Best single guess (e.g., 15% weight loss) |
+| Lower bound | Lowest plausible value |
+| Upper bound | Highest plausible value |
+| Confidence level | How confident we are the true value is within range |
+
+### How to Read a CI
+
+**Example: Weight loss of 15.0% (95% CI: 13.5% to 16.5%)**
+
+- **15.0%**: Best estimate of the true effect
+- **13.5%**: Lowest plausible weight loss
+- **16.5%**: Highest plausible weight loss
+- **95%**: If we repeated this study 100 times, 95 intervals would contain the true value
+
+### What 95% Confidence Really Means
+
+| Common Misinterpretation | Correct Interpretation |
+|--------------------------|------------------------|
+| "95% chance the true value is in this range" | Incorrect - the true value is fixed |
+| "95% of the data falls in this range" | No - CIs are about estimates, not data |
+| "Correct interpretation" | If we repeated the study many times, 95% of CIs would contain the true value |
+
+## Confidence Intervals in Peptide Research
+
+### Trial Results Examples
+
+**STEP 1 (Semaglutide 2.4 mg):**
+- Weight change: -14.9% (95% CI: -15.7% to -14.2%)
+- Interpretation: True weight loss likely between 14.2% and 15.7%
+- Narrow CI indicates precise estimate
+
+**SURMOUNT-1 (Tirzepatide 15 mg):**
+- Weight change: -22.5% (95% CI: -23.6% to -21.4%)
+- Interpretation: True effect between 21.4% and 23.6%
+- Very narrow CI reflects large sample size
+
+### Comparing Treatments Using CIs
+
+```
+Semaglutide:    |----[====15%====]----|
+                     13.5%      16.5%
+
+Tirzepatide:               |----[====22.5%====]----|
+                                21%         24%
+
+                |_________|_________|_________|
+                    10%      15%       20%      25%
+```
+
+**Non-overlapping CIs suggest statistically significant difference.**
+
+## Interpreting Confidence Intervals
+
+### What Wide vs Narrow CIs Tell You
+
+| CI Width | Indicates | Causes |
+|----------|-----------|--------|
+| Narrow | High precision | Large sample size, low variability |
+| Wide | Low precision | Small sample size, high variability |
+
+### Relationship to Statistical Significance
+
+| CI Relationship to Zero/Null | Statistical Significance |
+|------------------------------|-------------------------|
+| CI excludes zero (or null value) | P < 0.05 (significant) |
+| CI includes zero | P > 0.05 (not significant) |
+| CI barely excludes zero | P close to 0.05 |
+
+**Example:**
+- Effect: 5.0% (95% CI: 1.2% to 8.8%) - Significant (excludes 0)
+- Effect: 2.0% (95% CI: -0.5% to 4.5%) - Not significant (includes 0)
+
+### CIs for Risk Ratios and Odds Ratios
+
+For ratios, the null value is 1.0, not 0:
+
+| Result | Interpretation |
+|--------|----------------|
+| RR = 0.70 (CI: 0.55-0.90) | Significant reduction (excludes 1) |
+| RR = 0.85 (CI: 0.70-1.05) | Not significant (includes 1) |
+| RR = 0.60 (CI: 0.50-0.72) | Strong significant reduction |
+
+## Factors Affecting CI Width
+
+### What Makes CIs Narrower
+
+| Factor | Effect on CI | Explanation |
+|--------|--------------|-------------|
+| Larger sample size | Narrower | More data = more precision |
+| Lower variability | Narrower | Less spread in outcomes |
+| Higher confidence level (99% vs 95%) | Wider | More certain = wider range |
+
+### Sample Size Impact
+
+```
+n = 50:   |--------[====Effect====]--------|  (Wide CI)
+
+n = 200:     |---[====Effect====]---|         (Moderate CI)
+
+n = 1000:       |-[Effect]-|                  (Narrow CI)
+```
+
+Larger trials produce more precise estimates.
+
+## CIs vs P-Values
+
+### Complementary Information
+
+| Metric | What It Tells You |
+|--------|-------------------|
+| P-value | Probability result is due to chance |
+| Confidence interval | Range of plausible effect sizes |
+| Effect size | Magnitude of the difference |
+
+### Why CIs Are Often Preferred
+
+| Advantage of CIs | Explanation |
+|------------------|-------------|
+| Show effect magnitude | P-values don't indicate size |
+| Display precision | Width shows certainty |
+| Enable comparison | Can visually compare treatments |
+| Not dichotomous | Avoid "significant vs not" thinking |
+
+## Practical Applications
+
+### Evaluating Clinical Meaningfulness
+
+**Question: Is this effect clinically important?**
+
+Look at the entire CI, not just the point estimate:
+
+| Scenario | CI | Interpretation |
+|----------|-----|----------------|
+| All values clinically meaningful | 12-18% weight loss | Clearly beneficial |
+| Mixed values | 2-8% weight loss | Uncertain clinical importance |
+| Includes trivial effects | -1% to 5% weight loss | May not be meaningful |
+
+### Decision Making with CIs
+
+Ask: "Would I be satisfied if the true effect is at the lower bound?"
+
+- CI: 15-22% weight loss - Yes, even 15% is substantial
+- CI: 2-10% weight loss - Maybe, depends on context
+- CI: -1% to 5% weight loss - No, might have no real effect
+
+## Frequently Asked Questions
+
+### Why do some studies report 90% or 99% confidence intervals?
+
+The confidence level is a choice. 95% is conventional, but 90% CIs are narrower (used when precision matters more) and 99% CIs are wider (used when more certainty is required). FDA bioequivalence studies often use 90% CIs. The choice should be pre-specified, not selected after seeing results.
+
+### How do confidence intervals relate to clinical decision-making?
+
+CIs help clinicians understand uncertainty. A narrow CI around a large effect provides confidence the treatment works well. A wide CI suggests results could vary considerably. Clinicians should consider whether even the lower bound represents worthwhile benefit for their patient.
+
+### Can two treatments with overlapping CIs still be statistically different?
+
+Yes. Visual CI overlap is a rough guide, but overlapping CIs don't necessarily mean non-significance. Two intervals can overlap substantially yet still show a statistically significant difference when directly compared. Formal statistical tests of the difference are more reliable than visual assessment.

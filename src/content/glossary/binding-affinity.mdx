@@ -1,0 +1,145 @@
+---
+term: "Binding Affinity"
+definition: "is the strength of interaction between a ligand (such as a drug or peptide) and its binding partner (such as a receptor or enzyme), typically quantified by the dissociation constant (Kd). Lower Kd values indicate tighter binding and higher affinity."
+aliases: ["Receptor affinity", "Ligand affinity", "Kd", "Dissociation constant"]
+relatedPeptides: ["semaglutide", "tirzepatide", "ipamorelin"]
+relatedTerms: ["ec50", "potency", "selectivity", "receptor-agonist"]
+category: "mechanism"
+lastUpdated: 2026-02-01
+metaTitle: "What is Binding Affinity? Definition & Kd Explained | PepCodex"
+metaDescription: "Binding affinity measures how strongly a drug binds its target. Learn about Kd, receptor binding, and why affinity matters for peptide effectiveness."
+---
+
+## Understanding Binding Affinity
+
+Binding affinity describes the strength of molecular interactions:
+
+```
+Drug + Receptor ⇌ Drug-Receptor Complex
+      kon →
+      ← koff
+
+Kd = koff / kon = [Drug][Receptor] / [Drug-Receptor]
+```
+
+### Key Principles
+
+| Concept | Meaning | Implication |
+|---------|---------|-------------|
+| Low Kd | Tight binding | Drug stays bound longer |
+| High Kd | Weak binding | Drug dissociates easily |
+| kon | Association rate | How fast binding occurs |
+| koff | Dissociation rate | How fast drug leaves |
+
+## The Dissociation Constant (Kd)
+
+### Interpreting Kd Values
+
+| Kd Range | Affinity Level | Example |
+|----------|----------------|---------|
+| pM (10^-12 M) | Extremely high | Therapeutic antibodies |
+| nM (10^-9 M) | High | Most peptide drugs |
+| uM (10^-6 M) | Moderate | Some small molecules |
+| mM (10^-3 M) | Low | Metabolites, substrates |
+
+### What Kd Physically Means
+
+Kd equals the concentration at which 50% of receptors are occupied:
+
+```
+Receptor Occupancy
+100%|         _____
+    |        /
+ 50%|-------*---- At Kd, 50% occupied
+    |      /
+  0%|_____/____________
+         Kd    [Ligand]
+```
+
+## Binding Kinetics
+
+### Beyond Equilibrium Affinity
+
+Two drugs with identical Kd can behave differently:
+
+| Property | Drug A | Drug B |
+|----------|--------|--------|
+| Kd | 1 nM | 1 nM |
+| kon | 10^6 M^-1s^-1 | 10^8 M^-1s^-1 |
+| koff | 10^-3 s^-1 | 10^-1 s^-1 |
+| Binding | Slow on, slow off | Fast on, fast off |
+| Result | Long-lasting | Rapidly reversible |
+
+**Drug A** provides sustained effect; **Drug B** allows rapid response to concentration changes.
+
+### Residence Time
+
+Drug-receptor residence time (1/koff) often correlates better with in vivo duration than Kd alone:
+
+- **Long residence time**: Sustained effect, less frequent dosing
+- **Short residence time**: Rapid onset/offset, easier titration
+
+## Binding Affinity in Peptide Research
+
+### GLP-1 Receptor Binding
+
+| Agonist | GLP-1R Affinity | Notes |
+|---------|-----------------|-------|
+| Native GLP-1 | Kd ~0.5-1 nM | High affinity, rapidly degraded |
+| Semaglutide | Kd ~0.1-0.5 nM | Similar affinity, albumin binding extends action |
+| Tirzepatide | Kd ~0.5-2 nM | Biased agonist, different signaling |
+
+### Growth Hormone Secretagogue Receptor
+
+| Ligand | GHS-R Affinity | Notes |
+|--------|----------------|-------|
+| Ghrelin | Kd ~1-10 nM | Endogenous ligand |
+| Ipamorelin | Kd ~1-5 nM | Selective synthetic agonist |
+| MK-677 | Kd ~1-5 nM | Orally active, non-peptide |
+
+## Affinity vs Function
+
+### Affinity Doesn't Equal Activity
+
+High affinity is necessary but not sufficient:
+
+| Scenario | Affinity | Efficacy | Result |
+|----------|----------|----------|--------|
+| Full agonist | High | High | Strong activation |
+| Partial agonist | High | Moderate | Limited activation |
+| Antagonist | High | Zero | Blocks receptor |
+| Weak agonist | Low | High | Needs high concentration |
+
+### Receptor Reserve
+
+Systems with receptor reserve can achieve maximum response without full receptor occupancy:
+
+- Maximum effect at 20% occupancy = high receptor reserve
+- Maximum effect at 90% occupancy = low receptor reserve
+
+This explains why EC50 (functional) is often lower than Kd (binding).
+
+## Methods to Measure Affinity
+
+### Common Techniques
+
+| Method | Measures | Advantage |
+|--------|----------|-----------|
+| Radioligand binding | Kd, Bmax | Classic, quantitative |
+| Surface plasmon resonance (SPR) | kon, koff, Kd | Real-time kinetics |
+| Isothermal calorimetry (ITC) | Kd, thermodynamics | Label-free |
+| Fluorescence polarization | Kd | High-throughput |
+
+## Frequently Asked Questions
+
+### Why is a lower Kd better?
+
+Lower Kd means tighter binding, so the drug is effective at lower concentrations. This typically translates to lower doses, potentially fewer off-target effects, and often longer duration of action. However, very tight binding isn't always desirable if rapid reversibility is needed.
+
+### How does binding affinity relate to potency?
+
+Affinity (Kd) measures binding strength; potency (EC50) measures functional effect. They're related but not identical. A drug with high affinity usually has high potency, but signaling efficiency and receptor reserve also contribute. EC50 is often lower than Kd due to signal amplification.
+
+### Can binding affinity be too high?
+
+Yes. Extremely high affinity (very low Kd) can cause problems: slow receptor turnover, prolonged effects that are hard to reverse, potential for accumulation, or "trapping" at non-target sites. Optimal affinity balances efficacy with manageable pharmacokinetics.

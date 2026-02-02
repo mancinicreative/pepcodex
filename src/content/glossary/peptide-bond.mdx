@@ -1,91 +1,108 @@
 ---
 term: "Peptide Bond"
-definition: "is a covalent chemical bond formed between the carboxyl group of one amino acid and the amino group of another, releasing a water molecule. Peptide bonds link amino acids together to form peptides and proteins. The peptide bond's properties determine much of a peptide's structure and stability."
-aliases: ["Amide bond", "Peptidic bond"]
-relatedPeptides: ["bpc-157", "semaglutide"]
-relatedTerms: ["amino-acid", "peptide", "protein"]
+definition: "is a covalent chemical bond formed between the carboxyl group of one amino acid and the amino group of another through a condensation reaction that releases water. Peptide bonds are the fundamental linkages that connect amino acids to form peptides and proteins, with their unique properties determining much of a peptide's structure and stability."
+aliases: ["Amide bond", "Peptidic bond", "CO-NH bond"]
+relatedPeptides: ["bpc-157", "semaglutide", "tb-500"]
+relatedTerms: ["amino-acid", "peptide", "protein", "n-terminus", "c-terminus", "primary-structure"]
 category: "general"
-lastUpdated: 2026-01-21
-metaTitle: "What is a Peptide Bond? Definition | PepCodex"
-metaDescription: "A peptide bond links amino acids together. Learn how peptide bonds form and why they're important for peptide structure and function."
+lastUpdated: 2026-02-01
+metaTitle: "Peptide Bond - Definition & Role in Peptide Research"
+metaDescription: "A peptide bond is the covalent link between amino acids formed through condensation. Learn how peptide bonds form and their importance in peptide drug design."
 ---
 
 ## How Peptide Bonds Form
 
-Peptide bond formation is a condensation reaction:
+Peptide bond formation is a condensation (dehydration) reaction where two amino acids join together with the release of a water molecule:
 
 ```
 Amino Acid 1 + Amino Acid 2 → Dipeptide + Water
    (C-OH)      (H-N)            (C-N)      (H2O)
 ```
 
-1. Carboxyl group (-COOH) of first amino acid
-2. Amino group (-NH2) of second amino acid
-3. Water molecule released
-4. C-N bond formed (peptide bond)
+The reaction proceeds as follows:
+
+1. **Carboxyl group** (-COOH) of first amino acid approaches
+2. **Amino group** (-NH2) of second amino acid
+3. **Water molecule** (H2O) is released
+4. **C-N bond** is formed (the peptide bond)
+
+In living cells, this reaction is catalyzed by ribosomes and requires ATP energy. In laboratory peptide synthesis, coupling reagents activate the carboxyl group to drive the reaction.
 
 ## Peptide Bond Properties
 
-| Property | Description | Importance |
-|----------|-------------|------------|
-| Planar | Atoms in same plane | Limits flexibility |
-| Partial double bond | 40% double bond character | Restricts rotation |
-| Trans configuration | Usually trans (more stable) | Affects folding |
-| Resonance | Electrons delocalized | Stabilizes structure |
+The peptide bond has unique chemical properties that distinguish it from simple single bonds:
+
+| Property | Description | Significance |
+|----------|-------------|--------------|
+| Planar | All atoms lie in same plane | Limits conformational flexibility |
+| Partial double bond | ~40% double bond character | Restricts rotation around C-N |
+| Trans configuration | Usually 180 degrees (trans) | More stable than cis (0 degrees) |
+| Resonance stabilized | Electrons delocalized | Increases bond strength |
+| Bond length | 1.33 Angstroms | Shorter than single C-N (1.47 A) |
+
+The partial double bond character arises from resonance between two forms, where electrons are shared between the C=O and C-N bonds.
 
 ## Peptide Chain Terminology
+
+Understanding peptide bonds requires familiarity with chain terminology:
 
 | Term | Description |
 |------|-------------|
 | N-terminus | Free amino group end (start) |
 | C-terminus | Free carboxyl group end (end) |
-| Backbone | Repeating N-C-C pattern |
+| Backbone | Repeating N-Calpha-C pattern |
 | Side chains | R groups extending from backbone |
 | Residue | Individual amino acid in chain |
+| Peptide unit | One peptide bond plus adjacent atoms |
 
 ## Breaking Peptide Bonds
 
+Peptide bonds can be broken through several mechanisms, which is important for understanding peptide drug stability:
+
 ### Enzymatic Cleavage
-- **Proteases/peptidases** break peptide bonds
-- Specific enzymes target specific sequences
-- This is why many peptides have short half-lives
+- **Proteases/peptidases** specifically break peptide bonds
+- Different enzymes target different sequences
+- This is why many peptides have short half-lives in vivo
 
 ### Chemical Hydrolysis
-- Strong acid or base
-- High temperature
-- Returns amino acids
+- Strong acid (6M HCl) or base
+- High temperature (110 degrees C)
+- Completely hydrolyzes peptide to amino acids
 
 ### Drug Design Implications
 - Protecting peptide bonds from enzymes
 - Using modified bonds (pseudopeptides)
-- Strategic amino acid placement
+- Strategic placement of resistant amino acids
 
-## Peptide Bond Angles and Folding
+## Peptide Bond Angles and Protein Folding
 
-The peptide bond restricts rotation around C-N:
+The geometry around peptide bonds determines how proteins can fold:
 
-| Angle | Name | Rotation |
-|-------|------|----------|
-| φ (phi) | N-Cα bond | Freely rotates |
-| ψ (psi) | Cα-C bond | Freely rotates |
-| ω (omega) | C-N peptide bond | Restricted (~180°) |
+| Angle | Name | Bond | Rotation |
+|-------|------|------|----------|
+| phi | N-Calpha bond | Before alpha carbon | Freely rotates |
+| psi | Calpha-C bond | After alpha carbon | Freely rotates |
+| omega | C-N peptide bond | The peptide bond | Restricted (~180 degrees) |
 
-These angles determine secondary structures (helices, sheets).
+These dihedral angles determine secondary structures. The restricted omega angle means most peptide bonds adopt the trans configuration, while proline can form cis peptide bonds more readily.
 
-## Peptide Bonds and Drug Stability
+## Peptide Bonds in Drug Design
 
 ### Challenges
-- Enzymatic degradation in gut (oral peptides)
-- Plasma proteases reduce half-life
-- Immune recognition possible
+- Enzymatic degradation in the gut (oral peptides)
+- Plasma proteases reduce circulating half-life
+- Immune recognition of peptide sequences
 
-### Solutions in Drug Design
+### Solutions
 - **Cyclic peptides** - Protect N and C termini
-- **D-amino acids** - Enzymes don't recognize
-- **N-methylation** - Blocks enzyme access
-- **Pseudopeptide bonds** - Modified bond chemistry
+- **D-amino acids** - Enzymes don't recognize mirror images
+- **N-methylation** - Blocks enzyme access to backbone
+- **Pseudopeptide bonds** - Modified bond chemistry (thioamide, reduced)
+- **Peptide stapling** - Cross-links stabilize structure
 
 ## Counting Peptide Bonds
+
+The number of peptide bonds is always one less than the number of amino acids:
 
 | Peptide Type | Amino Acids | Peptide Bonds |
 |--------------|-------------|---------------|
@@ -95,18 +112,18 @@ These angles determine secondary structures (helices, sheets).
 | BPC-157 | 15 | 14 |
 | Semaglutide | 31 | 30 |
 
-Formula: Peptide bonds = (number of amino acids) - 1
+**Formula:** Peptide bonds = (number of amino acids) - 1
 
 ## Frequently Asked Questions
 
 ### What's the difference between a peptide bond and a disulfide bond?
 
-Peptide bonds link amino acids in sequence (backbone). Disulfide bonds form between cysteine residues, connecting different parts of the chain (or different chains). Peptide bonds create the chain; disulfide bonds help fold and stabilize it.
+Peptide bonds link amino acids in sequence along the backbone, connecting the carboxyl group of one residue to the amino group of the next. Disulfide bonds form between the sulfur atoms of two cysteine residues, connecting different parts of the chain (or different chains entirely). Peptide bonds create the chain; disulfide bonds help fold and stabilize it.
 
 ### Why can't most peptides be taken orally?
 
-Digestive enzymes (proteases) efficiently break peptide bonds. The stomach and intestines are designed to break down proteins into amino acids for absorption. Most peptides are rapidly degraded before they can be absorbed intact.
+Digestive enzymes (proteases) efficiently break peptide bonds. The stomach and intestines are designed to break down dietary proteins into amino acids for absorption. Most peptide drugs are rapidly degraded before they can be absorbed intact, which is why injection is the common route of administration.
 
 ### How do peptide drugs survive in the body?
 
-Drug designers modify peptides to resist breakdown: using D-amino acids (enzyme-invisible), adding protective groups, creating cyclic structures, attaching to carriers like albumin, or using non-natural amino acids at susceptible positions.
+Drug designers modify peptides to resist breakdown: using D-amino acids that enzymes don't recognize, adding protective chemical groups, creating cyclic structures, attaching to carriers like albumin or fatty acids, or using non-natural amino acids at susceptible positions in the sequence.

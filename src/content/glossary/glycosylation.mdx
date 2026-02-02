@@ -1,0 +1,182 @@
+---
+term: "Glycosylation"
+definition: "is the enzymatic process of attaching carbohydrate (sugar) groups to proteins or peptides, typically at specific asparagine (N-linked) or serine/threonine (O-linked) residues. Glycosylation affects protein folding, stability, half-life, and biological activity, and is a critical quality attribute for many biopharmaceuticals including therapeutic antibodies and hormones."
+aliases: ["Glycan attachment", "Sugar modification", "Carbohydrate conjugation"]
+relatedPeptides: ["erythropoietin", "follicle-stimulating-hormone", "interferon-beta"]
+relatedTerms: ["pegylation", "half-life", "protein", "bioavailability"]
+category: "general"
+lastUpdated: 2026-02-01
+metaTitle: "What is Glycosylation? Protein Sugar Modifications | PepCodex"
+metaDescription: "Glycosylation attaches sugar groups to proteins, affecting stability and function. Learn about N-linked and O-linked glycosylation in biopharmaceuticals."
+---
+
+## Understanding Glycosylation
+
+Glycosylation is the attachment of carbohydrate chains (glycans) to proteins:
+
+```
+Protein + Sugar chains → Glycoprotein
+```
+
+Unlike chemical modifications (acetylation, PEGylation), glycosylation is primarily an enzymatic process occurring in living cells. It is one of the most common and complex post-translational modifications.
+
+## Types of Glycosylation
+
+### N-Linked Glycosylation
+Attachment to asparagine (Asn) in the sequence Asn-X-Ser/Thr:
+
+| Feature | Description |
+|---------|-------------|
+| Attachment site | Asparagine nitrogen |
+| Recognition sequence | Asn-X-Ser/Thr (X ≠ Pro) |
+| Location | Endoplasmic reticulum, Golgi |
+| Core structure | GlcNAc₂Man₃ |
+
+### O-Linked Glycosylation
+Attachment to serine or threonine hydroxyl groups:
+
+| Feature | Description |
+|---------|-------------|
+| Attachment site | Ser/Thr oxygen |
+| Recognition sequence | No strict sequence motif |
+| Location | Golgi apparatus |
+| Core structure | Variable (GalNAc most common) |
+
+### Comparison
+
+| Property | N-Linked | O-Linked |
+|----------|----------|----------|
+| Amino acid | Asparagine | Serine, Threonine |
+| Sequence requirement | Asn-X-Ser/Thr | None specific |
+| Typical size | 1-20+ sugars | 1-10 sugars |
+| Processing | ER + Golgi | Golgi only |
+
+## Functions of Glycosylation
+
+### Structural Effects
+
+| Function | Mechanism |
+|----------|-----------|
+| Protein folding | Glycans assist proper folding in ER |
+| Stability | Shield protein surface from degradation |
+| Solubility | Increase hydrophilicity |
+| Aggregation prevention | Steric blocking of aggregation sites |
+
+### Biological Effects
+
+| Function | Examples |
+|----------|----------|
+| Cell signaling | Receptor recognition |
+| Immune recognition | Antibody effector functions |
+| Half-life regulation | Clearance receptor binding |
+| Cell adhesion | Selectin interactions |
+
+## Glycosylation in Biopharmaceuticals
+
+### Impact on Drug Properties
+
+| Property | Effect of Glycosylation |
+|----------|------------------------|
+| Half-life | Often extended (shields from proteases) |
+| Immunogenicity | Can be increased or decreased |
+| Efficacy | May be essential for activity |
+| Manufacturing | Requires mammalian cell expression |
+
+### Glycosylated Drug Examples
+
+| Drug | Type | Glycosylation Importance |
+|------|------|-------------------------|
+| Erythropoietin (EPO) | N-linked (3 sites) + O-linked (1 site) | Critical for half-life |
+| Etanercept (Enbrel) | N-linked | Stability and function |
+| Rituximab | N-linked | Effector function |
+| Interferon-beta | N-linked | Stability, reduced immunogenicity |
+
+## Glycosylation and Half-Life
+
+### The Asialoglycoprotein Receptor System
+
+| Glycan Terminal | Receptor Recognition | Half-Life Effect |
+|-----------------|---------------------|------------------|
+| Sialic acid | Not recognized | Long half-life |
+| Galactose | Recognized | Rapid clearance |
+| GlcNAc | Mannose receptor | Rapid clearance |
+
+**Key insight**: Terminal sialic acid caps protect glycoproteins from rapid liver clearance.
+
+### Erythropoietin Example
+- Native EPO: ~4-8 hours half-life
+- Darbepoetin (extra glycosylation sites): ~25 hours half-life
+- Same protein, more glycans = longer action
+
+## Manufacturing Considerations
+
+### Expression Systems
+
+| System | Glycosylation Capability |
+|--------|-------------------------|
+| E. coli | None (no glycosylation machinery) |
+| Yeast | High mannose (often immunogenic) |
+| Insect cells | Simpler, paucimannose |
+| CHO cells | Human-like (preferred) |
+| Human cells | Authentic human patterns |
+
+### Quality Control
+
+| Attribute | Why It Matters |
+|-----------|---------------|
+| Glycan profile | Affects efficacy and safety |
+| Sialylation level | Half-life determinant |
+| Fucosylation | Affects antibody ADCC |
+| Consistency | Batch-to-batch reproducibility |
+
+## Glycosylation vs. Other Modifications
+
+| Modification | Size Added | Half-Life Impact | Manufacturing |
+|--------------|-----------|------------------|---------------|
+| Glycosylation | ~2-20 kDa | Moderate extension | Requires cells |
+| PEGylation | 5-40 kDa | Strong extension | Chemical |
+| Lipidation | ~0.3 kDa | Strong extension | Chemical |
+| Fc fusion | ~50 kDa | Strong extension | Requires cells |
+
+## Glycoengineering
+
+### Strategies to Optimize Glycosylation
+
+| Approach | Goal |
+|----------|------|
+| Add glycosylation sites | Increase half-life (darbepoetin) |
+| Remove glycosylation sites | Reduce heterogeneity |
+| Modify host cell enzymes | Control glycan structures |
+| In vitro glycan modification | Precise control |
+
+### Glycoengineered Products
+
+| Product | Modification | Benefit |
+|---------|--------------|---------|
+| Darbepoetin alfa | 2 extra N-glycan sites | 3x longer half-life than EPO |
+| Afucosylated antibodies | Removed core fucose | Enhanced ADCC |
+
+## Frequently Asked Questions
+
+### Why can't glycosylated proteins be made in bacteria?
+
+Bacteria like E. coli lack the cellular machinery for eukaryotic glycosylation. They have no endoplasmic reticulum or Golgi apparatus where glycosylation occurs, and don't produce the necessary glycosyltransferase enzymes. Glycoproteins must be produced in eukaryotic cells (typically CHO cells for pharmaceuticals).
+
+### How does glycosylation differ from PEGylation?
+
+| Aspect | Glycosylation | PEGylation |
+|--------|---------------|------------|
+| Origin | Natural, enzymatic | Synthetic, chemical |
+| Attachment | Specific residues | Various sites |
+| Structure | Complex branched | Linear or branched polymer |
+| Biodegradability | Fully metabolized | Limited |
+| Control | Cell-dependent | Chemical control |
+
+### Can glycosylation patterns affect drug safety?
+
+Yes. Non-human glycan patterns can be immunogenic. For example:
+- Alpha-gal epitopes (from mouse cells) can cause allergic reactions
+- High mannose patterns may trigger unwanted immune responses
+- Inconsistent glycosylation between batches can affect efficacy
+
+This is why human-like glycosylation from CHO cells is preferred for biopharmaceuticals.

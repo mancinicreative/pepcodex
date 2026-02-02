@@ -1,0 +1,156 @@
+---
+term: "Area Under the Curve"
+definition: "is a pharmacokinetic measure representing total drug exposure over time, calculated as the integral of the plasma concentration-time curve. AUC reflects the overall amount of drug reaching systemic circulation and is used to assess bioavailability, compare formulations, and determine total drug exposure in therapeutic monitoring."
+aliases: ["AUC", "Area under the concentration-time curve", "Total drug exposure", "AUC0-inf", "AUC0-t"]
+relatedPeptides: ["semaglutide", "tirzepatide", "liraglutide"]
+relatedTerms: ["bioavailability", "plasma-concentration", "peak-level", "clearance", "half-life"]
+category: "administration"
+lastUpdated: 2026-02-01
+metaTitle: "What is Area Under the Curve (AUC)? Drug Exposure Explained | PepCodex"
+metaDescription: "AUC measures total drug exposure over time. Learn how area under the curve is used to assess bioavailability and compare peptide formulations."
+---
+
+## Understanding Area Under the Curve
+
+Area Under the Curve (AUC) captures total systemic drug exposure by measuring the entire concentration-time profile. Unlike peak or trough levels that capture single moments, AUC integrates all drug exposure from administration through elimination.
+
+```
+Concentration
+     ^
+     |     Peak
+     |      /\
+     |     /  \
+     |    /    \
+     |   / AUC  \
+     |  /________\____
+     |        Time →
+```
+
+The shaded area between the curve and the time axis represents the AUC.
+
+## Types of AUC Measurements
+
+| Parameter | Description | Use |
+|-----------|-------------|-----|
+| AUC0-t | Area from time 0 to last measurable time point | Practical measurement limit |
+| AUC0-inf | Area extrapolated to infinity | Complete drug exposure |
+| AUC0-tau | Area over one dosing interval at steady-state | Repeated dosing exposure |
+
+## Why AUC Matters
+
+### Bioavailability Determination
+AUC is the gold standard for assessing how much drug reaches circulation:
+
+**Absolute bioavailability:**
+```
+F = AUC (test route) / AUC (IV) x 100%
+```
+
+**Relative bioavailability:**
+```
+F = AUC (test formulation) / AUC (reference formulation) x 100%
+```
+
+### Bioequivalence Testing
+Generic drug approval requires demonstrating similar AUC to the reference product:
+
+| Parameter | Bioequivalence Criteria |
+|-----------|------------------------|
+| AUC ratio | 80-125% of reference |
+| Cmax ratio | 80-125% of reference |
+| Confidence interval | 90% CI must fall within bounds |
+
+## AUC in Peptide Pharmacology
+
+### Comparing Administration Routes
+AUC reveals dramatic differences in peptide delivery:
+
+| Route (for typical peptide) | Relative AUC |
+|-----------------------------|--------------|
+| Intravenous | 100% (reference) |
+| Subcutaneous | 70-100% |
+| Intramuscular | 75-100% |
+| Oral | Typically less than 1% |
+
+### Oral Semaglutide Example
+The oral formulation (Rybelsus) achieves only ~1% bioavailability:
+- AUC is dramatically lower than subcutaneous
+- Higher oral doses compensate for low bioavailability
+- 14mg oral approximates 0.5mg subcutaneous exposure
+
+## Clinical Applications of AUC
+
+### Drug Development
+AUC guides multiple development decisions:
+
+| Application | How AUC Is Used |
+|-------------|-----------------|
+| Dose selection | Correlate AUC with efficacy/safety |
+| Formulation comparison | Ensure equivalent exposure |
+| Drug interactions | Assess changes in exposure |
+| Special populations | Evaluate impact of renal/hepatic impairment |
+
+### Therapeutic Monitoring
+For some drugs, AUC-based monitoring guides dosing:
+- Certain chemotherapy agents
+- Immunosuppressants
+- Antiretrovirals
+
+## Calculating and Interpreting AUC
+
+### Calculation Methods
+
+**Trapezoidal rule (most common):**
+- Divides curve into trapezoids between sampling times
+- Sums trapezoid areas
+- Practical with limited sampling points
+
+**Compartmental modeling:**
+- Fits data to pharmacokinetic model
+- Calculates AUC from model parameters
+- Allows extrapolation and prediction
+
+### Relationships to Other Parameters
+
+| Relationship | Formula | Meaning |
+|--------------|---------|---------|
+| AUC and Clearance | AUC = Dose / CL | Higher clearance = lower AUC |
+| AUC and Half-life | Proportional | Longer half-life = higher AUC |
+| AUC and F | AUC = (F x Dose) / CL | Bioavailability directly affects AUC |
+
+## Factors Affecting AUC
+
+### Drug Factors
+- **Dose** - Higher dose = proportionally higher AUC (for linear kinetics)
+- **Formulation** - Affects absorption extent
+- **Route** - Determines bioavailability
+
+### Patient Factors
+- **Clearance** - Reduced clearance increases AUC
+- **Hepatic function** - Impairment may increase AUC
+- **Renal function** - Affects AUC for renally cleared drugs
+- **Drug interactions** - May alter metabolism and clearance
+
+## AUC-Based Dosing Adjustments
+
+For drugs where total exposure drives efficacy or toxicity:
+
+| AUC Finding | Interpretation | Possible Action |
+|-------------|----------------|-----------------|
+| Lower than target | Insufficient exposure | Increase dose |
+| Within target range | Appropriate exposure | Continue dosing |
+| Higher than target | Excessive exposure | Reduce dose |
+
+## Frequently Asked Questions
+
+### How is AUC different from measuring a single blood level?
+
+A single blood level only captures one moment in time. AUC integrates the entire concentration-time profile, accounting for both how high levels go and how long they remain elevated. It provides a complete picture of total drug exposure.
+
+### Why is AUC important for comparing drug formulations?
+
+Different formulations may have different absorption rates, leading to different peaks, but the same total amount may ultimately reach circulation. AUC reveals whether total exposure is equivalent, which is essential for therapeutic interchangeability.
+
+### Does higher AUC always mean better drug effect?
+
+Not necessarily. Higher AUC means more total exposure, but optimal therapeutic effect depends on achieving concentrations within the therapeutic range. Excessive AUC may increase toxicity without improving efficacy.

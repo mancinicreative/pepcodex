@@ -1,16 +1,65 @@
 ---
 term: "Efficacy"
-definition: "is the ability of a drug or treatment to produce the desired therapeutic effect under ideal, controlled conditions. Efficacy is typically established in clinical trials where variables are carefully managed. It differs from effectiveness, which measures real-world performance under typical conditions."
-aliases: ["Drug efficacy", "Therapeutic efficacy"]
+definition: "is the maximum response or effect a drug can produce regardless of dose, representing its intrinsic ability to activate a receptor and generate a biological response. In pharmacology, efficacy (Emax) distinguishes full agonists from partial agonists, while in clinical contexts it measures a treatment's ability to produce desired therapeutic effects under controlled conditions."
+aliases: ["Drug efficacy", "Therapeutic efficacy", "Emax", "Intrinsic efficacy", "Maximal efficacy"]
 relatedPeptides: ["semaglutide", "tirzepatide", "liraglutide"]
-relatedTerms: ["clinical-trial", "biomarker", "placebo"]
-category: "research"
-lastUpdated: 2026-01-21
-metaTitle: "What is Efficacy? Definition | PepCodex"
-metaDescription: "Efficacy measures how well a drug works in controlled conditions. Learn about efficacy in peptide research and clinical trials."
+relatedTerms: ["potency", "ec50", "dose-response-curve", "receptor-agonist"]
+category: "mechanism"
+lastUpdated: 2026-02-01
+metaTitle: "What is Efficacy? Emax Definition | PepCodex"
+metaDescription: "Efficacy is the maximum effect a drug can produce. Learn about intrinsic efficacy (Emax), how it differs from potency, and its role in peptide pharmacology."
 ---
 
-## Efficacy vs Effectiveness
+## Two Meanings of Efficacy
+
+The term "efficacy" has distinct meanings in pharmacology and clinical medicine:
+
+| Context | Definition | Measure |
+|---------|------------|---------|
+| Pharmacological | Maximum possible effect (ceiling) | Emax |
+| Clinical | How well treatment works | Trial outcomes |
+
+This page covers both concepts, starting with the pharmacological definition.
+
+## Pharmacological Efficacy (Emax)
+
+### The Maximum Response
+
+Efficacy represents the ceiling of drug effect - the highest response achievable regardless of dose:
+
+```
+Response
+100%|    _____ Full agonist (high efficacy)
+    |   /
+ 75%|  /  ___ Partial agonist (moderate efficacy)
+    | / /
+ 50%|/_/
+    |/    ___ Antagonist (zero efficacy)
+ 25%|    /
+    |___/____________
+       Dose →
+```
+
+### Key Concepts
+
+| Drug Type | Efficacy | Effect |
+|-----------|----------|--------|
+| Full agonist | 100% Emax | Achieves maximum receptor activation |
+| Partial agonist | Under 100% Emax | Limited maximum response, even at high doses |
+| Antagonist | 0% Emax | Blocks receptor, produces no activation |
+
+### Efficacy vs Potency
+
+| Property | Efficacy | Potency |
+|----------|----------|---------|
+| Measures | Maximum effect | Dose for effect |
+| Curve position | Height (vertical) | Position (horizontal) |
+| Symbol | Emax | EC50 |
+| Question | How high can it go? | How much is needed? |
+
+A drug can be highly potent but have low efficacy (effective at low doses but with a limited ceiling), or less potent with high efficacy (needs more drug but reaches full effect).
+
+## Clinical Efficacy vs Effectiveness
 
 | Aspect | Efficacy | Effectiveness |
 |--------|----------|---------------|
@@ -39,7 +88,7 @@ Additional outcomes of interest:
 |--------|---------|
 | Absolute change | -15 lbs average |
 | Percent change | -12% body weight |
-| Responder rate | 70% achieved >5% loss |
+| Responder rate | 70% achieved 5%+ loss |
 | vs placebo | 10% more than placebo |
 
 ## Efficacy Data for Major Peptides
@@ -107,6 +156,10 @@ Why real-world results may differ:
 - Drug interactions
 
 ## Frequently Asked Questions
+
+### What's the difference between efficacy and potency?
+
+Potency measures how much drug is needed (EC50), while efficacy measures how much effect is possible (Emax). A highly potent drug works at low doses; a highly efficacious drug produces a large maximum effect. The most desirable drugs are both potent AND efficacious, but these properties are independent.
 
 ### If a drug has high efficacy, will it work for me?
 

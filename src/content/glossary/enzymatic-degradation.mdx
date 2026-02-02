@@ -1,0 +1,150 @@
+---
+term: "Enzymatic Degradation"
+definition: "is the breakdown of peptides by proteolytic enzymes (proteases) that cleave peptide bonds at specific recognition sites. In biological systems, enzymes like DPP-4, neprilysin, and various peptidases rapidly degrade most peptides, resulting in short half-lives. Understanding and circumventing enzymatic degradation is essential for designing peptide therapeutics with adequate duration of action."
+aliases: ["Proteolytic degradation", "Proteolysis", "Enzymatic breakdown"]
+relatedPeptides: ["semaglutide", "bpc-157", "tb-500"]
+relatedTerms: ["degradation", "peptide-bond", "dpp-4", "half-life"]
+category: "general"
+lastUpdated: 2026-02-01
+metaTitle: "What is Enzymatic Degradation? Definition | PepCodex"
+metaDescription: "Enzymatic degradation breaks down peptides through protease activity. Learn how enzymes cleave peptides and strategies to improve peptide stability in vivo."
+---
+
+## Key Peptide-Degrading Enzymes
+
+### Exopeptidases (Terminal Cleavage)
+
+| Enzyme | Target | Location | Peptides Affected |
+|--------|--------|----------|-------------------|
+| DPP-4 | N-terminal X-Pro or X-Ala | Blood, tissues | GLP-1, GIP, many peptides |
+| Aminopeptidases | N-terminus | Widespread | Most peptides |
+| Carboxypeptidases | C-terminus | Blood, tissues | Most peptides |
+| ACE | C-terminal dipeptide | Lung, blood | Angiotensin, bradykinin |
+
+### Endopeptidases (Internal Cleavage)
+
+| Enzyme | Specificity | Location | Substrates |
+|--------|------------|----------|------------|
+| Neprilysin (NEP) | Hydrophobic residues | Kidney, brain | ANP, BNP, substance P |
+| Trypsin | Lys-X, Arg-X | GI tract | Dietary peptides |
+| Chymotrypsin | Phe-X, Tyr-X, Trp-X | GI tract | Dietary peptides |
+| Elastase | Ala-X, Val-X | GI tract, neutrophils | Various |
+| Matrix metalloproteinases | Various | Tissues | ECM peptides |
+
+## Half-Lives of Native Peptides
+
+| Peptide | Native Half-Life | Primary Enzyme | Modified Version Half-Life |
+|---------|------------------|----------------|---------------------------|
+| GLP-1 | 1-2 minutes | DPP-4 | Semaglutide: ~7 days |
+| GIP | 5-7 minutes | DPP-4 | Modified GIP: hours-days |
+| Insulin | 5-6 minutes | Insulinase | Glargine: ~24 hours |
+| Glucagon | 3-6 minutes | DPP-4, proteases | Modified: hours |
+| ANP | 3 minutes | NEP | Sacubitril combo: hours |
+| Oxytocin | 3-5 minutes | Oxytocinase | Carbetocin: 4-10x longer |
+
+## Degradation in Different Compartments
+
+### Gastrointestinal Tract
+
+| Barrier | Enzymes Present | Challenge |
+|---------|-----------------|-----------|
+| Stomach | Pepsin, HCl | Acid hydrolysis |
+| Duodenum | Trypsin, chymotrypsin | Major proteolysis |
+| Jejunum/ileum | Brush border peptidases | Final breakdown |
+| Intestinal wall | Cytoplasmic peptidases | During absorption |
+
+This is why most peptides cannot be taken orally.
+
+### Blood/Plasma
+
+| Enzyme Class | Examples | Activity |
+|--------------|----------|----------|
+| Serine proteases | Thrombin, plasmin | Coagulation-related |
+| DPP family | DPP-4, FAP | N-terminal trimming |
+| ACE | ACE, ACE2 | C-terminal cleavage |
+| Carboxypeptidases | CPN, CPB | C-terminal removal |
+
+### Tissue/Cellular
+
+| Location | Key Enzymes | Function |
+|----------|-------------|----------|
+| Cell surface | NEP, ACE, DPP-4 | Extracellular clearance |
+| Lysosomes | Cathepsins | Intracellular degradation |
+| Endosomes | Cathepsins | Receptor-bound peptide |
+| Cytoplasm | Various peptidases | Cytoplasmic peptides |
+
+## Strategies to Resist Enzymatic Degradation
+
+### Amino Acid Modifications
+
+| Strategy | Mechanism | Example |
+|----------|-----------|---------|
+| D-amino acids | Enzymes don't recognize | D-Ala at DPP-4 site |
+| N-methylation | Blocks enzyme access | NMe-amino acids |
+| Alpha-methylation | Steric hindrance | Aib (aminoisobutyric acid) |
+| Unnatural amino acids | Not recognized | Semaglutide: Aib at position 8 |
+| Beta-amino acids | Altered backbone | Peptide mimetics |
+
+### Structural Modifications
+
+| Strategy | Mechanism | Application |
+|----------|-----------|-------------|
+| Cyclization | Removes termini | Cyclosporine, octreotide |
+| Disulfide stapling | Constrains structure | Somatostatin analogs |
+| N-terminal acetylation | Blocks aminopeptidases | Many research peptides |
+| C-terminal amidation | Blocks carboxypeptidases | Most therapeutic peptides |
+| PEGylation | Steric shielding | Pegfilgrastim |
+
+### Carrier Approaches
+
+| Strategy | Mechanism | Example |
+|----------|-----------|---------|
+| Albumin binding | Sequestration, size | Semaglutide (fatty acid) |
+| Fc fusion | Size, recycling | Dulaglutide |
+| Albumin fusion | Size, long circulation | Albiglutide |
+| Lipidation | Albumin binding | Liraglutide, semaglutide |
+
+## Case Study: GLP-1 Agonists
+
+Evolution of DPP-4 resistance:
+
+| Drug | Half-Life | Strategy Used |
+|------|-----------|---------------|
+| Native GLP-1 | 2 min | None |
+| Exenatide | 2.4 hours | Exendin sequence (DPP-4 resistant) |
+| Liraglutide | 13 hours | Aib8 + fatty acid (albumin binding) |
+| Semaglutide | 7 days | Aib8 + C18 fatty acid (stronger binding) |
+| Tirzepatide | 5 days | Aib2 + C20 fatty acid |
+
+## Predicting Susceptibility
+
+### Sequence Analysis Tools
+
+| Tool/Method | Purpose |
+|-------------|---------|
+| PeptideCutter | Predict protease cleavage sites |
+| MEROPS database | Protease specificity information |
+| In silico modeling | Predict vulnerable positions |
+
+### High-Risk Motifs
+
+| Motif | Susceptible To | Solution |
+|-------|----------------|----------|
+| X-Pro N-terminus | DPP-4 | Substitute or protect |
+| Lys-X or Arg-X | Trypsin-like | Substitute |
+| Phe-X, Tyr-X | Chymotrypsin-like | Substitute |
+| Unprotected termini | Exopeptidases | Cap termini |
+
+## Frequently Asked Questions
+
+### Why do peptide drugs need modifications to work?
+
+Native peptides evolved for rapid signaling with quick on/off kinetics. For drugs, we need sustained activity. Without modifications, most peptides are degraded within minutes, requiring impractical dosing (continuous infusion). Modifications extend half-life from minutes to hours or days.
+
+### Can enzymatic degradation be completely prevented?
+
+Not entirely, but it can be dramatically slowed. Even the longest-acting peptides (semaglutide at 7 days) are eventually degraded. The goal is achieving a therapeutically useful half-life, not infinite stability. Complete resistance would also prevent eventual clearance.
+
+### How do D-amino acids provide protection?
+
+Most proteases evolved to recognize L-amino acids (the natural form). D-amino acids are mirror images that don't fit the enzyme's active site. Incorporating even one D-amino acid at a cleavage site can provide substantial protection from that specific enzyme.

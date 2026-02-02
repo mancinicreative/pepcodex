@@ -1,0 +1,133 @@
+---
+term: "Liquid Chromatography"
+definition: "is a separation technique that purifies compounds by passing a liquid sample through a column packed with stationary phase material. Different molecules interact differently with the stationary phase, causing them to separate based on properties like size, charge, or hydrophobicity. This technique is essential for peptide purification and analysis."
+aliases: ["LC", "Column chromatography", "Chromatographic separation"]
+relatedPeptides: ["semaglutide", "bpc-157", "tb-500"]
+relatedTerms: ["hplc", "purity", "mass-spectrometry"]
+category: "general"
+lastUpdated: 2026-02-01
+metaTitle: "What is Liquid Chromatography? Definition | PepCodex"
+metaDescription: "Liquid chromatography separates and purifies peptides based on their chemical properties. Learn how LC works and why it's essential for peptide research."
+---
+
+## How Liquid Chromatography Works
+
+The basic principle involves differential migration:
+
+1. **Sample injection** - Mixture introduced into mobile phase (liquid)
+2. **Column passage** - Mobile phase carries sample through stationary phase
+3. **Differential interaction** - Components interact differently with stationary phase
+4. **Separation** - Components exit column at different times (retention times)
+5. **Detection** - Separated components measured as they elute
+
+| Component | Description | Role |
+|-----------|-------------|------|
+| Mobile phase | Solvent (water, acetonitrile, etc.) | Carries sample through column |
+| Stationary phase | Column packing material | Separates based on interactions |
+| Detector | UV, fluorescence, MS | Identifies eluting compounds |
+| Pump | High-pressure system | Pushes mobile phase through |
+
+## Types of Liquid Chromatography
+
+### Reverse-Phase (RP-LC)
+
+| Aspect | Details |
+|--------|---------|
+| Stationary phase | Hydrophobic (C18, C8) |
+| Mobile phase | Water/organic gradient |
+| Separation basis | Hydrophobicity |
+| Peptide use | Most common for peptides |
+
+### Ion-Exchange (IEX)
+
+| Aspect | Details |
+|--------|---------|
+| Stationary phase | Charged groups |
+| Mobile phase | Salt gradient |
+| Separation basis | Charge differences |
+| Peptide use | Charge variants, purification |
+
+### Size-Exclusion (SEC)
+
+| Aspect | Details |
+|--------|---------|
+| Stationary phase | Porous beads |
+| Mobile phase | Aqueous buffer |
+| Separation basis | Molecular size |
+| Peptide use | Aggregation analysis, buffer exchange |
+
+### Affinity Chromatography
+
+| Aspect | Details |
+|--------|---------|
+| Stationary phase | Specific ligands |
+| Mobile phase | Buffer systems |
+| Separation basis | Biological affinity |
+| Peptide use | Tagged peptide purification |
+
+## Peptide Purification Workflow
+
+Typical multi-step purification:
+
+| Step | Method | Purpose |
+|------|--------|---------|
+| 1. Crude purification | RP-LC | Remove synthesis byproducts |
+| 2. Polishing | RP-LC (optimized) | Achieve target purity |
+| 3. Salt removal | SEC or dialysis | Buffer exchange |
+| 4. Quality check | Analytical HPLC | Confirm final purity |
+
+## Resolution and Separation Quality
+
+Key parameters affecting separation:
+
+| Parameter | Effect | Optimization |
+|-----------|--------|--------------|
+| Column length | More plates = better resolution | Longer columns (cost/time tradeoff) |
+| Particle size | Smaller = sharper peaks | 3-5 micron typical |
+| Flow rate | Too fast = poor separation | Optimize for column |
+| Gradient slope | Steeper = faster but lower resolution | Balance speed/resolution |
+| Temperature | Affects selectivity | 25-60C typical |
+
+## Detection Methods
+
+| Detector | Principle | Sensitivity | Use Case |
+|----------|-----------|-------------|----------|
+| UV (214nm) | Peptide bond absorption | Moderate | Routine analysis |
+| UV (280nm) | Aromatic amino acids | Lower | Trp/Tyr-containing |
+| Fluorescence | Labeled peptides | High | Trace analysis |
+| Mass spec | Mass-to-charge ratio | High | Identification |
+| CAD/ELSD | Aerosol detection | Universal | Non-UV absorbing |
+
+## Common Challenges
+
+### Peak Problems
+
+| Issue | Cause | Solution |
+|-------|-------|----------|
+| Tailing | Secondary interactions | Add ion-pairing agent |
+| Fronting | Column overload | Reduce sample amount |
+| Poor resolution | Wrong conditions | Optimize gradient/column |
+| Ghost peaks | Contamination | Clean system, new column |
+
+### Peptide-Specific Issues
+
+| Challenge | Solution |
+|-----------|----------|
+| Adsorption | Use TFA or formic acid |
+| Aggregation | Add organic modifier |
+| Poor solubility | Adjust pH, use DMSO |
+| Oxidation | Degas solvents, fresh samples |
+
+## Frequently Asked Questions
+
+### What's the difference between LC and HPLC?
+
+HPLC (High-Performance Liquid Chromatography) is a form of liquid chromatography that uses high pressure (up to 6000+ psi) and small particle columns to achieve faster, higher-resolution separations. Standard LC uses gravity or low pressure. For peptide work, HPLC is the standard.
+
+### Why is reverse-phase most common for peptides?
+
+Peptides vary significantly in hydrophobicity based on their amino acid composition, making reverse-phase ideal for separating them. The technique is also compatible with mass spectrometry and uses volatile solvents that are easily removed during lyophilization.
+
+### How do you choose purification conditions?
+
+Start with the peptide's properties: length, charge, hydrophobicity, and solubility. Use reverse-phase with a C18 column and water/acetonitrile gradient with 0.1% TFA for most peptides. Optimize gradient slope and temperature based on initial results.

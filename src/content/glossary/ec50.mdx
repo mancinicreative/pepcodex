@@ -1,0 +1,126 @@
+---
+term: "EC50"
+definition: "is the concentration of a drug or ligand that produces 50% of its maximum possible effect, serving as a standard measure of drug potency. A lower EC50 indicates higher potency, meaning less drug is needed to achieve half-maximal response."
+aliases: ["Effective concentration 50", "Half-maximal effective concentration", "EC-50"]
+relatedPeptides: ["semaglutide", "tirzepatide", "ipamorelin"]
+relatedTerms: ["ic50", "potency", "dose-response-curve", "binding-affinity"]
+category: "mechanism"
+lastUpdated: 2026-02-01
+metaTitle: "What is EC50? Definition & Meaning | PepCodex"
+metaDescription: "EC50 is the drug concentration producing 50% of maximum effect. Learn how this potency measure is used to compare peptides and guide dosing."
+---
+
+## Understanding EC50
+
+EC50 represents the midpoint of a dose-response curve:
+
+```
+Response (%)
+100 |           ___________
+    |          /
+ 75 |         /
+    |        /
+ 50 |-------*-------- EC50 point
+    |      /
+ 25 |     /
+    |    /
+  0 |___/_____________________
+       [Drug concentration]
+```
+
+### Key Points
+
+- **Lower EC50 = Higher potency** (less drug needed)
+- **Measured in concentration units** (nM, uM, ng/mL)
+- **Specific to the measured effect** (different endpoints may have different EC50s)
+- **Independent of maximum effect** (a drug can be potent but have low efficacy)
+
+## EC50 vs Related Measures
+
+| Measure | Definition | Use Case |
+|---------|------------|----------|
+| EC50 | Concentration for 50% effect | Potency comparison |
+| IC50 | Concentration for 50% inhibition | Inhibitor potency |
+| ED50 | Dose effective in 50% of subjects | Clinical dosing |
+| Kd | Dissociation constant | Binding affinity |
+| Ki | Inhibition constant | Enzyme inhibition |
+
+### EC50 vs Kd
+
+- **Kd** measures binding affinity (how tightly drug binds)
+- **EC50** measures functional response (what happens after binding)
+- They correlate but aren't identical (receptor reserve, signal amplification)
+
+## Interpreting EC50 Values
+
+### Comparing Drug Potency
+
+| Drug | EC50 | Relative Potency |
+|------|------|------------------|
+| Drug A | 0.1 nM | Reference (1x) |
+| Drug B | 1 nM | 10x less potent |
+| Drug C | 10 nM | 100x less potent |
+
+### What Affects EC50?
+
+| Factor | Effect on EC50 |
+|--------|----------------|
+| Higher receptor affinity | Lower EC50 (more potent) |
+| Receptor reserve | Lower apparent EC50 |
+| Competing ligands | Higher apparent EC50 |
+| Assay conditions | Variable |
+| Species/tissue type | Variable |
+
+## EC50 in Peptide Research
+
+### GLP-1 Receptor Agonists
+
+Relative potency at GLP-1 receptor (approximate):
+
+| Agonist | EC50 Range | Notes |
+|---------|------------|-------|
+| Native GLP-1 | ~0.5 nM | Reference, short half-life |
+| Semaglutide | ~0.1-0.5 nM | Similar potency, much longer action |
+| Tirzepatide | ~0.1-1 nM | GLP-1 activity (also activates GIP) |
+| Exenatide | ~0.5-2 nM | Slightly less potent |
+
+### Growth Hormone Secretagogues
+
+| Secretagogue | EC50 at GHS-R | Notes |
+|--------------|---------------|-------|
+| Ghrelin | ~1-5 nM | Endogenous ligand |
+| Ipamorelin | ~1-10 nM | Selective GHS-R agonist |
+| GHRP-6 | ~1-5 nM | Less selective |
+
+## Clinical Relevance
+
+### From EC50 to Dosing
+
+EC50 helps determine clinical doses but doesn't directly translate:
+
+```
+Laboratory EC50 → Animal studies → Human PK/PD → Clinical dose
+        ↓
+    Starting point for dose finding
+```
+
+### Why EC50 Matters
+
+1. **Drug comparison**: Rank candidates by potency
+2. **Dose prediction**: Estimate therapeutic concentrations
+3. **Safety margins**: Compare EC50 for efficacy vs toxicity
+4. **Receptor selectivity**: Compare EC50 at different targets
+
+## Frequently Asked Questions
+
+### Does a lower EC50 mean a better drug?
+
+Not necessarily. Lower EC50 means higher potency (less drug needed), but other factors matter: efficacy (maximum effect), selectivity (off-target effects), pharmacokinetics (how long it lasts), and safety profile. A less potent drug at adequate dose can be equally effective.
+
+### Why might EC50 values differ between studies?
+
+EC50 depends on assay conditions: cell type, receptor expression level, incubation time, temperature, and measurement method. Published values should be compared cautiously when methodologies differ.
+
+### How does EC50 relate to the dose I take?
+
+EC50 is a laboratory measurement of concentration needed for effect. Your dose must achieve adequate tissue concentrations, accounting for absorption, distribution, and metabolism. A drug with 1 nM EC50 doesn't mean you take 1 nanomolar - the dose ensures target tissue reaches that concentration.

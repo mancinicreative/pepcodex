@@ -1,0 +1,158 @@
+---
+term: "Potency"
+definition: "is a measure of drug activity expressed in terms of the amount or concentration required to produce a defined effect, typically quantified as EC50 or ED50. A more potent drug achieves the same effect at a lower dose than a less potent drug, though potency alone does not determine clinical usefulness."
+aliases: ["Drug potency", "Pharmacological potency", "Relative potency"]
+relatedPeptides: ["semaglutide", "tirzepatide", "ipamorelin"]
+relatedTerms: ["efficacy", "ec50", "dose-response-curve", "binding-affinity"]
+category: "mechanism"
+lastUpdated: 2026-02-01
+metaTitle: "What is Drug Potency? Definition | PepCodex"
+metaDescription: "Potency measures how much drug is needed for an effect. Learn the difference between potency and efficacy, and why potency alone doesn't make a drug better."
+---
+
+## Understanding Potency
+
+Potency describes dose requirements, not effectiveness:
+
+```
+Response
+100%|           Drug A    Drug B
+    |             /         /
+    |            /         /
+    |           /         /
+    |          /         /
+  0%|_________/______|__/______
+             ↑         ↑
+          More       Less
+         potent     potent
+       (lower dose) (higher dose)
+```
+
+### Key Insight
+
+**More potent ≠ More effective**
+
+Both drugs above reach the same maximum effect - they're equally effective. Drug A simply requires a lower dose to get there.
+
+## Measuring Potency
+
+### Common Potency Parameters
+
+| Parameter | Definition | Context |
+|-----------|------------|---------|
+| EC50 | Concentration for 50% effect | In vitro assays |
+| ED50 | Dose effective in 50% of subjects | Clinical studies |
+| IC50 | Concentration for 50% inhibition | Inhibitor assays |
+| pD2 | Negative log of EC50 | Higher = more potent |
+
+### Comparing Potency
+
+| Drug | EC50 | Relative Potency |
+|------|------|------------------|
+| Reference | 10 nM | 1x |
+| Drug A | 1 nM | 10x more potent |
+| Drug B | 100 nM | 10x less potent |
+
+## Potency vs Efficacy
+
+These terms are frequently confused:
+
+| Aspect | Potency | Efficacy |
+|--------|---------|----------|
+| Measures | Dose needed for effect | Maximum effect possible |
+| Graph position | Horizontal (left/right) | Vertical (height) |
+| Symbol | EC50, ED50 | Emax |
+| Clinical meaning | Dose size | How well it works |
+
+```
+Response
+    |    _____ High efficacy, high potency (A)
+    |   /
+    |  / ___ High efficacy, low potency (B)
+    | / /
+    |/_/  __ Low efficacy, high potency (C)
+    | /  /
+    |/__/____________
+       Dose →
+```
+
+- **Drug A**: High potency (works at low dose) AND high efficacy (maximum effect)
+- **Drug B**: Low potency (needs higher dose) BUT equally effective as A
+- **Drug C**: High potency BUT low efficacy (limited maximum effect)
+
+## Why Potency Matters (and When It Doesn't)
+
+### When Potency Matters
+
+| Situation | Reason |
+|-----------|--------|
+| Manufacturing costs | Less drug substance needed per dose |
+| Injection volume | More concentrated = smaller injection |
+| Pill/capsule size | Easier to swallow smaller doses |
+| Receptor occupancy | May achieve binding without saturating |
+| Margin for error | High potency with narrow window requires precision |
+
+### When Potency Is Less Important
+
+| Situation | Reason |
+|-----------|--------|
+| Adequate doses achievable | 10 mg vs 1 mg doesn't matter clinically |
+| Safety not dose-limited | Can give more if needed |
+| Similar manufacturing | No cost advantage |
+| Similar efficacy | End result is what counts |
+
+## Potency in Peptide Research
+
+### GLP-1 Receptor Agonists
+
+| Agonist | Approximate Potency | Clinical Dose |
+|---------|---------------------|---------------|
+| Semaglutide | Very high | 0.25-2.4 mg/week |
+| Tirzepatide | High | 2.5-15 mg/week |
+| Liraglutide | Moderate | 0.6-3.0 mg/day |
+| Exenatide | Lower | 5-10 mcg twice daily |
+
+Despite potency differences, all achieve meaningful clinical effects at their respective doses.
+
+### Growth Hormone Secretagogues
+
+| Peptide | Relative Potency | Typical Research Dose |
+|---------|------------------|----------------------|
+| Ipamorelin | Moderate | 100-300 mcg |
+| GHRP-6 | High | 100-300 mcg |
+| GHRP-2 | Higher | 100-300 mcg |
+
+Similar dosing despite potency differences due to different efficacy profiles and side effect considerations.
+
+## Determinants of Potency
+
+### Drug Properties
+
+| Factor | Effect on Potency |
+|--------|------------------|
+| Receptor affinity | Higher affinity → Higher potency |
+| Intrinsic activity | Partial agonists may need higher doses |
+| Receptor coupling | Efficient signaling → Higher apparent potency |
+| Bioavailability | Lower F → Lower apparent in vivo potency |
+
+### Biological Factors
+
+| Factor | Effect |
+|--------|--------|
+| Receptor density | More receptors → Higher apparent potency |
+| Receptor reserve | Spare receptors → Response at lower occupancy |
+| Signal amplification | Cascade effects amplify response |
+
+## Frequently Asked Questions
+
+### If Drug A is 10x more potent than Drug B, is it better?
+
+Not necessarily. "Better" depends on efficacy, safety, side effects, duration, convenience, and cost. A 10x more potent drug just means you take 1 mg instead of 10 mg - if both are equally effective and safe at their doses, potency alone doesn't make one superior.
+
+### Why do drug guides often highlight potency?
+
+Potency is easy to measure and compare numerically. It's relevant for dosing calculations and pharmacological classification. However, clinical decisions should weight efficacy, safety, and patient factors more heavily than potency rankings.
+
+### Can potency change over time?
+
+Apparent potency can decrease with tolerance (receptor desensitization, downregulation) or increase with sensitization. The drug's intrinsic potency doesn't change, but the body's response to it can, effectively requiring dose adjustments.

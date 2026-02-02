@@ -1,0 +1,145 @@
+---
+term: "Specificity"
+definition: "is the ability of a drug or ligand to bind exclusively to its intended molecular target without interacting with other molecules, representing the most stringent form of target discrimination. Unlike selectivity which admits degrees, specificity implies binary target recognition."
+aliases: ["Target specificity", "Molecular specificity", "Binding specificity"]
+relatedPeptides: ["semaglutide", "ipamorelin", "bpc-157"]
+relatedTerms: ["selectivity", "binding-affinity", "receptor-agonist", "mechanism-of-action"]
+category: "mechanism"
+lastUpdated: 2026-02-01
+metaTitle: "What is Drug Specificity? Definition | PepCodex"
+metaDescription: "Specificity is a drug's ability to bind only its intended target. Learn how specificity differs from selectivity and why it matters for peptide action."
+---
+
+## Understanding Specificity
+
+Specificity describes exclusive target recognition:
+
+```
+Specific drug:           Non-specific drug:
+     ↓                        ↓
+[Target] ← binds         [Target] ← binds
+[Other A] ✗ no           [Other A] ← binds
+[Other B] ✗ no           [Other B] ← binds
+[Other C] ✗ no           [Other C] ← binds
+```
+
+### Specificity in Practice
+
+True molecular specificity is rare. Most "specific" drugs have some degree of off-target interaction at high concentrations. The term is often used clinically to mean "highly selective" - affecting primarily the intended target at therapeutic doses.
+
+## Specificity vs Selectivity
+
+| Dimension | Specificity | Selectivity |
+|-----------|-------------|-------------|
+| Nature | Qualitative (yes/no) | Quantitative (ratios) |
+| Standard | Absolute | Relative |
+| Reality | Theoretical ideal | Practical measure |
+| Usage | Target binds only X | Target prefers X by 100x |
+
+### Why the Distinction Matters
+
+A GLP-1 agonist described as "specific" for GLP-1 receptors:
+- Doesn't mean it binds ONLY GLP-1R
+- Does mean GLP-1R is the primary, dominant target
+- May still have weak activity at related receptors at high concentrations
+
+## Levels of Specificity
+
+### Molecular Specificity
+
+Single molecular target:
+
+| Level | Example | Implication |
+|-------|---------|-------------|
+| Receptor type | GLP-1R only | Predictable effects |
+| Receptor subtype | Beta-1 vs Beta-2 | Tissue-selective |
+| Binding site | Orthosteric vs allosteric | Different modulation |
+
+### Tissue Specificity
+
+Same target, different tissue:
+
+```
+Receptor X
+    ↓
+Heart → Tissue A effect
+Kidney → Tissue B effect
+Brain → Tissue C effect
+```
+
+A drug may affect receptor X everywhere it exists, requiring tissue-specific expression or prodrug strategies for organ selectivity.
+
+### Pathway Specificity
+
+Downstream signaling discrimination:
+
+```
+Receptor activation
+    ↓
+Pathway A → Effect 1 (therapeutic)
+Pathway B → Effect 2 (side effect)
+```
+
+**Biased agonists** (like some GLP-1 analogs) preferentially activate beneficial pathways while minimizing adverse ones.
+
+## Specificity in Peptide Research
+
+### GLP-1 Receptor Agonists
+
+| Agonist | GLP-1R | GIP-R | Glucagon-R | Specificity |
+|---------|--------|-------|------------|-------------|
+| Semaglutide | +++ | - | - | GLP-1R specific |
+| Tirzepatide | +++ | +++ | - | Dual agonist |
+| Retatrutide | +++ | +++ | ++ | Triple agonist |
+
+Semaglutide is GLP-1R "specific" while tirzepatide intentionally sacrifices specificity for enhanced metabolic effects.
+
+### Growth Hormone Axis
+
+| Compound | GHS-R | GHRH-R | Other | Notes |
+|----------|-------|--------|-------|-------|
+| GHRP-6 | +++ | - | Cortisol, prolactin | Less specific |
+| Ipamorelin | +++ | - | Minimal | More specific |
+| CJC-1295 | - | +++ | Minimal | GHRH-R specific |
+
+### Why Peptides Often Have High Specificity
+
+Peptides tend to be more specific than small molecules because:
+
+1. **Larger interaction surface** - More contact points require better match
+2. **Three-dimensional fit** - Conformational requirements
+3. **Evolved recognition** - Natural peptides evolved for specific signaling
+4. **Less structural similarity** - Receptor types are more distinct for peptides
+
+## Clinical Implications
+
+### Benefits of Specificity
+
+| Benefit | Mechanism |
+|---------|-----------|
+| Fewer side effects | No off-target activation |
+| Predictable action | Single mechanism |
+| Clear dose-response | One target response |
+| Drug interactions | Less interference with other pathways |
+
+### Limitations of Specificity
+
+| Limitation | Example |
+|------------|---------|
+| Single point of failure | Resistance, receptor desensitization |
+| May miss synergies | Multi-target drugs sometimes more effective |
+| Evolution of targets | Disease may alter target expression |
+
+## Frequently Asked Questions
+
+### Are peptides more specific than small molecule drugs?
+
+Generally yes. Peptides have larger binding interfaces requiring precise molecular recognition. Small molecules can fit into many similar pockets. However, this is a tendency, not a rule - some small molecules are highly specific, and some peptides have multiple targets.
+
+### How is specificity tested?
+
+Through comprehensive screening against panels of potential off-targets - related receptors, receptor subtypes, enzymes, and ion channels. A drug is considered "specific" if it shows minimal activity (under 10-20% of target effect) at reasonable concentrations against all tested off-targets.
+
+### Can specificity be engineered?
+
+Yes. Drug design strategies include modifying amino acid sequences (for peptides), adding targeting moieties, using prodrugs activated only in target tissues, and designing allosteric modulators. Structure-based design and computational modeling have dramatically improved specificity engineering.

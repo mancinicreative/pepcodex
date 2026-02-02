@@ -1,0 +1,158 @@
+---
+term: "Case-Control Study"
+definition: "is an observational research design that compares individuals who have a specific outcome or disease (cases) with those who do not (controls) to identify factors that may have contributed to the outcome. Case-control studies work backward from outcome to exposure, making them efficient for studying rare conditions or adverse events."
+aliases: ["Case-control analysis", "Case-referent study", "Retrospective case-control"]
+relatedPeptides: ["semaglutide", "tirzepatide", "liraglutide", "bpc-157"]
+relatedTerms: ["cohort-study", "cross-sectional-study", "randomized-controlled-trial", "adverse-event"]
+category: "research"
+lastUpdated: 2026-02-01
+metaTitle: "Case-Control Study - Definition & Role in Peptide Research"
+metaDescription: "What is a case-control study? Learn how this research design identifies risk factors and investigates rare adverse events in peptide therapy."
+---
+
+## How Case-Control Studies Work
+
+### Study Structure
+
+Case-control studies work backward from outcome:
+
+1. **Identify cases** - People with the outcome of interest
+2. **Select controls** - People without the outcome
+3. **Look backward** - Assess past exposures
+4. **Compare exposure rates** - Cases vs controls
+5. **Calculate odds ratio** - Strength of association
+
+### Visual Representation
+
+```
+Present (Outcome Known)          Past (Exposure Unknown)
+        |                                |
+   +---------+                     +----------+
+   |  Cases  | -----------------> | Exposed? |
+   | (have   |                     |   Y/N    |
+   | outcome)|                     +----------+
+   +---------+
+        |
+   +---------+                     +----------+
+   | Controls| -----------------> | Exposed? |
+   | (no     |                     |   Y/N    |
+   | outcome)|                     +----------+
+   +---------+
+```
+
+## Relevance to Peptides
+
+### Safety Signal Investigation
+
+Case-control studies excel at investigating rare adverse events:
+
+**Example: Thyroid Cancer and GLP-1 Agonists**
+- Cases: Patients with thyroid cancer
+- Controls: Matched patients without thyroid cancer
+- Exposure: Prior GLP-1 agonist use
+- Question: Is GLP-1 use associated with thyroid cancer risk?
+
+### Peptide Research Applications
+
+| Application | Cases | Controls |
+|-------------|-------|----------|
+| Pancreatitis risk | Patients with pancreatitis | Matched without |
+| Gallbladder disease | Cholecystectomy patients | Surgery-free patients |
+| Injection site reactions | Patients with reactions | Patients without |
+| Rare metabolic effects | Affected individuals | Unaffected individuals |
+
+### Post-Marketing Surveillance
+
+When rare adverse events are reported after peptide approval:
+- Case-control studies quickly investigate signals
+- Much faster than waiting for cohort data
+- Cost-effective for rare outcomes
+- Can use existing medical records
+
+## Advantages and Limitations
+
+### Advantages
+
+| Benefit | Explanation |
+|---------|-------------|
+| Efficient for rare outcomes | Don't need huge cohorts |
+| Fast and inexpensive | No long follow-up needed |
+| Multiple exposures | Can study many risk factors |
+| Existing data | Can use medical records |
+| Ethical for harmful exposures | No deliberate exposure |
+
+### Limitations
+
+| Challenge | Impact |
+|-----------|--------|
+| Recall bias | Cases may remember differently |
+| Selection bias | Control selection critical |
+| Temporal ambiguity | Hard to establish sequence |
+| No incidence rates | Can't calculate absolute risk |
+| Confounding | Difficult to fully control |
+
+## Control Selection
+
+### Matching Strategies
+
+Proper control selection is critical:
+
+| Strategy | Description | Use When |
+|----------|-------------|----------|
+| Individual matching | Each case paired with control | Small studies |
+| Frequency matching | Groups balanced on factors | Larger studies |
+| Hospital controls | Other patients at same facility | Hospital-based cases |
+| Population controls | Random community sample | Population-based cases |
+
+### Common Matching Variables
+- Age
+- Sex
+- Geographic location
+- Time period
+- Healthcare utilization
+
+## Interpreting Results
+
+### The Odds Ratio
+
+Case-control studies report odds ratios (OR):
+
+| OR Value | Interpretation |
+|----------|----------------|
+| OR = 1.0 | No association |
+| OR > 1.0 | Increased odds with exposure |
+| OR < 1.0 | Decreased odds with exposure |
+| OR = 2.0 | Twice the odds |
+| OR = 0.5 | Half the odds |
+
+### Confidence Intervals
+
+- CI includes 1.0: Not statistically significant
+- CI excludes 1.0: Statistically significant
+- Narrow CI: More precise estimate
+- Wide CI: Less precise estimate
+
+## Case-Control vs Other Designs
+
+| Feature | Case-Control | Cohort | RCT |
+|---------|--------------|--------|-----|
+| Direction | Backward | Forward | Forward |
+| Outcome | Selected on | Measured | Measured |
+| Best for | Rare outcomes | Rare exposures | Efficacy |
+| Time | Short | Long | Medium |
+| Cost | Low | High | High |
+| Bias risk | Higher | Medium | Lower |
+
+## Frequently Asked Questions
+
+### When should case-control studies be used for peptide research?
+
+Case-control designs are ideal when investigating rare outcomes like uncommon adverse events, when quick answers are needed (safety signals), when the condition takes a long time to develop, or when prospective studies would be too expensive. They're commonly used in post-marketing safety surveillance.
+
+### Can a case-control study prove a peptide causes harm?
+
+No, case-control studies cannot prove causation. They identify associations that suggest a relationship between exposure and outcome. The retrospective design and potential for bias limit causal inference. However, strong, consistent associations across multiple well-designed studies provide compelling evidence.
+
+### What is the difference between odds ratio and relative risk?
+
+Odds ratio compares the odds of exposure between cases and controls; relative risk compares the probability of outcome between exposed and unexposed. For rare outcomes, OR approximates RR. For common outcomes, OR overestimates the strength of association compared to RR.

@@ -1,0 +1,182 @@
+---
+term: "Amino Acid Sequence"
+definition: "is the specific linear order of amino acids in a peptide or protein, read from the amino terminus (N-terminus) to the carboxyl terminus (C-terminus). The sequence determines the peptide's three-dimensional structure, biological function, receptor binding specificity, and pharmacological properties. Even single amino acid changes can dramatically alter activity."
+aliases: ["Primary structure", "Peptide sequence", "Sequence"]
+relatedPeptides: ["semaglutide", "bpc-157", "tb-500"]
+relatedTerms: ["amino-acid", "peptide-bond", "chain-length", "solid-phase-synthesis"]
+category: "general"
+lastUpdated: 2026-02-01
+metaTitle: "What is Amino Acid Sequence? Definition | PepCodex"
+metaDescription: "Amino acid sequence is the specific order of amino acids in a peptide. Learn how sequence determines structure, function, and biological activity of peptides."
+---
+
+## Sequence Notation Systems
+
+### One-Letter Code
+
+| Letter | Amino Acid | Letter | Amino Acid |
+|--------|------------|--------|------------|
+| A | Alanine | M | Methionine |
+| C | Cysteine | N | Asparagine |
+| D | Aspartic acid | P | Proline |
+| E | Glutamic acid | Q | Glutamine |
+| F | Phenylalanine | R | Arginine |
+| G | Glycine | S | Serine |
+| H | Histidine | T | Threonine |
+| I | Isoleucine | V | Valine |
+| K | Lysine | W | Tryptophan |
+| L | Leucine | Y | Tyrosine |
+
+### Three-Letter Code
+
+Used in detailed documentation:
+
+```
+Met-Gly-Ser-Ser-Ser-His-Leu-Val-Arg-Ala-Leu-Tyr-Leu-Val-Cys
+```
+
+### Example Sequences
+
+| Peptide | Sequence (One-Letter) | Length |
+|---------|----------------------|--------|
+| BPC-157 | GEPPPGKPADDAGLV | 15 AA |
+| Oxytocin | CYIQNCPLG (cyclic) | 9 AA |
+| Vasopressin | CYFQNCPRG (cyclic) | 9 AA |
+| TB-500 | LKKTETQ... (43 AA total) | 43 AA |
+
+## How Sequence Determines Function
+
+### Structure Levels
+
+| Level | Determined By | Description |
+|-------|---------------|-------------|
+| Primary | Sequence itself | Linear amino acid order |
+| Secondary | Local sequence | Alpha helices, beta sheets |
+| Tertiary | Full sequence | 3D folding |
+| Quaternary | Multiple chains | Multi-subunit assembly |
+
+### Sequence-Function Relationships
+
+| Sequence Feature | Functional Impact |
+|------------------|-------------------|
+| Hydrophobic residues | Membrane interaction, folding core |
+| Charged residues | Solubility, receptor binding |
+| Cysteine positions | Disulfide bonds, structure |
+| Proline positions | Helix breaks, rigidity |
+| Glycine positions | Flexibility |
+
+## Critical Positions
+
+### Receptor Binding Sites
+
+| Peptide | Critical Residues | Function |
+|---------|-------------------|----------|
+| GLP-1 | His7, Glu9, Phe12 | Receptor activation |
+| Insulin | A21, B24-B26 | Receptor binding |
+| Oxytocin | Tyr2, Ile3, Gln4 | Uterine receptor |
+
+### Single Amino Acid Effects
+
+| Change | Peptide | Effect |
+|--------|---------|--------|
+| Glu3 to Gln3 | GLP-1 vs Glucagon | Different receptor specificity |
+| Ile3 vs Phe3 | Oxytocin vs Vasopressin | Uterine vs vascular effects |
+| Ala8 to Aib8 | Native GLP-1 vs Semaglutide | DPP-4 resistance |
+
+## Sequence Analysis
+
+### Calculating Properties from Sequence
+
+| Property | How to Calculate | Importance |
+|----------|------------------|------------|
+| Molecular weight | Sum of residue masses - (n-1)x18 | Identity confirmation |
+| Isoelectric point (pI) | From charged residues | Solubility, purification |
+| Hydrophobicity | Sum of hydrophobicity values | Solubility prediction |
+| Charge at pH 7 | From ionizable groups | Behavior in solution |
+
+### BPC-157 Example
+
+Sequence: GEPPPGKPADDAGLV
+
+| Property | Value | Basis |
+|----------|-------|-------|
+| Length | 15 amino acids | Count |
+| MW | 1419.53 Da | Sum of masses |
+| pI | 4.2 | 2 Asp, 1 Glu, 1 Lys |
+| Net charge (pH 7) | -2 | Acidic peptide |
+
+## Sequence Variations
+
+### Natural Variants
+
+| Type | Description | Example |
+|------|-------------|---------|
+| Polymorphisms | Population variants | SNPs affecting peptide hormones |
+| Splice variants | Alternative processing | Different preprohormone processing |
+| Species differences | Evolution | Insulin varies between species |
+
+### Designed Modifications
+
+| Modification | Purpose | Example |
+|--------------|---------|---------|
+| Substitution | Improve property | Met to Nle for stability |
+| Deletion | Shorten/simplify | Truncated analogs |
+| Insertion | Add function | Additional binding site |
+| Cyclization | Stability, selectivity | Cyclic peptide drugs |
+
+## Sequence Determination Methods
+
+### Sequencing Techniques
+
+| Method | Principle | Use Case |
+|--------|-----------|----------|
+| Edman degradation | Sequential N-terminal removal | Classical method |
+| MS/MS sequencing | Fragmentation analysis | Modern standard |
+| Amino acid analysis | Composition (not order) | Confirms composition |
+
+### Verification Requirements
+
+| Test | Confirms | Method |
+|------|----------|--------|
+| Molecular weight | Correct formula | Mass spectrometry |
+| Sequence order | Correct sequence | MS/MS, Edman |
+| Composition | Right amino acids | Amino acid analysis |
+| Purity | Main component | HPLC |
+
+## Representing Modified Sequences
+
+### Notation Conventions
+
+| Modification | Notation Example |
+|--------------|------------------|
+| N-terminal acetyl | Ac-GEPPPGKPADDAGLV |
+| C-terminal amide | GEPPPGKPADDAGLV-NH2 |
+| D-amino acid | [D-Ala]-GEPPPG... |
+| Disulfide bond | C1-C6 (positions) |
+| Non-standard AA | [Aib]-EGTFTSDV... |
+| Fatty acid | K([Palmitoyl-Glu])... |
+
+### Complex Example: Semaglutide
+
+```
+[Aib8,Arg34,Lys26(Nε-[Nα-hexadecanoyl-γ-Glu])]GLP-1(7-37)
+```
+
+Translation:
+- Position 8: Aib instead of Ala
+- Position 34: Arg instead of Lys
+- Position 26: Lys with fatty acid attachment
+
+## Frequently Asked Questions
+
+### Why is sequence written N to C terminus?
+
+This convention matches how peptides are synthesized biologically (ribosomes add amino acids to the C-terminus) and chemically (solid-phase synthesis typically builds C to N, then the sequence is read N to C). It's the universal standard in biochemistry.
+
+### Can two different sequences have the same activity?
+
+Yes, if the critical binding residues are preserved. Many peptide analogs maintain activity with sequence changes outside the binding site. However, these changes may affect other properties like stability, immunogenicity, or pharmacokinetics.
+
+### How many possible peptide sequences exist?
+
+For a peptide of length n using 20 amino acids: 20^n possibilities. A 10-amino acid peptide has over 10 trillion possible sequences (20^10 = 10.24 x 10^12). This vast "sequence space" is why peptides offer enormous therapeutic diversity.

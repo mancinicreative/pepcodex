@@ -1,0 +1,160 @@
+---
+term: "Oxidation"
+definition: "is a chemical reaction involving the loss of electrons, which in peptides typically occurs at susceptible amino acid residues like methionine, cysteine, tryptophan, and tyrosine. Oxidation can alter peptide structure, reduce biological activity, and create immunogenic products. It is one of the most common degradation pathways affecting peptide stability during storage and handling."
+aliases: ["Peptide oxidation", "Oxidative degradation", "Chemical oxidation"]
+relatedPeptides: ["semaglutide", "bpc-157", "tb-500"]
+relatedTerms: ["degradation", "purity", "aggregation", "mass-spectrometry"]
+category: "general"
+lastUpdated: 2026-02-01
+metaTitle: "What is Peptide Oxidation? Definition & Prevention | PepCodex"
+metaDescription: "Peptide oxidation damages susceptible amino acids like methionine and cysteine. Learn about oxidation detection, effects on peptide activity, and prevention methods."
+---
+
+## Oxidation-Susceptible Residues
+
+### Primary Targets
+
+| Amino Acid | Oxidation Product | Mass Change | Relative Susceptibility |
+|------------|-------------------|-------------|------------------------|
+| Methionine (Met) | Methionine sulfoxide | +16 Da | Very high |
+| Methionine sulfoxide | Methionine sulfone | +32 Da total | Lower (requires harsh conditions) |
+| Cysteine (Cys) | Cystine (disulfide) | -2 Da (per pair) | High |
+| Cysteine | Sulfenic acid | +16 Da | High |
+| Cysteine | Sulfinic acid | +32 Da | Irreversible |
+| Cysteine | Sulfonic acid | +48 Da | Irreversible |
+| Tryptophan (Trp) | Various oxidation products | +4 to +32 Da | Moderate |
+| Tyrosine (Tyr) | Dityrosine, DOPA | Variable | Lower |
+| Histidine (His) | 2-oxo-histidine | +16 Da | Lower |
+
+### Oxidation Rates
+
+| Residue | Rate Factor | Conditions That Accelerate |
+|---------|-------------|---------------------------|
+| Met | 1.0 (reference) | O2, peroxides, light, metals |
+| Cys (free) | 0.5-2.0 | O2, metals, alkaline pH |
+| Trp | 0.1-0.5 | Light, peroxides |
+| Tyr | 0.05-0.2 | Light, metals |
+| His | 0.01-0.1 | Metals, peroxides |
+
+## Oxidation Sources
+
+### Environmental Oxidants
+
+| Source | Mechanism | Prevention |
+|--------|-----------|------------|
+| Atmospheric oxygen | Direct reaction | Nitrogen/argon overlay |
+| Hydrogen peroxide | Strong oxidant | Peroxide-free excipients |
+| Light (UV/visible) | Photo-oxidation | Amber containers, dark storage |
+| Metal ions (Fe, Cu) | Catalyzed oxidation | Chelators (EDTA), metal-free containers |
+| Ozone | Strong oxidant | Filtered air systems |
+
+### Process-Related Sources
+
+| Source | When | Mitigation |
+|--------|------|------------|
+| Water impurities | Reconstitution | Use high-purity water |
+| Container leachables | Storage | Quality containers |
+| Residual peroxides | From excipients | Certified peroxide-free |
+| Sterilization | Gamma irradiation | Alternative methods |
+
+## Detection of Oxidation
+
+### Mass Spectrometry
+
+| Species | Molecular Weight | Observation |
+|---------|------------------|-------------|
+| Native peptide | M | Expected mass |
+| +1 oxidation (Met) | M + 16 | Single Met oxidized |
+| +2 oxidations | M + 32 | Two Met or one Cys to sulfinic |
+| +3 oxidations | M + 48 | Multiple events |
+
+### HPLC Detection
+
+| Observation | Interpretation |
+|-------------|----------------|
+| New early-eluting peak | Oxidized form (more polar) |
+| Shoulder on main peak | Partial oxidation |
+| Peak broadening | Heterogeneous oxidation |
+| Multiple new peaks | Extensive degradation |
+
+### Oxidation Mapping
+
+Steps to identify oxidation sites:
+1. Digest peptide with enzyme (trypsin)
+2. Analyze fragments by LC-MS/MS
+3. Identify +16 Da shifts in specific fragments
+4. Locate oxidized residue within fragment
+
+## Biological Impact
+
+### Effects on Activity
+
+| Residue Location | Activity Impact |
+|------------------|-----------------|
+| Active site Met | Often major loss |
+| Binding interface Met | Variable loss |
+| Surface-exposed Met | Usually minimal |
+| Buried Met | Structural disruption |
+
+### Case Examples
+
+| Peptide/Protein | Oxidation Effect |
+|-----------------|------------------|
+| Calcitonin | Met oxidation reduces receptor binding |
+| Insulin | Chain A Met oxidation decreases potency |
+| Growth hormone | Met14 oxidation acceptable; Met125 critical |
+| Somatostatin | Trp oxidation affects activity |
+
+## Prevention Strategies
+
+### Formulation Approaches
+
+| Additive | Mechanism | Typical Level |
+|----------|-----------|---------------|
+| Methionine (free) | Sacrificial oxidation | 1-10 mM |
+| Ascorbic acid | Antioxidant | 0.1-1% |
+| EDTA | Metal chelation | 0.01-0.1% |
+| Sodium thiosulfate | Reducing agent | 0.1-1% |
+| Acetylcysteine | Antioxidant | 0.1-0.5% |
+
+### Storage and Handling
+
+| Practice | Rationale | Implementation |
+|----------|-----------|----------------|
+| Inert atmosphere | Remove oxygen | Nitrogen fill, sealed vials |
+| Light protection | Prevent photo-oxidation | Amber vials, dark storage |
+| Temperature control | Slow reaction rates | Refrigerate or freeze |
+| Metal-free systems | Avoid catalysis | Glass vials, no metal caps |
+| Minimize handling | Reduce exposure | Aliquot, single use |
+
+### Sequence Modifications
+
+| Strategy | Approach | Tradeoff |
+|----------|----------|----------|
+| Met to Norleucine | Non-oxidizable isostere | May affect activity |
+| Met to Leucine | Conservative substitution | May affect activity |
+| Cys protection | Acetamidomethyl (Acm) | Requires deprotection |
+| Formyl-Met | N-terminal protection | Alters charge |
+
+## Stability Testing
+
+| Test | Purpose | Method |
+|------|---------|--------|
+| Accelerated (40C) | Predict oxidation rate | HPLC, MS at intervals |
+| Light stress | Photo-stability | Controlled illumination |
+| Peroxide challenge | Oxidative stress resistance | Spike with H2O2 |
+| Metal challenge | Metal sensitivity | Spike with Fe/Cu |
+
+## Frequently Asked Questions
+
+### How much oxidation is acceptable?
+
+For research peptides, under 5% oxidized forms is generally acceptable. For pharmaceutical applications, specifications are tighter (often under 1-2%). The acceptable level depends on whether oxidation affects the peptide's activity in your specific application.
+
+### Can oxidation be reversed?
+
+Methionine sulfoxide can be reduced back to methionine using reducing agents or enzymes (methionine sulfoxide reductase). However, further oxidation to sulfone, or cysteine oxidation beyond disulfide, is irreversible. Prevention is always preferable.
+
+### Why does methionine oxidize so easily?
+
+Methionine's sulfur atom has lone electron pairs that readily react with oxidizing species. The thioether group (-S-CH3) is nucleophilic and accessible, unlike the cyclic sulfur in biotin or the protected sulfur in disulfide bonds. This makes Met the most oxidation-sensitive standard amino acid.

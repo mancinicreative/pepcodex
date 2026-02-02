@@ -1,0 +1,151 @@
+---
+term: "IC50"
+definition: "is the concentration of an inhibitor required to reduce a biological process or enzyme activity by 50%, serving as a standard measure of inhibitory potency. Lower IC50 values indicate more potent inhibitors that achieve half-maximal inhibition at lower concentrations."
+aliases: ["Inhibitory concentration 50", "Half-maximal inhibitory concentration", "IC-50"]
+relatedPeptides: ["semaglutide", "tirzepatide", "bpc-157"]
+relatedTerms: ["ec50", "potency", "dose-response-curve", "dpp-4"]
+category: "mechanism"
+lastUpdated: 2026-02-01
+metaTitle: "What is IC50? Definition & Meaning | PepCodex"
+metaDescription: "IC50 is the inhibitor concentration reducing activity by 50%. Learn how IC50 measures inhibitory potency for enzymes and receptors in peptide research."
+---
+
+## Understanding IC50
+
+IC50 represents the midpoint of an inhibition curve:
+
+```
+Activity (%)
+100 |___
+    |   \
+ 75 |    \
+    |     \
+ 50 |------*-------- IC50 point
+    |       \
+ 25 |        \
+    |         \___
+  0 |________________
+       [Inhibitor concentration]
+```
+
+### Key Points
+
+- **Lower IC50 = More potent inhibitor** (less drug needed)
+- **Measured in concentration units** (nM, uM, ng/mL)
+- **Specific to the target being inhibited** (enzyme, receptor, pathway)
+- **Dependent on assay conditions** (substrate concentration, incubation time)
+
+## IC50 in Context
+
+### Related Inhibition Measures
+
+| Measure | Definition | Advantage |
+|---------|------------|-----------|
+| IC50 | Concentration for 50% inhibition | Easy to measure |
+| Ki | Inhibition constant | Independent of substrate |
+| IC90 | Concentration for 90% inhibition | More relevant for clinical efficacy |
+| Selectivity ratio | IC50 target / IC50 off-target | Measures specificity |
+
+### IC50 vs Ki
+
+- **IC50** depends on assay conditions (substrate concentration)
+- **Ki** is an intrinsic property of the inhibitor-enzyme pair
+- **Cheng-Prusoff equation** relates them: Ki = IC50 / (1 + [S]/Km)
+
+## Types of Inhibition
+
+### Competitive Inhibitors
+
+| Characteristic | Effect |
+|----------------|--------|
+| Binds active site | Competes with substrate |
+| IC50 behavior | Increases with substrate concentration |
+| Can be overcome | Yes, with high substrate |
+
+### Non-competitive Inhibitors
+
+| Characteristic | Effect |
+|----------------|--------|
+| Binds allosteric site | Doesn't compete with substrate |
+| IC50 behavior | Independent of substrate concentration |
+| Can be overcome | No |
+
+## IC50 in Peptide Research
+
+### DPP-4 Inhibitors
+
+DPP-4 enzyme rapidly degrades GLP-1 and GIP. Inhibitors protect these incretins:
+
+| Inhibitor | IC50 | Notes |
+|-----------|------|-------|
+| Sitagliptin | ~18 nM | First approved DPP-4 inhibitor |
+| Vildagliptin | ~3 nM | More potent |
+| Saxagliptin | ~1 nM | Most potent |
+| Linagliptin | ~1 nM | Highly potent |
+
+**Clinical implication**: All achieve near-complete DPP-4 inhibition at therapeutic doses despite potency differences.
+
+### ACE Inhibitors
+
+Angiotensin-converting enzyme inhibitors for cardiovascular disease:
+
+| Inhibitor | IC50 Range | Notes |
+|-----------|------------|-------|
+| Enalaprilat | ~1-5 nM | Active form of enalapril |
+| Lisinopril | ~1-2 nM | No prodrug conversion needed |
+| Captopril | ~5-20 nM | First ACE inhibitor |
+
+## Selectivity and IC50
+
+### Calculating Selectivity
+
+Selectivity ratio = IC50 (off-target) / IC50 (target)
+
+| Drug | Target IC50 | Off-target IC50 | Selectivity |
+|------|-------------|-----------------|-------------|
+| Selective | 1 nM | 1000 nM | 1000x |
+| Non-selective | 1 nM | 10 nM | 10x |
+
+Higher selectivity ratios indicate less off-target activity and potentially fewer side effects.
+
+### Multi-target Inhibitors
+
+Some drugs intentionally inhibit multiple targets:
+
+| Target | IC50 | Therapeutic Role |
+|--------|------|------------------|
+| Target A | 5 nM | Primary effect |
+| Target B | 10 nM | Secondary benefit |
+| Target C | 500 nM | Minimal activity |
+
+## Practical Considerations
+
+### What IC50 Doesn't Tell You
+
+- **In vivo efficacy** - Tissue penetration and metabolism matter
+- **Duration of effect** - Binding kinetics (on/off rates)
+- **Mechanism** - Competitive vs non-competitive
+- **Reversibility** - Covalent vs non-covalent binding
+
+### From IC50 to Clinical Dose
+
+```
+IC50 → Required tissue concentration → Account for PK → Clinical dose
+        (usually 5-10x IC50            (absorption,
+         for near-complete              distribution,
+         inhibition)                    metabolism)
+```
+
+## Frequently Asked Questions
+
+### Why do some drugs need higher concentrations than their IC50?
+
+IC50 represents 50% inhibition. For therapeutic effect, you often need 90-99% inhibition, requiring concentrations 10-100x higher than IC50 depending on the steepness of the inhibition curve.
+
+### Can IC50 change?
+
+IC50 is measured under specific assay conditions. It can appear to change with different substrate concentrations (competitive inhibitors), temperature, pH, or assay methodology. Intrinsic Ki is more consistent.
+
+### How does resistance affect IC50?
+
+In infectious disease and oncology, resistance mutations often increase IC50 dramatically. A 10-fold increase in IC50 may render previously effective concentrations inadequate, requiring higher doses or alternative drugs.

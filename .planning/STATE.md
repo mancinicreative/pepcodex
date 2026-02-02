@@ -25,8 +25,8 @@
 | 24 | Schema Deployments | +0 (enhancement) | ✓ COMPLETE |
 | 25 | Glossary Expansion | +116 | ✓ COMPLETE |
 | 26 | Bioregulators Batch 1 | +11 | ✓ COMPLETE |
-| 27 | Bioregulators Batch 2 | +10 | PENDING |
-| 28 | Weekly News Blog | +78 | Pending |
+| 27 | Bioregulators Batch 2 | +10 | ✓ COMPLETE |
+| 28 | Weekly News Blog | +78 | PENDING |
 | 29 | Comparisons Batch 2 + Calculators | +229 | Pending |
 
 ## What's Done
@@ -105,6 +105,14 @@
 - ✓ /bioregulators landing page with sequence reference table
 - Total peptide dossiers: 72 → 82 (+10)
 
+**Phase 27: Bioregulators Batch 2 ✓ COMPLETE**
+- ✓ 10 more bioregulator dossiers created
+  - Synthetic tripeptides: ovagen (EDL), pancragen (KEDW), stamakort
+  - Cytamin supplements: vladonix, endoluten, cerluten, ventfort, svetinorm, suprefort, sigumir
+- ✓ Bioregulators landing page already had all entries configured
+- Total peptide dossiers: 82 → 92 (+10)
+- Complete Khavinson bioregulator module: 20 total (5 original + 15 new)
+
 ### Pre-existing Assets (v4.0)
 - ✓ Calculators (reconstitution, blend, accumulation)
 - ✓ Legal pages (disclaimer, privacy, terms)
@@ -114,12 +122,13 @@
 
 ## What's Next (v4.0)
 
-### Phase 27: Bioregulators Batch 2
-**Goal:** Complete bioregulator module with cytamin series
+### Phase 28: Weekly News Blog
+**Goal:** Build content freshness signals with backdated news posts
 
 **Deliverables:**
-- 10 more bioregulator dossiers (Ovagen through Sigumir)
-- Update bioregulators page with new entries
+- 78 backdated weekly news posts (3/week × 26 weeks, months 1-6 back)
+- Mon/Wed/Fri publishing schedule
+- News aggregation on peptide industry updates, research, and regulatory developments
 
 ## Cut List (Deferred to v5.0)
 
@@ -133,20 +142,20 @@ Per content expansion pivot decision:
 
 ## Context for Resume
 
-v4.0 Content Expansion milestone in progress. Phase 26 complete.
+v4.0 Content Expansion milestone in progress. Phase 27 complete.
 
-**Current State (after Phase 26):**
-- ~790 pages (779 + 10 bioregulators + 1 category page)
-- 82 peptide dossiers (72 + 10 bioregulators)
+**Current State (after Phase 27):**
+- ~800 pages (790 + 10 bioregulators)
+- 92 peptide dossiers (72 + 20 bioregulators)
 - 100 comparisons (45 + 55 new)
 - 215 glossary terms (99 + 116 new)
 - 15 condition hub pages
-- 1 bioregulators landing page
+- 1 bioregulators landing page (20 entries)
 - Schema markup deployed (FAQSchema, HowToSchema, DrugSchema)
 
 **Target State (v4.0):**
 - ~1,132 pages
-- 92 peptide dossiers (+20 bioregulators)
+- 92 peptide dossiers ✓ (bioregulator module complete)
 - 280 comparisons (+180 more in Phase 29)
 - 240 glossary terms (+141)
 - 151 blog posts (+78 weekly news)
@@ -183,8 +192,8 @@ Phase 23: Comparisons + Hubs   [████████] 100% ✓
 Phase 24: Schema Deployments   [████████] 100% ✓
 Phase 25: Glossary Expansion   [████████] 100% ✓
 Phase 26: Bioregulators 1      [████████] 100% ✓
-Phase 27: Bioregulators 2      [░░░░░░░░] 0%  <-- NEXT
-Phase 28: Weekly News Blog     [░░░░░░░░] 0%
+Phase 27: Bioregulators 2      [████████] 100% ✓
+Phase 28: Weekly News Blog     [░░░░░░░░] 0%  <-- NEXT
 Phase 29: Comparisons + Calc   [░░░░░░░░] 0%
 ```
 
@@ -209,6 +218,7 @@ None
 - 2026-02-01: Phase 24 COMPLETE — Schema deployments (FAQSchema, HowToSchema, DrugSchema)
 - 2026-02-01: Phase 25 COMPLETE — 116 new glossary terms (99 → 215 total)
 - 2026-02-01: Phase 26 COMPLETE — 10 bioregulator dossiers + /bioregulators page
+- 2026-02-02: Phase 27 COMPLETE — 10 more bioregulator dossiers (Ovagen→Sigumir), bioregulator module complete with 20 total
 
 ---
-*Last updated: 2026-02-01*
+*Last updated: 2026-02-02*

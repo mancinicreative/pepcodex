@@ -5,21 +5,36 @@ import { getCollection } from 'astro:content';
 
 // List of known bioregulator peptide slugs
 const bioregulatorSlugs = [
+  // Original 5
   'epithalon',
   'thymalin',
   'thymogen',
   'cortexin',
   'pinealon',
+  // Phase 26 synthetic
   'vilon',
   'livagen',
   'vesugen',
   'cardiogen',
   'kristagen',
-  'prostatilen',
-  'retinalamin',
   'bronchogen',
   'chonluten',
   'testagen',
+  // Phase 26 extracts
+  'prostatilen',
+  'retinalamin',
+  // Phase 27 synthetic
+  'ovagen',
+  'pancragen',
+  'stamakort',
+  // Phase 27 cytamins
+  'vladonix',
+  'endoluten',
+  'cerluten',
+  'ventfort',
+  'svetinorm',
+  'suprefort',
+  'sigumir',
 ];
 
 const allPeptides = await getCollection('peptides');
@@ -29,10 +44,13 @@ const peptides = allPeptides
 
 // Group by type for display
 const syntheticPeptides = peptides.filter(p =>
-  ['epithalon', 'vilon', 'livagen', 'vesugen', 'cardiogen', 'kristagen', 'bronchogen', 'chonluten', 'testagen', 'pinealon', 'thymalin', 'thymogen', 'cortexin'].includes(p.slug)
+  ['epithalon', 'vilon', 'livagen', 'vesugen', 'cardiogen', 'kristagen', 'bronchogen', 'chonluten', 'testagen', 'pinealon', 'thymalin', 'thymogen', 'cortexin', 'ovagen', 'pancragen', 'stamakort'].includes(p.slug)
 );
 const extractPeptides = peptides.filter(p =>
   ['prostatilen', 'retinalamin'].includes(p.slug)
+);
+const cytaminPeptides = peptides.filter(p =>
+  ['vladonix', 'endoluten', 'cerluten', 'ventfort', 'svetinorm', 'suprefort', 'sigumir'].includes(p.slug)
 );
 ---
 
@@ -90,6 +108,29 @@ const extractPeptides = peptides.filter(p =>
       </p>
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {extractPeptides.map((peptide) => (
+          <PeptideCard
+            name={peptide.data.name}
+            slug={peptide.slug}
+            category={peptide.data.category}
+            evidenceStrength={peptide.data.evidenceStrength}
+            summary={peptide.data.summary}
+            aliases={peptide.data.aliases}
+          />
+        ))}
+      </div>
+    </div>
+  )}
+
+  {cytaminPeptides.length > 0 && (
+    <div class="mb-12">
+      <h2 class="text-2xl font-bold text-white mb-6">Cytamin Supplements</h2>
+      <p class="text-white/70 mb-6">
+        Oral peptide supplements derived from tissue extracts, marketed as dietary supplements in Russia.
+        Cytamins contain multiple peptide fractions rather than single defined sequences. Oral bioavailability
+        of peptides is generally very low.
+      </p>
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {cytaminPeptides.map((peptide) => (
           <PeptideCard
             name={peptide.data.name}
             slug={peptide.slug}
@@ -198,6 +239,66 @@ const extractPeptides = peptides.filter(p =>
             <td class="py-3 pr-4 font-mono text-white/50">Complex</td>
             <td class="py-3 pr-4">Brain</td>
             <td class="py-3">Extract</td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="py-3 pr-4 font-medium text-white">Ovagen</td>
+            <td class="py-3 pr-4 font-mono text-primary">EDL</td>
+            <td class="py-3 pr-4">Liver</td>
+            <td class="py-3">Tripeptide</td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="py-3 pr-4 font-medium text-white">Pancragen</td>
+            <td class="py-3 pr-4 font-mono text-primary">KEDW</td>
+            <td class="py-3 pr-4">Pancreas</td>
+            <td class="py-3">Tetrapeptide</td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="py-3 pr-4 font-medium text-white">Stamakort</td>
+            <td class="py-3 pr-4 font-mono text-white/50">Unknown</td>
+            <td class="py-3 pr-4">Stomach</td>
+            <td class="py-3">Peptide</td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="py-3 pr-4 font-medium text-white">Vladonix</td>
+            <td class="py-3 pr-4 font-mono text-white/50">Complex</td>
+            <td class="py-3 pr-4">Thymus</td>
+            <td class="py-3">Cytamin</td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="py-3 pr-4 font-medium text-white">Endoluten</td>
+            <td class="py-3 pr-4 font-mono text-white/50">Complex</td>
+            <td class="py-3 pr-4">Pineal gland</td>
+            <td class="py-3">Cytamin</td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="py-3 pr-4 font-medium text-white">Cerluten</td>
+            <td class="py-3 pr-4 font-mono text-white/50">Complex</td>
+            <td class="py-3 pr-4">Brain</td>
+            <td class="py-3">Cytamin</td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="py-3 pr-4 font-medium text-white">Ventfort</td>
+            <td class="py-3 pr-4 font-mono text-white/50">Complex</td>
+            <td class="py-3 pr-4">Blood vessels</td>
+            <td class="py-3">Cytamin</td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="py-3 pr-4 font-medium text-white">Svetinorm</td>
+            <td class="py-3 pr-4 font-mono text-white/50">Complex</td>
+            <td class="py-3 pr-4">Liver</td>
+            <td class="py-3">Cytamin</td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="py-3 pr-4 font-medium text-white">Suprefort</td>
+            <td class="py-3 pr-4 font-mono text-white/50">Complex</td>
+            <td class="py-3 pr-4">Pancreas</td>
+            <td class="py-3">Cytamin</td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="py-3 pr-4 font-medium text-white">Sigumir</td>
+            <td class="py-3 pr-4 font-mono text-white/50">Complex</td>
+            <td class="py-3 pr-4">Cartilage</td>
+            <td class="py-3">Cytamin</td>
           </tr>
         </tbody>
       </table>

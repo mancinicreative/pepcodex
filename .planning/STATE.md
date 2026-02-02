@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-**Phase 27: Bioregulators Batch 2** — PENDING (next phase of v4.0 Content Expansion)
+**Phase 28: Weekly News Blog** — PENDING (next phase of v4.0 Content Expansion)
 
 ## Active Work
 

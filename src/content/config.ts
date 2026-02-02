@@ -2,7 +2,7 @@ import { defineCollection, z } from 'astro:content';
 
 const evidenceStrength = z.enum(['high', 'moderate', 'low', 'very-low']);
 const category = z.enum(['metabolic', 'repair-recovery', 'hormonal', 'longevity', 'cognitive', 'immune', 'other']);
-const compoundType = z.enum(['peptide', 'small-molecule', 'mrna', 'protein', 'glycoprotein']).default('peptide');
+const compoundType = z.enum(['peptide', 'small-molecule', 'mrna', 'protein', 'glycoprotein', 'bioregulator']).default('peptide');
 
 // Shared SEO fields for all content types
 const seoFields = {

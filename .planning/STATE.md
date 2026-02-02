@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-**Phase 26: Bioregulators Batch 1** — PENDING (next phase of v4.0 Content Expansion)
+**Phase 27: Bioregulators Batch 2** — PENDING (next phase of v4.0 Content Expansion)
 
 ## Active Work
 
@@ -24,8 +24,8 @@
 | 23 | Comparisons Batch 1 + Condition Hubs | +70 | ✓ COMPLETE |
 | 24 | Schema Deployments | +0 (enhancement) | ✓ COMPLETE |
 | 25 | Glossary Expansion | +116 | ✓ COMPLETE |
-| 26 | Bioregulators Batch 1 | +11 | PENDING |
-| 27 | Bioregulators Batch 2 | +10 | Pending |
+| 26 | Bioregulators Batch 1 | +11 | ✓ COMPLETE |
+| 27 | Bioregulators Batch 2 | +10 | PENDING |
 | 28 | Weekly News Blog | +78 | Pending |
 | 29 | Comparisons Batch 2 + Calculators | +229 | Pending |
 
@@ -98,6 +98,13 @@
 - ✓ 34 existing terms updated with improved content
 - ✓ MDX syntax issues fixed (< and > symbols in tables)
 
+**Phase 26: Bioregulators Batch 1 ✓ COMPLETE**
+- ✓ 10 new bioregulator dossiers created
+  - Synthetic tripeptides: vilon (KE), livagen (KED), vesugen (KED), cardiogen (AED), kristagen (EDG), chonluten (EDG), bronchogen (AEDL), testagen
+  - Tissue extract complexes: prostatilen, retinalamin
+- ✓ /bioregulators landing page with sequence reference table
+- Total peptide dossiers: 72 → 82 (+10)
+
 ### Pre-existing Assets (v4.0)
 - ✓ Calculators (reconstitution, blend, accumulation)
 - ✓ Legal pages (disclaimer, privacy, terms)
@@ -107,12 +114,12 @@
 
 ## What's Next (v4.0)
 
-### Phase 26: Bioregulators Batch 1
-**Goal:** Establish niche authority with Khavinson peptide coverage
+### Phase 27: Bioregulators Batch 2
+**Goal:** Complete bioregulator module with cytamin series
 
 **Deliverables:**
-- 10 bioregulator dossiers (Vilon through Testagen)
-- Bioregulators category page
+- 10 more bioregulator dossiers (Ovagen through Sigumir)
+- Update bioregulators page with new entries
 
 ## Cut List (Deferred to v5.0)
 
@@ -126,14 +133,15 @@ Per content expansion pivot decision:
 
 ## Context for Resume
 
-v4.0 Content Expansion milestone in progress. Phase 25 complete.
+v4.0 Content Expansion milestone in progress. Phase 26 complete.
 
-**Current State (after Phase 25):**
-- ~779 pages (663 + 116 glossary terms)
-- 72 peptide dossiers
+**Current State (after Phase 26):**
+- ~790 pages (779 + 10 bioregulators + 1 category page)
+- 82 peptide dossiers (72 + 10 bioregulators)
 - 100 comparisons (45 + 55 new)
 - 215 glossary terms (99 + 116 new)
 - 15 condition hub pages
+- 1 bioregulators landing page
 - Schema markup deployed (FAQSchema, HowToSchema, DrugSchema)
 
 **Target State (v4.0):**
@@ -174,8 +182,8 @@ v4.0 Phases (ACTIVE):
 Phase 23: Comparisons + Hubs   [████████] 100% ✓
 Phase 24: Schema Deployments   [████████] 100% ✓
 Phase 25: Glossary Expansion   [████████] 100% ✓
-Phase 26: Bioregulators 1      [░░░░░░░░] 0%  <-- NEXT
-Phase 27: Bioregulators 2      [░░░░░░░░] 0%
+Phase 26: Bioregulators 1      [████████] 100% ✓
+Phase 27: Bioregulators 2      [░░░░░░░░] 0%  <-- NEXT
 Phase 28: Weekly News Blog     [░░░░░░░░] 0%
 Phase 29: Comparisons + Calc   [░░░░░░░░] 0%
 ```
@@ -200,6 +208,7 @@ None
 - 2026-02-01: Phase 23 COMPLETE — 55 comparisons + 15 condition hubs + ConditionLayout
 - 2026-02-01: Phase 24 COMPLETE — Schema deployments (FAQSchema, HowToSchema, DrugSchema)
 - 2026-02-01: Phase 25 COMPLETE — 116 new glossary terms (99 → 215 total)
+- 2026-02-01: Phase 26 COMPLETE — 10 bioregulator dossiers + /bioregulators page
 
 ---
 *Last updated: 2026-02-01*

@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-**Phase 24: Schema Deployments** — PENDING (next phase of v4.0 Content Expansion)
+**Phase 25: Glossary Expansion** — PENDING (next phase of v4.0 Content Expansion)
 
 ## Active Work
 
@@ -22,8 +22,8 @@
 | Phase | Focus | Pages Added | Status |
 |-------|-------|-------------|--------|
 | 23 | Comparisons Batch 1 + Condition Hubs | +70 | ✓ COMPLETE |
-| 24 | Schema Deployments | +0 (enhancement) | PENDING |
-| 25 | Glossary Expansion | +141 | Pending |
+| 24 | Schema Deployments | +0 (enhancement) | ✓ COMPLETE |
+| 25 | Glossary Expansion | +141 | PENDING |
 | 26 | Bioregulators Batch 1 | +11 | Pending |
 | 27 | Bioregulators Batch 2 | +10 | Pending |
 | 28 | Weekly News Blog | +78 | Pending |
@@ -79,6 +79,15 @@
   - Additional: 5 comparisons (pt-141, dsip, pasireotide, hcg, glutathione)
 - Total comparisons: 45 → 100 (+55)
 
+**Phase 24: Schema Deployments ✓ COMPLETE**
+- ✓ FAQSchema deployed to top 20 peptide dossiers
+- ✓ HowToSchema component created
+- ✓ HowToSchema deployed to 3 calculators (reconstitution, blend, accumulation)
+- ✓ DrugSchema component created
+- ✓ DrugSchema deployed to all dossiers via DossierLayout
+- ✓ FAQSchema support added to ComparisonLayout
+- ✓ FAQs added to 20 high-traffic comparison pages
+
 ### Pre-existing Assets (v4.0)
 - ✓ Calculators (reconstitution, blend, accumulation)
 - ✓ Legal pages (disclaimer, privacy, terms)
@@ -87,17 +96,6 @@
 - ✓ 5 existing bioregulator dossiers (epithalon, thymalin, thymogen, cortexin, pinealon)
 
 ## What's Next (v4.0)
-
-### Phase 24: Schema Deployments
-**Goal:** SERP feature eligibility through structured data
-
-**Deliverables:**
-- FAQSchema deployed to top 20 peptide dossiers
-- HowToSchema component + deployment to calculators
-- DrugSchema component + deployment to dossiers
-- FAQs added to comparison pages
-
-**Requirements:** SCHEMA-01 through SCHEMA-06
 
 ### Phase 25: Glossary Expansion
 **Goal:** Authority building through comprehensive terminology
@@ -117,15 +115,15 @@ Per content expansion pivot decision:
 
 ## Context for Resume
 
-v4.0 Content Expansion milestone in progress. Phase 23 complete.
+v4.0 Content Expansion milestone in progress. Phase 24 complete.
 
-**Current State (after Phase 23):**
+**Current State (after Phase 24):**
 - ~663 pages (593 + 55 comparisons + 15 condition hubs)
 - 72 peptide dossiers
 - 100 comparisons (45 + 55 new)
 - 99 glossary terms
-- 15 condition hub pages (NEW)
-- ConditionLayout template (NEW)
+- 15 condition hub pages
+- Schema markup deployed (FAQSchema, HowToSchema, DrugSchema)
 
 **Target State (v4.0):**
 - ~1,132 pages
@@ -163,8 +161,8 @@ Phase 9-12: Operations         [░░░░░░░░] ON HOLD
 
 v4.0 Phases (ACTIVE):
 Phase 23: Comparisons + Hubs   [████████] 100% ✓
-Phase 24: Schema Deployments   [░░░░░░░░] 0%  <-- NEXT
-Phase 25: Glossary Expansion   [░░░░░░░░] 0%
+Phase 24: Schema Deployments   [████████] 100% ✓
+Phase 25: Glossary Expansion   [░░░░░░░░] 0%  <-- NEXT
 Phase 26: Bioregulators 1      [░░░░░░░░] 0%
 Phase 27: Bioregulators 2      [░░░░░░░░] 0%
 Phase 28: Weekly News Blog     [░░░░░░░░] 0%
@@ -189,6 +187,7 @@ None
 - 2026-02-01: GSD planning complete — 7 phases, 62 requirements
 - 2026-02-01: Planning docs updated (PROJECT.md, REQUIREMENTS.md, ROADMAP.md, STATE.md)
 - 2026-02-01: Phase 23 COMPLETE — 55 comparisons + 15 condition hubs + ConditionLayout
+- 2026-02-01: Phase 24 COMPLETE — Schema deployments (FAQSchema, HowToSchema, DrugSchema)
 
 ---
 *Last updated: 2026-02-01*

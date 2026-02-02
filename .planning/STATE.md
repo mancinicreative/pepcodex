@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-**Phase 25: Glossary Expansion** — PENDING (next phase of v4.0 Content Expansion)
+**Phase 26: Bioregulators Batch 1** — PENDING (next phase of v4.0 Content Expansion)
 
 ## Active Work
 
@@ -23,8 +23,8 @@
 |-------|-------|-------------|--------|
 | 23 | Comparisons Batch 1 + Condition Hubs | +70 | ✓ COMPLETE |
 | 24 | Schema Deployments | +0 (enhancement) | ✓ COMPLETE |
-| 25 | Glossary Expansion | +141 | PENDING |
-| 26 | Bioregulators Batch 1 | +11 | Pending |
+| 25 | Glossary Expansion | +116 | ✓ COMPLETE |
+| 26 | Bioregulators Batch 1 | +11 | PENDING |
 | 27 | Bioregulators Batch 2 | +10 | Pending |
 | 28 | Weekly News Blog | +78 | Pending |
 | 29 | Comparisons Batch 2 + Calculators | +229 | Pending |
@@ -88,6 +88,16 @@
 - ✓ FAQSchema support added to ComparisonLayout
 - ✓ FAQs added to 20 high-traffic comparison pages
 
+**Phase 25: Glossary Expansion ✓ COMPLETE**
+- ✓ 116 new glossary terms added (99 → 215 total)
+  - 40 mechanism terms (receptor types, signaling, pharmacology)
+  - 20 study type terms (RCTs, meta-analysis, clinical trials)
+  - 30 administration terms (PK/PD, dosing, injection)
+  - 20 regulatory terms (FDA, IND, NDA, approvals)
+  - 31 chemistry terms (structure, synthesis, modifications)
+- ✓ 34 existing terms updated with improved content
+- ✓ MDX syntax issues fixed (< and > symbols in tables)
+
 ### Pre-existing Assets (v4.0)
 - ✓ Calculators (reconstitution, blend, accumulation)
 - ✓ Legal pages (disclaimer, privacy, terms)
@@ -97,11 +107,12 @@
 
 ## What's Next (v4.0)
 
-### Phase 25: Glossary Expansion
-**Goal:** Authority building through comprehensive terminology
+### Phase 26: Bioregulators Batch 1
+**Goal:** Establish niche authority with Khavinson peptide coverage
 
 **Deliverables:**
-- 141 new glossary terms across 5 categories
+- 10 bioregulator dossiers (Vilon through Testagen)
+- Bioregulators category page
 
 ## Cut List (Deferred to v5.0)
 
@@ -115,13 +126,13 @@ Per content expansion pivot decision:
 
 ## Context for Resume
 
-v4.0 Content Expansion milestone in progress. Phase 24 complete.
+v4.0 Content Expansion milestone in progress. Phase 25 complete.
 
-**Current State (after Phase 24):**
-- ~663 pages (593 + 55 comparisons + 15 condition hubs)
+**Current State (after Phase 25):**
+- ~779 pages (663 + 116 glossary terms)
 - 72 peptide dossiers
 - 100 comparisons (45 + 55 new)
-- 99 glossary terms
+- 215 glossary terms (99 + 116 new)
 - 15 condition hub pages
 - Schema markup deployed (FAQSchema, HowToSchema, DrugSchema)
 
@@ -162,8 +173,8 @@ Phase 9-12: Operations         [░░░░░░░░] ON HOLD
 v4.0 Phases (ACTIVE):
 Phase 23: Comparisons + Hubs   [████████] 100% ✓
 Phase 24: Schema Deployments   [████████] 100% ✓
-Phase 25: Glossary Expansion   [░░░░░░░░] 0%  <-- NEXT
-Phase 26: Bioregulators 1      [░░░░░░░░] 0%
+Phase 25: Glossary Expansion   [████████] 100% ✓
+Phase 26: Bioregulators 1      [░░░░░░░░] 0%  <-- NEXT
 Phase 27: Bioregulators 2      [░░░░░░░░] 0%
 Phase 28: Weekly News Blog     [░░░░░░░░] 0%
 Phase 29: Comparisons + Calc   [░░░░░░░░] 0%
@@ -188,6 +199,7 @@ None
 - 2026-02-01: Planning docs updated (PROJECT.md, REQUIREMENTS.md, ROADMAP.md, STATE.md)
 - 2026-02-01: Phase 23 COMPLETE — 55 comparisons + 15 condition hubs + ConditionLayout
 - 2026-02-01: Phase 24 COMPLETE — Schema deployments (FAQSchema, HowToSchema, DrugSchema)
+- 2026-02-01: Phase 25 COMPLETE — 116 new glossary terms (99 → 215 total)
 
 ---
 *Last updated: 2026-02-01*

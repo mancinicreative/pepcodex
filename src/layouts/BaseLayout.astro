@@ -126,7 +126,7 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
             <button
               class:list={[
                 "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300",
-                ['/compare', '/guide', '/safety', '/glossary', '/conditions', '/protocols'].some(p => currentPath.startsWith(p))
+                ['/compare', '/guide', '/safety', '/glossary', '/conditions'].some(p => currentPath.startsWith(p))
                   ? "bg-white/10 text-white shadow-[0_0_15px_rgba(255,255,255,0.1)] border border-white/10"
                   : "text-white/85 hover:text-white hover:bg-white/5"
               ]}
@@ -161,10 +161,6 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
                 <a href="/conditions" class:list={["flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors", isActive('/conditions') ? "bg-white/10 text-white" : "text-white/70 hover:text-white hover:bg-white/5"]}>
                   <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
                   Conditions
-                </a>
-                <a href="/protocols" class:list={["flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors", isActive('/protocols') ? "bg-white/10 text-white" : "text-white/70 hover:text-white hover:bg-white/5"]}>
-                  <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                  Protocols
                 </a>
               </div>
             </div>
@@ -344,7 +340,7 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
           <details class="group/research">
             <summary class:list={[
               "flex items-center justify-between px-4 py-3 rounded-xl text-lg font-medium transition-colors cursor-pointer list-none",
-              ['/compare', '/guide', '/safety', '/glossary', '/conditions', '/protocols'].some(p => currentPath.startsWith(p))
+              ['/compare', '/guide', '/safety', '/glossary', '/conditions'].some(p => currentPath.startsWith(p))
                 ? "bg-[var(--primary)]/10 text-primary border border-[var(--primary)]/20"
                 : "text-white/85 hover:text-white hover:bg-white/5"
             ]}>
@@ -374,9 +370,6 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
               </a>
               <a href="/conditions" class:list={["flex items-center gap-3 px-4 py-2.5 rounded-lg text-base transition-colors", isActive('/conditions') ? "text-primary" : "text-white/70 hover:text-white hover:bg-white/5"]}>
                 Conditions
-              </a>
-              <a href="/protocols" class:list={["flex items-center gap-3 px-4 py-2.5 rounded-lg text-base transition-colors", isActive('/protocols') ? "text-primary" : "text-white/70 hover:text-white hover:bg-white/5"]}>
-                Protocols
               </a>
             </div>
           </details>

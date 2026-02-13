@@ -12,6 +12,11 @@ export async function getStaticPaths() {
 }
 
 const { condition } = Astro.props;
+
+if (!condition) {
+  return Astro.redirect('/conditions');
+}
+
 const { Content } = await condition.render();
 ---
 

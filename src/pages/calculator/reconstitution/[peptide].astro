@@ -1,0 +1,247 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import HowToSchema from '../../../components/SEO/HowToSchema.astro';
+import presetData from '../../../../data/calculator-presets.json';
+
+export function getStaticPaths() {
+  return presetData.presets
+    .filter(p => p.reconstitution.reconstitutionRequired !== false)
+    .map(preset => ({
+      params: { peptide: preset.slug },
+      props: { preset },
+    }));
+}
+
+const { preset } = Astro.props;
+const displayName = preset.name;
+const vialSizes = preset.reconstitution.typicalVialSizes;
+const defaultWater = preset.reconstitution.typicalWaterVolume;
+const defaultVial = vialSizes[0];
+
+const howToSteps = [
+  {
+    name: `Select ${displayName} vial size`,
+    text: `Choose from typical ${displayName} vial sizes: ${vialSizes.join('mg, ')}mg. The calculator pre-fills with ${defaultVial}mg.`
+  },
+  {
+    name: "Enter bacteriostatic water volume",
+    text: `The default reconstitution volume for ${displayName} is ${defaultWater}mL of bacteriostatic water. Adjust as needed.`
+  },
+  {
+    name: "Enter desired dose",
+    text: "Input your target dose per injection in micrograms (mcg). The calculator determines the draw volume."
+  },
+  {
+    name: "Select syringe size",
+    text: "Choose your insulin syringe size (0.3mL, 0.5mL, or 1.0mL) for the visual guide."
+  },
+  {
+    name: "Read results",
+    text: "View concentration (mcg/mL), doses per vial, draw volume, and syringe units."
+  }
+];
+---
+
+<BaseLayout
+  title={`${displayName} Reconstitution Calculator`}
+  description={`Calculate ${displayName} reconstitution concentrations and draw volumes. Pre-filled with typical ${displayName} vial sizes.`}
+>
+  <HowToSchema
+    name={`How to Calculate ${displayName} Reconstitution`}
+    description={`Step-by-step guide to reconstituting ${displayName} and calculating draw volumes.`}
+    totalTime="PT2M"
+    steps={howToSteps}
+  />
+
+  <!-- Breadcrumb -->
+  <nav class="flex items-center gap-2 text-sm mb-8" style="color: var(--text-medium);">
+    <a href="/calculator" class="hover:text-primary transition-colors">Calculators</a>
+    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+    <a href="/calculator/reconstitution" class="hover:text-primary transition-colors">Reconstitution</a>
+    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+    <span style="color: var(--text-high);">{displayName}</span>
+  </nav>
+
+  <!-- Header -->
+  <section class="mb-12">
+    <div class="flex items-center gap-4 mb-6">
+      <div class="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center">
+        <svg class="w-7 h-7 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4.5 3h15"/><path d="M6 3v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V3"/><path d="M6 14h12"/>
+        </svg>
+      </div>
+      <div>
+        <h1 class="text-3xl font-bold font-display" style="color: var(--text-high);">{displayName} Reconstitution Calculator</h1>
+        <p class="text-sm" style="color: var(--text-medium);">Pre-filled with typical {displayName} values</p>
+      </div>
+    </div>
+    <p class="text-base max-w-2xl" style="color: var(--text-medium);">
+      Calculate reconstitution concentrations and draw volumes for {displayName}.
+      Pre-loaded with typical vial sizes ({vialSizes.map(v => `${v}${preset.reconstitution.unit}`).join(', ')}) and {defaultWater}mL bacteriostatic water.
+    </p>
+  </section>
+
+  <!-- Calculator -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+    <!-- Input Panel -->
+    <div class="glass-card p-8">
+      <h2 class="text-lg font-bold mb-6 font-display" style="color: var(--text-high);">Input Values</h2>
+      <div class="space-y-6">
+        <div>
+          <label class="block text-sm font-medium mb-2" style="color: var(--text-high);">Peptide Amount ({preset.reconstitution.unit})</label>
+          <div class="flex gap-2 mb-2">
+            {vialSizes.map((size: number) => (
+              <button type="button" data-vial={size} class={`vial-btn px-3 py-1.5 rounded-lg text-xs font-medium border transition-all ${size === defaultVial ? 'active' : ''}`}>
+                {size}{preset.reconstitution.unit}
+              </button>
+            ))}
+          </div>
+          <input type="number" id="peptideAmount" value={defaultVial} min="0.1" step="0.1"
+            class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all" />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-2" style="color: var(--text-high);">Bacteriostatic Water (mL)</label>
+          <input type="number" id="waterVolume" value={defaultWater} min="0.1" step="0.1"
+            class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all" />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-2" style="color: var(--text-high);">Desired Dose (mcg)</label>
+          <input type="number" id="desiredDose" value="250" min="1" step="1"
+            class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all" />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-2" style="color: var(--text-high);">Syringe Size</label>
+          <div class="grid grid-cols-3 gap-2">
+            <button type="button" data-syringe="0.3" class="syringe-btn active px-4 py-2 rounded-lg text-sm font-medium border transition-all">0.3 mL</button>
+            <button type="button" data-syringe="0.5" class="syringe-btn px-4 py-2 rounded-lg text-sm font-medium border transition-all">0.5 mL</button>
+            <button type="button" data-syringe="1.0" class="syringe-btn px-4 py-2 rounded-lg text-sm font-medium border transition-all">1.0 mL</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Panel -->
+    <div class="glass-card p-8">
+      <h2 class="text-lg font-bold mb-6 font-display" style="color: var(--text-high);">Results</h2>
+      <div class="grid grid-cols-2 gap-4 mb-8">
+        <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+          <p class="text-xs uppercase tracking-wider mb-1" style="color: var(--text-low);">Concentration</p>
+          <p class="text-2xl font-bold text-primary" id="resultConcentration">-</p>
+          <p class="text-xs" style="color: var(--text-medium);">mg/mL</p>
+        </div>
+        <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+          <p class="text-xs uppercase tracking-wider mb-1" style="color: var(--text-low);">Doses Per Vial</p>
+          <p class="text-2xl font-bold text-cyan-400" id="resultDoses">-</p>
+          <p class="text-xs" style="color: var(--text-medium);">at selected dose</p>
+        </div>
+        <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+          <p class="text-xs uppercase tracking-wider mb-1" style="color: var(--text-low);">Draw Volume</p>
+          <p class="text-2xl font-bold text-purple-400" id="resultVolume">-</p>
+          <p class="text-xs" style="color: var(--text-medium);">mL per dose</p>
+        </div>
+        <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+          <p class="text-xs uppercase tracking-wider mb-1" style="color: var(--text-low);">Syringe Units</p>
+          <p class="text-2xl font-bold text-green-400" id="resultUnits">-</p>
+          <p class="text-xs" style="color: var(--text-medium);">units to draw</p>
+        </div>
+      </div>
+
+      <!-- Link to dossier -->
+      <a href={`/peptides/${preset.slug}`} class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline">
+        View {displayName} Evidence Dossier
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Disclaimer -->
+  <section class="py-8">
+    <div class="glass-card p-6" style="border-color: hsla(45, 90%, 55%, 0.3);">
+      <div class="flex items-start gap-4">
+        <div class="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 bg-yellow-500/20 border border-yellow-500/30">
+          <svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-sm font-bold text-yellow-400 uppercase tracking-wider mb-2">For Research Purposes Only</h3>
+          <p class="text-sm leading-relaxed" style="color: var(--text-medium);">
+            This calculator is for educational and research purposes only. It does not provide dosing guidance or medical advice. Always consult qualified healthcare professionals. Pre-filled values represent typical research-grade vial sizes, not recommended doses.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .vial-btn, .syringe-btn { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); }
+  .vial-btn:hover, .syringe-btn:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: white; }
+  .vial-btn.active, .syringe-btn.active { background: rgba(139,92,246,0.2); border-color: rgba(139,92,246,0.5); color: rgb(139,92,246); }
+</style>
+
+<script>
+  let currentSyringeSize = 0.3;
+
+  const peptideInput = document.getElementById('peptideAmount') as HTMLInputElement;
+  const waterInput = document.getElementById('waterVolume') as HTMLInputElement;
+  const doseInput = document.getElementById('desiredDose') as HTMLInputElement;
+  const resultConcentration = document.getElementById('resultConcentration')!;
+  const resultDoses = document.getElementById('resultDoses')!;
+  const resultVolume = document.getElementById('resultVolume')!;
+  const resultUnits = document.getElementById('resultUnits')!;
+
+  function calculate() {
+    const peptideMg = parseFloat(peptideInput.value) || 0;
+    const waterMl = parseFloat(waterInput.value) || 0;
+    const doseMcg = parseFloat(doseInput.value) || 0;
+
+    if (peptideMg <= 0 || waterMl <= 0) {
+      resultConcentration.textContent = '0.00';
+      resultDoses.textContent = '0';
+      resultVolume.textContent = '0.000';
+      resultUnits.textContent = '0';
+      return;
+    }
+
+    const concentration = peptideMg / waterMl;
+    resultConcentration.textContent = concentration.toFixed(2);
+
+    const totalMcg = peptideMg * 1000;
+    const doses = doseMcg > 0 ? Math.floor(totalMcg / doseMcg) : 0;
+    resultDoses.textContent = doses.toString();
+
+    const volumeMl = doseMcg > 0 ? doseMcg / (concentration * 1000) : 0;
+    resultVolume.textContent = volumeMl.toFixed(4);
+
+    const units = volumeMl * 100;
+    resultUnits.textContent = units.toFixed(1);
+  }
+
+  peptideInput.addEventListener('input', calculate);
+  waterInput.addEventListener('input', calculate);
+  doseInput.addEventListener('input', calculate);
+
+  document.querySelectorAll('.syringe-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      document.querySelectorAll('.syringe-btn').forEach(b => b.classList.remove('active'));
+      (e.currentTarget as HTMLButtonElement).classList.add('active');
+      currentSyringeSize = parseFloat((e.currentTarget as HTMLButtonElement).dataset.syringe || '0.3');
+      calculate();
+    });
+  });
+
+  document.querySelectorAll('.vial-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      document.querySelectorAll('.vial-btn').forEach(b => b.classList.remove('active'));
+      (e.currentTarget as HTMLButtonElement).classList.add('active');
+      peptideInput.value = (e.currentTarget as HTMLButtonElement).dataset.vial || '5';
+      calculate();
+    });
+  });
+
+  calculate();
+</script>

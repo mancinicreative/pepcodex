@@ -1,161 +1,268 @@
 ---
-name: "Pinealon"
-aliases: ["EDR", "Glu-Asp-Arg", "Pinealon peptide", "T-33 peptide"]
-category: "cognitive"
-compoundType: "bioregulator"
-evidenceStrength: "very-low"
-lastUpdated: 2026-01-31
-comparators: ["epithalon", "semax", "cortexin"]
-summary: "A synthetic tripeptide (Glu-Asp-Arg) developed by Russian researcher Vladimir Khavinson as a 'peptide bioregulator' claimed to support brain function. Part of a larger Russian research program on short peptides. Evidence comes almost exclusively from Russian publications with no independent Western replication. Not approved by any Western regulatory agency."
+name: Pinealon
+aliases:
+  - EDR
+  - Glu-Asp-Arg
+  - Pinealon peptide
+  - T-33 peptide
+category: cognitive
+compoundType: bioregulator
+evidenceStrength: low
+lastUpdated: 2026-01-31T00:00:00.000Z
+comparators:
+  - epithalon
+  - semax
+  - cortexin
+summary: >-
+  A synthetic tripeptide (Glu-Asp-Arg) developed by Russian researcher Vladimir
+  Khavinson as a 'peptide bioregulator' claimed to support brain function. Part
+  of a larger Russian research program on short peptides. Evidence comes almost
+  exclusively from Russian publications with no independent Western replication.
+  Not approved by any Western regulatory agency.
 sources:
   count: 15
   human: 2
   preclinical: 13
   openAccess: 5
-metaTitle: "Pinealon Evidence Dossier | PepCodex"
-metaDescription: "Evidence review of Pinealon (EDR), the Russian tripeptide bioregulator. Khavinson research, mechanism claims, evidence limitations, and regulatory status."
+metaTitle: Pinealon Evidence Dossier | PepCodex
+metaDescription: >-
+  Evidence review of Pinealon (EDR), the Russian tripeptide bioregulator.
+  Khavinson research, mechanism claims, evidence limitations, and regulatory
+  status.
 interactions:
-  - peptide: "epithalon"
-    type: "compatible"
-    description: "Both are Khavinson bioregulator peptides with different proposed targets. Epithalon focuses on telomerase activation while Pinealon targets brain function. No interaction studies available; both lack independent validation."
-  - peptide: "semax"
-    type: "compatible"
-    description: "Different mechanisms of action (Semax is ACTH-derived with BDNF modulation vs Pinealon's proposed antioxidant effects). Both target cognitive function through distinct pathways. No combined studies exist."
-  - peptide: "cortexin"
-    type: "compatible"
-    description: "Both are Russian neuropeptide preparations. Cortexin is a complex polypeptide mixture while Pinealon is a defined tripeptide. Theoretical complementary effects; no interaction data available."
-  - peptide: "selank"
-    type: "compatible"
-    description: "Non-overlapping mechanisms. Selank modulates GABA and serotonin systems while Pinealon claims antioxidant and ERK modulation. No contraindications known; both lack rigorous human data."
-  - peptide: "bpc-157"
-    type: "compatible"
-    description: "Different primary targets (Pinealon for brain, BPC-157 for tissue repair). No known interactions; both peptides lack comprehensive human pharmacokinetic data."
-  - peptide: "dihexa"
-    type: "caution"
-    description: "Both claimed to have cognitive effects. Dihexa has potent HGF receptor activity. Combining experimental nootropic peptides with unknown safety profiles warrants caution."
+  - peptide: epithalon
+    type: compatible
+    description: >-
+      Both are Khavinson bioregulator peptides with different proposed targets.
+      Epithalon focuses on telomerase activation while Pinealon targets brain
+      function. No interaction studies available; both lack independent
+      validation.
+  - peptide: semax
+    type: compatible
+    description: >-
+      Different mechanisms of action (Semax is ACTH-derived with BDNF modulation
+      vs Pinealon's proposed antioxidant effects). Both target cognitive
+      function through distinct pathways. No combined studies exist.
+  - peptide: cortexin
+    type: compatible
+    description: >-
+      Both are Russian neuropeptide preparations. Cortexin is a complex
+      polypeptide mixture while Pinealon is a defined tripeptide. Theoretical
+      complementary effects; no interaction data available.
+  - peptide: selank
+    type: compatible
+    description: >-
+      Non-overlapping mechanisms. Selank modulates GABA and serotonin systems
+      while Pinealon claims antioxidant and ERK modulation. No contraindications
+      known; both lack rigorous human data.
+  - peptide: bpc-157
+    type: compatible
+    description: >-
+      Different primary targets (Pinealon for brain, BPC-157 for tissue repair).
+      No known interactions; both peptides lack comprehensive human
+      pharmacokinetic data.
+  - peptide: dihexa
+    type: caution
+    description: >-
+      Both claimed to have cognitive effects. Dihexa has potent HGF receptor
+      activity. Combining experimental nootropic peptides with unknown safety
+      profiles warrants caution.
 molecularInfo:
-  weight: "418.41 Da"
+  weight: 418.41 Da
   chainLength: 3
-  type: "Tripeptide"
-  sequence: "EDR"
+  type: Tripeptide
+  sequence: EDR
   aminoAcids:
-    - { code: "E", name: "Glutamic Acid", position: 1, property: "negative" }
-    - { code: "D", name: "Aspartic Acid", position: 2, property: "negative" }
-    - { code: "R", name: "Arginine", position: 3, property: "positive" }
+    - code: E
+      name: Glutamic Acid
+      position: 1
+      property: negative
+    - code: D
+      name: Aspartic Acid
+      position: 2
+      property: negative
+    - code: R
+      name: Arginine
+      position: 3
+      property: positive
 evidenceChainedBenefits:
   - mechanism:
-      action: "Antioxidant activity via ROS suppression and SOD/glutathione peroxidase upregulation"
-      confidence: "emerging"
+      action: >-
+        Antioxidant activity via ROS suppression and SOD/glutathione peroxidase
+        upregulation
+      confidence: emerging
       directStudies: 3
     benefit:
-      claim: "protect neurons from oxidative stress"
-      qualifier: "may"
+      claim: protect neurons from oxidative stress
+      qualifier: may
     evidence:
-      level: "very-low"
+      level: very-low
       humanStudies: 0
       animalStudies: 2
       cellStudies: 3
       keyFindings:
-        - study: "Khavinson V et al. 2011"
-          type: "in-vitro"
-          finding: "Pinealon demonstrated dose-dependent ROS suppression in cerebellar granule cells, neutrophils, and PC12 cells under oxidative stress"
-          pmid: "21978084"
-        - study: "Arutjunyan A et al. 2012"
-          type: "animal"
-          finding: "Pinealon administration to pregnant rats with hyperhomocysteinemia decreased ROS accumulation and necrotic cells in offspring cerebellum neurons"
-          pmid: "22567179"
+        - study: Khavinson V et al. 2011
+          type: in-vitro
+          finding: >-
+            Pinealon demonstrated dose-dependent ROS suppression in cerebellar
+            granule cells, neutrophils, and PC12 cells under oxidative stress
+          pmid: '21978084'
+        - study: Arutjunyan A et al. 2012
+          type: animal
+          finding: >-
+            Pinealon administration to pregnant rats with hyperhomocysteinemia
+            decreased ROS accumulation and necrotic cells in offspring
+            cerebellum neurons
+          pmid: '22567179'
   - mechanism:
-      action: "ERK1/2 signaling modulation and cell cycle regulation"
-      confidence: "emerging"
+      action: ERK1/2 signaling modulation and cell cycle regulation
+      confidence: emerging
       directStudies: 2
     benefit:
-      claim: "support neuronal cell viability"
-      qualifier: "suggested to"
+      claim: support neuronal cell viability
+      qualifier: suggested to
     evidence:
-      level: "very-low"
+      level: very-low
       humanStudies: 0
       animalStudies: 1
       cellStudies: 2
       keyFindings:
-        - study: "Khavinson V et al. 2011"
-          type: "in-vitro"
-          finding: "Pinealon delayed ERK1/2 activation time course and modified cell cycle in PC12 cells exposed to homocysteine"
-          pmid: "21978084"
-        - study: "Ilina A et al. 2021"
-          type: "animal"
-          finding: "EDR peptide increased dendritic spine density of CA1 neurons by 11% in 5xFAD Alzheimer's mouse model"
-          pmid: "34071923"
+        - study: Khavinson V et al. 2011
+          type: in-vitro
+          finding: >-
+            Pinealon delayed ERK1/2 activation time course and modified cell
+            cycle in PC12 cells exposed to homocysteine
+          pmid: '21978084'
+        - study: Ilina A et al. 2021
+          type: animal
+          finding: >-
+            EDR peptide increased dendritic spine density of CA1 neurons by 11%
+            in 5xFAD Alzheimer's mouse model
+          pmid: '34071923'
   - mechanism:
-      action: "Proposed gene expression regulation via DNA binding (Khavinson theory - unvalidated)"
-      confidence: "emerging"
+      action: >-
+        Proposed gene expression regulation via DNA binding (Khavinson theory -
+        unvalidated)
+      confidence: emerging
       directStudies: 2
     benefit:
-      claim: "regulate neuroprotective gene expression"
-      qualifier: "may"
+      claim: regulate neuroprotective gene expression
+      qualifier: may
     evidence:
-      level: "very-low"
+      level: very-low
       humanStudies: 0
       animalStudies: 0
       cellStudies: 2
       keyFindings:
-        - study: "Fedoreyeva LI et al. 2011"
-          type: "in-vitro"
-          finding: "Short fluorescence-labeled peptides observed to penetrate nucleus in HeLa cells; specific DNA interaction claimed but mechanism unvalidated"
-          pmid: "22117547"
-        - study: "Khavinson V et al. 2020"
-          type: "in-vitro"
-          finding: "Computational modeling suggested EDR binding sites in promoter regions of CASP3, SOD2, APOE genes; biological significance unconfirmed"
-          pmid: "33396470"
+        - study: Fedoreyeva LI et al. 2011
+          type: in-vitro
+          finding: >-
+            Short fluorescence-labeled peptides observed to penetrate nucleus in
+            HeLa cells; specific DNA interaction claimed but mechanism
+            unvalidated
+          pmid: '22117547'
+        - study: Khavinson V et al. 2020
+          type: in-vitro
+          finding: >-
+            Computational modeling suggested EDR binding sites in promoter
+            regions of CASP3, SOD2, APOE genes; biological significance
+            unconfirmed
+          pmid: '33396470'
 conditions:
-  - slug: "cognitive-decline"
-    name: "Cognitive Decline"
-    researchSummary: "Pinealon has been studied in Russian preclinical models for age-related cognitive changes. Khavinson laboratory studies suggest antioxidant effects in brain tissue, but all evidence is from single research group. Two small Russian human studies exist but lack Western validation. No independent clinical trials have evaluated Pinealon for cognitive decline."
-    relevantStudies: ["21978084", "34071923", "22567179"]
-    relatedPeptides: ["semax", "selank", "cortexin"]
-  - slug: "oxidative-stress"
-    name: "Oxidative Stress"
-    researchSummary: "In vitro studies from Khavinson laboratory demonstrated Pinealon's ability to suppress reactive oxygen species in neuronal cell cultures. Animal studies showed reduced oxidative damage markers. However, antioxidant effects in humans are unconfirmed, and bioavailability of this tripeptide is unknown."
-    relevantStudies: ["21978084", "22567179"]
-    relatedPeptides: ["epithalon", "ghk-cu"]
-  - slug: "neurodegeneration"
-    name: "Neurodegeneration"
-    researchSummary: "Preclinical work in 5xFAD Alzheimer's mouse model showed Pinealon increased dendritic spine density. Additional in vitro studies suggest neuroprotective signaling. All studies originate from Russian laboratories without independent replication. No human neurodegenerative disease trials exist."
-    relevantStudies: ["34071923", "33396470", "21978084"]
-    relatedPeptides: ["semax", "dihexa", "cortexin"]
+  - slug: cognitive-decline
+    name: Cognitive Decline
+    researchSummary: >-
+      Pinealon has been studied in Russian preclinical models for age-related
+      cognitive changes. Khavinson laboratory studies suggest antioxidant
+      effects in brain tissue, but all evidence is from single research group.
+      Two small Russian human studies exist but lack Western validation. No
+      independent clinical trials have evaluated Pinealon for cognitive decline.
+    relevantStudies:
+      - '21978084'
+      - '34071923'
+      - '22567179'
+    relatedPeptides:
+      - semax
+      - selank
+      - cortexin
+  - slug: oxidative-stress
+    name: Oxidative Stress
+    researchSummary: >-
+      In vitro studies from Khavinson laboratory demonstrated Pinealon's ability
+      to suppress reactive oxygen species in neuronal cell cultures. Animal
+      studies showed reduced oxidative damage markers. However, antioxidant
+      effects in humans are unconfirmed, and bioavailability of this tripeptide
+      is unknown.
+    relevantStudies:
+      - '21978084'
+      - '22567179'
+    relatedPeptides:
+      - epithalon
+      - ghk-cu
+  - slug: neurodegeneration
+    name: Neurodegeneration
+    researchSummary: >-
+      Preclinical work in 5xFAD Alzheimer's mouse model showed Pinealon
+      increased dendritic spine density. Additional in vitro studies suggest
+      neuroprotective signaling. All studies originate from Russian laboratories
+      without independent replication. No human neurodegenerative disease trials
+      exist.
+    relevantStudies:
+      - '34071923'
+      - '33396470'
+      - '21978084'
+    relatedPeptides:
+      - semax
+      - dihexa
+      - cortexin
 timeline:
-  - period: "Week 1-2"
-    effects: "Based on limited preclinical data: Proposed antioxidant effects may begin. Russian cell studies show ROS suppression within hours to days of exposure. No human timeline data available. Oral bioavailability likely very low for this tripeptide."
-    source: "PMID:21978084"
-  - period: "Week 2-4"
-    effects: "Animal studies suggest ongoing neuroprotective signaling. ERK1/2 modulation observed in cell models within this timeframe. Translation to human effects is completely speculative and unvalidated."
-    source: "PMID:21978084"
-  - period: "Week 4-8"
-    effects: "Mouse studies showed dendritic spine density changes over several weeks. Long-term effects, optimal duration, and human pharmacokinetics are unknown. All timeline estimates are extrapolated from Russian preclinical data."
-    source: "PMID:34071923"
-  - period: "Week 8+"
-    effects: "No long-term human data exists. Russian bioregulator theory suggests extended use for 'cellular regulation' but this lacks scientific validation. Safety of prolonged use is uncharacterized."
+  - period: Week 1-2
+    effects: >-
+      Based on limited preclinical data: Proposed antioxidant effects may begin.
+      Russian cell studies show ROS suppression within hours to days of
+      exposure. No human timeline data available. Oral bioavailability likely
+      very low for this tripeptide.
+    source: 'PMID:21978084'
+  - period: Week 2-4
+    effects: >-
+      Animal studies suggest ongoing neuroprotective signaling. ERK1/2
+      modulation observed in cell models within this timeframe. Translation to
+      human effects is completely speculative and unvalidated.
+    source: 'PMID:21978084'
+  - period: Week 4-8
+    effects: >-
+      Mouse studies showed dendritic spine density changes over several weeks.
+      Long-term effects, optimal duration, and human pharmacokinetics are
+      unknown. All timeline estimates are extrapolated from Russian preclinical
+      data.
+    source: 'PMID:34071923'
+  - period: Week 8+
+    effects: >-
+      No long-term human data exists. Russian bioregulator theory suggests
+      extended use for 'cellular regulation' but this lacks scientific
+      validation. Safety of prolonged use is uncharacterized.
 qualityChecklist:
   goodSigns:
-    - "White to off-white lyophilized powder"
-    - "Dissolves completely in bacteriostatic water"
-    - "Clear, colorless solution after reconstitution"
-    - "Certificate of analysis (COA) showing >95% purity"
-    - "Third-party HPLC and mass spectrometry verification"
-    - "Proper vacuum seal on vial"
+    - White to off-white lyophilized powder
+    - Dissolves completely in bacteriostatic water
+    - 'Clear, colorless solution after reconstitution'
+    - Certificate of analysis (COA) showing >95% purity
+    - Third-party HPLC and mass spectrometry verification
+    - Proper vacuum seal on vial
   warningSigns:
-    - "Slightly off-white or cream-colored powder"
-    - "Takes longer than expected to dissolve"
-    - "COA from manufacturer only without third-party verification"
-    - "Purity listed below 95% but above 90%"
-    - "Limited vendor reputation or transparency"
+    - Slightly off-white or cream-colored powder
+    - Takes longer than expected to dissolve
+    - COA from manufacturer only without third-party verification
+    - Purity listed below 95% but above 90%
+    - Limited vendor reputation or transparency
   badSigns:
-    - "Yellow, brown, or otherwise discolored powder"
-    - "Visible particles or cloudiness after reconstitution"
-    - "Clumping that won't dissolve"
-    - "No COA provided or COA appears fraudulent"
-    - "Strong unusual odor"
-    - "Vial seal appears compromised"
-    - "Vendor makes therapeutic claims (regulatory red flag)"
+    - 'Yellow, brown, or otherwise discolored powder'
+    - Visible particles or cloudiness after reconstitution
+    - Clumping that won't dissolve
+    - No COA provided or COA appears fraudulent
+    - Strong unusual odor
+    - Vial seal appears compromised
+    - Vendor makes therapeutic claims (regulatory red flag)
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

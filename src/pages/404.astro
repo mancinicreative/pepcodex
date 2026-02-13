@@ -5,7 +5,8 @@ import { getCollection } from 'astro:content';
 // Get popular peptides for suggestions
 const peptides = await getCollection('peptides');
 const popularPeptides = peptides
-  .sort((a, b) => b.data.sources.count - a.data.sources.count)
+  .filter(p => p?.data?.sources?.count !== undefined)
+  .sort((a, b) => (b?.data?.sources?.count || 0) - (a?.data?.sources?.count || 0))
   .slice(0, 6);
 
 const categoryLabels: Record<string, string> = {

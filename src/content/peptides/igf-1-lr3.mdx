@@ -1,257 +1,582 @@
 ---
-name: "IGF-1 LR3"
-aliases: ["Long R3 IGF-1", "LR3-IGF-1", "Insulin-like Growth Factor 1 Long R3"]
-category: "hormonal"
-evidenceStrength: "moderate"
-lastUpdated: 2026-01-22
-comparators: ["igf-1", "hgh", "mgf"]
-summary: "A modified form of IGF-1 with an extended half-life due to reduced binding protein affinity. Used primarily in research for muscle growth and metabolic effects. Not approved for human use; significant safety concerns exist."
+name: IGF-1 LR3
+aliases:
+  - Long R3 IGF-1
+  - LR3-IGF-1
+  - Insulin-like Growth Factor 1 Long R3
+category: hormonal
+evidenceStrength: low
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - igf-1
+  - hgh
+  - mgf
+summary: >-
+  A modified form of IGF-1 with an extended half-life due to reduced binding
+  protein affinity. Used primarily in research for muscle growth and metabolic
+  effects. Not approved for human use; significant safety concerns exist.
 sources:
   count: 48
   human: 8
   preclinical: 28
   openAccess: 32
-metaTitle: "IGF-1 LR3 Evidence Dossier | PepCodex"
-metaDescription: "Evidence review of IGF-1 LR3 (Long R3 Insulin-like Growth Factor-1). Research data on mechanism, muscle growth effects, safety concerns, and regulatory status."
+metaTitle: IGF-1 LR3 Evidence Dossier | PepCodex
+metaDescription: >-
+  Evidence review of IGF-1 LR3 (Long R3 Insulin-like Growth Factor-1). Research
+  data on mechanism, muscle growth effects, safety concerns, and regulatory
+  status.
 interactions:
-  - peptide: "hgh"
-    type: "synergistic"
-    description: "HGH stimulates endogenous IGF-1 production. Adding exogenous IGF-1 LR3 may amplify anabolic effects but also compounds risks including hypoglycemia and potential cancer promotion."
-  - peptide: "igf-1"
-    type: "avoid"
-    description: "Both act on the same receptor. Combining provides no additional benefit and increases risk of hypoglycemia and other adverse effects."
-  - peptide: "insulin"
-    type: "caution"
-    description: "Both cause hypoglycemia through different mechanisms. Combined use dramatically increases risk of severe hypoglycemia."
-  - peptide: "mgf"
-    type: "compatible"
-    description: "MGF (Mechano Growth Factor) is an IGF-1 splice variant. Different kinetics and localization may provide complementary effects, but combined safety is not established."
-  - peptide: "bpc-157"
-    type: "compatible"
-    description: "Different regenerative mechanisms - BPC-157 for tissue healing, IGF-1 LR3 for muscle growth. Theoretical complementary use."
-  - peptide: "tb-500"
-    type: "compatible"
-    description: "TB-500 promotes tissue repair via actin regulation while IGF-1 LR3 drives muscle hypertrophy. Different mechanisms may be complementary."
+  - peptide: hgh
+    type: synergistic
+    description: >-
+      HGH stimulates endogenous IGF-1 production. Adding exogenous IGF-1 LR3 may
+      amplify anabolic effects but also compounds risks including hypoglycemia
+      and potential cancer promotion.
+  - peptide: igf-1
+    type: avoid
+    description: >-
+      Both act on the same receptor. Combining provides no additional benefit
+      and increases risk of hypoglycemia and other adverse effects.
+  - peptide: insulin
+    type: caution
+    description: >-
+      Both cause hypoglycemia through different mechanisms. Combined use
+      dramatically increases risk of severe hypoglycemia.
+  - peptide: mgf
+    type: compatible
+    description: >-
+      MGF (Mechano Growth Factor) is an IGF-1 splice variant. Different kinetics
+      and localization may provide complementary effects, but combined safety is
+      not established.
+  - peptide: bpc-157
+    type: compatible
+    description: >-
+      Different regenerative mechanisms - BPC-157 for tissue healing, IGF-1 LR3
+      for muscle growth. Theoretical complementary use.
+  - peptide: tb-500
+    type: compatible
+    description: >-
+      TB-500 promotes tissue repair via actin regulation while IGF-1 LR3 drives
+      muscle hypertrophy. Different mechanisms may be complementary.
 molecularInfo:
-  weight: "9,116 Da"
+  weight: '9,116 Da'
   chainLength: 83
-  type: "Modified growth factor analog"
-  sequence: "MFPAMPLSSLFVNGPRTLCGAELVDALQFVCGDRGFYFNKPTGYGSSSRRAPQTGIVDECCFRSCDLRRLEMYCAPLKPAKSA"
+  type: Modified growth factor analog
+  sequence: >-
+    MFPAMPLSSLFVNGPRTLCGAELVDALQFVCGDRGFYFNKPTGYGSSSRRAPQTGIVDECCFRSCDLRRLEMYCAPLKPAKSA
   aminoAcids:
-    - { code: "M", name: "Methionine", position: 1, property: "hydrophobic" }
-    - { code: "F", name: "Phenylalanine", position: 2, property: "hydrophobic" }
-    - { code: "P", name: "Proline", position: 3, property: "hydrophobic" }
-    - { code: "A", name: "Alanine", position: 4, property: "hydrophobic" }
-    - { code: "M", name: "Methionine", position: 5, property: "hydrophobic" }
-    - { code: "P", name: "Proline", position: 6, property: "hydrophobic" }
-    - { code: "L", name: "Leucine", position: 7, property: "hydrophobic" }
-    - { code: "S", name: "Serine", position: 8, property: "polar" }
-    - { code: "S", name: "Serine", position: 9, property: "polar" }
-    - { code: "L", name: "Leucine", position: 10, property: "hydrophobic" }
-    - { code: "F", name: "Phenylalanine", position: 11, property: "hydrophobic" }
-    - { code: "V", name: "Valine", position: 12, property: "hydrophobic" }
-    - { code: "N", name: "Asparagine", position: 13, property: "polar" }
-    - { code: "G", name: "Glycine", position: 14, property: "polar" }
-    - { code: "P", name: "Proline", position: 15, property: "hydrophobic" }
-    - { code: "R", name: "Arginine", position: 16, property: "positive" }
-    - { code: "T", name: "Threonine", position: 17, property: "polar" }
-    - { code: "L", name: "Leucine", position: 18, property: "hydrophobic" }
-    - { code: "C", name: "Cysteine", position: 19, property: "polar" }
-    - { code: "G", name: "Glycine", position: 20, property: "polar" }
-    - { code: "A", name: "Alanine", position: 21, property: "hydrophobic" }
-    - { code: "E", name: "Glutamic Acid", position: 22, property: "negative" }
-    - { code: "L", name: "Leucine", position: 23, property: "hydrophobic" }
-    - { code: "V", name: "Valine", position: 24, property: "hydrophobic" }
-    - { code: "D", name: "Aspartic Acid", position: 25, property: "negative" }
-    - { code: "A", name: "Alanine", position: 26, property: "hydrophobic" }
-    - { code: "L", name: "Leucine", position: 27, property: "hydrophobic" }
-    - { code: "Q", name: "Glutamine", position: 28, property: "polar" }
-    - { code: "F", name: "Phenylalanine", position: 29, property: "hydrophobic" }
-    - { code: "V", name: "Valine", position: 30, property: "hydrophobic" }
-    - { code: "C", name: "Cysteine", position: 31, property: "polar" }
-    - { code: "G", name: "Glycine", position: 32, property: "polar" }
-    - { code: "D", name: "Aspartic Acid", position: 33, property: "negative" }
-    - { code: "R", name: "Arginine", position: 34, property: "positive" }
-    - { code: "G", name: "Glycine", position: 35, property: "polar" }
-    - { code: "F", name: "Phenylalanine", position: 36, property: "hydrophobic" }
-    - { code: "Y", name: "Tyrosine", position: 37, property: "polar" }
-    - { code: "F", name: "Phenylalanine", position: 38, property: "hydrophobic" }
-    - { code: "N", name: "Asparagine", position: 39, property: "polar" }
-    - { code: "K", name: "Lysine", position: 40, property: "positive" }
-    - { code: "P", name: "Proline", position: 41, property: "hydrophobic" }
-    - { code: "T", name: "Threonine", position: 42, property: "polar" }
-    - { code: "G", name: "Glycine", position: 43, property: "polar" }
-    - { code: "Y", name: "Tyrosine", position: 44, property: "polar" }
-    - { code: "G", name: "Glycine", position: 45, property: "polar" }
-    - { code: "S", name: "Serine", position: 46, property: "polar" }
-    - { code: "S", name: "Serine", position: 47, property: "polar" }
-    - { code: "S", name: "Serine", position: 48, property: "polar" }
-    - { code: "R", name: "Arginine", position: 49, property: "positive" }
-    - { code: "R", name: "Arginine", position: 50, property: "positive" }
-    - { code: "A", name: "Alanine", position: 51, property: "hydrophobic" }
-    - { code: "P", name: "Proline", position: 52, property: "hydrophobic" }
-    - { code: "Q", name: "Glutamine", position: 53, property: "polar" }
-    - { code: "T", name: "Threonine", position: 54, property: "polar" }
-    - { code: "G", name: "Glycine", position: 55, property: "polar" }
-    - { code: "I", name: "Isoleucine", position: 56, property: "hydrophobic" }
-    - { code: "V", name: "Valine", position: 57, property: "hydrophobic" }
-    - { code: "D", name: "Aspartic Acid", position: 58, property: "negative" }
-    - { code: "E", name: "Glutamic Acid", position: 59, property: "negative" }
-    - { code: "C", name: "Cysteine", position: 60, property: "polar" }
-    - { code: "C", name: "Cysteine", position: 61, property: "polar" }
-    - { code: "F", name: "Phenylalanine", position: 62, property: "hydrophobic" }
-    - { code: "R", name: "Arginine", position: 63, property: "positive" }
-    - { code: "S", name: "Serine", position: 64, property: "polar" }
-    - { code: "C", name: "Cysteine", position: 65, property: "polar" }
-    - { code: "D", name: "Aspartic Acid", position: 66, property: "negative" }
-    - { code: "L", name: "Leucine", position: 67, property: "hydrophobic" }
-    - { code: "R", name: "Arginine", position: 68, property: "positive" }
-    - { code: "R", name: "Arginine", position: 69, property: "positive" }
-    - { code: "L", name: "Leucine", position: 70, property: "hydrophobic" }
-    - { code: "E", name: "Glutamic Acid", position: 71, property: "negative" }
-    - { code: "M", name: "Methionine", position: 72, property: "hydrophobic" }
-    - { code: "Y", name: "Tyrosine", position: 73, property: "polar" }
-    - { code: "C", name: "Cysteine", position: 74, property: "polar" }
-    - { code: "A", name: "Alanine", position: 75, property: "hydrophobic" }
-    - { code: "P", name: "Proline", position: 76, property: "hydrophobic" }
-    - { code: "L", name: "Leucine", position: 77, property: "hydrophobic" }
-    - { code: "K", name: "Lysine", position: 78, property: "positive" }
-    - { code: "P", name: "Proline", position: 79, property: "hydrophobic" }
-    - { code: "A", name: "Alanine", position: 80, property: "hydrophobic" }
-    - { code: "K", name: "Lysine", position: 81, property: "positive" }
-    - { code: "S", name: "Serine", position: 82, property: "polar" }
-    - { code: "A", name: "Alanine", position: 83, property: "hydrophobic" }
+    - code: M
+      name: Methionine
+      position: 1
+      property: hydrophobic
+    - code: F
+      name: Phenylalanine
+      position: 2
+      property: hydrophobic
+    - code: P
+      name: Proline
+      position: 3
+      property: hydrophobic
+    - code: A
+      name: Alanine
+      position: 4
+      property: hydrophobic
+    - code: M
+      name: Methionine
+      position: 5
+      property: hydrophobic
+    - code: P
+      name: Proline
+      position: 6
+      property: hydrophobic
+    - code: L
+      name: Leucine
+      position: 7
+      property: hydrophobic
+    - code: S
+      name: Serine
+      position: 8
+      property: polar
+    - code: S
+      name: Serine
+      position: 9
+      property: polar
+    - code: L
+      name: Leucine
+      position: 10
+      property: hydrophobic
+    - code: F
+      name: Phenylalanine
+      position: 11
+      property: hydrophobic
+    - code: V
+      name: Valine
+      position: 12
+      property: hydrophobic
+    - code: 'N'
+      name: Asparagine
+      position: 13
+      property: polar
+    - code: G
+      name: Glycine
+      position: 14
+      property: polar
+    - code: P
+      name: Proline
+      position: 15
+      property: hydrophobic
+    - code: R
+      name: Arginine
+      position: 16
+      property: positive
+    - code: T
+      name: Threonine
+      position: 17
+      property: polar
+    - code: L
+      name: Leucine
+      position: 18
+      property: hydrophobic
+    - code: C
+      name: Cysteine
+      position: 19
+      property: polar
+    - code: G
+      name: Glycine
+      position: 20
+      property: polar
+    - code: A
+      name: Alanine
+      position: 21
+      property: hydrophobic
+    - code: E
+      name: Glutamic Acid
+      position: 22
+      property: negative
+    - code: L
+      name: Leucine
+      position: 23
+      property: hydrophobic
+    - code: V
+      name: Valine
+      position: 24
+      property: hydrophobic
+    - code: D
+      name: Aspartic Acid
+      position: 25
+      property: negative
+    - code: A
+      name: Alanine
+      position: 26
+      property: hydrophobic
+    - code: L
+      name: Leucine
+      position: 27
+      property: hydrophobic
+    - code: Q
+      name: Glutamine
+      position: 28
+      property: polar
+    - code: F
+      name: Phenylalanine
+      position: 29
+      property: hydrophobic
+    - code: V
+      name: Valine
+      position: 30
+      property: hydrophobic
+    - code: C
+      name: Cysteine
+      position: 31
+      property: polar
+    - code: G
+      name: Glycine
+      position: 32
+      property: polar
+    - code: D
+      name: Aspartic Acid
+      position: 33
+      property: negative
+    - code: R
+      name: Arginine
+      position: 34
+      property: positive
+    - code: G
+      name: Glycine
+      position: 35
+      property: polar
+    - code: F
+      name: Phenylalanine
+      position: 36
+      property: hydrophobic
+    - code: 'Y'
+      name: Tyrosine
+      position: 37
+      property: polar
+    - code: F
+      name: Phenylalanine
+      position: 38
+      property: hydrophobic
+    - code: 'N'
+      name: Asparagine
+      position: 39
+      property: polar
+    - code: K
+      name: Lysine
+      position: 40
+      property: positive
+    - code: P
+      name: Proline
+      position: 41
+      property: hydrophobic
+    - code: T
+      name: Threonine
+      position: 42
+      property: polar
+    - code: G
+      name: Glycine
+      position: 43
+      property: polar
+    - code: 'Y'
+      name: Tyrosine
+      position: 44
+      property: polar
+    - code: G
+      name: Glycine
+      position: 45
+      property: polar
+    - code: S
+      name: Serine
+      position: 46
+      property: polar
+    - code: S
+      name: Serine
+      position: 47
+      property: polar
+    - code: S
+      name: Serine
+      position: 48
+      property: polar
+    - code: R
+      name: Arginine
+      position: 49
+      property: positive
+    - code: R
+      name: Arginine
+      position: 50
+      property: positive
+    - code: A
+      name: Alanine
+      position: 51
+      property: hydrophobic
+    - code: P
+      name: Proline
+      position: 52
+      property: hydrophobic
+    - code: Q
+      name: Glutamine
+      position: 53
+      property: polar
+    - code: T
+      name: Threonine
+      position: 54
+      property: polar
+    - code: G
+      name: Glycine
+      position: 55
+      property: polar
+    - code: I
+      name: Isoleucine
+      position: 56
+      property: hydrophobic
+    - code: V
+      name: Valine
+      position: 57
+      property: hydrophobic
+    - code: D
+      name: Aspartic Acid
+      position: 58
+      property: negative
+    - code: E
+      name: Glutamic Acid
+      position: 59
+      property: negative
+    - code: C
+      name: Cysteine
+      position: 60
+      property: polar
+    - code: C
+      name: Cysteine
+      position: 61
+      property: polar
+    - code: F
+      name: Phenylalanine
+      position: 62
+      property: hydrophobic
+    - code: R
+      name: Arginine
+      position: 63
+      property: positive
+    - code: S
+      name: Serine
+      position: 64
+      property: polar
+    - code: C
+      name: Cysteine
+      position: 65
+      property: polar
+    - code: D
+      name: Aspartic Acid
+      position: 66
+      property: negative
+    - code: L
+      name: Leucine
+      position: 67
+      property: hydrophobic
+    - code: R
+      name: Arginine
+      position: 68
+      property: positive
+    - code: R
+      name: Arginine
+      position: 69
+      property: positive
+    - code: L
+      name: Leucine
+      position: 70
+      property: hydrophobic
+    - code: E
+      name: Glutamic Acid
+      position: 71
+      property: negative
+    - code: M
+      name: Methionine
+      position: 72
+      property: hydrophobic
+    - code: 'Y'
+      name: Tyrosine
+      position: 73
+      property: polar
+    - code: C
+      name: Cysteine
+      position: 74
+      property: polar
+    - code: A
+      name: Alanine
+      position: 75
+      property: hydrophobic
+    - code: P
+      name: Proline
+      position: 76
+      property: hydrophobic
+    - code: L
+      name: Leucine
+      position: 77
+      property: hydrophobic
+    - code: K
+      name: Lysine
+      position: 78
+      property: positive
+    - code: P
+      name: Proline
+      position: 79
+      property: hydrophobic
+    - code: A
+      name: Alanine
+      position: 80
+      property: hydrophobic
+    - code: K
+      name: Lysine
+      position: 81
+      property: positive
+    - code: S
+      name: Serine
+      position: 82
+      property: polar
+    - code: A
+      name: Alanine
+      position: 83
+      property: hydrophobic
 evidenceChainedBenefits:
   - mechanism:
-      action: "PI3K/Akt/mTORC1 pathway activation promoting protein synthesis"
-      confidence: "established"
+      action: PI3K/Akt/mTORC1 pathway activation promoting protein synthesis
+      confidence: established
       directStudies: 12
     benefit:
-      claim: "enhance muscle protein synthesis and hypertrophy"
-      qualifier: "shown to"
+      claim: enhance muscle protein synthesis and hypertrophy
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 2
       animalStudies: 8
       cellStudies: 6
       keyFindings:
-        - study: "Rommel C et al. 2001"
-          type: "in-vitro"
-          finding: "IGF-1 activates Akt/mTOR pathway leading to muscle hypertrophy through S6K1 and 4E-BP1 phosphorylation"
-          pmid: "11373679"
-        - study: "Tomas FM et al. 1998"
-          type: "animal"
-          finding: "IGF-1 LR3 infusion increased muscle mass and reduced adiposity in rats"
-          pmid: "9597107"
+        - study: Rommel C et al. 2001
+          type: in-vitro
+          finding: >-
+            IGF-1 activates Akt/mTOR pathway leading to muscle hypertrophy
+            through S6K1 and 4E-BP1 phosphorylation
+          pmid: '11373679'
+        - study: Tomas FM et al. 1998
+          type: animal
+          finding: >-
+            IGF-1 LR3 infusion increased muscle mass and reduced adiposity in
+            rats
+          pmid: '9597107'
   - mechanism:
-      action: "FOXO transcription factor inhibition reducing protein degradation"
-      confidence: "established"
+      action: FOXO transcription factor inhibition reducing protein degradation
+      confidence: established
       directStudies: 8
     benefit:
-      claim: "reduce muscle protein breakdown"
-      qualifier: "shown to"
+      claim: reduce muscle protein breakdown
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 1
       animalStudies: 6
       cellStudies: 4
       keyFindings:
-        - study: "Sandri M et al. 2004"
-          type: "animal"
-          finding: "IGF-1/Akt pathway inhibits FOXO transcription factors, suppressing atrophy genes MuRF1 and atrogin-1"
-          pmid: "15240889"
-        - study: "Stitt TN et al. 2004"
-          type: "in-vitro"
-          finding: "Akt/FOXO pathway mediates IGF-1 anti-atrophic effects in muscle cells"
-          pmid: "15282312"
+        - study: Sandri M et al. 2004
+          type: animal
+          finding: >-
+            IGF-1/Akt pathway inhibits FOXO transcription factors, suppressing
+            atrophy genes MuRF1 and atrogin-1
+          pmid: '15240889'
+        - study: Stitt TN et al. 2004
+          type: in-vitro
+          finding: >-
+            Akt/FOXO pathway mediates IGF-1 anti-atrophic effects in muscle
+            cells
+          pmid: '15282312'
   - mechanism:
-      action: "Satellite cell proliferation and myoblast differentiation enhancement"
-      confidence: "supported"
+      action: Satellite cell proliferation and myoblast differentiation enhancement
+      confidence: supported
       directStudies: 6
     benefit:
-      claim: "support muscle regeneration and repair"
-      qualifier: "appears to"
+      claim: support muscle regeneration and repair
+      qualifier: appears to
     evidence:
-      level: "low"
+      level: low
       humanStudies: 0
       animalStudies: 5
       cellStudies: 4
       keyFindings:
-        - study: "Florini JR et al. 1996"
-          type: "in-vitro"
-          finding: "IGF-1 promotes myoblast proliferation and differentiation into myotubes"
-          pmid: "8621789"
-        - study: "Schertzer JD et al. 2007"
-          type: "animal"
-          finding: "IGF-1 LR3 improved muscle function in mdx dystrophic mice through enhanced regeneration"
-          pmid: "17110584"
+        - study: Florini JR et al. 1996
+          type: in-vitro
+          finding: >-
+            IGF-1 promotes myoblast proliferation and differentiation into
+            myotubes
+          pmid: '8621789'
+        - study: Schertzer JD et al. 2007
+          type: animal
+          finding: >-
+            IGF-1 LR3 improved muscle function in mdx dystrophic mice through
+            enhanced regeneration
+          pmid: '17110584'
   - mechanism:
-      action: "GLUT4 translocation increasing glucose uptake"
-      confidence: "supported"
+      action: GLUT4 translocation increasing glucose uptake
+      confidence: supported
       directStudies: 5
     benefit:
-      claim: "improve glucose disposal in muscle tissue"
-      qualifier: "may"
+      claim: improve glucose disposal in muscle tissue
+      qualifier: may
     evidence:
-      level: "low"
+      level: low
       humanStudies: 1
       animalStudies: 4
       cellStudies: 3
       keyFindings:
-        - study: "Bilan PJ et al. 1992"
-          type: "in-vitro"
-          finding: "IGF-1 stimulates glucose transport via GLUT4 translocation in muscle cells"
-          pmid: "1309769"
-        - study: "Bark TH et al. 1998"
-          type: "animal"
-          finding: "Systemic IGF-1 LR3 administration improved glucose utilization in mice"
-          pmid: "9651638"
+        - study: Bilan PJ et al. 1992
+          type: in-vitro
+          finding: >-
+            IGF-1 stimulates glucose transport via GLUT4 translocation in muscle
+            cells
+          pmid: '1309769'
+        - study: Bark TH et al. 1998
+          type: animal
+          finding: >-
+            Systemic IGF-1 LR3 administration improved glucose utilization in
+            mice
+          pmid: '9651638'
 conditions:
-  - slug: "muscle-growth"
-    name: "Muscle Growth"
-    researchSummary: "IGF-1 LR3's extended half-life and reduced IGFBP binding make it a potent activator of the PI3K/Akt/mTOR pathway for muscle protein synthesis. Animal studies show clear hypertrophic effects. Human data is limited to extrapolation from native IGF-1 studies."
-    relevantStudies: ["11373679", "9597107"]
-    relatedPeptides: ["hgh", "mgf", "follistatin"]
-  - slug: "muscle-wasting"
-    name: "Muscle Wasting"
-    researchSummary: "IGF-1 signaling inhibits FOXO transcription factors that drive muscle atrophy. In animal models of muscle wasting (including muscular dystrophy), IGF-1 LR3 improved muscle function. Clinical trials for wasting conditions have used native IGF-1, not the LR3 variant."
-    relevantStudies: ["15240889", "17110584"]
-    relatedPeptides: ["follistatin", "bpc-157"]
-  - slug: "diabetes"
-    name: "Diabetes/Glucose Metabolism"
-    researchSummary: "IGF-1 can improve insulin sensitivity and glucose uptake via GLUT4 translocation. However, the hypoglycemic effects are a significant safety concern. Native IGF-1 (mecasermin) is approved for IGF-1 deficiency but not for diabetes."
-    relevantStudies: ["1309769", "9651638"]
+  - slug: muscle-growth
+    name: Muscle Growth
+    researchSummary: >-
+      IGF-1 LR3's extended half-life and reduced IGFBP binding make it a potent
+      activator of the PI3K/Akt/mTOR pathway for muscle protein synthesis.
+      Animal studies show clear hypertrophic effects. Human data is limited to
+      extrapolation from native IGF-1 studies.
+    relevantStudies:
+      - '11373679'
+      - '9597107'
+    relatedPeptides:
+      - hgh
+      - mgf
+      - follistatin
+  - slug: muscle-wasting
+    name: Muscle Wasting
+    researchSummary: >-
+      IGF-1 signaling inhibits FOXO transcription factors that drive muscle
+      atrophy. In animal models of muscle wasting (including muscular
+      dystrophy), IGF-1 LR3 improved muscle function. Clinical trials for
+      wasting conditions have used native IGF-1, not the LR3 variant.
+    relevantStudies:
+      - '15240889'
+      - '17110584'
+    relatedPeptides:
+      - follistatin
+      - bpc-157
+  - slug: diabetes
+    name: Diabetes/Glucose Metabolism
+    researchSummary: >-
+      IGF-1 can improve insulin sensitivity and glucose uptake via GLUT4
+      translocation. However, the hypoglycemic effects are a significant safety
+      concern. Native IGF-1 (mecasermin) is approved for IGF-1 deficiency but
+      not for diabetes.
+    relevantStudies:
+      - '1309769'
+      - '9651638'
     relatedPeptides: []
 timeline:
-  - period: "Acute"
-    effects: "IGF-1 LR3's extended half-life (20-30 hours vs 12-15 minutes for native IGF-1) means effects persist longer per dose. Hypoglycemia risk exists within hours of administration."
-    source: "PMID:1281011"
-  - period: "Week 1-4"
-    effects: "Animal studies typically used treatment periods of weeks. Muscle protein synthesis increases may be detectable early. Most users in performance contexts report cycles of 4-8 weeks."
-    source: "PMID:9597107"
-  - period: "Long-term"
-    effects: "Long-term human safety data for IGF-1 LR3 does not exist. Native IGF-1 (mecasermin) long-term use has been associated with various adverse effects including tonsillar hypertrophy and potential cancer risk concerns."
+  - period: Acute
+    effects: >-
+      IGF-1 LR3's extended half-life (20-30 hours vs 12-15 minutes for native
+      IGF-1) means effects persist longer per dose. Hypoglycemia risk exists
+      within hours of administration.
+    source: 'PMID:1281011'
+  - period: Week 1-4
+    effects: >-
+      Animal studies typically used treatment periods of weeks. Muscle protein
+      synthesis increases may be detectable early. Most users in performance
+      contexts report cycles of 4-8 weeks.
+    source: 'PMID:9597107'
+  - period: Long-term
+    effects: >-
+      Long-term human safety data for IGF-1 LR3 does not exist. Native IGF-1
+      (mecasermin) long-term use has been associated with various adverse
+      effects including tonsillar hypertrophy and potential cancer risk
+      concerns.
 qualityChecklist:
   goodSigns:
-    - "White lyophilized powder"
-    - "Complete dissolution in bacteriostatic water"
-    - "Clear solution after reconstitution"
-    - "Certificate of analysis with >98% purity"
-    - "HPLC and mass spec verification"
-    - "Proper cold chain shipping"
+    - White lyophilized powder
+    - Complete dissolution in bacteriostatic water
+    - Clear solution after reconstitution
+    - Certificate of analysis with >98% purity
+    - HPLC and mass spec verification
+    - Proper cold chain shipping
   warningSigns:
-    - "Off-white coloration"
-    - "No third-party testing"
-    - "Purity below 98%"
-    - "Unclear source or manufacturing"
-    - "No specification of LR3 vs native IGF-1"
+    - Off-white coloration
+    - No third-party testing
+    - Purity below 98%
+    - Unclear source or manufacturing
+    - No specification of LR3 vs native IGF-1
   badSigns:
-    - "Yellow or brown discoloration"
-    - "Particles or cloudiness after reconstitution"
-    - "No certificate of analysis"
-    - "Incomplete dissolution"
-    - "Unusual odor"
-    - "Compromised packaging"
+    - Yellow or brown discoloration
+    - Particles or cloudiness after reconstitution
+    - No certificate of analysis
+    - Incomplete dissolution
+    - Unusual odor
+    - Compromised packaging
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

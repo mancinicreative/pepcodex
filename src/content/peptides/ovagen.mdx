@@ -1,110 +1,179 @@
 ---
-name: "Ovagen"
-aliases: ["EDL", "Glu-Asp-Leu", "Hepatic tripeptide", "Liver bioregulator"]
-category: "other"
-compoundType: "bioregulator"
-evidenceStrength: "very-low"
-lastUpdated: 2026-02-01
-comparators: ["livagen", "epithalon", "thymalin"]
-summary: "A synthetic tripeptide (Glu-Asp-Leu) developed by Russian scientist Vladimir Khavinson for liver support. Part of the peptide bioregulation framework claiming tissue-specific gene regulation. No Western clinical validation exists."
+name: Ovagen
+aliases:
+  - EDL
+  - Glu-Asp-Leu
+  - Hepatic tripeptide
+  - Liver bioregulator
+category: other
+compoundType: bioregulator
+evidenceStrength: low
+lastUpdated: 2026-02-01T00:00:00.000Z
+comparators:
+  - livagen
+  - epithalon
+  - thymalin
+summary: >-
+  A synthetic tripeptide (Glu-Asp-Leu) developed by Russian scientist Vladimir
+  Khavinson for liver support. Part of the peptide bioregulation framework
+  claiming tissue-specific gene regulation. No Western clinical validation
+  exists.
 sources:
   count: 10
   human: 1
   preclinical: 8
   openAccess: 3
-metaTitle: "Ovagen Evidence Dossier | PepCodex"
-metaDescription: "Evidence review of Ovagen (EDL tripeptide). Analysis of Russian bioregulator research, liver support claims, and critical evaluation of hepatoprotective evidence."
+metaTitle: Ovagen Evidence Dossier | PepCodex
+metaDescription: >-
+  Evidence review of Ovagen (EDL tripeptide). Analysis of Russian bioregulator
+  research, liver support claims, and critical evaluation of hepatoprotective
+  evidence.
 interactions:
-  - peptide: "livagen"
-    type: "compatible"
-    description: "Both target liver function - Livagen (KED) and Ovagen (EDL) represent different tripeptide approaches to hepatic support within Khavinson bioregulator research."
-  - peptide: "epithalon"
-    type: "compatible"
-    description: "Both Khavinson bioregulator peptides with distinct targets - Ovagen for liver, epithalon for pineal/longevity."
+  - peptide: livagen
+    type: compatible
+    description: >-
+      Both target liver function - Livagen (KED) and Ovagen (EDL) represent
+      different tripeptide approaches to hepatic support within Khavinson
+      bioregulator research.
+  - peptide: epithalon
+    type: compatible
+    description: >-
+      Both Khavinson bioregulator peptides with distinct targets - Ovagen for
+      liver, epithalon for pineal/longevity.
 molecularInfo:
-  weight: "361.35 Da"
+  weight: 361.35 Da
   chainLength: 3
-  type: "Tripeptide"
-  sequence: "EDL"
+  type: Tripeptide
+  sequence: EDL
   aminoAcids:
-    - { code: "E", name: "Glutamic Acid", position: 1, property: "negative" }
-    - { code: "D", name: "Aspartic Acid", position: 2, property: "negative" }
-    - { code: "L", name: "Leucine", position: 3, property: "hydrophobic" }
+    - code: E
+      name: Glutamic Acid
+      position: 1
+      property: negative
+    - code: D
+      name: Aspartic Acid
+      position: 2
+      property: negative
+    - code: L
+      name: Leucine
+      position: 3
+      property: hydrophobic
 evidenceChainedBenefits:
   - mechanism:
-      action: "Hepatocyte gene expression modulation promoting liver regeneration"
-      confidence: "emerging"
+      action: Hepatocyte gene expression modulation promoting liver regeneration
+      confidence: emerging
       directStudies: 3
     benefit:
-      claim: "support liver function and regeneration"
-      qualifier: "suggested to"
+      claim: support liver function and regeneration
+      qualifier: suggested to
     evidence:
-      level: "very-low"
+      level: very-low
       humanStudies: 0
       animalStudies: 2
       cellStudies: 2
       keyFindings:
-        - study: "Khavinson VK et al."
-          type: "in-vitro"
-          finding: "Observed hepatocyte gene expression changes in cell culture models"
-          pmid: ""
+        - study: Khavinson VK et al.
+          type: in-vitro
+          finding: Observed hepatocyte gene expression changes in cell culture models
+          pmid: ''
 conditions:
-  - slug: "liver-support"
-    name: "Liver Support"
-    researchSummary: "Ovagen is marketed primarily for liver support based on claimed hepatocyte stimulation and regenerative effects. Russian research reports gene expression changes in liver cells and hepatoprotective effects in animal models. No controlled human clinical trials have evaluated liver outcomes in healthy or hepatically impaired populations."
+  - slug: liver-support
+    name: Liver Support
+    researchSummary: >-
+      Ovagen is marketed primarily for liver support based on claimed hepatocyte
+      stimulation and regenerative effects. Russian research reports gene
+      expression changes in liver cells and hepatoprotective effects in animal
+      models. No controlled human clinical trials have evaluated liver outcomes
+      in healthy or hepatically impaired populations.
     relevantStudies: []
-    relatedPeptides: ["livagen"]
-  - slug: "hepatoprotection"
-    name: "Hepatoprotection"
-    researchSummary: "The liver is subject to toxin exposure, viral damage, and metabolic stress. Ovagen is proposed to provide hepatoprotective effects through gene expression modulation. Russian preclinical studies suggest potential protective effects, but translation to human hepatoprotection is completely unconfirmed."
+    relatedPeptides:
+      - livagen
+  - slug: hepatoprotection
+    name: Hepatoprotection
+    researchSummary: >-
+      The liver is subject to toxin exposure, viral damage, and metabolic
+      stress. Ovagen is proposed to provide hepatoprotective effects through
+      gene expression modulation. Russian preclinical studies suggest potential
+      protective effects, but translation to human hepatoprotection is
+      completely unconfirmed.
     relevantStudies: []
-    relatedPeptides: ["livagen"]
+    relatedPeptides:
+      - livagen
 timeline:
-  - period: "Week 1-2"
-    effects: "Based on preclinical data: Initial interactions with hepatic tissue may begin. In vitro studies suggest cellular uptake in liver cells. Any liver function parameter changes would not be detectable this early."
-    source: "Russian preclinical research"
-  - period: "Week 2-4"
-    effects: "Russian protocols suggest continued treatment during this period. Animal studies show progressive changes in hepatocyte function over weeks. Gene expression modifications may develop."
-    source: "Russian preclinical research"
-  - period: "Week 4-8"
-    effects: "Extended treatment in animal models shows more pronounced effects on liver regeneration markers. Human response timeline is unknown."
-    source: "Russian preclinical research"
-  - period: "Week 8+"
-    effects: "Long-term effects based on Russian animal studies using cyclical treatment protocols. Optimal human treatment duration and cycling are not established. Sustained hepatoprotective benefits are unconfirmed."
+  - period: Week 1-2
+    effects: >-
+      Based on preclinical data: Initial interactions with hepatic tissue may
+      begin. In vitro studies suggest cellular uptake in liver cells. Any liver
+      function parameter changes would not be detectable this early.
+    source: Russian preclinical research
+  - period: Week 2-4
+    effects: >-
+      Russian protocols suggest continued treatment during this period. Animal
+      studies show progressive changes in hepatocyte function over weeks. Gene
+      expression modifications may develop.
+    source: Russian preclinical research
+  - period: Week 4-8
+    effects: >-
+      Extended treatment in animal models shows more pronounced effects on liver
+      regeneration markers. Human response timeline is unknown.
+    source: Russian preclinical research
+  - period: Week 8+
+    effects: >-
+      Long-term effects based on Russian animal studies using cyclical treatment
+      protocols. Optimal human treatment duration and cycling are not
+      established. Sustained hepatoprotective benefits are unconfirmed.
 faqs:
-  - question: "What is Ovagen?"
-    answer: "Ovagen is a synthetic tripeptide (Glu-Asp-Leu or EDL) developed by Russian scientist Vladimir Khavinson as part of the peptide bioregulation framework. It is claimed to support liver function and hepatocyte regeneration."
-  - question: "Is Ovagen FDA approved?"
-    answer: "No, Ovagen is not approved by the FDA or any Western regulatory agency. It has never undergone controlled human clinical trials outside of Russia. All research originates from Russian institutes."
-  - question: "What is the evidence for Ovagen?"
-    answer: "Evidence is very low quality, consisting entirely of Russian preclinical studies and limited observational human research. No independent Western validation exists. No controlled human clinical trials have evaluated liver outcomes."
-  - question: "How does Ovagen compare to established hepatoprotective agents?"
-    answer: "Established hepatoprotective agents like silymarin (milk thistle) and N-acetylcysteine have extensive clinical research. Ovagen has only Russian preclinical data. The evidence quality difference is substantial."
-  - question: "Is Ovagen research legitimate?"
-    answer: "All Ovagen research originates from Russian institutes, primarily the St. Petersburg Institute of Bioregulation and Gerontology. No independent Western replication has been conducted. The proposed mechanisms are biologically plausible but clinically unvalidated."
+  - question: What is Ovagen?
+    answer: >-
+      Ovagen is a synthetic tripeptide (Glu-Asp-Leu or EDL) developed by Russian
+      scientist Vladimir Khavinson as part of the peptide bioregulation
+      framework. It is claimed to support liver function and hepatocyte
+      regeneration.
+  - question: Is Ovagen FDA approved?
+    answer: >-
+      No, Ovagen is not approved by the FDA or any Western regulatory agency. It
+      has never undergone controlled human clinical trials outside of Russia.
+      All research originates from Russian institutes.
+  - question: What is the evidence for Ovagen?
+    answer: >-
+      Evidence is very low quality, consisting entirely of Russian preclinical
+      studies and limited observational human research. No independent Western
+      validation exists. No controlled human clinical trials have evaluated
+      liver outcomes.
+  - question: How does Ovagen compare to established hepatoprotective agents?
+    answer: >-
+      Established hepatoprotective agents like silymarin (milk thistle) and
+      N-acetylcysteine have extensive clinical research. Ovagen has only Russian
+      preclinical data. The evidence quality difference is substantial.
+  - question: Is Ovagen research legitimate?
+    answer: >-
+      All Ovagen research originates from Russian institutes, primarily the St.
+      Petersburg Institute of Bioregulation and Gerontology. No independent
+      Western replication has been conducted. The proposed mechanisms are
+      biologically plausible but clinically unvalidated.
 qualityChecklist:
   goodSigns:
-    - "White lyophilized powder"
-    - "Dissolves readily in bacteriostatic water"
-    - "Clear, colorless solution after reconstitution"
-    - "Certificate of analysis showing >98% purity"
-    - "HPLC verification of sequence"
-    - "Mass spectrometry confirmation (~361 Da)"
-    - "Proper vacuum seal on vial"
+    - White lyophilized powder
+    - Dissolves readily in bacteriostatic water
+    - 'Clear, colorless solution after reconstitution'
+    - Certificate of analysis showing >98% purity
+    - HPLC verification of sequence
+    - Mass spectrometry confirmation (~361 Da)
+    - Proper vacuum seal on vial
   warningSigns:
-    - "Off-white or slightly discolored powder"
-    - "Slow dissolution time"
-    - "No third-party testing verification"
-    - "Purity between 95-98%"
-    - "Unclear manufacturing source"
+    - Off-white or slightly discolored powder
+    - Slow dissolution time
+    - No third-party testing verification
+    - Purity between 95-98%
+    - Unclear manufacturing source
   badSigns:
-    - "Yellow or brown discoloration"
-    - "Visible particles after reconstitution"
-    - "Cloudy solution"
-    - "No certificate of analysis"
-    - "Unusual odor"
-    - "Compromised seal or packaging"
-    - "Cannot verify source authenticity"
+    - Yellow or brown discoloration
+    - Visible particles after reconstitution
+    - Cloudy solution
+    - No certificate of analysis
+    - Unusual odor
+    - Compromised seal or packaging
+    - Cannot verify source authenticity
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

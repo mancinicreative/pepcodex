@@ -1,181 +1,281 @@
 ---
-name: "Pemvidutide"
-aliases: ["ALT-801", "GLP-1/Glucagon Dual Agonist"]
-category: "metabolic"
-evidenceStrength: "high"
-lastUpdated: 2026-01-22
-comparators: ["semaglutide", "tirzepatide", "survodutide"]
-summary: "A dual GLP-1/glucagon receptor agonist developed by Altimmune showing 15.6% weight loss at 48 weeks with unique lean mass preservation (78% fat mass lost). Phase 2b trials completed for obesity (MOMENTUM) and MASH (IMPACT) with 59.1% MASH resolution. FDA Fast Track designation for MASH."
+name: Pemvidutide
+aliases:
+  - ALT-801
+  - GLP-1/Glucagon Dual Agonist
+category: metabolic
+evidenceStrength: moderate
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - semaglutide
+  - tirzepatide
+  - survodutide
+summary: >-
+  A dual GLP-1/glucagon receptor agonist developed by Altimmune showing 15.6%
+  weight loss at 48 weeks with unique lean mass preservation (78% fat mass
+  lost). Phase 2b trials completed for obesity (MOMENTUM) and MASH (IMPACT) with
+  59.1% MASH resolution. FDA Fast Track designation for MASH.
 sources:
   count: 28
   human: 12
   preclinical: 8
   openAccess: 22
-metaTitle: "Pemvidutide Evidence Dossier | PepCodex"
-metaDescription: "Comprehensive evidence review of pemvidutide (ALT-801). GLP-1/glucagon dual agonist with unique lean mass preservation. MOMENTUM and IMPACT trial data, mechanism, safety profile."
+metaTitle: Pemvidutide Evidence Dossier | PepCodex
+metaDescription: >-
+  Comprehensive evidence review of pemvidutide (ALT-801). GLP-1/glucagon dual
+  agonist with unique lean mass preservation. MOMENTUM and IMPACT trial data,
+  mechanism, safety profile.
 interactions:
-  - peptide: "semaglutide"
-    type: "caution"
-    description: "Both target GLP-1 receptors. Co-administration would result in overlapping mechanisms with potential for increased GI side effects. Not recommended to combine."
-  - peptide: "tirzepatide"
-    type: "avoid"
-    description: "Both are incretin-based dual agonists targeting overlapping receptor systems. Combining would create redundant and potentially dangerous receptor overstimulation."
-  - peptide: "survodutide"
-    type: "avoid"
-    description: "Both are GLP-1/glucagon dual agonists with nearly identical mechanisms. No rationale for combination; risk of adverse effects from receptor overstimulation."
-  - peptide: "bpc-157"
-    type: "compatible"
-    description: "Different mechanisms of action. BPC-157 focuses on tissue repair while pemvidutide targets metabolic pathways. No known contraindications."
-  - peptide: "tb-500"
-    type: "compatible"
-    description: "Non-overlapping mechanisms. TB-500 targets tissue repair and cell migration while pemvidutide modulates metabolic function. No interaction data available."
+  - peptide: semaglutide
+    type: caution
+    description: >-
+      Both target GLP-1 receptors. Co-administration would result in overlapping
+      mechanisms with potential for increased GI side effects. Not recommended
+      to combine.
+  - peptide: tirzepatide
+    type: avoid
+    description: >-
+      Both are incretin-based dual agonists targeting overlapping receptor
+      systems. Combining would create redundant and potentially dangerous
+      receptor overstimulation.
+  - peptide: survodutide
+    type: avoid
+    description: >-
+      Both are GLP-1/glucagon dual agonists with nearly identical mechanisms. No
+      rationale for combination; risk of adverse effects from receptor
+      overstimulation.
+  - peptide: bpc-157
+    type: compatible
+    description: >-
+      Different mechanisms of action. BPC-157 focuses on tissue repair while
+      pemvidutide targets metabolic pathways. No known contraindications.
+  - peptide: tb-500
+    type: compatible
+    description: >-
+      Non-overlapping mechanisms. TB-500 targets tissue repair and cell
+      migration while pemvidutide modulates metabolic function. No interaction
+      data available.
 molecularInfo:
-  weight: "~7,000 Da (with PEG)"
+  weight: '~7,000 Da (with PEG)'
   chainLength: 30
-  type: "Pegylated peptide"
-  sequence: "Proprietary (GLP-1/glucagon hybrid)"
+  type: Pegylated peptide
+  sequence: Proprietary (GLP-1/glucagon hybrid)
   aminoAcids:
-    - { code: "H", name: "Histidine", position: 1, property: "positive" }
-    - { code: "A", name: "Alanine", position: 2, property: "hydrophobic" }
-    - { code: "E", name: "Glutamic Acid", position: 3, property: "negative" }
-    - { code: "G", name: "Glycine", position: 4, property: "polar" }
-    - { code: "T", name: "Threonine", position: 5, property: "polar" }
-    - { code: "F", name: "Phenylalanine", position: 6, property: "hydrophobic" }
-    - { code: "T", name: "Threonine", position: 7, property: "polar" }
-    - { code: "S", name: "Serine", position: 8, property: "polar" }
-    - { code: "D", name: "Aspartic Acid", position: 9, property: "negative" }
-    - { code: "V", name: "Valine", position: 10, property: "hydrophobic" }
+    - code: H
+      name: Histidine
+      position: 1
+      property: positive
+    - code: A
+      name: Alanine
+      position: 2
+      property: hydrophobic
+    - code: E
+      name: Glutamic Acid
+      position: 3
+      property: negative
+    - code: G
+      name: Glycine
+      position: 4
+      property: polar
+    - code: T
+      name: Threonine
+      position: 5
+      property: polar
+    - code: F
+      name: Phenylalanine
+      position: 6
+      property: hydrophobic
+    - code: T
+      name: Threonine
+      position: 7
+      property: polar
+    - code: S
+      name: Serine
+      position: 8
+      property: polar
+    - code: D
+      name: Aspartic Acid
+      position: 9
+      property: negative
+    - code: V
+      name: Valine
+      position: 10
+      property: hydrophobic
 evidenceChainedBenefits:
   - mechanism:
-      action: "GLP-1 receptor agonism reducing appetite and slowing gastric emptying"
-      confidence: "established"
+      action: GLP-1 receptor agonism reducing appetite and slowing gastric emptying
+      confidence: established
       directStudies: 12
     benefit:
-      claim: "reduce body weight through decreased caloric intake"
-      qualifier: "shown to"
+      claim: reduce body weight through decreased caloric intake
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 4
       animalStudies: 6
       cellStudies: 2
       keyFindings:
-        - study: "MOMENTUM Phase 2b (48-week)"
-          type: "human-rct"
-          finding: "15.6% weight loss at highest dose (2.4mg) vs 2.3% placebo"
-          pmid: "NCT05295875"
-        - study: "MOMENTUM Phase 2b (24-week)"
-          type: "human-rct"
-          finding: "10.3% weight loss at 24 weeks with 1.8mg dose"
-          pmid: "NCT05295875"
+        - study: MOMENTUM Phase 2b (48-week)
+          type: human-rct
+          finding: 15.6% weight loss at highest dose (2.4mg) vs 2.3% placebo
+          pmid: NCT05295875
+        - study: MOMENTUM Phase 2b (24-week)
+          type: human-rct
+          finding: 10.3% weight loss at 24 weeks with 1.8mg dose
+          pmid: NCT05295875
   - mechanism:
-      action: "Glucagon receptor agonism promoting hepatic lipid oxidation"
-      confidence: "established"
+      action: Glucagon receptor agonism promoting hepatic lipid oxidation
+      confidence: established
       directStudies: 8
     benefit:
-      claim: "reduce liver fat content and resolve MASH"
-      qualifier: "shown to"
+      claim: reduce liver fat content and resolve MASH
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 2
       animalStudies: 4
       cellStudies: 2
       keyFindings:
-        - study: "IMPACT Phase 2b"
-          type: "human-rct"
-          finding: "59.1% achieved MASH resolution without fibrosis worsening vs 16.7% placebo"
-          pmid: "NCT05454839"
-        - study: "IMPACT Phase 2b"
-          type: "human-rct"
-          finding: "82% reduction in liver fat content by MRI-PDFF"
-          pmid: "NCT05454839"
+        - study: IMPACT Phase 2b
+          type: human-rct
+          finding: >-
+            59.1% achieved MASH resolution without fibrosis worsening vs 16.7%
+            placebo
+          pmid: NCT05454839
+        - study: IMPACT Phase 2b
+          type: human-rct
+          finding: 82% reduction in liver fat content by MRI-PDFF
+          pmid: NCT05454839
   - mechanism:
-      action: "Balanced dual agonism preferentially targeting fat stores via glucagon-driven lipolysis"
-      confidence: "supported"
+      action: >-
+        Balanced dual agonism preferentially targeting fat stores via
+        glucagon-driven lipolysis
+      confidence: supported
       directStudies: 4
     benefit:
-      claim: "preserve lean muscle mass during weight loss"
-      qualifier: "appears to"
+      claim: preserve lean muscle mass during weight loss
+      qualifier: appears to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 2
       animalStudies: 2
       cellStudies: 0
       keyFindings:
-        - study: "MOMENTUM body composition substudy"
-          type: "human-rct"
-          finding: "78% of weight lost was fat mass vs typical 65-70% with GLP-1-only drugs"
-          pmid: "NCT05295875"
-        - study: "Finan B et al. 2015"
-          type: "animal"
-          finding: "Dual agonism demonstrated superior body composition effects in preclinical models"
-          pmid: "26312728"
+        - study: MOMENTUM body composition substudy
+          type: human-rct
+          finding: >-
+            78% of weight lost was fat mass vs typical 65-70% with GLP-1-only
+            drugs
+          pmid: NCT05295875
+        - study: Finan B et al. 2015
+          type: animal
+          finding: >-
+            Dual agonism demonstrated superior body composition effects in
+            preclinical models
+          pmid: '26312728'
   - mechanism:
-      action: "Glucagon-mediated increase in energy expenditure and thermogenesis"
-      confidence: "supported"
+      action: Glucagon-mediated increase in energy expenditure and thermogenesis
+      confidence: supported
       directStudies: 5
     benefit:
-      claim: "increase metabolic rate"
-      qualifier: "may"
+      claim: increase metabolic rate
+      qualifier: may
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 1
       animalStudies: 4
       cellStudies: 2
       keyFindings:
-        - study: "Ambery P et al. 2018"
-          type: "human-observational"
-          finding: "Glucagon receptor agonism associated with increased energy expenditure"
-          pmid: "29806722"
-        - study: "Tillner J et al. 2019"
-          type: "animal"
-          finding: "Glucagon activation increases brown adipose thermogenesis"
-          pmid: "30581122"
+        - study: Ambery P et al. 2018
+          type: human-observational
+          finding: >-
+            Glucagon receptor agonism associated with increased energy
+            expenditure
+          pmid: '29806722'
+        - study: Tillner J et al. 2019
+          type: animal
+          finding: Glucagon activation increases brown adipose thermogenesis
+          pmid: '30581122'
 conditions:
-  - slug: "obesity"
-    name: "Obesity"
-    researchSummary: "Phase 2b MOMENTUM trial demonstrated 15.6% weight loss at 48 weeks with 2.4mg dose. Weight loss trajectory had not plateaued, suggesting continued benefit with longer treatment. 78% of weight lost was fat mass, superior to GLP-1-only agents."
-    relevantStudies: ["NCT05295875"]
-    relatedPeptides: ["semaglutide", "tirzepatide"]
-  - slug: "mash"
-    name: "MASH (Metabolic Dysfunction-Associated Steatohepatitis)"
-    researchSummary: "Phase 2b IMPACT trial showed 59.1% MASH resolution without fibrosis worsening at 48 weeks. 43.6% achieved fibrosis improvement of at least one stage. 82% reduction in liver fat by MRI-PDFF. FDA Fast Track designation granted November 2022."
-    relevantStudies: ["NCT05454839"]
-    relatedPeptides: ["semaglutide", "survodutide"]
-  - slug: "metabolic-syndrome"
-    name: "Metabolic Syndrome"
-    researchSummary: "Trials demonstrated improvements across metabolic parameters including blood pressure (-3 to -5 mmHg systolic), lipid profile (LDL and triglycerides decreased, HDL increased), and liver enzymes. Type 2 diabetes population not yet studied but planned for Phase 3."
-    relevantStudies: ["NCT05295875", "NCT05454839"]
-    relatedPeptides: ["tirzepatide", "semaglutide"]
+  - slug: obesity
+    name: Obesity
+    researchSummary: >-
+      Phase 2b MOMENTUM trial demonstrated 15.6% weight loss at 48 weeks with
+      2.4mg dose. Weight loss trajectory had not plateaued, suggesting continued
+      benefit with longer treatment. 78% of weight lost was fat mass, superior
+      to GLP-1-only agents.
+    relevantStudies:
+      - NCT05295875
+    relatedPeptides:
+      - semaglutide
+      - tirzepatide
+  - slug: mash
+    name: MASH (Metabolic Dysfunction-Associated Steatohepatitis)
+    researchSummary: >-
+      Phase 2b IMPACT trial showed 59.1% MASH resolution without fibrosis
+      worsening at 48 weeks. 43.6% achieved fibrosis improvement of at least one
+      stage. 82% reduction in liver fat by MRI-PDFF. FDA Fast Track designation
+      granted November 2022.
+    relevantStudies:
+      - NCT05454839
+    relatedPeptides:
+      - semaglutide
+      - survodutide
+  - slug: metabolic-syndrome
+    name: Metabolic Syndrome
+    researchSummary: >-
+      Trials demonstrated improvements across metabolic parameters including
+      blood pressure (-3 to -5 mmHg systolic), lipid profile (LDL and
+      triglycerides decreased, HDL increased), and liver enzymes. Type 2
+      diabetes population not yet studied but planned for Phase 3.
+    relevantStudies:
+      - NCT05295875
+      - NCT05454839
+    relatedPeptides:
+      - tirzepatide
+      - semaglutide
 timeline:
-  - period: "Week 1-4"
-    effects: "Titration phase beginning at 0.6mg weekly. Initial appetite suppression and satiety effects. Common GI side effects (nausea, diarrhea) typically most pronounced during this period but improve with continued use."
-    source: "NCT05295875"
-  - period: "Week 4-12"
-    effects: "Dose escalation to maintenance dose (1.8-2.4mg). Progressive weight loss averaging 1-2% body weight per month. Liver fat reduction begins. GI tolerability improves."
-    source: "NCT05295875"
-  - period: "Week 12-24"
-    effects: "Sustained weight loss reaching approximately 10% at 24 weeks with 1.8mg dose. Significant improvements in liver enzymes. Metabolic parameters (lipids, blood pressure) show measurable improvement."
-    source: "NCT05295875"
-  - period: "Week 24-48"
-    effects: "Continued weight loss to 15.6% at 48 weeks. MASH resolution observed in 59.1% of patients. Fibrosis improvement in 43.6%. Weight loss trajectory not yet plateaued, suggesting further benefit with extended treatment."
-    source: "NCT05454839"
+  - period: Week 1-4
+    effects: >-
+      Titration phase beginning at 0.6mg weekly. Initial appetite suppression
+      and satiety effects. Common GI side effects (nausea, diarrhea) typically
+      most pronounced during this period but improve with continued use.
+    source: NCT05295875
+  - period: Week 4-12
+    effects: >-
+      Dose escalation to maintenance dose (1.8-2.4mg). Progressive weight loss
+      averaging 1-2% body weight per month. Liver fat reduction begins. GI
+      tolerability improves.
+    source: NCT05295875
+  - period: Week 12-24
+    effects: >-
+      Sustained weight loss reaching approximately 10% at 24 weeks with 1.8mg
+      dose. Significant improvements in liver enzymes. Metabolic parameters
+      (lipids, blood pressure) show measurable improvement.
+    source: NCT05295875
+  - period: Week 24-48
+    effects: >-
+      Continued weight loss to 15.6% at 48 weeks. MASH resolution observed in
+      59.1% of patients. Fibrosis improvement in 43.6%. Weight loss trajectory
+      not yet plateaued, suggesting further benefit with extended treatment.
+    source: NCT05454839
 qualityChecklist:
   goodSigns:
-    - "Manufactured under GMP conditions for clinical trials"
-    - "Clear, colorless solution in prefilled syringe or vial"
-    - "Proper cold chain storage (refrigerated 2-8°C)"
-    - "Within expiration date with proper lot documentation"
-    - "No visible particulates or discoloration"
+    - Manufactured under GMP conditions for clinical trials
+    - 'Clear, colorless solution in prefilled syringe or vial'
+    - Proper cold chain storage (refrigerated 2-8°C)
+    - Within expiration date with proper lot documentation
+    - No visible particulates or discoloration
   warningSigns:
-    - "Storage outside recommended temperature range"
-    - "Approaching expiration date"
-    - "Minor cloudiness that clears on gentle swirling"
+    - Storage outside recommended temperature range
+    - Approaching expiration date
+    - Minor cloudiness that clears on gentle swirling
   badSigns:
-    - "Visible particles or precipitate in solution"
-    - "Yellow or brown discoloration"
-    - "Frozen product (may damage peptide structure)"
-    - "Compromised packaging or broken seals"
-    - "Sourced outside regulated clinical trial or pharmacy"
+    - Visible particles or precipitate in solution
+    - Yellow or brown discoloration
+    - Frozen product (may damage peptide structure)
+    - Compromised packaging or broken seals
+    - Sourced outside regulated clinical trial or pharmacy
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

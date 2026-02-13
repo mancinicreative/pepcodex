@@ -1,129 +1,181 @@
 ---
-name: "MariTide"
-aliases: ["AMG 133", "maridebart cafraglutide"]
-category: "metabolic"
-evidenceStrength: "high"
-lastUpdated: 2026-01-22
-comparators: ["tirzepatide", "semaglutide", "retatrutide"]
-summary: "A bispecific peptide-antibody conjugate combining GLP-1 receptor agonism with GIP receptor antagonism. Unique mechanism opposite to tirzepatide. Phase 2 showed ~20% weight loss at 52 weeks with once-monthly dosing. MARITIME Phase 3 program initiated."
+name: MariTide
+aliases:
+  - AMG 133
+  - maridebart cafraglutide
+category: metabolic
+evidenceStrength: moderate
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - tirzepatide
+  - semaglutide
+  - retatrutide
+summary: >-
+  A bispecific peptide-antibody conjugate combining GLP-1 receptor agonism with
+  GIP receptor antagonism. Unique mechanism opposite to tirzepatide. Phase 2
+  showed ~20% weight loss at 52 weeks with once-monthly dosing. MARITIME Phase 3
+  program initiated.
 sources:
   count: 14
   human: 12
   preclinical: 2
   openAccess: 10
-metaTitle: "MariTide Evidence Dossier | PepCodex"
-metaDescription: "Comprehensive evidence review of MariTide (AMG 133). Phase 2 data, unique GLP-1/GIP antagonist mechanism, monthly dosing, and MARITIME Phase 3 program."
+metaTitle: MariTide Evidence Dossier | PepCodex
+metaDescription: >-
+  Comprehensive evidence review of MariTide (AMG 133). Phase 2 data, unique
+  GLP-1/GIP antagonist mechanism, monthly dosing, and MARITIME Phase 3 program.
 interactions:
-  - peptide: "tirzepatide"
-    type: "caution"
-    description: "Both target GLP-1 receptors but with opposing GIP mechanisms (MariTide antagonizes, tirzepatide agonizes). Should not be combined due to overlapping primary mechanisms."
-  - peptide: "semaglutide"
-    type: "caution"
-    description: "Both are GLP-1 receptor agonists. Combining would result in additive GLP-1 activation and potentially severe GI adverse events. Not recommended."
-  - peptide: "retatrutide"
-    type: "caution"
-    description: "Overlapping GLP-1 agonism and opposing GIP mechanisms. Not suitable for combination due to pharmacological conflicts."
+  - peptide: tirzepatide
+    type: caution
+    description: >-
+      Both target GLP-1 receptors but with opposing GIP mechanisms (MariTide
+      antagonizes, tirzepatide agonizes). Should not be combined due to
+      overlapping primary mechanisms.
+  - peptide: semaglutide
+    type: caution
+    description: >-
+      Both are GLP-1 receptor agonists. Combining would result in additive GLP-1
+      activation and potentially severe GI adverse events. Not recommended.
+  - peptide: retatrutide
+    type: caution
+    description: >-
+      Overlapping GLP-1 agonism and opposing GIP mechanisms. Not suitable for
+      combination due to pharmacological conflicts.
 molecularInfo:
-  weight: "~240 kDa"
+  weight: ~240 kDa
   chainLength: 30
-  type: "Bispecific peptide-antibody conjugate"
-  sequence: "GLP-1 analog + anti-GIPR antibody"
+  type: Bispecific peptide-antibody conjugate
+  sequence: GLP-1 analog + anti-GIPR antibody
   aminoAcids:
-    - { code: "GLP1", name: "GLP-1 peptide portion", position: 1, property: "modified" }
-    - { code: "Ab", name: "Anti-GIPR antibody", position: 2, property: "modified" }
+    - code: GLP1
+      name: GLP-1 peptide portion
+      position: 1
+      property: modified
+    - code: Ab
+      name: Anti-GIPR antibody
+      position: 2
+      property: modified
 evidenceChainedBenefits:
   - mechanism:
-      action: "GLP-1 receptor agonism reducing appetite and improving glycemic control"
-      confidence: "established"
+      action: GLP-1 receptor agonism reducing appetite and improving glycemic control
+      confidence: established
       directStudies: 12
     benefit:
-      claim: "achieve significant weight loss"
-      qualifier: "shown to"
+      claim: achieve significant weight loss
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 12
       animalStudies: 2
       cellStudies: 0
       keyFindings:
-        - study: "Amgen Phase 2 (2025)"
-          type: "human-rct"
-          finding: "~20% weight loss at 52 weeks vs 2.6% placebo in obesity without diabetes"
-        - study: "Amgen Phase 2 T2D (2025)"
-          type: "human-rct"
-          finding: "~17% weight loss at 52 weeks vs 1.4% placebo in T2D patients"
+        - study: Amgen Phase 2 (2025)
+          type: human-rct
+          finding: >-
+            ~20% weight loss at 52 weeks vs 2.6% placebo in obesity without
+            diabetes
+        - study: Amgen Phase 2 T2D (2025)
+          type: human-rct
+          finding: ~17% weight loss at 52 weeks vs 1.4% placebo in T2D patients
   - mechanism:
-      action: "GIP receptor antagonism altering nutrient partitioning and fat storage"
-      confidence: "supported"
+      action: GIP receptor antagonism altering nutrient partitioning and fat storage
+      confidence: supported
       directStudies: 8
     benefit:
-      claim: "enhance metabolic outcomes through novel GIP blockade"
-      qualifier: "appears to"
+      claim: enhance metabolic outcomes through novel GIP blockade
+      qualifier: appears to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 8
       animalStudies: 2
       cellStudies: 0
       keyFindings:
-        - study: "Amgen Mechanistic Studies"
-          type: "human-observational"
-          finding: "GIP antagonism produces comparable weight loss to GIP agonism, suggesting complex GIP biology"
-        - study: "Phase 2 Subgroup Analysis"
-          type: "human-rct"
-          finding: "No weight loss plateau observed at 52 weeks, curves still declining"
+        - study: Amgen Mechanistic Studies
+          type: human-observational
+          finding: >-
+            GIP antagonism produces comparable weight loss to GIP agonism,
+            suggesting complex GIP biology
+        - study: Phase 2 Subgroup Analysis
+          type: human-rct
+          finding: 'No weight loss plateau observed at 52 weeks, curves still declining'
   - mechanism:
-      action: "Extended half-life antibody portion enabling monthly dosing"
-      confidence: "established"
+      action: Extended half-life antibody portion enabling monthly dosing
+      confidence: established
       directStudies: 10
     benefit:
-      claim: "provide convenient once-monthly administration"
-      qualifier: "shown to"
+      claim: provide convenient once-monthly administration
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 10
       animalStudies: 2
       cellStudies: 0
       keyFindings:
-        - study: "Amgen PK Studies"
-          type: "human-observational"
-          finding: "21-day half-life of antibody portion allows monthly dosing interval"
-        - study: "Phase 2 Dosing"
-          type: "human-rct"
-          finding: "Monthly dosing (21mg → 35mg → 70mg titration) well tolerated with sustained efficacy"
+        - study: Amgen PK Studies
+          type: human-observational
+          finding: 21-day half-life of antibody portion allows monthly dosing interval
+        - study: Phase 2 Dosing
+          type: human-rct
+          finding: >-
+            Monthly dosing (21mg → 35mg → 70mg titration) well tolerated with
+            sustained efficacy
 conditions:
-  - slug: "obesity"
-    name: "Obesity"
-    researchSummary: "Phase 2 trials demonstrated approximately 20% weight loss at 52 weeks in patients with BMI ≥30 or ≥27 with comorbidities. Weight loss curves showed no plateau at study end. The MARITIME Phase 3 program was initiated in 2025 to confirm efficacy in larger populations over 72 weeks."
+  - slug: obesity
+    name: Obesity
+    researchSummary: >-
+      Phase 2 trials demonstrated approximately 20% weight loss at 52 weeks in
+      patients with BMI ≥30 or ≥27 with comorbidities. Weight loss curves showed
+      no plateau at study end. The MARITIME Phase 3 program was initiated in
+      2025 to confirm efficacy in larger populations over 72 weeks.
     relevantStudies: []
-    relatedPeptides: ["tirzepatide", "semaglutide", "retatrutide"]
-  - slug: "type-2-diabetes"
-    name: "Type 2 Diabetes"
-    researchSummary: "Phase 2 trials in T2D patients with obesity showed approximately 17% weight loss at 52 weeks along with significant HbA1c improvements. The MARITIME-2 Phase 3 trial is evaluating efficacy in this population over 72 weeks."
+    relatedPeptides:
+      - tirzepatide
+      - semaglutide
+      - retatrutide
+  - slug: type-2-diabetes
+    name: Type 2 Diabetes
+    researchSummary: >-
+      Phase 2 trials in T2D patients with obesity showed approximately 17%
+      weight loss at 52 weeks along with significant HbA1c improvements. The
+      MARITIME-2 Phase 3 trial is evaluating efficacy in this population over 72
+      weeks.
     relevantStudies: []
-    relatedPeptides: ["tirzepatide", "semaglutide"]
+    relatedPeptides:
+      - tirzepatide
+      - semaglutide
 timeline:
-  - period: "Week 1-4"
-    effects: "Titration phase beginning at 21mg monthly. GI side effects (nausea, vomiting, diarrhea) most common during initial dosing. Early appetite suppression typically observed."
-  - period: "Week 4-8"
-    effects: "Dose escalation to 35mg then 70mg. Continued weight loss trajectory. GI symptoms typically diminish as body adjusts to medication."
-  - period: "Week 8-24"
-    effects: "Maintenance dosing at 70mg monthly. Phase 2 data showed substantial and progressive weight loss through this period with no plateau."
-  - period: "Week 24-52"
-    effects: "Continued weight loss with curves still declining at 52 weeks. Mean weight loss approximately 20% in non-diabetic obesity population."
+  - period: Week 1-4
+    effects: >-
+      Titration phase beginning at 21mg monthly. GI side effects (nausea,
+      vomiting, diarrhea) most common during initial dosing. Early appetite
+      suppression typically observed.
+  - period: Week 4-8
+    effects: >-
+      Dose escalation to 35mg then 70mg. Continued weight loss trajectory. GI
+      symptoms typically diminish as body adjusts to medication.
+  - period: Week 8-24
+    effects: >-
+      Maintenance dosing at 70mg monthly. Phase 2 data showed substantial and
+      progressive weight loss through this period with no plateau.
+  - period: Week 24-52
+    effects: >-
+      Continued weight loss with curves still declining at 52 weeks. Mean weight
+      loss approximately 20% in non-diabetic obesity population.
 qualityChecklist:
   goodSigns:
-    - "Supplied through legitimate clinical trial or healthcare provider"
-    - "Proper cold chain storage maintained"
-    - "Clear documentation of product authenticity"
-    - "Administered under medical supervision"
+    - Supplied through legitimate clinical trial or healthcare provider
+    - Proper cold chain storage maintained
+    - Clear documentation of product authenticity
+    - Administered under medical supervision
   warningSigns:
-    - "Product obtained outside of clinical trials or legitimate medical channels"
-    - "Unclear storage or handling history"
-    - "Missing documentation or certificates"
+    - Product obtained outside of clinical trials or legitimate medical channels
+    - Unclear storage or handling history
+    - Missing documentation or certificates
   badSigns:
-    - "Product sold by unverified online vendors"
-    - "No cold chain verification"
-    - "Significantly below expected pricing"
-    - "Claims of availability before regulatory approval"
+    - Product sold by unverified online vendors
+    - No cold chain verification
+    - Significantly below expected pricing
+    - Claims of availability before regulatory approval
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

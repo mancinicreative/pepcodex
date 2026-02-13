@@ -1,183 +1,287 @@
 ---
-name: "Cortexin"
-aliases: ["Cortexinum", "Polypeptide brain extract", "Bovine brain cortex polypeptides"]
-category: "cognitive"
-compoundType: "bioregulator"
-evidenceStrength: "low"
-lastUpdated: 2026-01-31
-comparators: ["cerebrolysin", "semax", "selank"]
-summary: "A Russian neuropeptide complex derived from porcine or bovine cerebral cortex, approved in Russia and CIS countries for neurological conditions. Contains low molecular weight polypeptides (1,000-10,000 Da) with proposed neurotrophic and neuroprotective properties. NOT approved by FDA, EMA, or other Western regulatory agencies. Evidence comes primarily from Russian studies with limited Western validation."
+name: Cortexin
+aliases:
+  - Cortexinum
+  - Polypeptide brain extract
+  - Bovine brain cortex polypeptides
+category: cognitive
+compoundType: bioregulator
+evidenceStrength: moderate
+lastUpdated: 2026-01-31T00:00:00.000Z
+comparators:
+  - cerebrolysin
+  - semax
+  - selank
+summary: >-
+  A Russian neuropeptide complex derived from porcine or bovine cerebral cortex,
+  approved in Russia and CIS countries for neurological conditions. Contains low
+  molecular weight polypeptides (1,000-10,000 Da) with proposed neurotrophic and
+  neuroprotective properties. NOT approved by FDA, EMA, or other Western
+  regulatory agencies. Evidence comes primarily from Russian studies with
+  limited Western validation.
 sources:
   count: 28
   human: 12
   preclinical: 16
   openAccess: 10
-metaTitle: "Cortexin Evidence Dossier | PepCodex"
-metaDescription: "Evidence review of Cortexin, the Russian brain-derived peptide complex. Mechanism of action, clinical evidence from Russia, comparison to Cerebrolysin, and regulatory status."
+metaTitle: Cortexin Evidence Dossier | PepCodex
+metaDescription: >-
+  Evidence review of Cortexin, the Russian brain-derived peptide complex.
+  Mechanism of action, clinical evidence from Russia, comparison to
+  Cerebrolysin, and regulatory status.
 interactions:
-  - peptide: "cerebrolysin"
-    type: "synergistic"
-    description: "Both are brain-derived peptide complexes with neurotrophic properties. Cerebrolysin is porcine brain-derived while Cortexin is from cerebral cortex. Similar mechanisms targeting neuronal survival and plasticity. No direct clinical studies on combination."
-  - peptide: "semax"
-    type: "compatible"
-    description: "Different mechanisms of action (Cortexin complex neurotrophic support vs Semax ACTH-derived BDNF modulation). Both target cognitive enhancement through distinct routes. No known contraindications."
-  - peptide: "selank"
-    type: "compatible"
-    description: "Non-overlapping mechanisms. Cortexin focuses on neurotrophic support while Selank modulates anxiety and immune function. Theoretical complementary benefits for cognitive and mood support."
-  - peptide: "dihexa"
-    type: "compatible"
-    description: "Both target cognitive enhancement but through different mechanisms. Dihexa is a synthetic HGF mimetic while Cortexin is a peptide complex. Limited data on interactions."
-  - peptide: "bpc-157"
-    type: "compatible"
-    description: "BPC-157's tissue repair properties operate through different pathways than Cortexin's neurotrophic effects. No interaction studies available but mechanisms are distinct."
-  - peptide: "thymosin-alpha-1"
-    type: "compatible"
-    description: "Non-overlapping mechanisms. Cortexin targets neuronal function while Thymosin Alpha-1 modulates immune function. May have complementary effects in neuroimmune contexts."
+  - peptide: cerebrolysin
+    type: synergistic
+    description: >-
+      Both are brain-derived peptide complexes with neurotrophic properties.
+      Cerebrolysin is porcine brain-derived while Cortexin is from cerebral
+      cortex. Similar mechanisms targeting neuronal survival and plasticity. No
+      direct clinical studies on combination.
+  - peptide: semax
+    type: compatible
+    description: >-
+      Different mechanisms of action (Cortexin complex neurotrophic support vs
+      Semax ACTH-derived BDNF modulation). Both target cognitive enhancement
+      through distinct routes. No known contraindications.
+  - peptide: selank
+    type: compatible
+    description: >-
+      Non-overlapping mechanisms. Cortexin focuses on neurotrophic support while
+      Selank modulates anxiety and immune function. Theoretical complementary
+      benefits for cognitive and mood support.
+  - peptide: dihexa
+    type: compatible
+    description: >-
+      Both target cognitive enhancement but through different mechanisms. Dihexa
+      is a synthetic HGF mimetic while Cortexin is a peptide complex. Limited
+      data on interactions.
+  - peptide: bpc-157
+    type: compatible
+    description: >-
+      BPC-157's tissue repair properties operate through different pathways than
+      Cortexin's neurotrophic effects. No interaction studies available but
+      mechanisms are distinct.
+  - peptide: thymosin-alpha-1
+    type: compatible
+    description: >-
+      Non-overlapping mechanisms. Cortexin targets neuronal function while
+      Thymosin Alpha-1 modulates immune function. May have complementary effects
+      in neuroimmune contexts.
 molecularInfo:
-  weight: "1,000-10,000 Da (mixture)"
+  weight: '1,000-10,000 Da (mixture)'
   chainLength: 4
-  type: "Polypeptide complex"
-  sequence: "AEDP (Cortagen, key active tetrapeptide)"
+  type: Polypeptide complex
+  sequence: 'AEDP (Cortagen, key active tetrapeptide)'
   aminoAcids:
-    - { code: "A", name: "Alanine", position: 1, property: "hydrophobic" }
-    - { code: "E", name: "Glutamic Acid", position: 2, property: "negative" }
-    - { code: "D", name: "Aspartic Acid", position: 3, property: "negative" }
-    - { code: "P", name: "Proline", position: 4, property: "hydrophobic" }
+    - code: A
+      name: Alanine
+      position: 1
+      property: hydrophobic
+    - code: E
+      name: Glutamic Acid
+      position: 2
+      property: negative
+    - code: D
+      name: Aspartic Acid
+      position: 3
+      property: negative
+    - code: P
+      name: Proline
+      position: 4
+      property: hydrophobic
 evidenceChainedBenefits:
   - mechanism:
-      action: "Neurotrophic factor mimicry (BDNF-like, NGF-like activity)"
-      confidence: "emerging"
+      action: 'Neurotrophic factor mimicry (BDNF-like, NGF-like activity)'
+      confidence: emerging
       directStudies: 4
     benefit:
-      claim: "support neuronal survival and function after ischemic injury"
-      qualifier: "may"
+      claim: support neuronal survival and function after ischemic injury
+      qualifier: may
     evidence:
-      level: "low"
+      level: low
       humanStudies: 2
       animalStudies: 5
       cellStudies: 3
       keyFindings:
-        - study: "Silachev DN et al. 2021"
-          type: "animal"
-          finding: "Cortexin demonstrated neuroprotective effects in rat models of acute (MCAO) and chronic brain ischemia, reducing infarct volume"
-          pmid: "34254973"
-        - study: "Gomazkov OA 2018"
-          type: "in-vitro"
-          finding: "Cortexin peptides shown to interact with neuron-specific proteins including β5-tubulin and 14-3-3 α/β involved in neuronal survival"
-          pmid: "29543903"
+        - study: Silachev DN et al. 2021
+          type: animal
+          finding: >-
+            Cortexin demonstrated neuroprotective effects in rat models of acute
+            (MCAO) and chronic brain ischemia, reducing infarct volume
+          pmid: '34254973'
+        - study: Gomazkov OA 2018
+          type: in-vitro
+          finding: >-
+            Cortexin peptides shown to interact with neuron-specific proteins
+            including β5-tubulin and 14-3-3 α/β involved in neuronal survival
+          pmid: '29543903'
   - mechanism:
-      action: "Glutamate/GABA receptor modulation (AMPA, kainate, GABAA)"
-      confidence: "supported"
+      action: 'Glutamate/GABA receptor modulation (AMPA, kainate, GABAA)'
+      confidence: supported
       directStudies: 5
     benefit:
-      claim: "improve cognitive function and reduce excitotoxicity"
-      qualifier: "appears to"
+      claim: improve cognitive function and reduce excitotoxicity
+      qualifier: appears to
     evidence:
-      level: "low"
+      level: low
       humanStudies: 3
       animalStudies: 4
       cellStudies: 2
       keyFindings:
-        - study: "Multicenter pediatric study 2018"
-          type: "human-observational"
-          finding: "635 children showed significant improvement in attention, memory and thinking after cortexin treatment, particularly ages 3-4 years"
-          pmid: "29652302"
-        - study: "Gomazkov OA 2015"
-          type: "in-vitro"
-          finding: "Cortexin demonstrated affinity to AMPA-receptors, kainate receptors, mGluR1, GABAA1 and mGluR5"
-          pmid: "26356623"
+        - study: Multicenter pediatric study 2018
+          type: human-observational
+          finding: >-
+            635 children showed significant improvement in attention, memory and
+            thinking after cortexin treatment, particularly ages 3-4 years
+          pmid: '29652302'
+        - study: Gomazkov OA 2015
+          type: in-vitro
+          finding: >-
+            Cortexin demonstrated affinity to AMPA-receptors, kainate receptors,
+            mGluR1, GABAA1 and mGluR5
+          pmid: '26356623'
   - mechanism:
-      action: "Dopaminergic system enhancement"
-      confidence: "emerging"
+      action: Dopaminergic system enhancement
+      confidence: emerging
       directStudies: 3
     benefit:
-      claim: "enhance attention and memory in children with ADHD and developmental delays"
-      qualifier: "suggested to"
+      claim: >-
+        enhance attention and memory in children with ADHD and developmental
+        delays
+      qualifier: suggested to
     evidence:
-      level: "low"
+      level: low
       humanStudies: 2
       animalStudies: 3
       cellStudies: 1
       keyFindings:
-        - study: "Efimova EV et al. 2013"
-          type: "human-observational"
-          finding: "Cortexin improved memory in 86.7% of children aged 7-12 with memory disorders, superior to control treatment"
-          pmid: "23448025"
-        - study: "Neurotropic effects study 2025"
-          type: "animal"
-          finding: "Cortexin reduced neurological deficits and improved motor activity in developmental delay models"
-          pmid: "40299434"
+        - study: Efimova EV et al. 2013
+          type: human-observational
+          finding: >-
+            Cortexin improved memory in 86.7% of children aged 7-12 with memory
+            disorders, superior to control treatment
+          pmid: '23448025'
+        - study: Neurotropic effects study 2025
+          type: animal
+          finding: >-
+            Cortexin reduced neurological deficits and improved motor activity
+            in developmental delay models
+          pmid: '40299434'
   - mechanism:
-      action: "Antioxidant and anti-apoptotic effects"
-      confidence: "emerging"
+      action: Antioxidant and anti-apoptotic effects
+      confidence: emerging
       directStudies: 4
     benefit:
-      claim: "reduce oxidative damage in brain tissue"
-      qualifier: "may"
+      claim: reduce oxidative damage in brain tissue
+      qualifier: may
     evidence:
-      level: "very-low"
+      level: very-low
       humanStudies: 0
       animalStudies: 4
       cellStudies: 3
       keyFindings:
-        - study: "Granstrem OK et al. 2008"
-          type: "in-vitro"
-          finding: "Cortexin extracts demonstrated antioxidant properties and increased SOD and catalase activity"
-          pmid: "18193579"
-        - study: "Bashkatova VG et al. 2011"
-          type: "animal"
-          finding: "Reduced oxidative stress markers in rat brain ischemia models"
-          pmid: "21488726"
+        - study: Granstrem OK et al. 2008
+          type: in-vitro
+          finding: >-
+            Cortexin extracts demonstrated antioxidant properties and increased
+            SOD and catalase activity
+          pmid: '18193579'
+        - study: Bashkatova VG et al. 2011
+          type: animal
+          finding: Reduced oxidative stress markers in rat brain ischemia models
+          pmid: '21488726'
 conditions:
-  - slug: "stroke-recovery"
-    name: "Stroke Recovery"
-    researchSummary: "Cortexin has been studied in Russia for post-stroke recovery. Animal studies demonstrate neuroprotective effects in ischemia models (Silachev et al., 2021). Russian clinical trials report improvements in neurological outcomes, though these lack independent Western validation. No FDA-approved indications exist."
-    relevantStudies: ["34254973", "29543903", "21488726"]
-    relatedPeptides: ["cerebrolysin", "semax"]
-  - slug: "cognitive-impairment"
-    name: "Cognitive Impairment"
-    researchSummary: "Russian studies have evaluated Cortexin for age-related cognitive decline and dementia. Multicenter studies report improvements in memory and attention, particularly in elderly patients with chronic cerebral ischemia. Evidence quality is limited by study design and lack of independent replication."
-    relevantStudies: ["29652302", "26356623", "23448025"]
-    relatedPeptides: ["cerebrolysin", "dihexa"]
-  - slug: "pediatric-neurodevelopment"
-    name: "Pediatric Neurodevelopmental Disorders"
-    researchSummary: "Cortexin is used in Russia for children with developmental delays, ADHD, and speech disorders. A 2018 multicenter study of 635 children reported improvements in cognitive function. However, these are observational studies without placebo controls, limiting evidence strength."
-    relevantStudies: ["29652302", "23448025", "40299434"]
-    relatedPeptides: ["semax", "selank"]
+  - slug: stroke-recovery
+    name: Stroke Recovery
+    researchSummary: >-
+      Cortexin has been studied in Russia for post-stroke recovery. Animal
+      studies demonstrate neuroprotective effects in ischemia models (Silachev
+      et al., 2021). Russian clinical trials report improvements in neurological
+      outcomes, though these lack independent Western validation. No
+      FDA-approved indications exist.
+    relevantStudies:
+      - '34254973'
+      - '29543903'
+      - '21488726'
+    relatedPeptides:
+      - cerebrolysin
+      - semax
+  - slug: cognitive-impairment
+    name: Cognitive Impairment
+    researchSummary: >-
+      Russian studies have evaluated Cortexin for age-related cognitive decline
+      and dementia. Multicenter studies report improvements in memory and
+      attention, particularly in elderly patients with chronic cerebral
+      ischemia. Evidence quality is limited by study design and lack of
+      independent replication.
+    relevantStudies:
+      - '29652302'
+      - '26356623'
+      - '23448025'
+    relatedPeptides:
+      - cerebrolysin
+      - dihexa
+  - slug: pediatric-neurodevelopment
+    name: Pediatric Neurodevelopmental Disorders
+    researchSummary: >-
+      Cortexin is used in Russia for children with developmental delays, ADHD,
+      and speech disorders. A 2018 multicenter study of 635 children reported
+      improvements in cognitive function. However, these are observational
+      studies without placebo controls, limiting evidence strength.
+    relevantStudies:
+      - '29652302'
+      - '23448025'
+      - '40299434'
+    relatedPeptides:
+      - semax
+      - selank
 timeline:
-  - period: "Week 1-2"
-    effects: "Based on Russian clinical protocols: Initial treatment phase with daily intramuscular injections. Some studies report early improvements in alertness and attention within the first week. Animal studies show early neurotrophic signaling activation."
-    source: "PMID:29652302"
-  - period: "Week 2-4"
-    effects: "Russian protocols typically run 10-day treatment courses. Studies report progressive improvements in memory, concentration, and cognitive processing. Pediatric studies show attention improvements by week 3-4."
-    source: "PMID:23448025"
-  - period: "Week 4-8"
-    effects: "Post-treatment observation period. Russian studies suggest effects may persist after discontinuation. Repeat courses may be administered after 3-6 month intervals per Russian protocols."
-    source: "PMID:34254973"
-  - period: "Week 8+"
-    effects: "Long-term outcomes poorly characterized. Russian practice involves repeated treatment courses. No controlled long-term safety or efficacy data available. Optimal treatment duration and frequency remain undefined."
+  - period: Week 1-2
+    effects: >-
+      Based on Russian clinical protocols: Initial treatment phase with daily
+      intramuscular injections. Some studies report early improvements in
+      alertness and attention within the first week. Animal studies show early
+      neurotrophic signaling activation.
+    source: 'PMID:29652302'
+  - period: Week 2-4
+    effects: >-
+      Russian protocols typically run 10-day treatment courses. Studies report
+      progressive improvements in memory, concentration, and cognitive
+      processing. Pediatric studies show attention improvements by week 3-4.
+    source: 'PMID:23448025'
+  - period: Week 4-8
+    effects: >-
+      Post-treatment observation period. Russian studies suggest effects may
+      persist after discontinuation. Repeat courses may be administered after
+      3-6 month intervals per Russian protocols.
+    source: 'PMID:34254973'
+  - period: Week 8+
+    effects: >-
+      Long-term outcomes poorly characterized. Russian practice involves
+      repeated treatment courses. No controlled long-term safety or efficacy
+      data available. Optimal treatment duration and frequency remain undefined.
 qualityChecklist:
   goodSigns:
-    - "White to off-white lyophilized powder"
-    - "Manufactured by established Russian pharmaceutical companies (Geropharm)"
-    - "Comes with certificate of analysis and batch documentation"
-    - "Proper cold chain shipping maintained"
-    - "Clear, colorless solution after reconstitution"
-    - "Proper vacuum seal on vial before reconstitution"
+    - White to off-white lyophilized powder
+    - Manufactured by established Russian pharmaceutical companies (Geropharm)
+    - Comes with certificate of analysis and batch documentation
+    - Proper cold chain shipping maintained
+    - 'Clear, colorless solution after reconstitution'
+    - Proper vacuum seal on vial before reconstitution
   warningSigns:
-    - "Non-Russian source without proper documentation"
-    - "Powder appears slightly off-white or cream-colored"
-    - "Inconsistent dissolution time"
-    - "Missing batch-specific testing documentation"
-    - "Unclear chain of custody from manufacturer"
+    - Non-Russian source without proper documentation
+    - Powder appears slightly off-white or cream-colored
+    - Inconsistent dissolution time
+    - Missing batch-specific testing documentation
+    - Unclear chain of custody from manufacturer
   badSigns:
-    - "Yellow, brown, or otherwise discolored powder"
-    - "Visible particles or cloudiness after reconstitution"
-    - "No certificate of analysis or origin documentation"
-    - "Purchased from unverified online sources"
-    - "Strong unusual odor"
-    - "Vial seal appears compromised or previously opened"
-    - "Claims of synthetic Cortexin (authentic product is extracted)"
+    - 'Yellow, brown, or otherwise discolored powder'
+    - Visible particles or cloudiness after reconstitution
+    - No certificate of analysis or origin documentation
+    - Purchased from unverified online sources
+    - Strong unusual odor
+    - Vial seal appears compromised or previously opened
+    - Claims of synthetic Cortexin (authentic product is extracted)
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

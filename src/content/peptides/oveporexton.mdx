@@ -1,176 +1,251 @@
 ---
-name: "Oveporexton"
-aliases: ["TAK-861"]
-category: "cognitive"
-compoundType: "small-molecule"
-evidenceStrength: "high"
-lastUpdated: 2026-01-22
-comparators: ["pitolisant", "sodium-oxybate", "modafinil"]
-summary: "A first-in-class oral orexin receptor 2 (OX2R) selective agonist developed by Takeda for narcolepsy type 1. Though not a peptide itself, oveporexton restores orexin peptide signaling lost due to autoimmune destruction of orexin-producing neurons. Phase 3 trials demonstrate significant reductions in excessive daytime sleepiness and cataplexy, with FDA Breakthrough Therapy designation."
+name: Oveporexton
+aliases:
+  - TAK-861
+category: cognitive
+compoundType: small-molecule
+evidenceStrength: moderate
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - pitolisant
+  - sodium-oxybate
+  - modafinil
+summary: >-
+  A first-in-class oral orexin receptor 2 (OX2R) selective agonist developed by
+  Takeda for narcolepsy type 1. Though not a peptide itself, oveporexton
+  restores orexin peptide signaling lost due to autoimmune destruction of
+  orexin-producing neurons. Phase 3 trials demonstrate significant reductions in
+  excessive daytime sleepiness and cataplexy, with FDA Breakthrough Therapy
+  designation.
 sources:
   count: 28
   human: 22
   preclinical: 6
   openAccess: 20
-metaTitle: "Oveporexton (TAK-861) Evidence Dossier | PepCodex"
-metaDescription: "Comprehensive evidence review of oveporexton (TAK-861). First-in-class OX2R agonist for narcolepsy type 1. Mechanism, Phase 3 trial data, safety profile, and citations."
+metaTitle: Oveporexton (TAK-861) Evidence Dossier | PepCodex
+metaDescription: >-
+  Comprehensive evidence review of oveporexton (TAK-861). First-in-class OX2R
+  agonist for narcolepsy type 1. Mechanism, Phase 3 trial data, safety profile,
+  and citations.
 interactions:
-  - peptide: "orexin-a"
-    type: "synergistic"
-    description: "Oveporexton mimics the endogenous orexin peptide signal at OX2R. In narcolepsy type 1, where orexin-A is deficient, oveporexton provides replacement receptor activation."
-  - peptide: "orexin-b"
-    type: "synergistic"
-    description: "Orexin-B preferentially activates OX2R, the same target as oveporexton. The drug compensates for lost orexin-B signaling in NT1 patients."
-  - peptide: "suvorexant"
-    type: "avoid"
-    description: "Suvorexant is a dual orexin receptor antagonist (DORA) used for insomnia. Concurrent use would cause direct pharmacological antagonism, negating therapeutic effects."
-  - peptide: "lemborexant"
-    type: "avoid"
-    description: "Lemborexant is a DORA for insomnia. Combining with oveporexton would result in opposing receptor effects and is contraindicated."
-  - peptide: "modafinil"
-    type: "compatible"
-    description: "Different wake-promoting mechanisms (dopamine/NE modulation vs OX2R agonism). May be used in combination, though oveporexton alone may be sufficient."
-  - peptide: "pitolisant"
-    type: "compatible"
-    description: "H3 receptor antagonist with different mechanism. Potential for complementary wake promotion, though clinical combination data is limited."
+  - peptide: orexin-a
+    type: synergistic
+    description: >-
+      Oveporexton mimics the endogenous orexin peptide signal at OX2R. In
+      narcolepsy type 1, where orexin-A is deficient, oveporexton provides
+      replacement receptor activation.
+  - peptide: orexin-b
+    type: synergistic
+    description: >-
+      Orexin-B preferentially activates OX2R, the same target as oveporexton.
+      The drug compensates for lost orexin-B signaling in NT1 patients.
+  - peptide: suvorexant
+    type: avoid
+    description: >-
+      Suvorexant is a dual orexin receptor antagonist (DORA) used for insomnia.
+      Concurrent use would cause direct pharmacological antagonism, negating
+      therapeutic effects.
+  - peptide: lemborexant
+    type: avoid
+    description: >-
+      Lemborexant is a DORA for insomnia. Combining with oveporexton would
+      result in opposing receptor effects and is contraindicated.
+  - peptide: modafinil
+    type: compatible
+    description: >-
+      Different wake-promoting mechanisms (dopamine/NE modulation vs OX2R
+      agonism). May be used in combination, though oveporexton alone may be
+      sufficient.
+  - peptide: pitolisant
+    type: compatible
+    description: >-
+      H3 receptor antagonist with different mechanism. Potential for
+      complementary wake promotion, though clinical combination data is limited.
 molecularInfo:
-  weight: "~450-550 Da (estimated)"
+  weight: ~450-550 Da (estimated)
   chainLength: 0
-  type: "Small molecule OX2R agonist"
-  sequence: "N/A (small molecule)"
+  type: Small molecule OX2R agonist
+  sequence: N/A (small molecule)
   aminoAcids: []
 evidenceChainedBenefits:
   - mechanism:
-      action: "Selective OX2R agonism activating arousal centers (TMN, LC, VTA)"
-      confidence: "established"
+      action: 'Selective OX2R agonism activating arousal centers (TMN, LC, VTA)'
+      confidence: established
       directStudies: 12
     benefit:
-      claim: "reduce excessive daytime sleepiness in narcolepsy type 1"
-      qualifier: "shown to"
+      claim: reduce excessive daytime sleepiness in narcolepsy type 1
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 8
       animalStudies: 4
       cellStudies: 2
       keyFindings:
-        - study: "ORCHESTRA-NT1 Phase 3"
-          type: "human-rct"
-          finding: "Significant reduction in Epworth Sleepiness Scale scores vs placebo in NT1 patients"
-          pmid: "TBD"
-        - study: "Phase 2 dose-finding"
-          type: "human-rct"
-          finding: "Dose-dependent improvements in sleepiness measures establishing optimal dosing"
-          pmid: "TBD"
+        - study: ORCHESTRA-NT1 Phase 3
+          type: human-rct
+          finding: >-
+            Significant reduction in Epworth Sleepiness Scale scores vs placebo
+            in NT1 patients
+          pmid: TBD
+        - study: Phase 2 dose-finding
+          type: human-rct
+          finding: >-
+            Dose-dependent improvements in sleepiness measures establishing
+            optimal dosing
+          pmid: TBD
   - mechanism:
-      action: "Restoration of orexin signaling stabilizing sleep-wake boundaries"
-      confidence: "established"
+      action: Restoration of orexin signaling stabilizing sleep-wake boundaries
+      confidence: established
       directStudies: 10
     benefit:
-      claim: "reduce cataplexy attacks in narcolepsy type 1"
-      qualifier: "shown to"
+      claim: reduce cataplexy attacks in narcolepsy type 1
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 6
       animalStudies: 4
       cellStudies: 0
       keyFindings:
-        - study: "ORCHESTRA-NT1 Phase 3"
-          type: "human-rct"
-          finding: "Approximately 70-80% reduction in weekly cataplexy attacks vs placebo"
-          pmid: "TBD"
-        - study: "Chemelli et al. 1999"
-          type: "animal"
-          finding: "Orexin knockout mice demonstrate narcolepsy phenotype, validating orexin deficiency as cause"
-          pmid: "10458611"
+        - study: ORCHESTRA-NT1 Phase 3
+          type: human-rct
+          finding: >-
+            Approximately 70-80% reduction in weekly cataplexy attacks vs
+            placebo
+          pmid: TBD
+        - study: Chemelli et al. 1999
+          type: animal
+          finding: >-
+            Orexin knockout mice demonstrate narcolepsy phenotype, validating
+            orexin deficiency as cause
+          pmid: '10458611'
   - mechanism:
-      action: "OX2R activation in tuberomammillary nucleus enhancing histaminergic arousal"
-      confidence: "established"
+      action: >-
+        OX2R activation in tuberomammillary nucleus enhancing histaminergic
+        arousal
+      confidence: established
       directStudies: 8
     benefit:
-      claim: "improve objective wakefulness on Maintenance of Wakefulness Test"
-      qualifier: "shown to"
+      claim: improve objective wakefulness on Maintenance of Wakefulness Test
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 4
       animalStudies: 6
       cellStudies: 2
       keyFindings:
-        - study: "ORCHESTRA-NT1 Phase 3"
-          type: "human-rct"
-          finding: "Significant improvement in MWT sleep latency vs placebo"
-          pmid: "TBD"
-        - study: "Willie et al. 2003"
-          type: "animal"
-          finding: "OX2R more important for wake promotion than OX1R in knockout models"
-          pmid: "14748850"
+        - study: ORCHESTRA-NT1 Phase 3
+          type: human-rct
+          finding: Significant improvement in MWT sleep latency vs placebo
+          pmid: TBD
+        - study: Willie et al. 2003
+          type: animal
+          finding: OX2R more important for wake promotion than OX1R in knockout models
+          pmid: '14748850'
   - mechanism:
-      action: "G-protein coupled receptor signaling via Gq/11 pathway"
-      confidence: "established"
+      action: G-protein coupled receptor signaling via Gq/11 pathway
+      confidence: established
       directStudies: 15
     benefit:
-      claim: "address root pathophysiology of narcolepsy type 1"
-      qualifier: "shown to"
+      claim: address root pathophysiology of narcolepsy type 1
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 3
       animalStudies: 8
       cellStudies: 6
       keyFindings:
-        - study: "Peyron et al. 2000"
-          type: "human-observational"
-          finding: "Demonstrated orexin neuron loss in human NT1, establishing pathophysiological basis"
-          pmid: "10996548"
-        - study: "Sakurai et al. 1998"
-          type: "animal"
-          finding: "Original discovery of orexins and receptor signaling pathways"
-          pmid: "9491897"
+        - study: Peyron et al. 2000
+          type: human-observational
+          finding: >-
+            Demonstrated orexin neuron loss in human NT1, establishing
+            pathophysiological basis
+          pmid: '10996548'
+        - study: Sakurai et al. 1998
+          type: animal
+          finding: Original discovery of orexins and receptor signaling pathways
+          pmid: '9491897'
 conditions:
-  - slug: "narcolepsy-type-1"
-    name: "Narcolepsy Type 1"
-    researchSummary: "Oveporexton is specifically developed for NT1, caused by autoimmune destruction of orexin-producing neurons. Phase 3 ORCHESTRA-NT1 trial demonstrated significant improvements in ESS, cataplexy frequency, and MWT. FDA Breakthrough Therapy designation granted 2021."
-    relevantStudies: ["TBD-NEJM", "NCT04592510"]
-    relatedPeptides: ["orexin-a", "orexin-b"]
-  - slug: "narcolepsy-type-2"
-    name: "Narcolepsy Type 2"
-    researchSummary: "NT2 patients have excessive sleepiness without cataplexy and usually normal CSF orexin. ORCHESTRA-NT2 trial (NCT04808037) is ongoing to evaluate if OX2R agonism benefits this population with less clear orexin dysfunction."
-    relevantStudies: ["NCT04808037"]
-    relatedPeptides: ["orexin-a", "orexin-b"]
-  - slug: "excessive-daytime-sleepiness"
-    name: "Excessive Daytime Sleepiness"
-    researchSummary: "Primary endpoint of ORCHESTRA-NT1 showed significant ESS reduction. Oveporexton promotes wakefulness through direct OX2R activation in arousal centers, addressing the underlying orexin deficiency."
-    relevantStudies: ["NCT04592510", "NCT03748979"]
-    relatedPeptides: ["modafinil", "pitolisant"]
+  - slug: narcolepsy-type-1
+    name: Narcolepsy Type 1
+    researchSummary: >-
+      Oveporexton is specifically developed for NT1, caused by autoimmune
+      destruction of orexin-producing neurons. Phase 3 ORCHESTRA-NT1 trial
+      demonstrated significant improvements in ESS, cataplexy frequency, and
+      MWT. FDA Breakthrough Therapy designation granted 2021.
+    relevantStudies:
+      - TBD-NEJM
+      - NCT04592510
+    relatedPeptides:
+      - orexin-a
+      - orexin-b
+  - slug: narcolepsy-type-2
+    name: Narcolepsy Type 2
+    researchSummary: >-
+      NT2 patients have excessive sleepiness without cataplexy and usually
+      normal CSF orexin. ORCHESTRA-NT2 trial (NCT04808037) is ongoing to
+      evaluate if OX2R agonism benefits this population with less clear orexin
+      dysfunction.
+    relevantStudies:
+      - NCT04808037
+    relatedPeptides:
+      - orexin-a
+      - orexin-b
+  - slug: excessive-daytime-sleepiness
+    name: Excessive Daytime Sleepiness
+    researchSummary: >-
+      Primary endpoint of ORCHESTRA-NT1 showed significant ESS reduction.
+      Oveporexton promotes wakefulness through direct OX2R activation in arousal
+      centers, addressing the underlying orexin deficiency.
+    relevantStudies:
+      - NCT04592510
+      - NCT03748979
+    relatedPeptides:
+      - modafinil
+      - pitolisant
 timeline:
-  - period: "Week 1-2"
-    effects: "Based on Phase 2/3 data: Rapid onset of wake-promoting effects. Patients may notice reduced daytime sleepiness within first weeks. Cataplexy frequency begins to decrease."
-    source: "NCT04592510"
-  - period: "Week 2-4"
-    effects: "Continued improvement in wakefulness measures. Phase 3 endpoints assessed at multiple timepoints showed progressive benefit. Optimal steady-state drug levels achieved."
-    source: "NCT03748979"
-  - period: "Week 4-8"
-    effects: "Full therapeutic effects observed in clinical trials. ESS improvements stabilize. Cataplexy reduction maintained at approximately 70-80% from baseline."
-    source: "NEJM 2024"
-  - period: "Week 8+"
-    effects: "Long-term extension studies (NCT04950842) ongoing to assess durability. Preliminary data suggests sustained efficacy. Safety monitoring continues."
-    source: "NCT04950842"
+  - period: Week 1-2
+    effects: >-
+      Based on Phase 2/3 data: Rapid onset of wake-promoting effects. Patients
+      may notice reduced daytime sleepiness within first weeks. Cataplexy
+      frequency begins to decrease.
+    source: NCT04592510
+  - period: Week 2-4
+    effects: >-
+      Continued improvement in wakefulness measures. Phase 3 endpoints assessed
+      at multiple timepoints showed progressive benefit. Optimal steady-state
+      drug levels achieved.
+    source: NCT03748979
+  - period: Week 4-8
+    effects: >-
+      Full therapeutic effects observed in clinical trials. ESS improvements
+      stabilize. Cataplexy reduction maintained at approximately 70-80% from
+      baseline.
+    source: NEJM 2024
+  - period: Week 8+
+    effects: >-
+      Long-term extension studies (NCT04950842) ongoing to assess durability.
+      Preliminary data suggests sustained efficacy. Safety monitoring continues.
+    source: NCT04950842
 qualityChecklist:
   goodSigns:
-    - "Pharmaceutical-grade product from licensed manufacturer (once approved)"
-    - "Proper packaging with lot number and expiration date"
-    - "Clear prescribing information from healthcare provider"
-    - "Obtained through legitimate pharmacy channels"
-    - "Consistent tablet or capsule appearance per manufacturer specifications"
+    - Pharmaceutical-grade product from licensed manufacturer (once approved)
+    - Proper packaging with lot number and expiration date
+    - Clear prescribing information from healthcare provider
+    - Obtained through legitimate pharmacy channels
+    - Consistent tablet or capsule appearance per manufacturer specifications
   warningSigns:
-    - "Product obtained outside of regulated pharmaceutical supply chain"
-    - "Compounded formulation without proper quality assurance"
-    - "Missing or inconsistent lot numbers"
-    - "Packaging that appears tampered with or non-authentic"
+    - Product obtained outside of regulated pharmaceutical supply chain
+    - Compounded formulation without proper quality assurance
+    - Missing or inconsistent lot numbers
+    - Packaging that appears tampered with or non-authentic
   badSigns:
-    - "Product sold as 'research chemical' without regulatory approval"
-    - "No verifiable manufacturer or source information"
-    - "Obtained from unregulated online sources"
-    - "Claims of identical efficacy at significantly lower cost from unknown sources"
-    - "Any product claiming to be oveporexton before regulatory approval"
+    - Product sold as 'research chemical' without regulatory approval
+    - No verifiable manufacturer or source information
+    - Obtained from unregulated online sources
+    - >-
+      Claims of identical efficacy at significantly lower cost from unknown
+      sources
+    - Any product claiming to be oveporexton before regulatory approval
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

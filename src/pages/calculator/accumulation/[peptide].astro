@@ -1,0 +1,286 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import presetData from '../../../../data/calculator-presets.json';
+
+export function getStaticPaths() {
+  return presetData.presets
+    .filter(p => p.accumulation.halfLifeHours > 0)
+    .map(preset => ({
+      params: { peptide: preset.slug },
+      props: { preset },
+    }));
+}
+
+const { preset } = Astro.props;
+const displayName = preset.name;
+const halfLife = preset.accumulation.halfLifeHours;
+const halfLifeDisplay = halfLife >= 24 ? `${(halfLife / 24).toFixed(1)} days` : `${halfLife} hours`;
+---
+
+<BaseLayout
+  title={`${displayName} Accumulation Calculator`}
+  description={`Calculate ${displayName} accumulation, steady-state concentrations, and pharmacokinetic parameters. Half-life: ${halfLifeDisplay}.`}
+>
+  <!-- Breadcrumb -->
+  <nav class="flex items-center gap-2 text-sm mb-8" style="color: var(--text-medium);">
+    <a href="/calculator" class="hover:text-primary transition-colors">Calculators</a>
+    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+    <a href="/calculator/accumulation" class="hover:text-primary transition-colors">Accumulation</a>
+    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+    <span style="color: var(--text-high);">{displayName}</span>
+  </nav>
+
+  <!-- Header -->
+  <section class="mb-12">
+    <div class="flex items-center gap-4 mb-6">
+      <div class="w-14 h-14 rounded-2xl bg-purple-400/20 flex items-center justify-center">
+        <svg class="w-7 h-7 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/>
+        </svg>
+      </div>
+      <div>
+        <h1 class="text-3xl font-bold font-display" style="color: var(--text-high);">{displayName} Accumulation Calculator</h1>
+        <p class="text-sm" style="color: var(--text-medium);">Half-life: {halfLifeDisplay} ({preset.accumulation.halfLifeSource})</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+    <!-- Input -->
+    <div class="glass-card p-8">
+      <h2 class="text-lg font-bold mb-6 font-display" style="color: var(--text-high);">Input Parameters</h2>
+      <div class="space-y-6">
+        <div>
+          <label class="block text-sm font-medium mb-2" style="color: var(--text-high);">Half-Life (hours)</label>
+          <input type="number" id="halfLife" value={halfLife} min="0.1" step="0.1"
+            class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all" />
+          <p class="text-xs mt-1" style="color: var(--text-low);">{preset.accumulation.halfLifeSource}</p>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-2" style="color: var(--text-high);">Dose Amount (mcg)</label>
+          <input type="number" id="doseAmount" value="250" min="1" step="1"
+            class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all" />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-2" style="color: var(--text-high);">Dosing Frequency</label>
+          <div class="grid grid-cols-2 gap-3">
+            <input type="number" id="freqCount" value="1" min="1" step="1"
+              class="px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-primary/50 transition-all" />
+            <select id="freqUnit"
+              class="px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-primary/50 transition-all">
+              <option value="day">times per day</option>
+              <option value="week" selected>times per week</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-2" style="color: var(--text-high);">Simulation Duration (days)</label>
+          <input type="number" id="duration" value="30" min="1" max="365" step="1"
+            class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div class="glass-card p-8">
+      <h2 class="text-lg font-bold mb-6 font-display" style="color: var(--text-high);">Pharmacokinetic Results</h2>
+      <div class="grid grid-cols-2 gap-4 mb-8">
+        <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+          <p class="text-xs uppercase tracking-wider mb-1" style="color: var(--text-low);">Accumulation Ratio</p>
+          <p class="text-2xl font-bold text-primary" id="resultRatio">-</p>
+          <p class="text-xs" style="color: var(--text-medium);">Css/single dose</p>
+        </div>
+        <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+          <p class="text-xs uppercase tracking-wider mb-1" style="color: var(--text-low);">Time to Steady State</p>
+          <p class="text-2xl font-bold text-cyan-400" id="resultSteady">-</p>
+          <p class="text-xs" style="color: var(--text-medium);">~5 half-lives</p>
+        </div>
+        <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+          <p class="text-xs uppercase tracking-wider mb-1" style="color: var(--text-low);">Peak at Steady State</p>
+          <p class="text-2xl font-bold text-purple-400" id="resultPeak">-</p>
+          <p class="text-xs" style="color: var(--text-medium);">mcg (relative)</p>
+        </div>
+        <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+          <p class="text-xs uppercase tracking-wider mb-1" style="color: var(--text-low);">Trough at Steady State</p>
+          <p class="text-2xl font-bold text-green-400" id="resultTrough">-</p>
+          <p class="text-xs" style="color: var(--text-medium);">mcg (relative)</p>
+        </div>
+      </div>
+
+      <!-- Concentration chart placeholder -->
+      <div class="rounded-xl bg-white/5 border border-white/10 p-4">
+        <p class="text-xs uppercase tracking-wider mb-3" style="color: var(--text-low);">Concentration Over Time</p>
+        <canvas id="accChart" width="400" height="200" class="w-full"></canvas>
+      </div>
+
+      <!-- Link to dossier -->
+      <a href={`/peptides/${preset.slug}`} class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline">
+        View {displayName} Evidence Dossier
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Disclaimer -->
+  <section class="py-8">
+    <div class="glass-card p-6" style="border-color: hsla(45, 90%, 55%, 0.3);">
+      <div class="flex items-start gap-4">
+        <div class="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 bg-yellow-500/20 border border-yellow-500/30">
+          <svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-sm font-bold text-yellow-400 uppercase tracking-wider mb-2">For Research Purposes Only</h3>
+          <p class="text-sm leading-relaxed" style="color: var(--text-medium);">
+            Accumulation estimates are theoretical based on one-compartment pharmacokinetic models. Real pharmacokinetics depend on many factors including individual metabolism, route of administration, and compound purity. No dosing guidance is provided.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const halfLifeInput = document.getElementById('halfLife') as HTMLInputElement;
+  const doseInput = document.getElementById('doseAmount') as HTMLInputElement;
+  const freqCountInput = document.getElementById('freqCount') as HTMLInputElement;
+  const freqUnitSelect = document.getElementById('freqUnit') as HTMLSelectElement;
+  const durationInput = document.getElementById('duration') as HTMLInputElement;
+
+  const resultRatio = document.getElementById('resultRatio')!;
+  const resultSteady = document.getElementById('resultSteady')!;
+  const resultPeak = document.getElementById('resultPeak')!;
+  const resultTrough = document.getElementById('resultTrough')!;
+  const canvas = document.getElementById('accChart') as HTMLCanvasElement;
+  const ctx = canvas.getContext('2d')!;
+
+  function calculate() {
+    const halfLife = parseFloat(halfLifeInput.value) || 1;
+    const dose = parseFloat(doseInput.value) || 0;
+    const freqCount = parseInt(freqCountInput.value) || 1;
+    const freqUnit = freqUnitSelect.value;
+    const duration = parseInt(durationInput.value) || 30;
+
+    // Convert frequency to interval in hours
+    const intervalHours = freqUnit === 'day' ? 24 / freqCount : (24 * 7) / freqCount;
+
+    // Elimination constant
+    const ke = Math.LN2 / halfLife;
+
+    // Accumulation ratio: R = 1 / (1 - e^(-ke * tau))
+    const ratio = 1 / (1 - Math.exp(-ke * intervalHours));
+    resultRatio.textContent = ratio.toFixed(2) + 'x';
+
+    // Time to steady state (~5 half-lives)
+    const tss = 5 * halfLife;
+    if (tss >= 24) {
+      resultSteady.textContent = (tss / 24).toFixed(1) + ' days';
+    } else {
+      resultSteady.textContent = tss.toFixed(1) + ' hours';
+    }
+
+    // Steady state peak and trough (relative units)
+    const peak = dose * ratio;
+    const trough = peak * Math.exp(-ke * intervalHours);
+    resultPeak.textContent = peak.toFixed(1);
+    resultTrough.textContent = trough.toFixed(1);
+
+    // Draw chart
+    drawChart(halfLife, dose, intervalHours, ke, duration);
+  }
+
+  function drawChart(halfLife: number, dose: number, intervalHours: number, ke: number, durationDays: number) {
+    const dpr = window.devicePixelRatio || 1;
+    const rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+    ctx.scale(dpr, dpr);
+
+    const w = rect.width;
+    const h = rect.height;
+    const padding = { top: 10, right: 10, bottom: 25, left: 40 };
+    const plotW = w - padding.left - padding.right;
+    const plotH = h - padding.top - padding.bottom;
+
+    ctx.clearRect(0, 0, w, h);
+
+    // Simulate concentration over time
+    const totalHours = durationDays * 24;
+    const dt = Math.max(0.5, totalHours / 2000); // time step
+    const points: { t: number; c: number }[] = [];
+    let concentration = 0;
+    let maxConc = 0;
+    let nextDoseTime = 0;
+
+    for (let t = 0; t <= totalHours; t += dt) {
+      // Apply dose at intervals
+      if (t >= nextDoseTime) {
+        concentration += dose;
+        nextDoseTime += intervalHours;
+      }
+      // Exponential decay
+      concentration *= Math.exp(-ke * dt);
+      points.push({ t, c: concentration });
+      if (concentration > maxConc) maxConc = concentration;
+    }
+
+    if (maxConc === 0) return;
+
+    // Draw axes
+    ctx.strokeStyle = 'rgba(255,255,255,0.2)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(padding.left, padding.top);
+    ctx.lineTo(padding.left, h - padding.bottom);
+    ctx.lineTo(w - padding.right, h - padding.bottom);
+    ctx.stroke();
+
+    // Draw concentration line
+    ctx.strokeStyle = 'rgb(139, 92, 246)';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    points.forEach((p, i) => {
+      const x = padding.left + (p.t / totalHours) * plotW;
+      const y = padding.top + plotH - (p.c / (maxConc * 1.1)) * plotH;
+      if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    });
+    ctx.stroke();
+
+    // Fill under curve
+    ctx.fillStyle = 'rgba(139, 92, 246, 0.1)';
+    ctx.beginPath();
+    points.forEach((p, i) => {
+      const x = padding.left + (p.t / totalHours) * plotW;
+      const y = padding.top + plotH - (p.c / (maxConc * 1.1)) * plotH;
+      if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    });
+    ctx.lineTo(padding.left + plotW, h - padding.bottom);
+    ctx.lineTo(padding.left, h - padding.bottom);
+    ctx.fill();
+
+    // Labels
+    ctx.fillStyle = 'rgba(255,255,255,0.5)';
+    ctx.font = '10px monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText('0', padding.left, h - padding.bottom + 15);
+    ctx.fillText(`${durationDays}d`, w - padding.right, h - padding.bottom + 15);
+    ctx.fillText(`${Math.round(durationDays / 2)}d`, padding.left + plotW / 2, h - padding.bottom + 15);
+
+    ctx.textAlign = 'right';
+    ctx.fillText(maxConc.toFixed(0), padding.left - 5, padding.top + 10);
+    ctx.fillText('0', padding.left - 5, h - padding.bottom);
+  }
+
+  halfLifeInput.addEventListener('input', calculate);
+  doseInput.addEventListener('input', calculate);
+  freqCountInput.addEventListener('input', calculate);
+  freqUnitSelect.addEventListener('change', calculate);
+  durationInput.addEventListener('input', calculate);
+
+  calculate();
+</script>

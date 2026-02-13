@@ -1,153 +1,226 @@
 ---
-name: "VK2735"
-aliases: ["Viking 2735"]
-category: "metabolic"
-evidenceStrength: "high"
-lastUpdated: 2026-01-22
-comparators: ["tirzepatide", "semaglutide"]
-summary: "A dual GLP-1/GIP receptor agonist from Viking Therapeutics with both subcutaneous and oral formulations. Phase 2 VENTURE trial showed 14.7% weight loss at 13 weeks (SC) and 12.2% (oral). Phase 3 VANQUISH-1 enrollment completed with 4,650 patients."
+name: VK2735
+aliases:
+  - Viking 2735
+category: metabolic
+evidenceStrength: moderate
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - tirzepatide
+  - semaglutide
+summary: >-
+  A dual GLP-1/GIP receptor agonist from Viking Therapeutics with both
+  subcutaneous and oral formulations. Phase 2 VENTURE trial showed 14.7% weight
+  loss at 13 weeks (SC) and 12.2% (oral). Phase 3 VANQUISH-1 enrollment
+  completed with 4,650 patients.
 sources:
   count: 12
   human: 11
   preclinical: 1
   openAccess: 10
-metaTitle: "VK2735 Evidence Dossier | PepCodex"
-metaDescription: "Comprehensive evidence review of VK2735. VENTURE and VANQUISH trial data, dual SC/oral formulations, mechanism of action, and clinical citations."
+metaTitle: VK2735 Evidence Dossier | PepCodex
+metaDescription: >-
+  Comprehensive evidence review of VK2735. VENTURE and VANQUISH trial data, dual
+  SC/oral formulations, mechanism of action, and clinical citations.
 interactions:
-  - peptide: "tirzepatide"
-    type: "avoid"
-    description: "Same mechanism of action (dual GLP-1/GIP agonism). Concurrent use would be duplicative with increased risk of adverse effects. No clinical rationale for combination."
-  - peptide: "semaglutide"
-    type: "avoid"
-    description: "Overlapping GLP-1 receptor agonism. Concurrent use would increase risk of GI adverse effects and hypoglycemia without additional benefit."
-  - peptide: "bpc-157"
-    type: "caution"
-    description: "Both affect GI function. VK2735 slows gastric emptying while BPC-157 is gastroprotective. Monitor GI symptoms if combined."
-  - peptide: "tesamorelin"
-    type: "compatible"
-    description: "Different mechanisms (GH-releasing vs incretin agonism). May have complementary effects on body composition. No interaction studies available."
+  - peptide: tirzepatide
+    type: avoid
+    description: >-
+      Same mechanism of action (dual GLP-1/GIP agonism). Concurrent use would be
+      duplicative with increased risk of adverse effects. No clinical rationale
+      for combination.
+  - peptide: semaglutide
+    type: avoid
+    description: >-
+      Overlapping GLP-1 receptor agonism. Concurrent use would increase risk of
+      GI adverse effects and hypoglycemia without additional benefit.
+  - peptide: bpc-157
+    type: caution
+    description: >-
+      Both affect GI function. VK2735 slows gastric emptying while BPC-157 is
+      gastroprotective. Monitor GI symptoms if combined.
+  - peptide: tesamorelin
+    type: compatible
+    description: >-
+      Different mechanisms (GH-releasing vs incretin agonism). May have
+      complementary effects on body composition. No interaction studies
+      available.
 molecularInfo:
-  weight: "~4,000 Da (estimated)"
+  weight: '~4,000 Da (estimated)'
   chainLength: 39
-  type: "Acylated peptide"
-  sequence: "Proprietary (GLP-1/GIP dual agonist)"
+  type: Acylated peptide
+  sequence: Proprietary (GLP-1/GIP dual agonist)
   aminoAcids:
-    - { code: "H", name: "Histidine", position: 1, property: "positive" }
-    - { code: "A", name: "Alanine", position: 2, property: "hydrophobic" }
-    - { code: "E", name: "Glutamic Acid", position: 3, property: "negative" }
-    - { code: "G", name: "Glycine", position: 4, property: "polar" }
-    - { code: "T", name: "Threonine", position: 5, property: "polar" }
+    - code: H
+      name: Histidine
+      position: 1
+      property: positive
+    - code: A
+      name: Alanine
+      position: 2
+      property: hydrophobic
+    - code: E
+      name: Glutamic Acid
+      position: 3
+      property: negative
+    - code: G
+      name: Glycine
+      position: 4
+      property: polar
+    - code: T
+      name: Threonine
+      position: 5
+      property: polar
 evidenceChainedBenefits:
   - mechanism:
-      action: "Dual GLP-1/GIP receptor agonism enhancing satiety and metabolic signaling"
-      confidence: "established"
+      action: >-
+        Dual GLP-1/GIP receptor agonism enhancing satiety and metabolic
+        signaling
+      confidence: established
       directStudies: 4
     benefit:
-      claim: "promote significant weight loss"
-      qualifier: "shown to"
+      claim: promote significant weight loss
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 4
       animalStudies: 1
       cellStudies: 2
       keyFindings:
-        - study: "VENTURE Phase 2 2024"
-          type: "human-rct"
-          finding: "14.7% body weight reduction at 13 weeks with subcutaneous formulation vs 1.7% placebo"
-          pmid: "NA"
-        - study: "VENTURE-Oral Phase 2 2024"
-          type: "human-rct"
-          finding: "12.2% weight loss with oral tablet; 97% achieved >=5% weight loss vs 10% placebo"
-          pmid: "NA"
+        - study: VENTURE Phase 2 2024
+          type: human-rct
+          finding: >-
+            14.7% body weight reduction at 13 weeks with subcutaneous
+            formulation vs 1.7% placebo
+          pmid: NA
+        - study: VENTURE-Oral Phase 2 2024
+          type: human-rct
+          finding: >-
+            12.2% weight loss with oral tablet; 97% achieved >=5% weight loss vs
+            10% placebo
+          pmid: NA
   - mechanism:
-      action: "GLP-1 mediated glucose-dependent insulin secretion and glucagon suppression"
-      confidence: "established"
+      action: >-
+        GLP-1 mediated glucose-dependent insulin secretion and glucagon
+        suppression
+      confidence: established
       directStudies: 3
     benefit:
-      claim: "improve glycemic control"
-      qualifier: "shown to"
+      claim: improve glycemic control
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 2
       animalStudies: 1
       cellStudies: 1
       keyFindings:
-        - study: "VENTURE Phase 2 2024"
-          type: "human-rct"
-          finding: "Improved glucose parameters consistent with GLP-1/GIP dual agonist mechanism"
-          pmid: "NA"
+        - study: VENTURE Phase 2 2024
+          type: human-rct
+          finding: >-
+            Improved glucose parameters consistent with GLP-1/GIP dual agonist
+            mechanism
+          pmid: NA
   - mechanism:
-      action: "GIP receptor activation on adipocytes enhancing lipid metabolism"
-      confidence: "supported"
+      action: GIP receptor activation on adipocytes enhancing lipid metabolism
+      confidence: supported
       directStudies: 2
     benefit:
-      claim: "improve fat tissue metabolism"
-      qualifier: "may"
+      claim: improve fat tissue metabolism
+      qualifier: may
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 1
       animalStudies: 2
       cellStudies: 1
       keyFindings:
-        - study: "Preclinical studies"
-          type: "animal"
-          finding: "GIP receptor activation on adipose tissue may enhance metabolic effects beyond GLP-1 alone"
-          pmid: "NA"
+        - study: Preclinical studies
+          type: animal
+          finding: >-
+            GIP receptor activation on adipose tissue may enhance metabolic
+            effects beyond GLP-1 alone
+          pmid: NA
   - mechanism:
-      action: "Delayed gastric emptying reducing postprandial glucose excursions"
-      confidence: "established"
+      action: Delayed gastric emptying reducing postprandial glucose excursions
+      confidence: established
       directStudies: 3
     benefit:
-      claim: "reduce appetite and food intake"
-      qualifier: "shown to"
+      claim: reduce appetite and food intake
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 3
       animalStudies: 1
       cellStudies: 0
       keyFindings:
-        - study: "VENTURE Phase 2 2024"
-          type: "human-rct"
-          finding: "Weight loss curves still declining at week 13, indicating sustained appetite suppression"
-          pmid: "NA"
+        - study: VENTURE Phase 2 2024
+          type: human-rct
+          finding: >-
+            Weight loss curves still declining at week 13, indicating sustained
+            appetite suppression
+          pmid: NA
 conditions:
-  - slug: "obesity"
-    name: "Obesity"
-    researchSummary: "VK2735 is in Phase 3 development for obesity treatment. VENTURE Phase 2 demonstrated 14.7% weight loss at 13 weeks with subcutaneous administration. VANQUISH-1 Phase 3 trial has enrolled 4,650 patients for 78-week evaluation."
-    relevantStudies: ["VENTURE", "VENTURE-Oral", "VANQUISH-1"]
-    relatedPeptides: ["tirzepatide", "semaglutide"]
-  - slug: "type-2-diabetes"
-    name: "Type 2 Diabetes"
-    researchSummary: "VANQUISH-2 Phase 3 trial is enrolling patients with T2D and obesity. Dual GLP-1/GIP mechanism provides both weight loss and glycemic control benefits based on class effect data from tirzepatide."
-    relevantStudies: ["VANQUISH-2"]
-    relatedPeptides: ["tirzepatide", "semaglutide"]
+  - slug: obesity
+    name: Obesity
+    researchSummary: >-
+      VK2735 is in Phase 3 development for obesity treatment. VENTURE Phase 2
+      demonstrated 14.7% weight loss at 13 weeks with subcutaneous
+      administration. VANQUISH-1 Phase 3 trial has enrolled 4,650 patients for
+      78-week evaluation.
+    relevantStudies:
+      - VENTURE
+      - VENTURE-Oral
+      - VANQUISH-1
+    relatedPeptides:
+      - tirzepatide
+      - semaglutide
+  - slug: type-2-diabetes
+    name: Type 2 Diabetes
+    researchSummary: >-
+      VANQUISH-2 Phase 3 trial is enrolling patients with T2D and obesity. Dual
+      GLP-1/GIP mechanism provides both weight loss and glycemic control
+      benefits based on class effect data from tirzepatide.
+    relevantStudies:
+      - VANQUISH-2
+    relatedPeptides:
+      - tirzepatide
+      - semaglutide
 timeline:
-  - period: "Week 1-4"
-    effects: "Initial dose titration phase. GI side effects (nausea, diarrhea) most common during this period but typically mild-moderate. Early appetite suppression begins."
-    source: "VENTURE Phase 2"
-  - period: "Week 4-8"
-    effects: "Continued weight loss with dose escalation. VENTURE data showed progressive weight reduction without plateau through week 13."
-    source: "VENTURE Phase 2"
-  - period: "Week 8-13"
-    effects: "Phase 2 endpoint. 14.7% weight loss achieved at highest SC dose. Weight loss curves still declining, suggesting further reduction possible with longer treatment."
-    source: "VENTURE Phase 2"
-  - period: "Week 13-78"
-    effects: "Phase 3 duration. VANQUISH-1 will evaluate 78-week efficacy and safety. Maintenance dosing study exploring weekly, biweekly, and monthly regimens."
-    source: "VANQUISH-1 Protocol"
+  - period: Week 1-4
+    effects: >-
+      Initial dose titration phase. GI side effects (nausea, diarrhea) most
+      common during this period but typically mild-moderate. Early appetite
+      suppression begins.
+    source: VENTURE Phase 2
+  - period: Week 4-8
+    effects: >-
+      Continued weight loss with dose escalation. VENTURE data showed
+      progressive weight reduction without plateau through week 13.
+    source: VENTURE Phase 2
+  - period: Week 8-13
+    effects: >-
+      Phase 2 endpoint. 14.7% weight loss achieved at highest SC dose. Weight
+      loss curves still declining, suggesting further reduction possible with
+      longer treatment.
+    source: VENTURE Phase 2
+  - period: Week 13-78
+    effects: >-
+      Phase 3 duration. VANQUISH-1 will evaluate 78-week efficacy and safety.
+      Maintenance dosing study exploring weekly, biweekly, and monthly regimens.
+    source: VANQUISH-1 Protocol
 qualityChecklist:
   goodSigns:
-    - "Investigational drug - only available through clinical trials"
-    - "Phase 3 trials conducted at regulated clinical sites"
-    - "Viking Therapeutics is publicly traded (VKTX) with SEC oversight"
-    - "Trial data presented at major conferences (ObesityWeek)"
+    - Investigational drug - only available through clinical trials
+    - Phase 3 trials conducted at regulated clinical sites
+    - Viking Therapeutics is publicly traded (VKTX) with SEC oversight
+    - Trial data presented at major conferences (ObesityWeek)
   warningSigns:
-    - "Any source claiming to sell VK2735 commercially"
-    - "Products claiming to be 'VK2735-like' or equivalents"
-    - "Research chemical versions claiming same efficacy"
+    - Any source claiming to sell VK2735 commercially
+    - Products claiming to be 'VK2735-like' or equivalents
+    - Research chemical versions claiming same efficacy
   badSigns:
-    - "VK2735 is NOT commercially available - any seller is fraudulent"
-    - "Black market peptides claiming to be VK2735"
-    - "Underground labs producing 'generic VK2735'"
+    - VK2735 is NOT commercially available - any seller is fraudulent
+    - Black market peptides claiming to be VK2735
+    - Underground labs producing 'generic VK2735'
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

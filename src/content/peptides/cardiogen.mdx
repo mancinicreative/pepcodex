@@ -1,196 +1,315 @@
 ---
-name: "Cardiogen"
-aliases: ["AED", "Ala-Glu-Asp", "Cardiac tripeptide"]
-category: "other"
-compoundType: "bioregulator"
-evidenceStrength: "very-low"
-lastUpdated: 2026-02-01
-comparators: ["vesugen", "epithalon", "thymalin"]
-summary: "A synthetic tripeptide (Ala-Glu-Asp) developed by Russian scientist Vladimir Khavinson for cardiac tissue support. Claimed to target cardiomyocyte gene expression and provide cardioprotective effects. No Western clinical validation exists; evidence limited to Russian preclinical and observational studies."
+name: Cardiogen
+aliases:
+  - AED
+  - Ala-Glu-Asp
+  - Cardiac tripeptide
+category: other
+compoundType: bioregulator
+evidenceStrength: low
+lastUpdated: 2026-02-01T00:00:00.000Z
+comparators:
+  - vesugen
+  - epithalon
+  - thymalin
+summary: >-
+  A synthetic tripeptide (Ala-Glu-Asp) developed by Russian scientist Vladimir
+  Khavinson for cardiac tissue support. Claimed to target cardiomyocyte gene
+  expression and provide cardioprotective effects. No Western clinical
+  validation exists; evidence limited to Russian preclinical and observational
+  studies.
 sources:
   count: 12
   human: 2
   preclinical: 8
   openAccess: 4
-metaTitle: "Cardiogen Evidence Dossier | PepCodex"
-metaDescription: "Evidence review of Cardiogen (AED cardiac tripeptide). Comprehensive analysis of Russian bioregulator research, cardioprotective claims, and cardiovascular evidence."
+metaTitle: Cardiogen Evidence Dossier | PepCodex
+metaDescription: >-
+  Evidence review of Cardiogen (AED cardiac tripeptide). Comprehensive analysis
+  of Russian bioregulator research, cardioprotective claims, and cardiovascular
+  evidence.
 interactions:
-  - peptide: "epithalon"
-    type: "compatible"
-    description: "Both Khavinson bioregulator peptides with distinct tissue targets - epithalon for pineal/telomeres, cardiogen for cardiac tissue. No known direct interactions."
-  - peptide: "thymalin"
-    type: "compatible"
-    description: "Both Russian peptide bioregulators - thymalin for thymus/immune modulation, cardiogen for cardiac support. May be used in combination protocols."
-  - peptide: "bpc-157"
-    type: "compatible"
-    description: "Different cardioprotective mechanisms - BPC-157 provides systemic tissue healing and NO pathway modulation, cardiogen targets cardiac-specific gene expression."
-  - peptide: "ghk-cu"
-    type: "compatible"
-    description: "Complementary regenerative targets - GHK-Cu for extracellular matrix remodeling, cardiogen for cardiomyocyte-specific effects."
-  - peptide: "ss-31"
-    type: "compatible"
-    description: "Different cardiac support mechanisms - SS-31 targets mitochondrial function and cardiolipin, cardiogen targets gene expression in heart tissue."
+  - peptide: epithalon
+    type: compatible
+    description: >-
+      Both Khavinson bioregulator peptides with distinct tissue targets -
+      epithalon for pineal/telomeres, cardiogen for cardiac tissue. No known
+      direct interactions.
+  - peptide: thymalin
+    type: compatible
+    description: >-
+      Both Russian peptide bioregulators - thymalin for thymus/immune
+      modulation, cardiogen for cardiac support. May be used in combination
+      protocols.
+  - peptide: bpc-157
+    type: compatible
+    description: >-
+      Different cardioprotective mechanisms - BPC-157 provides systemic tissue
+      healing and NO pathway modulation, cardiogen targets cardiac-specific gene
+      expression.
+  - peptide: ghk-cu
+    type: compatible
+    description: >-
+      Complementary regenerative targets - GHK-Cu for extracellular matrix
+      remodeling, cardiogen for cardiomyocyte-specific effects.
+  - peptide: ss-31
+    type: compatible
+    description: >-
+      Different cardiac support mechanisms - SS-31 targets mitochondrial
+      function and cardiolipin, cardiogen targets gene expression in heart
+      tissue.
 molecularInfo:
-  weight: "333.29 Da"
+  weight: 333.29 Da
   chainLength: 3
-  type: "Tripeptide"
-  sequence: "AED"
+  type: Tripeptide
+  sequence: AED
   aminoAcids:
-    - { code: "A", name: "Alanine", position: 1, property: "hydrophobic" }
-    - { code: "E", name: "Glutamic Acid", position: 2, property: "negative" }
-    - { code: "D", name: "Aspartic Acid", position: 3, property: "negative" }
+    - code: A
+      name: Alanine
+      position: 1
+      property: hydrophobic
+    - code: E
+      name: Glutamic Acid
+      position: 2
+      property: negative
+    - code: D
+      name: Aspartic Acid
+      position: 3
+      property: negative
 evidenceChainedBenefits:
   - mechanism:
-      action: "Modulation of cardiac-specific gene expression via DNA interactions"
-      confidence: "emerging"
+      action: Modulation of cardiac-specific gene expression via DNA interactions
+      confidence: emerging
       directStudies: 3
     benefit:
-      claim: "support cardiomyocyte function and protein synthesis"
-      qualifier: "suggested to"
+      claim: support cardiomyocyte function and protein synthesis
+      qualifier: suggested to
     evidence:
-      level: "very-low"
+      level: very-low
       humanStudies: 0
       animalStudies: 2
       cellStudies: 3
       keyFindings:
-        - study: "Khavinson VK et al. 2008"
-          type: "in-vitro"
-          finding: "AED peptide demonstrated binding to gene promoter regions in cardiac tissue cultures, suggesting potential regulatory effects on cardiomyocyte protein expression"
-          pmid: "18683838"
-        - study: "Khavinson VK et al. 2013"
-          type: "in-vitro"
-          finding: "Short peptides including AED shown to penetrate cell membranes and interact with DNA in cultured cardiomyocytes"
-          pmid: "23902586"
+        - study: Khavinson VK et al. 2008
+          type: in-vitro
+          finding: >-
+            AED peptide demonstrated binding to gene promoter regions in cardiac
+            tissue cultures, suggesting potential regulatory effects on
+            cardiomyocyte protein expression
+          pmid: '18683838'
+        - study: Khavinson VK et al. 2013
+          type: in-vitro
+          finding: >-
+            Short peptides including AED shown to penetrate cell membranes and
+            interact with DNA in cultured cardiomyocytes
+          pmid: '23902586'
   - mechanism:
-      action: "Reduction of oxidative stress in cardiac tissue"
-      confidence: "emerging"
+      action: Reduction of oxidative stress in cardiac tissue
+      confidence: emerging
       directStudies: 2
     benefit:
-      claim: "protect against ischemic damage"
-      qualifier: "may"
+      claim: protect against ischemic damage
+      qualifier: may
     evidence:
-      level: "very-low"
+      level: very-low
       humanStudies: 0
       animalStudies: 3
       cellStudies: 1
       keyFindings:
-        - study: "Khavinson VK et al. 2010"
-          type: "animal"
-          finding: "Cardiogen administration reduced markers of oxidative damage in rat cardiac tissue following experimental ischemia"
-          pmid: "20583866"
-        - study: "Khavinson VK et al. 2012"
-          type: "animal"
-          finding: "Aged rats treated with cardiogen showed improved cardiac antioxidant enzyme activity compared to controls"
-          pmid: "22611599"
+        - study: Khavinson VK et al. 2010
+          type: animal
+          finding: >-
+            Cardiogen administration reduced markers of oxidative damage in rat
+            cardiac tissue following experimental ischemia
+          pmid: '20583866'
+        - study: Khavinson VK et al. 2012
+          type: animal
+          finding: >-
+            Aged rats treated with cardiogen showed improved cardiac antioxidant
+            enzyme activity compared to controls
+          pmid: '22611599'
   - mechanism:
-      action: "Promotion of cardiac tissue regeneration and repair"
-      confidence: "emerging"
+      action: Promotion of cardiac tissue regeneration and repair
+      confidence: emerging
       directStudies: 2
     benefit:
-      claim: "support cardiac recovery after injury"
-      qualifier: "suggested to"
+      claim: support cardiac recovery after injury
+      qualifier: suggested to
     evidence:
-      level: "very-low"
+      level: very-low
       humanStudies: 1
       animalStudies: 2
       cellStudies: 0
       keyFindings:
-        - study: "Khavinson VK et al. 2011"
-          type: "animal"
-          finding: "Cardiogen treatment enhanced cardiac function recovery metrics in rats following myocardial injury"
-          pmid: "21445669"
-        - study: "Khavinson VK et al. 2014"
-          type: "human-observational"
-          finding: "Elderly patients receiving cardiogen showed improved cardiac biomarkers in uncontrolled observational study"
-          pmid: "24756614"
+        - study: Khavinson VK et al. 2011
+          type: animal
+          finding: >-
+            Cardiogen treatment enhanced cardiac function recovery metrics in
+            rats following myocardial injury
+          pmid: '21445669'
+        - study: Khavinson VK et al. 2014
+          type: human-observational
+          finding: >-
+            Elderly patients receiving cardiogen showed improved cardiac
+            biomarkers in uncontrolled observational study
+          pmid: '24756614'
   - mechanism:
-      action: "Anti-fibrotic effects reducing cardiac fibrosis"
-      confidence: "emerging"
+      action: Anti-fibrotic effects reducing cardiac fibrosis
+      confidence: emerging
       directStudies: 2
     benefit:
-      claim: "prevent pathological cardiac remodeling"
-      qualifier: "may"
+      claim: prevent pathological cardiac remodeling
+      qualifier: may
     evidence:
-      level: "very-low"
+      level: very-low
       humanStudies: 0
       animalStudies: 2
       cellStudies: 1
       keyFindings:
-        - study: "Khavinson VK et al. 2015"
-          type: "animal"
-          finding: "Reduced collagen deposition and fibrotic markers in aged rat hearts following cardiogen treatment"
-          pmid: "25824876"
-        - study: "Ryzhak GA et al. 2017"
-          type: "in-vitro"
-          finding: "Cardiogen reduced fibroblast activation markers in cardiac fibroblast cultures"
-          pmid: "28371285"
+        - study: Khavinson VK et al. 2015
+          type: animal
+          finding: >-
+            Reduced collagen deposition and fibrotic markers in aged rat hearts
+            following cardiogen treatment
+          pmid: '25824876'
+        - study: Ryzhak GA et al. 2017
+          type: in-vitro
+          finding: >-
+            Cardiogen reduced fibroblast activation markers in cardiac
+            fibroblast cultures
+          pmid: '28371285'
 conditions:
-  - slug: "cardiovascular-support"
-    name: "Cardiovascular Support"
-    researchSummary: "Cardiogen is marketed for general cardiovascular support based on claimed cardioprotective and regenerative effects. Russian research suggests it may modulate cardiac gene expression and reduce oxidative damage. All evidence comes from preclinical models or uncontrolled human observations. No controlled clinical trials have evaluated cardiovascular outcomes."
-    relevantStudies: ["18683838", "20583866"]
-    relatedPeptides: ["bpc-157", "ss-31"]
-  - slug: "cardiac-aging"
-    name: "Cardiac Aging"
-    researchSummary: "Russian bioregulator theory proposes that cardiogen counteracts age-related decline in cardiac function by restoring youthful gene expression patterns in cardiomyocytes. Animal studies in aged rats report improved cardiac function markers. No controlled human studies have evaluated anti-aging cardiac effects."
-    relevantStudies: ["22611599", "24756614"]
-    relatedPeptides: ["epithalon", "thymalin"]
-  - slug: "cardiac-recovery"
-    name: "Cardiac Recovery"
-    researchSummary: "Preclinical studies suggest cardiogen may support cardiac tissue recovery following ischemic injury. Effects attributed to reduced oxidative damage and enhanced tissue repair pathways. Translation to human cardiac recovery is unconfirmed. Not a substitute for standard cardiac care."
-    relevantStudies: ["21445669", "20583866"]
-    relatedPeptides: ["bpc-157", "tb-500"]
-  - slug: "cardiac-fibrosis"
-    name: "Cardiac Fibrosis"
-    researchSummary: "Limited preclinical research suggests cardiogen may reduce cardiac fibrosis by inhibiting fibroblast activation and collagen deposition. This could theoretically prevent pathological remodeling after cardiac injury. Human data on anti-fibrotic effects is lacking."
-    relevantStudies: ["25824876", "28371285"]
-    relatedPeptides: ["bpc-157"]
+  - slug: cardiovascular-support
+    name: Cardiovascular Support
+    researchSummary: >-
+      Cardiogen is marketed for general cardiovascular support based on claimed
+      cardioprotective and regenerative effects. Russian research suggests it
+      may modulate cardiac gene expression and reduce oxidative damage. All
+      evidence comes from preclinical models or uncontrolled human observations.
+      No controlled clinical trials have evaluated cardiovascular outcomes.
+    relevantStudies:
+      - '18683838'
+      - '20583866'
+    relatedPeptides:
+      - bpc-157
+      - ss-31
+  - slug: cardiac-aging
+    name: Cardiac Aging
+    researchSummary: >-
+      Russian bioregulator theory proposes that cardiogen counteracts
+      age-related decline in cardiac function by restoring youthful gene
+      expression patterns in cardiomyocytes. Animal studies in aged rats report
+      improved cardiac function markers. No controlled human studies have
+      evaluated anti-aging cardiac effects.
+    relevantStudies:
+      - '22611599'
+      - '24756614'
+    relatedPeptides:
+      - epithalon
+      - thymalin
+  - slug: cardiac-recovery
+    name: Cardiac Recovery
+    researchSummary: >-
+      Preclinical studies suggest cardiogen may support cardiac tissue recovery
+      following ischemic injury. Effects attributed to reduced oxidative damage
+      and enhanced tissue repair pathways. Translation to human cardiac recovery
+      is unconfirmed. Not a substitute for standard cardiac care.
+    relevantStudies:
+      - '21445669'
+      - '20583866'
+    relatedPeptides:
+      - bpc-157
+      - tb-500
+  - slug: cardiac-fibrosis
+    name: Cardiac Fibrosis
+    researchSummary: >-
+      Limited preclinical research suggests cardiogen may reduce cardiac
+      fibrosis by inhibiting fibroblast activation and collagen deposition. This
+      could theoretically prevent pathological remodeling after cardiac injury.
+      Human data on anti-fibrotic effects is lacking.
+    relevantStudies:
+      - '25824876'
+      - '28371285'
+    relatedPeptides:
+      - bpc-157
 timeline:
-  - period: "Week 1-2"
-    effects: "Based on preclinical data: Initial peptide-DNA interactions and gene expression changes may begin in cardiac tissue. Russian protocols typically start effects assessment at this point."
-    source: "PMID:18683838"
-  - period: "Week 2-4"
-    effects: "Continued treatment may produce measurable changes in cardiac biomarkers based on animal model timelines. Antioxidant effects observed in preclinical studies within this window."
-    source: "PMID:20583866"
-  - period: "Week 4-8"
-    effects: "Russian protocols often use treatment periods of 10-20 days with rest intervals. Functional cardiac improvements reported in animal studies at this duration."
-    source: "PMID:21445669"
-  - period: "Week 8+"
-    effects: "Long-term effects based on Russian observational studies in elderly patients. Cyclical treatment protocols are typical. Human pharmacokinetics and optimal duration are unknown."
+  - period: Week 1-2
+    effects: >-
+      Based on preclinical data: Initial peptide-DNA interactions and gene
+      expression changes may begin in cardiac tissue. Russian protocols
+      typically start effects assessment at this point.
+    source: 'PMID:18683838'
+  - period: Week 2-4
+    effects: >-
+      Continued treatment may produce measurable changes in cardiac biomarkers
+      based on animal model timelines. Antioxidant effects observed in
+      preclinical studies within this window.
+    source: 'PMID:20583866'
+  - period: Week 4-8
+    effects: >-
+      Russian protocols often use treatment periods of 10-20 days with rest
+      intervals. Functional cardiac improvements reported in animal studies at
+      this duration.
+    source: 'PMID:21445669'
+  - period: Week 8+
+    effects: >-
+      Long-term effects based on Russian observational studies in elderly
+      patients. Cyclical treatment protocols are typical. Human pharmacokinetics
+      and optimal duration are unknown.
 faqs:
-  - question: "What is Cardiogen?"
-    answer: "Cardiogen is a synthetic tripeptide (Ala-Glu-Asp) developed by Russian scientist Vladimir Khavinson, claimed to support cardiac tissue function through modulation of gene expression in cardiomyocytes. It belongs to the Khavinson bioregulator peptide family."
-  - question: "Is Cardiogen FDA approved?"
-    answer: "No, Cardiogen is not approved by the FDA or any major Western regulatory agency. It is used in Russia and some Eastern European countries as part of peptide bioregulation therapy but has no regulatory approval for cardiovascular conditions."
-  - question: "What is the evidence for Cardiogen?"
-    answer: "Evidence is very low quality, consisting primarily of Russian preclinical studies and uncontrolled observational reports. No independent Western research has validated cardiogen's effects. No randomized controlled trials have been conducted."
-  - question: "Does Cardiogen treat heart disease?"
-    answer: "There is no clinical evidence that Cardiogen treats any heart disease. It should not be used as a substitute for evidence-based cardiac medications or interventions. Russian claims are based on preclinical data and observational studies only."
-  - question: "How does Cardiogen relate to other Khavinson peptides?"
-    answer: "Cardiogen is part of Khavinson's tissue-specific bioregulator series. Similar tripeptides include Vesugen (vascular), Pinealon (brain), and Livagen (liver). All share similar evidence limitations and lack Western clinical validation."
+  - question: What is Cardiogen?
+    answer: >-
+      Cardiogen is a synthetic tripeptide (Ala-Glu-Asp) developed by Russian
+      scientist Vladimir Khavinson, claimed to support cardiac tissue function
+      through modulation of gene expression in cardiomyocytes. It belongs to the
+      Khavinson bioregulator peptide family.
+  - question: Is Cardiogen FDA approved?
+    answer: >-
+      No, Cardiogen is not approved by the FDA or any major Western regulatory
+      agency. It is used in Russia and some Eastern European countries as part
+      of peptide bioregulation therapy but has no regulatory approval for
+      cardiovascular conditions.
+  - question: What is the evidence for Cardiogen?
+    answer: >-
+      Evidence is very low quality, consisting primarily of Russian preclinical
+      studies and uncontrolled observational reports. No independent Western
+      research has validated cardiogen's effects. No randomized controlled
+      trials have been conducted.
+  - question: Does Cardiogen treat heart disease?
+    answer: >-
+      There is no clinical evidence that Cardiogen treats any heart disease. It
+      should not be used as a substitute for evidence-based cardiac medications
+      or interventions. Russian claims are based on preclinical data and
+      observational studies only.
+  - question: How does Cardiogen relate to other Khavinson peptides?
+    answer: >-
+      Cardiogen is part of Khavinson's tissue-specific bioregulator series.
+      Similar tripeptides include Vesugen (vascular), Pinealon (brain), and
+      Livagen (liver). All share similar evidence limitations and lack Western
+      clinical validation.
 qualityChecklist:
   goodSigns:
-    - "White lyophilized powder"
-    - "Dissolves readily in bacteriostatic water"
-    - "Clear, colorless solution after reconstitution"
-    - "Certificate of analysis showing >98% purity"
-    - "HPLC verification of sequence"
-    - "Mass spectrometry confirmation (~333 Da)"
-    - "Proper vacuum seal on vial"
+    - White lyophilized powder
+    - Dissolves readily in bacteriostatic water
+    - 'Clear, colorless solution after reconstitution'
+    - Certificate of analysis showing >98% purity
+    - HPLC verification of sequence
+    - Mass spectrometry confirmation (~333 Da)
+    - Proper vacuum seal on vial
   warningSigns:
-    - "Off-white or slightly discolored powder"
-    - "Slow dissolution time"
-    - "No third-party testing verification"
-    - "Purity between 95-98%"
-    - "Unclear manufacturing source"
+    - Off-white or slightly discolored powder
+    - Slow dissolution time
+    - No third-party testing verification
+    - Purity between 95-98%
+    - Unclear manufacturing source
   badSigns:
-    - "Yellow or brown discoloration"
-    - "Visible particles after reconstitution"
-    - "Cloudy solution"
-    - "No certificate of analysis"
-    - "Unusual odor"
-    - "Compromised seal or packaging"
-    - "Cannot verify source authenticity"
+    - Yellow or brown discoloration
+    - Visible particles after reconstitution
+    - Cloudy solution
+    - No certificate of analysis
+    - Unusual odor
+    - Compromised seal or packaging
+    - Cannot verify source authenticity
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

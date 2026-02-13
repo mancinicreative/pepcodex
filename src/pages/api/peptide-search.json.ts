@@ -110,27 +110,29 @@ export const GET: APIRoute = async () => {
     const peptides = await getCollection('peptides');
 
     const searchIndex: PeptideSearchItem[] = await Promise.all(
-      peptides.map(async (peptide) => {
-        // Get the raw body content for searching
-        const rawContent = peptide.body || '';
-        const plainContent = stripMarkdown(rawContent);
+      peptides
+        .filter(peptide => peptide?.data?.summary && peptide?.data?.sources)
+        .map(async (peptide) => {
+          // Get the raw body content for searching
+          const rawContent = peptide.body || '';
+          const plainContent = stripMarkdown(rawContent);
 
-        // Extract key medical terms from content
-        const keyTerms = extractKeyTerms(rawContent + ' ' + peptide.data.summary);
+          // Extract key medical terms from content
+          const keyTerms = extractKeyTerms(rawContent + ' ' + (peptide.data.summary || ''));
 
-        return {
-          slug: peptide.slug,
-          name: peptide.data.name,
-          aliases: peptide.data.aliases,
-          category: peptide.data.category,
-          evidenceStrength: peptide.data.evidenceStrength,
-          summary: peptide.data.summary,
-          content: plainContent,
-          keyTerms,
-          url: `/peptides/${peptide.slug}`,
-          sources: peptide.data.sources,
-        };
-      })
+          return {
+            slug: peptide.slug,
+            name: peptide.data.name,
+            aliases: peptide.data.aliases || [],
+            category: peptide.data.category,
+            evidenceStrength: peptide.data.evidenceStrength,
+            summary: peptide.data.summary || '',
+            content: plainContent,
+            keyTerms,
+            url: `/peptides/${peptide.slug}`,
+            sources: peptide.data.sources || { count: 0, human: 0, preclinical: 0, openAccess: 0 },
+          };
+        })
     );
 
     return new Response(JSON.stringify(searchIndex), {

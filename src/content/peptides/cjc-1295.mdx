@@ -1,240 +1,454 @@
 ---
-name: "CJC-1295"
-aliases: ["DAC:GRF", "Modified GRF 1-29", "Tetrasubstituted GRF"]
-category: "hormonal"
-evidenceStrength: "low"
-lastUpdated: 2026-01-22
-comparators: ["sermorelin", "ipamorelin", "tesamorelin"]
-summary: "A synthetic analog of growth hormone-releasing hormone (GHRH) with extended half-life. Limited clinical development; not approved for any indication."
+name: CJC-1295
+aliases:
+  - 'DAC:GRF'
+  - Modified GRF 1-29
+  - Tetrasubstituted GRF
+category: hormonal
+evidenceStrength: moderate
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - sermorelin
+  - ipamorelin
+  - tesamorelin
+summary: >-
+  A synthetic analog of growth hormone-releasing hormone (GHRH) with extended
+  half-life. Limited clinical development; not approved for any indication.
 sources:
   count: 14
   human: 4
   preclinical: 2
   openAccess: 7
-metaTitle: "CJC-1295 Evidence Dossier | PepCodex"
-metaDescription: "Evidence review of CJC-1295. GHRH analog mechanism, clinical data, and regulatory status."
+metaTitle: CJC-1295 Evidence Dossier | PepCodex
+metaDescription: >-
+  Evidence review of CJC-1295. GHRH analog mechanism, clinical data, and
+  regulatory status.
 interactions:
-  - peptide: "ipamorelin"
-    type: "synergistic"
-    description: "Commonly combined in research. CJC-1295 (GHRH analog) stimulates GH release via GHRH receptor while ipamorelin acts on ghrelin receptor. Different mechanisms may produce additive GH release."
-    source: "18174396"
-  - peptide: "ghrp-6"
-    type: "synergistic"
-    description: "GHRH + GHRP combination produces greater GH release than either alone. CJC-1295 amplifies GH pulse while GHRP-6 initiates it via ghrelin receptor."
-    source: "9467534"
-  - peptide: "ghrp-2"
-    type: "synergistic"
-    description: "Similar synergistic mechanism as GHRP-6. GHRH and GHRP act through complementary pathways to enhance GH secretion."
-  - peptide: "sermorelin"
-    type: "avoid"
-    description: "Both are GHRH analogs acting on the same receptor. Combination provides no benefit and may cause receptor desensitization."
-  - peptide: "tesamorelin"
-    type: "avoid"
-    description: "Both are GHRH analogs with identical mechanism. No rationale for combining; use one or the other."
-  - peptide: "mk-677"
-    type: "synergistic"
-    description: "CJC-1295 (GHRH pathway) and MK-677 (ghrelin pathway) may act synergistically. Different receptor targets produce complementary GH release."
-  - peptide: "semaglutide"
-    type: "caution"
-    description: "GH can impair glucose tolerance. Monitor blood glucose if combining with diabetes medications."
+  - peptide: ipamorelin
+    type: synergistic
+    description: >-
+      Commonly combined in research. CJC-1295 (GHRH analog) stimulates GH
+      release via GHRH receptor while ipamorelin acts on ghrelin receptor.
+      Different mechanisms may produce additive GH release.
+    source: '18174396'
+  - peptide: ghrp-6
+    type: synergistic
+    description: >-
+      GHRH + GHRP combination produces greater GH release than either alone.
+      CJC-1295 amplifies GH pulse while GHRP-6 initiates it via ghrelin
+      receptor.
+    source: '9467534'
+  - peptide: ghrp-2
+    type: synergistic
+    description: >-
+      Similar synergistic mechanism as GHRP-6. GHRH and GHRP act through
+      complementary pathways to enhance GH secretion.
+  - peptide: sermorelin
+    type: avoid
+    description: >-
+      Both are GHRH analogs acting on the same receptor. Combination provides no
+      benefit and may cause receptor desensitization.
+  - peptide: tesamorelin
+    type: avoid
+    description: >-
+      Both are GHRH analogs with identical mechanism. No rationale for
+      combining; use one or the other.
+  - peptide: mk-677
+    type: synergistic
+    description: >-
+      CJC-1295 (GHRH pathway) and MK-677 (ghrelin pathway) may act
+      synergistically. Different receptor targets produce complementary GH
+      release.
+  - peptide: semaglutide
+    type: caution
+    description: >-
+      GH can impair glucose tolerance. Monitor blood glucose if combining with
+      diabetes medications.
 molecularInfo:
-  weight: "3,367.97 Da"
+  weight: '3,367.97 Da'
   chainLength: 29
-  type: "Tetrasubstituted GHRH Analog"
-  sequence: "YADAIFTNSYRKVLGQLSARKLLQDILSR"
+  type: Tetrasubstituted GHRH Analog
+  sequence: YADAIFTNSYRKVLGQLSARKLLQDILSR
   aminoAcids:
-    - { code: "Y", name: "Tyrosine", position: 1, property: "polar" }
-    - { code: "D-A", name: "D-Alanine", position: 2, property: "modified" }
-    - { code: "D", name: "Aspartic Acid", position: 3, property: "negative" }
-    - { code: "A", name: "Alanine", position: 4, property: "hydrophobic" }
-    - { code: "I", name: "Isoleucine", position: 5, property: "hydrophobic" }
-    - { code: "F", name: "Phenylalanine", position: 6, property: "hydrophobic" }
-    - { code: "T", name: "Threonine", position: 7, property: "polar" }
-    - { code: "Q", name: "Glutamine", position: 8, property: "polar" }
-    - { code: "S", name: "Serine", position: 9, property: "polar" }
-    - { code: "Y", name: "Tyrosine", position: 10, property: "polar" }
-    - { code: "R", name: "Arginine", position: 11, property: "positive" }
-    - { code: "K", name: "Lysine", position: 12, property: "positive" }
-    - { code: "V", name: "Valine", position: 13, property: "hydrophobic" }
-    - { code: "L", name: "Leucine", position: 14, property: "hydrophobic" }
-    - { code: "A", name: "Alanine", position: 15, property: "hydrophobic" }
-    - { code: "Q", name: "Glutamine", position: 16, property: "polar" }
-    - { code: "L", name: "Leucine", position: 17, property: "hydrophobic" }
-    - { code: "S", name: "Serine", position: 18, property: "polar" }
-    - { code: "A", name: "Alanine", position: 19, property: "hydrophobic" }
-    - { code: "R", name: "Arginine", position: 20, property: "positive" }
-    - { code: "K", name: "Lysine", position: 21, property: "positive" }
-    - { code: "L", name: "Leucine", position: 22, property: "hydrophobic" }
-    - { code: "L", name: "Leucine", position: 23, property: "hydrophobic" }
-    - { code: "Q", name: "Glutamine", position: 24, property: "polar" }
-    - { code: "D", name: "Aspartic Acid", position: 25, property: "negative" }
-    - { code: "I", name: "Isoleucine", position: 26, property: "hydrophobic" }
-    - { code: "L", name: "Leucine", position: 27, property: "hydrophobic" }
-    - { code: "S", name: "Serine", position: 28, property: "polar" }
-    - { code: "R", name: "Arginine", position: 29, property: "positive" }
+    - code: 'Y'
+      name: Tyrosine
+      position: 1
+      property: polar
+    - code: D-A
+      name: D-Alanine
+      position: 2
+      property: modified
+    - code: D
+      name: Aspartic Acid
+      position: 3
+      property: negative
+    - code: A
+      name: Alanine
+      position: 4
+      property: hydrophobic
+    - code: I
+      name: Isoleucine
+      position: 5
+      property: hydrophobic
+    - code: F
+      name: Phenylalanine
+      position: 6
+      property: hydrophobic
+    - code: T
+      name: Threonine
+      position: 7
+      property: polar
+    - code: Q
+      name: Glutamine
+      position: 8
+      property: polar
+    - code: S
+      name: Serine
+      position: 9
+      property: polar
+    - code: 'Y'
+      name: Tyrosine
+      position: 10
+      property: polar
+    - code: R
+      name: Arginine
+      position: 11
+      property: positive
+    - code: K
+      name: Lysine
+      position: 12
+      property: positive
+    - code: V
+      name: Valine
+      position: 13
+      property: hydrophobic
+    - code: L
+      name: Leucine
+      position: 14
+      property: hydrophobic
+    - code: A
+      name: Alanine
+      position: 15
+      property: hydrophobic
+    - code: Q
+      name: Glutamine
+      position: 16
+      property: polar
+    - code: L
+      name: Leucine
+      position: 17
+      property: hydrophobic
+    - code: S
+      name: Serine
+      position: 18
+      property: polar
+    - code: A
+      name: Alanine
+      position: 19
+      property: hydrophobic
+    - code: R
+      name: Arginine
+      position: 20
+      property: positive
+    - code: K
+      name: Lysine
+      position: 21
+      property: positive
+    - code: L
+      name: Leucine
+      position: 22
+      property: hydrophobic
+    - code: L
+      name: Leucine
+      position: 23
+      property: hydrophobic
+    - code: Q
+      name: Glutamine
+      position: 24
+      property: polar
+    - code: D
+      name: Aspartic Acid
+      position: 25
+      property: negative
+    - code: I
+      name: Isoleucine
+      position: 26
+      property: hydrophobic
+    - code: L
+      name: Leucine
+      position: 27
+      property: hydrophobic
+    - code: S
+      name: Serine
+      position: 28
+      property: polar
+    - code: R
+      name: Arginine
+      position: 29
+      property: positive
 evidenceChainedBenefits:
   - mechanism:
-      action: "GHRH receptor agonism with extended half-life via albumin binding (DAC)"
-      confidence: "established"
+      action: GHRH receptor agonism with extended half-life via albumin binding (DAC)
+      confidence: established
       directStudies: 6
     benefit:
-      claim: "produce sustained elevation of growth hormone and IGF-1"
-      qualifier: "shown to"
+      claim: produce sustained elevation of growth hormone and IGF-1
+      qualifier: shown to
     evidence:
-      level: "low"
+      level: low
       humanStudies: 2
       animalStudies: 2
       cellStudies: 1
       keyFindings:
-        - study: "Teichman SL et al. 2006"
-          type: "human-rct"
-          finding: "Single injection: GH increased 2-10 fold for 6+ days; IGF-1 increased 1.5-3 fold for 9-11 days"
-          pmid: "16352683"
-        - study: "Ionescu M et al. 2006"
-          type: "human-observational"
-          finding: "GH pulsatility preserved; basal GH levels increased 7.5-fold"
-          pmid: "17018654"
+        - study: Teichman SL et al. 2006
+          type: human-rct
+          finding: >-
+            Single injection: GH increased 2-10 fold for 6+ days; IGF-1
+            increased 1.5-3 fold for 9-11 days
+          pmid: '16352683'
+        - study: Ionescu M et al. 2006
+          type: human-observational
+          finding: GH pulsatility preserved; basal GH levels increased 7.5-fold
+          pmid: '17018654'
   - mechanism:
-      action: "Tetrasubstitution conferring DPP-IV resistance at positions 2, 8, 15, 27"
-      confidence: "established"
+      action: 'Tetrasubstitution conferring DPP-IV resistance at positions 2, 8, 15, 27'
+      confidence: established
       directStudies: 4
     benefit:
-      claim: "extend half-life from minutes to 5-8 days"
-      qualifier: "shown to"
+      claim: extend half-life from minutes to 5-8 days
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 2
       animalStudies: 2
       cellStudies: 1
       keyFindings:
-        - study: "Jette L et al. 2005"
-          type: "animal"
-          finding: "DAC mechanism confirmed: MPA group binds covalently to Cys34 on serum albumin"
-          pmid: "15817669"
-        - study: "Teichman SL et al. 2006"
-          type: "human-rct"
-          finding: "Estimated half-life: 5.8-8.1 days in human subjects"
-          pmid: "16352683"
+        - study: Jette L et al. 2005
+          type: animal
+          finding: >-
+            DAC mechanism confirmed: MPA group binds covalently to Cys34 on
+            serum albumin
+          pmid: '15817669'
+        - study: Teichman SL et al. 2006
+          type: human-rct
+          finding: 'Estimated half-life: 5.8-8.1 days in human subjects'
+          pmid: '16352683'
   - mechanism:
-      action: "JAK-STAT and cAMP-PKA pathway activation in somatotrophs"
-      confidence: "supported"
+      action: JAK-STAT and cAMP-PKA pathway activation in somatotrophs
+      confidence: supported
       directStudies: 3
     benefit:
-      claim: "stimulate pituitary GH synthesis and release"
-      qualifier: "appears to"
+      claim: stimulate pituitary GH synthesis and release
+      qualifier: appears to
     evidence:
-      level: "low"
+      level: low
       humanStudies: 1
       animalStudies: 2
       cellStudies: 2
       keyFindings:
-        - study: "Alba M et al. 2006"
-          type: "animal"
-          finding: "Once-daily CJC-1295 normalized growth in GHRH-KO mice"
-          pmid: "16822960"
-        - study: "Jette L et al. 2005"
-          type: "animal"
-          finding: "4-fold increase in GH AUC vs native GHRH(1-29)"
-          pmid: "15817669"
+        - study: Alba M et al. 2006
+          type: animal
+          finding: Once-daily CJC-1295 normalized growth in GHRH-KO mice
+          pmid: '16822960'
+        - study: Jette L et al. 2005
+          type: animal
+          finding: 4-fold increase in GH AUC vs native GHRH(1-29)
+          pmid: '15817669'
 conditions:
-  - slug: "growth-hormone-deficiency"
-    name: "Growth Hormone Deficiency"
-    researchSummary: "CJC-1295 was developed to address the need for longer-acting GHRH analogs in growth hormone deficiency. Phase 1-2 trials demonstrated sustained elevations in GH and IGF-1 levels with once or twice-weekly dosing.
+  - slug: growth-hormone-deficiency
+    name: Growth Hormone Deficiency
+    researchSummary: >-
+      CJC-1295 was developed to address the need for longer-acting GHRH analogs
+      in growth hormone deficiency. Phase 1-2 trials demonstrated sustained
+      elevations in GH and IGF-1 levels with once or twice-weekly dosing.
 
-The DAC (Drug Affinity Complex) version binds to albumin, extending half-life to 6-8 days and maintaining IGF-1 elevation for 9-11 days after a single injection. This addresses the pharmacokinetic limitations of native GHRH.
+      The DAC (Drug Affinity Complex) version binds to albumin, extending
+      half-life to 6-8 days and maintaining IGF-1 elevation for 9-11 days after
+      a single injection. This addresses the pharmacokinetic limitations of
+      native GHRH.
 
-However, clinical development was discontinued in 2006 after a participant death (deemed unrelated to the drug but due to pre-existing coronary disease). No approved GHRH-based therapies use CJC-1295."
-    relevantStudies: ["16822960", "16352683", "15817669"]
-    relatedPeptides: ["sermorelin", "ipamorelin", "tesamorelin"]
-  - slug: "anti-aging"
-    name: "Anti-Aging"
-    researchSummary: "Interest in CJC-1295 for anti-aging stems from the theory that declining GH/IGF-1 levels contribute to aging. The peptide reliably increases these hormones in human studies.
+      However, clinical development was discontinued in 2006 after a participant
+      death (deemed unrelated to the drug but due to pre-existing coronary
+      disease). No approved GHRH-based therapies use CJC-1295.
+    relevantStudies:
+      - '16822960'
+      - '16352683'
+      - '15817669'
+    relatedPeptides:
+      - sermorelin
+      - ipamorelin
+      - tesamorelin
+  - slug: anti-aging
+    name: Anti-Aging
+    researchSummary: >-
+      Interest in CJC-1295 for anti-aging stems from the theory that declining
+      GH/IGF-1 levels contribute to aging. The peptide reliably increases these
+      hormones in human studies.
 
-Growth hormone affects body composition (reducing fat, maintaining muscle), skin quality, and energy levels. Some anti-aging practitioners use GHRH analogs to restore youthful hormone levels.
+      Growth hormone affects body composition (reducing fat, maintaining
+      muscle), skin quality, and energy levels. Some anti-aging practitioners
+      use GHRH analogs to restore youthful hormone levels.
 
-However, no clinical trials have evaluated CJC-1295 specifically for anti-aging endpoints. The safety of long-term GH elevation is uncertain, with concerns about potential cancer risk from elevated IGF-1."
-    relevantStudies: ["16352683", "16822960"]
-    relatedPeptides: ["ipamorelin", "sermorelin", "epithalon", "mots-c"]
-  - slug: "muscle-growth"
-    name: "Muscle Growth"
-    researchSummary: "CJC-1295's GH-releasing effects have generated interest for potential muscle-building applications. Growth hormone promotes protein synthesis and may enhance muscle recovery and hypertrophy.
+      However, no clinical trials have evaluated CJC-1295 specifically for
+      anti-aging endpoints. The safety of long-term GH elevation is uncertain,
+      with concerns about potential cancer risk from elevated IGF-1.
+    relevantStudies:
+      - '16352683'
+      - '16822960'
+    relatedPeptides:
+      - ipamorelin
+      - sermorelin
+      - epithalon
+      - mots-c
+  - slug: muscle-growth
+    name: Muscle Growth
+    researchSummary: >-
+      CJC-1295's GH-releasing effects have generated interest for potential
+      muscle-building applications. Growth hormone promotes protein synthesis
+      and may enhance muscle recovery and hypertrophy.
 
-Phase 1 studies showed sustained IGF-1 elevations, which is the primary mediator of GH's anabolic effects on muscle tissue. The extended half-life of CJC-1295 DAC provides prolonged exposure to elevated GH/IGF-1.
+      Phase 1 studies showed sustained IGF-1 elevations, which is the primary
+      mediator of GH's anabolic effects on muscle tissue. The extended half-life
+      of CJC-1295 DAC provides prolonged exposure to elevated GH/IGF-1.
 
-No clinical trials have evaluated CJC-1295 specifically for muscle growth or athletic performance. The peptide is prohibited by WADA for athletic competition."
-    relevantStudies: ["16352683", "15817669"]
-    relatedPeptides: ["ipamorelin", "mk-677", "igf-1-lr3"]
-  - slug: "fat-loss"
-    name: "Fat Loss"
-    researchSummary: "Growth hormone has well-documented lipolytic (fat-burning) effects. By stimulating GH release, CJC-1295 may enhance fat mobilization and metabolism.
+      No clinical trials have evaluated CJC-1295 specifically for muscle growth
+      or athletic performance. The peptide is prohibited by WADA for athletic
+      competition.
+    relevantStudies:
+      - '16352683'
+      - '15817669'
+    relatedPeptides:
+      - ipamorelin
+      - mk-677
+      - igf-1-lr3
+  - slug: fat-loss
+    name: Fat Loss
+    researchSummary: >-
+      Growth hormone has well-documented lipolytic (fat-burning) effects. By
+      stimulating GH release, CJC-1295 may enhance fat mobilization and
+      metabolism.
 
-Studies demonstrate that elevated GH promotes lipolysis and reduces visceral adipose tissue. The sustained GH elevation from CJC-1295 DAC could theoretically provide ongoing lipolytic stimulus.
+      Studies demonstrate that elevated GH promotes lipolysis and reduces
+      visceral adipose tissue. The sustained GH elevation from CJC-1295 DAC
+      could theoretically provide ongoing lipolytic stimulus.
 
-However, specific clinical trials evaluating CJC-1295 for fat loss have not been conducted. The magnitude of body composition changes achievable through GHRH analog use remains uncertain."
-    relevantStudies: ["16352683", "16822960"]
-    relatedPeptides: ["ipamorelin", "mk-677", "aod-9604", "tesamorelin"]
-  - slug: "sleep-improvement"
-    name: "Sleep Improvement"
-    researchSummary: "GHRH and GH secretion are closely linked to sleep architecture. Natural GH secretion occurs primarily during deep sleep, and GHRH administration has been shown to enhance sleep quality in some studies.
+      However, specific clinical trials evaluating CJC-1295 for fat loss have
+      not been conducted. The magnitude of body composition changes achievable
+      through GHRH analog use remains uncertain.
+    relevantStudies:
+      - '16352683'
+      - '16822960'
+    relatedPeptides:
+      - ipamorelin
+      - mk-677
+      - aod-9604
+      - tesamorelin
+  - slug: sleep-improvement
+    name: Sleep Improvement
+    researchSummary: >-
+      GHRH and GH secretion are closely linked to sleep architecture. Natural GH
+      secretion occurs primarily during deep sleep, and GHRH administration has
+      been shown to enhance sleep quality in some studies.
 
-The pulsatile pattern of GH release with CJC-1295 without DAC may more closely mimic physiological secretion patterns associated with restorative sleep.
+      The pulsatile pattern of GH release with CJC-1295 without DAC may more
+      closely mimic physiological secretion patterns associated with restorative
+      sleep.
 
-No specific trials have evaluated CJC-1295 for sleep improvement. Any potential sleep benefits would be extrapolated from general GHRH research."
-    relevantStudies: ["16352683"]
-    relatedPeptides: ["ipamorelin", "dsip"]
-  - slug: "recovery"
-    name: "Recovery"
-    researchSummary: "The GH/IGF-1 axis plays important roles in tissue repair and recovery from exercise or injury. Elevated GH may enhance collagen synthesis, protein turnover, and cellular regeneration.
+      No specific trials have evaluated CJC-1295 for sleep improvement. Any
+      potential sleep benefits would be extrapolated from general GHRH research.
+    relevantStudies:
+      - '16352683'
+    relatedPeptides:
+      - ipamorelin
+      - dsip
+  - slug: recovery
+    name: Recovery
+    researchSummary: >-
+      The GH/IGF-1 axis plays important roles in tissue repair and recovery from
+      exercise or injury. Elevated GH may enhance collagen synthesis, protein
+      turnover, and cellular regeneration.
 
-Athletes and fitness enthusiasts have shown interest in CJC-1295 for potentially accelerating recovery between training sessions. The sustained IGF-1 elevation could theoretically support tissue repair.
+      Athletes and fitness enthusiasts have shown interest in CJC-1295 for
+      potentially accelerating recovery between training sessions. The sustained
+      IGF-1 elevation could theoretically support tissue repair.
 
-No clinical evidence specifically supports CJC-1295 for recovery enhancement. The peptide is prohibited in athletic competition by WADA."
-    relevantStudies: ["16352683", "15817669"]
-    relatedPeptides: ["ipamorelin", "bpc-157", "tb-500"]
+      No clinical evidence specifically supports CJC-1295 for recovery
+      enhancement. The peptide is prohibited in athletic competition by WADA.
+    relevantStudies:
+      - '16352683'
+      - '15817669'
+    relatedPeptides:
+      - ipamorelin
+      - bpc-157
+      - tb-500
 timeline:
-  - period: "Week 1-2"
-    effects: "Based on Phase 1 data: Single injection of CJC-1295 DAC produced IGF-1 elevation within 24-48 hours. GH pulsatility patterns may begin to change. Steady-state levels not yet achieved."
-    source: "PMID:16352683"
-  - period: "Week 2-4"
-    effects: "Phase 1 studies showed sustained IGF-1 elevation lasting 9-11 days after single dose. With repeated dosing (weekly or twice-weekly), approaching steady-state levels. GH response patterns established."
-    source: "PMID:16352683"
-  - period: "Week 4-8"
-    effects: "Steady-state GH/IGF-1 elevations achieved with regular administration. In growth-deficient mouse models, normalization of growth occurred over this timeframe. Body composition changes may begin."
-    source: "PMID:16822960"
-  - period: "Week 8+"
-    effects: "Limited long-term human data available. Animal studies suggest maintained efficacy. Clinical development was discontinued, so extended human timeline data is lacking."
+  - period: Week 1-2
+    effects: >-
+      Based on Phase 1 data: Single injection of CJC-1295 DAC produced IGF-1
+      elevation within 24-48 hours. GH pulsatility patterns may begin to change.
+      Steady-state levels not yet achieved.
+    source: 'PMID:16352683'
+  - period: Week 2-4
+    effects: >-
+      Phase 1 studies showed sustained IGF-1 elevation lasting 9-11 days after
+      single dose. With repeated dosing (weekly or twice-weekly), approaching
+      steady-state levels. GH response patterns established.
+    source: 'PMID:16352683'
+  - period: Week 4-8
+    effects: >-
+      Steady-state GH/IGF-1 elevations achieved with regular administration. In
+      growth-deficient mouse models, normalization of growth occurred over this
+      timeframe. Body composition changes may begin.
+    source: 'PMID:16822960'
+  - period: Week 8+
+    effects: >-
+      Limited long-term human data available. Animal studies suggest maintained
+      efficacy. Clinical development was discontinued, so extended human
+      timeline data is lacking.
 faqs:
-  - question: "What is CJC-1295?"
-    answer: "CJC-1295 is a synthetic GHRH analog with modifications that extend its half-life from minutes to 5-8 days. The DAC (Drug Affinity Complex) version binds to albumin for even longer duration of action."
-  - question: "Is CJC-1295 FDA approved?"
-    answer: "No. CJC-1295 clinical development was discontinued in 2006 after a participant death (deemed unrelated to the drug). It has never been approved by the FDA or any regulatory agency."
-  - question: "What is the evidence for CJC-1295?"
-    answer: "Evidence quality is low with only 4 human studies. Phase 1/2 data showed sustained GH/IGF-1 elevation (2-10 fold for 6+ days), but development was halted before pivotal efficacy trials."
-  - question: "What is the difference between CJC-1295 and CJC-1295 DAC?"
-    answer: "CJC-1295 DAC contains a drug affinity complex that covalently binds to serum albumin, extending half-life to 6-8 days. Without DAC, half-life is shorter and more frequent dosing is required."
+  - question: What is CJC-1295?
+    answer: >-
+      CJC-1295 is a synthetic GHRH analog with modifications that extend its
+      half-life from minutes to 5-8 days. The DAC (Drug Affinity Complex)
+      version binds to albumin for even longer duration of action.
+  - question: Is CJC-1295 FDA approved?
+    answer: >-
+      No. CJC-1295 clinical development was discontinued in 2006 after a
+      participant death (deemed unrelated to the drug). It has never been
+      approved by the FDA or any regulatory agency.
+  - question: What is the evidence for CJC-1295?
+    answer: >-
+      Evidence quality is low with only 4 human studies. Phase 1/2 data showed
+      sustained GH/IGF-1 elevation (2-10 fold for 6+ days), but development was
+      halted before pivotal efficacy trials.
+  - question: What is the difference between CJC-1295 and CJC-1295 DAC?
+    answer: >-
+      CJC-1295 DAC contains a drug affinity complex that covalently binds to
+      serum albumin, extending half-life to 6-8 days. Without DAC, half-life is
+      shorter and more frequent dosing is required.
 qualityChecklist:
   goodSigns:
-    - "White to off-white lyophilized powder"
-    - "Dissolves completely in bacteriostatic water"
-    - "Clear, colorless solution after reconstitution"
-    - "Certificate of analysis showing >98% purity"
-    - "HPLC verification of identity and purity"
-    - "Proper vacuum seal and vial integrity"
-    - "Labeled as CJC-1295 with or without DAC (know which variant)"
+    - White to off-white lyophilized powder
+    - Dissolves completely in bacteriostatic water
+    - 'Clear, colorless solution after reconstitution'
+    - Certificate of analysis showing >98% purity
+    - HPLC verification of identity and purity
+    - Proper vacuum seal and vial integrity
+    - Labeled as CJC-1295 with or without DAC (know which variant)
   warningSigns:
-    - "Slightly off-white or cream colored powder"
-    - "Slower dissolution than expected"
-    - "COA without third-party verification"
-    - "Unclear whether product contains DAC modification"
-    - "Purity between 95-98%"
+    - Slightly off-white or cream colored powder
+    - Slower dissolution than expected
+    - COA without third-party verification
+    - Unclear whether product contains DAC modification
+    - Purity between 95-98%
   badSigns:
-    - "Yellow or brown discoloration"
-    - "Particles or cloudiness after reconstitution"
-    - "Gel-like consistency or incomplete dissolution"
-    - "No COA or certificate appears fabricated"
-    - "Mislabeled DAC vs non-DAC variant"
-    - "Unusual odor"
-    - "Compromised vial seal"
+    - Yellow or brown discoloration
+    - Particles or cloudiness after reconstitution
+    - Gel-like consistency or incomplete dissolution
+    - No COA or certificate appears fabricated
+    - Mislabeled DAC vs non-DAC variant
+    - Unusual odor
+    - Compromised vial seal
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

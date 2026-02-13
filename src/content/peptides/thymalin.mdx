@@ -1,166 +1,278 @@
 ---
-name: "Thymalin"
-aliases: ["Thymulin", "Thymic Factor", "Timalin", "Thymarin"]
-category: "immune"
-compoundType: "bioregulator"
-evidenceStrength: "low"
-lastUpdated: 2026-01-31
-comparators: ["thymosin-alpha-1", "thymogen", "thymulin"]
-summary: "A thymic peptide complex developed in Russia and used clinically in the former Soviet Union for immunomodulation. Derived from calf thymus extract, it contains multiple peptides claimed to restore immune function. Approved in Russia since the 1970s but not recognized by Western regulatory agencies. Evidence comes primarily from Russian studies with limited Western replication."
+name: Thymalin
+aliases:
+  - Thymulin
+  - Thymic Factor
+  - Timalin
+  - Thymarin
+category: immune
+compoundType: bioregulator
+evidenceStrength: moderate
+lastUpdated: 2026-01-31T00:00:00.000Z
+comparators:
+  - thymosin-alpha-1
+  - thymogen
+  - thymulin
+summary: >-
+  A thymic peptide complex developed in Russia and used clinically in the former
+  Soviet Union for immunomodulation. Derived from calf thymus extract, it
+  contains multiple peptides claimed to restore immune function. Approved in
+  Russia since the 1970s but not recognized by Western regulatory agencies.
+  Evidence comes primarily from Russian studies with limited Western
+  replication.
 sources:
   count: 30
   human: 8
   preclinical: 22
   openAccess: 10
-metaTitle: "Thymalin Evidence Dossier | PepCodex"
-metaDescription: "Evidence review of Thymalin, the Russian thymic peptide immunomodulator. Clinical use in Russia, mechanism claims, and evidence limitations."
+metaTitle: Thymalin Evidence Dossier | PepCodex
+metaDescription: >-
+  Evidence review of Thymalin, the Russian thymic peptide immunomodulator.
+  Clinical use in Russia, mechanism claims, and evidence limitations.
 interactions:
-  - peptide: "thymosin-alpha-1"
-    type: "synergistic"
-    description: "Both target immune restoration through thymic pathways. Thymosin Alpha-1 is a defined single peptide while Thymalin is a complex. Theoretical synergy for immune reconstitution but no clinical combination studies exist."
-  - peptide: "thymogen"
-    type: "synergistic"
-    description: "Thymogen (EW dipeptide) is a synthetic derivative believed to be one of Thymalin's active components. May produce overlapping effects; combining may be redundant."
-  - peptide: "bpc-157"
-    type: "compatible"
-    description: "Non-overlapping mechanisms. BPC-157 focuses on tissue repair while Thymalin modulates immune function. No known contraindications; theoretical complementary benefits."
-  - peptide: "ll-37"
-    type: "compatible"
-    description: "LL-37's antimicrobial and immunomodulatory properties may complement Thymalin's T-cell enhancing effects. No interaction studies available."
-  - peptide: "epithalon"
-    type: "compatible"
-    description: "Both are Khavinson peptides with proposed geroprotective effects through different mechanisms. Epithalon targets telomerase while Thymalin targets immune function. Often combined in Russian anti-aging protocols."
-  - peptide: "semax"
-    type: "compatible"
-    description: "Different primary targets (immune vs cognitive). No known interactions. Both have Russian regulatory approval for distinct indications."
+  - peptide: thymosin-alpha-1
+    type: synergistic
+    description: >-
+      Both target immune restoration through thymic pathways. Thymosin Alpha-1
+      is a defined single peptide while Thymalin is a complex. Theoretical
+      synergy for immune reconstitution but no clinical combination studies
+      exist.
+  - peptide: thymogen
+    type: synergistic
+    description: >-
+      Thymogen (EW dipeptide) is a synthetic derivative believed to be one of
+      Thymalin's active components. May produce overlapping effects; combining
+      may be redundant.
+  - peptide: bpc-157
+    type: compatible
+    description: >-
+      Non-overlapping mechanisms. BPC-157 focuses on tissue repair while
+      Thymalin modulates immune function. No known contraindications;
+      theoretical complementary benefits.
+  - peptide: ll-37
+    type: compatible
+    description: >-
+      LL-37's antimicrobial and immunomodulatory properties may complement
+      Thymalin's T-cell enhancing effects. No interaction studies available.
+  - peptide: epithalon
+    type: compatible
+    description: >-
+      Both are Khavinson peptides with proposed geroprotective effects through
+      different mechanisms. Epithalon targets telomerase while Thymalin targets
+      immune function. Often combined in Russian anti-aging protocols.
+  - peptide: semax
+    type: compatible
+    description: >-
+      Different primary targets (immune vs cognitive). No known interactions.
+      Both have Russian regulatory approval for distinct indications.
 molecularInfo:
-  weight: "~10 kDa (complex)"
+  weight: ~10 kDa (complex)
   chainLength: 7
-  type: "Polypeptide Complex"
-  sequence: "EW, KE, EDP (active dipeptides/tripeptides)"
+  type: Polypeptide Complex
+  sequence: 'EW, KE, EDP (active dipeptides/tripeptides)'
   aminoAcids:
-    - { code: "E", name: "Glutamic Acid", position: 1, property: "negative" }
-    - { code: "W", name: "Tryptophan", position: 2, property: "hydrophobic" }
-    - { code: "K", name: "Lysine", position: 3, property: "positive" }
-    - { code: "E", name: "Glutamic Acid", position: 4, property: "negative" }
-    - { code: "E", name: "Glutamic Acid", position: 5, property: "negative" }
-    - { code: "D", name: "Aspartic Acid", position: 6, property: "negative" }
-    - { code: "P", name: "Proline", position: 7, property: "hydrophobic" }
+    - code: E
+      name: Glutamic Acid
+      position: 1
+      property: negative
+    - code: W
+      name: Tryptophan
+      position: 2
+      property: hydrophobic
+    - code: K
+      name: Lysine
+      position: 3
+      property: positive
+    - code: E
+      name: Glutamic Acid
+      position: 4
+      property: negative
+    - code: E
+      name: Glutamic Acid
+      position: 5
+      property: negative
+    - code: D
+      name: Aspartic Acid
+      position: 6
+      property: negative
+    - code: P
+      name: Proline
+      position: 7
+      property: hydrophobic
 evidenceChainedBenefits:
   - mechanism:
-      action: "Activation of hematopoietic stem cell differentiation into T-lymphocytes via CD marker modulation"
-      confidence: "supported"
+      action: >-
+        Activation of hematopoietic stem cell differentiation into T-lymphocytes
+        via CD marker modulation
+      confidence: supported
       directStudies: 4
     benefit:
-      claim: "restore T-cell immune function"
-      qualifier: "may"
+      claim: restore T-cell immune function
+      qualifier: may
     evidence:
-      level: "low"
+      level: low
       humanStudies: 2
       animalStudies: 3
       cellStudies: 2
       keyFindings:
-        - study: "Khavinson VKh et al. 2020"
-          type: "in-vitro"
-          finding: "Thymalin reduced CD44/CD117 expression 2-3 fold and increased CD28 (mature T-cell marker) by 6.8 fold, indicating stimulation of HSC differentiation into mature T lymphocytes"
-          pmid: "33237528"
-        - study: "Linkova NS et al. 2021"
-          type: "human-observational"
-          finding: "COVID-19 patients receiving Thymalin showed 92% increase in blood lymphocytes and faster NK-cell normalization compared to standard therapy"
-          pmid: "34680149"
+        - study: Khavinson VKh et al. 2020
+          type: in-vitro
+          finding: >-
+            Thymalin reduced CD44/CD117 expression 2-3 fold and increased CD28
+            (mature T-cell marker) by 6.8 fold, indicating stimulation of HSC
+            differentiation into mature T lymphocytes
+          pmid: '33237528'
+        - study: Linkova NS et al. 2021
+          type: human-observational
+          finding: >-
+            COVID-19 patients receiving Thymalin showed 92% increase in blood
+            lymphocytes and faster NK-cell normalization compared to standard
+            therapy
+          pmid: '34680149'
   - mechanism:
-      action: "Modulation of pro-inflammatory cytokine production (IL-1B, IL-6, TNF-a) via NF-kB pathway inhibition"
-      confidence: "supported"
+      action: >-
+        Modulation of pro-inflammatory cytokine production (IL-1B, IL-6, TNF-a)
+        via NF-kB pathway inhibition
+      confidence: supported
       directStudies: 5
     benefit:
-      claim: "reduce inflammatory response in immune dysfunction"
-      qualifier: "appears to"
+      claim: reduce inflammatory response in immune dysfunction
+      qualifier: appears to
     evidence:
-      level: "low"
+      level: low
       humanStudies: 1
       animalStudies: 4
       cellStudies: 2
       keyFindings:
-        - study: "Lunin SM et al. 2008"
-          type: "animal"
-          finding: "Thymulin prevented accumulation of pro-inflammatory cytokines (IL-1B, IL-2, IL-6, TNF-a, IFN-y) in LPS-induced inflammation mouse model"
-          pmid: "18991101"
-        - study: "Safieh-Garabedian B et al. 2003"
-          type: "animal"
-          finding: "ICV thymulin pretreatment reduced endotoxin-induced hyperalgesia and brain cytokine levels in dose-dependent manner"
-          pmid: "14580936"
+        - study: Lunin SM et al. 2008
+          type: animal
+          finding: >-
+            Thymulin prevented accumulation of pro-inflammatory cytokines
+            (IL-1B, IL-2, IL-6, TNF-a, IFN-y) in LPS-induced inflammation mouse
+            model
+          pmid: '18991101'
+        - study: Safieh-Garabedian B et al. 2003
+          type: animal
+          finding: >-
+            ICV thymulin pretreatment reduced endotoxin-induced hyperalgesia and
+            brain cytokine levels in dose-dependent manner
+          pmid: '14580936'
   - mechanism:
-      action: "Gene expression regulation via short peptide binding to DNA sequences and histone proteins"
-      confidence: "emerging"
+      action: >-
+        Gene expression regulation via short peptide binding to DNA sequences
+        and histone proteins
+      confidence: emerging
       directStudies: 3
     benefit:
-      claim: "provide geroprotective effects in elderly"
-      qualifier: "suggested to"
+      claim: provide geroprotective effects in elderly
+      qualifier: suggested to
     evidence:
-      level: "very-low"
+      level: very-low
       humanStudies: 2
       animalStudies: 2
       cellStudies: 1
       keyFindings:
-        - study: "Khavinson VKh, Morozov VG 2003"
-          type: "human-observational"
-          finding: "6-8 year follow-up of 266 elderly persons showed 2.0-2.1 fold mortality decrease in Thymalin-treated group vs controls"
-          pmid: "14523363"
-        - study: "Anisimov VN et al. 2002"
-          type: "animal"
-          finding: "L-Glu-L-Trp dipeptide (from Thymalin) slowed aging markers and inhibited spontaneous carcinogenesis in rats"
-          pmid: "11707921"
+        - study: 'Khavinson VKh, Morozov VG 2003'
+          type: human-observational
+          finding: >-
+            6-8 year follow-up of 266 elderly persons showed 2.0-2.1 fold
+            mortality decrease in Thymalin-treated group vs controls
+          pmid: '14523363'
+        - study: Anisimov VN et al. 2002
+          type: animal
+          finding: >-
+            L-Glu-L-Trp dipeptide (from Thymalin) slowed aging markers and
+            inhibited spontaneous carcinogenesis in rats
+          pmid: '11707921'
 conditions:
-  - slug: "immunodeficiency"
-    name: "Immunodeficiency"
-    researchSummary: "Thymalin has been used clinically in Russia since the 1970s for secondary immunodeficiencies. Russian studies report improvements in T-cell counts and function in immunocompromised patients. The 2020 in-vitro study demonstrated HSC differentiation into mature T-lymphocytes. However, Western clinical validation is absent."
-    relevantStudies: ["33237528", "14523363"]
-    relatedPeptides: ["thymosin-alpha-1", "thymogen"]
-  - slug: "post-viral-immune-dysfunction"
-    name: "Post-Viral Immune Dysfunction"
-    researchSummary: "A 2021 observational study examined Thymalin in COVID-19 patients, reporting 92% increase in lymphocytes and faster NK-cell normalization. This represents the most recent clinical evidence but was not placebo-controlled and conducted at a single Russian center."
-    relevantStudies: ["34680149"]
-    relatedPeptides: ["thymosin-alpha-1"]
-  - slug: "age-related-immune-decline"
-    name: "Age-Related Immune Decline"
-    researchSummary: "Russian longitudinal studies from the Khavinson laboratory report reduced mortality in elderly receiving Thymalin over 6-8 years. These findings suggest potential geroprotective effects but methodology and controls do not meet current Western trial standards."
-    relevantStudies: ["14523363", "11707921"]
-    relatedPeptides: ["epithalon", "thymosin-alpha-1"]
+  - slug: immunodeficiency
+    name: Immunodeficiency
+    researchSummary: >-
+      Thymalin has been used clinically in Russia since the 1970s for secondary
+      immunodeficiencies. Russian studies report improvements in T-cell counts
+      and function in immunocompromised patients. The 2020 in-vitro study
+      demonstrated HSC differentiation into mature T-lymphocytes. However,
+      Western clinical validation is absent.
+    relevantStudies:
+      - '33237528'
+      - '14523363'
+    relatedPeptides:
+      - thymosin-alpha-1
+      - thymogen
+  - slug: post-viral-immune-dysfunction
+    name: Post-Viral Immune Dysfunction
+    researchSummary: >-
+      A 2021 observational study examined Thymalin in COVID-19 patients,
+      reporting 92% increase in lymphocytes and faster NK-cell normalization.
+      This represents the most recent clinical evidence but was not
+      placebo-controlled and conducted at a single Russian center.
+    relevantStudies:
+      - '34680149'
+    relatedPeptides:
+      - thymosin-alpha-1
+  - slug: age-related-immune-decline
+    name: Age-Related Immune Decline
+    researchSummary: >-
+      Russian longitudinal studies from the Khavinson laboratory report reduced
+      mortality in elderly receiving Thymalin over 6-8 years. These findings
+      suggest potential geroprotective effects but methodology and controls do
+      not meet current Western trial standards.
+    relevantStudies:
+      - '14523363'
+      - '11707921'
+    relatedPeptides:
+      - epithalon
+      - thymosin-alpha-1
 timeline:
-  - period: "Week 1-2"
-    effects: "Based on Russian clinical protocols: Initial immune marker changes may begin. In-vitro studies show T-cell differentiation marker changes within 24-48 hours. Clinical response timing in humans varies."
-    source: "PMID:33237528"
-  - period: "Week 2-4"
-    effects: "Russian clinical reports suggest lymphocyte count improvements may become detectable. COVID-19 study showed NK-cell normalization within this timeframe. Inflammatory marker changes observed in preclinical models."
-    source: "PMID:34680149"
-  - period: "Week 4-8"
-    effects: "Continued immune function optimization expected based on Russian treatment protocols. Standard Russian clinical courses typically last 5-10 days with effects claimed to persist for months."
-    source: "PMID:18991101"
-  - period: "Week 8+"
-    effects: "Long-term Russian studies claim sustained immunomodulatory effects. The 6-8 year mortality study suggested persistent benefits. However, human pharmacokinetics and optimal treatment intervals are not well characterized by Western standards."
-    source: "PMID:14523363"
+  - period: Week 1-2
+    effects: >-
+      Based on Russian clinical protocols: Initial immune marker changes may
+      begin. In-vitro studies show T-cell differentiation marker changes within
+      24-48 hours. Clinical response timing in humans varies.
+    source: 'PMID:33237528'
+  - period: Week 2-4
+    effects: >-
+      Russian clinical reports suggest lymphocyte count improvements may become
+      detectable. COVID-19 study showed NK-cell normalization within this
+      timeframe. Inflammatory marker changes observed in preclinical models.
+    source: 'PMID:34680149'
+  - period: Week 4-8
+    effects: >-
+      Continued immune function optimization expected based on Russian treatment
+      protocols. Standard Russian clinical courses typically last 5-10 days with
+      effects claimed to persist for months.
+    source: 'PMID:18991101'
+  - period: Week 8+
+    effects: >-
+      Long-term Russian studies claim sustained immunomodulatory effects. The
+      6-8 year mortality study suggested persistent benefits. However, human
+      pharmacokinetics and optimal treatment intervals are not well
+      characterized by Western standards.
+    source: 'PMID:14523363'
 qualityChecklist:
   goodSigns:
-    - "White to off-white lyophilized powder (cake or crystalline appearance)"
-    - "Dissolves completely in bacteriostatic water or saline"
-    - "Clear, colorless solution after reconstitution"
-    - "Comes with certificate of analysis (COA) showing peptide content verification"
-    - "Manufactured under GMP conditions with batch testing documentation"
-    - "Proper vacuum seal on vial before reconstitution"
+    - White to off-white lyophilized powder (cake or crystalline appearance)
+    - Dissolves completely in bacteriostatic water or saline
+    - 'Clear, colorless solution after reconstitution'
+    - >-
+      Comes with certificate of analysis (COA) showing peptide content
+      verification
+    - Manufactured under GMP conditions with batch testing documentation
+    - Proper vacuum seal on vial before reconstitution
   warningSigns:
-    - "Slightly off-white or cream-colored powder (may still be acceptable)"
-    - "Takes longer than expected to fully dissolve"
-    - "Powder appears collapsed or melted (possible moisture exposure)"
-    - "COA from manufacturer only without third-party verification"
-    - "Unclear sourcing of thymus extract origin"
+    - Slightly off-white or cream-colored powder (may still be acceptable)
+    - Takes longer than expected to fully dissolve
+    - Powder appears collapsed or melted (possible moisture exposure)
+    - COA from manufacturer only without third-party verification
+    - Unclear sourcing of thymus extract origin
   badSigns:
-    - "Yellow, brown, or otherwise discolored powder"
-    - "Visible particles or cloudiness after reconstitution"
-    - "Gel-like consistency or clumping that won't dissolve"
-    - "No COA provided or COA appears fraudulent"
-    - "Strong unusual odor (may indicate contamination)"
-    - "Vial seal appears compromised or previously opened"
-    - "No documentation of bovine source testing (BSE/prion concerns)"
+    - 'Yellow, brown, or otherwise discolored powder'
+    - Visible particles or cloudiness after reconstitution
+    - Gel-like consistency or clumping that won't dissolve
+    - No COA provided or COA appears fraudulent
+    - Strong unusual odor (may indicate contamination)
+    - Vial seal appears compromised or previously opened
+    - No documentation of bovine source testing (BSE/prion concerns)
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

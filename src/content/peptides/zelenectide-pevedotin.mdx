@@ -1,182 +1,295 @@
 ---
-name: "Zelenectide Pevedotin"
-aliases: ["BT8009", "Bicycle Drug Conjugate BT8009"]
-category: "other"
-evidenceStrength: "high"
-lastUpdated: 2026-01-22
-comparators: ["enfortumab-vedotin", "sacituzumab-govitecan"]
-summary: "A first-in-class Bicycle Drug Conjugate (BDC) targeting Nectin-4 for solid tumors, developed by Bicycle Therapeutics. Demonstrates 45% overall response rate in metastatic urothelial cancer with a novel bicyclic peptide platform approximately 40x smaller than traditional antibody-drug conjugates. Phase 2/3 Duravelo-2 registrational trial ongoing."
+name: Zelenectide Pevedotin
+aliases:
+  - BT8009
+  - Bicycle Drug Conjugate BT8009
+category: other
+evidenceStrength: moderate
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - enfortumab-vedotin
+  - sacituzumab-govitecan
+summary: >-
+  A first-in-class Bicycle Drug Conjugate (BDC) targeting Nectin-4 for solid
+  tumors, developed by Bicycle Therapeutics. Demonstrates 45% overall response
+  rate in metastatic urothelial cancer with a novel bicyclic peptide platform
+  approximately 40x smaller than traditional antibody-drug conjugates. Phase 2/3
+  Duravelo-2 registrational trial ongoing.
 sources:
   count: 28
   human: 22
   preclinical: 6
   openAccess: 18
-metaTitle: "Zelenectide Pevedotin (BT8009) Evidence Dossier | PepCodex"
-metaDescription: "Evidence review of zelenectide pevedotin (BT8009), a Bicycle Drug Conjugate targeting Nectin-4 for urothelial cancer. Clinical trial data, mechanism of action, safety profile."
+metaTitle: Zelenectide Pevedotin (BT8009) Evidence Dossier | PepCodex
+metaDescription: >-
+  Evidence review of zelenectide pevedotin (BT8009), a Bicycle Drug Conjugate
+  targeting Nectin-4 for urothelial cancer. Clinical trial data, mechanism of
+  action, safety profile.
 interactions:
-  - peptide: "enfortumab-vedotin"
-    type: "caution"
-    description: "Both target Nectin-4 with MMAE payload. Sequential use may be possible as BT8009 shows activity post-EV (~30-35% ORR). No concurrent use data available."
-  - peptide: "pembrolizumab"
-    type: "compatible"
-    description: "Combination studies planned. Checkpoint inhibitors may complement BDC mechanism. Preclinical data suggests enhanced efficacy with PD-1 inhibition."
-  - peptide: "sacituzumab-govitecan"
-    type: "compatible"
-    description: "Different targets (Nectin-4 vs Trop-2) and payloads (MMAE vs SN-38). Sequential use in urothelial cancer may be feasible based on distinct mechanisms."
+  - peptide: enfortumab-vedotin
+    type: caution
+    description: >-
+      Both target Nectin-4 with MMAE payload. Sequential use may be possible as
+      BT8009 shows activity post-EV (~30-35% ORR). No concurrent use data
+      available.
+  - peptide: pembrolizumab
+    type: compatible
+    description: >-
+      Combination studies planned. Checkpoint inhibitors may complement BDC
+      mechanism. Preclinical data suggests enhanced efficacy with PD-1
+      inhibition.
+  - peptide: sacituzumab-govitecan
+    type: compatible
+    description: >-
+      Different targets (Nectin-4 vs Trop-2) and payloads (MMAE vs SN-38).
+      Sequential use in urothelial cancer may be feasible based on distinct
+      mechanisms.
 molecularInfo:
-  weight: "~3,500 Da"
+  weight: '~3,500 Da'
   chainLength: 15
-  type: "Bicyclic Peptide-Drug Conjugate"
-  sequence: "Proprietary constrained bicyclic peptide"
+  type: Bicyclic Peptide-Drug Conjugate
+  sequence: Proprietary constrained bicyclic peptide
   aminoAcids:
-    - { code: "C", name: "Cysteine", position: 1, property: "polar" }
-    - { code: "X", name: "Modified", position: 2, property: "modified" }
-    - { code: "X", name: "Modified", position: 3, property: "modified" }
-    - { code: "X", name: "Modified", position: 4, property: "modified" }
-    - { code: "C", name: "Cysteine", position: 5, property: "polar" }
-    - { code: "X", name: "Modified", position: 6, property: "modified" }
-    - { code: "X", name: "Modified", position: 7, property: "modified" }
-    - { code: "X", name: "Modified", position: 8, property: "modified" }
-    - { code: "C", name: "Cysteine", position: 9, property: "polar" }
-    - { code: "X", name: "Modified", position: 10, property: "modified" }
-    - { code: "X", name: "Modified", position: 11, property: "modified" }
-    - { code: "X", name: "Modified", position: 12, property: "modified" }
-    - { code: "X", name: "Modified", position: 13, property: "modified" }
-    - { code: "X", name: "Modified", position: 14, property: "modified" }
-    - { code: "X", name: "Modified", position: 15, property: "modified" }
+    - code: C
+      name: Cysteine
+      position: 1
+      property: polar
+    - code: X
+      name: Modified
+      position: 2
+      property: modified
+    - code: X
+      name: Modified
+      position: 3
+      property: modified
+    - code: X
+      name: Modified
+      position: 4
+      property: modified
+    - code: C
+      name: Cysteine
+      position: 5
+      property: polar
+    - code: X
+      name: Modified
+      position: 6
+      property: modified
+    - code: X
+      name: Modified
+      position: 7
+      property: modified
+    - code: X
+      name: Modified
+      position: 8
+      property: modified
+    - code: C
+      name: Cysteine
+      position: 9
+      property: polar
+    - code: X
+      name: Modified
+      position: 10
+      property: modified
+    - code: X
+      name: Modified
+      position: 11
+      property: modified
+    - code: X
+      name: Modified
+      position: 12
+      property: modified
+    - code: X
+      name: Modified
+      position: 13
+      property: modified
+    - code: X
+      name: Modified
+      position: 14
+      property: modified
+    - code: X
+      name: Modified
+      position: 15
+      property: modified
 evidenceChainedBenefits:
   - mechanism:
-      action: "Nectin-4 binding and receptor-mediated endocytosis delivering MMAE payload"
-      confidence: "established"
+      action: >-
+        Nectin-4 binding and receptor-mediated endocytosis delivering MMAE
+        payload
+      confidence: established
       directStudies: 22
     benefit:
-      claim: "induce tumor cell death in Nectin-4 expressing cancers"
-      qualifier: "shown to"
+      claim: induce tumor cell death in Nectin-4 expressing cancers
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 22
       animalStudies: 6
       cellStudies: 8
       keyFindings:
-        - study: "Hanna KS et al. 2024"
-          type: "human-observational"
-          finding: "45% ORR with 11.1 month median duration of response in 2L+ metastatic urothelial carcinoma"
-          pmid: "10.1016/j.annonc.2024.10.743"
-        - study: "Bennett G et al. 2020"
-          type: "animal"
-          finding: "Bicycle platform demonstrates superior tumor penetration vs traditional ADCs in xenograft models"
-          pmid: "32241873"
+        - study: Hanna KS et al. 2024
+          type: human-observational
+          finding: >-
+            45% ORR with 11.1 month median duration of response in 2L+
+            metastatic urothelial carcinoma
+          pmid: 10.1016/j.annonc.2024.10.743
+        - study: Bennett G et al. 2020
+          type: animal
+          finding: >-
+            Bicycle platform demonstrates superior tumor penetration vs
+            traditional ADCs in xenograft models
+          pmid: '32241873'
   - mechanism:
-      action: "Rapid tumor penetration due to small molecular size (~40x smaller than ADCs)"
-      confidence: "established"
+      action: >-
+        Rapid tumor penetration due to small molecular size (~40x smaller than
+        ADCs)
+      confidence: established
       directStudies: 8
     benefit:
-      claim: "achieve faster and deeper tumor tissue distribution"
-      qualifier: "shown to"
+      claim: achieve faster and deeper tumor tissue distribution
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 5
       animalStudies: 6
       cellStudies: 4
       keyFindings:
-        - study: "Bennett G et al. 2020"
-          type: "animal"
-          finding: "Full tumor spheroid penetration in <6 hours vs >24 hours for traditional ADCs"
-          pmid: "32241873"
-        - study: "Rigby M et al. 2020"
-          type: "in-vitro"
-          finding: "Optimized BDC synthesis achieving sub-nanomolar Nectin-4 binding affinity"
-          pmid: "32226607"
+        - study: Bennett G et al. 2020
+          type: animal
+          finding: >-
+            Full tumor spheroid penetration in <6 hours vs >24 hours for
+            traditional ADCs
+          pmid: '32241873'
+        - study: Rigby M et al. 2020
+          type: in-vitro
+          finding: >-
+            Optimized BDC synthesis achieving sub-nanomolar Nectin-4 binding
+            affinity
+          pmid: '32226607'
   - mechanism:
-      action: "MMAE release and tubulin polymerization inhibition causing mitotic arrest"
-      confidence: "established"
+      action: >-
+        MMAE release and tubulin polymerization inhibition causing mitotic
+        arrest
+      confidence: established
       directStudies: 15
     benefit:
-      claim: "induce apoptosis in rapidly dividing tumor cells"
-      qualifier: "shown to"
+      claim: induce apoptosis in rapidly dividing tumor cells
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 18
       animalStudies: 6
       cellStudies: 10
       keyFindings:
-        - study: "Powles T et al. 2024"
-          type: "human-observational"
-          finding: "Durable responses with 11% complete response rate in heavily pretreated mUC population"
-          pmid: "ASCO-GU-527"
-        - study: "Tagawa ST et al. 2023"
-          type: "human-observational"
-          finding: "Confirmed safety profile and efficacy in expansion cohorts"
-          pmid: "ASCO-4504"
+        - study: Powles T et al. 2024
+          type: human-observational
+          finding: >-
+            Durable responses with 11% complete response rate in heavily
+            pretreated mUC population
+          pmid: ASCO-GU-527
+        - study: Tagawa ST et al. 2023
+          type: human-observational
+          finding: Confirmed safety profile and efficacy in expansion cohorts
+          pmid: ASCO-4504
   - mechanism:
-      action: "Fast systemic clearance reducing off-target tissue exposure"
-      confidence: "supported"
+      action: Fast systemic clearance reducing off-target tissue exposure
+      confidence: supported
       directStudies: 10
     benefit:
-      claim: "improve tolerability compared to traditional ADCs"
-      qualifier: "appears to"
+      claim: improve tolerability compared to traditional ADCs
+      qualifier: appears to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 15
       animalStudies: 4
       cellStudies: 0
       keyFindings:
-        - study: "Phase 1/2 Pooled Safety Data 2024"
-          type: "human-observational"
-          finding: "12% treatment discontinuation rate due to AEs vs ~20% for enfortumab vedotin; lower skin toxicity rates"
-          pmid: "NCT04561362"
-        - study: "Petrylak DP et al. 2022"
-          type: "human-observational"
-          finding: "Established RP2D of 5 mg/kg weekly with manageable safety profile"
-          pmid: "JCO-2022"
+        - study: Phase 1/2 Pooled Safety Data 2024
+          type: human-observational
+          finding: >-
+            12% treatment discontinuation rate due to AEs vs ~20% for enfortumab
+            vedotin; lower skin toxicity rates
+          pmid: NCT04561362
+        - study: Petrylak DP et al. 2022
+          type: human-observational
+          finding: Established RP2D of 5 mg/kg weekly with manageable safety profile
+          pmid: JCO-2022
 conditions:
-  - slug: "urothelial-carcinoma"
-    name: "Metastatic Urothelial Carcinoma"
-    researchSummary: "Primary indication with robust Phase 1/2 clinical data. 45% ORR in heavily pretreated 2L+ population (100% prior checkpoint inhibitor, 87% prior platinum). FDA Breakthrough Therapy Designation granted 2023. Phase 2/3 Duravelo-2 registrational trial ongoing."
-    relevantStudies: ["NCT04561362", "NCT05936528"]
-    relatedPeptides: ["enfortumab-vedotin"]
-  - slug: "pancreatic-cancer"
-    name: "Pancreatic Cancer"
-    researchSummary: "Under investigation in Phase 1/2 expansion cohorts due to high Nectin-4 expression (60-80%). Preliminary ORR ~15-20%. Limited data available; ongoing evaluation."
-    relevantStudies: ["NCT04561362"]
+  - slug: urothelial-carcinoma
+    name: Metastatic Urothelial Carcinoma
+    researchSummary: >-
+      Primary indication with robust Phase 1/2 clinical data. 45% ORR in heavily
+      pretreated 2L+ population (100% prior checkpoint inhibitor, 87% prior
+      platinum). FDA Breakthrough Therapy Designation granted 2023. Phase 2/3
+      Duravelo-2 registrational trial ongoing.
+    relevantStudies:
+      - NCT04561362
+      - NCT05936528
+    relatedPeptides:
+      - enfortumab-vedotin
+  - slug: pancreatic-cancer
+    name: Pancreatic Cancer
+    researchSummary: >-
+      Under investigation in Phase 1/2 expansion cohorts due to high Nectin-4
+      expression (60-80%). Preliminary ORR ~15-20%. Limited data available;
+      ongoing evaluation.
+    relevantStudies:
+      - NCT04561362
     relatedPeptides: []
-  - slug: "breast-cancer"
-    name: "Breast Cancer"
-    researchSummary: "Evaluated in Phase 1/2 expansion based on moderate-high Nectin-4 expression (50-70%). Preliminary ORR ~25-30%. Early stage development for this indication."
-    relevantStudies: ["NCT04561362"]
+  - slug: breast-cancer
+    name: Breast Cancer
+    researchSummary: >-
+      Evaluated in Phase 1/2 expansion based on moderate-high Nectin-4
+      expression (50-70%). Preliminary ORR ~25-30%. Early stage development for
+      this indication.
+    relevantStudies:
+      - NCT04561362
     relatedPeptides: []
 timeline:
-  - period: "Day 1"
-    effects: "IV infusion administered over 30-60 minutes. Rapid distribution to Nectin-4-expressing tumors due to small molecular size. Plasma half-life of 3-6 hours."
-    source: "NCT04561362"
-  - period: "Week 1-4"
-    effects: "Weekly dosing at 5 mg/kg RP2D. Initial tumor assessment typically at 8-12 weeks per clinical trial protocols. Early responders may show tumor marker changes."
-    source: "NCT04561362"
-  - period: "Week 8-12"
-    effects: "First radiographic response assessment. In Phase 1/2 trials, responses observed across this timeframe. Disease control rate of 77% (CR + PR + SD)."
-    source: "ASCO-2024"
-  - period: "Month 3+"
-    effects: "Median duration of response 11.1 months in responders. Continued weekly dosing until progression or unacceptable toxicity. Some patients achieve durable complete responses."
-    source: "Ann-Oncol-2024"
+  - period: Day 1
+    effects: >-
+      IV infusion administered over 30-60 minutes. Rapid distribution to
+      Nectin-4-expressing tumors due to small molecular size. Plasma half-life
+      of 3-6 hours.
+    source: NCT04561362
+  - period: Week 1-4
+    effects: >-
+      Weekly dosing at 5 mg/kg RP2D. Initial tumor assessment typically at 8-12
+      weeks per clinical trial protocols. Early responders may show tumor marker
+      changes.
+    source: NCT04561362
+  - period: Week 8-12
+    effects: >-
+      First radiographic response assessment. In Phase 1/2 trials, responses
+      observed across this timeframe. Disease control rate of 77% (CR + PR +
+      SD).
+    source: ASCO-2024
+  - period: Month 3+
+    effects: >-
+      Median duration of response 11.1 months in responders. Continued weekly
+      dosing until progression or unacceptable toxicity. Some patients achieve
+      durable complete responses.
+    source: Ann-Oncol-2024
 qualityChecklist:
   goodSigns:
-    - "Administered only in clinical trial settings under medical supervision"
-    - "Enrolled in registered clinical trial (NCT04561362 or NCT05936528)"
-    - "Proper screening for Nectin-4 expression if required by protocol"
-    - "Baseline neuropathy assessment completed"
-    - "Informed consent obtained with full understanding of investigational status"
-    - "Access to experienced oncology care team"
+    - Administered only in clinical trial settings under medical supervision
+    - Enrolled in registered clinical trial (NCT04561362 or NCT05936528)
+    - Proper screening for Nectin-4 expression if required by protocol
+    - Baseline neuropathy assessment completed
+    - >-
+      Informed consent obtained with full understanding of investigational
+      status
+    - Access to experienced oncology care team
   warningSigns:
-    - "Pre-existing peripheral neuropathy (Grade 1-2) requiring close monitoring"
-    - "Prior enfortumab vedotin exposure (may still respond but monitor closely)"
-    - "History of infusion reactions requiring premedication protocol"
-    - "Moderate renal impairment requiring dose consideration"
+    - Pre-existing peripheral neuropathy (Grade 1-2) requiring close monitoring
+    - Prior enfortumab vedotin exposure (may still respond but monitor closely)
+    - History of infusion reactions requiring premedication protocol
+    - Moderate renal impairment requiring dose consideration
   badSigns:
-    - "Attempting to obtain outside of clinical trial (not approved)"
-    - "Severe pre-existing peripheral neuropathy (Grade 3+)"
-    - "Known hypersensitivity to MMAE or bicyclic peptides"
-    - "Pregnancy or planning pregnancy (teratogenic potential)"
-    - "No access to appropriate oncology monitoring and supportive care"
+    - Attempting to obtain outside of clinical trial (not approved)
+    - Severe pre-existing peripheral neuropathy (Grade 3+)
+    - Known hypersensitivity to MMAE or bicyclic peptides
+    - Pregnancy or planning pregnancy (teratogenic potential)
+    - No access to appropriate oncology monitoring and supportive care
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

@@ -1,144 +1,210 @@
 ---
-name: "FOXO4-DRI"
-aliases: ["FOXO4-D-Retro-Inverso", "FOXO4-DRI Peptide", "Proxofim"]
-category: "longevity"
-evidenceStrength: "low"
-lastUpdated: 2026-01-31
-comparators: ["navitoclax", "dasatinib-quercetin", "fisetin"]
-summary: "A D-retro-inverso peptide designed to disrupt the FOXO4-p53 interaction, selectively eliminating senescent cells (senolytic). Preclinical studies in aged mice demonstrated restored fitness, fur density, and renal function. No human clinical trials conducted. More selective than BCL-2 inhibitors but remains unproven in humans."
+name: FOXO4-DRI
+aliases:
+  - FOXO4-D-Retro-Inverso
+  - FOXO4-DRI Peptide
+  - Proxofim
+category: longevity
+evidenceStrength: very-low
+lastUpdated: 2026-01-31T00:00:00.000Z
+comparators:
+  - navitoclax
+  - dasatinib-quercetin
+  - fisetin
+summary: >-
+  A D-retro-inverso peptide designed to disrupt the FOXO4-p53 interaction,
+  selectively eliminating senescent cells (senolytic). Preclinical studies in
+  aged mice demonstrated restored fitness, fur density, and renal function. No
+  human clinical trials conducted. More selective than BCL-2 inhibitors but
+  remains unproven in humans.
 sources:
   count: 18
   human: 0
   preclinical: 14
   openAccess: 10
-metaTitle: "FOXO4-DRI Evidence Dossier | PepCodex"
-metaDescription: "Evidence review of FOXO4-DRI senolytic peptide. Mechanism of action targeting FOXO4-p53 interaction, preclinical data in aging mice, and current research status."
+metaTitle: FOXO4-DRI Evidence Dossier | PepCodex
+metaDescription: >-
+  Evidence review of FOXO4-DRI senolytic peptide. Mechanism of action targeting
+  FOXO4-p53 interaction, preclinical data in aging mice, and current research
+  status.
 interactions:
-  - peptide: "epithalon"
-    type: "compatible"
-    description: "Different longevity mechanisms - FOXO4-DRI clears senescent cells while epithalon targets telomerase. No interaction studies but theoretically complementary."
-  - peptide: "humanin"
-    type: "caution"
-    description: "Opposing mechanisms - humanin is anti-apoptotic while FOXO4-DRI promotes apoptosis in senescent cells. Could potentially counteract senolytic effects."
-  - peptide: "mots-c"
-    type: "compatible"
-    description: "Different mechanisms - FOXO4-DRI clears senescent cells while MOTS-c targets AMPK metabolic pathways. No known interactions."
-  - peptide: "bpc-157"
-    type: "caution"
-    description: "Uncertain interaction - BPC-157 promotes tissue repair which may involve senescent cell signaling. Effects on senolytic activity unknown."
-  - peptide: "ss-31"
-    type: "compatible"
-    description: "Different targets - SS-31 protects mitochondria while FOXO4-DRI clears senescent cells. Potentially complementary for aging intervention."
+  - peptide: epithalon
+    type: compatible
+    description: >-
+      Different longevity mechanisms - FOXO4-DRI clears senescent cells while
+      epithalon targets telomerase. No interaction studies but theoretically
+      complementary.
+  - peptide: humanin
+    type: caution
+    description: >-
+      Opposing mechanisms - humanin is anti-apoptotic while FOXO4-DRI promotes
+      apoptosis in senescent cells. Could potentially counteract senolytic
+      effects.
+  - peptide: mots-c
+    type: compatible
+    description: >-
+      Different mechanisms - FOXO4-DRI clears senescent cells while MOTS-c
+      targets AMPK metabolic pathways. No known interactions.
+  - peptide: bpc-157
+    type: caution
+    description: >-
+      Uncertain interaction - BPC-157 promotes tissue repair which may involve
+      senescent cell signaling. Effects on senolytic activity unknown.
+  - peptide: ss-31
+    type: compatible
+    description: >-
+      Different targets - SS-31 protects mitochondria while FOXO4-DRI clears
+      senescent cells. Potentially complementary for aging intervention.
 molecularInfo:
-  weight: "~5,500 Da"
+  weight: '~5,500 Da'
   chainLength: 45
-  type: "D-Retro-Inverso Peptide"
-  sequence: "D-peptide derived from FOXO4 p53-binding domain (exact sequence proprietary)"
+  type: D-Retro-Inverso Peptide
+  sequence: D-peptide derived from FOXO4 p53-binding domain (exact sequence proprietary)
   aminoAcids:
-    - { code: "D-aa", name: "D-amino acids", position: 1, property: "modified" }
+    - code: D-aa
+      name: D-amino acids
+      position: 1
+      property: modified
 evidenceChainedBenefits:
   - mechanism:
-      action: "Disruption of FOXO4-p53 interaction releasing p53 to trigger apoptosis"
-      confidence: "supported"
+      action: Disruption of FOXO4-p53 interaction releasing p53 to trigger apoptosis
+      confidence: supported
       directStudies: 8
     benefit:
-      claim: "selectively eliminate senescent cells"
-      qualifier: "appears to"
+      claim: selectively eliminate senescent cells
+      qualifier: appears to
     evidence:
-      level: "low"
+      level: low
       humanStudies: 0
       animalStudies: 6
       cellStudies: 8
       keyFindings:
-        - study: "Baar MP et al. 2017"
-          type: "animal"
-          finding: "FOXO4-DRI selectively killed senescent cells and restored fitness, fur density, and renal function in aged mice"
-          pmid: "28340339"
-        - study: "Baar MP et al. 2017"
-          type: "in-vitro"
-          finding: "Selective killing of senescent fibroblasts while sparing non-senescent cells"
-          pmid: "28340339"
+        - study: Baar MP et al. 2017
+          type: animal
+          finding: >-
+            FOXO4-DRI selectively killed senescent cells and restored fitness,
+            fur density, and renal function in aged mice
+          pmid: '28340339'
+        - study: Baar MP et al. 2017
+          type: in-vitro
+          finding: >-
+            Selective killing of senescent fibroblasts while sparing
+            non-senescent cells
+          pmid: '28340339'
   - mechanism:
-      action: "D-retro-inverso design conferring protease resistance"
-      confidence: "supported"
+      action: D-retro-inverso design conferring protease resistance
+      confidence: supported
       directStudies: 4
     benefit:
-      claim: "maintain peptide stability in biological systems"
-      qualifier: "shown to"
+      claim: maintain peptide stability in biological systems
+      qualifier: shown to
     evidence:
-      level: "low"
+      level: low
       humanStudies: 0
       animalStudies: 4
       cellStudies: 3
       keyFindings:
-        - study: "De Keizer et al. 2017"
-          type: "animal"
-          finding: "D-amino acid configuration provides extended half-life and protease resistance"
-          pmid: "28188094"
+        - study: De Keizer et al. 2017
+          type: animal
+          finding: >-
+            D-amino acid configuration provides extended half-life and protease
+            resistance
+          pmid: '28188094'
   - mechanism:
-      action: "p53 release from nuclear sequestration enabling mitochondrial translocation"
-      confidence: "supported"
+      action: >-
+        p53 release from nuclear sequestration enabling mitochondrial
+        translocation
+      confidence: supported
       directStudies: 5
     benefit:
-      claim: "reduce senescence-associated inflammatory factors"
-      qualifier: "may"
+      claim: reduce senescence-associated inflammatory factors
+      qualifier: may
     evidence:
-      level: "low"
+      level: low
       humanStudies: 0
       animalStudies: 4
       cellStudies: 5
       keyFindings:
-        - study: "Baar MP et al. 2017"
-          type: "in-vitro"
-          finding: "SASP factors decreased following senescent cell clearance; p53 mitochondrial translocation confirmed"
-          pmid: "28340339"
+        - study: Baar MP et al. 2017
+          type: in-vitro
+          finding: >-
+            SASP factors decreased following senescent cell clearance; p53
+            mitochondrial translocation confirmed
+          pmid: '28340339'
 conditions:
-  - slug: "cellular-senescence"
-    name: "Cellular Senescence"
-    researchSummary: "FOXO4-DRI was specifically designed to clear senescent cells by disrupting the FOXO4-p53 survival interaction. Preclinical studies show selective elimination of senescent cells with reduction in senescence markers (p16, p21, SA-beta-gal). No human studies have been conducted."
-    relevantStudies: ["28340339"]
+  - slug: cellular-senescence
+    name: Cellular Senescence
+    researchSummary: >-
+      FOXO4-DRI was specifically designed to clear senescent cells by disrupting
+      the FOXO4-p53 survival interaction. Preclinical studies show selective
+      elimination of senescent cells with reduction in senescence markers (p16,
+      p21, SA-beta-gal). No human studies have been conducted.
+    relevantStudies:
+      - '28340339'
     relatedPeptides: []
-  - slug: "aging"
-    name: "Aging & Longevity"
-    researchSummary: "In aged mice, FOXO4-DRI treatment restored physical fitness, improved fur density, and enhanced renal function. These findings suggest potential healthspan benefits from senescent cell clearance. Human translation is completely untested."
-    relevantStudies: ["28340339", "22048312"]
-    relatedPeptides: ["humanin", "mots-c", "epithalon"]
-  - slug: "age-related-organ-decline"
-    name: "Age-Related Organ Decline"
-    researchSummary: "Preclinical evidence shows FOXO4-DRI improved renal function in aged mice. Senescent cell clearance reduced tissue dysfunction. Effects on other organs and in humans are unknown."
-    relevantStudies: ["28340339"]
+  - slug: aging
+    name: Aging & Longevity
+    researchSummary: >-
+      In aged mice, FOXO4-DRI treatment restored physical fitness, improved fur
+      density, and enhanced renal function. These findings suggest potential
+      healthspan benefits from senescent cell clearance. Human translation is
+      completely untested.
+    relevantStudies:
+      - '28340339'
+      - '22048312'
+    relatedPeptides:
+      - humanin
+      - mots-c
+      - epithalon
+  - slug: age-related-organ-decline
+    name: Age-Related Organ Decline
+    researchSummary: >-
+      Preclinical evidence shows FOXO4-DRI improved renal function in aged mice.
+      Senescent cell clearance reduced tissue dysfunction. Effects on other
+      organs and in humans are unknown.
+    relevantStudies:
+      - '28340339'
     relatedPeptides: []
 timeline:
-  - period: "Acute"
-    effects: "FOXO4-DRI enters cells via cell-penetrating properties. Competes with endogenous FOXO4 for p53 binding. Apoptosis of senescent cells begins within hours in vitro."
-    source: "PMID:28340339"
-  - period: "Days to weeks"
-    effects: "In mouse studies, treatment three times per week for 3-4 weeks produced measurable effects. Senescent cell burden reduced (p16, p21 markers). SASP factors decreased."
-    source: "PMID:28340339"
-  - period: "Weeks to months"
-    effects: "After several weeks of treatment, aged mice showed restored running wheel activity, improved fur density, and enhanced renal function. Tissue homeostasis improvements observed."
-    source: "PMID:28340339"
+  - period: Acute
+    effects: >-
+      FOXO4-DRI enters cells via cell-penetrating properties. Competes with
+      endogenous FOXO4 for p53 binding. Apoptosis of senescent cells begins
+      within hours in vitro.
+    source: 'PMID:28340339'
+  - period: Days to weeks
+    effects: >-
+      In mouse studies, treatment three times per week for 3-4 weeks produced
+      measurable effects. Senescent cell burden reduced (p16, p21 markers). SASP
+      factors decreased.
+    source: 'PMID:28340339'
+  - period: Weeks to months
+    effects: >-
+      After several weeks of treatment, aged mice showed restored running wheel
+      activity, improved fur density, and enhanced renal function. Tissue
+      homeostasis improvements observed.
+    source: 'PMID:28340339'
 qualityChecklist:
   goodSigns:
-    - "White to off-white lyophilized powder"
-    - "Certificate of analysis showing >95% purity"
-    - "HPLC verification with D-amino acid confirmation"
-    - "Mass spectrometry verification of molecular weight"
-    - "Clear documentation of D-retro-inverso synthesis"
-    - "Proper vacuum seal on vial"
+    - White to off-white lyophilized powder
+    - Certificate of analysis showing >95% purity
+    - HPLC verification with D-amino acid confirmation
+    - Mass spectrometry verification of molecular weight
+    - Clear documentation of D-retro-inverso synthesis
+    - Proper vacuum seal on vial
   warningSigns:
-    - "No verification of D-amino acid content"
-    - "Purity below 95%"
-    - "No third-party testing"
-    - "Unclear synthesis methodology"
-    - "Limited stability data"
+    - No verification of D-amino acid content
+    - Purity below 95%
+    - No third-party testing
+    - Unclear synthesis methodology
+    - Limited stability data
   badSigns:
-    - "Discolored powder"
-    - "No certificate of analysis"
-    - "Cannot verify D-peptide configuration"
-    - "Contamination with L-amino acid isomers"
-    - "Compromised vial seal"
-    - "Claims of clinical efficacy (no human trials exist)"
+    - Discolored powder
+    - No certificate of analysis
+    - Cannot verify D-peptide configuration
+    - Contamination with L-amino acid isomers
+    - Compromised vial seal
+    - Claims of clinical efficacy (no human trials exist)
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

@@ -1,213 +1,343 @@
 ---
-name: "Melanotan II"
-aliases: ["MT-II", "MT-2"]
-category: "other"
-evidenceStrength: "low"
-lastUpdated: 2026-01-22
-comparators: ["pt-141", "melanotan-i"]
-summary: "A non-selective melanocortin receptor agonist known for tanning effects. Not approved by any regulatory agency; associated with significant safety concerns including melanoma risk and systemic toxicity."
+name: Melanotan II
+aliases:
+  - MT-II
+  - MT-2
+category: other
+evidenceStrength: moderate
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - pt-141
+  - melanotan-i
+summary: >-
+  A non-selective melanocortin receptor agonist known for tanning effects. Not
+  approved by any regulatory agency; associated with significant safety concerns
+  including melanoma risk and systemic toxicity.
 sources:
   count: 26
   human: 8
   preclinical: 4
   openAccess: 14
-metaTitle: "Melanotan II Evidence Dossier | PepCodex"
-metaDescription: "Evidence review of Melanotan II (MT-II). Melanocortin agonist, tanning mechanism, safety concerns, and regulatory warnings."
+metaTitle: Melanotan II Evidence Dossier | PepCodex
+metaDescription: >-
+  Evidence review of Melanotan II (MT-II). Melanocortin agonist, tanning
+  mechanism, safety concerns, and regulatory warnings.
 interactions:
-  - peptide: "pt-141"
-    type: "avoid"
-    description: "PT-141 (bremelanotide) is derived from Melanotan II with more selective melanocortin receptor activity. Combining provides redundant stimulation with increased risk of adverse events."
-  - peptide: "bpc-157"
-    type: "caution"
-    description: "BPC-157 has pro-angiogenic effects. Melanotan II stimulates melanocyte activity. Theoretical concern about combined effects on moles/nevi. No interaction studies available."
-  - peptide: "semaglutide"
-    type: "caution"
-    description: "Both can cause nausea. Melanotan II commonly causes GI effects. Monitor for additive adverse events."
-  - peptide: "thymosin-alpha-1"
-    type: "caution"
-    description: "Both modulate immune function. Melanotan II's melanocortin effects may interact with immune signaling. Exercise caution."
-  - peptide: "ghk-cu"
-    type: "caution"
-    description: "Both may affect skin/pigmentation. GHK-Cu promotes wound healing while MT-II stimulates melanogenesis. Unknown if combined effects are safe for moles/nevi."
+  - peptide: pt-141
+    type: avoid
+    description: >-
+      PT-141 (bremelanotide) is derived from Melanotan II with more selective
+      melanocortin receptor activity. Combining provides redundant stimulation
+      with increased risk of adverse events.
+  - peptide: bpc-157
+    type: caution
+    description: >-
+      BPC-157 has pro-angiogenic effects. Melanotan II stimulates melanocyte
+      activity. Theoretical concern about combined effects on moles/nevi. No
+      interaction studies available.
+  - peptide: semaglutide
+    type: caution
+    description: >-
+      Both can cause nausea. Melanotan II commonly causes GI effects. Monitor
+      for additive adverse events.
+  - peptide: thymosin-alpha-1
+    type: caution
+    description: >-
+      Both modulate immune function. Melanotan II's melanocortin effects may
+      interact with immune signaling. Exercise caution.
+  - peptide: ghk-cu
+    type: caution
+    description: >-
+      Both may affect skin/pigmentation. GHK-Cu promotes wound healing while
+      MT-II stimulates melanogenesis. Unknown if combined effects are safe for
+      moles/nevi.
 molecularInfo:
-  weight: "1,024.18 Da"
+  weight: '1,024.18 Da'
   chainLength: 7
-  type: "Cyclic Heptapeptide"
-  sequence: "Ac-Nle-c[Asp-His-D-Phe-Arg-Trp-Lys]-NH2"
+  type: Cyclic Heptapeptide
+  sequence: 'Ac-Nle-c[Asp-His-D-Phe-Arg-Trp-Lys]-NH2'
   aminoAcids:
-    - { code: "Nle", name: "Norleucine", position: 1, property: "hydrophobic" }
-    - { code: "D", name: "Aspartic Acid", position: 2, property: "negative" }
-    - { code: "H", name: "Histidine", position: 3, property: "positive" }
-    - { code: "dF", name: "D-Phenylalanine", position: 4, property: "hydrophobic" }
-    - { code: "R", name: "Arginine", position: 5, property: "positive" }
-    - { code: "W", name: "Tryptophan", position: 6, property: "hydrophobic" }
-    - { code: "K", name: "Lysine", position: 7, property: "positive" }
+    - code: Nle
+      name: Norleucine
+      position: 1
+      property: hydrophobic
+    - code: D
+      name: Aspartic Acid
+      position: 2
+      property: negative
+    - code: H
+      name: Histidine
+      position: 3
+      property: positive
+    - code: dF
+      name: D-Phenylalanine
+      position: 4
+      property: hydrophobic
+    - code: R
+      name: Arginine
+      position: 5
+      property: positive
+    - code: W
+      name: Tryptophan
+      position: 6
+      property: hydrophobic
+    - code: K
+      name: Lysine
+      position: 7
+      property: positive
 evidenceChainedBenefits:
   - mechanism:
-      action: "MC1R activation on melanocytes stimulating cAMP-dependent melanin synthesis"
-      confidence: "established"
+      action: >-
+        MC1R activation on melanocytes stimulating cAMP-dependent melanin
+        synthesis
+      confidence: established
       directStudies: 8
     benefit:
-      claim: "induce skin tanning without UV exposure"
-      qualifier: "shown to"
+      claim: induce skin tanning without UV exposure
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 4
       animalStudies: 3
       cellStudies: 2
       keyFindings:
-        - study: "Dorr RT et al. 1996"
-          type: "human-rct"
-          finding: "First human study confirmed skin darkening without UV exposure in 3 subjects"
-          pmid: "8637402"
-        - study: "Abdel-Malek ZA et al. 2000"
-          type: "in-vitro"
-          finding: "MC1R signaling in human melanocytes increases tyrosinase activity and eumelanin production"
-          pmid: "11041376"
+        - study: Dorr RT et al. 1996
+          type: human-rct
+          finding: >-
+            First human study confirmed skin darkening without UV exposure in 3
+            subjects
+          pmid: '8637402'
+        - study: Abdel-Malek ZA et al. 2000
+          type: in-vitro
+          finding: >-
+            MC1R signaling in human melanocytes increases tyrosinase activity
+            and eumelanin production
+          pmid: '11041376'
   - mechanism:
-      action: "MC4R activation in hypothalamic regions controlling sexual behavior and arousal"
-      confidence: "established"
+      action: >-
+        MC4R activation in hypothalamic regions controlling sexual behavior and
+        arousal
+      confidence: established
       directStudies: 5
     benefit:
-      claim: "increase sexual arousal and erectile function"
-      qualifier: "shown to"
+      claim: increase sexual arousal and erectile function
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 3
       animalStudies: 4
       cellStudies: 0
       keyFindings:
-        - study: "Wessells H et al. 1998"
-          type: "human-observational"
-          finding: "Erectile response observed in 8 of 10 men with psychogenic ED after subcutaneous administration"
-          pmid: "9610557"
-        - study: "Wessells H et al. 2000"
-          type: "human-rct"
-          finding: "RCT showed 68% increase in sexual desire vs 19% with placebo"
-          pmid: "11035391"
+        - study: Wessells H et al. 1998
+          type: human-observational
+          finding: >-
+            Erectile response observed in 8 of 10 men with psychogenic ED after
+            subcutaneous administration
+          pmid: '9610557'
+        - study: Wessells H et al. 2000
+          type: human-rct
+          finding: RCT showed 68% increase in sexual desire vs 19% with placebo
+          pmid: '11035391'
   - mechanism:
-      action: "MC4R activation in hypothalamic appetite centers reducing food intake signaling"
-      confidence: "supported"
+      action: >-
+        MC4R activation in hypothalamic appetite centers reducing food intake
+        signaling
+      confidence: supported
       directStudies: 3
     benefit:
-      claim: "suppress appetite and reduce food intake"
-      qualifier: "appears to"
+      claim: suppress appetite and reduce food intake
+      qualifier: appears to
     evidence:
-      level: "low"
+      level: low
       humanStudies: 1
       animalStudies: 4
       cellStudies: 0
       keyFindings:
-        - study: "Van der Ploeg LH et al. 2002"
-          type: "animal"
-          finding: "MC4R activation produces anorectic effects; mechanism exploited by setmelanotide for obesity"
-          pmid: "12172010"
-        - study: "Hadley ME & Dorr RT 2006"
-          type: "animal"
-          finding: "Melanocortin receptor activation in hypothalamus modulates energy homeostasis"
-          pmid: "16412534"
+        - study: Van der Ploeg LH et al. 2002
+          type: animal
+          finding: >-
+            MC4R activation produces anorectic effects; mechanism exploited by
+            setmelanotide for obesity
+          pmid: '12172010'
+        - study: Hadley ME & Dorr RT 2006
+          type: animal
+          finding: >-
+            Melanocortin receptor activation in hypothalamus modulates energy
+            homeostasis
+          pmid: '16412534'
   - mechanism:
-      action: "Stimulation of melanocyte activity including proliferation and nevus changes"
-      confidence: "supported"
+      action: >-
+        Stimulation of melanocyte activity including proliferation and nevus
+        changes
+      confidence: supported
       directStudies: 12
     benefit:
-      claim: "cause changes to existing moles and nevi"
-      qualifier: "shown to"
+      claim: cause changes to existing moles and nevi
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 12
       animalStudies: 1
       cellStudies: 1
       keyFindings:
-        - study: "Hjuler KF et al. 2014"
-          type: "human-observational"
-          finding: "Melanoma diagnosed in 20-year-old woman with atypical nevi changes after MT-II use"
-          pmid: "24355990"
-        - study: "Cousen P, Messenger A 2010"
-          type: "human-observational"
-          finding: "Case series documenting mole changes and new nevi development in MT-II users"
-          pmid: "20346021"
+        - study: Hjuler KF et al. 2014
+          type: human-observational
+          finding: >-
+            Melanoma diagnosed in 20-year-old woman with atypical nevi changes
+            after MT-II use
+          pmid: '24355990'
+        - study: 'Cousen P, Messenger A 2010'
+          type: human-observational
+          finding: >-
+            Case series documenting mole changes and new nevi development in
+            MT-II users
+          pmid: '20346021'
 conditions:
-  - slug: "tanning"
-    name: "Tanning"
-    researchSummary: "Melanotan II stimulates melanogenesis through melanocortin-1 receptor activation, producing skin darkening without UV exposure. The peptide was originally developed by University of Arizona researchers as a potential skin cancer prevention agent.
+  - slug: tanning
+    name: Tanning
+    researchSummary: >-
+      Melanotan II stimulates melanogenesis through melanocortin-1 receptor
+      activation, producing skin darkening without UV exposure. The peptide was
+      originally developed by University of Arizona researchers as a potential
+      skin cancer prevention agent.
 
-The tanning effect occurs through increased melanin production in melanocytes. Users can develop significant skin darkening, particularly with initial 'loading' doses.
+      The tanning effect occurs through increased melanin production in
+      melanocytes. Users can develop significant skin darkening, particularly
+      with initial 'loading' doses.
 
-Melanotan II is not approved by any regulatory agency. Concerns include effects on existing moles/nevi, potential for melanoma masking or promotion, and lack of quality control in unregulated products."
-    relevantStudies: ["9876322", "8786230"]
-    relatedPeptides: ["pt-141"]
-  - slug: "skin-protection"
-    name: "Skin Protection"
-    researchSummary: "Melanotan II was originally developed as a potential skin cancer prevention agent. The theory was that stimulated melanin production would provide photoprotection against UV radiation.
+      Melanotan II is not approved by any regulatory agency. Concerns include
+      effects on existing moles/nevi, potential for melanoma masking or
+      promotion, and lack of quality control in unregulated products.
+    relevantStudies:
+      - '9876322'
+      - '8786230'
+    relatedPeptides:
+      - pt-141
+  - slug: skin-protection
+    name: Skin Protection
+    researchSummary: >-
+      Melanotan II was originally developed as a potential skin cancer
+      prevention agent. The theory was that stimulated melanin production would
+      provide photoprotection against UV radiation.
 
-Increased melanin does provide some protection against UV-induced DNA damage. However, the peptide was never proven to reduce skin cancer risk in clinical trials.
+      Increased melanin does provide some protection against UV-induced DNA
+      damage. However, the peptide was never proven to reduce skin cancer risk
+      in clinical trials.
 
-The lack of regulatory approval and safety data means Melanotan II cannot be recommended for skin protection. Standard sun protection measures remain the evidence-based approach."
-    relevantStudies: ["9876322"]
+      The lack of regulatory approval and safety data means Melanotan II cannot
+      be recommended for skin protection. Standard sun protection measures
+      remain the evidence-based approach.
+    relevantStudies:
+      - '9876322'
     relatedPeptides: []
-  - slug: "sexual-dysfunction"
-    name: "Sexual Dysfunction"
-    researchSummary: "Melanotan II produces erectile effects as a side effect of its melanocortin receptor activity. This led to the development of PT-141 (bremelanotide), a derivative specifically targeting sexual function.
+  - slug: sexual-dysfunction
+    name: Sexual Dysfunction
+    researchSummary: >-
+      Melanotan II produces erectile effects as a side effect of its
+      melanocortin receptor activity. This led to the development of PT-141
+      (bremelanotide), a derivative specifically targeting sexual function.
 
-The sexual effects are mediated through melanocortin-4 receptors in the brain affecting sexual motivation and arousal. These effects were unexpected findings during tanning research.
+      The sexual effects are mediated through melanocortin-4 receptors in the
+      brain affecting sexual motivation and arousal. These effects were
+      unexpected findings during tanning research.
 
-Melanotan II is not approved for sexual dysfunction. PT-141, the selective derivative, received FDA approval for female HSDD but not male ED."
-    relevantStudies: ["14976499", "9876322"]
-    relatedPeptides: ["pt-141"]
-  - slug: "appetite-suppression"
-    name: "Appetite Suppression"
-    researchSummary: "Melanotan II acts on melanocortin-4 receptors, which are involved in appetite regulation. Users often report reduced appetite as a side effect.
+      Melanotan II is not approved for sexual dysfunction. PT-141, the selective
+      derivative, received FDA approval for female HSDD but not male ED.
+    relevantStudies:
+      - '14976499'
+      - '9876322'
+    relatedPeptides:
+      - pt-141
+  - slug: appetite-suppression
+    name: Appetite Suppression
+    researchSummary: >-
+      Melanotan II acts on melanocortin-4 receptors, which are involved in
+      appetite regulation. Users often report reduced appetite as a side effect.
 
-The melanocortin system is a key regulator of energy balance and food intake. MC4R activation produces anorectic effects, which is being explored with other melanocortin agonists for obesity.
+      The melanocortin system is a key regulator of energy balance and food
+      intake. MC4R activation produces anorectic effects, which is being
+      explored with other melanocortin agonists for obesity.
 
-Melanotan II was not developed or approved for weight loss. Setmelanotide, an MC4R agonist, is FDA-approved for rare genetic obesity conditions."
-    relevantStudies: ["9876322"]
+      Melanotan II was not developed or approved for weight loss. Setmelanotide,
+      an MC4R agonist, is FDA-approved for rare genetic obesity conditions.
+    relevantStudies:
+      - '9876322'
     relatedPeptides: []
 timeline:
-  - period: "Day 1-3"
-    effects: "Initial administration may produce acute side effects including nausea, facial flushing, fatigue, and spontaneous erections. These effects are commonly reported from first dose and typically diminish with continued use."
-    source: "PMID:8637402"
-  - period: "Week 1-2"
-    effects: "Early tanning effects may become visible, particularly with UV exposure. Freckles and existing moles may begin to darken. Appetite suppression and sexual effects often manifest during this period."
-    source: "PMID:9610557"
-  - period: "Week 2-4"
-    effects: "Progressive skin darkening continues. Users report noticeable tan development. Mole changes may become more apparent. Side effects typically stabilize or diminish."
-    source: "PMID:11041376"
-  - period: "Week 4+"
-    effects: "Maximum tanning effect generally reached by 4-8 weeks. Some users transition to maintenance dosing. Long-term effects on moles and melanocyte activity remain concerning. No long-term safety data available."
+  - period: Day 1-3
+    effects: >-
+      Initial administration may produce acute side effects including nausea,
+      facial flushing, fatigue, and spontaneous erections. These effects are
+      commonly reported from first dose and typically diminish with continued
+      use.
+    source: 'PMID:8637402'
+  - period: Week 1-2
+    effects: >-
+      Early tanning effects may become visible, particularly with UV exposure.
+      Freckles and existing moles may begin to darken. Appetite suppression and
+      sexual effects often manifest during this period.
+    source: 'PMID:9610557'
+  - period: Week 2-4
+    effects: >-
+      Progressive skin darkening continues. Users report noticeable tan
+      development. Mole changes may become more apparent. Side effects typically
+      stabilize or diminish.
+    source: 'PMID:11041376'
+  - period: Week 4+
+    effects: >-
+      Maximum tanning effect generally reached by 4-8 weeks. Some users
+      transition to maintenance dosing. Long-term effects on moles and
+      melanocyte activity remain concerning. No long-term safety data available.
 faqs:
-  - question: "What is Melanotan II?"
-    answer: "Melanotan II is a synthetic melanocortin receptor agonist that stimulates melanin production for skin tanning, along with side effects on sexual arousal and appetite. It was developed at the University of Arizona but never completed clinical development."
-  - question: "Is Melanotan II FDA approved?"
-    answer: "No, Melanotan II is not approved by the FDA, TGA, EMA, or any regulatory agency worldwide. It has never completed Phase 3 clinical trials and was abandoned during development due to safety concerns."
-  - question: "What are the risks of Melanotan II?"
-    answer: "Significant safety concerns include potential effects on existing moles and nevi, with case reports linking MT-II to melanoma development. Other risks include nausea, blood pressure changes, and unpredictable systemic effects from non-selective receptor binding."
-  - question: "How does Melanotan II relate to PT-141?"
-    answer: "PT-141 (bremelanotide/Vyleesi) was derived from Melanotan II as a more selective compound focusing on sexual function. PT-141 received FDA approval for female HSDD, while Melanotan II was never approved."
-  - question: "Does Melanotan II cause cancer?"
-    answer: "There is no definitive proof, but multiple case reports document melanoma in MT-II users and changes to existing moles. The peptide stimulates melanocyte activity while bypassing natural UV-triggered surveillance mechanisms, raising theoretical cancer concerns."
+  - question: What is Melanotan II?
+    answer: >-
+      Melanotan II is a synthetic melanocortin receptor agonist that stimulates
+      melanin production for skin tanning, along with side effects on sexual
+      arousal and appetite. It was developed at the University of Arizona but
+      never completed clinical development.
+  - question: Is Melanotan II FDA approved?
+    answer: >-
+      No, Melanotan II is not approved by the FDA, TGA, EMA, or any regulatory
+      agency worldwide. It has never completed Phase 3 clinical trials and was
+      abandoned during development due to safety concerns.
+  - question: What are the risks of Melanotan II?
+    answer: >-
+      Significant safety concerns include potential effects on existing moles
+      and nevi, with case reports linking MT-II to melanoma development. Other
+      risks include nausea, blood pressure changes, and unpredictable systemic
+      effects from non-selective receptor binding.
+  - question: How does Melanotan II relate to PT-141?
+    answer: >-
+      PT-141 (bremelanotide/Vyleesi) was derived from Melanotan II as a more
+      selective compound focusing on sexual function. PT-141 received FDA
+      approval for female HSDD, while Melanotan II was never approved.
+  - question: Does Melanotan II cause cancer?
+    answer: >-
+      There is no definitive proof, but multiple case reports document melanoma
+      in MT-II users and changes to existing moles. The peptide stimulates
+      melanocyte activity while bypassing natural UV-triggered surveillance
+      mechanisms, raising theoretical cancer concerns.
 qualityChecklist:
   goodSigns:
-    - "White to off-white lyophilized powder (cake or crystalline appearance)"
-    - "Dissolves completely and quickly in bacteriostatic water"
-    - "Clear, colorless solution after reconstitution"
-    - "Comes with certificate of analysis (COA) showing >98% purity"
-    - "Third-party HPLC and mass spectrometry verification available"
-    - "Proper vacuum seal on vial before reconstitution"
+    - White to off-white lyophilized powder (cake or crystalline appearance)
+    - Dissolves completely and quickly in bacteriostatic water
+    - 'Clear, colorless solution after reconstitution'
+    - Comes with certificate of analysis (COA) showing >98% purity
+    - Third-party HPLC and mass spectrometry verification available
+    - Proper vacuum seal on vial before reconstitution
   warningSigns:
-    - "Slightly off-white or cream-colored powder (may still be acceptable)"
-    - "Takes longer than expected to fully dissolve"
-    - "Powder appears collapsed or melted (possible moisture exposure)"
-    - "COA from manufacturer only without third-party verification"
-    - "Purity listed below 98% but above 95%"
+    - Slightly off-white or cream-colored powder (may still be acceptable)
+    - Takes longer than expected to fully dissolve
+    - Powder appears collapsed or melted (possible moisture exposure)
+    - COA from manufacturer only without third-party verification
+    - Purity listed below 98% but above 95%
   badSigns:
-    - "Yellow, brown, or otherwise discolored powder"
-    - "Visible particles or cloudiness after reconstitution"
-    - "Gel-like consistency or clumping that won't dissolve"
-    - "No COA provided or COA appears fraudulent"
-    - "Strong unusual odor"
-    - "Vial seal appears compromised or previously opened"
+    - 'Yellow, brown, or otherwise discolored powder'
+    - Visible particles or cloudiness after reconstitution
+    - Gel-like consistency or clumping that won't dissolve
+    - No COA provided or COA appears fraudulent
+    - Strong unusual odor
+    - Vial seal appears compromised or previously opened
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

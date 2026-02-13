@@ -1,202 +1,397 @@
 ---
-name: "Cagrilintide"
-aliases: ["AM833", "NN9838", "ZP8396"]
-category: "metabolic"
-evidenceStrength: "moderate"
-lastUpdated: 2026-01-22
-comparators: ["semaglutide", "tirzepatide"]
-summary: "A long-acting amylin analog developed by Novo Nordisk for weight management. Currently in Phase 3 trials as CagriSema (combination with semaglutide). Phase 2 data shows up to 22-25% weight loss when combined with semaglutide, potentially exceeding tirzepatide efficacy."
+name: Cagrilintide
+aliases:
+  - AM833
+  - NN9838
+  - ZP8396
+category: metabolic
+evidenceStrength: high
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - semaglutide
+  - tirzepatide
+summary: >-
+  A long-acting amylin analog developed by Novo Nordisk for weight management.
+  Currently in Phase 3 trials as CagriSema (combination with semaglutide). Phase
+  2 data shows up to 22-25% weight loss when combined with semaglutide,
+  potentially exceeding tirzepatide efficacy.
 sources:
   count: 28
   human: 18
   preclinical: 10
   openAccess: 22
-metaTitle: "Cagrilintide Evidence Dossier | PepCodex"
-metaDescription: "Comprehensive evidence review of cagrilintide (AM833), Novo Nordisk's amylin analog. Mechanism, clinical trial data, CagriSema combination, safety profile, and 28+ citations."
+metaTitle: Cagrilintide Evidence Dossier | PepCodex
+metaDescription: >-
+  Comprehensive evidence review of cagrilintide (AM833), Novo Nordisk's amylin
+  analog. Mechanism, clinical trial data, CagriSema combination, safety profile,
+  and 28+ citations.
 interactions:
-  - peptide: "semaglutide"
-    type: "synergistic"
-    description: "CagriSema is the combination product of cagrilintide + semaglutide. Phase 2 data shows -15.6% weight loss vs -5.1% for semaglutide alone. Complementary mechanisms via amylin and GLP-1 pathways."
-  - peptide: "tirzepatide"
-    type: "caution"
-    description: "Both are potent weight loss agents targeting distinct pathways. No combination studies exist. Concurrent use would have unknown safety profile and unclear benefit given overlapping GLP-1 receptor activity."
-  - peptide: "liraglutide"
-    type: "compatible"
-    description: "Cagrilintide monotherapy showed comparable efficacy to liraglutide 3.0 mg in Phase 2. No specific interaction data but both can reduce appetite and slow gastric emptying."
+  - peptide: semaglutide
+    type: synergistic
+    description: >-
+      CagriSema is the combination product of cagrilintide + semaglutide. Phase
+      2 data shows -15.6% weight loss vs -5.1% for semaglutide alone.
+      Complementary mechanisms via amylin and GLP-1 pathways.
+  - peptide: tirzepatide
+    type: caution
+    description: >-
+      Both are potent weight loss agents targeting distinct pathways. No
+      combination studies exist. Concurrent use would have unknown safety
+      profile and unclear benefit given overlapping GLP-1 receptor activity.
+  - peptide: liraglutide
+    type: compatible
+    description: >-
+      Cagrilintide monotherapy showed comparable efficacy to liraglutide 3.0 mg
+      in Phase 2. No specific interaction data but both can reduce appetite and
+      slow gastric emptying.
 molecularInfo:
-  weight: "~4,200 Da"
+  weight: '~4,200 Da'
   chainLength: 37
-  type: "Acylated amylin analog"
-  sequence: "Modified human amylin with amino acid substitutions + C18 fatty acid acylation"
+  type: Acylated amylin analog
+  sequence: >-
+    Modified human amylin with amino acid substitutions + C18 fatty acid
+    acylation
   aminoAcids:
-    - { code: "K", name: "Lysine", position: 1, property: "positive" }
-    - { code: "C", name: "Cysteine", position: 2, property: "polar" }
-    - { code: "N", name: "Asparagine", position: 3, property: "polar" }
-    - { code: "T", name: "Threonine", position: 4, property: "polar" }
-    - { code: "A", name: "Alanine", position: 5, property: "hydrophobic" }
-    - { code: "T", name: "Threonine", position: 6, property: "polar" }
-    - { code: "C", name: "Cysteine", position: 7, property: "polar" }
-    - { code: "A", name: "Alanine", position: 8, property: "hydrophobic" }
-    - { code: "T", name: "Threonine", position: 9, property: "polar" }
-    - { code: "Q", name: "Glutamine", position: 10, property: "polar" }
-    - { code: "R", name: "Arginine", position: 11, property: "positive" }
-    - { code: "L", name: "Leucine", position: 12, property: "hydrophobic" }
-    - { code: "A", name: "Alanine", position: 13, property: "hydrophobic" }
-    - { code: "N", name: "Asparagine", position: 14, property: "polar" }
-    - { code: "F", name: "Phenylalanine", position: 15, property: "hydrophobic" }
-    - { code: "L", name: "Leucine", position: 16, property: "hydrophobic" }
-    - { code: "V", name: "Valine", position: 17, property: "hydrophobic" }
-    - { code: "H", name: "Histidine", position: 18, property: "positive" }
-    - { code: "S", name: "Serine", position: 19, property: "polar" }
-    - { code: "S", name: "Serine", position: 20, property: "polar" }
-    - { code: "N", name: "Asparagine", position: 21, property: "polar" }
-    - { code: "N", name: "Asparagine", position: 22, property: "polar" }
-    - { code: "F", name: "Phenylalanine", position: 23, property: "hydrophobic" }
-    - { code: "G", name: "Glycine", position: 24, property: "polar" }
-    - { code: "A", name: "Alanine", position: 25, property: "hydrophobic" }
-    - { code: "I", name: "Isoleucine", position: 26, property: "hydrophobic" }
-    - { code: "L", name: "Leucine", position: 27, property: "hydrophobic" }
-    - { code: "S", name: "Serine", position: 28, property: "polar" }
-    - { code: "S", name: "Serine", position: 29, property: "polar" }
-    - { code: "T", name: "Threonine", position: 30, property: "polar" }
-    - { code: "N", name: "Asparagine", position: 31, property: "polar" }
-    - { code: "V", name: "Valine", position: 32, property: "hydrophobic" }
-    - { code: "G", name: "Glycine", position: 33, property: "polar" }
-    - { code: "S", name: "Serine", position: 34, property: "polar" }
-    - { code: "N", name: "Asparagine", position: 35, property: "polar" }
-    - { code: "T", name: "Threonine", position: 36, property: "polar" }
-    - { code: "Y", name: "Tyrosine", position: 37, property: "polar" }
+    - code: K
+      name: Lysine
+      position: 1
+      property: positive
+    - code: C
+      name: Cysteine
+      position: 2
+      property: polar
+    - code: 'N'
+      name: Asparagine
+      position: 3
+      property: polar
+    - code: T
+      name: Threonine
+      position: 4
+      property: polar
+    - code: A
+      name: Alanine
+      position: 5
+      property: hydrophobic
+    - code: T
+      name: Threonine
+      position: 6
+      property: polar
+    - code: C
+      name: Cysteine
+      position: 7
+      property: polar
+    - code: A
+      name: Alanine
+      position: 8
+      property: hydrophobic
+    - code: T
+      name: Threonine
+      position: 9
+      property: polar
+    - code: Q
+      name: Glutamine
+      position: 10
+      property: polar
+    - code: R
+      name: Arginine
+      position: 11
+      property: positive
+    - code: L
+      name: Leucine
+      position: 12
+      property: hydrophobic
+    - code: A
+      name: Alanine
+      position: 13
+      property: hydrophobic
+    - code: 'N'
+      name: Asparagine
+      position: 14
+      property: polar
+    - code: F
+      name: Phenylalanine
+      position: 15
+      property: hydrophobic
+    - code: L
+      name: Leucine
+      position: 16
+      property: hydrophobic
+    - code: V
+      name: Valine
+      position: 17
+      property: hydrophobic
+    - code: H
+      name: Histidine
+      position: 18
+      property: positive
+    - code: S
+      name: Serine
+      position: 19
+      property: polar
+    - code: S
+      name: Serine
+      position: 20
+      property: polar
+    - code: 'N'
+      name: Asparagine
+      position: 21
+      property: polar
+    - code: 'N'
+      name: Asparagine
+      position: 22
+      property: polar
+    - code: F
+      name: Phenylalanine
+      position: 23
+      property: hydrophobic
+    - code: G
+      name: Glycine
+      position: 24
+      property: polar
+    - code: A
+      name: Alanine
+      position: 25
+      property: hydrophobic
+    - code: I
+      name: Isoleucine
+      position: 26
+      property: hydrophobic
+    - code: L
+      name: Leucine
+      position: 27
+      property: hydrophobic
+    - code: S
+      name: Serine
+      position: 28
+      property: polar
+    - code: S
+      name: Serine
+      position: 29
+      property: polar
+    - code: T
+      name: Threonine
+      position: 30
+      property: polar
+    - code: 'N'
+      name: Asparagine
+      position: 31
+      property: polar
+    - code: V
+      name: Valine
+      position: 32
+      property: hydrophobic
+    - code: G
+      name: Glycine
+      position: 33
+      property: polar
+    - code: S
+      name: Serine
+      position: 34
+      property: polar
+    - code: 'N'
+      name: Asparagine
+      position: 35
+      property: polar
+    - code: T
+      name: Threonine
+      position: 36
+      property: polar
+    - code: 'Y'
+      name: Tyrosine
+      position: 37
+      property: polar
 evidenceChainedBenefits:
   - mechanism:
-      action: "Amylin receptor (AMY1/2/3) agonism in area postrema triggering satiety signaling"
-      confidence: "established"
+      action: >-
+        Amylin receptor (AMY1/2/3) agonism in area postrema triggering satiety
+        signaling
+      confidence: established
       directStudies: 8
     benefit:
-      claim: "reduce appetite and food intake"
-      qualifier: "shown to"
+      claim: reduce appetite and food intake
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 3
       animalStudies: 5
       cellStudies: 2
       keyFindings:
-        - study: "Lau DCW et al. 2021"
-          type: "human-rct"
-          finding: "Cagrilintide 4.5 mg achieved -10.8% weight loss at 26 weeks in Phase 2 trial with 706 participants"
-          pmid: "34798060"
-        - study: "Hay DL et al. 2015"
-          type: "in-vitro"
-          finding: "Comprehensive characterization of amylin receptor pharmacology and signaling"
-          pmid: "26071095"
+        - study: Lau DCW et al. 2021
+          type: human-rct
+          finding: >-
+            Cagrilintide 4.5 mg achieved -10.8% weight loss at 26 weeks in Phase
+            2 trial with 706 participants
+          pmid: '34798060'
+        - study: Hay DL et al. 2015
+          type: in-vitro
+          finding: >-
+            Comprehensive characterization of amylin receptor pharmacology and
+            signaling
+          pmid: '26071095'
   - mechanism:
-      action: "Leptin sensitization via amylin-mediated restoration of hypothalamic leptin responsiveness"
-      confidence: "supported"
+      action: >-
+        Leptin sensitization via amylin-mediated restoration of hypothalamic
+        leptin responsiveness
+      confidence: supported
       directStudies: 4
     benefit:
-      claim: "overcome leptin resistance in obesity"
-      qualifier: "appears to"
+      claim: overcome leptin resistance in obesity
+      qualifier: appears to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 1
       animalStudies: 4
       cellStudies: 1
       keyFindings:
-        - study: "Roth JD et al. 2008"
-          type: "animal"
-          finding: "Amylin treatment restores leptin responsiveness in diet-induced obese rats, producing synergistic weight loss"
-          pmid: "18458326"
-        - study: "Enebo LB et al. 2021"
-          type: "human-rct"
-          finding: "Cagrilintide + semaglutide achieved -17.1% weight loss at 20 weeks, suggesting complementary mechanisms"
-          pmid: "33894838"
+        - study: Roth JD et al. 2008
+          type: animal
+          finding: >-
+            Amylin treatment restores leptin responsiveness in diet-induced
+            obese rats, producing synergistic weight loss
+          pmid: '18458326'
+        - study: Enebo LB et al. 2021
+          type: human-rct
+          finding: >-
+            Cagrilintide + semaglutide achieved -17.1% weight loss at 20 weeks,
+            suggesting complementary mechanisms
+          pmid: '33894838'
   - mechanism:
-      action: "Delayed gastric emptying via vagal efferent inhibition"
-      confidence: "established"
+      action: Delayed gastric emptying via vagal efferent inhibition
+      confidence: established
       directStudies: 6
     benefit:
-      claim: "prolong satiety and reduce postprandial glucose spikes"
-      qualifier: "shown to"
+      claim: prolong satiety and reduce postprandial glucose spikes
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 2
       animalStudies: 5
       cellStudies: 0
       keyFindings:
-        - study: "Lutz TA et al. 1994"
-          type: "animal"
-          finding: "Amylin dose-dependently reduces food intake and delays gastric emptying in rats"
-          pmid: "8022910"
-        - study: "Frias JP et al. 2023"
-          type: "human-rct"
-          finding: "CagriSema showed -2.2% HbA1c reduction and -15.6% weight loss in T2D patients"
-          pmid: "37364590"
+        - study: Lutz TA et al. 1994
+          type: animal
+          finding: >-
+            Amylin dose-dependently reduces food intake and delays gastric
+            emptying in rats
+          pmid: '8022910'
+        - study: Frias JP et al. 2023
+          type: human-rct
+          finding: >-
+            CagriSema showed -2.2% HbA1c reduction and -15.6% weight loss in T2D
+            patients
+          pmid: '37364590'
   - mechanism:
-      action: "Postprandial glucagon suppression via direct pancreatic alpha-cell effects"
-      confidence: "supported"
+      action: >-
+        Postprandial glucagon suppression via direct pancreatic alpha-cell
+        effects
+      confidence: supported
       directStudies: 4
     benefit:
-      claim: "improve glycemic control in type 2 diabetes"
-      qualifier: "appears to"
+      claim: improve glycemic control in type 2 diabetes
+      qualifier: appears to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 2
       animalStudies: 3
       cellStudies: 2
       keyFindings:
-        - study: "Frias JP et al. 2023"
-          type: "human-rct"
-          finding: "CagriSema showed superior HbA1c reduction (-2.2%) vs semaglutide alone (-1.8%) in T2D"
-          pmid: "37364590"
-        - study: "Smith SR et al. 2008"
-          type: "human-rct"
-          finding: "Pramlintide (amylin analog) demonstrated glycemic benefits as insulin adjunct"
-          pmid: "18753670"
+        - study: Frias JP et al. 2023
+          type: human-rct
+          finding: >-
+            CagriSema showed superior HbA1c reduction (-2.2%) vs semaglutide
+            alone (-1.8%) in T2D
+          pmid: '37364590'
+        - study: Smith SR et al. 2008
+          type: human-rct
+          finding: >-
+            Pramlintide (amylin analog) demonstrated glycemic benefits as
+            insulin adjunct
+          pmid: '18753670'
 conditions:
-  - slug: "obesity"
-    name: "Obesity"
-    researchSummary: "Cagrilintide has shown significant weight loss efficacy in Phase 2 clinical trials. Monotherapy achieved -10.8% weight loss at 26 weeks. When combined with semaglutide (CagriSema), Phase 2 data showed -15.6% to -17.1% weight loss. Phase 3 REDEFINE trials are ongoing with results expected in 2025."
-    relevantStudies: ["34798060", "33894838", "37364590"]
-    relatedPeptides: ["semaglutide", "tirzepatide"]
-  - slug: "type-2-diabetes"
-    name: "Type 2 Diabetes"
-    researchSummary: "CagriSema demonstrated superior glycemic control vs semaglutide alone in Phase 2 trial of T2D patients. HbA1c reduction of -2.2% with CagriSema vs -1.8% with semaglutide. Amylin analogs suppress postprandial glucagon and slow gastric emptying, contributing to glucose control."
-    relevantStudies: ["37364590", "18753670"]
-    relatedPeptides: ["semaglutide", "tirzepatide"]
-  - slug: "metabolic-syndrome"
-    name: "Metabolic Syndrome"
-    researchSummary: "The combination of significant weight loss and improved glycemic control suggests potential benefits for metabolic syndrome. However, no trials have specifically studied cagrilintide for metabolic syndrome endpoints. Effects on lipids, blood pressure, and other metabolic parameters are secondary findings in obesity trials."
-    relevantStudies: ["34798060", "37364590"]
-    relatedPeptides: ["semaglutide", "tirzepatide"]
+  - slug: obesity
+    name: Obesity
+    researchSummary: >-
+      Cagrilintide has shown significant weight loss efficacy in Phase 2
+      clinical trials. Monotherapy achieved -10.8% weight loss at 26 weeks. When
+      combined with semaglutide (CagriSema), Phase 2 data showed -15.6% to
+      -17.1% weight loss. Phase 3 REDEFINE trials are ongoing with results
+      expected in 2025.
+    relevantStudies:
+      - '34798060'
+      - '33894838'
+      - '37364590'
+    relatedPeptides:
+      - semaglutide
+      - tirzepatide
+  - slug: type-2-diabetes
+    name: Type 2 Diabetes
+    researchSummary: >-
+      CagriSema demonstrated superior glycemic control vs semaglutide alone in
+      Phase 2 trial of T2D patients. HbA1c reduction of -2.2% with CagriSema vs
+      -1.8% with semaglutide. Amylin analogs suppress postprandial glucagon and
+      slow gastric emptying, contributing to glucose control.
+    relevantStudies:
+      - '37364590'
+      - '18753670'
+    relatedPeptides:
+      - semaglutide
+      - tirzepatide
+  - slug: metabolic-syndrome
+    name: Metabolic Syndrome
+    researchSummary: >-
+      The combination of significant weight loss and improved glycemic control
+      suggests potential benefits for metabolic syndrome. However, no trials
+      have specifically studied cagrilintide for metabolic syndrome endpoints.
+      Effects on lipids, blood pressure, and other metabolic parameters are
+      secondary findings in obesity trials.
+    relevantStudies:
+      - '34798060'
+      - '37364590'
+    relatedPeptides:
+      - semaglutide
+      - tirzepatide
 timeline:
-  - period: "Week 1-4"
-    effects: "Initial titration period with dose escalation. Appetite suppression begins within days. GI side effects (nausea, vomiting) most common during this phase. Weight loss typically begins but is modest during titration."
-    source: "PMID:34798060"
-  - period: "Week 4-12"
-    effects: "Continued weight loss as maintenance dose is reached. Mean weight loss of approximately 5-7% expected by week 12 based on Phase 2 trajectory. GI side effects typically improve after titration completion."
-    source: "PMID:34798060"
-  - period: "Week 12-26"
-    effects: "Ongoing weight loss approaching plateau. Phase 2 monotherapy showed -10.8% at 26 weeks with cagrilintide 4.5 mg. Combination with semaglutide showed -17.1% at 20 weeks, projecting to greater efficacy with longer treatment."
-    source: "PMID:33894838"
-  - period: "Week 26+"
-    effects: "Long-term maintenance phase. Phase 3 trials (REDEFINE) are 68 weeks duration. Weight loss plateau expected around week 40-68 based on GLP-1 agonist class data. Long-term efficacy and durability under investigation."
+  - period: Week 1-4
+    effects: >-
+      Initial titration period with dose escalation. Appetite suppression begins
+      within days. GI side effects (nausea, vomiting) most common during this
+      phase. Weight loss typically begins but is modest during titration.
+    source: 'PMID:34798060'
+  - period: Week 4-12
+    effects: >-
+      Continued weight loss as maintenance dose is reached. Mean weight loss of
+      approximately 5-7% expected by week 12 based on Phase 2 trajectory. GI
+      side effects typically improve after titration completion.
+    source: 'PMID:34798060'
+  - period: Week 12-26
+    effects: >-
+      Ongoing weight loss approaching plateau. Phase 2 monotherapy showed -10.8%
+      at 26 weeks with cagrilintide 4.5 mg. Combination with semaglutide showed
+      -17.1% at 20 weeks, projecting to greater efficacy with longer treatment.
+    source: 'PMID:33894838'
+  - period: Week 26+
+    effects: >-
+      Long-term maintenance phase. Phase 3 trials (REDEFINE) are 68 weeks
+      duration. Weight loss plateau expected around week 40-68 based on GLP-1
+      agonist class data. Long-term efficacy and durability under investigation.
 qualityChecklist:
   goodSigns:
-    - "Investigational compound - only available through clinical trials"
-    - "Manufactured by Novo Nordisk under pharmaceutical-grade conditions"
-    - "All published trial data from regulatory-grade clinical studies"
-    - "Proper cold chain storage maintained"
-    - "Clear documentation of trial enrollment"
+    - Investigational compound - only available through clinical trials
+    - Manufactured by Novo Nordisk under pharmaceutical-grade conditions
+    - All published trial data from regulatory-grade clinical studies
+    - Proper cold chain storage maintained
+    - Clear documentation of trial enrollment
   warningSigns:
-    - "Any non-trial source claiming to sell cagrilintide"
-    - "Products labeled as cagrilintide from research chemical suppliers"
-    - "Claims of CagriSema availability outside clinical trials"
-    - "Pricing significantly below pharmaceutical development costs"
+    - Any non-trial source claiming to sell cagrilintide
+    - Products labeled as cagrilintide from research chemical suppliers
+    - Claims of CagriSema availability outside clinical trials
+    - Pricing significantly below pharmaceutical development costs
   badSigns:
-    - "Cagrilintide sold online as research chemical (not legitimately available)"
-    - "Any non-Novo Nordisk manufactured product"
-    - "Claims of FDA approval (not yet approved as of January 2026)"
-    - "Combination products from non-trial sources"
-    - "Any product without proper pharmaceutical documentation"
+    - Cagrilintide sold online as research chemical (not legitimately available)
+    - Any non-Novo Nordisk manufactured product
+    - Claims of FDA approval (not yet approved as of January 2026)
+    - Combination products from non-trial sources
+    - Any product without proper pharmaceutical documentation
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

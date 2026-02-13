@@ -25,14 +25,15 @@ v4.0 Content Expansion — Scale from ~593 to ~1,132 high-quality indexable page
 - [ ] **Phase 11: Distribution System** - Instagram, email capture, newsletters
 - [ ] **Phase 12: Monetization Foundation** - Directory, pricing, outreach
 
-### v4.0 Content Expansion (ACTIVE)
-- [ ] **Phase 23: Comparisons Batch 1 + Condition Hubs** - 55 comparisons + 15 condition hubs
-- [ ] **Phase 24: Schema Deployments** - FAQ, HowTo, Drug schema markup
-- [ ] **Phase 25: Glossary Expansion** - 141 new glossary terms
-- [ ] **Phase 26: Bioregulators Batch 1** - 10 Khavinson peptide dossiers + category page
-- [ ] **Phase 27: Bioregulators Batch 2** - 10 more bioregulator dossiers
-- [ ] **Phase 28: Weekly News Blog** - 78 backdated news posts (6 months)
-- [ ] **Phase 29: Comparisons Batch 2 + Calculators** - 180 comparisons + 50 calculator URLs
+### v4.0 Content Expansion (COMPLETE)
+- [x] **Phase 23: Comparisons Batch 1 + Condition Hubs** - 55 comparisons + 15 condition hubs
+- [x] **Phase 24: Schema Deployments** - FAQ, HowTo, Drug schema markup
+- [x] **Phase 25: Glossary Expansion** - 116 new glossary terms
+- [x] **Phase 26: Bioregulators Batch 1** - 10 Khavinson peptide dossiers + category page
+- [x] **Phase 27: Bioregulators Batch 2** - 10 more bioregulator dossiers
+- [x] **Phase 28: Weekly News Blog** - 78 backdated news posts (6 months)
+- [x] **Phase 28.1: QA Audit** - Evidence level audit + comparison accuracy fixes
+- [x] **Phase 29: Comparisons Batch 2 + Calculators** - 179 comparisons + 144 calculator URLs
 
 ### v5.0 Feature Enhancement (DEFERRED)
 *Original v4.0 features deferred to prioritize content expansion.*
@@ -249,13 +250,14 @@ Phase 23 → 24 → 25 → 26 → 27 → 28 → 29
 | 7. Analytics Setup | Complete | 4/4 | 2026-01-27 |
 | 8. Production Verification | Partial | 0/5 | — |
 | 9-12. v3.0 Operations | On Hold | 0/40 | — |
-| 23. Comparisons + Conditions | **Pending** | 0/17 | — |
-| 24. Schema Deployments | Pending | 0/6 | — |
-| 25. Glossary Expansion | Pending | 0/5 | — |
-| 26. Bioregulators Batch 1 | Pending | 0/12 | — |
-| 27. Bioregulators Batch 2 | Pending | 0/10 | — |
-| 28. Weekly News Blog | Pending | 0/5 | — |
-| 29. Comparisons + Calculators | Pending | 0/9 | — |
+| 23. Comparisons + Conditions | Complete | 17/17 | 2026-02-01 |
+| 24. Schema Deployments | Complete | 6/6 | 2026-02-01 |
+| 25. Glossary Expansion | Complete | 5/5 | 2026-02-01 |
+| 26. Bioregulators Batch 1 | Complete | 12/12 | 2026-02-01 |
+| 27. Bioregulators Batch 2 | Complete | 10/10 | 2026-02-02 |
+| 28. Weekly News Blog | Complete | 5/5 | 2026-02-02 |
+| 28.1. QA Audit | Complete | — | 2026-02-12 |
+| 29. Comparisons + Calculators | Complete | 9/9 | 2026-02-12 |
 
 ---
 
@@ -283,4 +285,4 @@ Phase 23 → 24 → 25 → 26 → 27 → 28 → 29
 
 ---
 *Created: 2026-01-19*
-*Updated: 2026-02-01 for v4.0 Content Expansion pivot*
+*Updated: 2026-02-12 — v4.0 Content Expansion COMPLETE*

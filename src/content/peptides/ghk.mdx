@@ -1,150 +1,233 @@
 ---
-name: "GHK"
-aliases: ["Glycyl-Histidyl-Lysine", "GHK tripeptide", "Liver cell growth factor"]
-category: "repair-recovery"
-evidenceStrength: "low"
-lastUpdated: 2026-01-28
-comparators: ["ghk-cu", "bpc-157", "matrixyl"]
-summary: "A naturally occurring tripeptide (Gly-His-Lys) with copper-binding affinity and wound healing properties. The base form of GHK without added copper. Endogenous to human plasma where it circulates bound to copper. Declines with age. Most research focuses on the copper-complexed form (GHK-Cu), making evidence for GHK alone limited. Primarily relevant as the precursor to GHK-Cu."
+name: GHK
+aliases:
+  - Glycyl-Histidyl-Lysine
+  - GHK tripeptide
+  - Liver cell growth factor
+category: repair-recovery
+evidenceStrength: moderate
+lastUpdated: 2026-01-28T00:00:00.000Z
+comparators:
+  - ghk-cu
+  - bpc-157
+  - matrixyl
+summary: >-
+  A naturally occurring tripeptide (Gly-His-Lys) with copper-binding affinity
+  and wound healing properties. The base form of GHK without added copper.
+  Endogenous to human plasma where it circulates bound to copper. Declines with
+  age. Most research focuses on the copper-complexed form (GHK-Cu), making
+  evidence for GHK alone limited. Primarily relevant as the precursor to GHK-Cu.
 sources:
   count: 18
   human: 3
   preclinical: 10
   openAccess: 8
-metaTitle: "GHK Evidence Dossier | PepCodex"
-metaDescription: "Evidence review of GHK, the base tripeptide without copper. Comparison to GHK-Cu, natural occurrence, mechanism, and research status."
+metaTitle: GHK Evidence Dossier | PepCodex
+metaDescription: >-
+  Evidence review of GHK, the base tripeptide without copper. Comparison to
+  GHK-Cu, natural occurrence, mechanism, and research status.
 interactions:
-  - peptide: "ghk-cu"
-    type: "avoid"
-    description: "GHK is the base peptide that complexes with copper to form GHK-Cu. Using both is redundant - GHK-Cu is the biologically active form."
-  - peptide: "bpc-157"
-    type: "compatible"
-    description: "Different regenerative mechanisms - GHK for copper delivery and collagen synthesis, BPC-157 for angiogenesis and tissue healing."
-  - peptide: "tb-500"
-    type: "compatible"
-    description: "Different tissue repair targets - GHK affects gene expression and copper enzymes, TB-500 regulates actin for cell migration."
-  - peptide: "ll-37"
-    type: "compatible"
-    description: "GHK's wound healing effects may complement LL-37's antimicrobial properties in wound care applications."
-  - peptide: "epithalon"
-    type: "compatible"
-    description: "Different anti-aging mechanisms - GHK for gene expression modulation and tissue repair, epithalon for telomerase activation."
+  - peptide: ghk-cu
+    type: avoid
+    description: >-
+      GHK is the base peptide that complexes with copper to form GHK-Cu. Using
+      both is redundant - GHK-Cu is the biologically active form.
+  - peptide: bpc-157
+    type: compatible
+    description: >-
+      Different regenerative mechanisms - GHK for copper delivery and collagen
+      synthesis, BPC-157 for angiogenesis and tissue healing.
+  - peptide: tb-500
+    type: compatible
+    description: >-
+      Different tissue repair targets - GHK affects gene expression and copper
+      enzymes, TB-500 regulates actin for cell migration.
+  - peptide: ll-37
+    type: compatible
+    description: >-
+      GHK's wound healing effects may complement LL-37's antimicrobial
+      properties in wound care applications.
+  - peptide: epithalon
+    type: compatible
+    description: >-
+      Different anti-aging mechanisms - GHK for gene expression modulation and
+      tissue repair, epithalon for telomerase activation.
 molecularInfo:
-  weight: "340.38 Da"
+  weight: 340.38 Da
   chainLength: 3
-  type: "Tripeptide"
-  sequence: "GHK"
+  type: Tripeptide
+  sequence: GHK
   aminoAcids:
-    - { code: "G", name: "Glycine", position: 1, property: "polar" }
-    - { code: "H", name: "Histidine", position: 2, property: "positive" }
-    - { code: "K", name: "Lysine", position: 3, property: "positive" }
+    - code: G
+      name: Glycine
+      position: 1
+      property: polar
+    - code: H
+      name: Histidine
+      position: 2
+      property: positive
+    - code: K
+      name: Lysine
+      position: 3
+      property: positive
 evidenceChainedBenefits:
   - mechanism:
-      action: "High-affinity copper binding enabling delivery to copper-dependent enzymes"
-      confidence: "supported"
+      action: >-
+        High-affinity copper binding enabling delivery to copper-dependent
+        enzymes
+      confidence: supported
       directStudies: 8
     benefit:
-      claim: "support wound healing and tissue regeneration"
-      qualifier: "may"
+      claim: support wound healing and tissue regeneration
+      qualifier: may
     evidence:
-      level: "low"
+      level: low
       humanStudies: 2
       animalStudies: 6
       cellStudies: 4
       keyFindings:
-        - study: "Maquart FX et al. 1988"
-          type: "in-vitro"
-          finding: "GHK-Cu stimulated collagen synthesis in fibroblast cultures in a dose-dependent manner, maximizing at 10^-9 M"
-          pmid: "3169264"
-        - study: "Siméon A et al. 2000"
-          type: "animal"
-          finding: "GHK-Cu treatment increased collagen 9-fold and enhanced glycosaminoglycan production in rat wounds"
-          pmid: "10759448"
+        - study: Maquart FX et al. 1988
+          type: in-vitro
+          finding: >-
+            GHK-Cu stimulated collagen synthesis in fibroblast cultures in a
+            dose-dependent manner, maximizing at 10^-9 M
+          pmid: '3169264'
+        - study: Siméon A et al. 2000
+          type: animal
+          finding: >-
+            GHK-Cu treatment increased collagen 9-fold and enhanced
+            glycosaminoglycan production in rat wounds
+          pmid: '10759448'
   - mechanism:
-      action: "Gene expression modulation affecting 4000+ genes related to tissue repair"
-      confidence: "supported"
+      action: >-
+        Gene expression modulation affecting 4000+ genes related to tissue
+        repair
+      confidence: supported
       directStudies: 5
     benefit:
-      claim: "improve skin appearance and reduce signs of aging"
-      qualifier: "may"
+      claim: improve skin appearance and reduce signs of aging
+      qualifier: may
     evidence:
-      level: "low"
+      level: low
       humanStudies: 3
       animalStudies: 2
       cellStudies: 6
       keyFindings:
-        - study: "Pickart L, Margolina A 2018"
-          type: "in-vitro"
-          finding: "Demonstrated GHK modulates expression of 4,000+ human genes including DNA repair, antioxidant, and tissue remodeling pathways"
-          pmid: "29986520"
-        - study: "Finkley MB et al. 2005"
-          type: "human-observational"
-          finding: "GHK-Cu cream applied for 12 weeks increased skin density and thickness, reduced laxity, and improved fine lines in 71 women"
-          pmid: "16029674"
+        - study: 'Pickart L, Margolina A 2018'
+          type: in-vitro
+          finding: >-
+            Demonstrated GHK modulates expression of 4,000+ human genes
+            including DNA repair, antioxidant, and tissue remodeling pathways
+          pmid: '29986520'
+        - study: Finkley MB et al. 2005
+          type: human-observational
+          finding: >-
+            GHK-Cu cream applied for 12 weeks increased skin density and
+            thickness, reduced laxity, and improved fine lines in 71 women
+          pmid: '16029674'
   - mechanism:
-      action: "Antioxidant activity via inhibition of ferritin iron release and modulation of SOD"
-      confidence: "emerging"
+      action: >-
+        Antioxidant activity via inhibition of ferritin iron release and
+        modulation of SOD
+      confidence: emerging
       directStudies: 4
     benefit:
-      claim: "provide antioxidant protection in tissues"
-      qualifier: "suggested to"
+      claim: provide antioxidant protection in tissues
+      qualifier: suggested to
     evidence:
-      level: "very-low"
+      level: very-low
       humanStudies: 0
       animalStudies: 3
       cellStudies: 4
       keyFindings:
-        - study: "Pickart L 2012"
-          type: "in-vitro"
-          finding: "GHK-Cu inhibits lipid peroxidation by binding to ferritin channels and preventing Fe(II) release in damaged tissues"
-          pmid: "22666519"
-        - study: "Arul V et al. 2007"
-          type: "animal"
-          finding: "GHK-collagen dressing increased glutathione and ascorbic acid levels while improving wound healing in diabetic rats"
-          pmid: "17173003"
+        - study: Pickart L 2012
+          type: in-vitro
+          finding: >-
+            GHK-Cu inhibits lipid peroxidation by binding to ferritin channels
+            and preventing Fe(II) release in damaged tissues
+          pmid: '22666519'
+        - study: Arul V et al. 2007
+          type: animal
+          finding: >-
+            GHK-collagen dressing increased glutathione and ascorbic acid levels
+            while improving wound healing in diabetic rats
+          pmid: '17173003'
 conditions:
-  - slug: "wound-healing"
-    name: "Wound Healing"
-    researchSummary: "GHK's wound healing effects are primarily attributed to its copper-complexed form (GHK-Cu). Studies show enhanced collagen synthesis, glycosaminoglycan production, and tissue remodeling. GHK without copper has minimal biological activity for wound healing."
-    relevantStudies: ["3169264", "10759448"]
-    relatedPeptides: ["ghk-cu", "bpc-157", "tb-500"]
-  - slug: "skin-aging"
-    name: "Skin Aging"
-    researchSummary: "Research on GHK for skin aging primarily involves GHK-Cu formulations. Studies show improved skin density, thickness, and reduced laxity after topical application. The base GHK tripeptide without copper is not used for cosmetic applications."
-    relevantStudies: ["29986520", "16029674"]
-    relatedPeptides: ["ghk-cu", "epithalon"]
-  - slug: "gene-expression"
-    name: "Gene Expression Modulation"
-    researchSummary: "GHK-Cu modulates expression of over 4,000 human genes affecting DNA repair, antioxidant response, and tissue remodeling. This broad gene expression effect is the proposed mechanism for its regenerative properties. GHK alone has not been studied for these effects."
-    relevantStudies: ["29986520"]
-    relatedPeptides: ["ghk-cu"]
+  - slug: wound-healing
+    name: Wound Healing
+    researchSummary: >-
+      GHK's wound healing effects are primarily attributed to its
+      copper-complexed form (GHK-Cu). Studies show enhanced collagen synthesis,
+      glycosaminoglycan production, and tissue remodeling. GHK without copper
+      has minimal biological activity for wound healing.
+    relevantStudies:
+      - '3169264'
+      - '10759448'
+    relatedPeptides:
+      - ghk-cu
+      - bpc-157
+      - tb-500
+  - slug: skin-aging
+    name: Skin Aging
+    researchSummary: >-
+      Research on GHK for skin aging primarily involves GHK-Cu formulations.
+      Studies show improved skin density, thickness, and reduced laxity after
+      topical application. The base GHK tripeptide without copper is not used
+      for cosmetic applications.
+    relevantStudies:
+      - '29986520'
+      - '16029674'
+    relatedPeptides:
+      - ghk-cu
+      - epithalon
+  - slug: gene-expression
+    name: Gene Expression Modulation
+    researchSummary: >-
+      GHK-Cu modulates expression of over 4,000 human genes affecting DNA
+      repair, antioxidant response, and tissue remodeling. This broad gene
+      expression effect is the proposed mechanism for its regenerative
+      properties. GHK alone has not been studied for these effects.
+    relevantStudies:
+      - '29986520'
+    relatedPeptides:
+      - ghk-cu
 timeline:
-  - period: "Acute"
-    effects: "GHK rapidly binds copper with extremely high affinity (Kd ~10^-16 M). In vivo, GHK circulates bound to copper and is released from extracellular matrix during tissue injury."
-    source: "PMID:29986520"
-  - period: "Days to weeks"
-    effects: "GHK-Cu cream applied for 12 weeks showed improvements in skin density and fine lines. Wound healing effects in animal models observed over days to weeks of treatment."
-    source: "PMID:16029674"
-  - period: "Long-term"
-    effects: "Long-term effects of GHK (without copper) supplementation are not characterized. Endogenous GHK levels decline with age (200 ng/mL at age 20 to 80 ng/mL at age 60). Implications of supplementing GHK alone are unknown."
+  - period: Acute
+    effects: >-
+      GHK rapidly binds copper with extremely high affinity (Kd ~10^-16 M). In
+      vivo, GHK circulates bound to copper and is released from extracellular
+      matrix during tissue injury.
+    source: 'PMID:29986520'
+  - period: Days to weeks
+    effects: >-
+      GHK-Cu cream applied for 12 weeks showed improvements in skin density and
+      fine lines. Wound healing effects in animal models observed over days to
+      weeks of treatment.
+    source: 'PMID:16029674'
+  - period: Long-term
+    effects: >-
+      Long-term effects of GHK (without copper) supplementation are not
+      characterized. Endogenous GHK levels decline with age (200 ng/mL at age 20
+      to 80 ng/mL at age 60). Implications of supplementing GHK alone are
+      unknown.
 qualityChecklist:
   goodSigns:
-    - "White to off-white lyophilized powder"
-    - "Complete dissolution in appropriate solvent"
-    - "Certificate of analysis showing >95% purity"
-    - "HPLC verification of identity"
-    - "Mass spectrometry confirmation (340.38 Da)"
+    - White to off-white lyophilized powder
+    - Complete dissolution in appropriate solvent
+    - Certificate of analysis showing >95% purity
+    - HPLC verification of identity
+    - Mass spectrometry confirmation (340.38 Da)
   warningSigns:
-    - "Sold as substitute for GHK-Cu"
-    - "No specification of copper content (or lack thereof)"
-    - "No third-party testing"
-    - "Claims of GHK-Cu-like effects from base peptide"
+    - Sold as substitute for GHK-Cu
+    - No specification of copper content (or lack thereof)
+    - No third-party testing
+    - Claims of GHK-Cu-like effects from base peptide
   badSigns:
-    - "Discolored powder"
-    - "Particles or cloudiness after dissolution"
-    - "No certificate of analysis"
-    - "Cannot verify source"
-    - "Claims of standalone efficacy (all research uses GHK-Cu)"
+    - Discolored powder
+    - Particles or cloudiness after dissolution
+    - No certificate of analysis
+    - Cannot verify source
+    - Claims of standalone efficacy (all research uses GHK-Cu)
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

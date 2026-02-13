@@ -1,235 +1,388 @@
 ---
-name: "Ipamorelin"
-aliases: ["NNC 26-0161", "NNC-26-0161"]
-category: "hormonal"
-evidenceStrength: "low"
-lastUpdated: 2026-01-22
-comparators: ["ghrp-6", "cjc-1295", "sermorelin", "mk-677"]
-summary: "A growth hormone secretagogue that stimulates GH release without significant effects on cortisol or prolactin. Developed by Novo Nordisk (Denmark); limited clinical development despite promising early data."
+name: Ipamorelin
+aliases:
+  - NNC 26-0161
+  - NNC-26-0161
+category: hormonal
+evidenceStrength: moderate
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - ghrp-6
+  - cjc-1295
+  - sermorelin
+  - mk-677
+summary: >-
+  A growth hormone secretagogue that stimulates GH release without significant
+  effects on cortisol or prolactin. Developed by Novo Nordisk (Denmark); limited
+  clinical development despite promising early data.
 sources:
   count: 18
   human: 4
   preclinical: 9
   openAccess: 11
-metaTitle: "Ipamorelin Evidence Dossier | PepCodex"
-metaDescription: "Evidence review of ipamorelin. Mechanism as growth hormone secretagogue, clinical data, and comparison to other GH-releasing peptides. Global research from Denmark, Sweden, Germany, Japan, USA."
+metaTitle: Ipamorelin Evidence Dossier | PepCodex
+metaDescription: >-
+  Evidence review of ipamorelin. Mechanism as growth hormone secretagogue,
+  clinical data, and comparison to other GH-releasing peptides. Global research
+  from Denmark, Sweden, Germany, Japan, USA.
 interactions:
-  - peptide: "cjc-1295"
-    type: "synergistic"
-    description: "Frequently combined in research. Ipamorelin (ghrelin receptor) and CJC-1295 (GHRH receptor) act through complementary pathways, potentially producing additive GH release effects."
-    source: "18174396"
-  - peptide: "sermorelin"
-    type: "synergistic"
-    description: "GHRH + GHRP synergy demonstrated in human studies. Sermorelin amplifies the GH pulse while ipamorelin initiates release. Combined effect may exceed either alone."
-  - peptide: "ghrp-6"
-    type: "compatible"
-    description: "Both act on ghrelin receptor with different selectivity profiles. Ipamorelin is more selective with less cortisol/prolactin effects. No clear benefit to combining same-mechanism agents."
-  - peptide: "ghrp-2"
-    type: "compatible"
-    description: "Same receptor target (GHS-R1a). GHRP-2 is more potent but less selective. No established rationale for combination."
-  - peptide: "mk-677"
-    type: "compatible"
-    description: "Both stimulate GH via ghrelin pathway. MK-677 is oral with longer duration. May be redundant to combine, though mechanisms slightly differ."
-  - peptide: "semaglutide"
-    type: "caution"
-    description: "GH secretagogues may affect glucose metabolism. Monitor blood glucose if using with GLP-1 agonists in diabetic patients."
-  - peptide: "tesamorelin"
-    type: "synergistic"
-    description: "Tesamorelin (GHRH analog) and ipamorelin (GHRP) act through complementary pathways. Established GHRH+GHRP synergy in GH release."
+  - peptide: cjc-1295
+    type: synergistic
+    description: >-
+      Frequently combined in research. Ipamorelin (ghrelin receptor) and
+      CJC-1295 (GHRH receptor) act through complementary pathways, potentially
+      producing additive GH release effects.
+    source: '18174396'
+  - peptide: sermorelin
+    type: synergistic
+    description: >-
+      GHRH + GHRP synergy demonstrated in human studies. Sermorelin amplifies
+      the GH pulse while ipamorelin initiates release. Combined effect may
+      exceed either alone.
+  - peptide: ghrp-6
+    type: compatible
+    description: >-
+      Both act on ghrelin receptor with different selectivity profiles.
+      Ipamorelin is more selective with less cortisol/prolactin effects. No
+      clear benefit to combining same-mechanism agents.
+  - peptide: ghrp-2
+    type: compatible
+    description: >-
+      Same receptor target (GHS-R1a). GHRP-2 is more potent but less selective.
+      No established rationale for combination.
+  - peptide: mk-677
+    type: compatible
+    description: >-
+      Both stimulate GH via ghrelin pathway. MK-677 is oral with longer
+      duration. May be redundant to combine, though mechanisms slightly differ.
+  - peptide: semaglutide
+    type: caution
+    description: >-
+      GH secretagogues may affect glucose metabolism. Monitor blood glucose if
+      using with GLP-1 agonists in diabetic patients.
+  - peptide: tesamorelin
+    type: synergistic
+    description: >-
+      Tesamorelin (GHRH analog) and ipamorelin (GHRP) act through complementary
+      pathways. Established GHRH+GHRP synergy in GH release.
 molecularInfo:
-  weight: "711.85 Da"
+  weight: 711.85 Da
   chainLength: 5
-  type: "Pentapeptide Growth Hormone Secretagogue"
-  sequence: "Aib-H-D-2Nal-D-Phe-K-NH2"
+  type: Pentapeptide Growth Hormone Secretagogue
+  sequence: Aib-H-D-2Nal-D-Phe-K-NH2
   aminoAcids:
-    - { code: "Aib", name: "Aminoisobutyric Acid", position: 1, property: "modified" }
-    - { code: "H", name: "Histidine", position: 2, property: "positive" }
-    - { code: "Nal", name: "D-2-Naphthylalanine", position: 3, property: "modified" }
-    - { code: "dF", name: "D-Phenylalanine", position: 4, property: "modified" }
-    - { code: "K", name: "Lysine", position: 5, property: "positive" }
+    - code: Aib
+      name: Aminoisobutyric Acid
+      position: 1
+      property: modified
+    - code: H
+      name: Histidine
+      position: 2
+      property: positive
+    - code: Nal
+      name: D-2-Naphthylalanine
+      position: 3
+      property: modified
+    - code: dF
+      name: D-Phenylalanine
+      position: 4
+      property: modified
+    - code: K
+      name: Lysine
+      position: 5
+      property: positive
 evidenceChainedBenefits:
   - mechanism:
-      action: "Selective GHS-R1a (ghrelin receptor) agonism via Gq/11 signaling"
-      confidence: "established"
+      action: Selective GHS-R1a (ghrelin receptor) agonism via Gq/11 signaling
+      confidence: established
       directStudies: 8
     benefit:
-      claim: "stimulate growth hormone release without affecting cortisol or prolactin"
-      qualifier: "shown to"
+      claim: stimulate growth hormone release without affecting cortisol or prolactin
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 2
       animalStudies: 5
       cellStudies: 2
       keyFindings:
-        - study: "Raun K et al. 1998"
-          type: "animal"
-          finding: "First selective GH secretagogue identified; no ACTH/cortisol release even at >200x ED50"
-          pmid: "9849822"
-        - study: "Gobburu JV et al. 1999"
-          type: "human-observational"
-          finding: "SC50 214 nmol/L; half-life 2 hours; dose-proportional PK in 40 healthy males"
-          pmid: "10496658"
+        - study: Raun K et al. 1998
+          type: animal
+          finding: >-
+            First selective GH secretagogue identified; no ACTH/cortisol release
+            even at >200x ED50
+          pmid: '9849822'
+        - study: Gobburu JV et al. 1999
+          type: human-observational
+          finding: >-
+            SC50 214 nmol/L; half-life 2 hours; dose-proportional PK in 40
+            healthy males
+          pmid: '10496658'
   - mechanism:
-      action: "Phospholipase C activation and intracellular Ca2+ mobilization"
-      confidence: "established"
+      action: Phospholipase C activation and intracellular Ca2+ mobilization
+      confidence: established
       directStudies: 5
     benefit:
-      claim: "produce dose-dependent GH release with physiologic pulsatility"
-      qualifier: "shown to"
+      claim: produce dose-dependent GH release with physiologic pulsatility
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 2
       animalStudies: 4
       cellStudies: 3
       keyFindings:
-        - study: "Gobburu JV et al. 1999"
-          type: "human-observational"
-          finding: "Single GH release episode with peak at 0.67 hours; Max GH production 694 mIU/L/h"
-          pmid: "10496658"
-        - study: "Hansen BS et al. 1999"
-          type: "animal"
-          finding: "GHS pharmacology characterized with ipamorelin as reference compound"
-          pmid: "10427163"
+        - study: Gobburu JV et al. 1999
+          type: human-observational
+          finding: >-
+            Single GH release episode with peak at 0.67 hours; Max GH production
+            694 mIU/L/h
+          pmid: '10496658'
+        - study: Hansen BS et al. 1999
+          type: animal
+          finding: GHS pharmacology characterized with ipamorelin as reference compound
+          pmid: '10427163'
   - mechanism:
-      action: "GHS-R1a activation in bone tissue"
-      confidence: "supported"
+      action: GHS-R1a activation in bone tissue
+      confidence: supported
       directStudies: 3
     benefit:
-      claim: "increase bone mineral content"
-      qualifier: "may"
+      claim: increase bone mineral content
+      qualifier: may
     evidence:
-      level: "low"
+      level: low
       humanStudies: 0
       animalStudies: 3
       cellStudies: 1
       keyFindings:
-        - study: "Andersen NB et al. 2001"
-          type: "animal"
-          finding: "12-week treatment increased whole-body BMC by 11% in adult female rats"
-          pmid: "10828840"
-        - study: "Johansen PB et al. 1999"
-          type: "animal"
-          finding: "Longitudinal bone growth in hypophysectomized rats comparable to GH treatment"
-          pmid: "10373343"
+        - study: Andersen NB et al. 2001
+          type: animal
+          finding: >-
+            12-week treatment increased whole-body BMC by 11% in adult female
+            rats
+          pmid: '10828840'
+        - study: Johansen PB et al. 1999
+          type: animal
+          finding: >-
+            Longitudinal bone growth in hypophysectomized rats comparable to GH
+            treatment
+          pmid: '10373343'
   - mechanism:
-      action: "GHS-R1a activation with preserved peptidase resistance"
-      confidence: "supported"
+      action: GHS-R1a activation with preserved peptidase resistance
+      confidence: supported
       directStudies: 4
     benefit:
-      claim: "be well-tolerated in clinical settings"
-      qualifier: "appears to"
+      claim: be well-tolerated in clinical settings
+      qualifier: appears to
     evidence:
-      level: "low"
+      level: low
       humanStudies: 1
       animalStudies: 3
       cellStudies: 0
       keyFindings:
-        - study: "Beck DE et al. 2014"
-          type: "human-rct"
-          finding: "Phase 2 POI trial (N=114): well tolerated but no efficacy vs placebo"
-          pmid: "25331030"
-        - study: "Sinha DK et al. 2020"
-          type: "human-observational"
-          finding: "Review confirms ipamorelin selectivity for GH with minimal side effects"
-          pmid: "32257856"
+        - study: Beck DE et al. 2014
+          type: human-rct
+          finding: 'Phase 2 POI trial (N=114): well tolerated but no efficacy vs placebo'
+          pmid: '25331030'
+        - study: Sinha DK et al. 2020
+          type: human-observational
+          finding: >-
+            Review confirms ipamorelin selectivity for GH with minimal side
+            effects
+          pmid: '32257856'
 conditions:
-  - slug: "growth-hormone-release"
-    name: "Growth Hormone Release"
-    researchSummary: "Ipamorelin was designed by Novo Nordisk as a selective growth hormone secretagogue with minimal effects on cortisol and prolactin. Human studies demonstrate dose-dependent GH release through ghrelin receptor (GHS-R1a) activation.
+  - slug: growth-hormone-release
+    name: Growth Hormone Release
+    researchSummary: >-
+      Ipamorelin was designed by Novo Nordisk as a selective growth hormone
+      secretagogue with minimal effects on cortisol and prolactin. Human studies
+      demonstrate dose-dependent GH release through ghrelin receptor (GHS-R1a)
+      activation.
 
-The key advantage over older GH secretagogues (GHRP-6, GHRP-2) is selectivity - ipamorelin produces GH release without the cortisol elevation, prolactin increase, or appetite stimulation seen with less selective agents.
+      The key advantage over older GH secretagogues (GHRP-6, GHRP-2) is
+      selectivity - ipamorelin produces GH release without the cortisol
+      elevation, prolactin increase, or appetite stimulation seen with less
+      selective agents.
 
-Clinical development was discontinued after Phase 2 trials for post-operative ileus failed to show efficacy. The peptide is not approved for any indication but remains studied in research contexts."
-    relevantStudies: ["9849822", "10604470", "25331030"]
-    relatedPeptides: ["cjc-1295", "sermorelin", "ghrp-6", "mk-677"]
-  - slug: "anti-aging"
-    name: "Anti-Aging"
-    researchSummary: "Interest in ipamorelin for anti-aging stems from its ability to stimulate GH release while minimizing side effects. The selective nature of ipamorelin may make it more suitable for long-term use compared to other GH secretagogues.
+      Clinical development was discontinued after Phase 2 trials for
+      post-operative ileus failed to show efficacy. The peptide is not approved
+      for any indication but remains studied in research contexts.
+    relevantStudies:
+      - '9849822'
+      - '10604470'
+      - '25331030'
+    relatedPeptides:
+      - cjc-1295
+      - sermorelin
+      - ghrp-6
+      - mk-677
+  - slug: anti-aging
+    name: Anti-Aging
+    researchSummary: >-
+      Interest in ipamorelin for anti-aging stems from its ability to stimulate
+      GH release while minimizing side effects. The selective nature of
+      ipamorelin may make it more suitable for long-term use compared to other
+      GH secretagogues.
 
-Growth hormone affects body composition, skin quality, energy levels, and potentially cognitive function. Restoring more youthful GH levels is a common goal in anti-aging medicine.
+      Growth hormone affects body composition, skin quality, energy levels, and
+      potentially cognitive function. Restoring more youthful GH levels is a
+      common goal in anti-aging medicine.
 
-No clinical trials have evaluated ipamorelin specifically for anti-aging endpoints. The long-term safety of chronic GH secretagogue use remains uncertain."
-    relevantStudies: ["32257856", "9849822"]
-    relatedPeptides: ["cjc-1295", "epithalon", "mots-c"]
-  - slug: "sleep-improvement"
-    name: "Sleep Improvement"
-    researchSummary: "Ipamorelin is often combined with CJC-1295 in protocols targeting sleep improvement. GH secretion is closely linked to sleep architecture, with the majority of GH release occurring during deep sleep.
+      No clinical trials have evaluated ipamorelin specifically for anti-aging
+      endpoints. The long-term safety of chronic GH secretagogue use remains
+      uncertain.
+    relevantStudies:
+      - '32257856'
+      - '9849822'
+    relatedPeptides:
+      - cjc-1295
+      - epithalon
+      - mots-c
+  - slug: sleep-improvement
+    name: Sleep Improvement
+    researchSummary: >-
+      Ipamorelin is often combined with CJC-1295 in protocols targeting sleep
+      improvement. GH secretion is closely linked to sleep architecture, with
+      the majority of GH release occurring during deep sleep.
 
-The pulsatile GH release pattern induced by ipamorelin more closely mimics physiological secretion than continuous GH elevation. This may be relevant for sleep-related benefits.
+      The pulsatile GH release pattern induced by ipamorelin more closely mimics
+      physiological secretion than continuous GH elevation. This may be relevant
+      for sleep-related benefits.
 
-No specific clinical trials have evaluated ipamorelin for sleep quality. Any sleep benefits would be theoretical based on GH physiology."
-    relevantStudies: ["9849822"]
-    relatedPeptides: ["cjc-1295", "dsip"]
-  - slug: "recovery"
-    name: "Recovery"
-    researchSummary: "The GH/IGF-1 axis plays important roles in tissue repair and recovery. Ipamorelin's selective GH-releasing effect may support recovery without the side effects associated with less selective secretagogues.
+      No specific clinical trials have evaluated ipamorelin for sleep quality.
+      Any sleep benefits would be theoretical based on GH physiology.
+    relevantStudies:
+      - '9849822'
+    relatedPeptides:
+      - cjc-1295
+      - dsip
+  - slug: recovery
+    name: Recovery
+    researchSummary: >-
+      The GH/IGF-1 axis plays important roles in tissue repair and recovery.
+      Ipamorelin's selective GH-releasing effect may support recovery without
+      the side effects associated with less selective secretagogues.
 
-Athletes and fitness enthusiasts have shown interest in ipamorelin for potentially enhancing recovery between training sessions. The clean GH release profile is considered advantageous.
+      Athletes and fitness enthusiasts have shown interest in ipamorelin for
+      potentially enhancing recovery between training sessions. The clean GH
+      release profile is considered advantageous.
 
-No clinical evidence specifically supports ipamorelin for recovery enhancement. The peptide is prohibited in athletic competition by WADA."
-    relevantStudies: ["10604470", "32257856"]
-    relatedPeptides: ["cjc-1295", "bpc-157", "tb-500"]
-  - slug: "body-composition"
-    name: "Body Composition"
-    researchSummary: "Growth hormone has well-documented effects on body composition, promoting fat loss and muscle preservation. Ipamorelin's GH-releasing effect may support favorable body composition changes.
+      No clinical evidence specifically supports ipamorelin for recovery
+      enhancement. The peptide is prohibited in athletic competition by WADA.
+    relevantStudies:
+      - '10604470'
+      - '32257856'
+    relatedPeptides:
+      - cjc-1295
+      - bpc-157
+      - tb-500
+  - slug: body-composition
+    name: Body Composition
+    researchSummary: >-
+      Growth hormone has well-documented effects on body composition, promoting
+      fat loss and muscle preservation. Ipamorelin's GH-releasing effect may
+      support favorable body composition changes.
 
-Danish and Swedish bone studies showed ipamorelin's effects on bone metabolism, suggesting broader effects on tissue composition beyond just GH release.
+      Danish and Swedish bone studies showed ipamorelin's effects on bone
+      metabolism, suggesting broader effects on tissue composition beyond just
+      GH release.
 
-No clinical trials have evaluated ipamorelin specifically for body composition changes. The magnitude of effects achievable with GH secretagogues versus direct GH administration remains uncertain."
-    relevantStudies: ["9849822", "10604470"]
-    relatedPeptides: ["cjc-1295", "mk-677", "tesamorelin"]
-  - slug: "bone-health"
-    name: "Bone Health"
-    researchSummary: "Scandinavian research groups studied ipamorelin's effects on bone metabolism. The GH/IGF-1 axis is important for bone formation and maintenance.
+      No clinical trials have evaluated ipamorelin specifically for body
+      composition changes. The magnitude of effects achievable with GH
+      secretagogues versus direct GH administration remains uncertain.
+    relevantStudies:
+      - '9849822'
+      - '10604470'
+    relatedPeptides:
+      - cjc-1295
+      - mk-677
+      - tesamorelin
+  - slug: bone-health
+    name: Bone Health
+    researchSummary: >-
+      Scandinavian research groups studied ipamorelin's effects on bone
+      metabolism. The GH/IGF-1 axis is important for bone formation and
+      maintenance.
 
-Studies in rats showed increased bone formation markers with ipamorelin administration. Danish-Swedish collaboration examined potential applications in bone healing and osteoporosis.
+      Studies in rats showed increased bone formation markers with ipamorelin
+      administration. Danish-Swedish collaboration examined potential
+      applications in bone healing and osteoporosis.
 
-Clinical development focused on post-operative ileus rather than bone health, so human bone outcomes data is limited. The bone effects remain primarily preclinical observations."
-    relevantStudies: ["9849822", "10604470"]
-    relatedPeptides: ["cjc-1295", "sermorelin"]
+      Clinical development focused on post-operative ileus rather than bone
+      health, so human bone outcomes data is limited. The bone effects remain
+      primarily preclinical observations.
+    relevantStudies:
+      - '9849822'
+      - '10604470'
+    relatedPeptides:
+      - cjc-1295
+      - sermorelin
 timeline:
-  - period: "First Dose"
-    effects: "Based on Phase 1 data: GH release begins within 15-30 minutes of injection. Peak GH levels occur approximately 30-60 minutes post-injection. Effects are acute and pulsatile."
-    source: "PMID:9849822"
-  - period: "Week 1-2"
-    effects: "With daily or twice-daily dosing, GH pulsatility patterns established. Early studies showed dose-dependent GH release without significant cortisol or prolactin elevation. No desensitization observed."
-    source: "PMID:9849822"
-  - period: "Week 2-8"
-    effects: "Sustained GH/IGF-1 elevations with continued use. Gastrointestinal motility effects noted in post-operative trials. Body composition changes may begin to become apparent."
-    source: "PMID:10604470"
-  - period: "Week 8+"
-    effects: "Limited long-term data. Phase 2 POI trials used short-term administration. Extended use outcomes not well-characterized in clinical trials. No approved indications exist."
+  - period: First Dose
+    effects: >-
+      Based on Phase 1 data: GH release begins within 15-30 minutes of
+      injection. Peak GH levels occur approximately 30-60 minutes
+      post-injection. Effects are acute and pulsatile.
+    source: 'PMID:9849822'
+  - period: Week 1-2
+    effects: >-
+      With daily or twice-daily dosing, GH pulsatility patterns established.
+      Early studies showed dose-dependent GH release without significant
+      cortisol or prolactin elevation. No desensitization observed.
+    source: 'PMID:9849822'
+  - period: Week 2-8
+    effects: >-
+      Sustained GH/IGF-1 elevations with continued use. Gastrointestinal
+      motility effects noted in post-operative trials. Body composition changes
+      may begin to become apparent.
+    source: 'PMID:10604470'
+  - period: Week 8+
+    effects: >-
+      Limited long-term data. Phase 2 POI trials used short-term administration.
+      Extended use outcomes not well-characterized in clinical trials. No
+      approved indications exist.
 faqs:
-  - question: "What is ipamorelin?"
-    answer: "Ipamorelin is a selective growth hormone secretagogue that stimulates GH release via the ghrelin receptor (GHS-R1a) without significantly affecting cortisol or prolactin levels, unlike older GH-releasing peptides."
-  - question: "Is ipamorelin FDA approved?"
-    answer: "No. Ipamorelin was developed by Novo Nordisk (Denmark) but clinical development was discontinued after Phase 2 trials for post-operative ileus failed to meet efficacy endpoints. It is not approved for any indication."
-  - question: "What is the evidence for ipamorelin?"
-    answer: "Evidence quality is low with only 4 human studies. Phase 1/2 data demonstrated selective GH release without cortisol/prolactin elevation, but the Phase 2 efficacy trial failed. Long-term safety data is unavailable."
-  - question: "What makes ipamorelin different from other GH secretagogues?"
-    answer: "Ipamorelin is notable for its selectivity - it produces GH release without the cortisol elevation, prolactin increase, or strong appetite stimulation seen with less selective agents like GHRP-6 or GHRP-2."
+  - question: What is ipamorelin?
+    answer: >-
+      Ipamorelin is a selective growth hormone secretagogue that stimulates GH
+      release via the ghrelin receptor (GHS-R1a) without significantly affecting
+      cortisol or prolactin levels, unlike older GH-releasing peptides.
+  - question: Is ipamorelin FDA approved?
+    answer: >-
+      No. Ipamorelin was developed by Novo Nordisk (Denmark) but clinical
+      development was discontinued after Phase 2 trials for post-operative ileus
+      failed to meet efficacy endpoints. It is not approved for any indication.
+  - question: What is the evidence for ipamorelin?
+    answer: >-
+      Evidence quality is low with only 4 human studies. Phase 1/2 data
+      demonstrated selective GH release without cortisol/prolactin elevation,
+      but the Phase 2 efficacy trial failed. Long-term safety data is
+      unavailable.
+  - question: What makes ipamorelin different from other GH secretagogues?
+    answer: >-
+      Ipamorelin is notable for its selectivity - it produces GH release without
+      the cortisol elevation, prolactin increase, or strong appetite stimulation
+      seen with less selective agents like GHRP-6 or GHRP-2.
 qualityChecklist:
   goodSigns:
-    - "White lyophilized powder (cake form)"
-    - "Dissolves quickly and completely in bacteriostatic water"
-    - "Clear, colorless solution after reconstitution"
-    - "Certificate of analysis showing >98% purity"
-    - "HPLC and mass spectrometry verification"
-    - "Proper vacuum seal intact"
+    - White lyophilized powder (cake form)
+    - Dissolves quickly and completely in bacteriostatic water
+    - 'Clear, colorless solution after reconstitution'
+    - Certificate of analysis showing >98% purity
+    - HPLC and mass spectrometry verification
+    - Proper vacuum seal intact
   warningSigns:
-    - "Off-white or slightly discolored powder"
-    - "Takes longer than expected to dissolve"
-    - "Powder appears collapsed (possible temperature excursion)"
-    - "No third-party testing verification"
-    - "Purity listed below 98%"
+    - Off-white or slightly discolored powder
+    - Takes longer than expected to dissolve
+    - Powder appears collapsed (possible temperature excursion)
+    - No third-party testing verification
+    - Purity listed below 98%
   badSigns:
-    - "Yellow or brown discoloration"
-    - "Visible particles after reconstitution"
-    - "Cloudy solution"
-    - "Gel-like texture or clumping"
-    - "No certificate of analysis"
-    - "Strong unusual odor"
-    - "Broken seal or signs of tampering"
+    - Yellow or brown discoloration
+    - Visible particles after reconstitution
+    - Cloudy solution
+    - Gel-like texture or clumping
+    - No certificate of analysis
+    - Strong unusual odor
+    - Broken seal or signs of tampering
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

@@ -1,0 +1,860 @@
+{
+  "presets": [
+    {
+      "slug": "semaglutide",
+      "name": "Semaglutide",
+      "category": "metabolic",
+      "reconstitution": {
+        "typicalVialSizes": [2.4, 3, 5],
+        "typicalWaterVolume": 1.5,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["tirzepatide"]
+      },
+      "accumulation": {
+        "halfLifeHours": 168,
+        "halfLifeSource": "established from clinical studies"
+      }
+    },
+    {
+      "slug": "tirzepatide",
+      "name": "Tirzepatide",
+      "category": "metabolic",
+      "reconstitution": {
+        "typicalVialSizes": [2.5, 5, 7.5, 10, 12.5, 15],
+        "typicalWaterVolume": 0.5,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["semaglutide"]
+      },
+      "accumulation": {
+        "halfLifeHours": 120,
+        "halfLifeSource": "established from clinical studies"
+      }
+    },
+    {
+      "slug": "bpc-157",
+      "name": "BPC-157",
+      "category": "repair-recovery",
+      "reconstitution": {
+        "typicalVialSizes": [5, 10],
+        "typicalWaterVolume": 2,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["tb-500", "ghk-cu"]
+      },
+      "accumulation": {
+        "halfLifeHours": 4,
+        "halfLifeSource": "estimated from preclinical data"
+      }
+    },
+    {
+      "slug": "tb-500",
+      "name": "TB-500",
+      "category": "repair-recovery",
+      "reconstitution": {
+        "typicalVialSizes": [2, 5, 10],
+        "typicalWaterVolume": 2,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["bpc-157", "ghk-cu"]
+      },
+      "accumulation": {
+        "halfLifeHours": 4,
+        "halfLifeSource": "estimated from preclinical data"
+      }
+    },
+    {
+      "slug": "mk-677",
+      "name": "MK-677",
+      "category": "hormonal",
+      "reconstitution": {
+        "reconstitutionRequired": false,
+        "typicalVialSizes": [25],
+        "unit": "mg",
+        "note": "oral capsule"
+      },
+      "blend": {
+        "commonPairings": ["ipamorelin", "cjc-1295", "sermorelin"]
+      },
+      "accumulation": {
+        "halfLifeHours": 6,
+        "halfLifeSource": "established from clinical studies"
+      }
+    },
+    {
+      "slug": "ipamorelin",
+      "name": "Ipamorelin",
+      "category": "hormonal",
+      "reconstitution": {
+        "typicalVialSizes": [2, 5],
+        "typicalWaterVolume": 2,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["cjc-1295", "mk-677", "sermorelin"]
+      },
+      "accumulation": {
+        "halfLifeHours": 2,
+        "halfLifeSource": "established from clinical studies"
+      }
+    },
+    {
+      "slug": "cjc-1295",
+      "name": "CJC-1295",
+      "category": "hormonal",
+      "reconstitution": {
+        "typicalVialSizes": [2, 5],
+        "typicalWaterVolume": 2,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["ipamorelin", "mk-677", "sermorelin"]
+      },
+      "accumulation": {
+        "halfLifeHours": 168,
+        "halfLifeSource": "established from clinical studies (with DAC)"
+      }
+    },
+    {
+      "slug": "sermorelin",
+      "name": "Sermorelin",
+      "category": "hormonal",
+      "reconstitution": {
+        "typicalVialSizes": [2, 5, 9],
+        "typicalWaterVolume": 2,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["ipamorelin", "cjc-1295", "mk-677"]
+      },
+      "accumulation": {
+        "halfLifeHours": 0.2,
+        "halfLifeSource": "established from clinical studies"
+      }
+    },
+    {
+      "slug": "tesamorelin",
+      "name": "Tesamorelin",
+      "category": "hormonal",
+      "reconstitution": {
+        "typicalVialSizes": [1, 2],
+        "typicalWaterVolume": 2,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["ipamorelin", "cjc-1295", "sermorelin"]
+      },
+      "accumulation": {
+        "halfLifeHours": 0.5,
+        "halfLifeSource": "established from clinical studies"
+      }
+    },
+    {
+      "slug": "ghk-cu",
+      "name": "GHK-Cu",
+      "category": "repair-recovery",
+      "reconstitution": {
+        "typicalVialSizes": [50, 100, 200],
+        "typicalWaterVolume": 5,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["bpc-157", "tb-500"]
+      },
+      "accumulation": {
+        "halfLifeHours": 0.5,
+        "halfLifeSource": "estimated from preclinical data"
+      }
+    },
+    {
+      "slug": "ghk",
+      "name": "GHK",
+      "category": "repair-recovery",
+      "reconstitution": {
+        "typicalVialSizes": [50, 100],
+        "typicalWaterVolume": 5,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["bpc-157", "tb-500", "ghk-cu"]
+      },
+      "accumulation": {
+        "halfLifeHours": 0.5,
+        "halfLifeSource": "estimated from preclinical data"
+      }
+    },
+    {
+      "slug": "liraglutide",
+      "name": "Liraglutide",
+      "category": "metabolic",
+      "reconstitution": {
+        "reconstitutionRequired": false,
+        "typicalVialSizes": [6, 18],
+        "unit": "mg",
+        "note": "prefilled pen"
+      },
+      "blend": {
+        "commonPairings": ["semaglutide", "tirzepatide"]
+      },
+      "accumulation": {
+        "halfLifeHours": 13,
+        "halfLifeSource": "established from clinical studies"
+      }
+    },
+    {
+      "slug": "retatrutide",
+      "name": "Retatrutide",
+      "category": "metabolic",
+      "reconstitution": {
+        "typicalVialSizes": [4, 8, 12],
+        "typicalWaterVolume": 0.5,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["semaglutide", "tirzepatide"]
+      },
+      "accumulation": {
+        "halfLifeHours": 168,
+        "halfLifeSource": "estimated from clinical trial data"
+      }
+    },
+    {
+      "slug": "pt-141",
+      "name": "PT-141",
+      "category": "hormonal",
+      "reconstitution": {
+        "typicalVialSizes": [10],
+        "typicalWaterVolume": 2,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["melanotan-ii"]
+      },
+      "accumulation": {
+        "halfLifeHours": 2.5,
+        "halfLifeSource": "established from clinical studies"
+      }
+    },
+    {
+      "slug": "melanotan-ii",
+      "name": "Melanotan II",
+      "category": "hormonal",
+      "reconstitution": {
+        "typicalVialSizes": [10],
+        "typicalWaterVolume": 2,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["pt-141"]
+      },
+      "accumulation": {
+        "halfLifeHours": 1,
+        "halfLifeSource": "established from clinical studies"
+      }
+    },
+    {
+      "slug": "thymosin-alpha-1",
+      "name": "Thymosin Alpha-1",
+      "category": "immune",
+      "reconstitution": {
+        "typicalVialSizes": [1.6, 3.2],
+        "typicalWaterVolume": 1,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["ll-37", "kpv"]
+      },
+      "accumulation": {
+        "halfLifeHours": 2,
+        "halfLifeSource": "established from clinical studies"
+      }
+    },
+    {
+      "slug": "selank",
+      "name": "Selank",
+      "category": "cognitive",
+      "reconstitution": {
+        "typicalVialSizes": [5],
+        "typicalWaterVolume": 2,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["semax", "na-selank-amidate", "cerebrolysin"]
+      },
+      "accumulation": {
+        "halfLifeHours": 0.5,
+        "halfLifeSource": "estimated from preclinical data"
+      }
+    },
+    {
+      "slug": "semax",
+      "name": "Semax",
+      "category": "cognitive",
+      "reconstitution": {
+        "typicalVialSizes": [5],
+        "typicalWaterVolume": 2,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["selank", "na-semax-amidate", "cerebrolysin"]
+      },
+      "accumulation": {
+        "halfLifeHours": 0.5,
+        "halfLifeSource": "estimated from preclinical data"
+      }
+    },
+    {
+      "slug": "na-selank-amidate",
+      "name": "N-Acetyl Selank Amidate",
+      "category": "cognitive",
+      "reconstitution": {
+        "typicalVialSizes": [5],
+        "typicalWaterVolume": 2,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["selank", "semax", "na-semax-amidate"]
+      },
+      "accumulation": {
+        "halfLifeHours": 1,
+        "halfLifeSource": "estimated from preclinical data"
+      }
+    },
+    {
+      "slug": "na-semax-amidate",
+      "name": "N-Acetyl Semax Amidate",
+      "category": "cognitive",
+      "reconstitution": {
+        "typicalVialSizes": [5],
+        "typicalWaterVolume": 2,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["semax", "selank", "na-selank-amidate"]
+      },
+      "accumulation": {
+        "halfLifeHours": 1,
+        "halfLifeSource": "estimated from preclinical data"
+      }
+    },
+    {
+      "slug": "epithalon",
+      "name": "Epithalon",
+      "category": "longevity",
+      "reconstitution": {
+        "typicalVialSizes": [10, 50],
+        "typicalWaterVolume": 2,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["mots-c", "humanin", "ss-31"]
+      },
+      "accumulation": {
+        "halfLifeHours": 0.5,
+        "halfLifeSource": "estimated from preclinical data"
+      }
+    },
+    {
+      "slug": "mots-c",
+      "name": "MOTS-c",
+      "category": "longevity",
+      "reconstitution": {
+        "typicalVialSizes": [5, 10],
+        "typicalWaterVolume": 2,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["epithalon", "humanin", "ss-31"]
+      },
+      "accumulation": {
+        "halfLifeHours": 12,
+        "halfLifeSource": "estimated from preclinical data"
+      }
+    },
+    {
+      "slug": "ss-31",
+      "name": "SS-31 (Elamipretide)",
+      "category": "longevity",
+      "reconstitution": {
+        "typicalVialSizes": [5],
+        "typicalWaterVolume": 2,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["mots-c", "epithalon", "humanin"]
+      },
+      "accumulation": {
+        "halfLifeHours": 4,
+        "halfLifeSource": "estimated from clinical trial data"
+      }
+    },
+    {
+      "slug": "aod-9604",
+      "name": "AOD-9604",
+      "category": "metabolic",
+      "reconstitution": {
+        "typicalVialSizes": [5],
+        "typicalWaterVolume": 2,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["semaglutide", "tirzepatide"]
+      },
+      "accumulation": {
+        "halfLifeHours": 0.5,
+        "halfLifeSource": "estimated from preclinical data"
+      }
+    },
+    {
+      "slug": "kpv",
+      "name": "KPV",
+      "category": "immune",
+      "reconstitution": {
+        "typicalVialSizes": [5],
+        "typicalWaterVolume": 2,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["thymosin-alpha-1", "ll-37", "bpc-157"]
+      },
+      "accumulation": {
+        "halfLifeHours": 2,
+        "halfLifeSource": "estimated from preclinical data"
+      }
+    },
+    {
+      "slug": "ll-37",
+      "name": "LL-37",
+      "category": "immune",
+      "reconstitution": {
+        "typicalVialSizes": [5],
+        "typicalWaterVolume": 2,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["thymosin-alpha-1", "kpv", "bpc-157"]
+      },
+      "accumulation": {
+        "halfLifeHours": 0.5,
+        "halfLifeSource": "estimated from preclinical data"
+      }
+    },
+    {
+      "slug": "dsip",
+      "name": "DSIP",
+      "category": "cognitive",
+      "reconstitution": {
+        "typicalVialSizes": [5],
+        "typicalWaterVolume": 2,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["selank", "semax"]
+      },
+      "accumulation": {
+        "halfLifeHours": 0.25,
+        "halfLifeSource": "estimated from preclinical data"
+      }
+    },
+    {
+      "slug": "ghrp-2",
+      "name": "GHRP-2",
+      "category": "hormonal",
+      "reconstitution": {
+        "typicalVialSizes": [5],
+        "typicalWaterVolume": 2,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["cjc-1295", "ipamorelin", "mk-677"]
+      },
+      "accumulation": {
+        "halfLifeHours": 0.5,
+        "halfLifeSource": "established from clinical studies"
+      }
+    },
+    {
+      "slug": "ghrp-6",
+      "name": "GHRP-6",
+      "category": "hormonal",
+      "reconstitution": {
+        "typicalVialSizes": [5],
+        "typicalWaterVolume": 2,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["cjc-1295", "ipamorelin", "mk-677"]
+      },
+      "accumulation": {
+        "halfLifeHours": 0.33,
+        "halfLifeSource": "established from clinical studies"
+      }
+    },
+    {
+      "slug": "hexarelin",
+      "name": "Hexarelin",
+      "category": "hormonal",
+      "reconstitution": {
+        "typicalVialSizes": [5],
+        "typicalWaterVolume": 2,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["cjc-1295", "ipamorelin", "mk-677"]
+      },
+      "accumulation": {
+        "halfLifeHours": 1,
+        "halfLifeSource": "established from clinical studies"
+      }
+    },
+    {
+      "slug": "follistatin",
+      "name": "Follistatin",
+      "category": "hormonal",
+      "reconstitution": {
+        "typicalVialSizes": [1],
+        "typicalWaterVolume": 1,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["igf-1-lr3"]
+      },
+      "accumulation": {
+        "halfLifeHours": 2,
+        "halfLifeSource": "estimated from preclinical data"
+      }
+    },
+    {
+      "slug": "igf-1-lr3",
+      "name": "IGF-1 LR3",
+      "category": "hormonal",
+      "reconstitution": {
+        "typicalVialSizes": [0.1, 1],
+        "typicalWaterVolume": 1,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["follistatin", "mk-677", "cjc-1295"]
+      },
+      "accumulation": {
+        "halfLifeHours": 20,
+        "halfLifeSource": "established from clinical studies"
+      }
+    },
+    {
+      "slug": "kisspeptin",
+      "name": "Kisspeptin",
+      "category": "hormonal",
+      "reconstitution": {
+        "typicalVialSizes": [5],
+        "typicalWaterVolume": 2,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["ipamorelin", "cjc-1295"]
+      },
+      "accumulation": {
+        "halfLifeHours": 0.5,
+        "halfLifeSource": "established from clinical studies"
+      }
+    },
+    {
+      "slug": "5-amino-1mq",
+      "name": "5-Amino-1MQ",
+      "category": "metabolic",
+      "reconstitution": {
+        "reconstitutionRequired": false,
+        "typicalVialSizes": [50],
+        "unit": "mg",
+        "note": "oral capsule"
+      },
+      "blend": {
+        "commonPairings": ["semaglutide", "tirzepatide", "aod-9604"]
+      },
+      "accumulation": {
+        "halfLifeHours": 6,
+        "halfLifeSource": "estimated from preclinical data"
+      }
+    },
+    {
+      "slug": "thymalin",
+      "name": "Thymalin",
+      "category": "immune",
+      "reconstitution": {
+        "typicalVialSizes": [10],
+        "typicalWaterVolume": 1,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["thymosin-alpha-1", "ll-37", "kpv"]
+      },
+      "accumulation": {
+        "halfLifeHours": 0.5,
+        "halfLifeSource": "estimated from preclinical data"
+      }
+    },
+    {
+      "slug": "thymogen",
+      "name": "Thymogen",
+      "category": "immune",
+      "reconstitution": {
+        "typicalVialSizes": [0.1],
+        "typicalWaterVolume": 1,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["thymosin-alpha-1", "thymalin", "kpv"]
+      },
+      "accumulation": {
+        "halfLifeHours": 0.5,
+        "halfLifeSource": "estimated from preclinical data"
+      }
+    },
+    {
+      "slug": "cortexin",
+      "name": "Cortexin",
+      "category": "cognitive",
+      "reconstitution": {
+        "typicalVialSizes": [5, 10],
+        "typicalWaterVolume": 2,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["selank", "semax", "cerebrolysin"]
+      },
+      "accumulation": {
+        "halfLifeHours": 0.5,
+        "halfLifeSource": "estimated from preclinical data"
+      }
+    },
+    {
+      "slug": "cerebrolysin",
+      "name": "Cerebrolysin",
+      "category": "cognitive",
+      "reconstitution": {
+        "reconstitutionRequired": false,
+        "typicalVialSizes": [1, 5, 10],
+        "unit": "mL",
+        "note": "prefilled solution"
+      },
+      "blend": {
+        "commonPairings": ["selank", "semax", "cortexin"]
+      },
+      "accumulation": {
+        "halfLifeHours": 0.5,
+        "halfLifeSource": "estimated from clinical data"
+      }
+    },
+    {
+      "slug": "dihexa",
+      "name": "Dihexa",
+      "category": "cognitive",
+      "reconstitution": {
+        "typicalVialSizes": [10],
+        "typicalWaterVolume": 2,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["selank", "semax", "cerebrolysin"]
+      },
+      "accumulation": {
+        "halfLifeHours": 6,
+        "halfLifeSource": "estimated from preclinical data"
+      }
+    },
+    {
+      "slug": "glutathione",
+      "name": "Glutathione",
+      "category": "longevity",
+      "reconstitution": {
+        "typicalVialSizes": [200, 600],
+        "typicalWaterVolume": 5,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["epithalon", "mots-c", "ss-31"]
+      },
+      "accumulation": {
+        "halfLifeHours": 0.25,
+        "halfLifeSource": "established from clinical studies"
+      }
+    },
+    {
+      "slug": "humanin",
+      "name": "Humanin",
+      "category": "longevity",
+      "reconstitution": {
+        "typicalVialSizes": [5],
+        "typicalWaterVolume": 2,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["mots-c", "epithalon", "ss-31"]
+      },
+      "accumulation": {
+        "halfLifeHours": 0.5,
+        "halfLifeSource": "estimated from preclinical data"
+      }
+    },
+    {
+      "slug": "shlp-2",
+      "name": "SHLP-2",
+      "category": "longevity",
+      "reconstitution": {
+        "typicalVialSizes": [5],
+        "typicalWaterVolume": 2,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["humanin", "mots-c", "epithalon"]
+      },
+      "accumulation": {
+        "halfLifeHours": 1,
+        "halfLifeSource": "estimated from preclinical data"
+      }
+    },
+    {
+      "slug": "foxo4-dri",
+      "name": "FOXO4-DRI",
+      "category": "longevity",
+      "reconstitution": {
+        "typicalVialSizes": [10],
+        "typicalWaterVolume": 2,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["epithalon", "mots-c", "humanin"]
+      },
+      "accumulation": {
+        "halfLifeHours": 4,
+        "halfLifeSource": "estimated from preclinical data"
+      }
+    },
+    {
+      "slug": "pinealon",
+      "name": "Pinealon",
+      "category": "longevity",
+      "reconstitution": {
+        "reconstitutionRequired": false,
+        "typicalVialSizes": [10],
+        "unit": "mg",
+        "note": "oral"
+      },
+      "blend": {
+        "commonPairings": ["epithalon", "mots-c", "humanin"]
+      },
+      "accumulation": {
+        "halfLifeHours": 1,
+        "halfLifeSource": "estimated from preclinical data"
+      }
+    },
+    {
+      "slug": "survodutide",
+      "name": "Survodutide",
+      "category": "metabolic",
+      "reconstitution": {
+        "typicalVialSizes": [4.8],
+        "typicalWaterVolume": 0.5,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["semaglutide", "tirzepatide"]
+      },
+      "accumulation": {
+        "halfLifeHours": 168,
+        "halfLifeSource": "estimated from clinical trial data"
+      }
+    },
+    {
+      "slug": "cagrilintide",
+      "name": "Cagrilintide",
+      "category": "metabolic",
+      "reconstitution": {
+        "typicalVialSizes": [2.4],
+        "typicalWaterVolume": 0.5,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["semaglutide", "tirzepatide"]
+      },
+      "accumulation": {
+        "halfLifeHours": 168,
+        "halfLifeSource": "established from clinical studies"
+      }
+    },
+    {
+      "slug": "orforglipron",
+      "name": "Orforglipron",
+      "category": "metabolic",
+      "reconstitution": {
+        "reconstitutionRequired": false,
+        "typicalVialSizes": [36],
+        "unit": "mg",
+        "note": "oral tablet"
+      },
+      "blend": {
+        "commonPairings": ["semaglutide", "tirzepatide"]
+      },
+      "accumulation": {
+        "halfLifeHours": 24,
+        "halfLifeSource": "estimated from clinical trial data"
+      }
+    },
+    {
+      "slug": "mazdutide",
+      "name": "Mazdutide",
+      "category": "metabolic",
+      "reconstitution": {
+        "typicalVialSizes": [3, 4.5, 6],
+        "typicalWaterVolume": 0.5,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["semaglutide", "tirzepatide"]
+      },
+      "accumulation": {
+        "halfLifeHours": 168,
+        "halfLifeSource": "estimated from clinical trial data"
+      }
+    },
+    {
+      "slug": "pemvidutide",
+      "name": "Pemvidutide",
+      "category": "metabolic",
+      "reconstitution": {
+        "typicalVialSizes": [1.8, 2.4],
+        "typicalWaterVolume": 0.5,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["semaglutide", "tirzepatide"]
+      },
+      "accumulation": {
+        "halfLifeHours": 168,
+        "halfLifeSource": "estimated from clinical trial data"
+      }
+    },
+    {
+      "slug": "vk2735",
+      "name": "VK2735",
+      "category": "metabolic",
+      "reconstitution": {
+        "typicalVialSizes": [5, 15],
+        "typicalWaterVolume": 0.5,
+        "unit": "mg"
+      },
+      "blend": {
+        "commonPairings": ["semaglutide", "tirzepatide"]
+      },
+      "accumulation": {
+        "halfLifeHours": 168,
+        "halfLifeSource": "estimated from clinical trial data"
+      }
+    }
+  ]
+}

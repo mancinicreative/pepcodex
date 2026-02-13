@@ -25,7 +25,7 @@ const allPeptides = await getCollection('peptides');
 // Count peptides per condition
 function countPeptidesForCondition(conditionSlug: string): number {
   return allPeptides.filter(p => {
-    if (!p.data.conditions) return false;
+    if (!p?.data?.conditions) return false;
     return p.data.conditions.some((c: { slug: string; name?: string }) =>
       c.slug === conditionSlug ||
       c.name?.toLowerCase().includes(conditionSlug.replace(/-/g, ' '))

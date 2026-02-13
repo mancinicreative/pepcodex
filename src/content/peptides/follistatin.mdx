@@ -1,188 +1,314 @@
 ---
-name: "Follistatin"
-aliases: ["FST", "FS-344", "FS-315", "Activin-Binding Protein"]
-category: "hormonal"
-compoundType: "protein"
-evidenceStrength: "low"
-lastUpdated: 2026-01-22
-comparators: ["myostatin-inhibitors", "igf-1", "mgf"]
-summary: "An endogenous glycoprotein that inhibits myostatin and activin signaling, potentially allowing muscle growth beyond genetic limits. Gene therapy trials for muscular dystrophy show promise, but injectable peptide forms remain unapproved and understudied in humans."
+name: Follistatin
+aliases:
+  - FST
+  - FS-344
+  - FS-315
+  - Activin-Binding Protein
+category: hormonal
+compoundType: protein
+evidenceStrength: moderate
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - myostatin-inhibitors
+  - igf-1
+  - mgf
+summary: >-
+  An endogenous glycoprotein that inhibits myostatin and activin signaling,
+  potentially allowing muscle growth beyond genetic limits. Gene therapy trials
+  for muscular dystrophy show promise, but injectable peptide forms remain
+  unapproved and understudied in humans.
 sources:
   count: 38
   human: 8
   preclinical: 30
   openAccess: 22
-metaTitle: "Follistatin Evidence Dossier | PepCodex"
-metaDescription: "Comprehensive evidence review of Follistatin (FS-344, FS-315). Myostatin inhibition mechanism, gene therapy trials, safety profile, and 38+ citations."
+metaTitle: Follistatin Evidence Dossier | PepCodex
+metaDescription: >-
+  Comprehensive evidence review of Follistatin (FS-344, FS-315). Myostatin
+  inhibition mechanism, gene therapy trials, safety profile, and 38+ citations.
 molecularInfo:
-  weight: "36-38 kDa (FST-315); 38-44 kDa (FST-344 with glycosylation)"
+  weight: 36-38 kDa (FST-315); 38-44 kDa (FST-344 with glycosylation)
   chainLength: 344
-  type: "Cysteine-rich glycoprotein"
-  sequence: "MVRARHQPGGNCRFLRAQRCISLCHCVGLNLTLPTDGRCLCVCAPFVPGASCREVPRPSQRSASRDSSFSTSSEKNVVCC"
+  type: Cysteine-rich glycoprotein
+  sequence: >-
+    MVRARHQPGGNCRFLRAQRCISLCHCVGLNLTLPTDGRCLCVCAPFVPGASCREVPRPSQRSASRDSSFSTSSEKNVVCC
   aminoAcids:
-    - { code: "M", name: "Methionine", position: 1, property: "hydrophobic" }
-    - { code: "V", name: "Valine", position: 2, property: "hydrophobic" }
-    - { code: "R", name: "Arginine", position: 3, property: "positive" }
-    - { code: "A", name: "Alanine", position: 4, property: "hydrophobic" }
-    - { code: "R", name: "Arginine", position: 5, property: "positive" }
-    - { code: "H", name: "Histidine", position: 6, property: "positive" }
-    - { code: "Q", name: "Glutamine", position: 7, property: "polar" }
-    - { code: "P", name: "Proline", position: 8, property: "hydrophobic" }
-    - { code: "G", name: "Glycine", position: 9, property: "polar" }
-    - { code: "G", name: "Glycine", position: 10, property: "polar" }
-    - { code: "N", name: "Asparagine", position: 11, property: "polar" }
-    - { code: "C", name: "Cysteine", position: 12, property: "polar" }
-    - { code: "R", name: "Arginine", position: 13, property: "positive" }
-    - { code: "F", name: "Phenylalanine", position: 14, property: "hydrophobic" }
-    - { code: "L", name: "Leucine", position: 15, property: "hydrophobic" }
+    - code: M
+      name: Methionine
+      position: 1
+      property: hydrophobic
+    - code: V
+      name: Valine
+      position: 2
+      property: hydrophobic
+    - code: R
+      name: Arginine
+      position: 3
+      property: positive
+    - code: A
+      name: Alanine
+      position: 4
+      property: hydrophobic
+    - code: R
+      name: Arginine
+      position: 5
+      property: positive
+    - code: H
+      name: Histidine
+      position: 6
+      property: positive
+    - code: Q
+      name: Glutamine
+      position: 7
+      property: polar
+    - code: P
+      name: Proline
+      position: 8
+      property: hydrophobic
+    - code: G
+      name: Glycine
+      position: 9
+      property: polar
+    - code: G
+      name: Glycine
+      position: 10
+      property: polar
+    - code: 'N'
+      name: Asparagine
+      position: 11
+      property: polar
+    - code: C
+      name: Cysteine
+      position: 12
+      property: polar
+    - code: R
+      name: Arginine
+      position: 13
+      property: positive
+    - code: F
+      name: Phenylalanine
+      position: 14
+      property: hydrophobic
+    - code: L
+      name: Leucine
+      position: 15
+      property: hydrophobic
 interactions:
-  - peptide: "igf-1-lr3"
-    type: "synergistic"
-    description: "Follistatin's hypertrophic effects require intact IGF-1R/Akt/mTOR pathway. IGF-1 LR3 activates this pathway directly. Combined use may amplify muscle growth but also compounds unknown risks."
-  - peptide: "hgh"
-    type: "compatible"
-    description: "HGH increases IGF-1, which is required for follistatin's full effect. Theoretical synergy, but combined safety not established."
-  - peptide: "myostatin-inhibitors"
-    type: "avoid"
-    description: "Follistatin already inhibits myostatin. Adding other myostatin inhibitors is redundant and may cause unpredictable effects on the activin/myostatin/follistatin balance."
-  - peptide: "bpc-157"
-    type: "compatible"
-    description: "Different regenerative targets - follistatin for muscle growth via myostatin inhibition, BPC-157 for tissue healing. No known interactions."
-  - peptide: "tb-500"
-    type: "compatible"
-    description: "Different mechanisms - TB-500 for tissue repair via actin regulation, follistatin for muscle growth via myostatin/activin sequestration."
+  - peptide: igf-1-lr3
+    type: synergistic
+    description: >-
+      Follistatin's hypertrophic effects require intact IGF-1R/Akt/mTOR pathway.
+      IGF-1 LR3 activates this pathway directly. Combined use may amplify muscle
+      growth but also compounds unknown risks.
+  - peptide: hgh
+    type: compatible
+    description: >-
+      HGH increases IGF-1, which is required for follistatin's full effect.
+      Theoretical synergy, but combined safety not established.
+  - peptide: myostatin-inhibitors
+    type: avoid
+    description: >-
+      Follistatin already inhibits myostatin. Adding other myostatin inhibitors
+      is redundant and may cause unpredictable effects on the
+      activin/myostatin/follistatin balance.
+  - peptide: bpc-157
+    type: compatible
+    description: >-
+      Different regenerative targets - follistatin for muscle growth via
+      myostatin inhibition, BPC-157 for tissue healing. No known interactions.
+  - peptide: tb-500
+    type: compatible
+    description: >-
+      Different mechanisms - TB-500 for tissue repair via actin regulation,
+      follistatin for muscle growth via myostatin/activin sequestration.
 evidenceChainedBenefits:
   - mechanism:
-      action: "Sequestration of myostatin (GDF-8), preventing receptor binding and removing muscle growth inhibition"
-      confidence: "established"
+      action: >-
+        Sequestration of myostatin (GDF-8), preventing receptor binding and
+        removing muscle growth inhibition
+      confidence: established
       directStudies: 12
     benefit:
-      claim: "increase muscle mass and strength"
-      qualifier: "shown to"
+      claim: increase muscle mass and strength
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 3
       animalStudies: 15
       cellStudies: 8
       keyFindings:
-        - study: "Mendell JR et al. 2015"
-          type: "human-rct"
-          finding: "AAV1-FS344 gene therapy improved 6-minute walk distance by 58-125 meters in BMD patients"
-          pmid: "25322757"
-        - study: "Kota J et al. 2009"
-          type: "animal"
-          finding: "AAV1-FS344 produced durable muscle hypertrophy in cynomolgus macaques lasting >15 months"
-          pmid: "19293773"
-        - study: "Lee SJ, McPherron AC 2001"
-          type: "animal"
-          finding: "Follistatin overexpression increased muscle mass 2-3 fold; 4-fold in myostatin-null background"
-          pmid: "11460166"
+        - study: Mendell JR et al. 2015
+          type: human-rct
+          finding: >-
+            AAV1-FS344 gene therapy improved 6-minute walk distance by 58-125
+            meters in BMD patients
+          pmid: '25322757'
+        - study: Kota J et al. 2009
+          type: animal
+          finding: >-
+            AAV1-FS344 produced durable muscle hypertrophy in cynomolgus
+            macaques lasting >15 months
+          pmid: '19293773'
+        - study: 'Lee SJ, McPherron AC 2001'
+          type: animal
+          finding: >-
+            Follistatin overexpression increased muscle mass 2-3 fold; 4-fold in
+            myostatin-null background
+          pmid: '11460166'
   - mechanism:
-      action: "Inhibition of activin A signaling through high-affinity binding (Kd ~45 pM)"
-      confidence: "established"
+      action: >-
+        Inhibition of activin A signaling through high-affinity binding (Kd ~45
+        pM)
+      confidence: established
       directStudies: 8
     benefit:
-      claim: "reduce muscle catabolism and wasting"
-      qualifier: "appears to"
+      claim: reduce muscle catabolism and wasting
+      qualifier: appears to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 2
       animalStudies: 10
       cellStudies: 5
       keyFindings:
-        - study: "Al-Zaidy SA et al. 2017"
-          type: "human-observational"
-          finding: "Follistatin gene therapy improved 6MWT by +56 m/year vs -25.8 m/year decline in untreated sIBM patients"
-          pmid: "28279643"
-        - study: "Thompson TB et al. 2005"
-          type: "in-vitro"
-          finding: "Crystal structure revealed two follistatin molecules encircle activin, blocking receptor sites"
-          pmid: "16198295"
+        - study: Al-Zaidy SA et al. 2017
+          type: human-observational
+          finding: >-
+            Follistatin gene therapy improved 6MWT by +56 m/year vs -25.8 m/year
+            decline in untreated sIBM patients
+          pmid: '28279643'
+        - study: Thompson TB et al. 2005
+          type: in-vitro
+          finding: >-
+            Crystal structure revealed two follistatin molecules encircle
+            activin, blocking receptor sites
+          pmid: '16198295'
   - mechanism:
-      action: "IGF-1 receptor pathway potentiation required for hypertrophic response"
-      confidence: "supported"
+      action: IGF-1 receptor pathway potentiation required for hypertrophic response
+      confidence: supported
       directStudies: 4
     benefit:
-      claim: "enhance muscle growth signaling cascades"
-      qualifier: "may"
+      claim: enhance muscle growth signaling cascades
+      qualifier: may
     evidence:
-      level: "low"
+      level: low
       humanStudies: 0
       animalStudies: 6
       cellStudies: 3
       keyFindings:
-        - study: "Winbanks CE et al. 2012"
-          type: "animal"
-          finding: "Follistatin-induced hypertrophy requires intact IGF-1R/Akt/mTOR pathway; IGF-IR inhibition reduced effect by 63%"
-          pmid: "22087027"
-        - study: "Yaden BC et al. 2015"
-          type: "animal"
-          finding: "Confirmed IGF-1 pathway necessity for follistatin muscle effects"
-          pmid: "26219865"
+        - study: Winbanks CE et al. 2012
+          type: animal
+          finding: >-
+            Follistatin-induced hypertrophy requires intact IGF-1R/Akt/mTOR
+            pathway; IGF-IR inhibition reduced effect by 63%
+          pmid: '22087027'
+        - study: Yaden BC et al. 2015
+          type: animal
+          finding: Confirmed IGF-1 pathway necessity for follistatin muscle effects
+          pmid: '26219865'
   - mechanism:
-      action: "Improvement of neuromuscular junction innervation and transmission in aged tissue"
-      confidence: "emerging"
+      action: >-
+        Improvement of neuromuscular junction innervation and transmission in
+        aged tissue
+      confidence: emerging
       directStudies: 2
     benefit:
-      claim: "improve muscle function in aging"
-      qualifier: "suggested to"
+      claim: improve muscle function in aging
+      qualifier: suggested to
     evidence:
-      level: "low"
+      level: low
       humanStudies: 0
       animalStudies: 3
       cellStudies: 1
       keyFindings:
-        - study: "Soendenbroe C et al. 2021"
-          type: "animal"
-          finding: "Follistatin overexpression improved NMJ innervation and neuromuscular transmission in 24-27 month old mice"
-          pmid: "33964607"
+        - study: Soendenbroe C et al. 2021
+          type: animal
+          finding: >-
+            Follistatin overexpression improved NMJ innervation and
+            neuromuscular transmission in 24-27 month old mice
+          pmid: '33964607'
 conditions:
-  - slug: "muscular-dystrophy"
-    name: "Muscular Dystrophy"
-    researchSummary: "AAV1-FS344 gene therapy trials in Becker muscular dystrophy showed 58-125 meter improvements in 6-minute walk distance. This represents the most advanced clinical application of follistatin, though via gene therapy rather than injectable peptide."
-    relevantStudies: ["25322757", "19293773"]
-    relatedPeptides: ["igf-1-lr3"]
-  - slug: "inclusion-body-myositis"
-    name: "Sporadic Inclusion Body Myositis"
-    researchSummary: "Follistatin gene therapy improved 6MWT by +56 m/year vs -25.8 m/year natural decline in sIBM patients. This rare muscle disease has no approved treatments, making follistatin gene therapy a promising approach."
-    relevantStudies: ["28279643"]
+  - slug: muscular-dystrophy
+    name: Muscular Dystrophy
+    researchSummary: >-
+      AAV1-FS344 gene therapy trials in Becker muscular dystrophy showed 58-125
+      meter improvements in 6-minute walk distance. This represents the most
+      advanced clinical application of follistatin, though via gene therapy
+      rather than injectable peptide.
+    relevantStudies:
+      - '25322757'
+      - '19293773'
+    relatedPeptides:
+      - igf-1-lr3
+  - slug: inclusion-body-myositis
+    name: Sporadic Inclusion Body Myositis
+    researchSummary: >-
+      Follistatin gene therapy improved 6MWT by +56 m/year vs -25.8 m/year
+      natural decline in sIBM patients. This rare muscle disease has no approved
+      treatments, making follistatin gene therapy a promising approach.
+    relevantStudies:
+      - '28279643'
     relatedPeptides: []
-  - slug: "muscle-growth"
-    name: "Muscle Growth"
-    researchSummary: "Animal studies show dramatic muscle hypertrophy (2-4 fold) with follistatin overexpression via gene therapy. However, injectable peptide forms have very short half-life (~4 min) and the translation from gene therapy to peptide injection is not scientifically supported."
-    relevantStudies: ["11460166", "22087027"]
-    relatedPeptides: ["igf-1-lr3", "mgf"]
-  - slug: "aging-muscle"
-    name: "Age-Related Muscle Loss"
-    researchSummary: "Follistatin overexpression improved neuromuscular junction innervation in aged mice. The combination of myostatin inhibition and NMJ improvement suggests potential for sarcopenia, but human evidence is absent for injectable forms."
-    relevantStudies: ["33964607"]
-    relatedPeptides: ["hgh", "igf-1-lr3"]
+  - slug: muscle-growth
+    name: Muscle Growth
+    researchSummary: >-
+      Animal studies show dramatic muscle hypertrophy (2-4 fold) with
+      follistatin overexpression via gene therapy. However, injectable peptide
+      forms have very short half-life (~4 min) and the translation from gene
+      therapy to peptide injection is not scientifically supported.
+    relevantStudies:
+      - '11460166'
+      - '22087027'
+    relatedPeptides:
+      - igf-1-lr3
+      - mgf
+  - slug: aging-muscle
+    name: Age-Related Muscle Loss
+    researchSummary: >-
+      Follistatin overexpression improved neuromuscular junction innervation in
+      aged mice. The combination of myostatin inhibition and NMJ improvement
+      suggests potential for sarcopenia, but human evidence is absent for
+      injectable forms.
+    relevantStudies:
+      - '33964607'
+    relatedPeptides:
+      - hgh
+      - igf-1-lr3
 timeline:
-  - period: "Acute"
-    effects: "Native follistatin has very short half-life (~4 min initial, ~130 min terminal). Injectable peptide effects would be transient. Gene therapy produces sustained local expression over months to years."
-    source: "PMID:25322757"
-  - period: "Gene therapy timeline"
-    effects: "In AAV gene therapy trials, muscle improvements were observed over 6-12 months and maintained for 15+ months in primate studies. This timeline is specific to gene therapy, not peptide injection."
-    source: "PMID:19293773"
-  - period: "Long-term"
-    effects: "Long-term safety of sustained myostatin inhibition is uncertain. Concerns include effects on cardiac muscle, tendons, and other tissues. Gene therapy trials continue to monitor safety."
+  - period: Acute
+    effects: >-
+      Native follistatin has very short half-life (~4 min initial, ~130 min
+      terminal). Injectable peptide effects would be transient. Gene therapy
+      produces sustained local expression over months to years.
+    source: 'PMID:25322757'
+  - period: Gene therapy timeline
+    effects: >-
+      In AAV gene therapy trials, muscle improvements were observed over 6-12
+      months and maintained for 15+ months in primate studies. This timeline is
+      specific to gene therapy, not peptide injection.
+    source: 'PMID:19293773'
+  - period: Long-term
+    effects: >-
+      Long-term safety of sustained myostatin inhibition is uncertain. Concerns
+      include effects on cardiac muscle, tendons, and other tissues. Gene
+      therapy trials continue to monitor safety.
 qualityChecklist:
   goodSigns:
-    - "Specification of variant (FS-344 vs FS-315)"
-    - "Certificate of analysis with purity verification"
-    - "HPLC and mass spec confirmation"
-    - "Proper lyophilization and cold chain"
+    - Specification of variant (FS-344 vs FS-315)
+    - Certificate of analysis with purity verification
+    - HPLC and mass spec confirmation
+    - Proper lyophilization and cold chain
   warningSigns:
-    - "No specification of follistatin variant"
-    - "No third-party testing"
-    - "Unclear source"
-    - "WADA analysis found only 9/17 products contained actual follistatin"
+    - No specification of follistatin variant
+    - No third-party testing
+    - Unclear source
+    - WADA analysis found only 9/17 products contained actual follistatin
   badSigns:
-    - "Discolored product"
-    - "No certificate of analysis"
-    - "Sold with efficacy claims despite lack of human peptide injection data"
-    - "Cannot verify actual follistatin content"
-    - "Claims of gene therapy-like results from peptide injection"
+    - Discolored product
+    - No certificate of analysis
+    - Sold with efficacy claims despite lack of human peptide injection data
+    - Cannot verify actual follistatin content
+    - Claims of gene therapy-like results from peptide injection
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

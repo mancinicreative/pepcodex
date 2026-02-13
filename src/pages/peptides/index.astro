@@ -5,11 +5,15 @@ import PeptideCard from '../../components/PeptideCard.astro';
 import { getCollection } from 'astro:content';
 
 const allPeptides = await getCollection('peptides');
-const peptides = allPeptides.sort((a, b) => a.data.name.localeCompare(b.data.name));
+const peptides = allPeptides
+  .filter(p => p?.data?.name)
+  .sort((a, b) => (a.data.name || '').localeCompare(b.data.name || ''));
 
 // Group by first letter for A-Z navigation
 const grouped = peptides.reduce((acc, peptide) => {
-  const letter = peptide.data.name[0].toUpperCase();
+  const name = peptide.data.name || '';
+  if (!name) return acc;
+  const letter = name[0].toUpperCase();
   if (!acc[letter]) acc[letter] = [];
   acc[letter].push(peptide);
   return acc;

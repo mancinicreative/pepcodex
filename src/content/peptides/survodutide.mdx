@@ -1,218 +1,412 @@
 ---
-name: "Survodutide"
-aliases: ["BI 456906", "BI-456906", "ZP6590"]
-category: "metabolic"
-evidenceStrength: "moderate"
-lastUpdated: 2026-01-22
-comparators: ["semaglutide", "tirzepatide", "retatrutide"]
-summary: "A dual GLP-1/glucagon receptor agonist developed by Boehringer Ingelheim/Zealand Pharma, currently in Phase 3 trials for obesity and MASH. Phase 2 data show 18.7% weight loss and 83% MASH resolution, with unique liver-targeting benefits from glucagon receptor agonism."
+name: Survodutide
+aliases:
+  - BI 456906
+  - BI-456906
+  - ZP6590
+category: metabolic
+evidenceStrength: high
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - semaglutide
+  - tirzepatide
+  - retatrutide
+summary: >-
+  A dual GLP-1/glucagon receptor agonist developed by Boehringer
+  Ingelheim/Zealand Pharma, currently in Phase 3 trials for obesity and MASH.
+  Phase 2 data show 18.7% weight loss and 83% MASH resolution, with unique
+  liver-targeting benefits from glucagon receptor agonism.
 sources:
   count: 20
   human: 16
   preclinical: 4
   openAccess: 18
-metaTitle: "Survodutide Evidence Dossier | PepCodex"
-metaDescription: "Comprehensive evidence review of survodutide (BI 456906). Dual GLP-1/glucagon mechanism, Phase 2/3 clinical trial data, MASH efficacy, and comparison to semaglutide and tirzepatide."
+metaTitle: Survodutide Evidence Dossier | PepCodex
+metaDescription: >-
+  Comprehensive evidence review of survodutide (BI 456906). Dual GLP-1/glucagon
+  mechanism, Phase 2/3 clinical trial data, MASH efficacy, and comparison to
+  semaglutide and tirzepatide.
 interactions:
-  - peptide: "semaglutide"
-    type: "avoid"
-    description: "Both are GLP-1 receptor agonists. Combining would result in overlapping mechanisms with increased risk of severe GI adverse events and no established benefit. Contraindicated."
-  - peptide: "tirzepatide"
-    type: "avoid"
-    description: "Both target GLP-1 receptor pathway. Combination would duplicate mechanisms and significantly increase adverse event risk without demonstrated benefit."
-  - peptide: "retatrutide"
-    type: "avoid"
-    description: "Retatrutide is a triple agonist (GLP-1/GIP/glucagon) that fully overlaps with survodutide's dual mechanism. Combining would be redundant with compounded risks."
-  - peptide: "bpc-157"
-    type: "caution"
-    description: "BPC-157 affects GI function and survodutide slows gastric emptying. Unclear if effects interact; monitor GI symptoms if combined."
-  - peptide: "tb-500"
-    type: "compatible"
-    description: "Non-overlapping mechanisms. TB-500 focuses on tissue repair while survodutide targets metabolic pathways. No known contraindications."
-  - peptide: "ghk-cu"
-    type: "compatible"
-    description: "Different mechanisms of action. GHK-Cu targets copper-mediated signaling while survodutide affects GLP-1/glucagon pathways. No interaction concerns."
+  - peptide: semaglutide
+    type: avoid
+    description: >-
+      Both are GLP-1 receptor agonists. Combining would result in overlapping
+      mechanisms with increased risk of severe GI adverse events and no
+      established benefit. Contraindicated.
+  - peptide: tirzepatide
+    type: avoid
+    description: >-
+      Both target GLP-1 receptor pathway. Combination would duplicate mechanisms
+      and significantly increase adverse event risk without demonstrated
+      benefit.
+  - peptide: retatrutide
+    type: avoid
+    description: >-
+      Retatrutide is a triple agonist (GLP-1/GIP/glucagon) that fully overlaps
+      with survodutide's dual mechanism. Combining would be redundant with
+      compounded risks.
+  - peptide: bpc-157
+    type: caution
+    description: >-
+      BPC-157 affects GI function and survodutide slows gastric emptying.
+      Unclear if effects interact; monitor GI symptoms if combined.
+  - peptide: tb-500
+    type: compatible
+    description: >-
+      Non-overlapping mechanisms. TB-500 focuses on tissue repair while
+      survodutide targets metabolic pathways. No known contraindications.
+  - peptide: ghk-cu
+    type: compatible
+    description: >-
+      Different mechanisms of action. GHK-Cu targets copper-mediated signaling
+      while survodutide affects GLP-1/glucagon pathways. No interaction
+      concerns.
 molecularInfo:
-  weight: "~4,300 Da"
+  weight: '~4,300 Da'
   chainLength: 40
-  type: "Acylated peptide analog"
-  sequence: "Modified GLP-1/glucagon hybrid (proprietary)"
+  type: Acylated peptide analog
+  sequence: Modified GLP-1/glucagon hybrid (proprietary)
   aminoAcids:
-    - { code: "H", name: "Histidine", position: 1, property: "positive" }
-    - { code: "S", name: "Serine", position: 2, property: "polar" }
-    - { code: "Q", name: "Glutamine", position: 3, property: "polar" }
-    - { code: "G", name: "Glycine", position: 4, property: "polar" }
-    - { code: "T", name: "Threonine", position: 5, property: "polar" }
-    - { code: "F", name: "Phenylalanine", position: 6, property: "hydrophobic" }
-    - { code: "T", name: "Threonine", position: 7, property: "polar" }
-    - { code: "S", name: "Serine", position: 8, property: "polar" }
-    - { code: "D", name: "Aspartic Acid", position: 9, property: "negative" }
-    - { code: "Y", name: "Tyrosine", position: 10, property: "polar" }
-    - { code: "S", name: "Serine", position: 11, property: "polar" }
-    - { code: "K", name: "Lysine", position: 12, property: "positive" }
-    - { code: "Y", name: "Tyrosine", position: 13, property: "polar" }
-    - { code: "L", name: "Leucine", position: 14, property: "hydrophobic" }
-    - { code: "D", name: "Aspartic Acid", position: 15, property: "negative" }
-    - { code: "S", name: "Serine", position: 16, property: "polar" }
-    - { code: "R", name: "Arginine", position: 17, property: "positive" }
-    - { code: "R", name: "Arginine", position: 18, property: "positive" }
-    - { code: "A", name: "Alanine", position: 19, property: "hydrophobic" }
-    - { code: "Q", name: "Glutamine", position: 20, property: "polar" }
-    - { code: "D", name: "Aspartic Acid", position: 21, property: "negative" }
-    - { code: "F", name: "Phenylalanine", position: 22, property: "hydrophobic" }
-    - { code: "V", name: "Valine", position: 23, property: "hydrophobic" }
-    - { code: "Q", name: "Glutamine", position: 24, property: "polar" }
-    - { code: "W", name: "Tryptophan", position: 25, property: "hydrophobic" }
-    - { code: "L", name: "Leucine", position: 26, property: "hydrophobic" }
-    - { code: "M", name: "Methionine", position: 27, property: "hydrophobic" }
-    - { code: "N", name: "Asparagine", position: 28, property: "polar" }
-    - { code: "T", name: "Threonine", position: 29, property: "polar" }
-    - { code: "K", name: "Lysine", position: 30, property: "modified" }
-    - { code: "R", name: "Arginine", position: 31, property: "positive" }
-    - { code: "N", name: "Asparagine", position: 32, property: "polar" }
-    - { code: "R", name: "Arginine", position: 33, property: "positive" }
-    - { code: "N", name: "Asparagine", position: 34, property: "polar" }
-    - { code: "N", name: "Asparagine", position: 35, property: "polar" }
-    - { code: "I", name: "Isoleucine", position: 36, property: "hydrophobic" }
-    - { code: "A", name: "Alanine", position: 37, property: "hydrophobic" }
-    - { code: "-", name: "Fatty acid", position: 38, property: "modified" }
-    - { code: "-", name: "Linker", position: 39, property: "modified" }
-    - { code: "-", name: "Acyl chain", position: 40, property: "modified" }
+    - code: H
+      name: Histidine
+      position: 1
+      property: positive
+    - code: S
+      name: Serine
+      position: 2
+      property: polar
+    - code: Q
+      name: Glutamine
+      position: 3
+      property: polar
+    - code: G
+      name: Glycine
+      position: 4
+      property: polar
+    - code: T
+      name: Threonine
+      position: 5
+      property: polar
+    - code: F
+      name: Phenylalanine
+      position: 6
+      property: hydrophobic
+    - code: T
+      name: Threonine
+      position: 7
+      property: polar
+    - code: S
+      name: Serine
+      position: 8
+      property: polar
+    - code: D
+      name: Aspartic Acid
+      position: 9
+      property: negative
+    - code: 'Y'
+      name: Tyrosine
+      position: 10
+      property: polar
+    - code: S
+      name: Serine
+      position: 11
+      property: polar
+    - code: K
+      name: Lysine
+      position: 12
+      property: positive
+    - code: 'Y'
+      name: Tyrosine
+      position: 13
+      property: polar
+    - code: L
+      name: Leucine
+      position: 14
+      property: hydrophobic
+    - code: D
+      name: Aspartic Acid
+      position: 15
+      property: negative
+    - code: S
+      name: Serine
+      position: 16
+      property: polar
+    - code: R
+      name: Arginine
+      position: 17
+      property: positive
+    - code: R
+      name: Arginine
+      position: 18
+      property: positive
+    - code: A
+      name: Alanine
+      position: 19
+      property: hydrophobic
+    - code: Q
+      name: Glutamine
+      position: 20
+      property: polar
+    - code: D
+      name: Aspartic Acid
+      position: 21
+      property: negative
+    - code: F
+      name: Phenylalanine
+      position: 22
+      property: hydrophobic
+    - code: V
+      name: Valine
+      position: 23
+      property: hydrophobic
+    - code: Q
+      name: Glutamine
+      position: 24
+      property: polar
+    - code: W
+      name: Tryptophan
+      position: 25
+      property: hydrophobic
+    - code: L
+      name: Leucine
+      position: 26
+      property: hydrophobic
+    - code: M
+      name: Methionine
+      position: 27
+      property: hydrophobic
+    - code: 'N'
+      name: Asparagine
+      position: 28
+      property: polar
+    - code: T
+      name: Threonine
+      position: 29
+      property: polar
+    - code: K
+      name: Lysine
+      position: 30
+      property: modified
+    - code: R
+      name: Arginine
+      position: 31
+      property: positive
+    - code: 'N'
+      name: Asparagine
+      position: 32
+      property: polar
+    - code: R
+      name: Arginine
+      position: 33
+      property: positive
+    - code: 'N'
+      name: Asparagine
+      position: 34
+      property: polar
+    - code: 'N'
+      name: Asparagine
+      position: 35
+      property: polar
+    - code: I
+      name: Isoleucine
+      position: 36
+      property: hydrophobic
+    - code: A
+      name: Alanine
+      position: 37
+      property: hydrophobic
+    - code: '-'
+      name: Fatty acid
+      position: 38
+      property: modified
+    - code: '-'
+      name: Linker
+      position: 39
+      property: modified
+    - code: '-'
+      name: Acyl chain
+      position: 40
+      property: modified
 evidenceChainedBenefits:
   - mechanism:
-      action: "GLP-1 receptor agonism promoting satiety and insulin secretion"
-      confidence: "established"
+      action: GLP-1 receptor agonism promoting satiety and insulin secretion
+      confidence: established
       directStudies: 16
     benefit:
-      claim: "reduce body weight in obesity"
-      qualifier: "shown to"
+      claim: reduce body weight in obesity
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 4
       animalStudies: 2
       cellStudies: 1
       keyFindings:
-        - study: "le Roux CW et al. 2024"
-          type: "human-rct"
-          finding: "18.7% weight loss at 46 weeks with 4.8mg dose vs 2.1% placebo in Phase 2 trial"
-          pmid: "37840093"
-        - study: "Nauck MA et al. 2023"
-          type: "human-rct"
-          finding: "9.6% weight loss at 16 weeks, superior to semaglutide 1mg (5.1%)"
-          pmid: "36702559"
+        - study: le Roux CW et al. 2024
+          type: human-rct
+          finding: >-
+            18.7% weight loss at 46 weeks with 4.8mg dose vs 2.1% placebo in
+            Phase 2 trial
+          pmid: '37840093'
+        - study: Nauck MA et al. 2023
+          type: human-rct
+          finding: '9.6% weight loss at 16 weeks, superior to semaglutide 1mg (5.1%)'
+          pmid: '36702559'
   - mechanism:
-      action: "Glucagon receptor agonism promoting hepatic lipid oxidation"
-      confidence: "supported"
+      action: Glucagon receptor agonism promoting hepatic lipid oxidation
+      confidence: supported
       directStudies: 8
     benefit:
-      claim: "resolve MASH and improve liver fibrosis"
-      qualifier: "appears to"
+      claim: resolve MASH and improve liver fibrosis
+      qualifier: appears to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 1
       animalStudies: 3
       cellStudies: 2
       keyFindings:
-        - study: "Sanyal AJ et al. 2024"
-          type: "human-rct"
-          finding: "83% MASH resolution vs 18% placebo; 64.5% fibrosis improvement vs 25.9% placebo at 48 weeks"
-          pmid: "38507727"
-        - study: "Perry RJ et al. 2023"
-          type: "animal"
-          finding: "GCGR activation drives hepatic fat oxidation and reduces steatosis in mouse models"
-          pmid: "36425689"
+        - study: Sanyal AJ et al. 2024
+          type: human-rct
+          finding: >-
+            83% MASH resolution vs 18% placebo; 64.5% fibrosis improvement vs
+            25.9% placebo at 48 weeks
+          pmid: '38507727'
+        - study: Perry RJ et al. 2023
+          type: animal
+          finding: >-
+            GCGR activation drives hepatic fat oxidation and reduces steatosis
+            in mouse models
+          pmid: '36425689'
   - mechanism:
-      action: "Dual receptor balance maintaining glycemic control"
-      confidence: "supported"
+      action: Dual receptor balance maintaining glycemic control
+      confidence: supported
       directStudies: 5
     benefit:
-      claim: "improve glycemic control in type 2 diabetes"
-      qualifier: "shown to"
+      claim: improve glycemic control in type 2 diabetes
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 2
       animalStudies: 2
       cellStudies: 1
       keyFindings:
-        - study: "Nauck MA et al. 2023"
-          type: "human-rct"
-          finding: "HbA1c reduction of 1.9% at 16 weeks vs 0.1% placebo in T2D patients"
-          pmid: "36702559"
-        - study: "Parker VE et al. 2022"
-          type: "human-rct"
-          finding: "Dose-dependent glucose lowering established in Phase 1 with favorable safety"
-          pmid: "35913766"
+        - study: Nauck MA et al. 2023
+          type: human-rct
+          finding: HbA1c reduction of 1.9% at 16 weeks vs 0.1% placebo in T2D patients
+          pmid: '36702559'
+        - study: Parker VE et al. 2022
+          type: human-rct
+          finding: >-
+            Dose-dependent glucose lowering established in Phase 1 with
+            favorable safety
+          pmid: '35913766'
   - mechanism:
-      action: "GCGR-mediated thermogenesis in brown adipose tissue"
-      confidence: "emerging"
+      action: GCGR-mediated thermogenesis in brown adipose tissue
+      confidence: emerging
       directStudies: 3
     benefit:
-      claim: "enhance energy expenditure beyond appetite reduction"
-      qualifier: "may"
+      claim: enhance energy expenditure beyond appetite reduction
+      qualifier: may
     evidence:
-      level: "low"
+      level: low
       humanStudies: 0
       animalStudies: 3
       cellStudies: 2
       keyFindings:
-        - study: "Ambery P et al. 2022"
-          type: "animal"
-          finding: "Increased oxygen consumption and thermogenesis in rodent models"
-          pmid: "35657668"
-        - study: "Capozzi ME et al. 2024"
-          type: "in-vitro"
-          finding: "GCGR activation increases metabolic rate via brown adipose tissue signaling"
-          pmid: "39156781"
+        - study: Ambery P et al. 2022
+          type: animal
+          finding: Increased oxygen consumption and thermogenesis in rodent models
+          pmid: '35657668'
+        - study: Capozzi ME et al. 2024
+          type: in-vitro
+          finding: >-
+            GCGR activation increases metabolic rate via brown adipose tissue
+            signaling
+          pmid: '39156781'
 conditions:
-  - slug: "obesity"
-    name: "Obesity"
-    researchSummary: "Phase 2 RCT (N=387) demonstrated 18.7% weight loss at 46 weeks with 4.8mg dose. 81% of participants achieved >=10% weight loss vs 14% placebo. Phase 3 SYNCHRONIZE trials ongoing with results expected 2026."
-    relevantStudies: ["37840093", "35913766"]
-    relatedPeptides: ["semaglutide", "tirzepatide", "retatrutide"]
-  - slug: "mash-nafld"
-    name: "MASH/NAFLD"
-    researchSummary: "Phase 2 RCT (N=293) showed 83% MASH resolution vs 18% placebo and 64.5% fibrosis improvement vs 25.9% placebo. Liver fat reduction of 82-86%. These are the highest MASH resolution rates reported for any drug in Phase 2. Phase 3 ACHIEVE trial ongoing."
-    relevantStudies: ["38507727", "36425689"]
-    relatedPeptides: ["semaglutide", "tirzepatide"]
-  - slug: "type-2-diabetes"
-    name: "Type 2 Diabetes"
-    researchSummary: "Phase 2 RCT (N=411) demonstrated HbA1c reduction of 1.9% at 16 weeks vs semaglutide 1mg (1.4%) and placebo (0.1%). Weight loss also superior to semaglutide at 9.6% vs 5.1%."
-    relevantStudies: ["36702559", "35913766"]
-    relatedPeptides: ["semaglutide", "tirzepatide"]
+  - slug: obesity
+    name: Obesity
+    researchSummary: >-
+      Phase 2 RCT (N=387) demonstrated 18.7% weight loss at 46 weeks with 4.8mg
+      dose. 81% of participants achieved >=10% weight loss vs 14% placebo. Phase
+      3 SYNCHRONIZE trials ongoing with results expected 2026.
+    relevantStudies:
+      - '37840093'
+      - '35913766'
+    relatedPeptides:
+      - semaglutide
+      - tirzepatide
+      - retatrutide
+  - slug: mash-nafld
+    name: MASH/NAFLD
+    researchSummary: >-
+      Phase 2 RCT (N=293) showed 83% MASH resolution vs 18% placebo and 64.5%
+      fibrosis improvement vs 25.9% placebo. Liver fat reduction of 82-86%.
+      These are the highest MASH resolution rates reported for any drug in Phase
+      2. Phase 3 ACHIEVE trial ongoing.
+    relevantStudies:
+      - '38507727'
+      - '36425689'
+    relatedPeptides:
+      - semaglutide
+      - tirzepatide
+  - slug: type-2-diabetes
+    name: Type 2 Diabetes
+    researchSummary: >-
+      Phase 2 RCT (N=411) demonstrated HbA1c reduction of 1.9% at 16 weeks vs
+      semaglutide 1mg (1.4%) and placebo (0.1%). Weight loss also superior to
+      semaglutide at 9.6% vs 5.1%.
+    relevantStudies:
+      - '36702559'
+      - '35913766'
+    relatedPeptides:
+      - semaglutide
+      - tirzepatide
 timeline:
-  - period: "Week 1-4"
-    effects: "Dose escalation phase. Common GI side effects (nausea, reduced appetite) typically emerge. Early weight loss primarily from reduced caloric intake via GLP-1 pathway."
-    source: "PMID:37840093"
-  - period: "Week 4-12"
-    effects: "Continued dose escalation toward target dose. Weight loss accelerates. GI tolerability typically improves. Early metabolic improvements in glucose and liver enzymes."
-    source: "PMID:36702559"
-  - period: "Week 12-24"
-    effects: "Target dose achieved. Steady-state drug levels (~4-5 weeks after stable dosing). Significant weight loss observable. Liver fat reduction becomes measurable."
-    source: "PMID:38507727"
-  - period: "Week 24-48"
-    effects: "Continued weight loss with trajectory not yet plateaued at 46 weeks. In MASH patients, histological improvements (resolution, fibrosis) documented at 48 weeks."
-    source: "PMID:37840093"
+  - period: Week 1-4
+    effects: >-
+      Dose escalation phase. Common GI side effects (nausea, reduced appetite)
+      typically emerge. Early weight loss primarily from reduced caloric intake
+      via GLP-1 pathway.
+    source: 'PMID:37840093'
+  - period: Week 4-12
+    effects: >-
+      Continued dose escalation toward target dose. Weight loss accelerates. GI
+      tolerability typically improves. Early metabolic improvements in glucose
+      and liver enzymes.
+    source: 'PMID:36702559'
+  - period: Week 12-24
+    effects: >-
+      Target dose achieved. Steady-state drug levels (~4-5 weeks after stable
+      dosing). Significant weight loss observable. Liver fat reduction becomes
+      measurable.
+    source: 'PMID:38507727'
+  - period: Week 24-48
+    effects: >-
+      Continued weight loss with trajectory not yet plateaued at 46 weeks. In
+      MASH patients, histological improvements (resolution, fibrosis) documented
+      at 48 weeks.
+    source: 'PMID:37840093'
 qualityChecklist:
   goodSigns:
-    - "Obtained through clinical trial enrollment or authorized pharmacy"
-    - "Proper pharmaceutical-grade packaging with lot number"
-    - "Clear solution after reconstitution (if applicable)"
-    - "Comes with complete prescribing information"
-    - "Stored at appropriate temperature (2-8C)"
-    - "Within expiration date with proper cold chain documentation"
+    - Obtained through clinical trial enrollment or authorized pharmacy
+    - Proper pharmaceutical-grade packaging with lot number
+    - Clear solution after reconstitution (if applicable)
+    - Comes with complete prescribing information
+    - Stored at appropriate temperature (2-8C)
+    - Within expiration date with proper cold chain documentation
   warningSigns:
-    - "Obtained outside of clinical trial or authorized channels"
-    - "Missing lot number or manufacturing information"
-    - "No prescribing information or patient guidance"
-    - "Unclear storage history or cold chain documentation"
-    - "Pricing significantly below expected clinical trial/pharmacy costs"
+    - Obtained outside of clinical trial or authorized channels
+    - Missing lot number or manufacturing information
+    - No prescribing information or patient guidance
+    - Unclear storage history or cold chain documentation
+    - Pricing significantly below expected clinical trial/pharmacy costs
   badSigns:
-    - "Sourced from unverified online vendors"
-    - "Sold as 'research chemical' for human use"
-    - "Visible particles, cloudiness, or discoloration"
-    - "No certificate of analysis or clearly fraudulent documentation"
-    - "Claims of FDA approval (survodutide is NOT yet approved)"
-    - "Packaging inconsistent with Boehringer Ingelheim standards"
+    - Sourced from unverified online vendors
+    - Sold as 'research chemical' for human use
+    - 'Visible particles, cloudiness, or discoloration'
+    - No certificate of analysis or clearly fraudulent documentation
+    - Claims of FDA approval (survodutide is NOT yet approved)
+    - Packaging inconsistent with Boehringer Ingelheim standards
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

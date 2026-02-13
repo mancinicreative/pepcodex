@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-**Phase 28: Weekly News Blog** — PENDING (next phase of v4.0 Content Expansion)
+**Phase 29: Comparisons Batch 2 + Calculators** — ✓ COMPLETE (v4.0 Content Expansion COMPLETE)
 
 ## Active Work
 
@@ -26,8 +26,9 @@
 | 25 | Glossary Expansion | +116 | ✓ COMPLETE |
 | 26 | Bioregulators Batch 1 | +11 | ✓ COMPLETE |
 | 27 | Bioregulators Batch 2 | +10 | ✓ COMPLETE |
-| 28 | Weekly News Blog | +78 | PENDING |
-| 29 | Comparisons Batch 2 + Calculators | +229 | Pending |
+| 28 | Weekly News Blog | +78 | ✓ COMPLETE |
+| 28.1 | QA Audit (Dossiers + Comparisons) | +0 (quality fix) | ✓ COMPLETE |
+| 29 | Comparisons Batch 2 + Calculators | +323 | ✓ COMPLETE |
 
 ## What's Done
 
@@ -113,22 +114,49 @@
 - Total peptide dossiers: 82 → 92 (+10)
 - Complete Khavinson bioregulator module: 20 total (5 original + 15 new)
 
+**Phase 28: Weekly News Blog ✓ COMPLETE**
+- ✓ 78 backdated weekly news posts created (Aug 2025 → Jan 2026)
+- ✓ 3 posts per week (Mon/Wed/Fri schedule)
+- ✓ Topics cover: GLP-1 trials, FDA regulatory, biotech news, research breakthroughs
+- ✓ All posts use weekly-briefing category with proper frontmatter
+- Total blog posts: 73 → 151 (+78)
+
+**Phase 28.1: QA Audit ✓ COMPLETE**
+- ✓ Created `scripts/qa-evidence-audit.mjs` — audits all 92 dossier evidence levels
+- ✓ Created `scripts/qa-comparison-audit.mjs` — cross-checks comparisons vs dossiers
+- ✓ Created `scripts/fix-comparison-mismatches.mjs` — automated evidence table fixes
+- ✓ 42 dossier evidence levels corrected (applied systematic criteria: FDA-approved=high, Phase 3+=high, Phase 2=moderate, human data thresholds)
+- ✓ 37 comparison files fixed for evidence level mismatches
+- ✓ 1 invalid comparison removed (aod-9604-vs-frag-176-191 — no matching dossier)
+
+**Phase 29: Comparisons Batch 2 + Calculators ✓ COMPLETE**
+- ✓ Fixed hardcoded peptideData bug in `src/pages/compare/[...slug].astro` — now uses `getCollection('peptides')` for all 92 peptides
+- ✓ Created `scripts/generate-comparisons.mjs` — pair generation with category/comparator logic
+- ✓ Created `scripts/backfill-comparison-faqs.mjs` — FAQ templating for existing comparisons
+- ✓ Created `data/calculator-presets.json` — 50 peptide presets with reconstitution/blend/accumulation data
+- ✓ 179 new comparison pages generated (100 → 279 total, 1 invalid removed)
+- ✓ 79 existing comparisons backfilled with FAQs
+- ✓ 3 dynamic calculator routes created:
+  - `/calculator/reconstitution/[peptide].astro` (44 peptides)
+  - `/calculator/blend/[peptide].astro` (50 peptides)
+  - `/calculator/accumulation/[peptide].astro` (50 peptides)
+- ✓ DossierLayout cross-linking updated:
+  - Comparison links use collection lookup (both slug orderings)
+  - Calculator links section added for presets
+- ✓ Build passes with 0 errors
+- Total comparisons: 100 → 279 (+179)
+- Total calculator URLs: 3 → 147 (+144)
+
 ### Pre-existing Assets (v4.0)
-- ✓ Calculators (reconstitution, blend, accumulation)
+- ✓ Calculators (reconstitution, blend, accumulation) — now with 144 peptide-specific routes
 - ✓ Legal pages (disclaimer, privacy, terms)
 - ✓ ComparisonLayout template
-- ✓ FAQSchema component (not deployed)
+- ✓ FAQSchema component (deployed to all comparisons)
 - ✓ 5 existing bioregulator dossiers (epithalon, thymalin, thymogen, cortexin, pinealon)
 
-## What's Next (v4.0)
+## What's Next
 
-### Phase 28: Weekly News Blog
-**Goal:** Build content freshness signals with backdated news posts
-
-**Deliverables:**
-- 78 backdated weekly news posts (3/week × 26 weeks, months 1-6 back)
-- Mon/Wed/Fri publishing schedule
-- News aggregation on peptide industry updates, research, and regulatory developments
+v4.0 Content Expansion is COMPLETE. Next milestone: v5.0 Feature Enhancement.
 
 ## Cut List (Deferred to v5.0)
 
@@ -142,25 +170,20 @@ Per content expansion pivot decision:
 
 ## Context for Resume
 
-v4.0 Content Expansion milestone in progress. Phase 27 complete.
+v4.0 Content Expansion milestone COMPLETE.
 
-**Current State (after Phase 27):**
-- ~800 pages (790 + 10 bioregulators)
-- 92 peptide dossiers (72 + 20 bioregulators)
-- 100 comparisons (45 + 55 new)
-- 215 glossary terms (99 + 116 new)
-- 15 condition hub pages
-- 1 bioregulators landing page (20 entries)
-- Schema markup deployed (FAQSchema, HowToSchema, DrugSchema)
-
-**Target State (v4.0):**
-- ~1,132 pages
-- 92 peptide dossiers ✓ (bioregulator module complete)
-- 280 comparisons (+180 more in Phase 29)
-- 240 glossary terms (+141)
-- 151 blog posts (+78 weekly news)
-- 15 condition hubs ✓
-- 53 calculator URLs (+50)
+**Final State (v4.0 Complete):**
+- ~1,048+ unique URLs (excluding peptide x condition cross-pages)
+- 92 peptide dossiers (72 + 20 bioregulators) ✓
+- 279 comparisons (45 + 55 Phase 23 + 179 Phase 29) ✓
+- 215 glossary terms (99 + 116 new) ✓
+- 15 condition hub pages ✓
+- 1 bioregulators landing page (20 entries) ✓
+- 151 blog posts (73 + 78 weekly news) ✓
+- 147 calculator URLs (3 static + 144 dynamic) ✓
+- Schema markup deployed (FAQSchema, HowToSchema, DrugSchema) ✓
+- QA audit tools created for ongoing use ✓
+- All dossier evidence levels systematically verified ✓
 
 **Key Documents:**
 - Plan: `C:\Users\manci\.claude\plans\piped-crunching-stardust.md`
@@ -193,9 +216,12 @@ Phase 24: Schema Deployments   [████████] 100% ✓
 Phase 25: Glossary Expansion   [████████] 100% ✓
 Phase 26: Bioregulators 1      [████████] 100% ✓
 Phase 27: Bioregulators 2      [████████] 100% ✓
-Phase 28: Weekly News Blog     [░░░░░░░░] 0%  <-- NEXT
-Phase 29: Comparisons + Calc   [░░░░░░░░] 0%
+Phase 28: Weekly News Blog     [████████] 100% ✓
+Phase 28.1: QA Audit            [████████] 100% ✓
+Phase 29: Comparisons + Calc   [████████] 100% ✓
 ```
+
+**v4.0 CONTENT EXPANSION: COMPLETE**
 
 ## Blockers
 
@@ -219,6 +245,10 @@ None
 - 2026-02-01: Phase 25 COMPLETE — 116 new glossary terms (99 → 215 total)
 - 2026-02-01: Phase 26 COMPLETE — 10 bioregulator dossiers + /bioregulators page
 - 2026-02-02: Phase 27 COMPLETE — 10 more bioregulator dossiers (Ovagen→Sigumir), bioregulator module complete with 20 total
+- 2026-02-02: Phase 28 COMPLETE — 78 weekly news blog posts (backdated Aug 2025 → Jan 2026)
+- 2026-02-12: Phase 28.1 COMPLETE — QA audit: 42 dossier evidence levels corrected, 37 comparison files fixed, audit tooling created
+- 2026-02-12: Phase 29 COMPLETE — 179 new comparisons, 144 calculator URLs, DossierLayout cross-linking, all FAQs backfilled
+- 2026-02-12: v4.0 Content Expansion milestone COMPLETE — ~1,048+ unique URLs
 
 ---
-*Last updated: 2026-02-02*
+*Last updated: 2026-02-12*

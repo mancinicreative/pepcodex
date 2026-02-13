@@ -138,7 +138,7 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
             <button
               class:list={[
                 "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300",
-                ['/compare', '/guide', '/safety', '/glossary', '/conditions', '/protocols', '/bioregulators'].some(p => currentPath.startsWith(p))
+                ['/compare', '/guide', '/safety', '/glossary', '/conditions', '/bioregulators'].some(p => currentPath.startsWith(p))
                   ? "bg-white/10 text-white shadow-[0_0_15px_rgba(255,255,255,0.1)] border border-white/10"
                   : "text-white/85 hover:text-white hover:bg-white/5"
               ]}
@@ -173,10 +173,6 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
                 <a href="/conditions" class:list={["flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors", isActive('/conditions') ? "bg-white/10 text-white" : "text-white/70 hover:text-white hover:bg-white/5"]}>
                   <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
                   Conditions
-                </a>
-                <a href="/protocols" class:list={["flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors", isActive('/protocols') ? "bg-white/10 text-white" : "text-white/70 hover:text-white hover:bg-white/5"]}>
-                  <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2M9 5h6M9 14l2 2 4-4"/></svg>
-                  Protocols
                 </a>
                 <a href="/bioregulators" class:list={["flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors", isActive('/bioregulators') ? "bg-white/10 text-white" : "text-white/70 hover:text-white hover:bg-white/5"]}>
                   <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 14a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/></svg>
@@ -363,7 +359,7 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
           <details class="group/research">
             <summary class:list={[
               "flex items-center justify-between px-4 py-3 rounded-xl text-lg font-medium transition-colors cursor-pointer list-none",
-              ['/compare', '/guide', '/safety', '/glossary', '/conditions', '/protocols', '/bioregulators'].some(p => currentPath.startsWith(p))
+              ['/compare', '/guide', '/safety', '/glossary', '/conditions', '/bioregulators'].some(p => currentPath.startsWith(p))
                 ? "bg-[var(--primary)]/10 text-primary border border-[var(--primary)]/20"
                 : "text-white/85 hover:text-white hover:bg-white/5"
             ]}>
@@ -393,9 +389,6 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
               </a>
               <a href="/conditions" class:list={["flex items-center gap-3 px-4 py-2.5 rounded-lg text-base transition-colors", isActive('/conditions') ? "text-primary" : "text-white/70 hover:text-white hover:bg-white/5"]}>
                 Conditions
-              </a>
-              <a href="/protocols" class:list={["flex items-center gap-3 px-4 py-2.5 rounded-lg text-base transition-colors", isActive('/protocols') ? "text-primary" : "text-white/70 hover:text-white hover:bg-white/5"]}>
-                Protocols
               </a>
               <a href="/bioregulators" class:list={["flex items-center gap-3 px-4 py-2.5 rounded-lg text-base transition-colors", isActive('/bioregulators') ? "text-primary" : "text-white/70 hover:text-white hover:bg-white/5"]}>
                 Bioregulators

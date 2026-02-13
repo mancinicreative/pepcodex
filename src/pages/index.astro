@@ -6,6 +6,9 @@ import NewsletterForm from '../components/NewsletterForm.astro';
 import { getCollection } from 'astro:content';
 
 const peptides = await getCollection('peptides');
+const comparisons = await getCollection('comparisons');
+const blogPosts = await getCollection('blog');
+const glossaryTerms = await getCollection('glossary');
 
 // Top Google searched peptides - manually curated for relevance
 const topPeptideSlugs = [
@@ -46,14 +49,32 @@ const categories = [
     description: 'Anti-aging bioregulators',
     icon: 'L',
   },
+  {
+    name: 'Cognitive',
+    slug: 'cognitive',
+    description: 'Nootropic and neuroprotective',
+    icon: 'C',
+  },
+  {
+    name: 'Immune',
+    slug: 'immune',
+    description: 'Immunomodulatory peptides',
+    icon: 'I',
+  },
+  {
+    name: 'Other',
+    slug: 'other',
+    description: 'Specialized compounds',
+    icon: 'O',
+  },
 ];
 
 const sourceCount = peptides.reduce((sum, p) => sum + p.data.sources.count, 0);
 const stats = [
   { value: `${peptides.length}+`, label: 'Peptide Dossiers', description: 'In-depth research profiles' },
+  { value: `${comparisons.length}+`, label: 'Comparisons', description: 'Head-to-head analyses' },
   { value: `${sourceCount.toLocaleString()}+`, label: 'Cited Sources', description: 'Peer-reviewed papers' },
-  { value: 'Global', label: 'Research Coverage', description: 'International literature' },
-  { value: 'Weekly', label: 'Updates', description: 'Fresh insights' },
+  { value: `${blogPosts.length}+`, label: 'Blog Articles', description: 'Weekly research updates' },
 ];
 ---
 
@@ -95,7 +116,7 @@ const stats = [
 
   <!-- Category Cards Grid -->
   <section class="py-12 md:py-16">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
       {categories.map((cat) => (
         <a href={`/category/${cat.slug}`} class="glass-card glass-card--hover p-6 text-center group">
           <!-- Icon circle -->
@@ -240,14 +261,3 @@ const stats = [
     </div>
   </section>
 </BaseLayout>
-
-<script>
-  // Keyboard shortcut for search (Cmd+K)
-  document.addEventListener('keydown', (e) => {
-    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-      e.preventDefault();
-      const searchInput = document.getElementById('search-input') as HTMLInputElement;
-      searchInput?.focus();
-    }
-  });
-</script>

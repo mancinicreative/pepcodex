@@ -2,6 +2,7 @@
 import BaseLayout from './BaseLayout.astro';
 import TableOfContents from '../components/TableOfContents.astro';
 import RelatedEntities from '../components/RelatedEntities.astro';
+import BreadcrumbSchema from '../components/SEO/BreadcrumbSchema.astro';
 
 interface Source {
   id: string;
@@ -50,9 +51,17 @@ const categoryColors: Record<string, string> = {
   'longevity': 'bg-amber-500/20 text-amber-400 border border-amber-500/30',
   'other': 'bg-white/20 text-white/80 border border-white/20',
 };
+
+const siteBase = Astro.site?.toString() || 'https://pepcodex.com';
+const breadcrumbItems = [
+  { name: 'Home', url: siteBase },
+  { name: 'Guides', url: `${siteBase}guide/` },
+  { name: title, url: Astro.url.toString() },
+];
 ---
 
 <BaseLayout title={title} description={summary}>
+  <BreadcrumbSchema items={breadcrumbItems} />
   <article class="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
     <!-- Header -->
     <header class="mb-8 relative">

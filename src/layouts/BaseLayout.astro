@@ -37,6 +37,13 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
+    <!-- Font loading: preconnect + non-blocking stylesheet (4 weights: 400-700) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" /></noscript>
+
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="8sNDsQp-DdfE1yFsY3N2xVcS2cnc4ecvACgyY6ON3LQ" />
 
@@ -76,8 +83,11 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
     )}
   </head>
   <body class="min-h-screen text-[var(--foreground)] antialiased selection:bg-[var(--primary)]/30" style="font-family: var(--font-sans);">
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Header -->
-    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-[var(--background)]/60 backdrop-blur-xl supports-[backdrop-filter]:bg-[var(--background)]/20">
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-[var(--background)]/60 backdrop-blur-xl supports-[backdrop-filter]:bg-[var(--background)]/20" aria-label="Main navigation">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <!-- Logo -->
         <a href="/" class="flex items-center gap-2 group">
@@ -95,6 +105,7 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
         <div class="hidden md:flex items-center gap-1">
           <a
             href="/peptides"
+            aria-current={isActive('/peptides') || isActive('/category') ? 'page' : undefined}
             class:list={[
               "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300",
               isActive('/peptides') || isActive('/category')
@@ -109,6 +120,7 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
           </a>
           <a
             href="/trials"
+            aria-current={isActive('/trials') ? 'page' : undefined}
             class:list={[
               "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300",
               isActive('/trials')
@@ -126,7 +138,7 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
             <button
               class:list={[
                 "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300",
-                ['/compare', '/guide', '/safety', '/glossary', '/conditions'].some(p => currentPath.startsWith(p))
+                ['/compare', '/guide', '/safety', '/glossary', '/conditions', '/protocols', '/bioregulators'].some(p => currentPath.startsWith(p))
                   ? "bg-white/10 text-white shadow-[0_0_15px_rgba(255,255,255,0.1)] border border-white/10"
                   : "text-white/85 hover:text-white hover:bg-white/5"
               ]}
@@ -162,11 +174,20 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
                   <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
                   Conditions
                 </a>
+                <a href="/protocols" class:list={["flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors", isActive('/protocols') ? "bg-white/10 text-white" : "text-white/70 hover:text-white hover:bg-white/5"]}>
+                  <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2M9 5h6M9 14l2 2 4-4"/></svg>
+                  Protocols
+                </a>
+                <a href="/bioregulators" class:list={["flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors", isActive('/bioregulators') ? "bg-white/10 text-white" : "text-white/70 hover:text-white hover:bg-white/5"]}>
+                  <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 14a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/></svg>
+                  Bioregulators
+                </a>
               </div>
             </div>
           </div>
           <a
             href="/calculator"
+            aria-current={isActive('/calculator') ? 'page' : undefined}
             class:list={[
               "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300",
               isActive('/calculator')
@@ -185,6 +206,7 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
           </a>
           <a
             href="/blog"
+            aria-current={isActive('/blog') ? 'page' : undefined}
             class:list={[
               "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300",
               isActive('/blog')
@@ -202,6 +224,7 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
           </a>
           <a
             href="/directory"
+            aria-current={isActive('/directory') ? 'page' : undefined}
             class:list={[
               "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300",
               isActive('/directory')
@@ -219,7 +242,7 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
 
         <!-- Right side actions -->
         <div class="hidden md:flex items-center gap-3">
-          <button id="header-search-btn" class="btn btn-ghost rounded-full p-2" style="color: var(--text-medium);">
+          <button id="header-search-btn" class="btn btn-ghost rounded-full p-2" style="color: var(--text-medium);" aria-label="Search (Ctrl+K)">
             <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="11" cy="11" r="8" />
               <path d="m21 21-4.3-4.3" />
@@ -256,7 +279,7 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
       </div>
 
       <!-- Mobile navigation -->
-      <div id="mobile-nav" class="hidden bg-[var(--background)]/95 backdrop-blur-2xl border-t border-white/5 p-4 md:hidden">
+      <div id="mobile-nav" class="mobile-nav-panel bg-[var(--background)]/95 backdrop-blur-2xl border-t border-white/5 p-4 md:hidden" aria-label="Mobile navigation">
         <div class="flex flex-col gap-2">
           <a
             href="/peptides"
@@ -340,7 +363,7 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
           <details class="group/research">
             <summary class:list={[
               "flex items-center justify-between px-4 py-3 rounded-xl text-lg font-medium transition-colors cursor-pointer list-none",
-              ['/compare', '/guide', '/safety', '/glossary', '/conditions'].some(p => currentPath.startsWith(p))
+              ['/compare', '/guide', '/safety', '/glossary', '/conditions', '/protocols', '/bioregulators'].some(p => currentPath.startsWith(p))
                 ? "bg-[var(--primary)]/10 text-primary border border-[var(--primary)]/20"
                 : "text-white/85 hover:text-white hover:bg-white/5"
             ]}>
@@ -371,6 +394,12 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
               <a href="/conditions" class:list={["flex items-center gap-3 px-4 py-2.5 rounded-lg text-base transition-colors", isActive('/conditions') ? "text-primary" : "text-white/70 hover:text-white hover:bg-white/5"]}>
                 Conditions
               </a>
+              <a href="/protocols" class:list={["flex items-center gap-3 px-4 py-2.5 rounded-lg text-base transition-colors", isActive('/protocols') ? "text-primary" : "text-white/70 hover:text-white hover:bg-white/5"]}>
+                Protocols
+              </a>
+              <a href="/bioregulators" class:list={["flex items-center gap-3 px-4 py-2.5 rounded-lg text-base transition-colors", isActive('/bioregulators') ? "text-primary" : "text-white/70 hover:text-white hover:bg-white/5"]}>
+                Bioregulators
+              </a>
             </div>
           </details>
           <div class="flex gap-2 mt-4 pt-4 border-t border-white/10">
@@ -391,7 +420,7 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
       </div>
     </nav>
 
-    <main class="pt-24 pb-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[calc(100vh-4rem)]">
+    <main id="main-content" class="pt-24 pb-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[calc(100vh-4rem)]">
       <slot />
     </main>
 
@@ -488,11 +517,54 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
       const menuBtn = document.getElementById('mobile-menu-btn');
       const mobileNav = document.getElementById('mobile-nav');
 
+      function closeMobileMenu() {
+        if (menuBtn && mobileNav) {
+          menuBtn.setAttribute('aria-expanded', 'false');
+          mobileNav.classList.remove('is-open');
+          menuBtn.focus();
+        }
+      }
+
+      function openMobileMenu() {
+        if (menuBtn && mobileNav) {
+          menuBtn.setAttribute('aria-expanded', 'true');
+          mobileNav.classList.add('is-open');
+          // Focus first link in menu after transition
+          const firstLink = mobileNav.querySelector('a');
+          if (firstLink) setTimeout(() => firstLink.focus(), 100);
+        }
+      }
+
       if (menuBtn && mobileNav) {
         menuBtn.addEventListener('click', () => {
           const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
-          menuBtn.setAttribute('aria-expanded', String(!isExpanded));
-          mobileNav.classList.toggle('hidden');
+          if (isExpanded) {
+            closeMobileMenu();
+          } else {
+            openMobileMenu();
+          }
+        });
+
+        // ESC to close
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true') {
+            closeMobileMenu();
+          }
+        });
+
+        // Focus trap within mobile nav
+        mobileNav.addEventListener('keydown', (e) => {
+          if (e.key !== 'Tab') return;
+          const focusable = mobileNav.querySelectorAll('a, button, details > summary');
+          const first = focusable[0] as HTMLElement;
+          const last = focusable[focusable.length - 1] as HTMLElement;
+          if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
         });
       }
     </script>

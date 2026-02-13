@@ -19,6 +19,7 @@ const {
     method="POST"
     data-newsletter-form
   >
+    <input type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;" />
     <input
       type="email"
       name="email"
@@ -46,6 +47,7 @@ const {
       method="POST"
       data-newsletter-form
     >
+      <input type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;" />
       <input
         type="email"
         name="email"
@@ -81,6 +83,7 @@ const {
         method="POST"
         data-newsletter-form
       >
+        <input type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;" />
         <input
           type="email"
           name="email"
@@ -106,7 +109,9 @@ const {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const formEl = e.target as HTMLFormElement;
-      const email = new FormData(formEl).get('email');
+      const formData = new FormData(formEl);
+      const email = formData.get('email');
+      const website = formData.get('website');
       const button = formEl.querySelector('button');
       const originalButtonText = button?.textContent || 'Subscribe';
 
@@ -119,7 +124,7 @@ const {
         const res = await fetch('/api/subscribe', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, source: 'website_form' }),
+          body: JSON.stringify({ email, source: 'website_form', website }),
         });
 
         const data = await res.json();

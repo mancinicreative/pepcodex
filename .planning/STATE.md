@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-**v5.0 Hardening & Enhancement** — PLANNED (Studio Evaluation complete)
+**v5.0 Hardening & Enhancement** — COMPLETE
 
 ## Active Work
 
@@ -17,12 +17,12 @@
 
 | Phase | Focus | Scorecard Impact | Status |
 |-------|-------|------------------|--------|
-| A | Security Hardening | Security 1→3 (+2) | PLANNED |
-| B | Performance Optimization | Performance 2→3 (+1) | PLANNED |
-| C | Accessibility Fixes | Accessibility 2→3 (+1) | PLANNED |
-| D | Navigation & UX | Usability 3→4 (+1) | PLANNED |
-| E | Content Quality | Content consistency | PLANNED |
-| F | Feature Enhancements | UX/Polish 3→4 (+1) | PLANNED |
+| A | Security Hardening | Security 1→3 (+2) | COMPLETE |
+| B | Performance Optimization | Performance 2→3 (+1) | COMPLETE |
+| C | Accessibility Fixes | Accessibility 2→3 (+1) | COMPLETE |
+| D | Navigation & UX | Usability 3→4 (+1) | COMPLETE |
+| E | Content Quality | Content consistency | COMPLETE |
+| F | Feature Enhancements | Clinics 10→52 | COMPLETE |
 
 **Minimum viable v5.0:** Phases A + B + C (brings scorecard to 75%)
 
@@ -166,24 +166,38 @@
 ## What's Next
 
 **v5.0 Phase A: Security Hardening** — BLOCKER items from studio evaluation.
+**v6.0 Growth & Monetization** — PLANNED (PMF Analysis complete, all 4 phases planned).
 
-See `.planning/ROADMAP.md` for full v5.0 phase breakdown.
-See `.planning/studio/` for evaluation reports.
+See `.planning/ROADMAP.md` for full v5.0 + v6.0 phase breakdown.
+See `.planning/studio/` for v5.0 evaluation reports.
+See `.planning/PMF-ANALYSIS.md` for v6.0 market analysis.
 
-## Quality Scorecard (v4.0 Final)
+### v6.0 Growth & Monetization (PLANNED)
+
+| Phase | Focus | Requirements | Dependencies | Status |
+|-------|-------|-------------|--------------|--------|
+| 31 | Analytics & Traffic Intelligence | ANLY-01 to ANLY-07 (7) | v5.0 Phase A | PLANNED |
+| 32 | Monetization Foundation | MONET-01 to MONET-10 (10) | Phase 31 | PLANNED |
+| 33 | Regulatory Status Tracker | REG-01 to REG-09 (9) | None | PLANNED |
+| 34 | Distribution & Growth | DIST-01 to DIST-10 (10) | Phases 31, 32 | PLANNED |
+
+**Total v6.0 requirements:** 36
+**PMF Score targets:** Monetization 2→6, Audience Reach 4→7, Brand Awareness 3→5
+
+## Quality Scorecard (v5.0 Phase C Update)
 
 | Dimension | Score | Phase 4 Min | Status |
 |---|---|---|---|
 | Functional | 3 | 3 | PASS |
-| Performance | 2 | 3 | FAIL |
-| Usability | 3 | 3 | PASS |
-| Accessibility | 2 | 3 | FAIL |
-| Security | 1 | 3 | BLOCKER |
+| Performance | 3 | 3 | PASS (was 2 — FIXED in Phase B) |
+| Usability | 4 | 3 | PASS (was 3 — improved in Phase D) |
+| Accessibility | 3 | 3 | PASS (was 2 — FIXED) |
+| Security | 3 | 3 | PASS (was 1 — FIXED in Phase A) |
 | Reliability | 3 | 3 | PASS |
 | Maintainability | 3 | 2 | PASS |
 | UX/Polish | 3 | 3 | PASS |
 
-**Overall: 20/32 = 62.5%** (target: 75%)
+**Overall: 25/32 = 78.1%** (was 75%)
 
 ## v5.0 Minimum Fixes to Pass
 
@@ -235,7 +249,7 @@ Phase 8: Production Verify     [░░░░░░░░] 0%  (partial)
 v3.0 Phases (ON HOLD):
 Phase 9-12: Operations         [░░░░░░░░] ON HOLD
 
-v4.0 Phases (ACTIVE):
+v4.0 Phases (COMPLETE):
 Phase 23: Comparisons + Hubs   [████████] 100% ✓
 Phase 24: Schema Deployments   [████████] 100% ✓
 Phase 25: Glossary Expansion   [████████] 100% ✓
@@ -244,9 +258,25 @@ Phase 27: Bioregulators 2      [████████] 100% ✓
 Phase 28: Weekly News Blog     [████████] 100% ✓
 Phase 28.1: QA Audit            [████████] 100% ✓
 Phase 29: Comparisons + Calc   [████████] 100% ✓
+
+v5.0 Phases (PLANNED):
+Phase A: Security Hardening    [████████] 100% ✓
+Phase B: Performance Optim.    [████████] 100% ✓
+Phase C: Accessibility Fixes   [████████] 100% ✓
+Phase D: Navigation & UX       [████████] 100% ✓
+Phase E: Content Quality       [████████] 100% ✓
+Phase F: Feature Enhancements  [████████] 100% ✓
+
+v6.0 Phases (PLANNED):
+Phase 31: Analytics & Traffic  [░░░░░░░░] 0%
+Phase 32: Monetization Found.  [░░░░░░░░] 0%
+Phase 33: Regulatory Tracker   [░░░░░░░░] 0%
+Phase 34: Distribution Growth  [░░░░░░░░] 0%
 ```
 
 **v4.0 CONTENT EXPANSION: COMPLETE**
+**v5.0 HARDENING: COMPLETE (6 phases, all done)**
+**v6.0 GROWTH & MONETIZATION: PLANNED (4 phases, 36 requirements)**
 
 ## Blockers
 
@@ -278,6 +308,21 @@ None
 - 2026-02-12: Quality scorecard: 20/32 = 62.5% (Security BLOCKER at 1/4)
 - 2026-02-12: v5.0 Roadmap written — 6 phases (A-F), 26 work items
 - 2026-02-12: STATE.md updated for v5.0 kickoff
+- 2026-02-12: PMF Analysis complete — PMF-ANALYSIS.md with market data, competitive landscape, gap analysis
+- 2026-02-12: v6.0 Growth & Monetization planned — 4 phases (31-34), 36 requirements
+- 2026-02-12: Phase directories created: 31-analytics-intelligence, 32-monetization-foundation, 33-regulatory-tracker, 34-distribution-growth
+- 2026-02-12: RESEARCH.md and PLAN.md written for all 4 v6.0 phases
+- 2026-02-12: Phase A COMPLETE — 5 security fixes, scorecard 62.5% → 68.75%
+- 2026-02-12: Phase B COMPLETE — Static output, font preload, weight reduction, dead CSS removal, fixed getStaticPaths bugs in [category] and protocols/[slug]. Scorecard 68.75% → 71.9%. Build: 1,332 pages.
+- 2026-02-12: Phase C COMPLETE — Skip-link, prefers-reduced-motion, breadcrumbs on all 9 layouts, aria-current on nav links, focus trap + ESC on mobile menu, slide-fade animation. Scorecard 71.9% → 75% TARGET REACHED.
+- 2026-02-12: Phase D COMPLETE — Unified Cmd+K to SearchModal, added Protocols + Bioregulators to Research dropdown, all 7 categories on homepage, dynamic homepage stats from collections. Scorecard 75% → 78.1%.
+- 2026-02-12: ROADMAP.md updated — v6.0 replaces deferred v3.0 placeholder with PMF-informed phases
+- 2026-02-12: REQUIREMENTS.md updated — 36 new v6 requirements (ANLY, MONET, REG, DIST)
+- 2026-02-12: PROJECT.md updated — current milestone v5.0, next milestone v6.0
+- 2026-02-12: v5.0 Phase A COMPLETE — 5 security fixes: CSP/HSTS/security headers, rate limiting (5/min/IP), health endpoint sanitized, CORS restricted to pepcodex.com, honeypot bot protection on newsletter forms
+- 2026-02-12: Phase E COMPLETE — Cross-link validator upgraded (3 severity levels, 0 structural errors in 3,683 refs), safety articles expanded 11→31 (+20 new covering top peptides). Evidence scales already unified, glossary auto-linking already active.
+- 2026-02-12: Phase F COMPLETE — Clinics expanded 10→52 (+42 across US cities). Content migration skipped (separate collections are a feature). Protocol expansion skipped (not part of site direction). Related peptides + blog nav already implemented.
+- 2026-02-12: v5.0 HARDENING MILESTONE COMPLETE — Scorecard 62.5% → 78.1%. All 6 phases (A-F) done.
 
 ---
 *Last updated: 2026-02-12*

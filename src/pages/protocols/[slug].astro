@@ -5,7 +5,7 @@ import ProtocolLayout from '../../layouts/ProtocolLayout.astro';
 export async function getStaticPaths() {
   const protocols = await getCollection('protocols');
   return protocols.map((protocol) => ({
-    params: { slug: protocol.data.slug },
+    params: { slug: protocol.id },
     props: { protocol },
   }));
 }

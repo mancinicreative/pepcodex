@@ -35,58 +35,100 @@ v5.0 Hardening & Enhancement — Fix security blockers, optimize performance, im
 - [x] **Phase 28.1: QA Audit** - Evidence level audit + comparison accuracy fixes
 - [x] **Phase 29: Comparisons Batch 2 + Calculators** - 179 comparisons + 144 calculator URLs
 
-### v5.0 Hardening & Enhancement (PLANNED)
-*Informed by Full Studio Pipeline Evaluation (2026-02-12). Quality scorecard: 62.5% → target 75%.*
+### v5.0 Hardening & Enhancement (COMPLETE)
+*Informed by Full Studio Pipeline Evaluation (2026-02-12). Quality scorecard: 62.5% → 78.1% (target 75% exceeded).*
 
-#### Phase A: Security Hardening (BLOCKER — must fix first)
-- [ ] **SEC-001: Security headers** — Add CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy to vercel.json
-- [ ] **SEC-002: Rate limiting** — Add rate limiting to `/api/subscribe` (Vercel Edge Middleware or Upstash)
-- [ ] **SEC-003: Health endpoint** — Remove config info exposure from `/api/health`
-- [ ] **SEC-004: CORS restriction** — Change `Access-Control-Allow-Origin: *` to `https://pepcodex.com`
-- [ ] **SEC-005: Bot protection** — Add honeypot field to newsletter form
+#### Phase A: Security Hardening (COMPLETE)
+- [x] **SEC-001: Security headers** — Added CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy to vercel.json
+- [x] **SEC-002: Rate limiting** — Added in-memory rate limiter (5 req/min per IP) to `/api/subscribe`
+- [x] **SEC-003: Health endpoint** — Removed config info exposure from `/api/health`
+- [x] **SEC-004: CORS restriction** — Changed `Access-Control-Allow-Origin: *` to `https://pepcodex.com`
+- [x] **SEC-005: Bot protection** — Added honeypot field to all 3 newsletter form variants
 
-#### Phase B: Performance Optimization (score 2→3)
-- [ ] **PERF-001: Static output** — Switch `output: 'server'` → `'static'` (or `'hybrid'`), add `prerender: false` to 3 API routes
-- [ ] **PERF-002: Font loading** — Move `@import url()` to `<link rel="preload">` in BaseLayout, add preconnect hints
-- [ ] **PERF-003: Font optimization** — Reduce from 6 weights (300-800) to 4 weights (400-700)
-- [ ] **PERF-004: Shiki theme** — Change `github-light` → `github-dark` or `one-dark-pro`
-- [ ] **PERF-005: Dead CSS** — Remove legacy aliases (`.glass-panel`, `.glass-card-default`, etc.)
+#### Phase B: Performance Optimization (COMPLETE)
+- [x] **PERF-001: Static output** — Switched `output: 'server'` → `'static'`, fixed getStaticPaths in `[category].astro` (extracted to `src/data/category-meta.ts`) and `protocols/[slug].astro` (fixed `protocol.data.slug` → `protocol.id`)
+- [x] **PERF-002: Font loading** — Moved `@import url()` to `<link rel="preload">` with preconnect hints in BaseLayout
+- [x] **PERF-003: Font optimization** — Reduced from 6 weights (300-800) to 4 weights (400-700)
+- [x] **PERF-004: Shiki theme** — Already `github-dark` (no change needed)
+- [x] **PERF-005: Dead CSS** — Removed `.glass-panel` class (legacy aliases `.glass-card-default` etc. still used in 40+ files — not dead)
 
-#### Phase C: Accessibility Fixes (score 2→3)
-- [ ] **A11Y-001: Skip navigation** — Add skip-link to BaseLayout before `<nav>`
-- [ ] **A11Y-002: Reduced motion** — Add `@media (prefers-reduced-motion)` to global.css
-- [ ] **A11Y-003: Breadcrumbs** — Deploy BreadcrumbSchema to all 10 layouts
-- [ ] **A11Y-004: ARIA improvements** — Add `aria-current="page"`, focus trap on mobile menu, ESC to close
-- [ ] **A11Y-005: Mobile menu animation** — Add slide/fade transition instead of instant toggle
+#### Phase C: Accessibility Fixes (COMPLETE)
+- [x] **A11Y-001: Skip navigation** — Added skip-to-content link in BaseLayout with focus-visible styling, `id="main-content"` on `<main>`
+- [x] **A11Y-002: Reduced motion** — Added `@media (prefers-reduced-motion: reduce)` global override for all animations/transitions
+- [x] **A11Y-003: Breadcrumbs** — Deployed BreadcrumbSchema to all 9 content layouts (was 3, now 9/9: Dossier, Condition, Glossary, Comparison, Guide, Safety, Blog, Protocol, Hub)
+- [x] **A11Y-004: ARIA improvements** — Added `aria-current="page"` to 5 desktop nav links, `aria-label` on nav + search button, ESC to close mobile menu, focus trap in mobile nav
+- [x] **A11Y-005: Mobile menu animation** — Replaced instant `hidden` toggle with CSS max-height/opacity slide-fade transition
 
-#### Phase D: Navigation & UX (score 3→4)
-- [ ] **UX-001: Fix search icon** — Wire header search button to Pagefind or scroll to SearchBar
-- [ ] **UX-002: Extend Cmd+K** — Make keyboard shortcut work on all pages
-- [ ] **UX-003: Navigation dropdown** — Add "Research" dropdown with all 12 content types
-- [ ] **UX-004: Dynamic categories** — Replace 3 hardcoded category pages with `[category].astro` covering all 7
-- [ ] **UX-005: Blog filtering** — Add category filter UI to blog index
-- [ ] **UX-006: Homepage stats** — Generate from content collections at build time
+#### Phase D: Navigation & UX (COMPLETE)
+- [x] **UX-001: Fix search icon** — Already wired to SearchModal via `open-search-modal` custom event
+- [x] **UX-002: Extend Cmd+K** — Removed conflicting homepage handler; global BaseLayout Cmd+K → SearchModal works on all pages
+- [x] **UX-003: Navigation dropdown** — Added Protocols + Bioregulators to Research dropdown (desktop + mobile), updated highlight detection
+- [x] **UX-004: Dynamic categories** — `[category].astro` already covered all 7; expanded homepage from 4 to 7 category cards with responsive grid
+- [x] **UX-005: Blog filtering** — Already implemented with client-side category filter buttons
+- [x] **UX-006: Homepage stats** — Now shows peptides, comparisons, cited sources, and blog articles (all from content collections at build time)
 
-#### Phase E: Content Quality (deferred enhancements)
-- [ ] **CONTENT-001: Unify evidence scales** — Pick one scale across all collections
-- [ ] **CONTENT-002: Source fields** — Add sources to guides and safety collections
-- [ ] **CONTENT-003: Cross-link validation** — Build-time slug reference validation
-- [ ] **CONTENT-004: Glossary auto-linking** — Remark/rehype plugin for auto-linking terms
-- [ ] **CONTENT-005: Safety coverage** — Expand from 11 to 30+ safety articles
+#### Phase E: Content Quality (COMPLETE)
+- [x] **CONTENT-001: Unify evidence scales** — Already unified: single `evidenceStrength` enum across all collections
+- [x] **CONTENT-002: Source fields** — Schema already has `sources` fields on guides and safety collections
+- [x] **CONTENT-003: Cross-link validation** — Enhanced validator with 3 severity levels (error/warning/info), 3,683 refs checked, 0 structural errors. Validator exits 0 on pass, supports `--strict` and `--verbose` flags
+- [x] **CONTENT-004: Glossary auto-linking** — Already implemented via rehype plugin in Astro config
+- [x] **CONTENT-005: Safety coverage** — Expanded from 11 to 31 safety articles (+20 new covering BPC-157, TB-500, ipamorelin, CJC-1295, MK-677, liraglutide, selank, semax, GHK-Cu, sermorelin, thymosin-alpha-1, dihexa, LL-37, retatrutide, FOXO4-DRI, MOTS-c, DSIP, SS-31, KPV, humanin)
 
-#### Phase F: Feature Enhancements (from original v5.0 plan)
-- [ ] **FEAT-001: Content migration** — Guides/safety → blog with redirects
-- [ ] **FEAT-002: Protocol expansion** — Expand from 3 to 15+ protocols
-- [ ] **FEAT-003: Clinic expansion** — Expand from 10 to 50+ clinic listings
-- [ ] **FEAT-004: Related peptides** — Add related dossier suggestions to DossierLayout
-- [ ] **FEAT-005: Blog navigation** — Add prev/next post navigation
+#### Phase F: Feature Enhancements (COMPLETE)
+- [x] **FEAT-001: Content migration** — SKIPPED: Guides/safety are distinct collections with different schemas, layouts, and purposes. Separate collections are a feature, not debt.
+- [x] **FEAT-002: Protocol expansion** — SKIPPED: Protocols not part of site direction.
+- [x] **FEAT-003: Clinic expansion** — Expanded from 10 to 52 clinic listings (+42 across 42 US cities)
+- [x] **FEAT-004: Related peptides** — Already implemented in DossierLayout (comparators + same-category suggestions)
+- [x] **FEAT-005: Blog navigation** — Already implemented (prev/next in BlogLayout)
 
-### v6.0 Growth & Monetization (DEFERRED)
-*Resume v3.0 operations work + new growth features.*
-- [ ] **Phase 9: Operations Infrastructure** — Templates, calendars, SOPs
-- [ ] **Phase 10: Content Production System** — Batch workflow, repurposing
-- [ ] **Phase 11: Distribution System** — Instagram, email capture, newsletters
-- [ ] **Phase 12: Monetization Foundation** — Directory, pricing, outreach
+### v6.0 Growth & Monetization (PLANNED)
+*Informed by PMF Analysis (2026-02-12). Replaces deferred v3.0 phases with data-driven growth strategy.*
+*PMF Assessment: Strong product, weak distribution. Content moat 7/10, Monetization 2/10, Reach 4/10.*
+*Depends on: v5.0 Phase A (security hardening) minimum.*
+
+#### Phase 31: Analytics & Traffic Intelligence
+- [ ] **ANLY-001: Vercel Analytics** — Activate Web Analytics on production deployment
+- [ ] **ANLY-002: GA4 deep audit** — Event tracking for search, comparisons, calculators, newsletter signup
+- [ ] **ANLY-003: Search Console deep dive** — Top queries, CTR by page type, indexing coverage
+- [ ] **ANLY-004: Beehiiv audit** — Subscriber count, open/click rates, growth trajectory
+- [ ] **ANLY-005: KPI dashboard** — Baseline report template for traffic, engagement, conversions
+- [ ] **ANLY-006: Conversion funnels** — GA4 funnel setup for newsletter, comparison→dossier, calculator flows
+- [ ] **ANLY-007: Page/query prioritization** — Top 20 pages by traffic, top 20 queries → monetization priority list
+
+#### Phase 32: Monetization Foundation
+- [ ] **MONET-001: Comparison CTAs** — "Find a specialist" / newsletter CTA component on all 279 comparison pages
+- [ ] **MONET-002: Condition CTAs** — Condition-specific lead capture on 15 hub pages
+- [ ] **MONET-003: Clinic partnership model** — Tiers ($99-499/mo), deliverables, terms document
+- [ ] **MONET-004: PepCodex Pro concept** — White-label content tier for clinics/practitioners
+- [ ] **MONET-005: Featured Clinic section** — Add to existing city page infrastructure
+- [ ] **MONET-006: Clinic directory** — Searchable directory with location/specialty filters
+- [ ] **MONET-007: Media kit** — Sponsorship deck for advertisers
+- [ ] **MONET-008: Payment infrastructure** — Stripe integration for Pro tier
+- [ ] **MONET-009: Quiz funnel** — "Which peptide research matches your interest?" → newsletter + clinic referral
+- [ ] **MONET-010: Revenue model** — Projections by channel (listings, Pro, sponsors, newsletter)
+
+#### Phase 33: Regulatory Status Tracker
+- [ ] **REG-001: Status data schema** — FDA approval, compounding, patent status per peptide
+- [ ] **REG-002: Content collection** — `regulatory-status` collection in Astro config
+- [ ] **REG-003: Tracker page** — Filterable table showing all 92 peptides with regulatory status
+- [ ] **REG-004: Data population** — Regulatory data for all 92 peptides
+- [ ] **REG-005: Dossier badges** — Regulatory status badge on DossierLayout
+- [ ] **REG-006: Compounding explainer** — What compounding means, FDA rules, state variations
+- [ ] **REG-007: FDA Pipeline page** — Peptides in Phase 2/3 with expected decision dates
+- [ ] **REG-008: Dossier frontmatter** — approval_status, compounding_status, patent_expiry fields
+- [ ] **REG-009: Schema markup** — MedicalEntity/Drug schema extensions for regulatory data
+
+#### Phase 34: Distribution & Growth
+- [ ] **DIST-001: SEO technical audit** — Crawlability, internal linking, orphan pages, canonicals
+- [ ] **DIST-002: Programmatic SEO** — "[peptide] + [condition]" landing pages from existing data
+- [ ] **DIST-003: Social strategy** — Platform selection, content formats, posting cadence
+- [ ] **DIST-004: Social templates** — 10 templates (carousels, threads, video scripts)
+- [ ] **DIST-005: Newsletter growth** — Lead magnets (PDF guides, tracker updates)
+- [ ] **DIST-006: Lead magnet PDFs** — 3 PDFs from existing content (top comparisons, GLP-1, bioregulators)
+- [ ] **DIST-007: Email capture** — Lead magnet offers on high-traffic pages
+- [ ] **DIST-008: Backlink strategy** — 20 target sites for guest posts/citations
+- [ ] **DIST-009: Content syndication** — License comparison articles to health media
+- [ ] **DIST-010: Social profiles** — Instagram, Twitter/X with consistent branding
 
 ---
 
@@ -252,6 +294,108 @@ v5.0 Hardening & Enhancement — Fix security blockers, optimize performance, im
 
 ---
 
+## v6.0 Phase Details
+
+### Phase 31: Analytics & Traffic Intelligence
+**Goal**: Establish data-driven baselines to prioritize monetization and growth investments
+**Requirements**: ANLY-01 through ANLY-07 (7 requirements)
+**Depends on**: v5.0 Phase A (security headers must be in place before analytics optimization)
+**Success Criteria**:
+1. Vercel Analytics active and collecting data
+2. GA4 event tracking covers all key user flows
+3. Search Console data exported with top queries and page performance
+4. Beehiiv metrics documented (subscriber count, engagement rates)
+5. KPI baseline report created with actionable insights
+6. Top 20 pages/queries identified for monetization priority
+
+**Deliverables**:
+- Vercel Analytics dashboard active
+- GA4 enhanced event configuration
+- Search Console export + analysis document
+- Beehiiv metrics snapshot
+- KPI baseline report (`.planning/ANALYTICS-BASELINE.md`)
+- Monetization priority list (top pages/queries ranked by revenue potential)
+
+---
+
+### Phase 32: Monetization Foundation
+**Goal**: Build revenue infrastructure — CTAs, clinic partnerships, Pro tier, payment processing
+**Requirements**: MONET-01 through MONET-10 (10 requirements)
+**Depends on**: Phase 31 (analytics baseline informs CTA placement priority)
+**Success Criteria**:
+1. CTA components deployed on all comparison and condition pages
+2. Clinic partnership model documented with pricing tiers
+3. PepCodex Pro tier concept validated (scope, pricing, deliverables)
+4. Clinic directory page functional with search/filter
+5. Media kit ready for sponsor outreach
+6. At least one revenue channel operational (even if zero revenue initially)
+
+**Deliverables**:
+- `ComparisonCTA.astro` component on 279 comparison pages
+- `ConditionCTA.astro` component on 15 condition hub pages
+- Clinic partnership terms document
+- PepCodex Pro tier spec
+- `/clinics` directory page with search
+- Featured clinic section on city pages
+- Media kit / sponsorship deck PDF
+- Revenue projection model
+
+---
+
+### Phase 33: Regulatory Status Tracker
+**Goal**: Create unique, high-value regulatory content that competitors lack — viral potential
+**Requirements**: REG-01 through REG-09 (9 requirements)
+**Depends on**: None (can run in parallel with 31-32)
+**Success Criteria**:
+1. Regulatory status data populated for all 92 peptides
+2. FDA Status Tracker page renders with filterable table
+3. Regulatory badges appear on all dossier pages
+4. Compounding explainer page published
+5. FDA Pipeline page shows peptides in active trials
+6. Schema markup validated for regulatory data
+
+**Deliverables**:
+- `regulatory-status` content collection + schema
+- `/regulatory-tracker` page with filterable table
+- Regulatory badges on DossierLayout
+- `/guides/compounding-status` explainer page
+- `/regulatory-tracker/pipeline` page
+- Updated dossier frontmatter (92 peptides)
+- Schema markup extensions
+
+**Market Context (from PMF Analysis)**:
+- FDA compounding crackdown created massive consumer confusion
+- "What's actually legal?" is a top consumer frustration
+- No competitor has a comprehensive regulatory tracker
+- High viral/share potential for journalists and health media
+
+---
+
+### Phase 34: Distribution & Growth
+**Goal**: Multi-channel distribution to reach the 40M+ Americans searching for peptide information
+**Requirements**: DIST-01 through DIST-10 (10 requirements)
+**Depends on**: Phase 31 (traffic data), Phase 32 (CTAs in place)
+**Success Criteria**:
+1. SEO technical audit complete with fix list
+2. Programmatic SEO pages generating traffic
+3. Social profiles created and first content published
+4. 3 lead magnet PDFs created and deployed
+5. Newsletter growth rate measurable (baseline vs. post-implementation)
+6. Backlink outreach list created with first 5 pitches sent
+
+**Deliverables**:
+- SEO technical audit report
+- Programmatic "[peptide] + [condition]" page templates
+- Social content strategy document
+- 10 social content templates
+- 3 lead magnet PDFs
+- Email capture components on high-traffic pages
+- Social profiles (Instagram, Twitter/X)
+- Backlink target list + outreach templates
+- Content syndication pitch deck
+
+---
+
 ## Page Count Projection
 
 | Content Type | Current | Add | Target |
@@ -293,7 +437,7 @@ Phase 23 → 24 → 25 → 26 → 27 → 28 → 29
 | 6. Deploy Infrastructure | Complete | 6/6 | 2026-01-27 |
 | 7. Analytics Setup | Complete | 4/4 | 2026-01-27 |
 | 8. Production Verification | Partial | 0/5 | — |
-| 9-12. v3.0 Operations | On Hold | 0/40 | — |
+| 9-12. v3.0 Operations | Superseded by v6.0 | — | — |
 | 23. Comparisons + Conditions | Complete | 17/17 | 2026-02-01 |
 | 24. Schema Deployments | Complete | 6/6 | 2026-02-01 |
 | 25. Glossary Expansion | Complete | 5/5 | 2026-02-01 |
@@ -302,6 +446,11 @@ Phase 23 → 24 → 25 → 26 → 27 → 28 → 29
 | 28. Weekly News Blog | Complete | 5/5 | 2026-02-02 |
 | 28.1. QA Audit | Complete | — | 2026-02-12 |
 | 29. Comparisons + Calculators | Complete | 9/9 | 2026-02-12 |
+
+| 31. Analytics & Traffic Intel | Planned | 0/7 | — |
+| 32. Monetization Foundation | Planned | 0/10 | — |
+| 33. Regulatory Status Tracker | Planned | 0/9 | — |
+| 34. Distribution & Growth | Planned | 0/10 | — |
 
 ---
 
@@ -326,7 +475,10 @@ Phase 23 → 24 → 25 → 26 → 27 → 28 → 29
 | Bioregulator module | Niche authority in Khavinson peptides | 2026-02-01 |
 | Weekly news backdating | Fresh content signal for SEO | 2026-02-01 |
 | Defer interactions/UX to v5.0 | Content scale more impactful than features | 2026-02-01 |
+| PMF-informed v6.0 phases | Replace v3.0 placeholder with data-driven growth strategy | 2026-02-12 |
+| Regulatory tracker as differentiator | No competitor has this; high viral potential; addresses top consumer frustration | 2026-02-12 |
+| Analytics-first monetization | Can't monetize what you can't measure; Phase 31 before Phase 32 | 2026-02-12 |
 
 ---
 *Created: 2026-01-19*
-*Updated: 2026-02-12 — v4.0 Content Expansion COMPLETE*
+*Updated: 2026-02-12 — v6.0 Growth & Monetization planned (PMF Analysis)*

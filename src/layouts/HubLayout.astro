@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import BreadcrumbSchema from '../components/SEO/BreadcrumbSchema.astro';
 
 interface Props {
   title: string;
@@ -19,9 +20,17 @@ const categoryAccents: Record<string, string> = {
 };
 
 const accentColor = category ? categoryAccents[category] || 'var(--primary)' : 'var(--primary)';
+
+const siteBase = Astro.site?.toString() || 'https://pepcodex.com';
+const breadcrumbItems = [
+  { name: 'Home', url: siteBase },
+  { name: 'Peptides', url: `${siteBase}peptides/` },
+  { name: title, url: Astro.url.toString() },
+];
 ---
 
 <BaseLayout title={title} description={description}>
+  <BreadcrumbSchema items={breadcrumbItems} />
   <!-- Hero Section -->
   <div class="relative overflow-hidden border-b border-white/5">
     <!-- Background Effects -->

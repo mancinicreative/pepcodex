@@ -2,6 +2,7 @@
 import BaseLayout from './BaseLayout.astro';
 import EvidenceBadge from '../components/EvidenceBadge.astro';
 import FAQSchema from '../components/SEO/FAQSchema.astro';
+import BreadcrumbSchema from '../components/SEO/BreadcrumbSchema.astro';
 
 interface FAQItem {
   question: string;
@@ -43,9 +44,17 @@ const categoryColors: Record<string, string> = {
   'longevity': 'bg-amber-500/20 text-amber-400 border border-amber-500/30',
   'other': 'bg-white/20 text-white/80 border border-white/20',
 };
+
+const siteBase = Astro.site?.toString() || 'https://pepcodex.com';
+const breadcrumbItems = [
+  { name: 'Home', url: siteBase },
+  { name: 'Comparisons', url: `${siteBase}compare/` },
+  { name: title, url: Astro.url.toString() },
+];
 ---
 
 <BaseLayout title={title} description={summary}>
+  <BreadcrumbSchema items={breadcrumbItems} />
   {faqs && faqs.length > 0 && <FAQSchema items={faqs} />}
   <article class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
     <!-- Header with purple gradient background -->

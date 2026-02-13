@@ -201,6 +201,81 @@ Goal: Scale from ~593 to ~1,132 high-quality indexable pages.
 
 ---
 
+## v6 Requirements (PLANNED)
+
+**Growth & Monetization informed by PMF Analysis (2026-02-12). Maps to Phases 31-34.**
+
+Goal: Transform PepCodex from strong-product-weak-distribution into a revenue-generating platform by establishing analytics baselines, monetization infrastructure, a differentiated regulatory tracker, and multi-channel distribution.
+
+**Reference:** `.planning/PMF-ANALYSIS.md`
+
+### ANLY — Analytics & Traffic Intelligence (Phase 31)
+
+- [ ] **ANLY-01**: Activate Vercel Analytics on production deployment
+- [ ] **ANLY-02**: GA4 deep audit — configure event tracking for key user flows (search, comparison clicks, calculator usage, newsletter signup)
+- [ ] **ANLY-03**: Google Search Console deep dive — export top queries, CTR by page type, indexing coverage report
+- [ ] **ANLY-04**: Beehiiv metrics export — subscriber count, open rate, click rate, growth rate
+- [ ] **ANLY-05**: Create analytics dashboard/report template — baseline KPIs for traffic, engagement, conversions
+- [ ] **ANLY-06**: Set up conversion funnels in GA4 — newsletter signup, comparison→dossier flow, calculator usage
+- [ ] **ANLY-07**: Identify top 20 pages by traffic and top 20 queries — inform monetization priority
+
+### MONET — Monetization Foundation (Phase 32)
+
+- [ ] **MONET-01**: Design CTA component for comparison pages — "Find a specialist" / newsletter signup
+- [ ] **MONET-02**: Design CTA component for condition hub pages — condition-specific lead capture
+- [ ] **MONET-03**: Create clinic partnership model document — tiers ($99-499/mo), deliverables, terms
+- [ ] **MONET-04**: Design "PepCodex Pro" tier concept — white-label content for clinics/practitioners
+- [ ] **MONET-05**: Add "Featured Clinic" section to city pages (existing 60 city page infrastructure)
+- [ ] **MONET-06**: Design clinic directory page with search/filter by location and specialty
+- [ ] **MONET-07**: Create media kit / sponsorship deck for potential sponsors
+- [ ] **MONET-08**: Implement Stripe or payment infrastructure for Pro tier
+- [ ] **MONET-09**: Design quiz funnel — "Which peptide research matches your interest?" → newsletter + clinic referral
+- [ ] **MONET-10**: Revenue projection model — targets by channel (clinic listings, Pro tier, sponsors, newsletter sponsors)
+
+### REG — Regulatory Status Tracker (Phase 33)
+
+- [ ] **REG-01**: Design regulatory status data schema — FDA approval status, compounding status, patent status per peptide
+- [ ] **REG-02**: Create `regulatory-status` content collection in Astro
+- [ ] **REG-03**: Build FDA Status Tracker page — filterable table showing all peptides with regulatory status
+- [ ] **REG-04**: Populate regulatory data for all 92 peptides (FDA-approved, compounding-eligible, research-only, banned)
+- [ ] **REG-05**: Add regulatory status badge to DossierLayout (inline with evidence badge)
+- [ ] **REG-06**: Create "Compounding Status" explainer page — what compounding means, FDA rules, state variations
+- [ ] **REG-07**: Create "FDA Pipeline" page — peptides in Phase 2/3 trials with expected decision dates
+- [ ] **REG-08**: Add regulatory frontmatter to peptide dossiers (approval_status, compounding_status, patent_expiry)
+- [ ] **REG-09**: Schema markup for regulatory status (MedicalEntity or Drug schema extensions)
+
+### DIST — Distribution & Growth (Phase 34)
+
+- [ ] **DIST-01**: SEO technical audit — crawlability, internal linking health, orphan pages, canonical tags
+- [ ] **DIST-02**: Programmatic SEO expansion — "[peptide] + [condition]" landing pages using existing data
+- [ ] **DIST-03**: Social content strategy document — platform selection, content formats, posting cadence
+- [ ] **DIST-04**: Create 10 social-optimized content templates (Instagram carousels, Twitter threads, short-form video scripts)
+- [ ] **DIST-05**: Newsletter growth strategy — lead magnets (PDF comparison guides, regulatory tracker updates)
+- [ ] **DIST-06**: Create 3 lead magnet PDFs from existing content (top comparison, GLP-1 guide, bioregulators overview)
+- [ ] **DIST-07**: Implement email capture on high-traffic pages with lead magnet offers
+- [ ] **DIST-08**: Backlink strategy — identify 20 target sites for guest posts/citations
+- [ ] **DIST-09**: Content syndication plan — license comparison articles to health media outlets
+- [ ] **DIST-10**: Set up social profiles (Instagram, Twitter/X) with consistent branding
+
+### v6 Requirements → Phases
+
+| Requirement | Phase | Dependencies |
+|-------------|-------|--------------|
+| ANLY-01 to ANLY-07 | Phase 31 | v5.0 Phase A (security) |
+| MONET-01 to MONET-10 | Phase 32 | Phase 31 (analytics baseline) |
+| REG-01 to REG-09 | Phase 33 | None (can parallel with 31-32) |
+| DIST-01 to DIST-10 | Phase 34 | Phase 31 (traffic data), Phase 32 (CTAs ready) |
+
+**Coverage:**
+- v6 requirements: 36 total
+- Phase 31: 7 requirements (Analytics & Traffic Intelligence)
+- Phase 32: 10 requirements (Monetization Foundation)
+- Phase 33: 9 requirements (Regulatory Status Tracker)
+- Phase 34: 10 requirements (Distribution & Growth)
+- Unmapped: 0
+
+---
+
 ## v5 Requirements (Deferred)
 
 *Original v4.0 features + Community deferred to v5.0 to prioritize content expansion.*

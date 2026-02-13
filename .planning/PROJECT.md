@@ -8,20 +8,29 @@ An evidence-based peptide education website that synthesizes research from PubMe
 
 **Become the authoritative, citation-heavy resource for peptide research** — no dosing, no protocols, no sourcing. Pure evidence synthesis that researchers, clinicians, and educated consumers can trust.
 
-## Current Milestone: v4.0 Content Expansion
+## Current Milestone: v5.0 Hardening & Enhancement
 
-**Goal:** Scale from ~593 to ~1,132 high-quality indexable pages through massive content expansion while maintaining evidence-first standards.
+**Goal:** Fix quality scorecard from 62.5% → 75% by addressing security (BLOCKER), performance, and accessibility. See ROADMAP.md phases A-F.
 
-**Key Decision:** Replace original competitive feature focus (interactions, UX overhaul) with aggressive content expansion strategy for SEO dominance.
+## Next Milestone: v6.0 Growth & Monetization
 
-**Target features:**
-- 235 new comparison pages
-- 141 new glossary terms
-- 20 bioregulator dossiers (Khavinson peptides)
-- 78 weekly news blog posts (6 months backdated)
-- 15 condition hub pages
-- 50 calculator URL routes
-- Schema deployments (FAQ, HowTo, Drug)
+**Goal:** Transform from strong-product-weak-distribution into a revenue-generating platform. Informed by PMF Analysis (2026-02-12).
+
+**PMF Assessment:** Market Timing 9/10, Content Moat 7/10, Monetization 2/10, Audience Reach 4/10.
+
+**Key Decision:** Replace deferred v3.0 placeholder phases with data-driven growth strategy based on $54B+ peptide market analysis.
+
+**v6.0 Phases:**
+- Phase 31: Analytics & Traffic Intelligence — baseline all KPIs
+- Phase 32: Monetization Foundation — CTAs, clinic partnerships, Pro tier
+- Phase 33: Regulatory Status Tracker — unique differentiator, viral potential
+- Phase 34: Distribution & Growth — SEO, social, lead magnets, backlinks
+
+**Reference:** `.planning/PMF-ANALYSIS.md`
+
+## Completed: v4.0 Content Expansion
+
+Scaled from ~593 to ~1,048+ pages. All 7 phases complete (23-29 + QA audit).
 
 ## Requirements
 
@@ -126,20 +135,25 @@ An evidence-based peptide education website that synthesizes research from PubMe
 - Hosting: Vercel (mancinicreative-pepcodex)
 - GitHub: mancinicreative/pepcodex
 
-**Current State:**
-- ~593 pages live and indexed
-- Calculators and legal pages exist
-- ComparisonLayout and FAQSchema exist
-- 72 peptide dossiers, 45 comparisons, 99 glossary terms
+**Current State (v4.0 complete):**
+- ~1,048+ unique URLs live
+- 92 peptide dossiers (72 original + 20 bioregulators)
+- 279 comparisons with FAQs
+- 215 glossary terms
+- 151 blog posts (73 original + 78 weekly news)
+- 15 condition hub pages
+- 147 calculator URLs (3 static + 144 dynamic)
+- Schema markup deployed (FAQ, HowTo, Drug)
+- Quality scorecard: 62.5% (Security BLOCKER at 1/4)
 
-**Target State (v4.0):**
-- ~1,132 pages
-- 92 peptide dossiers (+20 bioregulators)
-- 280 comparisons (+235)
-- 240 glossary terms (+141)
-- 151 blog posts (+78 weekly news)
-- 15 condition hubs
-- 53 calculator URLs (+50)
+**Target State (v5.0):**
+- Quality scorecard: 75%+ (security 3/4, performance 3/4, accessibility 3/4)
+
+**Target State (v6.0):**
+- Analytics baselines established for all channels
+- Revenue infrastructure operational (clinics, Pro tier, sponsors)
+- Regulatory tracker as unique content differentiator
+- Multi-channel distribution (SEO + social + newsletter + backlinks)
 
 **Markets:** US + Canada first → Global
 **Time Budget:** 10+ hours/week
@@ -188,9 +202,12 @@ An evidence-based peptide education website that synthesizes research from PubMe
 | Vercel for hosting | Free tier, preview URLs, easy custom domains | ✓ Good |
 | Skip dosing permanently | Maintains credibility, avoids weak sources | ✓ Good |
 | Calculators as utility | Provides value without liability | ✓ Good |
-| Content expansion over features | SEO dominance through scale | — Pending |
-| Bioregulator module | Niche authority in Khavinson peptides | — Pending |
-| Weekly news backdating | Fresh content signal for SEO | — Pending |
+| Content expansion over features | SEO dominance through scale | ✓ Good |
+| Bioregulator module | Niche authority in Khavinson peptides | ✓ Good |
+| Weekly news backdating | Fresh content signal for SEO | ✓ Good |
+| PMF-informed v6.0 | Data-driven growth replaces v3.0 placeholder | — Pending |
+| Regulatory tracker | Unique differentiator, no competitor has this | — Pending |
+| Analytics-first monetization | Measure before monetizing | — Pending |
 
 ---
-*Last updated: 2026-02-01 after v4.0 Content Expansion milestone pivot*
+*Last updated: 2026-02-12 after PMF Analysis and v6.0 planning*

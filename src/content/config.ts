@@ -196,7 +196,7 @@ const blog = defineCollection({
       url: z.string().optional(),
       type: z.enum(['journal', 'trial', 'regulatory', 'preprint', 'news']).optional(),
     })).default([]),
-    evidenceLevel: z.enum(['known', 'suggestive', 'early', 'unknown']).optional(),
+    evidenceLevel: z.enum(['high', 'moderate', 'low', 'very-low']).optional(),
     featured: z.boolean().default(false),
     // Guide-specific fields (optional, used when category is 'guide')
     peptide: z.string().optional(), // Primary peptide this guide is about

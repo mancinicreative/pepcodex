@@ -80,7 +80,7 @@ PepCodex positions itself as evidence-based. Our credibility depends on:
 - Unverified health claims
 
 ### Required Elements
-- Evidence grading (known/suggestive/early/unknown)
+- Evidence grading (high/moderate/low/very-low)
 - Clear disclaimers
 - Proper citations for all factual claims
 
@@ -97,4 +97,4 @@ PepCodex positions itself as evidence-based. Our credibility depends on:
 
 *Workflow orchestration, task management, and core principles are loaded from `.claude/rules/` automatically.*
 
-*Last updated: 2026-02-09*
+*Last updated: 2026-02-12*

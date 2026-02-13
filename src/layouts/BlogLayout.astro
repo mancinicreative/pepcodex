@@ -20,7 +20,7 @@ interface Props {
   relatedPeptides?: string[];
   relatedGlossary?: string[];
   sources?: Source[];
-  evidenceLevel?: 'known' | 'suggestive' | 'early' | 'unknown';
+  evidenceLevel?: 'high' | 'moderate' | 'low' | 'very-low';
 }
 
 const {
@@ -54,10 +54,10 @@ const categoryColors: Record<string, string> = {
 };
 
 const evidenceLabels: Record<string, { label: string; color: string }> = {
-  'known': { label: 'Known', color: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30' },
-  'suggestive': { label: 'Suggestive', color: 'bg-blue-500/20 text-blue-400 border-blue-500/30' },
-  'early': { label: 'Early', color: 'bg-amber-500/20 text-amber-400 border-amber-500/30' },
-  'unknown': { label: 'Unknown', color: 'bg-white/20 text-white/70 border-white/20' },
+  'high': { label: 'High Evidence', color: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30' },
+  'moderate': { label: 'Moderate', color: 'bg-blue-500/20 text-blue-400 border-blue-500/30' },
+  'low': { label: 'Low Evidence', color: 'bg-amber-500/20 text-amber-400 border-amber-500/30' },
+  'very-low': { label: 'Very Low', color: 'bg-white/20 text-white/70 border-white/20' },
 };
 
 const sourceTypeIcons: Record<string, string> = {

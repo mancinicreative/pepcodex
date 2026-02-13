@@ -2,33 +2,42 @@
 
 ## Current Phase
 
-**Phase 29: Comparisons Batch 2 + Calculators** — ✓ COMPLETE (v4.0 Content Expansion COMPLETE)
+**v5.0 Hardening & Enhancement** — PLANNED (Studio Evaluation complete)
 
 ## Active Work
 
-### v4.0 Content Expansion
+### v5.0 Hardening & Enhancement
 
-**Strategy:** Scale from ~593 to ~1,132 high-quality indexable pages through:
-1. 235 new comparison pages (+URL multiplication)
-2. 20 bioregulator dossiers (+niche authority)
-3. 78 weekly news blog posts (+fresh content)
-4. 141 glossary terms (+authority signals)
-5. 15 condition hub pages (+topic coverage)
-6. 50 calculator dynamic routes (+utility SEO)
-7. Schema deployments (+SERP features)
+**Strategy:** Fix quality scorecard from 62.5% → 75% by addressing security (BLOCKER), performance, and accessibility, then ship deferred UX features.
 
-### Phase Execution Order
+**Informed by:** Full Studio Pipeline Evaluation (2026-02-12)
+**Artifacts:** `.planning/studio/` (8 evaluation reports)
+
+### v5.0 Phase Execution Order
+
+| Phase | Focus | Scorecard Impact | Status |
+|-------|-------|------------------|--------|
+| A | Security Hardening | Security 1→3 (+2) | PLANNED |
+| B | Performance Optimization | Performance 2→3 (+1) | PLANNED |
+| C | Accessibility Fixes | Accessibility 2→3 (+1) | PLANNED |
+| D | Navigation & UX | Usability 3→4 (+1) | PLANNED |
+| E | Content Quality | Content consistency | PLANNED |
+| F | Feature Enhancements | UX/Polish 3→4 (+1) | PLANNED |
+
+**Minimum viable v5.0:** Phases A + B + C (brings scorecard to 75%)
+
+### v4.0 Content Expansion (COMPLETE)
 
 | Phase | Focus | Pages Added | Status |
 |-------|-------|-------------|--------|
-| 23 | Comparisons Batch 1 + Condition Hubs | +70 | ✓ COMPLETE |
-| 24 | Schema Deployments | +0 (enhancement) | ✓ COMPLETE |
-| 25 | Glossary Expansion | +116 | ✓ COMPLETE |
-| 26 | Bioregulators Batch 1 | +11 | ✓ COMPLETE |
-| 27 | Bioregulators Batch 2 | +10 | ✓ COMPLETE |
-| 28 | Weekly News Blog | +78 | ✓ COMPLETE |
-| 28.1 | QA Audit (Dossiers + Comparisons) | +0 (quality fix) | ✓ COMPLETE |
-| 29 | Comparisons Batch 2 + Calculators | +323 | ✓ COMPLETE |
+| 23 | Comparisons Batch 1 + Condition Hubs | +70 | COMPLETE |
+| 24 | Schema Deployments | +0 (enhancement) | COMPLETE |
+| 25 | Glossary Expansion | +116 | COMPLETE |
+| 26 | Bioregulators Batch 1 | +11 | COMPLETE |
+| 27 | Bioregulators Batch 2 | +10 | COMPLETE |
+| 28 | Weekly News Blog | +78 | COMPLETE |
+| 28.1 | QA Audit (Dossiers + Comparisons) | +0 (quality fix) | COMPLETE |
+| 29 | Comparisons Batch 2 + Calculators | +323 | COMPLETE |
 
 ## What's Done
 
@@ -156,17 +165,33 @@
 
 ## What's Next
 
-v4.0 Content Expansion is COMPLETE. Next milestone: v5.0 Feature Enhancement.
+**v5.0 Phase A: Security Hardening** — BLOCKER items from studio evaluation.
 
-## Cut List (Deferred to v5.0)
+See `.planning/ROADMAP.md` for full v5.0 phase breakdown.
+See `.planning/studio/` for evaluation reports.
 
-Per content expansion pivot decision:
-- **Peptide interactions matrix** — Defer to v5.0
-- **Dossier UX overhaul** — Defer to v5.0
-- **Content migration (guides/safety → blog)** — Defer to v5.0
-- **Multi-peptide protocols** — Defer to v5.0
-- **City pages (location SEO)** — Defer to v5.0
-- **Community features** — Defer to v5.0
+## Quality Scorecard (v4.0 Final)
+
+| Dimension | Score | Phase 4 Min | Status |
+|---|---|---|---|
+| Functional | 3 | 3 | PASS |
+| Performance | 2 | 3 | FAIL |
+| Usability | 3 | 3 | PASS |
+| Accessibility | 2 | 3 | FAIL |
+| Security | 1 | 3 | BLOCKER |
+| Reliability | 3 | 3 | PASS |
+| Maintainability | 3 | 2 | PASS |
+| UX/Polish | 3 | 3 | PASS |
+
+**Overall: 20/32 = 62.5%** (target: 75%)
+
+## v5.0 Minimum Fixes to Pass
+
+1. Security headers + rate limiting + health fix → Security 1→3
+2. Static output + font preloading → Performance 2→3
+3. Skip-link + prefers-reduced-motion + breadcrumbs → Accessibility 2→3
+
+**Projected score after minimum fixes: 24/32 = 75%**
 
 ## Context for Resume
 
@@ -249,6 +274,10 @@ None
 - 2026-02-12: Phase 28.1 COMPLETE — QA audit: 42 dossier evidence levels corrected, 37 comparison files fixed, audit tooling created
 - 2026-02-12: Phase 29 COMPLETE — 179 new comparisons, 144 calculator URLs, DossierLayout cross-linking, all FAQs backfilled
 - 2026-02-12: v4.0 Content Expansion milestone COMPLETE — ~1,048+ unique URLs
+- 2026-02-12: Full Studio Pipeline Evaluation COMPLETE — 8 artifacts in `.planning/studio/`
+- 2026-02-12: Quality scorecard: 20/32 = 62.5% (Security BLOCKER at 1/4)
+- 2026-02-12: v5.0 Roadmap written — 6 phases (A-F), 26 work items
+- 2026-02-12: STATE.md updated for v5.0 kickoff
 
 ---
 *Last updated: 2026-02-12*

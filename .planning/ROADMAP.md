@@ -2,7 +2,7 @@
 
 ## Overview
 
-v4.0 Content Expansion — Scale from ~593 to ~1,132 high-quality indexable pages through strategic content multiplication.
+v5.0 Hardening & Enhancement — Fix security blockers, optimize performance, improve accessibility, and deploy deferred UX features. Preceded by v4.0 Content Expansion (1,048+ URLs shipped).
 
 ## Milestones
 
@@ -35,14 +35,58 @@ v4.0 Content Expansion — Scale from ~593 to ~1,132 high-quality indexable page
 - [x] **Phase 28.1: QA Audit** - Evidence level audit + comparison accuracy fixes
 - [x] **Phase 29: Comparisons Batch 2 + Calculators** - 179 comparisons + 144 calculator URLs
 
-### v5.0 Feature Enhancement (DEFERRED)
-*Original v4.0 features deferred to prioritize content expansion.*
-- [ ] **Phase 30+: Peptide Interactions** - Synergy matrix with color coding
-- [ ] **Phase 31+: Dossier UX Overhaul** - Molecular viz, evidence chains
-- [ ] **Phase 32+: Content Migration** - Guides/safety → blog with redirects
-- [ ] **Phase 33+: Multi-Peptide Protocols** - Research-based protocol pages
-- [ ] **Phase 34+: Enhanced UX** - Timeline, quality checklist
-- [ ] **Phase 35+: City Pages** - Location SEO for monetization
+### v5.0 Hardening & Enhancement (PLANNED)
+*Informed by Full Studio Pipeline Evaluation (2026-02-12). Quality scorecard: 62.5% → target 75%.*
+
+#### Phase A: Security Hardening (BLOCKER — must fix first)
+- [ ] **SEC-001: Security headers** — Add CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy to vercel.json
+- [ ] **SEC-002: Rate limiting** — Add rate limiting to `/api/subscribe` (Vercel Edge Middleware or Upstash)
+- [ ] **SEC-003: Health endpoint** — Remove config info exposure from `/api/health`
+- [ ] **SEC-004: CORS restriction** — Change `Access-Control-Allow-Origin: *` to `https://pepcodex.com`
+- [ ] **SEC-005: Bot protection** — Add honeypot field to newsletter form
+
+#### Phase B: Performance Optimization (score 2→3)
+- [ ] **PERF-001: Static output** — Switch `output: 'server'` → `'static'` (or `'hybrid'`), add `prerender: false` to 3 API routes
+- [ ] **PERF-002: Font loading** — Move `@import url()` to `<link rel="preload">` in BaseLayout, add preconnect hints
+- [ ] **PERF-003: Font optimization** — Reduce from 6 weights (300-800) to 4 weights (400-700)
+- [ ] **PERF-004: Shiki theme** — Change `github-light` → `github-dark` or `one-dark-pro`
+- [ ] **PERF-005: Dead CSS** — Remove legacy aliases (`.glass-panel`, `.glass-card-default`, etc.)
+
+#### Phase C: Accessibility Fixes (score 2→3)
+- [ ] **A11Y-001: Skip navigation** — Add skip-link to BaseLayout before `<nav>`
+- [ ] **A11Y-002: Reduced motion** — Add `@media (prefers-reduced-motion)` to global.css
+- [ ] **A11Y-003: Breadcrumbs** — Deploy BreadcrumbSchema to all 10 layouts
+- [ ] **A11Y-004: ARIA improvements** — Add `aria-current="page"`, focus trap on mobile menu, ESC to close
+- [ ] **A11Y-005: Mobile menu animation** — Add slide/fade transition instead of instant toggle
+
+#### Phase D: Navigation & UX (score 3→4)
+- [ ] **UX-001: Fix search icon** — Wire header search button to Pagefind or scroll to SearchBar
+- [ ] **UX-002: Extend Cmd+K** — Make keyboard shortcut work on all pages
+- [ ] **UX-003: Navigation dropdown** — Add "Research" dropdown with all 12 content types
+- [ ] **UX-004: Dynamic categories** — Replace 3 hardcoded category pages with `[category].astro` covering all 7
+- [ ] **UX-005: Blog filtering** — Add category filter UI to blog index
+- [ ] **UX-006: Homepage stats** — Generate from content collections at build time
+
+#### Phase E: Content Quality (deferred enhancements)
+- [ ] **CONTENT-001: Unify evidence scales** — Pick one scale across all collections
+- [ ] **CONTENT-002: Source fields** — Add sources to guides and safety collections
+- [ ] **CONTENT-003: Cross-link validation** — Build-time slug reference validation
+- [ ] **CONTENT-004: Glossary auto-linking** — Remark/rehype plugin for auto-linking terms
+- [ ] **CONTENT-005: Safety coverage** — Expand from 11 to 30+ safety articles
+
+#### Phase F: Feature Enhancements (from original v5.0 plan)
+- [ ] **FEAT-001: Content migration** — Guides/safety → blog with redirects
+- [ ] **FEAT-002: Protocol expansion** — Expand from 3 to 15+ protocols
+- [ ] **FEAT-003: Clinic expansion** — Expand from 10 to 50+ clinic listings
+- [ ] **FEAT-004: Related peptides** — Add related dossier suggestions to DossierLayout
+- [ ] **FEAT-005: Blog navigation** — Add prev/next post navigation
+
+### v6.0 Growth & Monetization (DEFERRED)
+*Resume v3.0 operations work + new growth features.*
+- [ ] **Phase 9: Operations Infrastructure** — Templates, calendars, SOPs
+- [ ] **Phase 10: Content Production System** — Batch workflow, repurposing
+- [ ] **Phase 11: Distribution System** — Instagram, email capture, newsletters
+- [ ] **Phase 12: Monetization Foundation** — Directory, pricing, outreach
 
 ---
 

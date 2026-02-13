@@ -4,9 +4,16 @@ import { getCollection, getEntry } from 'astro:content';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
-  return posts.map((post) => ({
+  const sorted = posts.sort((a, b) =>
+    b.data.publishDate.getTime() - a.data.publishDate.getTime()
+  );
+  return sorted.map((post, i) => ({
     params: { slug: post.slug },
-    props: { post },
+    props: {
+      post,
+      prevPost: sorted[i + 1] ? { slug: sorted[i + 1].slug, title: sorted[i + 1].data.title } : null,
+      nextPost: sorted[i - 1] ? { slug: sorted[i - 1].slug, title: sorted[i - 1].data.title } : null,
+    },
   }));
 }
 
@@ -36,6 +43,8 @@ const { Content } = await post.render();
   relatedGlossary={post.data.relatedGlossary}
   sources={post.data.sources}
   evidenceLevel={post.data.evidenceLevel}
+  prevPost={Astro.props.prevPost}
+  nextPost={Astro.props.nextPost}
 >
   <Content />
 </BlogLayout>

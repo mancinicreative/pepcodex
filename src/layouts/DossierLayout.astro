@@ -6,6 +6,7 @@ import BreadcrumbSchema from '../components/SEO/BreadcrumbSchema.astro';
 import FAQSchema from '../components/SEO/FAQSchema.astro';
 import DrugSchema from '../components/SEO/DrugSchema.astro';
 import RelatedEntities from '../components/RelatedEntities.astro';
+import PeptideCard from '../components/PeptideCard.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
 import SafetyBanner from '../components/SafetyBanner.astro';
 import OverviewSection from '../components/OverviewSection.astro';
@@ -710,6 +711,33 @@ const articleUrl = Astro.url.toString();
         </div>
       </section>
     )}
+
+    <!-- Related Peptides (same category) -->
+    {(() => {
+      const comparatorSlugs = new Set(comparators.map(c => c.toLowerCase().replace(/\s+/g, '-')));
+      const related = allPeptides
+        .filter(p => p.data.category === category && p.slug !== currentSlug && !comparatorSlugs.has(p.slug))
+        .slice(0, 6);
+      return related.length > 0 ? (
+        <section class="mt-12">
+          <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-8">
+            <h2 class="text-2xl font-bold" style="font-family: var(--font-display);">Related Peptides</h2>
+          </div>
+          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {related.map(p => (
+              <PeptideCard
+                name={p.data.name}
+                slug={p.slug}
+                category={p.data.category}
+                evidenceStrength={p.data.evidenceStrength}
+                summary={p.data.summary}
+                aliases={p.data.aliases}
+              />
+            ))}
+          </div>
+        </section>
+      ) : null;
+    })()}
 
     <!-- Related Content (Internal Linking) -->
     <RelatedEntities

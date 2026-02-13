@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import vercel from '@astrojs/vercel';
+import rehypeAutoGlossary from './plugins/rehype-auto-glossary.mjs';
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,8 +18,9 @@ export default defineConfig({
   },
   integrations: [mdx(), sitemap()],
   markdown: {
+    rehypePlugins: [rehypeAutoGlossary],
     shikiConfig: {
-      theme: 'github-light'
+      theme: 'github-dark'
     }
   }
 });

@@ -7,7 +7,8 @@
     "build": "astro build",
     "postbuild": "npx pagefind --site dist",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "validate-links": "node scripts/validate-cross-links.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.13",

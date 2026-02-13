@@ -143,6 +143,12 @@ const guides = defineCollection({
     lastUpdated: z.coerce.date(),
     summary: z.string(),
     relatedTerms: z.array(z.string()).default([]),
+    sources: z.array(z.object({
+      id: z.string(),
+      title: z.string(),
+      url: z.string().optional(),
+      type: z.enum(['journal', 'trial', 'regulatory', 'preprint', 'news']).optional(),
+    })).default([]),
     ...seoFields,
   }),
 });
@@ -154,6 +160,12 @@ const safety = defineCollection({
     peptides: z.array(z.string()).default([]), // Related peptides
     lastUpdated: z.coerce.date(),
     summary: z.string(),
+    sources: z.array(z.object({
+      id: z.string(),
+      title: z.string(),
+      url: z.string().optional(),
+      type: z.enum(['journal', 'trial', 'regulatory', 'preprint', 'news']).optional(),
+    })).default([]),
     ...seoFields,
   }),
 });

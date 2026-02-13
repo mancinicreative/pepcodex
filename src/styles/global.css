@@ -436,4 +436,20 @@
   .prose-invert h2[id]:nth-of-type(odd) {
     @apply pl-6 border-l-2 border-cyan-400/40;
   }
+
+  /* ===========================================
+     GLOSSARY AUTO-LINK STYLING
+     =========================================== */
+
+  .glossary-link {
+    text-decoration: underline dotted;
+    text-underline-offset: 3px;
+    text-decoration-color: hsl(var(--primary));
+    opacity: 0.9;
+  }
+
+  .glossary-link:hover {
+    opacity: 1;
+    text-decoration-style: solid;
+  }
 }

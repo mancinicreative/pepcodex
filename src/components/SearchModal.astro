@@ -1,0 +1,575 @@
+---
+// SearchModal.astro — Global search modal triggered by Cmd+K or header search button
+---
+
+<div
+  id="search-modal-overlay"
+  class="fixed inset-0 z-[100] hidden bg-black/60 backdrop-blur-sm transition-opacity duration-200 opacity-0"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Search peptides"
+  aria-hidden="true"
+>
+  <!-- Backdrop click to close -->
+  <div class="absolute inset-0" id="search-modal-backdrop"></div>
+
+  <!-- Modal container -->
+  <div class="relative mx-auto mt-[15vh] max-w-2xl px-4">
+    <div class="border border-white/10 bg-[#0a0a0f]/95 backdrop-blur-xl rounded-2xl shadow-2xl overflow-hidden">
+      <!-- Search input area -->
+      <div class="relative border-b border-white/10">
+        <svg
+          class="absolute left-5 top-1/2 -translate-y-1/2 h-5 w-5 text-white/60"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          />
+        </svg>
+        <input
+          type="search"
+          id="modal-search-input"
+          placeholder="Search peptides by name or condition..."
+          class="w-full bg-transparent px-5 py-4 pl-13 pr-20 text-base text-white placeholder-white/40 outline-none"
+          autocomplete="off"
+        />
+        <!-- Cmd+K badge -->
+        <div class="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-1">
+          <kbd class="hidden sm:inline-flex items-center gap-0.5 rounded border border-white/15 bg-white/5 px-1.5 py-0.5 text-[11px] font-medium text-white/40">
+            <span class="text-[13px]">&#8984;</span>K
+          </kbd>
+        </div>
+        <!-- Loading spinner -->
+        <div id="modal-search-spinner" class="absolute right-16 top-1/2 -translate-y-1/2 hidden">
+          <svg class="animate-spin h-5 w-5 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Results area -->
+      <div id="modal-search-results" class="max-h-[60vh] overflow-auto">
+        <div class="p-4 text-center text-white/40 hidden" id="modal-search-loading">
+          Searching peptide dossiers...
+        </div>
+        <ul id="modal-search-results-list" class="divide-y divide-white/10">
+          <!-- Populated by JavaScript -->
+        </ul>
+        <!-- Empty state shown when modal opens -->
+        <div id="modal-search-empty" class="p-6 text-center">
+          <p class="text-white/40 text-sm">Type to search peptides, conditions, or research topics</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  interface PeptideSearchItem {
+    slug: string;
+    name: string;
+    aliases: string[];
+    category: string;
+    evidenceStrength: string;
+    summary: string;
+    content: string;
+    keyTerms?: string[];
+    url: string;
+    sources: {
+      count: number;
+      human: number;
+      preclinical: number;
+      openAccess: number;
+    };
+  }
+
+  interface SearchResult {
+    peptide: PeptideSearchItem;
+    score: number;
+    matchType: 'name' | 'alias' | 'summary' | 'content';
+    matchContext?: string;
+  }
+
+  let peptideIndex: PeptideSearchItem[] | null = null;
+  let pagefind: any = null;
+
+  // Category labels and colors
+  const categoryConfig: Record<string, { label: string; color: string }> = {
+    'metabolic': { label: 'Metabolic', color: 'hsl(45 90% 55%)' },
+    'repair-recovery': { label: 'Repair', color: 'hsl(142 70% 45%)' },
+    'hormonal': { label: 'Hormonal', color: 'hsl(280 80% 60%)' },
+    'longevity': { label: 'Longevity', color: 'hsl(200 80% 55%)' },
+    'cognitive': { label: 'Cognitive', color: 'hsl(320 70% 55%)' },
+    'immune': { label: 'Immune', color: 'hsl(30 80% 55%)' },
+    'other': { label: 'Other', color: 'hsl(220 15% 60%)' },
+  };
+
+  const evidenceConfig: Record<string, { label: string; color: string }> = {
+    'high': { label: 'High Evidence', color: 'hsl(142 70% 45%)' },
+    'moderate': { label: 'Moderate', color: 'var(--primary)' },
+    'low': { label: 'Low Evidence', color: 'hsl(45 90% 55%)' },
+    'very-low': { label: 'Very Low', color: 'hsl(0 70% 55%)' },
+  };
+
+  // Load the peptide search index
+  async function loadPeptideIndex(): Promise<PeptideSearchItem[]> {
+    if (peptideIndex) return peptideIndex;
+
+    try {
+      const response = await fetch('/api/peptide-search.json');
+      if (response.ok) {
+        peptideIndex = await response.json();
+        return peptideIndex!;
+      }
+    } catch (e) {
+      console.log('Peptide search index not available');
+    }
+    return [];
+  }
+
+  // Initialize Pagefind as fallback
+  async function initPagefind() {
+    try {
+      const pagefindPath = '/pagefind/pagefind.js';
+      pagefind = await import(/* @vite-ignore */ pagefindPath);
+      await pagefind.init();
+    } catch (e) {
+      console.log('Pagefind not available (normal during development)');
+    }
+  }
+
+  // Search through peptide content
+  function searchPeptides(query: string, index: PeptideSearchItem[]): SearchResult[] {
+    const normalizedQuery = query.toLowerCase().trim();
+    const queryWords = normalizedQuery.split(/\s+/);
+    const results: SearchResult[] = [];
+
+    for (const peptide of index) {
+      let score = 0;
+      let matchType: SearchResult['matchType'] = 'content';
+      let matchContext: string | undefined;
+
+      // Check name (highest priority)
+      const nameLower = peptide.name.toLowerCase();
+      if (nameLower === normalizedQuery) {
+        score = 1000;
+        matchType = 'name';
+      } else if (nameLower.includes(normalizedQuery)) {
+        score = 800;
+        matchType = 'name';
+      } else if (queryWords.some(w => nameLower.includes(w))) {
+        score = 600;
+        matchType = 'name';
+      }
+
+      // Check aliases (high priority)
+      if (score < 500) {
+        for (const alias of peptide.aliases) {
+          const aliasLower = alias.toLowerCase();
+          if (aliasLower === normalizedQuery) {
+            score = 700;
+            matchType = 'alias';
+            matchContext = `Also known as: ${alias}`;
+            break;
+          } else if (aliasLower.includes(normalizedQuery)) {
+            score = Math.max(score, 500);
+            matchType = 'alias';
+            matchContext = `Also known as: ${alias}`;
+          }
+        }
+      }
+
+      // Check summary (medium priority)
+      if (score < 400) {
+        const summaryLower = peptide.summary.toLowerCase();
+        if (queryWords.every(w => summaryLower.includes(w))) {
+          score = Math.max(score, 400);
+          matchType = 'summary';
+          matchContext = highlightMatch(peptide.summary, normalizedQuery);
+        } else if (queryWords.some(w => summaryLower.includes(w))) {
+          score = Math.max(score, 200);
+          matchType = 'summary';
+          matchContext = highlightMatch(peptide.summary, normalizedQuery);
+        }
+      }
+
+      // Check key medical terms (high priority for condition searches like "PCOS")
+      if (score < 300 && peptide.keyTerms?.length) {
+        const keyTermsStr = peptide.keyTerms.join(' ').toLowerCase();
+        if (queryWords.every(w => keyTermsStr.includes(w))) {
+          score = Math.max(score, 300);
+          matchType = 'content';
+          const matchedTerms = peptide.keyTerms.filter(t =>
+            queryWords.some(w => t.toLowerCase().includes(w))
+          );
+          matchContext = `Related to: ${matchedTerms.slice(0, 5).join(', ')}`;
+        } else if (queryWords.some(w => keyTermsStr.includes(w))) {
+          score = Math.max(score, 250);
+          matchType = 'content';
+          const matchedTerms = peptide.keyTerms.filter(t =>
+            queryWords.some(w => t.toLowerCase().includes(w))
+          );
+          matchContext = `Related to: ${matchedTerms.slice(0, 5).join(', ')}`;
+        }
+      }
+
+      // Check full content (lower priority but important for condition searches like "PCOS")
+      if (score < 200) {
+        const contentLower = peptide.content.toLowerCase();
+        const matchCount = queryWords.filter(w => contentLower.includes(w)).length;
+
+        if (matchCount === queryWords.length) {
+          // All query words found in content
+          score = Math.max(score, 150 + matchCount * 20);
+          matchType = 'content';
+          matchContext = matchContext || extractMatchContext(peptide.content, normalizedQuery);
+        } else if (matchCount > 0) {
+          score = Math.max(score, 50 + matchCount * 10);
+          matchType = 'content';
+          matchContext = matchContext || extractMatchContext(peptide.content, queryWords[0]);
+        }
+      }
+
+      if (score > 0) {
+        results.push({ peptide, score, matchType, matchContext });
+      }
+    }
+
+    // Sort by score (highest first)
+    return results.sort((a, b) => b.score - a.score).slice(0, 10);
+  }
+
+  // Extract context around the match
+  function extractMatchContext(content: string, query: string): string {
+    const lowerContent = content.toLowerCase();
+    const index = lowerContent.indexOf(query.toLowerCase());
+
+    if (index === -1) {
+      // Find any word match
+      const words = query.split(/\s+/);
+      for (const word of words) {
+        const wordIndex = lowerContent.indexOf(word);
+        if (wordIndex !== -1) {
+          const start = Math.max(0, wordIndex - 60);
+          const end = Math.min(content.length, wordIndex + word.length + 80);
+          let excerpt = content.slice(start, end).trim();
+          if (start > 0) excerpt = '...' + excerpt;
+          if (end < content.length) excerpt = excerpt + '...';
+          return excerpt;
+        }
+      }
+      return content.slice(0, 150) + '...';
+    }
+
+    const start = Math.max(0, index - 60);
+    const end = Math.min(content.length, index + query.length + 80);
+    let excerpt = content.slice(start, end).trim();
+    if (start > 0) excerpt = '...' + excerpt;
+    if (end < content.length) excerpt = excerpt + '...';
+    return excerpt;
+  }
+
+  // Highlight the matched term (basic)
+  function highlightMatch(text: string, query: string): string {
+    const maxLength = 180;
+    const lowerText = text.toLowerCase();
+    const lowerQuery = query.toLowerCase();
+    const index = lowerText.indexOf(lowerQuery);
+
+    if (text.length <= maxLength) {
+      return text;
+    }
+
+    if (index !== -1) {
+      const start = Math.max(0, index - 40);
+      const end = Math.min(text.length, start + maxLength);
+      let excerpt = text.slice(start, end).trim();
+      if (start > 0) excerpt = '...' + excerpt;
+      if (end < text.length) excerpt = excerpt + '...';
+      return excerpt;
+    }
+
+    return text.slice(0, maxLength) + '...';
+  }
+
+  // Escape HTML
+  function escapeHtml(text: string): string {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
+  // Highlight query terms in text
+  function highlightTerms(text: string, query: string): string {
+    const escaped = escapeHtml(text);
+    const words = query.toLowerCase().split(/\s+/).filter(w => w.length > 1);
+    let result = escaped;
+
+    for (const word of words) {
+      const regex = new RegExp(`(${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+      result = result.replace(regex, '<mark class="bg-[var(--primary)]/30 text-white px-0.5 rounded">$1</mark>');
+    }
+
+    return result;
+  }
+
+  // Render search results
+  function renderResults(results: SearchResult[], query: string): string {
+    if (results.length === 0) {
+      return `
+        <li class="p-6 text-center">
+          <div class="text-white/50 mb-2">No peptides found for "${escapeHtml(query)}"</div>
+          <a href="/peptides" class="text-primary hover:underline text-sm">Browse all peptides</a>
+        </li>
+      `;
+    }
+
+    return results.map(({ peptide, matchType, matchContext }) => {
+      const cat = categoryConfig[peptide.category] || categoryConfig['other'];
+      const evidence = evidenceConfig[peptide.evidenceStrength] || evidenceConfig['low'];
+
+      // Match type indicator
+      const matchBadge = matchType === 'content'
+        ? `<span class="text-xs text-primary bg-[var(--primary)]/10 px-2 py-0.5 rounded-full">Found in dossier</span>`
+        : '';
+
+      // Show context or summary
+      const displayText = matchContext || peptide.summary;
+
+      return `
+        <li class="group/item">
+          <a href="${peptide.url}" class="modal-result-link block p-4 relative rounded-lg overflow-hidden transition-all duration-300 hover:bg-gradient-to-r hover:from-[var(--primary)]/40 hover:to-purple-600/30 focus:bg-gradient-to-r focus:from-[var(--primary)]/40 focus:to-purple-600/30 outline-none">
+            <div class="flex items-start justify-between gap-3 mb-2">
+              <div class="font-semibold text-white transition-colors">
+                ${highlightTerms(peptide.name, query)}
+              </div>
+              <div class="flex items-center gap-2 flex-shrink-0">
+                <span class="text-[10px] px-2 py-0.5 rounded-full border font-medium"
+                      style="color: ${cat.color}; border-color: ${cat.color}40; background: ${cat.color}15;">
+                  ${cat.label}
+                </span>
+              </div>
+            </div>
+            ${peptide.aliases.length > 0 ? `
+              <div class="text-xs text-white/50 mb-2" style="text-align: left;">
+                ${peptide.aliases.slice(0, 3).join(' &middot; ')}${peptide.aliases.length > 3 ? ' &middot; ...' : ''}
+              </div>
+            ` : ''}
+            <div class="text-sm text-white/70 line-clamp-2 mb-2" style="text-align: left;">
+              ${highlightTerms(displayText, query)}
+            </div>
+            <div class="flex items-center gap-3 text-xs text-white/50" style="text-align: left;">
+              <span>${peptide.sources.count} sources</span>
+              <span>&middot;</span>
+              <span>${peptide.sources.human} human studies</span>
+              ${matchBadge}
+            </div>
+          </a>
+        </li>
+      `;
+    }).join('');
+  }
+
+  // --- Modal Logic ---
+
+  const overlay = document.getElementById('search-modal-overlay')!;
+  const backdrop = document.getElementById('search-modal-backdrop')!;
+  const modalInput = document.getElementById('modal-search-input') as HTMLInputElement;
+  const modalResultsList = document.getElementById('modal-search-results-list')!;
+  const modalLoading = document.getElementById('modal-search-loading')!;
+  const modalSpinner = document.getElementById('modal-search-spinner')!;
+  const modalEmpty = document.getElementById('modal-search-empty')!;
+
+  let savedOverflow = '';
+  let debounceTimer: ReturnType<typeof setTimeout>;
+
+  function openModal() {
+    // Save and lock body scroll
+    savedOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    // Show overlay
+    overlay.classList.remove('hidden');
+    overlay.setAttribute('aria-hidden', 'false');
+
+    // Trigger opacity transition (after a frame so the transition fires)
+    requestAnimationFrame(() => {
+      overlay.classList.remove('opacity-0');
+      overlay.classList.add('opacity-100');
+    });
+
+    // Focus the input
+    setTimeout(() => modalInput.focus(), 50);
+
+    // Preload index
+    loadPeptideIndex();
+    initPagefind();
+  }
+
+  function closeModal() {
+    // Fade out
+    overlay.classList.remove('opacity-100');
+    overlay.classList.add('opacity-0');
+
+    // After transition, hide
+    setTimeout(() => {
+      overlay.classList.add('hidden');
+      overlay.setAttribute('aria-hidden', 'true');
+
+      // Clear search state
+      modalInput.value = '';
+      modalResultsList.innerHTML = '';
+      modalLoading.classList.add('hidden');
+      modalSpinner.classList.add('hidden');
+      modalEmpty.classList.remove('hidden');
+    }, 200);
+
+    // Restore body scroll
+    document.body.style.overflow = savedOverflow;
+  }
+
+  // Listen for open-search-modal custom event
+  document.addEventListener('open-search-modal', () => {
+    openModal();
+  });
+
+  // ESC to close
+  overlay.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      e.stopPropagation();
+      closeModal();
+    }
+  });
+
+  // Click backdrop to close
+  backdrop.addEventListener('click', () => {
+    closeModal();
+  });
+
+  // Search input handler
+  modalInput.addEventListener('input', (e) => {
+    const query = (e.target as HTMLInputElement).value;
+
+    clearTimeout(debounceTimer);
+
+    if (query.length < 2) {
+      modalResultsList.innerHTML = '';
+      modalLoading.classList.add('hidden');
+      modalSpinner.classList.add('hidden');
+      modalEmpty.classList.toggle('hidden', query.length > 0);
+      return;
+    }
+
+    modalEmpty.classList.add('hidden');
+    modalLoading.classList.remove('hidden');
+    modalSpinner.classList.remove('hidden');
+    modalResultsList.innerHTML = '';
+
+    debounceTimer = setTimeout(async () => {
+      // Try peptide index first
+      const index = await loadPeptideIndex();
+
+      if (index.length > 0) {
+        const results = searchPeptides(query, index);
+        modalLoading.classList.add('hidden');
+        modalSpinner.classList.add('hidden');
+        modalResultsList.innerHTML = renderResults(results, query);
+      } else if (pagefind) {
+        // Fallback to Pagefind
+        const search = await pagefind.search(query);
+        const results = await Promise.all(
+          search.results.slice(0, 8).map((r: any) => r.data())
+        );
+
+        modalLoading.classList.add('hidden');
+        modalSpinner.classList.add('hidden');
+
+        if (results.length === 0) {
+          modalResultsList.innerHTML = `
+            <li class="p-4 text-center text-white/50">No results found for "${escapeHtml(query)}"</li>
+          `;
+          return;
+        }
+
+        modalResultsList.innerHTML = results.map((result: any) => `
+          <li>
+            <a href="${result.url}" class="modal-result-link block p-4 hover:bg-white/5 transition-colors outline-none focus:bg-white/5">
+              <div class="font-medium text-white">${result.meta?.title || 'Untitled'}</div>
+              <div class="mt-1 text-sm text-white/50 line-clamp-2">${result.excerpt}</div>
+            </a>
+          </li>
+        `).join('');
+      } else {
+        // No search available
+        modalLoading.classList.add('hidden');
+        modalSpinner.classList.add('hidden');
+        modalResultsList.innerHTML = `
+          <li class="p-4 text-center text-white/50">
+            <div class="mb-2">Search index loading...</div>
+            <a href="/peptides" class="text-primary hover:underline">Browse all peptides</a>
+          </li>
+        `;
+      }
+    }, 300);
+  });
+
+  // Keyboard navigation: ArrowDown from input to first result
+  modalInput.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      const firstLink = modalResultsList.querySelector('.modal-result-link') as HTMLElement;
+      if (firstLink) firstLink.focus();
+    }
+  });
+
+  // Keyboard navigation within results
+  modalResultsList.addEventListener('keydown', (e) => {
+    const links = Array.from(modalResultsList.querySelectorAll('.modal-result-link')) as HTMLElement[];
+    const currentIndex = links.indexOf(document.activeElement as HTMLElement);
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (currentIndex < links.length - 1) {
+        links[currentIndex + 1].focus();
+      }
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (currentIndex === 0) {
+        modalInput.focus();
+      } else if (currentIndex > 0) {
+        links[currentIndex - 1].focus();
+      }
+    }
+  });
+
+  // Focus trap: Tab from last result wraps to input
+  overlay.addEventListener('keydown', (e) => {
+    if (e.key !== 'Tab') return;
+
+    const links = Array.from(modalResultsList.querySelectorAll('.modal-result-link')) as HTMLElement[];
+    const focusableElements = [modalInput, ...links];
+    const firstFocusable = focusableElements[0];
+    const lastFocusable = focusableElements[focusableElements.length - 1];
+
+    if (e.shiftKey) {
+      // Shift+Tab from first element wraps to last
+      if (document.activeElement === firstFocusable) {
+        e.preventDefault();
+        lastFocusable.focus();
+      }
+    } else {
+      // Tab from last element wraps to first
+      if (document.activeElement === lastFocusable) {
+        e.preventDefault();
+        firstFocusable.focus();
+      }
+    }
+  });
+</script>

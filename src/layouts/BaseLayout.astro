@@ -3,6 +3,7 @@ import '../styles/global.css';
 import OrganizationSchema from '../components/SEO/OrganizationSchema.astro';
 import DisclaimerBanner from '../components/DisclaimerBanner.astro';
 import CookieConsent from '../components/CookieConsent.astro';
+import SearchModal from '../components/SearchModal.astro';
 
 interface Props {
   title: string;
@@ -174,7 +175,7 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
 
         <!-- Right side actions -->
         <div class="hidden md:flex items-center gap-3">
-          <button class="btn btn-ghost rounded-full p-2" style="color: var(--text-medium);">
+          <button id="header-search-btn" class="btn btn-ghost rounded-full p-2" style="color: var(--text-medium);">
             <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="11" cy="11" r="8" />
               <path d="m21 21-4.3-4.3" />
@@ -345,6 +346,9 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
               <li><a href="/category/metabolic" class="hover:text-primary transition-colors">Metabolic</a></li>
               <li><a href="/category/repair-recovery" class="hover:text-primary transition-colors">Recovery</a></li>
               <li><a href="/category/hormonal" class="hover:text-primary transition-colors">Hormonal</a></li>
+              <li><a href="/category/longevity" class="hover:text-primary transition-colors">Longevity</a></li>
+              <li><a href="/category/cognitive" class="hover:text-primary transition-colors">Cognitive</a></li>
+              <li><a href="/category/immune" class="hover:text-primary transition-colors">Immune</a></li>
             </ul>
           </div>
 
@@ -396,6 +400,7 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
     <!-- Legal Components -->
     <DisclaimerBanner />
     <CookieConsent />
+    <SearchModal />
 
     <!-- Mobile menu script -->
     <script>
@@ -409,6 +414,21 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
           mobileNav.classList.toggle('hidden');
         });
       }
+    </script>
+
+    <script>
+      // Global Cmd+K handler
+      document.addEventListener('keydown', (e) => {
+        if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+          e.preventDefault();
+          document.dispatchEvent(new CustomEvent('open-search-modal'));
+        }
+      });
+
+      // Header search button
+      document.getElementById('header-search-btn')?.addEventListener('click', () => {
+        document.dispatchEvent(new CustomEvent('open-search-modal'));
+      });
     </script>
   </body>
 </html>

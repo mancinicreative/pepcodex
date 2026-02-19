@@ -2,6 +2,7 @@
 import BaseLayout from './BaseLayout.astro';
 import TableOfContents from '../components/TableOfContents.astro';
 import BreadcrumbSchema from '../components/SEO/BreadcrumbSchema.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
 
 interface Source {
   id: string;
@@ -273,18 +274,7 @@ const breadcrumbItems = [
           )}
 
           <!-- Newsletter CTA -->
-          <div class="rounded-xl border border-[var(--primary)]/30 bg-[var(--primary)]/10 p-4 backdrop-blur-sm">
-            <h3 class="font-semibold text-primary mb-2">Stay Updated</h3>
-            <p class="text-sm text-white/70 mb-3">
-              Get weekly peptide research briefings delivered to your inbox.
-            </p>
-            <a
-              href="/newsletter"
-              class="btn btn-primary btn-sm w-full text-center"
-            >
-              Subscribe
-            </a>
-          </div>
+          <NewsletterForm variant="card" />
 
           <!-- Disclaimer -->
           <div class="rounded-xl border border-amber-500/30 bg-amber-500/10 p-4 backdrop-blur-sm">

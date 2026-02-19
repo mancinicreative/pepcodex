@@ -3,6 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import TableOfContents from '../components/TableOfContents.astro';
 import RelatedEntities from '../components/RelatedEntities.astro';
 import BreadcrumbSchema from '../components/SEO/BreadcrumbSchema.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
 
 interface Source {
   id: string;
@@ -206,6 +207,11 @@ const breadcrumbItems = [
       currentPeptide={peptide}
       category={category}
     />
+
+    <!-- Newsletter CTA -->
+    <div class="mt-12">
+      <NewsletterForm variant="card" />
+    </div>
 
     <!-- Disclaimer -->
     <div class="mt-12 rounded-xl border border-amber-500/30 bg-amber-500/10 p-6 backdrop-blur-sm">

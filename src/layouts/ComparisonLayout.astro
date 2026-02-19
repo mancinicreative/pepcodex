@@ -3,6 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import EvidenceBadge from '../components/EvidenceBadge.astro';
 import FAQSchema from '../components/SEO/FAQSchema.astro';
 import BreadcrumbSchema from '../components/SEO/BreadcrumbSchema.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
 
 interface FAQItem {
   question: string;
@@ -152,6 +153,15 @@ const breadcrumbItems = [
           </svg>
         </a>
       </div>
+    </div>
+
+    <!-- Newsletter CTA -->
+    <div class="mt-12">
+      <NewsletterForm
+        variant="card"
+        heading="Stay Updated on Peptide Comparisons"
+        description="Get notified when we publish new comparison dossiers and evidence reviews."
+      />
     </div>
 
     <!-- Disclaimer -->

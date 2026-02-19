@@ -2,6 +2,7 @@
 import BaseLayout from './BaseLayout.astro';
 import ArticleSchema from '../components/SEO/ArticleSchema.astro';
 import BreadcrumbSchema from '../components/SEO/BreadcrumbSchema.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
 import { getCollection } from 'astro:content';
 
 interface Props {
@@ -172,6 +173,11 @@ const relatedTermData = relatedTerms
         </div>
       </section>
     )}
+
+    <!-- Newsletter CTA -->
+    <div class="mt-8">
+      <NewsletterForm variant="inline" />
+    </div>
 
     <!-- Disclaimer -->
     <div class="mt-8 rounded-xl border border-amber-500/30 bg-amber-500/10 p-6 backdrop-blur-sm">

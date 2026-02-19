@@ -1,173 +1,257 @@
 ---
-name: "Orforglipron"
-aliases: ["LY3502970", "OWL833"]
-category: "metabolic"
-compoundType: "small-molecule"
-evidenceStrength: "high"
-lastUpdated: 2026-01-22
-comparators: ["semaglutide", "tirzepatide"]
-summary: "The first oral small-molecule (non-peptide) GLP-1 receptor agonist. NDA submitted to FDA. ATTAIN trials showed 12.4% weight loss at 72 weeks. No food/water restrictions unlike oral semaglutide. Phase 3 data in 9,000+ patients."
+name: Orforglipron
+aliases:
+  - LY3502970
+  - OWL833
+category: metabolic
+compoundType: small-molecule
+evidenceStrength: high
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - semaglutide
+  - tirzepatide
+summary: >-
+  The first oral small-molecule (non-peptide) GLP-1 receptor agonist. NDA
+  submitted to FDA. ATTAIN trials showed 12.4% weight loss at 72 weeks. No
+  food/water restrictions unlike oral semaglutide. Phase 3 data in 9,000+
+  patients.
 sources:
   count: 20
   human: 18
   preclinical: 2
   openAccess: 16
-metaTitle: "Orforglipron Evidence Dossier | PepCodex"
-metaDescription: "Comprehensive evidence review of orforglipron (LY3502970). ATTAIN and ACHIEVE trial data, oral GLP-1 mechanism, FDA submission status, and citations."
+metaTitle: Orforglipron Evidence Dossier | PepCodex
+metaDescription: >-
+  Comprehensive evidence review of orforglipron (LY3502970). ATTAIN and ACHIEVE
+  trial data, oral GLP-1 mechanism, FDA submission status, and citations.
 interactions:
-  - peptide: "semaglutide"
-    type: "caution"
-    description: "Both are GLP-1 receptor agonists. Concurrent use would result in redundant mechanisms and increased risk of GI side effects. Not recommended to combine."
-  - peptide: "tirzepatide"
-    type: "avoid"
-    description: "Tirzepatide is a dual GIP/GLP-1 agonist. Combining with orforglipron would cause overlapping GLP-1 receptor activation. Contraindicated."
-  - peptide: "retatrutide"
-    type: "avoid"
-    description: "Retatrutide is a triple GIP/GLP-1/glucagon agonist. Concurrent GLP-1 receptor activation contraindicated."
-  - peptide: "bpc-157"
-    type: "caution"
-    description: "Both affect GI function. BPC-157 is gastroprotective while orforglipron slows gastric emptying. Monitor GI symptoms if combined."
-  - peptide: "5-amino-1mq"
-    type: "compatible"
-    description: "Different mechanisms of action. 5-Amino-1MQ inhibits NNMT for metabolic effects while orforglipron acts on GLP-1R. No known interactions."
+  - peptide: semaglutide
+    type: caution
+    description: >-
+      Both are GLP-1 receptor agonists. Concurrent use would result in redundant
+      mechanisms and increased risk of GI side effects. Not recommended to
+      combine.
+  - peptide: tirzepatide
+    type: avoid
+    description: >-
+      Tirzepatide is a dual GIP/GLP-1 agonist. Combining with orforglipron would
+      cause overlapping GLP-1 receptor activation. Contraindicated.
+  - peptide: retatrutide
+    type: avoid
+    description: >-
+      Retatrutide is a triple GIP/GLP-1/glucagon agonist. Concurrent GLP-1
+      receptor activation contraindicated.
+  - peptide: bpc-157
+    type: caution
+    description: >-
+      Both affect GI function. BPC-157 is gastroprotective while orforglipron
+      slows gastric emptying. Monitor GI symptoms if combined.
+  - peptide: 5-amino-1mq
+    type: compatible
+    description: >-
+      Different mechanisms of action. 5-Amino-1MQ inhibits NNMT for metabolic
+      effects while orforglipron acts on GLP-1R. No known interactions.
 molecularInfo:
-  weight: "882.97 Da"
+  weight: 882.97 Da
   chainLength: 0
-  type: "Small Molecule (Non-Peptide)"
-  sequence: "N/A (small molecule)"
+  type: Small Molecule (Non-Peptide)
+  sequence: N/A (small molecule)
   aminoAcids: []
 evidenceChainedBenefits:
   - mechanism:
-      action: "Biased GLP-1 receptor agonism favoring cAMP signaling over beta-arrestin recruitment"
-      confidence: "established"
+      action: >-
+        Biased GLP-1 receptor agonism favoring cAMP signaling over beta-arrestin
+        recruitment
+      confidence: established
       directStudies: 12
     benefit:
-      claim: "reduce body weight in adults with obesity"
-      qualifier: "shown to"
+      claim: reduce body weight in adults with obesity
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 6
       animalStudies: 4
       cellStudies: 3
       keyFindings:
-        - study: "Wharton S et al. NEJM 2025"
-          type: "human-rct"
-          finding: "ATTAIN-1: 12.4% weight loss at 72 weeks with 36mg dose vs 2.1% placebo in 3,127 patients"
-          pmid: "40960239"
-        - study: "ATTAIN-2 Lancet 2025"
-          type: "human-rct"
-          finding: "9.6% weight loss in adults with obesity and T2D at 72 weeks with 36mg dose"
-          doi: "10.1016/S0140-6736(25)02165-8"
+        - study: Wharton S et al. NEJM 2025
+          type: human-rct
+          finding: >-
+            ATTAIN-1: 12.4% weight loss at 72 weeks with 36mg dose vs 2.1%
+            placebo in 3,127 patients
+          pmid: '40960239'
+        - study: ATTAIN-2 Lancet 2025
+          type: human-rct
+          finding: >-
+            9.6% weight loss in adults with obesity and T2D at 72 weeks with
+            36mg dose
+          doi: 10.1016/S0140-6736(25)02165-8
   - mechanism:
-      action: "GLP-1 receptor activation enhancing glucose-dependent insulin secretion"
-      confidence: "established"
+      action: GLP-1 receptor activation enhancing glucose-dependent insulin secretion
+      confidence: established
       directStudies: 8
     benefit:
-      claim: "improve glycemic control in type 2 diabetes"
-      qualifier: "shown to"
+      claim: improve glycemic control in type 2 diabetes
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 5
       animalStudies: 3
       cellStudies: 2
       keyFindings:
-        - study: "ATTAIN-2 Lancet 2025"
-          type: "human-rct"
-          finding: "HbA1c reduction of 1.66% with 36mg; 75.5% achieved HbA1c <7%"
-          doi: "10.1016/S0140-6736(25)02165-8"
-        - study: "Pratt E et al. Diabetes Obes Metab 2023"
-          type: "human-rct"
-          finding: "Phase 1 demonstrated dose-dependent glucose lowering with favorable PK profile"
-          pmid: "37403801"
+        - study: ATTAIN-2 Lancet 2025
+          type: human-rct
+          finding: HbA1c reduction of 1.66% with 36mg; 75.5% achieved HbA1c <7%
+          doi: 10.1016/S0140-6736(25)02165-8
+        - study: Pratt E et al. Diabetes Obes Metab 2023
+          type: human-rct
+          finding: >-
+            Phase 1 demonstrated dose-dependent glucose lowering with favorable
+            PK profile
+          pmid: '37403801'
   - mechanism:
-      action: "Reduced appetite signaling via hypothalamic GLP-1 receptor activation"
-      confidence: "supported"
+      action: Reduced appetite signaling via hypothalamic GLP-1 receptor activation
+      confidence: supported
       directStudies: 6
     benefit:
-      claim: "reduce appetite and caloric intake"
-      qualifier: "appears to"
+      claim: reduce appetite and caloric intake
+      qualifier: appears to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 4
       animalStudies: 4
       cellStudies: 2
       keyFindings:
-        - study: "Phase 2 NEJM 2023"
-          type: "human-rct"
-          finding: "36-week treatment led to 11.6% weight loss with reduced appetite reported"
-          pmid: "37351564"
-        - study: "Kawai T et al. PNAS 2020"
-          type: "in-vitro"
-          finding: "Structural basis for GLP-1R activation with potent cAMP signaling"
-          pmid: "32747553"
+        - study: Phase 2 NEJM 2023
+          type: human-rct
+          finding: >-
+            36-week treatment led to 11.6% weight loss with reduced appetite
+            reported
+          pmid: '37351564'
+        - study: Kawai T et al. PNAS 2020
+          type: in-vitro
+          finding: Structural basis for GLP-1R activation with potent cAMP signaling
+          pmid: '32747553'
   - mechanism:
-      action: "Systemic anti-inflammatory effects via GLP-1 receptor signaling"
-      confidence: "emerging"
+      action: Systemic anti-inflammatory effects via GLP-1 receptor signaling
+      confidence: emerging
       directStudies: 3
     benefit:
-      claim: "improve cardiometabolic risk markers"
-      qualifier: "may"
+      claim: improve cardiometabolic risk markers
+      qualifier: may
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 3
       animalStudies: 2
       cellStudies: 1
       keyFindings:
-        - study: "ATTAIN-1 NEJM 2025"
-          type: "human-rct"
-          finding: "50.6% reduction in hsCRP; improvements in non-HDL cholesterol, blood pressure, triglycerides"
-          pmid: "40960239"
-        - study: "ATTAIN-2 Lancet 2025"
-          type: "human-rct"
-          finding: "Clinically meaningful benefits across cardiovascular risk factors"
-          doi: "10.1016/S0140-6736(25)02165-8"
+        - study: ATTAIN-1 NEJM 2025
+          type: human-rct
+          finding: >-
+            50.6% reduction in hsCRP; improvements in non-HDL cholesterol, blood
+            pressure, triglycerides
+          pmid: '40960239'
+        - study: ATTAIN-2 Lancet 2025
+          type: human-rct
+          finding: Clinically meaningful benefits across cardiovascular risk factors
+          doi: 10.1016/S0140-6736(25)02165-8
 conditions:
-  - slug: "obesity"
-    name: "Obesity"
-    researchSummary: "Orforglipron has demonstrated significant weight loss efficacy in large Phase 3 trials. ATTAIN-1 showed 12.4% weight loss at 72 weeks with the 36mg dose compared to 2.1% with placebo in 3,127 adults with obesity. This represents the first oral non-peptide GLP-1 agonist to show comparable efficacy to injectable alternatives."
-    relevantStudies: ["40960239", "37351564"]
-    relatedPeptides: ["semaglutide", "tirzepatide"]
-  - slug: "type-2-diabetes"
-    name: "Type 2 Diabetes"
-    researchSummary: "ATTAIN-2 evaluated orforglipron in adults with obesity and type 2 diabetes, showing HbA1c reductions of 1.66% with the 36mg dose and 75.5% of participants achieving HbA1c <7%. The oral administration without food restrictions offers practical advantages over existing therapies."
-    relevantStudies: ["37403801"]
-    relatedPeptides: ["semaglutide", "tirzepatide"]
-  - slug: "metabolic-syndrome"
-    name: "Metabolic Syndrome"
-    researchSummary: "Beyond weight and glycemic control, orforglipron improved multiple cardiometabolic markers including hsCRP (50.6% reduction), blood pressure, triglycerides, and non-HDL cholesterol. These effects suggest potential broader metabolic benefits."
-    relevantStudies: ["40960239"]
-    relatedPeptides: ["semaglutide", "tirzepatide", "retatrutide"]
+  - slug: obesity
+    name: Obesity
+    researchSummary: >-
+      Orforglipron has demonstrated significant weight loss efficacy in large
+      Phase 3 trials. ATTAIN-1 showed 12.4% weight loss at 72 weeks with the
+      36mg dose compared to 2.1% with placebo in 3,127 adults with obesity. This
+      represents the first oral non-peptide GLP-1 agonist to show comparable
+      efficacy to injectable alternatives.
+    relevantStudies:
+      - '40960239'
+      - '37351564'
+    relatedPeptides:
+      - semaglutide
+      - tirzepatide
+  - slug: type-2-diabetes
+    name: Type 2 Diabetes
+    researchSummary: >-
+      ATTAIN-2 evaluated orforglipron in adults with obesity and type 2
+      diabetes, showing HbA1c reductions of 1.66% with the 36mg dose and 75.5%
+      of participants achieving HbA1c <7%. The oral administration without food
+      restrictions offers practical advantages over existing therapies.
+    relevantStudies:
+      - '37403801'
+    relatedPeptides:
+      - semaglutide
+      - tirzepatide
+  - slug: metabolic-syndrome
+    name: Metabolic Syndrome
+    researchSummary: >-
+      Beyond weight and glycemic control, orforglipron improved multiple
+      cardiometabolic markers including hsCRP (50.6% reduction), blood pressure,
+      triglycerides, and non-HDL cholesterol. These effects suggest potential
+      broader metabolic benefits.
+    relevantStudies:
+      - '40960239'
+    relatedPeptides:
+      - semaglutide
+      - tirzepatide
+      - retatrutide
 timeline:
-  - period: "Week 1-4"
-    effects: "Initial titration period. GI side effects (nausea, vomiting, diarrhea) most common during dose escalation. Appetite reduction typically begins within first weeks."
-    source: "PMID:37351564"
-  - period: "Week 4-12"
-    effects: "Progressive weight loss observed. Phase 2 data showed approximately 5-7% weight loss by week 12 at higher doses. Glycemic improvements evident in diabetic patients."
-    source: "PMID:37351564"
-  - period: "Week 12-36"
-    effects: "Continued weight loss trajectory. Phase 2 showed 11.6% weight loss at 36 weeks with 36mg dose. GI tolerability generally improves after initial weeks."
-    source: "PMID:37351564"
-  - period: "Week 36-72"
-    effects: "Phase 3 ATTAIN trials demonstrated 12.4% weight loss at 72 weeks in obesity (ATTAIN-1) and 9.6% in obesity with T2D (ATTAIN-2). Sustained metabolic benefits observed."
-    source: "PMID:40960239"
+  - period: Week 1-4
+    effects: >-
+      Initial titration period. GI side effects (nausea, vomiting, diarrhea)
+      most common during dose escalation. Appetite reduction typically begins
+      within first weeks.
+    source: 'PMID:37351564'
+  - period: Week 4-12
+    effects: >-
+      Progressive weight loss observed. Phase 2 data showed approximately 5-7%
+      weight loss by week 12 at higher doses. Glycemic improvements evident in
+      diabetic patients.
+    source: 'PMID:37351564'
+  - period: Week 12-36
+    effects: >-
+      Continued weight loss trajectory. Phase 2 showed 11.6% weight loss at 36
+      weeks with 36mg dose. GI tolerability generally improves after initial
+      weeks.
+    source: 'PMID:37351564'
+  - period: Week 36-72
+    effects: >-
+      Phase 3 ATTAIN trials demonstrated 12.4% weight loss at 72 weeks in
+      obesity (ATTAIN-1) and 9.6% in obesity with T2D (ATTAIN-2). Sustained
+      metabolic benefits observed.
+    source: 'PMID:40960239'
 qualityChecklist:
   goodSigns:
-    - "Pharmaceutical-grade tablet formulation (not available as research peptide)"
-    - "NDA submitted to FDA with Priority Review status"
-    - "Manufactured by Eli Lilly with full GMP compliance"
-    - "Verified clinical trial supply chain"
-    - "Clear dosing instructions (12mg, 24mg, or 36mg once daily)"
+    - >-
+      Pharmaceutical-grade tablet formulation (not available as research
+      peptide)
+    - NDA submitted to FDA with Priority Review status
+    - Manufactured by Eli Lilly with full GMP compliance
+    - Verified clinical trial supply chain
+    - 'Clear dosing instructions (12mg, 24mg, or 36mg once daily)'
   warningSigns:
-    - "Any non-Lilly source claiming to sell orforglipron"
-    - "Powder or injectable formulations (orforglipron is oral only)"
-    - "Significantly discounted pricing from unverified sources"
-    - "Claims of availability before FDA approval"
+    - Any non-Lilly source claiming to sell orforglipron
+    - Powder or injectable formulations (orforglipron is oral only)
+    - Significantly discounted pricing from unverified sources
+    - Claims of availability before FDA approval
   badSigns:
-    - "Research chemical suppliers offering orforglipron"
-    - "Injectable versions (this is an oral-only compound)"
-    - "No proper pharmaceutical packaging or labeling"
-    - "Sources outside regulated pharmaceutical distribution"
-    - "Any liquid or lyophilized powder form"
+    - Research chemical suppliers offering orforglipron
+    - Injectable versions (this is an oral-only compound)
+    - No proper pharmaceutical packaging or labeling
+    - Sources outside regulated pharmaceutical distribution
+    - Any liquid or lyophilized powder form
+regulatoryStatus:
+  status: investigational
+  lastUpdated: '2026-02-18'
+  notes: >-
+    Phase 3 clinical trials for obesity and T2D (Eli Lilly). Oral non-peptide
+    GLP-1 agonist.
+ratings:
+  researchDepth: 4
+  globalCoverage: 4
+  mechanismPlausibility: 4
+  overall: 4.0
+  lastReviewed: 2026-02-19T00:00:00.000Z
+  reviewNotes: "Eli Lilly oral non-peptide GLP-1 agonist with Phase 3 global trials and established GLP-1R mechanism; multinational program with strong human data and FDA NDA submission anticipated."
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

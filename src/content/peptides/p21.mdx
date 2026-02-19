@@ -1,163 +1,281 @@
 ---
-name: "P21"
-aliases: ["Ac-DGGLAG-NH2", "P021", "CNTF-derived peptide"]
-category: "cognitive"
-evidenceStrength: "very-low"
-lastUpdated: 2026-01-28
-comparators: ["dihexa", "semax", "cerebrolysin"]
-summary: "A hexapeptide (Ac-DGGLAG-NH2) derived from ciliary neurotrophic factor (CNTF) that is claimed to mimic BDNF effects and promote neurogenesis. Developed primarily at the New York State Institute for Basic Research. Limited to preclinical rodent studies with no human clinical trials. Sold as a research chemical with unknown safety profile."
+name: P21
+aliases:
+  - Ac-DGGLAG-NH2
+  - P021
+  - CNTF-derived peptide
+category: cognitive
+evidenceStrength: very-low
+lastUpdated: 2026-01-28T00:00:00.000Z
+comparators:
+  - dihexa
+  - semax
+  - cerebrolysin
+summary: >-
+  A hexapeptide (Ac-DGGLAG-NH2) derived from ciliary neurotrophic factor (CNTF)
+  that is claimed to mimic BDNF effects and promote neurogenesis. Developed
+  primarily at the New York State Institute for Basic Research. Limited to
+  preclinical rodent studies with no human clinical trials. Sold as a research
+  chemical with unknown safety profile.
 sources:
   count: 15
   human: 0
   preclinical: 15
   openAccess: 6
-metaTitle: "P21 Evidence Dossier | PepCodex"
-metaDescription: "Evidence review of P21 (Ac-DGGLAG-NH2), the experimental CNTF-derived nootropic peptide. Research status, mechanism claims, and critical limitations."
+metaTitle: P21 Evidence Dossier | PepCodex
+metaDescription: >-
+  Evidence review of P21 (Ac-DGGLAG-NH2), the experimental CNTF-derived
+  nootropic peptide. Research status, mechanism claims, and critical
+  limitations.
 interactions:
-  - peptide: "dihexa"
-    type: "compatible"
-    description: "Both target cognitive enhancement through different mechanisms. P21 focuses on BDNF/neurogenesis while Dihexa acts on HGF/c-Met pathway. No interaction studies available; theoretical complementary nootropic effects."
-  - peptide: "semax"
-    type: "compatible"
-    description: "Different neurotrophic mechanisms. P21 is CNTF-derived targeting BDNF while Semax is ACTH-derived with broader neuroprotective effects. No known contraindications; both aim to support cognitive function."
-  - peptide: "cerebrolysin"
-    type: "compatible"
-    description: "Cerebrolysin is a complex peptide mixture with neurotrophic properties. P21 has a more targeted mechanism via BDNF pathway. No interaction data available; both target neuroregeneration."
-  - peptide: "selank"
-    type: "compatible"
-    description: "Non-overlapping mechanisms. P21 targets neurogenesis while Selank modulates anxiety and immune function. Theoretical complementary cognitive benefits."
-  - peptide: "bpc-157"
-    type: "caution"
-    description: "Both have neuroprotective claims but through different pathways. BPC-157 affects dopaminergic system while P21 targets BDNF/LIF signaling. Limited data on CNS interactions; exercise caution."
+  - peptide: dihexa
+    type: compatible
+    description: >-
+      Both target cognitive enhancement through different mechanisms. P21
+      focuses on BDNF/neurogenesis while Dihexa acts on HGF/c-Met pathway. No
+      interaction studies available; theoretical complementary nootropic
+      effects.
+  - peptide: semax
+    type: compatible
+    description: >-
+      Different neurotrophic mechanisms. P21 is CNTF-derived targeting BDNF
+      while Semax is ACTH-derived with broader neuroprotective effects. No known
+      contraindications; both aim to support cognitive function.
+  - peptide: cerebrolysin
+    type: compatible
+    description: >-
+      Cerebrolysin is a complex peptide mixture with neurotrophic properties.
+      P21 has a more targeted mechanism via BDNF pathway. No interaction data
+      available; both target neuroregeneration.
+  - peptide: selank
+    type: compatible
+    description: >-
+      Non-overlapping mechanisms. P21 targets neurogenesis while Selank
+      modulates anxiety and immune function. Theoretical complementary cognitive
+      benefits.
+  - peptide: bpc-157
+    type: caution
+    description: >-
+      Both have neuroprotective claims but through different pathways. BPC-157
+      affects dopaminergic system while P21 targets BDNF/LIF signaling. Limited
+      data on CNS interactions; exercise caution.
 molecularInfo:
-  weight: "578.3 Da"
+  weight: 578.3 Da
   chainLength: 6
-  type: "Hexapeptide"
-  sequence: "Ac-DGGLAG-NH2"
+  type: Hexapeptide
+  sequence: Ac-DGGLAG-NH2
   aminoAcids:
-    - { code: "D", name: "Aspartic Acid", position: 1, property: "negative" }
-    - { code: "G", name: "Glycine", position: 2, property: "polar" }
-    - { code: "G", name: "Glycine", position: 3, property: "polar" }
-    - { code: "L", name: "Leucine", position: 4, property: "hydrophobic" }
-    - { code: "A", name: "Alanine", position: 5, property: "hydrophobic" }
-    - { code: "G", name: "Glycine (Adamantylated)", position: 6, property: "modified" }
+    - code: D
+      name: Aspartic Acid
+      position: 1
+      property: negative
+    - code: G
+      name: Glycine
+      position: 2
+      property: polar
+    - code: G
+      name: Glycine
+      position: 3
+      property: polar
+    - code: L
+      name: Leucine
+      position: 4
+      property: hydrophobic
+    - code: A
+      name: Alanine
+      position: 5
+      property: hydrophobic
+    - code: G
+      name: Glycine (Adamantylated)
+      position: 6
+      property: modified
 evidenceChainedBenefits:
   - mechanism:
-      action: "BDNF upregulation via LIF signaling pathway inhibition"
-      confidence: "supported"
+      action: BDNF upregulation via LIF signaling pathway inhibition
+      confidence: supported
       directStudies: 5
     benefit:
-      claim: "enhance hippocampal neurogenesis"
-      qualifier: "may"
+      claim: enhance hippocampal neurogenesis
+      qualifier: may
     evidence:
-      level: "very-low"
+      level: very-low
       humanStudies: 0
       animalStudies: 5
       cellStudies: 2
       keyFindings:
-        - study: "Li B et al. 2010"
-          type: "animal"
-          finding: "P21 enhanced neurogenesis and maturation of newly born neurons in dentate gyrus of normal adult mice"
-          pmid: "20600002"
-        - study: "Kazim SF et al. 2014"
-          type: "animal"
-          finding: "P021 rescued neurogenesis deficits in 3xTg-AD mice with increased Ki-67+ and DCX+ cells in hippocampus"
-          pmid: "25046994"
+        - study: Li B et al. 2010
+          type: animal
+          finding: >-
+            P21 enhanced neurogenesis and maturation of newly born neurons in
+            dentate gyrus of normal adult mice
+          pmid: '20600002'
+        - study: Kazim SF et al. 2014
+          type: animal
+          finding: >-
+            P021 rescued neurogenesis deficits in 3xTg-AD mice with increased
+            Ki-67+ and DCX+ cells in hippocampus
+          pmid: '25046994'
   - mechanism:
-      action: "GSK-3beta inhibition via BDNF/TrkB/PI3K/Akt pathway activation"
-      confidence: "supported"
+      action: GSK-3beta inhibition via BDNF/TrkB/PI3K/Akt pathway activation
+      confidence: supported
       directStudies: 4
     benefit:
-      claim: "reduce abnormal tau phosphorylation"
-      qualifier: "appears to"
+      claim: reduce abnormal tau phosphorylation
+      qualifier: appears to
     evidence:
-      level: "very-low"
+      level: very-low
       humanStudies: 0
       animalStudies: 4
       cellStudies: 1
       keyFindings:
-        - study: "Kazim SF et al. 2014"
-          type: "animal"
-          finding: "P021 reduced tau hyperphosphorylation at multiple AD-relevant sites via decreased GSK-3beta activity in 3xTg-AD mice"
-          pmid: "25046994"
-        - study: "Kazim SF, Iqbal K 2016"
-          type: "animal"
-          finding: "Demonstrated BDNF-mediated inhibitory phosphorylation of GSK-3beta at Ser9, reducing tau pathology"
-          pmid: "27400746"
+        - study: Kazim SF et al. 2014
+          type: animal
+          finding: >-
+            P021 reduced tau hyperphosphorylation at multiple AD-relevant sites
+            via decreased GSK-3beta activity in 3xTg-AD mice
+          pmid: '25046994'
+        - study: 'Kazim SF, Iqbal K 2016'
+          type: animal
+          finding: >-
+            Demonstrated BDNF-mediated inhibitory phosphorylation of GSK-3beta
+            at Ser9, reducing tau pathology
+          pmid: '27400746'
   - mechanism:
-      action: "Synaptic protein restoration (MAP2, PSD-95, synapsin-1, glutamate receptors)"
-      confidence: "emerging"
+      action: >-
+        Synaptic protein restoration (MAP2, PSD-95, synapsin-1, glutamate
+        receptors)
+      confidence: emerging
       directStudies: 3
     benefit:
-      claim: "improve cognitive function in aging"
-      qualifier: "suggested to"
+      claim: improve cognitive function in aging
+      qualifier: suggested to
     evidence:
-      level: "very-low"
+      level: very-low
       humanStudies: 0
       animalStudies: 3
       cellStudies: 0
       keyFindings:
-        - study: "Bolognin S et al. 2014"
-          type: "animal"
-          finding: "P021 restored synaptic deficits (GluN2A, GluN2B, synaptophysin) and improved memory in 22-24 month old rats"
-          pmid: "24702821"
-        - study: "Baazaoui N, Iqbal K 2017"
-          type: "animal"
-          finding: "P021 rescued dendritic and synaptic markers (MAP2, PSD-95, NR1) and reversed cognitive impairment in 3xTg-AD mice"
-          pmid: "28655344"
+        - study: Bolognin S et al. 2014
+          type: animal
+          finding: >-
+            P021 restored synaptic deficits (GluN2A, GluN2B, synaptophysin) and
+            improved memory in 22-24 month old rats
+          pmid: '24702821'
+        - study: 'Baazaoui N, Iqbal K 2017'
+          type: animal
+          finding: >-
+            P021 rescued dendritic and synaptic markers (MAP2, PSD-95, NR1) and
+            reversed cognitive impairment in 3xTg-AD mice
+          pmid: '28655344'
 conditions:
-  - slug: "cognitive-decline"
-    name: "Age-Related Cognitive Decline"
-    researchSummary: "P21 has been studied for its potential effects on age-related cognitive impairment in preclinical models. Research from the Iqbal laboratory demonstrated that P21 improved spatial memory and restored synaptic markers in aged rats (Bolognin et al., 2014). Effects were associated with increased BDNF and reduced neuroinflammation. All evidence is preclinical with no human clinical trials."
-    relevantStudies: ["24702821", "28655344", "20600002"]
-    relatedPeptides: ["dihexa", "semax", "cerebrolysin"]
-  - slug: "alzheimers-research"
-    name: "Alzheimer's Disease Research"
-    researchSummary: "Multiple preclinical studies have examined P21 in transgenic Alzheimer's mouse models (3xTg-AD). Research showed reduced tau hyperphosphorylation, decreased amyloid pathology, and improved cognitive function (Kazim et al., 2014, 2016). These findings remain limited to animal models with no human translation data."
-    relevantStudies: ["25046994", "27400746", "24702821"]
-    relatedPeptides: ["dihexa", "cerebrolysin"]
-  - slug: "neurogenesis"
-    name: "Neurogenesis Enhancement"
-    researchSummary: "P21 was specifically designed to promote adult hippocampal neurogenesis. Studies in normal mice showed increased proliferation and maturation of neural progenitor cells in the dentate gyrus (Li et al., 2010). The BDNF-mimetic mechanism is proposed but not fully validated at the receptor level."
-    relevantStudies: ["20600002", "25046994"]
-    relatedPeptides: ["semax", "selank"]
+  - slug: cognitive-decline
+    name: Age-Related Cognitive Decline
+    researchSummary: >-
+      P21 has been studied for its potential effects on age-related cognitive
+      impairment in preclinical models. Research from the Iqbal laboratory
+      demonstrated that P21 improved spatial memory and restored synaptic
+      markers in aged rats (Bolognin et al., 2014). Effects were associated with
+      increased BDNF and reduced neuroinflammation. All evidence is preclinical
+      with no human clinical trials.
+    relevantStudies:
+      - '24702821'
+      - '28655344'
+      - '20600002'
+    relatedPeptides:
+      - dihexa
+      - semax
+      - cerebrolysin
+  - slug: alzheimers-research
+    name: Alzheimer's Disease Research
+    researchSummary: >-
+      Multiple preclinical studies have examined P21 in transgenic Alzheimer's
+      mouse models (3xTg-AD). Research showed reduced tau hyperphosphorylation,
+      decreased amyloid pathology, and improved cognitive function (Kazim et
+      al., 2014, 2016). These findings remain limited to animal models with no
+      human translation data.
+    relevantStudies:
+      - '25046994'
+      - '27400746'
+      - '24702821'
+    relatedPeptides:
+      - dihexa
+      - cerebrolysin
+  - slug: neurogenesis
+    name: Neurogenesis Enhancement
+    researchSummary: >-
+      P21 was specifically designed to promote adult hippocampal neurogenesis.
+      Studies in normal mice showed increased proliferation and maturation of
+      neural progenitor cells in the dentate gyrus (Li et al., 2010). The
+      BDNF-mimetic mechanism is proposed but not fully validated at the receptor
+      level.
+    relevantStudies:
+      - '20600002'
+      - '25046994'
+    relatedPeptides:
+      - semax
+      - selank
 timeline:
-  - period: "Week 1-2"
-    effects: "Based on preclinical observations: Initial BDNF pathway activation may begin. Animal studies show early changes in CREB phosphorylation and neurotrophin signaling within days. No human timeline data available."
-    source: "PMID:20600002"
-  - period: "Week 2-4"
-    effects: "Animal studies suggest neural progenitor proliferation increases. In mouse models, Ki-67+ cells (proliferating) and DCX+ cells (immature neurons) show measurable increases by 2-4 weeks of treatment."
-    source: "PMID:25046994"
-  - period: "Week 4-8"
-    effects: "Preclinical models show continued neurogenesis and early synaptic protein restoration. Tau phosphorylation changes and GSK-3beta inhibition effects observed in AD mouse models within this timeframe."
-    source: "PMID:27400746"
-  - period: "Week 8+"
-    effects: "Long-term animal studies (3-12 months) suggest sustained cognitive improvements and ongoing neuroprotection. However, human pharmacokinetics, optimal dosing, and treatment duration are completely unknown."
-    source: "PMID:28655344"
+  - period: Week 1-2
+    effects: >-
+      Based on preclinical observations: Initial BDNF pathway activation may
+      begin. Animal studies show early changes in CREB phosphorylation and
+      neurotrophin signaling within days. No human timeline data available.
+    source: 'PMID:20600002'
+  - period: Week 2-4
+    effects: >-
+      Animal studies suggest neural progenitor proliferation increases. In mouse
+      models, Ki-67+ cells (proliferating) and DCX+ cells (immature neurons)
+      show measurable increases by 2-4 weeks of treatment.
+    source: 'PMID:25046994'
+  - period: Week 4-8
+    effects: >-
+      Preclinical models show continued neurogenesis and early synaptic protein
+      restoration. Tau phosphorylation changes and GSK-3beta inhibition effects
+      observed in AD mouse models within this timeframe.
+    source: 'PMID:27400746'
+  - period: Week 8+
+    effects: >-
+      Long-term animal studies (3-12 months) suggest sustained cognitive
+      improvements and ongoing neuroprotection. However, human pharmacokinetics,
+      optimal dosing, and treatment duration are completely unknown.
+    source: 'PMID:28655344'
 qualityChecklist:
   goodSigns:
-    - "White to off-white lyophilized powder (cake or crystalline appearance)"
-    - "Dissolves completely and quickly in bacteriostatic water"
-    - "Clear, colorless solution after reconstitution"
-    - "Comes with certificate of analysis (COA) showing >98% purity"
-    - "Third-party HPLC and mass spectrometry verification available"
-    - "Proper vacuum seal on vial before reconstitution"
-    - "Acetylated N-terminus and amidated C-terminus verified in COA"
+    - White to off-white lyophilized powder (cake or crystalline appearance)
+    - Dissolves completely and quickly in bacteriostatic water
+    - 'Clear, colorless solution after reconstitution'
+    - Comes with certificate of analysis (COA) showing >98% purity
+    - Third-party HPLC and mass spectrometry verification available
+    - Proper vacuum seal on vial before reconstitution
+    - Acetylated N-terminus and amidated C-terminus verified in COA
   warningSigns:
-    - "Slightly off-white or cream-colored powder (may still be acceptable)"
-    - "Takes longer than expected to fully dissolve"
-    - "Powder appears collapsed or melted (possible moisture exposure)"
-    - "COA from manufacturer only without third-party verification"
-    - "Purity listed below 98% but above 95%"
-    - "No verification of terminal modifications (Ac- and -NH2)"
+    - Slightly off-white or cream-colored powder (may still be acceptable)
+    - Takes longer than expected to fully dissolve
+    - Powder appears collapsed or melted (possible moisture exposure)
+    - COA from manufacturer only without third-party verification
+    - Purity listed below 98% but above 95%
+    - No verification of terminal modifications (Ac- and -NH2)
   badSigns:
-    - "Yellow, brown, or otherwise discolored powder"
-    - "Visible particles or cloudiness after reconstitution"
-    - "Gel-like consistency or clumping that won't dissolve"
-    - "No COA provided or COA appears fraudulent"
-    - "Strong unusual odor"
-    - "Vial seal appears compromised or previously opened"
-    - "Missing adamantyl modification on C-terminal glycine"
+    - 'Yellow, brown, or otherwise discolored powder'
+    - Visible particles or cloudiness after reconstitution
+    - Gel-like consistency or clumping that won't dissolve
+    - No COA provided or COA appears fraudulent
+    - Strong unusual odor
+    - Vial seal appears compromised or previously opened
+    - Missing adamantyl modification on C-terminal glycine
+regulatoryStatus:
+  status: research-only
+  lastUpdated: '2026-02-18'
+  notes: >-
+    Not FDA-approved. Synthetic peptide fragment of CNTF. Preclinical research
+    on neurogenesis.
+ratings:
+  researchDepth: 1
+  globalCoverage: 1
+  mechanismPlausibility: 2
+  overall: 1.5
+  lastReviewed: 2026-02-19T00:00:00.000Z
+  reviewNotes: "Synthetic CNTF fragment with exclusively preclinical neurogenesis data; CNTF receptor signaling is proposed but no human studies exist for this specific peptide modification."
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

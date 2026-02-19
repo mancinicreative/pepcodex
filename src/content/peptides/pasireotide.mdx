@@ -1,183 +1,302 @@
 ---
-name: "Pasireotide"
-aliases: ["SOM230", "Signifor", "Signifor LAR"]
-category: "hormonal"
-evidenceStrength: "high"
-lastUpdated: 2026-01-22
-comparators: ["octreotide", "lanreotide"]
-summary: "A multi-receptor somatostatin analog FDA-approved for Cushing's disease and acromegaly. Features unique binding profile with 30-40 fold higher affinity for SSTR1 and SSTR5 compared to octreotide, enabling efficacy in patients resistant to first-generation somatostatin analogs."
+name: Pasireotide
+aliases:
+  - SOM230
+  - Signifor
+  - Signifor LAR
+category: hormonal
+evidenceStrength: high
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - octreotide
+  - lanreotide
+summary: >-
+  A multi-receptor somatostatin analog FDA-approved for Cushing's disease and
+  acromegaly. Features unique binding profile with 30-40 fold higher affinity
+  for SSTR1 and SSTR5 compared to octreotide, enabling efficacy in patients
+  resistant to first-generation somatostatin analogs.
 sources:
   count: 48
   human: 42
   preclinical: 6
   openAccess: 35
-metaTitle: "Pasireotide Evidence Dossier | PepCodex"
-metaDescription: "Comprehensive evidence review of pasireotide (Signifor, SOM230). Multi-receptor somatostatin analog for Cushing's disease and acromegaly. Mechanism, clinical trials, safety profile, and citations."
+metaTitle: Pasireotide Evidence Dossier | PepCodex
+metaDescription: >-
+  Comprehensive evidence review of pasireotide (Signifor, SOM230).
+  Multi-receptor somatostatin analog for Cushing's disease and acromegaly.
+  Mechanism, clinical trials, safety profile, and citations.
 interactions:
-  - peptide: "octreotide"
-    type: "avoid"
-    description: "Same drug class with overlapping receptor targets. No clinical rationale for combination as pasireotide provides broader SSTR coverage. Switching from octreotide to pasireotide is appropriate for resistant patients."
-  - peptide: "lanreotide"
-    type: "avoid"
-    description: "Same drug class with overlapping receptor targets. No clinical rationale for combination. Pasireotide may be considered after lanreotide failure due to superior SSTR5 affinity."
-  - peptide: "pegvisomant"
-    type: "synergistic"
-    description: "Combination studied in acromegaly. Pegvisomant blocks GH receptor while pasireotide suppresses GH secretion. May allow dose reduction of either agent with maintained efficacy."
-  - peptide: "cabergoline"
-    type: "compatible"
-    description: "Different mechanisms (dopamine agonist vs somatostatin analog). May be combined in resistant Cushing's disease or acromegaly. Monitor for additive effects on tumor shrinkage."
-  - peptide: "metformin"
-    type: "compatible"
-    description: "Commonly co-administered to manage pasireotide-induced hyperglycemia. First-line antidiabetic recommended per prescribing guidelines."
-  - peptide: "insulin"
-    type: "caution"
-    description: "May be required for pasireotide-induced hyperglycemia. Requires careful glucose monitoring as pasireotide directly suppresses insulin secretion via SSTR5."
+  - peptide: octreotide
+    type: avoid
+    description: >-
+      Same drug class with overlapping receptor targets. No clinical rationale
+      for combination as pasireotide provides broader SSTR coverage. Switching
+      from octreotide to pasireotide is appropriate for resistant patients.
+  - peptide: lanreotide
+    type: avoid
+    description: >-
+      Same drug class with overlapping receptor targets. No clinical rationale
+      for combination. Pasireotide may be considered after lanreotide failure
+      due to superior SSTR5 affinity.
+  - peptide: pegvisomant
+    type: synergistic
+    description: >-
+      Combination studied in acromegaly. Pegvisomant blocks GH receptor while
+      pasireotide suppresses GH secretion. May allow dose reduction of either
+      agent with maintained efficacy.
+  - peptide: cabergoline
+    type: compatible
+    description: >-
+      Different mechanisms (dopamine agonist vs somatostatin analog). May be
+      combined in resistant Cushing's disease or acromegaly. Monitor for
+      additive effects on tumor shrinkage.
+  - peptide: metformin
+    type: compatible
+    description: >-
+      Commonly co-administered to manage pasireotide-induced hyperglycemia.
+      First-line antidiabetic recommended per prescribing guidelines.
+  - peptide: insulin
+    type: caution
+    description: >-
+      May be required for pasireotide-induced hyperglycemia. Requires careful
+      glucose monitoring as pasireotide directly suppresses insulin secretion
+      via SSTR5.
 molecularInfo:
-  weight: "1,047 Da"
+  weight: '1,047 Da'
   chainLength: 6
-  type: "Cyclic hexapeptide"
-  sequence: "cyclo[4-(NH2-C2H4-NH-CO-O-)Pro-Phg-DTrp-Lys-Tyr(Bzl)-Phe]"
+  type: Cyclic hexapeptide
+  sequence: 'cyclo[4-(NH2-C2H4-NH-CO-O-)Pro-Phg-DTrp-Lys-Tyr(Bzl)-Phe]'
   aminoAcids:
-    - { code: "Pro", name: "Proline", position: 1, property: "modified" }
-    - { code: "Phg", name: "Phenylglycine", position: 2, property: "modified" }
-    - { code: "DTrp", name: "D-Tryptophan", position: 3, property: "modified" }
-    - { code: "K", name: "Lysine", position: 4, property: "positive" }
-    - { code: "Tyr(Bzl)", name: "O-Benzyl-Tyrosine", position: 5, property: "modified" }
-    - { code: "F", name: "Phenylalanine", position: 6, property: "hydrophobic" }
+    - code: Pro
+      name: Proline
+      position: 1
+      property: modified
+    - code: Phg
+      name: Phenylglycine
+      position: 2
+      property: modified
+    - code: DTrp
+      name: D-Tryptophan
+      position: 3
+      property: modified
+    - code: K
+      name: Lysine
+      position: 4
+      property: positive
+    - code: Tyr(Bzl)
+      name: O-Benzyl-Tyrosine
+      position: 5
+      property: modified
+    - code: F
+      name: Phenylalanine
+      position: 6
+      property: hydrophobic
 evidenceChainedBenefits:
   - mechanism:
-      action: "Multi-receptor somatostatin agonism (SSTR1, 2, 3, 5) with highest SSTR5 affinity"
-      confidence: "established"
+      action: >-
+        Multi-receptor somatostatin agonism (SSTR1, 2, 3, 5) with highest SSTR5
+        affinity
+      confidence: established
       directStudies: 12
     benefit:
-      claim: "normalize urinary free cortisol in Cushing's disease"
-      qualifier: "shown to"
+      claim: normalize urinary free cortisol in Cushing's disease
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 8
       animalStudies: 2
       cellStudies: 2
       keyFindings:
-        - study: "Colao A et al. 2012"
-          type: "human-rct"
-          finding: "26.3% of patients achieved UFC normalization at 6 months in Phase 3 trial (N=162)"
-          pmid: "22990096"
-        - study: "Lacroix A et al. 2018"
-          type: "human-rct"
-          finding: "Sustained efficacy demonstrated over 5-year follow-up in responders"
-          pmid: "29174517"
+        - study: Colao A et al. 2012
+          type: human-rct
+          finding: >-
+            26.3% of patients achieved UFC normalization at 6 months in Phase 3
+            trial (N=162)
+          pmid: '22990096'
+        - study: Lacroix A et al. 2018
+          type: human-rct
+          finding: Sustained efficacy demonstrated over 5-year follow-up in responders
+          pmid: '29174517'
   - mechanism:
-      action: "Suppression of GH secretion via SSTR2/5 on somatotroph adenomas"
-      confidence: "established"
+      action: Suppression of GH secretion via SSTR2/5 on somatotroph adenomas
+      confidence: established
       directStudies: 10
     benefit:
-      claim: "achieve biochemical control in acromegaly"
-      qualifier: "shown to"
+      claim: achieve biochemical control in acromegaly
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 7
       animalStudies: 2
       cellStudies: 1
       keyFindings:
-        - study: "Gadelha MR et al. 2017"
-          type: "human-rct"
-          finding: "PAOLA trial: 31.3% achieved biochemical control vs 19.2% with octreotide (p=0.007)"
-          pmid: "28253614"
-        - study: "Colao A et al. 2014"
-          type: "human-rct"
-          finding: "Superior to octreotide LAR as first-line medical therapy in treatment-naive acromegaly"
-          pmid: "24423324"
+        - study: Gadelha MR et al. 2017
+          type: human-rct
+          finding: >-
+            PAOLA trial: 31.3% achieved biochemical control vs 19.2% with
+            octreotide (p=0.007)
+          pmid: '28253614'
+        - study: Colao A et al. 2014
+          type: human-rct
+          finding: >-
+            Superior to octreotide LAR as first-line medical therapy in
+            treatment-naive acromegaly
+          pmid: '24423324'
   - mechanism:
-      action: "SSTR5-mediated inhibition of pancreatic beta cell insulin secretion"
-      confidence: "established"
+      action: SSTR5-mediated inhibition of pancreatic beta cell insulin secretion
+      confidence: established
       directStudies: 6
     benefit:
-      claim: "cause hyperglycemia requiring management"
-      qualifier: "shown to"
+      claim: cause hyperglycemia requiring management
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 5
       animalStudies: 1
       cellStudies: 2
       keyFindings:
-        - study: "Henry RR et al. 2013"
-          type: "human-rct"
-          finding: "Direct demonstration of insulin suppression mechanism via SSTR5 in healthy volunteers"
-          pmid: "23345097"
-        - study: "Fleseriu M et al. 2018"
-          type: "human-observational"
-          finding: "Hyperglycemia management consensus: 40-70% incidence, requires proactive monitoring"
-          pmid: "29855803"
+        - study: Henry RR et al. 2013
+          type: human-rct
+          finding: >-
+            Direct demonstration of insulin suppression mechanism via SSTR5 in
+            healthy volunteers
+          pmid: '23345097'
+        - study: Fleseriu M et al. 2018
+          type: human-observational
+          finding: >-
+            Hyperglycemia management consensus: 40-70% incidence, requires
+            proactive monitoring
+          pmid: '29855803'
   - mechanism:
-      action: "Gi/Go protein activation leading to adenylyl cyclase inhibition and decreased cAMP"
-      confidence: "established"
+      action: >-
+        Gi/Go protein activation leading to adenylyl cyclase inhibition and
+        decreased cAMP
+      confidence: established
       directStudies: 8
     benefit:
-      claim: "reduce tumor cell proliferation"
-      qualifier: "appears to"
+      claim: reduce tumor cell proliferation
+      qualifier: appears to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 4
       animalStudies: 3
       cellStudies: 4
       keyFindings:
-        - study: "Bruns C et al. 2002"
-          type: "in-vitro"
-          finding: "Characterized multi-SSTR binding profile and antiproliferative signaling pathways"
-          pmid: "12200368"
-        - study: "Sheppard M et al. 2015"
-          type: "human-observational"
-          finding: "Tumor volume reduction observed in pooled acromegaly trial analysis"
-          pmid: "26573920"
+        - study: Bruns C et al. 2002
+          type: in-vitro
+          finding: >-
+            Characterized multi-SSTR binding profile and antiproliferative
+            signaling pathways
+          pmid: '12200368'
+        - study: Sheppard M et al. 2015
+          type: human-observational
+          finding: Tumor volume reduction observed in pooled acromegaly trial analysis
+          pmid: '26573920'
 conditions:
-  - slug: "cushings-disease"
-    name: "Cushing's Disease"
-    researchSummary: "Pasireotide is FDA-approved for Cushing's disease, the first medical therapy specifically approved for this indication (2012). Phase 3 trial (N=162) demonstrated 26.3% UFC normalization at 6 months. Long-term extensions show sustained efficacy in responders for up to 5 years. Works by suppressing ACTH secretion from corticotroph adenomas via SSTR5."
-    relevantStudies: ["22990096", "24476079", "29174517", "30219838"]
-    relatedPeptides: ["octreotide", "lanreotide"]
-  - slug: "acromegaly"
-    name: "Acromegaly"
-    researchSummary: "FDA-approved for acromegaly in 2014. PAOLA trial demonstrated superiority over octreotide LAR in SSA-resistant patients (31.3% vs 19.2% biochemical control, p=0.007). Also superior as first-line medical therapy in treatment-naive patients. Particularly effective in tumors with high SSTR5 expression."
-    relevantStudies: ["28253614", "24423324", "25337926", "26573920"]
-    relatedPeptides: ["octreotide", "lanreotide", "pegvisomant"]
-  - slug: "neuroendocrine-tumors"
-    name: "Neuroendocrine Tumors"
-    researchSummary: "Investigated in Phase 2 trials for metastatic NETs progressing on octreotide LAR. Showed antiproliferative activity in some patients. COOPERATE-2 trial evaluated combination with everolimus. Not FDA-approved for this indication but represents area of ongoing research."
-    relevantStudies: ["25667288", "26282658"]
-    relatedPeptides: ["octreotide", "lanreotide"]
+  - slug: cushings-disease
+    name: Cushing's Disease
+    researchSummary: >-
+      Pasireotide is FDA-approved for Cushing's disease, the first medical
+      therapy specifically approved for this indication (2012). Phase 3 trial
+      (N=162) demonstrated 26.3% UFC normalization at 6 months. Long-term
+      extensions show sustained efficacy in responders for up to 5 years. Works
+      by suppressing ACTH secretion from corticotroph adenomas via SSTR5.
+    relevantStudies:
+      - '22990096'
+      - '24476079'
+      - '29174517'
+      - '30219838'
+    relatedPeptides:
+      - octreotide
+      - lanreotide
+  - slug: acromegaly
+    name: Acromegaly
+    researchSummary: >-
+      FDA-approved for acromegaly in 2014. PAOLA trial demonstrated superiority
+      over octreotide LAR in SSA-resistant patients (31.3% vs 19.2% biochemical
+      control, p=0.007). Also superior as first-line medical therapy in
+      treatment-naive patients. Particularly effective in tumors with high SSTR5
+      expression.
+    relevantStudies:
+      - '28253614'
+      - '24423324'
+      - '25337926'
+      - '26573920'
+    relatedPeptides:
+      - octreotide
+      - lanreotide
+      - pegvisomant
+  - slug: neuroendocrine-tumors
+    name: Neuroendocrine Tumors
+    researchSummary: >-
+      Investigated in Phase 2 trials for metastatic NETs progressing on
+      octreotide LAR. Showed antiproliferative activity in some patients.
+      COOPERATE-2 trial evaluated combination with everolimus. Not FDA-approved
+      for this indication but represents area of ongoing research.
+    relevantStudies:
+      - '25667288'
+      - '26282658'
+    relatedPeptides:
+      - octreotide
+      - lanreotide
 timeline:
-  - period: "Day 1-7"
-    effects: "Rapid suppression of hormone secretion begins. In Cushing's disease, ACTH reduction measurable within days. GH suppression in acromegaly occurs rapidly. Hyperglycemia may develop within first week - weekly FPG monitoring recommended."
-    source: "PMID:22990096"
-  - period: "Week 2-4"
-    effects: "Continued hormone suppression. UFC levels decrease in Cushing's responders. IGF-1 reduction observed in acromegaly patients. Glucose levels typically stabilize or may require antidiabetic therapy initiation."
-    source: "PMID:28253614"
-  - period: "Month 1-3"
-    effects: "Assessment of biochemical response at 2-3 months. Dose titration based on response and tolerability. Steady state achieved for LAR formulation. HbA1c monitoring every 3 months for hyperglycemia management."
-    source: "PMID:24423324"
-  - period: "Month 3-12"
-    effects: "Full therapeutic response typically established. Tumor volume changes may be assessed. Long-term responders maintain biochemical control. Some patients develop tolerance requiring dose adjustment or combination therapy."
-    source: "PMID:29174517"
+  - period: Day 1-7
+    effects: >-
+      Rapid suppression of hormone secretion begins. In Cushing's disease, ACTH
+      reduction measurable within days. GH suppression in acromegaly occurs
+      rapidly. Hyperglycemia may develop within first week - weekly FPG
+      monitoring recommended.
+    source: 'PMID:22990096'
+  - period: Week 2-4
+    effects: >-
+      Continued hormone suppression. UFC levels decrease in Cushing's
+      responders. IGF-1 reduction observed in acromegaly patients. Glucose
+      levels typically stabilize or may require antidiabetic therapy initiation.
+    source: 'PMID:28253614'
+  - period: Month 1-3
+    effects: >-
+      Assessment of biochemical response at 2-3 months. Dose titration based on
+      response and tolerability. Steady state achieved for LAR formulation.
+      HbA1c monitoring every 3 months for hyperglycemia management.
+    source: 'PMID:24423324'
+  - period: Month 3-12
+    effects: >-
+      Full therapeutic response typically established. Tumor volume changes may
+      be assessed. Long-term responders maintain biochemical control. Some
+      patients develop tolerance requiring dose adjustment or combination
+      therapy.
+    source: 'PMID:29174517'
 qualityChecklist:
   goodSigns:
-    - "FDA-approved pharmaceutical product (Signifor, Signifor LAR)"
-    - "Obtained through licensed pharmacy with valid prescription"
-    - "Proper cold chain storage maintained"
-    - "Original manufacturer packaging with lot number and expiry"
-    - "Clear solution without particulates for SC formulation"
-    - "Microsphere suspension reconstitutes properly for LAR formulation"
+    - 'FDA-approved pharmaceutical product (Signifor, Signifor LAR)'
+    - Obtained through licensed pharmacy with valid prescription
+    - Proper cold chain storage maintained
+    - Original manufacturer packaging with lot number and expiry
+    - Clear solution without particulates for SC formulation
+    - Microsphere suspension reconstitutes properly for LAR formulation
   warningSigns:
-    - "Product approaching expiration date"
-    - "Storage conditions uncertain during shipping"
-    - "Reconstituted LAR not administered within recommended timeframe"
-    - "Partial vial use without proper storage"
+    - Product approaching expiration date
+    - Storage conditions uncertain during shipping
+    - Reconstituted LAR not administered within recommended timeframe
+    - Partial vial use without proper storage
   badSigns:
-    - "Product obtained without prescription"
-    - "Non-pharmaceutical or research-grade sourcing"
-    - "Visible particulates or discoloration"
-    - "Compromised packaging or missing lot information"
-    - "Storage outside recommended temperature range"
-    - "Counterfeit or grey market products"
+    - Product obtained without prescription
+    - Non-pharmaceutical or research-grade sourcing
+    - Visible particulates or discoloration
+    - Compromised packaging or missing lot information
+    - Storage outside recommended temperature range
+    - Counterfeit or grey market products
+regulatoryStatus:
+  status: approved
+  lastUpdated: '2026-02-18'
+  notes: FDA-approved as Signifor for Cushing's disease and acromegaly.
+ratings:
+  researchDepth: 4
+  globalCoverage: 4
+  mechanismPlausibility: 5
+  overall: 4.5
+  lastReviewed: 2026-02-19T00:00:00.000Z
+  reviewNotes: "FDA-approved somatostatin analog (Signifor) with 42 human studies across global trials; multi-receptor somatostatin pharmacology is textbook endocrinology with extensive direct evidence."
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

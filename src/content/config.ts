@@ -29,6 +29,19 @@ const conditionSchema = z.object({
   relatedPeptides: z.array(z.string()).optional(), // other peptides studied for this condition
 });
 
+// Regulatory status for FDA tracker
+const regulatoryStatus = z.enum(['approved', 'investigational', 'compounding-restricted', 'research-only']);
+
+// Multi-dimension evidence ratings schema (Phase 36)
+const ratingsSchema = z.object({
+  researchDepth: z.number().min(1).max(5),
+  globalCoverage: z.number().min(1).max(5),
+  mechanismPlausibility: z.number().min(1).max(5),
+  overall: z.number().min(1).max(5),
+  lastReviewed: z.coerce.date(),
+  reviewNotes: z.string().optional(),
+});
+
 const peptides = defineCollection({
   type: 'content',
   schema: z.object({
@@ -40,6 +53,12 @@ const peptides = defineCollection({
     lastUpdated: z.coerce.date(),
     comparators: z.array(z.string()).default([]),
     summary: z.string(), // Quick 1-2 sentence summary
+    // Regulatory status for FDA tracker
+    regulatoryStatus: z.object({
+      status: regulatoryStatus,
+      lastUpdated: z.coerce.date().optional(),
+      notes: z.string().optional(),
+    }).optional(),
     sources: z.object({
       count: z.number(),
       human: z.number(),
@@ -111,6 +130,8 @@ const peptides = defineCollection({
       question: z.string(),
       answer: z.string(),
     })).optional(),
+    // NEW: Multi-dimension evidence ratings (Phase 36)
+    ratings: ratingsSchema.optional(),
     // SEO fields
     ...seoFields,
   }),

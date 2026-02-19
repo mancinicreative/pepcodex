@@ -83,6 +83,33 @@ const categoryLabels: Record<string, string> = {
       </div>
     </div>
 
+    <!-- Browse by Category -->
+    <div class="w-full max-w-2xl mt-10">
+      <h2 class="text-sm font-bold uppercase tracking-wider text-white/60 mb-4">Browse by Category</h2>
+      <div class="flex flex-wrap gap-3 justify-center">
+        {Object.entries(categoryLabels).map(([slug, label]) => (
+          <a
+            href={`/category/${slug}`}
+            class="px-4 py-2 rounded-lg border border-white/10 text-white/70 hover:text-white hover:border-white/30 text-sm transition-all"
+          >
+            {label}
+          </a>
+        ))}
+        <a
+          href="/guide"
+          class="px-4 py-2 rounded-lg border border-white/10 text-white/70 hover:text-white hover:border-white/30 text-sm transition-all"
+        >
+          Guides
+        </a>
+        <a
+          href="/compare"
+          class="px-4 py-2 rounded-lg border border-white/10 text-white/70 hover:text-white hover:border-white/30 text-sm transition-all"
+        >
+          Compare
+        </a>
+      </div>
+    </div>
+
     <!-- Navigation Links -->
     <div class="flex flex-wrap justify-center gap-4 mt-12">
       <a
@@ -128,7 +155,8 @@ const categoryLabels: Record<string, string> = {
       gtag('event', '404_error', {
         'page_path': attemptedUrl,
         'page_referrer': referrer,
-        'page_location': window.location.href
+        'page_location': window.location.href,
+        'path_segment': attemptedUrl.split('/')[1] || 'root'
       });
     }
 

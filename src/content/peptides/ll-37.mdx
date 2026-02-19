@@ -1,249 +1,496 @@
 ---
-name: "LL-37"
-aliases: ["Cathelicidin", "hCAP18", "Human Cationic Antimicrobial Peptide 18", "CAMP", "FALL-39", "CAP18"]
-category: "immune"
-evidenceStrength: "moderate"
-lastUpdated: 2026-01-22
-comparators: ["defensins", "magainin", "pexiganan"]
-summary: "The only human cathelicidin antimicrobial peptide, discovered at Karolinska Institute in Sweden (1995). A 37-amino acid peptide with broad-spectrum antimicrobial activity and immunomodulatory functions. Extensive mechanistic research supports roles in innate immunity, wound healing, and host defense."
+name: LL-37
+aliases:
+  - Cathelicidin
+  - hCAP18
+  - Human Cationic Antimicrobial Peptide 18
+  - CAMP
+  - FALL-39
+  - CAP18
+category: immune
+evidenceStrength: moderate
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - defensins
+  - magainin
+  - pexiganan
+summary: >-
+  The only human cathelicidin antimicrobial peptide, discovered at Karolinska
+  Institute in Sweden (1995). A 37-amino acid peptide with broad-spectrum
+  antimicrobial activity and immunomodulatory functions. Extensive mechanistic
+  research supports roles in innate immunity, wound healing, and host defense.
 sources:
   count: 25
   human: 8
   preclinical: 17
   openAccess: 12
-metaTitle: "LL-37 Evidence Dossier | Human Cathelicidin Antimicrobial Peptide | PepCodex"
-metaDescription: "Comprehensive evidence review of LL-37 (cathelicidin). Discovery history, antimicrobial mechanisms, immunomodulation, wound healing research, and clinical development status."
+metaTitle: LL-37 Evidence Dossier | Human Cathelicidin Antimicrobial Peptide | PepCodex
+metaDescription: >-
+  Comprehensive evidence review of LL-37 (cathelicidin). Discovery history,
+  antimicrobial mechanisms, immunomodulation, wound healing research, and
+  clinical development status.
 interactions:
-  - peptide: "bpc-157"
-    type: "synergistic"
-    description: "LL-37's antimicrobial and wound healing properties complement BPC-157's tissue repair mechanisms. May enhance wound healing outcomes through infection control plus regeneration."
-  - peptide: "tb-500"
-    type: "compatible"
-    description: "Both promote wound healing - LL-37 via antimicrobial defense and angiogenesis, TB-500 via actin regulation and cell migration. Complementary mechanisms."
-  - peptide: "ghk-cu"
-    type: "compatible"
-    description: "LL-37's antimicrobial effects may protect healing tissue while GHK-Cu promotes collagen synthesis. Complementary wound healing pathways."
-  - peptide: "thymosin-alpha-1"
-    type: "synergistic"
-    description: "Both enhance innate immunity - LL-37 provides direct antimicrobial peptide activity while Ta1 modulates T-cell and dendritic cell responses. Complementary immune enhancement."
-  - peptide: "selank"
-    type: "compatible"
-    description: "Selank retains immunomodulatory activity from tuftsin backbone. Different immune modulation mechanisms with no known contraindications."
-  - peptide: "semax"
-    type: "compatible"
-    description: "Both have immunomodulatory components - LL-37 as antimicrobial peptide, Semax via anti-inflammatory mechanisms. Different primary targets."
+  - peptide: bpc-157
+    type: synergistic
+    description: >-
+      LL-37's antimicrobial and wound healing properties complement BPC-157's
+      tissue repair mechanisms. May enhance wound healing outcomes through
+      infection control plus regeneration.
+  - peptide: tb-500
+    type: compatible
+    description: >-
+      Both promote wound healing - LL-37 via antimicrobial defense and
+      angiogenesis, TB-500 via actin regulation and cell migration.
+      Complementary mechanisms.
+  - peptide: ghk-cu
+    type: compatible
+    description: >-
+      LL-37's antimicrobial effects may protect healing tissue while GHK-Cu
+      promotes collagen synthesis. Complementary wound healing pathways.
+  - peptide: thymosin-alpha-1
+    type: synergistic
+    description: >-
+      Both enhance innate immunity - LL-37 provides direct antimicrobial peptide
+      activity while Ta1 modulates T-cell and dendritic cell responses.
+      Complementary immune enhancement.
+  - peptide: selank
+    type: compatible
+    description: >-
+      Selank retains immunomodulatory activity from tuftsin backbone. Different
+      immune modulation mechanisms with no known contraindications.
+  - peptide: semax
+    type: compatible
+    description: >-
+      Both have immunomodulatory components - LL-37 as antimicrobial peptide,
+      Semax via anti-inflammatory mechanisms. Different primary targets.
 molecularInfo:
-  weight: "4,493.33 Da"
+  weight: '4,493.33 Da'
   chainLength: 37
-  type: "Cathelicidin Antimicrobial Peptide"
-  sequence: "LLGDFFRKSKEKIGKEFKRIVQRIKDFLRNLVPRTES"
+  type: Cathelicidin Antimicrobial Peptide
+  sequence: LLGDFFRKSKEKIGKEFKRIVQRIKDFLRNLVPRTES
   aminoAcids:
-    - { code: "L", name: "Leucine", position: 1, property: "hydrophobic" }
-    - { code: "L", name: "Leucine", position: 2, property: "hydrophobic" }
-    - { code: "G", name: "Glycine", position: 3, property: "polar" }
-    - { code: "D", name: "Aspartic Acid", position: 4, property: "negative" }
-    - { code: "F", name: "Phenylalanine", position: 5, property: "hydrophobic" }
-    - { code: "F", name: "Phenylalanine", position: 6, property: "hydrophobic" }
-    - { code: "R", name: "Arginine", position: 7, property: "positive" }
-    - { code: "K", name: "Lysine", position: 8, property: "positive" }
-    - { code: "S", name: "Serine", position: 9, property: "polar" }
-    - { code: "K", name: "Lysine", position: 10, property: "positive" }
-    - { code: "E", name: "Glutamic Acid", position: 11, property: "negative" }
-    - { code: "K", name: "Lysine", position: 12, property: "positive" }
-    - { code: "I", name: "Isoleucine", position: 13, property: "hydrophobic" }
-    - { code: "G", name: "Glycine", position: 14, property: "polar" }
-    - { code: "K", name: "Lysine", position: 15, property: "positive" }
-    - { code: "E", name: "Glutamic Acid", position: 16, property: "negative" }
-    - { code: "F", name: "Phenylalanine", position: 17, property: "hydrophobic" }
-    - { code: "K", name: "Lysine", position: 18, property: "positive" }
-    - { code: "R", name: "Arginine", position: 19, property: "positive" }
-    - { code: "I", name: "Isoleucine", position: 20, property: "hydrophobic" }
-    - { code: "V", name: "Valine", position: 21, property: "hydrophobic" }
-    - { code: "Q", name: "Glutamine", position: 22, property: "polar" }
-    - { code: "R", name: "Arginine", position: 23, property: "positive" }
-    - { code: "I", name: "Isoleucine", position: 24, property: "hydrophobic" }
-    - { code: "K", name: "Lysine", position: 25, property: "positive" }
-    - { code: "D", name: "Aspartic Acid", position: 26, property: "negative" }
-    - { code: "F", name: "Phenylalanine", position: 27, property: "hydrophobic" }
-    - { code: "L", name: "Leucine", position: 28, property: "hydrophobic" }
-    - { code: "R", name: "Arginine", position: 29, property: "positive" }
-    - { code: "N", name: "Asparagine", position: 30, property: "polar" }
-    - { code: "L", name: "Leucine", position: 31, property: "hydrophobic" }
-    - { code: "V", name: "Valine", position: 32, property: "hydrophobic" }
-    - { code: "P", name: "Proline", position: 33, property: "hydrophobic" }
-    - { code: "R", name: "Arginine", position: 34, property: "positive" }
-    - { code: "T", name: "Threonine", position: 35, property: "polar" }
-    - { code: "E", name: "Glutamic Acid", position: 36, property: "negative" }
-    - { code: "S", name: "Serine", position: 37, property: "polar" }
+    - code: L
+      name: Leucine
+      position: 1
+      property: hydrophobic
+    - code: L
+      name: Leucine
+      position: 2
+      property: hydrophobic
+    - code: G
+      name: Glycine
+      position: 3
+      property: polar
+    - code: D
+      name: Aspartic Acid
+      position: 4
+      property: negative
+    - code: F
+      name: Phenylalanine
+      position: 5
+      property: hydrophobic
+    - code: F
+      name: Phenylalanine
+      position: 6
+      property: hydrophobic
+    - code: R
+      name: Arginine
+      position: 7
+      property: positive
+    - code: K
+      name: Lysine
+      position: 8
+      property: positive
+    - code: S
+      name: Serine
+      position: 9
+      property: polar
+    - code: K
+      name: Lysine
+      position: 10
+      property: positive
+    - code: E
+      name: Glutamic Acid
+      position: 11
+      property: negative
+    - code: K
+      name: Lysine
+      position: 12
+      property: positive
+    - code: I
+      name: Isoleucine
+      position: 13
+      property: hydrophobic
+    - code: G
+      name: Glycine
+      position: 14
+      property: polar
+    - code: K
+      name: Lysine
+      position: 15
+      property: positive
+    - code: E
+      name: Glutamic Acid
+      position: 16
+      property: negative
+    - code: F
+      name: Phenylalanine
+      position: 17
+      property: hydrophobic
+    - code: K
+      name: Lysine
+      position: 18
+      property: positive
+    - code: R
+      name: Arginine
+      position: 19
+      property: positive
+    - code: I
+      name: Isoleucine
+      position: 20
+      property: hydrophobic
+    - code: V
+      name: Valine
+      position: 21
+      property: hydrophobic
+    - code: Q
+      name: Glutamine
+      position: 22
+      property: polar
+    - code: R
+      name: Arginine
+      position: 23
+      property: positive
+    - code: I
+      name: Isoleucine
+      position: 24
+      property: hydrophobic
+    - code: K
+      name: Lysine
+      position: 25
+      property: positive
+    - code: D
+      name: Aspartic Acid
+      position: 26
+      property: negative
+    - code: F
+      name: Phenylalanine
+      position: 27
+      property: hydrophobic
+    - code: L
+      name: Leucine
+      position: 28
+      property: hydrophobic
+    - code: R
+      name: Arginine
+      position: 29
+      property: positive
+    - code: 'N'
+      name: Asparagine
+      position: 30
+      property: polar
+    - code: L
+      name: Leucine
+      position: 31
+      property: hydrophobic
+    - code: V
+      name: Valine
+      position: 32
+      property: hydrophobic
+    - code: P
+      name: Proline
+      position: 33
+      property: hydrophobic
+    - code: R
+      name: Arginine
+      position: 34
+      property: positive
+    - code: T
+      name: Threonine
+      position: 35
+      property: polar
+    - code: E
+      name: Glutamic Acid
+      position: 36
+      property: negative
+    - code: S
+      name: Serine
+      position: 37
+      property: polar
 evidenceChainedBenefits:
   - mechanism:
-      action: "Cationic amphipathic structure disrupts bacterial membranes via electrostatic attraction and pore formation"
-      confidence: "established"
+      action: >-
+        Cationic amphipathic structure disrupts bacterial membranes via
+        electrostatic attraction and pore formation
+      confidence: established
       directStudies: 12
     benefit:
-      claim: "kill bacteria including antibiotic-resistant strains"
-      qualifier: "shown to"
+      claim: kill bacteria including antibiotic-resistant strains
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 5
       animalStudies: 8
       cellStudies: 15
       keyFindings:
-        - study: "Turner J et al. 1998"
-          type: "in-vitro"
-          finding: "Demonstrated broad-spectrum antimicrobial activity against both gram-positive and gram-negative bacteria"
-          pmid: "9736536"
-        - study: "Nizet V et al. 2001"
-          type: "animal"
-          finding: "CRAMP knockout mice highly susceptible to Group A Streptococcus skin infection"
-          pmid: "11719807"
-        - study: "Dorschner RA et al. 2001"
-          type: "human-observational"
-          finding: "LL-37 present at antimicrobial concentrations in human wound fluid"
-          pmid: "11442754"
+        - study: Turner J et al. 1998
+          type: in-vitro
+          finding: >-
+            Demonstrated broad-spectrum antimicrobial activity against both
+            gram-positive and gram-negative bacteria
+          pmid: '9736536'
+        - study: Nizet V et al. 2001
+          type: animal
+          finding: >-
+            CRAMP knockout mice highly susceptible to Group A Streptococcus skin
+            infection
+          pmid: '11719807'
+        - study: Dorschner RA et al. 2001
+          type: human-observational
+          finding: LL-37 present at antimicrobial concentrations in human wound fluid
+          pmid: '11442754'
   - mechanism:
-      action: "FPRL1/FPR2 receptor activation promoting keratinocyte migration and EGFR transactivation"
-      confidence: "established"
+      action: >-
+        FPRL1/FPR2 receptor activation promoting keratinocyte migration and EGFR
+        transactivation
+      confidence: established
       directStudies: 8
     benefit:
-      claim: "accelerate wound healing and re-epithelialization"
-      qualifier: "appears to"
+      claim: accelerate wound healing and re-epithelialization
+      qualifier: appears to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 3
       animalStudies: 6
       cellStudies: 10
       keyFindings:
-        - study: "Heilborn JD et al. 2003"
-          type: "human-observational"
-          finding: "LL-37 deficient in chronic non-healing ulcers compared to acute healing wounds"
-          pmid: "12603850"
-        - study: "Koczulla R et al. 2003"
-          type: "animal"
-          finding: "LL-37 promotes angiogenesis through FPRL1 receptor-mediated signaling"
-          pmid: "12782669"
+        - study: Heilborn JD et al. 2003
+          type: human-observational
+          finding: >-
+            LL-37 deficient in chronic non-healing ulcers compared to acute
+            healing wounds
+          pmid: '12603850'
+        - study: Koczulla R et al. 2003
+          type: animal
+          finding: >-
+            LL-37 promotes angiogenesis through FPRL1 receptor-mediated
+            signaling
+          pmid: '12782669'
   - mechanism:
-      action: "High-affinity LPS binding neutralizing bacterial endotoxin and modulating TLR signaling"
-      confidence: "established"
+      action: >-
+        High-affinity LPS binding neutralizing bacterial endotoxin and
+        modulating TLR signaling
+      confidence: established
       directStudies: 6
     benefit:
-      claim: "reduce sepsis-related inflammation"
-      qualifier: "may"
+      claim: reduce sepsis-related inflammation
+      qualifier: may
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 2
       animalStudies: 5
       cellStudies: 8
       keyFindings:
-        - study: "Larrick JW et al. 1995"
-          type: "in-vitro"
-          finding: "CAP18 binds LPS with high affinity and neutralizes endotoxin activity"
-          pmid: "7890387"
-        - study: "Scott MG et al. 2002"
-          type: "in-vitro"
-          finding: "LL-37 modulates dendritic cell responses and chemotaxis of immune cells"
-          pmid: "12244186"
+        - study: Larrick JW et al. 1995
+          type: in-vitro
+          finding: >-
+            CAP18 binds LPS with high affinity and neutralizes endotoxin
+            activity
+          pmid: '7890387'
+        - study: Scott MG et al. 2002
+          type: in-vitro
+          finding: >-
+            LL-37 modulates dendritic cell responses and chemotaxis of immune
+            cells
+          pmid: '12244186'
   - mechanism:
-      action: "Vitamin D receptor-mediated CAMP gene transcription increasing endogenous LL-37 production"
-      confidence: "established"
+      action: >-
+        Vitamin D receptor-mediated CAMP gene transcription increasing
+        endogenous LL-37 production
+      confidence: established
       directStudies: 5
     benefit:
-      claim: "enhance innate immune defense against tuberculosis"
-      qualifier: "shown to"
+      claim: enhance innate immune defense against tuberculosis
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 4
       animalStudies: 3
       cellStudies: 6
       keyFindings:
-        - study: "Liu PT et al. 2006"
-          type: "human-observational"
-          finding: "Vitamin D induces LL-37 expression in macrophages; essential for intracellular killing of M. tuberculosis"
-          pmid: "16497887"
-        - study: "Chromek M et al. 2006"
-          type: "human-observational"
-          finding: "Low cathelicidin associated with recurrent urinary tract infections in children"
-          pmid: "16751768"
+        - study: Liu PT et al. 2006
+          type: human-observational
+          finding: >-
+            Vitamin D induces LL-37 expression in macrophages; essential for
+            intracellular killing of M. tuberculosis
+          pmid: '16497887'
+        - study: Chromek M et al. 2006
+          type: human-observational
+          finding: >-
+            Low cathelicidin associated with recurrent urinary tract infections
+            in children
+          pmid: '16751768'
 conditions:
-  - slug: "infections"
-    name: "Infections"
-    researchSummary: "LL-37 has broad-spectrum antimicrobial activity against bacteria, viruses, and fungi. The cationic peptide disrupts microbial membranes and has additional immunomodulatory effects that enhance pathogen clearance.
+  - slug: infections
+    name: Infections
+    researchSummary: >-
+      LL-37 has broad-spectrum antimicrobial activity against bacteria, viruses,
+      and fungi. The cationic peptide disrupts microbial membranes and has
+      additional immunomodulatory effects that enhance pathogen clearance.
 
-Research demonstrates activity against both gram-positive and gram-negative bacteria, including antibiotic-resistant strains. The peptide is part of the innate immune response to infection.
+      Research demonstrates activity against both gram-positive and
+      gram-negative bacteria, including antibiotic-resistant strains. The
+      peptide is part of the innate immune response to infection.
 
-Clinical development has been limited by challenges in peptide delivery and stability. Topical formulations and synthetic analogs are under investigation."
-    relevantStudies: ["7665586", "12648468", "17277287"]
-    relatedPeptides: ["kpv", "thymosin-alpha-1"]
-  - slug: "wound-healing"
-    name: "Wound Healing"
-    researchSummary: "LL-37 promotes wound healing through multiple mechanisms including stimulation of keratinocyte and fibroblast migration, angiogenesis promotion, and antimicrobial effects that protect healing tissue from infection.
+      Clinical development has been limited by challenges in peptide delivery
+      and stability. Topical formulations and synthetic analogs are under
+      investigation.
+    relevantStudies:
+      - '7665586'
+      - '12648468'
+      - '17277287'
+    relatedPeptides:
+      - kpv
+      - thymosin-alpha-1
+  - slug: wound-healing
+    name: Wound Healing
+    researchSummary: >-
+      LL-37 promotes wound healing through multiple mechanisms including
+      stimulation of keratinocyte and fibroblast migration, angiogenesis
+      promotion, and antimicrobial effects that protect healing tissue from
+      infection.
 
-Studies show LL-37 deficiency impairs wound healing, while exogenous LL-37 can accelerate wound closure. The peptide is naturally upregulated in wound fluid.
+      Studies show LL-37 deficiency impairs wound healing, while exogenous LL-37
+      can accelerate wound closure. The peptide is naturally upregulated in
+      wound fluid.
 
-The wound healing effects complement the antimicrobial properties, providing both infection control and tissue repair in injured skin."
-    relevantStudies: ["16424392", "12648468"]
-    relatedPeptides: ["bpc-157", "ghk-cu", "kpv"]
-  - slug: "inflammation"
-    name: "Inflammation"
-    researchSummary: "LL-37 has complex immunomodulatory effects, functioning as both pro- and anti-inflammatory depending on context. The peptide can neutralize LPS (endotoxin), recruit immune cells, and modulate cytokine production.
+      The wound healing effects complement the antimicrobial properties,
+      providing both infection control and tissue repair in injured skin.
+    relevantStudies:
+      - '16424392'
+      - '12648468'
+    relatedPeptides:
+      - bpc-157
+      - ghk-cu
+      - kpv
+  - slug: inflammation
+    name: Inflammation
+    researchSummary: >-
+      LL-37 has complex immunomodulatory effects, functioning as both pro- and
+      anti-inflammatory depending on context. The peptide can neutralize LPS
+      (endotoxin), recruit immune cells, and modulate cytokine production.
 
-In excess, LL-37 contributes to inflammatory diseases like rosacea and psoriasis. However, at physiological levels it helps balance immune responses.
+      In excess, LL-37 contributes to inflammatory diseases like rosacea and
+      psoriasis. However, at physiological levels it helps balance immune
+      responses.
 
-Understanding LL-37's role in inflammation has led to research into both agonists (for immunodeficiency) and inhibitors (for inflammatory diseases)."
-    relevantStudies: ["17277287", "19050087"]
-    relatedPeptides: ["kpv", "thymosin-alpha-1"]
-  - slug: "antimicrobial-resistance"
-    name: "Antimicrobial Resistance"
-    researchSummary: "LL-37 and other antimicrobial peptides are being investigated as alternatives to traditional antibiotics in the face of antibiotic resistance. The membrane-disrupting mechanism is difficult for bacteria to develop resistance against.
+      Understanding LL-37's role in inflammation has led to research into both
+      agonists (for immunodeficiency) and inhibitors (for inflammatory
+      diseases).
+    relevantStudies:
+      - '17277287'
+      - '19050087'
+    relatedPeptides:
+      - kpv
+      - thymosin-alpha-1
+  - slug: antimicrobial-resistance
+    name: Antimicrobial Resistance
+    researchSummary: >-
+      LL-37 and other antimicrobial peptides are being investigated as
+      alternatives to traditional antibiotics in the face of antibiotic
+      resistance. The membrane-disrupting mechanism is difficult for bacteria to
+      develop resistance against.
 
-The peptide shows activity against multidrug-resistant organisms including MRSA and VRE. Synergistic effects with conventional antibiotics have been demonstrated.
+      The peptide shows activity against multidrug-resistant organisms including
+      MRSA and VRE. Synergistic effects with conventional antibiotics have been
+      demonstrated.
 
-Development challenges include peptide stability, cost of production, and delivery. Synthetic analogs and mimetics are being developed to overcome these limitations."
-    relevantStudies: ["7665586", "12648468"]
-    relatedPeptides: ["kpv"]
-  - slug: "skin-infections"
-    name: "Skin Infections"
-    researchSummary: "LL-37 is naturally expressed in skin and plays a key role in cutaneous innate immunity. The peptide is upregulated in response to skin infection and injury.
+      Development challenges include peptide stability, cost of production, and
+      delivery. Synthetic analogs and mimetics are being developed to overcome
+      these limitations.
+    relevantStudies:
+      - '7665586'
+      - '12648468'
+    relatedPeptides:
+      - kpv
+  - slug: skin-infections
+    name: Skin Infections
+    researchSummary: >-
+      LL-37 is naturally expressed in skin and plays a key role in cutaneous
+      innate immunity. The peptide is upregulated in response to skin infection
+      and injury.
 
-Deficiency in LL-37 expression is associated with increased susceptibility to skin infections. Topical application has shown antimicrobial effects in preclinical models.
+      Deficiency in LL-37 expression is associated with increased susceptibility
+      to skin infections. Topical application has shown antimicrobial effects in
+      preclinical models.
 
-Clinical applications may include treatment of infected wounds, diabetic ulcers, and chronic skin infections resistant to conventional antibiotics."
-    relevantStudies: ["16424392", "7665586"]
-    relatedPeptides: ["ghk-cu", "kpv"]
+      Clinical applications may include treatment of infected wounds, diabetic
+      ulcers, and chronic skin infections resistant to conventional antibiotics.
+    relevantStudies:
+      - '16424392'
+      - '7665586'
+    relatedPeptides:
+      - ghk-cu
+      - kpv
 timeline:
-  - period: "Immediate (minutes)"
-    effects: "LL-37 exerts rapid antimicrobial effects upon contact with pathogens. Membrane disruption and bacterial killing occurs within minutes of exposure at sufficient concentrations."
-    source: "PMID:9736536"
-  - period: "Hours to Days"
-    effects: "Immunomodulatory effects begin including immune cell chemotaxis, cytokine modulation, and initiation of wound healing cascades via FPRL1/EGFR signaling."
-    source: "PMID:12244186"
-  - period: "Days to Weeks"
-    effects: "Wound healing effects become apparent with increased keratinocyte migration, angiogenesis, and re-epithelialization. Clinical trials showed improved healing endpoints over 2-4 weeks."
-    source: "PMID:12603850"
-  - period: "Ongoing"
-    effects: "Endogenous LL-37 production can be enhanced long-term through vitamin D optimization. Sustained vitamin D levels maintain elevated cathelicidin expression."
-    source: "PMID:16497887"
+  - period: Immediate (minutes)
+    effects: >-
+      LL-37 exerts rapid antimicrobial effects upon contact with pathogens.
+      Membrane disruption and bacterial killing occurs within minutes of
+      exposure at sufficient concentrations.
+    source: 'PMID:9736536'
+  - period: Hours to Days
+    effects: >-
+      Immunomodulatory effects begin including immune cell chemotaxis, cytokine
+      modulation, and initiation of wound healing cascades via FPRL1/EGFR
+      signaling.
+    source: 'PMID:12244186'
+  - period: Days to Weeks
+    effects: >-
+      Wound healing effects become apparent with increased keratinocyte
+      migration, angiogenesis, and re-epithelialization. Clinical trials showed
+      improved healing endpoints over 2-4 weeks.
+    source: 'PMID:12603850'
+  - period: Ongoing
+    effects: >-
+      Endogenous LL-37 production can be enhanced long-term through vitamin D
+      optimization. Sustained vitamin D levels maintain elevated cathelicidin
+      expression.
+    source: 'PMID:16497887'
 qualityChecklist:
   goodSigns:
-    - "White to off-white lyophilized powder"
-    - "Dissolves completely in sterile water or buffer"
-    - "Clear, colorless solution after reconstitution"
-    - "Certificate of analysis showing >95% purity by HPLC"
-    - "Mass spectrometry verification of molecular weight (4,493 Da)"
-    - "Proper vacuum seal and cold storage"
+    - White to off-white lyophilized powder
+    - Dissolves completely in sterile water or buffer
+    - 'Clear, colorless solution after reconstitution'
+    - Certificate of analysis showing >95% purity by HPLC
+    - 'Mass spectrometry verification of molecular weight (4,493 Da)'
+    - Proper vacuum seal and cold storage
   warningSigns:
-    - "Slightly off-white or cream-colored powder"
-    - "Takes longer than expected to dissolve"
-    - "Purity between 90-95% on COA"
-    - "COA without third-party verification"
-    - "Storage at room temperature during shipping"
+    - Slightly off-white or cream-colored powder
+    - Takes longer than expected to dissolve
+    - Purity between 90-95% on COA
+    - COA without third-party verification
+    - Storage at room temperature during shipping
   badSigns:
-    - "Yellow, brown, or discolored powder"
-    - "Visible particles or cloudiness after reconstitution"
-    - "Gel-like consistency or aggregation"
-    - "No COA or fraudulent documentation"
-    - "Unusual odor"
-    - "Compromised vial seal"
+    - 'Yellow, brown, or discolored powder'
+    - Visible particles or cloudiness after reconstitution
+    - Gel-like consistency or aggregation
+    - No COA or fraudulent documentation
+    - Unusual odor
+    - Compromised vial seal
+regulatoryStatus:
+  status: research-only
+  lastUpdated: '2026-02-18'
+  notes: >-
+    Not FDA-approved. Human cathelicidin antimicrobial peptide. Preclinical
+    research on infection and wound healing.
+ratings:
+  researchDepth: 3
+  globalCoverage: 2
+  mechanismPlausibility: 3
+  overall: 2.5
+  lastReviewed: 2026-02-19T00:00:00.000Z
+  reviewNotes: "Human cathelicidin with growing international research interest; membrane-disruption and immunomodulatory mechanisms are supported, but clinical trials are early-stage with limited human data."
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

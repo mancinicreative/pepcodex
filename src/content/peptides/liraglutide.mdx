@@ -1,220 +1,430 @@
 ---
-name: "Liraglutide"
-aliases: ["Victoza", "Saxenda", "NN2211"]
-category: "metabolic"
-evidenceStrength: "high"
-lastUpdated: 2026-01-22
-comparators: ["semaglutide", "tirzepatide", "exenatide"]
-summary: "The first long-acting GLP-1 receptor agonist, FDA-approved for type 2 diabetes (Victoza, 2010) and chronic weight management (Saxenda, 2014). Pioneered the therapeutic class with proven cardiovascular benefits in the landmark LEADER trial."
+name: Liraglutide
+aliases:
+  - Victoza
+  - Saxenda
+  - NN2211
+category: metabolic
+evidenceStrength: high
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - semaglutide
+  - tirzepatide
+  - exenatide
+summary: >-
+  The first long-acting GLP-1 receptor agonist, FDA-approved for type 2 diabetes
+  (Victoza, 2010) and chronic weight management (Saxenda, 2014). Pioneered the
+  therapeutic class with proven cardiovascular benefits in the landmark LEADER
+  trial.
 sources:
   count: 72
   human: 58
   preclinical: 14
   openAccess: 52
-metaTitle: "Liraglutide Evidence Dossier | PepCodex"
-metaDescription: "Comprehensive evidence review of liraglutide (Victoza, Saxenda). GLP-1 mechanism, LEADER and SCALE trial data, safety profile, and 70+ citations."
+metaTitle: Liraglutide Evidence Dossier | PepCodex
+metaDescription: >-
+  Comprehensive evidence review of liraglutide (Victoza, Saxenda). GLP-1
+  mechanism, LEADER and SCALE trial data, safety profile, and 70+ citations.
 interactions:
-  - peptide: "semaglutide"
-    type: "avoid"
-    description: "Both are GLP-1 receptor agonists. Concurrent use would result in overlapping mechanisms and increased risk of adverse effects including severe nausea, vomiting, and potential hypoglycemia. Never combine GLP-1RAs."
-  - peptide: "tirzepatide"
-    type: "avoid"
-    description: "Tirzepatide is a dual GIP/GLP-1 agonist. Combining with liraglutide would cause receptor overstimulation, severe GI effects, and no additional therapeutic benefit. Choose one or the other."
-  - peptide: "exenatide"
-    type: "avoid"
-    description: "Both are GLP-1 receptor agonists with overlapping mechanisms. Do not combine. Exenatide is shorter-acting but targets the same receptor pathway."
-  - peptide: "bpc-157"
-    type: "caution"
-    description: "Both affect GI function. BPC-157 is gastroprotective while liraglutide slows gastric emptying. Unclear if effects interact; monitor GI symptoms if combined."
-  - peptide: "ipamorelin"
-    type: "compatible"
-    description: "Different mechanisms (GLP-1 vs GHRP). Ipamorelin stimulates GH release while liraglutide affects glucose and satiety. No known direct interactions."
-  - peptide: "tesamorelin"
-    type: "compatible"
-    description: "Tesamorelin is a GHRH analog targeting GH secretion. Different mechanism from liraglutide's GLP-1 agonism. Both may reduce visceral fat through different pathways."
+  - peptide: semaglutide
+    type: avoid
+    description: >-
+      Both are GLP-1 receptor agonists. Concurrent use would result in
+      overlapping mechanisms and increased risk of adverse effects including
+      severe nausea, vomiting, and potential hypoglycemia. Never combine
+      GLP-1RAs.
+  - peptide: tirzepatide
+    type: avoid
+    description: >-
+      Tirzepatide is a dual GIP/GLP-1 agonist. Combining with liraglutide would
+      cause receptor overstimulation, severe GI effects, and no additional
+      therapeutic benefit. Choose one or the other.
+  - peptide: exenatide
+    type: avoid
+    description: >-
+      Both are GLP-1 receptor agonists with overlapping mechanisms. Do not
+      combine. Exenatide is shorter-acting but targets the same receptor
+      pathway.
+  - peptide: bpc-157
+    type: caution
+    description: >-
+      Both affect GI function. BPC-157 is gastroprotective while liraglutide
+      slows gastric emptying. Unclear if effects interact; monitor GI symptoms
+      if combined.
+  - peptide: ipamorelin
+    type: compatible
+    description: >-
+      Different mechanisms (GLP-1 vs GHRP). Ipamorelin stimulates GH release
+      while liraglutide affects glucose and satiety. No known direct
+      interactions.
+  - peptide: tesamorelin
+    type: compatible
+    description: >-
+      Tesamorelin is a GHRH analog targeting GH secretion. Different mechanism
+      from liraglutide's GLP-1 agonism. Both may reduce visceral fat through
+      different pathways.
 molecularInfo:
-  weight: "3,751 Da"
+  weight: '3,751 Da'
   chainLength: 31
-  type: "GLP-1 analog"
-  sequence: "HAEGTFTSDVSSYLEGQAAKEFIAWLVKGRG"
+  type: GLP-1 analog
+  sequence: HAEGTFTSDVSSYLEGQAAKEFIAWLVKGRG
   aminoAcids:
-    - { code: "H", name: "Histidine", position: 1, property: "positive" }
-    - { code: "A", name: "Alanine", position: 2, property: "hydrophobic" }
-    - { code: "E", name: "Glutamic Acid", position: 3, property: "negative" }
-    - { code: "G", name: "Glycine", position: 4, property: "polar" }
-    - { code: "T", name: "Threonine", position: 5, property: "polar" }
-    - { code: "F", name: "Phenylalanine", position: 6, property: "hydrophobic" }
-    - { code: "T", name: "Threonine", position: 7, property: "polar" }
-    - { code: "S", name: "Serine", position: 8, property: "polar" }
-    - { code: "D", name: "Aspartic Acid", position: 9, property: "negative" }
-    - { code: "V", name: "Valine", position: 10, property: "hydrophobic" }
-    - { code: "S", name: "Serine", position: 11, property: "polar" }
-    - { code: "S", name: "Serine", position: 12, property: "polar" }
-    - { code: "Y", name: "Tyrosine", position: 13, property: "polar" }
-    - { code: "L", name: "Leucine", position: 14, property: "hydrophobic" }
-    - { code: "E", name: "Glutamic Acid", position: 15, property: "negative" }
-    - { code: "G", name: "Glycine", position: 16, property: "polar" }
-    - { code: "Q", name: "Glutamine", position: 17, property: "polar" }
-    - { code: "A", name: "Alanine", position: 18, property: "hydrophobic" }
-    - { code: "A", name: "Alanine", position: 19, property: "hydrophobic" }
-    - { code: "K", name: "Lysine", position: 20, property: "positive" }
-    - { code: "E", name: "Glutamic Acid", position: 21, property: "negative" }
-    - { code: "F", name: "Phenylalanine", position: 22, property: "hydrophobic" }
-    - { code: "I", name: "Isoleucine", position: 23, property: "hydrophobic" }
-    - { code: "A", name: "Alanine", position: 24, property: "hydrophobic" }
-    - { code: "W", name: "Tryptophan", position: 25, property: "hydrophobic" }
-    - { code: "L", name: "Leucine", position: 26, property: "hydrophobic" }
-    - { code: "V", name: "Valine", position: 27, property: "hydrophobic" }
-    - { code: "K", name: "Lysine", position: 28, property: "positive" }
-    - { code: "G", name: "Glycine", position: 29, property: "polar" }
-    - { code: "R", name: "Arginine", position: 30, property: "positive" }
-    - { code: "G", name: "Glycine", position: 31, property: "polar" }
+    - code: H
+      name: Histidine
+      position: 1
+      property: positive
+    - code: A
+      name: Alanine
+      position: 2
+      property: hydrophobic
+    - code: E
+      name: Glutamic Acid
+      position: 3
+      property: negative
+    - code: G
+      name: Glycine
+      position: 4
+      property: polar
+    - code: T
+      name: Threonine
+      position: 5
+      property: polar
+    - code: F
+      name: Phenylalanine
+      position: 6
+      property: hydrophobic
+    - code: T
+      name: Threonine
+      position: 7
+      property: polar
+    - code: S
+      name: Serine
+      position: 8
+      property: polar
+    - code: D
+      name: Aspartic Acid
+      position: 9
+      property: negative
+    - code: V
+      name: Valine
+      position: 10
+      property: hydrophobic
+    - code: S
+      name: Serine
+      position: 11
+      property: polar
+    - code: S
+      name: Serine
+      position: 12
+      property: polar
+    - code: 'Y'
+      name: Tyrosine
+      position: 13
+      property: polar
+    - code: L
+      name: Leucine
+      position: 14
+      property: hydrophobic
+    - code: E
+      name: Glutamic Acid
+      position: 15
+      property: negative
+    - code: G
+      name: Glycine
+      position: 16
+      property: polar
+    - code: Q
+      name: Glutamine
+      position: 17
+      property: polar
+    - code: A
+      name: Alanine
+      position: 18
+      property: hydrophobic
+    - code: A
+      name: Alanine
+      position: 19
+      property: hydrophobic
+    - code: K
+      name: Lysine
+      position: 20
+      property: positive
+    - code: E
+      name: Glutamic Acid
+      position: 21
+      property: negative
+    - code: F
+      name: Phenylalanine
+      position: 22
+      property: hydrophobic
+    - code: I
+      name: Isoleucine
+      position: 23
+      property: hydrophobic
+    - code: A
+      name: Alanine
+      position: 24
+      property: hydrophobic
+    - code: W
+      name: Tryptophan
+      position: 25
+      property: hydrophobic
+    - code: L
+      name: Leucine
+      position: 26
+      property: hydrophobic
+    - code: V
+      name: Valine
+      position: 27
+      property: hydrophobic
+    - code: K
+      name: Lysine
+      position: 28
+      property: positive
+    - code: G
+      name: Glycine
+      position: 29
+      property: polar
+    - code: R
+      name: Arginine
+      position: 30
+      property: positive
+    - code: G
+      name: Glycine
+      position: 31
+      property: polar
 evidenceChainedBenefits:
   - mechanism:
-      action: "GLP-1 receptor activation on pancreatic beta cells stimulating glucose-dependent insulin secretion"
-      confidence: "established"
+      action: >-
+        GLP-1 receptor activation on pancreatic beta cells stimulating
+        glucose-dependent insulin secretion
+      confidence: established
       directStudies: 45
     benefit:
-      claim: "improve glycemic control in type 2 diabetes"
-      qualifier: "shown to"
+      claim: improve glycemic control in type 2 diabetes
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 32
       animalStudies: 8
       cellStudies: 5
       keyFindings:
-        - study: "LEAD-6 Trial 2009"
-          type: "human-rct"
-          finding: "Liraglutide 1.8mg reduced HbA1c by 1.1% vs 0.8% for exenatide BID in T2D patients"
-          pmid: "19564476"
-        - study: "Vilsboll T et al. 2007"
-          type: "human-rct"
-          finding: "Demonstrated glucose-dependent insulin secretion mechanism minimizes hypoglycemia risk"
-          pmid: "17383062"
+        - study: LEAD-6 Trial 2009
+          type: human-rct
+          finding: >-
+            Liraglutide 1.8mg reduced HbA1c by 1.1% vs 0.8% for exenatide BID in
+            T2D patients
+          pmid: '19564476'
+        - study: Vilsboll T et al. 2007
+          type: human-rct
+          finding: >-
+            Demonstrated glucose-dependent insulin secretion mechanism minimizes
+            hypoglycemia risk
+          pmid: '17383062'
   - mechanism:
-      action: "Activation of GLP-1 receptors in hypothalamus reducing appetite and increasing satiety signaling"
-      confidence: "established"
+      action: >-
+        Activation of GLP-1 receptors in hypothalamus reducing appetite and
+        increasing satiety signaling
+      confidence: established
       directStudies: 28
     benefit:
-      claim: "reduce body weight in obesity"
-      qualifier: "shown to"
+      claim: reduce body weight in obesity
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 18
       animalStudies: 6
       cellStudies: 4
       keyFindings:
-        - study: "SCALE Obesity Trial 2015"
-          type: "human-rct"
-          finding: "Liraglutide 3.0mg achieved 8.0% weight loss vs 2.6% placebo at 56 weeks (N=3,731)"
-          pmid: "25673378"
-        - study: "Secher A et al. 2014"
-          type: "human-observational"
-          finding: "Confirmed CNS GLP-1R activation in appetite-regulating brain regions"
-          pmid: "25169296"
+        - study: SCALE Obesity Trial 2015
+          type: human-rct
+          finding: >-
+            Liraglutide 3.0mg achieved 8.0% weight loss vs 2.6% placebo at 56
+            weeks (N=3,731)
+          pmid: '25673378'
+        - study: Secher A et al. 2014
+          type: human-observational
+          finding: Confirmed CNS GLP-1R activation in appetite-regulating brain regions
+          pmid: '25169296'
   - mechanism:
-      action: "Multifactorial cardiovascular effects including blood pressure reduction and anti-inflammatory actions"
-      confidence: "established"
+      action: >-
+        Multifactorial cardiovascular effects including blood pressure reduction
+        and anti-inflammatory actions
+      confidence: established
       directStudies: 22
     benefit:
-      claim: "reduce cardiovascular events in high-risk T2D patients"
-      qualifier: "shown to"
+      claim: reduce cardiovascular events in high-risk T2D patients
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 15
       animalStudies: 5
       cellStudies: 2
       keyFindings:
-        - study: "LEADER Trial 2016"
-          type: "human-rct"
-          finding: "13% reduction in MACE (CV death, MI, stroke) with HR 0.87 in 9,340 high-risk T2D patients"
-          pmid: "27295427"
-        - study: "Verma S et al. 2018"
-          type: "human-rct"
-          finding: "CV death benefit observed in heart failure subgroup from LEADER"
-          pmid: "29122881"
+        - study: LEADER Trial 2016
+          type: human-rct
+          finding: >-
+            13% reduction in MACE (CV death, MI, stroke) with HR 0.87 in 9,340
+            high-risk T2D patients
+          pmid: '27295427'
+        - study: Verma S et al. 2018
+          type: human-rct
+          finding: CV death benefit observed in heart failure subgroup from LEADER
+          pmid: '29122881'
   - mechanism:
-      action: "Delayed gastric emptying reducing postprandial glucose excursions"
-      confidence: "established"
+      action: Delayed gastric emptying reducing postprandial glucose excursions
+      confidence: established
       directStudies: 12
     benefit:
-      claim: "reduce postprandial blood glucose spikes"
-      qualifier: "shown to"
+      claim: reduce postprandial blood glucose spikes
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 10
       animalStudies: 2
       cellStudies: 0
       keyFindings:
-        - study: "Harder H et al. 2004"
-          type: "human-rct"
-          finding: "Liraglutide significantly delays gastric emptying, contributing to glycemic control"
-          pmid: "18184924"
-        - study: "Flint A et al. 2008"
-          type: "human-rct"
-          finding: "Gastric emptying delay correlates with reduced food intake and enhanced satiety"
-          pmid: "18180765"
+        - study: Harder H et al. 2004
+          type: human-rct
+          finding: >-
+            Liraglutide significantly delays gastric emptying, contributing to
+            glycemic control
+          pmid: '18184924'
+        - study: Flint A et al. 2008
+          type: human-rct
+          finding: >-
+            Gastric emptying delay correlates with reduced food intake and
+            enhanced satiety
+          pmid: '18180765'
 conditions:
-  - slug: "type-2-diabetes"
-    name: "Type 2 Diabetes"
-    researchSummary: "Liraglutide is FDA-approved for glycemic control in type 2 diabetes. The LEAD program (6 Phase 3 RCTs, >4,000 patients) demonstrated HbA1c reductions of 1.0-1.5% with weight loss rather than weight gain. LEADER trial (N=9,340) showed 13% reduction in major cardiovascular events."
-    relevantStudies: ["19564476", "27295427", "19171717"]
-    relatedPeptides: ["semaglutide", "tirzepatide", "exenatide"]
-  - slug: "obesity"
-    name: "Obesity"
-    researchSummary: "Liraglutide 3.0mg (Saxenda) is FDA-approved for chronic weight management. SCALE trials demonstrated 8% average weight loss at 56 weeks, with 63% achieving clinically significant (>5%) weight loss. Also approved for adolescents 12-17 years."
-    relevantStudies: ["25673378", "26193481", "32559234"]
-    relatedPeptides: ["semaglutide", "tirzepatide"]
-  - slug: "cardiovascular-disease"
-    name: "Cardiovascular Disease"
-    researchSummary: "LEADER trial demonstrated 13% reduction in MACE (cardiovascular death, non-fatal MI, non-fatal stroke) and 22% reduction in cardiovascular death in T2D patients with high CV risk. FDA label includes indication for CV risk reduction."
-    relevantStudies: ["27295427", "29122881", "28686416"]
-    relatedPeptides: ["semaglutide", "tirzepatide"]
+  - slug: type-2-diabetes
+    name: Type 2 Diabetes
+    researchSummary: >-
+      Liraglutide is FDA-approved for glycemic control in type 2 diabetes. The
+      LEAD program (6 Phase 3 RCTs, >4,000 patients) demonstrated HbA1c
+      reductions of 1.0-1.5% with weight loss rather than weight gain. LEADER
+      trial (N=9,340) showed 13% reduction in major cardiovascular events.
+    relevantStudies:
+      - '19564476'
+      - '27295427'
+      - '19171717'
+    relatedPeptides:
+      - semaglutide
+      - tirzepatide
+      - exenatide
+  - slug: obesity
+    name: Obesity
+    researchSummary: >-
+      Liraglutide 3.0mg (Saxenda) is FDA-approved for chronic weight management.
+      SCALE trials demonstrated 8% average weight loss at 56 weeks, with 63%
+      achieving clinically significant (>5%) weight loss. Also approved for
+      adolescents 12-17 years.
+    relevantStudies:
+      - '25673378'
+      - '26193481'
+      - '32559234'
+    relatedPeptides:
+      - semaglutide
+      - tirzepatide
+  - slug: cardiovascular-disease
+    name: Cardiovascular Disease
+    researchSummary: >-
+      LEADER trial demonstrated 13% reduction in MACE (cardiovascular death,
+      non-fatal MI, non-fatal stroke) and 22% reduction in cardiovascular death
+      in T2D patients with high CV risk. FDA label includes indication for CV
+      risk reduction.
+    relevantStudies:
+      - '27295427'
+      - '29122881'
+      - '28686416'
+    relatedPeptides:
+      - semaglutide
+      - tirzepatide
 timeline:
-  - period: "Week 1-2"
-    effects: "Initial dose titration phase. Most patients experience transient nausea (25-40%) which typically improves. Early appetite suppression and reduced food intake begin. Blood glucose effects start within days."
-    source: "PMID:17383062"
-  - period: "Week 2-4"
-    effects: "GI side effects diminish as tolerance develops. Weight loss becomes measurable (1-2 kg). HbA1c begins declining. Patients should reach target dose (1.8mg or 3.0mg) by end of this period."
-    source: "PMID:19171717"
-  - period: "Week 4-12"
-    effects: "Steady weight loss continues. HbA1c reduction of 0.5-1.0% typically achieved. Full appetite suppression effects established. Most GI tolerability issues resolved."
-    source: "PMID:25673378"
-  - period: "Week 12-56"
-    effects: "Maximum weight loss typically reached around weeks 40-56 (average 8% with 3.0mg dose). HbA1c maintained at 1.0-1.5% below baseline. Cardiovascular benefits emerge with longer-term use."
-    source: "PMID:27295427"
+  - period: Week 1-2
+    effects: >-
+      Initial dose titration phase. Most patients experience transient nausea
+      (25-40%) which typically improves. Early appetite suppression and reduced
+      food intake begin. Blood glucose effects start within days.
+    source: 'PMID:17383062'
+  - period: Week 2-4
+    effects: >-
+      GI side effects diminish as tolerance develops. Weight loss becomes
+      measurable (1-2 kg). HbA1c begins declining. Patients should reach target
+      dose (1.8mg or 3.0mg) by end of this period.
+    source: 'PMID:19171717'
+  - period: Week 4-12
+    effects: >-
+      Steady weight loss continues. HbA1c reduction of 0.5-1.0% typically
+      achieved. Full appetite suppression effects established. Most GI
+      tolerability issues resolved.
+    source: 'PMID:25673378'
+  - period: Week 12-56
+    effects: >-
+      Maximum weight loss typically reached around weeks 40-56 (average 8% with
+      3.0mg dose). HbA1c maintained at 1.0-1.5% below baseline. Cardiovascular
+      benefits emerge with longer-term use.
+    source: 'PMID:27295427'
 faqs:
-  - question: "What is liraglutide?"
-    answer: "Liraglutide is an FDA-approved GLP-1 receptor agonist that mimics the natural incretin hormone to regulate blood sugar and appetite. It is marketed as Victoza for type 2 diabetes and Saxenda for chronic weight management."
-  - question: "Is liraglutide FDA approved?"
-    answer: "Yes, liraglutide has two FDA approvals: Victoza (1.8mg) for type 2 diabetes since 2010, and Saxenda (3.0mg) for chronic weight management since 2014. It also has an indication for cardiovascular risk reduction."
-  - question: "What is the evidence for liraglutide?"
-    answer: "Liraglutide has extensive high-quality evidence from the LEAD program (6 Phase 3 trials) and the landmark LEADER trial showing 13% reduction in major cardiovascular events. SCALE trials demonstrated 8% average weight loss."
-  - question: "How does liraglutide compare to semaglutide?"
-    answer: "Both are GLP-1 agonists, but liraglutide requires daily injection while semaglutide is weekly. Semaglutide generally produces greater weight loss, though liraglutide has a longer safety track record."
-  - question: "What are common side effects of liraglutide?"
-    answer: "The most common side effects are gastrointestinal, including nausea (25-40% initially), vomiting, and diarrhea. These typically improve during the dose titration period over 4-5 weeks."
+  - question: What is liraglutide?
+    answer: >-
+      Liraglutide is an FDA-approved GLP-1 receptor agonist that mimics the
+      natural incretin hormone to regulate blood sugar and appetite. It is
+      marketed as Victoza for type 2 diabetes and Saxenda for chronic weight
+      management.
+  - question: Is liraglutide FDA approved?
+    answer: >-
+      Yes, liraglutide has two FDA approvals: Victoza (1.8mg) for type 2
+      diabetes since 2010, and Saxenda (3.0mg) for chronic weight management
+      since 2014. It also has an indication for cardiovascular risk reduction.
+  - question: What is the evidence for liraglutide?
+    answer: >-
+      Liraglutide has extensive high-quality evidence from the LEAD program (6
+      Phase 3 trials) and the landmark LEADER trial showing 13% reduction in
+      major cardiovascular events. SCALE trials demonstrated 8% average weight
+      loss.
+  - question: How does liraglutide compare to semaglutide?
+    answer: >-
+      Both are GLP-1 agonists, but liraglutide requires daily injection while
+      semaglutide is weekly. Semaglutide generally produces greater weight loss,
+      though liraglutide has a longer safety track record.
+  - question: What are common side effects of liraglutide?
+    answer: >-
+      The most common side effects are gastrointestinal, including nausea
+      (25-40% initially), vomiting, and diarrhea. These typically improve during
+      the dose titration period over 4-5 weeks.
 qualityChecklist:
   goodSigns:
-    - "FDA-approved pharmaceutical product (Victoza or Saxenda)"
-    - "Prescription obtained through licensed healthcare provider"
-    - "Clear solution in pre-filled pen device"
-    - "Proper storage at 2-8C before first use, room temperature after"
-    - "Within expiration date with intact packaging"
-    - "Manufacturer lot number traceable"
+    - FDA-approved pharmaceutical product (Victoza or Saxenda)
+    - Prescription obtained through licensed healthcare provider
+    - Clear solution in pre-filled pen device
+    - 'Proper storage at 2-8C before first use, room temperature after'
+    - Within expiration date with intact packaging
+    - Manufacturer lot number traceable
   warningSigns:
-    - "Product not in original manufacturer packaging"
-    - "Stored outside recommended temperature range"
-    - "Obtained without valid prescription"
-    - "Significantly below market price (potential counterfeit)"
-    - "Approaching expiration date"
+    - Product not in original manufacturer packaging
+    - Stored outside recommended temperature range
+    - Obtained without valid prescription
+    - Significantly below market price (potential counterfeit)
+    - Approaching expiration date
   badSigns:
-    - "Cloudy, discolored, or particulate-containing solution"
-    - "Compounded or non-FDA-approved formulation"
-    - "Frozen product (should never be frozen)"
-    - "No manufacturer information or batch tracking"
-    - "Purchased from unverified international sources"
-    - "Damaged pen device or compromised seal"
+    - 'Cloudy, discolored, or particulate-containing solution'
+    - Compounded or non-FDA-approved formulation
+    - Frozen product (should never be frozen)
+    - No manufacturer information or batch tracking
+    - Purchased from unverified international sources
+    - Damaged pen device or compromised seal
+regulatoryStatus:
+  status: approved
+  lastUpdated: '2026-02-18'
+  notes: FDA-approved as Victoza (T2D) and Saxenda (weight management).
+ratings:
+  researchDepth: 5
+  globalCoverage: 5
+  mechanismPlausibility: 5
+  overall: 5.0
+  lastReviewed: 2026-02-19T00:00:00.000Z
+  reviewNotes: "Calibration anchor: FDA-approved GLP-1 receptor agonist with LEADER and SCALE global Phase 3 trials, cardiovascular outcome data, and fully established incretin mechanism."
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

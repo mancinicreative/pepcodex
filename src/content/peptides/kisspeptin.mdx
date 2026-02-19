@@ -1,202 +1,454 @@
 ---
-name: "Kisspeptin"
-aliases: ["KISS1", "Metastin", "Kisspeptin-54", "Kisspeptin-10", "KP-54", "KP-10"]
-category: "hormonal"
-evidenceStrength: "moderate"
-lastUpdated: 2026-01-22
-comparators: ["gnrh", "hcg", "leuprolide"]
-summary: "An endogenous neuropeptide that serves as the master regulator of reproductive function. Acts upstream of GnRH to control puberty, fertility, and the menstrual cycle. Under clinical investigation as a safer IVF trigger and treatment for hypothalamic amenorrhea. Pioneering research led by Imperial College London."
+name: Kisspeptin
+aliases:
+  - KISS1
+  - Metastin
+  - Kisspeptin-54
+  - Kisspeptin-10
+  - KP-54
+  - KP-10
+category: hormonal
+evidenceStrength: moderate
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - gnrh
+  - hcg
+  - leuprolide
+summary: >-
+  An endogenous neuropeptide that serves as the master regulator of reproductive
+  function. Acts upstream of GnRH to control puberty, fertility, and the
+  menstrual cycle. Under clinical investigation as a safer IVF trigger and
+  treatment for hypothalamic amenorrhea. Pioneering research led by Imperial
+  College London.
 sources:
   count: 24
   human: 18
   preclinical: 6
   openAccess: 15
-metaTitle: "Kisspeptin (KISS1) Evidence Dossier | PepCodex"
-metaDescription: "Evidence review of kisspeptin/KISS1, the master reproductive hormone regulator. Clinical trials for IVF and hypothalamic amenorrhea, mechanism, safety data."
+metaTitle: Kisspeptin (KISS1) Evidence Dossier | PepCodex
+metaDescription: >-
+  Evidence review of kisspeptin/KISS1, the master reproductive hormone
+  regulator. Clinical trials for IVF and hypothalamic amenorrhea, mechanism,
+  safety data.
 interactions:
-  - peptide: "gonadorelin"
-    type: "synergistic"
-    description: "Kisspeptin activates GnRH neurons upstream. Both stimulate the HPG axis but at different levels. Combined use may amplify gonadotropin release."
-  - peptide: "hcg"
-    type: "caution"
-    description: "Both used for ovulation triggering in IVF. Kisspeptin produces shorter LH surge (safer for OHSS), while hCG produces prolonged stimulation. Combining may negate kisspeptin's safety advantage."
-  - peptide: "clomiphene"
-    type: "compatible"
-    description: "Different mechanisms for stimulating HPG axis - clomiphene blocks estrogen feedback, kisspeptin directly activates GnRH. May have additive effects on LH release."
-  - peptide: "sermorelin"
-    type: "compatible"
-    description: "Different hormonal axes - kisspeptin targets reproductive axis, sermorelin targets GH axis. No known interactions."
-  - peptide: "pt-141"
-    type: "compatible"
-    description: "Both affect sexual function but through different mechanisms - kisspeptin via limbic brain activity and hormones, PT-141 via melanocortin receptors."
+  - peptide: gonadorelin
+    type: synergistic
+    description: >-
+      Kisspeptin activates GnRH neurons upstream. Both stimulate the HPG axis
+      but at different levels. Combined use may amplify gonadotropin release.
+  - peptide: hcg
+    type: caution
+    description: >-
+      Both used for ovulation triggering in IVF. Kisspeptin produces shorter LH
+      surge (safer for OHSS), while hCG produces prolonged stimulation.
+      Combining may negate kisspeptin's safety advantage.
+  - peptide: clomiphene
+    type: compatible
+    description: >-
+      Different mechanisms for stimulating HPG axis - clomiphene blocks estrogen
+      feedback, kisspeptin directly activates GnRH. May have additive effects on
+      LH release.
+  - peptide: sermorelin
+    type: compatible
+    description: >-
+      Different hormonal axes - kisspeptin targets reproductive axis, sermorelin
+      targets GH axis. No known interactions.
+  - peptide: pt-141
+    type: compatible
+    description: >-
+      Both affect sexual function but through different mechanisms - kisspeptin
+      via limbic brain activity and hormones, PT-141 via melanocortin receptors.
 molecularInfo:
-  weight: "5,857.41 Da"
+  weight: '5,857.41 Da'
   chainLength: 54
-  type: "Neuropeptide"
-  sequence: "GTSLSPPPESSGSRQQPGLSAPHSRQIPAPQGAVLVQREKDLPNYNWNSFGLRF-NH2"
+  type: Neuropeptide
+  sequence: GTSLSPPPESSGSRQQPGLSAPHSRQIPAPQGAVLVQREKDLPNYNWNSFGLRF-NH2
   aminoAcids:
-    - { code: "G", name: "Glycine", position: 1, property: "polar" }
-    - { code: "T", name: "Threonine", position: 2, property: "polar" }
-    - { code: "S", name: "Serine", position: 3, property: "polar" }
-    - { code: "L", name: "Leucine", position: 4, property: "hydrophobic" }
-    - { code: "S", name: "Serine", position: 5, property: "polar" }
-    - { code: "P", name: "Proline", position: 6, property: "hydrophobic" }
-    - { code: "P", name: "Proline", position: 7, property: "hydrophobic" }
-    - { code: "P", name: "Proline", position: 8, property: "hydrophobic" }
-    - { code: "E", name: "Glutamic Acid", position: 9, property: "negative" }
-    - { code: "S", name: "Serine", position: 10, property: "polar" }
-    - { code: "S", name: "Serine", position: 11, property: "polar" }
-    - { code: "G", name: "Glycine", position: 12, property: "polar" }
-    - { code: "S", name: "Serine", position: 13, property: "polar" }
-    - { code: "R", name: "Arginine", position: 14, property: "positive" }
-    - { code: "Q", name: "Glutamine", position: 15, property: "polar" }
-    - { code: "Q", name: "Glutamine", position: 16, property: "polar" }
-    - { code: "P", name: "Proline", position: 17, property: "hydrophobic" }
-    - { code: "G", name: "Glycine", position: 18, property: "polar" }
-    - { code: "L", name: "Leucine", position: 19, property: "hydrophobic" }
-    - { code: "S", name: "Serine", position: 20, property: "polar" }
-    - { code: "A", name: "Alanine", position: 21, property: "hydrophobic" }
-    - { code: "P", name: "Proline", position: 22, property: "hydrophobic" }
-    - { code: "H", name: "Histidine", position: 23, property: "positive" }
-    - { code: "S", name: "Serine", position: 24, property: "polar" }
-    - { code: "R", name: "Arginine", position: 25, property: "positive" }
-    - { code: "Q", name: "Glutamine", position: 26, property: "polar" }
-    - { code: "I", name: "Isoleucine", position: 27, property: "hydrophobic" }
-    - { code: "P", name: "Proline", position: 28, property: "hydrophobic" }
-    - { code: "A", name: "Alanine", position: 29, property: "hydrophobic" }
-    - { code: "P", name: "Proline", position: 30, property: "hydrophobic" }
-    - { code: "Q", name: "Glutamine", position: 31, property: "polar" }
-    - { code: "G", name: "Glycine", position: 32, property: "polar" }
-    - { code: "A", name: "Alanine", position: 33, property: "hydrophobic" }
-    - { code: "V", name: "Valine", position: 34, property: "hydrophobic" }
-    - { code: "L", name: "Leucine", position: 35, property: "hydrophobic" }
-    - { code: "V", name: "Valine", position: 36, property: "hydrophobic" }
-    - { code: "Q", name: "Glutamine", position: 37, property: "polar" }
-    - { code: "R", name: "Arginine", position: 38, property: "positive" }
-    - { code: "E", name: "Glutamic Acid", position: 39, property: "negative" }
-    - { code: "K", name: "Lysine", position: 40, property: "positive" }
-    - { code: "D", name: "Aspartic Acid", position: 41, property: "negative" }
-    - { code: "L", name: "Leucine", position: 42, property: "hydrophobic" }
-    - { code: "P", name: "Proline", position: 43, property: "hydrophobic" }
-    - { code: "N", name: "Asparagine", position: 44, property: "polar" }
-    - { code: "Y", name: "Tyrosine", position: 45, property: "polar" }
-    - { code: "N", name: "Asparagine", position: 46, property: "polar" }
-    - { code: "W", name: "Tryptophan", position: 47, property: "hydrophobic" }
-    - { code: "N", name: "Asparagine", position: 48, property: "polar" }
-    - { code: "S", name: "Serine", position: 49, property: "polar" }
-    - { code: "F", name: "Phenylalanine", position: 50, property: "hydrophobic" }
-    - { code: "G", name: "Glycine", position: 51, property: "polar" }
-    - { code: "L", name: "Leucine", position: 52, property: "hydrophobic" }
-    - { code: "R", name: "Arginine", position: 53, property: "positive" }
-    - { code: "F", name: "Phenylalanine", position: 54, property: "hydrophobic" }
+    - code: G
+      name: Glycine
+      position: 1
+      property: polar
+    - code: T
+      name: Threonine
+      position: 2
+      property: polar
+    - code: S
+      name: Serine
+      position: 3
+      property: polar
+    - code: L
+      name: Leucine
+      position: 4
+      property: hydrophobic
+    - code: S
+      name: Serine
+      position: 5
+      property: polar
+    - code: P
+      name: Proline
+      position: 6
+      property: hydrophobic
+    - code: P
+      name: Proline
+      position: 7
+      property: hydrophobic
+    - code: P
+      name: Proline
+      position: 8
+      property: hydrophobic
+    - code: E
+      name: Glutamic Acid
+      position: 9
+      property: negative
+    - code: S
+      name: Serine
+      position: 10
+      property: polar
+    - code: S
+      name: Serine
+      position: 11
+      property: polar
+    - code: G
+      name: Glycine
+      position: 12
+      property: polar
+    - code: S
+      name: Serine
+      position: 13
+      property: polar
+    - code: R
+      name: Arginine
+      position: 14
+      property: positive
+    - code: Q
+      name: Glutamine
+      position: 15
+      property: polar
+    - code: Q
+      name: Glutamine
+      position: 16
+      property: polar
+    - code: P
+      name: Proline
+      position: 17
+      property: hydrophobic
+    - code: G
+      name: Glycine
+      position: 18
+      property: polar
+    - code: L
+      name: Leucine
+      position: 19
+      property: hydrophobic
+    - code: S
+      name: Serine
+      position: 20
+      property: polar
+    - code: A
+      name: Alanine
+      position: 21
+      property: hydrophobic
+    - code: P
+      name: Proline
+      position: 22
+      property: hydrophobic
+    - code: H
+      name: Histidine
+      position: 23
+      property: positive
+    - code: S
+      name: Serine
+      position: 24
+      property: polar
+    - code: R
+      name: Arginine
+      position: 25
+      property: positive
+    - code: Q
+      name: Glutamine
+      position: 26
+      property: polar
+    - code: I
+      name: Isoleucine
+      position: 27
+      property: hydrophobic
+    - code: P
+      name: Proline
+      position: 28
+      property: hydrophobic
+    - code: A
+      name: Alanine
+      position: 29
+      property: hydrophobic
+    - code: P
+      name: Proline
+      position: 30
+      property: hydrophobic
+    - code: Q
+      name: Glutamine
+      position: 31
+      property: polar
+    - code: G
+      name: Glycine
+      position: 32
+      property: polar
+    - code: A
+      name: Alanine
+      position: 33
+      property: hydrophobic
+    - code: V
+      name: Valine
+      position: 34
+      property: hydrophobic
+    - code: L
+      name: Leucine
+      position: 35
+      property: hydrophobic
+    - code: V
+      name: Valine
+      position: 36
+      property: hydrophobic
+    - code: Q
+      name: Glutamine
+      position: 37
+      property: polar
+    - code: R
+      name: Arginine
+      position: 38
+      property: positive
+    - code: E
+      name: Glutamic Acid
+      position: 39
+      property: negative
+    - code: K
+      name: Lysine
+      position: 40
+      property: positive
+    - code: D
+      name: Aspartic Acid
+      position: 41
+      property: negative
+    - code: L
+      name: Leucine
+      position: 42
+      property: hydrophobic
+    - code: P
+      name: Proline
+      position: 43
+      property: hydrophobic
+    - code: 'N'
+      name: Asparagine
+      position: 44
+      property: polar
+    - code: 'Y'
+      name: Tyrosine
+      position: 45
+      property: polar
+    - code: 'N'
+      name: Asparagine
+      position: 46
+      property: polar
+    - code: W
+      name: Tryptophan
+      position: 47
+      property: hydrophobic
+    - code: 'N'
+      name: Asparagine
+      position: 48
+      property: polar
+    - code: S
+      name: Serine
+      position: 49
+      property: polar
+    - code: F
+      name: Phenylalanine
+      position: 50
+      property: hydrophobic
+    - code: G
+      name: Glycine
+      position: 51
+      property: polar
+    - code: L
+      name: Leucine
+      position: 52
+      property: hydrophobic
+    - code: R
+      name: Arginine
+      position: 53
+      property: positive
+    - code: F
+      name: Phenylalanine
+      position: 54
+      property: hydrophobic
 evidenceChainedBenefits:
   - mechanism:
-      action: "KISS1R (GPR54) activation triggering GnRH neuron depolarization via Gq/11-PLC-Ca2+ pathway"
-      confidence: "supported"
+      action: >-
+        KISS1R (GPR54) activation triggering GnRH neuron depolarization via
+        Gq/11-PLC-Ca2+ pathway
+      confidence: supported
       directStudies: 12
     benefit:
-      claim: "trigger oocyte maturation in IVF with reduced OHSS risk"
-      qualifier: "shown to"
+      claim: trigger oocyte maturation in IVF with reduced OHSS risk
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 8
       animalStudies: 4
       cellStudies: 3
       keyFindings:
-        - study: "Abbara A et al. 2017"
-          type: "human-rct"
-          finding: "Phase 2 RCT: kisspeptin-54 triggered oocyte maturation with zero cases of OHSS in high-risk IVF patients"
-          pmid: "28854728"
-        - study: "Jayasena CN et al. 2014"
-          type: "human-rct"
-          finding: "Dose-finding RCT in 60 women showed 95% oocyte maturation rate with highest pregnancy rates at 9.6 nmol/kg"
-          pmid: "26192876"
+        - study: Abbara A et al. 2017
+          type: human-rct
+          finding: >-
+            Phase 2 RCT: kisspeptin-54 triggered oocyte maturation with zero
+            cases of OHSS in high-risk IVF patients
+          pmid: '28854728'
+        - study: Jayasena CN et al. 2014
+          type: human-rct
+          finding: >-
+            Dose-finding RCT in 60 women showed 95% oocyte maturation rate with
+            highest pregnancy rates at 9.6 nmol/kg
+          pmid: '26192876'
   - mechanism:
-      action: "Restoration of pulsatile GnRH secretion via hypothalamic KNDy neuron activation"
-      confidence: "supported"
+      action: >-
+        Restoration of pulsatile GnRH secretion via hypothalamic KNDy neuron
+        activation
+      confidence: supported
       directStudies: 8
     benefit:
-      claim: "restore LH pulsatility in hypothalamic amenorrhea"
-      qualifier: "shown to"
+      claim: restore LH pulsatility in hypothalamic amenorrhea
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 5
       animalStudies: 3
       cellStudies: 2
       keyFindings:
-        - study: "Abbara A et al. 2015"
-          type: "human-observational"
-          finding: "Kisspeptin infusion increased LH pulse frequency 3-fold and pulse secretory mass 6-fold in women with hypothalamic amenorrhea"
-          pmid: "24517142"
-        - study: "Podfigurna A et al. 2020"
-          type: "human-observational"
-          finding: "Demonstrated temporal coupling of kisspeptin and LH secretory episodes in 71 patients with functional hypothalamic amenorrhea"
-          pmid: "32915434"
+        - study: Abbara A et al. 2015
+          type: human-observational
+          finding: >-
+            Kisspeptin infusion increased LH pulse frequency 3-fold and pulse
+            secretory mass 6-fold in women with hypothalamic amenorrhea
+          pmid: '24517142'
+        - study: Podfigurna A et al. 2020
+          type: human-observational
+          finding: >-
+            Demonstrated temporal coupling of kisspeptin and LH secretory
+            episodes in 71 patients with functional hypothalamic amenorrhea
+          pmid: '32915434'
   - mechanism:
-      action: "Modulation of limbic brain activity via kisspeptin receptors in amygdala and hippocampus"
-      confidence: "emerging"
+      action: >-
+        Modulation of limbic brain activity via kisspeptin receptors in amygdala
+        and hippocampus
+      confidence: emerging
       directStudies: 5
     benefit:
-      claim: "enhance sexual arousal and emotional processing"
-      qualifier: "may"
+      claim: enhance sexual arousal and emotional processing
+      qualifier: may
     evidence:
-      level: "low"
+      level: low
       humanStudies: 4
       animalStudies: 2
       cellStudies: 0
       keyFindings:
-        - study: "Comninos AN et al. 2017"
-          type: "human-rct"
-          finding: "Double-blind RCT with fMRI showed kisspeptin enhanced limbic brain activity to sexual and couple-bonding stimuli in healthy men"
-          pmid: "28112678"
-        - study: "Mills EGA et al. 2023"
-          type: "human-rct"
-          finding: "RCT in men with hypoactive sexual desire disorder showed kisspeptin enhanced brain responses to sexual stimuli and penile tumescence"
-          pmid: "36735255"
+        - study: Comninos AN et al. 2017
+          type: human-rct
+          finding: >-
+            Double-blind RCT with fMRI showed kisspeptin enhanced limbic brain
+            activity to sexual and couple-bonding stimuli in healthy men
+          pmid: '28112678'
+        - study: Mills EGA et al. 2023
+          type: human-rct
+          finding: >-
+            RCT in men with hypoactive sexual desire disorder showed kisspeptin
+            enhanced brain responses to sexual stimuli and penile tumescence
+          pmid: '36735255'
 conditions:
-  - slug: "ivf-trigger"
-    name: "IVF Oocyte Maturation Trigger"
-    researchSummary: "Kisspeptin-54 has been evaluated as an alternative to hCG for triggering oocyte maturation in IVF. Phase 2 RCTs at Imperial College London demonstrated 95% oocyte maturation rates with zero cases of OHSS in high-risk patients, compared to significant OHSS rates with conventional hCG triggering."
-    relevantStudies: ["28854728", "26192876"]
+  - slug: ivf-trigger
+    name: IVF Oocyte Maturation Trigger
+    researchSummary: >-
+      Kisspeptin-54 has been evaluated as an alternative to hCG for triggering
+      oocyte maturation in IVF. Phase 2 RCTs at Imperial College London
+      demonstrated 95% oocyte maturation rates with zero cases of OHSS in
+      high-risk patients, compared to significant OHSS rates with conventional
+      hCG triggering.
+    relevantStudies:
+      - '28854728'
+      - '26192876'
     relatedPeptides: []
-  - slug: "hypothalamic-amenorrhea"
-    name: "Hypothalamic Amenorrhea"
-    researchSummary: "Kisspeptin infusion restores pulsatile LH secretion in women with hypothalamic amenorrhea. Studies showed 3-fold increase in LH pulse frequency and 6-fold increase in pulse secretory mass. This represents a potential treatment for functional infertility due to hypothalamic suppression."
-    relevantStudies: ["24517142", "32915434"]
+  - slug: hypothalamic-amenorrhea
+    name: Hypothalamic Amenorrhea
+    researchSummary: >-
+      Kisspeptin infusion restores pulsatile LH secretion in women with
+      hypothalamic amenorrhea. Studies showed 3-fold increase in LH pulse
+      frequency and 6-fold increase in pulse secretory mass. This represents a
+      potential treatment for functional infertility due to hypothalamic
+      suppression.
+    relevantStudies:
+      - '24517142'
+      - '32915434'
     relatedPeptides: []
-  - slug: "hypoactive-sexual-desire"
-    name: "Hypoactive Sexual Desire Disorder"
-    researchSummary: "fMRI studies show kisspeptin enhances limbic brain activity to sexual stimuli in men. RCTs demonstrated enhanced brain responses to sexual content and improved penile tumescence in men with HSDD. This represents an emerging application beyond reproductive function."
-    relevantStudies: ["28112678", "36735255"]
-    relatedPeptides: ["pt-141"]
+  - slug: hypoactive-sexual-desire
+    name: Hypoactive Sexual Desire Disorder
+    researchSummary: >-
+      fMRI studies show kisspeptin enhances limbic brain activity to sexual
+      stimuli in men. RCTs demonstrated enhanced brain responses to sexual
+      content and improved penile tumescence in men with HSDD. This represents
+      an emerging application beyond reproductive function.
+    relevantStudies:
+      - '28112678'
+      - '36735255'
+    relatedPeptides:
+      - pt-141
 timeline:
-  - period: "Acute (hours)"
-    effects: "Single injection of kisspeptin-54 produces LH surge within 4-12 hours. Unlike hCG, the LH elevation is short-lived (hours rather than days), which eliminates OHSS risk in IVF applications."
-    source: "PMID:28854728"
-  - period: "Infusion period"
-    effects: "During continuous infusion, LH pulsatility is restored within hours. In hypothalamic amenorrhea studies, 8-hour infusions produced sustained gonadotropin responses."
-    source: "PMID:24517142"
-  - period: "Post-administration"
-    effects: "Effects are transient - kisspeptin's short half-life means hormonal effects normalize quickly after cessation. This is therapeutically advantageous for IVF safety but may limit other applications."
+  - period: Acute (hours)
+    effects: >-
+      Single injection of kisspeptin-54 produces LH surge within 4-12 hours.
+      Unlike hCG, the LH elevation is short-lived (hours rather than days),
+      which eliminates OHSS risk in IVF applications.
+    source: 'PMID:28854728'
+  - period: Infusion period
+    effects: >-
+      During continuous infusion, LH pulsatility is restored within hours. In
+      hypothalamic amenorrhea studies, 8-hour infusions produced sustained
+      gonadotropin responses.
+    source: 'PMID:24517142'
+  - period: Post-administration
+    effects: >-
+      Effects are transient - kisspeptin's short half-life means hormonal
+      effects normalize quickly after cessation. This is therapeutically
+      advantageous for IVF safety but may limit other applications.
 qualityChecklist:
   goodSigns:
-    - "Pharmaceutical grade preparation"
-    - "White lyophilized powder"
-    - "Complete dissolution in sterile water"
-    - "Clear solution after reconstitution"
-    - "Certificate of analysis with >98% purity"
-    - "Specification of kisspeptin variant (KP-54 vs KP-10)"
+    - Pharmaceutical grade preparation
+    - White lyophilized powder
+    - Complete dissolution in sterile water
+    - Clear solution after reconstitution
+    - Certificate of analysis with >98% purity
+    - Specification of kisspeptin variant (KP-54 vs KP-10)
   warningSigns:
-    - "Research grade without pharmaceutical standards"
-    - "Off-white coloration"
-    - "No specification of peptide length/variant"
-    - "No third-party testing"
+    - Research grade without pharmaceutical standards
+    - Off-white coloration
+    - No specification of peptide length/variant
+    - No third-party testing
   badSigns:
-    - "Discolored powder"
-    - "Particles or cloudiness after reconstitution"
-    - "No certificate of analysis"
-    - "Unusual odor"
-    - "Cannot verify source"
+    - Discolored powder
+    - Particles or cloudiness after reconstitution
+    - No certificate of analysis
+    - Unusual odor
+    - Cannot verify source
+regulatoryStatus:
+  status: research-only
+  lastUpdated: '2026-02-18'
+  notes: >-
+    Not FDA-approved. Naturally occurring neuropeptide. Active research in
+    reproductive endocrinology.
+ratings:
+  researchDepth: 3
+  globalCoverage: 3
+  mechanismPlausibility: 4
+  overall: 3.5
+  lastReviewed: 2026-02-19T00:00:00.000Z
+  reviewNotes: "Well-characterized KISS1R signaling with 18 human studies across multiple countries; GPR54 mechanism is established in reproductive neuroendocrinology with strong independent replication."
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

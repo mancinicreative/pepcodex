@@ -1,194 +1,311 @@
 ---
-name: "KPV"
-aliases: ["Lys-Pro-Val", "Lysine-Proline-Valine", "alpha-MSH(11-13)", "C-terminal alpha-MSH tripeptide"]
-category: "immune"
-evidenceStrength: "low"
-lastUpdated: 2026-01-22
-comparators: ["alpha-msh", "bpc-157", "thymosin-alpha-1"]
-summary: "A naturally occurring tripeptide derived from the C-terminus of alpha-melanocyte-stimulating hormone (alpha-MSH). Preclinical studies demonstrate potent anti-inflammatory effects via NF-kB inhibition, but no human clinical trials have been conducted. Research has focused on inflammatory bowel disease and skin inflammation models."
+name: KPV
+aliases:
+  - Lys-Pro-Val
+  - Lysine-Proline-Valine
+  - alpha-MSH(11-13)
+  - C-terminal alpha-MSH tripeptide
+category: immune
+evidenceStrength: low
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - alpha-msh
+  - bpc-157
+  - thymosin-alpha-1
+summary: >-
+  A naturally occurring tripeptide derived from the C-terminus of
+  alpha-melanocyte-stimulating hormone (alpha-MSH). Preclinical studies
+  demonstrate potent anti-inflammatory effects via NF-kB inhibition, but no
+  human clinical trials have been conducted. Research has focused on
+  inflammatory bowel disease and skin inflammation models.
 sources:
   count: 18
   human: 1
   preclinical: 17
   openAccess: 7
-metaTitle: "KPV Peptide Evidence Dossier | PepCodex"
-metaDescription: "Comprehensive evidence review of KPV tripeptide (alpha-MSH fragment). Preclinical research, anti-inflammatory mechanisms, safety considerations, and scientific citations."
+metaTitle: KPV Peptide Evidence Dossier | PepCodex
+metaDescription: >-
+  Comprehensive evidence review of KPV tripeptide (alpha-MSH fragment).
+  Preclinical research, anti-inflammatory mechanisms, safety considerations, and
+  scientific citations.
 interactions:
-  - peptide: "bpc-157"
-    type: "compatible"
-    description: "Both have anti-inflammatory properties through different mechanisms. KPV targets NF-kB pathway while BPC-157 acts via VEGF/angiogenesis. No known contraindications."
-  - peptide: "ll-37"
-    type: "compatible"
-    description: "LL-37's antimicrobial properties may complement KPV's anti-inflammatory effects in wound healing contexts. Different immune modulation mechanisms."
-  - peptide: "thymosin-alpha-1"
-    type: "compatible"
-    description: "Both modulate immune function through different pathways. KPV inhibits NF-kB while Ta1 enhances T-cell and dendritic cell responses. May have complementary effects."
-  - peptide: "ghk-cu"
-    type: "compatible"
-    description: "KPV's anti-inflammatory effects may complement GHK-Cu's wound healing and collagen synthesis properties. Different target pathways."
-  - peptide: "melanotan-ii"
-    type: "caution"
-    description: "Both derive from melanocortin family. Unlike full alpha-MSH or Melanotan-II, KPV lacks melanocortin receptor binding. However, theoretical pathway overlap warrants caution."
+  - peptide: bpc-157
+    type: compatible
+    description: >-
+      Both have anti-inflammatory properties through different mechanisms. KPV
+      targets NF-kB pathway while BPC-157 acts via VEGF/angiogenesis. No known
+      contraindications.
+  - peptide: ll-37
+    type: compatible
+    description: >-
+      LL-37's antimicrobial properties may complement KPV's anti-inflammatory
+      effects in wound healing contexts. Different immune modulation mechanisms.
+  - peptide: thymosin-alpha-1
+    type: compatible
+    description: >-
+      Both modulate immune function through different pathways. KPV inhibits
+      NF-kB while Ta1 enhances T-cell and dendritic cell responses. May have
+      complementary effects.
+  - peptide: ghk-cu
+    type: compatible
+    description: >-
+      KPV's anti-inflammatory effects may complement GHK-Cu's wound healing and
+      collagen synthesis properties. Different target pathways.
+  - peptide: melanotan-ii
+    type: caution
+    description: >-
+      Both derive from melanocortin family. Unlike full alpha-MSH or
+      Melanotan-II, KPV lacks melanocortin receptor binding. However,
+      theoretical pathway overlap warrants caution.
 molecularInfo:
-  weight: "342.43 Da"
+  weight: 342.43 Da
   chainLength: 3
-  type: "Tripeptide"
-  sequence: "KPV"
+  type: Tripeptide
+  sequence: KPV
   aminoAcids:
-    - { code: "K", name: "Lysine", position: 1, property: "positive" }
-    - { code: "P", name: "Proline", position: 2, property: "hydrophobic" }
-    - { code: "V", name: "Valine", position: 3, property: "hydrophobic" }
+    - code: K
+      name: Lysine
+      position: 1
+      property: positive
+    - code: P
+      name: Proline
+      position: 2
+      property: hydrophobic
+    - code: V
+      name: Valine
+      position: 3
+      property: hydrophobic
 evidenceChainedBenefits:
   - mechanism:
-      action: "NF-kB pathway inhibition via IkBa stabilization"
-      confidence: "supported"
+      action: NF-kB pathway inhibition via IkBa stabilization
+      confidence: supported
       directStudies: 6
     benefit:
-      claim: "reduce inflammation in various tissue types"
-      qualifier: "appears to"
+      claim: reduce inflammation in various tissue types
+      qualifier: appears to
     evidence:
-      level: "low"
+      level: low
       humanStudies: 0
       animalStudies: 8
       cellStudies: 5
       keyFindings:
-        - study: "Manna SK, Aggarwal BB 1998"
-          type: "in-vitro"
-          finding: "Alpha-MSH and KPV inhibit NF-kB by preventing IkBa degradation in multiple human cell lines"
-          pmid: "9743348"
-        - study: "Ichiyama T et al. 1999"
-          type: "in-vitro"
-          finding: "Alpha-MSH inhibits NF-kB activation in brain inflammation models"
-          pmid: "10364450"
+        - study: 'Manna SK, Aggarwal BB 1998'
+          type: in-vitro
+          finding: >-
+            Alpha-MSH and KPV inhibit NF-kB by preventing IkBa degradation in
+            multiple human cell lines
+          pmid: '9743348'
+        - study: Ichiyama T et al. 1999
+          type: in-vitro
+          finding: Alpha-MSH inhibits NF-kB activation in brain inflammation models
+          pmid: '10364450'
   - mechanism:
-      action: "PepT1 transporter-mediated cellular uptake in intestinal epithelium"
-      confidence: "supported"
+      action: PepT1 transporter-mediated cellular uptake in intestinal epithelium
+      confidence: supported
       directStudies: 4
     benefit:
-      claim: "provide oral bioavailability for intestinal anti-inflammatory effects"
-      qualifier: "may"
+      claim: provide oral bioavailability for intestinal anti-inflammatory effects
+      qualifier: may
     evidence:
-      level: "low"
+      level: low
       humanStudies: 0
       animalStudies: 5
       cellStudies: 3
       keyFindings:
-        - study: "Dalmasso G et al. 2008"
-          type: "animal"
-          finding: "PepT1 transporter mediates KPV uptake; oral efficacy in DSS colitis model"
-          pmid: "18061177"
-        - study: "Kannengiesser K et al. 2008"
-          type: "animal"
-          finding: "Oral KPV reduced inflammation in DSS and TNBS colitis models"
-          pmid: "18092346"
+        - study: Dalmasso G et al. 2008
+          type: animal
+          finding: >-
+            PepT1 transporter mediates KPV uptake; oral efficacy in DSS colitis
+            model
+          pmid: '18061177'
+        - study: Kannengiesser K et al. 2008
+          type: animal
+          finding: Oral KPV reduced inflammation in DSS and TNBS colitis models
+          pmid: '18092346'
   - mechanism:
-      action: "MAPK pathway modulation (p38, JNK, ERK inhibition)"
-      confidence: "emerging"
+      action: 'MAPK pathway modulation (p38, JNK, ERK inhibition)'
+      confidence: emerging
       directStudies: 3
     benefit:
-      claim: "suppress inflammatory cytokine production"
-      qualifier: "may"
+      claim: suppress inflammatory cytokine production
+      qualifier: may
     evidence:
-      level: "very-low"
+      level: very-low
       humanStudies: 0
       animalStudies: 4
       cellStudies: 3
       keyFindings:
-        - study: "Getting SJ et al. 2003"
-          type: "animal"
-          finding: "KPV retains anti-inflammatory activity independent of melanocortin receptors"
-          pmid: "12730356"
+        - study: Getting SJ et al. 2003
+          type: animal
+          finding: >-
+            KPV retains anti-inflammatory activity independent of melanocortin
+            receptors
+          pmid: '12730356'
   - mechanism:
-      action: "Melanocortin receptor-independent anti-inflammatory signaling"
-      confidence: "supported"
+      action: Melanocortin receptor-independent anti-inflammatory signaling
+      confidence: supported
       directStudies: 4
     benefit:
-      claim: "reduce inflammation without melanotropic (tanning) effects"
-      qualifier: "appears to"
+      claim: reduce inflammation without melanotropic (tanning) effects
+      qualifier: appears to
     evidence:
-      level: "low"
+      level: low
       humanStudies: 0
       animalStudies: 5
       cellStudies: 4
       keyFindings:
-        - study: "Getting SJ et al. 2003"
-          type: "animal"
-          finding: "KPV anti-inflammatory effects occur via melanocortin receptor-independent mechanism"
-          pmid: "12730356"
-        - study: "Luger TA et al. 2003"
-          type: "in-vitro"
-          finding: "KPV shares anti-inflammatory properties of alpha-MSH without receptor-dependent pigmentation effects"
-          pmid: "12851308"
+        - study: Getting SJ et al. 2003
+          type: animal
+          finding: >-
+            KPV anti-inflammatory effects occur via melanocortin
+            receptor-independent mechanism
+          pmid: '12730356'
+        - study: Luger TA et al. 2003
+          type: in-vitro
+          finding: >-
+            KPV shares anti-inflammatory properties of alpha-MSH without
+            receptor-dependent pigmentation effects
+          pmid: '12851308'
 conditions:
-  - slug: "inflammatory-bowel-disease"
-    name: "Inflammatory Bowel Disease"
-    researchSummary: "KPV has been studied extensively in preclinical models of inflammatory bowel disease (IBD). The tripeptide inhibits NF-kB activation, a central pathway in intestinal inflammation.
+  - slug: inflammatory-bowel-disease
+    name: Inflammatory Bowel Disease
+    researchSummary: >-
+      KPV has been studied extensively in preclinical models of inflammatory
+      bowel disease (IBD). The tripeptide inhibits NF-kB activation, a central
+      pathway in intestinal inflammation.
 
-Animal studies demonstrate reduced inflammation in colitis models with both systemic and oral KPV administration. The peptide decreases pro-inflammatory cytokine production and improves intestinal barrier function.
+      Animal studies demonstrate reduced inflammation in colitis models with
+      both systemic and oral KPV administration. The peptide decreases
+      pro-inflammatory cytokine production and improves intestinal barrier
+      function.
 
-No human clinical trials have been conducted for IBD. The preclinical data, while promising, requires validation in human studies."
-    relevantStudies: ["18061177", "18092346"]
-    relatedPeptides: ["bpc-157", "ll-37"]
-  - slug: "gut-inflammation"
-    name: "Gut Inflammation"
-    researchSummary: "KPV exerts potent anti-inflammatory effects in the gastrointestinal tract through NF-kB inhibition. The peptide is naturally present in the gut and may play a role in mucosal immune regulation.
+      No human clinical trials have been conducted for IBD. The preclinical
+      data, while promising, requires validation in human studies.
+    relevantStudies:
+      - '18061177'
+      - '18092346'
+    relatedPeptides:
+      - bpc-157
+      - ll-37
+  - slug: gut-inflammation
+    name: Gut Inflammation
+    researchSummary: >-
+      KPV exerts potent anti-inflammatory effects in the gastrointestinal tract
+      through NF-kB inhibition. The peptide is naturally present in the gut and
+      may play a role in mucosal immune regulation.
 
-Preclinical studies show KPV protects against various forms of intestinal inflammation. The tripeptide can be administered orally and appears to act locally on inflamed gut tissue.
+      Preclinical studies show KPV protects against various forms of intestinal
+      inflammation. The tripeptide can be administered orally and appears to act
+      locally on inflamed gut tissue.
 
-Interest in KPV for gut health has grown in integrative medicine circles, though clinical evidence supporting such use is lacking."
-    relevantStudies: ["18061177", "18092346", "12730356"]
-    relatedPeptides: ["bpc-157", "ll-37"]
-  - slug: "skin-inflammation"
-    name: "Skin Inflammation"
-    researchSummary: "KPV, derived from the anti-inflammatory portion of alpha-MSH, has been studied for skin inflammatory conditions. The peptide inhibits inflammatory pathways in keratinocytes and immune cells.
+      Interest in KPV for gut health has grown in integrative medicine circles,
+      though clinical evidence supporting such use is lacking.
+    relevantStudies:
+      - '18061177'
+      - '18092346'
+      - '12730356'
+    relatedPeptides:
+      - bpc-157
+      - ll-37
+  - slug: skin-inflammation
+    name: Skin Inflammation
+    researchSummary: >-
+      KPV, derived from the anti-inflammatory portion of alpha-MSH, has been
+      studied for skin inflammatory conditions. The peptide inhibits
+      inflammatory pathways in keratinocytes and immune cells.
 
-Research demonstrates anti-inflammatory effects in models of contact dermatitis and other skin inflammation. The melanocortin system is known to modulate cutaneous immune responses.
+      Research demonstrates anti-inflammatory effects in models of contact
+      dermatitis and other skin inflammation. The melanocortin system is known
+      to modulate cutaneous immune responses.
 
-Topical KPV formulations are of interest but have not been clinically evaluated. The peptide's small size facilitates skin penetration."
-    relevantStudies: ["12851308"]
-    relatedPeptides: ["ghk-cu", "ll-37"]
-  - slug: "anti-inflammatory"
-    name: "Anti-Inflammatory"
-    researchSummary: "KPV is one of the most potent natural anti-inflammatory peptides known. The tripeptide inhibits NF-kB nuclear translocation, preventing transcription of pro-inflammatory genes.
+      Topical KPV formulations are of interest but have not been clinically
+      evaluated. The peptide's small size facilitates skin penetration.
+    relevantStudies:
+      - '12851308'
+    relatedPeptides:
+      - ghk-cu
+      - ll-37
+  - slug: anti-inflammatory
+    name: Anti-Inflammatory
+    researchSummary: >-
+      KPV is one of the most potent natural anti-inflammatory peptides known.
+      The tripeptide inhibits NF-kB nuclear translocation, preventing
+      transcription of pro-inflammatory genes.
 
-Unlike the full alpha-MSH molecule, KPV does not cause pigmentation changes because it lacks the melanocortin receptor binding sequence. This allows anti-inflammatory effects without tanning.
+      Unlike the full alpha-MSH molecule, KPV does not cause pigmentation
+      changes because it lacks the melanocortin receptor binding sequence. This
+      allows anti-inflammatory effects without tanning.
 
-The anti-inflammatory potency has generated interest for various conditions, though human clinical validation is needed."
-    relevantStudies: ["9743348", "12730356", "18061177"]
-    relatedPeptides: ["bpc-157", "ll-37", "thymosin-alpha-1"]
+      The anti-inflammatory potency has generated interest for various
+      conditions, though human clinical validation is needed.
+    relevantStudies:
+      - '9743348'
+      - '12730356'
+      - '18061177'
+    relatedPeptides:
+      - bpc-157
+      - ll-37
+      - thymosin-alpha-1
 timeline:
-  - period: "Week 1-2"
-    effects: "Based on preclinical data: NF-kB inhibition begins within hours of administration. Reduction in pro-inflammatory cytokine production (TNF-alpha, IL-1, IL-6) observed in cell studies. Animal colitis studies showed reduced inflammation markers within the first week."
-    source: "PMID:9743348"
-  - period: "Week 2-4"
-    effects: "Animal studies demonstrate sustained anti-inflammatory effects with continued administration. Improved intestinal barrier function and reduced immune cell infiltration observed in colitis models."
-    source: "PMID:18061177"
-  - period: "Week 4-8"
-    effects: "Preclinical models show ongoing suppression of inflammatory pathways. Oral bioavailability via PepT1 transporter enables sustained intestinal effects in animal studies."
-    source: "PMID:18092346"
-  - period: "Week 8+"
-    effects: "Long-term effects in humans are completely unknown. No clinical trials have established duration of treatment, optimal dosing, or sustained efficacy. All timeline data is extrapolated from short-term animal studies."
+  - period: Week 1-2
+    effects: >-
+      Based on preclinical data: NF-kB inhibition begins within hours of
+      administration. Reduction in pro-inflammatory cytokine production
+      (TNF-alpha, IL-1, IL-6) observed in cell studies. Animal colitis studies
+      showed reduced inflammation markers within the first week.
+    source: 'PMID:9743348'
+  - period: Week 2-4
+    effects: >-
+      Animal studies demonstrate sustained anti-inflammatory effects with
+      continued administration. Improved intestinal barrier function and reduced
+      immune cell infiltration observed in colitis models.
+    source: 'PMID:18061177'
+  - period: Week 4-8
+    effects: >-
+      Preclinical models show ongoing suppression of inflammatory pathways. Oral
+      bioavailability via PepT1 transporter enables sustained intestinal effects
+      in animal studies.
+    source: 'PMID:18092346'
+  - period: Week 8+
+    effects: >-
+      Long-term effects in humans are completely unknown. No clinical trials
+      have established duration of treatment, optimal dosing, or sustained
+      efficacy. All timeline data is extrapolated from short-term animal
+      studies.
 qualityChecklist:
   goodSigns:
-    - "White to off-white lyophilized powder"
-    - "Dissolves completely in bacteriostatic water"
-    - "Clear, colorless solution after reconstitution"
-    - "Certificate of analysis showing >95% purity"
-    - "HPLC verification of identity and purity"
-    - "Proper vacuum seal intact before reconstitution"
+    - White to off-white lyophilized powder
+    - Dissolves completely in bacteriostatic water
+    - 'Clear, colorless solution after reconstitution'
+    - Certificate of analysis showing >95% purity
+    - HPLC verification of identity and purity
+    - Proper vacuum seal intact before reconstitution
   warningSigns:
-    - "Slightly off-white or cream-colored powder"
-    - "Takes longer than expected to dissolve"
-    - "No third-party testing verification"
-    - "COA from manufacturer only"
-    - "Purity listed below 95% but above 90%"
+    - Slightly off-white or cream-colored powder
+    - Takes longer than expected to dissolve
+    - No third-party testing verification
+    - COA from manufacturer only
+    - Purity listed below 95% but above 90%
   badSigns:
-    - "Yellow, brown, or discolored powder"
-    - "Visible particles or cloudiness after reconstitution"
-    - "Gel-like consistency or clumping"
-    - "No COA provided or COA appears fraudulent"
-    - "Unusual odor"
-    - "Vial seal compromised or previously opened"
+    - 'Yellow, brown, or discolored powder'
+    - Visible particles or cloudiness after reconstitution
+    - Gel-like consistency or clumping
+    - No COA provided or COA appears fraudulent
+    - Unusual odor
+    - Vial seal compromised or previously opened
+regulatoryStatus:
+  status: research-only
+  lastUpdated: '2026-02-18'
+  notes: >-
+    Not FDA-approved. Tripeptide fragment of alpha-MSH. Preclinical research on
+    anti-inflammatory effects.
+ratings:
+  researchDepth: 2
+  globalCoverage: 1
+  mechanismPlausibility: 2
+  overall: 1.5
+  lastReviewed: 2026-02-19T00:00:00.000Z
+  reviewNotes: "Alpha-MSH tripeptide fragment with predominantly preclinical IBD data and only one small human study; melanocortin anti-inflammatory mechanism proposed but not independently validated in humans."
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

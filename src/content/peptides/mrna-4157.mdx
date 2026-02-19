@@ -1,148 +1,242 @@
 ---
-name: "mRNA-4157/V940"
-aliases: ["V940", "mRNA-4157", "INTerpath vaccine"]
-category: "other"
-compoundType: "mrna"
-evidenceStrength: "high"
-lastUpdated: 2026-01-22
-comparators: ["pembrolizumab", "ipilimumab", "nivolumab"]
-summary: "A personalized mRNA cancer vaccine encoding up to 34 patient-specific neoantigens, developed jointly by Moderna and Merck. Designed for use in combination with pembrolizumab (Keytruda) for adjuvant treatment of resected high-risk melanoma and other solid tumors. Phase 2b KEYNOTE-942 demonstrated 44-50% reduction in recurrence or death. FDA Breakthrough Therapy designation granted. Multiple Phase 3 trials (INTerpath) ongoing."
+name: mRNA-4157/V940
+aliases:
+  - V940
+  - mRNA-4157
+  - INTerpath vaccine
+category: other
+compoundType: mrna
+evidenceStrength: high
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - pembrolizumab
+  - ipilimumab
+  - nivolumab
+summary: >-
+  A personalized mRNA cancer vaccine encoding up to 34 patient-specific
+  neoantigens, developed jointly by Moderna and Merck. Designed for use in
+  combination with pembrolizumab (Keytruda) for adjuvant treatment of resected
+  high-risk melanoma and other solid tumors. Phase 2b KEYNOTE-942 demonstrated
+  44-50% reduction in recurrence or death. FDA Breakthrough Therapy designation
+  granted. Multiple Phase 3 trials (INTerpath) ongoing.
 sources:
   count: 28
   human: 24
   preclinical: 4
   openAccess: 20
-metaTitle: "mRNA-4157/V940 Personalized Cancer Vaccine Dossier | PepCodex"
-metaDescription: "Comprehensive evidence review of mRNA-4157/V940 personalized cancer vaccine. Mechanism of action, KEYNOTE-942 Phase 2b results, INTerpath Phase 3 trials, safety profile, and citations."
+metaTitle: mRNA-4157/V940 Personalized Cancer Vaccine Dossier | PepCodex
+metaDescription: >-
+  Comprehensive evidence review of mRNA-4157/V940 personalized cancer vaccine.
+  Mechanism of action, KEYNOTE-942 Phase 2b results, INTerpath Phase 3 trials,
+  safety profile, and citations.
 interactions:
-  - peptide: "pembrolizumab"
-    type: "synergistic"
-    description: "Designed as combination therapy. mRNA-4157 provides neoantigen targets while pembrolizumab removes PD-1 immune checkpoint inhibition. KEYNOTE-942 demonstrated 44% risk reduction with combination vs pembrolizumab alone."
-  - peptide: "nivolumab"
-    type: "compatible"
-    description: "Another PD-1 inhibitor. Theoretical compatibility based on similar mechanism to pembrolizumab, but no clinical data exists for this combination."
-  - peptide: "ipilimumab"
-    type: "compatible"
-    description: "CTLA-4 checkpoint inhibitor with complementary mechanism. Triple combination (mRNA-4157 + PD-1 + CTLA-4) not yet studied clinically."
+  - peptide: pembrolizumab
+    type: synergistic
+    description: >-
+      Designed as combination therapy. mRNA-4157 provides neoantigen targets
+      while pembrolizumab removes PD-1 immune checkpoint inhibition. KEYNOTE-942
+      demonstrated 44% risk reduction with combination vs pembrolizumab alone.
+  - peptide: nivolumab
+    type: compatible
+    description: >-
+      Another PD-1 inhibitor. Theoretical compatibility based on similar
+      mechanism to pembrolizumab, but no clinical data exists for this
+      combination.
+  - peptide: ipilimumab
+    type: compatible
+    description: >-
+      CTLA-4 checkpoint inhibitor with complementary mechanism. Triple
+      combination (mRNA-4157 + PD-1 + CTLA-4) not yet studied clinically.
 molecularInfo:
-  weight: "N/A (mRNA therapeutic)"
+  weight: N/A (mRNA therapeutic)
   chainLength: 0
-  type: "Lipid nanoparticle-encapsulated mRNA"
-  sequence: "N/A (mRNA therapeutic)"
+  type: Lipid nanoparticle-encapsulated mRNA
+  sequence: N/A (mRNA therapeutic)
   aminoAcids: []
 evidenceChainedBenefits:
   - mechanism:
-      action: "LNP-mRNA delivery to antigen-presenting cells, enabling neoantigen expression and MHC presentation"
-      confidence: "established"
+      action: >-
+        LNP-mRNA delivery to antigen-presenting cells, enabling neoantigen
+        expression and MHC presentation
+      confidence: established
       directStudies: 12
     benefit:
-      claim: "induce neoantigen-specific T cell responses"
-      qualifier: "shown to"
+      claim: induce neoantigen-specific T cell responses
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 8
       animalStudies: 4
       cellStudies: 6
       keyFindings:
-        - study: "Weber JS et al. 2024"
-          type: "human-rct"
-          finding: "KEYNOTE-942 Phase 2b demonstrated 44% reduction in recurrence or death with mRNA-4157 plus pembrolizumab vs pembrolizumab alone in resected melanoma"
-          pmid: "38029730"
-        - study: "Patel MR et al. 2022"
-          type: "human-observational"
-          finding: "Phase 1 dose escalation showed acceptable safety and neoantigen-specific T cell responses across multiple solid tumor types"
-          pmid: "35489362"
+        - study: Weber JS et al. 2024
+          type: human-rct
+          finding: >-
+            KEYNOTE-942 Phase 2b demonstrated 44% reduction in recurrence or
+            death with mRNA-4157 plus pembrolizumab vs pembrolizumab alone in
+            resected melanoma
+          pmid: '38029730'
+        - study: Patel MR et al. 2022
+          type: human-observational
+          finding: >-
+            Phase 1 dose escalation showed acceptable safety and
+            neoantigen-specific T cell responses across multiple solid tumor
+            types
+          pmid: '35489362'
   - mechanism:
-      action: "CD8+ cytotoxic T cell activation against patient-specific tumor neoantigens"
-      confidence: "established"
+      action: >-
+        CD8+ cytotoxic T cell activation against patient-specific tumor
+        neoantigens
+      confidence: established
       directStudies: 8
     benefit:
-      claim: "reduce cancer recurrence in resected melanoma"
-      qualifier: "shown to"
+      claim: reduce cancer recurrence in resected melanoma
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 6
       animalStudies: 2
       cellStudies: 4
       keyFindings:
-        - study: "Moderna/Merck 2024"
-          type: "human-rct"
-          finding: "3-year follow-up showed approximately 50% sustained risk reduction in recurrence-free survival"
-          pmid: "38029730"
-        - study: "Weber JS et al. 2024"
-          type: "human-rct"
-          finding: "Distant metastasis-free survival significantly improved with combination therapy"
-          pmid: "38029730"
+        - study: Moderna/Merck 2024
+          type: human-rct
+          finding: >-
+            3-year follow-up showed approximately 50% sustained risk reduction
+            in recurrence-free survival
+          pmid: '38029730'
+        - study: Weber JS et al. 2024
+          type: human-rct
+          finding: >-
+            Distant metastasis-free survival significantly improved with
+            combination therapy
+          pmid: '38029730'
   - mechanism:
-      action: "Synergistic immune activation through combined antigen presentation and checkpoint blockade"
-      confidence: "established"
+      action: >-
+        Synergistic immune activation through combined antigen presentation and
+        checkpoint blockade
+      confidence: established
       directStudies: 6
     benefit:
-      claim: "enhance anti-tumor immunity when combined with pembrolizumab"
-      qualifier: "shown to"
+      claim: enhance anti-tumor immunity when combined with pembrolizumab
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 4
       animalStudies: 2
       cellStudies: 3
       keyFindings:
-        - study: "Weber JS et al. 2024"
-          type: "human-rct"
-          finding: "Combination achieved 79% 18-month recurrence-free survival vs 62% with pembrolizumab alone"
-          pmid: "38029730"
-        - study: "Ott PA et al. 2017"
-          type: "human-observational"
-          finding: "Neoantigen vaccines induce robust T cell responses that correlate with clinical outcomes"
-          pmid: "28678784"
+        - study: Weber JS et al. 2024
+          type: human-rct
+          finding: >-
+            Combination achieved 79% 18-month recurrence-free survival vs 62%
+            with pembrolizumab alone
+          pmid: '38029730'
+        - study: Ott PA et al. 2017
+          type: human-observational
+          finding: >-
+            Neoantigen vaccines induce robust T cell responses that correlate
+            with clinical outcomes
+          pmid: '28678784'
 conditions:
-  - slug: "melanoma"
-    name: "Melanoma (Adjuvant)"
-    researchSummary: "mRNA-4157 in combination with pembrolizumab is being developed as adjuvant therapy for resected high-risk melanoma. KEYNOTE-942 Phase 2b trial demonstrated 44% reduction in recurrence or death. FDA granted Breakthrough Therapy Designation in 2023. Phase 3 INTerpath-001 trial ongoing with ~1,100 patients."
-    relevantStudies: ["38029730", "28678784", "25891304"]
-    relatedPeptides: ["pembrolizumab", "nivolumab", "ipilimumab"]
-  - slug: "nsclc"
-    name: "Non-Small Cell Lung Cancer (Adjuvant)"
-    researchSummary: "Phase 3 INTerpath-002 trial is evaluating mRNA-4157 plus pembrolizumab vs pembrolizumab alone in resected stage II-IIIB NSCLC. Approximately 860 patients targeted. High mutation burden in NSCLC creates favorable conditions for neoantigen targeting."
-    relevantStudies: ["38029730", "30345906"]
-    relatedPeptides: ["pembrolizumab"]
-  - slug: "solid-tumors"
-    name: "Solid Tumors (Various)"
-    researchSummary: "Phase 1 studies evaluated mRNA-4157 across multiple solid tumor types including bladder cancer and HPV-negative head and neck cancer. Safety was acceptable with neoantigen-specific T cell responses observed. Expansion to additional tumor types is planned."
-    relevantStudies: ["28678784", "28678778"]
-    relatedPeptides: ["pembrolizumab", "nivolumab"]
+  - slug: melanoma
+    name: Melanoma (Adjuvant)
+    researchSummary: >-
+      mRNA-4157 in combination with pembrolizumab is being developed as adjuvant
+      therapy for resected high-risk melanoma. KEYNOTE-942 Phase 2b trial
+      demonstrated 44% reduction in recurrence or death. FDA granted
+      Breakthrough Therapy Designation in 2023. Phase 3 INTerpath-001 trial
+      ongoing with ~1,100 patients.
+    relevantStudies:
+      - '38029730'
+      - '28678784'
+      - '25891304'
+    relatedPeptides:
+      - pembrolizumab
+      - nivolumab
+      - ipilimumab
+  - slug: nsclc
+    name: Non-Small Cell Lung Cancer (Adjuvant)
+    researchSummary: >-
+      Phase 3 INTerpath-002 trial is evaluating mRNA-4157 plus pembrolizumab vs
+      pembrolizumab alone in resected stage II-IIIB NSCLC. Approximately 860
+      patients targeted. High mutation burden in NSCLC creates favorable
+      conditions for neoantigen targeting.
+    relevantStudies:
+      - '38029730'
+      - '30345906'
+    relatedPeptides:
+      - pembrolizumab
+  - slug: solid-tumors
+    name: Solid Tumors (Various)
+    researchSummary: >-
+      Phase 1 studies evaluated mRNA-4157 across multiple solid tumor types
+      including bladder cancer and HPV-negative head and neck cancer. Safety was
+      acceptable with neoantigen-specific T cell responses observed. Expansion
+      to additional tumor types is planned.
+    relevantStudies:
+      - '28678784'
+      - '28678778'
+    relatedPeptides:
+      - pembrolizumab
+      - nivolumab
 timeline:
-  - period: "Week 1-3"
-    effects: "First dose administered intramuscularly. Injection site reactions and transient systemic symptoms (fatigue, fever, myalgia) commonly observed. LNP-mRNA uptake by antigen-presenting cells initiates immune priming."
-    source: "PMID:38029730"
-  - period: "Week 3-18"
-    effects: "Subsequent doses given every 3 weeks (9 total doses over ~6 months). T cell responses develop and expand against patient-specific neoantigens. Concurrent pembrolizumab given every 3 weeks."
-    source: "PMID:38029730"
-  - period: "Month 6-12"
-    effects: "mRNA-4157 dosing completes at approximately 6 months. Pembrolizumab continues for total of 18 doses (~1 year). Ongoing immune surveillance targets residual micrometastatic disease."
-    source: "PMID:38029730"
-  - period: "Year 1-3"
-    effects: "Long-term follow-up in KEYNOTE-942 demonstrated sustained 44-50% reduction in recurrence risk. Distant metastasis-free survival improved. Overall survival trend favorable but data still maturing."
-    source: "PMID:38029730"
+  - period: Week 1-3
+    effects: >-
+      First dose administered intramuscularly. Injection site reactions and
+      transient systemic symptoms (fatigue, fever, myalgia) commonly observed.
+      LNP-mRNA uptake by antigen-presenting cells initiates immune priming.
+    source: 'PMID:38029730'
+  - period: Week 3-18
+    effects: >-
+      Subsequent doses given every 3 weeks (9 total doses over ~6 months). T
+      cell responses develop and expand against patient-specific neoantigens.
+      Concurrent pembrolizumab given every 3 weeks.
+    source: 'PMID:38029730'
+  - period: Month 6-12
+    effects: >-
+      mRNA-4157 dosing completes at approximately 6 months. Pembrolizumab
+      continues for total of 18 doses (~1 year). Ongoing immune surveillance
+      targets residual micrometastatic disease.
+    source: 'PMID:38029730'
+  - period: Year 1-3
+    effects: >-
+      Long-term follow-up in KEYNOTE-942 demonstrated sustained 44-50% reduction
+      in recurrence risk. Distant metastasis-free survival improved. Overall
+      survival trend favorable but data still maturing.
+    source: 'PMID:38029730'
 qualityChecklist:
   goodSigns:
-    - "Administered only in approved clinical trial settings"
-    - "Personalized manufacturing from patient tumor sequencing"
-    - "Approximately 6 weeks from biopsy to individualized product"
-    - "GMP manufacturing at Moderna facilities"
-    - "Lipid nanoparticle formulation for mRNA stability"
-    - "Up to 34 neoantigens encoded per individual vaccine"
+    - Administered only in approved clinical trial settings
+    - Personalized manufacturing from patient tumor sequencing
+    - Approximately 6 weeks from biopsy to individualized product
+    - GMP manufacturing at Moderna facilities
+    - Lipid nanoparticle formulation for mRNA stability
+    - Up to 34 neoantigens encoded per individual vaccine
   warningSigns:
-    - "Not available outside of clinical trials"
-    - "Requires tumor resection and adequate tissue for sequencing"
-    - "Manufacturing timeline may delay treatment initiation"
-    - "Patient must be eligible for pembrolizumab combination"
-    - "Requires adequate HLA typing for neoantigen prediction"
+    - Not available outside of clinical trials
+    - Requires tumor resection and adequate tissue for sequencing
+    - Manufacturing timeline may delay treatment initiation
+    - Patient must be eligible for pembrolizumab combination
+    - Requires adequate HLA typing for neoantigen prediction
   badSigns:
-    - "Any product offered outside registered clinical trials is fraudulent"
-    - "No generic or biosimilar versions exist"
-    - "Online sales claiming mRNA-4157 availability are scams"
-    - "Product cannot be compounded or replicated at pharmacy level"
-    - "Patient-specific; cannot be transferred between individuals"
+    - Any product offered outside registered clinical trials is fraudulent
+    - No generic or biosimilar versions exist
+    - Online sales claiming mRNA-4157 availability are scams
+    - Product cannot be compounded or replicated at pharmacy level
+    - Patient-specific; cannot be transferred between individuals
+regulatoryStatus:
+  status: investigational
+  lastUpdated: '2026-02-18'
+  notes: >-
+    Phase 3 clinical trials for melanoma (Moderna). Personalized mRNA cancer
+    vaccine, used with pembrolizumab.
+ratings:
+  researchDepth: 4
+  globalCoverage: 4
+  mechanismPlausibility: 4
+  overall: 4.0
+  lastReviewed: 2026-02-19T00:00:00.000Z
+  reviewNotes: "Moderna personalized neoantigen mRNA cancer vaccine with FDA Breakthrough Therapy designation; KEYNOTE-942 Phase 2b data and INTerpath Phase 3 trials demonstrate substantial multinational evidence base."
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

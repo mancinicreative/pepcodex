@@ -1,199 +1,366 @@
 ---
-name: "Human Chorionic Gonadotropin (hCG)"
-aliases: ["hCG", "Choriogonadotropin", "Pregnyl", "Novarel", "Ovidrel", "Choragon", "Profasi", "Choriomon"]
-category: "hormonal"
-compoundType: "glycoprotein"
-evidenceStrength: "high"
-lastUpdated: 2026-01-22
-comparators: ["LH", "FSH", "GnRH agonists"]
-summary: "A glycoprotein hormone FDA-approved for ovulation induction, cryptorchidism, and hypogonadotropic hypogonadism. Functions as an LH receptor agonist with over 50 years of clinical use in reproductive medicine. Gold standard trigger for assisted reproductive technology."
+name: Human Chorionic Gonadotropin (hCG)
+aliases:
+  - hCG
+  - Choriogonadotropin
+  - Pregnyl
+  - Novarel
+  - Ovidrel
+  - Choragon
+  - Profasi
+  - Choriomon
+category: hormonal
+compoundType: glycoprotein
+evidenceStrength: high
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - LH
+  - FSH
+  - GnRH agonists
+summary: >-
+  A glycoprotein hormone FDA-approved for ovulation induction, cryptorchidism,
+  and hypogonadotropic hypogonadism. Functions as an LH receptor agonist with
+  over 50 years of clinical use in reproductive medicine. Gold standard trigger
+  for assisted reproductive technology.
 sources:
   count: 45
   human: 38
   preclinical: 7
   openAccess: 32
-metaTitle: "hCG (Human Chorionic Gonadotropin) Evidence Dossier | PepCodex"
-metaDescription: "Comprehensive evidence review of hCG (Pregnyl, Ovidrel). FDA-approved fertility hormone, mechanism of action, clinical trial data, safety profile, and 45+ citations."
+metaTitle: hCG (Human Chorionic Gonadotropin) Evidence Dossier | PepCodex
+metaDescription: >-
+  Comprehensive evidence review of hCG (Pregnyl, Ovidrel). FDA-approved
+  fertility hormone, mechanism of action, clinical trial data, safety profile,
+  and 45+ citations.
 interactions:
-  - peptide: "kisspeptin"
-    type: "synergistic"
-    description: "Kisspeptin stimulates endogenous GnRH/LH release while hCG provides direct LHCGR agonism. Combined use studied for ovulation induction with potentially reduced OHSS risk. Clinical trials support sequential administration."
-  - peptide: "gonadorelin"
-    type: "synergistic"
-    description: "GnRH pulses restore HPG axis function while hCG provides direct gonadal stimulation. Used sequentially in hypogonadotropic hypogonadism treatment protocols."
-  - peptide: "sermorelin"
-    type: "compatible"
-    description: "Different axes of action (GH vs gonadal). No known interactions; commonly used together in hormone optimization protocols."
-  - peptide: "bpc-157"
-    type: "compatible"
-    description: "Non-overlapping mechanisms. BPC-157 focuses on tissue repair while hCG acts on gonadal function. No interaction data available."
-  - peptide: "pt-141"
-    type: "caution"
-    description: "Both affect reproductive/sexual function through different mechanisms. PT-141 acts on melanocortin receptors while hCG stimulates gonadal hormone production. Monitor for additive effects."
-  - peptide: "clomiphene"
-    type: "caution"
-    description: "Both stimulate gonadal function. Clomiphene via SERM action increasing LH, hCG via direct LHCGR agonism. Combined use requires careful monitoring for overstimulation."
+  - peptide: kisspeptin
+    type: synergistic
+    description: >-
+      Kisspeptin stimulates endogenous GnRH/LH release while hCG provides direct
+      LHCGR agonism. Combined use studied for ovulation induction with
+      potentially reduced OHSS risk. Clinical trials support sequential
+      administration.
+  - peptide: gonadorelin
+    type: synergistic
+    description: >-
+      GnRH pulses restore HPG axis function while hCG provides direct gonadal
+      stimulation. Used sequentially in hypogonadotropic hypogonadism treatment
+      protocols.
+  - peptide: sermorelin
+    type: compatible
+    description: >-
+      Different axes of action (GH vs gonadal). No known interactions; commonly
+      used together in hormone optimization protocols.
+  - peptide: bpc-157
+    type: compatible
+    description: >-
+      Non-overlapping mechanisms. BPC-157 focuses on tissue repair while hCG
+      acts on gonadal function. No interaction data available.
+  - peptide: pt-141
+    type: caution
+    description: >-
+      Both affect reproductive/sexual function through different mechanisms.
+      PT-141 acts on melanocortin receptors while hCG stimulates gonadal hormone
+      production. Monitor for additive effects.
+  - peptide: clomiphene
+    type: caution
+    description: >-
+      Both stimulate gonadal function. Clomiphene via SERM action increasing LH,
+      hCG via direct LHCGR agonism. Combined use requires careful monitoring for
+      overstimulation.
 molecularInfo:
-  weight: "~36,700 Da (heterodimer)"
+  weight: '~36,700 Da (heterodimer)'
   chainLength: 237
-  type: "Heterodimeric glycoprotein"
-  sequence: "Alpha (92 aa) + Beta (145 aa) non-covalently linked subunits"
+  type: Heterodimeric glycoprotein
+  sequence: Alpha (92 aa) + Beta (145 aa) non-covalently linked subunits
   aminoAcids:
-    - { code: "A", name: "Alanine", position: 1, property: "hydrophobic" }
-    - { code: "P", name: "Proline", position: 2, property: "hydrophobic" }
-    - { code: "D", name: "Aspartic Acid", position: 3, property: "negative" }
-    - { code: "V", name: "Valine", position: 4, property: "hydrophobic" }
-    - { code: "Q", name: "Glutamine", position: 5, property: "polar" }
-    - { code: "D", name: "Aspartic Acid", position: 6, property: "negative" }
-    - { code: "C", name: "Cysteine", position: 7, property: "polar" }
-    - { code: "P", name: "Proline", position: 8, property: "hydrophobic" }
-    - { code: "E", name: "Glutamic Acid", position: 9, property: "negative" }
-    - { code: "C", name: "Cysteine", position: 10, property: "polar" }
-    - { code: "T", name: "Threonine", position: 11, property: "polar" }
-    - { code: "L", name: "Leucine", position: 12, property: "hydrophobic" }
-    - { code: "Q", name: "Glutamine", position: 13, property: "polar" }
-    - { code: "E", name: "Glutamic Acid", position: 14, property: "negative" }
-    - { code: "N", name: "Asparagine", position: 15, property: "polar" }
-    - { code: "P", name: "Proline", position: 16, property: "hydrophobic" }
-    - { code: "F", name: "Phenylalanine", position: 17, property: "hydrophobic" }
-    - { code: "F", name: "Phenylalanine", position: 18, property: "hydrophobic" }
-    - { code: "S", name: "Serine", position: 19, property: "polar" }
-    - { code: "Q", name: "Glutamine", position: 20, property: "polar" }
+    - code: A
+      name: Alanine
+      position: 1
+      property: hydrophobic
+    - code: P
+      name: Proline
+      position: 2
+      property: hydrophobic
+    - code: D
+      name: Aspartic Acid
+      position: 3
+      property: negative
+    - code: V
+      name: Valine
+      position: 4
+      property: hydrophobic
+    - code: Q
+      name: Glutamine
+      position: 5
+      property: polar
+    - code: D
+      name: Aspartic Acid
+      position: 6
+      property: negative
+    - code: C
+      name: Cysteine
+      position: 7
+      property: polar
+    - code: P
+      name: Proline
+      position: 8
+      property: hydrophobic
+    - code: E
+      name: Glutamic Acid
+      position: 9
+      property: negative
+    - code: C
+      name: Cysteine
+      position: 10
+      property: polar
+    - code: T
+      name: Threonine
+      position: 11
+      property: polar
+    - code: L
+      name: Leucine
+      position: 12
+      property: hydrophobic
+    - code: Q
+      name: Glutamine
+      position: 13
+      property: polar
+    - code: E
+      name: Glutamic Acid
+      position: 14
+      property: negative
+    - code: 'N'
+      name: Asparagine
+      position: 15
+      property: polar
+    - code: P
+      name: Proline
+      position: 16
+      property: hydrophobic
+    - code: F
+      name: Phenylalanine
+      position: 17
+      property: hydrophobic
+    - code: F
+      name: Phenylalanine
+      position: 18
+      property: hydrophobic
+    - code: S
+      name: Serine
+      position: 19
+      property: polar
+    - code: Q
+      name: Glutamine
+      position: 20
+      property: polar
 evidenceChainedBenefits:
   - mechanism:
-      action: "LH/hCG receptor (LHCGR) agonism triggering cAMP cascade in ovarian follicles"
-      confidence: "established"
+      action: >-
+        LH/hCG receptor (LHCGR) agonism triggering cAMP cascade in ovarian
+        follicles
+      confidence: established
       directStudies: 17
     benefit:
-      claim: "induce predictable ovulation for assisted reproduction"
-      qualifier: "shown to"
+      claim: induce predictable ovulation for assisted reproduction
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 17
       animalStudies: 5
       cellStudies: 8
       keyFindings:
-        - study: "Youssef MA et al. Cochrane 2014"
-          type: "human-rct"
-          finding: "hCG trigger produces higher live birth rates than GnRH agonist trigger in fresh autologous IVF cycles (17 RCTs, n=1,847)"
-          pmid: "25358904"
-        - study: "European rhCG Study Group 2000"
-          type: "human-rct"
-          finding: "250 mcg recombinant hCG equivalent to 5,000-10,000 IU urinary hCG for ovulation induction (n=228)"
-          pmid: "10875848"
+        - study: Youssef MA et al. Cochrane 2014
+          type: human-rct
+          finding: >-
+            hCG trigger produces higher live birth rates than GnRH agonist
+            trigger in fresh autologous IVF cycles (17 RCTs, n=1,847)
+          pmid: '25358904'
+        - study: European rhCG Study Group 2000
+          type: human-rct
+          finding: >-
+            250 mcg recombinant hCG equivalent to 5,000-10,000 IU urinary hCG
+            for ovulation induction (n=228)
+          pmid: '10875848'
   - mechanism:
-      action: "Leydig cell LHCGR activation stimulating testosterone biosynthesis via StAR and P450 enzymes"
-      confidence: "established"
+      action: >-
+        Leydig cell LHCGR activation stimulating testosterone biosynthesis via
+        StAR and P450 enzymes
+      confidence: established
       directStudies: 8
     benefit:
-      claim: "maintain intratesticular testosterone during TRT"
-      qualifier: "shown to"
+      claim: maintain intratesticular testosterone during TRT
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 5
       animalStudies: 3
       cellStudies: 4
       keyFindings:
-        - study: "Coviello AD et al. 2005"
-          type: "human-rct"
-          finding: "hCG 250 IU every other day maintained intratesticular testosterone at 93% of baseline during testosterone therapy (n=29)"
-          pmid: "15713727"
-        - study: "Hsieh TC et al. 2013"
-          type: "human-observational"
-          finding: "Concomitant hCG preserved spermatogenesis in men on TRT; none became azoospermic during 1-year follow-up (n=26)"
-          pmid: "23260550"
+        - study: Coviello AD et al. 2005
+          type: human-rct
+          finding: >-
+            hCG 250 IU every other day maintained intratesticular testosterone
+            at 93% of baseline during testosterone therapy (n=29)
+          pmid: '15713727'
+        - study: Hsieh TC et al. 2013
+          type: human-observational
+          finding: >-
+            Concomitant hCG preserved spermatogenesis in men on TRT; none became
+            azoospermic during 1-year follow-up (n=26)
+          pmid: '23260550'
   - mechanism:
-      action: "Corpus luteum LHCGR stimulation maintaining progesterone secretion"
-      confidence: "established"
+      action: Corpus luteum LHCGR stimulation maintaining progesterone secretion
+      confidence: established
       directStudies: 12
     benefit:
-      claim: "support early pregnancy through luteal phase"
-      qualifier: "shown to"
+      claim: support early pregnancy through luteal phase
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 12
       animalStudies: 4
       cellStudies: 3
       keyFindings:
-        - study: "Cole LA 2010"
-          type: "human-observational"
-          finding: "hCG maintains corpus luteum progesterone production above 10 ng/mL threshold required for implantation"
-          pmid: "20735820"
-        - study: "Al-Inany HG et al. Cochrane 2005"
-          type: "human-rct"
-          finding: "No significant difference in pregnancy rates between recombinant and urinary hCG for luteal support (n>2,000)"
-          pmid: "15846678"
+        - study: Cole LA 2010
+          type: human-observational
+          finding: >-
+            hCG maintains corpus luteum progesterone production above 10 ng/mL
+            threshold required for implantation
+          pmid: '20735820'
+        - study: Al-Inany HG et al. Cochrane 2005
+          type: human-rct
+          finding: >-
+            No significant difference in pregnancy rates between recombinant and
+            urinary hCG for luteal support (n>2,000)
+          pmid: '15846678'
   - mechanism:
-      action: "LHCGR activation in undescended testes promoting testicular descent"
-      confidence: "supported"
+      action: LHCGR activation in undescended testes promoting testicular descent
+      confidence: supported
       directStudies: 6
     benefit:
-      claim: "treat cryptorchidism in prepubertal males"
-      qualifier: "may"
+      claim: treat cryptorchidism in prepubertal males
+      qualifier: may
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 33
       animalStudies: 2
       cellStudies: 0
       keyFindings:
-        - study: "Pyorala S et al. 1995"
-          type: "human-observational"
-          finding: "Meta-analysis of 33 studies showed ~19% testicular descent rate with hCG treatment"
-          pmid: "7673426"
-        - study: "ASRM Practice Committee 2016"
-          type: "human-observational"
-          finding: "hCG approved for cryptorchidism though surgery (orchiopexy) now preferred as primary treatment"
-          pmid: "27678032"
+        - study: Pyorala S et al. 1995
+          type: human-observational
+          finding: >-
+            Meta-analysis of 33 studies showed ~19% testicular descent rate with
+            hCG treatment
+          pmid: '7673426'
+        - study: ASRM Practice Committee 2016
+          type: human-observational
+          finding: >-
+            hCG approved for cryptorchidism though surgery (orchiopexy) now
+            preferred as primary treatment
+          pmid: '27678032'
 conditions:
-  - slug: "infertility-female"
-    name: "Female Infertility"
-    researchSummary: "hCG is the gold standard ovulation trigger in assisted reproductive technology. Multiple Cochrane reviews confirm its efficacy for inducing final oocyte maturation and predictable ovulation timing. FDA-approved for ovulation induction in anovulatory infertility."
-    relevantStudies: ["25358904", "10875848", "15846678"]
-    relatedPeptides: ["kisspeptin", "gonadorelin"]
-  - slug: "hypogonadism"
-    name: "Male Hypogonadism"
-    researchSummary: "hCG is FDA-approved for hypogonadotropic hypogonadism and is commonly used to maintain fertility during testosterone replacement therapy. Clinical studies demonstrate preservation of intratesticular testosterone and spermatogenesis with concurrent hCG administration."
-    relevantStudies: ["15713727", "23260550", "20735820"]
-    relatedPeptides: ["gonadorelin", "kisspeptin"]
-  - slug: "cryptorchidism"
-    name: "Cryptorchidism"
-    researchSummary: "hCG has FDA approval for cryptorchidism in prepubertal males. While meta-analyses show approximately 19% success rate for testicular descent, surgical orchiopexy is now preferred as first-line treatment due to higher efficacy."
-    relevantStudies: ["7673426", "27678032"]
-    relatedPeptides: ["gonadorelin"]
+  - slug: infertility-female
+    name: Female Infertility
+    researchSummary: >-
+      hCG is the gold standard ovulation trigger in assisted reproductive
+      technology. Multiple Cochrane reviews confirm its efficacy for inducing
+      final oocyte maturation and predictable ovulation timing. FDA-approved for
+      ovulation induction in anovulatory infertility.
+    relevantStudies:
+      - '25358904'
+      - '10875848'
+      - '15846678'
+    relatedPeptides:
+      - kisspeptin
+      - gonadorelin
+  - slug: hypogonadism
+    name: Male Hypogonadism
+    researchSummary: >-
+      hCG is FDA-approved for hypogonadotropic hypogonadism and is commonly used
+      to maintain fertility during testosterone replacement therapy. Clinical
+      studies demonstrate preservation of intratesticular testosterone and
+      spermatogenesis with concurrent hCG administration.
+    relevantStudies:
+      - '15713727'
+      - '23260550'
+      - '20735820'
+    relatedPeptides:
+      - gonadorelin
+      - kisspeptin
+  - slug: cryptorchidism
+    name: Cryptorchidism
+    researchSummary: >-
+      hCG has FDA approval for cryptorchidism in prepubertal males. While
+      meta-analyses show approximately 19% success rate for testicular descent,
+      surgical orchiopexy is now preferred as first-line treatment due to higher
+      efficacy.
+    relevantStudies:
+      - '7673426'
+      - '27678032'
+    relatedPeptides:
+      - gonadorelin
 timeline:
-  - period: "Hours 0-4"
-    effects: "Rapid absorption following subcutaneous or intramuscular injection. Peak serum levels reached within 4-12 hours depending on formulation (recombinant vs urinary-derived)."
-    source: "PMID:10875848"
-  - period: "Hours 36-40"
-    effects: "Ovulation occurs approximately 36-40 hours post-trigger injection in fertility protocols. This predictable timing enables precise scheduling of egg retrieval or timed intercourse."
-    source: "PMID:25358904"
-  - period: "Days 1-7"
-    effects: "Sustained LHCGR stimulation due to 24-36 hour half-life. In males, testosterone elevation persists for several days. Corpus luteum support maintained through this period."
-    source: "PMID:15713727"
-  - period: "Weeks 2-4"
-    effects: "With continued administration in TRT protocols, intratesticular testosterone maintained at near-baseline levels. Spermatogenesis preserved with ongoing treatment."
-    source: "PMID:23260550"
+  - period: Hours 0-4
+    effects: >-
+      Rapid absorption following subcutaneous or intramuscular injection. Peak
+      serum levels reached within 4-12 hours depending on formulation
+      (recombinant vs urinary-derived).
+    source: 'PMID:10875848'
+  - period: Hours 36-40
+    effects: >-
+      Ovulation occurs approximately 36-40 hours post-trigger injection in
+      fertility protocols. This predictable timing enables precise scheduling of
+      egg retrieval or timed intercourse.
+    source: 'PMID:25358904'
+  - period: Days 1-7
+    effects: >-
+      Sustained LHCGR stimulation due to 24-36 hour half-life. In males,
+      testosterone elevation persists for several days. Corpus luteum support
+      maintained through this period.
+    source: 'PMID:15713727'
+  - period: Weeks 2-4
+    effects: >-
+      With continued administration in TRT protocols, intratesticular
+      testosterone maintained at near-baseline levels. Spermatogenesis preserved
+      with ongoing treatment.
+    source: 'PMID:23260550'
 qualityChecklist:
   goodSigns:
-    - "Pharmaceutical-grade product from licensed manufacturer (Pregnyl, Ovidrel, Novarel)"
-    - "Clear solution after reconstitution (urinary-derived) or pre-filled syringe (recombinant)"
-    - "Proper cold chain storage maintained (refrigerated 2-8C)"
-    - "Valid prescription from licensed physician"
-    - "Expiration date clearly visible and not passed"
-    - "Tamper-evident packaging intact"
+    - >-
+      Pharmaceutical-grade product from licensed manufacturer (Pregnyl, Ovidrel,
+      Novarel)
+    - >-
+      Clear solution after reconstitution (urinary-derived) or pre-filled
+      syringe (recombinant)
+    - Proper cold chain storage maintained (refrigerated 2-8C)
+    - Valid prescription from licensed physician
+    - Expiration date clearly visible and not passed
+    - Tamper-evident packaging intact
   warningSigns:
-    - "Compounded hCG from compounding pharmacy (variable quality control)"
-    - "Product stored at room temperature for extended periods"
-    - "Reconstituted solution stored longer than manufacturer recommendations"
-    - "Discount pricing significantly below pharmaceutical cost"
-    - "Online source without prescription requirement"
+    - Compounded hCG from compounding pharmacy (variable quality control)
+    - Product stored at room temperature for extended periods
+    - Reconstituted solution stored longer than manufacturer recommendations
+    - Discount pricing significantly below pharmaceutical cost
+    - Online source without prescription requirement
   badSigns:
-    - "Cloudy or particulate matter visible in solution"
-    - "Product labeled for 'weight loss' or 'homeopathic hCG'"
-    - "No prescription required for purchase"
-    - "Sublingual or oral hCG products (not bioavailable orally)"
-    - "Unknown manufacturer or missing lot numbers"
-    - "Product shipped without temperature control"
+    - Cloudy or particulate matter visible in solution
+    - Product labeled for 'weight loss' or 'homeopathic hCG'
+    - No prescription required for purchase
+    - Sublingual or oral hCG products (not bioavailable orally)
+    - Unknown manufacturer or missing lot numbers
+    - Product shipped without temperature control
+regulatoryStatus:
+  status: approved
+  lastUpdated: '2026-02-18'
+  notes: 'FDA-approved (Pregnyl, Ovidrel) for fertility treatment.'
+ratings:
+  researchDepth: 5
+  globalCoverage: 5
+  mechanismPlausibility: 5
+  overall: 5.0
+  lastReviewed: 2026-02-18T00:00:00.000Z
+  reviewNotes: "FDA-approved glycoprotein hormone with decades of global trials and fully established mechanism."
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

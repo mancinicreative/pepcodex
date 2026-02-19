@@ -1,182 +1,297 @@
 ---
-name: "Mazdutide"
-aliases: ["IBI362", "LY3305677", "Xinermei"]
-category: "metabolic"
-evidenceStrength: "high"
-lastUpdated: 2026-01-22
-comparators: ["semaglutide", "survodutide", "tirzepatide"]
-summary: "A dual GLP-1 and glucagon receptor agonist developed by Innovent/Eli Lilly. NMPA approved in China (2025) for obesity. GLORY-1 trial showed 14.3% weight loss at 48 weeks. DREAMS-3 head-to-head trial demonstrated superiority vs semaglutide for combined diabetes + obesity outcomes."
+name: Mazdutide
+aliases:
+  - IBI362
+  - LY3305677
+  - Xinermei
+category: metabolic
+evidenceStrength: high
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - semaglutide
+  - survodutide
+  - tirzepatide
+summary: >-
+  A dual GLP-1 and glucagon receptor agonist developed by Innovent/Eli Lilly.
+  NMPA approved in China (2025) for obesity. GLORY-1 trial showed 14.3% weight
+  loss at 48 weeks. DREAMS-3 head-to-head trial demonstrated superiority vs
+  semaglutide for combined diabetes + obesity outcomes.
 sources:
   count: 15
   human: 14
   preclinical: 1
   openAccess: 12
-metaTitle: "Mazdutide Evidence Dossier | PepCodex"
-metaDescription: "Comprehensive evidence review of mazdutide (IBI362). GLORY and DREAMS trial data, mechanism of action, NMPA approval status, and clinical citations."
+metaTitle: Mazdutide Evidence Dossier | PepCodex
+metaDescription: >-
+  Comprehensive evidence review of mazdutide (IBI362). GLORY and DREAMS trial
+  data, mechanism of action, NMPA approval status, and clinical citations.
 interactions:
-  - peptide: "semaglutide"
-    type: "avoid"
-    description: "Both are GLP-1 receptor agonists. Combining would duplicate mechanisms and increase risk of severe GI adverse effects and hypoglycemia. No clinical rationale for combination."
-  - peptide: "tirzepatide"
-    type: "avoid"
-    description: "Both target GLP-1 receptors with overlapping mechanisms. Combining incretin therapies is contraindicated due to additive effects and safety concerns."
-  - peptide: "survodutide"
-    type: "avoid"
-    description: "Both are dual GLP-1/glucagon receptor agonists with identical mechanisms. Combination would be redundant and potentially dangerous."
-  - peptide: "bpc-157"
-    type: "caution"
-    description: "Both affect GI function. Mazdutide slows gastric emptying while BPC-157 is gastroprotective. Monitor GI symptoms if combined; interaction data unavailable."
+  - peptide: semaglutide
+    type: avoid
+    description: >-
+      Both are GLP-1 receptor agonists. Combining would duplicate mechanisms and
+      increase risk of severe GI adverse effects and hypoglycemia. No clinical
+      rationale for combination.
+  - peptide: tirzepatide
+    type: avoid
+    description: >-
+      Both target GLP-1 receptors with overlapping mechanisms. Combining
+      incretin therapies is contraindicated due to additive effects and safety
+      concerns.
+  - peptide: survodutide
+    type: avoid
+    description: >-
+      Both are dual GLP-1/glucagon receptor agonists with identical mechanisms.
+      Combination would be redundant and potentially dangerous.
+  - peptide: bpc-157
+    type: caution
+    description: >-
+      Both affect GI function. Mazdutide slows gastric emptying while BPC-157 is
+      gastroprotective. Monitor GI symptoms if combined; interaction data
+      unavailable.
 molecularInfo:
-  weight: "~4,000 Da"
+  weight: '~4,000 Da'
   chainLength: 30
-  type: "Modified peptide"
-  sequence: "Modified GLP-1 analog with fatty acid side chain"
+  type: Modified peptide
+  sequence: Modified GLP-1 analog with fatty acid side chain
   aminoAcids:
-    - { code: "H", name: "Histidine", position: 1, property: "positive" }
-    - { code: "A", name: "Alanine", position: 2, property: "hydrophobic" }
-    - { code: "E", name: "Glutamic Acid", position: 3, property: "negative" }
-    - { code: "G", name: "Glycine", position: 4, property: "polar" }
-    - { code: "T", name: "Threonine", position: 5, property: "polar" }
-    - { code: "F", name: "Phenylalanine", position: 6, property: "hydrophobic" }
-    - { code: "T", name: "Threonine", position: 7, property: "polar" }
-    - { code: "S", name: "Serine", position: 8, property: "polar" }
-    - { code: "D", name: "Aspartic Acid", position: 9, property: "negative" }
-    - { code: "V", name: "Valine", position: 10, property: "hydrophobic" }
+    - code: H
+      name: Histidine
+      position: 1
+      property: positive
+    - code: A
+      name: Alanine
+      position: 2
+      property: hydrophobic
+    - code: E
+      name: Glutamic Acid
+      position: 3
+      property: negative
+    - code: G
+      name: Glycine
+      position: 4
+      property: polar
+    - code: T
+      name: Threonine
+      position: 5
+      property: polar
+    - code: F
+      name: Phenylalanine
+      position: 6
+      property: hydrophobic
+    - code: T
+      name: Threonine
+      position: 7
+      property: polar
+    - code: S
+      name: Serine
+      position: 8
+      property: polar
+    - code: D
+      name: Aspartic Acid
+      position: 9
+      property: negative
+    - code: V
+      name: Valine
+      position: 10
+      property: hydrophobic
 evidenceChainedBenefits:
   - mechanism:
-      action: "GLP-1 receptor activation reducing appetite and improving glycemic control"
-      confidence: "established"
+      action: >-
+        GLP-1 receptor activation reducing appetite and improving glycemic
+        control
+      confidence: established
       directStudies: 12
     benefit:
-      claim: "promote significant weight loss"
-      qualifier: "shown to"
+      claim: promote significant weight loss
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 10
       animalStudies: 2
       cellStudies: 1
       keyFindings:
-        - study: "Ji L et al. NEJM 2025"
-          type: "human-rct"
-          finding: "GLORY-1 trial: 14.3% weight loss at 48 weeks with 6mg dose vs 3.3% placebo"
-          pmid: "39661467"
-        - study: "DREAMS-3 2025"
-          type: "human-rct"
-          finding: "Superior weight loss compared to semaglutide in head-to-head trial"
-          pmid: "39873251"
+        - study: Ji L et al. NEJM 2025
+          type: human-rct
+          finding: >-
+            GLORY-1 trial: 14.3% weight loss at 48 weeks with 6mg dose vs 3.3%
+            placebo
+          pmid: '39661467'
+        - study: DREAMS-3 2025
+          type: human-rct
+          finding: Superior weight loss compared to semaglutide in head-to-head trial
+          pmid: '39873251'
   - mechanism:
-      action: "Glucagon receptor activation increasing hepatic fatty acid oxidation"
-      confidence: "established"
+      action: Glucagon receptor activation increasing hepatic fatty acid oxidation
+      confidence: established
       directStudies: 8
     benefit:
-      claim: "reduce liver fat content"
-      qualifier: "shown to"
+      claim: reduce liver fat content
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 6
       animalStudies: 2
       cellStudies: 2
       keyFindings:
-        - study: "GLORY-1 Liver Substudy 2025"
-          type: "human-rct"
-          finding: "80.2% reduction in liver fat (MRI-PDFF) in patients with baseline liver fat ≥10%"
-          pmid: "39661467"
-        - study: "Innovent ADA 2024"
-          type: "human-observational"
-          finding: "Consistent liver fat reduction across DREAMS and GLORY trial programs"
-          pmid: "38892456"
+        - study: GLORY-1 Liver Substudy 2025
+          type: human-rct
+          finding: >-
+            80.2% reduction in liver fat (MRI-PDFF) in patients with baseline
+            liver fat ≥10%
+          pmid: '39661467'
+        - study: Innovent ADA 2024
+          type: human-observational
+          finding: >-
+            Consistent liver fat reduction across DREAMS and GLORY trial
+            programs
+          pmid: '38892456'
   - mechanism:
-      action: "Dual receptor agonism improving insulin secretion and gluconeogenesis balance"
-      confidence: "established"
+      action: >-
+        Dual receptor agonism improving insulin secretion and gluconeogenesis
+        balance
+      confidence: established
       directStudies: 10
     benefit:
-      claim: "improve glycemic control in type 2 diabetes"
-      qualifier: "shown to"
+      claim: improve glycemic control in type 2 diabetes
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 8
       animalStudies: 2
       cellStudies: 0
       keyFindings:
-        - study: "DREAMS-3 2025"
-          type: "human-rct"
-          finding: "48% achieved combined HbA1c <7% AND ≥10% weight loss vs 21% with semaglutide"
-          pmid: "39873251"
-        - study: "DREAMS-1 2024"
-          type: "human-rct"
-          finding: "Superior HbA1c reduction vs placebo in type 2 diabetes"
-          pmid: "38457892"
+        - study: DREAMS-3 2025
+          type: human-rct
+          finding: >-
+            48% achieved combined HbA1c <7% AND ≥10% weight loss vs 21% with
+            semaglutide
+          pmid: '39873251'
+        - study: DREAMS-1 2024
+          type: human-rct
+          finding: Superior HbA1c reduction vs placebo in type 2 diabetes
+          pmid: '38457892'
   - mechanism:
-      action: "Glucagon-mediated increase in energy expenditure"
-      confidence: "supported"
+      action: Glucagon-mediated increase in energy expenditure
+      confidence: supported
       directStudies: 4
     benefit:
-      claim: "increase metabolic rate"
-      qualifier: "appears to"
+      claim: increase metabolic rate
+      qualifier: appears to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 2
       animalStudies: 3
       cellStudies: 1
       keyFindings:
-        - study: "Innovent Phase 1 2023"
-          type: "human-rct"
-          finding: "Indirect calorimetry showed increased resting energy expenditure"
-          pmid: "37845623"
-        - study: "Preclinical 2022"
-          type: "animal"
-          finding: "Mouse studies demonstrated elevated energy expenditure via brown adipose tissue activation"
-          pmid: "36892341"
+        - study: Innovent Phase 1 2023
+          type: human-rct
+          finding: Indirect calorimetry showed increased resting energy expenditure
+          pmid: '37845623'
+        - study: Preclinical 2022
+          type: animal
+          finding: >-
+            Mouse studies demonstrated elevated energy expenditure via brown
+            adipose tissue activation
+          pmid: '36892341'
 conditions:
-  - slug: "obesity"
-    name: "Obesity"
-    researchSummary: "Mazdutide has robust Phase 3 evidence for obesity treatment. The GLORY-1 trial (N=610) demonstrated 14.3% weight loss at 48 weeks with 6mg dosing, with 64% of participants achieving ≥10% weight loss. NMPA approved in China for weight management in June 2025."
-    relevantStudies: ["39661467", "38892456"]
-    relatedPeptides: ["semaglutide", "tirzepatide"]
-  - slug: "type-2-diabetes"
-    name: "Type 2 Diabetes"
-    researchSummary: "DREAMS trial program showed superior glycemic control. DREAMS-3 head-to-head vs semaglutide demonstrated 2.3x higher success rate for achieving combined HbA1c and weight loss targets. Under regulatory review in China for T2D indication."
-    relevantStudies: ["39873251", "38457892"]
-    relatedPeptides: ["semaglutide", "tirzepatide"]
-  - slug: "nafld"
-    name: "Non-Alcoholic Fatty Liver Disease"
-    researchSummary: "Mazdutide shows exceptional liver fat reduction due to glucagon receptor activation. GLORY-1 substudy demonstrated 80.2% reduction in liver fat (MRI-PDFF) in patients with elevated baseline liver fat, substantially exceeding results seen with GLP-1-only therapies."
-    relevantStudies: ["39661467"]
-    relatedPeptides: ["semaglutide", "survodutide"]
+  - slug: obesity
+    name: Obesity
+    researchSummary: >-
+      Mazdutide has robust Phase 3 evidence for obesity treatment. The GLORY-1
+      trial (N=610) demonstrated 14.3% weight loss at 48 weeks with 6mg dosing,
+      with 64% of participants achieving ≥10% weight loss. NMPA approved in
+      China for weight management in June 2025.
+    relevantStudies:
+      - '39661467'
+      - '38892456'
+    relatedPeptides:
+      - semaglutide
+      - tirzepatide
+  - slug: type-2-diabetes
+    name: Type 2 Diabetes
+    researchSummary: >-
+      DREAMS trial program showed superior glycemic control. DREAMS-3
+      head-to-head vs semaglutide demonstrated 2.3x higher success rate for
+      achieving combined HbA1c and weight loss targets. Under regulatory review
+      in China for T2D indication.
+    relevantStudies:
+      - '39873251'
+      - '38457892'
+    relatedPeptides:
+      - semaglutide
+      - tirzepatide
+  - slug: nafld
+    name: Non-Alcoholic Fatty Liver Disease
+    researchSummary: >-
+      Mazdutide shows exceptional liver fat reduction due to glucagon receptor
+      activation. GLORY-1 substudy demonstrated 80.2% reduction in liver fat
+      (MRI-PDFF) in patients with elevated baseline liver fat, substantially
+      exceeding results seen with GLP-1-only therapies.
+    relevantStudies:
+      - '39661467'
+    relatedPeptides:
+      - semaglutide
+      - survodutide
 timeline:
-  - period: "Week 1-4"
-    effects: "Initial dose titration period. Nausea and GI effects most common during this phase. Early appetite suppression and reduced food intake typically begin within days of first dose."
-    source: "PMID:39661467"
-  - period: "Week 4-12"
-    effects: "Continued dose escalation to target dose. Steady weight loss averaging 1-2% body weight per month. Blood glucose improvements measurable. GI side effects typically diminish."
-    source: "PMID:39661467"
-  - period: "Week 12-24"
-    effects: "Maintenance dosing established. Weight loss continues at consistent rate. Liver fat reduction becomes measurable on imaging. HbA1c improvements reach clinically significant levels."
-    source: "PMID:39661467"
-  - period: "Week 24-48"
-    effects: "Peak efficacy period. GLORY-1 showed 14.3% total body weight loss at 48 weeks. Liver fat reduction of 80% in affected patients. Sustained glycemic control."
-    source: "PMID:39661467"
+  - period: Week 1-4
+    effects: >-
+      Initial dose titration period. Nausea and GI effects most common during
+      this phase. Early appetite suppression and reduced food intake typically
+      begin within days of first dose.
+    source: 'PMID:39661467'
+  - period: Week 4-12
+    effects: >-
+      Continued dose escalation to target dose. Steady weight loss averaging
+      1-2% body weight per month. Blood glucose improvements measurable. GI side
+      effects typically diminish.
+    source: 'PMID:39661467'
+  - period: Week 12-24
+    effects: >-
+      Maintenance dosing established. Weight loss continues at consistent rate.
+      Liver fat reduction becomes measurable on imaging. HbA1c improvements
+      reach clinically significant levels.
+    source: 'PMID:39661467'
+  - period: Week 24-48
+    effects: >-
+      Peak efficacy period. GLORY-1 showed 14.3% total body weight loss at 48
+      weeks. Liver fat reduction of 80% in affected patients. Sustained glycemic
+      control.
+    source: 'PMID:39661467'
 qualityChecklist:
   goodSigns:
-    - "Prescription-only pharmaceutical product from licensed manufacturer"
-    - "Proper cold chain storage maintained"
-    - "Clear, colorless solution in pre-filled pen or vial"
-    - "Intact tamper-evident seal"
-    - "Within expiration date with proper lot number"
-    - "Accompanied by official prescribing information"
+    - Prescription-only pharmaceutical product from licensed manufacturer
+    - Proper cold chain storage maintained
+    - 'Clear, colorless solution in pre-filled pen or vial'
+    - Intact tamper-evident seal
+    - Within expiration date with proper lot number
+    - Accompanied by official prescribing information
   warningSigns:
-    - "Obtained outside regulatory channels"
-    - "Missing batch/lot documentation"
-    - "Unclear storage history"
-    - "Pricing significantly below market rate"
-    - "No prescribing information included"
+    - Obtained outside regulatory channels
+    - Missing batch/lot documentation
+    - Unclear storage history
+    - Pricing significantly below market rate
+    - No prescribing information included
   badSigns:
-    - "Cloudy, discolored, or particulate-containing solution"
-    - "Damaged or previously opened packaging"
-    - "No cold chain verification"
-    - "Missing manufacturer identification"
-    - "Expired product"
-    - "Sourced from unverified or underground suppliers"
+    - 'Cloudy, discolored, or particulate-containing solution'
+    - Damaged or previously opened packaging
+    - No cold chain verification
+    - Missing manufacturer identification
+    - Expired product
+    - Sourced from unverified or underground suppliers
+regulatoryStatus:
+  status: investigational
+  lastUpdated: '2026-02-18'
+  notes: >-
+    Phase 3 clinical trials for obesity and T2D (Innovent Biologics).
+    GLP-1/glucagon dual agonist.
+ratings:
+  researchDepth: 4
+  globalCoverage: 3
+  mechanismPlausibility: 4
+  overall: 4.0
+  lastReviewed: 2026-02-19T00:00:00.000Z
+  reviewNotes: "Phase 3 GLP-1/glucagon dual agonist with strong China-led trial program; trials primarily China-based so global coverage limited, but GLP-1R/GCGR dual mechanism well-characterized."
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

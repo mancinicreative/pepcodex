@@ -1,185 +1,298 @@
 ---
-name: "Hexarelin"
-aliases: ["Examorelin", "HEX", "Growth Hormone Releasing Hexapeptide", "MF-6003", "EP-23905"]
-category: "hormonal"
-evidenceStrength: "moderate"
-lastUpdated: 2026-01-22
-comparators: ["ghrp-2", "ghrp-6", "ipamorelin"]
-summary: "The most potent synthetic GHRP (Growth Hormone Releasing Peptide), a hexapeptide that strongly stimulates GH release via the ghrelin receptor. Notable for cardioprotective effects independent of GH release. Development discontinued due to rapid desensitization with repeated dosing. Italian research leads global investigation."
+name: Hexarelin
+aliases:
+  - Examorelin
+  - HEX
+  - Growth Hormone Releasing Hexapeptide
+  - MF-6003
+  - EP-23905
+category: hormonal
+evidenceStrength: moderate
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - ghrp-2
+  - ghrp-6
+  - ipamorelin
+summary: >-
+  The most potent synthetic GHRP (Growth Hormone Releasing Peptide), a
+  hexapeptide that strongly stimulates GH release via the ghrelin receptor.
+  Notable for cardioprotective effects independent of GH release. Development
+  discontinued due to rapid desensitization with repeated dosing. Italian
+  research leads global investigation.
 sources:
   count: 42
   human: 18
   preclinical: 15
   openAccess: 28
-metaTitle: "Hexarelin Evidence Dossier | PepCodex"
-metaDescription: "Comprehensive evidence review of hexarelin. Most potent GHRP with unique cardioprotective properties. Human trial data, mechanism of action, desensitization profile, and 42 global citations including Italian research leadership."
+metaTitle: Hexarelin Evidence Dossier | PepCodex
+metaDescription: >-
+  Comprehensive evidence review of hexarelin. Most potent GHRP with unique
+  cardioprotective properties. Human trial data, mechanism of action,
+  desensitization profile, and 42 global citations including Italian research
+  leadership.
 interactions:
-  - peptide: "tesamorelin"
-    type: "synergistic"
-    description: "GHRH+GHRP synergy - tesamorelin (GHRH) amplifies hexarelin's (GHRP) GH-releasing effect. However, hexarelin's rapid desensitization limits practical use of this combination."
-    source: "7806864"
-  - peptide: "ghrp-6"
-    type: "avoid"
-    description: "Both are GHRPs acting on the same receptor (GHS-R1a). Combining provides no additional benefit and hexarelin desensitizes faster than GHRP-6."
-  - peptide: "ghrp-2"
-    type: "avoid"
-    description: "Both are GHRPs targeting GHS-R1a. No benefit to combining as they share mechanism. Use one or the other."
-  - peptide: "ipamorelin"
-    type: "avoid"
-    description: "Both GHRPs acting on same receptor. Ipamorelin is more selective with less desensitization; combining offers no advantage."
-  - peptide: "sermorelin"
-    type: "synergistic"
-    description: "Classic GHRH+GHRP synergy. Sermorelin (GHRH) and hexarelin (GHRP) produce greater GH release than either alone."
-  - peptide: "bpc-157"
-    type: "compatible"
-    description: "Different mechanisms - hexarelin for GH release, BPC-157 for tissue repair. No known interactions."
+  - peptide: tesamorelin
+    type: synergistic
+    description: >-
+      GHRH+GHRP synergy - tesamorelin (GHRH) amplifies hexarelin's (GHRP)
+      GH-releasing effect. However, hexarelin's rapid desensitization limits
+      practical use of this combination.
+    source: '7806864'
+  - peptide: ghrp-6
+    type: avoid
+    description: >-
+      Both are GHRPs acting on the same receptor (GHS-R1a). Combining provides
+      no additional benefit and hexarelin desensitizes faster than GHRP-6.
+  - peptide: ghrp-2
+    type: avoid
+    description: >-
+      Both are GHRPs targeting GHS-R1a. No benefit to combining as they share
+      mechanism. Use one or the other.
+  - peptide: ipamorelin
+    type: avoid
+    description: >-
+      Both GHRPs acting on same receptor. Ipamorelin is more selective with less
+      desensitization; combining offers no advantage.
+  - peptide: sermorelin
+    type: synergistic
+    description: >-
+      Classic GHRH+GHRP synergy. Sermorelin (GHRH) and hexarelin (GHRP) produce
+      greater GH release than either alone.
+  - peptide: bpc-157
+    type: compatible
+    description: >-
+      Different mechanisms - hexarelin for GH release, BPC-157 for tissue
+      repair. No known interactions.
 molecularInfo:
-  weight: "887.04 Da"
+  weight: 887.04 Da
   chainLength: 6
-  type: "Hexapeptide (Growth Hormone Releasing Peptide)"
-  sequence: "His-D-2MeTrp-Ala-Trp-D-Phe-Lys-NH2"
+  type: Hexapeptide (Growth Hormone Releasing Peptide)
+  sequence: His-D-2MeTrp-Ala-Trp-D-Phe-Lys-NH2
   aminoAcids:
-    - { code: "H", name: "Histidine", position: 1, property: "positive" }
-    - { code: "W*", name: "D-2-Methyltryptophan", position: 2, property: "hydrophobic" }
-    - { code: "A", name: "Alanine", position: 3, property: "hydrophobic" }
-    - { code: "W", name: "Tryptophan", position: 4, property: "hydrophobic" }
-    - { code: "F*", name: "D-Phenylalanine", position: 5, property: "hydrophobic" }
-    - { code: "K", name: "Lysine", position: 6, property: "positive" }
+    - code: H
+      name: Histidine
+      position: 1
+      property: positive
+    - code: W*
+      name: D-2-Methyltryptophan
+      position: 2
+      property: hydrophobic
+    - code: A
+      name: Alanine
+      position: 3
+      property: hydrophobic
+    - code: W
+      name: Tryptophan
+      position: 4
+      property: hydrophobic
+    - code: F*
+      name: D-Phenylalanine
+      position: 5
+      property: hydrophobic
+    - code: K
+      name: Lysine
+      position: 6
+      property: positive
 evidenceChainedBenefits:
   - mechanism:
-      action: "GHS-R1a (ghrelin receptor) agonism triggering pituitary GH secretion"
-      confidence: "established"
+      action: GHS-R1a (ghrelin receptor) agonism triggering pituitary GH secretion
+      confidence: established
       directStudies: 18
     benefit:
-      claim: "stimulate acute growth hormone release"
-      qualifier: "shown to"
+      claim: stimulate acute growth hormone release
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 12
       animalStudies: 8
       cellStudies: 4
       keyFindings:
-        - study: "Ghigo E et al. 1994"
-          type: "human-rct"
-          finding: "Hexarelin produced GH response approximately 2x greater than GHRP-6 in healthy volunteers"
-          pmid: "7806864"
-        - study: "Arvat E et al. 1994"
-          type: "human-rct"
-          finding: "Subcutaneous administration achieved 85-95% of IV GH response, establishing practical dosing"
-          pmid: "7809041"
+        - study: Ghigo E et al. 1994
+          type: human-rct
+          finding: >-
+            Hexarelin produced GH response approximately 2x greater than GHRP-6
+            in healthy volunteers
+          pmid: '7806864'
+        - study: Arvat E et al. 1994
+          type: human-rct
+          finding: >-
+            Subcutaneous administration achieved 85-95% of IV GH response,
+            establishing practical dosing
+          pmid: '7809041'
   - mechanism:
-      action: "CD36 receptor binding on cardiomyocytes activating PPAR-gamma and anti-apoptotic pathways"
-      confidence: "supported"
+      action: >-
+        CD36 receptor binding on cardiomyocytes activating PPAR-gamma and
+        anti-apoptotic pathways
+      confidence: supported
       directStudies: 8
     benefit:
-      claim: "protect cardiac tissue from ischemia-reperfusion injury"
-      qualifier: "appears to"
+      claim: protect cardiac tissue from ischemia-reperfusion injury
+      qualifier: appears to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 2
       animalStudies: 6
       cellStudies: 4
       keyFindings:
-        - study: "Broglio F et al. 2002"
-          type: "human-observational"
-          finding: "Acute hexarelin administration improved left ventricular ejection fraction before GH peak"
-          pmid: "11916712"
-        - study: "Tivesten A et al. 2000"
-          type: "animal"
-          finding: "40% reduction in infarct size in rat ischemia-reperfusion model"
-          pmid: "10866686"
-        - study: "Locatelli V et al. 1999"
-          type: "animal"
-          finding: "Positive inotropic effects demonstrated independent of GH release"
-          pmid: "10516699"
+        - study: Broglio F et al. 2002
+          type: human-observational
+          finding: >-
+            Acute hexarelin administration improved left ventricular ejection
+            fraction before GH peak
+          pmid: '11916712'
+        - study: Tivesten A et al. 2000
+          type: animal
+          finding: 40% reduction in infarct size in rat ischemia-reperfusion model
+          pmid: '10866686'
+        - study: Locatelli V et al. 1999
+          type: animal
+          finding: Positive inotropic effects demonstrated independent of GH release
+          pmid: '10516699'
   - mechanism:
-      action: "GHS-R1a receptor internalization and downregulation with repeated agonist exposure"
-      confidence: "established"
+      action: >-
+        GHS-R1a receptor internalization and downregulation with repeated
+        agonist exposure
+      confidence: established
       directStudies: 5
     benefit:
-      claim: "cause rapid desensitization limiting chronic therapeutic use"
-      qualifier: "shown to"
+      claim: cause rapid desensitization limiting chronic therapeutic use
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 4
       animalStudies: 3
       cellStudies: 2
       keyFindings:
-        - study: "Rahim A et al. 1998"
-          type: "human-rct"
-          finding: "GH response decreased 50-80% within 4-7 days of daily dosing; no sustained IGF-1 elevation"
-          pmid: "9636063"
-        - study: "Arvat E et al. 1997"
-          type: "human-observational"
-          finding: "Systematic comparison showed hexarelin desensitizes faster than GHRP-6 and GHRP-2"
-          pmid: "9285939"
+        - study: Rahim A et al. 1998
+          type: human-rct
+          finding: >-
+            GH response decreased 50-80% within 4-7 days of daily dosing; no
+            sustained IGF-1 elevation
+          pmid: '9636063'
+        - study: Arvat E et al. 1997
+          type: human-observational
+          finding: >-
+            Systematic comparison showed hexarelin desensitizes faster than
+            GHRP-6 and GHRP-2
+          pmid: '9285939'
   - mechanism:
-      action: "Hypothalamic GHRH neuron activation amplifying pituitary GH response"
-      confidence: "supported"
+      action: Hypothalamic GHRH neuron activation amplifying pituitary GH response
+      confidence: supported
       directStudies: 4
     benefit:
-      claim: "enhance slow-wave sleep architecture"
-      qualifier: "may"
+      claim: enhance slow-wave sleep architecture
+      qualifier: may
     evidence:
-      level: "low"
+      level: low
       humanStudies: 2
       animalStudies: 3
       cellStudies: 0
       keyFindings:
-        - study: "Frieboes RM et al. 1999"
-          type: "human-rct"
-          finding: "IV hexarelin during sleep increased slow-wave sleep with transient ACTH/cortisol rise"
-          pmid: "10447775"
+        - study: Frieboes RM et al. 1999
+          type: human-rct
+          finding: >-
+            IV hexarelin during sleep increased slow-wave sleep with transient
+            ACTH/cortisol rise
+          pmid: '10447775'
 conditions:
-  - slug: "growth-hormone-stimulation"
-    name: "Growth Hormone Stimulation"
-    researchSummary: "Hexarelin is the most potent synthetic GHRP for acute GH release. Human studies showed GH responses approximately 2x greater than GHRP-6. However, rapid desensitization (50-80% reduction within 4-7 days) ended pharmaceutical development for chronic use."
-    relevantStudies: ["7806864", "7809041"]
-    relatedPeptides: ["ghrp-6", "ghrp-2", "ipamorelin"]
-  - slug: "cardioprotection"
-    name: "Cardioprotection"
-    researchSummary: "Hexarelin exhibits unique cardioprotective effects via CD36 receptor binding, independent of GH release. Animal studies showed 40% reduction in infarct size. Human studies demonstrated improved LVEF before GH peak. This GH-independent cardiac benefit distinguishes hexarelin from other GHRPs."
-    relevantStudies: ["11916712", "10866686", "10516699"]
+  - slug: growth-hormone-stimulation
+    name: Growth Hormone Stimulation
+    researchSummary: >-
+      Hexarelin is the most potent synthetic GHRP for acute GH release. Human
+      studies showed GH responses approximately 2x greater than GHRP-6. However,
+      rapid desensitization (50-80% reduction within 4-7 days) ended
+      pharmaceutical development for chronic use.
+    relevantStudies:
+      - '7806864'
+      - '7809041'
+    relatedPeptides:
+      - ghrp-6
+      - ghrp-2
+      - ipamorelin
+  - slug: cardioprotection
+    name: Cardioprotection
+    researchSummary: >-
+      Hexarelin exhibits unique cardioprotective effects via CD36 receptor
+      binding, independent of GH release. Animal studies showed 40% reduction in
+      infarct size. Human studies demonstrated improved LVEF before GH peak.
+      This GH-independent cardiac benefit distinguishes hexarelin from other
+      GHRPs.
+    relevantStudies:
+      - '11916712'
+      - '10866686'
+      - '10516699'
     relatedPeptides: []
-  - slug: "sleep-enhancement"
-    name: "Sleep Enhancement"
-    researchSummary: "IV hexarelin during sleep increased slow-wave sleep in human studies, though with transient ACTH and cortisol elevation. This effect relates to GH's role in sleep architecture but is limited by the desensitization issue."
-    relevantStudies: ["10447775"]
-    relatedPeptides: ["dsip", "sermorelin"]
+  - slug: sleep-enhancement
+    name: Sleep Enhancement
+    researchSummary: >-
+      IV hexarelin during sleep increased slow-wave sleep in human studies,
+      though with transient ACTH and cortisol elevation. This effect relates to
+      GH's role in sleep architecture but is limited by the desensitization
+      issue.
+    relevantStudies:
+      - '10447775'
+    relatedPeptides:
+      - dsip
+      - sermorelin
 timeline:
-  - period: "Acute (minutes to hours)"
-    effects: "Based on human studies: GH peak occurs 15-30 minutes after subcutaneous or IV administration. GH response is approximately 2x greater than GHRP-6. Single-dose effects are potent and reliable."
-    source: "PMID:7806864"
-  - period: "Days 1-4"
-    effects: "Initial doses maintain strong GH response. Subcutaneous administration achieves 85-95% of IV GH response. Cardioprotective effects may occur with each dose independent of GH status."
-    source: "PMID:7809041"
-  - period: "Days 4-7"
-    effects: "Desensitization begins. GH response decreases 50-80% from initial levels. No sustained IGF-1 elevation achieved. This rapid tolerance ended pharmaceutical development."
-    source: "PMID:9636063"
-  - period: "Week 2+"
-    effects: "Continued daily dosing produces minimal GH response. Recovery of sensitivity requires extended washout period. This desensitization profile makes hexarelin unsuitable for chronic therapy."
-    source: "PMID:9285939"
+  - period: Acute (minutes to hours)
+    effects: >-
+      Based on human studies: GH peak occurs 15-30 minutes after subcutaneous or
+      IV administration. GH response is approximately 2x greater than GHRP-6.
+      Single-dose effects are potent and reliable.
+    source: 'PMID:7806864'
+  - period: Days 1-4
+    effects: >-
+      Initial doses maintain strong GH response. Subcutaneous administration
+      achieves 85-95% of IV GH response. Cardioprotective effects may occur with
+      each dose independent of GH status.
+    source: 'PMID:7809041'
+  - period: Days 4-7
+    effects: >-
+      Desensitization begins. GH response decreases 50-80% from initial levels.
+      No sustained IGF-1 elevation achieved. This rapid tolerance ended
+      pharmaceutical development.
+    source: 'PMID:9636063'
+  - period: Week 2+
+    effects: >-
+      Continued daily dosing produces minimal GH response. Recovery of
+      sensitivity requires extended washout period. This desensitization profile
+      makes hexarelin unsuitable for chronic therapy.
+    source: 'PMID:9285939'
 qualityChecklist:
   goodSigns:
-    - "White lyophilized powder"
-    - "Complete dissolution in bacteriostatic water"
-    - "Clear, colorless solution after reconstitution"
-    - "Certificate of analysis showing >98% purity"
-    - "HPLC and mass spectrometry verification"
-    - "Proper vacuum seal on vial"
+    - White lyophilized powder
+    - Complete dissolution in bacteriostatic water
+    - 'Clear, colorless solution after reconstitution'
+    - Certificate of analysis showing >98% purity
+    - HPLC and mass spectrometry verification
+    - Proper vacuum seal on vial
   warningSigns:
-    - "Off-white coloration of powder"
-    - "Slow dissolution time"
-    - "No third-party testing verification"
-    - "Purity between 95-98%"
-    - "Unclear manufacturing source"
+    - Off-white coloration of powder
+    - Slow dissolution time
+    - No third-party testing verification
+    - Purity between 95-98%
+    - Unclear manufacturing source
   badSigns:
-    - "Yellow or brown discoloration"
-    - "Visible particles after reconstitution"
-    - "Cloudy solution"
-    - "No certificate of analysis"
-    - "Unusual odor"
-    - "Compromised seal or packaging"
+    - Yellow or brown discoloration
+    - Visible particles after reconstitution
+    - Cloudy solution
+    - No certificate of analysis
+    - Unusual odor
+    - Compromised seal or packaging
+regulatoryStatus:
+  status: research-only
+  lastUpdated: '2026-02-18'
+  notes: >-
+    Not FDA-approved. Growth hormone secretagogue. Limited clinical research,
+    some cardioprotective studies.
+ratings:
+  researchDepth: 3
+  globalCoverage: 2
+  mechanismPlausibility: 3
+  overall: 2.5
+  lastReviewed: 2026-02-19T00:00:00.000Z
+  reviewNotes: "Moderate clinical body led primarily by Italian research groups; cardioprotective mechanism via CD36 is well-characterized but global trial diversity is limited."
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

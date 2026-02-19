@@ -1,164 +1,293 @@
 ---
-name: "HMG"
-aliases: ["Human Menopausal Gonadotropin", "Menotropins", "hMG", "Menopur", "Pergonal", "Repronex", "HP-hMG"]
-category: "hormonal"
-compoundType: "glycoprotein"
-evidenceStrength: "high"
-lastUpdated: 2026-01-22
-comparators: ["hCG", "FSH", "clomiphene", "recombinant FSH", "letrozole"]
-summary: "A urinary-derived glycoprotein hormone preparation containing both FSH and LH in approximately 1:1 ratio, FDA-approved for female infertility (ovulation induction, ART) and male hypogonadotropic hypogonadism. First used clinically in 1961 by Bruno Lunenfeld, HMG enabled the birth of the first American IVF baby in 1981 and remains a cornerstone of fertility medicine with over 60 years of clinical experience. Highly purified preparations (HP-hMG) demonstrate comparable or slightly superior live birth rates compared to recombinant FSH in IVF."
+name: HMG
+aliases:
+  - Human Menopausal Gonadotropin
+  - Menotropins
+  - hMG
+  - Menopur
+  - Pergonal
+  - Repronex
+  - HP-hMG
+category: hormonal
+compoundType: glycoprotein
+evidenceStrength: high
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - hCG
+  - FSH
+  - clomiphene
+  - recombinant FSH
+  - letrozole
+summary: >-
+  A urinary-derived glycoprotein hormone preparation containing both FSH and LH
+  in approximately 1:1 ratio, FDA-approved for female infertility (ovulation
+  induction, ART) and male hypogonadotropic hypogonadism. First used clinically
+  in 1961 by Bruno Lunenfeld, HMG enabled the birth of the first American IVF
+  baby in 1981 and remains a cornerstone of fertility medicine with over 60
+  years of clinical experience. Highly purified preparations (HP-hMG)
+  demonstrate comparable or slightly superior live birth rates compared to
+  recombinant FSH in IVF.
 sources:
   count: 52
   human: 44
   preclinical: 8
   openAccess: 38
-metaTitle: "HMG (Human Menopausal Gonadotropin) Evidence Dossier | PepCodex"
-metaDescription: "Comprehensive evidence review of HMG/Menotropins (Menopur, Pergonal). FDA-approved fertility hormone, mechanism of action, clinical trial data including IVF outcomes, safety profile including OHSS risk, and 52+ global citations."
+metaTitle: HMG (Human Menopausal Gonadotropin) Evidence Dossier | PepCodex
+metaDescription: >-
+  Comprehensive evidence review of HMG/Menotropins (Menopur, Pergonal).
+  FDA-approved fertility hormone, mechanism of action, clinical trial data
+  including IVF outcomes, safety profile including OHSS risk, and 52+ global
+  citations.
 interactions:
-  - peptide: "hCG"
-    type: "synergistic"
-    description: "Standard clinical combination. HMG provides FSH/LH for follicular development while hCG triggers final oocyte maturation. Well-established protocol in fertility medicine with decades of combined use data."
-  - peptide: "gonadorelin"
-    type: "synergistic"
-    description: "GnRH agonists used in long protocols to prevent premature LH surge during HMG stimulation. Established clinical combination for controlled ovarian hyperstimulation."
-  - peptide: "kisspeptin"
-    type: "compatible"
-    description: "Kisspeptin acts upstream on GnRH neurons. Emerging research on kisspeptin for oocyte maturation trigger as alternative to hCG. No direct interaction concerns with HMG."
-  - peptide: "growth-hormone"
-    type: "compatible"
-    description: "GH co-treatment studied as adjuvant in poor responders to gonadotropins. May improve ovarian response to HMG in certain patient populations. Limited interaction data."
-  - peptide: "semaglutide"
-    type: "caution"
-    description: "GLP-1 agonists affect reproductive hormones. Weight loss from semaglutide may improve fertility outcomes, but direct interactions with gonadotropins not well characterized."
-  - peptide: "testosterone"
-    type: "avoid"
-    description: "Exogenous testosterone suppresses gonadotropin axis and impairs spermatogenesis. Contraindicated during HMG therapy for male infertility; must discontinue testosterone before initiating HMG."
+  - peptide: hCG
+    type: synergistic
+    description: >-
+      Standard clinical combination. HMG provides FSH/LH for follicular
+      development while hCG triggers final oocyte maturation. Well-established
+      protocol in fertility medicine with decades of combined use data.
+  - peptide: gonadorelin
+    type: synergistic
+    description: >-
+      GnRH agonists used in long protocols to prevent premature LH surge during
+      HMG stimulation. Established clinical combination for controlled ovarian
+      hyperstimulation.
+  - peptide: kisspeptin
+    type: compatible
+    description: >-
+      Kisspeptin acts upstream on GnRH neurons. Emerging research on kisspeptin
+      for oocyte maturation trigger as alternative to hCG. No direct interaction
+      concerns with HMG.
+  - peptide: growth-hormone
+    type: compatible
+    description: >-
+      GH co-treatment studied as adjuvant in poor responders to gonadotropins.
+      May improve ovarian response to HMG in certain patient populations.
+      Limited interaction data.
+  - peptide: semaglutide
+    type: caution
+    description: >-
+      GLP-1 agonists affect reproductive hormones. Weight loss from semaglutide
+      may improve fertility outcomes, but direct interactions with gonadotropins
+      not well characterized.
+  - peptide: testosterone
+    type: avoid
+    description: >-
+      Exogenous testosterone suppresses gonadotropin axis and impairs
+      spermatogenesis. Contraindicated during HMG therapy for male infertility;
+      must discontinue testosterone before initiating HMG.
 molecularInfo:
-  weight: "~30,000 Da (FSH) + ~28,000 Da (LH)"
+  weight: '~30,000 Da (FSH) + ~28,000 Da (LH)'
   chainLength: 203
-  type: "Glycoprotein Hormone Mixture"
-  sequence: "Heterodimeric complex (alpha + beta subunits)"
+  type: Glycoprotein Hormone Mixture
+  sequence: Heterodimeric complex (alpha + beta subunits)
   aminoAcids:
-    - { code: "alpha", name: "Common Alpha Subunit", position: 1, property: "polar" }
-    - { code: "FSH-beta", name: "FSH Beta Subunit (111 aa)", position: 2, property: "polar" }
-    - { code: "LH-beta", name: "LH Beta Subunit (121 aa)", position: 3, property: "polar" }
-    - { code: "Cys", name: "Cysteine (disulfide bonds)", position: 4, property: "hydrophobic" }
-    - { code: "Asn", name: "Asparagine (N-glycosylation)", position: 5, property: "polar" }
-    - { code: "Ser", name: "Serine (O-glycosylation)", position: 6, property: "polar" }
+    - code: alpha
+      name: Common Alpha Subunit
+      position: 1
+      property: polar
+    - code: FSH-beta
+      name: FSH Beta Subunit (111 aa)
+      position: 2
+      property: polar
+    - code: LH-beta
+      name: LH Beta Subunit (121 aa)
+      position: 3
+      property: polar
+    - code: Cys
+      name: Cysteine (disulfide bonds)
+      position: 4
+      property: hydrophobic
+    - code: Asn
+      name: Asparagine (N-glycosylation)
+      position: 5
+      property: polar
+    - code: Ser
+      name: Serine (O-glycosylation)
+      position: 6
+      property: polar
 evidenceChainedBenefits:
   - mechanism:
-      action: "FSH receptor activation on granulosa/Sertoli cells via cAMP/PKA pathway"
-      confidence: "established"
+      action: FSH receptor activation on granulosa/Sertoli cells via cAMP/PKA pathway
+      confidence: established
       directStudies: 42
     benefit:
-      claim: "induce follicular development and support spermatogenesis"
-      qualifier: "shown to"
+      claim: induce follicular development and support spermatogenesis
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 38
       animalStudies: 4
       cellStudies: 6
       keyFindings:
-        - study: "van Wely M et al. Cochrane Database Syst Rev 2011"
-          type: "human-rct"
-          finding: "Meta-analysis of 42 RCTs with 9,606 women showed HMG associated with significantly higher live birth rates than rFSH (OR 0.84, 95% CI 0.72-0.99)"
-          pmid: "21328277"
-        - study: "Andersen AN et al. Hum Reprod 2006"
-          type: "human-rct"
-          finding: "HP-hMG produced 11.3% top-quality embryos vs 9.0% with rFSH; IVF subgroup showed 31% vs 20% ongoing pregnancy rate"
-          pmid: "16873892"
+        - study: van Wely M et al. Cochrane Database Syst Rev 2011
+          type: human-rct
+          finding: >-
+            Meta-analysis of 42 RCTs with 9,606 women showed HMG associated with
+            significantly higher live birth rates than rFSH (OR 0.84, 95% CI
+            0.72-0.99)
+          pmid: '21328277'
+        - study: Andersen AN et al. Hum Reprod 2006
+          type: human-rct
+          finding: >-
+            HP-hMG produced 11.3% top-quality embryos vs 9.0% with rFSH; IVF
+            subgroup showed 31% vs 20% ongoing pregnancy rate
+          pmid: '16873892'
   - mechanism:
-      action: "LH/hCG receptor activation on theca/Leydig cells stimulating steroidogenesis"
-      confidence: "established"
+      action: >-
+        LH/hCG receptor activation on theca/Leydig cells stimulating
+        steroidogenesis
+      confidence: established
       directStudies: 28
     benefit:
-      claim: "restore testosterone production and support oocyte maturation"
-      qualifier: "shown to"
+      claim: restore testosterone production and support oocyte maturation
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 24
       animalStudies: 4
       cellStudies: 5
       keyFindings:
-        - study: "Burris AS et al. JCEM 1988"
-          type: "human-observational"
-          finding: "92% of hypogonadotropic men achieved spermatogenesis with hCG/HMG therapy; prior androgen treatment did not adversely affect outcomes"
-          pmid: "3928676"
-        - study: "Coomarasamy A et al. Hum Reprod 2008"
-          type: "human-rct"
-          finding: "Meta-analysis of 7 RCTs (2,159 women) showed 18% relative increase in live birth rate with HMG vs rFSH (RR 1.18, 95% CI 1.02-1.38)"
-          pmid: "18056719"
+        - study: Burris AS et al. JCEM 1988
+          type: human-observational
+          finding: >-
+            92% of hypogonadotropic men achieved spermatogenesis with hCG/HMG
+            therapy; prior androgen treatment did not adversely affect outcomes
+          pmid: '3928676'
+        - study: Coomarasamy A et al. Hum Reprod 2008
+          type: human-rct
+          finding: >-
+            Meta-analysis of 7 RCTs (2,159 women) showed 18% relative increase
+            in live birth rate with HMG vs rFSH (RR 1.18, 95% CI 1.02-1.38)
+          pmid: '18056719'
   - mechanism:
-      action: "Two-cell, two-gonadotropin model enabling physiologic estrogen synthesis"
-      confidence: "established"
+      action: 'Two-cell, two-gonadotropin model enabling physiologic estrogen synthesis'
+      confidence: established
       directStudies: 15
     benefit:
-      claim: "optimize ovarian stimulation for IVF outcomes"
-      qualifier: "appears to"
+      claim: optimize ovarian stimulation for IVF outcomes
+      qualifier: appears to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 12
       animalStudies: 3
       cellStudies: 4
       keyFindings:
-        - study: "Devroey P et al. Hum Reprod 2012"
-          type: "human-rct"
-          finding: "HP-hMG demonstrated non-inferiority to rFSH in GnRH antagonist cycles with 30% vs 27% ongoing pregnancy rates"
-          pmid: "22244781"
-        - study: "Al-Inany HG et al. Reprod Biomed Online 2009"
-          type: "human-rct"
-          finding: "HP-hMG showed 3-4% higher live birth rate vs rFSH in long agonist protocols; benefit most pronounced in IVF cycles"
-          pmid: "19340668"
+        - study: Devroey P et al. Hum Reprod 2012
+          type: human-rct
+          finding: >-
+            HP-hMG demonstrated non-inferiority to rFSH in GnRH antagonist
+            cycles with 30% vs 27% ongoing pregnancy rates
+          pmid: '22244781'
+        - study: Al-Inany HG et al. Reprod Biomed Online 2009
+          type: human-rct
+          finding: >-
+            HP-hMG showed 3-4% higher live birth rate vs rFSH in long agonist
+            protocols; benefit most pronounced in IVF cycles
+          pmid: '19340668'
 conditions:
-  - slug: "female-infertility"
-    name: "Female Infertility"
-    researchSummary: "HMG is FDA-approved for ovulation induction in anovulatory women and controlled ovarian hyperstimulation for IVF. Cochrane meta-analysis of 42 RCTs (9,606 women) demonstrated significantly higher live birth rates compared to recombinant FSH. Highly purified HMG (HP-hMG) shows particular benefit in conventional IVF cycles."
-    relevantStudies: ["21328277", "16873892", "18056719"]
-    relatedPeptides: ["hCG", "gonadorelin"]
-  - slug: "male-hypogonadotropic-hypogonadism"
-    name: "Male Hypogonadotropic Hypogonadism"
-    researchSummary: "FDA-approved indication. Combined hCG/HMG therapy achieves spermatogenesis in 92% of men with hypogonadotropic hypogonadism. Treatment typically begins with hCG to restore testosterone, then adds HMG to stimulate spermatogenesis via Sertoli cell FSH receptors."
-    relevantStudies: ["3928676", "2892728", "19104659"]
-    relatedPeptides: ["hCG", "gonadorelin"]
-  - slug: "ivf-outcomes"
-    name: "IVF Outcomes"
-    researchSummary: "Multiple RCTs and meta-analyses show HP-hMG produces comparable or superior outcomes to recombinant FSH in IVF. The MEGASET-HR trial and others demonstrate 30% vs 27% ongoing pregnancy rates. The LH component may improve oocyte quality through more physiologic steroidogenesis."
-    relevantStudies: ["22244781", "19340668", "16873892"]
-    relatedPeptides: ["hCG", "growth-hormone"]
+  - slug: female-infertility
+    name: Female Infertility
+    researchSummary: >-
+      HMG is FDA-approved for ovulation induction in anovulatory women and
+      controlled ovarian hyperstimulation for IVF. Cochrane meta-analysis of 42
+      RCTs (9,606 women) demonstrated significantly higher live birth rates
+      compared to recombinant FSH. Highly purified HMG (HP-hMG) shows particular
+      benefit in conventional IVF cycles.
+    relevantStudies:
+      - '21328277'
+      - '16873892'
+      - '18056719'
+    relatedPeptides:
+      - hCG
+      - gonadorelin
+  - slug: male-hypogonadotropic-hypogonadism
+    name: Male Hypogonadotropic Hypogonadism
+    researchSummary: >-
+      FDA-approved indication. Combined hCG/HMG therapy achieves spermatogenesis
+      in 92% of men with hypogonadotropic hypogonadism. Treatment typically
+      begins with hCG to restore testosterone, then adds HMG to stimulate
+      spermatogenesis via Sertoli cell FSH receptors.
+    relevantStudies:
+      - '3928676'
+      - '2892728'
+      - '19104659'
+    relatedPeptides:
+      - hCG
+      - gonadorelin
+  - slug: ivf-outcomes
+    name: IVF Outcomes
+    researchSummary: >-
+      Multiple RCTs and meta-analyses show HP-hMG produces comparable or
+      superior outcomes to recombinant FSH in IVF. The MEGASET-HR trial and
+      others demonstrate 30% vs 27% ongoing pregnancy rates. The LH component
+      may improve oocyte quality through more physiologic steroidogenesis.
+    relevantStudies:
+      - '22244781'
+      - '19340668'
+      - '16873892'
+    relatedPeptides:
+      - hCG
+      - growth-hormone
 timeline:
-  - period: "Day 1-5"
-    effects: "Initial follicular recruitment phase. HMG administration typically begins cycle day 2-3. FSH component rescues cohort of antral follicles from atresia. Baseline ultrasound confirms no residual cysts."
-    source: "PMID:21328277"
-  - period: "Day 5-10"
-    effects: "Active follicular growth phase. Dominant follicles emerge and grow 1-2mm daily. Estradiol rises progressively. Dose adjustments based on ovarian response. Monitoring with serial ultrasound and estradiol levels."
-    source: "PMID:16873892"
-  - period: "Day 10-14"
-    effects: "Final maturation phase. Lead follicles reach 17-20mm diameter. Estradiol typically 200-300 pg/mL per mature follicle. hCG trigger administered when criteria met. Egg retrieval 34-36 hours after trigger."
-    source: "PMID:22244781"
-  - period: "Male therapy: Month 1-6"
-    effects: "In hypogonadotropic hypogonadism, hCG monotherapy first normalizes testosterone (typically 3 months). HMG then added at 75-150 IU 2-3x weekly. Spermatogenesis initiation takes 3-6 months; optimal sperm counts may require 12-24 months."
-    source: "PMID:3928676"
+  - period: Day 1-5
+    effects: >-
+      Initial follicular recruitment phase. HMG administration typically begins
+      cycle day 2-3. FSH component rescues cohort of antral follicles from
+      atresia. Baseline ultrasound confirms no residual cysts.
+    source: 'PMID:21328277'
+  - period: Day 5-10
+    effects: >-
+      Active follicular growth phase. Dominant follicles emerge and grow 1-2mm
+      daily. Estradiol rises progressively. Dose adjustments based on ovarian
+      response. Monitoring with serial ultrasound and estradiol levels.
+    source: 'PMID:16873892'
+  - period: Day 10-14
+    effects: >-
+      Final maturation phase. Lead follicles reach 17-20mm diameter. Estradiol
+      typically 200-300 pg/mL per mature follicle. hCG trigger administered when
+      criteria met. Egg retrieval 34-36 hours after trigger.
+    source: 'PMID:22244781'
+  - period: 'Male therapy: Month 1-6'
+    effects: >-
+      In hypogonadotropic hypogonadism, hCG monotherapy first normalizes
+      testosterone (typically 3 months). HMG then added at 75-150 IU 2-3x
+      weekly. Spermatogenesis initiation takes 3-6 months; optimal sperm counts
+      may require 12-24 months.
+    source: 'PMID:3928676'
 qualityChecklist:
   goodSigns:
-    - "Pharmaceutical-grade product from licensed manufacturer (Menopur, Repronex)"
-    - "Clear expiration date and lot number on packaging"
-    - "Lyophilized powder reconstitutes completely in provided diluent"
-    - "Clear, colorless solution after reconstitution"
-    - "Proper storage at 2-8°C or room temperature per manufacturer"
-    - "Intact vial seal and tamper-evident packaging"
+    - >-
+      Pharmaceutical-grade product from licensed manufacturer (Menopur,
+      Repronex)
+    - Clear expiration date and lot number on packaging
+    - Lyophilized powder reconstitutes completely in provided diluent
+    - 'Clear, colorless solution after reconstitution'
+    - Proper storage at 2-8°C or room temperature per manufacturer
+    - Intact vial seal and tamper-evident packaging
   warningSigns:
-    - "Product from unverified compounding pharmacy"
-    - "Missing or unclear lot numbers and expiration dates"
-    - "Powder takes unusually long to dissolve"
-    - "Near-expiration product requiring immediate use"
-    - "Storage conditions unknown or potentially compromised"
+    - Product from unverified compounding pharmacy
+    - Missing or unclear lot numbers and expiration dates
+    - Powder takes unusually long to dissolve
+    - Near-expiration product requiring immediate use
+    - Storage conditions unknown or potentially compromised
   badSigns:
-    - "Any particulate matter or cloudiness after reconstitution"
-    - "Discolored powder (should be white to off-white)"
-    - "Broken seal or evidence of tampering"
-    - "Product from non-pharmaceutical sources"
-    - "No prescription or medical supervision"
-    - "Expired product or unknown storage history"
+    - Any particulate matter or cloudiness after reconstitution
+    - Discolored powder (should be white to off-white)
+    - Broken seal or evidence of tampering
+    - Product from non-pharmaceutical sources
+    - No prescription or medical supervision
+    - Expired product or unknown storage history
+regulatoryStatus:
+  status: approved
+  lastUpdated: '2026-02-18'
+  notes: FDA-approved (Menopur) for assisted reproduction.
+ratings:
+  researchDepth: 5
+  globalCoverage: 5
+  mechanismPlausibility: 5
+  overall: 5.0
+  lastReviewed: 2026-02-19T00:00:00.000Z
+  reviewNotes: "FDA-approved fertility hormone with 60+ years of global clinical use; FSH/LH mechanism is textbook reproductive endocrinology with extensive multinational trial data."
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

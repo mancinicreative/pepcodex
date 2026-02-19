@@ -1,162 +1,259 @@
 ---
-name: "N-Acetyl Selank Amidate"
-aliases: ["NA-Selank", "N-Acetyl Selank", "Acetyl-Selank-Amidate", "NASA"]
-category: "cognitive"
-evidenceStrength: "very-low"
-lastUpdated: 2026-01-28
-comparators: ["selank", "na-semax-amidate", "semax"]
-summary: "A modified version of Selank with N-terminal acetylation and C-terminal amidation designed to enhance stability and bioavailability. While the parent compound Selank is approved in Russia, N-Acetyl Selank Amidate has no independent clinical research and relies entirely on extrapolated claims from Selank studies."
+name: N-Acetyl Selank Amidate
+aliases:
+  - NA-Selank
+  - N-Acetyl Selank
+  - Acetyl-Selank-Amidate
+  - NASA
+category: cognitive
+evidenceStrength: very-low
+lastUpdated: 2026-01-28T00:00:00.000Z
+comparators:
+  - selank
+  - na-semax-amidate
+  - semax
+summary: >-
+  A modified version of Selank with N-terminal acetylation and C-terminal
+  amidation designed to enhance stability and bioavailability. While the parent
+  compound Selank is approved in Russia, N-Acetyl Selank Amidate has no
+  independent clinical research and relies entirely on extrapolated claims from
+  Selank studies.
 sources:
   count: 2
   human: 0
   preclinical: 2
   openAccess: 1
-metaTitle: "N-Acetyl Selank Amidate Evidence Dossier | PepCodex"
-metaDescription: "Evidence review of N-Acetyl Selank Amidate, a modified form of the Russian anxiolytic peptide. Stability claims, evidence limitations, and comparison to parent compound."
+metaTitle: N-Acetyl Selank Amidate Evidence Dossier | PepCodex
+metaDescription: >-
+  Evidence review of N-Acetyl Selank Amidate, a modified form of the Russian
+  anxiolytic peptide. Stability claims, evidence limitations, and comparison to
+  parent compound.
 interactions:
-  - peptide: "selank"
-    type: "synergistic"
-    description: "Parent compound with identical core sequence. NA-Selank-Amidate may have improved stability but shares the same mechanisms. No studies on combining the two forms."
-  - peptide: "na-semax-amidate"
-    type: "compatible"
-    description: "Both are modified Russian nootropic peptides targeting different pathways. Semax focuses on BDNF/NGF while Selank emphasizes GABAergic modulation. Commonly stacked in nootropic protocols."
-  - peptide: "semax"
-    type: "compatible"
-    description: "Different mechanisms of action. Semax targets neurotrophic factors while Selank focuses on anxiolytic pathways. No known contraindications."
-  - peptide: "dihexa"
-    type: "caution"
-    description: "Both target cognitive pathways through different mechanisms. Limited safety data on combination. Exercise caution due to lack of interaction studies."
+  - peptide: selank
+    type: synergistic
+    description: >-
+      Parent compound with identical core sequence. NA-Selank-Amidate may have
+      improved stability but shares the same mechanisms. No studies on combining
+      the two forms.
+  - peptide: na-semax-amidate
+    type: compatible
+    description: >-
+      Both are modified Russian nootropic peptides targeting different pathways.
+      Semax focuses on BDNF/NGF while Selank emphasizes GABAergic modulation.
+      Commonly stacked in nootropic protocols.
+  - peptide: semax
+    type: compatible
+    description: >-
+      Different mechanisms of action. Semax targets neurotrophic factors while
+      Selank focuses on anxiolytic pathways. No known contraindications.
+  - peptide: dihexa
+    type: caution
+    description: >-
+      Both target cognitive pathways through different mechanisms. Limited
+      safety data on combination. Exercise caution due to lack of interaction
+      studies.
 molecularInfo:
-  weight: "~793 Da"
+  weight: ~793 Da
   chainLength: 7
-  type: "Heptapeptide"
-  sequence: "Ac-Thr-Lys-Pro-Arg-Pro-Gly-Pro-NH2"
+  type: Heptapeptide
+  sequence: Ac-Thr-Lys-Pro-Arg-Pro-Gly-Pro-NH2
   aminoAcids:
-    - { code: "Ac-Thr", name: "N-Acetyl Threonine", position: 1, property: "modified" }
-    - { code: "K", name: "Lysine", position: 2, property: "positive" }
-    - { code: "P", name: "Proline", position: 3, property: "hydrophobic" }
-    - { code: "R", name: "Arginine", position: 4, property: "positive" }
-    - { code: "P", name: "Proline", position: 5, property: "hydrophobic" }
-    - { code: "G", name: "Glycine", position: 6, property: "polar" }
-    - { code: "P-NH2", name: "Proline Amide", position: 7, property: "modified" }
+    - code: Ac-Thr
+      name: N-Acetyl Threonine
+      position: 1
+      property: modified
+    - code: K
+      name: Lysine
+      position: 2
+      property: positive
+    - code: P
+      name: Proline
+      position: 3
+      property: hydrophobic
+    - code: R
+      name: Arginine
+      position: 4
+      property: positive
+    - code: P
+      name: Proline
+      position: 5
+      property: hydrophobic
+    - code: G
+      name: Glycine
+      position: 6
+      property: polar
+    - code: P-NH2
+      name: Proline Amide
+      position: 7
+      property: modified
 evidenceChainedBenefits:
   - mechanism:
-      action: "GABAergic system modulation enhancing inhibitory neurotransmission"
-      confidence: "emerging"
+      action: GABAergic system modulation enhancing inhibitory neurotransmission
+      confidence: emerging
       directStudies: 0
     benefit:
-      claim: "reduce anxiety symptoms"
-      qualifier: "may"
+      claim: reduce anxiety symptoms
+      qualifier: may
     evidence:
-      level: "very-low"
+      level: very-low
       humanStudies: 0
       animalStudies: 2
       cellStudies: 0
       keyFindings:
-        - study: "Zozulia AA et al. 2008 (parent compound)"
-          type: "human-rct"
-          finding: "Selank demonstrated anxiolytic efficacy in GAD patients (parent compound data, not this modification)"
-          pmid: "18577768"
+        - study: Zozulia AA et al. 2008 (parent compound)
+          type: human-rct
+          finding: >-
+            Selank demonstrated anxiolytic efficacy in GAD patients (parent
+            compound data, not this modification)
+          pmid: '18577768'
   - mechanism:
-      action: "Enkephalinase inhibition preserving endogenous enkephalins"
-      confidence: "emerging"
+      action: Enkephalinase inhibition preserving endogenous enkephalins
+      confidence: emerging
       directStudies: 0
     benefit:
-      claim: "enhance mood and well-being"
-      qualifier: "suggested to"
+      claim: enhance mood and well-being
+      qualifier: suggested to
     evidence:
-      level: "very-low"
+      level: very-low
       humanStudies: 0
       animalStudies: 1
       cellStudies: 0
       keyFindings:
-        - study: "Seredenin SB et al. 2004 (parent compound)"
-          type: "animal"
-          finding: "Selank shown to protect enkephalins from degradation in animal models"
-          pmid: "15500665"
+        - study: Seredenin SB et al. 2004 (parent compound)
+          type: animal
+          finding: >-
+            Selank shown to protect enkephalins from degradation in animal
+            models
+          pmid: '15500665'
   - mechanism:
-      action: "BDNF upregulation supporting neuroplasticity"
-      confidence: "emerging"
+      action: BDNF upregulation supporting neuroplasticity
+      confidence: emerging
       directStudies: 0
     benefit:
-      claim: "support cognitive function"
-      qualifier: "suggested to"
+      claim: support cognitive function
+      qualifier: suggested to
     evidence:
-      level: "very-low"
+      level: very-low
       humanStudies: 0
       animalStudies: 1
       cellStudies: 0
       keyFindings:
-        - study: "Seredenin SB et al. 2004 (parent compound)"
-          type: "animal"
-          finding: "Selank associated with BDNF pathway activation in rodent studies"
-          pmid: "15500665"
+        - study: Seredenin SB et al. 2004 (parent compound)
+          type: animal
+          finding: Selank associated with BDNF pathway activation in rodent studies
+          pmid: '15500665'
   - mechanism:
-      action: "Terminal modifications (N-acetylation, C-amidation) reducing enzymatic degradation"
-      confidence: "emerging"
+      action: >-
+        Terminal modifications (N-acetylation, C-amidation) reducing enzymatic
+        degradation
+      confidence: emerging
       directStudies: 0
     benefit:
-      claim: "improve stability and bioavailability"
-      qualifier: "may"
+      claim: improve stability and bioavailability
+      qualifier: may
     evidence:
-      level: "very-low"
+      level: very-low
       humanStudies: 0
       animalStudies: 0
       cellStudies: 0
       keyFindings:
-        - study: "Werle M, Bernkop-Schnurch A 2006"
-          type: "in-vitro"
-          finding: "General peptide chemistry demonstrates terminal modifications can improve stability"
-          pmid: "16777323"
+        - study: 'Werle M, Bernkop-Schnurch A 2006'
+          type: in-vitro
+          finding: >-
+            General peptide chemistry demonstrates terminal modifications can
+            improve stability
+          pmid: '16777323'
 conditions:
-  - slug: "anxiety"
-    name: "Anxiety"
-    researchSummary: "The parent compound Selank has been studied for anxiety in Russian clinical trials. Zozulia et al. (2008) reported anxiolytic effects in GAD patients. However, no studies exist on N-Acetyl Selank Amidate specifically. All evidence is extrapolated from the parent compound."
-    relevantStudies: ["18577768"]
-    relatedPeptides: ["selank", "na-semax-amidate"]
-  - slug: "cognitive-enhancement"
-    name: "Cognitive Enhancement"
-    researchSummary: "Selank has shown effects on BDNF pathways in animal models, suggesting potential cognitive benefits. N-Acetyl Selank Amidate is proposed to have similar effects with improved stability, but no direct research exists on this modification."
-    relevantStudies: ["15500665"]
-    relatedPeptides: ["na-semax-amidate", "semax", "dihexa"]
-  - slug: "stress-resilience"
-    name: "Stress Resilience"
-    researchSummary: "Selank's effects on the enkephalin system suggest potential stress-modulating properties observed in animal studies. Translation to humans and applicability to the N-acetyl amidate form remain unconfirmed."
-    relevantStudies: ["15500665"]
-    relatedPeptides: ["selank", "semax"]
+  - slug: anxiety
+    name: Anxiety
+    researchSummary: >-
+      The parent compound Selank has been studied for anxiety in Russian
+      clinical trials. Zozulia et al. (2008) reported anxiolytic effects in GAD
+      patients. However, no studies exist on N-Acetyl Selank Amidate
+      specifically. All evidence is extrapolated from the parent compound.
+    relevantStudies:
+      - '18577768'
+    relatedPeptides:
+      - selank
+      - na-semax-amidate
+  - slug: cognitive-enhancement
+    name: Cognitive Enhancement
+    researchSummary: >-
+      Selank has shown effects on BDNF pathways in animal models, suggesting
+      potential cognitive benefits. N-Acetyl Selank Amidate is proposed to have
+      similar effects with improved stability, but no direct research exists on
+      this modification.
+    relevantStudies:
+      - '15500665'
+    relatedPeptides:
+      - na-semax-amidate
+      - semax
+      - dihexa
+  - slug: stress-resilience
+    name: Stress Resilience
+    researchSummary: >-
+      Selank's effects on the enkephalin system suggest potential
+      stress-modulating properties observed in animal studies. Translation to
+      humans and applicability to the N-acetyl amidate form remain unconfirmed.
+    relevantStudies:
+      - '15500665'
+    relatedPeptides:
+      - selank
+      - semax
 timeline:
-  - period: "Week 1-2"
-    effects: "Based on parent compound data: Users report initial anxiolytic effects within days. No pharmacokinetic data exists for NA-Selank-Amidate to confirm onset timing."
-    source: "PMID:18577768"
-  - period: "Week 2-4"
-    effects: "Theoretical continued GABAergic modulation and enkephalin protection. Parent compound studies suggest sustained anxiolytic effects with continued use."
-    source: "PMID:18577768"
-  - period: "Week 4-8"
-    effects: "Long-term effects completely unknown. No studies on extended use of either Selank or NA-Selank-Amidate beyond short-term trials."
-    source: "PMID:15500665"
-  - period: "Week 8+"
-    effects: "No data available. Human pharmacokinetics, tolerance development, and optimal treatment duration are completely unknown for this modification."
+  - period: Week 1-2
+    effects: >-
+      Based on parent compound data: Users report initial anxiolytic effects
+      within days. No pharmacokinetic data exists for NA-Selank-Amidate to
+      confirm onset timing.
+    source: 'PMID:18577768'
+  - period: Week 2-4
+    effects: >-
+      Theoretical continued GABAergic modulation and enkephalin protection.
+      Parent compound studies suggest sustained anxiolytic effects with
+      continued use.
+    source: 'PMID:18577768'
+  - period: Week 4-8
+    effects: >-
+      Long-term effects completely unknown. No studies on extended use of either
+      Selank or NA-Selank-Amidate beyond short-term trials.
+    source: 'PMID:15500665'
+  - period: Week 8+
+    effects: >-
+      No data available. Human pharmacokinetics, tolerance development, and
+      optimal treatment duration are completely unknown for this modification.
 qualityChecklist:
   goodSigns:
-    - "White to off-white lyophilized powder"
-    - "Dissolves completely and quickly in bacteriostatic water"
-    - "Clear, colorless solution after reconstitution"
-    - "Comes with certificate of analysis (COA) showing >98% purity"
-    - "Third-party HPLC and mass spectrometry verification available"
-    - "Proper vacuum seal on vial before reconstitution"
+    - White to off-white lyophilized powder
+    - Dissolves completely and quickly in bacteriostatic water
+    - 'Clear, colorless solution after reconstitution'
+    - Comes with certificate of analysis (COA) showing >98% purity
+    - Third-party HPLC and mass spectrometry verification available
+    - Proper vacuum seal on vial before reconstitution
   warningSigns:
-    - "Slightly off-white or cream-colored powder (may still be acceptable)"
-    - "Takes longer than expected to fully dissolve"
-    - "Powder appears collapsed or melted (possible moisture exposure)"
-    - "COA from manufacturer only without third-party verification"
-    - "Purity listed below 98% but above 95%"
+    - Slightly off-white or cream-colored powder (may still be acceptable)
+    - Takes longer than expected to fully dissolve
+    - Powder appears collapsed or melted (possible moisture exposure)
+    - COA from manufacturer only without third-party verification
+    - Purity listed below 98% but above 95%
   badSigns:
-    - "Yellow, brown, or otherwise discolored powder"
-    - "Visible particles or cloudiness after reconstitution"
-    - "Gel-like consistency or clumping that won't dissolve"
-    - "No COA provided or COA appears fraudulent"
-    - "Strong unusual odor"
-    - "Vial seal appears compromised or previously opened"
+    - 'Yellow, brown, or otherwise discolored powder'
+    - Visible particles or cloudiness after reconstitution
+    - Gel-like consistency or clumping that won't dissolve
+    - No COA provided or COA appears fraudulent
+    - Strong unusual odor
+    - Vial seal appears compromised or previously opened
+regulatoryStatus:
+  status: research-only
+  lastUpdated: '2026-02-18'
+  notes: Not FDA-approved. Modified form of selank. Research compound only.
+ratings:
+  researchDepth: 1
+  globalCoverage: 1
+  mechanismPlausibility: 2
+  overall: 1.5
+  lastReviewed: 2026-02-19T00:00:00.000Z
+  reviewNotes: "N-acetyl amidate modification of selank with no direct human studies; mechanism extrapolated entirely from parent compound with no independent validation of this specific modification."
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

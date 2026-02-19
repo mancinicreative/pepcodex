@@ -61,13 +61,14 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta property="og:image" content={ogImage || `${Astro.site}og-default.png`} />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImage || `${Astro.site}og-default.png`} />
 
     <!-- Google Analytics 4 -->
     {GA_TRACKING_ID && (
@@ -499,6 +500,15 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
         </div>
       </div>
     </footer>
+
+    <!-- Analytics -->
+    <script>
+      import { inject } from '@vercel/analytics';
+      inject();
+    </script>
+    <script>
+      import '../scripts/analytics';
+    </script>
 
     <!-- Legal Components -->
     <DisclaimerBanner />

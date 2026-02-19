@@ -4,6 +4,7 @@ import OrganizationSchema from '../components/SEO/OrganizationSchema.astro';
 import DisclaimerBanner from '../components/DisclaimerBanner.astro';
 import CookieConsent from '../components/CookieConsent.astro';
 import SearchModal from '../components/SearchModal.astro';
+import ExitIntentPopup from '../components/ExitIntentPopup.astro';
 
 interface Props {
   title: string;
@@ -586,5 +587,8 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
         document.dispatchEvent(new CustomEvent('open-search-modal'));
       });
     </script>
+
+    <!-- Exit-intent newsletter popup (all pages) -->
+    <ExitIntentPopup />
   </body>
 </html>

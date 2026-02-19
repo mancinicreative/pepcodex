@@ -1,0 +1,95 @@
+---
+import NewsletterForm from './NewsletterForm.astro';
+---
+
+<!-- Exit-intent popup overlay -->
+<div
+  id="exit-popup"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="exit-popup-heading"
+  style="display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.7); align-items: center; justify-content: center;"
+>
+  <!-- Inner card -->
+  <div
+    class="glass-card relative w-full max-w-lg mx-4 p-8"
+    style="max-width: 480px;"
+  >
+    <!-- Close button -->
+    <button
+      data-close
+      class="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center transition-colors hover:bg-white/10"
+      style="color: var(--text-medium);"
+      aria-label="Close popup"
+    >
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 6 6 18" />
+        <path d="m6 6 12 12" />
+      </svg>
+    </button>
+
+    <!-- Heading -->
+    <h3 id="exit-popup-heading" class="text-xl font-bold mb-2" style="color: var(--text-high);">
+      Before you go...
+    </h3>
+
+    <!-- Description -->
+    <p class="text-sm mb-6" style="color: var(--text-medium);">
+      Get evidence-based peptide research delivered to your inbox. No spam, just science.
+    </p>
+
+    <!-- Newsletter form -->
+    <NewsletterForm variant="inline" />
+  </div>
+</div>
+
+<script>
+  // Guard: don't show if already dismissed this session
+  if (!sessionStorage.getItem('exit-popup-dismissed')) {
+    const popup = document.getElementById('exit-popup');
+    let triggered = false;
+
+    function showPopup() {
+      if (triggered) return;
+      triggered = true;
+      if (popup) popup.style.display = 'flex';
+    }
+
+    // Desktop: mouseleave from viewport top
+    document.addEventListener('mouseleave', (e) => {
+      if (e.clientY < 10) showPopup();
+    });
+
+    // Mobile: scroll depth 60%
+    window.addEventListener('scroll', () => {
+      const scrollPct = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight;
+      if (scrollPct > 0.6) showPopup();
+    }, { passive: true });
+
+    // Close handlers
+    if (popup) {
+      const closeBtn = popup.querySelector('[data-close]');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          popup.style.display = 'none';
+          sessionStorage.setItem('exit-popup-dismissed', 'true');
+        });
+      }
+
+      popup.addEventListener('click', (e) => {
+        if (e.target === popup) {
+          popup.style.display = 'none';
+          sessionStorage.setItem('exit-popup-dismissed', 'true');
+        }
+      });
+
+      // ESC key closes popup
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && popup.style.display === 'flex') {
+          popup.style.display = 'none';
+          sessionStorage.setItem('exit-popup-dismissed', 'true');
+        }
+      });
+    }
+  }
+</script>

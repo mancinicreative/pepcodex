@@ -14,6 +14,7 @@ import EvidenceChain from '../components/EvidenceChain.astro';
 import InteractionMatrix from '../components/InteractionMatrix.astro';
 import Timeline from '../components/Timeline.astro';
 import QualityChecklist from '../components/QualityChecklist.astro';
+import RatingCard from '../components/RatingCard.astro';
 
 // Type definitions for peptide interactions
 interface Interaction {
@@ -126,6 +127,21 @@ interface Props {
   qualityChecklist?: QualityChecklistData;
   // NEW: FAQ items for schema markup (Phase 24)
   faqs?: FAQItem[];
+  // Regulatory status
+  regulatoryStatus?: {
+    status: 'approved' | 'investigational' | 'compounding-restricted' | 'research-only';
+    lastUpdated?: Date;
+    notes?: string;
+  };
+  // NEW: Multi-dimension ratings (optional — backward compat with existing dossiers)
+  ratings?: {
+    researchDepth: number;
+    globalCoverage: number;
+    mechanismPlausibility: number;
+    overall: number;
+    lastReviewed: Date;
+    reviewNotes?: string;
+  };
 }
 
 const {
@@ -144,7 +160,9 @@ const {
   interactions = [],
   timeline,
   qualityChecklist,
-  faqs = []
+  faqs = [],
+  regulatoryStatus,
+  ratings,
 } = Astro.props;
 
 const categoryLabels: Record<string, string> = {
@@ -163,6 +181,14 @@ const evidenceConfig: Record<string, { dots: number; label: string; color: strin
 };
 
 const currentEvidence = evidenceConfig[evidenceStrength];
+
+const regulatoryConfig: Record<string, { label: string; color: string; bg: string; border: string }> = {
+  'approved': { label: 'FDA Approved', color: 'text-emerald-400', bg: 'bg-emerald-500/15', border: 'border-emerald-500/30' },
+  'investigational': { label: 'Investigational', color: 'text-blue-400', bg: 'bg-blue-500/15', border: 'border-blue-500/30' },
+  'compounding-restricted': { label: 'Compounding Restricted', color: 'text-amber-400', bg: 'bg-amber-500/15', border: 'border-amber-500/30' },
+  'research-only': { label: 'Research Only', color: 'text-white/60', bg: 'bg-white/5', border: 'border-white/20' },
+};
+const regConfig = regulatoryStatus ? regulatoryConfig[regulatoryStatus.status] : null;
 
 // Section navigation - CONSOLIDATED STRUCTURE
 // Order: Overview (includes molecular) → Mechanism → Evidence → Timeline → Quality → Interactions → References
@@ -277,6 +303,22 @@ const articleUrl = Astro.url.toString();
           {name}
         </h1>
 
+        {/* Regulatory badge */}
+        {regConfig && (
+          <a href="/regulatory-tracker/" class:list={["inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium border mb-4 transition-colors hover:opacity-80", regConfig.bg, regConfig.color, regConfig.border]}>
+            <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              {regulatoryStatus!.status === 'approved' ? (
+                <><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></>
+              ) : regulatoryStatus!.status === 'investigational' ? (
+                <><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></>
+              ) : (
+                <><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></>
+              )}
+            </svg>
+            {regConfig.label}
+          </a>
+        )}
+
         <!-- Aliases -->
         {aliases.length > 0 && (
           <p class="text-lg text-white/70 mb-4">
@@ -359,24 +401,30 @@ const articleUrl = Astro.url.toString();
                 <span class="font-mono text-sm" style="color: hsl(280 80% 60%);">{sources.preclinical}</span>
               </div>
 
-              <div class="flex items-center justify-between group/item">
-                <div class="flex items-center gap-3 text-white/70 group-hover/item:text-white transition-colors">
-                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
-                  </svg>
-                  <span class="text-sm">Evidence Level</span>
+              {ratings ? (
+                <div class="pt-2 border-t border-white/10">
+                  <RatingCard ratings={ratings} />
                 </div>
-                <div class="flex items-center gap-2">
-                  <div class="flex gap-1">
-                    {[1, 2, 3, 4].map((n) => (
-                      <div
-                        class="w-2 h-2 rounded-full"
-                        style={`background: ${n <= currentEvidence.dots ? currentEvidence.color : currentEvidence.color + '40'}`}
-                      ></div>
-                    ))}
+              ) : (
+                <div class="flex items-center justify-between group/item">
+                  <div class="flex items-center gap-3 text-white/70 group-hover/item:text-white transition-colors">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+                    </svg>
+                    <span class="text-sm">Evidence Level</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <div class="flex gap-1">
+                      {[1, 2, 3, 4].map((n) => (
+                        <div
+                          class="w-2 h-2 rounded-full"
+                          style={`background: ${n <= currentEvidence.dots ? currentEvidence.color : currentEvidence.color + '40'}`}
+                        ></div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
 

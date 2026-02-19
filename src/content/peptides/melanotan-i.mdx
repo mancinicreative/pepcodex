@@ -1,0 +1,401 @@
+---
+name: Melanotan-1
+aliases:
+  - Afamelanotide
+  - Scenesse
+  - NDP-MSH
+  - "[Nle4,D-Phe7]-\u03B1-MSH"
+  - MT-I
+  - MT-1
+  - CUV1647
+category: other
+compoundType: peptide
+evidenceStrength: moderate
+lastUpdated: 2026-02-18
+comparators:
+  - melanotan-ii
+  - pt-141
+summary: >-
+  An FDA-approved synthetic analog of alpha-MSH that selectively activates MC1R
+  to stimulate eumelanin production. Approved as Scenesse for erythropoietic
+  protoporphyria (EPP), making it the first and only treatment for this rare
+  photosensitivity disorder.
+sources:
+  count: 18
+  human: 6
+  preclinical: 8
+  openAccess: 10
+metaTitle: Melanotan-1 Evidence Dossier | PepCodex
+metaDescription: >-
+  Evidence review of Melanotan-1 (Afamelanotide/Scenesse). FDA-approved for
+  EPP. MC1R mechanism, pivotal RCT data, safety profile, and comparison to
+  Melanotan-II.
+interactions:
+  - peptide: melanotan-ii
+    type: caution
+    description: >-
+      Structurally related alpha-MSH analogs but fundamentally different.
+      Melanotan-II is non-selective (MC1R+MC3R+MC4R+MC5R) and unapproved with
+      significant safety concerns. Do not combine — overlapping melanocortin
+      pathway activation with unpredictable receptor cross-talk.
+  - peptide: pt-141
+    type: compatible
+    description: >-
+      Both melanocortin analogs but target different receptors and indications.
+      PT-141 (bremelanotide) is MC4R-preferring for HSDD; Melanotan-1 is
+      MC1R-selective for EPP. No overlapping mechanism of concern.
+  - peptide: bpc-157
+    type: compatible
+    description: >-
+      No known interaction. Different targets — BPC-157 for GI/tissue repair,
+      Melanotan-1 for melanocortin-mediated photoprotection.
+molecularInfo:
+  weight: "1,646.85 Da"
+  chainLength: 13
+  type: Linear Tridecapeptide
+  sequence: "Ac-Ser-Tyr-Ser-Nle-Glu-His-D-Phe-Arg-Trp-Gly-Lys-Pro-Val-NH2"
+  aminoAcids:
+    - code: Ser
+      name: Serine
+      position: 1
+      property: polar
+    - code: Tyr
+      name: Tyrosine
+      position: 2
+      property: polar
+    - code: Ser
+      name: Serine
+      position: 3
+      property: polar
+    - code: Nle
+      name: Norleucine
+      position: 4
+      property: modified
+    - code: E
+      name: Glutamic Acid
+      position: 5
+      property: negative
+    - code: H
+      name: Histidine
+      position: 6
+      property: positive
+    - code: dF
+      name: D-Phenylalanine
+      position: 7
+      property: modified
+    - code: R
+      name: Arginine
+      position: 8
+      property: positive
+    - code: W
+      name: Tryptophan
+      position: 9
+      property: hydrophobic
+    - code: G
+      name: Glycine
+      position: 10
+      property: polar
+    - code: K
+      name: Lysine
+      position: 11
+      property: positive
+    - code: P
+      name: Proline
+      position: 12
+      property: hydrophobic
+    - code: V
+      name: Valine
+      position: 13
+      property: hydrophobic
+evidenceChainedBenefits:
+  - mechanism:
+      action: >-
+        MC1R activation on epidermal melanocytes stimulating eumelanin synthesis
+        via cAMP/PKA/MITF cascade
+      confidence: established
+      directStudies: 12
+    benefit:
+      claim: increase pain-free sunlight exposure in EPP patients
+      qualifier: shown to
+    evidence:
+      level: moderate
+      humanStudies: 3
+      animalStudies: 5
+      cellStudies: 4
+      keyFindings:
+        - study: Langendonk JG et al. 2015 (NEJM)
+          type: human-rct
+          finding: >-
+            US trial (N=93): 69.4 vs 40.8 median pain-free hours over 180 days;
+            EU trial (N=74): 6.0 vs 0.8 hours median over 270 days (P=0.005);
+            70% more pain-free sunlight time achieved
+          pmid: "26132941"
+        - study: Homey B et al. 2025
+          type: human-observational
+          finding: >-
+            German real-world cohort: 91% of patients continued treatment; QoL
+            significantly improved versus baseline (P<0.0001)
+          pmid: "40082741"
+  - mechanism:
+      action: >-
+        Eumelanin accumulation in epidermis absorbing UV radiation before it
+        reaches and excites accumulated protoporphyrin IX (PPIX)
+      confidence: established
+      directStudies: 8
+    benefit:
+      claim: reduce phototoxic reactions and skin damage from UV exposure in EPP
+      qualifier: shown to
+    evidence:
+      level: moderate
+      humanStudies: 2
+      animalStudies: 4
+      cellStudies: 2
+      keyFindings:
+        - study: Langendonk JG et al. 2015 (NEJM)
+          type: human-rct
+          finding: >-
+            EU trial: phototoxic reactions reduced from 146 (placebo) to 77
+            (afamelanotide) over 270-day observation period (P=0.04)
+          pmid: "26132941"
+        - study: Minder EI et al. 2009
+          type: human-observational
+          finding: >-
+            Long-term Swiss cohort documented sustained reduction in EPP
+            phototoxic episodes with repeated afamelanotide implant cycles
+          pmid: "20546511"
+  - mechanism:
+      action: >-
+        MC1R signaling upregulating nucleotide excision repair and antioxidant
+        enzyme expression in melanocytes
+      confidence: supported
+      directStudies: 5
+    benefit:
+      claim: enhance UV-induced DNA repair capacity as secondary mechanism
+      qualifier: appears to
+    evidence:
+      level: low
+      humanStudies: 0
+      animalStudies: 3
+      cellStudies: 2
+      keyFindings:
+        - study: Abdel-Malek ZA et al. 2008
+          type: in-vitro
+          finding: >-
+            MC1R signaling in human melanocytes upregulates base and nucleotide
+            excision repair pathways, suggesting secondary photoprotective
+            mechanism beyond eumelanin production
+          pmid: "18086851"
+conditions:
+  - slug: erythropoietic-protoporphyria
+    name: Erythropoietic Protoporphyria (EPP)
+    researchSummary: >-
+      Erythropoietic protoporphyria (EPP) is an autosomal recessive disorder
+      caused by deficiency of ferrochelatase (FECH), the enzyme that catalyzes
+      insertion of iron into protoporphyrin IX (PPIX). PPIX accumulates in red
+      blood cells and is transported to skin, where sunlight exposure excites
+      PPIX molecules and triggers immediate, excruciating burning pain without
+      blistering. Patients are severely restricted in sunlight exposure,
+      significantly impairing quality of life.
+
+      Afamelanotide was evaluated in two pivotal randomized placebo-controlled
+      trials. The US trial (CUV039, N=93) demonstrated 69.4 median pain-free
+      hours over 180 days versus 40.8 hours for placebo (P=0.04). The European
+      trial (N=74) showed 6.0 versus 0.8 median pain-free hours over 270 days
+      (P=0.005), with phototoxic reactions reduced from 146 to 77 events
+      (P=0.04). Both trials used a 16 mg subcutaneous implant administered every
+      60 days.
+
+      Based on these trials, the EMA approved afamelanotide in December 2014 and
+      the FDA approved it in October 2019 (NDA 210797), under the brand name
+      Scenesse. This marked the first FDA-approved treatment for EPP. A 2025
+      German real-world cohort (N not specified) confirmed 91% treatment
+      continuation with significant quality of life improvement (P<0.0001).
+    relevantStudies:
+      - "26132941"
+      - "40082741"
+    relatedPeptides:
+      - melanotan-ii
+  - slug: vitiligo
+    name: Vitiligo
+    researchSummary: >-
+      Vitiligo is an autoimmune condition causing depigmented patches due to
+      melanocyte destruction. CLINUVEL Pharmaceuticals has investigated
+      afamelanotide as a melanocyte stimulant to repigment affected skin,
+      particularly in combination with narrowband UVB (NB-UVB) phototherapy.
+
+      Early phase studies showed promising repigmentation rates when
+      afamelanotide was combined with NB-UVB versus NB-UVB alone. A Phase 2
+      trial (VIPHOT, PMID 28078665) found significantly faster and more complete
+      repigmentation with the combination approach. CLINUVEL initiated Phase 3
+      development (CUV-105) for vitiligo, though afamelanotide is not yet
+      approved for this indication in any jurisdiction.
+
+      This is an investigational use only. Any repigmentation benefit would
+      require the patient to undergo light therapy in conjunction with the
+      implant, under medical supervision. The melanocyte-stimulating mechanism
+      is biologically plausible, but regulatory approval is pending.
+    relevantStudies:
+      - "28078665"
+    relatedPeptides: []
+timeline:
+  - period: Day 1-2
+    effects: >-
+      Afamelanotide implant releases most of its dose within the first 48 hours
+      following subcutaneous implantation. Initial melanocyte activation begins
+      as drug is absorbed systemically. Mild implant site reactions (bruising,
+      swelling) are common during this period.
+    source: "PMID:26132941"
+  - period: Week 1-2
+    effects: >-
+      Visible skin darkening begins as eumelanin synthesis ramps up in epidermal
+      melanocytes. Initial photoprotective effect begins emerging. Clinical trial
+      participants reported gradual increase in tolerable sunlight exposure during
+      this period.
+    source: "PMID:26132941"
+  - period: Month 1-2
+    effects: >-
+      Peak eumelanin levels and maximum photoprotective benefit observed. Pivotal
+      trials showed the greatest increase in pain-free sunlight hours in this
+      window. EPP patients can typically tolerate substantially more outdoor
+      activity compared to pre-treatment baseline.
+    source: "PMID:26132941"
+  - period: Month 2-4
+    effects: >-
+      Sustained protection with repeat implant at 60-day intervals maintains
+      eumelanin levels. Clinical trial protocol required implants every two
+      months to sustain benefit. Real-world data confirms 91% of patients
+      continue treatment long-term due to sustained benefit.
+    source: "PMID:40082741"
+  - period: After discontinuation
+    effects: >-
+      Gradual return to baseline skin pigmentation over approximately 1-3 months
+      as existing eumelanin degrades and new melanin synthesis returns to
+      unstimulated baseline. EPP symptoms typically return as photoprotection
+      wanes. No rebound phenomena or withdrawal effects documented.
+qualityChecklist:
+  goodSigns:
+    - Obtained through licensed pharmacy under REMS program (US) or authorized
+      distributor (EU/AU)
+    - Administered as subcutaneous implant by a trained healthcare provider
+    - Comes in sealed sterile vial or applicator with intact packaging
+    - Distributed only through certified Scenesse prescribers enrolled in REMS
+    - Product traceable to CLINUVEL Pharmaceuticals (ASX listed, regulated manufacturer)
+    - Implant site procedure documented in medical records
+  warningSigns:
+    - Offered outside licensed clinical channels or without REMS enrollment
+    - Significantly lower price than clinical program rates
+    - Marketed for cosmetic tanning without mention of EPP indication
+    - Offered as subcutaneous injection (not an implant) — different product
+  badSigns:
+    - Sold without prescription or medical involvement
+    - Sourced from research chemical vendors (unapproved product, quality unknown)
+    - Marketed for cosmetic tanning or anti-aging — not evidence-based
+    - Claims of same safety profile as standard peptide injections
+    - Comparison to Melanotan-II in any favorable context — fundamentally different
+      compounds with different safety profiles
+faqs:
+  - question: How is Melanotan-1 different from Melanotan-II?
+    answer: >-
+      Melanotan-1 (afamelanotide/Scenesse) is MC1R-selective, FDA-approved, and
+      administered as a subcutaneous implant by a healthcare provider. It has no
+      sexual side effects, no documented melanoma risk signal, and is used only
+      for the rare disease EPP. Melanotan-II is non-selective (activates MC1R,
+      MC3R, MC4R, MC5R), never received regulatory approval, causes spontaneous
+      erections and appetite suppression via MC4R, and carries documented case
+      reports of melanoma. These are fundamentally different compounds — safety
+      data is not interchangeable.
+  - question: Is Melanotan-1 available for cosmetic tanning?
+    answer: >-
+      No. Afamelanotide (Scenesse) is only FDA-approved for erythropoietic
+      protoporphyria (EPP) and distributed through a restricted REMS program in
+      the US. Off-label cosmetic use is not supported by evidence and is not
+      recommended. Research chemical versions sold without medical oversight are
+      not the same as the approved pharmaceutical product.
+  - question: What is erythropoietic protoporphyria (EPP)?
+    answer: >-
+      EPP is a rare genetic disorder where deficiency of the enzyme ferrochelatase
+      causes protoporphyrin IX (PPIX) to accumulate in red blood cells and skin.
+      When exposed to sunlight, PPIX is excited and causes immediate, severe
+      burning pain without blistering. Before Scenesse, patients could only
+      manage EPP through strict sun avoidance. Prevalence is approximately 1 in
+      140,000 in Europe.
+  - question: How is Melanotan-1 administered?
+    answer: >-
+      Afamelanotide is administered as a 16 mg subcutaneous implant inserted by
+      a healthcare provider, typically in the lower abdominal area. It is
+      re-implanted every 60 days. It cannot be self-administered and is not
+      available as a traditional injection formulation.
+regulatoryStatus:
+  status: approved
+  lastUpdated: "2026-02-18"
+  notes: >-
+    FDA-approved October 2019 (NDA 210797) as Scenesse for the prevention of
+    phototoxicity in adults with EPP. EMA-approved December 2014. Orphan drug
+    designation (both FDA and EMA). Restricted distribution via Scenesse REMS
+    program in the US. Manufacturer: CLINUVEL Pharmaceuticals (ASX: CUV).
+---
+
+<h2 id="mechanism-of-action">Mechanism of Action</h2>
+
+Melanotan-1 (afamelanotide) is a synthetic 13-amino acid analog of alpha-melanocyte-stimulating hormone (alpha-MSH) that selectively activates MC1R receptors on melanocytes to stimulate eumelanin production, making it the first FDA-approved treatment for erythropoietic protoporphyria (EPP).
+
+### How It Works (Simplified)
+
+Melanotan-1 acts as a targeted MC1R agonist, producing photoprotection through a defined melanocortin signaling cascade:
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-8">
+  <div class="bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 rounded-xl p-5 border border-emerald-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400">1</div>
+      <div class="font-semibold text-white">MC1R Binding</div>
+    </div>
+    <p class="text-sm text-white/70">Afamelanotide binds to MC1R receptors on melanocytes with high selectivity, unlike non-selective Melanotan-II which also activates MC3R, MC4R, and MC5R. This selectivity eliminates the CNS and cardiovascular effects associated with multi-receptor melanocortin agonism.</p>
+  </div>
+  <div class="bg-gradient-to-br from-blue-500/10 to-blue-500/5 rounded-xl p-5 border border-blue-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">2</div>
+      <div class="font-semibold text-white">Eumelanin Production</div>
+    </div>
+    <p class="text-sm text-white/70">MC1R activation triggers the intracellular cAMP/PKA/MITF cascade, upregulating tyrosinase and related enzymes (TRP-1, TRP-2). This drives synthesis of eumelanin (dark pigment) rather than pheomelanin, increasing protective pigment density in the epidermis.</p>
+  </div>
+  <div class="bg-gradient-to-br from-violet-500/10 to-violet-500/5 rounded-xl p-5 border border-violet-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-violet-500/20 flex items-center justify-center text-violet-400">3</div>
+      <div class="font-semibold text-white">UV Absorption</div>
+    </div>
+    <p class="text-sm text-white/70">Increased epidermal eumelanin absorbs UV radiation before it reaches and excites accumulated protoporphyrin IX (PPIX) in EPP patients. By intercepting the photon energy at the melanin layer, phototoxic PPIX excitation is prevented, dramatically reducing pain episodes.</p>
+  </div>
+  <div class="bg-gradient-to-br from-amber-500/10 to-amber-500/5 rounded-xl p-5 border border-amber-500/20">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-400">4</div>
+      <div class="font-semibold text-white">Photoprotection</div>
+    </div>
+    <p class="text-sm text-white/70">EPP patients gain significantly more pain-free hours in sunlight — 69.4 vs 40.8 median hours over 6 months in the pivotal US trial. Clinical benefit lasts through 60-day implant cycles, enabling near-normal daily activity for patients previously confined to strict sun avoidance.</p>
+  </div>
+</div>
+
+### Scientific Pathways
+
+**MC1R Photoprotection Pathway** *(Primary EPP Mechanism)*
+```
+Afamelanotide (MC1R-selective)
+→ MC1R activation on melanocytes
+→ cAMP increase → PKA activation
+→ MITF transcription factor upregulation
+→ Tyrosinase/TRP-1/TRP-2 expression
+→ Eumelanin synthesis ↑
+→ UV absorption in epidermis ↑
+→ PPIX phototoxicity ↓ (in EPP)
+```
+
+**Key Research:** Langendonk JG et al. (2015, NEJM) demonstrated in two randomized placebo-controlled trials that afamelanotide significantly increased pain-free sunlight hours in EPP patients, forming the basis for FDA approval in 2019. [PMID:26132941](https://pubmed.ncbi.nlm.nih.gov/26132941/)
+
+### Important Limitations
+
+- Only FDA-approved for erythropoietic protoporphyria (EPP) — all other uses are off-label and unsupported by evidence
+- Small trial populations typical of rare disease studies (N=93 US trial, N=74 EU trial); total pivotal trial enrollment under 200 patients
+- Subcutaneous implant must be administered by a trained healthcare provider — cannot be self-administered
+- Only available through the restricted Scenesse REMS program in the US
+- Long-term safety data beyond 5 years is limited
+- Does NOT have the same receptor profile as Melanotan-II — safety and efficacy data between the two compounds is not interchangeable
+- Off-label cosmetic tanning use is not evidence-based and not recommended

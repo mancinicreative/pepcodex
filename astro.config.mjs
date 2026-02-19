@@ -9,6 +9,7 @@ import rehypeAutoGlossary from './plugins/rehype-auto-glossary.mjs';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://pepcodex.com',
+  trailingSlash: 'never',
   output: 'static',
   adapter: vercel({
     imageService: true,

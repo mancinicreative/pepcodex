@@ -1,224 +1,381 @@
 ---
-name: "Selank"
-aliases: ["TP-7", "Selanc", "Threonyl-Lysyl-Prolyl-Arginyl-Prolyl-Glycyl-Proline"]
-category: "cognitive"
-evidenceStrength: "moderate"
-lastUpdated: 2026-01-22
-comparators: ["semax", "diazepam", "buspirone"]
-summary: "A synthetic heptapeptide derived from the immunomodulatory peptide tuftsin, developed by Russian researchers and approved in Russia since 2009 for anxiety and neurasthenia. Demonstrates anxiolytic effects comparable to benzodiazepines without sedation, cognitive impairment, or dependence liability. Extensive Russian clinical research supports efficacy, though Western independent replication remains limited."
+name: Selank
+aliases:
+  - TP-7
+  - Selanc
+  - Threonyl-Lysyl-Prolyl-Arginyl-Prolyl-Glycyl-Proline
+category: cognitive
+evidenceStrength: moderate
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - semax
+  - diazepam
+  - buspirone
+summary: >-
+  A synthetic heptapeptide derived from the immunomodulatory peptide tuftsin,
+  developed by Russian researchers and approved in Russia since 2009 for anxiety
+  and neurasthenia. Demonstrates anxiolytic effects comparable to
+  benzodiazepines without sedation, cognitive impairment, or dependence
+  liability. Extensive Russian clinical research supports efficacy, though
+  Western independent replication remains limited.
 sources:
   count: 25
   human: 5
   preclinical: 20
   openAccess: 12
-metaTitle: "Selank Evidence Dossier | PepCodex"
-metaDescription: "Evidence review of Selank (TP-7), the Russian-approved anxiolytic peptide. Clinical trials, mechanism of action, safety profile, and citations from Russian and international research."
+metaTitle: Selank Evidence Dossier | PepCodex
+metaDescription: >-
+  Evidence review of Selank (TP-7), the Russian-approved anxiolytic peptide.
+  Clinical trials, mechanism of action, safety profile, and citations from
+  Russian and international research.
 interactions:
-  - peptide: "semax"
-    type: "synergistic"
-    description: "Both Russian regulatory peptides with complementary effects - Selank provides anxiolysis while Semax enhances cognition. Often used together in Russian clinical practice."
-    source: "26854712"
-  - peptide: "epithalon"
-    type: "compatible"
-    description: "Both Russian bioregulator peptides with distinct targets - Selank for anxiety via GABA modulation, epithalon for longevity via telomerase. No known interactions."
-  - peptide: "thymosin-alpha-1"
-    type: "compatible"
-    description: "Both have immunomodulatory properties - Selank via tuftsin backbone, Ta1 as primary function. May have complementary immune effects."
-  - peptide: "bpc-157"
-    type: "compatible"
-    description: "Different primary targets - Selank for CNS anxiolysis, BPC-157 for tissue repair. BPC-157's reported CNS effects may complement Selank's anxiolytic action."
-  - peptide: "ll-37"
-    type: "compatible"
-    description: "Selank retains immunomodulatory properties from tuftsin backbone; LL-37 provides direct antimicrobial effects. Different immune modulation pathways."
+  - peptide: semax
+    type: synergistic
+    description: >-
+      Both Russian regulatory peptides with complementary effects - Selank
+      provides anxiolysis while Semax enhances cognition. Often used together in
+      Russian clinical practice.
+    source: '26854712'
+  - peptide: epithalon
+    type: compatible
+    description: >-
+      Both Russian bioregulator peptides with distinct targets - Selank for
+      anxiety via GABA modulation, epithalon for longevity via telomerase. No
+      known interactions.
+  - peptide: thymosin-alpha-1
+    type: compatible
+    description: >-
+      Both have immunomodulatory properties - Selank via tuftsin backbone, Ta1
+      as primary function. May have complementary immune effects.
+  - peptide: bpc-157
+    type: compatible
+    description: >-
+      Different primary targets - Selank for CNS anxiolysis, BPC-157 for tissue
+      repair. BPC-157's reported CNS effects may complement Selank's anxiolytic
+      action.
+  - peptide: ll-37
+    type: compatible
+    description: >-
+      Selank retains immunomodulatory properties from tuftsin backbone; LL-37
+      provides direct antimicrobial effects. Different immune modulation
+      pathways.
 molecularInfo:
-  weight: "751.9 Da"
+  weight: 751.9 Da
   chainLength: 7
-  type: "Heptapeptide (Tuftsin Analogue)"
-  sequence: "TKPRPGP"
+  type: Heptapeptide (Tuftsin Analogue)
+  sequence: TKPRPGP
   aminoAcids:
-    - { code: "T", name: "Threonine", position: 1, property: "polar" }
-    - { code: "K", name: "Lysine", position: 2, property: "positive" }
-    - { code: "P", name: "Proline", position: 3, property: "hydrophobic" }
-    - { code: "R", name: "Arginine", position: 4, property: "positive" }
-    - { code: "P", name: "Proline", position: 5, property: "hydrophobic" }
-    - { code: "G", name: "Glycine", position: 6, property: "polar" }
-    - { code: "P", name: "Proline", position: 7, property: "hydrophobic" }
+    - code: T
+      name: Threonine
+      position: 1
+      property: polar
+    - code: K
+      name: Lysine
+      position: 2
+      property: positive
+    - code: P
+      name: Proline
+      position: 3
+      property: hydrophobic
+    - code: R
+      name: Arginine
+      position: 4
+      property: positive
+    - code: P
+      name: Proline
+      position: 5
+      property: hydrophobic
+    - code: G
+      name: Glycine
+      position: 6
+      property: polar
+    - code: P
+      name: Proline
+      position: 7
+      property: hydrophobic
 evidenceChainedBenefits:
   - mechanism:
-      action: "GABA-A receptor subunit gene expression modulation"
-      confidence: "established"
+      action: GABA-A receptor subunit gene expression modulation
+      confidence: established
       directStudies: 8
     benefit:
-      claim: "reduce anxiety without sedation or dependence"
-      qualifier: "shown to"
+      claim: reduce anxiety without sedation or dependence
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 4
       animalStudies: 12
       cellStudies: 3
       keyFindings:
-        - study: "Zozulia AA et al. 2008"
-          type: "human-rct"
-          finding: "Significant reduction in HAM-A scores vs placebo in 62 GAD patients without sedation or cognitive impairment"
-          pmid: "18577768"
-        - study: "Volkova A et al. 2016"
-          type: "animal"
-          finding: "Demonstrated modulation of GABA-A receptor alpha, beta, and gamma subunit gene expression in hippocampus"
-          pmid: "19499411"
-        - study: "Kozlovskaya MM et al. 2003"
-          type: "animal"
-          finding: "Anxiolytic effects comparable to diazepam in elevated plus maze without motor coordination impairment"
-          pmid: "22359068"
+        - study: Zozulia AA et al. 2008
+          type: human-rct
+          finding: >-
+            Significant reduction in HAM-A scores vs placebo in 62 GAD patients
+            without sedation or cognitive impairment
+          pmid: '18577768'
+        - study: Volkova A et al. 2016
+          type: animal
+          finding: >-
+            Demonstrated modulation of GABA-A receptor alpha, beta, and gamma
+            subunit gene expression in hippocampus
+          pmid: '19499411'
+        - study: Kozlovskaya MM et al. 2003
+          type: animal
+          finding: >-
+            Anxiolytic effects comparable to diazepam in elevated plus maze
+            without motor coordination impairment
+          pmid: '22359068'
   - mechanism:
-      action: "Enkephalin-degrading enzyme inhibition elevating endogenous opioids"
-      confidence: "supported"
+      action: Enkephalin-degrading enzyme inhibition elevating endogenous opioids
+      confidence: supported
       directStudies: 5
     benefit:
-      claim: "enhance natural mood regulation and stress resilience"
-      qualifier: "appears to"
+      claim: enhance natural mood regulation and stress resilience
+      qualifier: appears to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 2
       animalStudies: 6
       cellStudies: 4
       keyFindings:
-        - study: "Kost NV et al. 2001"
-          type: "in-vitro"
-          finding: "Selank and tuftsin inhibit enkephalin-degrading aminopeptidases in human blood samples"
-          pmid: "18461234"
-        - study: "Kost NV et al. 2007"
-          type: "in-vitro"
-          finding: "Demonstrated selective inhibition of enkephalin degradation leading to elevated endogenous opioid levels"
-          pmid: "17361081"
+        - study: Kost NV et al. 2001
+          type: in-vitro
+          finding: >-
+            Selank and tuftsin inhibit enkephalin-degrading aminopeptidases in
+            human blood samples
+          pmid: '18461234'
+        - study: Kost NV et al. 2007
+          type: in-vitro
+          finding: >-
+            Demonstrated selective inhibition of enkephalin degradation leading
+            to elevated endogenous opioid levels
+          pmid: '17361081'
   - mechanism:
-      action: "BDNF upregulation in hippocampus and frontal cortex"
-      confidence: "supported"
+      action: BDNF upregulation in hippocampus and frontal cortex
+      confidence: supported
       directStudies: 4
     benefit:
-      claim: "improve memory consolidation and cognitive function"
-      qualifier: "may"
+      claim: improve memory consolidation and cognitive function
+      qualifier: may
     evidence:
-      level: "low"
+      level: low
       humanStudies: 1
       animalStudies: 8
       cellStudies: 2
       keyFindings:
-        - study: "Kolomin T et al. 2016"
-          type: "animal"
-          finding: "Selank administration increased BDNF mRNA expression in rat hippocampus and frontal cortex"
-          pmid: "26865129"
-        - study: "Narkevich VB et al. 2008"
-          type: "animal"
-          finding: "Prevented stress-induced memory impairment in passive avoidance paradigm"
-          pmid: "23392213"
+        - study: Kolomin T et al. 2016
+          type: animal
+          finding: >-
+            Selank administration increased BDNF mRNA expression in rat
+            hippocampus and frontal cortex
+          pmid: '26865129'
+        - study: Narkevich VB et al. 2008
+          type: animal
+          finding: >-
+            Prevented stress-induced memory impairment in passive avoidance
+            paradigm
+          pmid: '23392213'
   - mechanism:
-      action: "Serotonin receptor gene modulation (5-HT1A, 5-HT2A)"
-      confidence: "supported"
+      action: 'Serotonin receptor gene modulation (5-HT1A, 5-HT2A)'
+      confidence: supported
       directStudies: 4
     benefit:
-      claim: "stabilize mood and reduce depressive symptoms"
-      qualifier: "may"
+      claim: stabilize mood and reduce depressive symptoms
+      qualifier: may
     evidence:
-      level: "low"
+      level: low
       humanStudies: 1
       animalStudies: 5
       cellStudies: 2
       keyFindings:
-        - study: "Filatova EV et al. 2017"
-          type: "animal"
-          finding: "Selank modulated 5-HT1A and 5-HT2A receptor gene expression in hippocampus"
-          pmid: "28189112"
-        - study: "Volkova A et al. 2015"
-          type: "animal"
-          finding: "Demonstrated balanced modulation of serotonergic and dopaminergic receptor genes"
-          pmid: "26118559"
+        - study: Filatova EV et al. 2017
+          type: animal
+          finding: >-
+            Selank modulated 5-HT1A and 5-HT2A receptor gene expression in
+            hippocampus
+          pmid: '28189112'
+        - study: Volkova A et al. 2015
+          type: animal
+          finding: >-
+            Demonstrated balanced modulation of serotonergic and dopaminergic
+            receptor genes
+          pmid: '26118559'
 conditions:
-  - slug: "anxiety"
-    name: "Anxiety"
-    researchSummary: "Selank is approved in Russia for anxiety disorders and neurasthenia. Clinical trials demonstrate anxiolytic efficacy comparable to benzodiazepines without the sedation, cognitive impairment, or dependence potential.
+  - slug: anxiety
+    name: Anxiety
+    researchSummary: >-
+      Selank is approved in Russia for anxiety disorders and neurasthenia.
+      Clinical trials demonstrate anxiolytic efficacy comparable to
+      benzodiazepines without the sedation, cognitive impairment, or dependence
+      potential.
 
-The mechanism involves GABA-A receptor allosteric modulation, similar to benzodiazepines but with a different binding profile. Studies show reduced anxiety scores on validated assessment tools.
+      The mechanism involves GABA-A receptor allosteric modulation, similar to
+      benzodiazepines but with a different binding profile. Studies show reduced
+      anxiety scores on validated assessment tools.
 
-Selank is not approved in Western countries. Russian clinical trials provide the evidence base, but independent Western replication is limited."
-    relevantStudies: ["26854712", "18549505"]
-    relatedPeptides: ["semax"]
-  - slug: "stress"
-    name: "Stress"
-    researchSummary: "Selank modulates the stress response through effects on the HPA axis and neurotransmitter systems. The peptide reduces cortisol elevation and anxiety symptoms in stress models.
+      Selank is not approved in Western countries. Russian clinical trials
+      provide the evidence base, but independent Western replication is limited.
+    relevantStudies:
+      - '26854712'
+      - '18549505'
+    relatedPeptides:
+      - semax
+  - slug: stress
+    name: Stress
+    researchSummary: >-
+      Selank modulates the stress response through effects on the HPA axis and
+      neurotransmitter systems. The peptide reduces cortisol elevation and
+      anxiety symptoms in stress models.
 
-Russian research shows improved stress resilience and reduced physiological stress markers with Selank administration. The anxiolytic effects translate to better stress coping.
+      Russian research shows improved stress resilience and reduced
+      physiological stress markers with Selank administration. The anxiolytic
+      effects translate to better stress coping.
 
-The combination of anxiolytic and immunomodulatory effects (from the tuftsin backbone) may provide stress-induced immune suppression protection."
-    relevantStudies: ["26854712", "18549505"]
-    relatedPeptides: ["semax", "dsip"]
-  - slug: "cognitive-enhancement"
-    name: "Cognitive Enhancement"
-    researchSummary: "Selank has nootropic effects alongside its anxiolytic properties. The peptide enhances memory consolidation and attention without the stimulant effects of typical cognitive enhancers.
+      The combination of anxiolytic and immunomodulatory effects (from the
+      tuftsin backbone) may provide stress-induced immune suppression
+      protection.
+    relevantStudies:
+      - '26854712'
+      - '18549505'
+    relatedPeptides:
+      - semax
+      - dsip
+  - slug: cognitive-enhancement
+    name: Cognitive Enhancement
+    researchSummary: >-
+      Selank has nootropic effects alongside its anxiolytic properties. The
+      peptide enhances memory consolidation and attention without the stimulant
+      effects of typical cognitive enhancers.
 
-Studies show improved learning performance and memory in both animal models and human trials. The lack of sedation allows cognitive benefits while reducing anxiety.
+      Studies show improved learning performance and memory in both animal
+      models and human trials. The lack of sedation allows cognitive benefits
+      while reducing anxiety.
 
-Selank is often combined with Semax in Russian practice for enhanced cognitive effects with anxiety reduction."
-    relevantStudies: ["26854712"]
-    relatedPeptides: ["semax", "cerebrolysin"]
-  - slug: "immune-support"
-    name: "Immune Support"
-    researchSummary: "Selank retains immunomodulatory properties from its tuftsin backbone. Tuftsin is an endogenous immunostimulatory tetrapeptide that enhances phagocyte activity.
+      Selank is often combined with Semax in Russian practice for enhanced
+      cognitive effects with anxiety reduction.
+    relevantStudies:
+      - '26854712'
+    relatedPeptides:
+      - semax
+      - cerebrolysin
+  - slug: immune-support
+    name: Immune Support
+    researchSummary: >-
+      Selank retains immunomodulatory properties from its tuftsin backbone.
+      Tuftsin is an endogenous immunostimulatory tetrapeptide that enhances
+      phagocyte activity.
 
-The peptide may provide immune support while addressing anxiety, which is relevant since chronic anxiety can suppress immune function. This dual action distinguishes Selank from traditional anxiolytics.
+      The peptide may provide immune support while addressing anxiety, which is
+      relevant since chronic anxiety can suppress immune function. This dual
+      action distinguishes Selank from traditional anxiolytics.
 
-The immune effects are secondary to the primary anxiolytic indication but may provide added benefit in stressed or immunocompromised individuals."
-    relevantStudies: ["18549505"]
-    relatedPeptides: ["thymosin-alpha-1", "ll-37"]
+      The immune effects are secondary to the primary anxiolytic indication but
+      may provide added benefit in stressed or immunocompromised individuals.
+    relevantStudies:
+      - '18549505'
+    relatedPeptides:
+      - thymosin-alpha-1
+      - ll-37
 timeline:
-  - period: "Day 1-3"
-    effects: "Gene expression modulation begins. Unlike fast-acting anxiolytics, Selank works through transcriptional changes requiring time for protein synthesis. Minimal acute effects expected as GABA receptor subunit genes begin modulation."
-    source: "PMID:19499411"
-  - period: "Week 1"
-    effects: "Initial anxiolytic effects may emerge as GABA-A receptor subunit changes accumulate. Russian clinical protocols typically use 14-day courses. Enkephalin levels begin rising due to aminopeptidase inhibition."
-    source: "PMID:18577768"
-  - period: "Week 2"
-    effects: "Clinical trials show significant HAM-A score reductions by end of 14-day treatment. BDNF upregulation contributing to cognitive improvements. Mood stabilization from serotonin receptor modulation."
-    source: "PMID:18577768"
-  - period: "Week 2-4"
-    effects: "Sustained anxiolytic effects with continued administration. No tolerance development observed in clinical studies. Cognitive benefits become more apparent with improved memory consolidation."
-    source: "PMID:26854712"
-  - period: "Post-treatment"
-    effects: "Effects may persist beyond treatment cessation due to gene expression changes. No withdrawal symptoms reported, distinguishing Selank from benzodiazepines. Duration of post-treatment benefit not well characterized."
+  - period: Day 1-3
+    effects: >-
+      Gene expression modulation begins. Unlike fast-acting anxiolytics, Selank
+      works through transcriptional changes requiring time for protein
+      synthesis. Minimal acute effects expected as GABA receptor subunit genes
+      begin modulation.
+    source: 'PMID:19499411'
+  - period: Week 1
+    effects: >-
+      Initial anxiolytic effects may emerge as GABA-A receptor subunit changes
+      accumulate. Russian clinical protocols typically use 14-day courses.
+      Enkephalin levels begin rising due to aminopeptidase inhibition.
+    source: 'PMID:18577768'
+  - period: Week 2
+    effects: >-
+      Clinical trials show significant HAM-A score reductions by end of 14-day
+      treatment. BDNF upregulation contributing to cognitive improvements. Mood
+      stabilization from serotonin receptor modulation.
+    source: 'PMID:18577768'
+  - period: Week 2-4
+    effects: >-
+      Sustained anxiolytic effects with continued administration. No tolerance
+      development observed in clinical studies. Cognitive benefits become more
+      apparent with improved memory consolidation.
+    source: 'PMID:26854712'
+  - period: Post-treatment
+    effects: >-
+      Effects may persist beyond treatment cessation due to gene expression
+      changes. No withdrawal symptoms reported, distinguishing Selank from
+      benzodiazepines. Duration of post-treatment benefit not well
+      characterized.
 faqs:
-  - question: "What is Selank?"
-    answer: "Selank is a synthetic heptapeptide derived from the immunomodulatory peptide tuftsin with a Pro-Gly-Pro extension. It is approved in Russia for anxiety and neurasthenia, demonstrating anxiolytic effects without sedation, cognitive impairment, or dependence."
-  - question: "Is Selank FDA approved?"
-    answer: "No, Selank is not FDA-approved. It has been approved in Russia since 2009 for anxiety disorders and neurasthenia. Western regulatory agencies have not evaluated it for approval."
-  - question: "What is the evidence for Selank?"
-    answer: "Selank has moderate evidence from Russian clinical trials showing anxiolytic efficacy comparable to benzodiazepines without their side effects. A trial in 62 GAD patients showed significant reduction in anxiety scores without sedation."
-  - question: "How does Selank compare to benzodiazepines?"
-    answer: "Selank provides anxiolytic effects comparable to benzodiazepines but without sedation, cognitive impairment, or dependence potential. It works through gene expression modulation of GABA-A receptors rather than direct receptor binding."
-  - question: "Is Selank addictive?"
-    answer: "No, clinical studies have not shown tolerance development or withdrawal symptoms with Selank, distinguishing it from benzodiazepines. The gene expression mechanism means effects persist beyond treatment without dependence."
+  - question: What is Selank?
+    answer: >-
+      Selank is a synthetic heptapeptide derived from the immunomodulatory
+      peptide tuftsin with a Pro-Gly-Pro extension. It is approved in Russia for
+      anxiety and neurasthenia, demonstrating anxiolytic effects without
+      sedation, cognitive impairment, or dependence.
+  - question: Is Selank FDA approved?
+    answer: >-
+      No, Selank is not FDA-approved. It has been approved in Russia since 2009
+      for anxiety disorders and neurasthenia. Western regulatory agencies have
+      not evaluated it for approval.
+  - question: What is the evidence for Selank?
+    answer: >-
+      Selank has moderate evidence from Russian clinical trials showing
+      anxiolytic efficacy comparable to benzodiazepines without their side
+      effects. A trial in 62 GAD patients showed significant reduction in
+      anxiety scores without sedation.
+  - question: How does Selank compare to benzodiazepines?
+    answer: >-
+      Selank provides anxiolytic effects comparable to benzodiazepines but
+      without sedation, cognitive impairment, or dependence potential. It works
+      through gene expression modulation of GABA-A receptors rather than direct
+      receptor binding.
+  - question: Is Selank addictive?
+    answer: >-
+      No, clinical studies have not shown tolerance development or withdrawal
+      symptoms with Selank, distinguishing it from benzodiazepines. The gene
+      expression mechanism means effects persist beyond treatment without
+      dependence.
 qualityChecklist:
   goodSigns:
-    - "White to off-white lyophilized powder (cake or crystalline appearance)"
-    - "Dissolves completely and quickly in bacteriostatic water"
-    - "Clear, colorless solution after reconstitution"
-    - "Comes with certificate of analysis (COA) showing >98% purity"
-    - "Third-party HPLC and mass spectrometry verification available"
-    - "Proper vacuum seal on vial before reconstitution"
-    - "Nasal spray formulations should have clear delivery mechanism"
+    - White to off-white lyophilized powder (cake or crystalline appearance)
+    - Dissolves completely and quickly in bacteriostatic water
+    - 'Clear, colorless solution after reconstitution'
+    - Comes with certificate of analysis (COA) showing >98% purity
+    - Third-party HPLC and mass spectrometry verification available
+    - Proper vacuum seal on vial before reconstitution
+    - Nasal spray formulations should have clear delivery mechanism
   warningSigns:
-    - "Slightly off-white or cream-colored powder (may still be acceptable)"
-    - "Takes longer than expected to fully dissolve"
-    - "Powder appears collapsed or melted (possible moisture exposure)"
-    - "COA from manufacturer only without third-party verification"
-    - "Purity listed below 98% but above 95%"
-    - "Nasal spray with inconsistent delivery"
+    - Slightly off-white or cream-colored powder (may still be acceptable)
+    - Takes longer than expected to fully dissolve
+    - Powder appears collapsed or melted (possible moisture exposure)
+    - COA from manufacturer only without third-party verification
+    - Purity listed below 98% but above 95%
+    - Nasal spray with inconsistent delivery
   badSigns:
-    - "Yellow, brown, or otherwise discolored powder"
-    - "Visible particles or cloudiness after reconstitution"
-    - "Gel-like consistency or clumping that won't dissolve"
-    - "No COA provided or COA appears fraudulent"
-    - "Strong unusual odor"
-    - "Vial seal appears compromised or previously opened"
-    - "Nasal spray with visible contamination or broken mechanism"
+    - 'Yellow, brown, or otherwise discolored powder'
+    - Visible particles or cloudiness after reconstitution
+    - Gel-like consistency or clumping that won't dissolve
+    - No COA provided or COA appears fraudulent
+    - Strong unusual odor
+    - Vial seal appears compromised or previously opened
+    - Nasal spray with visible contamination or broken mechanism
+regulatoryStatus:
+  status: research-only
+  lastUpdated: '2026-02-18'
+  notes: >-
+    Not FDA-approved in US. Approved in Russia as an anxiolytic. Synthetic
+    analog of tuftsin.
+ratings:
+  researchDepth: 2
+  globalCoverage: 2
+  mechanismPlausibility: 3
+  overall: 2.5
+  lastReviewed: 2026-02-19T00:00:00.000Z
+  reviewNotes: >-
+    Russian-origin anxiolytic approved in Russia since 2009. Limited independent Western replication (some Ukrainian and European preclinical work). Mechanism via tuftsin backbone with GABA/BDNF modulation is supported but primarily from Russian studies.
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

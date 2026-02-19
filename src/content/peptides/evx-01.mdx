@@ -1,134 +1,201 @@
 ---
-name: "EVX-01"
-aliases: ["EVX01", "Evaxion EVX-01", "AI-Immunology Neoantigen Vaccine"]
-category: "other"
-evidenceStrength: "moderate"
-lastUpdated: 2026-01-22
-comparators: ["mRNA-4157"]
-summary: "A personalized neoantigen peptide vaccine developed by Evaxion Biotech using AI-driven neoantigen prediction. Phase 1 data in melanoma showed 67% overall response rate when combined with anti-PD-1 therapy, with neoantigen-specific T-cell responses detected in all patients. Distinct from mRNA-based approaches like mRNA-4157."
+name: EVX-01
+aliases:
+  - EVX01
+  - Evaxion EVX-01
+  - AI-Immunology Neoantigen Vaccine
+category: other
+evidenceStrength: moderate
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - mRNA-4157
+summary: >-
+  A personalized neoantigen peptide vaccine developed by Evaxion Biotech using
+  AI-driven neoantigen prediction. Phase 1 data in melanoma showed 67% overall
+  response rate when combined with anti-PD-1 therapy, with neoantigen-specific
+  T-cell responses detected in all patients. Distinct from mRNA-based approaches
+  like mRNA-4157.
 sources:
   count: 18
   human: 12
   preclinical: 6
   openAccess: 14
-metaTitle: "EVX-01 Evidence Dossier | Personalized Neoantigen Peptide Vaccine | PepCodex"
-metaDescription: "Comprehensive evidence review of EVX-01, Evaxion Biotech's AI-driven personalized neoantigen peptide vaccine. Phase 1 melanoma data, mechanism of action, and comparison to mRNA-4157."
+metaTitle: EVX-01 Evidence Dossier | Personalized Neoantigen Peptide Vaccine | PepCodex
+metaDescription: >-
+  Comprehensive evidence review of EVX-01, Evaxion Biotech's AI-driven
+  personalized neoantigen peptide vaccine. Phase 1 melanoma data, mechanism of
+  action, and comparison to mRNA-4157.
 interactions:
-  - peptide: "mRNA-4157"
-    type: "compatible"
-    description: "Alternative neoantigen vaccine platform (mRNA vs peptide). Both target personalized tumor neoantigens through different delivery mechanisms. Not typically combined."
-  - peptide: "pembrolizumab"
-    type: "synergistic"
-    description: "EVX-01 is designed for combination with anti-PD-1 therapy. Vaccine primes neoantigen-specific T cells while checkpoint inhibitor removes immunosuppressive brakes. Phase 1 data from this combination."
+  - peptide: mRNA-4157
+    type: compatible
+    description: >-
+      Alternative neoantigen vaccine platform (mRNA vs peptide). Both target
+      personalized tumor neoantigens through different delivery mechanisms. Not
+      typically combined.
+  - peptide: pembrolizumab
+    type: synergistic
+    description: >-
+      EVX-01 is designed for combination with anti-PD-1 therapy. Vaccine primes
+      neoantigen-specific T cells while checkpoint inhibitor removes
+      immunosuppressive brakes. Phase 1 data from this combination.
 molecularInfo:
-  weight: "Variable (patient-specific)"
+  weight: Variable (patient-specific)
   chainLength: 0
-  type: "Personalized synthetic long peptide (SLP) vaccine"
-  sequence: "N/A (small molecule)"
+  type: Personalized synthetic long peptide (SLP) vaccine
+  sequence: N/A (small molecule)
   aminoAcids: []
 evidenceChainedBenefits:
   - mechanism:
-      action: "AI-driven neoantigen prediction via PIONEER platform for personalized tumor targeting"
-      confidence: "supported"
+      action: >-
+        AI-driven neoantigen prediction via PIONEER platform for personalized
+        tumor targeting
+      confidence: supported
       directStudies: 4
     benefit:
-      claim: "generate tumor-specific T-cell responses"
-      qualifier: "shown to"
+      claim: generate tumor-specific T-cell responses
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 12
       animalStudies: 4
       cellStudies: 2
       keyFindings:
-        - study: "Evaxion Phase 1/2a 2023"
-          type: "human-observational"
-          finding: "100% T-cell response rate (12/12 patients) with neoantigen-specific CD8+ and CD4+ T cells detected"
-          pmid: "NCT03715985"
-        - study: "ESMO Congress 2023"
-          type: "human-observational"
-          finding: "Median 9 of 15 vaccine peptides induced measurable T-cell responses per patient"
-          pmid: "Conference Abstract"
+        - study: Evaxion Phase 1/2a 2023
+          type: human-observational
+          finding: >-
+            100% T-cell response rate (12/12 patients) with neoantigen-specific
+            CD8+ and CD4+ T cells detected
+          pmid: NCT03715985
+        - study: ESMO Congress 2023
+          type: human-observational
+          finding: >-
+            Median 9 of 15 vaccine peptides induced measurable T-cell responses
+            per patient
+          pmid: Conference Abstract
   - mechanism:
-      action: "Synthetic long peptide (SLP) design enabling both CD4+ and CD8+ T-cell activation"
-      confidence: "supported"
+      action: >-
+        Synthetic long peptide (SLP) design enabling both CD4+ and CD8+ T-cell
+        activation
+      confidence: supported
       directStudies: 3
     benefit:
-      claim: "improve anti-tumor immune response durability"
-      qualifier: "appears to"
+      claim: improve anti-tumor immune response durability
+      qualifier: appears to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 12
       animalStudies: 2
       cellStudies: 1
       keyFindings:
-        - study: "Evaxion Phase 1/2a Follow-up"
-          type: "human-observational"
-          finding: "T-cell responses persisted beyond 1 year in responding patients"
-          pmid: "NCT03715985"
-        - study: "Ott PA et al. 2017"
-          type: "human-observational"
-          finding: "Long peptide neoantigen vaccines induce durable poly-functional T-cell responses"
-          pmid: "28678778"
+        - study: Evaxion Phase 1/2a Follow-up
+          type: human-observational
+          finding: T-cell responses persisted beyond 1 year in responding patients
+          pmid: NCT03715985
+        - study: Ott PA et al. 2017
+          type: human-observational
+          finding: >-
+            Long peptide neoantigen vaccines induce durable poly-functional
+            T-cell responses
+          pmid: '28678778'
   - mechanism:
-      action: "Combination with anti-PD-1 checkpoint inhibition removing T-cell suppression"
-      confidence: "supported"
+      action: >-
+        Combination with anti-PD-1 checkpoint inhibition removing T-cell
+        suppression
+      confidence: supported
       directStudies: 5
     benefit:
-      claim: "enhance clinical response rates in melanoma"
-      qualifier: "appears to"
+      claim: enhance clinical response rates in melanoma
+      qualifier: appears to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 12
       animalStudies: 3
       cellStudies: 0
       keyFindings:
-        - study: "Evaxion Phase 1/2a 2023"
-          type: "human-observational"
-          finding: "67% overall response rate (8/12) vs historical 40% with pembrolizumab alone"
-          pmid: "NCT03715985"
-        - study: "Evaxion Phase 1/2a 2023"
-          type: "human-observational"
-          finding: "25% complete response rate with durable responses beyond 2 years"
-          pmid: "NCT03715985"
+        - study: Evaxion Phase 1/2a 2023
+          type: human-observational
+          finding: >-
+            67% overall response rate (8/12) vs historical 40% with
+            pembrolizumab alone
+          pmid: NCT03715985
+        - study: Evaxion Phase 1/2a 2023
+          type: human-observational
+          finding: 25% complete response rate with durable responses beyond 2 years
+          pmid: NCT03715985
 conditions:
-  - slug: "melanoma"
-    name: "Melanoma"
-    researchSummary: "EVX-01 has been evaluated in a Phase 1/2a trial (NCT03715985) in advanced melanoma patients naive to checkpoint inhibitors. In combination with pembrolizumab, 67% overall response rate was observed (8/12 patients), with 25% complete responses and 100% T-cell immunogenicity. All evidence is from a single small open-label trial."
-    relevantStudies: ["NCT03715985", "28678778", "28678784"]
-    relatedPeptides: ["mRNA-4157"]
+  - slug: melanoma
+    name: Melanoma
+    researchSummary: >-
+      EVX-01 has been evaluated in a Phase 1/2a trial (NCT03715985) in advanced
+      melanoma patients naive to checkpoint inhibitors. In combination with
+      pembrolizumab, 67% overall response rate was observed (8/12 patients),
+      with 25% complete responses and 100% T-cell immunogenicity. All evidence
+      is from a single small open-label trial.
+    relevantStudies:
+      - NCT03715985
+      - '28678778'
+      - '28678784'
+    relatedPeptides:
+      - mRNA-4157
 timeline:
-  - period: "Week 1-4"
-    effects: "Initial vaccination series (weeks 1, 2, 3, 4). Based on Phase 1/2a protocol, neoantigen-specific T-cell responses begin developing. Early immune priming occurs."
-    source: "NCT03715985"
-  - period: "Week 4-14"
-    effects: "Continued vaccination schedule (weeks 6, 8, 11, 14). T-cell expansion and maturation. Clinical responses may begin to emerge in combination with checkpoint inhibitor."
-    source: "NCT03715985"
-  - period: "Week 14-26"
-    effects: "Maintenance vaccinations (weeks 20, 26). In Phase 1/2a, objective responses were typically evident by week 12-24. Durable T-cell memory formation."
-    source: "NCT03715985"
-  - period: "6+ months"
-    effects: "Long-term follow-up showed 88% of responders maintained response at 12 months, 63% at 24 months. T-cell responses persisted beyond 1 year."
-    source: "NCT03715985"
+  - period: Week 1-4
+    effects: >-
+      Initial vaccination series (weeks 1, 2, 3, 4). Based on Phase 1/2a
+      protocol, neoantigen-specific T-cell responses begin developing. Early
+      immune priming occurs.
+    source: NCT03715985
+  - period: Week 4-14
+    effects: >-
+      Continued vaccination schedule (weeks 6, 8, 11, 14). T-cell expansion and
+      maturation. Clinical responses may begin to emerge in combination with
+      checkpoint inhibitor.
+    source: NCT03715985
+  - period: Week 14-26
+    effects: >-
+      Maintenance vaccinations (weeks 20, 26). In Phase 1/2a, objective
+      responses were typically evident by week 12-24. Durable T-cell memory
+      formation.
+    source: NCT03715985
+  - period: 6+ months
+    effects: >-
+      Long-term follow-up showed 88% of responders maintained response at 12
+      months, 63% at 24 months. T-cell responses persisted beyond 1 year.
+    source: NCT03715985
 qualityChecklist:
   goodSigns:
-    - "Manufactured under GMP conditions by qualified facility"
-    - "Patient-specific formulation based on tumor sequencing"
-    - "Administered through clinical trial with proper oversight"
-    - "Certificate of analysis provided for each batch"
-    - "Proper cold chain maintained during storage and transport"
-    - "Administered with validated adjuvant system"
+    - Manufactured under GMP conditions by qualified facility
+    - Patient-specific formulation based on tumor sequencing
+    - Administered through clinical trial with proper oversight
+    - Certificate of analysis provided for each batch
+    - Proper cold chain maintained during storage and transport
+    - Administered with validated adjuvant system
   warningSigns:
-    - "Manufacturing timeline exceeding 8 weeks from biopsy"
-    - "Fewer than 10 neoantigens included in formulation"
-    - "Adjuvant system different from validated protocol"
-    - "Storage conditions outside 2-8C range"
+    - Manufacturing timeline exceeding 8 weeks from biopsy
+    - Fewer than 10 neoantigens included in formulation
+    - Adjuvant system different from validated protocol
+    - Storage conditions outside 2-8C range
   badSigns:
-    - "Not administered through approved clinical trial"
-    - "No tumor sequencing verification"
-    - "Missing certificate of analysis"
-    - "Unknown or unvalidated manufacturing source"
-    - "No adjuvant included with peptide formulation"
-    - "Claims of 'off-the-shelf' neoantigen vaccine (contradicts personalized approach)"
+    - Not administered through approved clinical trial
+    - No tumor sequencing verification
+    - Missing certificate of analysis
+    - Unknown or unvalidated manufacturing source
+    - No adjuvant included with peptide formulation
+    - >-
+      Claims of 'off-the-shelf' neoantigen vaccine (contradicts personalized
+      approach)
+regulatoryStatus:
+  status: investigational
+  lastUpdated: '2026-02-18'
+  notes: >-
+    Phase 1 clinical trials for cancer (Evaxion Biotech). AI-designed
+    personalized cancer vaccine.
+ratings:
+  researchDepth: 3
+  globalCoverage: 3
+  mechanismPlausibility: 3
+  overall: 3.0
+  lastReviewed: 2026-02-18T00:00:00.000Z
+  reviewNotes: "Phase 2 NSCLC peptide vaccine with multi-country trials and clear HER-2 targeting mechanism."
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

@@ -1,156 +1,237 @@
 ---
-name: "5-Amino-1MQ"
-aliases: ["5-Amino-1-Methylquinolinium", "NNMT Inhibitor"]
-category: "metabolic"
-compoundType: "small-molecule"
-evidenceStrength: "low"
-lastUpdated: 2026-01-22
-comparators: ["aod-9604", "semaglutide"]
-summary: "A small molecule NNMT inhibitor studied for metabolic effects in animal models. No human clinical trials have been conducted. Increases NAD+ levels in adipose tissue in preclinical studies."
+name: 5-Amino-1MQ
+aliases:
+  - 5-Amino-1-Methylquinolinium
+  - NNMT Inhibitor
+category: metabolic
+compoundType: small-molecule
+evidenceStrength: low
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - aod-9604
+  - semaglutide
+summary: >-
+  A small molecule NNMT inhibitor studied for metabolic effects in animal
+  models. No human clinical trials have been conducted. Increases NAD+ levels in
+  adipose tissue in preclinical studies.
 sources:
   count: 12
   human: 1
   preclinical: 11
   openAccess: 7
-metaTitle: "5-Amino-1MQ Evidence Dossier | PepCodex"
-metaDescription: "Evidence review of 5-Amino-1MQ (NNMT inhibitor). Preclinical research, mechanism of action, and current evidence limitations."
+metaTitle: 5-Amino-1MQ Evidence Dossier | PepCodex
+metaDescription: >-
+  Evidence review of 5-Amino-1MQ (NNMT inhibitor). Preclinical research,
+  mechanism of action, and current evidence limitations.
 interactions:
-  - peptide: "aod-9604"
-    type: "compatible"
-    description: "Different mechanisms of action (5-Amino-1MQ targets NNMT/NAD+ pathway vs AOD-9604's lipolytic effects). No interaction studies available; both target metabolic pathways through distinct routes."
-  - peptide: "semaglutide"
-    type: "caution"
-    description: "Both target metabolic and weight management pathways. Semaglutide is a GLP-1 agonist affecting appetite/insulin while 5-Amino-1MQ targets cellular NAD+ metabolism. No interaction data exists."
-  - peptide: "nmn"
-    type: "synergistic"
-    description: "Theoretical synergy: NMN provides NAD+ precursor while 5-Amino-1MQ preserves NAD+ by blocking NNMT consumption. Both aim to elevate NAD+ through complementary mechanisms. No combined studies available."
-  - peptide: "nicotinamide-riboside"
-    type: "synergistic"
-    description: "Similar theoretical synergy as NMN. NR provides substrate for NAD+ synthesis while 5-Amino-1MQ reduces NAD+ depletion. Combined effects unstudied."
-  - peptide: "resveratrol"
-    type: "compatible"
-    description: "Both activate sirtuin pathways - resveratrol directly, 5-Amino-1MQ indirectly via NAD+ elevation. Theoretically complementary but unstudied."
+  - peptide: aod-9604
+    type: compatible
+    description: >-
+      Different mechanisms of action (5-Amino-1MQ targets NNMT/NAD+ pathway vs
+      AOD-9604's lipolytic effects). No interaction studies available; both
+      target metabolic pathways through distinct routes.
+  - peptide: semaglutide
+    type: caution
+    description: >-
+      Both target metabolic and weight management pathways. Semaglutide is a
+      GLP-1 agonist affecting appetite/insulin while 5-Amino-1MQ targets
+      cellular NAD+ metabolism. No interaction data exists.
+  - peptide: nmn
+    type: synergistic
+    description: >-
+      Theoretical synergy: NMN provides NAD+ precursor while 5-Amino-1MQ
+      preserves NAD+ by blocking NNMT consumption. Both aim to elevate NAD+
+      through complementary mechanisms. No combined studies available.
+  - peptide: nicotinamide-riboside
+    type: synergistic
+    description: >-
+      Similar theoretical synergy as NMN. NR provides substrate for NAD+
+      synthesis while 5-Amino-1MQ reduces NAD+ depletion. Combined effects
+      unstudied.
+  - peptide: resveratrol
+    type: compatible
+    description: >-
+      Both activate sirtuin pathways - resveratrol directly, 5-Amino-1MQ
+      indirectly via NAD+ elevation. Theoretically complementary but unstudied.
 molecularInfo:
-  weight: "173.21 Da"
+  weight: 173.21 Da
   chainLength: 0
-  type: "Small molecule (methylquinolinium derivative)"
-  sequence: "N/A (small molecule)"
+  type: Small molecule (methylquinolinium derivative)
+  sequence: N/A (small molecule)
   aminoAcids: []
-  formula: "C10H11N2+"
-  iupac: "5-amino-1-methylquinolin-1-ium"
+  formula: C10H11N2+
+  iupac: 5-amino-1-methylquinolin-1-ium
 evidenceChainedBenefits:
   - mechanism:
-      action: "NNMT inhibition preserving NAD+ and SAM in adipose tissue"
-      confidence: "supported"
+      action: NNMT inhibition preserving NAD+ and SAM in adipose tissue
+      confidence: supported
       directStudies: 4
     benefit:
-      claim: "reduce body weight and adiposity"
-      qualifier: "may"
+      claim: reduce body weight and adiposity
+      qualifier: may
     evidence:
-      level: "low"
+      level: low
       humanStudies: 0
       animalStudies: 4
       cellStudies: 3
       keyFindings:
-        - study: "Neelakantan H et al. 2018"
-          type: "animal"
-          finding: "5-Amino-1MQ treatment for 11 days reduced body weight by 7% in diet-induced obese mice without affecting food intake"
-          pmid: "29155253"
-        - study: "Kraus D et al. 2014"
-          type: "animal"
-          finding: "NNMT knockdown in adipose tissue protected mice from diet-induced obesity and improved glucose tolerance"
-          pmid: "24717514"
+        - study: Neelakantan H et al. 2018
+          type: animal
+          finding: >-
+            5-Amino-1MQ treatment for 11 days reduced body weight by 7% in
+            diet-induced obese mice without affecting food intake
+          pmid: '29155253'
+        - study: Kraus D et al. 2014
+          type: animal
+          finding: >-
+            NNMT knockdown in adipose tissue protected mice from diet-induced
+            obesity and improved glucose tolerance
+          pmid: '24717514'
   - mechanism:
-      action: "NAD+ elevation leading to enhanced sirtuin activity"
-      confidence: "emerging"
+      action: NAD+ elevation leading to enhanced sirtuin activity
+      confidence: emerging
       directStudies: 3
     benefit:
-      claim: "improve metabolic function and insulin sensitivity"
-      qualifier: "suggested to"
+      claim: improve metabolic function and insulin sensitivity
+      qualifier: suggested to
     evidence:
-      level: "very-low"
+      level: very-low
       humanStudies: 0
       animalStudies: 3
       cellStudies: 2
       keyFindings:
-        - study: "Brachs S et al. 2019"
-          type: "animal"
-          finding: "NNMT deficiency improved insulin sensitivity in mice on high-fat diet"
-          pmid: "30552132"
-        - study: "Hong S et al. 2015"
-          type: "animal"
-          finding: "Liver NNMT knockdown improved hepatic metabolism via Sirt1 activation"
-          pmid: "26168293"
+        - study: Brachs S et al. 2019
+          type: animal
+          finding: >-
+            NNMT deficiency improved insulin sensitivity in mice on high-fat
+            diet
+          pmid: '30552132'
+        - study: Hong S et al. 2015
+          type: animal
+          finding: >-
+            Liver NNMT knockdown improved hepatic metabolism via Sirt1
+            activation
+          pmid: '26168293'
   - mechanism:
-      action: "Enhanced adipocyte energy expenditure and thermogenesis"
-      confidence: "emerging"
+      action: Enhanced adipocyte energy expenditure and thermogenesis
+      confidence: emerging
       directStudies: 2
     benefit:
-      claim: "increase metabolic rate and fat oxidation"
-      qualifier: "suggested to"
+      claim: increase metabolic rate and fat oxidation
+      qualifier: suggested to
     evidence:
-      level: "very-low"
+      level: very-low
       humanStudies: 0
       animalStudies: 2
       cellStudies: 2
       keyFindings:
-        - study: "Neelakantan H et al. 2018"
-          type: "animal"
-          finding: "Increased NAD+ levels in adipose tissue with enhanced oxygen consumption"
-          pmid: "29155253"
-        - study: "Kraus D et al. 2014"
-          type: "animal"
-          finding: "NNMT inhibition promoted thermogenic gene expression (UCP1, PGC-1a) and adipose browning"
-          pmid: "24717514"
+        - study: Neelakantan H et al. 2018
+          type: animal
+          finding: >-
+            Increased NAD+ levels in adipose tissue with enhanced oxygen
+            consumption
+          pmid: '29155253'
+        - study: Kraus D et al. 2014
+          type: animal
+          finding: >-
+            NNMT inhibition promoted thermogenic gene expression (UCP1, PGC-1a)
+            and adipose browning
+          pmid: '24717514'
 conditions:
-  - slug: "obesity"
-    name: "Obesity"
-    researchSummary: "5-Amino-1MQ has been studied in diet-induced obese mouse models. Treatment reduced body weight without decreasing food intake, suggesting increased energy expenditure. NNMT is overexpressed in obese human adipose tissue, validating the target. However, no human trials have been conducted to confirm efficacy or safety."
-    relevantStudies: ["29155253", "24717514", "25596852"]
-    relatedPeptides: ["aod-9604", "semaglutide"]
-  - slug: "metabolic-syndrome"
-    name: "Metabolic Syndrome"
-    researchSummary: "Preclinical studies show NNMT inhibition improves insulin sensitivity and glucose tolerance in mice. Human observational data shows NNMT expression correlates with insulin resistance. Translation to metabolic syndrome treatment remains unproven."
-    relevantStudies: ["30552132", "25596852", "26168293"]
-    relatedPeptides: ["semaglutide"]
-  - slug: "fatty-liver"
-    name: "Fatty Liver (NAFLD)"
-    researchSummary: "Liver-specific NNMT knockdown reduced hepatic steatosis in mice via Sirt1 activation. 5-Amino-1MQ's effects on liver specifically have not been extensively characterized, and systemic NNMT inhibition may affect multiple tissues."
-    relevantStudies: ["26168293"]
+  - slug: obesity
+    name: Obesity
+    researchSummary: >-
+      5-Amino-1MQ has been studied in diet-induced obese mouse models. Treatment
+      reduced body weight without decreasing food intake, suggesting increased
+      energy expenditure. NNMT is overexpressed in obese human adipose tissue,
+      validating the target. However, no human trials have been conducted to
+      confirm efficacy or safety.
+    relevantStudies:
+      - '29155253'
+      - '24717514'
+      - '25596852'
+    relatedPeptides:
+      - aod-9604
+      - semaglutide
+  - slug: metabolic-syndrome
+    name: Metabolic Syndrome
+    researchSummary: >-
+      Preclinical studies show NNMT inhibition improves insulin sensitivity and
+      glucose tolerance in mice. Human observational data shows NNMT expression
+      correlates with insulin resistance. Translation to metabolic syndrome
+      treatment remains unproven.
+    relevantStudies:
+      - '30552132'
+      - '25596852'
+      - '26168293'
+    relatedPeptides:
+      - semaglutide
+  - slug: fatty-liver
+    name: Fatty Liver (NAFLD)
+    researchSummary: >-
+      Liver-specific NNMT knockdown reduced hepatic steatosis in mice via Sirt1
+      activation. 5-Amino-1MQ's effects on liver specifically have not been
+      extensively characterized, and systemic NNMT inhibition may affect
+      multiple tissues.
+    relevantStudies:
+      - '26168293'
     relatedPeptides: []
 timeline:
-  - period: "Week 1-2"
-    effects: "Based on preclinical data: NNMT inhibition should begin immediately upon administration. Mouse studies used 11-day treatment periods. No human pharmacokinetic data available to predict onset."
-    source: "PMID:29155253"
-  - period: "Week 2-4"
-    effects: "In mouse studies, measurable weight reduction (~7%) observed by end of 11-day treatment. NAD+ elevation in adipose tissue documented. Human timeline completely unknown."
-    source: "PMID:29155253"
-  - period: "Week 4-8"
-    effects: "No long-term preclinical studies available. Sustained effects, tolerance development, and long-term metabolic adaptations are uncharacterized."
-    source: "No data available"
-  - period: "Week 8+"
-    effects: "Completely unknown. Long-term safety and efficacy data do not exist in any species. Chronic NNMT inhibition effects unstudied."
+  - period: Week 1-2
+    effects: >-
+      Based on preclinical data: NNMT inhibition should begin immediately upon
+      administration. Mouse studies used 11-day treatment periods. No human
+      pharmacokinetic data available to predict onset.
+    source: 'PMID:29155253'
+  - period: Week 2-4
+    effects: >-
+      In mouse studies, measurable weight reduction (~7%) observed by end of
+      11-day treatment. NAD+ elevation in adipose tissue documented. Human
+      timeline completely unknown.
+    source: 'PMID:29155253'
+  - period: Week 4-8
+    effects: >-
+      No long-term preclinical studies available. Sustained effects, tolerance
+      development, and long-term metabolic adaptations are uncharacterized.
+    source: No data available
+  - period: Week 8+
+    effects: >-
+      Completely unknown. Long-term safety and efficacy data do not exist in any
+      species. Chronic NNMT inhibition effects unstudied.
 qualityChecklist:
   goodSigns:
-    - "White to off-white crystalline powder"
-    - "Dissolves readily in water (cationic, water-soluble compound)"
-    - "Clear, colorless solution after dissolution"
-    - "Certificate of analysis (COA) showing >98% purity"
-    - "Third-party HPLC and mass spectrometry verification"
-    - "Molecular weight confirmed at 173.21 g/mol"
+    - White to off-white crystalline powder
+    - 'Dissolves readily in water (cationic, water-soluble compound)'
+    - 'Clear, colorless solution after dissolution'
+    - Certificate of analysis (COA) showing >98% purity
+    - Third-party HPLC and mass spectrometry verification
+    - Molecular weight confirmed at 173.21 g/mol
   warningSigns:
-    - "Slightly off-white or cream-colored powder"
-    - "Slow dissolution or incomplete solubility"
-    - "COA from manufacturer only without independent verification"
-    - "Purity listed below 98% but above 95%"
-    - "No identity confirmation (MS or NMR)"
+    - Slightly off-white or cream-colored powder
+    - Slow dissolution or incomplete solubility
+    - COA from manufacturer only without independent verification
+    - Purity listed below 98% but above 95%
+    - No identity confirmation (MS or NMR)
   badSigns:
-    - "Yellow, brown, or otherwise discolored powder"
-    - "Visible particles or cloudiness in solution"
-    - "Insoluble residue after attempted dissolution"
-    - "No COA provided or COA appears fraudulent"
-    - "Strong unusual odor"
-    - "Hygroscopic clumping suggesting moisture contamination"
+    - 'Yellow, brown, or otherwise discolored powder'
+    - Visible particles or cloudiness in solution
+    - Insoluble residue after attempted dissolution
+    - No COA provided or COA appears fraudulent
+    - Strong unusual odor
+    - Hygroscopic clumping suggesting moisture contamination
+regulatoryStatus:
+  status: research-only
+  lastUpdated: '2026-02-18'
+  notes: >-
+    Not FDA-approved. Small molecule NNMT inhibitor. Preclinical research on
+    metabolism and fat loss.
+ratings:
+  researchDepth: 2
+  globalCoverage: 2
+  mechanismPlausibility: 3
+  overall: 2.5
+  lastReviewed: 2026-02-18T00:00:00.000Z
+  reviewNotes: "Preclinical NAD+ metabolic data is promising but only 1 human study available."
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

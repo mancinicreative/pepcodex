@@ -1,201 +1,352 @@
 ---
-name: "BPC-157"
-aliases: ["Body Protection Compound-157", "Bepecin", "PL 14736", "PL-10"]
-category: "repair-recovery"
-evidenceStrength: "low"
-lastUpdated: 2026-01-22
-comparators: ["tb-500", "ghk-cu"]
-summary: "A synthetic peptide derived from human gastric juice protein. Preclinical studies suggest tissue repair properties, but human clinical trial data is extremely limited. A 2025 systematic review of 36 studies found only 1 clinical study."
+name: BPC-157
+aliases:
+  - Body Protection Compound-157
+  - Bepecin
+  - PL 14736
+  - PL-10
+category: repair-recovery
+evidenceStrength: low
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - tb-500
+  - ghk-cu
+summary: >-
+  A synthetic peptide derived from human gastric juice protein. Preclinical
+  studies suggest tissue repair properties, but human clinical trial data is
+  extremely limited. A 2025 systematic review of 36 studies found only 1
+  clinical study.
 sources:
   count: 32
   human: 3
   preclinical: 29
   openAccess: 18
-metaTitle: "BPC-157 Evidence Dossier | PepCodex"
-metaDescription: "Evidence review of BPC-157 (Body Protection Compound). Preclinical research, proposed mechanisms, safety considerations, and citations."
+metaTitle: BPC-157 Evidence Dossier | PepCodex
+metaDescription: >-
+  Evidence review of BPC-157 (Body Protection Compound). Preclinical research,
+  proposed mechanisms, safety considerations, and citations.
 interactions:
-  - peptide: "tb-500"
-    type: "synergistic"
-    description: "Commonly combined in research for tissue repair. BPC-157's angiogenic and cytoprotective mechanisms may complement TB-500's actin-regulating and cell migration effects. No direct clinical studies on combination."
-  - peptide: "ghk-cu"
-    type: "compatible"
-    description: "Different mechanisms of action (BPC-157 systemic cytoprotection vs GHK-Cu copper-mediated signaling). No known contraindications; both target wound healing pathways through distinct routes."
-  - peptide: "thymosin-alpha-1"
-    type: "compatible"
-    description: "Non-overlapping mechanisms. BPC-157 focuses on tissue repair while Thymosin Alpha-1 modulates immune function. Theoretical complementary benefits for recovery."
-  - peptide: "ll-37"
-    type: "compatible"
-    description: "LL-37's antimicrobial properties may complement BPC-157's tissue repair effects in wound healing contexts. No interaction studies available."
-  - peptide: "semaglutide"
-    type: "caution"
-    description: "Both affect GI function. BPC-157 is gastroprotective while semaglutide slows gastric emptying. Unclear if effects interact; monitor GI symptoms if combined."
-  - peptide: "melanotan-ii"
-    type: "caution"
-    description: "Both act on various receptor systems. Limited data on interactions. Exercise caution due to lack of combined safety data."
+  - peptide: tb-500
+    type: synergistic
+    description: >-
+      Commonly combined in research for tissue repair. BPC-157's angiogenic and
+      cytoprotective mechanisms may complement TB-500's actin-regulating and
+      cell migration effects. No direct clinical studies on combination.
+  - peptide: ghk-cu
+    type: compatible
+    description: >-
+      Different mechanisms of action (BPC-157 systemic cytoprotection vs GHK-Cu
+      copper-mediated signaling). No known contraindications; both target wound
+      healing pathways through distinct routes.
+  - peptide: thymosin-alpha-1
+    type: compatible
+    description: >-
+      Non-overlapping mechanisms. BPC-157 focuses on tissue repair while
+      Thymosin Alpha-1 modulates immune function. Theoretical complementary
+      benefits for recovery.
+  - peptide: ll-37
+    type: compatible
+    description: >-
+      LL-37's antimicrobial properties may complement BPC-157's tissue repair
+      effects in wound healing contexts. No interaction studies available.
+  - peptide: semaglutide
+    type: caution
+    description: >-
+      Both affect GI function. BPC-157 is gastroprotective while semaglutide
+      slows gastric emptying. Unclear if effects interact; monitor GI symptoms
+      if combined.
+  - peptide: melanotan-ii
+    type: caution
+    description: >-
+      Both act on various receptor systems. Limited data on interactions.
+      Exercise caution due to lack of combined safety data.
 molecularInfo:
-  weight: "1,419.53 Da"
+  weight: '1,419.53 Da'
   chainLength: 15
-  type: "Pentadecapeptide"
-  sequence: "GEPPPGKPADDAGLV"
+  type: Pentadecapeptide
+  sequence: GEPPPGKPADDAGLV
   aminoAcids:
-    - { code: "G", name: "Glycine", position: 1, property: "polar" }
-    - { code: "E", name: "Glutamic Acid", position: 2, property: "negative" }
-    - { code: "P", name: "Proline", position: 3, property: "hydrophobic" }
-    - { code: "P", name: "Proline", position: 4, property: "hydrophobic" }
-    - { code: "P", name: "Proline", position: 5, property: "hydrophobic" }
-    - { code: "G", name: "Glycine", position: 6, property: "polar" }
-    - { code: "K", name: "Lysine", position: 7, property: "positive" }
-    - { code: "P", name: "Proline", position: 8, property: "hydrophobic" }
-    - { code: "A", name: "Alanine", position: 9, property: "hydrophobic" }
-    - { code: "D", name: "Aspartic Acid", position: 10, property: "negative" }
-    - { code: "D", name: "Aspartic Acid", position: 11, property: "negative" }
-    - { code: "A", name: "Alanine", position: 12, property: "hydrophobic" }
-    - { code: "G", name: "Glycine", position: 13, property: "polar" }
-    - { code: "L", name: "Leucine", position: 14, property: "hydrophobic" }
-    - { code: "V", name: "Valine", position: 15, property: "hydrophobic" }
+    - code: G
+      name: Glycine
+      position: 1
+      property: polar
+    - code: E
+      name: Glutamic Acid
+      position: 2
+      property: negative
+    - code: P
+      name: Proline
+      position: 3
+      property: hydrophobic
+    - code: P
+      name: Proline
+      position: 4
+      property: hydrophobic
+    - code: P
+      name: Proline
+      position: 5
+      property: hydrophobic
+    - code: G
+      name: Glycine
+      position: 6
+      property: polar
+    - code: K
+      name: Lysine
+      position: 7
+      property: positive
+    - code: P
+      name: Proline
+      position: 8
+      property: hydrophobic
+    - code: A
+      name: Alanine
+      position: 9
+      property: hydrophobic
+    - code: D
+      name: Aspartic Acid
+      position: 10
+      property: negative
+    - code: D
+      name: Aspartic Acid
+      position: 11
+      property: negative
+    - code: A
+      name: Alanine
+      position: 12
+      property: hydrophobic
+    - code: G
+      name: Glycine
+      position: 13
+      property: polar
+    - code: L
+      name: Leucine
+      position: 14
+      property: hydrophobic
+    - code: V
+      name: Valine
+      position: 15
+      property: hydrophobic
 evidenceChainedBenefits:
   - mechanism:
-      action: "VEGF/VEGFR2 pathway activation promoting angiogenesis"
-      confidence: "supported"
+      action: VEGF/VEGFR2 pathway activation promoting angiogenesis
+      confidence: supported
       directStudies: 6
     benefit:
-      claim: "accelerate wound and tissue healing"
-      qualifier: "may"
+      claim: accelerate wound and tissue healing
+      qualifier: may
     evidence:
-      level: "low"
+      level: low
       humanStudies: 0
       animalStudies: 5
       cellStudies: 3
       keyFindings:
-        - study: "Hsieh MJ et al. 2017"
-          type: "animal"
-          finding: "BPC-157 promoted angiogenesis and wound healing via VEGFR2 activation in ischemic wound model"
-          pmid: "28013436"
-        - study: "Sikiric P et al. 2014"
-          type: "animal"
-          finding: "Demonstrated NO system interactions enhancing vasodilation and blood flow"
-          pmid: "23772940"
+        - study: Hsieh MJ et al. 2017
+          type: animal
+          finding: >-
+            BPC-157 promoted angiogenesis and wound healing via VEGFR2
+            activation in ischemic wound model
+          pmid: '28013436'
+        - study: Sikiric P et al. 2014
+          type: animal
+          finding: >-
+            Demonstrated NO system interactions enhancing vasodilation and blood
+            flow
+          pmid: '23772940'
   - mechanism:
-      action: "FAK-paxillin pathway activation promoting cell migration"
-      confidence: "supported"
+      action: FAK-paxillin pathway activation promoting cell migration
+      confidence: supported
       directStudies: 4
     benefit:
-      claim: "improve tendon and ligament repair"
-      qualifier: "may"
+      claim: improve tendon and ligament repair
+      qualifier: may
     evidence:
-      level: "low"
+      level: low
       humanStudies: 0
       animalStudies: 4
       cellStudies: 2
       keyFindings:
-        - study: "Chang CH et al. 2011"
-          type: "animal"
-          finding: "FAK-paxillin phosphorylation increased in tendon fibroblasts, promoting cell migration"
-          pmid: "21030672"
-        - study: "Chang CH et al. 2014"
-          type: "in-vitro"
-          finding: "GHR upregulation enhanced collagen synthesis in tendon fibroblasts"
-          pmid: "25415472"
+        - study: Chang CH et al. 2011
+          type: animal
+          finding: >-
+            FAK-paxillin phosphorylation increased in tendon fibroblasts,
+            promoting cell migration
+          pmid: '21030672'
+        - study: Chang CH et al. 2014
+          type: in-vitro
+          finding: GHR upregulation enhanced collagen synthesis in tendon fibroblasts
+          pmid: '25415472'
   - mechanism:
-      action: "Nitric oxide system modulation (Nos1/3 upregulation, Nos2 downregulation)"
-      confidence: "supported"
+      action: >-
+        Nitric oxide system modulation (Nos1/3 upregulation, Nos2
+        downregulation)
+      confidence: supported
       directStudies: 5
     benefit:
-      claim: "protect gastric mucosa from NSAID damage"
-      qualifier: "appears to"
+      claim: protect gastric mucosa from NSAID damage
+      qualifier: appears to
     evidence:
-      level: "low"
+      level: low
       humanStudies: 0
       animalStudies: 6
       cellStudies: 2
       keyFindings:
-        - study: "Xue XC et al. 2004"
-          type: "animal"
-          finding: "Accelerated gastric ulcer healing with increased PGE2 production"
-          pmid: "15052688"
-        - study: "Wang XY et al. 2019"
-          type: "animal"
-          finding: "Demonstrated GI and hepatic cytoprotection mechanisms"
-          pmid: "31371774"
+        - study: Xue XC et al. 2004
+          type: animal
+          finding: Accelerated gastric ulcer healing with increased PGE2 production
+          pmid: '15052688'
+        - study: Wang XY et al. 2019
+          type: animal
+          finding: Demonstrated GI and hepatic cytoprotection mechanisms
+          pmid: '31371774'
   - mechanism:
-      action: "D2 receptor partial agonism and dopaminergic modulation"
-      confidence: "emerging"
+      action: D2 receptor partial agonism and dopaminergic modulation
+      confidence: emerging
       directStudies: 3
     benefit:
-      claim: "provide neuroprotective effects"
-      qualifier: "suggested to"
+      claim: provide neuroprotective effects
+      qualifier: suggested to
     evidence:
-      level: "very-low"
+      level: very-low
       humanStudies: 0
       animalStudies: 4
       cellStudies: 1
       keyFindings:
-        - study: "Sikiric P et al. 2016"
-          type: "animal"
-          finding: "Brain-gut axis effects with dopaminergic, serotonergic, GABAergic modulation"
-          pmid: "27306034"
-        - study: "Sikiric P et al. 2022"
-          type: "animal"
-          finding: "Detailed CNS effects including dopamine system interactions"
-          pmid: "34766891"
+        - study: Sikiric P et al. 2016
+          type: animal
+          finding: >-
+            Brain-gut axis effects with dopaminergic, serotonergic, GABAergic
+            modulation
+          pmid: '27306034'
+        - study: Sikiric P et al. 2022
+          type: animal
+          finding: Detailed CNS effects including dopamine system interactions
+          pmid: '34766891'
 conditions:
-  - slug: "tendonitis"
-    name: "Tendonitis"
-    researchSummary: "BPC-157 has been studied for its potential effects on tendon healing in preclinical models. Research from Taiwanese laboratories demonstrated that BPC-157 promotes tendon fibroblast proliferation and migration through FAK-paxillin pathway activation (Chang et al., 2011). However, all available evidence is preclinical. No human clinical trials have evaluated BPC-157 for tendonitis."
-    relevantStudies: ["21030672", "25415472", "20225319"]
-    relatedPeptides: ["tb-500", "ghk-cu"]
-  - slug: "muscle-tears"
-    name: "Muscle Tears"
-    researchSummary: "Preclinical studies from Croatian researchers have examined BPC-157's effects on muscle injury repair. In rat quadriceps transection models, BPC-157 administration was associated with improved functional recovery and increased myofiber density compared to controls. These findings remain limited to animal models."
-    relevantStudies: ["16609966", "18668315", "20388964"]
-    relatedPeptides: ["tb-500"]
-  - slug: "gut-healing"
-    name: "Gut Healing"
-    researchSummary: "BPC-157 was originally isolated from human gastric juice, and its effects on gastrointestinal tissue have been extensively studied in animal models. Multiple studies demonstrate gastroprotective effects, including protection against NSAID-induced mucosal damage."
-    relevantStudies: ["15052688", "31371774", "22950504", "21548867"]
-    relatedPeptides: ["kpv", "ll-37"]
+  - slug: tendonitis
+    name: Tendonitis
+    researchSummary: >-
+      BPC-157 has been studied for its potential effects on tendon healing in
+      preclinical models. Research from Taiwanese laboratories demonstrated that
+      BPC-157 promotes tendon fibroblast proliferation and migration through
+      FAK-paxillin pathway activation (Chang et al., 2011). However, all
+      available evidence is preclinical. No human clinical trials have evaluated
+      BPC-157 for tendonitis.
+    relevantStudies:
+      - '21030672'
+      - '25415472'
+      - '20225319'
+    relatedPeptides:
+      - tb-500
+      - ghk-cu
+  - slug: muscle-tears
+    name: Muscle Tears
+    researchSummary: >-
+      Preclinical studies from Croatian researchers have examined BPC-157's
+      effects on muscle injury repair. In rat quadriceps transection models,
+      BPC-157 administration was associated with improved functional recovery
+      and increased myofiber density compared to controls. These findings remain
+      limited to animal models.
+    relevantStudies:
+      - '16609966'
+      - '18668315'
+      - '20388964'
+    relatedPeptides:
+      - tb-500
+  - slug: gut-healing
+    name: Gut Healing
+    researchSummary: >-
+      BPC-157 was originally isolated from human gastric juice, and its effects
+      on gastrointestinal tissue have been extensively studied in animal models.
+      Multiple studies demonstrate gastroprotective effects, including
+      protection against NSAID-induced mucosal damage.
+    relevantStudies:
+      - '15052688'
+      - '31371774'
+      - '22950504'
+      - '21548867'
+    relatedPeptides:
+      - kpv
+      - ll-37
 timeline:
-  - period: "Week 1-2"
-    effects: "Based on preclinical observations: Initial angiogenic signaling may begin. Animal studies show early VEGF/VEGFR2 pathway activation within days of administration. No human timeline data available."
-    source: "PMID:28013436"
-  - period: "Week 2-4"
-    effects: "Animal studies suggest ongoing tissue repair processes. In rat tendon models, improved collagen organization observed by 2-4 weeks. Gastric healing acceleration noted in ulcer models within this timeframe."
-    source: "PMID:21030672"
-  - period: "Week 4-8"
-    effects: "Preclinical models show continued tissue remodeling. Rat studies demonstrated improved biomechanical properties of healing tendons. Muscle injury models showed functional recovery improvements."
-    source: "PMID:25415472"
-  - period: "Week 8+"
-    effects: "Long-term animal studies suggest sustained effects on tissue repair pathways. However, human pharmacokinetics, duration of effect, and optimal treatment length are completely unknown."
+  - period: Week 1-2
+    effects: >-
+      Based on preclinical observations: Initial angiogenic signaling may begin.
+      Animal studies show early VEGF/VEGFR2 pathway activation within days of
+      administration. No human timeline data available.
+    source: 'PMID:28013436'
+  - period: Week 2-4
+    effects: >-
+      Animal studies suggest ongoing tissue repair processes. In rat tendon
+      models, improved collagen organization observed by 2-4 weeks. Gastric
+      healing acceleration noted in ulcer models within this timeframe.
+    source: 'PMID:21030672'
+  - period: Week 4-8
+    effects: >-
+      Preclinical models show continued tissue remodeling. Rat studies
+      demonstrated improved biomechanical properties of healing tendons. Muscle
+      injury models showed functional recovery improvements.
+    source: 'PMID:25415472'
+  - period: Week 8+
+    effects: >-
+      Long-term animal studies suggest sustained effects on tissue repair
+      pathways. However, human pharmacokinetics, duration of effect, and optimal
+      treatment length are completely unknown.
 faqs:
-  - question: "What is BPC-157?"
-    answer: "BPC-157 is a synthetic 15-amino acid peptide derived from human gastric juice protein, studied in preclinical research for tissue repair and wound healing properties."
-  - question: "Is BPC-157 FDA approved?"
-    answer: "No. BPC-157 is not FDA-approved for any indication. It remains an experimental research compound with extremely limited human clinical trial data."
-  - question: "What is the evidence for BPC-157?"
-    answer: "Evidence is low-quality. A 2025 systematic review found only 1 clinical study among 36 total studies. Nearly all research is preclinical (animal and cell studies), mostly from a single Croatian research group."
-  - question: "Has BPC-157 been tested in humans?"
-    answer: "Human clinical data is extremely limited. The vast majority of published research is from animal models (rats) and cell culture studies. Results may not translate to humans."
+  - question: What is BPC-157?
+    answer: >-
+      BPC-157 is a synthetic 15-amino acid peptide derived from human gastric
+      juice protein, studied in preclinical research for tissue repair and wound
+      healing properties.
+  - question: Is BPC-157 FDA approved?
+    answer: >-
+      No. BPC-157 is not FDA-approved for any indication. It remains an
+      experimental research compound with extremely limited human clinical trial
+      data.
+  - question: What is the evidence for BPC-157?
+    answer: >-
+      Evidence is low-quality. A 2025 systematic review found only 1 clinical
+      study among 36 total studies. Nearly all research is preclinical (animal
+      and cell studies), mostly from a single Croatian research group.
+  - question: Has BPC-157 been tested in humans?
+    answer: >-
+      Human clinical data is extremely limited. The vast majority of published
+      research is from animal models (rats) and cell culture studies. Results
+      may not translate to humans.
 qualityChecklist:
   goodSigns:
-    - "White to off-white lyophilized powder (cake or crystalline appearance)"
-    - "Dissolves completely and quickly in bacteriostatic water"
-    - "Clear, colorless solution after reconstitution"
-    - "Comes with certificate of analysis (COA) showing >98% purity"
-    - "Third-party HPLC and mass spectrometry verification available"
-    - "Proper vacuum seal on vial before reconstitution"
+    - White to off-white lyophilized powder (cake or crystalline appearance)
+    - Dissolves completely and quickly in bacteriostatic water
+    - 'Clear, colorless solution after reconstitution'
+    - Comes with certificate of analysis (COA) showing >98% purity
+    - Third-party HPLC and mass spectrometry verification available
+    - Proper vacuum seal on vial before reconstitution
   warningSigns:
-    - "Slightly off-white or cream-colored powder (may still be acceptable)"
-    - "Takes longer than expected to fully dissolve"
-    - "Powder appears collapsed or melted (possible moisture exposure)"
-    - "COA from manufacturer only without third-party verification"
-    - "Purity listed below 98% but above 95%"
+    - Slightly off-white or cream-colored powder (may still be acceptable)
+    - Takes longer than expected to fully dissolve
+    - Powder appears collapsed or melted (possible moisture exposure)
+    - COA from manufacturer only without third-party verification
+    - Purity listed below 98% but above 95%
   badSigns:
-    - "Yellow, brown, or otherwise discolored powder"
-    - "Visible particles or cloudiness after reconstitution"
-    - "Gel-like consistency or clumping that won't dissolve"
-    - "No COA provided or COA appears fraudulent"
-    - "Strong unusual odor"
-    - "Vial seal appears compromised or previously opened"
+    - 'Yellow, brown, or otherwise discolored powder'
+    - Visible particles or cloudiness after reconstitution
+    - Gel-like consistency or clumping that won't dissolve
+    - No COA provided or COA appears fraudulent
+    - Strong unusual odor
+    - Vial seal appears compromised or previously opened
+regulatoryStatus:
+  status: research-only
+  lastUpdated: '2026-02-18'
+  notes: >-
+    Not FDA-approved. Extensive preclinical research but no completed human
+    clinical trials. Available through compounding pharmacies and research
+    suppliers.
+ratings:
+  researchDepth: 2
+  globalCoverage: 2
+  mechanismPlausibility: 3
+  overall: 2.5
+  lastReviewed: 2026-02-18T00:00:00.000Z
+  reviewNotes: "Predominantly preclinical; mechanism proposed but unconfirmed in humans; sparse clinical data."
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

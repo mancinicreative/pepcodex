@@ -1,153 +1,244 @@
 ---
-name: "CT-388"
-aliases: ["RG-6912"]
-category: "metabolic"
-evidenceStrength: "moderate"
-lastUpdated: 2026-01-22
-comparators: ["tirzepatide", "semaglutide", "survodutide"]
-summary: "A dual GLP-1/GIP receptor agonist acquired by Roche through the $2.7 billion Carmot Therapeutics acquisition in 2024. Phase 1b results showed 18.8% placebo-adjusted weight loss at 24 weeks, positioning it as a competitive obesity therapeutic with a mechanism similar to tirzepatide."
+name: CT-388
+aliases:
+  - RG-6912
+category: metabolic
+evidenceStrength: moderate
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - tirzepatide
+  - semaglutide
+  - survodutide
+summary: >-
+  A dual GLP-1/GIP receptor agonist acquired by Roche through the $2.7 billion
+  Carmot Therapeutics acquisition in 2024. Phase 1b results showed 18.8%
+  placebo-adjusted weight loss at 24 weeks, positioning it as a competitive
+  obesity therapeutic with a mechanism similar to tirzepatide.
 sources:
   count: 8
   human: 6
   preclinical: 2
   openAccess: 6
-metaTitle: "CT-388 Evidence Dossier | PepCodex"
-metaDescription: "Comprehensive evidence review of CT-388 (RG-6912). Roche/Carmot dual GLP-1/GIP agonist, Phase 1b clinical trial data showing 18.8% weight loss, mechanism of action, and comparison to tirzepatide."
+metaTitle: CT-388 Evidence Dossier | PepCodex
+metaDescription: >-
+  Comprehensive evidence review of CT-388 (RG-6912). Roche/Carmot dual GLP-1/GIP
+  agonist, Phase 1b clinical trial data showing 18.8% weight loss, mechanism of
+  action, and comparison to tirzepatide.
 interactions:
-  - peptide: "tirzepatide"
-    type: "avoid"
-    description: "Both are dual GLP-1/GIP receptor agonists with overlapping mechanisms. Combining would duplicate effects and increase risk of severe GI adverse events. No clinical rationale for combination."
-  - peptide: "semaglutide"
-    type: "avoid"
-    description: "CT-388 already activates GLP-1 receptors. Adding a GLP-1-only agonist would provide no additional benefit while increasing adverse event risk."
-  - peptide: "survodutide"
-    type: "avoid"
-    description: "Overlapping GLP-1 receptor activation. Combining dual/triple agonists has no clinical rationale and would compound GI side effects."
-  - peptide: "bpc-157"
-    type: "caution"
-    description: "Both affect GI function. CT-388 slows gastric emptying significantly while BPC-157 has gastroprotective effects. Unclear if effects interact; monitor GI symptoms if combined."
-  - peptide: "tesamorelin"
-    type: "compatible"
-    description: "Different mechanisms (incretin vs GHRH). No known contraindications. Both target metabolic improvements through distinct pathways."
+  - peptide: tirzepatide
+    type: avoid
+    description: >-
+      Both are dual GLP-1/GIP receptor agonists with overlapping mechanisms.
+      Combining would duplicate effects and increase risk of severe GI adverse
+      events. No clinical rationale for combination.
+  - peptide: semaglutide
+    type: avoid
+    description: >-
+      CT-388 already activates GLP-1 receptors. Adding a GLP-1-only agonist
+      would provide no additional benefit while increasing adverse event risk.
+  - peptide: survodutide
+    type: avoid
+    description: >-
+      Overlapping GLP-1 receptor activation. Combining dual/triple agonists has
+      no clinical rationale and would compound GI side effects.
+  - peptide: bpc-157
+    type: caution
+    description: >-
+      Both affect GI function. CT-388 slows gastric emptying significantly while
+      BPC-157 has gastroprotective effects. Unclear if effects interact; monitor
+      GI symptoms if combined.
+  - peptide: tesamorelin
+    type: compatible
+    description: >-
+      Different mechanisms (incretin vs GHRH). No known contraindications. Both
+      target metabolic improvements through distinct pathways.
 molecularInfo:
-  weight: "~4,500 Da (estimated)"
+  weight: '~4,500 Da (estimated)'
   chainLength: 39
-  type: "Modified peptide dual agonist"
-  sequence: "Proprietary (not publicly disclosed)"
+  type: Modified peptide dual agonist
+  sequence: Proprietary (not publicly disclosed)
   aminoAcids: []
 evidenceChainedBenefits:
   - mechanism:
-      action: "GLP-1 receptor activation reducing appetite and slowing gastric emptying"
-      confidence: "established"
+      action: GLP-1 receptor activation reducing appetite and slowing gastric emptying
+      confidence: established
       directStudies: 6
     benefit:
-      claim: "reduce body weight in obesity"
-      qualifier: "shown to"
+      claim: reduce body weight in obesity
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 6
       animalStudies: 2
       cellStudies: 2
       keyFindings:
-        - study: "CT-388 Phase 1b (Roche/Carmot)"
-          type: "human-rct"
-          finding: "18.8% placebo-adjusted weight loss at 24 weeks in adults with obesity"
-          pmid: "N/A"
-        - study: "Carmot Phase 1 FIH"
-          type: "human-rct"
-          finding: "Established safety profile and weekly dosing feasibility with linear pharmacokinetics"
-          pmid: "N/A"
+        - study: CT-388 Phase 1b (Roche/Carmot)
+          type: human-rct
+          finding: >-
+            18.8% placebo-adjusted weight loss at 24 weeks in adults with
+            obesity
+          pmid: N/A
+        - study: Carmot Phase 1 FIH
+          type: human-rct
+          finding: >-
+            Established safety profile and weekly dosing feasibility with linear
+            pharmacokinetics
+          pmid: N/A
   - mechanism:
-      action: "GIP receptor activation enhancing insulin secretion and adipocyte function"
-      confidence: "established"
+      action: >-
+        GIP receptor activation enhancing insulin secretion and adipocyte
+        function
+      confidence: established
       directStudies: 4
     benefit:
-      claim: "improve glycemic control in type 2 diabetes"
-      qualifier: "appears to"
+      claim: improve glycemic control in type 2 diabetes
+      qualifier: appears to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 2
       animalStudies: 2
       cellStudies: 3
       keyFindings:
-        - study: "Willard FS et al. 2020"
-          type: "in-vitro"
-          finding: "GLP-1/GIP dual agonism produces synergistic effects on insulin secretion and glucose homeostasis"
-          pmid: "32956065"
-        - study: "Samms RJ et al. 2024"
-          type: "in-vitro"
-          finding: "GIP receptor activation directly improves adipocyte function and lipid metabolism"
-          pmid: "38091986"
+        - study: Willard FS et al. 2020
+          type: in-vitro
+          finding: >-
+            GLP-1/GIP dual agonism produces synergistic effects on insulin
+            secretion and glucose homeostasis
+          pmid: '32956065'
+        - study: Samms RJ et al. 2024
+          type: in-vitro
+          finding: >-
+            GIP receptor activation directly improves adipocyte function and
+            lipid metabolism
+          pmid: '38091986'
   - mechanism:
-      action: "Dual incretin receptor synergy producing enhanced satiety signaling"
-      confidence: "supported"
+      action: Dual incretin receptor synergy producing enhanced satiety signaling
+      confidence: supported
       directStudies: 3
     benefit:
-      claim: "achieve greater weight loss than GLP-1 agonists alone"
-      qualifier: "appears to"
+      claim: achieve greater weight loss than GLP-1 agonists alone
+      qualifier: appears to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 1
       animalStudies: 2
       cellStudies: 2
       keyFindings:
-        - study: "Campbell JE et al. 2023"
-          type: "in-vitro"
-          finding: "Dual incretin agonism biology explains enhanced efficacy over mono-agonists"
-          pmid: "36610630"
-        - study: "CT-388 Phase 1b"
-          type: "human-rct"
-          finding: "24-week weight loss (18.8%) exceeds typical GLP-1 agonist results at similar timepoint"
-          pmid: "N/A"
+        - study: Campbell JE et al. 2023
+          type: in-vitro
+          finding: >-
+            Dual incretin agonism biology explains enhanced efficacy over
+            mono-agonists
+          pmid: '36610630'
+        - study: CT-388 Phase 1b
+          type: human-rct
+          finding: >-
+            24-week weight loss (18.8%) exceeds typical GLP-1 agonist results at
+            similar timepoint
+          pmid: N/A
 conditions:
-  - slug: "obesity"
-    name: "Obesity"
-    researchSummary: "CT-388 has demonstrated significant weight loss in Phase 1b clinical trials. The 18.8% placebo-adjusted weight loss at 24 weeks is competitive with or exceeds early-timepoint data from tirzepatide. The dual GLP-1/GIP mechanism is the same as the FDA-approved tirzepatide (Mounjaro/Zepbound)."
-    relevantStudies: ["32956065", "38091986", "36610630"]
-    relatedPeptides: ["tirzepatide", "semaglutide", "survodutide"]
-  - slug: "type-2-diabetes"
-    name: "Type 2 Diabetes"
-    researchSummary: "The GLP-1/GIP dual agonist mechanism has proven effective for glycemic control with tirzepatide. CT-388 is expected to have similar glucose-lowering effects through enhanced insulin secretion and improved insulin sensitivity. Phase 2 trials in T2D are planned or ongoing."
-    relevantStudies: ["32956065", "36610630"]
-    relatedPeptides: ["tirzepatide", "semaglutide"]
-  - slug: "metabolic-syndrome"
-    name: "Metabolic Syndrome"
-    researchSummary: "Dual incretin agonists like CT-388 address multiple components of metabolic syndrome including obesity, insulin resistance, and dyslipidemia. The direct effects on adipose tissue via GIP receptors may provide benefits beyond weight loss alone."
-    relevantStudies: ["38091986", "36610630"]
-    relatedPeptides: ["tirzepatide", "semaglutide", "retatrutide"]
+  - slug: obesity
+    name: Obesity
+    researchSummary: >-
+      CT-388 has demonstrated significant weight loss in Phase 1b clinical
+      trials. The 18.8% placebo-adjusted weight loss at 24 weeks is competitive
+      with or exceeds early-timepoint data from tirzepatide. The dual GLP-1/GIP
+      mechanism is the same as the FDA-approved tirzepatide (Mounjaro/Zepbound).
+    relevantStudies:
+      - '32956065'
+      - '38091986'
+      - '36610630'
+    relatedPeptides:
+      - tirzepatide
+      - semaglutide
+      - survodutide
+  - slug: type-2-diabetes
+    name: Type 2 Diabetes
+    researchSummary: >-
+      The GLP-1/GIP dual agonist mechanism has proven effective for glycemic
+      control with tirzepatide. CT-388 is expected to have similar
+      glucose-lowering effects through enhanced insulin secretion and improved
+      insulin sensitivity. Phase 2 trials in T2D are planned or ongoing.
+    relevantStudies:
+      - '32956065'
+      - '36610630'
+    relatedPeptides:
+      - tirzepatide
+      - semaglutide
+  - slug: metabolic-syndrome
+    name: Metabolic Syndrome
+    researchSummary: >-
+      Dual incretin agonists like CT-388 address multiple components of
+      metabolic syndrome including obesity, insulin resistance, and
+      dyslipidemia. The direct effects on adipose tissue via GIP receptors may
+      provide benefits beyond weight loss alone.
+    relevantStudies:
+      - '38091986'
+      - '36610630'
+    relatedPeptides:
+      - tirzepatide
+      - semaglutide
+      - retatrutide
 timeline:
-  - period: "Week 1-4"
-    effects: "Based on Phase 1b data: Initial GI adaptation period with potential nausea, decreased appetite. Early weight loss begins during dose escalation phase. Glucose improvements may be seen in diabetic patients."
-    source: "Phase 1b data"
-  - period: "Week 4-12"
-    effects: "Continued weight loss as dose escalation proceeds. GI side effects typically diminish. Phase 1b showed dose-response relationship across treatment arms with ongoing weight reduction."
-    source: "Phase 1b data"
-  - period: "Week 12-24"
-    effects: "Phase 1b demonstrated 18.8% placebo-adjusted weight loss by 24 weeks. Weight loss trajectory suggested no plateau at this timepoint, indicating continued efficacy expected with longer treatment."
-    source: "Phase 1b data"
-  - period: "Week 24+"
-    effects: "Based on tirzepatide data, continued weight loss expected through 52-72 weeks. Maintenance of weight loss requires ongoing treatment. Long-term CT-388 data pending Phase 2/3 results."
+  - period: Week 1-4
+    effects: >-
+      Based on Phase 1b data: Initial GI adaptation period with potential
+      nausea, decreased appetite. Early weight loss begins during dose
+      escalation phase. Glucose improvements may be seen in diabetic patients.
+    source: Phase 1b data
+  - period: Week 4-12
+    effects: >-
+      Continued weight loss as dose escalation proceeds. GI side effects
+      typically diminish. Phase 1b showed dose-response relationship across
+      treatment arms with ongoing weight reduction.
+    source: Phase 1b data
+  - period: Week 12-24
+    effects: >-
+      Phase 1b demonstrated 18.8% placebo-adjusted weight loss by 24 weeks.
+      Weight loss trajectory suggested no plateau at this timepoint, indicating
+      continued efficacy expected with longer treatment.
+    source: Phase 1b data
+  - period: Week 24+
+    effects: >-
+      Based on tirzepatide data, continued weight loss expected through 52-72
+      weeks. Maintenance of weight loss requires ongoing treatment. Long-term
+      CT-388 data pending Phase 2/3 results.
 qualityChecklist:
   goodSigns:
-    - "Manufactured under pharmaceutical GMP conditions (Roche)"
-    - "Clear documentation of dose and administration instructions"
-    - "Provided through legitimate clinical trial or prescription pathway"
-    - "Proper cold chain maintenance during shipping"
-    - "Comes with complete prescribing information"
-    - "Single-use prefilled device or properly sealed vials"
+    - Manufactured under pharmaceutical GMP conditions (Roche)
+    - Clear documentation of dose and administration instructions
+    - Provided through legitimate clinical trial or prescription pathway
+    - Proper cold chain maintenance during shipping
+    - Comes with complete prescribing information
+    - Single-use prefilled device or properly sealed vials
   warningSigns:
-    - "CT-388 is not yet approved - any commercial sale is unauthorized"
-    - "Products claiming to be CT-388 from research chemical suppliers"
-    - "Significantly lower price than expected for novel biologic"
-    - "No clear chain of custody or manufacturing documentation"
-    - "Offered outside of clinical trial setting before approval"
+    - CT-388 is not yet approved - any commercial sale is unauthorized
+    - Products claiming to be CT-388 from research chemical suppliers
+    - Significantly lower price than expected for novel biologic
+    - No clear chain of custody or manufacturing documentation
+    - Offered outside of clinical trial setting before approval
   badSigns:
-    - "Any product sold as CT-388 outside clinical trials (currently investigational only)"
-    - "Research chemical supplier claiming to sell CT-388"
-    - "No COA or obviously fraudulent documentation"
-    - "Unclear or suspicious origin"
-    - "Products from unregulated compounding sources"
-    - "Any CT-388 product without Roche/clinical trial involvement"
+    - >-
+      Any product sold as CT-388 outside clinical trials (currently
+      investigational only)
+    - Research chemical supplier claiming to sell CT-388
+    - No COA or obviously fraudulent documentation
+    - Unclear or suspicious origin
+    - Products from unregulated compounding sources
+    - Any CT-388 product without Roche/clinical trial involvement
+regulatoryStatus:
+  status: investigational
+  lastUpdated: '2026-02-18'
+  notes: >-
+    Phase 2 clinical trials for obesity (Carmot Therapeutics/Roche). GLP-1/GIP
+    dual agonist.
+ratings:
+  researchDepth: 3
+  globalCoverage: 2
+  mechanismPlausibility: 3
+  overall: 3.0
+  lastReviewed: 2026-02-18T00:00:00.000Z
+  reviewNotes: "Phase 2 GLP-1/GIP dual agonist; established GLP-1 receptor mechanism but limited geography."
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

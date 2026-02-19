@@ -1,286 +1,518 @@
 ---
-name: "Sermorelin"
-aliases: ["Geref", "GRF 1-29", "GHRH(1-29)NH2"]
-category: "hormonal"
-evidenceStrength: "moderate"
-lastUpdated: 2026-01-22
-comparators: ["tesamorelin", "cjc-1295", "somatropin"]
-summary: "A GHRH analog that was FDA-approved for pediatric GH deficiency. Now discontinued commercially but established safety and efficacy profile exists."
+name: Sermorelin
+aliases:
+  - Geref
+  - GRF 1-29
+  - GHRH(1-29)NH2
+category: hormonal
+evidenceStrength: moderate
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - tesamorelin
+  - cjc-1295
+  - somatropin
+summary: >-
+  A GHRH analog that was FDA-approved for pediatric GH deficiency. Now
+  discontinued commercially but established safety and efficacy profile exists.
 sources:
   count: 40
   human: 32
   preclinical: 8
   openAccess: 18
-metaTitle: "Sermorelin Evidence Dossier | PepCodex"
-metaDescription: "Evidence review of sermorelin (Geref). Former FDA-approved GHRH analog, clinical history, and comparison to alternatives."
+metaTitle: Sermorelin Evidence Dossier | PepCodex
+metaDescription: >-
+  Evidence review of sermorelin (Geref). Former FDA-approved GHRH analog,
+  clinical history, and comparison to alternatives.
 interactions:
-  - peptide: "ipamorelin"
-    type: "synergistic"
-    description: "GHRH+GHRP synergy well-documented in literature. Sermorelin (GHRH) combined with ipamorelin (GHRP) produces greater GH release than either alone through complementary receptor pathways."
-    source: "18174396"
-  - peptide: "ghrp-6"
-    type: "synergistic"
-    description: "Classic synergistic combination used in research. GHRH amplifies GH pulse while GHRP initiates release."
-    source: "9467534"
-  - peptide: "ghrp-2"
-    type: "synergistic"
-    description: "Complementary mechanisms through GHRH and ghrelin receptor pathways produce synergistic GH secretion."
-  - peptide: "tesamorelin"
-    type: "avoid"
-    description: "Both are GHRH analogs acting on the same receptor (GHRH-R). Combination provides no benefit and may cause receptor desensitization."
-  - peptide: "cjc-1295"
-    type: "avoid"
-    description: "Both are GHRH analogs with identical mechanism of action. Use one or the other."
-  - peptide: "mk-677"
-    type: "synergistic"
-    description: "MK-677 acts on ghrelin receptor while sermorelin acts on GHRH receptor. Complementary pathways may enhance GH release."
-  - peptide: "semaglutide"
-    type: "caution"
-    description: "GH secretagogues may affect glucose metabolism. Monitor in diabetic patients."
+  - peptide: ipamorelin
+    type: synergistic
+    description: >-
+      GHRH+GHRP synergy well-documented in literature. Sermorelin (GHRH)
+      combined with ipamorelin (GHRP) produces greater GH release than either
+      alone through complementary receptor pathways.
+    source: '18174396'
+  - peptide: ghrp-6
+    type: synergistic
+    description: >-
+      Classic synergistic combination used in research. GHRH amplifies GH pulse
+      while GHRP initiates release.
+    source: '9467534'
+  - peptide: ghrp-2
+    type: synergistic
+    description: >-
+      Complementary mechanisms through GHRH and ghrelin receptor pathways
+      produce synergistic GH secretion.
+  - peptide: tesamorelin
+    type: avoid
+    description: >-
+      Both are GHRH analogs acting on the same receptor (GHRH-R). Combination
+      provides no benefit and may cause receptor desensitization.
+  - peptide: cjc-1295
+    type: avoid
+    description: >-
+      Both are GHRH analogs with identical mechanism of action. Use one or the
+      other.
+  - peptide: mk-677
+    type: synergistic
+    description: >-
+      MK-677 acts on ghrelin receptor while sermorelin acts on GHRH receptor.
+      Complementary pathways may enhance GH release.
+  - peptide: semaglutide
+    type: caution
+    description: >-
+      GH secretagogues may affect glucose metabolism. Monitor in diabetic
+      patients.
 molecularInfo:
-  weight: "3,357.93 Da"
+  weight: '3,357.93 Da'
   chainLength: 29
-  type: "Nonapeptide analog of GHRH"
-  sequence: "YADAIFTNSYRKVLGQLSARKLLQDIMSRNH2"
+  type: Nonapeptide analog of GHRH
+  sequence: YADAIFTNSYRKVLGQLSARKLLQDIMSRNH2
   aminoAcids:
-    - { code: "Y", name: "Tyrosine", position: 1, property: "hydrophobic" }
-    - { code: "A", name: "Alanine", position: 2, property: "hydrophobic" }
-    - { code: "D", name: "Aspartic Acid", position: 3, property: "negative" }
-    - { code: "A", name: "Alanine", position: 4, property: "hydrophobic" }
-    - { code: "I", name: "Isoleucine", position: 5, property: "hydrophobic" }
-    - { code: "F", name: "Phenylalanine", position: 6, property: "hydrophobic" }
-    - { code: "T", name: "Threonine", position: 7, property: "polar" }
-    - { code: "N", name: "Asparagine", position: 8, property: "polar" }
-    - { code: "S", name: "Serine", position: 9, property: "polar" }
-    - { code: "Y", name: "Tyrosine", position: 10, property: "hydrophobic" }
-    - { code: "R", name: "Arginine", position: 11, property: "positive" }
-    - { code: "K", name: "Lysine", position: 12, property: "positive" }
-    - { code: "V", name: "Valine", position: 13, property: "hydrophobic" }
-    - { code: "L", name: "Leucine", position: 14, property: "hydrophobic" }
-    - { code: "G", name: "Glycine", position: 15, property: "polar" }
-    - { code: "Q", name: "Glutamine", position: 16, property: "polar" }
-    - { code: "L", name: "Leucine", position: 17, property: "hydrophobic" }
-    - { code: "S", name: "Serine", position: 18, property: "polar" }
-    - { code: "A", name: "Alanine", position: 19, property: "hydrophobic" }
-    - { code: "R", name: "Arginine", position: 20, property: "positive" }
-    - { code: "K", name: "Lysine", position: 21, property: "positive" }
-    - { code: "L", name: "Leucine", position: 22, property: "hydrophobic" }
-    - { code: "L", name: "Leucine", position: 23, property: "hydrophobic" }
-    - { code: "Q", name: "Glutamine", position: 24, property: "polar" }
-    - { code: "D", name: "Aspartic Acid", position: 25, property: "negative" }
-    - { code: "I", name: "Isoleucine", position: 26, property: "hydrophobic" }
-    - { code: "M", name: "Methionine", position: 27, property: "hydrophobic" }
-    - { code: "S", name: "Serine", position: 28, property: "polar" }
-    - { code: "R", name: "Arginine", position: 29, property: "positive" }
+    - code: 'Y'
+      name: Tyrosine
+      position: 1
+      property: hydrophobic
+    - code: A
+      name: Alanine
+      position: 2
+      property: hydrophobic
+    - code: D
+      name: Aspartic Acid
+      position: 3
+      property: negative
+    - code: A
+      name: Alanine
+      position: 4
+      property: hydrophobic
+    - code: I
+      name: Isoleucine
+      position: 5
+      property: hydrophobic
+    - code: F
+      name: Phenylalanine
+      position: 6
+      property: hydrophobic
+    - code: T
+      name: Threonine
+      position: 7
+      property: polar
+    - code: 'N'
+      name: Asparagine
+      position: 8
+      property: polar
+    - code: S
+      name: Serine
+      position: 9
+      property: polar
+    - code: 'Y'
+      name: Tyrosine
+      position: 10
+      property: hydrophobic
+    - code: R
+      name: Arginine
+      position: 11
+      property: positive
+    - code: K
+      name: Lysine
+      position: 12
+      property: positive
+    - code: V
+      name: Valine
+      position: 13
+      property: hydrophobic
+    - code: L
+      name: Leucine
+      position: 14
+      property: hydrophobic
+    - code: G
+      name: Glycine
+      position: 15
+      property: polar
+    - code: Q
+      name: Glutamine
+      position: 16
+      property: polar
+    - code: L
+      name: Leucine
+      position: 17
+      property: hydrophobic
+    - code: S
+      name: Serine
+      position: 18
+      property: polar
+    - code: A
+      name: Alanine
+      position: 19
+      property: hydrophobic
+    - code: R
+      name: Arginine
+      position: 20
+      property: positive
+    - code: K
+      name: Lysine
+      position: 21
+      property: positive
+    - code: L
+      name: Leucine
+      position: 22
+      property: hydrophobic
+    - code: L
+      name: Leucine
+      position: 23
+      property: hydrophobic
+    - code: Q
+      name: Glutamine
+      position: 24
+      property: polar
+    - code: D
+      name: Aspartic Acid
+      position: 25
+      property: negative
+    - code: I
+      name: Isoleucine
+      position: 26
+      property: hydrophobic
+    - code: M
+      name: Methionine
+      position: 27
+      property: hydrophobic
+    - code: S
+      name: Serine
+      position: 28
+      property: polar
+    - code: R
+      name: Arginine
+      position: 29
+      property: positive
 evidenceChainedBenefits:
   - mechanism:
-      action: "GHRH receptor activation triggering cAMP/PKA signaling cascade in pituitary somatotrophs"
-      confidence: "established"
+      action: >-
+        GHRH receptor activation triggering cAMP/PKA signaling cascade in
+        pituitary somatotrophs
+      confidence: established
       directStudies: 12
     benefit:
-      claim: "stimulate endogenous growth hormone release"
-      qualifier: "shown to"
+      claim: stimulate endogenous growth hormone release
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 10
       animalStudies: 4
       cellStudies: 3
       keyFindings:
-        - study: "Thorner M et al. 1996 (Geref International Study)"
-          type: "human-rct"
-          finding: "74% of GH-deficient children showed increased growth rate after 6 months of sermorelin treatment"
-          pmid: "8772599"
-        - study: "Corpas E et al. 1992"
-          type: "human-rct"
-          finding: "GHRH(1-29) reversed age-related decreases in GH and IGF-1 levels in elderly men after 14 days"
-          pmid: "1379256"
+        - study: Thorner M et al. 1996 (Geref International Study)
+          type: human-rct
+          finding: >-
+            74% of GH-deficient children showed increased growth rate after 6
+            months of sermorelin treatment
+          pmid: '8772599'
+        - study: Corpas E et al. 1992
+          type: human-rct
+          finding: >-
+            GHRH(1-29) reversed age-related decreases in GH and IGF-1 levels in
+            elderly men after 14 days
+          pmid: '1379256'
   - mechanism:
-      action: "Enhancement of slow-wave sleep through CNS GHRH receptor activation independent of peripheral GH"
-      confidence: "supported"
+      action: >-
+        Enhancement of slow-wave sleep through CNS GHRH receptor activation
+        independent of peripheral GH
+      confidence: supported
       directStudies: 6
     benefit:
-      claim: "improve sleep quality and slow-wave sleep duration"
-      qualifier: "appears to"
+      claim: improve sleep quality and slow-wave sleep duration
+      qualifier: appears to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 5
       animalStudies: 3
       cellStudies: 0
       keyFindings:
-        - study: "Frieboes RM et al. 2000"
-          type: "human-observational"
-          finding: "Sermorelin enhanced slow-wave sleep and GH secretion without affecting REM sleep in healthy adults"
-          pmid: "10720539"
-        - study: "Obal F Jr et al. 1990"
-          type: "animal"
-          finding: "GHRH promotes slow-wave sleep via CNS mechanisms independent of peripheral GH release"
-          pmid: "2128622"
+        - study: Frieboes RM et al. 2000
+          type: human-observational
+          finding: >-
+            Sermorelin enhanced slow-wave sleep and GH secretion without
+            affecting REM sleep in healthy adults
+          pmid: '10720539'
+        - study: Obal F Jr et al. 1990
+          type: animal
+          finding: >-
+            GHRH promotes slow-wave sleep via CNS mechanisms independent of
+            peripheral GH release
+          pmid: '2128622'
   - mechanism:
-      action: "Increased brain GABA levels through GHRH-mediated neuroendocrine pathways"
-      confidence: "supported"
+      action: >-
+        Increased brain GABA levels through GHRH-mediated neuroendocrine
+        pathways
+      confidence: supported
       directStudies: 3
     benefit:
-      claim: "enhance cognitive function including working memory and processing speed"
-      qualifier: "may"
+      claim: enhance cognitive function including working memory and processing speed
+      qualifier: may
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 3
       animalStudies: 1
       cellStudies: 0
       keyFindings:
-        - study: "Friedman SD et al. 2013"
-          type: "human-rct"
-          finding: "20-week GHRH treatment increased brain GABA levels and improved fluid intelligence measures in older adults and MCI patients"
-          pmid: "23588422"
-        - study: "Vitiello MV et al. 2006"
-          type: "human-rct"
-          finding: "6-month GHRH improved sleep quality and cognitive function in healthy older adults"
-          pmid: "17047218"
+        - study: Friedman SD et al. 2013
+          type: human-rct
+          finding: >-
+            20-week GHRH treatment increased brain GABA levels and improved
+            fluid intelligence measures in older adults and MCI patients
+          pmid: '23588422'
+        - study: Vitiello MV et al. 2006
+          type: human-rct
+          finding: >-
+            6-month GHRH improved sleep quality and cognitive function in
+            healthy older adults
+          pmid: '17047218'
   - mechanism:
-      action: "Restoration of physiologic IGF-1 levels promoting anabolic effects on lean tissue"
-      confidence: "established"
+      action: >-
+        Restoration of physiologic IGF-1 levels promoting anabolic effects on
+        lean tissue
+      confidence: established
       directStudies: 8
     benefit:
-      claim: "improve body composition by increasing lean mass and reducing fat mass"
-      qualifier: "shown to"
+      claim: improve body composition by increasing lean mass and reducing fat mass
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 6
       animalStudies: 2
       cellStudies: 0
       keyFindings:
-        - study: "Merriam GR et al. 2005"
-          type: "human-rct"
-          finding: "6-month GHRH in older adults (65-88 years) increased IGF-1 and lean mass while decreasing fat mass"
-          pmid: "16099970"
-        - study: "Khorram O et al. 1997"
-          type: "human-rct"
-          finding: "5-month GHRH therapy improved insulin sensitivity and body composition in elderly subjects"
-          pmid: "9141536"
+        - study: Merriam GR et al. 2005
+          type: human-rct
+          finding: >-
+            6-month GHRH in older adults (65-88 years) increased IGF-1 and lean
+            mass while decreasing fat mass
+          pmid: '16099970'
+        - study: Khorram O et al. 1997
+          type: human-rct
+          finding: >-
+            5-month GHRH therapy improved insulin sensitivity and body
+            composition in elderly subjects
+          pmid: '9141536'
 conditions:
-  - slug: "growth-hormone-deficiency"
-    name: "Growth Hormone Deficiency"
-    researchSummary: |
-      Sermorelin was FDA-approved for pediatric growth hormone deficiency, making it one of few GHRH analogs with established regulatory approval for a defined indication. The Geref International Study demonstrated that 74% of GH-deficient children showed increased growth rate after 6 months of treatment.
+  - slug: growth-hormone-deficiency
+    name: Growth Hormone Deficiency
+    researchSummary: >
+      Sermorelin was FDA-approved for pediatric growth hormone deficiency,
+      making it one of few GHRH analogs with established regulatory approval for
+      a defined indication. The Geref International Study demonstrated that 74%
+      of GH-deficient children showed increased growth rate after 6 months of
+      treatment.
 
-      The mechanism works by stimulating the pituitary to release endogenous GH, preserving natural pulsatile secretion and feedback systems. This distinguishes it from direct GH replacement and may offer advantages in preserving physiologic GH patterns.
 
-      While commercially discontinued in 2008 for business reasons (not safety concerns), the historical approval data established sermorelin's efficacy and safety profile for GH deficiency.
+      The mechanism works by stimulating the pituitary to release endogenous GH,
+      preserving natural pulsatile secretion and feedback systems. This
+      distinguishes it from direct GH replacement and may offer advantages in
+      preserving physiologic GH patterns.
+
+
+      While commercially discontinued in 2008 for business reasons (not safety
+      concerns), the historical approval data established sermorelin's efficacy
+      and safety profile for GH deficiency.
     relevantStudies:
-      - "8772599"
-      - "6092099"
-      - "3297423"
+      - '8772599'
+      - '6092099'
+      - '3297423'
     relatedPeptides:
-      - "tesamorelin"
-      - "cjc-1295"
-      - "ipamorelin"
-  - slug: "anti-aging"
-    name: "Anti-Aging"
-    researchSummary: |
-      Sermorelin has been extensively studied for age-related GH decline (somatopause). NIH research demonstrated that GHRH(1-29) reversed age-related decreases in GH and IGF-1 levels in elderly men, suggesting potential for addressing age-related hormonal changes.
+      - tesamorelin
+      - cjc-1295
+      - ipamorelin
+  - slug: anti-aging
+    name: Anti-Aging
+    researchSummary: >
+      Sermorelin has been extensively studied for age-related GH decline
+      (somatopause). NIH research demonstrated that GHRH(1-29) reversed
+      age-related decreases in GH and IGF-1 levels in elderly men, suggesting
+      potential for addressing age-related hormonal changes.
 
-      A 6-month randomized trial in healthy older adults (65-88 years) showed GHRH increased IGF-1 and lean mass while decreasing fat mass, without major adverse effects. These findings support the concept of GHRH therapy for age-related body composition changes.
 
-      The Italian research groups at Turin and Milan have contributed significantly to understanding GHRH in somatopause, demonstrating that age-related GH decline is hypothalamic (not pituitary) in origin, making GHRH an appropriate intervention target.
+      A 6-month randomized trial in healthy older adults (65-88 years) showed
+      GHRH increased IGF-1 and lean mass while decreasing fat mass, without
+      major adverse effects. These findings support the concept of GHRH therapy
+      for age-related body composition changes.
+
+
+      The Italian research groups at Turin and Milan have contributed
+      significantly to understanding GHRH in somatopause, demonstrating that
+      age-related GH decline is hypothalamic (not pituitary) in origin, making
+      GHRH an appropriate intervention target.
     relevantStudies:
-      - "1379256"
-      - "16099970"
-      - "2106347"
-      - "7867818"
+      - '1379256'
+      - '16099970'
+      - '2106347'
+      - '7867818'
     relatedPeptides:
-      - "epithalon"
-      - "ipamorelin"
-      - "cjc-1295"
-  - slug: "sleep-improvement"
-    name: "Sleep Improvement"
-    researchSummary: |
-      Multiple studies have demonstrated that GHRH administration enhances slow-wave sleep (SWS), the restorative deep sleep phase. German research at Max Planck Institute showed sermorelin enhanced slow-wave sleep and GH secretion without affecting REM sleep.
+      - epithalon
+      - ipamorelin
+      - cjc-1295
+  - slug: sleep-improvement
+    name: Sleep Improvement
+    researchSummary: >
+      Multiple studies have demonstrated that GHRH administration enhances
+      slow-wave sleep (SWS), the restorative deep sleep phase. German research
+      at Max Planck Institute showed sermorelin enhanced slow-wave sleep and GH
+      secretion without affecting REM sleep.
 
-      The mechanism appears to be CNS-mediated, with GHRH promoting slow-wave sleep independently of peripheral GH release. This bidirectional relationship (GHRH promotes sleep, sleep promotes GH release) represents a beneficial cycle for restoration and recovery.
 
-      Clinical trials in healthy older adults showed improvements in sleep quality alongside cognitive function benefits, suggesting interconnected mechanisms where improved sleep may mediate some of sermorelin's broader benefits.
+      The mechanism appears to be CNS-mediated, with GHRH promoting slow-wave
+      sleep independently of peripheral GH release. This bidirectional
+      relationship (GHRH promotes sleep, sleep promotes GH release) represents a
+      beneficial cycle for restoration and recovery.
+
+
+      Clinical trials in healthy older adults showed improvements in sleep
+      quality alongside cognitive function benefits, suggesting interconnected
+      mechanisms where improved sleep may mediate some of sermorelin's broader
+      benefits.
     relevantStudies:
-      - "10720539"
-      - "8432877"
-      - "2128622"
-      - "17047218"
+      - '10720539'
+      - '8432877'
+      - '2128622'
+      - '17047218'
     relatedPeptides:
-      - "ipamorelin"
-      - "mk-677"
-  - slug: "cognitive-function"
-    name: "Cognitive Function"
-    researchSummary: |
-      A 20-week randomized controlled trial demonstrated that sermorelin treatment increased brain GABA levels in all measured regions and improved performance on tests of fluid intelligence including working memory, planning, selective attention, and processing speed.
+      - ipamorelin
+      - mk-677
+  - slug: cognitive-function
+    name: Cognitive Function
+    researchSummary: >
+      A 20-week randomized controlled trial demonstrated that sermorelin
+      treatment increased brain GABA levels in all measured regions and improved
+      performance on tests of fluid intelligence including working memory,
+      planning, selective attention, and processing speed.
 
-      The study included both healthy older adults and those with mild cognitive impairment (MCI), suggesting potential benefits across the cognitive aging spectrum. The GABA increase may mediate improved cognitive function through enhanced inhibitory neurotransmission.
 
-      Additional trials in healthy older adults showed GHRH improved cognitive function alongside sleep quality, supporting a role for optimized GH secretion in maintaining cognitive health during aging.
+      The study included both healthy older adults and those with mild cognitive
+      impairment (MCI), suggesting potential benefits across the cognitive aging
+      spectrum. The GABA increase may mediate improved cognitive function
+      through enhanced inhibitory neurotransmission.
+
+
+      Additional trials in healthy older adults showed GHRH improved cognitive
+      function alongside sleep quality, supporting a role for optimized GH
+      secretion in maintaining cognitive health during aging.
     relevantStudies:
-      - "23588422"
-      - "17047218"
-      - "22034239"
+      - '23588422'
+      - '17047218'
+      - '22034239'
     relatedPeptides:
-      - "semax"
-      - "selank"
-  - slug: "body-composition"
-    name: "Body Composition"
-    researchSummary: |
-      Clinical trials have consistently shown that sermorelin improves body composition by increasing lean mass and decreasing fat mass in older adults. A 6-month NIH trial demonstrated significant improvements in body composition without major adverse effects.
+      - semax
+      - selank
+  - slug: body-composition
+    name: Body Composition
+    researchSummary: >
+      Clinical trials have consistently shown that sermorelin improves body
+      composition by increasing lean mass and decreasing fat mass in older
+      adults. A 6-month NIH trial demonstrated significant improvements in body
+      composition without major adverse effects.
 
-      The 5-month trial by Khorram et al. showed that men receiving GHRH experienced improvements in insulin sensitivity alongside body composition changes, suggesting metabolic benefits beyond simple fat loss.
 
-      Swedish research has examined the comparative effects of GH versus GHRH on body composition and bone density, finding that GHRH therapy may offer advantages in preserving physiologic regulation while achieving similar body composition benefits.
+      The 5-month trial by Khorram et al. showed that men receiving GHRH
+      experienced improvements in insulin sensitivity alongside body composition
+      changes, suggesting metabolic benefits beyond simple fat loss.
+
+
+      Swedish research has examined the comparative effects of GH versus GHRH on
+      body composition and bone density, finding that GHRH therapy may offer
+      advantages in preserving physiologic regulation while achieving similar
+      body composition benefits.
     relevantStudies:
-      - "16099970"
-      - "9141536"
-      - "15070959"
+      - '16099970'
+      - '9141536'
+      - '15070959'
     relatedPeptides:
-      - "ipamorelin"
-      - "tesamorelin"
-      - "mk-677"
+      - ipamorelin
+      - tesamorelin
+      - mk-677
 timeline:
-  - period: "First Dose"
-    effects: "GH release begins within 15-30 minutes of subcutaneous injection. Peak GH typically occurs 30-60 minutes post-injection. Sermorelin produces a physiological pulsatile GH response."
-  - period: "Week 1-4"
-    effects: "Based on clinical trial data: Daily administration establishes regular GH pulsatility. IGF-1 levels begin to rise. Some patients report improved sleep quality early in treatment."
-  - period: "Week 4-12"
-    effects: "Clinical studies in GH-deficient children showed growth velocity improvements over 6-12 months. In adult studies, IGF-1 levels approached normal ranges with continued use."
-  - period: "Month 3-6"
-    effects: "Growth velocity improvements documented in pediatric GHD trials. Body composition changes (increased lean mass, reduced fat) may become apparent with continued use."
-  - period: "Month 6+"
-    effects: "Long-term pediatric studies showed sustained growth improvements. Sermorelin was FDA-approved for pediatric GHD before discontinuation in 2008 due to manufacturing (not safety) issues."
+  - period: First Dose
+    effects: >-
+      GH release begins within 15-30 minutes of subcutaneous injection. Peak GH
+      typically occurs 30-60 minutes post-injection. Sermorelin produces a
+      physiological pulsatile GH response.
+  - period: Week 1-4
+    effects: >-
+      Based on clinical trial data: Daily administration establishes regular GH
+      pulsatility. IGF-1 levels begin to rise. Some patients report improved
+      sleep quality early in treatment.
+  - period: Week 4-12
+    effects: >-
+      Clinical studies in GH-deficient children showed growth velocity
+      improvements over 6-12 months. In adult studies, IGF-1 levels approached
+      normal ranges with continued use.
+  - period: Month 3-6
+    effects: >-
+      Growth velocity improvements documented in pediatric GHD trials. Body
+      composition changes (increased lean mass, reduced fat) may become apparent
+      with continued use.
+  - period: Month 6+
+    effects: >-
+      Long-term pediatric studies showed sustained growth improvements.
+      Sermorelin was FDA-approved for pediatric GHD before discontinuation in
+      2008 due to manufacturing (not safety) issues.
 faqs:
-  - question: "What is sermorelin?"
-    answer: "Sermorelin is a synthetic GHRH (growth hormone-releasing hormone) analog consisting of the first 29 amino acids of natural GHRH. It stimulates the pituitary to release growth hormone while preserving natural feedback systems."
-  - question: "Is sermorelin FDA approved?"
-    answer: "Sermorelin was FDA-approved for pediatric growth hormone deficiency (as Geref) but was discontinued commercially in 2008 for business reasons, not safety concerns. It remains available through compounding pharmacies."
-  - question: "What is the evidence for sermorelin?"
-    answer: "Evidence quality is moderate with 32 human studies. The Geref International Study showed 74% of GH-deficient children had increased growth rates. Additional trials demonstrated sleep and cognitive benefits in older adults."
-  - question: "How does sermorelin differ from growth hormone?"
-    answer: "Sermorelin stimulates your pituitary to produce natural GH in physiologic pulses, while GH injections provide direct hormone replacement with constant levels. Sermorelin preserves natural feedback mechanisms."
+  - question: What is sermorelin?
+    answer: >-
+      Sermorelin is a synthetic GHRH (growth hormone-releasing hormone) analog
+      consisting of the first 29 amino acids of natural GHRH. It stimulates the
+      pituitary to release growth hormone while preserving natural feedback
+      systems.
+  - question: Is sermorelin FDA approved?
+    answer: >-
+      Sermorelin was FDA-approved for pediatric growth hormone deficiency (as
+      Geref) but was discontinued commercially in 2008 for business reasons, not
+      safety concerns. It remains available through compounding pharmacies.
+  - question: What is the evidence for sermorelin?
+    answer: >-
+      Evidence quality is moderate with 32 human studies. The Geref
+      International Study showed 74% of GH-deficient children had increased
+      growth rates. Additional trials demonstrated sleep and cognitive benefits
+      in older adults.
+  - question: How does sermorelin differ from growth hormone?
+    answer: >-
+      Sermorelin stimulates your pituitary to produce natural GH in physiologic
+      pulses, while GH injections provide direct hormone replacement with
+      constant levels. Sermorelin preserves natural feedback mechanisms.
 qualityChecklist:
   goodSigns:
-    - "White to off-white lyophilized powder"
-    - "Complete dissolution in bacteriostatic water"
-    - "Clear, colorless solution after reconstitution"
-    - "Certificate of analysis with >97% purity"
-    - "HPLC verification of identity"
-    - "Compounding pharmacy is PCAB or similar accredited"
-    - "Obtained through legitimate medical prescription"
+    - White to off-white lyophilized powder
+    - Complete dissolution in bacteriostatic water
+    - 'Clear, colorless solution after reconstitution'
+    - Certificate of analysis with >97% purity
+    - HPLC verification of identity
+    - Compounding pharmacy is PCAB or similar accredited
+    - Obtained through legitimate medical prescription
   warningSigns:
-    - "Slight off-white coloration"
-    - "Slower dissolution than expected"
-    - "Compounding pharmacy not accredited"
-    - "No third-party testing verification"
-    - "Limited documentation of source"
+    - Slight off-white coloration
+    - Slower dissolution than expected
+    - Compounding pharmacy not accredited
+    - No third-party testing verification
+    - Limited documentation of source
   badSigns:
-    - "Yellow or brown discoloration"
-    - "Visible particles in reconstituted solution"
-    - "Cloudy appearance after mixing"
-    - "No certificate of analysis"
-    - "Unusual odor"
-    - "Vial seal compromised"
-    - "Source cannot be verified"
+    - Yellow or brown discoloration
+    - Visible particles in reconstituted solution
+    - Cloudy appearance after mixing
+    - No certificate of analysis
+    - Unusual odor
+    - Vial seal compromised
+    - Source cannot be verified
+regulatoryStatus:
+  status: research-only
+  lastUpdated: '2026-02-18'
+  notes: >-
+    Previously FDA-approved (Geref) for growth hormone deficiency diagnosis.
+    Withdrawn from market but available through compounding.
+ratings:
+  researchDepth: 3
+  globalCoverage: 3
+  mechanismPlausibility: 4
+  overall: 3.5
+  lastReviewed: 2026-02-19T00:00:00.000Z
+  reviewNotes: >-
+    Previously FDA-approved GHRH(1-29) analog. Established mechanism as GHRH receptor agonist stimulating pituitary GH release. US and European clinical data; moderate research body with human trials supporting GH secretagogue role. Anchor for FDA-approved but limited-scope peptides.
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

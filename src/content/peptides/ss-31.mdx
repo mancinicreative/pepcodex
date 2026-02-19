@@ -1,182 +1,302 @@
 ---
-name: "SS-31"
-aliases: ["Elamipretide", "Bendavia", "MTP-131"]
-category: "longevity"
-evidenceStrength: "moderate"
-lastUpdated: 2026-01-22
-comparators: ["mitoq", "coq10", "nad-precursors"]
-summary: "A first-in-class mitochondria-targeting tetrapeptide that binds cardiolipin on the inner mitochondrial membrane. Developed by Stealth BioTherapeutics for mitochondrial diseases, heart failure, and age-related macular degeneration. Phase 3 trials in primary mitochondrial myopathy did not meet primary endpoints, but Barth syndrome data was positive. Strong preclinical rationale with mixed clinical translation."
+name: SS-31
+aliases:
+  - Elamipretide
+  - Bendavia
+  - MTP-131
+category: longevity
+evidenceStrength: moderate
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - mitoq
+  - coq10
+  - nad-precursors
+summary: >-
+  A first-in-class mitochondria-targeting tetrapeptide that binds cardiolipin on
+  the inner mitochondrial membrane. Developed by Stealth BioTherapeutics for
+  mitochondrial diseases, heart failure, and age-related macular degeneration.
+  Phase 3 trials in primary mitochondrial myopathy did not meet primary
+  endpoints, but Barth syndrome data was positive. Strong preclinical rationale
+  with mixed clinical translation.
 sources:
   count: 35
   human: 12
   preclinical: 23
   openAccess: 28
-metaTitle: "SS-31 (Elamipretide) Evidence Dossier | PepCodex"
-metaDescription: "Comprehensive evidence review of SS-31/Elamipretide/Bendavia. Cardiolipin-targeting mitochondrial peptide, clinical trials in PMM, Barth syndrome, heart failure, and AMD."
+metaTitle: SS-31 (Elamipretide) Evidence Dossier | PepCodex
+metaDescription: >-
+  Comprehensive evidence review of SS-31/Elamipretide/Bendavia.
+  Cardiolipin-targeting mitochondrial peptide, clinical trials in PMM, Barth
+  syndrome, heart failure, and AMD.
 interactions:
-  - peptide: "mitoq"
-    type: "compatible"
-    description: "Different mitochondrial targets - SS-31 binds cardiolipin on inner membrane while MitoQ accumulates in matrix. May provide complementary antioxidant and bioenergetic effects. No interaction studies available."
-  - peptide: "coq10"
-    type: "compatible"
-    description: "CoQ10 functions as electron carrier in ETC while SS-31 optimizes cardiolipin-cytochrome c interactions. Theoretically complementary mechanisms for mitochondrial support."
-  - peptide: "nad-precursors"
-    type: "compatible"
-    description: "NAD+ precursors (NMN, NR) support different aspects of mitochondrial function than SS-31. Non-overlapping mechanisms may provide additive benefits."
-  - peptide: "urolithin-a"
-    type: "compatible"
-    description: "Urolithin A promotes mitophagy while SS-31 optimizes existing mitochondrial function. Different but potentially complementary approaches to mitochondrial health."
-  - peptide: "idebenone"
-    type: "compatible"
-    description: "Idebenone bypasses Complex I while SS-31 optimizes overall ETC efficiency through cardiolipin. May have additive effects in mitochondrial dysfunction."
+  - peptide: mitoq
+    type: compatible
+    description: >-
+      Different mitochondrial targets - SS-31 binds cardiolipin on inner
+      membrane while MitoQ accumulates in matrix. May provide complementary
+      antioxidant and bioenergetic effects. No interaction studies available.
+  - peptide: coq10
+    type: compatible
+    description: >-
+      CoQ10 functions as electron carrier in ETC while SS-31 optimizes
+      cardiolipin-cytochrome c interactions. Theoretically complementary
+      mechanisms for mitochondrial support.
+  - peptide: nad-precursors
+    type: compatible
+    description: >-
+      NAD+ precursors (NMN, NR) support different aspects of mitochondrial
+      function than SS-31. Non-overlapping mechanisms may provide additive
+      benefits.
+  - peptide: urolithin-a
+    type: compatible
+    description: >-
+      Urolithin A promotes mitophagy while SS-31 optimizes existing
+      mitochondrial function. Different but potentially complementary approaches
+      to mitochondrial health.
+  - peptide: idebenone
+    type: compatible
+    description: >-
+      Idebenone bypasses Complex I while SS-31 optimizes overall ETC efficiency
+      through cardiolipin. May have additive effects in mitochondrial
+      dysfunction.
 molecularInfo:
-  weight: "639.8 Da"
+  weight: 639.8 Da
   chainLength: 4
-  type: "Tetrapeptide"
-  sequence: "D-Arg-Dmt-Lys-Phe-NH2"
+  type: Tetrapeptide
+  sequence: D-Arg-Dmt-Lys-Phe-NH2
   aminoAcids:
-    - { code: "r", name: "D-Arginine", position: 1, property: "positive" }
-    - { code: "Dmt", name: "2,6-Dimethyltyrosine", position: 2, property: "modified" }
-    - { code: "K", name: "Lysine", position: 3, property: "positive" }
-    - { code: "F", name: "Phenylalanine", position: 4, property: "hydrophobic" }
+    - code: r
+      name: D-Arginine
+      position: 1
+      property: positive
+    - code: Dmt
+      name: '2,6-Dimethyltyrosine'
+      position: 2
+      property: modified
+    - code: K
+      name: Lysine
+      position: 3
+      property: positive
+    - code: F
+      name: Phenylalanine
+      position: 4
+      property: hydrophobic
 evidenceChainedBenefits:
   - mechanism:
-      action: "Cardiolipin binding on inner mitochondrial membrane optimizes electron transport chain"
-      confidence: "established"
+      action: >-
+        Cardiolipin binding on inner mitochondrial membrane optimizes electron
+        transport chain
+      confidence: established
       directStudies: 8
     benefit:
-      claim: "improve mitochondrial ATP production efficiency"
-      qualifier: "shown to"
+      claim: improve mitochondrial ATP production efficiency
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 3
       animalStudies: 12
       cellStudies: 6
       keyFindings:
-        - study: "Birk AV et al. 2013"
-          type: "in-vitro"
-          finding: "SS-31 binds cardiolipin and optimizes cytochrome c interactions, reducing electron leak"
-          pmid: "23813215"
-        - study: "Mitchell W et al. 2020"
-          type: "in-vitro"
-          finding: "Biophysical studies confirmed cardiolipin binding mechanism and membrane interactions"
-          pmid: "32253237"
+        - study: Birk AV et al. 2013
+          type: in-vitro
+          finding: >-
+            SS-31 binds cardiolipin and optimizes cytochrome c interactions,
+            reducing electron leak
+          pmid: '23813215'
+        - study: Mitchell W et al. 2020
+          type: in-vitro
+          finding: >-
+            Biophysical studies confirmed cardiolipin binding mechanism and
+            membrane interactions
+          pmid: '32253237'
   - mechanism:
-      action: "Prevention of cardiolipin peroxidation and cristae structure maintenance"
-      confidence: "supported"
+      action: Prevention of cardiolipin peroxidation and cristae structure maintenance
+      confidence: supported
       directStudies: 6
     benefit:
-      claim: "protect against mitochondrial dysfunction in disease states"
-      qualifier: "appears to"
+      claim: protect against mitochondrial dysfunction in disease states
+      qualifier: appears to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 2
       animalStudies: 10
       cellStudies: 4
       keyFindings:
-        - study: "Sabbah HN et al. 2016"
-          type: "animal"
-          finding: "3-month treatment in canine HF model normalized mitochondrial respiration and improved LVEF"
-          pmid: "26839394"
-        - study: "Chatfield KC et al. 2019"
-          type: "in-vitro"
-          finding: "Human failing heart tissue showed improved mitochondrial function with SS-31"
-          pmid: "31061918"
+        - study: Sabbah HN et al. 2016
+          type: animal
+          finding: >-
+            3-month treatment in canine HF model normalized mitochondrial
+            respiration and improved LVEF
+          pmid: '26839394'
+        - study: Chatfield KC et al. 2019
+          type: in-vitro
+          finding: >-
+            Human failing heart tissue showed improved mitochondrial function
+            with SS-31
+          pmid: '31061918'
   - mechanism:
-      action: "Stabilization of mitochondrial membrane potential and prevention of mPTP opening"
-      confidence: "supported"
+      action: >-
+        Stabilization of mitochondrial membrane potential and prevention of mPTP
+        opening
+      confidence: supported
       directStudies: 5
     benefit:
-      claim: "reduce ischemia-reperfusion injury"
-      qualifier: "may"
+      claim: reduce ischemia-reperfusion injury
+      qualifier: may
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 1
       animalStudies: 8
       cellStudies: 3
       keyFindings:
-        - study: "Kloner RA et al. 2012"
-          type: "animal"
-          finding: "18-35% reduction in infarct size when given at reperfusion in rabbit and sheep models"
-          pmid: "23130143"
-        - study: "Gibson CM et al. 2016"
-          type: "human-rct"
-          finding: "EMBRACE STEMI trial showed trends in anterior MI subgroup though primary endpoint not met"
-          pmid: "26586786"
+        - study: Kloner RA et al. 2012
+          type: animal
+          finding: >-
+            18-35% reduction in infarct size when given at reperfusion in rabbit
+            and sheep models
+          pmid: '23130143'
+        - study: Gibson CM et al. 2016
+          type: human-rct
+          finding: >-
+            EMBRACE STEMI trial showed trends in anterior MI subgroup though
+            primary endpoint not met
+          pmid: '26586786'
   - mechanism:
-      action: "Rapid mitochondrial uptake and concentration (1000-5000x) targeting source of ROS"
-      confidence: "established"
+      action: >-
+        Rapid mitochondrial uptake and concentration (1000-5000x) targeting
+        source of ROS
+      confidence: established
       directStudies: 7
     benefit:
-      claim: "reverse age-related mitochondrial dysfunction"
-      qualifier: "suggested to"
+      claim: reverse age-related mitochondrial dysfunction
+      qualifier: suggested to
     evidence:
-      level: "low"
+      level: low
       humanStudies: 0
       animalStudies: 5
       cellStudies: 3
       keyFindings:
-        - study: "Siegel MP et al. 2013"
-          type: "animal"
-          finding: "Single 1-hour treatment in aged mice reversed mitochondrial dysfunction and improved fatigue resistance"
-          pmid: "23692507"
+        - study: Siegel MP et al. 2013
+          type: animal
+          finding: >-
+            Single 1-hour treatment in aged mice reversed mitochondrial
+            dysfunction and improved fatigue resistance
+          pmid: '23692507'
 conditions:
-  - slug: "primary-mitochondrial-myopathy"
-    name: "Primary Mitochondrial Myopathy"
-    researchSummary: "SS-31 has been evaluated in two Phase 3 trials (TAZPOWER, MMPOWER-3) for primary mitochondrial myopathy. While primary endpoints (6-minute walk test improvement) were not met, long-term extension data showed durable improvements in completers. The heterogeneous nature of PMM may complicate endpoint selection."
-    relevantStudies: ["29500292", "37137731"]
-    relatedPeptides: ["idebenone", "coq10"]
-  - slug: "barth-syndrome"
-    name: "Barth Syndrome"
-    researchSummary: "Barth syndrome is caused by TAZ gene mutations affecting cardiolipin remodeling, creating a direct mechanistic rationale for SS-31. Phase 2/3 trial showed 67-meter improvement in 6-minute walk test and significant improvements in muscle strength and fatigue (n=12)."
-    relevantStudies: ["32994548"]
-    relatedPeptides: ["coq10"]
-  - slug: "heart-failure"
-    name: "Heart Failure"
-    researchSummary: "PROGRESS-HF Phase 2 trial in HFrEF showed trends toward improved LVEF but did not meet primary endpoint (LVESV change). Preclinical data in canine HF model showed normalized mitochondrial respiration and improved LVEF from 25% to 35%. Ex vivo human failing heart tissue showed improved mitochondrial function."
-    relevantStudies: ["32184074", "29217757", "26839394", "31061918"]
-    relatedPeptides: ["coq10", "nad-precursors"]
-  - slug: "age-related-macular-degeneration"
-    name: "Age-Related Macular Degeneration"
-    researchSummary: "ReCLAIM Phase 2 showed statistically significant improvement in low-luminance visual acuity in dry AMD patients. ReCLAIM-2 Phase 2b trial evaluating effect on geographic atrophy progression is ongoing with results expected 2026."
+  - slug: primary-mitochondrial-myopathy
+    name: Primary Mitochondrial Myopathy
+    researchSummary: >-
+      SS-31 has been evaluated in two Phase 3 trials (TAZPOWER, MMPOWER-3) for
+      primary mitochondrial myopathy. While primary endpoints (6-minute walk
+      test improvement) were not met, long-term extension data showed durable
+      improvements in completers. The heterogeneous nature of PMM may complicate
+      endpoint selection.
+    relevantStudies:
+      - '29500292'
+      - '37137731'
+    relatedPeptides:
+      - idebenone
+      - coq10
+  - slug: barth-syndrome
+    name: Barth Syndrome
+    researchSummary: >-
+      Barth syndrome is caused by TAZ gene mutations affecting cardiolipin
+      remodeling, creating a direct mechanistic rationale for SS-31. Phase 2/3
+      trial showed 67-meter improvement in 6-minute walk test and significant
+      improvements in muscle strength and fatigue (n=12).
+    relevantStudies:
+      - '32994548'
+    relatedPeptides:
+      - coq10
+  - slug: heart-failure
+    name: Heart Failure
+    researchSummary: >-
+      PROGRESS-HF Phase 2 trial in HFrEF showed trends toward improved LVEF but
+      did not meet primary endpoint (LVESV change). Preclinical data in canine
+      HF model showed normalized mitochondrial respiration and improved LVEF
+      from 25% to 35%. Ex vivo human failing heart tissue showed improved
+      mitochondrial function.
+    relevantStudies:
+      - '32184074'
+      - '29217757'
+      - '26839394'
+      - '31061918'
+    relatedPeptides:
+      - coq10
+      - nad-precursors
+  - slug: age-related-macular-degeneration
+    name: Age-Related Macular Degeneration
+    researchSummary: >-
+      ReCLAIM Phase 2 showed statistically significant improvement in
+      low-luminance visual acuity in dry AMD patients. ReCLAIM-2 Phase 2b trial
+      evaluating effect on geographic atrophy progression is ongoing with
+      results expected 2026.
     relevantStudies: []
     relatedPeptides: []
 timeline:
-  - period: "Minutes to Hours"
-    effects: "SS-31 rapidly crosses plasma membrane and concentrates 1000-5000x in mitochondria. Binds cardiolipin on inner mitochondrial membrane. In aged mice, single 1-hour treatment showed immediate improvements in mitochondrial function."
-    source: "PMID:23692507"
-  - period: "Days to Weeks"
-    effects: "Clinical trials used daily SC dosing with steady state achieved within days. Phase 2 trials (28 days) showed trends toward improved cardiac and mitochondrial parameters."
-    source: "PMID:32184074"
-  - period: "Weeks to Months"
-    effects: "Phase 3 PMM trials evaluated 24-week endpoints. Barth syndrome trial showed significant improvements by 12 weeks. Long-term extension studies (up to 144 weeks) showed durable improvements in completers."
-    source: "PMID:32994548"
-  - period: "Long-term"
-    effects: "144-week extension data suggests sustained effects. Ongoing ReCLAIM-2 trial evaluating chronic dosing for geographic atrophy. Long-term human pharmacokinetics and optimal treatment duration continue to be characterized."
-    source: "PMID:37137731"
+  - period: Minutes to Hours
+    effects: >-
+      SS-31 rapidly crosses plasma membrane and concentrates 1000-5000x in
+      mitochondria. Binds cardiolipin on inner mitochondrial membrane. In aged
+      mice, single 1-hour treatment showed immediate improvements in
+      mitochondrial function.
+    source: 'PMID:23692507'
+  - period: Days to Weeks
+    effects: >-
+      Clinical trials used daily SC dosing with steady state achieved within
+      days. Phase 2 trials (28 days) showed trends toward improved cardiac and
+      mitochondrial parameters.
+    source: 'PMID:32184074'
+  - period: Weeks to Months
+    effects: >-
+      Phase 3 PMM trials evaluated 24-week endpoints. Barth syndrome trial
+      showed significant improvements by 12 weeks. Long-term extension studies
+      (up to 144 weeks) showed durable improvements in completers.
+    source: 'PMID:32994548'
+  - period: Long-term
+    effects: >-
+      144-week extension data suggests sustained effects. Ongoing ReCLAIM-2
+      trial evaluating chronic dosing for geographic atrophy. Long-term human
+      pharmacokinetics and optimal treatment duration continue to be
+      characterized.
+    source: 'PMID:37137731'
 qualityChecklist:
   goodSigns:
-    - "White to off-white lyophilized powder"
-    - "Dissolves completely in bacteriostatic water"
-    - "Clear, colorless solution after reconstitution"
-    - "Certificate of analysis (COA) showing >98% purity"
-    - "Third-party HPLC and mass spectrometry verification"
-    - "Proper vacuum seal on vial"
-    - "Stored at recommended temperature (-20C for long-term)"
+    - White to off-white lyophilized powder
+    - Dissolves completely in bacteriostatic water
+    - 'Clear, colorless solution after reconstitution'
+    - Certificate of analysis (COA) showing >98% purity
+    - Third-party HPLC and mass spectrometry verification
+    - Proper vacuum seal on vial
+    - Stored at recommended temperature (-20C for long-term)
   warningSigns:
-    - "Slightly off-white powder (may still be acceptable)"
-    - "Takes longer than expected to dissolve"
-    - "COA from manufacturer only without third-party testing"
-    - "Purity listed below 98% but above 95%"
-    - "No temperature indicator or storage history"
+    - Slightly off-white powder (may still be acceptable)
+    - Takes longer than expected to dissolve
+    - COA from manufacturer only without third-party testing
+    - Purity listed below 98% but above 95%
+    - No temperature indicator or storage history
   badSigns:
-    - "Yellow, brown, or discolored powder"
-    - "Visible particles or cloudiness after reconstitution"
-    - "Gel-like consistency or clumping"
-    - "No COA provided or fraudulent-appearing COA"
-    - "Strong unusual odor"
-    - "Vial seal compromised or previously opened"
-    - "Evidence of temperature excursions during shipping"
+    - 'Yellow, brown, or discolored powder'
+    - Visible particles or cloudiness after reconstitution
+    - Gel-like consistency or clumping
+    - No COA provided or fraudulent-appearing COA
+    - Strong unusual odor
+    - Vial seal compromised or previously opened
+    - Evidence of temperature excursions during shipping
+regulatoryStatus:
+  status: investigational
+  lastUpdated: '2026-02-18'
+  notes: >-
+    Phase 3 clinical trials as elamipretide for mitochondrial diseases (Stealth
+    BioTherapeutics).
+ratings:
+  researchDepth: 3
+  globalCoverage: 3
+  mechanismPlausibility: 4
+  overall: 3.5
+  lastReviewed: 2026-02-19T00:00:00.000Z
+  reviewNotes: >-
+    Mitochondria-targeted tetrapeptide (elamipretide) in Phase 2-3 trials for primary mitochondrial myopathy and Barth syndrome. US-led trials with some international sites. Cardiolipin-targeting mechanism with mitochondrial cristae stabilization is well-characterized through multiple biochemical studies.
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

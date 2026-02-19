@@ -1,133 +1,200 @@
 ---
-name: "BT5528"
-aliases: ["Bicycle Toxin Conjugate 5528", "EphA2-BTC"]
-category: "other"
-evidenceStrength: "moderate"
-lastUpdated: 2026-01-22
-comparators: ["antibody-drug-conjugates", "enfortumab-vedotin"]
-summary: "A first-in-class Bicycle Toxin Conjugate (BTC) targeting EphA2-expressing tumors, developed by Bicycle Therapeutics. Combines a constrained bicyclic peptide targeting moiety with the cytotoxic payload MMAE. Phase 1/2 dose expansion ongoing with 67% ORR reported in EphA2-positive urothelial cancer patients."
+name: BT5528
+aliases:
+  - Bicycle Toxin Conjugate 5528
+  - EphA2-BTC
+category: other
+evidenceStrength: moderate
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - antibody-drug-conjugates
+  - enfortumab-vedotin
+summary: >-
+  A first-in-class Bicycle Toxin Conjugate (BTC) targeting EphA2-expressing
+  tumors, developed by Bicycle Therapeutics. Combines a constrained bicyclic
+  peptide targeting moiety with the cytotoxic payload MMAE. Phase 1/2 dose
+  expansion ongoing with 67% ORR reported in EphA2-positive urothelial cancer
+  patients.
 sources:
   count: 18
   human: 8
   preclinical: 10
   openAccess: 12
-metaTitle: "BT5528 Evidence Dossier | PepCodex"
-metaDescription: "Evidence review of BT5528, a first-in-class EphA2-targeting Bicycle Toxin Conjugate. Clinical trial data, mechanism of action, safety profile, and ongoing research."
+metaTitle: BT5528 Evidence Dossier | PepCodex
+metaDescription: >-
+  Evidence review of BT5528, a first-in-class EphA2-targeting Bicycle Toxin
+  Conjugate. Clinical trial data, mechanism of action, safety profile, and
+  ongoing research.
 interactions:
-  - peptide: "antibody-drug-conjugates"
-    type: "compatible"
-    description: "BTCs represent a distinct modality from traditional ADCs. Different pharmacokinetic profiles (shorter half-life, smaller size) may allow sequential use. No direct interaction studies."
-  - peptide: "enfortumab-vedotin"
-    type: "caution"
-    description: "Both use MMAE payload. Sequential use may increase cumulative neuropathy risk. Different targets (EphA2 vs Nectin-4) but overlapping toxicity profiles."
+  - peptide: antibody-drug-conjugates
+    type: compatible
+    description: >-
+      BTCs represent a distinct modality from traditional ADCs. Different
+      pharmacokinetic profiles (shorter half-life, smaller size) may allow
+      sequential use. No direct interaction studies.
+  - peptide: enfortumab-vedotin
+    type: caution
+    description: >-
+      Both use MMAE payload. Sequential use may increase cumulative neuropathy
+      risk. Different targets (EphA2 vs Nectin-4) but overlapping toxicity
+      profiles.
 molecularInfo:
-  weight: "~7,000 Da"
+  weight: '~7,000 Da'
   chainLength: 0
-  type: "Bicycle Toxin Conjugate"
-  sequence: "N/A (constrained bicyclic peptide + MMAE)"
+  type: Bicycle Toxin Conjugate
+  sequence: N/A (constrained bicyclic peptide + MMAE)
   aminoAcids: []
 evidenceChainedBenefits:
   - mechanism:
-      action: "EphA2 receptor binding and internalization triggering MMAE release"
-      confidence: "established"
+      action: EphA2 receptor binding and internalization triggering MMAE release
+      confidence: established
       directStudies: 8
     benefit:
-      claim: "induce tumor cell death in EphA2-expressing cancers"
-      qualifier: "shown to"
+      claim: induce tumor cell death in EphA2-expressing cancers
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 8
       animalStudies: 10
       cellStudies: 5
       keyFindings:
-        - study: "Bicycle Therapeutics Phase 1/2 Data 2024"
-          type: "human-observational"
-          finding: "67% overall response rate in EphA2-positive urothelial cancer patients"
-          pmid: "NCT04180371"
-        - study: "Preclinical xenograft studies"
-          type: "animal"
-          finding: "Tumor regression in EphA2+ xenograft models with target-dependent activity"
-          pmid: "N/A"
+        - study: Bicycle Therapeutics Phase 1/2 Data 2024
+          type: human-observational
+          finding: >-
+            67% overall response rate in EphA2-positive urothelial cancer
+            patients
+          pmid: NCT04180371
+        - study: Preclinical xenograft studies
+          type: animal
+          finding: >-
+            Tumor regression in EphA2+ xenograft models with target-dependent
+            activity
+          pmid: N/A
   - mechanism:
-      action: "MMAE-mediated microtubule disruption causing mitotic arrest"
-      confidence: "established"
+      action: MMAE-mediated microtubule disruption causing mitotic arrest
+      confidence: established
       directStudies: 15
     benefit:
-      claim: "inhibit cancer cell proliferation"
-      qualifier: "shown to"
+      claim: inhibit cancer cell proliferation
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 10
       animalStudies: 20
       cellStudies: 15
       keyFindings:
-        - study: "Doronina SO et al. 2003"
-          type: "in-vitro"
-          finding: "MMAE demonstrates potent subnanomolar cytotoxicity via tubulin polymerization inhibition"
-          pmid: "12778056"
-        - study: "Francisco JA et al. 2003"
-          type: "animal"
-          finding: "MMAE-conjugates show selective tumor killing in CD30+ models"
-          pmid: "12893756"
+        - study: Doronina SO et al. 2003
+          type: in-vitro
+          finding: >-
+            MMAE demonstrates potent subnanomolar cytotoxicity via tubulin
+            polymerization inhibition
+          pmid: '12778056'
+        - study: Francisco JA et al. 2003
+          type: animal
+          finding: MMAE-conjugates show selective tumor killing in CD30+ models
+          pmid: '12893756'
   - mechanism:
-      action: "Enhanced tumor penetration due to small molecular size (~7 kDa vs ~150 kDa for ADCs)"
-      confidence: "supported"
+      action: >-
+        Enhanced tumor penetration due to small molecular size (~7 kDa vs ~150
+        kDa for ADCs)
+      confidence: supported
       directStudies: 5
     benefit:
-      claim: "achieve better solid tumor distribution than traditional ADCs"
-      qualifier: "appears to"
+      claim: achieve better solid tumor distribution than traditional ADCs
+      qualifier: appears to
     evidence:
-      level: "low"
+      level: low
       humanStudies: 2
       animalStudies: 5
       cellStudies: 3
       keyFindings:
-        - study: "Bennett G et al. 2020"
-          type: "animal"
-          finding: "Bicyclic peptide platform demonstrates rapid tissue distribution and tumor accumulation"
-          pmid: "32738260"
-        - study: "Preclinical biodistribution"
-          type: "animal"
-          finding: "Faster clearance from normal tissues compared to antibody-based conjugates"
-          pmid: "N/A"
+        - study: Bennett G et al. 2020
+          type: animal
+          finding: >-
+            Bicyclic peptide platform demonstrates rapid tissue distribution and
+            tumor accumulation
+          pmid: '32738260'
+        - study: Preclinical biodistribution
+          type: animal
+          finding: >-
+            Faster clearance from normal tissues compared to antibody-based
+            conjugates
+          pmid: N/A
 conditions:
-  - slug: "urothelial-cancer"
-    name: "Urothelial Cancer"
-    researchSummary: "BT5528 has shown promising preliminary results in EphA2-positive urothelial cancer patients. Phase 1/2 data reported a 67% overall response rate in this population, with most responses being partial responses. EphA2 is overexpressed in 50-70% of urothelial tumors."
-    relevantStudies: ["NCT04180371"]
-    relatedPeptides: ["enfortumab-vedotin"]
-  - slug: "solid-tumors"
-    name: "EphA2-Positive Solid Tumors"
-    researchSummary: "BT5528 is being studied across multiple EphA2-expressing solid tumor types including NSCLC, ovarian, gastric, and pancreatic cancers. EphA2 overexpression is associated with aggressive disease and poor prognosis across these tumor types."
-    relevantStudies: ["NCT04180371", "20495582"]
+  - slug: urothelial-cancer
+    name: Urothelial Cancer
+    researchSummary: >-
+      BT5528 has shown promising preliminary results in EphA2-positive
+      urothelial cancer patients. Phase 1/2 data reported a 67% overall response
+      rate in this population, with most responses being partial responses.
+      EphA2 is overexpressed in 50-70% of urothelial tumors.
+    relevantStudies:
+      - NCT04180371
+    relatedPeptides:
+      - enfortumab-vedotin
+  - slug: solid-tumors
+    name: EphA2-Positive Solid Tumors
+    researchSummary: >-
+      BT5528 is being studied across multiple EphA2-expressing solid tumor types
+      including NSCLC, ovarian, gastric, and pancreatic cancers. EphA2
+      overexpression is associated with aggressive disease and poor prognosis
+      across these tumor types.
+    relevantStudies:
+      - NCT04180371
+      - '20495582'
     relatedPeptides: []
 timeline:
-  - period: "Week 1-2"
-    effects: "Drug administration via weekly IV infusion. Initial target engagement and tumor cell internalization occurring. Early safety monitoring for MMAE-related effects including nausea and fatigue."
-    source: "NCT04180371"
-  - period: "Week 2-4"
-    effects: "Continued weekly dosing. MMAE-mediated cytotoxicity in EphA2+ tumor cells. Monitoring for peripheral neuropathy onset. First tumor assessments typically around week 6-8."
-    source: "NCT04180371"
-  - period: "Week 4-8"
-    effects: "Initial response assessment by imaging. In clinical trials, responses observed as early as first assessment. Ongoing monitoring for cumulative neuropathy."
-    source: "NCT04180371"
-  - period: "Week 8+"
-    effects: "Continued treatment until progression or unacceptable toxicity. Duration of response data still maturing. Long-term peripheral neuropathy monitoring essential."
+  - period: Week 1-2
+    effects: >-
+      Drug administration via weekly IV infusion. Initial target engagement and
+      tumor cell internalization occurring. Early safety monitoring for
+      MMAE-related effects including nausea and fatigue.
+    source: NCT04180371
+  - period: Week 2-4
+    effects: >-
+      Continued weekly dosing. MMAE-mediated cytotoxicity in EphA2+ tumor cells.
+      Monitoring for peripheral neuropathy onset. First tumor assessments
+      typically around week 6-8.
+    source: NCT04180371
+  - period: Week 4-8
+    effects: >-
+      Initial response assessment by imaging. In clinical trials, responses
+      observed as early as first assessment. Ongoing monitoring for cumulative
+      neuropathy.
+    source: NCT04180371
+  - period: Week 8+
+    effects: >-
+      Continued treatment until progression or unacceptable toxicity. Duration
+      of response data still maturing. Long-term peripheral neuropathy
+      monitoring essential.
 qualityChecklist:
   goodSigns:
-    - "Administered only in clinical trial setting under oncologist supervision"
-    - "Proper patient selection via EphA2 IHC testing"
-    - "Regular monitoring of CBC, liver function, and neurologic status"
-    - "Appropriate dose modifications for toxicity"
+    - Administered only in clinical trial setting under oncologist supervision
+    - Proper patient selection via EphA2 IHC testing
+    - 'Regular monitoring of CBC, liver function, and neurologic status'
+    - Appropriate dose modifications for toxicity
   warningSigns:
-    - "Grade 2 peripheral neuropathy developing"
-    - "Moderate neutropenia requiring dose delays"
-    - "Fatigue impacting daily activities"
+    - Grade 2 peripheral neuropathy developing
+    - Moderate neutropenia requiring dose delays
+    - Fatigue impacting daily activities
   badSigns:
-    - "Grade 3-4 peripheral neuropathy"
-    - "Febrile neutropenia"
-    - "Signs of severe infusion reaction"
-    - "Administration outside of clinical trial"
+    - Grade 3-4 peripheral neuropathy
+    - Febrile neutropenia
+    - Signs of severe infusion reaction
+    - Administration outside of clinical trial
+regulatoryStatus:
+  status: investigational
+  lastUpdated: '2026-02-18'
+  notes: >-
+    Phase 1/2 clinical trials for solid tumors (Bicycle Therapeutics).
+    EphA2-targeting bicycle toxin conjugate.
+ratings:
+  researchDepth: 3
+  globalCoverage: 2
+  mechanismPlausibility: 3
+  overall: 3.0
+  lastReviewed: 2026-02-18T00:00:00.000Z
+  reviewNotes: "Phase 1 ITGA3/4-targeting peptide with mechanistic support; early-stage, limited geography."
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

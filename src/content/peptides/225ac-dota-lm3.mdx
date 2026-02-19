@@ -1,182 +1,313 @@
 ---
-name: "225Ac-DOTA-LM3"
-aliases: ["Actinium-225-DOTA-LM3", "225Ac-DOTA-JR11", "Alpha-PRRT", "Ac-225 LM3"]
-category: "other"
-evidenceStrength: "moderate"
-lastUpdated: 2026-01-22
-comparators: ["Lutathera", "Lu-177 DOTATATE", "Lu-177 DOTA-LM3"]
-summary: "An alpha-emitting radiolabeled somatostatin receptor antagonist for peptide receptor radionuclide therapy (PRRT) in neuroendocrine tumors. Unlike conventional beta-emitting Lu-177 therapies and SSTR agonists, 225Ac-DOTA-LM3 combines the higher cell-killing power of alpha particles with antagonist binding for enhanced tumor targeting. Clinical stage investigational therapy showing promise in Lu-177-refractory patients."
+name: 225Ac-DOTA-LM3
+aliases:
+  - Actinium-225-DOTA-LM3
+  - 225Ac-DOTA-JR11
+  - Alpha-PRRT
+  - Ac-225 LM3
+category: other
+evidenceStrength: moderate
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - Lutathera
+  - Lu-177 DOTATATE
+  - Lu-177 DOTA-LM3
+summary: >-
+  An alpha-emitting radiolabeled somatostatin receptor antagonist for peptide
+  receptor radionuclide therapy (PRRT) in neuroendocrine tumors. Unlike
+  conventional beta-emitting Lu-177 therapies and SSTR agonists, 225Ac-DOTA-LM3
+  combines the higher cell-killing power of alpha particles with antagonist
+  binding for enhanced tumor targeting. Clinical stage investigational therapy
+  showing promise in Lu-177-refractory patients.
 sources:
   count: 28
   human: 18
   preclinical: 10
   openAccess: 22
-metaTitle: "225Ac-DOTA-LM3 Evidence Dossier | Alpha-PRRT for NETs | PepCodex"
-metaDescription: "Comprehensive evidence review of 225Ac-DOTA-LM3, an alpha-emitting somatostatin receptor antagonist for neuroendocrine tumors. Mechanism, clinical data, TANDEM therapy, and citations."
+metaTitle: 225Ac-DOTA-LM3 Evidence Dossier | Alpha-PRRT for NETs | PepCodex
+metaDescription: >-
+  Comprehensive evidence review of 225Ac-DOTA-LM3, an alpha-emitting
+  somatostatin receptor antagonist for neuroendocrine tumors. Mechanism,
+  clinical data, TANDEM therapy, and citations.
 interactions:
-  - peptide: "lutathera"
-    type: "caution"
-    description: "Sequential use may be appropriate (Lu-177 first-line, Ac-225 at progression). TANDEM therapy protocols combine both for complementary beta and alpha radiation effects. Coordinate with nuclear medicine specialist."
-  - peptide: "octreotide"
-    type: "avoid"
-    description: "Both target SSTR2. Octreotide (agonist) would compete for receptor binding and reduce 225Ac-DOTA-LM3 tumor uptake. Must discontinue octreotide before PRRT administration."
-  - peptide: "lanreotide"
-    type: "avoid"
-    description: "Similar SSTR agonist that would compete for receptor binding. Requires washout period before 225Ac-DOTA-LM3 therapy to ensure optimal tumor targeting."
-  - peptide: "semaglutide"
-    type: "compatible"
-    description: "No overlapping receptor targets. GLP-1 agonists do not affect SSTR2 binding. Can be safely used in diabetic NET patients receiving PRRT."
-  - peptide: "bpc-157"
-    type: "caution"
-    description: "BPC-157's gastroprotective effects may theoretically interact with GI tract radiation effects. No clinical data on combination. Consult treating physician."
+  - peptide: lutathera
+    type: caution
+    description: >-
+      Sequential use may be appropriate (Lu-177 first-line, Ac-225 at
+      progression). TANDEM therapy protocols combine both for complementary beta
+      and alpha radiation effects. Coordinate with nuclear medicine specialist.
+  - peptide: octreotide
+    type: avoid
+    description: >-
+      Both target SSTR2. Octreotide (agonist) would compete for receptor binding
+      and reduce 225Ac-DOTA-LM3 tumor uptake. Must discontinue octreotide before
+      PRRT administration.
+  - peptide: lanreotide
+    type: avoid
+    description: >-
+      Similar SSTR agonist that would compete for receptor binding. Requires
+      washout period before 225Ac-DOTA-LM3 therapy to ensure optimal tumor
+      targeting.
+  - peptide: semaglutide
+    type: compatible
+    description: >-
+      No overlapping receptor targets. GLP-1 agonists do not affect SSTR2
+      binding. Can be safely used in diabetic NET patients receiving PRRT.
+  - peptide: bpc-157
+    type: caution
+    description: >-
+      BPC-157's gastroprotective effects may theoretically interact with GI
+      tract radiation effects. No clinical data on combination. Consult treating
+      physician.
 molecularInfo:
-  weight: "~3,500 Da (peptide + chelator)"
+  weight: '~3,500 Da (peptide + chelator)'
   chainLength: 8
-  type: "Radiolabeled octapeptide antagonist"
-  sequence: "Cpa-c[DCys-Aph(Hor)-DAph(Cbm)-Lys-Thr-Cys]-DTyr-NH2"
+  type: Radiolabeled octapeptide antagonist
+  sequence: 'Cpa-c[DCys-Aph(Hor)-DAph(Cbm)-Lys-Thr-Cys]-DTyr-NH2'
   aminoAcids:
-    - { code: "Cpa", name: "4-Chlorophenylalanine", position: 1, property: "hydrophobic" }
-    - { code: "DCys", name: "D-Cysteine", position: 2, property: "polar" }
-    - { code: "Aph(Hor)", name: "4-Amino-L-hydroorotyl-phenylalanine", position: 3, property: "modified" }
-    - { code: "DAph(Cbm)", name: "D-4-Amino-carbamoyl-phenylalanine", position: 4, property: "modified" }
-    - { code: "Lys", name: "Lysine", position: 5, property: "positive" }
-    - { code: "Thr", name: "Threonine", position: 6, property: "polar" }
-    - { code: "Cys", name: "Cysteine", position: 7, property: "polar" }
-    - { code: "DTyr", name: "D-Tyrosine", position: 8, property: "hydrophobic" }
+    - code: Cpa
+      name: 4-Chlorophenylalanine
+      position: 1
+      property: hydrophobic
+    - code: DCys
+      name: D-Cysteine
+      position: 2
+      property: polar
+    - code: Aph(Hor)
+      name: 4-Amino-L-hydroorotyl-phenylalanine
+      position: 3
+      property: modified
+    - code: DAph(Cbm)
+      name: D-4-Amino-carbamoyl-phenylalanine
+      position: 4
+      property: modified
+    - code: Lys
+      name: Lysine
+      position: 5
+      property: positive
+    - code: Thr
+      name: Threonine
+      position: 6
+      property: polar
+    - code: Cys
+      name: Cysteine
+      position: 7
+      property: polar
+    - code: DTyr
+      name: D-Tyrosine
+      position: 8
+      property: hydrophobic
 evidenceChainedBenefits:
   - mechanism:
-      action: "SSTR2 antagonist binding without receptor internalization, providing prolonged tumor surface retention"
-      confidence: "established"
+      action: >-
+        SSTR2 antagonist binding without receptor internalization, providing
+        prolonged tumor surface retention
+      confidence: established
       directStudies: 8
     benefit:
-      claim: "achieve higher tumor uptake than agonist-based therapies"
-      qualifier: "shown to"
+      claim: achieve higher tumor uptake than agonist-based therapies
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 4
       animalStudies: 6
       cellStudies: 3
       keyFindings:
-        - study: "Wild D et al. 2013"
-          type: "human-observational"
-          finding: "SSTR antagonist showed 1.7-10.6 fold higher tumor uptake than agonist DOTATATE in direct patient comparison"
-          pmid: "23687390"
-        - study: "Ginj M et al. 2006"
-          type: "animal"
-          finding: "Radiolabeled SSTR antagonists demonstrated 2-4x higher tumor uptake than agonists in mouse models"
-          pmid: "16818509"
+        - study: Wild D et al. 2013
+          type: human-observational
+          finding: >-
+            SSTR antagonist showed 1.7-10.6 fold higher tumor uptake than
+            agonist DOTATATE in direct patient comparison
+          pmid: '23687390'
+        - study: Ginj M et al. 2006
+          type: animal
+          finding: >-
+            Radiolabeled SSTR antagonists demonstrated 2-4x higher tumor uptake
+            than agonists in mouse models
+          pmid: '16818509'
   - mechanism:
-      action: "Alpha particle emission causing irreparable DNA double-strand breaks with high linear energy transfer (80-100 keV/micron)"
-      confidence: "established"
+      action: >-
+        Alpha particle emission causing irreparable DNA double-strand breaks
+        with high linear energy transfer (80-100 keV/micron)
+      confidence: established
       directStudies: 12
     benefit:
-      claim: "overcome radioresistance seen with beta-emitting therapies"
-      qualifier: "may"
+      claim: overcome radioresistance seen with beta-emitting therapies
+      qualifier: may
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 6
       animalStudies: 5
       cellStudies: 4
       keyFindings:
-        - study: "Kratochwil C et al. 2019"
-          type: "human-observational"
-          finding: "95% disease control rate in patients including those refractory to Lu-177 PRRT"
-          pmid: "31217290"
-        - study: "Morgenstern A et al. 2018"
-          type: "in-vitro"
-          finding: "Alpha particles produce clustered DNA damage that is largely irreparable by cellular mechanisms"
-          pmid: "30033867"
+        - study: Kratochwil C et al. 2019
+          type: human-observational
+          finding: >-
+            95% disease control rate in patients including those refractory to
+            Lu-177 PRRT
+          pmid: '31217290'
+        - study: Morgenstern A et al. 2018
+          type: in-vitro
+          finding: >-
+            Alpha particles produce clustered DNA damage that is largely
+            irreparable by cellular mechanisms
+          pmid: '30033867'
   - mechanism:
-      action: "Actinium-225 decay cascade releasing 4 alpha particles with ~28 MeV total energy over 10-day half-life"
-      confidence: "established"
+      action: >-
+        Actinium-225 decay cascade releasing 4 alpha particles with ~28 MeV
+        total energy over 10-day half-life
+      confidence: established
       directStudies: 10
     benefit:
-      claim: "provide sustained high-dose radiation to tumor cells"
-      qualifier: "shown to"
+      claim: provide sustained high-dose radiation to tumor cells
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 8
       animalStudies: 6
       cellStudies: 5
       keyFindings:
-        - study: "Giesel FL et al. 2022"
-          type: "human-observational"
-          finding: "Disease control in 80% of Lu-177 refractory patients with median PFS of 11 months"
-          pmid: "34866015"
-        - study: "Kratochwil C et al. 2016"
-          type: "human-observational"
-          finding: "Established alpha-radioligand therapy concept with exceptional tumor responses"
-          pmid: "27742876"
+        - study: Giesel FL et al. 2022
+          type: human-observational
+          finding: >-
+            Disease control in 80% of Lu-177 refractory patients with median PFS
+            of 11 months
+          pmid: '34866015'
+        - study: Kratochwil C et al. 2016
+          type: human-observational
+          finding: >-
+            Established alpha-radioligand therapy concept with exceptional tumor
+            responses
+          pmid: '27742876'
   - mechanism:
-      action: "Short alpha particle range (50-100 microns) limiting collateral damage to adjacent normal tissue"
-      confidence: "established"
+      action: >-
+        Short alpha particle range (50-100 microns) limiting collateral damage
+        to adjacent normal tissue
+      confidence: established
       directStudies: 8
     benefit:
-      claim: "minimize off-target radiation exposure"
-      qualifier: "shown to"
+      claim: minimize off-target radiation exposure
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 5
       animalStudies: 4
       cellStudies: 3
       keyFindings:
-        - study: "Delker A et al. 2014"
-          type: "human-observational"
-          finding: "Alpha particle range confines radiation damage to targeted cells; amino acid protection reduces kidney dose by ~40%"
-          pmid: "25425858"
+        - study: Delker A et al. 2014
+          type: human-observational
+          finding: >-
+            Alpha particle range confines radiation damage to targeted cells;
+            amino acid protection reduces kidney dose by ~40%
+          pmid: '25425858'
 conditions:
-  - slug: "neuroendocrine-tumors"
-    name: "Neuroendocrine Tumors (NETs)"
-    researchSummary: "225Ac-DOTA-LM3 is primarily investigated for SSTR-positive neuroendocrine tumors. Phase 1/2 studies from Heidelberg showed 95% disease control rate with 29% partial responses in patients including those refractory to Lu-177 DOTATATE. The antagonist binding mechanism provides superior tumor uptake compared to agonist-based therapies."
-    relevantStudies: ["31217290", "34866015", "23687390"]
-    relatedPeptides: ["lutathera", "octreotide"]
-  - slug: "gep-nets"
-    name: "Gastroenteropancreatic NETs"
-    researchSummary: "GEP-NETs represent the most studied indication for SSTR-targeted PRRT. Following progression on Lutathera (Lu-177 DOTATATE), 225Ac-DOTA-LM3 offers a salvage option with different mechanism of cell killing. Clinical data shows disease stabilization in majority of refractory patients."
-    relevantStudies: ["31217290", "28076709", "24876205"]
-    relatedPeptides: ["lutathera"]
-  - slug: "lu177-refractory-nets"
-    name: "Lu-177 Refractory NETs"
-    researchSummary: "Patients progressing after Lu-177 DOTATATE have limited options. 225Ac-DOTA-LM3 addresses multiple resistance mechanisms: alpha particles cause irreparable DNA damage (vs repairable beta damage), and antagonist binding accesses more receptor sites. Case series report disease control in 80% of refractory patients."
-    relevantStudies: ["34866015", "31217290"]
-    relatedPeptides: ["lutathera"]
+  - slug: neuroendocrine-tumors
+    name: Neuroendocrine Tumors (NETs)
+    researchSummary: >-
+      225Ac-DOTA-LM3 is primarily investigated for SSTR-positive neuroendocrine
+      tumors. Phase 1/2 studies from Heidelberg showed 95% disease control rate
+      with 29% partial responses in patients including those refractory to
+      Lu-177 DOTATATE. The antagonist binding mechanism provides superior tumor
+      uptake compared to agonist-based therapies.
+    relevantStudies:
+      - '31217290'
+      - '34866015'
+      - '23687390'
+    relatedPeptides:
+      - lutathera
+      - octreotide
+  - slug: gep-nets
+    name: Gastroenteropancreatic NETs
+    researchSummary: >-
+      GEP-NETs represent the most studied indication for SSTR-targeted PRRT.
+      Following progression on Lutathera (Lu-177 DOTATATE), 225Ac-DOTA-LM3
+      offers a salvage option with different mechanism of cell killing. Clinical
+      data shows disease stabilization in majority of refractory patients.
+    relevantStudies:
+      - '31217290'
+      - '28076709'
+      - '24876205'
+    relatedPeptides:
+      - lutathera
+  - slug: lu177-refractory-nets
+    name: Lu-177 Refractory NETs
+    researchSummary: >-
+      Patients progressing after Lu-177 DOTATATE have limited options.
+      225Ac-DOTA-LM3 addresses multiple resistance mechanisms: alpha particles
+      cause irreparable DNA damage (vs repairable beta damage), and antagonist
+      binding accesses more receptor sites. Case series report disease control
+      in 80% of refractory patients.
+    relevantStudies:
+      - '34866015'
+      - '31217290'
+    relatedPeptides:
+      - lutathera
 timeline:
-  - period: "Day 0-7"
-    effects: "Treatment administration at specialized nuclear medicine center. Amino acid co-infusion for renal protection. Actinium-225 begins alpha decay cascade. Nausea possible on treatment day; managed with antiemetics."
-    source: "PMID:31217290"
-  - period: "Week 1-4"
-    effects: "Continued alpha particle emission as Ac-225 decays (9.92-day half-life). Mild fatigue common. Hematologic parameters monitored. Tumor irradiation ongoing from internalized and surface-bound radioactivity."
-    source: "PMID:31217290"
-  - period: "Week 4-6"
-    effects: "Hematologic nadir typically occurs 4-6 weeks post-treatment. Transient grade 1-2 cytopenias common. Blood count monitoring recommended. Some patients may experience onset of xerostomia."
-    source: "PMID:34866015"
-  - period: "Week 8-12"
-    effects: "Hematologic recovery in most patients. Restaging imaging (68Ga-DOTATATE PET/CT) to assess response. Next treatment cycle considered if tolerated and indicated. Disease control assessment."
-    source: "PMID:31217290"
-  - period: "Cycle 2-6"
-    effects: "Additional cycles administered at 8-12 week intervals based on response and tolerance. Cumulative kidney dose monitored. Xerostomia may develop or worsen with repeated cycles. Long-term monitoring for secondary malignancy."
-    source: "PMID:34866015"
+  - period: Day 0-7
+    effects: >-
+      Treatment administration at specialized nuclear medicine center. Amino
+      acid co-infusion for renal protection. Actinium-225 begins alpha decay
+      cascade. Nausea possible on treatment day; managed with antiemetics.
+    source: 'PMID:31217290'
+  - period: Week 1-4
+    effects: >-
+      Continued alpha particle emission as Ac-225 decays (9.92-day half-life).
+      Mild fatigue common. Hematologic parameters monitored. Tumor irradiation
+      ongoing from internalized and surface-bound radioactivity.
+    source: 'PMID:31217290'
+  - period: Week 4-6
+    effects: >-
+      Hematologic nadir typically occurs 4-6 weeks post-treatment. Transient
+      grade 1-2 cytopenias common. Blood count monitoring recommended. Some
+      patients may experience onset of xerostomia.
+    source: 'PMID:34866015'
+  - period: Week 8-12
+    effects: >-
+      Hematologic recovery in most patients. Restaging imaging (68Ga-DOTATATE
+      PET/CT) to assess response. Next treatment cycle considered if tolerated
+      and indicated. Disease control assessment.
+    source: 'PMID:31217290'
+  - period: Cycle 2-6
+    effects: >-
+      Additional cycles administered at 8-12 week intervals based on response
+      and tolerance. Cumulative kidney dose monitored. Xerostomia may develop or
+      worsen with repeated cycles. Long-term monitoring for secondary
+      malignancy.
+    source: 'PMID:34866015'
 qualityChecklist:
   goodSigns:
-    - "Administered at accredited nuclear medicine facility"
-    - "Proper SSTR-positive tumor confirmation via 68Ga-DOTATATE PET/CT"
-    - "Individualized dosimetry performed for kidney dose estimation"
-    - "Amino acid co-infusion protocol followed for renal protection"
-    - "Multidisciplinary tumor board review prior to treatment"
-    - "Certificate of analysis for radiopharmaceutical preparation"
+    - Administered at accredited nuclear medicine facility
+    - Proper SSTR-positive tumor confirmation via 68Ga-DOTATATE PET/CT
+    - Individualized dosimetry performed for kidney dose estimation
+    - Amino acid co-infusion protocol followed for renal protection
+    - Multidisciplinary tumor board review prior to treatment
+    - Certificate of analysis for radiopharmaceutical preparation
   warningSigns:
-    - "Limited prior imaging to confirm SSTR expression"
-    - "No dosimetry performed between cycles"
-    - "Inadequate hydration or amino acid protection"
-    - "Treatment at facility with limited PRRT experience"
-    - "Insufficient time between cycles (<8 weeks)"
+    - Limited prior imaging to confirm SSTR expression
+    - No dosimetry performed between cycles
+    - Inadequate hydration or amino acid protection
+    - Treatment at facility with limited PRRT experience
+    - Insufficient time between cycles (<8 weeks)
   badSigns:
-    - "Administration without confirmed SSTR-positive disease"
-    - "No renal function monitoring before treatment"
-    - "Skipping amino acid renal protection protocol"
-    - "Treatment in setting of severe renal impairment (eGFR <30)"
-    - "No baseline hematologic assessment"
-    - "Facility without proper radiation safety protocols"
+    - Administration without confirmed SSTR-positive disease
+    - No renal function monitoring before treatment
+    - Skipping amino acid renal protection protocol
+    - Treatment in setting of severe renal impairment (eGFR <30)
+    - No baseline hematologic assessment
+    - Facility without proper radiation safety protocols
+regulatoryStatus:
+  status: investigational
+  lastUpdated: '2026-02-18'
+  notes: >-
+    Phase 1/2 clinical trials for prostate cancer. Alpha-emitting PSMA-targeting
+    radiopharmaceutical.
+ratings:
+  researchDepth: 3
+  globalCoverage: 3
+  mechanismPlausibility: 4
+  overall: 3.5
+  lastReviewed: 2026-02-18T00:00:00.000Z
+  reviewNotes: "Phase 1-2 alpha-PRRT with strong mechanistic rationale; multi-country trials but investigational only."
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

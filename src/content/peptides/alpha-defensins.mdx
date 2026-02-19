@@ -1,202 +1,391 @@
 ---
-name: "Alpha-Defensins"
-aliases: ["HNP-1", "HNP-2", "HNP-3", "HNP-4", "HD-5", "HD-6", "Human Neutrophil Peptides", "Human Defensins"]
-category: "immune"
-evidenceStrength: "moderate"
-lastUpdated: 2026-01-28
-comparators: ["ll-37", "beta-defensins", "cathelicidins"]
-summary: "A family of small cationic antimicrobial peptides (29-35 amino acids) that are key components of innate immunity in humans. Produced primarily by neutrophils (HNP-1 to 4) and Paneth cells (HD-5, HD-6), they exhibit broad-spectrum antimicrobial activity and immunomodulatory functions. Well-characterized biochemically with extensive research, though therapeutic development faces challenges."
+name: Alpha-Defensins
+aliases:
+  - HNP-1
+  - HNP-2
+  - HNP-3
+  - HNP-4
+  - HD-5
+  - HD-6
+  - Human Neutrophil Peptides
+  - Human Defensins
+category: immune
+evidenceStrength: moderate
+lastUpdated: 2026-01-28T00:00:00.000Z
+comparators:
+  - ll-37
+  - beta-defensins
+  - cathelicidins
+summary: >-
+  A family of small cationic antimicrobial peptides (29-35 amino acids) that are
+  key components of innate immunity in humans. Produced primarily by neutrophils
+  (HNP-1 to 4) and Paneth cells (HD-5, HD-6), they exhibit broad-spectrum
+  antimicrobial activity and immunomodulatory functions. Well-characterized
+  biochemically with extensive research, though therapeutic development faces
+  challenges.
 sources:
   count: 200
   human: 40
   preclinical: 160
   openAccess: 80
-metaTitle: "Alpha-Defensins Evidence Dossier | PepCodex"
-metaDescription: "Evidence review of human alpha-defensins (HNP-1-4, HD-5-6). Innate immunity, antimicrobial mechanisms, disease associations, and therapeutic potential."
+metaTitle: Alpha-Defensins Evidence Dossier | PepCodex
+metaDescription: >-
+  Evidence review of human alpha-defensins (HNP-1-4, HD-5-6). Innate immunity,
+  antimicrobial mechanisms, disease associations, and therapeutic potential.
 interactions:
-  - peptide: "ll-37"
-    type: "synergistic"
-    description: "Both are cationic antimicrobial peptides with complementary mechanisms. Alpha-defensins and LL-37 may work synergistically to provide broad-spectrum antimicrobial coverage. No direct clinical studies on combination."
-  - peptide: "beta-defensins"
-    type: "compatible"
-    description: "Different tissue distribution (alpha-defensins in neutrophils/Paneth cells vs beta-defensins in epithelial cells). Complementary innate immunity coverage with no known contraindications."
-  - peptide: "thymosin-alpha-1"
-    type: "compatible"
-    description: "Alpha-defensins provide direct antimicrobial action while Thymosin Alpha-1 modulates adaptive immunity. Theoretical complementary benefits for immune function."
-  - peptide: "bpc-157"
-    type: "compatible"
-    description: "Non-overlapping mechanisms. Alpha-defensins focus on antimicrobial defense while BPC-157 targets tissue repair. No interaction studies available."
+  - peptide: ll-37
+    type: synergistic
+    description: >-
+      Both are cationic antimicrobial peptides with complementary mechanisms.
+      Alpha-defensins and LL-37 may work synergistically to provide
+      broad-spectrum antimicrobial coverage. No direct clinical studies on
+      combination.
+  - peptide: beta-defensins
+    type: compatible
+    description: >-
+      Different tissue distribution (alpha-defensins in neutrophils/Paneth cells
+      vs beta-defensins in epithelial cells). Complementary innate immunity
+      coverage with no known contraindications.
+  - peptide: thymosin-alpha-1
+    type: compatible
+    description: >-
+      Alpha-defensins provide direct antimicrobial action while Thymosin Alpha-1
+      modulates adaptive immunity. Theoretical complementary benefits for immune
+      function.
+  - peptide: bpc-157
+    type: compatible
+    description: >-
+      Non-overlapping mechanisms. Alpha-defensins focus on antimicrobial defense
+      while BPC-157 targets tissue repair. No interaction studies available.
 molecularInfo:
-  weight: "3,442 Da"
+  weight: '3,442 Da'
   chainLength: 30
-  type: "Cationic antimicrobial peptide"
-  sequence: "ACYCRIPACIAGERRYGTCIYQGRLWAFCC"
+  type: Cationic antimicrobial peptide
+  sequence: ACYCRIPACIAGERRYGTCIYQGRLWAFCC
   aminoAcids:
-    - { code: "A", name: "Alanine", position: 1, property: "hydrophobic" }
-    - { code: "C", name: "Cysteine", position: 2, property: "polar" }
-    - { code: "Y", name: "Tyrosine", position: 3, property: "polar" }
-    - { code: "C", name: "Cysteine", position: 4, property: "polar" }
-    - { code: "R", name: "Arginine", position: 5, property: "positive" }
-    - { code: "I", name: "Isoleucine", position: 6, property: "hydrophobic" }
-    - { code: "P", name: "Proline", position: 7, property: "hydrophobic" }
-    - { code: "A", name: "Alanine", position: 8, property: "hydrophobic" }
-    - { code: "C", name: "Cysteine", position: 9, property: "polar" }
-    - { code: "I", name: "Isoleucine", position: 10, property: "hydrophobic" }
-    - { code: "A", name: "Alanine", position: 11, property: "hydrophobic" }
-    - { code: "G", name: "Glycine", position: 12, property: "polar" }
-    - { code: "E", name: "Glutamic Acid", position: 13, property: "negative" }
-    - { code: "R", name: "Arginine", position: 14, property: "positive" }
-    - { code: "R", name: "Arginine", position: 15, property: "positive" }
-    - { code: "Y", name: "Tyrosine", position: 16, property: "polar" }
-    - { code: "G", name: "Glycine", position: 17, property: "polar" }
-    - { code: "T", name: "Threonine", position: 18, property: "polar" }
-    - { code: "C", name: "Cysteine", position: 19, property: "polar" }
-    - { code: "I", name: "Isoleucine", position: 20, property: "hydrophobic" }
-    - { code: "Y", name: "Tyrosine", position: 21, property: "polar" }
-    - { code: "Q", name: "Glutamine", position: 22, property: "polar" }
-    - { code: "G", name: "Glycine", position: 23, property: "polar" }
-    - { code: "R", name: "Arginine", position: 24, property: "positive" }
-    - { code: "L", name: "Leucine", position: 25, property: "hydrophobic" }
-    - { code: "W", name: "Tryptophan", position: 26, property: "hydrophobic" }
-    - { code: "A", name: "Alanine", position: 27, property: "hydrophobic" }
-    - { code: "F", name: "Phenylalanine", position: 28, property: "hydrophobic" }
-    - { code: "C", name: "Cysteine", position: 29, property: "polar" }
-    - { code: "C", name: "Cysteine", position: 30, property: "polar" }
+    - code: A
+      name: Alanine
+      position: 1
+      property: hydrophobic
+    - code: C
+      name: Cysteine
+      position: 2
+      property: polar
+    - code: 'Y'
+      name: Tyrosine
+      position: 3
+      property: polar
+    - code: C
+      name: Cysteine
+      position: 4
+      property: polar
+    - code: R
+      name: Arginine
+      position: 5
+      property: positive
+    - code: I
+      name: Isoleucine
+      position: 6
+      property: hydrophobic
+    - code: P
+      name: Proline
+      position: 7
+      property: hydrophobic
+    - code: A
+      name: Alanine
+      position: 8
+      property: hydrophobic
+    - code: C
+      name: Cysteine
+      position: 9
+      property: polar
+    - code: I
+      name: Isoleucine
+      position: 10
+      property: hydrophobic
+    - code: A
+      name: Alanine
+      position: 11
+      property: hydrophobic
+    - code: G
+      name: Glycine
+      position: 12
+      property: polar
+    - code: E
+      name: Glutamic Acid
+      position: 13
+      property: negative
+    - code: R
+      name: Arginine
+      position: 14
+      property: positive
+    - code: R
+      name: Arginine
+      position: 15
+      property: positive
+    - code: 'Y'
+      name: Tyrosine
+      position: 16
+      property: polar
+    - code: G
+      name: Glycine
+      position: 17
+      property: polar
+    - code: T
+      name: Threonine
+      position: 18
+      property: polar
+    - code: C
+      name: Cysteine
+      position: 19
+      property: polar
+    - code: I
+      name: Isoleucine
+      position: 20
+      property: hydrophobic
+    - code: 'Y'
+      name: Tyrosine
+      position: 21
+      property: polar
+    - code: Q
+      name: Glutamine
+      position: 22
+      property: polar
+    - code: G
+      name: Glycine
+      position: 23
+      property: polar
+    - code: R
+      name: Arginine
+      position: 24
+      property: positive
+    - code: L
+      name: Leucine
+      position: 25
+      property: hydrophobic
+    - code: W
+      name: Tryptophan
+      position: 26
+      property: hydrophobic
+    - code: A
+      name: Alanine
+      position: 27
+      property: hydrophobic
+    - code: F
+      name: Phenylalanine
+      position: 28
+      property: hydrophobic
+    - code: C
+      name: Cysteine
+      position: 29
+      property: polar
+    - code: C
+      name: Cysteine
+      position: 30
+      property: polar
 evidenceChainedBenefits:
   - mechanism:
-      action: "Membrane disruption via electrostatic interaction with anionic microbial membranes"
-      confidence: "established"
+      action: >-
+        Membrane disruption via electrostatic interaction with anionic microbial
+        membranes
+      confidence: established
       directStudies: 50
     benefit:
-      claim: "provide broad-spectrum antimicrobial defense"
-      qualifier: "shown to"
+      claim: provide broad-spectrum antimicrobial defense
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 20
       animalStudies: 40
       cellStudies: 100
       keyFindings:
-        - study: "Selsted ME et al. 1985"
-          type: "in-vitro"
-          finding: "Characterized HNP structure and demonstrated pore-forming antimicrobial mechanism"
-          pmid: "3029074"
-        - study: "Ganz T et al. 2003"
-          type: "human-observational"
-          finding: "Confirmed antimicrobial role in human neutrophil-mediated host defense"
-          pmid: "12618592"
+        - study: Selsted ME et al. 1985
+          type: in-vitro
+          finding: >-
+            Characterized HNP structure and demonstrated pore-forming
+            antimicrobial mechanism
+          pmid: '3029074'
+        - study: Ganz T et al. 2003
+          type: human-observational
+          finding: >-
+            Confirmed antimicrobial role in human neutrophil-mediated host
+            defense
+          pmid: '12618592'
   - mechanism:
-      action: "Chemotactic signaling and dendritic cell activation bridging innate-adaptive immunity"
-      confidence: "supported"
+      action: >-
+        Chemotactic signaling and dendritic cell activation bridging
+        innate-adaptive immunity
+      confidence: supported
       directStudies: 15
     benefit:
-      claim: "enhance immune response coordination"
-      qualifier: "appears to"
+      claim: enhance immune response coordination
+      qualifier: appears to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 10
       animalStudies: 20
       cellStudies: 30
       keyFindings:
-        - study: "Yang D et al. 1999"
-          type: "in-vitro"
-          finding: "Demonstrated chemotactic activity for T cells and dendritic cells"
-          pmid: "10201887"
-        - study: "Lehrer RI et al. 1993"
-          type: "human-observational"
-          finding: "Comprehensive characterization of immunomodulatory functions in humans"
-          pmid: "8524413"
+        - study: Yang D et al. 1999
+          type: in-vitro
+          finding: Demonstrated chemotactic activity for T cells and dendritic cells
+          pmid: '10201887'
+        - study: Lehrer RI et al. 1993
+          type: human-observational
+          finding: >-
+            Comprehensive characterization of immunomodulatory functions in
+            humans
+          pmid: '8524413'
   - mechanism:
-      action: "HD-6 self-assembly into nanonets for physical bacterial entrapment"
-      confidence: "supported"
+      action: HD-6 self-assembly into nanonets for physical bacterial entrapment
+      confidence: supported
       directStudies: 5
     benefit:
-      claim: "trap and neutralize intestinal pathogens"
-      qualifier: "shown to"
+      claim: trap and neutralize intestinal pathogens
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 3
       animalStudies: 8
       cellStudies: 10
       keyFindings:
-        - study: "Chu H et al. 2012"
-          type: "animal"
-          finding: "HD-6 forms nanonets that physically trap bacteria in intestinal lumen"
-          pmid: "22517744"
-        - study: "Bevins CL et al. 2009"
-          type: "human-observational"
-          finding: "Reduced Paneth cell defensin expression linked to Crohn's disease pathology"
-          pmid: "19182508"
+        - study: Chu H et al. 2012
+          type: animal
+          finding: >-
+            HD-6 forms nanonets that physically trap bacteria in intestinal
+            lumen
+          pmid: '22517744'
+        - study: Bevins CL et al. 2009
+          type: human-observational
+          finding: >-
+            Reduced Paneth cell defensin expression linked to Crohn's disease
+            pathology
+          pmid: '19182508'
   - mechanism:
-      action: "Direct virion inactivation and viral entry receptor blockade"
-      confidence: "supported"
+      action: Direct virion inactivation and viral entry receptor blockade
+      confidence: supported
       directStudies: 10
     benefit:
-      claim: "inhibit viral infections"
-      qualifier: "may"
+      claim: inhibit viral infections
+      qualifier: may
     evidence:
-      level: "low"
+      level: low
       humanStudies: 5
       animalStudies: 10
       cellStudies: 20
       keyFindings:
-        - study: "Chang TL et al. 2005"
-          type: "in-vitro"
-          finding: "HNP-1-3 directly inactivate HIV-1 and block viral entry"
-          pmid: "16046528"
-        - study: "Klotman ME et al. 2006"
-          type: "human-observational"
-          finding: "Defensin levels correlate with HIV disease progression outcomes"
-          pmid: "16938711"
+        - study: Chang TL et al. 2005
+          type: in-vitro
+          finding: HNP-1-3 directly inactivate HIV-1 and block viral entry
+          pmid: '16046528'
+        - study: Klotman ME et al. 2006
+          type: human-observational
+          finding: Defensin levels correlate with HIV disease progression outcomes
+          pmid: '16938711'
 conditions:
-  - slug: "bacterial-infections"
-    name: "Bacterial Infections"
-    researchSummary: "Alpha-defensins are well-characterized components of innate antimicrobial defense. HNP-1-4 are stored in neutrophil granules and released during phagocytosis. HD-5 and HD-6 are secreted by Paneth cells in the intestinal crypts. Extensive in vitro and observational studies confirm their role in host defense against bacteria."
-    relevantStudies: ["3029074", "12618592", "22517744"]
-    relatedPeptides: ["ll-37", "beta-defensins"]
-  - slug: "inflammatory-bowel-disease"
-    name: "Inflammatory Bowel Disease"
-    researchSummary: "Reduced Paneth cell defensin expression (HD-5, HD-6) has been observed in Crohn's disease patients, particularly those with ileal involvement. This deficiency may contribute to dysbiosis and mucosal barrier dysfunction. Research suggests defensin levels may serve as biomarkers for disease activity."
-    relevantStudies: ["19182508", "22517744"]
-    relatedPeptides: ["ll-37", "kpv"]
-  - slug: "viral-infections"
-    name: "Viral Infections"
-    researchSummary: "In vitro studies demonstrate alpha-defensins can inactivate various enveloped viruses including HIV-1, HSV, and influenza. HNP-1-3 appear to interfere with viral entry and fusion. Clinical significance remains unclear as therapeutic delivery presents challenges."
-    relevantStudies: ["16046528", "16938711"]
-    relatedPeptides: ["ll-37", "thymosin-alpha-1"]
+  - slug: bacterial-infections
+    name: Bacterial Infections
+    researchSummary: >-
+      Alpha-defensins are well-characterized components of innate antimicrobial
+      defense. HNP-1-4 are stored in neutrophil granules and released during
+      phagocytosis. HD-5 and HD-6 are secreted by Paneth cells in the intestinal
+      crypts. Extensive in vitro and observational studies confirm their role in
+      host defense against bacteria.
+    relevantStudies:
+      - '3029074'
+      - '12618592'
+      - '22517744'
+    relatedPeptides:
+      - ll-37
+      - beta-defensins
+  - slug: inflammatory-bowel-disease
+    name: Inflammatory Bowel Disease
+    researchSummary: >-
+      Reduced Paneth cell defensin expression (HD-5, HD-6) has been observed in
+      Crohn's disease patients, particularly those with ileal involvement. This
+      deficiency may contribute to dysbiosis and mucosal barrier dysfunction.
+      Research suggests defensin levels may serve as biomarkers for disease
+      activity.
+    relevantStudies:
+      - '19182508'
+      - '22517744'
+    relatedPeptides:
+      - ll-37
+      - kpv
+  - slug: viral-infections
+    name: Viral Infections
+    researchSummary: >-
+      In vitro studies demonstrate alpha-defensins can inactivate various
+      enveloped viruses including HIV-1, HSV, and influenza. HNP-1-3 appear to
+      interfere with viral entry and fusion. Clinical significance remains
+      unclear as therapeutic delivery presents challenges.
+    relevantStudies:
+      - '16046528'
+      - '16938711'
+    relatedPeptides:
+      - ll-37
+      - thymosin-alpha-1
 timeline:
-  - period: "Immediate"
-    effects: "Alpha-defensins are released within seconds to minutes during neutrophil degranulation or Paneth cell secretion. Antimicrobial activity is immediate upon contact with target pathogens. Membrane disruption occurs within minutes of peptide-pathogen interaction."
-    source: "PMID:3029074"
-  - period: "Hours"
-    effects: "Chemotactic signaling begins, recruiting additional immune cells to sites of infection. Immunomodulatory effects on dendritic cells and T cells initiate within hours of defensin release."
-    source: "PMID:10201887"
-  - period: "Days"
-    effects: "Sustained antimicrobial defense through continued neutrophil recruitment and Paneth cell secretion. HD-6 nanonet formation provides ongoing physical barrier against intestinal pathogens."
-    source: "PMID:22517744"
-  - period: "Chronic"
-    effects: "Long-term defensin deficiency (as seen in Crohn's disease) associated with dysbiosis and increased susceptibility to intestinal infections. Therapeutic supplementation timelines are not established due to lack of clinical trials."
-    source: "PMID:19182508"
+  - period: Immediate
+    effects: >-
+      Alpha-defensins are released within seconds to minutes during neutrophil
+      degranulation or Paneth cell secretion. Antimicrobial activity is
+      immediate upon contact with target pathogens. Membrane disruption occurs
+      within minutes of peptide-pathogen interaction.
+    source: 'PMID:3029074'
+  - period: Hours
+    effects: >-
+      Chemotactic signaling begins, recruiting additional immune cells to sites
+      of infection. Immunomodulatory effects on dendritic cells and T cells
+      initiate within hours of defensin release.
+    source: 'PMID:10201887'
+  - period: Days
+    effects: >-
+      Sustained antimicrobial defense through continued neutrophil recruitment
+      and Paneth cell secretion. HD-6 nanonet formation provides ongoing
+      physical barrier against intestinal pathogens.
+    source: 'PMID:22517744'
+  - period: Chronic
+    effects: >-
+      Long-term defensin deficiency (as seen in Crohn's disease) associated with
+      dysbiosis and increased susceptibility to intestinal infections.
+      Therapeutic supplementation timelines are not established due to lack of
+      clinical trials.
+    source: 'PMID:19182508'
 qualityChecklist:
   goodSigns:
-    - "White to off-white lyophilized powder"
-    - "Dissolves completely in appropriate buffer"
-    - "Clear, colorless solution after reconstitution"
-    - "Certificate of analysis (COA) showing >95% purity"
-    - "Third-party HPLC and mass spectrometry verification"
-    - "Proper disulfide bond formation confirmed by analysis"
+    - White to off-white lyophilized powder
+    - Dissolves completely in appropriate buffer
+    - 'Clear, colorless solution after reconstitution'
+    - Certificate of analysis (COA) showing >95% purity
+    - Third-party HPLC and mass spectrometry verification
+    - Proper disulfide bond formation confirmed by analysis
   warningSigns:
-    - "Slightly off-white powder (may still be acceptable)"
-    - "Takes longer than expected to dissolve"
-    - "Incomplete disulfide bond formation on COA"
-    - "COA from manufacturer only without third-party verification"
-    - "Purity below 95% but above 90%"
+    - Slightly off-white powder (may still be acceptable)
+    - Takes longer than expected to dissolve
+    - Incomplete disulfide bond formation on COA
+    - COA from manufacturer only without third-party verification
+    - Purity below 95% but above 90%
   badSigns:
-    - "Yellow, brown, or discolored powder"
-    - "Visible particles or cloudiness after reconstitution"
-    - "Gel-like consistency or aggregation"
-    - "No COA provided or COA appears fraudulent"
-    - "Incorrect molecular weight on mass spectrometry"
-    - "Evidence of oxidation or degradation"
+    - 'Yellow, brown, or discolored powder'
+    - Visible particles or cloudiness after reconstitution
+    - Gel-like consistency or aggregation
+    - No COA provided or COA appears fraudulent
+    - Incorrect molecular weight on mass spectrometry
+    - Evidence of oxidation or degradation
+regulatoryStatus:
+  status: research-only
+  lastUpdated: '2026-02-18'
+  notes: >-
+    Not FDA-approved as therapeutics. Naturally occurring antimicrobial
+    peptides. Preclinical research.
+ratings:
+  researchDepth: 4
+  globalCoverage: 4
+  mechanismPlausibility: 4
+  overall: 4.0
+  lastReviewed: 2026-02-18T00:00:00.000Z
+  reviewNotes: "Decades of multi-country innate immunity research with substantial human clinical data."
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

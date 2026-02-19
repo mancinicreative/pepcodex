@@ -1,163 +1,288 @@
 ---
-name: "Sulanemadlin"
-aliases: ["ALRN-6924", "MP-4897"]
-category: "other"
-evidenceStrength: "moderate"
-lastUpdated: 2026-01-22
-comparators: ["idasanutlin", "navtemadlin", "milademetan"]
-summary: "First-in-class stapled alpha-helical peptide and dual MDM2/MDMX inhibitor that reactivates wild-type p53 tumor suppressor function. Phase 1/2 trials demonstrated 59% disease control rate with notably low hematologic toxicity compared to MDM2-only inhibitors. Novel chemoprotection application being developed for retinoblastoma with Advancium Biosciences partnership."
+name: Sulanemadlin
+aliases:
+  - ALRN-6924
+  - MP-4897
+category: other
+evidenceStrength: moderate
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - idasanutlin
+  - navtemadlin
+  - milademetan
+summary: >-
+  First-in-class stapled alpha-helical peptide and dual MDM2/MDMX inhibitor that
+  reactivates wild-type p53 tumor suppressor function. Phase 1/2 trials
+  demonstrated 59% disease control rate with notably low hematologic toxicity
+  compared to MDM2-only inhibitors. Novel chemoprotection application being
+  developed for retinoblastoma with Advancium Biosciences partnership.
 sources:
   count: 28
   human: 18
   preclinical: 10
   openAccess: 22
-metaTitle: "Sulanemadlin (ALRN-6924) Evidence Dossier | PepCodex"
-metaDescription: "Comprehensive evidence review of Sulanemadlin (ALRN-6924). Stapled peptide MDM2/MDMX inhibitor, p53 reactivation, clinical trial data, chemoprotection, and citations."
+metaTitle: Sulanemadlin (ALRN-6924) Evidence Dossier | PepCodex
+metaDescription: >-
+  Comprehensive evidence review of Sulanemadlin (ALRN-6924). Stapled peptide
+  MDM2/MDMX inhibitor, p53 reactivation, clinical trial data, chemoprotection,
+  and citations.
 interactions:
-  - peptide: "idasanutlin"
-    type: "caution"
-    description: "Both target MDM2-p53 pathway. Combining MDM2 inhibitors could cause excessive p53 activation and increased toxicity. Not recommended for co-administration."
-  - peptide: "navtemadlin"
-    type: "caution"
-    description: "Overlapping MDM2 inhibition mechanism. Concurrent use may increase risk of hematologic toxicity. Clinical combination not studied."
-  - peptide: "milademetan"
-    type: "caution"
-    description: "Similar MDM2-targeting mechanism. Potential for additive toxicity if combined. No clinical data on co-administration."
+  - peptide: idasanutlin
+    type: caution
+    description: >-
+      Both target MDM2-p53 pathway. Combining MDM2 inhibitors could cause
+      excessive p53 activation and increased toxicity. Not recommended for
+      co-administration.
+  - peptide: navtemadlin
+    type: caution
+    description: >-
+      Overlapping MDM2 inhibition mechanism. Concurrent use may increase risk of
+      hematologic toxicity. Clinical combination not studied.
+  - peptide: milademetan
+    type: caution
+    description: >-
+      Similar MDM2-targeting mechanism. Potential for additive toxicity if
+      combined. No clinical data on co-administration.
 molecularInfo:
-  weight: "~2,100 Da"
+  weight: '~2,100 Da'
   chainLength: 15
-  type: "Stapled alpha-helical peptide"
-  sequence: "Hydrocarbon-stapled i,i+7 helix mimicking p53 TAD"
+  type: Stapled alpha-helical peptide
+  sequence: 'Hydrocarbon-stapled i,i+7 helix mimicking p53 TAD'
   aminoAcids:
-    - { code: "X", name: "Modified residue", position: 1, property: "modified" }
-    - { code: "X", name: "Modified residue", position: 2, property: "modified" }
-    - { code: "X", name: "Modified residue", position: 3, property: "modified" }
-    - { code: "X", name: "Modified residue", position: 4, property: "modified" }
-    - { code: "X", name: "Modified residue", position: 5, property: "modified" }
-    - { code: "X", name: "Modified residue", position: 6, property: "modified" }
-    - { code: "X", name: "Modified residue", position: 7, property: "modified" }
-    - { code: "X", name: "Modified residue", position: 8, property: "modified" }
-    - { code: "X", name: "Modified residue", position: 9, property: "modified" }
-    - { code: "X", name: "Modified residue", position: 10, property: "modified" }
-    - { code: "X", name: "Modified residue", position: 11, property: "modified" }
-    - { code: "X", name: "Modified residue", position: 12, property: "modified" }
-    - { code: "X", name: "Modified residue", position: 13, property: "modified" }
-    - { code: "X", name: "Modified residue", position: 14, property: "modified" }
-    - { code: "X", name: "Modified residue", position: 15, property: "modified" }
+    - code: X
+      name: Modified residue
+      position: 1
+      property: modified
+    - code: X
+      name: Modified residue
+      position: 2
+      property: modified
+    - code: X
+      name: Modified residue
+      position: 3
+      property: modified
+    - code: X
+      name: Modified residue
+      position: 4
+      property: modified
+    - code: X
+      name: Modified residue
+      position: 5
+      property: modified
+    - code: X
+      name: Modified residue
+      position: 6
+      property: modified
+    - code: X
+      name: Modified residue
+      position: 7
+      property: modified
+    - code: X
+      name: Modified residue
+      position: 8
+      property: modified
+    - code: X
+      name: Modified residue
+      position: 9
+      property: modified
+    - code: X
+      name: Modified residue
+      position: 10
+      property: modified
+    - code: X
+      name: Modified residue
+      position: 11
+      property: modified
+    - code: X
+      name: Modified residue
+      position: 12
+      property: modified
+    - code: X
+      name: Modified residue
+      position: 13
+      property: modified
+    - code: X
+      name: Modified residue
+      position: 14
+      property: modified
+    - code: X
+      name: Modified residue
+      position: 15
+      property: modified
 evidenceChainedBenefits:
   - mechanism:
-      action: "Dual MDM2/MDMX binding displacing p53, reactivating tumor suppressor function"
-      confidence: "established"
+      action: >-
+        Dual MDM2/MDMX binding displacing p53, reactivating tumor suppressor
+        function
+      confidence: established
       directStudies: 12
     benefit:
-      claim: "induce cancer cell death in TP53 wild-type tumors"
-      qualifier: "shown to"
+      claim: induce cancer cell death in TP53 wild-type tumors
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 4
       animalStudies: 6
       cellStudies: 8
       keyFindings:
-        - study: "Saleh MN et al. 2019"
-          type: "human-rct"
-          finding: "Phase 1/2 trial demonstrated 59% disease control rate in TP53wt solid tumors and lymphomas with confirmed p53 pathway activation"
-          pmid: "31852831"
-        - study: "Chang YS et al. 2013"
-          type: "animal"
-          finding: "Dose-dependent tumor regression in SJSA-1 osteosarcoma xenograft with p53 target gene induction"
-          pmid: "23946421"
+        - study: Saleh MN et al. 2019
+          type: human-rct
+          finding: >-
+            Phase 1/2 trial demonstrated 59% disease control rate in TP53wt
+            solid tumors and lymphomas with confirmed p53 pathway activation
+          pmid: '31852831'
+        - study: Chang YS et al. 2013
+          type: animal
+          finding: >-
+            Dose-dependent tumor regression in SJSA-1 osteosarcoma xenograft
+            with p53 target gene induction
+          pmid: '23946421'
   - mechanism:
-      action: "Transient p53-mediated G1 arrest in normal cells protecting from chemotherapy"
-      confidence: "supported"
+      action: >-
+        Transient p53-mediated G1 arrest in normal cells protecting from
+        chemotherapy
+      confidence: supported
       directStudies: 5
     benefit:
-      claim: "reduce chemotherapy-induced neutropenia"
-      qualifier: "shown to"
+      claim: reduce chemotherapy-induced neutropenia
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 2
       animalStudies: 3
       cellStudies: 4
       keyFindings:
-        - study: "Tolcher AW et al. 2022"
-          type: "human-rct"
-          finding: "Grade 4 neutropenia reduced from 63% to 21% when sulanemadlin administered before chemotherapy"
-          pmid: "35789377"
-        - study: "Aileron preclinical 2021"
-          type: "animal"
-          finding: "Bone marrow protection from 5-FU and cyclophosphamide demonstrated in mouse models"
-          pmid: "35789377"
+        - study: Tolcher AW et al. 2022
+          type: human-rct
+          finding: >-
+            Grade 4 neutropenia reduced from 63% to 21% when sulanemadlin
+            administered before chemotherapy
+          pmid: '35789377'
+        - study: Aileron preclinical 2021
+          type: animal
+          finding: >-
+            Bone marrow protection from 5-FU and cyclophosphamide demonstrated
+            in mouse models
+          pmid: '35789377'
   - mechanism:
-      action: "High-affinity MDMX inhibition overcoming resistance seen with MDM2-only inhibitors"
-      confidence: "supported"
+      action: >-
+        High-affinity MDMX inhibition overcoming resistance seen with MDM2-only
+        inhibitors
+      confidence: supported
       directStudies: 6
     benefit:
-      claim: "maintain efficacy in MDMX-overexpressing tumors"
-      qualifier: "appears to"
+      claim: maintain efficacy in MDMX-overexpressing tumors
+      qualifier: appears to
     evidence:
-      level: "low"
+      level: low
       humanStudies: 1
       animalStudies: 4
       cellStudies: 5
       keyFindings:
-        - study: "Chang YS et al. 2013"
-          type: "in-vitro"
-          finding: "Activity maintained in MDMX-overexpressing cell lines where MDM2-only inhibitors failed"
-          pmid: "23946421"
-        - study: "Bernal F et al. 2010"
-          type: "animal"
-          finding: "Stapled peptide mechanism overcomes MDMX-mediated resistance to p53 activation"
-          pmid: "20541702"
+        - study: Chang YS et al. 2013
+          type: in-vitro
+          finding: >-
+            Activity maintained in MDMX-overexpressing cell lines where
+            MDM2-only inhibitors failed
+          pmid: '23946421'
+        - study: Bernal F et al. 2010
+          type: animal
+          finding: >-
+            Stapled peptide mechanism overcomes MDMX-mediated resistance to p53
+            activation
+          pmid: '20541702'
 conditions:
-  - slug: "tp53-wild-type-cancers"
-    name: "TP53 Wild-Type Cancers"
-    researchSummary: "Sulanemadlin is being developed for TP53 wild-type solid tumors and lymphomas. Phase 1/2 data showed 59% disease control rate with notable responses in peripheral T-cell lymphoma. Requires molecular confirmation of TP53wt status for patient selection."
-    relevantStudies: ["31852831", "32304659", "34373580"]
-    relatedPeptides: ["idasanutlin", "navtemadlin"]
-  - slug: "chemotherapy-toxicity-prevention"
-    name: "Chemotherapy Toxicity Prevention"
-    researchSummary: "Novel chemoprotection application uses sulanemadlin to induce transient G1 arrest in normal cells before chemotherapy exposure. Phase 1 data demonstrated significant reduction in grade 4 neutropenia (63% to 21%) enabling maintained chemotherapy dose intensity."
-    relevantStudies: ["35789377"]
+  - slug: tp53-wild-type-cancers
+    name: TP53 Wild-Type Cancers
+    researchSummary: >-
+      Sulanemadlin is being developed for TP53 wild-type solid tumors and
+      lymphomas. Phase 1/2 data showed 59% disease control rate with notable
+      responses in peripheral T-cell lymphoma. Requires molecular confirmation
+      of TP53wt status for patient selection.
+    relevantStudies:
+      - '31852831'
+      - '32304659'
+      - '34373580'
+    relatedPeptides:
+      - idasanutlin
+      - navtemadlin
+  - slug: chemotherapy-toxicity-prevention
+    name: Chemotherapy Toxicity Prevention
+    researchSummary: >-
+      Novel chemoprotection application uses sulanemadlin to induce transient G1
+      arrest in normal cells before chemotherapy exposure. Phase 1 data
+      demonstrated significant reduction in grade 4 neutropenia (63% to 21%)
+      enabling maintained chemotherapy dose intensity.
+    relevantStudies:
+      - '35789377'
     relatedPeptides: []
-  - slug: "retinoblastoma"
-    name: "Retinoblastoma"
-    researchSummary: "Advancium Biosciences partnership (2023) developing sulanemadlin for retinoblastoma via intravitreal delivery. Retinoblastoma is a TP53wt tumor type well-suited to dual MDM2/MDMX inhibition mechanism. Pediatric formulation under development."
+  - slug: retinoblastoma
+    name: Retinoblastoma
+    researchSummary: >-
+      Advancium Biosciences partnership (2023) developing sulanemadlin for
+      retinoblastoma via intravitreal delivery. Retinoblastoma is a TP53wt tumor
+      type well-suited to dual MDM2/MDMX inhibition mechanism. Pediatric
+      formulation under development.
     relevantStudies: []
     relatedPeptides: []
 timeline:
-  - period: "Week 1-2"
-    effects: "IV infusion on days 1, 4, 8, 11 of 21-day cycle. Rapid p53 pathway activation confirmed by serum MIC-1/GDF-15 elevation within hours of dosing. Dose-dependent pharmacodynamic response observed."
-    source: "PMID:31852831"
-  - period: "Week 2-4"
-    effects: "Disease stabilization may become apparent. Tumor marker changes and imaging assessment typically at cycle 2. Chemoprotection effect (reduced neutropenia) evident by day 14 in combination protocols."
-    source: "PMID:35789377"
-  - period: "Week 4-8"
-    effects: "Response assessment per RECIST criteria. Lymphoma responses observed as early as cycle 2-3. Continued tolerability with low rates of dose-limiting toxicity. Cumulative fatigue possible."
-    source: "PMID:32304659"
-  - period: "Week 8+"
-    effects: "Durable disease control in responding patients. Some responses maintained beyond 6 months. Long-term treatment feasible due to favorable hematologic safety profile compared to MDM2-only inhibitors."
-    source: "PMID:34373580"
+  - period: Week 1-2
+    effects: >-
+      IV infusion on days 1, 4, 8, 11 of 21-day cycle. Rapid p53 pathway
+      activation confirmed by serum MIC-1/GDF-15 elevation within hours of
+      dosing. Dose-dependent pharmacodynamic response observed.
+    source: 'PMID:31852831'
+  - period: Week 2-4
+    effects: >-
+      Disease stabilization may become apparent. Tumor marker changes and
+      imaging assessment typically at cycle 2. Chemoprotection effect (reduced
+      neutropenia) evident by day 14 in combination protocols.
+    source: 'PMID:35789377'
+  - period: Week 4-8
+    effects: >-
+      Response assessment per RECIST criteria. Lymphoma responses observed as
+      early as cycle 2-3. Continued tolerability with low rates of dose-limiting
+      toxicity. Cumulative fatigue possible.
+    source: 'PMID:32304659'
+  - period: Week 8+
+    effects: >-
+      Durable disease control in responding patients. Some responses maintained
+      beyond 6 months. Long-term treatment feasible due to favorable hematologic
+      safety profile compared to MDM2-only inhibitors.
+    source: 'PMID:34373580'
 qualityChecklist:
   goodSigns:
-    - "Administered only in clinical trial settings with proper monitoring"
-    - "TP53 wild-type status confirmed by molecular testing before treatment"
-    - "IV formulation prepared by qualified pharmacy staff"
-    - "Proper informed consent and trial enrollment documentation"
-    - "Regular safety monitoring including CBC and liver function tests"
-    - "Antiemetic prophylaxis provided per protocol"
+    - Administered only in clinical trial settings with proper monitoring
+    - TP53 wild-type status confirmed by molecular testing before treatment
+    - IV formulation prepared by qualified pharmacy staff
+    - Proper informed consent and trial enrollment documentation
+    - Regular safety monitoring including CBC and liver function tests
+    - Antiemetic prophylaxis provided per protocol
   warningSigns:
-    - "Treatment outside of registered clinical trial"
-    - "No molecular confirmation of TP53 status"
-    - "Inadequate monitoring for infusion reactions"
-    - "History of severe hypersensitivity to peptide therapeutics"
-    - "Concurrent use of other MDM2 inhibitors"
+    - Treatment outside of registered clinical trial
+    - No molecular confirmation of TP53 status
+    - Inadequate monitoring for infusion reactions
+    - History of severe hypersensitivity to peptide therapeutics
+    - Concurrent use of other MDM2 inhibitors
   badSigns:
-    - "TP53-mutant tumor (mechanism requires wild-type p53)"
-    - "Sourced from non-clinical/research suppliers"
-    - "No proper medical supervision or monitoring"
-    - "Pregnancy or planning pregnancy (expected teratogenic)"
-    - "Severe hepatic impairment without dose adjustment considerations"
-    - "Administration without access to emergency resuscitation equipment"
+    - TP53-mutant tumor (mechanism requires wild-type p53)
+    - Sourced from non-clinical/research suppliers
+    - No proper medical supervision or monitoring
+    - Pregnancy or planning pregnancy (expected teratogenic)
+    - Severe hepatic impairment without dose adjustment considerations
+    - Administration without access to emergency resuscitation equipment
+regulatoryStatus:
+  status: investigational
+  lastUpdated: '2026-02-18'
+  notes: Phase 2 clinical trials for solid tumors. MDM2 inhibitor reactivating p53.
+ratings:
+  researchDepth: 3
+  globalCoverage: 3
+  mechanismPlausibility: 4
+  overall: 3.5
+  lastReviewed: 2026-02-19T00:00:00.000Z
+  reviewNotes: >-
+    Stapled alpha-helical peptide MDM2 inhibitor (ALRN-6924) in Phase 2 oncology trials. Multiple international trial sites. MDM2-p53 interaction disruption mechanism is well-characterized through extensive structural biology; p53 reactivation pathway is established tumor suppressor biology.
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

@@ -1,172 +1,274 @@
 ---
-name: "Alixorexton"
-aliases: ["ALKS 2680", "ALKS-2680"]
-category: "cognitive"
-compoundType: "small-molecule"
-evidenceStrength: "moderate"
-lastUpdated: 2026-01-22
-comparators: ["oveporexton", "danavorexton"]
-summary: "An oral orexin receptor 2 (OX2R) agonist developed by Alkermes for narcolepsy type 1 (NT1). Phase 2 clinical trials demonstrated improvements in excessive daytime sleepiness and cataplexy with once-daily dosing. Represents a novel approach to restore orexin signaling in patients who have lost orexin-producing neurons."
+name: Alixorexton
+aliases:
+  - ALKS 2680
+  - ALKS-2680
+category: cognitive
+compoundType: small-molecule
+evidenceStrength: moderate
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - oveporexton
+  - danavorexton
+summary: >-
+  An oral orexin receptor 2 (OX2R) agonist developed by Alkermes for narcolepsy
+  type 1 (NT1). Phase 2 clinical trials demonstrated improvements in excessive
+  daytime sleepiness and cataplexy with once-daily dosing. Represents a novel
+  approach to restore orexin signaling in patients who have lost
+  orexin-producing neurons.
 sources:
   count: 18
   human: 12
   preclinical: 6
   openAccess: 10
-metaTitle: "Alixorexton Evidence Dossier | PepCodex"
-metaDescription: "Evidence review of alixorexton (ALKS 2680), an oral orexin receptor 2 agonist for narcolepsy type 1. Mechanism of action, Phase 2 clinical trial data, safety profile, and comparison to oveporexton (TAK-861)."
+metaTitle: Alixorexton Evidence Dossier | PepCodex
+metaDescription: >-
+  Evidence review of alixorexton (ALKS 2680), an oral orexin receptor 2 agonist
+  for narcolepsy type 1. Mechanism of action, Phase 2 clinical trial data,
+  safety profile, and comparison to oveporexton (TAK-861).
 interactions:
-  - peptide: "oveporexton"
-    type: "caution"
-    description: "Both are orexin receptor agonists. Oveporexton is a dual OX1R/OX2R agonist while alixorexton is OX2R-selective. Concurrent use would cause overlapping receptor activation. No clinical rationale for combination."
-  - peptide: "danavorexton"
-    type: "caution"
-    description: "Both target OX2R. Danavorexton is an IV formulation while alixorexton is oral. Combined use would result in excessive OX2R stimulation without additional benefit."
-  - peptide: "suvorexant"
-    type: "avoid"
-    description: "Suvorexant is an orexin receptor antagonist, directly opposing alixorexton's mechanism. Concurrent use would result in pharmacological antagonism, negating therapeutic effects of both drugs."
-  - peptide: "modafinil"
-    type: "compatible"
-    description: "Different mechanisms of action. Modafinil works via dopamine reuptake inhibition while alixorexton directly activates OX2R. Potential additive wake-promoting effects, though clinical combination data is lacking."
-  - peptide: "sodium-oxybate"
-    type: "compatible"
-    description: "Complementary mechanisms. Sodium oxybate acts on GABA-B receptors primarily during sleep, while alixorexton promotes daytime wakefulness via OX2R. May allow dose reduction of either agent."
+  - peptide: oveporexton
+    type: caution
+    description: >-
+      Both are orexin receptor agonists. Oveporexton is a dual OX1R/OX2R agonist
+      while alixorexton is OX2R-selective. Concurrent use would cause
+      overlapping receptor activation. No clinical rationale for combination.
+  - peptide: danavorexton
+    type: caution
+    description: >-
+      Both target OX2R. Danavorexton is an IV formulation while alixorexton is
+      oral. Combined use would result in excessive OX2R stimulation without
+      additional benefit.
+  - peptide: suvorexant
+    type: avoid
+    description: >-
+      Suvorexant is an orexin receptor antagonist, directly opposing
+      alixorexton's mechanism. Concurrent use would result in pharmacological
+      antagonism, negating therapeutic effects of both drugs.
+  - peptide: modafinil
+    type: compatible
+    description: >-
+      Different mechanisms of action. Modafinil works via dopamine reuptake
+      inhibition while alixorexton directly activates OX2R. Potential additive
+      wake-promoting effects, though clinical combination data is lacking.
+  - peptide: sodium-oxybate
+    type: compatible
+    description: >-
+      Complementary mechanisms. Sodium oxybate acts on GABA-B receptors
+      primarily during sleep, while alixorexton promotes daytime wakefulness via
+      OX2R. May allow dose reduction of either agent.
 molecularInfo:
-  weight: "~400-500 Da (estimated)"
+  weight: ~400-500 Da (estimated)
   chainLength: 0
-  type: "Small molecule OX2R agonist"
-  sequence: "N/A (small molecule)"
+  type: Small molecule OX2R agonist
+  sequence: N/A (small molecule)
   aminoAcids: []
 evidenceChainedBenefits:
   - mechanism:
-      action: "Selective OX2R agonism restoring orexin signaling in wake-promoting nuclei"
-      confidence: "established"
+      action: >-
+        Selective OX2R agonism restoring orexin signaling in wake-promoting
+        nuclei
+      confidence: established
       directStudies: 8
     benefit:
-      claim: "improve daytime wakefulness in narcolepsy type 1"
-      qualifier: "shown to"
+      claim: improve daytime wakefulness in narcolepsy type 1
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 6
       animalStudies: 4
       cellStudies: 2
       keyFindings:
-        - study: "Alkermes Phase 2 Trial 2023"
-          type: "human-rct"
-          finding: "Statistically significant improvement in Maintenance of Wakefulness Test (MWT) vs placebo in NT1 patients"
-          pmid: "NCT04631991"
-        - study: "Willie JT et al. 2003"
-          type: "animal"
-          finding: "OX2R knockout mice exhibit severe narcolepsy phenotype, validating target selection"
-          pmid: "14622577"
+        - study: Alkermes Phase 2 Trial 2023
+          type: human-rct
+          finding: >-
+            Statistically significant improvement in Maintenance of Wakefulness
+            Test (MWT) vs placebo in NT1 patients
+          pmid: NCT04631991
+        - study: Willie JT et al. 2003
+          type: animal
+          finding: >-
+            OX2R knockout mice exhibit severe narcolepsy phenotype, validating
+            target selection
+          pmid: '14622577'
   - mechanism:
-      action: "OX2R activation in brain regions controlling muscle tone during wakefulness"
-      confidence: "supported"
+      action: >-
+        OX2R activation in brain regions controlling muscle tone during
+        wakefulness
+      confidence: supported
       directStudies: 5
     benefit:
-      claim: "reduce cataplexy episodes"
-      qualifier: "appears to"
+      claim: reduce cataplexy episodes
+      qualifier: appears to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 4
       animalStudies: 3
       cellStudies: 1
       keyFindings:
-        - study: "Alkermes Phase 2 Trial 2023"
-          type: "human-rct"
-          finding: "Meaningful reduction in weekly cataplexy episodes compared to placebo"
-          pmid: "NCT04631991"
-        - study: "Lin L et al. 1999"
-          type: "animal"
-          finding: "OX2R mutation identified as cause of canine narcolepsy with cataplexy"
-          pmid: "10458611"
+        - study: Alkermes Phase 2 Trial 2023
+          type: human-rct
+          finding: >-
+            Meaningful reduction in weekly cataplexy episodes compared to
+            placebo
+          pmid: NCT04631991
+        - study: Lin L et al. 1999
+          type: animal
+          finding: >-
+            OX2R mutation identified as cause of canine narcolepsy with
+            cataplexy
+          pmid: '10458611'
   - mechanism:
-      action: "Restoration of orexin-mediated sleep-wake boundary consolidation"
-      confidence: "supported"
+      action: Restoration of orexin-mediated sleep-wake boundary consolidation
+      confidence: supported
       directStudies: 4
     benefit:
-      claim: "improve overall sleep architecture"
-      qualifier: "may"
+      claim: improve overall sleep architecture
+      qualifier: may
     evidence:
-      level: "low"
+      level: low
       humanStudies: 2
       animalStudies: 4
       cellStudies: 0
       keyFindings:
-        - study: "Mieda M et al. 2011"
-          type: "animal"
-          finding: "OX2R signaling essential for sleep-wake state transitions and consolidation"
-          pmid: "21613484"
-        - study: "Irukayama-Tomobe Y et al. 2017"
-          type: "animal"
-          finding: "Small molecule OX2R agonists reduce sleep fragmentation in orexin-deficient models"
-          pmid: "28137830"
+        - study: Mieda M et al. 2011
+          type: animal
+          finding: >-
+            OX2R signaling essential for sleep-wake state transitions and
+            consolidation
+          pmid: '21613484'
+        - study: Irukayama-Tomobe Y et al. 2017
+          type: animal
+          finding: >-
+            Small molecule OX2R agonists reduce sleep fragmentation in
+            orexin-deficient models
+          pmid: '28137830'
   - mechanism:
-      action: "G-protein (Gq/11) coupled receptor activation promoting neuronal depolarization"
-      confidence: "established"
+      action: >-
+        G-protein (Gq/11) coupled receptor activation promoting neuronal
+        depolarization
+      confidence: established
       directStudies: 6
     benefit:
-      claim: "enhance neurotransmitter release from wake-promoting neurons"
-      qualifier: "shown to"
+      claim: enhance neurotransmitter release from wake-promoting neurons
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 2
       animalStudies: 5
       cellStudies: 4
       keyFindings:
-        - study: "Sakurai T et al. 1998"
-          type: "in-vitro"
-          finding: "OX2R activation triggers Gq-mediated calcium signaling and neuronal excitation"
-          pmid: "9491897"
-        - study: "Mahoney CE et al. 2019"
-          type: "animal"
-          finding: "Orexin receptor activation increases histamine, norepinephrine, and dopamine release"
-          pmid: "30941269"
+        - study: Sakurai T et al. 1998
+          type: in-vitro
+          finding: >-
+            OX2R activation triggers Gq-mediated calcium signaling and neuronal
+            excitation
+          pmid: '9491897'
+        - study: Mahoney CE et al. 2019
+          type: animal
+          finding: >-
+            Orexin receptor activation increases histamine, norepinephrine, and
+            dopamine release
+          pmid: '30941269'
 conditions:
-  - slug: "narcolepsy-type-1"
-    name: "Narcolepsy Type 1"
-    researchSummary: "Alixorexton directly addresses the pathophysiology of NT1 by replacing lost orexin signaling. Phase 2 trials demonstrated significant improvements in MWT sleep latency and ESS scores, with reduced cataplexy frequency. This represents a disease-modifying approach rather than symptomatic treatment."
-    relevantStudies: ["NCT04631991", "14622577", "10458611"]
-    relatedPeptides: ["oveporexton", "danavorexton"]
-  - slug: "excessive-daytime-sleepiness"
-    name: "Excessive Daytime Sleepiness"
-    researchSummary: "Phase 2 data showed dose-dependent improvements in objective wakefulness measures. Patients demonstrated significant increases in MWT sleep latency and improved subjective sleepiness scores on the Epworth Sleepiness Scale compared to placebo."
-    relevantStudies: ["NCT04631991", "28137830"]
-    relatedPeptides: ["oveporexton", "modafinil"]
-  - slug: "cataplexy"
-    name: "Cataplexy"
-    researchSummary: "Orexin signaling normally prevents inappropriate muscle relaxation during wakefulness. By restoring OX2R activation, alixorexton reduced cataplexy episode frequency in Phase 2 trials. This addresses cataplexy through its root cause rather than downstream pathways."
-    relevantStudies: ["NCT04631991", "10458611", "30368065"]
-    relatedPeptides: ["oveporexton", "sodium-oxybate"]
+  - slug: narcolepsy-type-1
+    name: Narcolepsy Type 1
+    researchSummary: >-
+      Alixorexton directly addresses the pathophysiology of NT1 by replacing
+      lost orexin signaling. Phase 2 trials demonstrated significant
+      improvements in MWT sleep latency and ESS scores, with reduced cataplexy
+      frequency. This represents a disease-modifying approach rather than
+      symptomatic treatment.
+    relevantStudies:
+      - NCT04631991
+      - '14622577'
+      - '10458611'
+    relatedPeptides:
+      - oveporexton
+      - danavorexton
+  - slug: excessive-daytime-sleepiness
+    name: Excessive Daytime Sleepiness
+    researchSummary: >-
+      Phase 2 data showed dose-dependent improvements in objective wakefulness
+      measures. Patients demonstrated significant increases in MWT sleep latency
+      and improved subjective sleepiness scores on the Epworth Sleepiness Scale
+      compared to placebo.
+    relevantStudies:
+      - NCT04631991
+      - '28137830'
+    relatedPeptides:
+      - oveporexton
+      - modafinil
+  - slug: cataplexy
+    name: Cataplexy
+    researchSummary: >-
+      Orexin signaling normally prevents inappropriate muscle relaxation during
+      wakefulness. By restoring OX2R activation, alixorexton reduced cataplexy
+      episode frequency in Phase 2 trials. This addresses cataplexy through its
+      root cause rather than downstream pathways.
+    relevantStudies:
+      - NCT04631991
+      - '10458611'
+      - '30368065'
+    relatedPeptides:
+      - oveporexton
+      - sodium-oxybate
 timeline:
-  - period: "Week 1-2"
-    effects: "Based on Phase 2 data: Initial improvements in daytime wakefulness may be observed. Oral bioavailability and CNS penetration allow for rapid onset of OX2R occupancy. Some patients report subjective improvement in alertness within first week."
-    source: "NCT04631991"
-  - period: "Week 2-4"
-    effects: "Continued improvement in MWT scores observed in clinical trials. Reduction in cataplexy frequency becomes more apparent. Patients typically report improved ability to maintain wakefulness during daily activities."
-    source: "NCT04631991"
-  - period: "Week 4-8"
-    effects: "Near-maximal efficacy observed in Phase 2 studies. ESS scores significantly improved. Sleep architecture improvements may become more pronounced with consolidated nighttime sleep and daytime wakefulness."
-    source: "NCT04631991"
-  - period: "Week 8+"
-    effects: "Long-term efficacy and durability being evaluated in extension studies. Phase 3 trials will establish sustained benefit profile. Unknown if tolerance develops with chronic OX2R agonism."
+  - period: Week 1-2
+    effects: >-
+      Based on Phase 2 data: Initial improvements in daytime wakefulness may be
+      observed. Oral bioavailability and CNS penetration allow for rapid onset
+      of OX2R occupancy. Some patients report subjective improvement in
+      alertness within first week.
+    source: NCT04631991
+  - period: Week 2-4
+    effects: >-
+      Continued improvement in MWT scores observed in clinical trials. Reduction
+      in cataplexy frequency becomes more apparent. Patients typically report
+      improved ability to maintain wakefulness during daily activities.
+    source: NCT04631991
+  - period: Week 4-8
+    effects: >-
+      Near-maximal efficacy observed in Phase 2 studies. ESS scores
+      significantly improved. Sleep architecture improvements may become more
+      pronounced with consolidated nighttime sleep and daytime wakefulness.
+    source: NCT04631991
+  - period: Week 8+
+    effects: >-
+      Long-term efficacy and durability being evaluated in extension studies.
+      Phase 3 trials will establish sustained benefit profile. Unknown if
+      tolerance develops with chronic OX2R agonism.
 qualityChecklist:
   goodSigns:
-    - "Obtained through legitimate clinical trial enrollment"
-    - "Provided by licensed pharmacy or research institution"
-    - "Accompanied by proper patient information and consent documentation"
-    - "Administered under medical supervision with appropriate monitoring"
-    - "Part of registered clinical trial with institutional oversight"
+    - Obtained through legitimate clinical trial enrollment
+    - Provided by licensed pharmacy or research institution
+    - Accompanied by proper patient information and consent documentation
+    - Administered under medical supervision with appropriate monitoring
+    - Part of registered clinical trial with institutional oversight
   warningSigns:
-    - "Not currently available outside of clinical trials"
-    - "Any claims of commercial availability are fraudulent"
-    - "Research chemical suppliers claiming to sell alixorexton"
-    - "Products marketed as generic or alternative formulations"
+    - Not currently available outside of clinical trials
+    - Any claims of commercial availability are fraudulent
+    - Research chemical suppliers claiming to sell alixorexton
+    - Products marketed as generic or alternative formulations
   badSigns:
-    - "Available for purchase online or from non-trial sources"
-    - "Sold as research chemical or for investigational use outside proper channels"
-    - "No documentation of regulatory approval or trial authorization"
-    - "Claims of FDA approval (not yet approved as of January 2026)"
-    - "Offered without medical supervision or proper informed consent"
+    - Available for purchase online or from non-trial sources
+    - >-
+      Sold as research chemical or for investigational use outside proper
+      channels
+    - No documentation of regulatory approval or trial authorization
+    - Claims of FDA approval (not yet approved as of January 2026)
+    - Offered without medical supervision or proper informed consent
+regulatoryStatus:
+  status: investigational
+  lastUpdated: '2026-02-18'
+  notes: Phase 1 clinical trials (Novo Nordisk). Next-gen metabolic candidate.
+ratings:
+  researchDepth: 3
+  globalCoverage: 3
+  mechanismPlausibility: 3
+  overall: 3.0
+  lastReviewed: 2026-02-18T00:00:00.000Z
+  reviewNotes: "Orexin-2 agonist with solid Phase 2 human data; well-characterized receptor mechanism."
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

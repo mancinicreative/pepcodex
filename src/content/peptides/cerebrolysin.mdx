@@ -1,193 +1,324 @@
 ---
-name: "Cerebrolysin"
-aliases: ["FPF-1070", "N-PEP-12", "Renacenz"]
-category: "cognitive"
-evidenceStrength: "moderate"
-lastUpdated: 2026-01-22
-comparators: ["donepezil", "rivastigmine", "memantine"]
-summary: "A porcine brain-derived peptide mixture approved in over 50 countries (Austria, Russia, China, Germany) for stroke, dementia, and traumatic brain injury. Contains neurotrophic peptide fragments mimicking BDNF, GDNF, NGF, and CNTF. NOT FDA-approved despite decades of international use. Mixed Phase 3 results but positive meta-analyses and widespread clinical adoption in Europe, Asia, and Latin America."
+name: Cerebrolysin
+aliases:
+  - FPF-1070
+  - N-PEP-12
+  - Renacenz
+category: cognitive
+evidenceStrength: moderate
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - donepezil
+  - rivastigmine
+  - memantine
+summary: >-
+  A porcine brain-derived peptide mixture approved in over 50 countries
+  (Austria, Russia, China, Germany) for stroke, dementia, and traumatic brain
+  injury. Contains neurotrophic peptide fragments mimicking BDNF, GDNF, NGF, and
+  CNTF. NOT FDA-approved despite decades of international use. Mixed Phase 3
+  results but positive meta-analyses and widespread clinical adoption in Europe,
+  Asia, and Latin America.
 sources:
   count: 32
   human: 22
   preclinical: 10
   openAccess: 12
-metaTitle: "Cerebrolysin Evidence Dossier | PepCodex"
-metaDescription: "Comprehensive evidence review of Cerebrolysin (porcine brain peptide mixture). International approval status, mechanism of action, clinical trials from Austria, Russia, China, and global research. 32 citations."
+metaTitle: Cerebrolysin Evidence Dossier | PepCodex
+metaDescription: >-
+  Comprehensive evidence review of Cerebrolysin (porcine brain peptide mixture).
+  International approval status, mechanism of action, clinical trials from
+  Austria, Russia, China, and global research. 32 citations.
 interactions:
-  - peptide: "semax"
-    type: "compatible"
-    description: "Both are neuroprotective peptides used in Russian clinical practice. Semax targets BDNF/NGF pathways similar to cerebrolysin's neurotrophic mechanisms. No known contraindications."
-  - peptide: "selank"
-    type: "compatible"
-    description: "Selank's anxiolytic and immunomodulatory effects complement cerebrolysin's neuroprotective actions. Both used in Russian neurological practice."
-  - peptide: "bpc-157"
-    type: "compatible"
-    description: "BPC-157's systemic cytoprotective effects may complement cerebrolysin's CNS-specific neuroprotection. Different target tissues with no known interactions."
-  - peptide: "dihexa"
-    type: "compatible"
-    description: "Both promote neuroplasticity through different mechanisms - cerebrolysin via neurotrophic factors, Dihexa via HGF/c-Met pathway. Theoretical complementary effects."
-  - peptide: "cortexin"
-    type: "synergistic"
-    description: "Both are brain-derived peptide preparations used in Russian neurology for similar indications. May have additive neuroprotective effects."
+  - peptide: semax
+    type: compatible
+    description: >-
+      Both are neuroprotective peptides used in Russian clinical practice. Semax
+      targets BDNF/NGF pathways similar to cerebrolysin's neurotrophic
+      mechanisms. No known contraindications.
+  - peptide: selank
+    type: compatible
+    description: >-
+      Selank's anxiolytic and immunomodulatory effects complement cerebrolysin's
+      neuroprotective actions. Both used in Russian neurological practice.
+  - peptide: bpc-157
+    type: compatible
+    description: >-
+      BPC-157's systemic cytoprotective effects may complement cerebrolysin's
+      CNS-specific neuroprotection. Different target tissues with no known
+      interactions.
+  - peptide: dihexa
+    type: compatible
+    description: >-
+      Both promote neuroplasticity through different mechanisms - cerebrolysin
+      via neurotrophic factors, Dihexa via HGF/c-Met pathway. Theoretical
+      complementary effects.
+  - peptide: cortexin
+    type: synergistic
+    description: >-
+      Both are brain-derived peptide preparations used in Russian neurology for
+      similar indications. May have additive neuroprotective effects.
 molecularInfo:
-  weight: "200-10,000 Da (peptide mixture)"
+  weight: '200-10,000 Da (peptide mixture)'
   chainLength: 100
-  type: "Porcine brain-derived peptide mixture"
-  sequence: "Complex mixture of neuropeptide fragments (~25%) and free amino acids (~75%)"
+  type: Porcine brain-derived peptide mixture
+  sequence: Complex mixture of neuropeptide fragments (~25%) and free amino acids (~75%)
   aminoAcids:
-    - { code: "MIX", name: "Multiple peptide fragments", position: 1, property: "modified" }
-    - { code: "AA", name: "Free amino acids (all 20 standard)", position: 2, property: "polar" }
-    - { code: "BDNF", name: "BDNF-like fragments", position: 3, property: "modified" }
-    - { code: "NGF", name: "NGF-like fragments", position: 4, property: "modified" }
-    - { code: "GDNF", name: "GDNF-like fragments", position: 5, property: "modified" }
-    - { code: "CNTF", name: "CNTF-like fragments", position: 6, property: "modified" }
+    - code: MIX
+      name: Multiple peptide fragments
+      position: 1
+      property: modified
+    - code: AA
+      name: Free amino acids (all 20 standard)
+      position: 2
+      property: polar
+    - code: BDNF
+      name: BDNF-like fragments
+      position: 3
+      property: modified
+    - code: NGF
+      name: NGF-like fragments
+      position: 4
+      property: modified
+    - code: GDNF
+      name: GDNF-like fragments
+      position: 5
+      property: modified
+    - code: CNTF
+      name: CNTF-like fragments
+      position: 6
+      property: modified
 evidenceChainedBenefits:
   - mechanism:
-      action: "TrkB-like receptor activation mimicking BDNF neurotrophic signaling"
-      confidence: "supported"
+      action: TrkB-like receptor activation mimicking BDNF neurotrophic signaling
+      confidence: supported
       directStudies: 8
     benefit:
-      claim: "improve cognitive function in Alzheimer's disease"
-      qualifier: "appears to"
+      claim: improve cognitive function in Alzheimer's disease
+      qualifier: appears to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 6
       animalStudies: 4
       cellStudies: 3
       keyFindings:
-        - study: "Alvarez XA et al. 2006"
-          type: "human-rct"
-          finding: "10mL and 30mL doses significantly improved ADAS-cog scores vs placebo in 279 mild-moderate AD patients; effects persisted 3 months post-treatment"
-          pmid: "16420392"
-        - study: "Gauthier S et al. 2015"
-          type: "human-rct"
-          finding: "Meta-analysis of 6 RCTs (N=784) showed OR 3.32 for clinical improvement, comparable to cholinesterase inhibitors"
-          pmid: "25792495"
-        - study: "Rockenstein E et al. 2007"
-          type: "animal"
-          finding: "Reduced amyloid plaque burden and increased neurogenesis in APP transgenic mice"
-          pmid: "17115170"
+        - study: Alvarez XA et al. 2006
+          type: human-rct
+          finding: >-
+            10mL and 30mL doses significantly improved ADAS-cog scores vs
+            placebo in 279 mild-moderate AD patients; effects persisted 3 months
+            post-treatment
+          pmid: '16420392'
+        - study: Gauthier S et al. 2015
+          type: human-rct
+          finding: >-
+            Meta-analysis of 6 RCTs (N=784) showed OR 3.32 for clinical
+            improvement, comparable to cholinesterase inhibitors
+          pmid: '25792495'
+        - study: Rockenstein E et al. 2007
+          type: animal
+          finding: >-
+            Reduced amyloid plaque burden and increased neurogenesis in APP
+            transgenic mice
+          pmid: '17115170'
   - mechanism:
-      action: "Sonic hedgehog pathway activation promoting neurogenesis and oligodendrogenesis"
-      confidence: "supported"
+      action: >-
+        Sonic hedgehog pathway activation promoting neurogenesis and
+        oligodendrogenesis
+      confidence: supported
       directStudies: 5
     benefit:
-      claim: "enhance motor recovery after stroke"
-      qualifier: "shown to"
+      claim: enhance motor recovery after stroke
+      qualifier: shown to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 4
       animalStudies: 6
       cellStudies: 2
       keyFindings:
-        - study: "Muresanu DF et al. 2016 (CARS)"
-          type: "human-rct"
-          finding: "Significant improvement in Action Research Arm Test (ARAT: 40.0 vs 29.3, p<0.01) with NNT=5 for clinically meaningful arm improvement"
-          pmid: "26564101"
-        - study: "Zhang L et al. 2013"
-          type: "animal"
-          finding: "Activated sonic hedgehog signaling, enhanced oligodendrogenesis and remyelination in rat stroke model"
-          pmid: "23696546"
-        - study: "Zhang C et al. 2010"
-          type: "animal"
-          finding: "Enhanced neurogenesis and angiogenesis in ischemic penumbra via sonic hedgehog pathway"
-          pmid: "20857502"
+        - study: Muresanu DF et al. 2016 (CARS)
+          type: human-rct
+          finding: >-
+            Significant improvement in Action Research Arm Test (ARAT: 40.0 vs
+            29.3, p<0.01) with NNT=5 for clinically meaningful arm improvement
+          pmid: '26564101'
+        - study: Zhang L et al. 2013
+          type: animal
+          finding: >-
+            Activated sonic hedgehog signaling, enhanced oligodendrogenesis and
+            remyelination in rat stroke model
+          pmid: '23696546'
+        - study: Zhang C et al. 2010
+          type: animal
+          finding: >-
+            Enhanced neurogenesis and angiogenesis in ischemic penumbra via
+            sonic hedgehog pathway
+          pmid: '20857502'
   - mechanism:
-      action: "Anti-apoptotic signaling via PI3K/Akt pathway activation"
-      confidence: "supported"
+      action: Anti-apoptotic signaling via PI3K/Akt pathway activation
+      confidence: supported
       directStudies: 6
     benefit:
-      claim: "provide neuroprotection against excitotoxic and ischemic damage"
-      qualifier: "appears to"
+      claim: provide neuroprotection against excitotoxic and ischemic damage
+      qualifier: appears to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 2
       animalStudies: 5
       cellStudies: 4
       keyFindings:
-        - study: "Hartbauer M et al. 2001"
-          type: "in-vitro"
-          finding: "Protected cultured neurons against glutamate excitotoxicity and promoted neurite outgrowth in dose-dependent manner"
-          pmid: "11459077"
-        - study: "Guekht AB et al. 2011"
-          type: "human-rct"
-          finding: "Significant improvement in ADAS-cog+ and CGI in 242 vascular dementia patients, with notable executive function domain benefit"
-          pmid: "20634095"
+        - study: Hartbauer M et al. 2001
+          type: in-vitro
+          finding: >-
+            Protected cultured neurons against glutamate excitotoxicity and
+            promoted neurite outgrowth in dose-dependent manner
+          pmid: '11459077'
+        - study: Guekht AB et al. 2011
+          type: human-rct
+          finding: >-
+            Significant improvement in ADAS-cog+ and CGI in 242 vascular
+            dementia patients, with notable executive function domain benefit
+          pmid: '20634095'
   - mechanism:
-      action: "Tau phosphorylation reduction and amyloid modulation"
-      confidence: "emerging"
+      action: Tau phosphorylation reduction and amyloid modulation
+      confidence: emerging
       directStudies: 3
     benefit:
-      claim: "slow neurodegenerative pathology progression"
-      qualifier: "may"
+      claim: slow neurodegenerative pathology progression
+      qualifier: may
     evidence:
-      level: "low"
+      level: low
       humanStudies: 0
       animalStudies: 3
       cellStudies: 2
       keyFindings:
-        - study: "Ubhi K et al. 2009"
-          type: "animal"
-          finding: "Reduced tau hyperphosphorylation and neurofibrillary pathology in APP/tau double transgenic mice"
-          pmid: "19277687"
-        - study: "Rockenstein E et al. 2007"
-          type: "animal"
-          finding: "Decreased amyloid plaque burden in APP transgenic mice with improved behavioral deficits"
-          pmid: "17115170"
+        - study: Ubhi K et al. 2009
+          type: animal
+          finding: >-
+            Reduced tau hyperphosphorylation and neurofibrillary pathology in
+            APP/tau double transgenic mice
+          pmid: '19277687'
+        - study: Rockenstein E et al. 2007
+          type: animal
+          finding: >-
+            Decreased amyloid plaque burden in APP transgenic mice with improved
+            behavioral deficits
+          pmid: '17115170'
 conditions:
-  - slug: "stroke"
-    name: "Stroke"
-    researchSummary: "Cerebrolysin is approved in 50+ countries for stroke treatment. The CARS trial demonstrated significant motor recovery with NNT=5 for clinically meaningful arm improvement. However, the largest trial (CASTA, N=1070) failed its primary endpoint, with benefit only seen in severe stroke subgroups. Cochrane reviews conclude no convincing evidence for mortality or dependence reduction."
-    relevantStudies: ["26564101", "22246687", "20857502"]
-    relatedPeptides: ["semax", "cortexin"]
-  - slug: "alzheimers-disease"
-    name: "Alzheimer's Disease"
-    researchSummary: "Multiple Phase 3 trials and meta-analyses support cerebrolysin for mild-moderate Alzheimer's disease. A meta-analysis of 6 RCTs (N=784) showed OR 3.32 for clinical improvement, comparable to cholinesterase inhibitors. Effects include improved ADAS-cog scores that persist 3 months post-treatment."
-    relevantStudies: ["16420392", "25792495", "17115170"]
-    relatedPeptides: ["dihexa", "semax"]
-  - slug: "vascular-dementia"
-    name: "Vascular Dementia"
-    researchSummary: "Cerebrolysin has shown benefit in vascular dementia trials. A study of 242 patients demonstrated significant improvement in ADAS-cog+ and CGI scores, with notable executive function domain benefit. The neuroprotective and neuroplasticity-promoting effects may be particularly relevant for vascular cognitive impairment."
-    relevantStudies: ["20634095", "25792495"]
-    relatedPeptides: ["semax"]
-  - slug: "traumatic-brain-injury"
-    name: "Traumatic Brain Injury"
-    researchSummary: "Cerebrolysin is used for traumatic brain injury in multiple countries. Preclinical studies show enhanced neurogenesis and angiogenesis in the ischemic penumbra. Clinical trials have shown improved outcomes, though large definitive trials are limited."
-    relevantStudies: ["23696546", "20857502"]
-    relatedPeptides: ["bpc-157", "semax"]
+  - slug: stroke
+    name: Stroke
+    researchSummary: >-
+      Cerebrolysin is approved in 50+ countries for stroke treatment. The CARS
+      trial demonstrated significant motor recovery with NNT=5 for clinically
+      meaningful arm improvement. However, the largest trial (CASTA, N=1070)
+      failed its primary endpoint, with benefit only seen in severe stroke
+      subgroups. Cochrane reviews conclude no convincing evidence for mortality
+      or dependence reduction.
+    relevantStudies:
+      - '26564101'
+      - '22246687'
+      - '20857502'
+    relatedPeptides:
+      - semax
+      - cortexin
+  - slug: alzheimers-disease
+    name: Alzheimer's Disease
+    researchSummary: >-
+      Multiple Phase 3 trials and meta-analyses support cerebrolysin for
+      mild-moderate Alzheimer's disease. A meta-analysis of 6 RCTs (N=784)
+      showed OR 3.32 for clinical improvement, comparable to cholinesterase
+      inhibitors. Effects include improved ADAS-cog scores that persist 3 months
+      post-treatment.
+    relevantStudies:
+      - '16420392'
+      - '25792495'
+      - '17115170'
+    relatedPeptides:
+      - dihexa
+      - semax
+  - slug: vascular-dementia
+    name: Vascular Dementia
+    researchSummary: >-
+      Cerebrolysin has shown benefit in vascular dementia trials. A study of 242
+      patients demonstrated significant improvement in ADAS-cog+ and CGI scores,
+      with notable executive function domain benefit. The neuroprotective and
+      neuroplasticity-promoting effects may be particularly relevant for
+      vascular cognitive impairment.
+    relevantStudies:
+      - '20634095'
+      - '25792495'
+    relatedPeptides:
+      - semax
+  - slug: traumatic-brain-injury
+    name: Traumatic Brain Injury
+    researchSummary: >-
+      Cerebrolysin is used for traumatic brain injury in multiple countries.
+      Preclinical studies show enhanced neurogenesis and angiogenesis in the
+      ischemic penumbra. Clinical trials have shown improved outcomes, though
+      large definitive trials are limited.
+    relevantStudies:
+      - '23696546'
+      - '20857502'
+    relatedPeptides:
+      - bpc-157
+      - semax
 timeline:
-  - period: "Week 1-2"
-    effects: "Based on clinical trials: Initial neurotrophic signaling begins. IV administration protocols typically show early improvements in cognitive assessments. Most trials use 10-30mL daily IV infusion."
-    source: "PMID:16420392"
-  - period: "Week 2-4"
-    effects: "CARS stroke trial showed significant motor improvements emerging by 3-4 weeks. Cognitive improvements in dementia trials become measurable. Sonic hedgehog pathway activation promotes ongoing neurogenesis."
-    source: "PMID:26564101"
-  - period: "Week 4-8"
-    effects: "Sustained neuroplasticity effects. Alzheimer's trials showed continued ADAS-cog improvement through treatment period. Motor recovery in stroke continues to progress."
-    source: "PMID:25792495"
-  - period: "Week 8+"
-    effects: "Effects persist 3 months post-treatment in Alzheimer's studies. Long-term follow-up suggests disease-modifying potential. Treatment courses of 4-8 weeks are common in clinical practice."
+  - period: Week 1-2
+    effects: >-
+      Based on clinical trials: Initial neurotrophic signaling begins. IV
+      administration protocols typically show early improvements in cognitive
+      assessments. Most trials use 10-30mL daily IV infusion.
+    source: 'PMID:16420392'
+  - period: Week 2-4
+    effects: >-
+      CARS stroke trial showed significant motor improvements emerging by 3-4
+      weeks. Cognitive improvements in dementia trials become measurable. Sonic
+      hedgehog pathway activation promotes ongoing neurogenesis.
+    source: 'PMID:26564101'
+  - period: Week 4-8
+    effects: >-
+      Sustained neuroplasticity effects. Alzheimer's trials showed continued
+      ADAS-cog improvement through treatment period. Motor recovery in stroke
+      continues to progress.
+    source: 'PMID:25792495'
+  - period: Week 8+
+    effects: >-
+      Effects persist 3 months post-treatment in Alzheimer's studies. Long-term
+      follow-up suggests disease-modifying potential. Treatment courses of 4-8
+      weeks are common in clinical practice.
 qualityChecklist:
   goodSigns:
-    - "Pharmaceutical product (EVER Neuro Pharma) in original ampules"
-    - "Clear, yellowish solution (characteristic of brain-derived peptides)"
-    - "Proper pharmaceutical packaging with batch number"
-    - "Stored at 2-25°C, protected from light"
-    - "Certificate of analysis from manufacturer"
-    - "Obtained through legitimate medical channels"
+    - Pharmaceutical product (EVER Neuro Pharma) in original ampules
+    - 'Clear, yellowish solution (characteristic of brain-derived peptides)'
+    - Proper pharmaceutical packaging with batch number
+    - 'Stored at 2-25°C, protected from light'
+    - Certificate of analysis from manufacturer
+    - Obtained through legitimate medical channels
   warningSigns:
-    - "Non-pharmaceutical source"
-    - "Unusual coloration or turbidity"
-    - "No manufacturer documentation"
-    - "Unclear chain of custody"
-    - "Temperature excursion during shipping"
+    - Non-pharmaceutical source
+    - Unusual coloration or turbidity
+    - No manufacturer documentation
+    - Unclear chain of custody
+    - Temperature excursion during shipping
   badSigns:
-    - "Precipitate or particles in solution"
-    - "Cloudy or discolored solution"
-    - "Broken seal or damaged ampules"
-    - "No batch identification"
-    - "Unusual odor"
-    - "Product from unverified sources"
+    - Precipitate or particles in solution
+    - Cloudy or discolored solution
+    - Broken seal or damaged ampules
+    - No batch identification
+    - Unusual odor
+    - Product from unverified sources
+regulatoryStatus:
+  status: research-only
+  lastUpdated: '2026-02-18'
+  notes: >-
+    Not FDA-approved in US. Approved in 45+ countries for stroke and dementia.
+    Porcine brain-derived peptide mixture.
+ratings:
+  researchDepth: 3
+  globalCoverage: 3
+  mechanismPlausibility: 3
+  overall: 3.0
+  lastReviewed: 2026-02-18T00:00:00.000Z
+  reviewNotes: "Approved in Eastern Europe and Asia; RCTs exist in multiple countries but Western adoption limited."
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

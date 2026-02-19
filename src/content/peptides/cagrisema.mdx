@@ -1,242 +1,538 @@
 ---
-name: "CagriSema"
-aliases: ["Cagrilintide-Semaglutide", "NNC0174-0833"]
-category: "metabolic"
-evidenceStrength: "high"
-lastUpdated: 2026-01-22
-comparators: ["tirzepatide", "semaglutide", "cagrilintide"]
-summary: "A fixed-dose combination of cagrilintide (amylin analog) and semaglutide (GLP-1 agonist) for chronic weight management. Phase 3 REDEFINE trials demonstrate 20-23% weight loss at 68 weeks. NDA submitted to FDA December 2025. First GLP-1/amylin combination therapy."
+name: CagriSema
+aliases:
+  - Cagrilintide-Semaglutide
+  - NNC0174-0833
+category: metabolic
+evidenceStrength: high
+lastUpdated: 2026-01-22T00:00:00.000Z
+comparators:
+  - tirzepatide
+  - semaglutide
+  - cagrilintide
+summary: >-
+  A fixed-dose combination of cagrilintide (amylin analog) and semaglutide
+  (GLP-1 agonist) for chronic weight management. Phase 3 REDEFINE trials
+  demonstrate 20-23% weight loss at 68 weeks. NDA submitted to FDA December
+  2025. First GLP-1/amylin combination therapy.
 sources:
   count: 18
   human: 16
   preclinical: 2
   openAccess: 14
-metaTitle: "CagriSema Evidence Dossier | PepCodex"
-metaDescription: "Comprehensive evidence review of CagriSema (cagrilintide-semaglutide). REDEFINE trial data, mechanism of action, safety profile, FDA submission status, and citations."
+metaTitle: CagriSema Evidence Dossier | PepCodex
+metaDescription: >-
+  Comprehensive evidence review of CagriSema (cagrilintide-semaglutide).
+  REDEFINE trial data, mechanism of action, safety profile, FDA submission
+  status, and citations.
 interactions:
-  - peptide: "semaglutide"
-    type: "avoid"
-    description: "CagriSema already contains semaglutide. Combining with additional semaglutide would result in overdose. Do not use concurrently."
-  - peptide: "tirzepatide"
-    type: "avoid"
-    description: "Both are GLP-1 receptor agonists for weight management. Concurrent use would cause overlapping mechanisms and increased adverse effects."
-  - peptide: "liraglutide"
-    type: "avoid"
-    description: "Liraglutide is a GLP-1 agonist. Combining with CagriSema would duplicate GLP-1 pathway activation and increase GI adverse effects."
-  - peptide: "bpc-157"
-    type: "caution"
-    description: "Both affect GI function. BPC-157 is gastroprotective while semaglutide component slows gastric emptying. Monitor GI symptoms if combined."
+  - peptide: semaglutide
+    type: avoid
+    description: >-
+      CagriSema already contains semaglutide. Combining with additional
+      semaglutide would result in overdose. Do not use concurrently.
+  - peptide: tirzepatide
+    type: avoid
+    description: >-
+      Both are GLP-1 receptor agonists for weight management. Concurrent use
+      would cause overlapping mechanisms and increased adverse effects.
+  - peptide: liraglutide
+    type: avoid
+    description: >-
+      Liraglutide is a GLP-1 agonist. Combining with CagriSema would duplicate
+      GLP-1 pathway activation and increase GI adverse effects.
+  - peptide: bpc-157
+    type: caution
+    description: >-
+      Both affect GI function. BPC-157 is gastroprotective while semaglutide
+      component slows gastric emptying. Monitor GI symptoms if combined.
 molecularInfo:
-  weight: "~8,335 Da (combined)"
+  weight: '~8,335 Da (combined)'
   chainLength: 70
-  type: "Fixed-dose combination (two peptides)"
-  sequence: "Cagrilintide (39 aa) + Semaglutide (31 aa)"
+  type: Fixed-dose combination (two peptides)
+  sequence: Cagrilintide (39 aa) + Semaglutide (31 aa)
   aminoAcids:
-    - { code: "K", name: "Lysine", position: 1, property: "positive" }
-    - { code: "C", name: "Cysteine", position: 2, property: "polar" }
-    - { code: "N", name: "Asparagine", position: 3, property: "polar" }
-    - { code: "T", name: "Threonine", position: 4, property: "polar" }
-    - { code: "A", name: "Alanine", position: 5, property: "hydrophobic" }
-    - { code: "T", name: "Threonine", position: 6, property: "polar" }
-    - { code: "C", name: "Cysteine", position: 7, property: "polar" }
-    - { code: "A", name: "Alanine", position: 8, property: "hydrophobic" }
-    - { code: "T", name: "Threonine", position: 9, property: "polar" }
-    - { code: "Q", name: "Glutamine", position: 10, property: "polar" }
-    - { code: "R", name: "Arginine", position: 11, property: "positive" }
-    - { code: "L", name: "Leucine", position: 12, property: "hydrophobic" }
-    - { code: "A", name: "Alanine", position: 13, property: "hydrophobic" }
-    - { code: "E", name: "Glutamic Acid", position: 14, property: "negative" }
-    - { code: "L", name: "Leucine", position: 15, property: "hydrophobic" }
-    - { code: "S", name: "Serine", position: 16, property: "polar" }
-    - { code: "S", name: "Serine", position: 17, property: "polar" }
-    - { code: "N", name: "Asparagine", position: 18, property: "polar" }
-    - { code: "L", name: "Leucine", position: 19, property: "hydrophobic" }
-    - { code: "V", name: "Valine", position: 20, property: "hydrophobic" }
-    - { code: "G", name: "Glycine", position: 21, property: "polar" }
-    - { code: "S", name: "Serine", position: 22, property: "polar" }
-    - { code: "N", name: "Asparagine", position: 23, property: "polar" }
-    - { code: "T", name: "Threonine", position: 24, property: "polar" }
-    - { code: "P", name: "Proline", position: 25, property: "hydrophobic" }
-    - { code: "V", name: "Valine", position: 26, property: "hydrophobic" }
-    - { code: "S", name: "Serine", position: 27, property: "polar" }
-    - { code: "S", name: "Serine", position: 28, property: "polar" }
-    - { code: "P", name: "Proline", position: 29, property: "hydrophobic" }
-    - { code: "P", name: "Proline", position: 30, property: "hydrophobic" }
-    - { code: "L", name: "Leucine", position: 31, property: "hydrophobic" }
-    - { code: "A", name: "Alanine", position: 32, property: "hydrophobic" }
-    - { code: "A", name: "Alanine", position: 33, property: "hydrophobic" }
-    - { code: "T", name: "Threonine", position: 34, property: "polar" }
-    - { code: "K", name: "Lysine", position: 35, property: "positive" }
-    - { code: "L", name: "Leucine", position: 36, property: "hydrophobic" }
-    - { code: "L", name: "Leucine", position: 37, property: "hydrophobic" }
-    - { code: "Q", name: "Glutamine", position: 38, property: "polar" }
-    - { code: "Y", name: "Tyrosine", position: 39, property: "polar" }
-    - { code: "H", name: "Histidine", position: 40, property: "positive" }
-    - { code: "Aib", name: "Aminoisobutyric Acid", position: 41, property: "modified" }
-    - { code: "E", name: "Glutamic Acid", position: 42, property: "negative" }
-    - { code: "G", name: "Glycine", position: 43, property: "polar" }
-    - { code: "T", name: "Threonine", position: 44, property: "polar" }
-    - { code: "F", name: "Phenylalanine", position: 45, property: "hydrophobic" }
-    - { code: "T", name: "Threonine", position: 46, property: "polar" }
-    - { code: "S", name: "Serine", position: 47, property: "polar" }
-    - { code: "D", name: "Aspartic Acid", position: 48, property: "negative" }
-    - { code: "V", name: "Valine", position: 49, property: "hydrophobic" }
-    - { code: "S", name: "Serine", position: 50, property: "polar" }
-    - { code: "S", name: "Serine", position: 51, property: "polar" }
-    - { code: "Y", name: "Tyrosine", position: 52, property: "polar" }
-    - { code: "L", name: "Leucine", position: 53, property: "hydrophobic" }
-    - { code: "E", name: "Glutamic Acid", position: 54, property: "negative" }
-    - { code: "G", name: "Glycine", position: 55, property: "polar" }
-    - { code: "Q", name: "Glutamine", position: 56, property: "polar" }
-    - { code: "A", name: "Alanine", position: 57, property: "hydrophobic" }
-    - { code: "A", name: "Alanine", position: 58, property: "hydrophobic" }
-    - { code: "K", name: "Lysine", position: 59, property: "positive" }
-    - { code: "E", name: "Glutamic Acid", position: 60, property: "negative" }
-    - { code: "F", name: "Phenylalanine", position: 61, property: "hydrophobic" }
-    - { code: "I", name: "Isoleucine", position: 62, property: "hydrophobic" }
-    - { code: "A", name: "Alanine", position: 63, property: "hydrophobic" }
-    - { code: "W", name: "Tryptophan", position: 64, property: "hydrophobic" }
-    - { code: "L", name: "Leucine", position: 65, property: "hydrophobic" }
-    - { code: "V", name: "Valine", position: 66, property: "hydrophobic" }
-    - { code: "R", name: "Arginine", position: 67, property: "positive" }
-    - { code: "G", name: "Glycine", position: 68, property: "polar" }
-    - { code: "R", name: "Arginine", position: 69, property: "positive" }
-    - { code: "G", name: "Glycine", position: 70, property: "polar" }
+    - code: K
+      name: Lysine
+      position: 1
+      property: positive
+    - code: C
+      name: Cysteine
+      position: 2
+      property: polar
+    - code: 'N'
+      name: Asparagine
+      position: 3
+      property: polar
+    - code: T
+      name: Threonine
+      position: 4
+      property: polar
+    - code: A
+      name: Alanine
+      position: 5
+      property: hydrophobic
+    - code: T
+      name: Threonine
+      position: 6
+      property: polar
+    - code: C
+      name: Cysteine
+      position: 7
+      property: polar
+    - code: A
+      name: Alanine
+      position: 8
+      property: hydrophobic
+    - code: T
+      name: Threonine
+      position: 9
+      property: polar
+    - code: Q
+      name: Glutamine
+      position: 10
+      property: polar
+    - code: R
+      name: Arginine
+      position: 11
+      property: positive
+    - code: L
+      name: Leucine
+      position: 12
+      property: hydrophobic
+    - code: A
+      name: Alanine
+      position: 13
+      property: hydrophobic
+    - code: E
+      name: Glutamic Acid
+      position: 14
+      property: negative
+    - code: L
+      name: Leucine
+      position: 15
+      property: hydrophobic
+    - code: S
+      name: Serine
+      position: 16
+      property: polar
+    - code: S
+      name: Serine
+      position: 17
+      property: polar
+    - code: 'N'
+      name: Asparagine
+      position: 18
+      property: polar
+    - code: L
+      name: Leucine
+      position: 19
+      property: hydrophobic
+    - code: V
+      name: Valine
+      position: 20
+      property: hydrophobic
+    - code: G
+      name: Glycine
+      position: 21
+      property: polar
+    - code: S
+      name: Serine
+      position: 22
+      property: polar
+    - code: 'N'
+      name: Asparagine
+      position: 23
+      property: polar
+    - code: T
+      name: Threonine
+      position: 24
+      property: polar
+    - code: P
+      name: Proline
+      position: 25
+      property: hydrophobic
+    - code: V
+      name: Valine
+      position: 26
+      property: hydrophobic
+    - code: S
+      name: Serine
+      position: 27
+      property: polar
+    - code: S
+      name: Serine
+      position: 28
+      property: polar
+    - code: P
+      name: Proline
+      position: 29
+      property: hydrophobic
+    - code: P
+      name: Proline
+      position: 30
+      property: hydrophobic
+    - code: L
+      name: Leucine
+      position: 31
+      property: hydrophobic
+    - code: A
+      name: Alanine
+      position: 32
+      property: hydrophobic
+    - code: A
+      name: Alanine
+      position: 33
+      property: hydrophobic
+    - code: T
+      name: Threonine
+      position: 34
+      property: polar
+    - code: K
+      name: Lysine
+      position: 35
+      property: positive
+    - code: L
+      name: Leucine
+      position: 36
+      property: hydrophobic
+    - code: L
+      name: Leucine
+      position: 37
+      property: hydrophobic
+    - code: Q
+      name: Glutamine
+      position: 38
+      property: polar
+    - code: 'Y'
+      name: Tyrosine
+      position: 39
+      property: polar
+    - code: H
+      name: Histidine
+      position: 40
+      property: positive
+    - code: Aib
+      name: Aminoisobutyric Acid
+      position: 41
+      property: modified
+    - code: E
+      name: Glutamic Acid
+      position: 42
+      property: negative
+    - code: G
+      name: Glycine
+      position: 43
+      property: polar
+    - code: T
+      name: Threonine
+      position: 44
+      property: polar
+    - code: F
+      name: Phenylalanine
+      position: 45
+      property: hydrophobic
+    - code: T
+      name: Threonine
+      position: 46
+      property: polar
+    - code: S
+      name: Serine
+      position: 47
+      property: polar
+    - code: D
+      name: Aspartic Acid
+      position: 48
+      property: negative
+    - code: V
+      name: Valine
+      position: 49
+      property: hydrophobic
+    - code: S
+      name: Serine
+      position: 50
+      property: polar
+    - code: S
+      name: Serine
+      position: 51
+      property: polar
+    - code: 'Y'
+      name: Tyrosine
+      position: 52
+      property: polar
+    - code: L
+      name: Leucine
+      position: 53
+      property: hydrophobic
+    - code: E
+      name: Glutamic Acid
+      position: 54
+      property: negative
+    - code: G
+      name: Glycine
+      position: 55
+      property: polar
+    - code: Q
+      name: Glutamine
+      position: 56
+      property: polar
+    - code: A
+      name: Alanine
+      position: 57
+      property: hydrophobic
+    - code: A
+      name: Alanine
+      position: 58
+      property: hydrophobic
+    - code: K
+      name: Lysine
+      position: 59
+      property: positive
+    - code: E
+      name: Glutamic Acid
+      position: 60
+      property: negative
+    - code: F
+      name: Phenylalanine
+      position: 61
+      property: hydrophobic
+    - code: I
+      name: Isoleucine
+      position: 62
+      property: hydrophobic
+    - code: A
+      name: Alanine
+      position: 63
+      property: hydrophobic
+    - code: W
+      name: Tryptophan
+      position: 64
+      property: hydrophobic
+    - code: L
+      name: Leucine
+      position: 65
+      property: hydrophobic
+    - code: V
+      name: Valine
+      position: 66
+      property: hydrophobic
+    - code: R
+      name: Arginine
+      position: 67
+      property: positive
+    - code: G
+      name: Glycine
+      position: 68
+      property: polar
+    - code: R
+      name: Arginine
+      position: 69
+      property: positive
+    - code: G
+      name: Glycine
+      position: 70
+      property: polar
 evidenceChainedBenefits:
   - mechanism:
-      action: "Dual activation of GLP-1 and amylin receptor pathways in hypothalamus and hindbrain"
-      confidence: "established"
+      action: >-
+        Dual activation of GLP-1 and amylin receptor pathways in hypothalamus
+        and hindbrain
+      confidence: established
       directStudies: 12
     benefit:
-      claim: "produce significant weight loss exceeding single-agent therapy"
-      qualifier: "shown to"
+      claim: produce significant weight loss exceeding single-agent therapy
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 4
       animalStudies: 2
       cellStudies: 1
       keyFindings:
-        - study: "Rubino DM et al. NEJM 2025"
-          type: "human-rct"
-          finding: "REDEFINE-1: 22.7% weight loss at 68 weeks; 60% achieved >=20% weight loss; synergistic effect exceeding sum of individual components"
-          pmid: "40544432"
-        - study: "Rubino DM et al. NEJM 2025"
-          type: "human-rct"
-          finding: "REDEFINE-2: 13.7% weight loss in T2D population; 73.5% achieved HbA1c <=6.5%"
-          pmid: "40544432"
+        - study: Rubino DM et al. NEJM 2025
+          type: human-rct
+          finding: >-
+            REDEFINE-1: 22.7% weight loss at 68 weeks; 60% achieved >=20% weight
+            loss; synergistic effect exceeding sum of individual components
+          pmid: '40544432'
+        - study: Rubino DM et al. NEJM 2025
+          type: human-rct
+          finding: >-
+            REDEFINE-2: 13.7% weight loss in T2D population; 73.5% achieved
+            HbA1c <=6.5%
+          pmid: '40544432'
   - mechanism:
-      action: "GLP-1 receptor activation enhances glucose-dependent insulin secretion and suppresses glucagon"
-      confidence: "established"
+      action: >-
+        GLP-1 receptor activation enhances glucose-dependent insulin secretion
+        and suppresses glucagon
+      confidence: established
       directStudies: 8
     benefit:
-      claim: "improve glycemic control in type 2 diabetes"
-      qualifier: "shown to"
+      claim: improve glycemic control in type 2 diabetes
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 3
       animalStudies: 1
       cellStudies: 2
       keyFindings:
-        - study: "REDEFINE-2 Trial"
-          type: "human-rct"
-          finding: "HbA1c reduction of 2.2% with CagriSema; 73.5% achieved HbA1c <=6.5% vs 15.9% with placebo"
-          pmid: "40544432"
-        - study: "REDEFINE-1 Subgroup Analysis"
-          type: "human-rct"
-          finding: "88% of participants with prediabetes returned to normoglycemia"
-          pmid: "40544432"
+        - study: REDEFINE-2 Trial
+          type: human-rct
+          finding: >-
+            HbA1c reduction of 2.2% with CagriSema; 73.5% achieved HbA1c <=6.5%
+            vs 15.9% with placebo
+          pmid: '40544432'
+        - study: REDEFINE-1 Subgroup Analysis
+          type: human-rct
+          finding: 88% of participants with prediabetes returned to normoglycemia
+          pmid: '40544432'
   - mechanism:
-      action: "Amylin receptor activation in area postrema and nucleus tractus solitarius promotes satiety signaling"
-      confidence: "established"
+      action: >-
+        Amylin receptor activation in area postrema and nucleus tractus
+        solitarius promotes satiety signaling
+      confidence: established
       directStudies: 6
     benefit:
-      claim: "reduce appetite and food intake through complementary brain pathways"
-      qualifier: "shown to"
+      claim: reduce appetite and food intake through complementary brain pathways
+      qualifier: shown to
     evidence:
-      level: "high"
+      level: high
       humanStudies: 4
       animalStudies: 3
       cellStudies: 1
       keyFindings:
-        - study: "Lau DCW et al. Lancet 2021"
-          type: "human-rct"
-          finding: "Cagrilintide monotherapy showed dose-dependent weight loss via amylin pathway satiety signaling"
-          pmid: "34653394"
-        - study: "Nature Communications 2025"
-          type: "in-vitro"
-          finding: "Cryo-EM structures revealed cagrilintide binding to AMY1R, AMY2R, AMY3R and CTR with amylin-like binding mode"
-          pmid: "40204768"
+        - study: Lau DCW et al. Lancet 2021
+          type: human-rct
+          finding: >-
+            Cagrilintide monotherapy showed dose-dependent weight loss via
+            amylin pathway satiety signaling
+          pmid: '34653394'
+        - study: Nature Communications 2025
+          type: in-vitro
+          finding: >-
+            Cryo-EM structures revealed cagrilintide binding to AMY1R, AMY2R,
+            AMY3R and CTR with amylin-like binding mode
+          pmid: '40204768'
   - mechanism:
-      action: "Delayed gastric emptying through both GLP-1 and amylin pathways (additive effect)"
-      confidence: "supported"
+      action: >-
+        Delayed gastric emptying through both GLP-1 and amylin pathways
+        (additive effect)
+      confidence: supported
       directStudies: 4
     benefit:
-      claim: "prolong post-meal satiety and reduce caloric intake"
-      qualifier: "appears to"
+      claim: prolong post-meal satiety and reduce caloric intake
+      qualifier: appears to
     evidence:
-      level: "moderate"
+      level: moderate
       humanStudies: 2
       animalStudies: 2
       cellStudies: 0
       keyFindings:
-        - study: "REDEFINE-1 Secondary Outcomes"
-          type: "human-rct"
-          finding: "Improved cardiometabolic parameters including blood pressure, waist circumference, and lipid profiles"
-          pmid: "40544432"
-        - study: "Phase 2 Mechanistic Studies"
-          type: "human-observational"
-          finding: "Both peptide components independently slow gastric emptying with additive effects when combined"
-          pmid: "34653394"
+        - study: REDEFINE-1 Secondary Outcomes
+          type: human-rct
+          finding: >-
+            Improved cardiometabolic parameters including blood pressure, waist
+            circumference, and lipid profiles
+          pmid: '40544432'
+        - study: Phase 2 Mechanistic Studies
+          type: human-observational
+          finding: >-
+            Both peptide components independently slow gastric emptying with
+            additive effects when combined
+          pmid: '34653394'
 conditions:
-  - slug: "obesity"
-    name: "Obesity"
-    researchSummary: "CagriSema has been evaluated in Phase 3 REDEFINE trials for chronic weight management. REDEFINE-1 demonstrated 22.7% weight loss at 68 weeks in adults with obesity, with 60% achieving >=20% weight loss. This represents the highest weight loss efficacy demonstrated in pivotal trials for any anti-obesity medication to date."
-    relevantStudies: ["40544432", "34653394"]
-    relatedPeptides: ["semaglutide", "tirzepatide"]
-  - slug: "type-2-diabetes"
-    name: "Type 2 Diabetes"
-    researchSummary: "REDEFINE-2 evaluated CagriSema in adults with type 2 diabetes and obesity. Results showed 13.7% weight loss and 2.2% HbA1c reduction at 68 weeks. 73.5% of participants achieved HbA1c <=6.5%, indicating substantial glycemic control benefit."
-    relevantStudies: ["40544432"]
-    relatedPeptides: ["semaglutide", "tirzepatide"]
-  - slug: "prediabetes"
-    name: "Prediabetes"
-    researchSummary: "Subgroup analysis from REDEFINE-1 showed 88% of participants with prediabetes at baseline returned to normoglycemia with CagriSema treatment. This suggests potential for diabetes prevention in high-risk populations."
-    relevantStudies: ["40544432"]
-    relatedPeptides: ["semaglutide"]
+  - slug: obesity
+    name: Obesity
+    researchSummary: >-
+      CagriSema has been evaluated in Phase 3 REDEFINE trials for chronic weight
+      management. REDEFINE-1 demonstrated 22.7% weight loss at 68 weeks in
+      adults with obesity, with 60% achieving >=20% weight loss. This represents
+      the highest weight loss efficacy demonstrated in pivotal trials for any
+      anti-obesity medication to date.
+    relevantStudies:
+      - '40544432'
+      - '34653394'
+    relatedPeptides:
+      - semaglutide
+      - tirzepatide
+  - slug: type-2-diabetes
+    name: Type 2 Diabetes
+    researchSummary: >-
+      REDEFINE-2 evaluated CagriSema in adults with type 2 diabetes and obesity.
+      Results showed 13.7% weight loss and 2.2% HbA1c reduction at 68 weeks.
+      73.5% of participants achieved HbA1c <=6.5%, indicating substantial
+      glycemic control benefit.
+    relevantStudies:
+      - '40544432'
+    relatedPeptides:
+      - semaglutide
+      - tirzepatide
+  - slug: prediabetes
+    name: Prediabetes
+    researchSummary: >-
+      Subgroup analysis from REDEFINE-1 showed 88% of participants with
+      prediabetes at baseline returned to normoglycemia with CagriSema
+      treatment. This suggests potential for diabetes prevention in high-risk
+      populations.
+    relevantStudies:
+      - '40544432'
+    relatedPeptides:
+      - semaglutide
 timeline:
-  - period: "Week 1-4"
-    effects: "Dose titration phase. GI side effects (nausea, vomiting, diarrhea) most common during initiation. Appetite suppression typically begins within first 1-2 weeks."
-    source: "PMID:40544432"
-  - period: "Week 4-16"
-    effects: "Continued dose escalation to maintenance dose. Weight loss acceleration observed. GI side effects typically diminish as tolerance develops."
-    source: "PMID:40544432"
-  - period: "Week 16-32"
-    effects: "Maintenance phase with ongoing weight loss. REDEFINE trials showed approximately 15-18% weight loss achieved by this timepoint."
-    source: "PMID:40544432"
-  - period: "Week 32-68"
-    effects: "Continued weight loss with plateau approaching. Final weight loss of 22.7% achieved at 68 weeks. Cardiometabolic improvements sustained."
-    source: "PMID:40544432"
+  - period: Week 1-4
+    effects: >-
+      Dose titration phase. GI side effects (nausea, vomiting, diarrhea) most
+      common during initiation. Appetite suppression typically begins within
+      first 1-2 weeks.
+    source: 'PMID:40544432'
+  - period: Week 4-16
+    effects: >-
+      Continued dose escalation to maintenance dose. Weight loss acceleration
+      observed. GI side effects typically diminish as tolerance develops.
+    source: 'PMID:40544432'
+  - period: Week 16-32
+    effects: >-
+      Maintenance phase with ongoing weight loss. REDEFINE trials showed
+      approximately 15-18% weight loss achieved by this timepoint.
+    source: 'PMID:40544432'
+  - period: Week 32-68
+    effects: >-
+      Continued weight loss with plateau approaching. Final weight loss of 22.7%
+      achieved at 68 weeks. Cardiometabolic improvements sustained.
+    source: 'PMID:40544432'
 qualityChecklist:
   goodSigns:
-    - "FDA-approved pharmaceutical product (pending approval)"
-    - "Single-use prefilled injection pen from licensed pharmacy"
-    - "Clear manufacturer labeling with lot number and expiration date"
-    - "Proper cold chain storage documentation"
-    - "Prescription from licensed healthcare provider"
-    - "Clear, colorless solution without particulates"
+    - FDA-approved pharmaceutical product (pending approval)
+    - Single-use prefilled injection pen from licensed pharmacy
+    - Clear manufacturer labeling with lot number and expiration date
+    - Proper cold chain storage documentation
+    - Prescription from licensed healthcare provider
+    - 'Clear, colorless solution without particulates'
   warningSigns:
-    - "Product obtained outside of regulated pharmacy channels"
-    - "Missing or unclear labeling information"
-    - "Storage temperature not maintained during shipping"
-    - "Approaching expiration date"
-    - "Unusual packaging or labeling inconsistencies"
+    - Product obtained outside of regulated pharmacy channels
+    - Missing or unclear labeling information
+    - Storage temperature not maintained during shipping
+    - Approaching expiration date
+    - Unusual packaging or labeling inconsistencies
   badSigns:
-    - "Product from unverified or overseas sources"
-    - "Cloudy solution or visible particles"
-    - "Damaged or compromised packaging"
-    - "No prescription or obtained without medical oversight"
-    - "Significant price discrepancy from market rates"
-    - "Missing cold chain verification"
+    - Product from unverified or overseas sources
+    - Cloudy solution or visible particles
+    - Damaged or compromised packaging
+    - No prescription or obtained without medical oversight
+    - Significant price discrepancy from market rates
+    - Missing cold chain verification
+regulatoryStatus:
+  status: investigational
+  lastUpdated: '2026-02-18'
+  notes: >-
+    Phase 3 clinical trials for obesity (Novo Nordisk). Cagrilintide +
+    semaglutide combination.
+ratings:
+  researchDepth: 4
+  globalCoverage: 4
+  mechanismPlausibility: 4
+  overall: 4.0
+  lastReviewed: 2026-02-18T00:00:00.000Z
+  reviewNotes: "Phase 3 cagrilintide+semaglutide combination with global trials and dual-mechanism support."
 ---
 
 <h2 id="mechanism-of-action">Mechanism of Action</h2>

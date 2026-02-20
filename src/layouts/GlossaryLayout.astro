@@ -13,6 +13,8 @@ interface Props {
   relatedTerms?: string[];
   category?: string;
   lastUpdated: Date;
+  metaTitle?: string;
+  metaDescription?: string;
 }
 
 const {
@@ -22,7 +24,9 @@ const {
   relatedPeptides = [],
   relatedTerms = [],
   category = 'general',
-  lastUpdated
+  lastUpdated,
+  metaTitle,
+  metaDescription,
 } = Astro.props;
 
 const categoryLabels: Record<string, string> = {
@@ -64,8 +68,8 @@ const relatedTermData = relatedTerms
 ---
 
 <BaseLayout
-  title={`${term} - Definition`}
-  description={definition.slice(0, 160)}
+  title={metaTitle || `${term} — Peptide Glossary`}
+  description={metaDescription || definition.slice(0, 160)}
 >
   <!-- Structured Data -->
   <ArticleSchema

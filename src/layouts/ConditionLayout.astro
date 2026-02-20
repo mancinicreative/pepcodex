@@ -13,6 +13,8 @@ interface Props {
   category?: 'metabolic' | 'hormonal' | 'repair-recovery' | 'cognitive' | 'immune' | 'longevity' | 'other';
   relatedConditions?: string[];
   lastUpdated: Date;
+  metaTitle?: string;
+  metaDescription?: string;
 }
 
 const {
@@ -23,7 +25,9 @@ const {
   researchOverview,
   category = 'other',
   relatedConditions = [],
-  lastUpdated
+  lastUpdated,
+  metaTitle,
+  metaDescription,
 } = Astro.props;
 
 // Get all peptides that have this condition in their research
@@ -75,7 +79,7 @@ const breadcrumbItems = [
 const allConditionHubs = await getCollection('conditions');
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={metaTitle || title} description={metaDescription || description}>
   <BreadcrumbSchema items={breadcrumbItems} />
 
   <!-- Hero Section -->

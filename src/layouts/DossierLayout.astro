@@ -142,6 +142,8 @@ interface Props {
     lastReviewed: Date;
     reviewNotes?: string;
   };
+  metaTitle?: string;
+  metaDescription?: string;
 }
 
 const {
@@ -163,6 +165,8 @@ const {
   faqs = [],
   regulatoryStatus,
   ratings,
+  metaTitle,
+  metaDescription,
 } = Astro.props;
 
 const categoryLabels: Record<string, string> = {
@@ -252,7 +256,7 @@ const breadcrumbItems = [
 const articleUrl = Astro.url.toString();
 ---
 
-<BaseLayout title={name} description={summary}>
+<BaseLayout title={metaTitle || name} description={metaDescription || summary}>
   <!-- Structured Data -->
   <ArticleSchema
     title={`${name}: Evidence Dossier`}

@@ -45,6 +45,8 @@ const { Content } = await post.render();
   evidenceLevel={post.data.evidenceLevel}
   prevPost={Astro.props.prevPost}
   nextPost={Astro.props.nextPost}
+  metaTitle={post.data.metaTitle}
+  metaDescription={post.data.metaDescription}
 >
   <Content />
 </BlogLayout>

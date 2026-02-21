@@ -11,7 +11,7 @@ export const prerender = true;
 export async function getStaticPaths() {
   const cities = await getCollection('cities');
   return cities.map((city) => ({
-    params: { city: city.id },
+    params: { city: city.id.replace(/\.mdx?$/, '') },
     props: { city }
   }));
 }
@@ -38,7 +38,7 @@ const nearbyCities = allCities
 const breadcrumbs = [
   { name: 'Home', url: '/' },
   { name: 'Peptide Clinics', url: '/clinics' },
-  { name: `${name}, ${stateAbbr}`, url: `/clinics/${city.id}` }
+  { name: `${name}, ${stateAbbr}`, url: `/clinics/${city.id.replace(/\.mdx?$/, '')}` }
 ];
 
 // FAQ items for schema markup
@@ -343,7 +343,7 @@ const commonPeptides = [
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
         {nearbyCities.map((nearbyCity) => (
           <a
-            href={`/clinics/${nearbyCity.id}`}
+            href={`/clinics/${nearbyCity.id.replace(/\.mdx?$/, '')}`}
             class="glass-card glass-card--interactive p-4 text-center"
           >
             <h3 class="font-semibold text-sm" style="color: var(--text-high);">

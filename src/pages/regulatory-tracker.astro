@@ -1,0 +1,272 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import BreadcrumbSchema from '../components/SEO/BreadcrumbSchema.astro';
+
+const peptides = await getCollection('peptides');
+
+// Group by status
+const statusOrder = ['approved', 'investigational', 'compounding-restricted', 'research-only'];
+const statusLabels: Record<string, string> = {
+  'approved': 'FDA Approved',
+  'investigational': 'Investigational',
+  'compounding-restricted': 'Compounding Restricted',
+  'research-only': 'Research Only',
+};
+const statusColors: Record<string, string> = {
+  'approved': 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
+  'investigational': 'bg-blue-500/20 text-blue-400 border-blue-500/30',
+  'compounding-restricted': 'bg-amber-500/20 text-amber-400 border-amber-500/30',
+  'research-only': 'bg-white/10 text-white/60 border-white/20',
+};
+
+// Sort peptides with regulatory status
+const sorted = peptides
+  .filter(p => p.data.regulatoryStatus)
+  .sort((a, b) => {
+    const aIdx = statusOrder.indexOf(a.data.regulatoryStatus!.status);
+    const bIdx = statusOrder.indexOf(b.data.regulatoryStatus!.status);
+    if (aIdx !== bIdx) return aIdx - bIdx;
+    return a.data.name.localeCompare(b.data.name);
+  });
+
+// Counts
+const counts: Record<string, number> = {};
+for (const p of sorted) {
+  const s = p.data.regulatoryStatus!.status;
+  counts[s] = (counts[s] || 0) + 1;
+}
+
+const categoryLabels: Record<string, string> = {
+  'metabolic': 'Metabolic',
+  'repair-recovery': 'Recovery',
+  'hormonal': 'Hormonal',
+  'longevity': 'Longevity',
+  'cognitive': 'Cognitive',
+  'immune': 'Immune',
+  'other': 'Other',
+};
+---
+
+<BaseLayout
+  title="Peptide Regulatory Tracker"
+  description="Track FDA approval status, clinical trial phases, and regulatory changes for 92 peptides. Updated February 2026."
+>
+  <BreadcrumbSchema items={[
+    { name: 'Home', url: 'https://pepcodex.com/' },
+    { name: 'Regulatory Tracker', url: 'https://pepcodex.com/regulatory-tracker/' },
+  ]} />
+
+  <div class="max-w-6xl mx-auto">
+    <!-- Header -->
+    <div class="mb-8">
+      <div class="flex items-center gap-2 text-sm mb-4" style="color: var(--text-low);">
+        <a href="/" class="hover:text-white transition-colors">Home</a>
+        <span>/</span>
+        <span style="color: var(--text-medium);">Regulatory Tracker</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-bold text-white mb-3" style="font-family: var(--font-display);">
+        Peptide Regulatory Tracker
+      </h1>
+      <p class="text-lg leading-relaxed max-w-3xl" style="color: var(--text-medium);">
+        FDA approval status and regulatory classification for {sorted.length} peptides. Updated as regulatory changes occur.
+      </p>
+    </div>
+
+    <!-- Status summary cards -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+      {statusOrder.map(status => (
+        <button
+          data-filter={status}
+          class:list={[
+            "filter-btn rounded-xl border p-4 text-left transition-all hover:scale-[1.02] cursor-pointer",
+            statusColors[status]
+          ]}
+        >
+          <div class="text-2xl font-bold mb-1">{counts[status] || 0}</div>
+          <div class="text-sm opacity-80">{statusLabels[status]}</div>
+        </button>
+      ))}
+    </div>
+
+    <!-- Search + filter bar -->
+    <div class="flex flex-col sm:flex-row gap-3 mb-6">
+      <div class="relative flex-1">
+        <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.3-4.3" />
+        </svg>
+        <input
+          type="search"
+          id="reg-search"
+          placeholder="Search peptides..."
+          class="w-full pl-10 pr-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/40 focus:outline-none focus:border-[var(--primary)]/50 text-sm"
+        />
+      </div>
+      <select
+        id="reg-category"
+        class="px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-[var(--primary)]/50"
+      >
+        <option value="">All Categories</option>
+        {Object.entries(categoryLabels).map(([val, label]) => (
+          <option value={val}>{label}</option>
+        ))}
+      </select>
+      <button
+        id="reg-reset"
+        class="px-4 py-2.5 rounded-lg border border-white/10 text-white/60 hover:text-white hover:bg-white/5 text-sm transition-colors hidden"
+      >
+        Clear Filters
+      </button>
+    </div>
+
+    <!-- Table -->
+    <div class="rounded-xl border border-white/10 overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-white/10 bg-white/5">
+              <th class="text-left px-4 py-3 font-semibold text-white/80 cursor-pointer hover:text-white" data-sort="name">
+                Peptide
+                <svg class="inline w-3 h-3 ml-1 opacity-40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+              </th>
+              <th class="text-left px-4 py-3 font-semibold text-white/80">Status</th>
+              <th class="text-left px-4 py-3 font-semibold text-white/80 hidden md:table-cell">Category</th>
+              <th class="text-left px-4 py-3 font-semibold text-white/80 hidden lg:table-cell">Evidence</th>
+              <th class="text-left px-4 py-3 font-semibold text-white/80 hidden md:table-cell">Notes</th>
+            </tr>
+          </thead>
+          <tbody id="reg-tbody">
+            {sorted.map(p => {
+              const reg = p.data.regulatoryStatus!;
+              return (
+                <tr
+                  class="border-b border-white/5 hover:bg-white/5 transition-colors"
+                  data-name={p.data.name.toLowerCase()}
+                  data-status={reg.status}
+                  data-category={p.data.category}
+                >
+                  <td class="px-4 py-3">
+                    <a href={`/peptides/${p.id}/`} class="font-medium text-white hover:text-[var(--primary)] transition-colors">
+                      {p.data.name}
+                    </a>
+                    {p.data.aliases.length > 0 && (
+                      <div class="text-xs mt-0.5" style="color: var(--text-low);">
+                        {p.data.aliases.slice(0, 2).join(', ')}
+                      </div>
+                    )}
+                  </td>
+                  <td class="px-4 py-3">
+                    <span class:list={["inline-flex px-2.5 py-1 rounded-full text-xs font-medium border", statusColors[reg.status]]}>
+                      {statusLabels[reg.status]}
+                    </span>
+                  </td>
+                  <td class="px-4 py-3 hidden md:table-cell">
+                    <span class="text-white/60 text-xs">{categoryLabels[p.data.category]}</span>
+                  </td>
+                  <td class="px-4 py-3 hidden lg:table-cell">
+                    <span class:list={[
+                      "text-xs font-medium",
+                      p.data.evidenceStrength === 'high' ? 'text-emerald-400' :
+                      p.data.evidenceStrength === 'moderate' ? 'text-blue-400' :
+                      p.data.evidenceStrength === 'low' ? 'text-amber-400' :
+                      'text-white/40'
+                    ]}>
+                      {p.data.evidenceStrength.charAt(0).toUpperCase() + p.data.evidenceStrength.slice(1)}
+                    </span>
+                  </td>
+                  <td class="px-4 py-3 hidden md:table-cell">
+                    <span class="text-xs leading-relaxed" style="color: var(--text-low);">
+                      {reg.notes && reg.notes.length > 120 ? reg.notes.slice(0, 120) + '...' : reg.notes}
+                    </span>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Results count -->
+    <div class="mt-4 text-sm" style="color: var(--text-low);">
+      <span id="reg-count">{sorted.length}</span> of {sorted.length} peptides shown
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="mt-8 p-4 rounded-xl border border-white/10 bg-white/5">
+      <p class="text-xs leading-relaxed" style="color: var(--text-low);">
+        <strong class="text-white/60">Disclaimer:</strong> This tracker is for informational purposes only. Regulatory status reflects publicly available information from FDA, ClinicalTrials.gov, and manufacturer disclosures. Status may change without notice. This is not medical or legal advice. Always verify current regulatory status through official channels before making any decisions.
+      </p>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  const search = document.getElementById('reg-search') as HTMLInputElement;
+  const categorySelect = document.getElementById('reg-category') as HTMLSelectElement;
+  const resetBtn = document.getElementById('reg-reset') as HTMLButtonElement;
+  const tbody = document.getElementById('reg-tbody')!;
+  const countEl = document.getElementById('reg-count')!;
+  const filterBtns = document.querySelectorAll('.filter-btn');
+
+  let activeStatus = '';
+
+  function applyFilters() {
+    const query = search.value.toLowerCase().trim();
+    const cat = categorySelect.value;
+    const rows = tbody.querySelectorAll('tr');
+    let visible = 0;
+
+    rows.forEach(row => {
+      const el = row as HTMLElement;
+      const name = el.dataset.name || '';
+      const status = el.dataset.status || '';
+      const rowCat = el.dataset.category || '';
+
+      const matchSearch = !query || name.includes(query);
+      const matchStatus = !activeStatus || status === activeStatus;
+      const matchCat = !cat || rowCat === cat;
+
+      if (matchSearch && matchStatus && matchCat) {
+        el.style.display = '';
+        visible++;
+      } else {
+        el.style.display = 'none';
+      }
+    });
+
+    countEl.textContent = String(visible);
+    resetBtn.classList.toggle('hidden', !query && !activeStatus && !cat);
+
+    // Update active filter button styling
+    filterBtns.forEach(btn => {
+      const el = btn as HTMLElement;
+      if (el.dataset.filter === activeStatus) {
+        el.style.outline = '2px solid rgba(255,255,255,0.4)';
+        el.style.outlineOffset = '2px';
+      } else {
+        el.style.outline = '';
+        el.style.outlineOffset = '';
+      }
+    });
+  }
+
+  search.addEventListener('input', applyFilters);
+  categorySelect.addEventListener('change', applyFilters);
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const status = (btn as HTMLElement).dataset.filter || '';
+      activeStatus = activeStatus === status ? '' : status;
+      applyFilters();
+    });
+  });
+
+  resetBtn.addEventListener('click', () => {
+    search.value = '';
+    categorySelect.value = '';
+    activeStatus = '';
+    applyFilters();
+  });
+</script>

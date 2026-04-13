@@ -238,12 +238,6 @@ function findComparisonSlug(compSlug: string): string | null {
   return match ? match.slug : null;
 }
 
-// Load calculator presets to check if this peptide has calculator pages
-let hasCalculatorPreset = false;
-try {
-  const presetData = await import('../../data/calculator-presets.json');
-  hasCalculatorPreset = presetData.presets?.some((p: any) => p.slug === currentSlug) ?? false;
-} catch { /* presets not available */ }
 
 // SEO: Breadcrumb data
 const breadcrumbItems = [
@@ -719,50 +713,6 @@ const articleUrl = Astro.url.toString();
       </section>
     )}
 
-    <!-- Calculator Links -->
-    {hasCalculatorPreset && (
-      <section class="mt-12">
-        <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-8">
-          <h2 class="text-2xl font-bold" style="font-family: var(--font-display);">{name} Calculators</h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <a href={`/calculator/reconstitution/${currentSlug}`} class="glass-card-hoverable p-6 flex items-center gap-4 group">
-            <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 transition-all">
-              <svg class="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4.5 3h15"/><path d="M6 3v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V3"/><path d="M6 14h12"/>
-              </svg>
-            </div>
-            <div>
-              <div class="font-bold text-white group-hover:text-primary transition-colors">Reconstitution</div>
-              <div class="text-sm text-white/70">Calculate concentrations</div>
-            </div>
-          </a>
-          <a href={`/calculator/blend/${currentSlug}`} class="glass-card-hoverable p-6 flex items-center gap-4 group">
-            <div class="w-12 h-12 rounded-xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center group-hover:bg-cyan-400/20 transition-all">
-              <svg class="w-6 h-6 text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/>
-                <path d="M8.5 2h7"/><path d="M7 16h10"/>
-              </svg>
-            </div>
-            <div>
-              <div class="font-bold text-white group-hover:text-cyan-400 transition-colors">Blend Calculator</div>
-              <div class="text-sm text-white/70">Multi-peptide volumes</div>
-            </div>
-          </a>
-          <a href={`/calculator/accumulation/${currentSlug}`} class="glass-card-hoverable p-6 flex items-center gap-4 group">
-            <div class="w-12 h-12 rounded-xl bg-purple-400/10 border border-purple-400/20 flex items-center justify-center group-hover:bg-purple-400/20 transition-all">
-              <svg class="w-6 h-6 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/>
-              </svg>
-            </div>
-            <div>
-              <div class="font-bold text-white group-hover:text-purple-400 transition-colors">Accumulation</div>
-              <div class="text-sm text-white/70">Steady-state calculations</div>
-            </div>
-          </a>
-        </div>
-      </section>
-    )}
 
     <!-- Related Peptides (same category) -->
     {(() => {

@@ -85,7 +85,6 @@ export const GET: APIRoute = async () => {
   lines.push('');
   lines.push('- [Methodology](https://pepcodex.com/methodology/): How PepCodex evaluates evidence');
   lines.push('- [Clinical Trial Tracker](https://pepcodex.com/trials/): Live tracker of peptide clinical trials');
-  lines.push('- [Calculators](https://pepcodex.com/calculator/): Reconstitution, blending, and accumulation calculators');
   lines.push('- [Clinic Directory](https://pepcodex.com/directory/): US peptide clinic finder');
   lines.push('- [Newsletter](https://pepcodex.com/newsletter/): Weekly peptide research digest');
 

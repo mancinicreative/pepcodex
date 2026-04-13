@@ -24,7 +24,6 @@ For term definitions:
 - Methodology: https://pepcodex.com/methodology/
 - Clinical Trial Tracker: https://pepcodex.com/trials/
 - Regulatory Tracker: https://pepcodex.com/regulatory-tracker/
-- Calculators: https://pepcodex.com/calculator/
 - Clinic Directory: https://pepcodex.com/directory/
 - Blog: https://pepcodex.com/blog/
 

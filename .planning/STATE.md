@@ -1,19 +1,42 @@
 # Project State: PepCodex
 
+*Last updated: 2026-04-13*
+
 ## Current Phase
 
-**v5.0 Hardening & Enhancement** — COMPLETE
+**v6.0 Phase 35 — Content Refresh & New Dossiers** — IN PROGRESS
 
 ## Active Work
 
-### v5.0 Hardening & Enhancement
+### Phase 35: Content Refresh & New Dossiers
 
-**Strategy:** Fix quality scorecard from 62.5% → 75% by addressing security (BLOCKER), performance, and accessibility, then ship deferred UX features.
+**Goal:** Bring PepCodex current with Feb-Mar 2026 developments. New dossiers for recently approved/near-approval peptides, update 15+ stale dossiers, publish high-priority blog posts.
 
-**Informed by:** Full Studio Pipeline Evaluation (2026-02-12)
-**Artifacts:** `.planning/studio/` (8 evaluation reports)
+**Informed by:** 10-agent research swarm (`.planning/RESEARCH-SWARM-2026-03-19.md`)
+**Plan:** `.planning/phases/35-content-refresh/PLAN.md`
 
-### v5.0 Phase Execution Order
+| Sub-Phase | Focus | Target | Status |
+|-----------|-------|--------|--------|
+| A | New Dossiers | 6 peptides (92→98): rusfertide, PF-08653944, klotho, MK-0616, ecnoglutide, PEG-MGF | Not started |
+| B | Dossier Updates | 15 existing dossiers refreshed with Feb-Mar 2026 data | Not started |
+| C | Blog Posts | 10 articles (trending topics + misinformation) | Not started |
+| D | Regulatory Updates | Category 1/2 reclassification (RFK Jr: 14→15 legal) | Not started |
+
+### Infra Hardening (2026-04-13, this session)
+
+- Archived 27 stale `.claude/` + `.planning/` docs → `_archive/` (~11K tokens off every session)
+- Slimmed `.claude/CLAUDE.md` 152→30 lines; sourcing rules → on-demand skill
+- Added `npm run check` as `prebuild` gate (validate-cross-links)
+- Added SessionStart + PostToolUse hooks (`.claude/settings.json`)
+- Recent commits: 104d086, df94a7d, b8f565b, d25e466, 02b6a23
+
+---
+
+## Completed Milestones
+
+### v5.0 Hardening & Enhancement — COMPLETE (2026-02-12)
+
+Scorecard 62.5% → 78.1%. All 6 phases (A-F) shipped.
 
 | Phase | Focus | Scorecard Impact | Status |
 |-------|-------|------------------|--------|
@@ -24,7 +47,7 @@
 | E | Content Quality | Content consistency | COMPLETE |
 | F | Feature Enhancements | Clinics 10→52 | COMPLETE |
 
-**Minimum viable v5.0:** Phases A + B + C (brings scorecard to 75%)
+**Artifacts:** `.planning/studio/` (8 evaluation reports)
 
 ### v4.0 Content Expansion (COMPLETE)
 

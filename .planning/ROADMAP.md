@@ -118,6 +118,13 @@ v5.0 Hardening & Enhancement — Fix security blockers, optimize performance, im
 - [ ] **REG-008: Dossier frontmatter** — approval_status, compounding_status, patent_expiry fields
 - [ ] **REG-009: Schema markup** — MedicalEntity/Drug schema extensions for regulatory data
 
+#### Phase 35: Content Refresh & New Dossiers
+*Informed by 10-agent research swarm (2026-03-19). Brings PepCodex current with Feb-Mar 2026 developments.*
+- [ ] **Sub-Phase A: New Dossiers** — 6 new peptides: rusfertide, PF-08653944, klotho, MK-0616, ecnoglutide, PEG-MGF (92 → 98 dossiers)
+- [ ] **Sub-Phase B: Dossier Updates** — 15 existing dossiers updated (SS-31 FDA approval, semaglutide oral/patent cliff, retatrutide Phase 3, orforglipron Phase 3, etc.)
+- [ ] **Sub-Phase C: Blog Posts** — 10 priority articles (FDA reclassification, Wolverine Stack evidence review, compounded GLP-1 safety, retatrutide Phase 3, oral GLP-1 race, etc.)
+- [ ] **Sub-Phase D: Regulatory Updates** — FDA Category 1/2 reclassification status across all affected dossiers
+
 #### Phase 34: Distribution & Growth
 - [ ] **DIST-001: SEO technical audit** — Crawlability, internal linking, orphan pages, canonicals
 - [ ] **DIST-002: Programmatic SEO** — "[peptide] + [condition]" landing pages from existing data
@@ -451,6 +458,7 @@ Phase 23 → 24 → 25 → 26 → 27 → 28 → 29
 | 32. Monetization Foundation | Planned | 0/10 | — |
 | 33. Regulatory Status Tracker | Planned | 0/9 | — |
 | 34. Distribution & Growth | Planned | 0/10 | — |
+| 35. Content Refresh & Dossiers | Planned | 0/4 | — |
 
 ---
 

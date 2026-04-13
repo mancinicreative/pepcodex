@@ -1,0 +1,38 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#a855f7"/>
+      <stop offset="50%" style="stop-color:#c084fc"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Subtle grid pattern -->
+  <g opacity="0.05" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="0" x2="1200" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+  </g>
+  <!-- Flask icon -->
+  <g transform="translate(520, 160)" fill="none" stroke="url(#accent)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.3">
+    <path d="M40 0v30.1a8 8 0 0 1-.84 3.58L16.9 82.2a4 4 0 0 0 3.6 5.8h51a4 4 0 0 0 3.6-5.8L52.84 33.69A8 8 0 0 1 52 30.1V0"/>
+    <path d="M34 0h28"/>
+    <path d="M28 64h40"/>
+  </g>
+  <!-- Title -->
+  <text x="600" y="310" text-anchor="middle" fill="url(#accent)" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" letter-spacing="6">PEPCODEX</text>
+  <!-- Subtitle -->
+  <text x="600" y="370" text-anchor="middle" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="400" opacity="0.7">Evidence-Based Peptide Research Library</text>
+  <!-- Stats bar -->
+  <text x="600" y="430" text-anchor="middle" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="500" opacity="0.4">92 Dossiers  |  279 Comparisons  |  215 Glossary Terms  |  151 Blog Posts</text>
+  <!-- URL -->
+  <text x="600" y="560" text-anchor="middle" fill="#a855f7" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="500" opacity="0.6">pepcodex.com</text>
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="1200" height="4" fill="url(#accent)" opacity="0.8"/>
+</svg>

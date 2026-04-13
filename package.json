@@ -4,6 +4,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "check": "node scripts/validate-cross-links.mjs",
+    "prebuild": "npm run check",
     "build": "astro build",
     "postbuild": "npx pagefind --site dist",
     "preview": "astro preview",

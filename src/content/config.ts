@@ -4,6 +4,9 @@ const evidenceStrength = z.enum(['high', 'moderate', 'low', 'very-low']);
 const category = z.enum(['metabolic', 'repair-recovery', 'hormonal', 'longevity', 'cognitive', 'immune', 'other']);
 const compoundType = z.enum(['peptide', 'small-molecule', 'mrna', 'protein', 'glycoprotein', 'bioregulator']).default('peptide');
 
+// Bioregulator classification — used by /bioregulators hub to group cards
+const bioregulatorType = z.enum(['synthetic', 'extract', 'cytamin']);
+
 // Shared SEO fields for all content types
 const seoFields = {
   metaTitle: z.string().optional(),
@@ -48,6 +51,7 @@ const peptides = defineCollection({
     name: z.string(),
     aliases: z.array(z.string()).default([]),
     category: category,
+    bioregulatorType: bioregulatorType.optional(),
     compoundType: compoundType, // peptide, small-molecule, mrna, protein, glycoprotein
     evidenceStrength: evidenceStrength,
     lastUpdated: z.coerce.date(),

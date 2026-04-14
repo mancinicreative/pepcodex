@@ -3,55 +3,14 @@ import HubLayout from '../layouts/HubLayout.astro';
 import PeptideCard from '../components/PeptideCard.astro';
 import { getCollection } from 'astro:content';
 
-// List of known bioregulator peptide slugs
-const bioregulatorSlugs = [
-  // Original 5
-  'epithalon',
-  'thymalin',
-  'thymogen',
-  'cortexin',
-  'pinealon',
-  // Phase 26 synthetic
-  'vilon',
-  'livagen',
-  'vesugen',
-  'cardiogen',
-  'kristagen',
-  'bronchogen',
-  'chonluten',
-  'testagen',
-  // Phase 26 extracts
-  'prostatilen',
-  'retinalamin',
-  // Phase 27 synthetic
-  'ovagen',
-  'pancragen',
-  'stamakort',
-  // Phase 27 cytamins
-  'vladonix',
-  'endoluten',
-  'cerluten',
-  'ventfort',
-  'svetinorm',
-  'suprefort',
-  'sigumir',
-];
-
 const allPeptides = await getCollection('peptides');
-const peptides = allPeptides
-  .filter(p => bioregulatorSlugs.includes(p.slug))
+const bioregulatorPeptides = allPeptides
+  .filter(p => p.data.bioregulatorType)
   .sort((a, b) => a.data.name.localeCompare(b.data.name));
 
-// Group by type for display
-const syntheticPeptides = peptides.filter(p =>
-  ['epithalon', 'vilon', 'livagen', 'vesugen', 'cardiogen', 'kristagen', 'bronchogen', 'chonluten', 'testagen', 'pinealon', 'thymalin', 'thymogen', 'cortexin', 'ovagen', 'pancragen', 'stamakort'].includes(p.slug)
-);
-const extractPeptides = peptides.filter(p =>
-  ['prostatilen', 'retinalamin'].includes(p.slug)
-);
-const cytaminPeptides = peptides.filter(p =>
-  ['vladonix', 'endoluten', 'cerluten', 'ventfort', 'svetinorm', 'suprefort', 'sigumir'].includes(p.slug)
-);
+const syntheticPeptides = bioregulatorPeptides.filter(p => p.data.bioregulatorType === 'synthetic');
+const extractPeptides = bioregulatorPeptides.filter(p => p.data.bioregulatorType === 'extract');
+const cytaminPeptides = bioregulatorPeptides.filter(p => p.data.bioregulatorType === 'cytamin');
 ---
 
 <HubLayout

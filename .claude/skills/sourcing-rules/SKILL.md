@@ -1,6 +1,6 @@
 ---
 name: sourcing-rules
-description: Evidence-based sourcing rules for PepCodex content. Use when writing/editing any blog post, peptide dossier, or making factual claims that require citations. Defines approved source tiers, citation format, and quality control thresholds.
+description: Evidence-based sourcing rules for PepCodex content. Use when writing, editing, or reviewing any peptide dossier, blog post, or comparison page — or any factual claim needing citations, PMIDs, DOIs, or evidence grading. Defines approved source tiers, citation format, and quality thresholds.
 ---
 
 # Evidence-Based Sourcing — PepCodex

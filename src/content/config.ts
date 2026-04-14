@@ -40,6 +40,7 @@ const ratingsSchema = z.object({
   researchDepth: z.number().min(1).max(5),
   globalCoverage: z.number().min(1).max(5),
   mechanismPlausibility: z.number().min(1).max(5),
+  anecdotalEvidence: z.number().min(1).max(5),
   overall: z.number().min(1).max(5),
   lastReviewed: z.coerce.date(),
   reviewNotes: z.string().optional(),
@@ -69,6 +70,12 @@ const peptides = defineCollection({
       preclinical: z.number(),
       openAccess: z.number(),
     }),
+    // Anecdotal community reports
+    anecdotalReports: z.object({
+      positive: z.array(z.string()),
+      negative: z.array(z.string()),
+      communityNotes: z.string().optional(),
+    }).optional(),
     // NEW: Molecular information for structure display
     molecularInfo: z.object({
       weight: z.string(),           // "1,419.53 Da"

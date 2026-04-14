@@ -4,6 +4,7 @@ interface Props {
     researchDepth: number;
     globalCoverage: number;
     mechanismPlausibility: number;
+    anecdotalEvidence: number;
     overall: number;
     lastReviewed: Date;
     reviewNotes?: string;
@@ -44,6 +45,7 @@ const dimensions = [
   { label: 'Research Depth', value: ratings.researchDepth },
   { label: 'Global Coverage', value: ratings.globalCoverage },
   { label: 'Mechanism Plausibility', value: ratings.mechanismPlausibility },
+  { label: 'Community Experience', value: ratings.anecdotalEvidence },
 ];
 ---
 

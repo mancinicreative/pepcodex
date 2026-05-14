@@ -305,6 +305,11 @@
     return div.innerHTML;
   }
 
+  // Restrict rendered links to internal, root-relative URLs.
+  function safeInternalUrl(url: string): string {
+    return typeof url === 'string' && url.startsWith('/') && !url.startsWith('//') ? url : '/';
+  }
+
   // Highlight query terms in text
   function highlightTerms(text: string, query: string): string {
     const escaped = escapeHtml(text);
@@ -344,7 +349,7 @@
 
       return `
         <li class="group/item">
-          <a href="${peptide.url}" class="modal-result-link block p-4 relative rounded-lg overflow-hidden transition-all duration-300 hover:bg-gradient-to-r hover:from-[var(--primary)]/40 hover:to-purple-600/30 focus:bg-gradient-to-r focus:from-[var(--primary)]/40 focus:to-purple-600/30 outline-none">
+          <a href="${escapeHtml(safeInternalUrl(peptide.url))}" class="modal-result-link block p-4 relative rounded-lg overflow-hidden transition-all duration-300 hover:bg-gradient-to-r hover:from-[var(--primary)]/40 hover:to-purple-600/30 focus:bg-gradient-to-r focus:from-[var(--primary)]/40 focus:to-purple-600/30 outline-none">
             <div class="flex items-start justify-between gap-3 mb-2">
               <div class="font-semibold text-white transition-colors">
                 ${highlightTerms(peptide.name, query)}
@@ -358,7 +363,7 @@
             </div>
             ${peptide.aliases.length > 0 ? `
               <div class="text-xs text-white/50 mb-2" style="text-align: left;">
-                ${peptide.aliases.slice(0, 3).join(' &middot; ')}${peptide.aliases.length > 3 ? ' &middot; ...' : ''}
+                ${peptide.aliases.slice(0, 3).map(alias => escapeHtml(alias)).join(' &middot; ')}${peptide.aliases.length > 3 ? ' &middot; ...' : ''}
               </div>
             ` : ''}
             <div class="text-sm text-white/70 line-clamp-2 mb-2" style="text-align: left;">
@@ -500,9 +505,9 @@
 
         modalResultsList.innerHTML = results.map((result: any) => `
           <li>
-            <a href="${result.url}" class="modal-result-link block p-4 hover:bg-white/5 transition-colors outline-none focus:bg-white/5">
-              <div class="font-medium text-white">${result.meta?.title || 'Untitled'}</div>
-              <div class="mt-1 text-sm text-white/50 line-clamp-2">${result.excerpt}</div>
+            <a href="${escapeHtml(safeInternalUrl(result.url))}" class="modal-result-link block p-4 hover:bg-white/5 transition-colors outline-none focus:bg-white/5">
+              <div class="font-medium text-white">${escapeHtml(result.meta?.title || 'Untitled')}</div>
+              <div class="mt-1 text-sm text-white/50 line-clamp-2">${escapeHtml(result.excerpt || '')}</div>
             </a>
           </li>
         `).join('');

@@ -130,8 +130,12 @@ const {
         const data = await res.json();
 
         if (data.success) {
-          // Success - show confirmation message
-          formEl.innerHTML = `<p class="text-white font-bold py-3 text-center w-full">${data.message}</p>`;
+          // Success - show confirmation message without injecting API text as HTML
+          formEl.replaceChildren();
+          const successEl = document.createElement('p');
+          successEl.className = 'text-white font-bold py-3 text-center w-full';
+          successEl.textContent = data.message || 'Successfully subscribed! Check your email.';
+          formEl.appendChild(successEl);
         } else {
           // API returned an error message
           if (button) {

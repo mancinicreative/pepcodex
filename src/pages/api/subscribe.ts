@@ -3,6 +3,20 @@ import type { APIRoute } from 'astro';
 export const prerender = false;
 
 const ALLOWED_ORIGIN = 'https://pepcodex.com';
+function normalizeOrigin(origin: string): string | null {
+  try {
+    return new URL(origin).origin;
+  } catch {
+    return null;
+  }
+}
+
+const ALLOWED_ORIGINS = new Set(
+  (import.meta.env.PEPCODEX_ALLOWED_ORIGINS || ALLOWED_ORIGIN)
+    .split(',')
+    .map((origin: string) => normalizeOrigin(origin.trim()))
+    .filter((origin: string | null): origin is string => Boolean(origin))
+);
 
 // Simple in-memory rate limiter (per serverless instance)
 // Not perfect across cold starts, but catches most abuse within a warm instance
@@ -42,17 +56,44 @@ function corsHeaders(origin?: string | null): Record<string, string> {
     'Content-Type': 'application/json',
   };
 
-  // Only set CORS headers for the allowed origin
-  if (origin === ALLOWED_ORIGIN) {
-    headers['Access-Control-Allow-Origin'] = ALLOWED_ORIGIN;
+  // Only set CORS headers for explicitly allowed origins
+  if (origin && ALLOWED_ORIGINS.has(origin)) {
+    headers['Access-Control-Allow-Origin'] = origin;
     headers['Vary'] = 'Origin';
   }
 
   return headers;
 }
 
+function isAllowedRequest(origin?: string | null, referer?: string | null): boolean {
+  if (origin) {
+    return ALLOWED_ORIGINS.has(origin);
+  }
+
+  // Some same-origin/server-to-server requests may omit Origin. If a Referer is
+  // present, require it to come from an allowed origin. If both are absent, let
+  // the rate limiter and Beehiiv validation handle non-browser clients.
+  if (referer) {
+    try {
+      return ALLOWED_ORIGINS.has(new URL(referer).origin);
+    } catch {
+      return false;
+    }
+  }
+
+  return true;
+}
+
 export const POST: APIRoute = async ({ request }) => {
   const origin = request.headers.get('origin');
+  const referer = request.headers.get('referer');
+
+  if (!isAllowedRequest(origin, referer)) {
+    return new Response(
+      JSON.stringify({ success: false, message: 'Request origin not allowed.' }),
+      { status: 403, headers: corsHeaders(origin) }
+    );
+  }
 
   // Cleanup stale rate limit entries periodically
   if (rateLimitMap.size > 1000) {
@@ -195,8 +236,8 @@ export const OPTIONS: APIRoute = async ({ request }) => {
     'Access-Control-Allow-Headers': 'Content-Type',
   };
 
-  if (origin === ALLOWED_ORIGIN) {
-    headers['Access-Control-Allow-Origin'] = ALLOWED_ORIGIN;
+  if (origin && ALLOWED_ORIGINS.has(origin)) {
+    headers['Access-Control-Allow-Origin'] = origin;
     headers['Vary'] = 'Origin';
   }
 

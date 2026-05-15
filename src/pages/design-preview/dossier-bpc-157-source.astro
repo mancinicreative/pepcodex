@@ -37,9 +37,9 @@
   --warning-grad:      linear-gradient(135deg, oklch(0.78 0.14 78) 0%, oklch(0.58 0.13 42) 100%);
   --danger-grad:       linear-gradient(135deg, oklch(0.62 0.17 32) 0%, oklch(0.46 0.16 6) 100%);
 
-  --recovery:        oklch(0.50 0.13 158);
-  --recovery-soft:   oklch(0.50 0.13 158 / 0.14);
-  --recovery-border: oklch(0.50 0.13 158 / 0.36);
+  --recovery:        oklch(0.54 0.08 70);
+  --recovery-soft:   oklch(0.54 0.08 70 / 0.14);
+  --recovery-border: oklch(0.54 0.08 70 / 0.36);
 
   --amber:         oklch(0.66 0.13 60);
   --amber-soft:    oklch(0.66 0.13 60 / 0.16);
@@ -196,6 +196,85 @@ a { color: inherit; text-decoration: none; }
 }
 .now-reading-more { color: var(--ink-muted); }
 .now-reading-more:hover { color: var(--ink); }
+
+/* ───── RECORD NAV + DECISION STRIP ───── */
+.record-jump {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in oklch, var(--paper) 90%, transparent);
+  backdrop-filter: blur(16px);
+}
+.record-jump-inner {
+  max-width: 1240px; margin: 0 auto;
+  padding: 8px 32px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.record-jump .label {
+  font-family: var(--mono); font-size: 10px; font-weight: 800;
+  letter-spacing: 1.4px; text-transform: uppercase; color: var(--ink-dim);
+}
+.jump-links { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+.jump-links::-webkit-scrollbar { display: none; }
+.jump-links a {
+  min-height: 36px;
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink-muted);
+  font-family: var(--mono); font-size: 10px; font-weight: 800;
+  letter-spacing: 1.2px; text-transform: uppercase;
+  white-space: nowrap;
+}
+.jump-links a:hover { color: var(--ink); border-color: var(--border-strong); transform: translateY(-1px); }
+.decision-strip {
+  max-width: 1240px; margin: 0 auto;
+  padding: 0 32px 30px;
+  display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(260px, .8fr);
+  gap: 16px;
+}
+.decision-card {
+  border: 1px solid var(--border-strong);
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--paper) 0%, var(--paper-2) 100%);
+  box-shadow: var(--shadow-card);
+  padding: 18px;
+}
+.decision-card.primary {
+  display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 16px; align-items: start;
+  border-top: 3px solid var(--ink);
+}
+.decision-mark {
+  width: 54px; height: 54px; border-radius: 16px;
+  background: var(--ink); color: var(--ink-paper);
+  display: grid; place-items: center;
+  font-size: 26px; font-weight: 900; letter-spacing: -.08em;
+}
+.decision-card h2 { margin: 0 0 8px; font-size: clamp(22px, 2.2vw, 34px); line-height: 1.02; letter-spacing: -1px; }
+.decision-card p { margin: 0; color: var(--ink-muted); }
+.decision-meta {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 14px;
+}
+.decision-meta span {
+  border: 1px solid var(--border); border-radius: 12px;
+  background: color-mix(in oklch, var(--paper) 70%, var(--paper-2));
+  padding: 10px;
+  font-family: var(--mono); font-size: 10px; font-weight: 800; letter-spacing: 1.1px; text-transform: uppercase;
+  color: var(--ink-muted);
+}
+.decision-meta strong { display: block; margin-top: 4px; font-family: var(--sans); font-size: 18px; letter-spacing: -.04em; color: var(--ink); text-transform: none; }
+.app-boundary-mini { display: flex; flex-direction: column; gap: 12px; }
+.app-boundary-mini .cta-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.button-mini {
+  min-height: 40px; display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 999px; padding: 0 14px;
+  border: 1px solid var(--ink); background: var(--ink); color: var(--ink-paper);
+  font-family: var(--mono); font-size: 10px; font-weight: 800; letter-spacing: 1.1px; text-transform: uppercase;
+}
+.button-mini.secondary { background: transparent; color: var(--ink); border-color: var(--border-strong); }
 
 /* ───── RECORD BANNER ───── */
 .sheet-head {
@@ -1346,6 +1425,10 @@ a { color: inherit; text-decoration: none; }
 
 @media (max-width: 1024px) {
   .title-block .title-row { grid-template-columns: 1fr; gap: 24px; }
+  .record-jump-inner { align-items: flex-start; flex-direction: column; }
+  .decision-strip { grid-template-columns: 1fr; }
+  .decision-card.primary { grid-template-columns: 1fr; }
+  .decision-meta { grid-template-columns: 1fr; }
   .plate-frame { grid-template-columns: 1fr; }
   .section { grid-template-columns: 1fr; }
   .section-head-col { position: static; }
@@ -1399,7 +1482,7 @@ a { color: inherit; text-decoration: none; }
   <div class="now-reading-inner">
     <span class="now-reading-tag"><span class="pulse"></span> Now reading</span>
     <div class="now-reading-list">
-      <span class="item"><span class="v">2,184</span> readers watching this plate</span>
+      <span class="item"><span class="v">94</span> sources cited</span>
       <span class="dot"></span>
       <span class="item">Median revision cadence <span class="v">2 / quarter</span></span>
       <span class="dot"></span>
@@ -1407,14 +1490,29 @@ a { color: inherit; text-decoration: none; }
       <span class="dot"></span>
       <span class="item"><span class="v italic">Editor:</span> <span class="v">E. Kwan, PhD</span></span>
       <span class="dot"></span>
-      <span class="item"><span class="v">94</span> sources cited · <span class="v">1</span> human trial</span>
+      <span class="item"><span class="v">1</span> human trial · mostly preclinical record</span>
     </div>
     <a class="now-reading-more" href="#">Methodology →</a>
   </div>
 </div>
 
+<nav class="record-jump" aria-label="Dossier sections">
+  <div class="record-jump-inner">
+    <span class="label">Scan the record</span>
+    <div class="jump-links">
+      <a href="#overview">Brief</a>
+      <a href="#mechanism">Mechanisms</a>
+      <a href="#evidence">Evidence</a>
+      <a href="#counter">Concerns</a>
+      <a href="#trials">Trials</a>
+      <a href="#references">Sources</a>
+      <a href="#watch">Watch</a>
+    </div>
+  </div>
+</nav>
+
 <!-- ───── RECORD BANNER ───── -->
-<section class="sheet-head" data-screen-label="01 Plate banner">
+<section class="sheet-head" data-screen-label="01 Record banner">
   <div class="record-banner">
     <div class="record-no"><span class="roman">Record XIV.</span> of cii.</div>
     <div class="center-label">A specimen of the recovery drawer</div>
@@ -1457,6 +1555,30 @@ a { color: inherit; text-decoration: none; }
   </div>
 </section>
 
+<section class="decision-strip" aria-label="Dossier decision summary">
+  <article class="decision-card primary">
+    <div class="decision-mark">!</div>
+    <div>
+      <p class="eyebrow">Bottom line</p>
+      <h2>Interesting biology, thin human evidence.</h2>
+      <p>BPC-157 has a coherent preclinical repair story, but the public narrative runs ahead of published human data. Read this as a research record, not a protocol recommendation.</p>
+      <div class="decision-meta" aria-label="Evidence summary">
+        <span>Human evidence <strong>Very low</strong></span>
+        <span>Preclinical signal <strong>Moderate</strong></span>
+        <span>Safety confidence <strong>Low</strong></span>
+      </div>
+    </div>
+  </article>
+  <aside class="decision-card app-boundary-mini">
+    <p class="eyebrow">PepTracker boundary</p>
+    <p>Public evidence belongs here. Personal tracking, protocol tools, inventory, reminders, and calculator workflows belong in the app.</p>
+    <div class="cta-row">
+      <a class="button-mini" href="#watch">Watch record</a>
+      <a class="button-mini secondary" href="#counter">Read concerns</a>
+    </div>
+  </aside>
+</section>
+
 <!-- ───── SPECIMEN PLATE ───── -->
 <section class="specimen-record" data-screen-label="03 Specimen">
   <div class="plate-frame">
@@ -1473,22 +1595,22 @@ a { color: inherit; text-decoration: none; }
           <line x1="40" y1="300" x2="280" y2="300" stroke="var(--ink-muted)" stroke-width="0.6" stroke-dasharray="2,3"/>
 
           <!-- vial body -->
-          <rect x="130" y="40" width="60" height="14" fill="none" stroke="oklch(0.50 0.13 158)" stroke-width="1.6"/>
+          <rect x="130" y="40" width="60" height="14" fill="none" stroke="var(--recovery)" stroke-width="1.6"/>
           <path d="M134 54 L134 60 L120 78 L120 280 Q120 296 134 296 L186 296 Q200 296 200 280 L200 78 L186 60 L186 54 Z"
-                fill="oklch(0.50 0.13 158 / 0.10)" stroke="oklch(0.50 0.13 158)" stroke-width="1.6"/>
+                fill="var(--recovery-soft)" stroke="var(--recovery)" stroke-width="1.6"/>
 
           <!-- fill -->
-          <rect x="124" y="200" width="72" height="92" fill="oklch(0.50 0.13 158 / 0.30)"/>
+          <rect x="124" y="200" width="72" height="92" fill="var(--recovery-border)"/>
 
           <!-- ml ticks -->
           <g font-family="JetBrains Mono, monospace" font-size="8" fill="var(--ink-muted)">
-            <line x1="116" y1="100" x2="120" y2="100" stroke="oklch(0.50 0.13 158)" stroke-width="0.7"/>
+            <line x1="116" y1="100" x2="120" y2="100" stroke="var(--recovery)" stroke-width="0.7"/>
             <text x="100" y="103">3 ml</text>
-            <line x1="116" y1="150" x2="120" y2="150" stroke="oklch(0.50 0.13 158)" stroke-width="0.7"/>
+            <line x1="116" y1="150" x2="120" y2="150" stroke="var(--recovery)" stroke-width="0.7"/>
             <text x="100" y="153">2 ml</text>
-            <line x1="116" y1="200" x2="120" y2="200" stroke="oklch(0.50 0.13 158)" stroke-width="0.7"/>
+            <line x1="116" y1="200" x2="120" y2="200" stroke="var(--recovery)" stroke-width="0.7"/>
             <text x="100" y="203">1 ml</text>
-            <line x1="116" y1="260" x2="120" y2="260" stroke="oklch(0.50 0.13 158)" stroke-width="0.7"/>
+            <line x1="116" y1="260" x2="120" y2="260" stroke="var(--recovery)" stroke-width="0.7"/>
             <text x="100" y="263">0 ml</text>
           </g>
 
@@ -2120,7 +2242,7 @@ a { color: inherit; text-decoration: none; }
 </section>
 
 <!-- ───── ALERTS CTA ───── -->
-<section class="alerts-band" data-screen-label="05 Alerts">
+<section class="alerts-band" id="watch" data-screen-label="05 Alerts">
   <div class="alerts-card">
     <div>
       <span class="sub">A bookmark for the next revision</span>
@@ -2130,9 +2252,9 @@ a { color: inherit; text-decoration: none; }
     <form class="form" onsubmit="event.preventDefault();">
       <div class="row">
         <input type="email" placeholder="your@email.com" required>
-        <button class="btn-amber" type="submit">Watch plate</button>
+        <button class="btn-amber" type="submit">Watch record</button>
       </div>
-      <div class="fine">2,184 readers watching · ≈ 2 updates per quarter</div>
+      <div class="fine">Record updates only · no protocol or dosing guidance</div>
     </form>
   </div>
 </section>
@@ -2148,13 +2270,13 @@ a { color: inherit; text-decoration: none; }
     <a class="adj-card" href="#">
       <div class="vial">
         <svg viewBox="0 0 30 44" aria-hidden="true">
-          <rect x="9" y="3" width="12" height="3" fill="none" stroke="oklch(0.50 0.13 158)" stroke-width="0.8"/>
-          <path d="M10 6 L10 8 L7 12 L7 38 Q7 41 10 41 L20 41 Q23 41 23 38 L23 12 L20 8 L20 6 Z" fill="oklch(0.50 0.13 158 / 0.12)" stroke="oklch(0.50 0.13 158)" stroke-width="0.8"/>
-          <rect x="8" y="20" width="14" height="21" fill="oklch(0.50 0.13 158 / 0.34)"/>
+          <rect x="9" y="3" width="12" height="3" fill="none" stroke="var(--recovery)" stroke-width="0.8"/>
+          <path d="M10 6 L10 8 L7 12 L7 38 Q7 41 10 41 L20 41 Q23 41 23 38 L23 12 L20 8 L20 6 Z" fill="var(--recovery-soft)" stroke="var(--recovery)" stroke-width="0.8"/>
+          <rect x="8" y="20" width="14" height="21" fill="var(--recovery-border)"/>
         </svg>
       </div>
       <div class="info">
-        <div class="pre">← Plate XIII · Entry 013</div>
+        <div class="pre">← Record XIII · Entry 013</div>
         <div class="name">Thymalin</div>
         <div class="meta">68 src · Preclinical</div>
       </div>
@@ -2162,13 +2284,13 @@ a { color: inherit; text-decoration: none; }
     <a class="adj-card" href="#">
       <div class="vial">
         <svg viewBox="0 0 30 44" aria-hidden="true">
-          <rect x="9" y="3" width="12" height="3" fill="none" stroke="oklch(0.50 0.13 158)" stroke-width="0.8"/>
-          <path d="M10 6 L10 8 L7 12 L7 38 Q7 41 10 41 L20 41 Q23 41 23 38 L23 12 L20 8 L20 6 Z" fill="oklch(0.50 0.13 158 / 0.12)" stroke="oklch(0.50 0.13 158)" stroke-width="0.8"/>
-          <rect x="8" y="20" width="14" height="21" fill="oklch(0.50 0.13 158 / 0.34)"/>
+          <rect x="9" y="3" width="12" height="3" fill="none" stroke="var(--recovery)" stroke-width="0.8"/>
+          <path d="M10 6 L10 8 L7 12 L7 38 Q7 41 10 41 L20 41 Q23 41 23 38 L23 12 L20 8 L20 6 Z" fill="var(--recovery-soft)" stroke="var(--recovery)" stroke-width="0.8"/>
+          <rect x="8" y="20" width="14" height="21" fill="var(--recovery-border)"/>
         </svg>
       </div>
       <div class="info">
-        <div class="pre">→ Plate XV · Entry 015</div>
+        <div class="pre">→ Record XV · Entry 015</div>
         <div class="name">TB-500</div>
         <div class="meta">128 src · Preclinical</div>
       </div>
@@ -2176,13 +2298,13 @@ a { color: inherit; text-decoration: none; }
     <a class="adj-card" href="#">
       <div class="vial">
         <svg viewBox="0 0 30 44" aria-hidden="true">
-          <rect x="9" y="3" width="12" height="3" fill="none" stroke="oklch(0.50 0.13 158)" stroke-width="0.8"/>
-          <path d="M10 6 L10 8 L7 12 L7 38 Q7 41 10 41 L20 41 Q23 41 23 38 L23 12 L20 8 L20 6 Z" fill="oklch(0.50 0.13 158 / 0.12)" stroke="oklch(0.50 0.13 158)" stroke-width="0.8"/>
-          <rect x="8" y="18" width="14" height="23" fill="oklch(0.50 0.13 158 / 0.34)"/>
+          <rect x="9" y="3" width="12" height="3" fill="none" stroke="var(--recovery)" stroke-width="0.8"/>
+          <path d="M10 6 L10 8 L7 12 L7 38 Q7 41 10 41 L20 41 Q23 41 23 38 L23 12 L20 8 L20 6 Z" fill="var(--recovery-soft)" stroke="var(--recovery)" stroke-width="0.8"/>
+          <rect x="8" y="18" width="14" height="23" fill="var(--recovery-border)"/>
         </svg>
       </div>
       <div class="info">
-        <div class="pre">→ Plate XVI · Entry 016</div>
+        <div class="pre">→ Record XVI · Entry 016</div>
         <div class="name">GHK-Cu</div>
         <div class="meta">203 src · Moderate</div>
       </div>

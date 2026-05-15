@@ -55,6 +55,47 @@ const validationRules = [
   { collection: 'guides', field: 'relatedTerms', target: 'glossary', type: 'array', severity: 'info' },
 ];
 
+
+const knownExternalInteractionRefs = new Set([
+  'acetaminophen',
+  'aicar',
+  'alpha-lipoic-acid',
+  'antibody-drug-conjugates',
+  'cabergoline',
+  'clomiphene',
+  'coq10',
+  'danavorexton',
+  'enfortumab-vedotin',
+  'gw501516',
+  'idasanutlin',
+  'idebenone',
+  'ipilimumab',
+  'lemborexant',
+  'lutathera',
+  'melatonin',
+  'metformin',
+  'milademetan',
+  'mitoq',
+  'modafinil',
+  'n-acetylcysteine',
+  'nad-precursors',
+  'navtemadlin',
+  'nicotinamide-riboside',
+  'nivolumab',
+  'nmn',
+  'pembrolizumab',
+  'pitolisant',
+  'resveratrol',
+  'sacituzumab-govitecan',
+  'sodium-oxybate',
+  'sr9009',
+  'suvorexant',
+  'testosterone',
+  'urolithin-a',
+  'vitamin-c',
+  'zinc-supplements',
+]);
+
 const verbose = process.argv.includes('--verbose');
 const strict = process.argv.includes('--strict');
 
@@ -89,8 +130,15 @@ for (const rule of validationRules) {
     for (const slug of slugsToCheck) {
       totalChecked++;
       if (!targetSlugs.has(slug)) {
-        counts[rule.severity]++;
-        issues[rule.severity].push(
+        const severity = rule.collection === 'peptides'
+          && rule.field === 'interactions'
+          && rule.target === 'peptides'
+          && knownExternalInteractionRefs.has(slug)
+          ? 'info'
+          : rule.severity;
+
+        counts[severity]++;
+        issues[severity].push(
           `${rule.collection}/${file} -> ${rule.field}: "${slug}" not found in ${rule.target}`
         );
       }

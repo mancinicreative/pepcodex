@@ -1,0 +1,43 @@
+---
+import CalculatorLayout from '../../layouts/CalculatorLayout.astro';
+
+const previewInputs = [
+  'Vial amount label: the stated mass of lyophilized peptide in a research vial',
+  'Diluent volume label: the mL amount used to understand resulting concentration',
+  'Unit language: how mg, mcg, mL, and syringe units relate conceptually',
+];
+
+const disclaimer = 'PepCodex is an evidence catalogue, not a dosing tool. This preview explains reconstitution concepts for research literacy only. It does not recommend doses, protocols, vendors, or treatment decisions. The working calculator is a private PepTracker app feature.';
+---
+
+<CalculatorLayout
+  name="Hexarelin Reconstitution Calculator"
+  peptideSlug="hexarelin"
+  calculatorType="reconstitution"
+  inputs={previewInputs}
+  disclaimer={disclaimer}
+  lastUpdated={new Date('2026-05-15')}
+  metaTitle="Calculator Intent Boundary Preview"
+  metaDescription="Noindex preview of the PepCodex calculator-intent explainer and PepTracker teaser boundary."
+  robots="noindex"
+>
+  <div class="mb-6 rounded-xl border border-white/10 bg-white/5 p-4 text-sm" style="color: var(--text-medium);">
+    <strong class="text-white">Preview route:</strong> this page is not wired into production navigation. It shows the approved calculator-intent boundary before replacing live calculator utility framing.
+  </div>
+
+  <h2>What people are trying to calculate</h2>
+  <p>Calculator-intent searches usually ask how vial amount, diluent volume, and concentration language relate. PepCodex can explain that relationship, but the public site should not behave like a calculator or produce personalized outputs.</p>
+
+  <h2>Research context from PepCodex</h2>
+  <p>The public layer points readers back to the maintained evidence dossier, glossary definitions, and safety context. It does not provide a protocol, suggested dose, syringe draw, vendor guidance, or treatment instruction.</p>
+
+  <h2>Why the calculator lives in PepTracker</h2>
+  <p>Working calculator access, vial inventory, reminders, saved history, and protocol tools are private app features. This is the line: PepCodex captures and educates calculator intent; PepTracker owns the utility layer.</p>
+
+  <h2>Preview acceptance checks</h2>
+  <ul>
+    <li>The route renders with <code>robots="noindex"</code>.</li>
+    <li>The layout uses “explainer” framing instead of “Calculator Inputs.”</li>
+    <li>The CTA routes calculator intent into PepTracker waitlist capture.</li>
+  </ul>
+</CalculatorLayout>

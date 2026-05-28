@@ -38,12 +38,9 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Font loading: preconnect + non-blocking stylesheet (4 weights: 400-700) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" /></noscript>
+    <!-- Self-hosted brand fonts: Geist (UI) · Geist Mono (labels) · Newsreader (editorial serif) -->
+    <link rel="preload" href="/fonts/Newsreader-Variable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin />
 
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="8sNDsQp-DdfE1yFsY3N2xVcS2cnc4ecvACgyY6ON3LQ" />
@@ -84,102 +81,73 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
       </>
     )}
   </head>
-  <body class="min-h-screen text-[var(--foreground)] antialiased selection:bg-[var(--primary)]/30" style="font-family: var(--font-sans);">
+  <body class="min-h-screen antialiased">
     <!-- Skip to main content -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Header -->
-    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-[var(--background)]/60 backdrop-blur-xl supports-[backdrop-filter]:bg-[var(--background)]/20" aria-label="Main navigation">
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-[color:var(--border-strong)] bg-[color:var(--bg)]/90 backdrop-blur-md" aria-label="Main navigation">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <!-- Logo -->
-        <a href="/" class="flex items-center gap-2 group">
-          <div class="relative w-8 h-8 flex items-center justify-center bg-[var(--primary)]/10 rounded-lg group-hover:bg-[var(--primary)]/20 transition-colors border border-[var(--primary)]/20">
-            <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <a href="/" class="flex items-center gap-2.5 group">
+          <span class="relative flex h-7 w-7 items-center justify-center rounded-md" style="background: var(--primary-c);">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="var(--ink-paper)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2" />
               <path d="M8.5 2h7" />
-              <path d="M7 16h10" />
             </svg>
-          </div>
-          <span class="font-bold text-lg bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-primary" style="font-family: var(--font-display);">PEPCODEX</span>
+          </span>
+          <span class="text-lg font-semibold tracking-tight" style="color: var(--ink);">PepCodex</span>
         </a>
 
         <!-- Desktop Nav -->
-        <div class="hidden md:flex items-center gap-1">
+        <div class="hidden md:flex items-center gap-1 text-[0.78rem] uppercase tracking-[0.1em]" style="font-family: var(--font-mono);">
           <a
             href="/peptides"
             aria-current={isActive('/peptides') || isActive('/category') ? 'page' : undefined}
             class:list={[
-              "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300",
+              "px-3 py-2 rounded-md transition-colors duration-200",
               isActive('/peptides') || isActive('/category')
-                ? "bg-white/10 text-white shadow-[0_0_15px_rgba(255,255,255,0.1)] border border-white/10"
-                : "text-white/85 hover:text-white hover:bg-white/5"
+                ? "text-[color:var(--primary-c)]"
+                : "text-[color:var(--ink-muted)] hover:text-[color:var(--ink)]"
             ]}
           >
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2" />
-            </svg>
             Peptides
           </a>
           <a
             href="/trials"
             aria-current={isActive('/trials') ? 'page' : undefined}
             class:list={[
-              "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300",
+              "px-3 py-2 rounded-md transition-colors duration-200",
               isActive('/trials')
-                ? "bg-white/10 text-white shadow-[0_0_15px_rgba(255,255,255,0.1)] border border-white/10"
-                : "text-white/85 hover:text-white hover:bg-white/5"
+                ? "text-[color:var(--primary-c)]"
+                : "text-[color:var(--ink-muted)] hover:text-[color:var(--ink)]"
             ]}
           >
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-            </svg>
             Trials
           </a>
           <!-- Research Dropdown -->
           <div class="relative group">
             <button
               class:list={[
-                "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300",
+                "flex items-center gap-1.5 px-3 py-2 rounded-md transition-colors duration-200 uppercase tracking-[0.1em]",
                 ['/compare', '/guide', '/safety', '/glossary', '/conditions', '/bioregulators'].some(p => currentPath.startsWith(p))
-                  ? "bg-white/10 text-white shadow-[0_0_15px_rgba(255,255,255,0.1)] border border-white/10"
-                  : "text-white/85 hover:text-white hover:bg-white/5"
+                  ? "text-[color:var(--primary-c)]"
+                  : "text-[color:var(--ink-muted)] hover:text-[color:var(--ink)]"
               ]}
             >
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-              </svg>
               Research
               <svg class="w-3 h-3 transition-transform group-hover:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="m6 9 6 6 6-6"/>
               </svg>
             </button>
-            <div class="absolute top-full left-0 mt-1 w-56 rounded-xl border border-white/10 bg-[var(--background)]/95 backdrop-blur-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-              <div class="p-2">
-                <a href="/compare" class:list={["flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors", isActive('/compare') ? "bg-white/10 text-white" : "text-white/70 hover:text-white hover:bg-white/5"]}>
-                  <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5M8 3H3v5M21 3L14 10M3 3l7 7M21 21l-7-7M3 21l7-7M16 21h5v-5M8 21H3v-5"/></svg>
-                  Comparisons
-                </a>
-                <a href="/guide" class:list={["flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors", isActive('/guide') ? "bg-white/10 text-white" : "text-white/70 hover:text-white hover:bg-white/5"]}>
-                  <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
-                  Guides
-                </a>
-                <a href="/safety" class:list={["flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors", isActive('/safety') ? "bg-white/10 text-white" : "text-white/70 hover:text-white hover:bg-white/5"]}>
-                  <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                  Safety Profiles
-                </a>
-                <a href="/glossary" class:list={["flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors", isActive('/glossary') ? "bg-white/10 text-white" : "text-white/70 hover:text-white hover:bg-white/5"]}>
-                  <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-                  Glossary
-                </a>
-                <a href="/conditions" class:list={["flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors", isActive('/conditions') ? "bg-white/10 text-white" : "text-white/70 hover:text-white hover:bg-white/5"]}>
-                  <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                  Conditions
-                </a>
-                <a href="/bioregulators" class:list={["flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors", isActive('/bioregulators') ? "bg-white/10 text-white" : "text-white/70 hover:text-white hover:bg-white/5"]}>
-                  <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 14a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/></svg>
-                  Bioregulators
-                </a>
+            <div class="absolute top-full left-0 mt-1 w-52 rounded-lg border border-[color:var(--border-c)] bg-[color:var(--paper)] shadow-[var(--shadow-raise)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div class="p-1.5">
+                <a href="/compare" class:list={["block px-3 py-2 rounded-md transition-colors", isActive('/compare') ? "text-[color:var(--primary-c)] bg-[color:var(--primary-soft)]" : "text-[color:var(--ink-muted)] hover:text-[color:var(--ink)] hover:bg-[color:var(--paper-2)]"]}>Comparisons</a>
+                <a href="/guide" class:list={["block px-3 py-2 rounded-md transition-colors", isActive('/guide') ? "text-[color:var(--primary-c)] bg-[color:var(--primary-soft)]" : "text-[color:var(--ink-muted)] hover:text-[color:var(--ink)] hover:bg-[color:var(--paper-2)]"]}>Guides</a>
+                <a href="/safety" class:list={["block px-3 py-2 rounded-md transition-colors", isActive('/safety') ? "text-[color:var(--primary-c)] bg-[color:var(--primary-soft)]" : "text-[color:var(--ink-muted)] hover:text-[color:var(--ink)] hover:bg-[color:var(--paper-2)]"]}>Safety Profiles</a>
+                <a href="/glossary" class:list={["block px-3 py-2 rounded-md transition-colors", isActive('/glossary') ? "text-[color:var(--primary-c)] bg-[color:var(--primary-soft)]" : "text-[color:var(--ink-muted)] hover:text-[color:var(--ink)] hover:bg-[color:var(--paper-2)]"]}>Glossary</a>
+                <a href="/conditions" class:list={["block px-3 py-2 rounded-md transition-colors", isActive('/conditions') ? "text-[color:var(--primary-c)] bg-[color:var(--primary-soft)]" : "text-[color:var(--ink-muted)] hover:text-[color:var(--ink)] hover:bg-[color:var(--paper-2)]"]}>Conditions</a>
+                <a href="/bioregulators" class:list={["block px-3 py-2 rounded-md transition-colors", isActive('/bioregulators') ? "text-[color:var(--primary-c)] bg-[color:var(--primary-soft)]" : "text-[color:var(--ink-muted)] hover:text-[color:var(--ink)] hover:bg-[color:var(--paper-2)]"]}>Bioregulators</a>
               </div>
             </div>
           </div>
@@ -187,57 +155,48 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
             href="/blog"
             aria-current={isActive('/blog') ? 'page' : undefined}
             class:list={[
-              "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300",
+              "px-3 py-2 rounded-md transition-colors duration-200",
               isActive('/blog')
-                ? "bg-white/10 text-white shadow-[0_0_15px_rgba(255,255,255,0.1)] border border-white/10"
-                : "text-white/85 hover:text-white hover:bg-white/5"
+                ? "text-[color:var(--primary-c)]"
+                : "text-[color:var(--ink-muted)] hover:text-[color:var(--ink)]"
             ]}
           >
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/>
-              <path d="M18 14h-8"/>
-              <path d="M18 18h-8"/>
-              <path d="M18 10h-8"/>
-            </svg>
             Blog
           </a>
           <a
             href="/directory"
             aria-current={isActive('/directory') ? 'page' : undefined}
             class:list={[
-              "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300",
+              "px-3 py-2 rounded-md transition-colors duration-200",
               isActive('/directory')
-                ? "bg-white/10 text-white shadow-[0_0_15px_rgba(255,255,255,0.1)] border border-white/10"
-                : "text-white/85 hover:text-white hover:bg-white/5"
+                ? "text-[color:var(--primary-c)]"
+                : "text-[color:var(--ink-muted)] hover:text-[color:var(--ink)]"
             ]}
           >
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-              <polyline points="9 22 9 12 15 12 15 22"/>
-            </svg>
             Directory
           </a>
         </div>
 
         <!-- Right side actions -->
-        <div class="hidden md:flex items-center gap-3">
-          <button id="header-search-btn" class="btn btn-ghost rounded-full p-2" style="color: var(--text-medium);" aria-label="Search (Ctrl+K)">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <div class="hidden md:flex items-center gap-2.5">
+          <button id="header-search-btn" class="flex items-center gap-2 px-2.5 py-1.5 rounded-md border border-[color:var(--border-c)] text-[color:var(--ink-dim)] hover:text-[color:var(--ink)] hover:border-[color:var(--border-strong)] transition-colors" aria-label="Search (Ctrl+K)">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="11" cy="11" r="8" />
               <path d="m21 21-4.3-4.3" />
             </svg>
+            <kbd class="text-[0.65rem] tracking-wider" style="font-family: var(--font-mono);">⌘K</kbd>
           </button>
           <a
             href="/contact"
-            class="btn btn-md relative overflow-hidden uppercase tracking-wider border border-white/30 text-white hover:bg-white/10 transition-colors"
-            style="font-family: var(--font-display);"
+            class="btn btn-paper btn-sm uppercase tracking-[0.1em] text-[0.72rem]"
+            style="font-family: var(--font-mono);"
           >
             Contact
           </a>
           <a
             href="/newsletter"
-            class="btn btn-primary btn-md relative overflow-hidden uppercase tracking-wider before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:-translate-x-full hover:before:translate-x-full before:transition-transform before:duration-700"
-            style="font-family: var(--font-display);"
+            class="btn btn-cobalt btn-sm uppercase tracking-[0.1em] text-[0.72rem]"
+            style="font-family: var(--font-mono);"
           >
             Subscribe
           </a>
@@ -247,7 +206,7 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
         <button
           type="button"
           id="mobile-menu-btn"
-          class="flex h-10 w-10 items-center justify-center rounded-lg text-white md:hidden hover:bg-white/10 transition-colors"
+          class="flex h-10 w-10 items-center justify-center rounded-lg text-[color:var(--ink)] md:hidden hover:bg-[color:var(--paper-2)] transition-colors"
           aria-expanded="false"
           aria-label="Open menu"
         >
@@ -258,121 +217,77 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
       </div>
 
       <!-- Mobile navigation -->
-      <div id="mobile-nav" class="mobile-nav-panel bg-[var(--background)]/95 backdrop-blur-2xl border-t border-white/5 p-4 md:hidden" aria-label="Mobile navigation">
-        <div class="flex flex-col gap-2">
+      <div id="mobile-nav" class="mobile-nav-panel bg-[color:var(--bg)] border-t border-[color:var(--border-c)] p-4 md:hidden" aria-label="Mobile navigation">
+        <div class="flex flex-col gap-1">
           <a
             href="/peptides"
             class:list={[
-              "flex items-center gap-3 px-4 py-3 rounded-xl text-lg font-medium transition-colors",
+              "px-4 py-3 rounded-lg text-base transition-colors",
               isActive('/peptides')
-                ? "bg-[var(--primary)]/10 text-primary border border-[var(--primary)]/20"
-                : "text-white/85 hover:text-white hover:bg-white/5"
+                ? "text-[color:var(--primary-c)] bg-[color:var(--primary-soft)]"
+                : "text-[color:var(--ink-muted)] hover:text-[color:var(--ink)] hover:bg-[color:var(--paper-2)]"
             ]}
           >
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2" />
-            </svg>
             Peptides
           </a>
           <a
             href="/trials"
             class:list={[
-              "flex items-center gap-3 px-4 py-3 rounded-xl text-lg font-medium transition-colors",
+              "px-4 py-3 rounded-lg text-base transition-colors",
               isActive('/trials')
-                ? "bg-[var(--primary)]/10 text-primary border border-[var(--primary)]/20"
-                : "text-white/85 hover:text-white hover:bg-white/5"
+                ? "text-[color:var(--primary-c)] bg-[color:var(--primary-soft)]"
+                : "text-[color:var(--ink-muted)] hover:text-[color:var(--ink)] hover:bg-[color:var(--paper-2)]"
             ]}
           >
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-            </svg>
             Trials
           </a>
           <a
             href="/blog"
             class:list={[
-              "flex items-center gap-3 px-4 py-3 rounded-xl text-lg font-medium transition-colors",
+              "px-4 py-3 rounded-lg text-base transition-colors",
               isActive('/blog')
-                ? "bg-[var(--primary)]/10 text-primary border border-[var(--primary)]/20"
-                : "text-white/85 hover:text-white hover:bg-white/5"
+                ? "text-[color:var(--primary-c)] bg-[color:var(--primary-soft)]"
+                : "text-[color:var(--ink-muted)] hover:text-[color:var(--ink)] hover:bg-[color:var(--paper-2)]"
             ]}
           >
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/>
-              <path d="M18 14h-8"/>
-              <path d="M18 18h-8"/>
-              <path d="M18 10h-8"/>
-            </svg>
             Blog
           </a>
           <a
             href="/directory"
             class:list={[
-              "flex items-center gap-3 px-4 py-3 rounded-xl text-lg font-medium transition-colors",
+              "px-4 py-3 rounded-lg text-base transition-colors",
               isActive('/directory')
-                ? "bg-[var(--primary)]/10 text-primary border border-[var(--primary)]/20"
-                : "text-white/85 hover:text-white hover:bg-white/5"
+                ? "text-[color:var(--primary-c)] bg-[color:var(--primary-soft)]"
+                : "text-[color:var(--ink-muted)] hover:text-[color:var(--ink)] hover:bg-[color:var(--paper-2)]"
             ]}
           >
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-              <polyline points="9 22 9 12 15 12 15 22"/>
-            </svg>
             Directory
           </a>
           <!-- Research (expandable) -->
           <details class="group/research">
             <summary class:list={[
-              "flex items-center justify-between px-4 py-3 rounded-xl text-lg font-medium transition-colors cursor-pointer list-none",
+              "flex items-center justify-between px-4 py-3 rounded-lg text-base transition-colors cursor-pointer list-none",
               ['/compare', '/guide', '/safety', '/glossary', '/conditions', '/bioregulators'].some(p => currentPath.startsWith(p))
-                ? "bg-[var(--primary)]/10 text-primary border border-[var(--primary)]/20"
-                : "text-white/85 hover:text-white hover:bg-white/5"
+                ? "text-[color:var(--primary-c)] bg-[color:var(--primary-soft)]"
+                : "text-[color:var(--ink-muted)] hover:text-[color:var(--ink)] hover:bg-[color:var(--paper-2)]"
             ]}>
-              <span class="flex items-center gap-3">
-                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-                </svg>
-                Research
-              </span>
+              <span>Research</span>
               <svg class="w-4 h-4 transition-transform group-open/research:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="m6 9 6 6 6-6"/>
               </svg>
             </summary>
             <div class="pl-4 mt-1 space-y-1">
-              <a href="/compare" class:list={["flex items-center gap-3 px-4 py-2.5 rounded-lg text-base transition-colors", isActive('/compare') ? "text-primary" : "text-white/70 hover:text-white hover:bg-white/5"]}>
-                Comparisons
-              </a>
-              <a href="/guide" class:list={["flex items-center gap-3 px-4 py-2.5 rounded-lg text-base transition-colors", isActive('/guide') ? "text-primary" : "text-white/70 hover:text-white hover:bg-white/5"]}>
-                Guides
-              </a>
-              <a href="/safety" class:list={["flex items-center gap-3 px-4 py-2.5 rounded-lg text-base transition-colors", isActive('/safety') ? "text-primary" : "text-white/70 hover:text-white hover:bg-white/5"]}>
-                Safety Profiles
-              </a>
-              <a href="/glossary" class:list={["flex items-center gap-3 px-4 py-2.5 rounded-lg text-base transition-colors", isActive('/glossary') ? "text-primary" : "text-white/70 hover:text-white hover:bg-white/5"]}>
-                Glossary
-              </a>
-              <a href="/conditions" class:list={["flex items-center gap-3 px-4 py-2.5 rounded-lg text-base transition-colors", isActive('/conditions') ? "text-primary" : "text-white/70 hover:text-white hover:bg-white/5"]}>
-                Conditions
-              </a>
-              <a href="/bioregulators" class:list={["flex items-center gap-3 px-4 py-2.5 rounded-lg text-base transition-colors", isActive('/bioregulators') ? "text-primary" : "text-white/70 hover:text-white hover:bg-white/5"]}>
-                Bioregulators
-              </a>
+              <a href="/compare" class:list={["block px-4 py-2.5 rounded-lg text-sm transition-colors", isActive('/compare') ? "text-[color:var(--primary-c)]" : "text-[color:var(--ink-dim)] hover:text-[color:var(--ink)] hover:bg-[color:var(--paper-2)]"]}>Comparisons</a>
+              <a href="/guide" class:list={["block px-4 py-2.5 rounded-lg text-sm transition-colors", isActive('/guide') ? "text-[color:var(--primary-c)]" : "text-[color:var(--ink-dim)] hover:text-[color:var(--ink)] hover:bg-[color:var(--paper-2)]"]}>Guides</a>
+              <a href="/safety" class:list={["block px-4 py-2.5 rounded-lg text-sm transition-colors", isActive('/safety') ? "text-[color:var(--primary-c)]" : "text-[color:var(--ink-dim)] hover:text-[color:var(--ink)] hover:bg-[color:var(--paper-2)]"]}>Safety Profiles</a>
+              <a href="/glossary" class:list={["block px-4 py-2.5 rounded-lg text-sm transition-colors", isActive('/glossary') ? "text-[color:var(--primary-c)]" : "text-[color:var(--ink-dim)] hover:text-[color:var(--ink)] hover:bg-[color:var(--paper-2)]"]}>Glossary</a>
+              <a href="/conditions" class:list={["block px-4 py-2.5 rounded-lg text-sm transition-colors", isActive('/conditions') ? "text-[color:var(--primary-c)]" : "text-[color:var(--ink-dim)] hover:text-[color:var(--ink)] hover:bg-[color:var(--paper-2)]"]}>Conditions</a>
+              <a href="/bioregulators" class:list={["block px-4 py-2.5 rounded-lg text-sm transition-colors", isActive('/bioregulators') ? "text-[color:var(--primary-c)]" : "text-[color:var(--ink-dim)] hover:text-[color:var(--ink)] hover:bg-[color:var(--paper-2)]"]}>Bioregulators</a>
             </div>
           </details>
-          <div class="flex gap-2 mt-4 pt-4 border-t border-white/10">
-            <a
-              href="/contact"
-              class="flex-1 btn btn-md text-center border border-white/30 text-white hover:bg-white/10 transition-colors"
-            >
-              Contact
-            </a>
-            <a
-              href="/newsletter"
-              class="flex-1 btn btn-primary btn-md text-center"
-            >
-              Subscribe
-            </a>
+          <div class="flex gap-2 mt-4 pt-4 border-t border-[color:var(--border-c)]">
+            <a href="/contact" class="flex-1 btn btn-paper btn-md text-center">Contact</a>
+            <a href="/newsletter" class="flex-1 btn btn-cobalt btn-md text-center">Subscribe</a>
           </div>
         </div>
       </div>
@@ -383,82 +298,77 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-white/5 bg-black/20 backdrop-blur-lg mt-auto">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+    <footer class="mt-auto" style="background: var(--charcoal); color: var(--ink-paper);">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
           <!-- Brand -->
-          <div>
-            <div class="flex items-center gap-2 mb-4">
-              <div class="w-6 h-6 bg-primary/20 rounded flex items-center justify-center">
-                <svg class="w-3 h-3 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <div class="col-span-2 md:col-span-1">
+            <div class="flex items-center gap-2.5 mb-4">
+              <span class="flex h-6 w-6 items-center justify-center rounded" style="background: var(--primary-c);">
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="var(--ink-paper)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2" />
+                  <path d="M8.5 2h7" />
                 </svg>
-              </div>
-              <span class="font-bold text-lg bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-primary" style="font-family: var(--font-display);">PEPCODEX</span>
+              </span>
+              <span class="text-lg font-semibold tracking-tight">PepCodex</span>
             </div>
-            <p class="text-sm leading-relaxed" style="color: var(--text-medium);">
-              Evidence-based peptide research platform. Synthesizing peer-reviewed literature for informed decisions.
+            <p class="text-sm leading-relaxed" style="color: rgba(251,247,238,0.62);">
+              Evidence-based peptide research catalogue. Synthesising peer-reviewed literature for informed decisions, one drawer at a time.
             </p>
-            <a href="https://www.instagram.com/pepcodex/" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 hover:text-primary transition-colors" style="color: var(--text-medium);" aria-label="Follow us on Instagram">
+            <a href="https://www.instagram.com/pepcodex/" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 transition-colors hover:opacity-100" style="color: rgba(251,247,238,0.62);" aria-label="Follow us on Instagram">
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
               </svg>
             </a>
           </div>
 
-          <!-- Browse -->
+          <!-- Drawers -->
           <div>
-            <h4 class="font-bold text-white mb-4 uppercase tracking-wider text-sm" style="font-family: var(--font-display);">Browse</h4>
-            <ul class="space-y-2 text-sm" style="color: var(--text-medium);">
-              <li><a href="/peptides" class="hover:text-primary transition-colors">All Peptides</a></li>
-              <li><a href="/category/metabolic" class="hover:text-primary transition-colors">Metabolic</a></li>
-              <li><a href="/category/repair-recovery" class="hover:text-primary transition-colors">Recovery</a></li>
-              <li><a href="/category/hormonal" class="hover:text-primary transition-colors">Hormonal</a></li>
-              <li><a href="/category/longevity" class="hover:text-primary transition-colors">Longevity</a></li>
-              <li><a href="/category/cognitive" class="hover:text-primary transition-colors">Cognitive</a></li>
-              <li><a href="/category/immune" class="hover:text-primary transition-colors">Immune</a></li>
+            <h4 class="eyebrow mb-4" style="color: rgba(251,247,238,0.5);">Drawers</h4>
+            <ul class="space-y-2.5 text-sm" style="color: rgba(251,247,238,0.72);">
+              <li><a href="/category/metabolic" class="transition-colors hover:text-[color:var(--compound)]">A · Metabolic</a></li>
+              <li><a href="/category/repair-recovery" class="transition-colors hover:text-[color:var(--compound)]">B · Recovery</a></li>
+              <li><a href="/category/hormonal" class="transition-colors hover:text-[color:var(--compound)]">C · Hormonal</a></li>
+              <li><a href="/category/longevity" class="transition-colors hover:text-[color:var(--compound)]">D · Longevity</a></li>
+              <li><a href="/category/cognitive" class="transition-colors hover:text-[color:var(--compound)]">E · Cognitive</a></li>
+              <li><a href="/category/immune" class="transition-colors hover:text-[color:var(--compound)]">F · Immune</a></li>
             </ul>
           </div>
 
           <!-- Research -->
           <div>
-            <h4 class="font-bold text-white mb-4 uppercase tracking-wider text-sm" style="font-family: var(--font-display);">Research</h4>
-            <ul class="space-y-2 text-sm" style="color: var(--text-medium);">
-              <li><a href="/trials" class="hover:text-primary transition-colors">Clinical Trials</a></li>
-              <li><a href="/compare" class="hover:text-primary transition-colors">Comparisons</a></li>
-              <li><a href="/guide" class="hover:text-primary transition-colors">Guides</a></li>
-              <li><a href="/safety" class="hover:text-primary transition-colors">Safety Profiles</a></li>
-              <li><a href="/glossary" class="hover:text-primary transition-colors">Glossary</a></li>
-              <li><a href="/blog" class="hover:text-primary transition-colors">Blog</a></li>
+            <h4 class="eyebrow mb-4" style="color: rgba(251,247,238,0.5);">Research</h4>
+            <ul class="space-y-2.5 text-sm" style="color: rgba(251,247,238,0.72);">
+              <li><a href="/peptides" class="transition-colors hover:text-[color:var(--compound)]">All Peptides</a></li>
+              <li><a href="/trials" class="transition-colors hover:text-[color:var(--compound)]">Clinical Trials</a></li>
+              <li><a href="/compare" class="transition-colors hover:text-[color:var(--compound)]">Comparisons</a></li>
+              <li><a href="/guide" class="transition-colors hover:text-[color:var(--compound)]">Guides</a></li>
+              <li><a href="/safety" class="transition-colors hover:text-[color:var(--compound)]">Safety Profiles</a></li>
+              <li><a href="/glossary" class="transition-colors hover:text-[color:var(--compound)]">Glossary</a></li>
             </ul>
           </div>
 
-          <!-- Disclaimer -->
+          <!-- Colophon -->
           <div>
-            <h4 class="font-bold text-white mb-4 uppercase tracking-wider text-sm" style="font-family: var(--font-display);">Disclaimer</h4>
-            <p class="text-xs leading-relaxed" style="color: var(--text-medium);">
-              Educational purposes only. Not medical advice. Always consult a healthcare professional.
-            </p>
+            <h4 class="eyebrow mb-4" style="color: rgba(251,247,238,0.5);">Colophon</h4>
+            <ul class="space-y-2.5 text-sm" style="color: rgba(251,247,238,0.72);">
+              <li><a href="/about" class="transition-colors hover:text-[color:var(--compound)]">About</a></li>
+              <li><a href="/methodology" class="transition-colors hover:text-[color:var(--compound)]">Methodology</a></li>
+              <li><a href="/editorial-policy" class="transition-colors hover:text-[color:var(--compound)]">Editorial Policy</a></li>
+              <li><a href="/disclaimer" class="transition-colors hover:text-[color:var(--compound)]">Disclaimer</a></li>
+              <li><a href="/fda-notice" class="transition-colors hover:text-[color:var(--compound)]">FDA Notice</a></li>
+            </ul>
           </div>
         </div>
 
-        <!-- Legal Links -->
-        <div class="pt-8 border-t border-white/5 mb-6">
-          <div class="flex flex-wrap justify-center gap-4 text-xs" style="color: var(--text-low);">
-            <a href="/disclaimer" class="hover:text-white transition-colors">Disclaimer</a>
-            <a href="/privacy" class="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="/terms" class="hover:text-white transition-colors">Terms of Service</a>
-            <a href="/fda-notice" class="hover:text-white transition-colors">FDA Notice</a>
-            <a href="/cookie-policy" class="hover:text-white transition-colors">Cookie Policy</a>
-          </div>
-        </div>
-
-        <div class="pt-4 border-t border-white/5 text-center md:text-left flex flex-col md:flex-row justify-between items-center text-xs" style="color: var(--text-low);">
-          <p>&copy; {new Date().getFullYear()} PepCodex. All rights reserved.</p>
-          <div class="flex gap-4 mt-4 md:mt-0">
-            <a href="/about" class="hover:text-white transition-colors">About</a>
-            <a href="/methodology" class="hover:text-white transition-colors">Methodology</a>
-            <a href="/editorial-policy" class="hover:text-white transition-colors">Editorial Policy</a>
+        <!-- Colophon line -->
+        <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4" style="border-top: 1px solid rgba(251,247,238,0.10);">
+          <p class="eyebrow" style="color: rgba(251,247,238,0.45);">&copy; {new Date().getFullYear()} PepCodex · Vol. IV · All rights reserved</p>
+          <div class="flex flex-wrap justify-center gap-4 text-xs" style="color: rgba(251,247,238,0.45);">
+            <a href="/privacy" class="transition-colors hover:text-[color:var(--ink-paper)]">Privacy</a>
+            <a href="/terms" class="transition-colors hover:text-[color:var(--ink-paper)]">Terms</a>
+            <a href="/cookie-policy" class="transition-colors hover:text-[color:var(--ink-paper)]">Cookie Policy</a>
+            <span class="italic" style="font-family: var(--font-serif);">Set in Geist &amp; Newsreader.</span>
           </div>
         </div>
       </div>

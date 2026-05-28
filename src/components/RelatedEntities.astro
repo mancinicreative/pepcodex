@@ -95,8 +95,8 @@ const categoryLabels: Record<string, string> = {
 ---
 
 {hasContent && (
-  <section class="mt-12 pt-8 border-t border-white/10">
-    <h2 class="text-xl font-bold text-white mb-6" style="font-family: var(--font-display);">
+  <section class="mt-12 pt-8 border-t border-[color:var(--border-c)]">
+    <h2 class="text-xl mb-6 text-[color:var(--ink)]" style="font-family: var(--font-serif); font-weight: 500;">
       Related Content
     </h2>
 
@@ -108,19 +108,19 @@ const categoryLabels: Record<string, string> = {
           class="glass-card-interactive p-4 group"
         >
           <div class="flex items-start gap-3">
-            <div class="w-10 h-10 rounded-lg bg-[var(--primary)]/10 border border-[var(--primary)]/30 flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--primary)]/20 transition-all">
+            <div class="w-10 h-10 rounded-lg bg-[color:var(--primary-soft)] border border-[color:var(--primary-c)]/30 flex items-center justify-center flex-shrink-0 transition-all">
               <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2" />
               </svg>
             </div>
             <div class="min-w-0">
-              <span class="text-[10px] font-bold uppercase tracking-wider text-primary">
+              <span class="eyebrow text-primary">
                 Peptide
               </span>
-              <h3 class="font-bold text-white group-hover:text-primary transition-colors truncate">
+              <h3 class="font-semibold text-[color:var(--ink)] group-hover:text-primary transition-colors truncate">
                 {peptide.data.name}
               </h3>
-              <p class="text-xs text-white/60 mt-1">
+              <p class="text-xs text-[color:var(--ink-muted)] mt-1">
                 {categoryLabels[peptide.data.category]} · {peptide.data.evidenceStrength} evidence
               </p>
             </div>
@@ -135,19 +135,19 @@ const categoryLabels: Record<string, string> = {
           class="glass-card-interactive p-4 group"
         >
           <div class="flex items-start gap-3">
-            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500/20 transition-all">
-              <svg class="w-5 h-5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <div class="w-10 h-10 rounded-lg bg-[color:var(--paper-2)] border border-[color:var(--border-c)] flex items-center justify-center flex-shrink-0 transition-all">
+              <svg class="w-5 h-5 text-[color:var(--ink-muted)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
               </svg>
             </div>
             <div class="min-w-0">
-              <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400">
+              <span class="eyebrow">
                 Guide
               </span>
-              <h3 class="font-bold text-white group-hover:text-emerald-400 transition-colors truncate">
+              <h3 class="font-semibold text-[color:var(--ink)] group-hover:text-primary transition-colors truncate">
                 {guide.data.title}
               </h3>
-              <p class="text-xs text-white/60 mt-1 line-clamp-1">
+              <p class="text-xs text-[color:var(--ink-muted)] mt-1 line-clamp-1">
                 {guide.data.summary.slice(0, 60)}...
               </p>
             </div>
@@ -162,19 +162,19 @@ const categoryLabels: Record<string, string> = {
           class="glass-card-interactive p-4 group"
         >
           <div class="flex items-start gap-3">
-            <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center flex-shrink-0 group-hover:bg-amber-500/20 transition-all">
-              <svg class="w-5 h-5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <div class="w-10 h-10 rounded-lg bg-[color:var(--paper-2)] border border-[color:var(--border-c)] flex items-center justify-center flex-shrink-0 transition-all">
+              <svg class="w-5 h-5 text-[color:var(--ink-muted)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M16 3h5v5M8 3H3v5M21 3L14 10M3 3l7 7M21 21l-7-7M3 21l7-7M16 21h5v-5M8 21H3v-5" />
               </svg>
             </div>
             <div class="min-w-0">
-              <span class="text-[10px] font-bold uppercase tracking-wider text-amber-400">
+              <span class="eyebrow">
                 Comparison
               </span>
-              <h3 class="font-bold text-white group-hover:text-amber-400 transition-colors truncate">
+              <h3 class="font-semibold text-[color:var(--ink)] group-hover:text-primary transition-colors truncate">
                 {comparison.data.title}
               </h3>
-              <p class="text-xs text-white/60 mt-1">
+              <p class="text-xs text-[color:var(--ink-muted)] mt-1">
                 View side-by-side analysis
               </p>
             </div>

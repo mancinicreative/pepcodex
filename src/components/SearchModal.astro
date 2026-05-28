@@ -4,7 +4,7 @@
 
 <div
   id="search-modal-overlay"
-  class="fixed inset-0 z-[100] hidden bg-black/60 backdrop-blur-sm transition-opacity duration-200 opacity-0"
+  class="fixed inset-0 z-[100] hidden bg-[rgba(31,26,18,0.45)] backdrop-blur-sm transition-opacity duration-200 opacity-0"
   role="dialog"
   aria-modal="true"
   aria-label="Search peptides"
@@ -15,11 +15,11 @@
 
   <!-- Modal container -->
   <div class="relative mx-auto mt-[15vh] max-w-2xl px-4">
-    <div class="border border-white/10 bg-[#0a0a0f]/95 backdrop-blur-xl rounded-2xl shadow-2xl overflow-hidden">
+    <div class="border border-[color:var(--border-c)] bg-[color:var(--paper)] rounded-2xl overflow-hidden" style="box-shadow: var(--shadow-raise);">
       <!-- Search input area -->
-      <div class="relative border-b border-white/10">
+      <div class="relative border-b border-[color:var(--border-c)]">
         <svg
-          class="absolute left-5 top-1/2 -translate-y-1/2 h-5 w-5 text-white/60"
+          class="absolute left-5 top-1/2 -translate-y-1/2 h-5 w-5 text-[color:var(--ink-dim)]"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -35,12 +35,12 @@
           type="search"
           id="modal-search-input"
           placeholder="Search peptides by name or condition..."
-          class="w-full bg-transparent px-5 py-4 pl-13 pr-20 text-base text-white placeholder-white/40 outline-none"
+          class="w-full bg-transparent px-5 py-4 pl-13 pr-20 text-base text-[color:var(--ink)] placeholder-[color:var(--ink-dim)] outline-none"
           autocomplete="off"
         />
         <!-- Cmd+K badge -->
         <div class="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-1">
-          <kbd class="hidden sm:inline-flex items-center gap-0.5 rounded border border-white/15 bg-white/5 px-1.5 py-0.5 text-[11px] font-medium text-white/40">
+          <kbd class="hidden sm:inline-flex items-center gap-0.5 rounded border border-[color:var(--border-c)] bg-[color:var(--paper-2)] px-1.5 py-0.5 text-[11px] font-mono text-[color:var(--ink-dim)]">
             <span class="text-[13px]">&#8984;</span>K
           </kbd>
         </div>
@@ -55,15 +55,15 @@
 
       <!-- Results area -->
       <div id="modal-search-results" class="max-h-[60vh] overflow-auto">
-        <div class="p-4 text-center text-white/40 hidden" id="modal-search-loading">
+        <div class="p-4 text-center text-[color:var(--ink-dim)] hidden" id="modal-search-loading">
           Searching peptide dossiers...
         </div>
-        <ul id="modal-search-results-list" class="divide-y divide-white/10">
+        <ul id="modal-search-results-list" class="divide-y divide-[color:var(--border-c)]">
           <!-- Populated by JavaScript -->
         </ul>
         <!-- Empty state shown when modal opens -->
         <div id="modal-search-empty" class="p-6 text-center">
-          <p class="text-white/40 text-sm">Type to search peptides, conditions, or research topics</p>
+          <p class="text-[color:var(--ink-dim)] text-sm">Type to search peptides, conditions, or research topics</p>
         </div>
       </div>
     </div>
@@ -313,7 +313,7 @@
 
     for (const word of words) {
       const regex = new RegExp(`(${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
-      result = result.replace(regex, '<mark class="bg-[var(--primary)]/30 text-white px-0.5 rounded">$1</mark>');
+      result = result.replace(regex, '<mark class="bg-[var(--primary-soft)] text-[color:var(--ink)] px-0.5 rounded">$1</mark>');
     }
 
     return result;
@@ -324,7 +324,7 @@
     if (results.length === 0) {
       return `
         <li class="p-6 text-center">
-          <div class="text-white/50 mb-2">No peptides found for "${escapeHtml(query)}"</div>
+          <div class="text-[color:var(--ink-dim)] mb-2">No peptides found for "${escapeHtml(query)}"</div>
           <a href="/peptides" class="text-primary hover:underline text-sm">Browse all peptides</a>
         </li>
       `;
@@ -344,9 +344,9 @@
 
       return `
         <li class="group/item">
-          <a href="${peptide.url}" class="modal-result-link block p-4 relative rounded-lg overflow-hidden transition-all duration-300 hover:bg-gradient-to-r hover:from-[var(--primary)]/40 hover:to-purple-600/30 focus:bg-gradient-to-r focus:from-[var(--primary)]/40 focus:to-purple-600/30 outline-none">
+          <a href="${peptide.url}" class="modal-result-link block p-4 relative rounded-lg overflow-hidden transition-colors duration-200 hover:bg-[color:var(--paper-2)] focus:bg-[color:var(--paper-2)] outline-none">
             <div class="flex items-start justify-between gap-3 mb-2">
-              <div class="font-semibold text-white transition-colors">
+              <div class="font-semibold text-[color:var(--ink)] transition-colors">
                 ${highlightTerms(peptide.name, query)}
               </div>
               <div class="flex items-center gap-2 flex-shrink-0">
@@ -357,14 +357,14 @@
               </div>
             </div>
             ${peptide.aliases.length > 0 ? `
-              <div class="text-xs text-white/50 mb-2" style="text-align: left;">
+              <div class="text-xs text-[color:var(--ink-dim)] mb-2" style="text-align: left;">
                 ${peptide.aliases.slice(0, 3).join(' &middot; ')}${peptide.aliases.length > 3 ? ' &middot; ...' : ''}
               </div>
             ` : ''}
-            <div class="text-sm text-white/70 line-clamp-2 mb-2" style="text-align: left;">
+            <div class="text-sm text-[color:var(--ink-muted)] line-clamp-2 mb-2" style="text-align: left;">
               ${highlightTerms(displayText, query)}
             </div>
-            <div class="flex items-center gap-3 text-xs text-white/50" style="text-align: left;">
+            <div class="flex items-center gap-3 text-xs text-[color:var(--ink-dim)]" style="text-align: left;">
               <span>${peptide.sources.count} sources</span>
               <span>&middot;</span>
               <span>${peptide.sources.human} human studies</span>
@@ -493,16 +493,16 @@
 
         if (results.length === 0) {
           modalResultsList.innerHTML = `
-            <li class="p-4 text-center text-white/50">No results found for "${escapeHtml(query)}"</li>
+            <li class="p-4 text-center text-[color:var(--ink-dim)]">No results found for "${escapeHtml(query)}"</li>
           `;
           return;
         }
 
         modalResultsList.innerHTML = results.map((result: any) => `
           <li>
-            <a href="${result.url}" class="modal-result-link block p-4 hover:bg-white/5 transition-colors outline-none focus:bg-white/5">
-              <div class="font-medium text-white">${result.meta?.title || 'Untitled'}</div>
-              <div class="mt-1 text-sm text-white/50 line-clamp-2">${result.excerpt}</div>
+            <a href="${result.url}" class="modal-result-link block p-4 hover:bg-[color:var(--paper-2)] transition-colors outline-none focus:bg-[color:var(--paper-2)]">
+              <div class="font-medium text-[color:var(--ink)]">${result.meta?.title || 'Untitled'}</div>
+              <div class="mt-1 text-sm text-[color:var(--ink-dim)] line-clamp-2">${result.excerpt}</div>
             </a>
           </li>
         `).join('');
@@ -511,7 +511,7 @@
         modalLoading.classList.add('hidden');
         modalSpinner.classList.add('hidden');
         modalResultsList.innerHTML = `
-          <li class="p-4 text-center text-white/50">
+          <li class="p-4 text-center text-[color:var(--ink-dim)]">
             <div class="mb-2">Search index loading...</div>
             <a href="/peptides" class="text-primary hover:underline">Browse all peptides</a>
           </li>

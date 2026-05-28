@@ -38,52 +38,52 @@ interface Props {
 
 const { benefits, peptideName } = Astro.props;
 
-// Confidence configuration
+// Confidence configuration (color carries meaning: strong=green, mid=cobalt, weak=amber)
 const confidenceConfig: Record<string, { label: string; dots: number; color: string; bgColor: string }> = {
-  'established': { label: 'Established', dots: 3, color: 'rgb(34, 197, 94)', bgColor: 'rgba(34, 197, 94, 0.15)' },
-  'supported': { label: 'Supported', dots: 2, color: 'rgb(59, 130, 246)', bgColor: 'rgba(59, 130, 246, 0.15)' },
-  'emerging': { label: 'Emerging', dots: 1, color: 'rgb(251, 191, 36)', bgColor: 'rgba(251, 191, 36, 0.15)' },
+  'established': { label: 'Established', dots: 3, color: 'rgb(20, 118, 74)', bgColor: 'rgba(20, 118, 74, 0.12)' },
+  'supported': { label: 'Supported', dots: 2, color: 'rgb(11, 81, 127)', bgColor: 'rgba(11, 81, 127, 0.10)' },
+  'emerging': { label: 'Emerging', dots: 1, color: 'rgb(154, 100, 24)', bgColor: 'rgba(203, 135, 52, 0.12)' },
 };
 
-// Evidence level configuration
+// Evidence level configuration (color carries meaning)
 const evidenceLevelConfig: Record<string, { label: string; bars: number; color: string; bgColor: string }> = {
-  'high': { label: 'High', bars: 4, color: 'rgb(34, 197, 94)', bgColor: 'rgba(34, 197, 94, 0.15)' },
-  'moderate': { label: 'Moderate', bars: 3, color: 'rgb(59, 130, 246)', bgColor: 'rgba(59, 130, 246, 0.15)' },
-  'low': { label: 'Low', bars: 2, color: 'rgb(251, 191, 36)', bgColor: 'rgba(251, 191, 36, 0.15)' },
-  'very-low': { label: 'Very Low', bars: 1, color: 'rgb(239, 68, 68)', bgColor: 'rgba(239, 68, 68, 0.15)' },
+  'high': { label: 'High', bars: 4, color: 'rgb(20, 118, 74)', bgColor: 'rgba(20, 118, 74, 0.12)' },
+  'moderate': { label: 'Moderate', bars: 3, color: 'rgb(11, 81, 127)', bgColor: 'rgba(11, 81, 127, 0.10)' },
+  'low': { label: 'Low', bars: 2, color: 'rgb(154, 100, 24)', bgColor: 'rgba(203, 135, 52, 0.12)' },
+  'very-low': { label: 'Very Low', bars: 1, color: 'rgb(185, 61, 66)', bgColor: 'rgba(185, 61, 66, 0.10)' },
 };
 
-// Qualifier styling
+// Qualifier styling (color carries meaning)
 const qualifierConfig: Record<string, { icon: string; color: string }> = {
-  'shown to': { icon: 'check-circle', color: 'rgb(34, 197, 94)' },
-  'appears to': { icon: 'arrow-up-circle', color: 'rgb(59, 130, 246)' },
-  'suggested to': { icon: 'help-circle', color: 'rgb(251, 191, 36)' },
-  'may': { icon: 'circle-dashed', color: 'rgb(156, 163, 175)' },
+  'shown to': { icon: 'check-circle', color: 'rgb(20, 118, 74)' },
+  'appears to': { icon: 'arrow-up-circle', color: 'rgb(11, 81, 127)' },
+  'suggested to': { icon: 'help-circle', color: 'rgb(154, 100, 24)' },
+  'may': { icon: 'circle-dashed', color: 'rgb(142, 133, 103)' },
 };
 
-// Study type configuration
+// Study type configuration (color carries meaning)
 const studyTypeConfig: Record<string, { label: string; abbrev: string; color: string }> = {
-  'human-rct': { label: 'Human RCT', abbrev: 'RCT', color: 'rgb(34, 197, 94)' },
-  'human-observational': { label: 'Human Observational', abbrev: 'OBS', color: 'rgb(59, 130, 246)' },
-  'animal': { label: 'Animal Study', abbrev: 'ANI', color: 'rgb(251, 191, 36)' },
-  'in-vitro': { label: 'In Vitro', abbrev: 'IVT', color: 'rgb(168, 85, 247)' },
+  'human-rct': { label: 'Human RCT', abbrev: 'RCT', color: 'rgb(20, 118, 74)' },
+  'human-observational': { label: 'Human Observational', abbrev: 'OBS', color: 'rgb(11, 81, 127)' },
+  'animal': { label: 'Animal Study', abbrev: 'ANI', color: 'rgb(154, 100, 24)' },
+  'in-vitro': { label: 'In Vitro', abbrev: 'IVT', color: 'rgb(92, 83, 65)' },
 };
 ---
 
 <div class="evidence-chain-container" data-component="evidence-chain">
   <div class="flex items-center justify-between mb-6">
     <div>
-      <h3 class="text-xl font-bold text-white" style="font-family: var(--font-display);">
+      <h3 class="text-xl text-[color:var(--ink)]" style="font-family: var(--font-serif); font-weight: 500;">
         Evidence-Chained Benefits
       </h3>
-      <p class="text-sm text-white/60 mt-1">
+      <p class="text-sm text-[color:var(--ink-muted)] mt-1">
         Research findings linked to mechanisms and clinical outcomes
       </p>
     </div>
 
     <!-- Summary badge -->
-    <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-white/5 rounded-lg border border-white/10">
-      <span class="text-xs text-white/50">{benefits.length} chains</span>
+    <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-[color:var(--paper-2)] rounded-lg border border-[color:var(--border-c)]">
+      <span class="text-xs text-[color:var(--ink-dim)]">{benefits.length} chains</span>
     </div>
   </div>
 
@@ -117,7 +117,7 @@ const studyTypeConfig: Record<string, { label: string; abbrev: string; color: st
                     {[1, 2, 3].map(n => (
                       <span
                         class="confidence-dot"
-                        style={`background: ${n <= conf.dots ? conf.color : 'rgba(255,255,255,0.2)'};`}
+                        style={`background: ${n <= conf.dots ? conf.color : 'rgba(31,26,18,0.15)'};`}
                       ></span>
                     ))}
                   </div>
@@ -133,7 +133,7 @@ const studyTypeConfig: Record<string, { label: string; abbrev: string; color: st
 
             <!-- Arrow -->
             <div class="chain-arrow">
-              <svg class="w-6 h-6 text-white/30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <svg class="w-6 h-6 text-[color:var(--ink-dim)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="m9 18 6-6-6-6"/>
               </svg>
             </div>
@@ -180,7 +180,7 @@ const studyTypeConfig: Record<string, { label: string; abbrev: string; color: st
 
             <!-- Arrow -->
             <div class="chain-arrow">
-              <svg class="w-6 h-6 text-white/30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <svg class="w-6 h-6 text-[color:var(--ink-dim)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="m9 18 6-6-6-6"/>
               </svg>
             </div>
@@ -200,7 +200,7 @@ const studyTypeConfig: Record<string, { label: string; abbrev: string; color: st
                     {[1, 2, 3, 4].map(n => (
                       <span
                         class="evidence-bar"
-                        style={`background: ${n <= evLvl.bars ? evLvl.color : 'rgba(255,255,255,0.15)'};`}
+                        style={`background: ${n <= evLvl.bars ? evLvl.color : 'rgba(31,26,18,0.12)'};`}
                       ></span>
                     ))}
                   </div>
@@ -216,19 +216,19 @@ const studyTypeConfig: Record<string, { label: string; abbrev: string; color: st
           <div class="study-breakdown">
             <div class="study-types">
               {benefit.evidence.humanStudies > 0 && (
-                <div class="study-type-badge" style="--badge-color: rgb(34, 197, 94);">
+                <div class="study-type-badge" style="--badge-color: rgb(20, 118, 74);">
                   <span class="badge-count">{benefit.evidence.humanStudies}</span>
                   <span class="badge-label">Human</span>
                 </div>
               )}
               {benefit.evidence.animalStudies > 0 && (
-                <div class="study-type-badge" style="--badge-color: rgb(251, 191, 36);">
+                <div class="study-type-badge" style="--badge-color: rgb(154, 100, 24);">
                   <span class="badge-count">{benefit.evidence.animalStudies}</span>
                   <span class="badge-label">Animal</span>
                 </div>
               )}
               {benefit.evidence.cellStudies > 0 && (
-                <div class="study-type-badge" style="--badge-color: rgb(168, 85, 247);">
+                <div class="study-type-badge" style="--badge-color: rgb(92, 83, 65);">
                   <span class="badge-count">{benefit.evidence.cellStudies}</span>
                   <span class="badge-label">In Vitro</span>
                 </div>
@@ -288,11 +288,11 @@ const studyTypeConfig: Record<string, { label: string; abbrev: string; color: st
   </div>
 
   <!-- Legend -->
-  <div class="evidence-legend mt-8 pt-6 border-t border-white/10">
+  <div class="evidence-legend mt-8 pt-6 border-t border-[color:var(--border-c)]">
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
       <!-- Confidence levels -->
       <div>
-        <div class="text-xs text-white/50 uppercase tracking-wider mb-3">Mechanism Confidence</div>
+        <div class="eyebrow mb-3">Mechanism Confidence</div>
         <div class="space-y-2">
           {Object.entries(confidenceConfig).map(([key, config]) => (
             <div class="flex items-center gap-3">
@@ -300,11 +300,11 @@ const studyTypeConfig: Record<string, { label: string; abbrev: string; color: st
                 {[1, 2, 3].map(n => (
                   <span
                     class="w-2 h-2 rounded-full"
-                    style={`background: ${n <= config.dots ? config.color : 'rgba(255,255,255,0.2)'};`}
+                    style={`background: ${n <= config.dots ? config.color : 'rgba(31,26,18,0.15)'};`}
                   ></span>
                 ))}
               </div>
-              <span class="text-xs text-white/70">{config.label}</span>
+              <span class="text-xs text-[color:var(--ink-muted)]">{config.label}</span>
             </div>
           ))}
         </div>
@@ -312,7 +312,7 @@ const studyTypeConfig: Record<string, { label: string; abbrev: string; color: st
 
       <!-- Evidence levels -->
       <div>
-        <div class="text-xs text-white/50 uppercase tracking-wider mb-3">Evidence Level</div>
+        <div class="eyebrow mb-3">Evidence Level</div>
         <div class="space-y-2">
           {Object.entries(evidenceLevelConfig).map(([key, config]) => (
             <div class="flex items-center gap-3">
@@ -323,12 +323,12 @@ const studyTypeConfig: Record<string, { label: string; abbrev: string; color: st
                     style={`
                       width: 4px;
                       height: ${6 + n * 3}px;
-                      background: ${n <= config.bars ? config.color : 'rgba(255,255,255,0.15)'};
+                      background: ${n <= config.bars ? config.color : 'rgba(31,26,18,0.12)'};
                     `}
                   ></span>
                 ))}
               </div>
-              <span class="text-xs text-white/70">{config.label}</span>
+              <span class="text-xs text-[color:var(--ink-muted)]">{config.label}</span>
             </div>
           ))}
         </div>
@@ -339,23 +339,23 @@ const studyTypeConfig: Record<string, { label: string; abbrev: string; color: st
 
 <style>
   .evidence-chain-container {
-    background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 1.5rem;
+    background: var(--paper);
+    border: 1px solid var(--border-c);
+    border-radius: 0.75rem;
     padding: 1.5rem;
   }
 
   .evidence-chain-card {
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 1rem;
+    background: var(--bg);
+    border: 1px solid var(--border-c);
+    border-radius: 0.75rem;
     padding: 1.25rem;
     transition: all 0.3s ease;
   }
 
   .evidence-chain-card:hover {
-    border-color: rgba(139, 92, 246, 0.3);
-    background: rgba(139, 92, 246, 0.03);
+    border-color: var(--primary-c);
+    background: var(--primary-soft);
   }
 
   .chain-flow {
@@ -377,9 +377,9 @@ const studyTypeConfig: Record<string, { label: string; abbrev: string; color: st
     display: flex;
     gap: 0.75rem;
     padding: 0.75rem;
-    background: rgba(255,255,255,0.03);
-    border-radius: 0.75rem;
-    border: 1px solid rgba(255,255,255,0.06);
+    background: var(--paper);
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-c);
   }
 
   .chain-arrow {
@@ -402,7 +402,7 @@ const studyTypeConfig: Record<string, { label: string; abbrev: string; color: st
     width: 2rem;
     height: 2rem;
     border-radius: 0.5rem;
-    background: rgba(255,255,255,0.05);
+    background: var(--paper-2);
     padding: 0.375rem;
     color: var(--primary);
   }
@@ -418,14 +418,14 @@ const studyTypeConfig: Record<string, { label: string; abbrev: string; color: st
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: rgba(255,255,255,0.4);
+    color: var(--ink-dim);
     margin-bottom: 0.25rem;
   }
 
   .node-value {
     display: block;
     font-size: 0.8125rem;
-    color: white;
+    color: var(--ink);
     line-height: 1.4;
   }
 
@@ -463,7 +463,7 @@ const studyTypeConfig: Record<string, { label: string; abbrev: string; color: st
 
   .studies-count {
     font-size: 0.625rem;
-    color: rgba(255,255,255,0.4);
+    color: var(--ink-dim);
   }
 
   .evidence-level-display {
@@ -500,7 +500,7 @@ const studyTypeConfig: Record<string, { label: string; abbrev: string; color: st
     justify-content: space-between;
     margin-top: 1rem;
     padding-top: 1rem;
-    border-top: 1px solid rgba(255,255,255,0.06);
+    border-top: 1px solid var(--border-c);
     flex-wrap: wrap;
     gap: 0.75rem;
   }
@@ -529,7 +529,7 @@ const studyTypeConfig: Record<string, { label: string; abbrev: string; color: st
   .badge-label {
     font-size: 0.625rem;
     font-weight: 500;
-    color: rgba(255,255,255,0.6);
+    color: var(--ink-muted);
     text-transform: uppercase;
     letter-spacing: 0.03em;
   }
@@ -540,9 +540,9 @@ const studyTypeConfig: Record<string, { label: string; abbrev: string; color: st
     gap: 0.5rem;
     padding: 0.5rem 0.75rem;
     background: transparent;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid var(--border-c);
     border-radius: 0.5rem;
-    color: rgba(255,255,255,0.6);
+    color: var(--ink-muted);
     font-size: 0.75rem;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -564,8 +564,8 @@ const studyTypeConfig: Record<string, { label: string; abbrev: string; color: st
   .key-findings-panel {
     margin-top: 1rem;
     padding: 1rem;
-    background: rgba(0,0,0,0.2);
-    border-radius: 0.75rem;
+    background: var(--paper-2);
+    border-radius: 0.5rem;
   }
 
   .key-findings-panel.hidden {
@@ -580,9 +580,9 @@ const studyTypeConfig: Record<string, { label: string; abbrev: string; color: st
 
   .finding-item {
     padding: 0.75rem;
-    background: rgba(255,255,255,0.02);
+    background: var(--paper);
     border-radius: 0.5rem;
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid var(--border-c);
   }
 
   .finding-header {
@@ -606,7 +606,7 @@ const studyTypeConfig: Record<string, { label: string; abbrev: string; color: st
   .finding-study {
     font-size: 0.75rem;
     font-weight: 600;
-    color: white;
+    color: var(--ink);
   }
 
   .pmid-link {
@@ -614,18 +614,18 @@ const studyTypeConfig: Record<string, { label: string; abbrev: string; color: st
     color: var(--primary);
     text-decoration: none;
     padding: 0.125rem 0.375rem;
-    background: rgba(139, 92, 246, 0.1);
+    background: var(--primary-soft);
     border-radius: 0.25rem;
   }
 
   .pmid-link:hover {
-    background: rgba(139, 92, 246, 0.2);
+    background: rgba(11, 81, 127, 0.18);
     text-decoration: underline;
   }
 
   .finding-text {
     font-size: 0.8125rem;
-    color: rgba(255,255,255,0.7);
+    color: var(--ink-muted);
     line-height: 1.5;
     margin: 0;
   }

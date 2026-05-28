@@ -2,8 +2,8 @@
 // Table of Contents - auto-generates from page headings via client JS
 ---
 
-<nav class="rounded-xl border border-white/10 bg-gradient-to-b from-[var(--primary)]/10 to-transparent p-4 backdrop-blur-sm" id="toc" aria-label="Table of contents">
-  <h2 class="font-semibold text-white mb-3">On This Page</h2>
+<nav class="rounded-xl border border-[color:var(--border-c)] bg-[color:var(--paper)] p-4" id="toc" aria-label="Table of contents">
+  <h2 class="font-serif font-medium text-[color:var(--ink)] mb-3">On This Page</h2>
   <ul class="space-y-2 text-sm" id="toc-list">
     <!-- Populated by JavaScript -->
   </ul>
@@ -30,8 +30,8 @@
       a.href = `#${heading.id}`;
       a.textContent = heading.textContent;
       a.className = heading.tagName === 'H3'
-        ? 'text-white/60 hover:text-primary pl-4 block transition-colors'
-        : 'text-white/80 hover:text-primary font-medium block transition-colors';
+        ? 'text-[color:var(--ink-muted)] hover:text-primary pl-4 block transition-colors'
+        : 'text-[color:var(--ink)] hover:text-primary font-medium block transition-colors';
 
       li.appendChild(a);
       tocList.appendChild(li);

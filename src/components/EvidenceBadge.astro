@@ -8,50 +8,50 @@ const { strength, showLabel = true } = Astro.props;
 
 const config = {
   'high': {
-    color: 'hsl(142 70% 45%)',
-    bgOpacity: '30',
-    borderOpacity: '50',
+    color: 'var(--research)',
+    tint: 'rgba(20, 118, 74, 0.10)',
+    border: 'rgba(20, 118, 74, 0.30)',
     icon: '●●●●',
     label: 'High Evidence',
     description: 'Multiple high-quality human RCTs with consistent results',
   },
   'moderate': {
-    color: 'hsl(260 80% 65%)',
-    bgOpacity: '30',
-    borderOpacity: '50',
+    color: 'var(--primary-c)',
+    tint: 'rgba(11, 81, 127, 0.10)',
+    border: 'rgba(11, 81, 127, 0.28)',
     icon: '●●●○',
     label: 'Moderate Evidence',
     description: 'Human studies exist but with limitations or inconsistencies',
   },
   'low': {
-    color: 'hsl(45 90% 55%)',
-    bgOpacity: '30',
-    borderOpacity: '50',
+    color: '#9a6418',
+    tint: 'rgba(203, 135, 52, 0.12)',
+    border: 'rgba(203, 135, 52, 0.32)',
     icon: '●●○○',
     label: 'Low Evidence',
     description: 'Limited human data; primarily preclinical evidence',
   },
   'very-low': {
-    color: 'hsl(0 70% 55%)',
-    bgOpacity: '30',
-    borderOpacity: '50',
+    color: 'var(--danger)',
+    tint: 'rgba(185, 61, 66, 0.10)',
+    border: 'rgba(185, 61, 66, 0.28)',
     icon: '●○○○',
     label: 'Very Low Evidence',
     description: 'Minimal or no human data; mostly theoretical or animal studies',
   },
 };
 
-const { color, bgOpacity, borderOpacity, icon, label, description } = config[strength];
+const { color, tint, border, icon, label } = config[strength];
 ---
 
 <div class="relative inline-flex items-center">
   <span
-    class="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold border shadow-sm"
-    style={`color: ${color}; background: ${color.replace(')', ` / 0.${bgOpacity})`).replace('hsl(', 'hsla(')}; border-color: ${color.replace(')', ` / 0.${borderOpacity})`).replace('hsl(', 'hsla(')};`}
+    class="inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs uppercase border"
+    style={`color: ${color}; background: ${tint}; border-color: ${border}; font-family: var(--font-mono); letter-spacing: 0.06em;`}
     role="status"
     aria-label={`Evidence strength: ${label}`}
   >
-    <span class="font-mono text-[11px] tracking-tight drop-shadow-sm" aria-hidden="true">{icon}</span>
-    {showLabel && <span class="drop-shadow-sm">{label}</span>}
+    <span class="text-[11px] tracking-tight" aria-hidden="true">{icon}</span>
+    {showLabel && <span>{label}</span>}
   </span>
 </div>

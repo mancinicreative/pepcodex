@@ -1,0 +1,78 @@
+---
+/**
+ * Specimen vial — fill level + color encode evidence strength.
+ * The signature visual of the catalogue. Data-driven, on-brand
+ * (the only color is meaningful; cap is neutral).
+ */
+interface Props {
+  strength?: 'high' | 'moderate' | 'low' | 'very-low';
+  /** Override the auto fill % (0–100). */
+  fill?: number;
+  /** Override the auto fill color (CSS color). */
+  fillColor?: string;
+  size?: 'sm' | 'md' | 'lg';
+  class?: string;
+}
+
+const { strength = 'low', fill, fillColor, size = 'md', class: className = '' } = Astro.props;
+
+const evidence: Record<string, { pct: number; color: string }> = {
+  'high':     { pct: 90, color: 'var(--research)' },
+  'moderate': { pct: 62, color: 'var(--primary-c)' },
+  'low':      { pct: 38, color: 'var(--compound)' },
+  'very-low': { pct: 16, color: 'var(--danger)' },
+};
+
+const pct = fill ?? evidence[strength].pct;
+const color = fillColor ?? evidence[strength].color;
+
+const widths = { sm: 26, md: 34, lg: 48 };
+const w = widths[size];
+const h = Math.round(w * 2.35);
+
+// Geometry (in viewBox units 0..40 x 0..94)
+const VB_W = 40, VB_H = 94;
+const bodyTop = 18, bodyBottom = 90, bodyLeft = 5, bodyRight = 35;
+const bodyH = bodyBottom - bodyTop;
+const fillH = (pct / 100) * bodyH;
+const fillY = bodyBottom - fillH;
+const uid = `vial-${Math.random().toString(36).slice(2, 8)}`;
+---
+
+<svg
+  width={w}
+  height={h}
+  viewBox={`0 0 ${VB_W} ${VB_H}`}
+  class={className}
+  role="img"
+  aria-label={`Evidence vial, ${strength.replace('-', ' ')}`}
+  fill="none"
+>
+  <defs>
+    <clipPath id={uid}>
+      <rect x={bodyLeft + 1} y={bodyTop + 1} width={bodyRight - bodyLeft - 2} height={bodyH - 2} rx="5" ry="5" />
+    </clipPath>
+  </defs>
+
+  <!-- Cap (neutral) -->
+  <rect x="13" y="2" width="14" height="7" rx="2" fill="var(--border-strong)" />
+  <!-- Neck -->
+  <rect x="15" y="9" width="10" height="9" fill="var(--paper-2)" stroke="var(--ink-dim)" stroke-width="1" />
+
+  <!-- Body outline -->
+  <rect x={bodyLeft} y={bodyTop} width={bodyRight - bodyLeft} height={bodyH} rx="6" ry="6"
+        fill="var(--paper)" stroke="var(--ink-dim)" stroke-width="1.4" />
+
+  <!-- Liquid fill -->
+  <g clip-path={`url(#${uid})`}>
+    <rect x={bodyLeft} y={fillY} width={bodyRight - bodyLeft} height={fillH} fill={color} opacity="0.85" />
+    <rect x={bodyLeft} y={fillY} width={bodyRight - bodyLeft} height="2" fill={color} />
+  </g>
+
+  <!-- Graduation ticks -->
+  <g stroke="var(--ink-dim)" stroke-width="0.8" opacity="0.5">
+    <line x1={bodyRight - 6} y1={bodyTop + bodyH * 0.25} x2={bodyRight - 2} y2={bodyTop + bodyH * 0.25} />
+    <line x1={bodyRight - 6} y1={bodyTop + bodyH * 0.5} x2={bodyRight - 2} y2={bodyTop + bodyH * 0.5} />
+    <line x1={bodyRight - 6} y1={bodyTop + bodyH * 0.75} x2={bodyRight - 2} y2={bodyTop + bodyH * 0.75} />
+  </g>
+</svg>

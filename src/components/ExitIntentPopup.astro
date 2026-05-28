@@ -8,7 +8,7 @@ import NewsletterForm from './NewsletterForm.astro';
   role="dialog"
   aria-modal="true"
   aria-labelledby="exit-popup-heading"
-  style="display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.7); align-items: center; justify-content: center;"
+  style="display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(31,26,18,0.45); align-items: center; justify-content: center;"
 >
   <!-- Inner card -->
   <div
@@ -18,7 +18,7 @@ import NewsletterForm from './NewsletterForm.astro';
     <!-- Close button -->
     <button
       data-close
-      class="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center transition-colors hover:bg-white/10"
+      class="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center transition-colors hover:bg-[color:var(--paper-2)]"
       style="color: var(--text-medium);"
       aria-label="Close popup"
     >
@@ -29,7 +29,7 @@ import NewsletterForm from './NewsletterForm.astro';
     </button>
 
     <!-- Heading -->
-    <h3 id="exit-popup-heading" class="text-xl font-bold mb-2" style="color: var(--text-high);">
+    <h3 id="exit-popup-heading" class="font-serif text-xl font-medium mb-2" style="color: var(--text-high);">
       Before you go...
     </h3>
 

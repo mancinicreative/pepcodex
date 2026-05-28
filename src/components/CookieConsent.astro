@@ -19,18 +19,18 @@
   aria-labelledby="cookie-consent-title"
 >
   <!-- Backdrop -->
-  <div class="fixed inset-0 bg-black/60 backdrop-blur-sm" aria-hidden="true"></div>
+  <div class="fixed inset-0 bg-[rgba(31,26,18,0.45)] backdrop-blur-sm" aria-hidden="true"></div>
 
   <!-- Modal -->
   <div class="fixed inset-0 flex items-end sm:items-center justify-center p-4">
-    <div class="relative w-full max-w-lg bg-[var(--background)] border border-white/10 rounded-2xl shadow-2xl overflow-hidden">
-      <!-- Gradient accent -->
-      <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--primary)] via-cyan-500 to-[var(--primary)]"></div>
+    <div class="relative w-full max-w-lg bg-[color:var(--paper)] border border-[color:var(--border-c)] rounded-2xl overflow-hidden" style="box-shadow: var(--shadow-raise);">
+      <!-- Cobalt accent rule -->
+      <div class="absolute top-0 left-0 right-0 h-1 bg-[color:var(--primary-c)]"></div>
 
       <div class="p-6">
         <!-- Header -->
         <div class="flex items-start gap-4 mb-4">
-          <div class="flex-shrink-0 p-2 bg-[var(--primary)]/10 rounded-xl">
+          <div class="flex-shrink-0 p-2 bg-[var(--primary-soft)] rounded-xl">
             <svg
               class="w-6 h-6 text-primary"
               viewBox="0 0 24 24"
@@ -49,24 +49,24 @@
             </svg>
           </div>
           <div>
-            <h2 id="cookie-consent-title" class="text-xl font-bold text-white">
+            <h2 id="cookie-consent-title" class="font-serif text-xl font-medium text-[color:var(--ink)]">
               Cookie Preferences
             </h2>
-            <p class="text-sm text-white/60 mt-1">
+            <p class="text-sm text-[color:var(--ink-muted)] mt-1">
               We respect your privacy
             </p>
           </div>
         </div>
 
         <!-- Description -->
-        <div class="mb-6 text-sm text-white/80 leading-relaxed">
+        <div class="mb-6 text-sm text-[color:var(--ink-muted)] leading-relaxed">
           <p>
             We use cookies to enhance your browsing experience and analyze site traffic.
             You can choose to accept all cookies or only essential ones.
           </p>
           <a
             href="/cookie-policy"
-            class="inline-flex items-center gap-1 text-primary hover:text-purple-300 transition-colors mt-2"
+            class="inline-flex items-center gap-1 text-primary hover:text-[color:var(--primary-deep)] transition-colors mt-2"
           >
             Learn more about our cookies
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -79,33 +79,33 @@
         <!-- Cookie Categories (Expandable) -->
         <div id="cookie-details" class="hidden mb-6 space-y-3">
           <!-- Essential Cookies -->
-          <div class="p-4 bg-white/5 rounded-xl border border-white/10">
+          <div class="p-4 bg-[color:var(--paper-2)] rounded-xl border border-[color:var(--border-c)]">
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-3">
-                <svg class="w-5 h-5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="w-5 h-5 text-[color:var(--research)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
                   <path d="m9 12 2 2 4-4"/>
                 </svg>
                 <div>
-                  <h3 class="text-sm font-semibold text-white">Essential</h3>
-                  <p class="text-xs text-white/60">Required for website to function</p>
+                  <h3 class="text-sm font-semibold text-[color:var(--ink)]">Essential</h3>
+                  <p class="text-xs text-[color:var(--ink-muted)]">Required for website to function</p>
                 </div>
               </div>
-              <span class="text-xs text-emerald-400 font-medium">Always On</span>
+              <span class="text-xs text-[color:var(--research)] font-medium">Always On</span>
             </div>
           </div>
 
           <!-- Analytics Cookies -->
-          <div class="p-4 bg-white/5 rounded-xl border border-white/10">
+          <div class="p-4 bg-[color:var(--paper-2)] rounded-xl border border-[color:var(--border-c)]">
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-3">
-                <svg class="w-5 h-5 text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="w-5 h-5 text-[color:var(--primary-c)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M3 3v18h18"/>
                   <path d="m19 9-5 5-4-4-3 3"/>
                 </svg>
                 <div>
-                  <h3 class="text-sm font-semibold text-white">Analytics</h3>
-                  <p class="text-xs text-white/60">Help us improve our website</p>
+                  <h3 class="text-sm font-semibold text-[color:var(--ink)]">Analytics</h3>
+                  <p class="text-xs text-[color:var(--ink-muted)]">Help us improve our website</p>
                 </div>
               </div>
               <label class="relative inline-flex items-center cursor-pointer">
@@ -115,7 +115,7 @@
                   class="sr-only peer"
                   checked
                 />
-                <div class="w-11 h-6 bg-white/10 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-[var(--primary)] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[var(--primary)]"></div>
+                <div class="w-11 h-6 bg-[color:var(--sand)] peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-[var(--primary-c)] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-[color:var(--ink-paper)] after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[color:var(--ink-paper)] after:border after:border-[color:var(--border-strong)] peer-checked:after:border-[color:var(--ink-paper)] after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[var(--primary-c)]"></div>
               </label>
             </div>
           </div>
@@ -125,7 +125,7 @@
         <button
           id="toggle-cookie-details"
           type="button"
-          class="w-full mb-6 py-2 text-sm text-white/60 hover:text-white transition-colors flex items-center justify-center gap-2"
+          class="w-full mb-6 py-2 text-sm text-[color:var(--ink-muted)] hover:text-[color:var(--ink)] transition-colors flex items-center justify-center gap-2"
         >
           <span id="details-toggle-text">Show cookie details</span>
           <svg id="details-toggle-icon" class="w-4 h-4 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -138,24 +138,24 @@
           <button
             id="decline-cookies"
             type="button"
-            class="flex-1 px-4 py-3 text-sm font-medium text-white/80 hover:text-white border border-white/20 hover:border-white/40 rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-white/20"
+            class="flex-1 px-4 py-3 text-sm font-medium text-[color:var(--ink-muted)] hover:text-[color:var(--ink)] border border-[color:var(--border-c)] hover:border-[color:var(--border-strong)] rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--primary-c)]"
           >
             Essential Only
           </button>
           <button
             id="accept-cookies"
             type="button"
-            class="flex-1 px-4 py-3 text-sm font-medium text-white bg-[var(--primary)] hover:bg-[var(--primary)]/90 rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:ring-offset-2 focus:ring-offset-[var(--background)]"
+            class="flex-1 px-4 py-3 text-sm font-medium text-[color:var(--ink-paper)] bg-[color:var(--primary-c)] hover:bg-[color:var(--primary-deep)] rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--primary-c)] focus:ring-offset-2 focus:ring-offset-[color:var(--paper)]"
           >
             Accept All
           </button>
         </div>
 
         <!-- Privacy Links -->
-        <div class="mt-4 pt-4 border-t border-white/10 flex flex-wrap justify-center gap-4 text-xs text-white/50">
-          <a href="/privacy" class="hover:text-white transition-colors">Privacy Policy</a>
+        <div class="mt-4 pt-4 border-t border-[color:var(--border-c)] flex flex-wrap justify-center gap-4 text-xs text-[color:var(--ink-dim)]">
+          <a href="/privacy" class="hover:text-[color:var(--ink)] transition-colors">Privacy Policy</a>
           <span>|</span>
-          <a href="/terms" class="hover:text-white transition-colors">Terms of Service</a>
+          <a href="/terms" class="hover:text-[color:var(--ink)] transition-colors">Terms of Service</a>
         </div>
       </div>
     </div>

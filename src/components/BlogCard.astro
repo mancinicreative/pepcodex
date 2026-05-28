@@ -32,13 +32,13 @@ const categoryLabels: Record<string, string> = {
 };
 
 const categoryColors: Record<string, string> = {
-  'weekly-briefing': 'bg-[var(--primary)]/20 text-primary border-[var(--primary)]/30',
-  'research-digest': 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
-  'deep-dive': 'bg-amber-500/20 text-amber-400 border-amber-500/30',
-  'regulatory': 'bg-blue-500/20 text-blue-400 border-blue-500/30',
-  'explainer': 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30',
-  'guide': 'bg-indigo-500/20 text-indigo-400 border-indigo-500/30',
-  'safety': 'bg-rose-500/20 text-rose-400 border-rose-500/30',
+  'weekly-briefing': 'bg-[color:var(--primary-soft)] text-primary border-[color:var(--border-c)]',
+  'research-digest': 'bg-[rgba(20,118,74,0.10)] text-[color:var(--research)] border-[rgba(20,118,74,0.30)]',
+  'deep-dive': 'bg-[color:var(--primary-soft)] text-primary border-[color:var(--border-c)]',
+  'regulatory': 'bg-[color:var(--primary-soft)] text-primary border-[color:var(--border-c)]',
+  'explainer': 'bg-[color:var(--primary-soft)] text-primary border-[color:var(--border-c)]',
+  'guide': 'bg-[color:var(--primary-soft)] text-primary border-[color:var(--border-c)]',
+  'safety': 'bg-[rgba(203,135,52,0.12)] text-[#9a6418] border-[rgba(203,135,52,0.32)]',
 };
 
 // Calculate reading time estimate
@@ -49,23 +49,20 @@ const readingTime = Math.ceil(excerpt.length / 200) + 5;
   href={`/blog/${slug}`}
   class:list={[
     "glass-card glass-card--interactive group relative block h-full",
-    featured && "ring-2 ring-[var(--primary)]/50"
+    featured && "ring-2 ring-[color:var(--primary-c)]/50"
   ]}
 >
-  <!-- Gradient overlay -->
-  <div class="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/10 via-[var(--primary)]/5 to-cyan-500/5 opacity-50 group-hover:opacity-100 group-hover:from-[var(--primary)]/25 group-hover:via-[var(--primary)]/15 transition-all duration-300 rounded-xl"></div>
-
   <!-- Featured badge -->
   {featured && (
     <div class="absolute top-5 right-4 z-20">
-      <span class="inline-flex items-center rounded-full bg-[var(--primary)] px-3 py-1 text-xs font-medium text-white shadow-lg">
+      <span class="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium shadow-[var(--shadow-card)]" style="background: var(--primary-c); color: var(--paper);">
         Featured
       </span>
     </div>
   )}
 
   <!-- Decorative icon -->
-  <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity text-primary">
+  <div class="absolute top-0 right-0 p-4 opacity-[0.06] group-hover:opacity-10 transition-opacity text-primary">
     <svg class="w-20 h-20 rotate-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
       <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/>
       <path d="M18 14h-8"/>
@@ -77,21 +74,21 @@ const readingTime = Math.ceil(excerpt.length / 200) + 5;
   <div class="relative z-10 p-6 flex flex-col h-full">
     <!-- Category and date -->
     <div class="flex flex-wrap items-center gap-2 mb-3">
-      <span class={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium border ${categoryColors[category] || categoryColors['research-digest']}`}>
+      <span class={`inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] uppercase tracking-wider font-medium border ${categoryColors[category] || categoryColors['research-digest']}`} style="font-family: var(--font-mono);">
         {categoryLabels[category] || category}
       </span>
-      <span class="text-xs" style="color: var(--text-low);">
+      <span class="text-xs" style="color: var(--ink-dim); font-family: var(--font-mono);">
         {publishDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
       </span>
     </div>
 
     <!-- Title -->
-    <h3 class="text-xl font-bold group-hover:text-primary transition-colors line-clamp-2" style="color: var(--text-high); font-family: var(--font-display);">
+    <h3 class="text-xl group-hover:text-primary transition-colors line-clamp-2" style="color: var(--ink); font-family: var(--font-serif); font-weight: 500;">
       {title}
     </h3>
 
     <!-- Excerpt -->
-    <p class="mt-3 text-sm line-clamp-3 leading-relaxed flex-grow" style="color: var(--text-medium);">
+    <p class="mt-3 text-sm line-clamp-3 leading-relaxed flex-grow" style="color: var(--ink-muted);">
       {excerpt}
     </p>
 
@@ -99,12 +96,12 @@ const readingTime = Math.ceil(excerpt.length / 200) + 5;
     {tags.length > 0 && (
       <div class="mt-3 flex flex-wrap gap-1.5">
         {tags.slice(0, 3).map(tag => (
-          <span class="inline-flex items-center rounded bg-white/5 px-2 py-0.5 text-xs" style="color: var(--text-low);">
+          <span class="inline-flex items-center rounded px-2 py-0.5 text-xs" style="color: var(--ink-dim); background: var(--paper-2);">
             #{tag}
           </span>
         ))}
         {tags.length > 3 && (
-          <span class="text-xs" style="color: var(--text-low);">+{tags.length - 3}</span>
+          <span class="text-xs" style="color: var(--ink-dim);">+{tags.length - 3}</span>
         )}
       </div>
     )}

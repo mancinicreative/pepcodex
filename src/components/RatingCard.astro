@@ -23,14 +23,17 @@ const overallLabel =
     ? 'Low Evidence'
     : 'Very Low Evidence';
 
-const overallColor =
+// Brand signal palette: [text/bar color, tint background, border]
+const overallPalette =
   ratings.overall >= 4.0
-    ? 'hsl(142 70% 45%)'
+    ? { color: 'var(--research)', tint: 'rgba(20,118,74,0.10)', border: 'rgba(20,118,74,0.30)' }
     : ratings.overall >= 3.0
-    ? 'hsl(260 80% 65%)'
+    ? { color: 'var(--primary-c)', tint: 'var(--primary-soft)', border: 'rgba(11,81,127,0.30)' }
     : ratings.overall >= 2.0
-    ? 'hsl(45 90% 55%)'
-    : 'hsl(0 70% 55%)';
+    ? { color: '#9a6418', tint: 'rgba(203,135,52,0.12)', border: 'rgba(203,135,52,0.32)' }
+    : { color: 'var(--danger)', tint: 'rgba(185,61,66,0.10)', border: 'rgba(185,61,66,0.28)' };
+
+const overallColor = overallPalette.color;
 
 // Convert 1-5 scale to percentage for progress bar width
 const toPercent = (v: number) => `${(v / 5) * 100}%`;
@@ -52,10 +55,10 @@ const dimensions = [
 <div class="space-y-4">
   <!-- Header: title + overall badge -->
   <div class="flex items-center justify-between">
-    <span class="text-sm font-semibold text-white/80 uppercase tracking-wider">Evidence Rating</span>
+    <span class="eyebrow">Evidence Rating</span>
     <span
       class="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold border"
-      style={`color: ${overallColor}; background: ${overallColor}20; border-color: ${overallColor}50;`}
+      style={`color: ${overallColor}; background: ${overallPalette.tint}; border-color: ${overallPalette.border};`}
     >
       {overallLabel}
     </span>
@@ -66,10 +69,10 @@ const dimensions = [
     {dimensions.map((dim) => (
       <div>
         <div class="flex justify-between items-baseline text-xs mb-1">
-          <span class="text-white/70">{dim.label}</span>
-          <span class="font-mono text-white">{dim.value}/5</span>
+          <span style="color: var(--ink-muted);">{dim.label}</span>
+          <span class="font-mono" style="color: var(--ink);">{dim.value}/5</span>
         </div>
-        <div class="h-1.5 rounded-full bg-white/10">
+        <div class="h-1.5 rounded-full" style="background: var(--paper-2);">
           <div
             class="h-full rounded-full"
             style={`width: ${toPercent(dim.value)}; background: ${overallColor};`}
@@ -80,8 +83,8 @@ const dimensions = [
   </div>
 
   <!-- Overall composite score row -->
-  <div class="flex items-center justify-between pt-1 border-t border-white/10">
-    <span class="text-xs font-semibold text-white/70 uppercase tracking-wider">Overall Score</span>
+  <div class="flex items-center justify-between pt-1" style="border-top: 1px solid var(--border-c);">
+    <span class="eyebrow">Overall Score</span>
     <div class="flex items-center gap-2">
       <span
         class="text-2xl font-bold font-mono"
@@ -89,21 +92,22 @@ const dimensions = [
       >
         {ratings.overall}
       </span>
-      <span class="text-xs text-white/40 font-mono">/5</span>
+      <span class="text-xs font-mono" style="color: var(--ink-dim);">/5</span>
     </div>
   </div>
 
   <!-- Optional review notes -->
   {ratings.reviewNotes && (
-    <p class="text-xs text-white/50 italic leading-relaxed">{ratings.reviewNotes}</p>
+    <p class="text-xs italic leading-relaxed" style="color: var(--ink-dim);">{ratings.reviewNotes}</p>
   )}
 
   <!-- Footer: last reviewed date + methodology link -->
   <div class="flex items-center justify-between pt-1">
-    <span class="text-xs text-white/40">Last reviewed {lastReviewedFormatted}</span>
+    <span class="text-xs" style="color: var(--ink-dim);">Last reviewed {lastReviewedFormatted}</span>
     <a
       href="/methodology#how-we-rate"
-      class="text-xs text-white/40 hover:text-white/70 transition-colors"
+      class="text-xs transition-colors"
+      style="color: var(--primary-c);"
     >
       How we rate &rarr;
     </a>

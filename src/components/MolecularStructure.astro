@@ -34,36 +34,39 @@ const threeLetterCodes: Record<string, string> = {
   'Aib': 'Aib', 'Nal': 'Nal', 'dF': 'dPhe', 'dW': 'dTrp'
 };
 
-// Property colors
+// Property colors — scientific category labels (not danger/positive signals), mapped to a
+// muted editorial palette legible on warm paper:
+//   hydrophobic = compound amber, polar = cobalt accent, positive charge = research green,
+//   negative charge = danger red, modified = warm ink-dim. Text tones darkened for paper contrast.
 const propertyColors: Record<string, { bg: string; border: string; text: string; label: string }> = {
   'hydrophobic': {
-    bg: 'rgba(251, 146, 60, 0.15)',
-    border: 'rgba(251, 146, 60, 0.5)',
-    text: 'rgb(251, 146, 60)',
+    bg: 'rgba(203, 135, 52, 0.12)',
+    border: 'rgba(203, 135, 52, 0.40)',
+    text: '#9a6418',
     label: 'Hydrophobic'
   },
   'polar': {
-    bg: 'rgba(59, 130, 246, 0.15)',
-    border: 'rgba(59, 130, 246, 0.5)',
-    text: 'rgb(59, 130, 246)',
+    bg: 'rgba(11, 81, 127, 0.10)',
+    border: 'rgba(11, 81, 127, 0.40)',
+    text: 'var(--primary-c)',
     label: 'Polar'
   },
   'positive': {
-    bg: 'rgba(34, 197, 94, 0.15)',
-    border: 'rgba(34, 197, 94, 0.5)',
-    text: 'rgb(34, 197, 94)',
+    bg: 'rgba(20, 118, 74, 0.10)',
+    border: 'rgba(20, 118, 74, 0.40)',
+    text: 'var(--research)',
     label: 'Positive Charge'
   },
   'negative': {
-    bg: 'rgba(239, 68, 68, 0.15)',
-    border: 'rgba(239, 68, 68, 0.5)',
-    text: 'rgb(239, 68, 68)',
+    bg: 'rgba(185, 61, 66, 0.10)',
+    border: 'rgba(185, 61, 66, 0.40)',
+    text: 'var(--danger)',
     label: 'Negative Charge'
   },
   'modified': {
-    bg: 'rgba(168, 85, 247, 0.15)',
-    border: 'rgba(168, 85, 247, 0.5)',
-    text: 'rgb(168, 85, 247)',
+    bg: 'rgba(142, 133, 103, 0.14)',
+    border: 'rgba(142, 133, 103, 0.45)',
+    text: 'var(--ink-dim)',
     label: 'Modified'
   }
 };
@@ -73,16 +76,16 @@ const propertyColors: Record<string, { bg: string; border: string; text: string;
   <!-- Header with stats -->
   <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
     <div>
-      <h3 class="text-xl font-bold text-white mb-1" style="font-family: var(--font-display);">
+      <h3 class="text-xl mb-1" style="font-family: var(--font-serif); font-weight: 500; color: var(--ink);">
         Molecular Structure
       </h3>
-      <p class="text-sm text-white/60">
+      <p class="text-sm" style="color: var(--ink-muted);">
         {molecularInfo.type} ({molecularInfo.chainLength} amino acids)
       </p>
     </div>
 
     <!-- Code toggle -->
-    <div class="flex items-center gap-2 bg-white/5 rounded-lg p-1">
+    <div class="flex items-center gap-2 rounded-lg p-1" style="background: var(--paper-2);">
       <button
         class="code-toggle-btn active px-3 py-1.5 rounded-md text-xs font-bold uppercase tracking-wider transition-all"
         data-code-type="one"
@@ -100,21 +103,21 @@ const propertyColors: Record<string, { bg: string; border: string; text: string;
 
   <!-- Molecular specs grid -->
   <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
-    <div class="bg-white/5 rounded-xl p-4 border border-white/10">
-      <div class="text-xs text-white/50 uppercase tracking-wider mb-1">Weight</div>
-      <div class="text-lg font-mono font-bold text-white">{molecularInfo.weight}</div>
+    <div class="rounded-lg p-4 border" style="background: var(--paper); border-color: var(--border-c);">
+      <div class="text-xs uppercase tracking-wider mb-1" style="color: var(--ink-dim);">Weight</div>
+      <div class="text-lg font-mono font-bold" style="color: var(--ink);">{molecularInfo.weight}</div>
     </div>
-    <div class="bg-white/5 rounded-xl p-4 border border-white/10">
-      <div class="text-xs text-white/50 uppercase tracking-wider mb-1">Chain Length</div>
-      <div class="text-lg font-mono font-bold text-white">{molecularInfo.chainLength} aa</div>
+    <div class="rounded-lg p-4 border" style="background: var(--paper); border-color: var(--border-c);">
+      <div class="text-xs uppercase tracking-wider mb-1" style="color: var(--ink-dim);">Chain Length</div>
+      <div class="text-lg font-mono font-bold" style="color: var(--ink);">{molecularInfo.chainLength} aa</div>
     </div>
-    <div class="bg-white/5 rounded-xl p-4 border border-white/10 overflow-hidden">
-      <div class="text-xs text-white/50 uppercase tracking-wider mb-1">Type</div>
-      <div class="text-xs font-bold text-white truncate" title={molecularInfo.type}>{molecularInfo.type}</div>
+    <div class="rounded-lg p-4 border overflow-hidden" style="background: var(--paper); border-color: var(--border-c);">
+      <div class="text-xs uppercase tracking-wider mb-1" style="color: var(--ink-dim);">Type</div>
+      <div class="text-xs font-bold truncate" style="color: var(--ink);" title={molecularInfo.type}>{molecularInfo.type}</div>
     </div>
-    <div class="bg-white/5 rounded-xl p-4 border border-white/10">
-      <div class="text-xs text-white/50 uppercase tracking-wider mb-1">Sequence</div>
-      <div class="text-xs font-mono text-white/80 truncate" title={molecularInfo.sequence}>
+    <div class="rounded-lg p-4 border" style="background: var(--paper); border-color: var(--border-c);">
+      <div class="text-xs uppercase tracking-wider mb-1" style="color: var(--ink-dim);">Sequence</div>
+      <div class="text-xs font-mono truncate" style="color: var(--ink-muted);" title={molecularInfo.sequence}>
         {molecularInfo.sequence}
       </div>
     </div>
@@ -122,7 +125,7 @@ const propertyColors: Record<string, { bg: string; border: string; text: string;
 
   <!-- Amino acid sequence visualization -->
   <div class="sequence-container">
-    <div class="text-xs text-white/50 uppercase tracking-wider mb-3">Amino Acid Sequence</div>
+    <div class="text-xs uppercase tracking-wider mb-3" style="color: var(--ink-dim);">Amino Acid Sequence</div>
 
     <div class="sequence-display flex flex-wrap gap-1.5" data-sequence-display>
       {molecularInfo.aminoAcids.map((aa, index) => {
@@ -171,8 +174,8 @@ const propertyColors: Record<string, { bg: string; border: string; text: string;
   </div>
 
   <!-- Legend -->
-  <div class="legend mt-6 pt-6 border-t border-white/10">
-    <div class="text-xs text-white/50 uppercase tracking-wider mb-3">Property Legend</div>
+  <div class="legend mt-6 pt-6 border-t" style="border-color: var(--border-c);">
+    <div class="text-xs uppercase tracking-wider mb-3" style="color: var(--ink-dim);">Property Legend</div>
     <div class="flex flex-wrap gap-3">
       {Object.entries(propertyColors).map(([key, colors]) => (
         <div class="flex items-center gap-2">
@@ -180,7 +183,7 @@ const propertyColors: Record<string, { bg: string; border: string; text: string;
             class="w-3 h-3 rounded"
             style={`background: ${colors.bg}; border: 1px solid ${colors.border};`}
           ></div>
-          <span class="text-xs text-white/70">{colors.label}</span>
+          <span class="text-xs" style="color: var(--ink-muted);">{colors.label}</span>
         </div>
       ))}
     </div>
@@ -188,9 +191,9 @@ const propertyColors: Record<string, { bg: string; border: string; text: string;
 
   <!-- Connection lines visualization (optional enhancement) -->
   <div class="chain-visualization mt-6">
-    <div class="text-xs text-white/50 uppercase tracking-wider mb-3">Peptide Bond Chain</div>
+    <div class="text-xs uppercase tracking-wider mb-3" style="color: var(--ink-dim);">Peptide Bond Chain</div>
     <div class="chain-line flex items-center overflow-x-auto pb-2">
-      <span class="text-xs text-white/40 mr-2">N-terminus</span>
+      <span class="text-xs mr-2" style="color: var(--ink-dim);">N-terminus</span>
       {molecularInfo.aminoAcids.map((aa, index) => {
         const colors = propertyColors[aa.property];
         const isLast = index === molecularInfo.aminoAcids.length - 1;
@@ -198,39 +201,38 @@ const propertyColors: Record<string, { bg: string; border: string; text: string;
           <div class="flex items-center">
             <div
               class="chain-node"
-              style={`background: ${colors.text}; box-shadow: 0 0 8px ${colors.text}40;`}
+              style={`background: ${colors.text};`}
               title={`${aa.name} (${aa.code})`}
             ></div>
             {!isLast && <div class="chain-bond"></div>}
           </div>
         );
       })}
-      <span class="text-xs text-white/40 ml-2">C-terminus</span>
+      <span class="text-xs ml-2" style="color: var(--ink-dim);">C-terminus</span>
     </div>
   </div>
 </div>
 
 <style>
   .molecular-structure-container {
-    background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 1.5rem;
+    background: var(--paper);
+    border: 1px solid var(--border-c);
+    border-radius: 0.75rem;
     padding: 1.5rem;
   }
 
   .code-toggle-btn {
-    color: rgba(255,255,255,0.5);
+    color: var(--ink-dim);
   }
 
   .code-toggle-btn.active {
-    background: var(--primary);
-    color: white;
-    box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+    background: var(--primary-c);
+    color: var(--paper);
   }
 
   .code-toggle-btn:not(.active):hover {
-    background: rgba(255,255,255,0.1);
-    color: rgba(255,255,255,0.8);
+    background: var(--sand);
+    color: var(--ink);
   }
 
   .amino-acid-unit {
@@ -266,8 +268,8 @@ const propertyColors: Record<string, { bg: string; border: string; text: string;
     position: absolute;
     bottom: -0.25rem;
     right: -0.25rem;
-    background: rgba(0,0,0,0.8);
-    color: rgba(255,255,255,0.6);
+    background: var(--charcoal);
+    color: rgba(251, 247, 238, 0.9);
     font-size: 0.5rem;
     font-weight: 700;
     padding: 0.1rem 0.25rem;
@@ -286,16 +288,16 @@ const propertyColors: Record<string, { bg: string; border: string; text: string;
     bottom: calc(100% + 0.75rem);
     left: 50%;
     transform: translateX(-50%) scale(0.9);
-    background: rgba(15, 15, 20, 0.98);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 0.75rem;
+    background: var(--paper);
+    border: 1px solid var(--border-strong);
+    border-radius: 0.5rem;
     padding: 0.75rem 1rem;
     min-width: 140px;
     opacity: 0;
     visibility: hidden;
     transition: all 0.2s ease;
     z-index: 100;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 24px rgba(31, 26, 18, 0.15);
     pointer-events: none;
   }
 
@@ -306,7 +308,7 @@ const propertyColors: Record<string, { bg: string; border: string; text: string;
     left: 50%;
     transform: translateX(-50%);
     border: 6px solid transparent;
-    border-top-color: rgba(255,255,255,0.15);
+    border-top-color: var(--border-strong);
   }
 
   .amino-acid-unit:hover .aa-tooltip {
@@ -329,7 +331,7 @@ const propertyColors: Record<string, { bg: string; border: string; text: string;
   }
 
   .tooltip-name {
-    color: white;
+    color: var(--ink);
     font-weight: 600;
     font-size: 0.875rem;
   }
@@ -342,7 +344,7 @@ const propertyColors: Record<string, { bg: string; border: string; text: string;
   }
 
   .tooltip-position {
-    color: rgba(255,255,255,0.5);
+    color: var(--ink-dim);
     font-size: 0.7rem;
   }
 
@@ -364,7 +366,7 @@ const propertyColors: Record<string, { bg: string; border: string; text: string;
   .chain-bond {
     width: 12px;
     height: 2px;
-    background: linear-gradient(90deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+    background: var(--border-strong);
     flex-shrink: 0;
   }
 

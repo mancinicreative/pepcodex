@@ -1,6 +1,6 @@
 # PepCodex Scoring Rubric — Source of Truth
 
-**Version:** 2.2 (draft — Evidence axis tuned & locked; Effectiveness calibration pending)
+**Version:** 2.3 (draft — both axes calibrated & locked; pending schema migration + dossier re-scoring)
 **Date:** 2026-05-29
 **Status:** Two-axis model defined — **Axis 1: Evidence Score** (5 dimensions, 20 elements, ~80 bands) and **Axis 2: Effectiveness Score** (4 elements). Deterministic bands defined for both. NOT yet calibrated against a test set; NOT yet implemented in the schema. Point *allocations* are an evidence-informed proposal to be validated in calibration; the *criteria* are grounded in the cited frameworks.
 
@@ -275,7 +275,7 @@ Rounded to the nearest whole number.
 
 The five dimensions above are **Axis 1: the Evidence Score** — how *proven* a compound is. This is **Axis 2: the Effectiveness Score** — how *large the demonstrated effect is when it works*. The two are scored and displayed **independently and always together** (e.g., "Evidence 100 · Effectiveness 77").
 
-**Scoring gate.** The Effectiveness Score is computed **only when ≥1 quantified *human* efficacy estimate exists.** With no human efficacy data the value is **"Not Established"** — *not* a low number (a low number would falsely imply a measured-but-small effect). This keeps preclinical/anecdotal hype off the axis.
+**Scoring gate.** The Effectiveness Score is computed **only when ≥1 quantified *human* efficacy estimate exists.** With no human efficacy data the value is **"Not Established"** — *not* a low number (a low number would falsely imply a measured-but-small effect). This keeps preclinical/anecdotal hype off the axis. **Weak or low-quality human estimates still count** — they are scored and carry a **Very Low** confidence flag; "Not Established" is reserved for the *complete absence* of human efficacy data.
 
 **Normalization rule (cross-indication comparability).** Never compare raw effect sizes across different conditions — placebo response and outcome variance are disease-specific. Judge each compound's effect **relative to placebo and to the best existing option *within its own primary indication***, then map onto the shared category bands below. The *category* (trivial → transformative), not the absolute number, is the comparable unit across conditions.
 
@@ -343,7 +343,7 @@ The five dimensions above are **Axis 1: the Evidence Score** — how *proven* a 
 
 ## Future work (not in this document)
 
-- **Calibration** (next step): score ~5 spread compounds (semaglutide, thymalin, BPC-157, a research-chemical, thymosin α-1) element-by-element on **both axes** to pressure-test bands and tune anchors before locking. (Evidence axis already calibrated 2026-05-29; Effectiveness axis pending.)
+- **Calibration** (done 2026-05-29): both axes calibrated against the test set (semaglutide, retatrutide, thymosin α-1, thymalin, BPC-157, FOXO4-DRI). Evidence ordering validated; Effectiveness behavior validated (retatrutide ~92 > semaglutide ~81; "Not Established" fires for no-human-data compounds). Bands locked.
 - **Evidence-axis tuning** (resolved 2026-05-29): ① preclinical evidence foundation added as element **1E (10 pts)** — preclinical-only compounds are no longer all floored (FOXO4-DRI Research Depth ~8 → ~14); ② science-first ordering **confirmed** — BPC-157 below thymalin accepted; the gap narrows (~49 vs ~52) once BPC-157's large preclinical program is credited, but ordering holds.
 - **Schema migration**: extend `ratings` from the current 1–5 / 4-field model to the two-axis model — Evidence (5 dimensions, element-level 0–100) + Effectiveness (4 elements 0–100 or "Not Established", plus a confidence flag); map `evidenceStrength` to the Research Depth axis to end the current contradiction.
 - **Re-scoring workflow**: re-score all ~102 dossiers against this rubric — one dossier per dedicated agent, each agent producing the 20 element scores with cited evidence, written to the dossier's `ratings` block. This document is the agent's scoring manual.

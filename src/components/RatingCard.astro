@@ -1,6 +1,9 @@
 ---
 interface Props {
-  ratings: {
+  // NEW two-axis scoring (rubric v2.4) — preferred when present
+  scoring?: any;
+  // LEGACY 1–5 ratings — fallback for un-migrated dossiers
+  ratings?: {
     researchDepth: number;
     globalCoverage: number;
     mechanismPlausibility: number;
@@ -11,105 +14,194 @@ interface Props {
   };
 }
 
-const { ratings } = Astro.props;
+const { scoring, ratings } = Astro.props;
 
-// Compute label and color based on overall score
-const overallLabel =
-  ratings.overall >= 4.0
+// ---- Two-axis (preferred) ----
+const evLabelMap: Record<string, string> = {
+  'well-evidenced': 'Well-evidenced',
+  'emerging': 'Emerging / moderate',
+  'early-limited': 'Early / limited',
+  'preliminary': 'Preliminary',
+  'insufficient': 'Insufficient',
+};
+const evDims = scoring
+  ? [
+      { label: 'Research Depth', v: scoring.evidence.researchDepth },
+      { label: 'Mechanism', v: scoring.evidence.mechanism },
+      { label: 'Plausibility', v: scoring.evidence.plausibility },
+      { label: 'Global Coverage', v: scoring.evidence.globalCoverage },
+      { label: 'Community Experience', v: scoring.evidence.communityExperience },
+    ]
+  : [];
+const eff = scoring?.effectiveness;
+const effDisplay = !eff
+  ? null
+  : eff.basis === 'not-established'
+  ? 'Not Established'
+  : `${eff.score}`;
+const effBasisLabel =
+  eff?.basis === 'community-reported'
+    ? 'community-reported · not clinically demonstrated'
+    : eff?.basis === 'clinical'
+    ? 'clinically demonstrated'
+    : '';
+const scoredFormatted = scoring?.lastScored
+  ? new Date(scoring.lastScored).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
+  : '';
+
+// ---- Legacy 1–5 (fallback, unchanged behaviour) ----
+const overallLabel = ratings
+  ? ratings.overall >= 4.0
     ? 'High Evidence'
     : ratings.overall >= 3.0
     ? 'Moderate Evidence'
     : ratings.overall >= 2.0
     ? 'Low Evidence'
-    : 'Very Low Evidence';
-
-// Brand signal palette: [text/bar color, tint background, border]
-const overallPalette =
-  ratings.overall >= 4.0
+    : 'Very Low Evidence'
+  : '';
+const overallPalette = ratings
+  ? ratings.overall >= 4.0
     ? { color: 'var(--research)', tint: 'rgba(20,118,74,0.10)', border: 'rgba(20,118,74,0.30)' }
     : ratings.overall >= 3.0
     ? { color: 'var(--primary-c)', tint: 'var(--primary-soft)', border: 'rgba(11,81,127,0.30)' }
     : ratings.overall >= 2.0
     ? { color: '#9a6418', tint: 'rgba(203,135,52,0.12)', border: 'rgba(203,135,52,0.32)' }
-    : { color: 'var(--danger)', tint: 'rgba(185,61,66,0.10)', border: 'rgba(185,61,66,0.28)' };
-
+    : { color: 'var(--danger)', tint: 'rgba(185,61,66,0.10)', border: 'rgba(185,61,66,0.28)' }
+  : { color: 'var(--ink)', tint: 'transparent', border: 'transparent' };
 const overallColor = overallPalette.color;
-
-// Convert 1-5 scale to percentage for progress bar width
 const toPercent = (v: number) => `${(v / 5) * 100}%`;
-
-// Format date as "Month YYYY"
-const lastReviewedFormatted = ratings.lastReviewed.toLocaleDateString('en-US', {
-  month: 'long',
-  year: 'numeric',
-});
-
-const dimensions = [
-  { label: 'Research Depth', value: ratings.researchDepth },
-  { label: 'Global Coverage', value: ratings.globalCoverage },
-  { label: 'Mechanism Plausibility', value: ratings.mechanismPlausibility },
-  { label: 'Community Experience', value: ratings.anecdotalEvidence },
-];
+const lastReviewedFormatted = ratings
+  ? ratings.lastReviewed.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
+  : '';
+const dimensions = ratings
+  ? [
+      { label: 'Research Depth', value: ratings.researchDepth },
+      { label: 'Global Coverage', value: ratings.globalCoverage },
+      { label: 'Mechanism Plausibility', value: ratings.mechanismPlausibility },
+      { label: 'Community Experience', value: ratings.anecdotalEvidence },
+    ]
+  : [];
 ---
 
-<div class="space-y-4">
-  <!-- Header: title + overall badge -->
-  <div class="flex items-center justify-between">
-    <span class="eyebrow">Evidence Rating</span>
-    <span
-      class="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold border"
-      style={`color: ${overallColor}; background: ${overallPalette.tint}; border-color: ${overallPalette.border};`}
-    >
-      {overallLabel}
-    </span>
-  </div>
-
-  <!-- Three progress bars: Research Depth, Global Coverage, Mechanism Plausibility -->
-  <div class="space-y-3">
-    {dimensions.map((dim) => (
-      <div>
-        <div class="flex justify-between items-baseline text-xs mb-1">
-          <span style="color: var(--ink-muted);">{dim.label}</span>
-          <span class="font-mono" style="color: var(--ink);">{dim.value}/5</span>
-        </div>
-        <div class="h-1.5 rounded-full" style="background: var(--paper-2);">
-          <div
-            class="h-full rounded-full"
-            style={`width: ${toPercent(dim.value)}; background: ${overallColor};`}
-          ></div>
-        </div>
-      </div>
-    ))}
-  </div>
-
-  <!-- Overall composite score row -->
-  <div class="flex items-center justify-between pt-1" style="border-top: 1px solid var(--border-c);">
-    <span class="eyebrow">Overall Score</span>
-    <div class="flex items-center gap-2">
-      <span
-        class="text-2xl font-bold font-mono"
-        style={`color: ${overallColor};`}
-      >
-        {ratings.overall}
+{scoring ? (
+  <div class="space-y-4">
+    <!-- Evidence axis: overall /100 + label + 5 bars -->
+    <div class="flex items-center justify-between">
+      <span class="eyebrow">Evidence Score</span>
+      <span class="text-2xl font-bold font-mono" style="color: var(--ink);">
+        {scoring.evidence.overall}<span class="text-xs" style="color: var(--ink-dim);">/100</span>
       </span>
-      <span class="text-xs font-mono" style="color: var(--ink-dim);">/5</span>
+    </div>
+    <span
+      class="inline-block rounded-full px-3 py-1 text-xs font-bold border"
+      style="color: var(--primary-c); background: var(--primary-soft); border-color: rgba(11,81,127,0.30);"
+    >
+      {evLabelMap[scoring.evidence.label] ?? scoring.evidence.label}
+    </span>
+
+    <div class="space-y-3">
+      {evDims.map((dim) => (
+        <div>
+          <div class="flex justify-between items-baseline text-xs mb-1">
+            <span style="color: var(--ink-muted);">{dim.label}</span>
+            <span class="font-mono" style="color: var(--ink);">{dim.v}/100</span>
+          </div>
+          <div class="h-1.5 rounded-full" style="background: var(--paper-2);">
+            <div class="h-full rounded-full" style={`width: ${dim.v}%; background: var(--primary-c);`}></div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Effectiveness axis (distinct, subordinate) -->
+    <div class="pt-3" style="border-top: 1px solid var(--border-c);">
+      <div class="flex items-center justify-between">
+        <span class="eyebrow">Effectiveness</span>
+        <span class="text-xl font-bold font-mono" style="color: var(--ink);">
+          {effDisplay}
+          {eff && eff.basis !== 'not-established' && (
+            <span class="text-xs" style="color: var(--ink-dim);">/100</span>
+          )}
+        </span>
+      </div>
+      {effBasisLabel && (
+        <p class="text-xs italic mt-0.5" style="color: var(--ink-dim);">
+          {effBasisLabel}{eff.confidence ? ` · ${eff.confidence} confidence` : ''}
+        </p>
+      )}
+      <p class="text-xs mt-1" style="color: var(--ink-dim);">
+        Demonstrated effect magnitude — not a recommendation or safety claim.
+      </p>
+    </div>
+
+    {scoring.notes && (
+      <p class="text-xs italic leading-relaxed" style="color: var(--ink-dim);">{scoring.notes}</p>
+    )}
+
+    <div class="flex items-center justify-between pt-1">
+      <span class="text-xs" style="color: var(--ink-dim);">{scoredFormatted && `Scored ${scoredFormatted}`}</span>
+      <a href="/methodology#how-we-rate" class="text-xs transition-colors" style="color: var(--primary-c);">
+        How we rate &rarr;
+      </a>
     </div>
   </div>
+) : ratings ? (
+  <div class="space-y-4">
+    <!-- Header: title + overall badge -->
+    <div class="flex items-center justify-between">
+      <span class="eyebrow">Evidence Rating</span>
+      <span
+        class="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold border"
+        style={`color: ${overallColor}; background: ${overallPalette.tint}; border-color: ${overallPalette.border};`}
+      >
+        {overallLabel}
+      </span>
+    </div>
 
-  <!-- Optional review notes -->
-  {ratings.reviewNotes && (
-    <p class="text-xs italic leading-relaxed" style="color: var(--ink-dim);">{ratings.reviewNotes}</p>
-  )}
+    <!-- Progress bars -->
+    <div class="space-y-3">
+      {dimensions.map((dim) => (
+        <div>
+          <div class="flex justify-between items-baseline text-xs mb-1">
+            <span style="color: var(--ink-muted);">{dim.label}</span>
+            <span class="font-mono" style="color: var(--ink);">{dim.value}/5</span>
+          </div>
+          <div class="h-1.5 rounded-full" style="background: var(--paper-2);">
+            <div
+              class="h-full rounded-full"
+              style={`width: ${toPercent(dim.value)}; background: ${overallColor};`}
+            ></div>
+          </div>
+        </div>
+      ))}
+    </div>
 
-  <!-- Footer: last reviewed date + methodology link -->
-  <div class="flex items-center justify-between pt-1">
-    <span class="text-xs" style="color: var(--ink-dim);">Last reviewed {lastReviewedFormatted}</span>
-    <a
-      href="/methodology#how-we-rate"
-      class="text-xs transition-colors"
-      style="color: var(--primary-c);"
-    >
-      How we rate &rarr;
-    </a>
+    <!-- Overall composite score row -->
+    <div class="flex items-center justify-between pt-1" style="border-top: 1px solid var(--border-c);">
+      <span class="eyebrow">Overall Score</span>
+      <div class="flex items-center gap-2">
+        <span class="text-2xl font-bold font-mono" style={`color: ${overallColor};`}>
+          {ratings.overall}
+        </span>
+        <span class="text-xs font-mono" style="color: var(--ink-dim);">/5</span>
+      </div>
+    </div>
+
+    <!-- Optional review notes -->
+    {ratings.reviewNotes && (
+      <p class="text-xs italic leading-relaxed" style="color: var(--ink-dim);">{ratings.reviewNotes}</p>
+    )}
+
+    <!-- Footer: last reviewed date + methodology link -->
+    <div class="flex items-center justify-between pt-1">
+      <span class="text-xs" style="color: var(--ink-dim);">Last reviewed {lastReviewedFormatted}</span>
+      <a
+        href="/methodology#how-we-rate"
+        class="text-xs transition-colors"
+        style="color: var(--primary-c);"
+      >
+        How we rate &rarr;
+      </a>
+    </div>
   </div>
-</div>
+) : null}

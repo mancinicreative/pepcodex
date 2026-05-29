@@ -4,6 +4,7 @@ import SearchBar from '../components/SearchBar.astro';
 import PeptideCard from '../components/PeptideCard.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
 import Vial from '../components/Vial.astro';
+import EvidenceBadge from '../components/EvidenceBadge.astro';
 import { getCollection } from 'astro:content';
 
 const peptides = await getCollection('peptides');
@@ -34,10 +35,15 @@ const drawerDefs = [
   { letter: 'E', name: 'Cognitive', slug: 'cognitive', description: 'Nootropic and neuroprotective' },
   { letter: 'F', name: 'Immune', slug: 'immune', description: 'Immunomodulatory peptides' },
 ];
-const drawers = drawerDefs.map(d => ({
-  ...d,
-  count: peptides.filter(p => p.data.category === d.slug).length,
-}));
+const evidenceRank: Record<string, number> = { 'high': 4, 'moderate': 3, 'low': 2, 'very-low': 1 };
+const drawers = drawerDefs.map(d => {
+  const inDrawer = peptides.filter(p => p.data.category === d.slug);
+  const top = [...inDrawer]
+    .sort((a, b) => (evidenceRank[b.data.evidenceStrength] - evidenceRank[a.data.evidenceStrength]) || a.data.name.localeCompare(b.data.name))
+    .slice(0, 4);
+  return { ...d, count: inDrawer.length, top };
+});
+const maxDrawerCount = Math.max(...drawers.map(d => d.count), 1);
 
 const sourceCount = peptides.reduce((sum, p) => sum + p.data.sources.count, 0);
 const stats = [
@@ -146,21 +152,38 @@ const issue = 'Spring 2026';
     </div>
     <p class="eyebrow mb-8" style="color: var(--ink-dim);">Browse by classification</p>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      {drawers.map((d) => (
-        <a href={`/category/${d.slug}`} class="glass-card glass-card--hover group p-5 flex items-start gap-4">
-          <span class="flex h-11 w-11 flex-none items-center justify-center rounded-md font-serif text-xl"
-                style="background: var(--primary-soft); color: var(--primary-c); font-weight: 500;">
-            {d.letter}
-          </span>
-          <div class="min-w-0">
-            <div class="flex items-baseline justify-between gap-2">
-              <h3 class="font-serif text-lg transition-colors group-hover:text-[color:var(--primary-c)]" style="color: var(--ink); font-weight: 500;">{d.name}</h3>
-              <span class="eyebrow" style="color: var(--ink-dim); font-size: 0.64rem;">{d.count}</span>
+    <div class="glass-card overflow-hidden">
+      {drawers.map((d, i) => (
+        <div class={`grid grid-cols-1 md:grid-cols-[250px_1fr] gap-5 md:gap-10 p-5 md:p-6 ${i > 0 ? 'border-t border-[color:var(--border-c)]' : ''}`}>
+          <!-- Drawer identity -->
+          <a href={`/category/${d.slug}`} class="group flex items-start gap-3.5 self-start">
+            <span class="flex h-11 w-11 flex-none items-center justify-center rounded-md font-serif text-xl"
+                  style="background: var(--primary-soft); color: var(--primary-c); font-weight: 500;">
+              {d.letter}
+            </span>
+            <div class="min-w-0">
+              <h3 class="font-serif text-lg leading-tight transition-colors group-hover:text-[color:var(--primary-c)]" style="color: var(--ink); font-weight: 500;">{d.name}</h3>
+              <p class="mt-1 text-xs leading-snug" style="color: var(--ink-muted);">{d.description}</p>
+              <span class="eyebrow mt-2 inline-flex items-center gap-1" style="color: var(--ink-dim); font-size: 0.6rem;">
+                {d.count} specimens
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
             </div>
-            <p class="mt-1 text-sm leading-snug" style="color: var(--ink-muted);">{d.description}</p>
+          </a>
+          <!-- Top specimens in this drawer -->
+          <div>
+            {d.top.map((p, j) => (
+              <a href={`/peptides/${p.slug}`} class={`flex items-start justify-between gap-4 py-2.5 group ${j > 0 ? 'border-t border-[color:var(--rule)]' : ''}`}>
+                <div class="min-w-0">
+                  <div class="font-serif text-[1rem] leading-tight transition-colors group-hover:text-[color:var(--primary-c)]" style="color: var(--ink);">{p.data.name}</div>
+                  <div class="mt-0.5 text-xs line-clamp-1" style="color: var(--ink-dim);">{p.data.summary}</div>
+                </div>
+                <div class="flex-none pt-0.5"><EvidenceBadge strength={p.data.evidenceStrength} showLabel={false} /></div>
+              </a>
+            ))}
+            {d.count === 0 && <p class="py-2.5 text-sm" style="color: var(--ink-dim);">No specimens catalogued yet.</p>}
           </div>
-        </a>
+        </div>
       ))}
     </div>
   </section>
@@ -171,14 +194,32 @@ const issue = 'Spring 2026';
       <span class="section-header__bar"></span>
       <h2 class="section-header__title">By the numbers</h2>
     </div>
-    <div class="panel-inset grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0" style="--tw-divide-opacity: 1;">
-      {stats.map((stat) => (
-        <div class="p-6" style="border-color: var(--border-c);">
-          <div class="font-serif text-4xl md:text-5xl" style="color: var(--ink); font-weight: 500;">{stat.value}</div>
-          <div class="eyebrow mt-2" style="color: var(--ink-muted);">{stat.label}</div>
-          <div class="mt-1 text-xs" style="color: var(--ink-dim);">{stat.description}</div>
+    <div class="grid lg:grid-cols-2 gap-5">
+      <!-- Distribution chart -->
+      <div class="panel-inset p-6">
+        <p class="eyebrow mb-5" style="color: var(--ink-dim);">Specimens per drawer</p>
+        <div class="space-y-3">
+          {drawers.map((d) => (
+            <div class="flex items-center gap-3">
+              <span class="eyebrow flex-none w-24 truncate" style="color: var(--ink-muted); font-size: 0.62rem;">{d.letter} · {d.name}</span>
+              <div class="flex-1 h-2.5 rounded-full overflow-hidden" style="background: var(--paper-3);">
+                <div class="h-full rounded-full" style={`width: ${Math.max(3, Math.round((d.count / maxDrawerCount) * 100))}%; background: var(--primary-c);`}></div>
+              </div>
+              <span class="flex-none w-7 text-right text-sm" style="font-family: var(--font-mono); color: var(--ink);">{d.count}</span>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
+      <!-- Stats -->
+      <div class="panel-inset grid grid-cols-2">
+        {stats.map((stat, i) => (
+          <div class="p-6" style={`border-color: var(--border-c); ${i % 2 === 0 ? 'border-right: 1px solid var(--border-c);' : ''} ${i < 2 ? 'border-bottom: 1px solid var(--border-c);' : ''}`}>
+            <div class="font-serif text-4xl md:text-5xl" style="color: var(--ink); font-weight: 500;">{stat.value}</div>
+            <div class="eyebrow mt-2" style="color: var(--ink-muted);">{stat.label}</div>
+            <div class="mt-1 text-xs" style="color: var(--ink-dim);">{stat.description}</div>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 

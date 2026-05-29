@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SearchBar from '../components/SearchBar.astro';
 import PeptideCard from '../components/PeptideCard.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
+import Vial from '../components/Vial.astro';
 import { getCollection } from 'astro:content';
 
 const peptides = await getCollection('peptides');
@@ -10,253 +11,206 @@ const comparisons = await getCollection('comparisons');
 const blogPosts = await getCollection('blog');
 const glossaryTerms = await getCollection('glossary');
 
-// Top Google searched peptides - manually curated for relevance
+// Selected specimens — curated for relevance (the "plates")
 const topPeptideSlugs = [
-  'semaglutide',    // GLP-1 (Ozempic/Wegovy) - highest search volume
-  'tirzepatide',    // GIP/GLP-1 (Mounjaro/Zepbound) - weight loss trend
-  'bpc-157',        // Popular recovery peptide
+  'semaglutide',    // GLP-1 (Ozempic/Wegovy)
+  'tirzepatide',    // GIP/GLP-1 (Mounjaro/Zepbound)
+  'bpc-157',        // Recovery
   'tb-500',         // Healing/recovery
-  'pt-141',         // Sexual health (Bremelanotide)
+  'pt-141',         // Sexual health
   'ghk-cu',         // Skin/hair/longevity
 ];
-
 const featuredPeptides = topPeptideSlugs
   .map(slug => peptides.find(p => p.slug === slug))
   .filter(Boolean);
+const plateNumerals = ['I', 'II', 'III', 'IV', 'V', 'VI'];
 
-const categories = [
-  {
-    name: 'Metabolic',
-    slug: 'metabolic',
-    description: 'GLP-1 agonists and metabolic regulators',
-    icon: 'M',
-  },
-  {
-    name: 'Recovery',
-    slug: 'repair-recovery',
-    description: 'Healing and tissue regeneration',
-    icon: 'R',
-  },
-  {
-    name: 'Hormonal',
-    slug: 'hormonal',
-    description: 'Growth hormone secretagogues',
-    icon: 'H',
-  },
-  {
-    name: 'Longevity',
-    slug: 'longevity',
-    description: 'Anti-aging bioregulators',
-    icon: 'L',
-  },
-  {
-    name: 'Cognitive',
-    slug: 'cognitive',
-    description: 'Nootropic and neuroprotective',
-    icon: 'C',
-  },
-  {
-    name: 'Immune',
-    slug: 'immune',
-    description: 'Immunomodulatory peptides',
-    icon: 'I',
-  },
-  {
-    name: 'Other',
-    slug: 'other',
-    description: 'Specialized compounds',
-    icon: 'O',
-  },
+// The "drawers" — categories A–F with live specimen counts
+const drawerDefs = [
+  { letter: 'A', name: 'Metabolic', slug: 'metabolic', description: 'GLP-1 agonists and metabolic regulators' },
+  { letter: 'B', name: 'Recovery', slug: 'repair-recovery', description: 'Healing and tissue regeneration' },
+  { letter: 'C', name: 'Hormonal', slug: 'hormonal', description: 'Growth hormone secretagogues' },
+  { letter: 'D', name: 'Longevity', slug: 'longevity', description: 'Anti-aging bioregulators' },
+  { letter: 'E', name: 'Cognitive', slug: 'cognitive', description: 'Nootropic and neuroprotective' },
+  { letter: 'F', name: 'Immune', slug: 'immune', description: 'Immunomodulatory peptides' },
 ];
+const drawers = drawerDefs.map(d => ({
+  ...d,
+  count: peptides.filter(p => p.data.category === d.slug).length,
+}));
 
 const sourceCount = peptides.reduce((sum, p) => sum + p.data.sources.count, 0);
 const stats = [
-  { value: `${peptides.length}+`, label: 'Peptide Dossiers', description: 'In-depth research profiles' },
-  { value: `${comparisons.length}+`, label: 'Comparisons', description: 'Head-to-head analyses' },
-  { value: `${sourceCount.toLocaleString()}+`, label: 'Cited Sources', description: 'Peer-reviewed papers' },
-  { value: `${blogPosts.length}+`, label: 'Blog Articles', description: 'Weekly research updates' },
+  { value: `${peptides.length}`, label: 'Dossiers', description: 'In-depth research profiles' },
+  { value: sourceCount.toLocaleString(), label: 'Cited sources', description: 'Peer-reviewed papers' },
+  { value: `${comparisons.length}`, label: 'Comparisons', description: 'Head-to-head analyses' },
+  { value: `${blogPosts.length}`, label: 'Briefings', description: 'Research updates' },
 ];
+const issue = 'Spring 2026';
 ---
 
 <BaseLayout title="Evidence-Based Peptide Research">
-  <!-- Hero Section -->
-  <section class="relative py-16 md:py-20 text-center">
-    <div class="relative z-10">
-      <!-- Badge at top -->
-      <div class="badge badge--primary mb-6 backdrop-blur-sm">
-        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/>
-        </svg>
-        <span>The Future of Bioresearch</span>
-      </div>
-
-      <!-- Large heading with gradient - Display size -->
-      <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-glow font-display" style="color: var(--text-high);">
-        Peptide Intelligence <br/>
-        <span class="text-primary drop-shadow-[0_0_30px_rgba(139,92,246,0.6)]">Synthesized.</span>
-      </h1>
-
-      <!-- Subtitle -->
-      <p class="text-xl max-w-2xl mx-auto mb-10 leading-relaxed" style="color: var(--text-medium);">
-        Comprehensive library of bioregulators and synthetic peptides.
-        Evidence-based dossiers synthesizing peer-reviewed literature.
-      </p>
-
-      <!-- Search Box with Glow Effect -->
-      <div class="max-w-xl mx-auto relative group">
-        <!-- Outer glow -->
-        <div class="absolute -inset-1 bg-gradient-to-r from-primary to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-        <!-- Inner container with SearchBar -->
-        <div class="relative">
-          <SearchBar placeholder="Search peptides by name or condition..." size="lg" />
+  <!-- ============ MASTHEAD ============ -->
+  <section class="pt-6 pb-12 md:pb-16">
+    <div class="grid lg:grid-cols-[1fr_320px] gap-10 lg:gap-12 items-start">
+      <!-- Headline -->
+      <div>
+        <span class="eyebrow">The PepCodex Catalogue · Vol. IV</span>
+        <h1 class="font-serif mt-4 text-[2.75rem] leading-[1.02] md:text-[4.25rem] tracking-[-0.01em]" style="color: var(--ink); font-weight: 500;">
+          A catalogue of <em class="italic" style="color: var(--primary-c);">peptides,</em> referenced.
+        </h1>
+        <p class="mt-6 max-w-xl text-lg leading-relaxed" style="color: var(--ink-muted);">
+          {peptides.length} dossiers. {sourceCount.toLocaleString()} cited sources. Distilled, classified,
+          and indexed — so you can read the evidence, not the marketing.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="/peptides" class="btn btn-ink btn-md uppercase tracking-[0.1em] text-[0.78rem]" style="font-family: var(--font-mono);">
+            Browse the catalogue
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/methodology" class="btn btn-paper btn-md uppercase tracking-[0.1em] text-[0.78rem]" style="font-family: var(--font-mono);">
+            Read the methodology
+          </a>
         </div>
       </div>
+
+      <!-- This Volume card -->
+      <aside class="glass-card relative overflow-hidden p-6">
+        <div class="signal-bar absolute top-0 left-0 right-0 rounded-none"></div>
+        <div class="flex items-start justify-between">
+          <span class="eyebrow">This volume</span>
+          <Vial strength="high" size="md" />
+        </div>
+        <div class="font-serif leading-none mt-2 text-[5.5rem]" style="color: var(--primary-c); font-weight: 500;">IV</div>
+        <dl class="mt-4 space-y-2.5 text-sm">
+          {[
+            ['Issue', issue],
+            ['Dossiers', `${peptides.length}`],
+            ['Cited sources', sourceCount.toLocaleString()],
+            ['Comparisons', `${comparisons.length}`],
+          ].map(([k, v]) => (
+            <div class="flex items-center justify-between gap-3 pb-2" style="border-bottom: 1px solid var(--border-c);">
+              <dt class="eyebrow" style="font-size: 0.66rem;">{k}</dt>
+              <dd style="color: var(--ink); font-family: var(--font-mono); font-weight: 500;">{v}</dd>
+            </div>
+          ))}
+        </dl>
+      </aside>
+    </div>
+
+    <!-- Search -->
+    <div class="mt-10 max-w-2xl">
+      <SearchBar placeholder="Search peptides by name or condition…" size="lg" />
     </div>
   </section>
 
-  <!-- Category Cards Grid -->
-  <section class="py-12 md:py-16">
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
-      {categories.map((cat) => (
-        <a href={`/category/${cat.slug}`} class="glass-card glass-card--hover p-6 text-center group">
-          <!-- Icon circle -->
-          <div class="w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-3 group-hover:bg-primary/20 group-hover:text-primary transition-colors" style="background: var(--surface-glass); border: 1px solid var(--border-glass);">
-            <span class="text-lg font-bold font-display text-white group-hover:text-primary">{cat.icon}</span>
-          </div>
-          <h3 class="font-semibold font-display" style="color: var(--text-high);">{cat.name}</h3>
-        </a>
-      ))}
-    </div>
-  </section>
-
-  <!-- Featured Peptides Section -->
+  <!-- ============ THE PLATES ============ -->
   {featuredPeptides.length > 0 && (
-    <section class="py-12 md:py-16">
-      <!-- Section header -->
-      <div class="flex items-center justify-between mb-8">
+    <section class="py-10 md:py-14" style="border-top: 1px solid var(--border-c);">
+      <div class="flex items-end justify-between gap-4 mb-2">
         <div class="section-header mb-0">
           <span class="section-header__bar"></span>
-          <h2 class="section-header__title">Featured Peptides</h2>
+          <h2 class="section-header__title">The plates</h2>
         </div>
-        <a href="/peptides" class="btn btn-ghost btn-sm flex items-center gap-2">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
-          </svg>
-          View All
+        <a href="/peptides" class="eyebrow inline-flex items-center gap-1 hover:text-[color:var(--primary-c)] transition-colors" style="color: var(--ink-dim);">
+          All entries
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
+      <p class="eyebrow mb-8" style="color: var(--ink-dim);">Selected specimens · Vol. IV</p>
 
-      <!-- Peptide cards grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {featuredPeptides.map((peptide) => (
-          <PeptideCard
-            name={peptide.data.name}
-            slug={peptide.slug}
-            category={peptide.data.category}
-            evidenceStrength={peptide.data.evidenceStrength}
-            summary={peptide.data.summary}
-            aliases={peptide.data.aliases}
-          />
+        {featuredPeptides.map((peptide, i) => (
+          <div>
+            <div class="eyebrow mb-2" style="color: var(--ink-dim);">Plate {plateNumerals[i]}</div>
+            <PeptideCard
+              name={peptide.data.name}
+              slug={peptide.slug}
+              category={peptide.data.category}
+              compoundType={peptide.data.compoundType}
+              evidenceStrength={peptide.data.evidenceStrength}
+              summary={peptide.data.summary}
+              aliases={peptide.data.aliases}
+            />
+          </div>
         ))}
       </div>
     </section>
   )}
 
-  <!-- Trust Signals / Stats -->
-  <section class="relative border-y border-white/5 bg-gradient-to-r from-[var(--primary)]/20 via-purple-900/30 to-[var(--primary)]/20 backdrop-blur-lg py-12">
-    <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
-      {stats.map((stat) => (
-        <div class="text-center group">
-          <div class="text-4xl font-bold group-hover:text-primary transition-colors font-display" style="color: var(--text-high);">
-            {stat.value}
+  <!-- ============ THE DRAWERS ============ -->
+  <section class="py-10 md:py-14" style="border-top: 1px solid var(--border-c);">
+    <div class="section-header mb-2">
+      <span class="section-header__bar"></span>
+      <h2 class="section-header__title">The drawers</h2>
+    </div>
+    <p class="eyebrow mb-8" style="color: var(--ink-dim);">Browse by classification</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {drawers.map((d) => (
+        <a href={`/category/${d.slug}`} class="glass-card glass-card--hover group p-5 flex items-start gap-4">
+          <span class="flex h-11 w-11 flex-none items-center justify-center rounded-md font-serif text-xl"
+                style="background: var(--primary-soft); color: var(--primary-c); font-weight: 500;">
+            {d.letter}
+          </span>
+          <div class="min-w-0">
+            <div class="flex items-baseline justify-between gap-2">
+              <h3 class="font-serif text-lg transition-colors group-hover:text-[color:var(--primary-c)]" style="color: var(--ink); font-weight: 500;">{d.name}</h3>
+              <span class="eyebrow" style="color: var(--ink-dim); font-size: 0.64rem;">{d.count}</span>
+            </div>
+            <p class="mt-1 text-sm leading-snug" style="color: var(--ink-muted);">{d.description}</p>
           </div>
-          <div class="mt-1 text-sm font-medium" style="color: var(--text-high);">{stat.label}</div>
-          <div class="text-xs" style="color: var(--text-low);">{stat.description}</div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- ============ BY THE NUMBERS ============ -->
+  <section class="py-10 md:py-14" style="border-top: 1px solid var(--border-c);">
+    <div class="section-header mb-8">
+      <span class="section-header__bar"></span>
+      <h2 class="section-header__title">By the numbers</h2>
+    </div>
+    <div class="panel-inset grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0" style="--tw-divide-opacity: 1;">
+      {stats.map((stat) => (
+        <div class="p-6" style="border-color: var(--border-c);">
+          <div class="font-serif text-4xl md:text-5xl" style="color: var(--ink); font-weight: 500;">{stat.value}</div>
+          <div class="eyebrow mt-2" style="color: var(--ink-muted);">{stat.label}</div>
+          <div class="mt-1 text-xs" style="color: var(--ink-dim);">{stat.description}</div>
         </div>
       ))}
     </div>
   </section>
 
-  <!-- How It Works -->
-  <section class="py-12 md:py-16">
-    <!-- Section header -->
-    <div class="section-header mb-12">
-      <span class="section-header__bar"></span>
-      <h2 class="section-header__title">How We Work</h2>
-    </div>
-
-    <div class="grid gap-8 md:grid-cols-3 pt-6">
-      <div class="relative group">
-        <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center text-white font-bold text-sm z-10" style="box-shadow: var(--shadow-glow-md);">1</div>
-        <div class="glass-card p-8 pt-10 text-center h-full">
-          <div class="w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors" style="background: var(--surface-glass); border: 1px solid var(--border-glass);">
-            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-          </div>
-          <h4 class="text-lg font-semibold mb-3 font-display" style="color: var(--text-high);">Primary Sources</h4>
-          <p class="text-sm leading-relaxed" style="color: var(--text-medium);">
-            Every claim is backed by peer-reviewed studies, clinical trials, or regulatory documents.
-          </p>
-        </div>
-      </div>
-
-      <div class="relative group">
-        <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center text-white font-bold text-sm z-10" style="box-shadow: var(--shadow-glow-md);">2</div>
-        <div class="glass-card p-8 pt-10 text-center h-full">
-          <div class="w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors" style="background: var(--surface-glass); border: 1px solid var(--border-glass);">
-            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <h4 class="text-lg font-semibold mb-3 font-display" style="color: var(--text-high);">Global Coverage</h4>
-          <p class="text-sm leading-relaxed" style="color: var(--text-medium);">
-            We include international research, including non-English sources, to give you the full picture.
-          </p>
-        </div>
-      </div>
-
-      <div class="relative group">
-        <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center text-white font-bold text-sm z-10" style="box-shadow: var(--shadow-glow-md);">3</div>
-        <div class="glass-card p-8 pt-10 text-center h-full">
-          <div class="w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors" style="background: var(--surface-glass); border: 1px solid var(--border-glass);">
-            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-            </svg>
-          </div>
-          <h4 class="text-lg font-semibold mb-3 font-display" style="color: var(--text-high);">Evidence Grading</h4>
-          <p class="text-sm leading-relaxed" style="color: var(--text-medium);">
-            Clear evidence ratings help you understand the strength and quality of available research.
-          </p>
-        </div>
+  <!-- ============ THE NEXT VOLUME (subscribe) ============ -->
+  <section class="py-10 md:py-14" style="border-top: 1px solid var(--border-c);">
+    <div class="glass-card relative overflow-hidden p-8 md:p-10">
+      <div class="signal-bar absolute top-0 left-0 right-0 rounded-none"></div>
+      <span class="eyebrow" style="color: var(--ink-dim);">The next volume</span>
+      <h2 class="font-serif mt-2 text-3xl md:text-4xl" style="color: var(--ink); font-weight: 500;">No. 03 lands this summer.</h2>
+      <p class="mt-3 max-w-xl text-sm leading-relaxed" style="color: var(--ink-muted);">
+        Subscribe and we'll send you the next issue — plus the in-between revisions when a dossier is
+        re-stamped. No marketing, no protocols, just receipts.
+      </p>
+      <div class="mt-6 max-w-xl">
+        <NewsletterForm variant="full" />
       </div>
     </div>
   </section>
 
-  <!-- Newsletter CTA -->
-  <section class="py-12 md:py-16">
-    <div class="mx-auto max-w-3xl">
-      <NewsletterForm variant="full" />
-    </div>
-  </section>
-
-  <!-- Disclaimer -->
-  <section class="py-12">
-    <div class="mx-auto max-w-4xl">
-      <div class="glass-card p-6" style="border-color: hsla(190, 100%, 50%, 0.3);">
-        <div class="flex items-start gap-4">
-          <div class="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--surface-glass); border: 1px solid var(--border-glass);">
-            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-            </svg>
-          </div>
-          <div>
-            <h3 class="text-sm font-bold text-accent uppercase tracking-wider mb-2">Important Disclaimer</h3>
-            <p class="text-sm leading-relaxed" style="color: var(--text-medium);">
-              This website provides educational information only. It is not medical advice and should not be used to diagnose, treat, or prevent any condition. Always consult a qualified healthcare provider before making health decisions. We do not provide dosing, protocols, or sourcing information.
-            </p>
-          </div>
-        </div>
+  <!-- ============ EDUCATIONAL USE ONLY ============ -->
+  <section class="pb-12">
+    <div class="panel-inset flex items-start gap-4 p-5" style="border-left: 3px solid var(--compound);">
+      <span class="flex h-8 w-8 flex-none items-center justify-center rounded-full" style="background: rgba(203,135,52,0.15);">
+        <svg class="w-4 h-4" style="color: #9a6418;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+      </span>
+      <div>
+        <h3 class="eyebrow" style="color: #9a6418;">Educational use only</h3>
+        <p class="mt-1.5 text-sm leading-relaxed" style="color: var(--ink-muted);">
+          This website provides educational information only. It is not medical advice and should not be
+          used to diagnose, treat, or prevent any condition. Always consult a qualified healthcare provider
+          before making health decisions. We do not provide dosing, protocols, or sourcing information.
+        </p>
       </div>
     </div>
   </section>

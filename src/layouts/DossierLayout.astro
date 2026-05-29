@@ -254,6 +254,51 @@ const breadcrumbItems = [
 
 // SEO: Article URL
 const articleUrl = Astro.url.toString();
+
+// === Editorial chrome (all derived from real data) ===
+const drawerLetters: Record<string, string> = {
+  'metabolic': 'A', 'repair-recovery': 'B', 'hormonal': 'C',
+  'longevity': 'D', 'cognitive': 'E', 'immune': 'F', 'other': 'G',
+};
+const drawerLetter = drawerLetters[category] || '—';
+
+// Stable entry number from alphabetical catalogue order
+const sortedPeptides = [...allPeptides].sort((a, b) => a.data.name.localeCompare(b.data.name));
+const entryNum = Math.max(1, sortedPeptides.findIndex(p => p.slug === currentSlug) + 1);
+const totalEntries = allPeptides.length;
+function toRoman(n: number): string {
+  const map: [number, string][] = [[1000,'M'],[900,'CM'],[500,'D'],[400,'CD'],[100,'C'],[90,'XC'],[50,'L'],[40,'XL'],[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']];
+  let r = ''; let x = n;
+  for (const [v, s] of map) { while (x >= v) { r += s; x -= v; } }
+  return r;
+}
+const plateRoman = toRoman(entryNum);
+const totalRoman = toRoman(totalEntries).toLowerCase();
+
+// Two-tone display name: trailing token containing a digit rendered in accent italic
+let namePrefix = name;
+let nameSuffix = '';
+const _lastDash = name.lastIndexOf('-');
+if (_lastDash > 0 && /\d/.test(name.slice(_lastDash + 1))) {
+  namePrefix = name.slice(0, _lastDash + 1);
+  nameSuffix = name.slice(_lastDash + 1);
+}
+
+// Verdict descriptor from real source mix
+const _humanN = sources.human || 0;
+const verdictLine = _humanN === 0
+  ? 'Preclinical evidence only'
+  : _humanN >= 3
+    ? `${_humanN} human studies`
+    : `Mostly preclinical · ${_humanN} human stud${_humanN === 1 ? 'y' : 'ies'}`;
+
+// Last revised, formatted
+const lastRevised = lastUpdated
+  ? new Date(lastUpdated).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
+  : null;
+
+// Citation string for the Cite action
+const citationText = `PepCodex. ${name}: Evidence Dossier. Retrieved ${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}, from ${articleUrl}`;
 ---
 
 <BaseLayout title={metaTitle || name} description={metaDescription || summary}>
@@ -278,8 +323,8 @@ const articleUrl = Astro.url.toString();
   />
 
   <div class="max-w-7xl mx-auto pb-20">
-    <!-- Breadcrumb + identification strip -->
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-10 pb-4" style="border-bottom: 1px solid var(--border-c);">
+    <!-- Breadcrumb + actions -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-3 mb-3">
       <nav class="flex items-center gap-2 text-[0.7rem] uppercase tracking-[0.12em]" style="font-family: var(--font-mono); color: var(--ink-dim);" aria-label="Breadcrumb">
         <a href="/peptides" class="hover:text-[color:var(--ink)] transition-colors">Catalogue</a>
         <span aria-hidden="true">/</span>
@@ -287,27 +332,46 @@ const articleUrl = Astro.url.toString();
         <span aria-hidden="true">/</span>
         <span style="color: var(--ink);">{name}</span>
       </nav>
-      <div class="flex items-center gap-2 text-[0.62rem] uppercase tracking-[0.12em]" style="font-family: var(--font-mono);">
-        <span class="px-2.5 py-1 rounded" style="background: var(--primary-soft); border: 1px solid var(--primary-border); color: var(--primary-c);">
-          ID · {name.toUpperCase().replace(/\s+/g, '-')}
-        </span>
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded" style="background: var(--paper-2); border: 1px solid var(--border-c); color: var(--ink-muted);">
-          <span class="signal-dot signal-dot--research"></span>Active
-        </span>
+      <div class="flex items-center gap-1 text-[0.64rem] uppercase tracking-[0.1em]" style="font-family: var(--font-mono);" data-citation={citationText}>
+        <button type="button" class="dossier-action" data-action="cite" aria-label="Copy citation">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 8h10M7 12h6M3 5v14l4-3h14V5z"/></svg>
+          <span>Cite</span>
+        </button>
+        <button type="button" class="dossier-action" data-action="share" aria-label="Copy link">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg>
+          <span>Share</span>
+        </button>
+        <button type="button" class="dossier-action" data-action="save" aria-label="Save to reading list">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          <span data-save-label>Save</span>
+        </button>
       </div>
+    </div>
+
+    <!-- Status strip (real data only) -->
+    <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mb-10 pb-4 text-[0.66rem] uppercase tracking-[0.1em]" style="border-bottom: 1px solid var(--border-c); font-family: var(--font-mono); color: var(--ink-dim);">
+      <span class="inline-flex items-center gap-1.5"><span class="signal-dot signal-dot--research"></span>Now reading</span>
+      <span>Entry <span style="color: var(--ink);">{String(entryNum).padStart(3, '0')}</span> / {totalEntries}</span>
+      {lastRevised && <span>Last revised <span style="color: var(--ink);">{lastRevised}</span></span>}
+      <span><span style="color: var(--ink);">{sources.count}</span> sources</span>
+      <a href="/methodology" class="transition-colors hover:text-[color:var(--ink)] md:ml-auto">Methodology →</a>
     </div>
 
     <!-- Specimen sheet hero -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 mb-16">
       <!-- Left: identity -->
       <div class="lg:col-span-7">
-        <div class="flex flex-wrap items-center gap-3 mb-5">
-          <span class="badge badge--primary">{catLabel}</span>
-          <span class="eyebrow" style="color: var(--ink-dim);">A specimen of the {catLabel} drawer</span>
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
+          <span class="font-serif italic text-lg">
+            <span style="color: var(--primary-c);">Plate {plateRoman}.</span>
+            <span style="color: var(--ink-dim);"> of {totalRoman}.</span>
+          </span>
+          <span class="badge badge--primary">Drawer {drawerLetter} · {catLabel}</span>
         </div>
+        <p class="eyebrow mb-4" style="color: var(--ink-dim);">A specimen of the {catLabel} drawer</p>
 
         <h1 class="font-serif text-6xl md:text-8xl leading-[0.95] tracking-[-0.02em]" style="color: var(--ink); font-weight: 500;">
-          {name}
+          {namePrefix}{nameSuffix && <em style="color: var(--primary-c);">{nameSuffix}</em>}
         </h1>
 
         {/* Regulatory badge */}
@@ -358,6 +422,7 @@ const articleUrl = Astro.url.toString();
             </div>
             <span class="font-serif text-2xl" style="color: var(--ink); font-weight: 500;">{currentEvidence.label.replace(' Evidence', '')}</span>
           </div>
+          <p class="mt-1.5 eyebrow" style="color: var(--ink-dim);">{verdictLine}</p>
 
           <!-- Source breakdown bars -->
           <dl class="mt-6 space-y-3.5">
@@ -703,6 +768,18 @@ const articleUrl = Astro.url.toString();
     border-color: var(--primary-c) !important;
     color: var(--ink-paper) !important;
   }
+
+  .dossier-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.55rem;
+    border-radius: 6px;
+    color: var(--ink-dim);
+    transition: color 0.15s, background 0.15s;
+  }
+  .dossier-action:hover { color: var(--ink); background: var(--paper-2); }
+  .dossier-action.is-active { color: var(--primary-c); }
 </style>
 
 <script>
@@ -867,5 +944,59 @@ const articleUrl = Astro.url.toString();
         }
       });
     }
+  });
+</script>
+
+<script>
+  // Breadcrumb Cite / Share / Save actions
+  document.addEventListener('DOMContentLoaded', () => {
+    const group = document.querySelector('[data-citation]');
+    const url = window.location.href;
+    const saveKey = 'pepcodex-saved';
+
+    function flash(btn: Element, msg: string) {
+      const label = btn.querySelector('span');
+      if (!label) return;
+      const original = label.textContent;
+      label.textContent = msg;
+      btn.classList.add('is-active');
+      setTimeout(() => { label.textContent = original; btn.classList.remove('is-active'); }, 1800);
+    }
+
+    async function copy(text: string) {
+      try { await navigator.clipboard.writeText(text); return true; }
+      catch { return false; }
+    }
+
+    // Reflect saved state on load
+    const saveBtn = document.querySelector('[data-action="save"]');
+    const saveLabel = document.querySelector('[data-save-label]');
+    function getSaved(): string[] {
+      try { return JSON.parse(localStorage.getItem(saveKey) || '[]'); } catch { return []; }
+    }
+    if (saveBtn && saveLabel) {
+      if (getSaved().includes(url)) { saveLabel.textContent = 'Saved'; saveBtn.classList.add('is-active'); }
+    }
+
+    document.querySelectorAll('.dossier-action').forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        const action = btn.getAttribute('data-action');
+        if (action === 'cite') {
+          const citation = group?.getAttribute('data-citation') || url;
+          if (await copy(citation)) flash(btn, 'Copied');
+        } else if (action === 'share') {
+          if ((navigator as any).share) {
+            try { await (navigator as any).share({ title: document.title, url }); return; } catch {}
+          }
+          if (await copy(url)) flash(btn, 'Copied');
+        } else if (action === 'save') {
+          const saved = getSaved();
+          const idx = saved.indexOf(url);
+          if (idx >= 0) { saved.splice(idx, 1); if (saveLabel) saveLabel.textContent = 'Save'; btn.classList.remove('is-active'); }
+          else { saved.push(url); if (saveLabel) saveLabel.textContent = 'Saved'; btn.classList.add('is-active'); }
+          localStorage.setItem(saveKey, JSON.stringify(saved));
+        }
+      });
+    });
   });
 </script>

@@ -21,7 +21,7 @@ const categoryAccents: Record<string, string> = {
 
 const accentColor = category ? categoryAccents[category] || 'var(--primary)' : 'var(--primary)';
 
-const siteBase = Astro.site?.toString() || 'https://pepcodex.com';
+const siteBase = Astro.site?.toString() || 'https://www.pepcodex.com';
 const breadcrumbItems = [
   { name: 'Home', url: siteBase },
   { name: 'Peptides', url: `${siteBase}peptides/` },

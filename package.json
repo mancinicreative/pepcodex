@@ -4,13 +4,14 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "check": "node scripts/validate-cross-links.mjs",
+    "check": "node scripts/validate-cross-links.mjs && node scripts/qa-seo.mjs",
     "prebuild": "npm run check",
     "build": "astro build",
     "postbuild": "npx pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro",
-    "validate-links": "node scripts/validate-cross-links.mjs"
+    "validate-links": "node scripts/validate-cross-links.mjs",
+    "qa-seo": "node scripts/qa-seo.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.14",

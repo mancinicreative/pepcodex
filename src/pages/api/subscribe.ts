@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 
 export const prerender = false;
 
-const ALLOWED_ORIGIN = 'https://pepcodex.com';
+const ALLOWED_ORIGIN = 'https://www.pepcodex.com';
 function normalizeOrigin(origin: string): string | null {
   try {
     return new URL(origin).origin;
@@ -180,7 +180,7 @@ export const POST: APIRoute = async ({ request }) => {
           utm_source: source || 'website',
           utm_medium: 'organic',
           utm_campaign: 'pepcodex',
-          referring_site: 'https://pepcodex.com',
+          referring_site: 'https://www.pepcodex.com',
         }),
       }
     );

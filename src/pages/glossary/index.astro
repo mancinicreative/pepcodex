@@ -41,13 +41,13 @@ const categoryLabels: Record<string, string> = {
 
 // SEO
 const breadcrumbItems = [
-  { name: 'Home', url: Astro.site?.toString() || 'https://pepcodex.com' },
+  { name: 'Home', url: Astro.site?.toString() || 'https://www.pepcodex.com' },
   { name: 'Glossary', url: Astro.url.toString() }
 ];
 
 const itemListData = sortedGlossary.map((term, index) => ({
   name: term.data.term,
-  url: `${Astro.site || 'https://pepcodex.com'}glossary/${term.slug}/`,
+  url: `${Astro.site || 'https://www.pepcodex.com'}glossary/${term.slug}/`,
   description: term.data.definition.slice(0, 100),
   position: index + 1
 }));

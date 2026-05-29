@@ -93,7 +93,7 @@ function getSourceUrl(source: Source): string {
   return `https://pubmed.ncbi.nlm.nih.gov/?term=${encodeURIComponent(searchTerms)}`;
 }
 
-const siteBase = Astro.site?.toString() || 'https://pepcodex.com';
+const siteBase = Astro.site?.toString() || 'https://www.pepcodex.com';
 const breadcrumbItems = [
   { name: 'Home', url: siteBase },
   { name: 'Blog', url: `${siteBase}blog/` },

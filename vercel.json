@@ -4,6 +4,12 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "pepcodex.com" }],
+      "destination": "https://www.pepcodex.com/:path*",
+      "statusCode": 308
+    },
+    {
       "source": "/calculator/reconstitution/tesamorelin",
       "destination": "/peptides/tesamorelin",
       "statusCode": 301

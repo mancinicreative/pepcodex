@@ -70,8 +70,8 @@ const evidenceConfig: Record<string, { color: string; label: string }> = {
 // SEO
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const breadcrumbItems = [
-  { name: 'Home', url: Astro.site?.toString() || 'https://pepcodex.com' },
-  { name: 'Conditions', url: `${Astro.site || 'https://pepcodex.com'}conditions/` },
+  { name: 'Home', url: Astro.site?.toString() || 'https://www.pepcodex.com' },
+  { name: 'Conditions', url: `${Astro.site || 'https://www.pepcodex.com'}conditions/` },
   { name: conditionName, url: canonicalURL.toString() },
 ];
 

@@ -313,9 +313,25 @@ anecdotalReports:
   positive: []
   negative: []
   communityNotes: No meaningful community discussion or user reports available.
+mechanismPathways:
+  - name: 'Lpt Transport Pathway'
+    label: 'LPS Assembly'
+    steps:
+      - 'LPS synthesis (inner membrane)'
+      - 'LptBFGC (ABC transporter)'
+      - 'LptA (periplasm)'
+      - 'Murepavadin ⟶ LptDE (blocked) ⟶ X No LPS insertion'
+    outcome: 'Outer membrane failure'
+    outcomeSignal: research
+  - name: 'Bactericidal Mechanism'
+    label: 'Cell Death'
+    steps:
+      - 'LptD inhibition'
+      - 'LPS accumulation in periplasm'
+      - 'Membrane asymmetry'
+    outcome: 'Cell lysis'
+    outcomeSignal: research
 ---
-
-<h2 id="mechanism-of-action">Mechanism of Action</h2>
 
 Murepavadin is the first-in-class Outer Membrane Protein Targeting Antibiotic (OMPTA), specifically targeting the LptD protein in Pseudomonas aeruginosa. Its mechanism is supported by extensive structural and biochemical studies including cryo-EM confirmation of its binding site.
 
@@ -341,24 +357,6 @@ Murepavadin acts as a precision weapon against P. aeruginosa by blocking a criti
     <p class="text-sm text-[color:var(--ink-muted)]">Only P. aeruginosa LptD has the specific structure murepavadin targets, preserving other bacteria and having no effect on human cells.</p>
   </div>
 </div>
-
-### Scientific Pathways
-
-**Lpt Transport Pathway** *(LPS Assembly)*
-```
-LPS synthesis (inner membrane) → LptBFGC (ABC transporter)
-                                         ↓
-                                   LptA (periplasm)
-                                         ↓
-                     Murepavadin ⟶ LptDE (blocked) ⟶ X No LPS insertion
-                                         ↓
-                                 Outer membrane failure
-```
-
-**Bactericidal Mechanism** *(Cell Death)*
-```
-LptD inhibition → LPS accumulation in periplasm → Membrane asymmetry → Cell lysis
-```
 
 **Key Research:** Andolina G et al. (Switzerland, 2018) confirmed LptD binding mechanism via cryo-EM structure. [PMID:29540583](https://pubmed.ncbi.nlm.nih.gov/29540583/)
 

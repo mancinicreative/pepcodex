@@ -340,9 +340,25 @@ anecdotalReports:
   communityNotes: >-
     Niche interest in bodybuilding. Concept of myostatin inhibition generates
     discussion but evidence is thin.
+mechanismPathways:
+  - name: 'Myostatin/Activin Sequestration Pathway'
+    label: 'Primary mechanism'
+    steps:
+      - 'Follistatin (2 molecules)'
+      - 'Encircle myostatin/activin dimer'
+      - 'Block receptor sites'
+      - 'Reduced Smad2/3 phosphorylation'
+    outcome: 'Muscle hypertrophy'
+    outcomeSignal: research
+  - name: IGF-1R Requirement
+    label: Necessary for effect
+    steps:
+      - Follistatin
+      - Myostatin inhibition
+      - Requires IGF-1R/Akt/mTOR intact
+    outcome: Full hypertrophic response
+    netEffect: IGF-1R inhibition reduces the effect by ~63%.
 ---
-
-<h2 id="mechanism-of-action">Mechanism of Action</h2>
 
 Follistatin's mechanisms are well-characterized through structural biology and gene therapy trials, though injectable peptide effects in humans remain unvalidated.
 
@@ -368,22 +384,6 @@ Follistatin acts as a "molecular sponge" that neutralizes muscle-limiting protei
     <p class="text-sm text-[color:var(--ink-muted)]">Hypertrophic effects require functional IGF-1 receptor signaling; follistatin removes inhibition rather than directly stimulating growth.</p>
   </div>
 </div>
-
-### Scientific Pathways
-
-**Myostatin/Activin Sequestration Pathway** *(Primary mechanism)*
-```
-Follistatin (2 molecules) → Encircle myostatin/activin dimer → Block receptor sites
-                                                                    ↓
-                                          Reduced Smad2/3 phosphorylation → Muscle hypertrophy
-```
-
-**IGF-1R Requirement** *(Necessary for effect)*
-```
-Follistatin → Myostatin inhibition → Requires IGF-1R/Akt/mTOR intact → Full hypertrophic response
-                                    |
-                                    IGF-IR inhibition reduces effect by ~63%
-```
 
 **Key Research:** Crystal structures [PMID:16198295](https://pubmed.ncbi.nlm.nih.gov/16198295/) and gene therapy trials [PMID:25322757](https://pubmed.ncbi.nlm.nih.gov/25322757/) confirm mechanism.
 

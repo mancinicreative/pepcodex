@@ -317,9 +317,28 @@ anecdotalReports:
   communityNotes: >-
     Known for extreme appetite stimulation. FDA Category 2 restricted. Community
     often recommends GHRP-2 or ipamorelin instead.
+mechanismPathways:
+  - name: 'Primary GH Release Pathway'
+    label: 'Gq/11 Signaling'
+    steps:
+      - 'GHRP-6'
+      - 'GHS-R1a activation'
+      - 'Gq/11 protein'
+      - 'PLC activation'
+      - 'IP3 production'
+      - 'Ca²⁺ release from ER'
+    outcome: 'GH vesicle exocytosis'
+    outcomeSignal: research
+  - name: 'Hypothalamic Amplification Pathway'
+    label: 'GHRH Synergism'
+    steps:
+      - 'GHRP-6'
+      - 'Hypothalamic GHS-R1a'
+      - 'GHRH neuron activation'
+      - 'Pituitary GHRH-R'
+    outcome: 'Amplified GH release'
+    outcomeSignal: research
 ---
-
-<h2 id="mechanism-of-action">Mechanism of Action</h2>
 
 GHRP-6 stimulates growth hormone release by activating the ghrelin receptor (GHS-R1a), the same receptor that responds to the endogenous "hunger hormone" ghrelin. Discovered in 1984 before ghrelin itself was identified, GHRP-6 is historically significant as the compound that led to the discovery of the entire ghrelin/GHS system through "reverse pharmacology."
 
@@ -345,26 +364,6 @@ GHRP-6 acts as a potent signal for growth hormone release through multiple inter
     <p class="text-sm text-[color:var(--ink-muted)]">Binds to CD36 scavenger receptor on cardiomyocytes, potentially providing GH-independent cytoprotective effects through Bcl-2 upregulation.</p>
   </div>
 </div>
-
-### Scientific Pathways
-
-**Primary GH Release Pathway** *(Gq/11 Signaling)*
-```
-GHRP-6 → GHS-R1a activation → Gq/11 protein → PLC activation
-                                                    ↓
-                                              IP3 production
-                                                    ↓
-                                          Ca²⁺ release from ER
-                                                    ↓
-                                          GH vesicle exocytosis
-```
-
-**Hypothalamic Amplification Pathway** *(GHRH Synergism)*
-```
-GHRP-6 → Hypothalamic GHS-R1a → GHRH neuron activation → Pituitary GHRH-R
-                                                              ↓
-                                                    Amplified GH release
-```
 
 **Key Research:** Pandya et al. (1998) demonstrated that GHRP-6 requires endogenous GHRH for maximal effect, and patients with hypothalamopituitary disconnection show blocked responses. [PMID:9543138](https://pubmed.ncbi.nlm.nih.gov/9543138/)
 

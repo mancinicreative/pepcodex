@@ -531,9 +531,29 @@ anecdotalReports:
   communityNotes: >-
     One of the earliest peptides prescribed in anti-aging clinics. Community
     views it as a milder, safer GH alternative.
+mechanismPathways:
+  - name: 'GHRH-R/cAMP/PKA Pathway'
+    label: 'Primary GH Release'
+    steps:
+      - 'Sermorelin'
+      - 'GHRH-R (GPCR)'
+      - 'Gs protein'
+      - 'Adenylyl Cyclase'
+      - 'ATP'
+      - 'cAMP'
+      - 'PKA activation'
+    outcome: 'GH gene transcription + vesicle exocytosis'
+    outcomeSignal: research
+  - name: 'Secondary Pathway'
+    label: 'PLC/IP3/DAG'
+    steps:
+      - 'GHRH-R activation'
+      - 'PLC'
+      - 'IP3 + DAG'
+      - 'Intracellular Ca²⁺ release'
+    outcome: 'Pre-synthesized GH release'
+    outcomeSignal: research
 ---
-
-<h2 id="mechanism-of-action">Mechanism of Action</h2>
 
 Sermorelin is the biologically active 1-29 amino acid fragment of endogenous GHRH (Growth Hormone-Releasing Hormone). It stimulates the pituitary gland to release growth hormone through receptor-mediated signaling, preserving natural feedback mechanisms.
 
@@ -559,26 +579,6 @@ Sermorelin acts as a "release signal" that tells your pituitary gland to produce
     <p class="text-sm text-[color:var(--ink-muted)]">Increased GH stimulates hepatic IGF-1 production, mediating anabolic effects on lean tissue and metabolic improvements.</p>
   </div>
 </div>
-
-### Scientific Pathways
-
-**GHRH-R/cAMP/PKA Pathway** *(Primary GH Release)*
-```
-Sermorelin → GHRH-R (GPCR) → Gs protein → Adenylyl Cyclase
-                                              ↓
-                                      ATP → cAMP
-                                              ↓
-                                      PKA activation
-                                              ↓
-                              GH gene transcription + vesicle exocytosis
-```
-
-**Secondary Pathway** *(PLC/IP3/DAG)*
-```
-GHRH-R activation → PLC → IP3 + DAG → Intracellular Ca²⁺ release
-                                              ↓
-                                    Pre-synthesized GH release
-```
 
 **Key Research:** Thorner M et al. (USA, 1996) demonstrated 74% growth acceleration in GH-deficient children in the pivotal Geref International Study. [PMID:8772599](https://pubmed.ncbi.nlm.nih.gov/8772599/)
 

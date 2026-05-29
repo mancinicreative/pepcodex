@@ -290,9 +290,26 @@ anecdotalReports:
   positive: []
   negative: []
   communityNotes: No meaningful community discussion or user reports available.
+mechanismPathways:
+  - name: 'MDM2/MDMX-p53 Pathway'
+    label: 'Tumor Suppression'
+    steps:
+      - 'Sulanemadlin'
+      - 'Binds MDM2 + MDMX'
+      - 'p53 released from suppression'
+      - 'p53 activates target genes (p21, PUMA, BAX)'
+    outcome: 'Cell cycle arrest + Apoptosis in cancer cells'
+    outcomeSignal: research
+  - name: 'Chemoprotection Pathway'
+    label: 'Normal Cell Protection'
+    steps:
+      - 'Sulanemadlin (pre-chemo)'
+      - 'p53 activation in normal cells'
+      - 'Transient G1 arrest'
+      - 'Normal cells protected during chemo'
+    outcome: 'Effect reverses after clearance'
+    outcomeSignal: research
 ---
-
-<h2 id="mechanism-of-action">Mechanism of Action</h2>
 
 Sulanemadlin reactivates the p53 tumor suppressor pathway by blocking its negative regulators MDM2 and MDMX.
 
@@ -318,26 +335,6 @@ Sulanemadlin acts as a "decoy" that frees p53 to resume its cancer-fighting func
     <p class="text-sm text-[color:var(--ink-muted)]">In normal cells, p53 activation causes temporary G1 arrest, allowing them to "hide" during chemotherapy exposure.</p>
   </div>
 </div>
-
-### Scientific Pathways
-
-**MDM2/MDMX-p53 Pathway** *(Tumor Suppression)*
-```
-Sulanemadlin → Binds MDM2 + MDMX → p53 released from suppression
-                                              ↓
-                              p53 activates target genes (p21, PUMA, BAX)
-                                              ↓
-                              Cell cycle arrest + Apoptosis in cancer cells
-```
-
-**Chemoprotection Pathway** *(Normal Cell Protection)*
-```
-Sulanemadlin (pre-chemo) → p53 activation in normal cells → Transient G1 arrest
-                                                                    ↓
-                                                    Normal cells protected during chemo
-                                                                    ↓
-                                                    Effect reverses after clearance
-```
 
 **Key Research:** Saleh MN et al. (USA, 2019) demonstrated 59% disease control rate with low hematologic toxicity in Phase 1/2 trial. [PMID:31852831](https://pubmed.ncbi.nlm.nih.gov/31852831/)
 

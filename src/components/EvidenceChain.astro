@@ -34,9 +34,10 @@ interface EvidenceChainedBenefit {
 interface Props {
   benefits: EvidenceChainedBenefit[];
   peptideName: string;
+  hideHeader?: boolean;
 }
 
-const { benefits, peptideName } = Astro.props;
+const { benefits, peptideName, hideHeader = false } = Astro.props;
 
 // Confidence configuration (color carries meaning: strong=green, mid=cobalt, weak=amber)
 const confidenceConfig: Record<string, { label: string; dots: number; color: string; bgColor: string }> = {
@@ -71,22 +72,24 @@ const studyTypeConfig: Record<string, { label: string; abbrev: string; color: st
 ---
 
 <div class="evidence-chain-container" data-component="evidence-chain">
-  <div class="flex items-center justify-between mb-6">
-    <div>
-      <p class="eyebrow" style="color: var(--ink-dim);">Evidence</p>
-      <h3 class="text-3xl tracking-tight text-[color:var(--ink)] mt-1" style="font-family: var(--font-serif); font-weight: 500;">
-        What the literature supports
-      </h3>
-      <p class="text-sm text-[color:var(--ink-muted)] mt-1">
-        Each claim traced from mechanism → benefit → the studies behind it.
-      </p>
-    </div>
+  {!hideHeader && (
+    <div class="flex items-center justify-between mb-6">
+      <div>
+        <p class="eyebrow" style="color: var(--ink-dim);">Evidence</p>
+        <h3 class="text-3xl tracking-tight text-[color:var(--ink)] mt-1" style="font-family: var(--font-serif); font-weight: 500;">
+          What the literature supports
+        </h3>
+        <p class="text-sm text-[color:var(--ink-muted)] mt-1">
+          Each claim traced from mechanism → benefit → the studies behind it.
+        </p>
+      </div>
 
-    <!-- Summary badge -->
-    <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-[color:var(--paper-2)] rounded-lg border border-[color:var(--border-c)]">
-      <span class="text-xs text-[color:var(--ink-dim)]">{benefits.length} chains</span>
+      <!-- Summary badge -->
+      <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-[color:var(--paper-2)] rounded-lg border border-[color:var(--border-c)]">
+        <span class="text-xs text-[color:var(--ink-dim)]">{benefits.length} chains</span>
+      </div>
     </div>
-  </div>
+  )}
 
   <!-- Evidence chains -->
   <div class="space-y-4">

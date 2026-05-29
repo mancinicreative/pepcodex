@@ -362,9 +362,30 @@ anecdotalReports:
   communityNotes: >-
     Growing interest in longevity community. Often discussed alongside other
     mitochondrial peptides.
+mechanismPathways:
+  - name: AMPK Activation Pathway
+    label: Primary Mechanism
+    steps:
+      - MOTS-c
+      - Cytoplasmic accumulation
+      - AMPK activation
+    branches:
+      - outcome: Increased glucose uptake (GLUT4)
+      - outcome: Enhanced fatty acid oxidation
+      - outcome: Inhibition of gluconeogenesis
+      - node: mTOR suppression
+        outcome: Autophagy activation
+  - name: Nuclear Gene Regulation
+    label: Transcriptional Effects
+    steps:
+      - MOTS-c
+      - Nuclear translocation (under stress)
+      - Nrf2-ARE pathway
+    branches:
+      - outcome: Antioxidant gene expression
+      - outcome: Metabolic reprogramming
+      - outcome: Stress resistance genes
 ---
-
-<h2 id="mechanism-of-action">Mechanism of Action</h2>
 
 MOTS-c is a mitochondria-derived peptide (MDP) discovered in 2015, encoded within the 12S rRNA gene of mitochondrial DNA. It functions as a metabolic regulator that coordinates cellular and whole-body energy homeostasis.
 
@@ -390,27 +411,6 @@ MOTS-c acts as an "exercise mimetic" through metabolic pathway activation:
     <p class="text-sm text-[color:var(--ink-muted)]">Improves glucose uptake and insulin sensitivity, reduces gluconeogenesis, and enhances fatty acid oxidation - mimicking exercise effects.</p>
   </div>
 </div>
-
-### Scientific Pathways
-
-**AMPK Activation Pathway** *(Primary Mechanism)*
-```
-MOTS-c → Cytoplasmic accumulation → AMPK activation
-                                           ↓
-                          ├── Increased glucose uptake (GLUT4)
-                          ├── Enhanced fatty acid oxidation
-                          ├── Inhibition of gluconeogenesis
-                          └── mTOR suppression → Autophagy activation
-```
-
-**Nuclear Gene Regulation** *(Transcriptional Effects)*
-```
-MOTS-c → Nuclear translocation (under stress) → Nrf2-ARE pathway
-                                                       ↓
-                                         Antioxidant gene expression
-                                         Metabolic reprogramming
-                                         Stress resistance genes
-```
 
 **Key Research:** Lee C et al. (2015) discovered MOTS-c and characterized its AMPK-dependent metabolic effects in Cell Metabolism. [PMID:25738459](https://pubmed.ncbi.nlm.nih.gov/25738459/)
 

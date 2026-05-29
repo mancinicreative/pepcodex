@@ -201,9 +201,23 @@ anecdotalReports:
   positive: []
   negative: []
   communityNotes: No meaningful community discussion or user reports available.
+mechanismPathways:
+  - name: EphA2 Targeting and Internalization
+    steps:
+      - BT5528
+      - EphA2 receptor (Kd ~ low nM)
+      - Receptor-mediated endocytosis
+      - Lysosomal processing
+      - Cathepsin B cleaves linker
+    outcome: Free MMAE release
+  - name: MMAE Cytotoxic Mechanism
+    steps:
+      - Free MMAE
+      - Tubulin binding at vinca site
+      - Microtubule disruption
+      - G2/M arrest
+    outcome: Apoptosis
 ---
-
-<h2 id="mechanism-of-action">Mechanism of Action</h2>
 
 BT5528 is a first-in-class Bicycle Toxin Conjugate combining targeted delivery with cytotoxic payload. Human clinical data supports the proposed mechanisms.
 
@@ -229,27 +243,6 @@ BT5528 works as a precision "smart missile" delivering chemotherapy directly to 
     <p class="text-sm text-[color:var(--ink-muted)]">MMAE disrupts microtubules essential for cell division, causing mitotic arrest and programmed cell death.</p>
   </div>
 </div>
-
-### Scientific Pathways
-
-**EphA2 Targeting and Internalization**
-```
-BT5528 binds EphA2 receptor (Kd ~ low nM)
-    |
-    v
-Receptor-mediated endocytosis
-    |
-    v
-Lysosomal processing → Cathepsin B cleaves linker → Free MMAE release
-```
-
-**MMAE Cytotoxic Mechanism**
-```
-Free MMAE in cytoplasm → Tubulin binding at vinca site → Microtubule disruption
-                                                              |
-                                                              v
-                                              G2/M arrest → Apoptosis
-```
 
 **Key Research:** Phase 1/2 NCT04180371 demonstrates 67% ORR in EphA2+ urothelial cancer. [ClinicalTrials.gov](https://clinicaltrials.gov/study/NCT04180371)
 

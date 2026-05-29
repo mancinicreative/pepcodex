@@ -15,9 +15,10 @@ interface Interaction {
 interface Props {
   interactions: Interaction[];
   currentPeptide: string;
+  hideHeader?: boolean;
 }
 
-const { interactions, currentPeptide } = Astro.props;
+const { interactions, currentPeptide, hideHeader = false } = Astro.props;
 
 // Sort interactions by type priority: synergistic > compatible > caution > avoid
 const typePriority = { synergistic: 0, compatible: 1, caution: 2, avoid: 3 };
@@ -106,15 +107,17 @@ function formatPeptideName(slug: string): string {
 
 {interactions.length > 0 && (
   <div>
-    <div class="mb-8">
-      <p class="eyebrow" style="color: var(--ink-dim);">Interactions</p>
-      <h3 class="text-3xl tracking-tight mt-1" style="font-family: var(--font-serif); font-weight: 500; color: var(--ink);">
-        Peptide Interactions
-      </h3>
-      <p class="text-sm mt-1" style="color: var(--ink-muted);">
-        Known and theoretical interactions when combining {currentPeptide} with other peptides. Based on published research and mechanistic considerations.
-      </p>
-    </div>
+    {!hideHeader && (
+      <div class="mb-8">
+        <p class="eyebrow" style="color: var(--ink-dim);">Interactions</p>
+        <h3 class="text-3xl tracking-tight mt-1" style="font-family: var(--font-serif); font-weight: 500; color: var(--ink);">
+          Peptide Interactions
+        </h3>
+        <p class="text-sm mt-1" style="color: var(--ink-muted);">
+          Known and theoretical interactions when combining {currentPeptide} with other peptides. Based on published research and mechanistic considerations.
+        </p>
+      </div>
+    )}
 
     <!-- Legend -->
     <div class="flex flex-wrap gap-3 mb-8">

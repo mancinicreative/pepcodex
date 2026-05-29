@@ -378,9 +378,29 @@ anecdotalReports:
   positive: []
   negative: []
   communityNotes: No meaningful community discussion or user reports available.
+mechanismPathways:
+  - name: 'Membrane Disruption Pathway'
+    label: 'Antimicrobial'
+    steps:
+      - 'LfcinB (+8 charge)'
+      - 'Electrostatic binding to anionic membrane'
+      - 'Membrane insertion'
+      - 'Pore formation / Carpet model'
+      - 'Membrane permeabilization'
+    outcome: 'Cell death'
+    outcomeSignal: research
+  - name: 'Apoptosis Pathway'
+    label: 'Anticancer'
+    steps:
+      - 'LfcinB'
+      - 'Phosphatidylserine targeting'
+      - 'ROS generation'
+      - 'Caspase-2 activation'
+      - 'Mitochondrial depolarization'
+      - 'Caspase-9/3'
+    outcome: 'Apoptosis'
+    outcomeSignal: research
 ---
-
-<h2 id="mechanism-of-action">Mechanism of Action</h2>
 
 The proposed mechanisms of Lactoferricin are based primarily on in vitro and animal studies. Human mechanistic data is lacking.
 
@@ -406,24 +426,6 @@ Lactoferricin acts as a natural antimicrobial by disrupting microbial membranes 
     <p class="text-sm text-[color:var(--ink-muted)]">In cancer cells, triggers mitochondrial apoptosis pathway via ROS generation and caspase activation, independent of membrane lysis.</p>
   </div>
 </div>
-
-### Scientific Pathways
-
-**Membrane Disruption Pathway** *(Antimicrobial)*
-```
-LfcinB (+8 charge) → Electrostatic binding to anionic membrane → Membrane insertion
-                                                                        ↓
-                                                          Pore formation / Carpet model
-                                                                        ↓
-                                                          Membrane permeabilization → Cell death
-```
-
-**Apoptosis Pathway** *(Anticancer)*
-```
-LfcinB → Phosphatidylserine targeting → ROS generation → Caspase-2 activation
-                                                                ↓
-                                              Mitochondrial depolarization → Caspase-9/3 → Apoptosis
-```
 
 **Key Research:** Bellamy W et al. (1993) demonstrated rapid binding to bacterial surfaces with over 10 million molecules per cell, disrupting membrane permeability. [PMID:8300449](https://pubmed.ncbi.nlm.nih.gov/8300449/)
 

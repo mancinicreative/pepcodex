@@ -509,9 +509,40 @@ anecdotalReports:
   communityNotes: >-
     Discussed primarily in immune and wound healing contexts. Growing interest
     post-pandemic.
+mechanismPathways:
+  - name: Membrane Disruption Pathway
+    label: Direct Antimicrobial
+    steps:
+      - LL-37 (+6 cationic charge)
+      - Electrostatic attraction to anionic bacterial membrane
+      - Alpha-helix formation
+      - Membrane insertion
+      - Pore formation
+    outcome: Cell lysis and death
+  - name: FPRL1/FPR2 Signaling Pathway
+    label: Immunomodulation & Wound Healing
+    steps:
+      - LL-37
+      - FPRL1/FPR2 receptor
+      - G-protein activation
+    branches:
+      - outcome: Chemotaxis (immune cell recruitment)
+      - node: EGFR transactivation
+        outcome: Keratinocyte migration
+      - node: VEGF pathway
+        outcome: Angiogenesis
+      - outcome: Cytokine modulation
+  - name: Vitamin D Regulation Pathway
+    label: Endogenous Production
+    steps:
+      - Vitamin D
+      - 1,25(OH)2D3
+      - VDR activation
+      - CAMP gene transcription
+      - hCAP18
+      - Proteinase 3 cleavage
+    outcome: Active LL-37
 ---
-
-<h2 id="mechanism-of-action">Mechanism of Action</h2>
 
 LL-37 is an endogenous human antimicrobial peptide with well-characterized mechanisms supported by extensive research from laboratories worldwide, including foundational work from Karolinska Institute in Sweden.
 
@@ -537,31 +568,6 @@ LL-37 functions as a multifunctional defense molecule through several parallel p
     <p class="text-sm text-[color:var(--ink-muted)]">Promotes angiogenesis and keratinocyte migration via EGFR transactivation, accelerating tissue repair while providing antimicrobial protection.</p>
   </div>
 </div>
-
-### Scientific Pathways
-
-**Membrane Disruption Pathway** *(Direct Antimicrobial)*
-```
-LL-37 (+6 cationic charge) → Electrostatic attraction to anionic bacterial membrane
-                                                      ↓
-                              Alpha-helix formation → Membrane insertion → Pore formation
-                                                                                ↓
-                                                                    Cell lysis and death
-```
-
-**FPRL1/FPR2 Signaling Pathway** *(Immunomodulation & Wound Healing)*
-```
-LL-37 → FPRL1/FPR2 receptor → G-protein activation → Multiple effects:
-                                                      ├── Chemotaxis (immune cell recruitment)
-                                                      ├── EGFR transactivation → Keratinocyte migration
-                                                      ├── VEGF pathway → Angiogenesis
-                                                      └── Cytokine modulation
-```
-
-**Vitamin D Regulation Pathway** *(Endogenous Production)*
-```
-Vitamin D → 1,25(OH)2D3 → VDR activation → CAMP gene transcription → hCAP18 → Proteinase 3 cleavage → Active LL-37
-```
 
 **Key Research:** Liu PT et al. (2006) demonstrated vitamin D-induced LL-37 is essential for macrophage killing of M. tuberculosis. [PMID:16497887](https://pubmed.ncbi.nlm.nih.gov/16497887/)
 

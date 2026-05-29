@@ -244,9 +244,26 @@ anecdotalReports:
   positive: []
   negative: []
   communityNotes: No meaningful community discussion or user reports available.
+mechanismPathways:
+  - name: 'LNP-mRNA Antigen Presentation Pathway'
+    label: 'Immune Priming'
+    steps:
+      - 'mRNA-4157 (IM injection)'
+      - 'LNP uptake by APCs'
+      - 'Cytoplasmic mRNA translation'
+      - 'Neoantigen protein production'
+      - 'Proteasomal processing'
+      - 'MHC I/II presentation'
+    outcome: 'CD8+ and CD4+ T cell activation'
+    outcomeSignal: research
+  - name: Combination Immunotherapy Pathway
+    label: Synergistic Anti-Tumor Response
+    steps:
+      - mRNA-4157 (neoantigen targeting)
+      - Tumor-specific T-cell recognition
+      - '+ Pembrolizumab: PD-1 blockade (T-cell exhaustion prevented)'
+    outcome: Enhanced tumor cell killing
 ---
-
-<h2 id="mechanism-of-action">Mechanism of Action</h2>
 
 The mechanism of mRNA-4157 is based on personalized neoantigen presentation through lipid nanoparticle-encapsulated mRNA delivery, validated in Phase 2b clinical trials.
 
@@ -272,28 +289,6 @@ mRNA-4157 functions as a personalized cancer vaccine that trains the immune syst
     <p class="text-sm text-[color:var(--ink-muted)]">Combined with pembrolizumab (PD-1 inhibitor) to release immune brakes, allowing activated T cells to attack residual cancer cells at full capacity.</p>
   </div>
 </div>
-
-### Scientific Pathways
-
-**LNP-mRNA Antigen Presentation Pathway** *(Immune Priming)*
-```
-mRNA-4157 (IM injection) → LNP uptake by APCs → Cytoplasmic mRNA translation
-                                                          ↓
-                                              Neoantigen protein production
-                                                          ↓
-                                              Proteasomal processing → MHC I/II presentation
-                                                          ↓
-                                              CD8+ and CD4+ T cell activation
-```
-
-**Combination Immunotherapy Pathway** *(Synergistic Anti-Tumor Response)*
-```
-mRNA-4157: Neoantigen targeting → T cells recognize tumor-specific mutations
-                                              +
-Pembrolizumab: PD-1 blockade → T cell exhaustion prevented
-                                              ↓
-                                  Enhanced tumor cell killing
-```
 
 **Key Research:** Weber JS et al. (Lancet, 2024) demonstrated 44% reduction in recurrence or death with combination therapy. [PMID:38029730](https://pubmed.ncbi.nlm.nih.gov/38029730/)
 

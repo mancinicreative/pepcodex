@@ -377,9 +377,24 @@ anecdotalReports:
   communityNotes: >-
     Standard component of TRT protocols. Extensively discussed in r/testosterone
     and HRT communities.
+mechanismPathways:
+  - name: LHCGR/cAMP Pathway
+    label: Primary Signaling
+    steps:
+      - hCG
+      - LHCGR
+      - Gαs protein
+      - Adenylyl cyclase
+      - cAMP ↑
+      - PKA activation
+    branches:
+      - node: Ovary
+        outcome: 'Meiosis resumption, cumulus expansion, ovulation'
+      - node: Testis
+        outcome: 'StAR/P450c17 activation, testosterone synthesis'
+      - node: Corpus luteum
+        outcome: Progesterone biosynthesis
 ---
-
-<h2 id="mechanism-of-action">Mechanism of Action</h2>
 
 hCG is a well-characterized hormone with extensive human clinical evidence spanning over 50 years. Its mechanisms are firmly established through receptor studies, clinical trials, and decades of therapeutic use.
 
@@ -405,23 +420,6 @@ hCG mimics luteinizing hormone (LH) but lasts much longer in the body, providing
     <p class="text-sm text-[color:var(--ink-muted)]">Half-life of 24-36 hours (vs LH's 20 minutes) due to extensive glycosylation and C-terminal extension, enabling single-dose efficacy.</p>
   </div>
 </div>
-
-### Scientific Pathways
-
-**LHCGR/cAMP Pathway** *(Primary Signaling)*
-```
-hCG binds LHCGR extracellular domain
-    |
-Receptor activation (conformational change)
-    |
-Galphas protein --> adenylyl cyclase --> cAMP increase
-    |
-Protein kinase A (PKA) activation
-    |
-+-- Ovary: Meiosis resumption, cumulus expansion, ovulation
-+-- Testis: StAR/P450c17 activation, testosterone synthesis
-+-- Corpus luteum: Progesterone biosynthesis
-```
 
 **Key Research:** Youssef MA et al. Cochrane systematic review (2014) established hCG as gold standard ovulation trigger with higher live birth rates than GnRH agonist in fresh IVF cycles. [PMID:25358904](https://pubmed.ncbi.nlm.nih.gov/25358904/)
 

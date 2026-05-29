@@ -443,9 +443,28 @@ anecdotalReports:
   communityNotes: >-
     First-generation GLP-1 with extensive real-world data. Community
     increasingly favors weekly alternatives.
+mechanismPathways:
+  - name: 'GLP-1R/cAMP Pathway'
+    label: 'Insulin Secretion'
+    steps:
+      - 'Liraglutide binds GLP-1R'
+      - 'Gs protein activation'
+      - 'adenylyl cyclase'
+      - 'cAMP increase'
+      - 'PKA activation'
+    outcome: 'insulin exocytosis (glucose-dependent)'
+    outcomeSignal: research
+  - name: 'Hypothalamic Pathway'
+    label: 'Appetite Regulation'
+    steps:
+      - 'Liraglutide'
+      - 'hypothalamic GLP-1R'
+      - 'POMC neuron activation'
+      - 'reduced food intake'
+      - 'NPY/AgRP inhibition'
+    outcome: 'decreased hunger drive'
+    outcomeSignal: research
 ---
-
-<h2 id="mechanism-of-action">Mechanism of Action</h2>
 
 Liraglutide is an FDA-approved GLP-1 receptor agonist with extensive human clinical trial data. Its mechanisms are well-characterized through over 15 years of clinical use.
 
@@ -471,22 +490,6 @@ Liraglutide mimics the natural incretin hormone GLP-1 with modifications that ex
     <p class="text-sm text-[color:var(--ink-muted)]">Provides multifactorial CV benefits through blood pressure reduction, anti-inflammatory effects, and potential direct cardioprotection.</p>
   </div>
 </div>
-
-### Scientific Pathways
-
-**GLP-1R/cAMP Pathway** *(Insulin Secretion)*
-```
-Liraglutide binds GLP-1R → Gs protein activation → adenylyl cyclase → cAMP increase
-                                                                        ↓
-                                                      PKA activation → insulin exocytosis
-                                                      (glucose-dependent)
-```
-
-**Hypothalamic Pathway** *(Appetite Regulation)*
-```
-Liraglutide → hypothalamic GLP-1R → POMC neuron activation → reduced food intake
-                                  → NPY/AgRP inhibition → decreased hunger drive
-```
 
 **Key Research:** Marso SP et al. (LEADER Trial, 2016) demonstrated 13% reduction in major adverse cardiovascular events in high-risk T2D patients. [PMID:27295427](https://pubmed.ncbi.nlm.nih.gov/27295427/)
 

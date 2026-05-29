@@ -27,9 +27,10 @@ interface Props {
   category: string;
   molecularInfo?: MolecularInfo;
   evidenceStrength?: 'high' | 'moderate' | 'low' | 'very-low';
+  hideHeader?: boolean;
 }
 
-const { peptideName, summary, aliases = [], category, molecularInfo, evidenceStrength = 'low' } = Astro.props;
+const { peptideName, summary, aliases = [], category, molecularInfo, evidenceStrength = 'low', hideHeader = false } = Astro.props;
 
 // Property colors for amino acids (biochemical property categorization)
 const propertyColors = {
@@ -41,14 +42,16 @@ const propertyColors = {
 };
 ---
 
-<section id="overview" class="not-prose">
-  <div class="mb-8">
-    <p class="eyebrow" style="color: var(--ink-dim);">Identification</p>
-    <h2 class="text-3xl tracking-tight mt-1 text-[color:var(--ink)]" style="font-family: var(--font-serif); font-weight: 500;">
-      Overview
-    </h2>
-    <p class="mt-1 text-[color:var(--ink-muted)]">What is {peptideName} and what does the research say?</p>
-  </div>
+<div class="not-prose">
+  {!hideHeader && (
+    <div class="mb-8">
+      <p class="eyebrow" style="color: var(--ink-dim);">Identification</p>
+      <h2 class="text-3xl tracking-tight mt-1 text-[color:var(--ink)]" style="font-family: var(--font-serif); font-weight: 500;">
+        Overview
+      </h2>
+      <p class="mt-1 text-[color:var(--ink-muted)]">What is {peptideName} and what does the research say?</p>
+    </div>
+  )}
 
   <div class="rounded-xl border border-[color:var(--border-c)] bg-[color:var(--paper)] overflow-hidden">
     <!-- Identity Section (Top) -->
@@ -170,4 +173,4 @@ const propertyColors = {
       </div>
     )}
   </div>
-</section>
+</div>

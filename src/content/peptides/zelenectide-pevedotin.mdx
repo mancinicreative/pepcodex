@@ -309,9 +309,27 @@ anecdotalReports:
   positive: []
   negative: []
   communityNotes: No meaningful community discussion or user reports available.
+mechanismPathways:
+  - name: 'Nectin-4 Targeting and Internalization'
+    label: 'Primary Mechanism'
+    steps:
+      - 'Zelenectide pevedotin (IV)'
+      - 'Rapid tumor distribution (small size)'
+      - 'Bicyclic peptide binds Nectin-4 (sub-nM affinity)'
+      - 'Receptor-mediated endocytosis'
+    outcome: 'Lysosomal trafficking'
+    outcomeSignal: research
+  - name: 'MMAE Release and Cytotoxicity'
+    label: 'Payload Mechanism'
+    steps:
+      - 'Cathepsin B cleaves valine-citrulline linker'
+      - 'Free MMAE released'
+      - 'MMAE binds tubulin'
+      - 'Blocks polymerization'
+      - 'Mitotic arrest'
+    outcome: 'Apoptosis (cell death)'
+    outcomeSignal: research
 ---
-
-<h2 id="mechanism-of-action">Mechanism of Action</h2>
 
 The mechanism of zelenectide pevedotin is well-characterized through extensive preclinical and clinical research. Human clinical data supports the proposed mechanism.
 
@@ -337,26 +355,6 @@ Zelenectide pevedotin functions as a precision "smart missile" targeting cancer 
     <p class="text-sm text-[color:var(--ink-muted)]">MMAE blocks tubulin polymerization, arrests mitosis, and triggers apoptosis. Bystander effect kills neighboring tumor cells.</p>
   </div>
 </div>
-
-### Scientific Pathways
-
-**Nectin-4 Targeting and Internalization** *(Primary Mechanism)*
-```
-Zelenectide pevedotin (IV) → Rapid tumor distribution (small size)
-                                        ↓
-              Bicyclic peptide binds Nectin-4 (sub-nM affinity)
-                                        ↓
-                    Receptor-mediated endocytosis → Lysosomal trafficking
-```
-
-**MMAE Release and Cytotoxicity** *(Payload Mechanism)*
-```
-Cathepsin B cleaves valine-citrulline linker → Free MMAE released
-                                                        ↓
-                              MMAE binds tubulin → Blocks polymerization
-                                                        ↓
-                              Mitotic arrest → Apoptosis (cell death)
-```
 
 **Key Research:** Bennett G et al. (2020) demonstrated superior tumor penetration of Bicycle platform vs ADCs. [PMID:32241873](https://pubmed.ncbi.nlm.nih.gov/32241873/)
 

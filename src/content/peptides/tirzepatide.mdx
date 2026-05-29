@@ -507,9 +507,32 @@ anecdotalReports:
   communityNotes: >-
     r/tirzepatide growing rapidly. Often compared directly to semaglutide in
     community discussions.
+mechanismPathways:
+  - name: GIPR Pathway
+    label: Dual Incretin · 5× native GIP potency
+    steps:
+      - Tirzepatide
+      - GIPR
+    branches:
+      - node: Pancreas
+        outcome: Enhanced insulin secretion
+      - node: Adipose
+        outcome: Direct fat cell modulation
+      - node: Brain
+        outcome: Satiety signaling
+  - name: GLP-1R Pathway
+    label: Dual Incretin · biased agonism
+    steps:
+      - Tirzepatide
+      - GLP-1R
+    branches:
+      - node: Pancreas
+        outcome: Insulin secretion + glucagon suppression
+      - node: Brain
+        outcome: 'POMC/CART activation, NPY/AgRP inhibition'
+      - node: GI tract
+        outcome: Delayed gastric emptying
 ---
-
-<h2 id="mechanism-of-action">Mechanism of Action</h2>
 
 Tirzepatide is a "twincretin" - the first dual GIP/GLP-1 receptor agonist designed to harness the full incretin effect.
 
@@ -533,25 +556,6 @@ Tirzepatide is a "twincretin" - the first dual GIP/GLP-1 receptor agonist design
     <p class="text-sm text-[color:var(--ink-muted)]">Sends powerful "fullness" signals to the brain through two pathways instead of one. GLP-1R and GIPR both contribute to satiety signaling in the hypothalamus, creating integrated appetite suppression.</p>
   </div>
 </div>
-
-### Scientific Pathways
-
-**Dual Incretin Receptor Activation**
-```
-Tirzepatide administration
-    |
-    +-- GIPR (5x native GIP potency)
-    |       |
-    |       +-- Pancreas: Enhanced insulin secretion
-    |       +-- Adipose: Direct fat cell modulation
-    |       +-- Brain: Satiety signaling
-    |
-    +-- GLP-1R (1x native GLP-1 potency, biased agonism)
-            |
-            +-- Pancreas: Insulin secretion + glucagon suppression
-            +-- Brain: POMC/CART activation, NPY/AgRP inhibition
-            +-- GI Tract: Delayed gastric emptying
-```
 
 **Key Research:** Willard FS et al. demonstrated 5-fold greater GIPR vs GLP-1R potency with biased signaling favoring cAMP over beta-arrestin. [PMID:32956065](https://pubmed.ncbi.nlm.nih.gov/32956065/)
 

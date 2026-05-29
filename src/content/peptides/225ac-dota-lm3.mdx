@@ -314,9 +314,41 @@ anecdotalReports:
   positive: []
   negative: []
   communityNotes: No meaningful community discussion or user reports available.
+mechanismPathways:
+  - name: 'SSTR2 Antagonist Binding'
+    label: 'Tumor Targeting'
+    steps:
+      - '225Ac-DOTA-LM3'
+      - 'SSTR2 binding (antagonist)'
+      - 'No receptor internalization'
+      - 'Prolonged surface retention'
+    outcome: 'Higher tumor uptake'
+    outcomeSignal: research
+  - name: 'Alpha Particle Radiobiology'
+    label: 'Cell Killing'
+    steps:
+      - '225Ac decay'
+      - '4 alpha particles (28 MeV total)'
+      - 'High LET (80-100 keV/micron)'
+      - 'Clustered DNA double-strand breaks'
+      - 'Irreparable damage'
+    outcome: 'Cell death'
+    outcomeSignal: research
+  - name: 'Ac-225 Decay Cascade'
+    label: 'Sustained Radiation'
+    steps:
+      - '225Ac (t1/2 = 9.92 days)'
+      - '221Fr'
+      - '217At'
+      - '213Bi'
+      - '209Pb'
+      - '209Bi (stable)'
+      - 'alpha'
+      - 'alpha'
+      - 'alpha'
+    outcome: 'beta/alpha 5.83 MeV 6.34 MeV 7.07 MeV 8.38 MeV'
+    outcomeSignal: research
 ---
-
-<h2 id="mechanism-of-action">Mechanism of Action</h2>
 
 The mechanism of 225Ac-DOTA-LM3 is well-characterized based on extensive preclinical studies and growing clinical experience.
 
@@ -342,31 +374,6 @@ The mechanism of 225Ac-DOTA-LM3 is well-characterized based on extensive preclin
     <p class="text-sm text-[color:var(--ink-muted)]">Alpha particles travel only 50-100 microns (less than a hair width), destroying tumor cells without damaging distant healthy tissue. Ideal for micrometastases.</p>
   </div>
 </div>
-
-### Scientific Pathways
-
-**SSTR2 Antagonist Binding** *(Tumor Targeting)*
-```
-225Ac-DOTA-LM3 → SSTR2 binding (antagonist) → No receptor internalization
-                                                       ↓
-                               Prolonged surface retention → Higher tumor uptake
-```
-
-**Alpha Particle Radiobiology** *(Cell Killing)*
-```
-225Ac decay → 4 alpha particles (28 MeV total) → High LET (80-100 keV/micron)
-                                                          ↓
-                                         Clustered DNA double-strand breaks
-                                                          ↓
-                                               Irreparable damage → Cell death
-```
-
-**Ac-225 Decay Cascade** *(Sustained Radiation)*
-```
-225Ac (t1/2 = 9.92 days) → 221Fr → 217At → 213Bi → 209Pb → 209Bi (stable)
-     ↓ alpha              ↓ alpha  ↓ alpha  ↓ beta/alpha
-   5.83 MeV             6.34 MeV  7.07 MeV   8.38 MeV
-```
 
 **Key Research:** Kratochwil C et al. (Heidelberg, 2019) demonstrated first-in-human 225Ac-DOTA-LM3 safety and efficacy. [PMID:31217290](https://pubmed.ncbi.nlm.nih.gov/31217290/)
 

@@ -467,9 +467,29 @@ anecdotalReports:
   communityNotes: >-
     Primarily discussed in fertility and hormone optimization contexts. Limited
     self-experimentation community.
+mechanismPathways:
+  - name: 'KISS1R Signaling Cascade'
+    label: 'GnRH Release'
+    steps:
+      - 'Kisspeptin'
+      - 'KISS1R (GPR54)'
+      - 'Gq/11'
+      - 'PLC activation'
+      - 'IP3 + DAG'
+      - 'Ca2+ mobilization'
+      - 'GnRH neuron depolarization'
+    outcome: 'Pulsatile GnRH release'
+    outcomeSignal: research
+  - name: 'Reproductive Hormone Cascade'
+    label: 'Downstream Effects'
+    steps:
+      - 'Kisspeptin'
+      - 'GnRH release'
+      - 'Pituitary LH/FSH'
+      - 'Gonadal sex hormones'
+    outcome: 'Oocyte maturation / Spermatogenesis'
+    outcomeSignal: research
 ---
-
-<h2 id="mechanism-of-action">Mechanism of Action</h2>
 
 Kisspeptin is the **master regulator** of reproduction, acting as the upstream controller of the entire hypothalamic-pituitary-gonadal axis. Human clinical trials have established its physiological role and therapeutic potential.
 
@@ -495,24 +515,6 @@ Kisspeptin serves as the gatekeeper of fertility by directly activating GnRH neu
     <p class="text-sm text-[color:var(--ink-muted)]">Unlike hCG, kisspeptin produces a short-lived LH surge (hours vs days), eliminating ovarian hyperstimulation syndrome risk in IVF.</p>
   </div>
 </div>
-
-### Scientific Pathways
-
-**KISS1R Signaling Cascade** *(GnRH Release)*
-```
-Kisspeptin → KISS1R (GPR54) → Gq/11 → PLC activation → IP3 + DAG
-                                                            ↓
-                                        Ca2+ mobilization → GnRH neuron depolarization
-                                                            ↓
-                                                    Pulsatile GnRH release
-```
-
-**Reproductive Hormone Cascade** *(Downstream Effects)*
-```
-Kisspeptin → GnRH release → Pituitary LH/FSH → Gonadal sex hormones
-                                                    ↓
-                                        Oocyte maturation / Spermatogenesis
-```
 
 **Key Research:** Abbara A et al. (Imperial College London, 2017) demonstrated kisspeptin-54 as safe IVF trigger with zero OHSS cases. [PMID:28854728](https://pubmed.ncbi.nlm.nih.gov/28854728/)
 

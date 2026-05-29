@@ -1,0 +1,177 @@
+---
+/**
+ * MechanismPathways.astro
+ * Mechanism signalling pathways as the specimen-sheet mockup renders them:
+ * a dark warm-charcoal card per pathway, with a mono label, a row of pill-chip
+ * nodes (source = amber, intermediates = cream, terminal outcome = green), and an
+ * optional "Net effect" caption. Data is reformatted from each dossier's own
+ * prose — no new claims are introduced here.
+ */
+interface Branch {
+  node?: string;
+  outcome: string;
+  outcomeSignal?: 'research' | 'compound' | 'primary' | 'neutral';
+}
+
+interface Pathway {
+  name: string;
+  label?: string;
+  steps: string[];
+  outcome?: string;
+  outcomeSignal?: 'research' | 'compound' | 'primary' | 'neutral';
+  branches?: Branch[];
+  netEffect?: string;
+}
+
+interface Props {
+  pathways: Pathway[];
+}
+
+const { pathways } = Astro.props;
+
+// terminal-chip palette tuned to read on the dark card
+const targetStyle: Record<string, string> = {
+  research: 'background: rgba(95,207,154,0.12); color: #5fcf9a; border-color: rgba(95,207,154,0.5);',
+  compound: 'background: rgba(227,181,116,0.12); color: #e3b574; border-color: rgba(227,181,116,0.5);',
+  primary:  'background: rgba(143,199,232,0.12); color: #8fc7e8; border-color: rgba(143,199,232,0.5);',
+  neutral:  'background: rgba(251,247,238,0.08); color: rgba(251,247,238,0.92); border-color: rgba(251,247,238,0.2);',
+};
+
+const romanLower = (n: number): string => {
+  const map: [number, string][] = [[10, 'x'], [9, 'ix'], [5, 'v'], [4, 'iv'], [1, 'i']];
+  let r = ''; let x = n;
+  for (const [v, s] of map) { while (x >= v) { r += s; x -= v; } }
+  return r;
+};
+---
+
+{pathways && pathways.length > 0 && (
+  <div class="mech-pathways not-prose space-y-4">
+    {pathways.map((p, idx) => (
+      <div class="pathway-card">
+        <div class="pathway-label">
+          {romanLower(idx + 1)}. {p.name}{p.label ? ` · ${p.label}` : ''}
+        </div>
+        <div class="pathway-chain">
+          {p.steps.map((s, i) => (
+            <>
+              {i > 0 && <span class="pathway-arrow" aria-hidden="true">&#8594;</span>}
+              <span class:list={["pathway-node", { "pathway-node--input": i === 0 }]}>{s}</span>
+            </>
+          ))}
+          {p.outcome && (
+            <>
+              <span class="pathway-arrow" aria-hidden="true">&#8594;</span>
+              <span class="pathway-node pathway-node--target" style={targetStyle[p.outcomeSignal || 'research']}>{p.outcome}</span>
+            </>
+          )}
+        </div>
+        {p.branches && p.branches.length > 0 && (
+          <div class="pathway-branches">
+            {p.branches.map((b) => (
+              <div class="pathway-branch">
+                <span class="branch-connector" aria-hidden="true">&#8627;</span>
+                {b.node && (
+                  <>
+                    <span class="pathway-node">{b.node}</span>
+                    <span class="pathway-arrow" aria-hidden="true">&#8594;</span>
+                  </>
+                )}
+                <span class="pathway-node pathway-node--target" style={targetStyle[b.outcomeSignal || 'research']}>{b.outcome}</span>
+              </div>
+            ))}
+          </div>
+        )}
+        {p.netEffect && (
+          <p class="pathway-result"><strong>Net effect.</strong> {p.netEffect}</p>
+        )}
+      </div>
+    ))}
+  </div>
+)}
+
+<style>
+  .pathway-card {
+    background: var(--charcoal);
+    border-radius: 14px;
+    padding: 22px 24px;
+  }
+
+  .pathway-label {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;       /* 10px */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: rgba(251, 247, 238, 0.66);
+    margin-bottom: 0.9rem;
+  }
+
+  .pathway-chain {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .pathway-node {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: rgba(251, 247, 238, 0.06);
+    border: 1px solid rgba(251, 247, 238, 0.16);
+    color: rgba(251, 247, 238, 0.92);
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;       /* 13px */
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .pathway-node--input {
+    color: #e3b574;             /* amber source */
+    border-color: rgba(227, 181, 116, 0.5);
+  }
+
+  .pathway-arrow {
+    color: rgba(251, 247, 238, 0.46);
+    font-size: 0.875rem;        /* 14px */
+  }
+
+  /* Branching cascade: trunk forks into several downstream effects */
+  .pathway-branches {
+    margin-top: 10px;
+    margin-left: 6px;
+    padding-left: 14px;
+    border-left: 1px dashed rgba(251, 247, 238, 0.18);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .pathway-branch {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .branch-connector {
+    color: rgba(251, 247, 238, 0.4);
+    font-size: 0.95rem;
+    margin-left: -6px;
+  }
+
+  .pathway-result {
+    margin: 0.9rem 0 0;
+    font-family: var(--font-sans);
+    font-size: 0.84rem;
+    line-height: 1.55;
+    color: rgba(251, 247, 238, 0.86);
+  }
+
+  .pathway-result strong {
+    color: rgba(251, 247, 238, 0.96);
+    font-weight: 600;
+  }
+</style>

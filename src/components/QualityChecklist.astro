@@ -14,9 +14,10 @@ interface QualityChecklistData {
 interface Props {
   checklist: QualityChecklistData;
   peptideName: string;
+  hideHeader?: boolean;
 }
 
-const { checklist, peptideName } = Astro.props;
+const { checklist, peptideName, hideHeader = false } = Astro.props;
 
 // Don't render if no checklist data
 if (!checklist) {
@@ -26,16 +27,18 @@ if (!checklist) {
 const { goodSigns, warningSigns, badSigns } = checklist;
 ---
 
-<section class="quality-checklist-section my-12">
-  <div class="mb-8">
-    <p class="eyebrow" style="color: var(--ink-dim);">Quality</p>
-    <h3 class="text-3xl tracking-tight mt-1 text-[color:var(--ink)]" style="font-family: var(--font-serif); font-weight: 500;">
-      Quality Checklist
-    </h3>
-    <p class="mt-1 text-[color:var(--ink-muted)] text-sm">
-      Visual indicators to help evaluate {peptideName} product quality
-    </p>
-  </div>
+<section class="quality-checklist-section">
+  {!hideHeader && (
+    <div class="mb-8">
+      <p class="eyebrow" style="color: var(--ink-dim);">Quality</p>
+      <h3 class="text-3xl tracking-tight mt-1 text-[color:var(--ink)]" style="font-family: var(--font-serif); font-weight: 500;">
+        Quality Checklist
+      </h3>
+      <p class="mt-1 text-[color:var(--ink-muted)] text-sm">
+        Visual indicators to help evaluate {peptideName} product quality
+      </p>
+    </div>
+  )}
 
   <!-- Expandable Sections -->
   <div class="space-y-4">

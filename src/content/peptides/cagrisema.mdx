@@ -541,9 +541,30 @@ anecdotalReports:
   communityNotes: >-
     Limited community discussion. Most reports come from niche enthusiast
     circles.
+mechanismPathways:
+  - name: GLP-1 Pathway (Semaglutide)
+    steps:
+      - Semaglutide
+      - GLP-1R activation
+      - Hypothalamus
+    branches:
+      - node: POMC/CART activation
+        outcome: satiety increase
+      - node: NPY/AgRP inhibition
+        outcome: hunger decrease
+      - outcome: Glucose-dependent insulin secretion
+  - name: Amylin Pathway (Cagrilintide)
+    steps:
+      - Cagrilintide
+      - AMY1R/AMY2R/AMY3R/CTR activation
+      - Hindbrain
+    branches:
+      - node: Area postrema signaling
+        outcome: meal termination
+      - node: Nucleus tractus solitarius
+        outcome: satiety
+      - outcome: Reduced postprandial glucagon
 ---
-
-<h2 id="mechanism-of-action">Mechanism of Action</h2>
 
 CagriSema combines two distinct appetite-suppressing peptide hormones into a single weekly injection, targeting complementary pathways in the brain.
 
@@ -567,26 +588,6 @@ CagriSema combines two distinct appetite-suppressing peptide hormones into a sin
     <p class="text-sm text-[color:var(--ink-muted)]">For people with prediabetes or diabetes, the combination improves blood sugar control more effectively than either component alone.</p>
   </div>
 </div>
-
-### Scientific Pathways
-
-**GLP-1 Pathway (Semaglutide)**
-```
-Semaglutide → GLP-1R activation → Hypothalamus
-                                        ↓
-                    ├── POMC/CART activation → satiety increase
-                    ├── NPY/AgRP inhibition → hunger decrease
-                    └── Glucose-dependent insulin secretion
-```
-
-**Amylin Pathway (Cagrilintide)**
-```
-Cagrilintide → AMY1R/AMY2R/AMY3R/CTR activation → Hindbrain
-                                                      ↓
-                            ├── Area postrema signaling → meal termination
-                            ├── Nucleus tractus solitarius → satiety
-                            └── Reduced postprandial glucagon
-```
 
 **Key Research:** Rubino DM et al. demonstrated in REDEFINE-1 that CagriSema produces weight loss exceeding the sum of individual components. [PMID:40544432](https://pubmed.ncbi.nlm.nih.gov/40544432/)
 

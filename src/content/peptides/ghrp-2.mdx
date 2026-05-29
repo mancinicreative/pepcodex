@@ -313,9 +313,28 @@ anecdotalReports:
   communityNotes: >-
     Potent GH secretagogue popular in bodybuilding. FDA Category 2 restricted
     from compounding.
+mechanismPathways:
+  - name: 'GHS-R1a Signaling Cascade'
+    label: 'Primary GH Release'
+    steps:
+      - 'GHRP-2'
+      - 'GHS-R1a binding (high affinity)'
+      - 'Gq/G11 activation'
+      - 'PLC stimulation'
+      - 'IP3 production'
+      - 'Ca2+ release from ER'
+    outcome: 'GH vesicle exocytosis from somatotrophs'
+    outcomeSignal: research
+  - name: 'Hypothalamic Amplification'
+    label: 'GHRH Synergy'
+    steps:
+      - 'GHRP-2'
+      - 'Hypothalamic GHS-R1a'
+      - 'GHRH neuron activation'
+      - 'Endogenous GHRH release'
+    outcome: 'Amplified GH secretion (supra-additive)'
+    outcomeSignal: research
 ---
-
-<h2 id="mechanism-of-action">Mechanism of Action</h2>
 
 GHRP-2 is a synthetic hexapeptide that acts as a potent agonist of the ghrelin receptor (GHS-R1a). Human pharmacodynamic studies establish it as the most potent hexapeptide GH secretagogue, approximately 3x more effective than GHRP-6 at stimulating growth hormone release.
 
@@ -341,28 +360,6 @@ GHRP-2 triggers growth hormone release by mimicking the hunger hormone ghrelin:
     <p class="text-sm text-[color:var(--ink-muted)]">Unlike ipamorelin, GHRP-2 significantly increases cortisol and prolactin (more than GHRP-6) while causing less appetite stimulation.</p>
   </div>
 </div>
-
-### Scientific Pathways
-
-**GHS-R1a Signaling Cascade** *(Primary GH Release)*
-```
-GHRP-2 → GHS-R1a binding (high affinity)
-                ↓
-        Gq/G11 activation → PLC stimulation
-                ↓
-        IP3 production → Ca2+ release from ER
-                ↓
-        GH vesicle exocytosis from somatotrophs
-```
-
-**Hypothalamic Amplification** *(GHRH Synergy)*
-```
-GHRP-2 → Hypothalamic GHS-R1a → GHRH neuron activation
-                                        ↓
-                            Endogenous GHRH release
-                                        ↓
-                            Amplified GH secretion (supra-additive)
-```
 
 **Key Research:** Arvat et al. (Italy, 1997) established GHRP-2 as the most potent hexapeptide secretagogue with highest cortisol/prolactin effects. [PMID:9285939](https://pubmed.ncbi.nlm.nih.gov/9285939/)
 

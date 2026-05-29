@@ -1,0 +1,87 @@
+---
+/**
+ * SectionAside.astro
+ * Left-margin editorial marker for dossier sections (specimen-sheet layout).
+ * Renders: ❧ fleuron + Roman numeral, eyebrow label, serif section title,
+ * and an optional muted note. Designed to be the first grid child of a
+ * `.dossier-section` (220px column); the section body is the second child.
+ */
+interface Props {
+  roman?: string;
+  eyebrow: string;
+  title: string;
+  note?: string;
+}
+const { roman, eyebrow, title, note } = Astro.props;
+---
+
+<aside class="dossier-aside">
+  <div class="dossier-aside-inner">
+    {roman && (
+      <div class="dossier-marker">
+        <span class="dossier-fleuron" aria-hidden="true">&#10087;</span>
+        <span class="dossier-roman">{roman}</span>
+      </div>
+    )}
+    <p class="eyebrow dossier-aside-eyebrow">{eyebrow}</p>
+    <h2 class="dossier-aside-title">{title}</h2>
+    {note && <p class="dossier-aside-note">{note}</p>}
+  </div>
+</aside>
+
+<style>
+  .dossier-aside-inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (min-width: 1024px) {
+    .dossier-aside-inner {
+      position: sticky;
+      top: 6.5rem;
+    }
+  }
+
+  .dossier-marker {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .dossier-fleuron {
+    color: var(--primary-c);
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+
+  .dossier-roman {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    color: var(--ink-dim);
+    padding-top: 0.1rem;
+  }
+
+  .dossier-aside-eyebrow {
+    color: var(--ink-dim);
+    margin: 0;
+  }
+
+  .dossier-aside-title {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 0.2rem 0 0;
+  }
+
+  .dossier-aside-note {
+    margin-top: 0.6rem;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    color: var(--ink-muted);
+  }
+</style>

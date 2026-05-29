@@ -96,6 +96,23 @@ const peptides = defineCollection({
     }).optional(),
     // Balanced critique — "Where the case weakens" (per-peptide, authored)
     limitations: z.array(z.string()).optional(),
+    // Mechanism signalling pathways — structured chip-flow diagrams (specimen-sheet mockup).
+    // Each is a source → intermediate steps → terminal outcome chain, reformatted from the
+    // dossier's own prose (no new claims). Renders as a dark "pathway" card in the dossier.
+    mechanismPathways: z.array(z.object({
+      name: z.string(),                 // "VEGF/VEGFR2 Pathway"
+      label: z.string().optional(),     // "Angiogenesis"
+      steps: z.array(z.string()),       // trunk chain ["BPC-157","VEGFR2 upregulation",...]
+      outcome: z.string().optional(),   // terminal node, rendered as a colored chip
+      outcomeSignal: z.enum(['research', 'compound', 'primary', 'neutral']).optional(),
+      // Branching cascades: the trunk (steps) forks into several downstream effects.
+      branches: z.array(z.object({
+        node: z.string().optional(),    // e.g. "β-cells" (tissue / compartment)
+        outcome: z.string(),            // e.g. "Glucose-dependent insulin secretion"
+        outcomeSignal: z.enum(['research', 'compound', 'primary', 'neutral']).optional(),
+      })).optional(),
+      netEffect: z.string().optional(), // optional muted caption under the card
+    })).optional(),
     // NEW: Evidence-chained benefits for detailed research breakdown
     evidenceChainedBenefits: z.array(z.object({
       mechanism: z.object({

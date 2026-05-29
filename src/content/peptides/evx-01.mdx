@@ -202,9 +202,28 @@ anecdotalReports:
   positive: []
   negative: []
   communityNotes: No meaningful community discussion or user reports available.
+mechanismPathways:
+  - name: 'Neoantigen Identification Pipeline'
+    label: 'AI-Driven Target Selection'
+    steps:
+      - 'Tumor Biopsy'
+      - 'WES + RNA-Seq'
+      - 'Mutation Calling'
+      - 'PIONEER AI Analysis'
+      - 'MHC binding + Immunogenicity scoring'
+    outcome: 'Top 10-15 neoantigen peptides selected'
+    outcomeSignal: research
+  - name: 'Immune Response Generation'
+    label: 'T-Cell Activation'
+    steps:
+      - 'EVX-01 + Adjuvant'
+      - 'DC Uptake'
+      - 'Lymph Node Migration'
+      - 'MHC Presentation'
+      - 'CD8+ and CD4+ T-Cell Priming'
+    outcome: 'Tumor Trafficking + Killing'
+    outcomeSignal: research
 ---
-
-<h2 id="mechanism-of-action">Mechanism of Action</h2>
 
 The proposed mechanisms of EVX-01 are based on Phase 1/2a clinical data and established neoantigen vaccine immunology. The personalized approach uses AI-driven prediction to identify patient-specific tumor targets.
 
@@ -230,26 +249,6 @@ EVX-01 is a personalized cancer vaccine that trains the immune system to attack 
     <p class="text-sm text-[color:var(--ink-muted)]">Combined with anti-PD-1 therapy, vaccine-primed T cells can effectively attack tumor cells without immunosuppressive brakes.</p>
   </div>
 </div>
-
-### Scientific Pathways
-
-**Neoantigen Identification Pipeline** *(AI-Driven Target Selection)*
-```
-Tumor Biopsy → WES + RNA-Seq → Mutation Calling → PIONEER AI Analysis
-                                                         ↓
-                                    MHC binding + Immunogenicity scoring
-                                                         ↓
-                                    Top 10-15 neoantigen peptides selected
-```
-
-**Immune Response Generation** *(T-Cell Activation)*
-```
-EVX-01 + Adjuvant → DC Uptake → Lymph Node Migration → MHC Presentation
-                                                              ↓
-                                              CD8+ and CD4+ T-Cell Priming
-                                                              ↓
-                                              Tumor Trafficking + Killing
-```
 
 **Key Research:** Phase 1/2a trial (NCT03715985) demonstrated 100% T-cell immunogenicity and 67% ORR in melanoma.
 

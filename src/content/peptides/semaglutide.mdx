@@ -652,9 +652,26 @@ anecdotalReports:
   communityNotes: >-
     Most discussed peptide online. r/semaglutide has 200K+ members. Extensive
     patient community feedback.
+mechanismPathways:
+  - name: GLP-1R Signaling Cascade
+    label: Primary Mechanism
+    steps:
+      - Semaglutide
+      - GLP-1R (Class B1 GPCR)
+      - Gαs activation
+      - Adenylyl cyclase
+      - cAMP ↑
+      - PKA activation
+    branches:
+      - node: β-cells
+        outcome: Glucose-dependent insulin secretion
+      - node: α-cells
+        outcome: Glucagon suppression
+      - node: Hypothalamus
+        outcome: POMC/CART ↑, NPY/AgRP ↓ (appetite suppression)
+      - node: GI tract
+        outcome: Delayed gastric emptying
 ---
-
-<h2 id="mechanism-of-action">Mechanism of Action</h2>
 
 Semaglutide is a selective GLP-1 receptor agonist with extensive Phase 3 clinical trial data supporting its mechanisms in humans.
 
@@ -680,24 +697,6 @@ Semaglutide mimics GLP-1, a natural hormone released after eating, producing mul
     <p class="text-sm text-[color:var(--ink-muted)]">Slows stomach emptying, prolonging satiety after meals and reducing postprandial glucose spikes. Contributes to both weight loss and glycemic benefits.</p>
   </div>
 </div>
-
-### Scientific Pathways
-
-**GLP-1R Signaling Cascade** *(Primary Mechanism)*
-```
-Semaglutide binds GLP-1R (Class B1 GPCR)
-    |
-    v
-G-alpha-s activation --> Adenylyl cyclase --> cAMP increase
-    |
-    v
-Protein Kinase A (PKA) activation
-    |
-    +---> Beta cells: Glucose-dependent insulin exocytosis
-    +---> Alpha cells: Glucagon suppression
-    +---> Hypothalamus: POMC/CART activation, NPY/AgRP inhibition
-    +---> GI tract: Delayed gastric emptying
-```
 
 **Key Research:** SUSTAIN and STEP Phase 3 programs demonstrated these mechanisms translate to clinically meaningful outcomes in over 20,000 patients. [PMID:33567185](https://pubmed.ncbi.nlm.nih.gov/33567185/)
 

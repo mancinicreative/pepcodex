@@ -379,9 +379,55 @@ anecdotalReports:
   communityNotes: >-
     Highly anticipated pipeline drug. Community following trial results closely.
     No real-world user reports yet.
+mechanismPathways:
+  - name: GLP-1R Pathway
+    label: Triple Agonist
+    steps:
+      - Retatrutide
+      - GLP-1R
+    branches:
+      - node: Brain
+        outcome: Satiety ↑, hunger ↓
+      - node: Pancreas
+        outcome: Insulin ↑, glucagon ↓
+      - node: GI
+        outcome: Gastric emptying delayed
+  - name: GIPR Pathway
+    label: Triple Agonist
+    steps:
+      - Retatrutide
+      - GIPR
+    branches:
+      - node: Pancreas
+        outcome: Additional insulin secretion
+      - node: Adipose
+        outcome: Healthy adipocyte function
+      - node: Brain
+        outcome: Enhanced satiety integration
+  - name: GCGR Pathway
+    label: Triple Agonist
+    steps:
+      - Retatrutide
+      - GCGR
+    branches:
+      - node: Liver
+        outcome: Fat oxidation ↑, steatosis ↓
+      - node: Brown fat
+        outcome: Thermogenesis ↑
+      - node: Energy expenditure
+        outcome: 10–15% increase
+  - name: Hepatic Glucagon Pathway
+    label: Liver-Specific Effects
+    steps:
+      - Glucagon receptor activation
+      - Liver (rich in GCGR)
+    branches:
+      - outcome: Hepatic lipid oxidation ↑
+      - outcome: Lipogenesis ↓
+      - outcome: Mitochondrial oxidative stress ↓
+      - node: Anti-fibrotic benefits
+        outcome: MASLD improvement
 ---
-
-<h2 id="mechanism-of-action">Mechanism of Action</h2>
 
 The mechanisms of retatrutide are well-characterized through Phase 2/3 clinical trials and preclinical studies. It is the first triple GIP/GLP-1/Glucagon receptor agonist in late-stage development.
 
@@ -407,38 +453,6 @@ Retatrutide activates three hormone receptors simultaneously, providing comprehe
     <p class="text-sm text-[color:var(--ink-muted)]">GLP-1/GIP counterbalance glucagon's glucose-raising effects, resulting in improved glycemia alongside maximum weight loss.</p>
   </div>
 </div>
-
-### Scientific Pathways
-
-**Triple Receptor Signaling Cascade** *(Metabolic Effects)*
-```
-Retatrutide Administration
-    ↓
-├── GLP-1R PATHWAY
-│   ├── Brain: Satiety ↑, hunger ↓
-│   ├── Pancreas: Insulin ↑, glucagon ↓
-│   └── GI: Gastric emptying delayed
-│
-├── GIPR PATHWAY
-│   ├── Pancreas: Additional insulin secretion
-│   ├── Adipose: Healthy adipocyte function
-│   └── Brain: Enhanced satiety integration
-│
-└── GCGR PATHWAY
-    ├── Liver: Fat oxidation ↑, steatosis ↓
-    ├── Brown fat: Thermogenesis ↑
-    └── Energy expenditure: 10-15% increase
-```
-
-**Hepatic Glucagon Pathway** *(Liver-Specific Effects)*
-```
-Glucagon Receptor Activation → Liver (rich in GCGR)
-    ↓
-├── ↑ Hepatic lipid oxidation
-├── ↓ Lipogenesis (fat creation)
-├── ↓ Oxidative stress in mitochondria
-└── Anti-fibrotic benefits → MASLD improvement
-```
 
 **Key Research:** Jastreboff AM et al. (2023) demonstrated 24.2% weight loss at 48 weeks in Phase 2. [PMID:37366315](https://pubmed.ncbi.nlm.nih.gov/37366315/)
 

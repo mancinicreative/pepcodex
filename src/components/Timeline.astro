@@ -12,9 +12,10 @@ interface TimelineEntry {
 interface Props {
   timeline: TimelineEntry[];
   peptideName: string;
+  hideHeader?: boolean;
 }
 
-const { timeline, peptideName } = Astro.props;
+const { timeline, peptideName, hideHeader = false } = Astro.props;
 if (!timeline || timeline.length === 0) {
   return null;
 }
@@ -23,16 +24,18 @@ const cols = Math.min(timeline.length, 4);
 const gridLgClass = ({ 1: 'lg:grid-cols-1', 2: 'lg:grid-cols-2', 3: 'lg:grid-cols-3', 4: 'lg:grid-cols-4' } as Record<number, string>)[cols] || 'lg:grid-cols-4';
 ---
 
-<section class="timeline-section my-12">
-  <div class="mb-8">
-    <p class="eyebrow" style="color: var(--ink-dim);">What to expect</p>
-    <h3 class="text-3xl tracking-tight mt-1" style="font-family: var(--font-serif); font-weight: 500; color: var(--ink);">
-      Timeline of observations
-    </h3>
-    <p class="mt-1 text-[color:var(--ink-muted)] text-sm">
-      Phases observed in published studies on {peptideName}. Individual responses vary.
-    </p>
-  </div>
+<section class="timeline-section">
+  {!hideHeader && (
+    <div class="mb-8">
+      <p class="eyebrow" style="color: var(--ink-dim);">What to expect</p>
+      <h3 class="text-3xl tracking-tight mt-1" style="font-family: var(--font-serif); font-weight: 500; color: var(--ink);">
+        Timeline of observations
+      </h3>
+      <p class="mt-1 text-[color:var(--ink-muted)] text-sm">
+        Phases observed in published studies on {peptideName}. Individual responses vary.
+      </p>
+    </div>
+  )}
 
   <!-- Horizontal phase cards -->
   <div class={`grid grid-cols-1 sm:grid-cols-2 gap-4 ${gridLgClass}`}>

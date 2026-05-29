@@ -15,6 +15,7 @@ import InteractionMatrix from '../components/InteractionMatrix.astro';
 import Timeline from '../components/Timeline.astro';
 import QualityChecklist from '../components/QualityChecklist.astro';
 import RatingCard from '../components/RatingCard.astro';
+import Vial from '../components/Vial.astro';
 
 // Type definitions for peptide interactions
 interface Interaction {
@@ -174,25 +175,30 @@ const categoryLabels: Record<string, string> = {
   'repair-recovery': 'Repair & Recovery',
   'hormonal': 'Hormonal',
   'longevity': 'Longevity',
+  'cognitive': 'Cognitive',
+  'immune': 'Immune',
   'other': 'Other',
 };
 
 const evidenceConfig: Record<string, { dots: number; label: string; color: string }> = {
-  'high': { dots: 4, label: 'High Evidence', color: 'hsl(142 70% 45%)' },
-  'moderate': { dots: 3, label: 'Moderate Evidence', color: 'var(--primary)' },
-  'low': { dots: 2, label: 'Low Evidence', color: 'hsl(45 90% 55%)' },
-  'very-low': { dots: 1, label: 'Very Low Evidence', color: 'hsl(0 70% 55%)' },
+  'high': { dots: 4, label: 'High Evidence', color: 'var(--research)' },
+  'moderate': { dots: 3, label: 'Moderate Evidence', color: 'var(--primary-c)' },
+  'low': { dots: 2, label: 'Low Evidence', color: 'var(--compound)' },
+  'very-low': { dots: 1, label: 'Very Low Evidence', color: 'var(--danger)' },
 };
 
 const currentEvidence = evidenceConfig[evidenceStrength];
 
 const regulatoryConfig: Record<string, { label: string; color: string; bg: string; border: string }> = {
-  'approved': { label: 'FDA Approved', color: 'text-emerald-400', bg: 'bg-emerald-500/15', border: 'border-emerald-500/30' },
-  'investigational': { label: 'Investigational', color: 'text-blue-400', bg: 'bg-blue-500/15', border: 'border-blue-500/30' },
-  'compounding-restricted': { label: 'Compounding Restricted', color: 'text-amber-400', bg: 'bg-amber-500/15', border: 'border-amber-500/30' },
-  'research-only': { label: 'Research Only', color: 'text-white/60', bg: 'bg-white/5', border: 'border-white/20' },
+  'approved': { label: 'FDA Approved', color: 'text-[color:var(--research)]', bg: 'bg-[rgba(20,118,74,0.10)]', border: 'border-[rgba(20,118,74,0.30)]' },
+  'investigational': { label: 'Investigational', color: 'text-[color:var(--primary-c)]', bg: 'bg-[color:var(--primary-soft)]', border: 'border-[rgba(11,81,127,0.28)]' },
+  'compounding-restricted': { label: 'Compounding Restricted', color: 'text-[#9a6418]', bg: 'bg-[rgba(203,135,52,0.12)]', border: 'border-[rgba(203,135,52,0.32)]' },
+  'research-only': { label: 'Research Only', color: 'text-[color:var(--ink-dim)]', bg: 'bg-[color:var(--paper-2)]', border: 'border-[color:var(--border-c)]' },
 };
 const regConfig = regulatoryStatus ? regulatoryConfig[regulatoryStatus.status] : null;
+
+// Roman numeral for entry framing (hybrid editorial accent)
+const catLabel = categoryLabels[category] || category;
 
 // Section navigation - CONSOLIDATED STRUCTURE
 // Order: Overview (includes molecular) → Mechanism → Evidence → Timeline → Quality → Interactions → References
@@ -241,8 +247,8 @@ function findComparisonSlug(compSlug: string): string | null {
 
 // SEO: Breadcrumb data
 const breadcrumbItems = [
-  { name: 'Home', url: Astro.site?.toString() || 'https://pepcodex.com' },
-  { name: 'Peptides', url: `${Astro.site || 'https://pepcodex.com'}peptides/` },
+  { name: 'Home', url: Astro.site?.toString() || 'https://www.pepcodex.com' },
+  { name: 'Peptides', url: `${Astro.site || 'https://www.pepcodex.com'}peptides/` },
   { name: name, url: Astro.url.toString() }
 ];
 
@@ -272,38 +278,41 @@ const articleUrl = Astro.url.toString();
   />
 
   <div class="max-w-7xl mx-auto pb-20">
-    <!-- Header with Navigation -->
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-12">
-      <a href="/peptides" class="group flex items-center text-sm font-medium text-white/70 hover:text-white transition-all">
-        <div class="mr-3 w-8 h-8 rounded-full border border-white/10 flex items-center justify-center group-hover:border-[var(--primary)]/50 group-hover:bg-[var(--primary)]/5 transition-all">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="m12 19-7-7 7-7"/>
-            <path d="M19 12H5"/>
-          </svg>
-        </div>
-        Back to Library
-      </a>
-      <div class="flex items-center gap-2">
-        <span class="bg-[var(--primary)]/5 border border-[var(--primary)]/20 text-primary px-3 py-1 rounded-full uppercase tracking-widest text-[10px] font-bold">
-          ID: {name.toUpperCase().replace(/\s+/g, '-')}
+    <!-- Breadcrumb + identification strip -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-10 pb-4" style="border-bottom: 1px solid var(--border-c);">
+      <nav class="flex items-center gap-2 text-[0.7rem] uppercase tracking-[0.12em]" style="font-family: var(--font-mono); color: var(--ink-dim);" aria-label="Breadcrumb">
+        <a href="/peptides" class="hover:text-[color:var(--ink)] transition-colors">Catalogue</a>
+        <span aria-hidden="true">/</span>
+        <a href={`/category/${category}`} class="hover:text-[color:var(--ink)] transition-colors">{catLabel}</a>
+        <span aria-hidden="true">/</span>
+        <span style="color: var(--ink);">{name}</span>
+      </nav>
+      <div class="flex items-center gap-2 text-[0.62rem] uppercase tracking-[0.12em]" style="font-family: var(--font-mono);">
+        <span class="px-2.5 py-1 rounded" style="background: var(--primary-soft); border: 1px solid var(--primary-border); color: var(--primary-c);">
+          ID · {name.toUpperCase().replace(/\s+/g, '-')}
         </span>
-        <span class="bg-white/5 border border-white/10 text-white/70 px-3 py-1 rounded-full uppercase tracking-widest text-[10px] font-bold">
-          STATUS: ACTIVE
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded" style="background: var(--paper-2); border: 1px solid var(--border-c); color: var(--ink-muted);">
+          <span class="signal-dot signal-dot--research"></span>Active
         </span>
       </div>
     </div>
 
-    <!-- Hero Layout - 12 column grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
-      <!-- Left: Title and description (7 columns) -->
+    <!-- Specimen sheet hero -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 mb-16">
+      <!-- Left: identity -->
       <div class="lg:col-span-7">
-        <h1 class="text-6xl md:text-8xl font-bold text-white mb-6 tracking-tighter leading-tight text-glow" style="font-family: var(--font-display);">
+        <div class="flex flex-wrap items-center gap-3 mb-5">
+          <span class="badge badge--primary">{catLabel}</span>
+          <span class="eyebrow" style="color: var(--ink-dim);">A specimen of the {catLabel} drawer</span>
+        </div>
+
+        <h1 class="font-serif text-6xl md:text-8xl leading-[0.95] tracking-[-0.02em]" style="color: var(--ink); font-weight: 500;">
           {name}
         </h1>
 
         {/* Regulatory badge */}
         {regConfig && (
-          <a href="/regulatory-tracker/" class:list={["inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium border mb-4 transition-colors hover:opacity-80", regConfig.bg, regConfig.color, regConfig.border]}>
+          <a href="/regulatory-tracker/" class:list={["inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium border mt-4 transition-opacity hover:opacity-80", regConfig.bg, regConfig.color, regConfig.border]} style="font-family: var(--font-mono);">
             <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               {regulatoryStatus!.status === 'approved' ? (
                 <><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></>
@@ -317,131 +326,79 @@ const articleUrl = Astro.url.toString();
           </a>
         )}
 
-        <!-- Aliases -->
-        {aliases.length > 0 && (
-          <p class="text-lg text-white/70 mb-4">
-            Also known as: <span class="font-medium text-white">{aliases.join(', ')}</span>
-          </p>
-        )}
-
-        <p class="text-xl md:text-2xl text-white/80 leading-relaxed max-w-2xl">
+        <!-- Summary as editorial descriptor -->
+        <p class="mt-6 font-serif italic text-xl md:text-2xl leading-snug max-w-2xl" style="color: var(--ink-muted);">
           {summary}
         </p>
 
-        <!-- Tags -->
-        <div class="flex flex-wrap gap-3 mt-8">
-          <!-- Category tag - purple -->
-          <span class="px-4 py-2 rounded-full bg-gradient-to-r from-[var(--primary)]/20 to-purple-600/20 border border-[var(--primary)]/40 text-sm font-medium text-white shadow-[0_0_15px_rgba(139,92,246,0.2)]">
-            {categoryLabels[category]}
-          </span>
-          <!-- Evidence tag - colored by level -->
-          <span
-            class="px-4 py-2 rounded-full text-sm font-medium text-white border"
-            style={`background: linear-gradient(135deg, ${currentEvidence.color}20, ${currentEvidence.color}10); border-color: ${currentEvidence.color}60; box-shadow: 0 0 15px ${currentEvidence.color}30;`}
-          >
-            {currentEvidence.label}
-          </span>
-          <!-- Sources tag - cyan accent -->
-          <span class="px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/40 text-sm font-medium text-white shadow-[0_0_15px_rgba(34,211,238,0.2)]">
-            {sources.count} Sources
-          </span>
-        </div>
+        <!-- Identifier line (mono) -->
+        {aliases.length > 0 && (
+          <p class="mt-5 text-sm" style="color: var(--ink-dim); font-family: var(--font-mono);">
+            {aliases.join(' · ')}
+          </p>
+        )}
       </div>
 
-      <!-- Right: Molecular Specifications Card (5 columns) -->
+      <!-- Right: verdict / evidence card -->
       <div class="lg:col-span-5">
-        <div class="glass-card-default p-8 h-full flex flex-col justify-between overflow-hidden relative group">
-          <!-- Decorative flask icon -->
-          <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-            <svg class="w-48 h-48 rotate-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-              <path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2" />
-              <path d="M8.5 2h7" />
-              <path d="M7 16h10" />
-            </svg>
+        <div class="glass-card relative overflow-hidden p-6 h-full flex flex-col">
+          <div class="signal-bar absolute top-0 left-0 right-0 rounded-none"></div>
+
+          <div class="flex items-start justify-between">
+            <span class="eyebrow">Research evidence</span>
+            <Vial strength={evidenceStrength} size="lg" />
           </div>
 
-          <div class="relative z-10 space-y-6">
-            <h3 class="text-xs font-bold text-white uppercase tracking-[0.2em]">Research Statistics</h3>
-            <div class="space-y-4">
-              <!-- Stats rows -->
-              <div class="flex items-center justify-between group/item">
-                <div class="flex items-center gap-3 text-white/70 group-hover/item:text-white transition-colors">
-                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
-                    <polyline points="14,2 14,8 20,8"/>
-                  </svg>
-                  <span class="text-sm">Total Sources</span>
-                </div>
-                <span class="font-mono text-sm text-white">{sources.count}</span>
-              </div>
-
-              <div class="flex items-center justify-between group/item">
-                <div class="flex items-center gap-3 text-white/70 group-hover/item:text-white transition-colors">
-                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
-                    <circle cx="9" cy="7" r="4"/>
-                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                  </svg>
-                  <span class="text-sm">Human Studies</span>
-                </div>
-                <span class="font-mono text-sm" style="color: hsl(142 70% 45%);">{sources.human}</span>
-              </div>
-
-              <div class="flex items-center justify-between group/item">
-                <div class="flex items-center gap-3 text-white/70 group-hover/item:text-white transition-colors">
-                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/>
-                    <path d="M8.5 2h7"/>
-                  </svg>
-                  <span class="text-sm">Preclinical</span>
-                </div>
-                <span class="font-mono text-sm" style="color: hsl(280 80% 60%);">{sources.preclinical}</span>
-              </div>
-
-              {ratings ? (
-                <div class="pt-2 border-t border-white/10">
-                  <RatingCard ratings={ratings} />
-                </div>
-              ) : (
-                <div class="flex items-center justify-between group/item">
-                  <div class="flex items-center gap-3 text-white/70 group-hover/item:text-white transition-colors">
-                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
-                    </svg>
-                    <span class="text-sm">Evidence Level</span>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <div class="flex gap-1">
-                      {[1, 2, 3, 4].map((n) => (
-                        <div
-                          class="w-2 h-2 rounded-full"
-                          style={`background: ${n <= currentEvidence.dots ? currentEvidence.color : currentEvidence.color + '40'}`}
-                        ></div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              )}
+          <!-- Verdict -->
+          <div class="mt-3 flex items-center gap-3">
+            <div class="flex gap-1.5">
+              {[1, 2, 3, 4].map((n) => (
+                <span class="w-2.5 h-2.5 rounded-full" style={`background: ${n <= currentEvidence.dots ? currentEvidence.color : 'var(--border-strong)'}`}></span>
+              ))}
             </div>
+            <span class="font-serif text-2xl" style="color: var(--ink); font-weight: 500;">{currentEvidence.label.replace(' Evidence', '')}</span>
           </div>
+
+          <!-- Source breakdown bars -->
+          <dl class="mt-6 space-y-3.5">
+            {[
+              { label: 'Total sources', val: sources.count, color: 'var(--ink-dim)' },
+              { label: 'Human studies', val: sources.human, color: 'var(--research)' },
+              { label: 'Preclinical', val: sources.preclinical, color: 'var(--compound)' },
+            ].map((row) => (
+              <div>
+                <div class="flex items-center justify-between mb-1">
+                  <dt class="eyebrow" style="font-size: 0.64rem;">{row.label}</dt>
+                  <dd class="text-sm" style="color: var(--ink); font-family: var(--font-mono); font-weight: 500;">{row.val}</dd>
+                </div>
+                <div class="h-1.5 rounded-full overflow-hidden" style="background: var(--paper-2);">
+                  <div class="h-full rounded-full" style={`width: ${sources.count ? Math.max(4, Math.round((row.val / sources.count) * 100)) : 0}%; background: ${row.color};`}></div>
+                </div>
+              </div>
+            ))}
+          </dl>
+
+          {ratings && (
+            <div class="mt-5 pt-5" style="border-top: 1px solid var(--border-c);">
+              <RatingCard ratings={ratings} />
+            </div>
+          )}
 
           <!-- Share button -->
-          <div class="mt-12 relative z-10">
-            <button
-              id="share-btn"
-              class="w-full flex items-center justify-center gap-3 bg-white text-black font-bold py-4 rounded-xl text-sm uppercase tracking-widest hover:bg-[var(--primary)] hover:text-white transition-all duration-500"
-            >
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="18" cy="5" r="3"/>
-                <circle cx="6" cy="12" r="3"/>
-                <circle cx="18" cy="19" r="3"/>
-                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
-                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
-              </svg>
-              <span id="share-text">Share Dossier</span>
-            </button>
-          </div>
+          <button
+            id="share-btn"
+            class="btn btn-ink btn-md mt-6 w-full uppercase tracking-[0.1em] text-[0.72rem]"
+            style="font-family: var(--font-mono);"
+          >
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="18" cy="5" r="3"/>
+              <circle cx="6" cy="12" r="3"/>
+              <circle cx="18" cy="19" r="3"/>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+            </svg>
+            <span id="share-text">Share dossier</span>
+          </button>
         </div>
       </div>
     </div>
@@ -456,12 +413,12 @@ const articleUrl = Astro.url.toString();
 
     <!-- Research Dossier Section -->
     <section class="space-y-8">
-      <div class="flex items-center justify-between border-b border-white/10 pb-4">
-        <h2 class="text-2xl font-bold text-white" style="font-family: var(--font-display);">Research Dossier</h2>
-        <div class="flex items-center gap-4 text-sm text-white/70 font-medium">
-          <span class="text-primary" id="current-section">01</span>
-          <span class="opacity-30">/</span>
-          <span>{sections.length}</span>
+      <div class="flex items-center justify-between pb-4" style="border-bottom: 1px solid var(--border-c);">
+        <h2 class="font-serif text-2xl" style="color: var(--ink); font-weight: 500;">Research Dossier</h2>
+        <div class="flex items-center gap-3 text-sm" style="font-family: var(--font-mono); color: var(--ink-dim);">
+          <span style="color: var(--primary-c);" id="current-section">01</span>
+          <span>/</span>
+          <span>{String(sections.length).padStart(2, '0')}</span>
         </div>
       </div>
 
@@ -473,14 +430,14 @@ const articleUrl = Astro.url.toString();
               href={`#${section.id}`}
               data-section-btn={section.id}
               data-section-num={section.num}
-              class="section-btn w-full text-left px-3 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-3 group text-white/60 hover:text-white hover:bg-white/5 border border-transparent"
+              class="section-btn w-full text-left px-3 py-2.5 rounded-lg transition-all duration-200 flex items-center gap-3 group text-[color:var(--ink-muted)] hover:text-[color:var(--ink)] hover:bg-[color:var(--paper-2)] border border-transparent"
             >
-              <span class="w-7 h-7 rounded-md flex items-center justify-center text-[10px] font-bold border bg-white/5 border-white/10 text-white/50 section-num shrink-0">
+              <span class="w-7 h-7 rounded-md flex items-center justify-center text-[10px] border section-num shrink-0" style="background: var(--paper-2); border-color: var(--border-c); color: var(--ink-dim); font-family: var(--font-mono);">
                 {section.num}
               </span>
-              <span class="font-semibold uppercase tracking-wide text-[11px] truncate">{section.label}</span>
+              <span class="uppercase tracking-wide text-[11px] truncate" style="font-family: var(--font-mono);">{section.label}</span>
               {section.isNew && (
-                <span class="px-1 py-0.5 text-[8px] font-bold uppercase bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 rounded shrink-0">
+                <span class="px-1 py-0.5 text-[8px] font-bold uppercase rounded shrink-0" style="background: rgba(20,118,74,0.12); border: 1px solid rgba(20,118,74,0.30); color: var(--research);">
                   New
                 </span>
               )}
@@ -490,9 +447,7 @@ const articleUrl = Astro.url.toString();
 
         <!-- Main Content (takes remaining width) -->
         <div>
-          <div class="glass-card-default p-10 md:p-16 relative overflow-hidden min-h-[500px]">
-            <div class="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-[var(--primary)]/5 to-transparent pointer-events-none"></div>
-
+          <div class="glass-card-default p-8 md:p-12 relative overflow-hidden min-h-[500px]">
             <div class="relative z-10 prose prose-invert prose-lg max-w-none">
               <!-- Overview Section (includes molecular info) -->
               <OverviewSection
@@ -511,12 +466,12 @@ const articleUrl = Astro.url.toString();
 
               <!-- Evidence-Chained Benefits -->
               {evidenceChainedBenefits && evidenceChainedBenefits.length > 0 && (
-                <section id="evidence-chain" class="not-prose mt-12 pt-8 border-t border-white/10">
+                <section id="evidence-chain" class="not-prose mt-12 pt-8 border-t border-[color:var(--border-c)]">
                   <div class="space-y-2 mb-8">
-                    <h2 class="text-3xl font-bold text-white tracking-tight" style="font-family: var(--font-display);">
+                    <h2 class="font-serif text-3xl tracking-tight" style="color: var(--ink); font-weight: 500;">
                       Evidence-Chained Benefits
                     </h2>
-                    <div class="h-1 w-20 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full"></div>
+                    <div class="h-1 w-16 rounded-full" style="background: var(--primary-c);"></div>
                   </div>
                   <EvidenceChain benefits={evidenceChainedBenefits} peptideName={name} />
                 </section>
@@ -524,59 +479,44 @@ const articleUrl = Astro.url.toString();
 
               <!-- Timeline "What to Expect" -->
               {timeline && timeline.length > 0 && (
-                <section id="timeline" class="not-prose mt-12 pt-8 border-t border-white/10">
+                <section id="timeline" class="not-prose mt-12 pt-8 border-t border-[color:var(--border-c)]">
                   <Timeline timeline={timeline} peptideName={name} />
                 </section>
               )}
 
               <!-- Quality Checklist -->
               {qualityChecklist && (
-                <section id="quality-checklist" class="not-prose mt-12 pt-8 border-t border-white/10">
+                <section id="quality-checklist" class="not-prose mt-12 pt-8 border-t border-[color:var(--border-c)]">
                   <QualityChecklist checklist={qualityChecklist} peptideName={name} />
                 </section>
               )}
 
               <!-- Peptide Interactions -->
               {interactions && interactions.length > 0 && (
-                <section id="peptide-interactions" class="not-prose mt-12 pt-8 border-t border-white/10">
+                <section id="peptide-interactions" class="not-prose mt-12 pt-8 border-t border-[color:var(--border-c)]">
                   <InteractionMatrix interactions={interactions} currentPeptide={name} />
                 </section>
               )}
 
               <!-- References Section -->
-              <section id="references" class="not-prose mt-12 pt-8 border-t border-white/10">
+              <section id="references" class="not-prose mt-12 pt-8 border-t border-[color:var(--border-c)]">
                 <div class="space-y-2 mb-8">
-                  <h2 class="text-3xl font-bold text-white tracking-tight" style="font-family: var(--font-display);">
+                  <h2 class="font-serif text-3xl tracking-tight" style="color: var(--ink); font-weight: 500;">
                     References
                   </h2>
-                  <div class="h-1 w-20 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full"></div>
+                  <div class="h-1 w-16 rounded-full" style="background: var(--primary-c);"></div>
                 </div>
 
-                <div class="rounded-2xl bg-white/5 border border-white/10 p-6">
-                  <div class="flex items-center gap-4 mb-6">
-                    <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
-                      <svg class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                      </svg>
-                      <span class="text-sm font-medium text-emerald-400">{sources.count} Sources</span>
-                    </div>
-                    <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20">
-                      <svg class="w-4 h-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                      </svg>
-                      <span class="text-sm font-medium text-blue-400">{sources.human} Human</span>
-                    </div>
-                    <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-violet-500/10 border border-violet-500/20">
-                      <svg class="w-4 h-4 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                      </svg>
-                      <span class="text-sm font-medium text-violet-400">{sources.preclinical} Preclinical</span>
-                    </div>
+                <div class="panel-inset p-6">
+                  <div class="flex flex-wrap items-center gap-3 mb-6">
+                    <span class="badge badge--success">{sources.count} Sources</span>
+                    <span class="badge badge--primary">{sources.human} Human</span>
+                    <span class="badge badge--warning">{sources.preclinical} Preclinical</span>
                   </div>
 
                   {evidenceChainedBenefits && evidenceChainedBenefits.length > 0 && (
                     <div class="space-y-4">
-                      <h3 class="text-lg font-semibold text-white">Key Studies Cited</h3>
+                      <h3 class="font-serif text-xl" style="color: var(--ink); font-weight: 500;">Key Studies Cited</h3>
                       <div class="grid gap-2">
                         {(() => {
                           // Collect unique studies from evidence chain
@@ -598,22 +538,23 @@ const articleUrl = Astro.url.toString();
                               href={`https://pubmed.ncbi.nlm.nih.gov/${study.pmid}/`}
                               target="_blank"
                               rel="noopener noreferrer"
-                              class="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/10 hover:border-primary/30 hover:bg-white/10 transition-all group"
+                              class="flex items-center justify-between p-3 rounded-lg transition-all group"
+                              style="background: var(--paper); border: 1px solid var(--border-c);"
                             >
                               <div class="flex items-center gap-3">
-                                <span class={`px-2 py-0.5 text-[10px] font-bold uppercase rounded ${
-                                  study.type === 'human-rct' ? 'bg-emerald-500/20 text-emerald-400' :
-                                  study.type === 'human-observational' ? 'bg-blue-500/20 text-blue-400' :
-                                  study.type === 'animal' ? 'bg-violet-500/20 text-violet-400' :
-                                  'bg-amber-500/20 text-amber-400'
+                                <span class="px-2 py-0.5 text-[10px] uppercase rounded" style={`font-family: var(--font-mono); ${
+                                  study.type === 'human-rct' ? 'background: rgba(20,118,74,0.12); color: var(--research);' :
+                                  study.type === 'human-observational' ? 'background: var(--primary-soft); color: var(--primary-c);' :
+                                  study.type === 'animal' ? 'background: rgba(203,135,52,0.14); color: #9a6418;' :
+                                  'background: var(--paper-2); color: var(--ink-dim);'
                                 }`}>
                                   {study.type === 'human-rct' ? 'RCT' :
                                    study.type === 'human-observational' ? 'Human' :
                                    study.type === 'animal' ? 'Animal' : 'In Vitro'}
                                 </span>
-                                <span class="text-sm text-white font-medium">{study.study}</span>
+                                <span class="text-sm font-medium" style="color: var(--ink);">{study.study}</span>
                               </div>
-                              <div class="flex items-center gap-2 text-white/50 group-hover:text-primary">
+                              <div class="flex items-center gap-2 group-hover:text-[color:var(--primary-c)]" style="color: var(--ink-dim);">
                                 <span class="text-xs">PMID:{study.pmid}</span>
                                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                   <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -626,43 +567,43 @@ const articleUrl = Astro.url.toString();
                     </div>
                   )}
 
-                  <p class="mt-6 text-sm text-white/50">
+                  <p class="mt-6 text-sm" style="color: var(--ink-dim);">
                     Full reference list available on request. All citations link to PubMed for verification.
                   </p>
                 </div>
               </section>
 
               <!-- Methodology Note -->
-              <section id="methodology-note" class="mt-12 pt-8 border-t border-white/10">
+              <section id="methodology-note" class="mt-12 pt-8 border-t border-[color:var(--border-c)]">
                 <div class="space-y-2 mb-8">
-                  <h3 class="text-3xl font-bold text-white tracking-tight" style="font-family: var(--font-display);">
+                  <h3 class="font-serif text-3xl tracking-tight" style="color: var(--ink); font-weight: 500;">
                     Methodology Note
                   </h3>
-                  <div class="h-1 w-20 bg-[var(--primary)] rounded-full"></div>
+                  <div class="h-1 w-16 rounded-full" style="background: var(--primary-c);"></div>
                 </div>
 
-                <div class="rounded-2xl bg-white/5 border border-white/10 p-6">
-                  <p class="text-white/80 mb-4">
+                <div class="panel-inset p-6">
+                  <p class="mb-4" style="color: var(--ink-muted);">
                     This dossier synthesizes available evidence from peer-reviewed literature, regulatory documents, and clinical trial registries. Evidence strength ratings follow a modified GRADE approach.
                   </p>
-                  <p class="text-white/80">
+                  <p style="color: var(--ink-muted);">
                     For complete methodology details, see our <a href="/methodology" class="font-medium text-primary hover:underline">Methodology page</a>.
                   </p>
                 </div>
               </section>
 
               <!-- Disclaimer -->
-              <div class="mt-8 rounded-2xl border border-[var(--accent)]/30 bg-[var(--accent)]/5 p-6">
+              <div class="mt-8 panel-inset p-6" style="border-left: 3px solid var(--compound);">
                 <div class="flex gap-4">
-                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--accent)]/10 text-[var(--accent)]">
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg" style="background: rgba(203,135,52,0.15); color: #9a6418;">
                     <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                     </svg>
                   </div>
                   <div>
-                    <h4 class="font-bold text-[var(--accent)] mb-1 text-base">Important Disclaimer</h4>
-                    <p class="text-white/80 text-sm leading-relaxed">
-                      This dossier is for <strong class="text-white">educational purposes only</strong> and does not constitute medical advice. Always consult a qualified healthcare provider before making health decisions.
+                    <h4 class="eyebrow mb-1" style="color: #9a6418;">Important Disclaimer</h4>
+                    <p class="text-sm leading-relaxed" style="color: var(--ink-muted);">
+                      This dossier is for <strong style="color: var(--ink);">educational purposes only</strong> and does not constitute medical advice. Always consult a qualified healthcare provider before making health decisions.
                     </p>
                   </div>
                 </div>
@@ -685,8 +626,8 @@ const articleUrl = Astro.url.toString();
     <!-- Compare Section -->
     {comparators.length > 0 && (
       <section class="mt-20">
-        <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-8">
-          <h2 class="text-2xl font-bold" style="font-family: var(--font-display);">Compare {name}</h2>
+        <div class="flex items-center justify-between pb-4 mb-8" style="border-bottom: 1px solid var(--border-c);">
+          <h2 class="font-serif text-2xl" style="color: var(--ink); font-weight: 500;">Compare {name}</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {comparators.map(comp => {
@@ -695,16 +636,16 @@ const articleUrl = Astro.url.toString();
             return comparisonSlug ? (
               <a
                 href={`/compare/${comparisonSlug}`}
-                class="glass-card-hoverable p-6 flex items-center gap-4 group"
+                class="glass-card-hoverable p-5 flex items-center gap-4 group"
               >
-                <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-[var(--primary)]/10 group-hover:border-[var(--primary)]/30 transition-all">
-                  <svg class="w-6 h-6 text-[var(--muted-foreground)] group-hover:text-primary transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <div class="w-11 h-11 rounded-lg flex items-center justify-center transition-all group-hover:bg-[color:var(--primary-soft)]" style="background: var(--paper-2); border: 1px solid var(--border-c);">
+                  <svg class="w-5 h-5 group-hover:text-primary transition-colors" style="color: var(--ink-dim);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M16 3h5v5M8 3H3v5M21 3L14 10M3 3l7 7M21 21l-7-7M3 21l7-7M16 21h5v-5M8 21H3v-5" />
                   </svg>
                 </div>
                 <div>
-                  <div class="font-bold text-white group-hover:text-primary transition-colors">{name} vs {compName}</div>
-                  <div class="text-sm text-white/70">View comparison</div>
+                  <div class="font-serif text-lg group-hover:text-primary transition-colors" style="color: var(--ink); font-weight: 500;">{name} vs {compName}</div>
+                  <div class="text-sm" style="color: var(--ink-muted);">View comparison</div>
                 </div>
               </a>
             ) : null;
@@ -722,8 +663,8 @@ const articleUrl = Astro.url.toString();
         .slice(0, 6);
       return related.length > 0 ? (
         <section class="mt-12">
-          <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-8">
-            <h2 class="text-2xl font-bold" style="font-family: var(--font-display);">Related Peptides</h2>
+          <div class="flex items-center justify-between pb-4 mb-8" style="border-bottom: 1px solid var(--border-c);">
+            <h2 class="font-serif text-2xl" style="color: var(--ink); font-weight: 500;">Related Peptides</h2>
           </div>
           <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {related.map(p => (
@@ -752,17 +693,15 @@ const articleUrl = Astro.url.toString();
 
 <style>
   .section-btn.active {
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(139, 92, 246, 0.1));
-    border-color: rgba(139, 92, 246, 0.4);
-    color: white;
-    box-shadow: 0 0 15px rgba(139, 92, 246, 0.2);
+    background: var(--primary-soft);
+    border-color: var(--primary-border);
+    color: var(--ink);
   }
 
   .section-btn.active .section-num {
-    background: var(--primary);
-    border-color: var(--primary);
-    color: white;
-    box-shadow: 0 0 10px rgba(139, 92, 246, 0.4);
+    background: var(--primary-c) !important;
+    border-color: var(--primary-c) !important;
+    color: var(--ink-paper) !important;
   }
 </style>
 
@@ -908,10 +847,10 @@ const articleUrl = Astro.url.toString();
         try {
           await navigator.clipboard.writeText(url);
           shareText.textContent = 'Link Copied!';
-          shareBtn.classList.add('bg-green-500');
+          shareBtn.style.background = 'var(--research)';
           setTimeout(() => {
-            shareText.textContent = 'Share Dossier';
-            shareBtn.classList.remove('bg-green-500');
+            shareText.textContent = 'Share dossier';
+            shareBtn.style.background = '';
           }, 2000);
         } catch (err) {
           // Fallback for older browsers

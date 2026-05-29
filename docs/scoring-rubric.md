@@ -1,8 +1,10 @@
 # PepCodex Scoring Rubric — Source of Truth
 
-**Version:** 2.0 (draft — pending calibration)
+**Version:** 2.1 (draft — pending calibration)
 **Date:** 2026-05-29
-**Status:** Rubric structure + deterministic bands defined. NOT yet calibrated against a test set; NOT yet implemented in the schema. Point *allocations* are an evidence-informed proposal to be validated in calibration; the *criteria* are grounded in the cited frameworks.
+**Status:** Two-axis model defined — **Axis 1: Evidence Score** (5 dimensions, 20 elements, ~80 bands) and **Axis 2: Effectiveness Score** (4 elements). Deterministic bands defined for both. NOT yet calibrated against a test set; NOT yet implemented in the schema. Point *allocations* are an evidence-informed proposal to be validated in calibration; the *criteria* are grounded in the cited frameworks.
+
+**The two axes are independent and always displayed together:** Evidence = *how proven*; Effectiveness = *how large the demonstrated effect is*. A compound can be highly effective but lightly proven (e.g., retatrutide) or modestly effective but definitively proven (e.g., semaglutide).
 
 ---
 
@@ -261,21 +263,81 @@ Rounded to the nearest whole number.
 
 ---
 
+# Axis 2 — Effectiveness Score (separate from the Evidence Score above)
+
+The five dimensions above are **Axis 1: the Evidence Score** — how *proven* a compound is. This is **Axis 2: the Effectiveness Score** — how *large the demonstrated effect is when it works*. The two are scored and displayed **independently and always together** (e.g., "Evidence 100 · Effectiveness 77").
+
+**Scoring gate.** The Effectiveness Score is computed **only when ≥1 quantified *human* efficacy estimate exists.** With no human efficacy data the value is **"Not Established"** — *not* a low number (a low number would falsely imply a measured-but-small effect). This keeps preclinical/anecdotal hype off the axis.
+
+**Normalization rule (cross-indication comparability).** Never compare raw effect sizes across different conditions — placebo response and outcome variance are disease-specific. Judge each compound's effect **relative to placebo and to the best existing option *within its own primary indication***, then map onto the shared category bands below. The *category* (trivial → transformative), not the absolute number, is the comparable unit across conditions.
+
+**Confidence.** Shown as a separate **flag** (High / Moderate / Low, from GRADE/CINeMA certainty of the effect estimate) and carried by the Evidence Score — it does **not** cap the Effectiveness number. This lets a large effect from immature evidence show its true magnitude while its thinner proof stays visible on the Evidence axis.
+
+### E1. Effect-size magnitude — primary outcome — 30 pts *(Cohen's d; GRADE RR>2/RR>5; NNT)*
+| Pts | Criterion |
+|---|---|
+| 0–6 | Trivial — Cohen's d <0.2 / RR ~1.0–1.5 / NNT >100 |
+| 7–15 | Small–moderate — d ~0.2–0.5 / RR ~1.5–2 / NNT ~20–100 |
+| 16–24 | Moderate–large — d ~0.5–0.8 / RR ~2–5 / NNT ~10–20 |
+| 25–30 | Large / transformative — d ≥0.8 / RR >5 / NNT <10 |
+
+### E2. Clinical meaningfulness vs MCID — 25 pts *(MCID; responder analysis)*
+| Pts | Criterion |
+|---|---|
+| 0–6 | Below the indication's MCID (statistically significant but trivial) |
+| 7–14 | Meets the MCID |
+| 15–21 | Exceeds MCID, or majority cross a moderate responder threshold (e.g., ACR20/50) |
+| 22–25 | Far exceeds MCID (≥2×) or high responder bar (e.g., ACR70-level) |
+
+### E3. Outcome relevance — patient-centered vs surrogate — 15 pts *(GRADE outcome-importance / indirectness)*
+| Pts | Criterion |
+|---|---|
+| 0–4 | Surrogate biomarker only |
+| 5–10 | Intermediate / functional endpoint |
+| 11–15 | Hard patient-relevant outcome (symptoms, function, morbidity/mortality) |
+
+### E4. Relative effectiveness vs best existing option — 30 pts *(comparative effectiveness: superiority vs non-inferiority; NMA SUCRA/P-score)*
+| Pts | Criterion |
+|---|---|
+| 0 | Worse than standard of care |
+| 1–8 | Comparable / non-inferior to existing options, or superiority vs placebo on a surrogate only |
+| 9–18 | Superior to placebo on a clinical outcome (no head-to-head) |
+| 19–26 | Top-tier in indirect comparison (high NMA SUCRA/P-score) vs active comparators |
+| 27–30 | Head-to-head superiority over standard of care |
+
+*Effectiveness Score = E1 + E2 + E3 + E4, out of 100.*
+
+### Effectiveness guardrails (mandatory)
+1. Labeled **"demonstrated effect magnitude — not a recommendation, endorsement, or safety claim."**
+2. Always displayed **paired with the Evidence Score** and the confidence flag — never alone.
+3. **"Not Established"** wherever no quantified human efficacy estimate exists.
+4. Prefer ARR/NNT and SMD over relative risk reduction (RRR inflates apparent size at low baseline risk).
+5. Surrogate-only effects are flagged and scored low on E3 regardless of magnitude.
+
+---
+
 ## How to score a compound (procedure)
 
+**Axis 1 — Evidence Score:**
 1. Gather the evidence base (literature, trials, regulatory records, community sources).
 2. For each of the 20 elements, find the matching band and record the points **plus the specific evidence** that justifies it (PMID/DOI/URL or source note).
 3. Sum each dimension's elements → five 0–100 sub-scores.
-4. Apply the weights → overall 0–100. Apply the label.
-5. Record `lastReviewed` and `reviewNotes` (a 1–3 sentence rationale).
-6. Anything ambiguous → score conservatively and flag for human review.
+4. Apply the weights → Evidence Score 0–100. Apply the label.
+
+**Axis 2 — Effectiveness Score:**
+5. If no quantified human efficacy estimate exists → mark **"Not Established"** and stop. Otherwise score E1–E4 (within the primary indication, relative to placebo + best alternative) → Effectiveness Score 0–100, and record the confidence flag (High/Moderate/Low).
+
+**Both axes:**
+6. Record `lastReviewed` and `reviewNotes` (a 1–3 sentence rationale per axis).
+7. Anything ambiguous → score conservatively and flag for human review.
 
 ---
 
 ## Future work (not in this document)
 
-- **Calibration** (next step): score ~5 spread compounds (semaglutide, thymalin, BPC-157, a research-chemical, thymosin α-1) element-by-element to pressure-test bands and tune anchors before locking.
-- **Schema migration**: extend `ratings` from the current 1–5 / 4-field model to this 5-dimension, element-level 0–100 model; map `evidenceStrength` to the Research Depth axis to end the current contradiction.
+- **Calibration** (next step): score ~5 spread compounds (semaglutide, thymalin, BPC-157, a research-chemical, thymosin α-1) element-by-element on **both axes** to pressure-test bands and tune anchors before locking. (Evidence axis already calibrated 2026-05-29; Effectiveness axis pending.)
+- **Open Evidence-axis tuning** (parked): ① whether preclinical-only compounds should earn partial Research-Depth credit (currently near-binary on "human data exists"); ② sign-off that science-first ordering can rank a community-favorite (BPC-157 ~47) below a more-studied compound (thymalin ~52).
+- **Schema migration**: extend `ratings` from the current 1–5 / 4-field model to the two-axis model — Evidence (5 dimensions, element-level 0–100) + Effectiveness (4 elements 0–100 or "Not Established", plus a confidence flag); map `evidenceStrength` to the Research Depth axis to end the current contradiction.
 - **Re-scoring workflow**: re-score all ~102 dossiers against this rubric — one dossier per dedicated agent, each agent producing the 20 element scores with cited evidence, written to the dossier's `ratings` block. This document is the agent's scoring manual.
 - **Public methodology page**: adapt this document into `/methodology` as a public E-E-A-T asset.
 
@@ -295,5 +357,17 @@ Rounded to the nearest whole number.
 - **FDA Patient-Reported Outcome guidance** — fda.gov.
 - **FAERS / pharmacovigilance signal detection** — FDA Adverse Event Reporting System public dashboard + Q&A (explicit: reports cannot establish causation or incidence).
 - **Evidence hierarchy placement of anecdote/case reports** — standard EBM hierarchy references.
+
+### Axis 2 — Effectiveness frameworks
+- **Effect size (Cohen's d / SMD)** — Cohen 1988 conventional thresholds (d = 0.2 small / 0.5 medium / 0.8 large; "crude" per Cohen).
+- **NNT / ARR / RRR** — Oxford CEBM (Number Needed to Treat); ARR/NNT preferred over RRR (RRR inflates at low baseline risk).
+- **Minimal Clinically Important Difference (MCID)** — JAMA Guide to Statistics & Methods (statistical vs clinical significance).
+- **GRADE large magnitude of effect** — Guyatt GH et al. "GRADE guidelines: 9. Rating up the quality of evidence." *J Clin Epidemiol.* 2011;64(12):1311–1316. PMID 21802902 (RR>2 ↑1 level; RR>5 ↑2 levels).
+- **Comparative effectiveness / non-inferiority** — FDA Non-Inferiority Clinical Trials guidance (superiority vs non-inferiority distinction).
+- **Network meta-analysis ranking (SUCRA / P-score)** — Salanti et al. 2011 (SUCRA); Rücker & Schwarzer 2015, BMC Med Res Methodol (P-score). Rankings must be read with certainty.
+- **CINeMA (confidence in NMA)** — Nikolakopoulou et al. 2020, PLOS Medicine (GRADE extended to network estimates).
+- **Responder analysis** — e.g., ACR20/50/70 response criteria.
+
+*Effectiveness verification note:* frameworks retrieved 2026-05-29. The Salanti 2011 SUCRA paper and GRADE Guidance 34 full texts were paywalled (definitions confirmed via Cochrane/GRADE handbooks); some OR→d conversion cutoffs are base-rate-dependent approximations. Effectiveness point allocations are an evidence-informed proposal pending calibration.
 
 *Verification note:* All frameworks above were retrieved from primary/official sources during research (2026-05-29). The Howick 2010 full text was paywalled (citation confirmed, not read in full). Two secondary-sourced regulatory figures (WHO-Listed-Authority count; NMPA reference-country status) are not used as scoring inputs in this version and should be re-verified before any public regulatory claims. Point allocations are an evidence-informed proposal pending calibration.

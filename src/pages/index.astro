@@ -24,7 +24,6 @@ const topPeptideSlugs = [
 const featuredPeptides = topPeptideSlugs
   .map(slug => peptides.find(p => p.slug === slug))
   .filter(Boolean);
-const plateNumerals = ['I', 'II', 'III', 'IV', 'V', 'VI'];
 
 // The "drawers" — categories A–F with live specimen counts
 const drawerDefs = [
@@ -116,7 +115,7 @@ const issue = 'Spring 2026';
       <div class="flex items-end justify-between gap-4 mb-2">
         <div class="section-header mb-0">
           <span class="section-header__bar"></span>
-          <h2 class="section-header__title">The plates</h2>
+          <h2 class="section-header__title">Featured dossiers</h2>
         </div>
         <a href="/peptides" class="eyebrow inline-flex items-center gap-1 hover:text-[color:var(--primary-c)] transition-colors" style="color: var(--ink-dim);">
           All entries
@@ -126,19 +125,16 @@ const issue = 'Spring 2026';
       <p class="eyebrow mb-8" style="color: var(--ink-dim);">Selected specimens · Vol. IV</p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {featuredPeptides.map((peptide, i) => (
-          <div>
-            <div class="eyebrow mb-2" style="color: var(--ink-dim);">Plate {plateNumerals[i]}</div>
-            <PeptideCard
-              name={peptide.data.name}
-              slug={peptide.slug}
-              category={peptide.data.category}
-              compoundType={peptide.data.compoundType}
-              evidenceStrength={peptide.data.evidenceStrength}
-              summary={peptide.data.summary}
-              aliases={peptide.data.aliases}
-            />
-          </div>
+        {featuredPeptides.map((peptide) => (
+          <PeptideCard
+            name={peptide.data.name}
+            slug={peptide.slug}
+            category={peptide.data.category}
+            compoundType={peptide.data.compoundType}
+            evidenceStrength={peptide.data.evidenceStrength}
+            summary={peptide.data.summary}
+            aliases={peptide.data.aliases}
+          />
         ))}
       </div>
     </section>

@@ -266,14 +266,6 @@ const drawerLetter = drawerLetters[category] || '—';
 const sortedPeptides = [...allPeptides].sort((a, b) => a.data.name.localeCompare(b.data.name));
 const entryNum = Math.max(1, sortedPeptides.findIndex(p => p.slug === currentSlug) + 1);
 const totalEntries = allPeptides.length;
-function toRoman(n: number): string {
-  const map: [number, string][] = [[1000,'M'],[900,'CM'],[500,'D'],[400,'CD'],[100,'C'],[90,'XC'],[50,'L'],[40,'XL'],[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']];
-  let r = ''; let x = n;
-  for (const [v, s] of map) { while (x >= v) { r += s; x -= v; } }
-  return r;
-}
-const plateRoman = toRoman(entryNum);
-const totalRoman = toRoman(totalEntries).toLowerCase();
 
 // Two-tone display name: trailing token containing a digit rendered in accent italic
 let namePrefix = name;
@@ -365,14 +357,10 @@ const comparisonCount = comparators.filter(c => findComparisonSlug(c)).length;
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 mb-16">
       <!-- Left: identity -->
       <div class="lg:col-span-7">
-        <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
-          <span class="font-serif italic text-lg">
-            <span style="color: var(--primary-c);">Plate {plateRoman}.</span>
-            <span style="color: var(--ink-dim);"> of {totalRoman}.</span>
-          </span>
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+          <span class="eyebrow" style="color: var(--ink-dim);">A specimen of the {catLabel} drawer</span>
           <span class="badge badge--primary">Drawer {drawerLetter} · {catLabel}</span>
         </div>
-        <p class="eyebrow mb-4" style="color: var(--ink-dim);">A specimen of the {catLabel} drawer</p>
 
         <h1 class="font-serif text-6xl md:text-8xl leading-[0.95] tracking-[-0.02em]" style="color: var(--ink); font-weight: 500;">
           {namePrefix}{nameSuffix && <em style="color: var(--primary-c);">{nameSuffix}</em>}

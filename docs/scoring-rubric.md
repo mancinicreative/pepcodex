@@ -1,6 +1,6 @@
 # PepCodex Scoring Rubric — Source of Truth
 
-**Version:** 2.1 (draft — pending calibration)
+**Version:** 2.2 (draft — Evidence axis tuned & locked; Effectiveness calibration pending)
 **Date:** 2026-05-29
 **Status:** Two-axis model defined — **Axis 1: Evidence Score** (5 dimensions, 20 elements, ~80 bands) and **Axis 2: Effectiveness Score** (4 elements). Deterministic bands defined for both. NOT yet calibrated against a test set; NOT yet implemented in the schema. Point *allocations* are an evidence-informed proposal to be validated in calibration; the *criteria* are grounded in the cited frameworks.
 
@@ -62,7 +62,7 @@ Rounded to the nearest whole number.
 ---
 
 ## Dimension 1 — Research Depth (30%)
-*Rigor and quality of the best available human evidence. Grounded in GRADE, Oxford CEBM 2011 Levels of Evidence, Cochrane RoB 2, AMSTAR-2.*
+*Rigor and quality of the best available human evidence, plus a small capped credit (1E, 10 pts) for the preclinical evidence foundation. Grounded in GRADE, Oxford CEBM 2011 Levels of Evidence, Cochrane RoB 2, AMSTAR-2. Element weights: 1A 35 · 1B 25 · 1C 15 · 1D 15 · 1E 10 = 100.*
 
 ### 1A. Highest human study tier reached — 35 pts *(OCEBM 2011 + evidence pyramid)*
 | Pts | Criterion |
@@ -81,21 +81,21 @@ Rounded to the nearest whole number.
 | 33 | Systematic review of RCTs |
 | 35 | Meta-analysis of multiple RCTs |
 
-### 1B. Risk-of-bias / methodological rigor of the best studies — 30 pts *(Cochrane RoB 2; AMSTAR-2)*
+### 1B. Risk-of-bias / methodological rigor of the best studies — 25 pts *(Cochrane RoB 2; AMSTAR-2)*
 | Pts | Criterion |
 |---|---|
-| 0–7 | Best available study at **high** risk of bias, or only "critically low" reviews |
-| 8–14 | Best study rated "some concerns" (RoB 2) |
-| 15–21 | ≥1 RCT at **low** risk of bias on the relevant outcome |
-| 22–30 | ≥1 low-RoB RCT **plus** a moderate/high-confidence systematic review (AMSTAR-2) |
+| 0–6 | Best available study at **high** risk of bias, or only "critically low" reviews |
+| 7–12 | Best study rated "some concerns" (RoB 2) |
+| 13–18 | ≥1 RCT at **low** risk of bias on the relevant outcome |
+| 19–25 | ≥1 low-RoB RCT **plus** a moderate/high-confidence systematic review (AMSTAR-2) |
 
-### 1C. Sample size / statistical precision — 20 pts *(GRADE imprecision)*
+### 1C. Sample size / statistical precision — 15 pts *(GRADE imprecision)*
 | Pts | Criterion |
 |---|---|
-| 0–4 | Total human N < 50 |
-| 5–10 | Total human N 50–300 |
-| 11–16 | Total human N 300–1,000 |
-| 17–20 | >1,000, adequately powered, narrow confidence intervals |
+| 0–3 | Total human N < 50 |
+| 4–7 | Total human N 50–300 |
+| 8–11 | Total human N 300–1,000 |
+| 12–15 | >1,000, adequately powered, narrow confidence intervals |
 
 ### 1D. Directness to intended human use — 15 pts *(GRADE indirectness)*
 | Pts | Criterion |
@@ -103,6 +103,14 @@ Rounded to the nearest whole number.
 | 0–4 | Evidence only indirect (surrogate endpoints, non-target population, different route) |
 | 5–9 | Partially direct (right population OR right outcome, not both) |
 | 10–15 | Direct — population, route, and outcome match the claimed use |
+
+### 1E. Preclinical evidence foundation — 10 pts *(volume/rigor/replication of the animal + in-vitro study program — scores the body of preclinical work, NOT mechanism understanding, to avoid double-counting with Dimension 2)*
+| Pts | Criterion |
+|---|---|
+| 0–2 | None, or a single weak animal/in-vitro study |
+| 3–5 | Modest preclinical program (a few animal studies) |
+| 6–8 | Substantial multi-study preclinical evidence across models |
+| 9–10 | Extensive, independently-replicated preclinical program across multiple models/species |
 
 ---
 
@@ -336,7 +344,7 @@ The five dimensions above are **Axis 1: the Evidence Score** — how *proven* a 
 ## Future work (not in this document)
 
 - **Calibration** (next step): score ~5 spread compounds (semaglutide, thymalin, BPC-157, a research-chemical, thymosin α-1) element-by-element on **both axes** to pressure-test bands and tune anchors before locking. (Evidence axis already calibrated 2026-05-29; Effectiveness axis pending.)
-- **Open Evidence-axis tuning** (parked): ① whether preclinical-only compounds should earn partial Research-Depth credit (currently near-binary on "human data exists"); ② sign-off that science-first ordering can rank a community-favorite (BPC-157 ~47) below a more-studied compound (thymalin ~52).
+- **Evidence-axis tuning** (resolved 2026-05-29): ① preclinical evidence foundation added as element **1E (10 pts)** — preclinical-only compounds are no longer all floored (FOXO4-DRI Research Depth ~8 → ~14); ② science-first ordering **confirmed** — BPC-157 below thymalin accepted; the gap narrows (~49 vs ~52) once BPC-157's large preclinical program is credited, but ordering holds.
 - **Schema migration**: extend `ratings` from the current 1–5 / 4-field model to the two-axis model — Evidence (5 dimensions, element-level 0–100) + Effectiveness (4 elements 0–100 or "Not Established", plus a confidence flag); map `evidenceStrength` to the Research Depth axis to end the current contradiction.
 - **Re-scoring workflow**: re-score all ~102 dossiers against this rubric — one dossier per dedicated agent, each agent producing the 20 element scores with cited evidence, written to the dossier's `ratings` block. This document is the agent's scoring manual.
 - **Public methodology page**: adapt this document into `/methodology` as a public E-E-A-T asset.

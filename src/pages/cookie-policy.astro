@@ -7,14 +7,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="Information about how PepCodex uses cookies and similar tracking technologies. EU GDPR and ePrivacy Directive compliance."
 >
   <article class="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
-    <header class="mb-12 relative">
-      <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-transparent rounded-2xl -z-10"></div>
+    <header class="mb-12">
       <div class="p-6">
-        <h1 class="text-4xl font-bold tracking-tight text-white">Cookie Policy</h1>
-        <p class="mt-4 text-xl text-white/80">
+        <h1 class="font-serif text-4xl tracking-tight" style="color: var(--ink); font-weight: 500;">Cookie Policy</h1>
+        <p class="mt-4 text-xl" style="color: var(--ink-muted);">
           How we use cookies and similar tracking technologies.
         </p>
-        <p class="mt-2 text-sm text-white/60">Last updated: January 2026</p>
+        <p class="mt-2 text-sm" style="color: var(--ink-dim);">Last updated: January 2026</p>
       </div>
     </header>
 
@@ -70,22 +69,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </p>
 
         <div class="not-prose my-6 overflow-x-auto">
-          <table class="min-w-full divide-y divide-white/10">
+          <table class="min-w-full divide-y" style="border-color: var(--border-c);">
             <thead>
-              <tr class="text-left text-sm text-white/60">
+              <tr class="text-left text-sm" style="color: var(--ink-dim);">
                 <th class="py-3 pr-4">Cookie Name</th>
                 <th class="py-3 pr-4">Purpose</th>
                 <th class="py-3 pr-4">Duration</th>
               </tr>
             </thead>
-            <tbody class="divide-y divide-white/5 text-sm text-white/80">
+            <tbody class="divide-y text-sm" style="border-color: var(--border-c); color: var(--ink-muted);">
               <tr>
-                <td class="py-3 pr-4 font-mono text-cyan-300">pepcodex_cookie_consent</td>
+                <td class="py-3 pr-4 font-mono" style="color: var(--primary-c);">pepcodex_cookie_consent</td>
                 <td class="py-3 pr-4">Stores your cookie consent preferences</td>
                 <td class="py-3 pr-4">1 year</td>
               </tr>
               <tr>
-                <td class="py-3 pr-4 font-mono text-cyan-300">pepcodex_disclaimer_accepted</td>
+                <td class="py-3 pr-4 font-mono" style="color: var(--primary-c);">pepcodex_disclaimer_accepted</td>
                 <td class="py-3 pr-4">Remembers if you have acknowledged the disclaimer</td>
                 <td class="py-3 pr-4">Session</td>
               </tr>
@@ -105,36 +104,36 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </p>
 
         <div class="not-prose my-6 overflow-x-auto">
-          <table class="min-w-full divide-y divide-white/10">
+          <table class="min-w-full divide-y" style="border-color: var(--border-c);">
             <thead>
-              <tr class="text-left text-sm text-white/60">
+              <tr class="text-left text-sm" style="color: var(--ink-dim);">
                 <th class="py-3 pr-4">Cookie Name</th>
                 <th class="py-3 pr-4">Provider</th>
                 <th class="py-3 pr-4">Purpose</th>
                 <th class="py-3 pr-4">Duration</th>
               </tr>
             </thead>
-            <tbody class="divide-y divide-white/5 text-sm text-white/80">
+            <tbody class="divide-y text-sm" style="border-color: var(--border-c); color: var(--ink-muted);">
               <tr>
-                <td class="py-3 pr-4 font-mono text-cyan-300">_ga</td>
+                <td class="py-3 pr-4 font-mono" style="color: var(--primary-c);">_ga</td>
                 <td class="py-3 pr-4">Google Analytics</td>
                 <td class="py-3 pr-4">Distinguishes unique users</td>
                 <td class="py-3 pr-4">2 years</td>
               </tr>
               <tr>
-                <td class="py-3 pr-4 font-mono text-cyan-300">_ga_*</td>
+                <td class="py-3 pr-4 font-mono" style="color: var(--primary-c);">_ga_*</td>
                 <td class="py-3 pr-4">Google Analytics 4</td>
                 <td class="py-3 pr-4">Maintains session state</td>
                 <td class="py-3 pr-4">2 years</td>
               </tr>
               <tr>
-                <td class="py-3 pr-4 font-mono text-cyan-300">_gid</td>
+                <td class="py-3 pr-4 font-mono" style="color: var(--primary-c);">_gid</td>
                 <td class="py-3 pr-4">Google Analytics</td>
                 <td class="py-3 pr-4">Distinguishes users</td>
                 <td class="py-3 pr-4">24 hours</td>
               </tr>
               <tr>
-                <td class="py-3 pr-4 font-mono text-cyan-300">_gat</td>
+                <td class="py-3 pr-4 font-mono" style="color: var(--primary-c);">_gat</td>
                 <td class="py-3 pr-4">Google Analytics</td>
                 <td class="py-3 pr-4">Throttles request rate</td>
                 <td class="py-3 pr-4">1 minute</td>
@@ -150,17 +149,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </p>
 
         <div class="not-prose my-6 overflow-x-auto">
-          <table class="min-w-full divide-y divide-white/10">
+          <table class="min-w-full divide-y" style="border-color: var(--border-c);">
             <thead>
-              <tr class="text-left text-sm text-white/60">
+              <tr class="text-left text-sm" style="color: var(--ink-dim);">
                 <th class="py-3 pr-4">Cookie Name</th>
                 <th class="py-3 pr-4">Purpose</th>
                 <th class="py-3 pr-4">Duration</th>
               </tr>
             </thead>
-            <tbody class="divide-y divide-white/5 text-sm text-white/80">
+            <tbody class="divide-y text-sm" style="border-color: var(--border-c); color: var(--ink-muted);">
               <tr>
-                <td class="py-3 pr-4 font-mono text-cyan-300">pepcodex_theme</td>
+                <td class="py-3 pr-4 font-mono" style="color: var(--primary-c);">pepcodex_theme</td>
                 <td class="py-3 pr-4">Stores your preferred color theme (if applicable)</td>
                 <td class="py-3 pr-4">1 year</td>
               </tr>
@@ -274,16 +273,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </li>
         </ul>
 
-        <div class="not-prose my-8 rounded-xl border border-amber-500/30 bg-amber-500/10 p-6 backdrop-blur-sm">
+        <div class="not-prose my-8 rounded-xl p-6" style="border: 1px solid var(--compound); background: rgba(203,135,52,0.10);">
           <div class="flex items-start gap-4">
-            <svg class="w-6 h-6 text-amber-400 flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="w-6 h-6 flex-shrink-0 mt-1" style="color: #9a6418;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"/>
               <path d="M12 16v-4"/>
               <path d="M12 8h.01"/>
             </svg>
             <div>
-              <h4 class="text-lg font-semibold text-amber-300 mb-2">Note</h4>
-              <p class="text-white/80">
+              <h4 class="text-lg font-semibold mb-2" style="color: #9a6418;">Note</h4>
+              <p style="color: var(--ink-muted);">
                 If you choose to block or delete cookies, some features of the website may
                 not function properly, and you may need to re-enter your preferences on
                 each visit.
@@ -308,20 +307,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </p>
 
         <div class="not-prose my-6 overflow-x-auto">
-          <table class="min-w-full divide-y divide-white/10">
+          <table class="min-w-full divide-y" style="border-color: var(--border-c);">
             <thead>
-              <tr class="text-left text-sm text-white/60">
+              <tr class="text-left text-sm" style="color: var(--ink-dim);">
                 <th class="py-3 pr-4">Key</th>
                 <th class="py-3 pr-4">Purpose</th>
               </tr>
             </thead>
-            <tbody class="divide-y divide-white/5 text-sm text-white/80">
+            <tbody class="divide-y text-sm" style="border-color: var(--border-c); color: var(--ink-muted);">
               <tr>
-                <td class="py-3 pr-4 font-mono text-cyan-300">pepcodex_cookie_consent</td>
+                <td class="py-3 pr-4 font-mono" style="color: var(--primary-c);">pepcodex_cookie_consent</td>
                 <td class="py-3 pr-4">Stores your cookie consent choices</td>
               </tr>
               <tr>
-                <td class="py-3 pr-4 font-mono text-cyan-300">pepcodex_disclaimer_dismissed</td>
+                <td class="py-3 pr-4 font-mono" style="color: var(--primary-c);">pepcodex_disclaimer_dismissed</td>
                 <td class="py-3 pr-4">Remembers if disclaimer banner was dismissed</td>
               </tr>
             </tbody>
@@ -404,7 +403,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </section>
 
       <!-- Related Pages -->
-      <section id="related" class="mt-12 pt-8 border-t border-white/10">
+      <section id="related" class="mt-12 pt-8" style="border-top: 1px solid var(--border-c);">
         <h2>Related Legal Pages</h2>
         <ul>
           <li><a href="/privacy">Privacy Policy</a></li>

@@ -7,11 +7,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="How we research, verify, and present peptide evidence. Our standards for citation, evidence grading, and editorial integrity."
 >
   <article class="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
-    <header class="mb-12 relative">
-      <div class="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/10 via-transparent to-transparent rounded-2xl -z-10"></div>
+    <header class="mb-12">
       <div class="p-6">
-        <h1 class="text-4xl font-bold tracking-tight text-white">Our Methodology</h1>
-        <p class="mt-4 text-xl text-white/80">
+        <span class="eyebrow" style="color: var(--ink-dim);">The PepCodex method</span>
+        <h1 class="mt-3 text-4xl tracking-tight" style="font-family: var(--font-serif); font-weight: 500; color: var(--ink);">Our Methodology</h1>
+        <p class="mt-4 text-xl text-[color:var(--ink-muted)]">
           How we research, verify, and present peptide evidence with integrity.
         </p>
       </div>
@@ -70,45 +70,45 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </p>
 
       <div class="not-prose my-8 space-y-4">
-        <div class="flex items-start gap-4 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4 backdrop-blur-sm">
-          <span class="inline-flex items-center rounded-full bg-emerald-500/30 px-3 py-1 text-sm font-medium text-emerald-300 border border-emerald-500/40">
+        <div class="flex items-start gap-4 rounded-xl p-4" style="border: 1px solid rgba(20,118,74,0.30); background: rgba(20,118,74,0.08);">
+          <span class="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium" style="background: rgba(20,118,74,0.14); color: var(--research); border: 1px solid rgba(20,118,74,0.32);">
             High Evidence
           </span>
           <div>
-            <p class="text-white/80">
+            <p class="text-[color:var(--ink-muted)]">
               Multiple high-quality human RCTs with consistent results. Clear safety profile from
               substantial clinical experience.
             </p>
           </div>
         </div>
-        <div class="flex items-start gap-4 rounded-xl border border-[var(--primary)]/30 bg-[var(--primary)]/10 p-4 backdrop-blur-sm">
-          <span class="inline-flex items-center rounded-full bg-[var(--primary)]/30 px-3 py-1 text-sm font-medium text-purple-300 border border-[var(--primary)]/40">
+        <div class="flex items-start gap-4 rounded-xl p-4" style="border: 1px solid var(--primary-border); background: var(--primary-soft);">
+          <span class="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium" style="background: var(--primary-soft); color: var(--primary-c); border: 1px solid var(--primary-border);">
             Moderate Evidence
           </span>
           <div>
-            <p class="text-white/80">
+            <p class="text-[color:var(--ink-muted)]">
               Human studies exist but with limitations: smaller sample sizes, shorter follow-up,
               or inconsistent results across studies.
             </p>
           </div>
         </div>
-        <div class="flex items-start gap-4 rounded-xl border border-amber-500/30 bg-amber-500/10 p-4 backdrop-blur-sm">
-          <span class="inline-flex items-center rounded-full bg-amber-500/30 px-3 py-1 text-sm font-medium text-amber-300 border border-amber-500/40">
+        <div class="flex items-start gap-4 rounded-xl p-4" style="border: 1px solid rgba(203,135,52,0.32); background: rgba(203,135,52,0.12);">
+          <span class="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium" style="background: rgba(203,135,52,0.12); color: #9a6418; border: 1px solid rgba(203,135,52,0.32);">
             Low Evidence
           </span>
           <div>
-            <p class="text-white/80">
+            <p class="text-[color:var(--ink-muted)]">
               Limited human data. Evidence primarily from case reports, preclinical studies,
               or very early-phase trials.
             </p>
           </div>
         </div>
-        <div class="flex items-start gap-4 rounded-xl border border-red-500/30 bg-red-500/10 p-4 backdrop-blur-sm">
-          <span class="inline-flex items-center rounded-full bg-red-500/30 px-3 py-1 text-sm font-medium text-red-300 border border-red-500/40">
+        <div class="flex items-start gap-4 rounded-xl p-4" style="border: 1px solid rgba(185,61,66,0.30); background: rgba(185,61,66,0.08);">
+          <span class="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium" style="background: rgba(185,61,66,0.12); color: var(--danger); border: 1px solid rgba(185,61,66,0.32);">
             Very Low Evidence
           </span>
           <div>
-            <p class="text-white/80">
+            <p class="text-[color:var(--ink-muted)]">
               Minimal or no human data. Evidence is theoretical, mechanistic, or limited to
               animal/in vitro studies.
             </p>
@@ -164,30 +164,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h3>The Three Dimensions</h3>
 
       <div class="not-prose my-6 space-y-4">
-        <div class="rounded-xl border border-white/10 bg-white/5 p-5">
+        <div class="rounded-xl p-5" style="border: 1px solid var(--border-c); background: var(--paper-2);">
           <div class="flex items-start gap-4">
-            <div class="shrink-0 rounded-lg bg-emerald-500/15 border border-emerald-500/25 px-2.5 py-1 text-xs font-bold text-emerald-400 uppercase tracking-wider">40%</div>
+            <div class="shrink-0 rounded-lg px-2.5 py-1 text-xs font-bold uppercase tracking-wider" style="background: var(--primary-soft); border: 1px solid var(--primary-border); color: var(--primary-c);">40%</div>
             <div>
-              <p class="font-semibold text-white mb-1">Research Depth</p>
-              <p class="text-sm text-white/70">Volume and quality of research literature. Ranges from theoretical or no studies (1) to extensive Phase 3 RCTs with multiple meta-analyses (5).</p>
+              <p class="font-semibold mb-1" style="color: var(--ink);">Research Depth</p>
+              <p class="text-sm text-[color:var(--ink-muted)]">Volume and quality of research literature. Ranges from theoretical or no studies (1) to extensive Phase 3 RCTs with multiple meta-analyses (5).</p>
             </div>
           </div>
         </div>
-        <div class="rounded-xl border border-white/10 bg-white/5 p-5">
+        <div class="rounded-xl p-5" style="border: 1px solid var(--border-c); background: var(--paper-2);">
           <div class="flex items-start gap-4">
-            <div class="shrink-0 rounded-lg bg-blue-500/15 border border-blue-500/25 px-2.5 py-1 text-xs font-bold text-blue-400 uppercase tracking-wider">25%</div>
+            <div class="shrink-0 rounded-lg px-2.5 py-1 text-xs font-bold uppercase tracking-wider" style="background: var(--primary-soft); border: 1px solid var(--primary-border); color: var(--primary-c);">25%</div>
             <div>
-              <p class="font-semibold text-white mb-1">Global Coverage</p>
-              <p class="text-sm text-white/70">Geographic diversity of research. Ranges from single country or language only (1) to global Phase 3 trials with multiple independent research groups worldwide (5).</p>
+              <p class="font-semibold mb-1" style="color: var(--ink);">Global Coverage</p>
+              <p class="text-sm text-[color:var(--ink-muted)]">Geographic diversity of research. Ranges from single country or language only (1) to global Phase 3 trials with multiple independent research groups worldwide (5).</p>
             </div>
           </div>
         </div>
-        <div class="rounded-xl border border-white/10 bg-white/5 p-5">
+        <div class="rounded-xl p-5" style="border: 1px solid var(--border-c); background: var(--paper-2);">
           <div class="flex items-start gap-4">
-            <div class="shrink-0 rounded-lg bg-violet-500/15 border border-violet-500/25 px-2.5 py-1 text-xs font-bold text-violet-400 uppercase tracking-wider">35%</div>
+            <div class="shrink-0 rounded-lg px-2.5 py-1 text-xs font-bold uppercase tracking-wider" style="background: var(--primary-soft); border: 1px solid var(--primary-border); color: var(--primary-c);">35%</div>
             <div>
-              <p class="font-semibold text-white mb-1">Mechanism Plausibility</p>
-              <p class="text-sm text-white/70">How well-understood the mechanism of action is. Ranges from unknown or theoretical (1) to established, textbook-level mechanism with extensive direct evidence (5).</p>
+              <p class="font-semibold mb-1" style="color: var(--ink);">Mechanism Plausibility</p>
+              <p class="text-sm text-[color:var(--ink-muted)]">How well-understood the mechanism of action is. Ranges from unknown or theoretical (1) to established, textbook-level mechanism with extensive direct evidence (5).</p>
             </div>
           </div>
         </div>
@@ -203,32 +203,32 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="not-prose my-6 overflow-x-auto">
         <table class="w-full text-sm border-collapse">
           <thead>
-            <tr class="border-b border-white/10">
-              <th class="text-left py-3 pr-6 text-white/60 font-medium uppercase tracking-wider text-xs">Overall Score</th>
-              <th class="text-left py-3 pr-6 text-white/60 font-medium uppercase tracking-wider text-xs">Label</th>
-              <th class="text-left py-3 text-white/60 font-medium uppercase tracking-wider text-xs">Meaning</th>
+            <tr style="border-bottom: 1px solid var(--border-c);">
+              <th class="text-left py-3 pr-6 font-medium uppercase tracking-wider text-xs" style="color: var(--ink-dim);">Overall Score</th>
+              <th class="text-left py-3 pr-6 font-medium uppercase tracking-wider text-xs" style="color: var(--ink-dim);">Label</th>
+              <th class="text-left py-3 font-medium uppercase tracking-wider text-xs" style="color: var(--ink-dim);">Meaning</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-white/5">
-            <tr>
-              <td class="py-3 pr-6 font-mono text-emerald-400 font-semibold">4.0 – 5.0</td>
-              <td class="py-3 pr-6"><span class="inline-flex items-center rounded-full bg-emerald-500/15 border border-emerald-500/30 px-2.5 py-0.5 text-xs font-semibold text-emerald-400">High Evidence</span></td>
-              <td class="py-3 text-white/70">Extensive human trials, global research, well-established mechanism</td>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border-c);">
+              <td class="py-3 pr-6 font-mono font-semibold" style="color: var(--research);">4.0 – 5.0</td>
+              <td class="py-3 pr-6"><span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold" style="background: rgba(20,118,74,0.14); border: 1px solid rgba(20,118,74,0.32); color: var(--research);">High Evidence</span></td>
+              <td class="py-3 text-[color:var(--ink-muted)]">Extensive human trials, global research, well-established mechanism</td>
             </tr>
-            <tr>
-              <td class="py-3 pr-6 font-mono text-purple-400 font-semibold">3.0 – 3.9</td>
-              <td class="py-3 pr-6"><span class="inline-flex items-center rounded-full bg-purple-500/15 border border-purple-500/30 px-2.5 py-0.5 text-xs font-semibold text-purple-400">Moderate Evidence</span></td>
-              <td class="py-3 text-white/70">Some human data, multi-country research, supported mechanism</td>
+            <tr style="border-bottom: 1px solid var(--border-c);">
+              <td class="py-3 pr-6 font-mono font-semibold" style="color: var(--primary-c);">3.0 – 3.9</td>
+              <td class="py-3 pr-6"><span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold" style="background: var(--primary-soft); border: 1px solid var(--primary-border); color: var(--primary-c);">Moderate Evidence</span></td>
+              <td class="py-3 text-[color:var(--ink-muted)]">Some human data, multi-country research, supported mechanism</td>
             </tr>
-            <tr>
-              <td class="py-3 pr-6 font-mono text-amber-400 font-semibold">2.0 – 2.9</td>
-              <td class="py-3 pr-6"><span class="inline-flex items-center rounded-full bg-amber-500/15 border border-amber-500/30 px-2.5 py-0.5 text-xs font-semibold text-amber-400">Low Evidence</span></td>
-              <td class="py-3 text-white/70">Limited human data, narrow research base, proposed mechanism</td>
+            <tr style="border-bottom: 1px solid var(--border-c);">
+              <td class="py-3 pr-6 font-mono font-semibold" style="color: #9a6418;">2.0 – 2.9</td>
+              <td class="py-3 pr-6"><span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold" style="background: rgba(203,135,52,0.12); border: 1px solid rgba(203,135,52,0.32); color: #9a6418;">Low Evidence</span></td>
+              <td class="py-3 text-[color:var(--ink-muted)]">Limited human data, narrow research base, proposed mechanism</td>
             </tr>
-            <tr>
-              <td class="py-3 pr-6 font-mono text-red-400 font-semibold">1.0 – 1.9</td>
-              <td class="py-3 pr-6"><span class="inline-flex items-center rounded-full bg-red-500/15 border border-red-500/30 px-2.5 py-0.5 text-xs font-semibold text-red-400">Very Low Evidence</span></td>
-              <td class="py-3 text-white/70">Theoretical or minimal data, single-source research</td>
+            <tr style="border-bottom: 1px solid var(--border-c);">
+              <td class="py-3 pr-6 font-mono font-semibold" style="color: var(--danger);">1.0 – 1.9</td>
+              <td class="py-3 pr-6"><span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold" style="background: rgba(185,61,66,0.12); border: 1px solid rgba(185,61,66,0.32); color: var(--danger);">Very Low Evidence</span></td>
+              <td class="py-3 text-[color:var(--ink-muted)]">Theoretical or minimal data, single-source research</td>
             </tr>
           </tbody>
         </table>

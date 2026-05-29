@@ -19,15 +19,15 @@ const cytaminPeptides = bioregulatorPeptides.filter(p => p.data.bioregulatorType
   category="longevity"
 >
   <div class="mb-12">
-    <p class="text-lg text-white/80 max-w-3xl leading-relaxed mb-6">
+    <p class="text-lg text-[color:var(--ink-muted)] max-w-3xl leading-relaxed mb-6">
       Bioregulator peptides are short peptides developed primarily by Russian scientist Vladimir Khavinson
       and colleagues at the St. Petersburg Institute of Bioregulation and Gerontology. These compounds
       are claimed to regulate gene expression in specific tissues through epigenetic mechanisms.
     </p>
 
     <div class="glass-card-amber p-6 rounded-xl">
-      <p class="text-amber-200 text-sm">
-        <strong class="text-amber-400">Evidence Note:</strong> Most bioregulator research originates from
+      <p class="text-sm" style="color: #9a6418;">
+        <strong style="color: #9a6418;">Evidence Note:</strong> Most bioregulator research originates from
         a single Russian institute with limited independent Western validation. Evidence quality for most
         compounds is very low. The 2025 UK replication of epithalon's telomerase effects was the first
         significant independent confirmation.
@@ -36,8 +36,8 @@ const cytaminPeptides = bioregulatorPeptides.filter(p => p.data.bioregulatorType
   </div>
 
   <div class="mb-12">
-    <h2 class="text-2xl font-bold text-white mb-6">Synthetic Bioregulators</h2>
-    <p class="text-white/70 mb-6">
+    <h2 class="text-2xl mb-6" style="font-family: var(--font-serif); font-weight: 500; color: var(--ink);">Synthetic Bioregulators</h2>
+    <p class="text-[color:var(--ink-muted)] mb-6">
       Defined amino acid sequences synthesized to mimic tissue-specific peptide signals.
     </p>
     {syntheticPeptides.length > 0 ? (
@@ -54,14 +54,14 @@ const cytaminPeptides = bioregulatorPeptides.filter(p => p.data.bioregulatorType
         ))}
       </div>
     ) : (
-      <p class="text-white/50">No synthetic bioregulators found.</p>
+      <p class="text-[color:var(--ink-dim)]">No synthetic bioregulators found.</p>
     )}
   </div>
 
   {extractPeptides.length > 0 && (
     <div class="mb-12">
-      <h2 class="text-2xl font-bold text-white mb-6">Tissue Extract Complexes</h2>
-      <p class="text-white/70 mb-6">
+      <h2 class="text-2xl mb-6" style="font-family: var(--font-serif); font-weight: 500; color: var(--ink);">Tissue Extract Complexes</h2>
+      <p class="text-[color:var(--ink-muted)] mb-6">
         Peptide mixtures extracted from animal tissues rather than synthesized. These are not single
         defined compounds but complex mixtures.
       </p>
@@ -82,8 +82,8 @@ const cytaminPeptides = bioregulatorPeptides.filter(p => p.data.bioregulatorType
 
   {cytaminPeptides.length > 0 && (
     <div class="mb-12">
-      <h2 class="text-2xl font-bold text-white mb-6">Cytamin Supplements</h2>
-      <p class="text-white/70 mb-6">
+      <h2 class="text-2xl mb-6" style="font-family: var(--font-serif); font-weight: 500; color: var(--ink);">Cytamin Supplements</h2>
+      <p class="text-[color:var(--ink-muted)] mb-6">
         Oral peptide supplements derived from tissue extracts, marketed as dietary supplements in Russia.
         Cytamins contain multiple peptide fractions rather than single defined sequences. Oral bioavailability
         of peptides is generally very low.
@@ -104,8 +104,8 @@ const cytaminPeptides = bioregulatorPeptides.filter(p => p.data.bioregulatorType
   )}
 
   <div class="mt-16 glass-card-default p-8">
-    <h3 class="font-bold text-white mb-4 text-lg">About Bioregulator Research</h3>
-    <div class="prose prose-invert prose-sm max-w-none text-white/80">
+    <h3 class="mb-4 text-lg" style="font-family: var(--font-serif); font-weight: 500; color: var(--ink);">About Bioregulator Research</h3>
+    <div class="prose prose-invert prose-sm max-w-none text-[color:var(--ink-muted)]">
       <p>
         The bioregulation theory proposes that short peptides (2-4 amino acids) can selectively
         regulate gene expression in specific tissues by interacting with DNA and chromatin.
@@ -127,135 +127,135 @@ const cytaminPeptides = bioregulatorPeptides.filter(p => p.data.bioregulatorType
   </div>
 
   <div class="mt-8 glass-card-default p-8">
-    <h3 class="font-bold text-white mb-4 text-lg">Quick Reference: Bioregulator Sequences</h3>
+    <h3 class="mb-4 text-lg" style="font-family: var(--font-serif); font-weight: 500; color: var(--ink);">Quick Reference: Bioregulator Sequences</h3>
     <div class="overflow-x-auto">
       <table class="w-full text-sm">
         <thead>
-          <tr class="text-left text-white/60 border-b border-white/10">
+          <tr class="text-left text-[color:var(--ink-dim)]" style="border-bottom: 1px solid var(--border-c);">
             <th class="pb-3 pr-4">Name</th>
             <th class="pb-3 pr-4">Sequence</th>
             <th class="pb-3 pr-4">Target Tissue</th>
             <th class="pb-3">Type</th>
           </tr>
         </thead>
-        <tbody class="text-white/80">
-          <tr class="border-b border-white/5">
-            <td class="py-3 pr-4 font-medium text-white">Epithalon</td>
+        <tbody class="text-[color:var(--ink-muted)]">
+          <tr style="border-bottom: 1px solid var(--border-c);">
+            <td class="py-3 pr-4 font-medium text-[color:var(--ink)]">Epithalon</td>
             <td class="py-3 pr-4 font-mono text-primary">AEDG</td>
             <td class="py-3 pr-4">Pineal gland</td>
             <td class="py-3">Tetrapeptide</td>
           </tr>
-          <tr class="border-b border-white/5">
-            <td class="py-3 pr-4 font-medium text-white">Vilon</td>
+          <tr style="border-bottom: 1px solid var(--border-c);">
+            <td class="py-3 pr-4 font-medium text-[color:var(--ink)]">Vilon</td>
             <td class="py-3 pr-4 font-mono text-primary">KE</td>
             <td class="py-3 pr-4">Thymus</td>
             <td class="py-3">Dipeptide</td>
           </tr>
-          <tr class="border-b border-white/5">
-            <td class="py-3 pr-4 font-medium text-white">Livagen</td>
+          <tr style="border-bottom: 1px solid var(--border-c);">
+            <td class="py-3 pr-4 font-medium text-[color:var(--ink)]">Livagen</td>
             <td class="py-3 pr-4 font-mono text-primary">KED</td>
             <td class="py-3 pr-4">Liver</td>
             <td class="py-3">Tripeptide</td>
           </tr>
-          <tr class="border-b border-white/5">
-            <td class="py-3 pr-4 font-medium text-white">Vesugen</td>
+          <tr style="border-bottom: 1px solid var(--border-c);">
+            <td class="py-3 pr-4 font-medium text-[color:var(--ink)]">Vesugen</td>
             <td class="py-3 pr-4 font-mono text-primary">KED</td>
             <td class="py-3 pr-4">Blood vessels</td>
             <td class="py-3">Tripeptide</td>
           </tr>
-          <tr class="border-b border-white/5">
-            <td class="py-3 pr-4 font-medium text-white">Cardiogen</td>
+          <tr style="border-bottom: 1px solid var(--border-c);">
+            <td class="py-3 pr-4 font-medium text-[color:var(--ink)]">Cardiogen</td>
             <td class="py-3 pr-4 font-mono text-primary">AED</td>
             <td class="py-3 pr-4">Heart</td>
             <td class="py-3">Tripeptide</td>
           </tr>
-          <tr class="border-b border-white/5">
-            <td class="py-3 pr-4 font-medium text-white">Kristagen</td>
+          <tr style="border-bottom: 1px solid var(--border-c);">
+            <td class="py-3 pr-4 font-medium text-[color:var(--ink)]">Kristagen</td>
             <td class="py-3 pr-4 font-mono text-primary">EDG</td>
             <td class="py-3 pr-4">Immune system</td>
             <td class="py-3">Tripeptide</td>
           </tr>
-          <tr class="border-b border-white/5">
-            <td class="py-3 pr-4 font-medium text-white">Chonluten</td>
+          <tr style="border-bottom: 1px solid var(--border-c);">
+            <td class="py-3 pr-4 font-medium text-[color:var(--ink)]">Chonluten</td>
             <td class="py-3 pr-4 font-mono text-primary">EDG</td>
             <td class="py-3 pr-4">GI tract</td>
             <td class="py-3">Tripeptide</td>
           </tr>
-          <tr class="border-b border-white/5">
-            <td class="py-3 pr-4 font-medium text-white">Bronchogen</td>
+          <tr style="border-bottom: 1px solid var(--border-c);">
+            <td class="py-3 pr-4 font-medium text-[color:var(--ink)]">Bronchogen</td>
             <td class="py-3 pr-4 font-mono text-primary">AEDL</td>
             <td class="py-3 pr-4">Bronchi/lungs</td>
             <td class="py-3">Tetrapeptide</td>
           </tr>
-          <tr class="border-b border-white/5">
-            <td class="py-3 pr-4 font-medium text-white">Pinealon</td>
+          <tr style="border-bottom: 1px solid var(--border-c);">
+            <td class="py-3 pr-4 font-medium text-[color:var(--ink)]">Pinealon</td>
             <td class="py-3 pr-4 font-mono text-primary">EDR</td>
             <td class="py-3 pr-4">Brain/pineal</td>
             <td class="py-3">Tripeptide</td>
           </tr>
-          <tr class="border-b border-white/5">
-            <td class="py-3 pr-4 font-medium text-white">Cortexin</td>
-            <td class="py-3 pr-4 font-mono text-white/50">Complex</td>
+          <tr style="border-bottom: 1px solid var(--border-c);">
+            <td class="py-3 pr-4 font-medium text-[color:var(--ink)]">Cortexin</td>
+            <td class="py-3 pr-4 font-mono text-[color:var(--ink-dim)]">Complex</td>
             <td class="py-3 pr-4">Brain</td>
             <td class="py-3">Extract</td>
           </tr>
-          <tr class="border-b border-white/5">
-            <td class="py-3 pr-4 font-medium text-white">Ovagen</td>
+          <tr style="border-bottom: 1px solid var(--border-c);">
+            <td class="py-3 pr-4 font-medium text-[color:var(--ink)]">Ovagen</td>
             <td class="py-3 pr-4 font-mono text-primary">EDL</td>
             <td class="py-3 pr-4">Liver</td>
             <td class="py-3">Tripeptide</td>
           </tr>
-          <tr class="border-b border-white/5">
-            <td class="py-3 pr-4 font-medium text-white">Pancragen</td>
+          <tr style="border-bottom: 1px solid var(--border-c);">
+            <td class="py-3 pr-4 font-medium text-[color:var(--ink)]">Pancragen</td>
             <td class="py-3 pr-4 font-mono text-primary">KEDW</td>
             <td class="py-3 pr-4">Pancreas</td>
             <td class="py-3">Tetrapeptide</td>
           </tr>
-          <tr class="border-b border-white/5">
-            <td class="py-3 pr-4 font-medium text-white">Stamakort</td>
-            <td class="py-3 pr-4 font-mono text-white/50">Unknown</td>
+          <tr style="border-bottom: 1px solid var(--border-c);">
+            <td class="py-3 pr-4 font-medium text-[color:var(--ink)]">Stamakort</td>
+            <td class="py-3 pr-4 font-mono text-[color:var(--ink-dim)]">Unknown</td>
             <td class="py-3 pr-4">Stomach</td>
             <td class="py-3">Peptide</td>
           </tr>
-          <tr class="border-b border-white/5">
-            <td class="py-3 pr-4 font-medium text-white">Vladonix</td>
-            <td class="py-3 pr-4 font-mono text-white/50">Complex</td>
+          <tr style="border-bottom: 1px solid var(--border-c);">
+            <td class="py-3 pr-4 font-medium text-[color:var(--ink)]">Vladonix</td>
+            <td class="py-3 pr-4 font-mono text-[color:var(--ink-dim)]">Complex</td>
             <td class="py-3 pr-4">Thymus</td>
             <td class="py-3">Cytamin</td>
           </tr>
-          <tr class="border-b border-white/5">
-            <td class="py-3 pr-4 font-medium text-white">Endoluten</td>
-            <td class="py-3 pr-4 font-mono text-white/50">Complex</td>
+          <tr style="border-bottom: 1px solid var(--border-c);">
+            <td class="py-3 pr-4 font-medium text-[color:var(--ink)]">Endoluten</td>
+            <td class="py-3 pr-4 font-mono text-[color:var(--ink-dim)]">Complex</td>
             <td class="py-3 pr-4">Pineal gland</td>
             <td class="py-3">Cytamin</td>
           </tr>
-          <tr class="border-b border-white/5">
-            <td class="py-3 pr-4 font-medium text-white">Cerluten</td>
-            <td class="py-3 pr-4 font-mono text-white/50">Complex</td>
+          <tr style="border-bottom: 1px solid var(--border-c);">
+            <td class="py-3 pr-4 font-medium text-[color:var(--ink)]">Cerluten</td>
+            <td class="py-3 pr-4 font-mono text-[color:var(--ink-dim)]">Complex</td>
             <td class="py-3 pr-4">Brain</td>
             <td class="py-3">Cytamin</td>
           </tr>
-          <tr class="border-b border-white/5">
-            <td class="py-3 pr-4 font-medium text-white">Ventfort</td>
-            <td class="py-3 pr-4 font-mono text-white/50">Complex</td>
+          <tr style="border-bottom: 1px solid var(--border-c);">
+            <td class="py-3 pr-4 font-medium text-[color:var(--ink)]">Ventfort</td>
+            <td class="py-3 pr-4 font-mono text-[color:var(--ink-dim)]">Complex</td>
             <td class="py-3 pr-4">Blood vessels</td>
             <td class="py-3">Cytamin</td>
           </tr>
-          <tr class="border-b border-white/5">
-            <td class="py-3 pr-4 font-medium text-white">Svetinorm</td>
-            <td class="py-3 pr-4 font-mono text-white/50">Complex</td>
+          <tr style="border-bottom: 1px solid var(--border-c);">
+            <td class="py-3 pr-4 font-medium text-[color:var(--ink)]">Svetinorm</td>
+            <td class="py-3 pr-4 font-mono text-[color:var(--ink-dim)]">Complex</td>
             <td class="py-3 pr-4">Liver</td>
             <td class="py-3">Cytamin</td>
           </tr>
-          <tr class="border-b border-white/5">
-            <td class="py-3 pr-4 font-medium text-white">Suprefort</td>
-            <td class="py-3 pr-4 font-mono text-white/50">Complex</td>
+          <tr style="border-bottom: 1px solid var(--border-c);">
+            <td class="py-3 pr-4 font-medium text-[color:var(--ink)]">Suprefort</td>
+            <td class="py-3 pr-4 font-mono text-[color:var(--ink-dim)]">Complex</td>
             <td class="py-3 pr-4">Pancreas</td>
             <td class="py-3">Cytamin</td>
           </tr>
-          <tr class="border-b border-white/5">
-            <td class="py-3 pr-4 font-medium text-white">Sigumir</td>
-            <td class="py-3 pr-4 font-mono text-white/50">Complex</td>
+          <tr style="border-bottom: 1px solid var(--border-c);">
+            <td class="py-3 pr-4 font-medium text-[color:var(--ink)]">Sigumir</td>
+            <td class="py-3 pr-4 font-mono text-[color:var(--ink-dim)]">Complex</td>
             <td class="py-3 pr-4">Cartilage</td>
             <td class="py-3">Cytamin</td>
           </tr>

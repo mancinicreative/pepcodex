@@ -7,30 +7,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="Important FDA compliance notice. The content on PepCodex has not been evaluated by the FDA and is for educational purposes only."
 >
   <article class="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
-    <header class="mb-12 relative">
-      <div class="absolute inset-0 bg-gradient-to-br from-red-500/10 via-transparent to-transparent rounded-2xl -z-10"></div>
-      <div class="p-6">
-        <h1 class="text-4xl font-bold tracking-tight text-white">FDA Notice</h1>
-        <p class="mt-4 text-xl text-white/80">
-          Important regulatory compliance information.
-        </p>
-        <p class="mt-2 text-sm text-white/60">Last updated: January 2026</p>
-      </div>
+    <header class="mb-12">
+      <span class="eyebrow">Regulatory</span>
+      <h1 class="font-serif mt-4 text-4xl tracking-tight" style="color: var(--ink); font-weight: 500;">FDA Notice</h1>
+      <p class="mt-4 text-xl" style="color: var(--ink-muted);">
+        Important regulatory compliance information.
+      </p>
+      <p class="mt-2 text-sm" style="color: var(--ink-dim);">Last updated: January 2026</p>
     </header>
 
     <div class="prose prose-invert prose-lg max-w-none">
       <!-- Main FDA Notice -->
       <section id="fda-disclaimer">
-        <div class="not-prose my-8 rounded-xl border border-red-500/30 bg-red-500/10 p-6 backdrop-blur-sm">
+        <div class="not-prose my-8 rounded-xl p-6" style="border: 1px solid var(--danger); background: rgba(185,61,66,.08);">
           <div class="flex items-start gap-4">
-            <svg class="w-8 h-8 text-red-400 flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="w-8 h-8 flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--danger);">
               <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
               <path d="M12 9v4"/>
               <path d="M12 17h.01"/>
             </svg>
             <div>
-              <h2 class="text-xl font-bold text-red-300 mb-3">FDA Disclaimer</h2>
-              <p class="text-white/90 text-lg leading-relaxed">
+              <h2 class="font-serif text-xl mb-3" style="color: var(--danger); font-weight: 500;">FDA Disclaimer</h2>
+              <p class="text-lg leading-relaxed" style="color: var(--ink);">
                 The statements and information on this website have <strong>not been evaluated by the
                 Food and Drug Administration (FDA)</strong>. The content is not intended to diagnose,
                 treat, cure, or prevent any disease.
@@ -97,34 +95,34 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </p>
 
         <div class="not-prose my-8 grid gap-4">
-          <div class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-5 backdrop-blur-sm">
-            <h3 class="text-lg font-semibold text-emerald-300 mb-2">FDA-Approved Medications</h3>
-            <p class="text-white/80 text-sm">
+          <div class="rounded-xl p-5" style="border: 1px solid rgba(20,118,74,.3); background: rgba(20,118,74,.08);">
+            <h3 class="font-serif text-lg mb-2" style="color: var(--research); font-weight: 500;">FDA-Approved Medications</h3>
+            <p class="text-sm" style="color: var(--ink-muted);">
               Some peptides are approved by the FDA as prescription medications for specific
               conditions. These are available only through licensed healthcare providers and
               pharmacies.
             </p>
           </div>
 
-          <div class="rounded-xl border border-amber-500/30 bg-amber-500/10 p-5 backdrop-blur-sm">
-            <h3 class="text-lg font-semibold text-amber-300 mb-2">Investigational Substances</h3>
-            <p class="text-white/80 text-sm">
+          <div class="rounded-xl p-5" style="border: 1px solid rgba(203,135,52,.3); background: rgba(203,135,52,.08);">
+            <h3 class="font-serif text-lg mb-2" style="color: #9a6418; font-weight: 500;">Investigational Substances</h3>
+            <p class="text-sm" style="color: var(--ink-muted);">
               Many peptides are currently being studied in clinical trials but have not yet
               received FDA approval. These are available only through clinical trial participation.
             </p>
           </div>
 
-          <div class="rounded-xl border border-red-500/30 bg-red-500/10 p-5 backdrop-blur-sm">
-            <h3 class="text-lg font-semibold text-red-300 mb-2">Research Chemicals</h3>
-            <p class="text-white/80 text-sm">
+          <div class="rounded-xl p-5" style="border: 1px solid rgba(185,61,66,.3); background: rgba(185,61,66,.08);">
+            <h3 class="font-serif text-lg mb-2" style="color: var(--danger); font-weight: 500;">Research Chemicals</h3>
+            <p class="text-sm" style="color: var(--ink-muted);">
               Some peptides are sold as "research chemicals" or "not for human consumption."
               These have not undergone FDA safety review and are not approved for human use.
             </p>
           </div>
 
-          <div class="rounded-xl border border-white/20 bg-white/5 p-5 backdrop-blur-sm">
-            <h3 class="text-lg font-semibold text-white/90 mb-2">Dietary Supplements</h3>
-            <p class="text-white/80 text-sm">
+          <div class="rounded-xl p-5" style="border: 1px solid var(--border-c); background: var(--paper-2);">
+            <h3 class="font-serif text-lg mb-2" style="color: var(--ink); font-weight: 500;">Dietary Supplements</h3>
+            <p class="text-sm" style="color: var(--ink-muted);">
               Some substances may be sold as dietary supplements. Under DSHEA (1994), supplements
               are not required to receive FDA approval before being sold, but manufacturers are
               responsible for safety and claims.
@@ -313,7 +311,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </section>
 
       <!-- Related Pages -->
-      <section id="related" class="mt-12 pt-8 border-t border-white/10">
+      <section id="related" class="mt-12 pt-8 border-t border-[color:var(--border-c)]">
         <h2>Related Legal Pages</h2>
         <ul>
           <li><a href="/disclaimer">Disclaimer</a></li>

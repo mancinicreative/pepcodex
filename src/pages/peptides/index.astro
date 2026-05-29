@@ -43,9 +43,9 @@ const compoundTypes = [
     <div class="mt-8 space-y-4">
       <!-- Category filter -->
       <div class="flex flex-wrap items-center gap-3">
-        <span class="text-xs font-bold uppercase tracking-[0.15em] text-primary">Category:</span>
+        <span class="eyebrow" style="color: var(--ink-dim);">Category</span>
         <button
-          class="filter-btn px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 bg-[var(--primary)] text-white border border-[var(--primary)]/50"
+          class="filter-btn filter-active px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300"
           data-filter="category"
           data-value="all"
         >
@@ -53,7 +53,7 @@ const compoundTypes = [
         </button>
         {categories.map((cat) => (
           <button
-            class="filter-btn px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 bg-white/5 text-white/70 border border-white/10 hover:bg-white/10 hover:text-white hover:border-white/20"
+            class="filter-btn filter-inactive px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300"
             data-filter="category"
             data-value={cat}
           >
@@ -64,9 +64,9 @@ const compoundTypes = [
 
       <!-- Evidence filter -->
       <div class="flex flex-wrap items-center gap-3">
-        <span class="text-xs font-bold uppercase tracking-[0.15em] text-primary">Evidence:</span>
+        <span class="eyebrow" style="color: var(--ink-dim);">Evidence</span>
         <button
-          class="filter-btn px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 bg-[var(--primary)] text-white border border-[var(--primary)]/50"
+          class="filter-btn filter-active px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300"
           data-filter="evidence"
           data-value="all"
         >
@@ -74,7 +74,7 @@ const compoundTypes = [
         </button>
         {evidenceLevels.map((level) => (
           <button
-            class="filter-btn px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 bg-white/5 text-white/70 border border-white/10 hover:bg-white/10 hover:text-white hover:border-white/20"
+            class="filter-btn filter-inactive px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300"
             data-filter="evidence"
             data-value={level}
           >
@@ -85,9 +85,9 @@ const compoundTypes = [
 
       <!-- Compound Type filter -->
       <div class="flex flex-wrap items-center gap-3">
-        <span class="text-xs font-bold uppercase tracking-[0.15em] text-primary">Type:</span>
+        <span class="eyebrow" style="color: var(--ink-dim);">Type</span>
         <button
-          class="filter-btn px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 bg-[var(--primary)] text-white border border-[var(--primary)]/50"
+          class="filter-btn filter-active px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300"
           data-filter="compound"
           data-value="all"
         >
@@ -95,7 +95,7 @@ const compoundTypes = [
         </button>
         {compoundTypes.map((type) => (
           <button
-            class="filter-btn px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 bg-white/5 text-white/70 border border-white/10 hover:bg-white/10 hover:text-white hover:border-white/20"
+            class="filter-btn filter-inactive px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300"
             data-filter="compound"
             data-value={type.value}
           >
@@ -112,10 +112,8 @@ const compoundTypes = [
       {[...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'].map((letter) => (
         <a
           href={letters.includes(letter) ? `#letter-${letter}` : undefined}
-          class={`w-9 h-9 flex items-center justify-center rounded-lg text-sm font-bold transition-all duration-300 ${
-            letters.includes(letter)
-              ? 'bg-white/10 text-white hover:bg-[var(--primary)] hover:text-white border border-white/10 hover:border-[var(--primary)]/50'
-              : 'bg-white/5 text-white/30 cursor-not-allowed border border-white/10'
+          class={`az-link w-9 h-9 flex items-center justify-center rounded-lg text-sm font-bold transition-all duration-300 ${
+            letters.includes(letter) ? 'az-link--on' : 'az-link--off cursor-not-allowed'
           }`}
         >
           {letter}
@@ -126,8 +124,8 @@ const compoundTypes = [
 
   <!-- Peptide count -->
   <div class="mb-8 flex items-center justify-between">
-    <p class="text-sm text-white/70">
-      Showing <span id="peptide-count" class="text-white font-bold">{peptides.length}</span> peptides
+    <p class="text-sm" style="color: var(--ink-muted);">
+      Showing <span id="peptide-count" class="font-bold" style="color: var(--ink);">{peptides.length}</span> peptides
     </p>
   </div>
 
@@ -136,10 +134,10 @@ const compoundTypes = [
     {letters.map((letter) => (
       <section id={`letter-${letter}`} class="scroll-mt-24">
         <div class="flex items-center gap-4 mb-6">
-          <div class="w-12 h-12 rounded-xl bg-[var(--primary)]/10 border border-[var(--primary)]/20 flex items-center justify-center">
-            <span class="text-2xl font-bold text-primary">{letter}</span>
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background: var(--primary-soft); border: 1px solid var(--primary-border);">
+            <span class="text-2xl font-serif" style="color: var(--primary-c); font-weight: 500;">{letter}</span>
           </div>
-          <div class="flex-1 h-px bg-gradient-to-r from-white/10 to-transparent"></div>
+          <div class="flex-1 h-px" style="background: linear-gradient(to right, var(--border-c), transparent);"></div>
         </div>
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {grouped[letter].map((peptide) => (
@@ -169,21 +167,53 @@ const compoundTypes = [
   <!-- Empty state -->
   <div id="empty-state" class="hidden py-20 text-center">
     <div class="glass-card-default p-12 max-w-md mx-auto">
-      <div class="w-16 h-16 rounded-2xl bg-[var(--primary)]/10 border border-[var(--primary)]/20 flex items-center justify-center mx-auto mb-6">
+      <div class="w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-6" style="background: var(--primary-soft); border: 1px solid var(--primary-border);">
         <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
       </div>
-      <p class="text-lg text-white mb-2">No peptides match your filters</p>
-      <p class="text-sm text-white/70 mb-6">Try adjusting your filter criteria</p>
+      <p class="text-lg mb-2" style="color: var(--ink);">No peptides match your filters</p>
+      <p class="text-sm mb-6" style="color: var(--ink-muted);">Try adjusting your filter criteria</p>
       <button
         id="clear-filters"
-        class="btn btn-primary btn-md"
+        class="btn btn-cobalt btn-md"
       >
         Clear all filters
       </button>
     </div>
   </div>
+
+  <style>
+    .filter-active {
+      background: var(--ink);
+      color: var(--ink-paper);
+      border: 1px solid var(--ink);
+    }
+    .filter-inactive {
+      background: var(--paper);
+      color: var(--ink-muted);
+      border: 1px solid var(--border-c);
+    }
+    .filter-inactive:hover {
+      background: var(--paper-2);
+      color: var(--ink);
+    }
+    .az-link--on {
+      background: var(--paper-2);
+      color: var(--ink);
+      border: 1px solid var(--border-c);
+    }
+    .az-link--on:hover {
+      background: var(--primary-c);
+      color: var(--ink-paper);
+      border-color: var(--primary-c);
+    }
+    .az-link--off {
+      background: var(--paper);
+      color: var(--ink-dim);
+      border: 1px solid var(--border-c);
+    }
+  </style>
 </HubLayout>
 
 <script>
@@ -252,13 +282,13 @@ const compoundTypes = [
       // Update active filter
       activeFilters[filterType] = value;
 
-      // Update button styles for dark theme
+      // Update button styles
       document.querySelectorAll(`[data-filter="${filterType}"]`).forEach((b) => {
-        b.classList.remove('bg-[var(--primary)]', 'text-white', 'border-[var(--primary)]/50');
-        b.classList.add('bg-white/5', 'text-white/70', 'border-white/10');
+        b.classList.remove('filter-active');
+        b.classList.add('filter-inactive');
       });
-      el.classList.remove('bg-white/5', 'text-white/70', 'border-white/10');
-      el.classList.add('bg-[var(--primary)]', 'text-white', 'border-[var(--primary)]/50');
+      el.classList.remove('filter-inactive');
+      el.classList.add('filter-active');
 
       applyFilters();
     });
@@ -270,11 +300,11 @@ const compoundTypes = [
     filterBtns.forEach((btn) => {
       const el = btn as HTMLElement;
       if (el.dataset.value === 'all') {
-        el.classList.remove('bg-white/5', 'text-white/70', 'border-white/10');
-        el.classList.add('bg-[var(--primary)]', 'text-white', 'border-[var(--primary)]/50');
+        el.classList.remove('filter-inactive');
+        el.classList.add('filter-active');
       } else {
-        el.classList.remove('bg-[var(--primary)]', 'text-white', 'border-[var(--primary)]/50');
-        el.classList.add('bg-white/5', 'text-white/70', 'border-white/10');
+        el.classList.remove('filter-active');
+        el.classList.add('filter-inactive');
       }
     });
 

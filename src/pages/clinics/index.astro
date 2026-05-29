@@ -88,8 +88,8 @@ const breadcrumbs = [
           type="text"
           id="city-search"
           placeholder="Search for a city..."
-          class="w-full px-5 py-4 rounded-xl text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-primary"
-          style="background: var(--surface-glass); border: 1px solid var(--border-glass);"
+          class="w-full px-5 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary"
+          style="background: var(--paper-2); border: 1px solid var(--border-c); color: var(--ink);"
         />
         <svg class="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5" style="color: var(--text-low);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="11" cy="11" r="8" />
@@ -141,7 +141,7 @@ const breadcrumbs = [
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {sortedStates.map((state) => (
           <div class="state-section" data-state={state.toLowerCase()}>
-            <h3 class="font-bold text-lg mb-3 pb-2 border-b border-white/10 font-display" style="color: var(--text-high);">
+            <h3 class="font-bold text-lg mb-3 pb-2 font-display" style="color: var(--text-high); border-bottom: 1px solid var(--border-c);">
               {state}
             </h3>
             <ul class="space-y-2">
@@ -171,11 +171,7 @@ const breadcrumbs = [
 
   <!-- CTA for Clinics -->
   <section class="mb-16">
-    <div class="glass-card p-8 md:p-12 text-center border-2 border-primary/20 relative overflow-hidden">
-      <!-- Background glow -->
-      <div class="absolute -top-20 -right-20 w-60 h-60 bg-primary/10 rounded-full blur-3xl"></div>
-      <div class="absolute -bottom-20 -left-20 w-60 h-60 bg-cyan-500/10 rounded-full blur-3xl"></div>
-
+    <div class="glass-card p-8 md:p-12 text-center relative overflow-hidden" style="border: 1px solid var(--primary-border);">
       <div class="relative z-10">
         <h2 class="text-2xl md:text-3xl font-bold mb-4 font-display" style="color: var(--text-high);">
           Own a Peptide Clinic?

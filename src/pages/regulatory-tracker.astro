@@ -13,11 +13,13 @@ const statusLabels: Record<string, string> = {
   'compounding-restricted': 'Compounding Restricted',
   'research-only': 'Research Only',
 };
+// Status colors mapped to brand signals (inline styles, meaningful):
+// approved → research green, investigational → cobalt, compounding-restricted → compound amber, research-only → muted
 const statusColors: Record<string, string> = {
-  'approved': 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
-  'investigational': 'bg-blue-500/20 text-blue-400 border-blue-500/30',
-  'compounding-restricted': 'bg-amber-500/20 text-amber-400 border-amber-500/30',
-  'research-only': 'bg-white/10 text-white/60 border-white/20',
+  'approved': 'background: rgba(20,118,74,.12); color: var(--research); border: 1px solid rgba(20,118,74,.28);',
+  'investigational': 'background: var(--primary-soft); color: var(--primary-c); border: 1px solid var(--primary-border);',
+  'compounding-restricted': 'background: rgba(203,135,52,.14); color: #9a6418; border: 1px solid rgba(203,135,52,.30);',
+  'research-only': 'background: var(--paper-2); color: var(--ink-muted); border: 1px solid var(--border-c);',
 };
 
 // Sort peptides with regulatory status
@@ -53,22 +55,22 @@ const categoryLabels: Record<string, string> = {
   description="Track FDA approval status, clinical trial phases, and regulatory changes for 92 peptides. Updated February 2026."
 >
   <BreadcrumbSchema items={[
-    { name: 'Home', url: 'https://pepcodex.com/' },
-    { name: 'Regulatory Tracker', url: 'https://pepcodex.com/regulatory-tracker/' },
+    { name: 'Home', url: 'https://www.pepcodex.com/' },
+    { name: 'Regulatory Tracker', url: 'https://www.pepcodex.com/regulatory-tracker/' },
   ]} />
 
   <div class="max-w-6xl mx-auto">
     <!-- Header -->
     <div class="mb-8">
-      <div class="flex items-center gap-2 text-sm mb-4" style="color: var(--text-low);">
-        <a href="/" class="hover:text-white transition-colors">Home</a>
+      <div class="flex items-center gap-2 text-sm mb-4" style="color: var(--ink-dim);">
+        <a href="/" class="transition-colors hover:text-[color:var(--ink)]">Home</a>
         <span>/</span>
-        <span style="color: var(--text-medium);">Regulatory Tracker</span>
+        <span style="color: var(--ink-muted);">Regulatory Tracker</span>
       </div>
-      <h1 class="text-3xl md:text-4xl font-bold text-white mb-3" style="font-family: var(--font-display);">
+      <h1 class="font-serif text-3xl md:text-4xl mb-3" style="color: var(--ink); font-weight: 500;">
         Peptide Regulatory Tracker
       </h1>
-      <p class="text-lg leading-relaxed max-w-3xl" style="color: var(--text-medium);">
+      <p class="text-lg leading-relaxed max-w-3xl" style="color: var(--ink-muted);">
         FDA approval status and regulatory classification for {sorted.length} peptides. Updated as regulatory changes occur.
       </p>
     </div>
@@ -78,10 +80,8 @@ const categoryLabels: Record<string, string> = {
       {statusOrder.map(status => (
         <button
           data-filter={status}
-          class:list={[
-            "filter-btn rounded-xl border p-4 text-left transition-all hover:scale-[1.02] cursor-pointer",
-            statusColors[status]
-          ]}
+          class="filter-btn rounded-xl p-4 text-left transition-all hover:scale-[1.02] cursor-pointer"
+          style={statusColors[status]}
         >
           <div class="text-2xl font-bold mb-1">{counts[status] || 0}</div>
           <div class="text-sm opacity-80">{statusLabels[status]}</div>
@@ -92,7 +92,7 @@ const categoryLabels: Record<string, string> = {
     <!-- Search + filter bar -->
     <div class="flex flex-col sm:flex-row gap-3 mb-6">
       <div class="relative flex-1">
-        <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style="color: var(--ink-dim);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="11" cy="11" r="8" />
           <path d="m21 21-4.3-4.3" />
         </svg>
@@ -100,12 +100,14 @@ const categoryLabels: Record<string, string> = {
           type="search"
           id="reg-search"
           placeholder="Search peptides..."
-          class="w-full pl-10 pr-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/40 focus:outline-none focus:border-[var(--primary)]/50 text-sm"
+          class="reg-input w-full pl-10 pr-4 py-2.5 rounded-lg text-sm focus:outline-none focus:border-[var(--primary)]/50"
+          style="background: var(--paper-2); border: 1px solid var(--border-c); color: var(--ink);"
         />
       </div>
       <select
         id="reg-category"
-        class="px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-[var(--primary)]/50"
+        class="px-4 py-2.5 rounded-lg text-sm focus:outline-none focus:border-[var(--primary)]/50"
+        style="background: var(--paper-2); border: 1px solid var(--border-c); color: var(--ink);"
       >
         <option value="">All Categories</option>
         {Object.entries(categoryLabels).map(([val, label]) => (
@@ -114,26 +116,27 @@ const categoryLabels: Record<string, string> = {
       </select>
       <button
         id="reg-reset"
-        class="px-4 py-2.5 rounded-lg border border-white/10 text-white/60 hover:text-white hover:bg-white/5 text-sm transition-colors hidden"
+        class="px-4 py-2.5 rounded-lg text-sm transition-colors hidden hover:text-[color:var(--ink)]"
+        style="border: 1px solid var(--border-c); color: var(--ink-muted);"
       >
         Clear Filters
       </button>
     </div>
 
     <!-- Table -->
-    <div class="rounded-xl border border-white/10 overflow-hidden">
+    <div class="rounded-xl overflow-hidden" style="border: 1px solid var(--border-c);">
       <div class="overflow-x-auto">
         <table class="w-full text-sm">
           <thead>
-            <tr class="border-b border-white/10 bg-white/5">
-              <th class="text-left px-4 py-3 font-semibold text-white/80 cursor-pointer hover:text-white" data-sort="name">
+            <tr style="border-bottom: 1px solid var(--border-c); background: var(--paper-2);">
+              <th class="text-left px-4 py-3 font-semibold uppercase tracking-wider cursor-pointer hover:text-[color:var(--ink)]" style="color: var(--ink-muted); font-family: var(--font-mono); font-size: 0.7rem;" data-sort="name">
                 Peptide
                 <svg class="inline w-3 h-3 ml-1 opacity-40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
               </th>
-              <th class="text-left px-4 py-3 font-semibold text-white/80">Status</th>
-              <th class="text-left px-4 py-3 font-semibold text-white/80 hidden md:table-cell">Category</th>
-              <th class="text-left px-4 py-3 font-semibold text-white/80 hidden lg:table-cell">Evidence</th>
-              <th class="text-left px-4 py-3 font-semibold text-white/80 hidden md:table-cell">Notes</th>
+              <th class="text-left px-4 py-3 font-semibold uppercase tracking-wider" style="color: var(--ink-muted); font-family: var(--font-mono); font-size: 0.7rem;">Status</th>
+              <th class="text-left px-4 py-3 font-semibold uppercase tracking-wider hidden md:table-cell" style="color: var(--ink-muted); font-family: var(--font-mono); font-size: 0.7rem;">Category</th>
+              <th class="text-left px-4 py-3 font-semibold uppercase tracking-wider hidden lg:table-cell" style="color: var(--ink-muted); font-family: var(--font-mono); font-size: 0.7rem;">Evidence</th>
+              <th class="text-left px-4 py-3 font-semibold uppercase tracking-wider hidden md:table-cell" style="color: var(--ink-muted); font-family: var(--font-mono); font-size: 0.7rem;">Notes</th>
             </tr>
           </thead>
           <tbody id="reg-tbody">
@@ -141,42 +144,45 @@ const categoryLabels: Record<string, string> = {
               const reg = p.data.regulatoryStatus!;
               return (
                 <tr
-                  class="border-b border-white/5 hover:bg-white/5 transition-colors"
+                  class="reg-row transition-colors"
+                  style="border-bottom: 1px solid var(--border-c);"
                   data-name={p.data.name.toLowerCase()}
                   data-status={reg.status}
                   data-category={p.data.category}
                 >
                   <td class="px-4 py-3">
-                    <a href={`/peptides/${p.id}/`} class="font-medium text-white hover:text-[var(--primary)] transition-colors">
+                    <a href={`/peptides/${p.id}/`} class="font-medium hover:text-[var(--primary)] transition-colors" style="color: var(--ink);">
                       {p.data.name}
                     </a>
                     {p.data.aliases.length > 0 && (
-                      <div class="text-xs mt-0.5" style="color: var(--text-low);">
+                      <div class="text-xs mt-0.5" style="color: var(--ink-dim);">
                         {p.data.aliases.slice(0, 2).join(', ')}
                       </div>
                     )}
                   </td>
                   <td class="px-4 py-3">
-                    <span class:list={["inline-flex px-2.5 py-1 rounded-full text-xs font-medium border", statusColors[reg.status]]}>
+                    <span class="inline-flex px-2.5 py-1 rounded-full text-xs font-medium" style={statusColors[reg.status]}>
                       {statusLabels[reg.status]}
                     </span>
                   </td>
                   <td class="px-4 py-3 hidden md:table-cell">
-                    <span class="text-white/60 text-xs">{categoryLabels[p.data.category]}</span>
+                    <span class="text-xs" style="color: var(--ink-muted);">{categoryLabels[p.data.category]}</span>
                   </td>
                   <td class="px-4 py-3 hidden lg:table-cell">
-                    <span class:list={[
-                      "text-xs font-medium",
-                      p.data.evidenceStrength === 'high' ? 'text-emerald-400' :
-                      p.data.evidenceStrength === 'moderate' ? 'text-blue-400' :
-                      p.data.evidenceStrength === 'low' ? 'text-amber-400' :
-                      'text-white/40'
-                    ]}>
+                    <span
+                      class="text-xs font-medium"
+                      style={
+                        p.data.evidenceStrength === 'high' ? 'color: var(--research);' :
+                        p.data.evidenceStrength === 'moderate' ? 'color: var(--primary-c);' :
+                        p.data.evidenceStrength === 'low' ? 'color: #9a6418;' :
+                        'color: var(--ink-dim);'
+                      }
+                    >
                       {p.data.evidenceStrength.charAt(0).toUpperCase() + p.data.evidenceStrength.slice(1)}
                     </span>
                   </td>
                   <td class="px-4 py-3 hidden md:table-cell">
-                    <span class="text-xs leading-relaxed" style="color: var(--text-low);">
+                    <span class="text-xs leading-relaxed" style="color: var(--ink-dim);">
                       {reg.notes && reg.notes.length > 120 ? reg.notes.slice(0, 120) + '...' : reg.notes}
                     </span>
                   </td>
@@ -189,17 +195,22 @@ const categoryLabels: Record<string, string> = {
     </div>
 
     <!-- Results count -->
-    <div class="mt-4 text-sm" style="color: var(--text-low);">
+    <div class="mt-4 text-sm" style="color: var(--ink-dim);">
       <span id="reg-count">{sorted.length}</span> of {sorted.length} peptides shown
     </div>
 
     <!-- Disclaimer -->
-    <div class="mt-8 p-4 rounded-xl border border-white/10 bg-white/5">
-      <p class="text-xs leading-relaxed" style="color: var(--text-low);">
-        <strong class="text-white/60">Disclaimer:</strong> This tracker is for informational purposes only. Regulatory status reflects publicly available information from FDA, ClinicalTrials.gov, and manufacturer disclosures. Status may change without notice. This is not medical or legal advice. Always verify current regulatory status through official channels before making any decisions.
+    <div class="mt-8 p-4 rounded-xl" style="border: 1px solid var(--border-c); background: var(--paper-2);">
+      <p class="text-xs leading-relaxed" style="color: var(--ink-dim);">
+        <strong style="color: var(--ink-muted);">Disclaimer:</strong> This tracker is for informational purposes only. Regulatory status reflects publicly available information from FDA, ClinicalTrials.gov, and manufacturer disclosures. Status may change without notice. This is not medical or legal advice. Always verify current regulatory status through official channels before making any decisions.
       </p>
     </div>
   </div>
+
+  <style>
+    .reg-row:hover { background: var(--paper-2); }
+    #regulatory-tracker option, .reg-input option { background-color: var(--paper); color: var(--ink); }
+  </style>
 </BaseLayout>
 
 <script>
@@ -243,7 +254,7 @@ const categoryLabels: Record<string, string> = {
     filterBtns.forEach(btn => {
       const el = btn as HTMLElement;
       if (el.dataset.filter === activeStatus) {
-        el.style.outline = '2px solid rgba(255,255,255,0.4)';
+        el.style.outline = '2px solid var(--primary-c)';
         el.style.outlineOffset = '2px';
       } else {
         el.style.outline = '';

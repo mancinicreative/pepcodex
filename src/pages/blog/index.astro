@@ -35,42 +35,31 @@ const categoryLabels: Record<string, string> = {
 >
   <div class="space-y-12">
     <!-- Hero Section -->
-    <header class="relative">
-      <div class="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/20 via-transparent to-cyan-500/10 rounded-2xl -z-10"></div>
-      <div class="p-8 lg:p-12">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-10 h-10 rounded-lg bg-[var(--primary)]/20 flex items-center justify-center border border-[var(--primary)]/30">
-            <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/>
-              <path d="M18 14h-8"/>
-              <path d="M18 18h-8"/>
-              <path d="M18 10h-8"/>
-            </svg>
-          </div>
-          <span class="text-sm font-medium text-primary uppercase tracking-wider">Research Blog</span>
-        </div>
+    <header>
+      <div class="py-4">
+        <span class="eyebrow">Research Blog</span>
 
-        <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4" style="font-family: var(--font-display);">
+        <h1 class="font-serif mt-3 text-4xl lg:text-5xl mb-4" style="color: var(--ink); font-weight: 500;">
           Peptide Research Briefings
         </h1>
 
-        <p class="text-xl text-white/80 max-w-3xl leading-relaxed">
+        <p class="text-xl max-w-3xl leading-relaxed" style="color: var(--ink-muted);">
           Weekly updates on clinical trials, regulatory developments, and breakthrough research in peptide therapeutics. Evidence-based analysis with full citations.
         </p>
 
         <!-- Stats -->
         <div class="mt-8 flex flex-wrap gap-8">
           <div>
-            <div class="text-3xl font-bold text-white">{allPosts.length}</div>
-            <div class="text-sm text-white/60">Articles</div>
+            <div class="font-serif text-3xl" style="color: var(--ink); font-weight: 500;">{allPosts.length}</div>
+            <div class="eyebrow mt-1" style="color: var(--ink-dim);">Articles</div>
           </div>
           <div>
-            <div class="text-3xl font-bold text-white">{categories.length}</div>
-            <div class="text-sm text-white/60">Categories</div>
+            <div class="font-serif text-3xl" style="color: var(--ink); font-weight: 500;">{categories.length}</div>
+            <div class="eyebrow mt-1" style="color: var(--ink-dim);">Categories</div>
           </div>
           <div>
-            <div class="text-3xl font-bold text-cyan-400">Weekly</div>
-            <div class="text-sm text-white/60">Updates</div>
+            <div class="font-serif text-3xl" style="color: var(--primary-c); font-weight: 500;">Weekly</div>
+            <div class="eyebrow mt-1" style="color: var(--ink-dim);">Updates</div>
           </div>
         </div>
       </div>
@@ -79,14 +68,14 @@ const categoryLabels: Record<string, string> = {
     <!-- Category Filters -->
     <div class="flex flex-wrap gap-2">
       <button
-        class="filter-btn filter-btn--active px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 bg-[var(--primary)] text-white border border-[var(--primary)]/50"
+        class="filter-btn filter-btn--active filter-active px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300"
         data-category="all"
       >
         All Posts
       </button>
       {categories.map(category => (
         <button
-          class="filter-btn px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 bg-white/5 text-white/70 border border-white/10 hover:bg-white/10 hover:text-white hover:border-white/20"
+          class="filter-btn filter-inactive px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300"
           data-category={category}
         >
           {categoryLabels[category] || category}
@@ -97,7 +86,7 @@ const categoryLabels: Record<string, string> = {
     <!-- Featured Posts -->
     {featuredPosts.length > 0 && (
       <section>
-        <h2 class="text-xl font-bold text-white mb-6">Featured</h2>
+        <h2 class="font-serif text-xl mb-6" style="color: var(--ink); font-weight: 500;">Featured</h2>
         <div class="grid gap-6 md:grid-cols-2">
           {featuredPosts.slice(0, 2).map(post => (
             <BlogCard
@@ -117,7 +106,7 @@ const categoryLabels: Record<string, string> = {
 
     <!-- All Posts Grid -->
     <section>
-      <h2 class="text-xl font-bold text-white mb-6">Latest Posts</h2>
+      <h2 class="font-serif text-xl mb-6" style="color: var(--ink); font-weight: 500;">Latest Posts</h2>
       <div id="posts-grid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {regularPosts.map(post => (
           <div data-category={post.data.category}>
@@ -136,30 +125,47 @@ const categoryLabels: Record<string, string> = {
 
       {sortedPosts.length === 0 && (
         <div class="text-center py-12">
-          <svg class="w-16 h-16 mx-auto text-white/20 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+          <svg class="w-16 h-16 mx-auto mb-4" style="color: var(--ink-dim);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
             <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/>
           </svg>
-          <h3 class="text-xl font-semibold text-white/60 mb-2">No posts yet</h3>
-          <p class="text-white/40">Check back soon for peptide research updates.</p>
+          <h3 class="font-serif text-xl mb-2" style="color: var(--ink-muted); font-weight: 500;">No posts yet</h3>
+          <p style="color: var(--ink-dim);">Check back soon for peptide research updates.</p>
         </div>
       )}
     </section>
 
     <!-- Newsletter CTA -->
-    <section class="rounded-2xl border border-[var(--primary)]/30 bg-gradient-to-br from-[var(--primary)]/20 via-transparent to-transparent p-8 lg:p-12">
+    <section class="glass-card p-8 lg:p-12">
       <div class="max-w-2xl">
-        <h2 class="text-2xl lg:text-3xl font-bold text-white mb-4" style="font-family: var(--font-display);">
+        <h2 class="font-serif text-2xl lg:text-3xl mb-4" style="color: var(--ink); font-weight: 500;">
           Never Miss a Briefing
         </h2>
-        <p class="text-white/70 mb-6">
+        <p class="mb-6" style="color: var(--ink-muted);">
           Subscribe to receive weekly peptide research updates, regulatory news, and clinical trial analysis directly in your inbox.
         </p>
-        <a href="/newsletter" class="btn btn-primary btn-md">
+        <a href="/newsletter" class="btn btn-cobalt btn-md">
           Subscribe to Newsletter
         </a>
       </div>
     </section>
   </div>
+
+  <style>
+    .filter-active {
+      background: var(--ink);
+      color: var(--ink-paper);
+      border: 1px solid var(--ink);
+    }
+    .filter-inactive {
+      background: var(--paper);
+      color: var(--ink-muted);
+      border: 1px solid var(--border-c);
+    }
+    .filter-inactive:hover {
+      background: var(--paper-2);
+      color: var(--ink);
+    }
+  </style>
 
   <!-- Client-side filtering script -->
   <script>
@@ -167,8 +173,8 @@ const categoryLabels: Record<string, string> = {
     const postsGrid = document.getElementById('posts-grid');
     const postItems = postsGrid?.querySelectorAll('[data-category]');
 
-    const activeClasses = ['bg-[var(--primary)]', 'text-white', 'border-[var(--primary)]/50'];
-    const inactiveClasses = ['bg-white/5', 'text-white/70', 'border-white/10', 'hover:bg-white/10', 'hover:text-white', 'hover:border-white/20'];
+    const activeClasses = ['filter-active'];
+    const inactiveClasses = ['filter-inactive'];
 
     filterButtons.forEach(button => {
       button.addEventListener('click', () => {

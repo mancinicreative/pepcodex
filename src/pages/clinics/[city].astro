@@ -223,25 +223,25 @@ const commonPeptides = [
           </h3>
           <ul class="space-y-3">
             <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 shrink-0 text-green-400 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="w-5 h-5 shrink-0 mt-0.5" style="color: var(--research);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
               <span style="color: var(--text-medium);">Licensed medical professionals (MD, DO, NP, PA)</span>
             </li>
             <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 shrink-0 text-green-400 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="w-5 h-5 shrink-0 mt-0.5" style="color: var(--research);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
               <span style="color: var(--text-medium);">Peptides from FDA-registered compounding pharmacies</span>
             </li>
             <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 shrink-0 text-green-400 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="w-5 h-5 shrink-0 mt-0.5" style="color: var(--research);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
               <span style="color: var(--text-medium);">Comprehensive initial consultation with lab work</span>
             </li>
             <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 shrink-0 text-green-400 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="w-5 h-5 shrink-0 mt-0.5" style="color: var(--research);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
               <span style="color: var(--text-medium);">Ongoing monitoring and follow-up care</span>
@@ -254,28 +254,28 @@ const commonPeptides = [
           </h3>
           <ul class="space-y-3">
             <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 shrink-0 text-red-400 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="w-5 h-5 shrink-0 mt-0.5" style="color: var(--danger);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18" />
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
               <span style="color: var(--text-medium);">No medical consultation or evaluation</span>
             </li>
             <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 shrink-0 text-red-400 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="w-5 h-5 shrink-0 mt-0.5" style="color: var(--danger);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18" />
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
               <span style="color: var(--text-medium);">Unclear sourcing of peptides</span>
             </li>
             <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 shrink-0 text-red-400 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="w-5 h-5 shrink-0 mt-0.5" style="color: var(--danger);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18" />
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
               <span style="color: var(--text-medium);">High-pressure sales tactics</span>
             </li>
             <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 shrink-0 text-red-400 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="w-5 h-5 shrink-0 mt-0.5" style="color: var(--danger);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18" />
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
@@ -320,7 +320,7 @@ const commonPeptides = [
 
     <div class="glass-card p-6 md:p-8 space-y-6">
       {faqItems.map((faq, index) => (
-        <div class:list={[index > 0 && "pt-6 border-t border-white/10"]}>
+        <div class:list={[index > 0 && "pt-6 border-t border-[color:var(--border-c)]"]}>
           <h3 class="font-bold mb-2" style="color: var(--text-high);">
             {faq.question}
           </h3>
@@ -357,10 +357,7 @@ const commonPeptides = [
 
   <!-- CTA for Clinic Owners -->
   <section class="mb-12">
-    <div class="glass-card p-8 md:p-12 text-center border-2 border-primary/20 relative overflow-hidden">
-      <div class="absolute -top-20 -right-20 w-60 h-60 bg-primary/10 rounded-full blur-3xl"></div>
-      <div class="absolute -bottom-20 -left-20 w-60 h-60 bg-cyan-500/10 rounded-full blur-3xl"></div>
-
+    <div class="glass-card p-8 md:p-12 text-center relative overflow-hidden" style="border: 1px solid var(--primary-border);">
       <div class="relative z-10">
         <h2 class="text-2xl md:text-3xl font-bold mb-4 font-display" style="color: var(--text-high);">
           Own a Peptide Clinic in {name}?

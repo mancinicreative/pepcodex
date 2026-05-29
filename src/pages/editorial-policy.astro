@@ -7,14 +7,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="Our commitment to accuracy, transparency, and editorial independence in peptide research coverage."
 >
   <article class="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
-    <header class="mb-12 relative">
-      <div class="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/10 via-transparent to-transparent rounded-2xl -z-10"></div>
-      <div class="p-6">
-        <h1 class="text-4xl font-bold tracking-tight text-white">Editorial Policy</h1>
-        <p class="mt-4 text-xl text-white/80">
-          Our commitment to accuracy, transparency, and editorial independence.
-        </p>
-      </div>
+    <header class="mb-12">
+      <span class="eyebrow">Policy</span>
+      <h1 class="font-serif mt-4 text-4xl tracking-tight" style="color: var(--ink); font-weight: 500;">Editorial Policy</h1>
+      <p class="mt-4 text-xl" style="color: var(--ink-muted);">
+        Our commitment to accuracy, transparency, and editorial independence.
+      </p>
     </header>
 
     <div class="prose prose-invert prose-lg max-w-none">
@@ -100,7 +98,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <li>Allow sponsors to review or approve editorial content before publication</li>
       </ul>
 
-      <p class="mt-8 text-sm text-white/70">
+      <p class="mt-8 text-sm" style="color: var(--ink-muted);">
         Last updated: January 2026
       </p>
     </div>

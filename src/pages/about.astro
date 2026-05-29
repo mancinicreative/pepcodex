@@ -7,14 +7,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="About PepCodex - our mission, team, and commitment to evidence-based peptide education."
 >
   <article class="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
-    <header class="mb-12 relative">
-      <div class="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/10 via-transparent to-transparent rounded-2xl -z-10"></div>
-      <div class="p-6">
-        <h1 class="text-4xl font-bold tracking-tight text-white">About PepCodex</h1>
-        <p class="mt-4 text-xl text-white/80">
-          Making peptide research accessible, understandable, and trustworthy.
-        </p>
-      </div>
+    <header class="mb-12">
+      <span class="eyebrow">PepCodex</span>
+      <h1 class="font-serif mt-4 text-4xl tracking-tight" style="color: var(--ink); font-weight: 500;">About PepCodex</h1>
+      <p class="mt-4 text-xl" style="color: var(--ink-muted);">
+        Making peptide research accessible, understandable, and trustworthy.
+      </p>
     </header>
 
     <div class="prose prose-invert prose-lg max-w-none">
@@ -32,27 +30,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <h2>What Makes Us Different</h2>
       <div class="not-prose my-8 grid gap-6 sm:grid-cols-2">
-        <div class="rounded-xl border border-white/10 bg-gradient-to-br from-[var(--primary)]/10 to-transparent p-6 backdrop-blur-sm">
-          <h3 class="text-lg font-semibold text-white">Citation-First</h3>
-          <p class="mt-2 text-white/70">
+        <div class="glass-card p-6">
+          <h3 class="font-serif text-lg" style="color: var(--ink); font-weight: 500;">Citation-First</h3>
+          <p class="mt-2" style="color: var(--ink-muted);">
             Every factual claim links to a primary source. No vague references to "studies show."
           </p>
         </div>
-        <div class="rounded-xl border border-white/10 bg-gradient-to-br from-cyan-500/10 to-transparent p-6 backdrop-blur-sm">
-          <h3 class="text-lg font-semibold text-white">Evidence Grading</h3>
-          <p class="mt-2 text-white/70">
+        <div class="glass-card p-6">
+          <h3 class="font-serif text-lg" style="color: var(--ink); font-weight: 500;">Evidence Grading</h3>
+          <p class="mt-2" style="color: var(--ink-muted);">
             Clear ratings help you understand the quality and strength of available evidence.
           </p>
         </div>
-        <div class="rounded-xl border border-white/10 bg-gradient-to-br from-emerald-500/10 to-transparent p-6 backdrop-blur-sm">
-          <h3 class="text-lg font-semibold text-white">Global Coverage</h3>
-          <p class="mt-2 text-white/70">
+        <div class="glass-card p-6">
+          <h3 class="font-serif text-lg" style="color: var(--ink); font-weight: 500;">Global Coverage</h3>
+          <p class="mt-2" style="color: var(--ink-muted);">
             We include international research, not just US-centric sources.
           </p>
         </div>
-        <div class="rounded-xl border border-white/10 bg-gradient-to-br from-amber-500/10 to-transparent p-6 backdrop-blur-sm">
-          <h3 class="text-lg font-semibold text-white">No Hype</h3>
-          <p class="mt-2 text-white/70">
+        <div class="glass-card p-6">
+          <h3 class="font-serif text-lg" style="color: var(--ink); font-weight: 500;">No Hype</h3>
+          <p class="mt-2" style="color: var(--ink-muted);">
             Neutral language. No miracle claims. We tell you what's known and what isn't.
           </p>
         </div>
@@ -91,7 +89,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         Email: <a href="mailto:info@pepcodex.com">info@pepcodex.com</a>
       </p>
 
-      <p class="mt-8 text-sm text-white/70">
+      <p class="mt-8 text-sm" style="color: var(--ink-muted);">
         PepCodex launched in January 2026.
       </p>
     </div>

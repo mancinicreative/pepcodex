@@ -118,21 +118,21 @@ const completedCount = allTrials.filter(t => (t.status || '').toLowerCase() === 
 >
   <!-- Stats overview -->
   <div class="mb-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
-    <div class="rounded-xl border border-white/10 bg-gradient-to-br from-[var(--primary)]/10 to-transparent p-4 backdrop-blur-sm">
-      <div class="text-2xl font-bold text-white">{allTrials.length}</div>
-      <div class="text-sm text-white/70">Total Trials</div>
+    <div class="rounded-xl p-4" style="border: 1px solid var(--primary-border); background: var(--primary-soft);">
+      <div class="text-2xl font-bold" style="color: var(--primary-c);">{allTrials.length}</div>
+      <div class="text-sm" style="color: var(--ink-muted);">Total Trials</div>
     </div>
-    <div class="rounded-xl border border-emerald-500/20 bg-emerald-500/10 p-4 backdrop-blur-sm">
-      <div class="text-2xl font-bold text-emerald-400">{activeCount}</div>
-      <div class="text-sm text-white/70">Active/Recruiting</div>
+    <div class="rounded-xl p-4" style="border: 1px solid rgba(20,118,74,.24); background: rgba(20,118,74,.10);">
+      <div class="text-2xl font-bold" style="color: var(--research);">{activeCount}</div>
+      <div class="text-sm" style="color: var(--ink-muted);">Active/Recruiting</div>
     </div>
-    <div class="rounded-xl border border-blue-500/20 bg-blue-500/10 p-4 backdrop-blur-sm">
-      <div class="text-2xl font-bold text-blue-400">{completedCount}</div>
-      <div class="text-sm text-white/70">Completed</div>
+    <div class="rounded-xl p-4" style="border: 1px solid var(--primary-border); background: var(--primary-soft);">
+      <div class="text-2xl font-bold" style="color: var(--primary-c);">{completedCount}</div>
+      <div class="text-sm" style="color: var(--ink-muted);">Completed</div>
     </div>
-    <div class="rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
-      <div class="text-2xl font-bold text-white">{uniquePeptides.length}</div>
-      <div class="text-sm text-white/70">Peptides Tracked</div>
+    <div class="rounded-xl p-4" style="border: 1px solid var(--border-c); background: var(--paper-2);">
+      <div class="text-2xl font-bold" style="color: var(--ink);">{uniquePeptides.length}</div>
+      <div class="text-sm" style="color: var(--ink-muted);">Peptides Tracked</div>
     </div>
   </div>
 
@@ -140,10 +140,11 @@ const completedCount = allTrials.filter(t => (t.status || '').toLowerCase() === 
   <div class="mb-6 flex flex-wrap items-center gap-4">
     <!-- Status filter -->
     <div class="flex items-center gap-2">
-      <label for="filter-status" class="text-sm font-medium text-white/70">Status:</label>
+      <label for="filter-status" class="text-sm font-medium" style="color: var(--ink-muted);">Status:</label>
       <select
         id="filter-status"
-        class="filter-select rounded-lg bg-white/10 border border-white/20 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent cursor-pointer"
+        class="filter-select rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent cursor-pointer"
+        style="background: var(--paper-2); border: 1px solid var(--border-c); color: var(--ink);"
       >
         <option value="all">All Statuses</option>
         {uniqueStatuses.map((status) => (
@@ -154,10 +155,11 @@ const completedCount = allTrials.filter(t => (t.status || '').toLowerCase() === 
 
     <!-- Phase filter -->
     <div class="flex items-center gap-2">
-      <label for="filter-phase" class="text-sm font-medium text-white/70">Phase:</label>
+      <label for="filter-phase" class="text-sm font-medium" style="color: var(--ink-muted);">Phase:</label>
       <select
         id="filter-phase"
-        class="filter-select rounded-lg bg-white/10 border border-white/20 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent cursor-pointer"
+        class="filter-select rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent cursor-pointer"
+        style="background: var(--paper-2); border: 1px solid var(--border-c); color: var(--ink);"
       >
         <option value="all">All Phases</option>
         {uniquePhases.map((phase) => (
@@ -168,10 +170,11 @@ const completedCount = allTrials.filter(t => (t.status || '').toLowerCase() === 
 
     <!-- Peptide filter -->
     <div class="flex items-center gap-2">
-      <label for="filter-peptide" class="text-sm font-medium text-white/70">Peptide:</label>
+      <label for="filter-peptide" class="text-sm font-medium" style="color: var(--ink-muted);">Peptide:</label>
       <select
         id="filter-peptide"
-        class="filter-select rounded-lg bg-white/10 border border-white/20 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent cursor-pointer"
+        class="filter-select rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent cursor-pointer"
+        style="background: var(--paper-2); border: 1px solid var(--border-c); color: var(--ink);"
       >
         <option value="all">All Peptides</option>
         {uniquePeptides.map((peptide) => (
@@ -183,28 +186,29 @@ const completedCount = allTrials.filter(t => (t.status || '').toLowerCase() === 
     <!-- Clear filters button -->
     <button
       id="clear-filters"
-      class="text-sm font-medium text-white/50 hover:text-white transition-colors"
+      class="text-sm font-medium transition-colors hover:text-[color:var(--ink)]"
+      style="color: var(--ink-dim);"
     >
       Clear filters
     </button>
   </div>
 
   <!-- Result count -->
-  <p class="mb-4 text-sm text-white/70">
+  <p class="mb-4 text-sm" style="color: var(--ink-muted);">
     Showing <span id="trial-count">{allTrials.length}</span> of {allTrials.length} trials
   </p>
 
   <!-- Trial table -->
-  <div class="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden">
+  <div class="rounded-xl border overflow-hidden" style="border-color: var(--border-c); background: var(--paper);">
     <TrialTable trials={allTrials} />
   </div>
 
   <!-- Empty state (hidden by default) -->
   <div id="empty-state" class="hidden py-16 text-center">
-    <svg class="mx-auto h-12 w-12 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <svg class="mx-auto h-12 w-12" style="color: var(--ink-dim);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
     </svg>
-    <p class="mt-4 text-lg text-white/60">No trials match your filters.</p>
+    <p class="mt-4 text-lg" style="color: var(--ink-muted);">No trials match your filters.</p>
     <button
       id="clear-filters-empty"
       class="mt-4 text-sm font-medium text-primary hover:text-[var(--accent)] transition-colors"
@@ -214,9 +218,9 @@ const completedCount = allTrials.filter(t => (t.status || '').toLowerCase() === 
   </div>
 
   <!-- Data source note -->
-  <div class="mt-8 rounded-xl border border-white/10 bg-gradient-to-r from-[var(--primary)]/5 to-transparent p-4 backdrop-blur-sm">
-    <p class="text-sm text-white/70">
-      <strong class="text-white">Data Source:</strong> Trial information is sourced from
+  <div class="mt-8 rounded-xl p-4" style="border: 1px solid var(--border-c); background: var(--primary-soft);">
+    <p class="text-sm" style="color: var(--ink-muted);">
+      <strong style="color: var(--ink);">Data Source:</strong> Trial information is sourced from
       <a href="https://clinicaltrials.gov" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-[var(--accent)] hover:underline transition-colors">ClinicalTrials.gov</a>
       and our curated source packs. Click any NCT ID to view the full trial record.
     </p>
@@ -319,9 +323,9 @@ const completedCount = allTrials.filter(t => (t.status || '').toLowerCase() === 
 </script>
 
 <style>
-  /* Style select dropdown options for dark theme */
+  /* Style select dropdown options for the paper theme */
   .filter-select option {
-    background-color: hsl(230 45% 8%);
-    color: white;
+    background-color: var(--paper);
+    color: var(--ink);
   }
 </style>

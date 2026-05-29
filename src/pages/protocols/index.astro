@@ -9,12 +9,12 @@ const sortedProtocols = protocols.sort((a, b) =>
   a.data.title.localeCompare(b.data.title)
 );
 
-// Study type badge colors
-const studyTypeBadges: Record<string, { bg: string; text: string; label: string }> = {
-  'human-rct': { bg: 'bg-emerald-500/20', text: 'text-emerald-400', label: 'Human RCT' },
-  'human-observational': { bg: 'bg-blue-500/20', text: 'text-blue-400', label: 'Human Observational' },
-  'animal': { bg: 'bg-amber-500/20', text: 'text-amber-400', label: 'Animal Study' },
-  'in-vitro': { bg: 'bg-purple-500/20', text: 'text-purple-400', label: 'In Vitro' },
+// Study type badge colors — mapped to brand signals (inline rgba, meaningful)
+const studyTypeBadges: Record<string, { style: string; label: string }> = {
+  'human-rct': { style: 'background: rgba(20,118,74,.12); color: var(--research);', label: 'Human RCT' },
+  'human-observational': { style: 'background: var(--primary-soft); color: var(--primary-c);', label: 'Human Observational' },
+  'animal': { style: 'background: rgba(203,135,52,.14); color: #9a6418;', label: 'Animal Study' },
+  'in-vitro': { style: 'background: var(--paper-2); color: var(--ink-muted);', label: 'In Vitro' },
 };
 
 // Count study types
@@ -32,23 +32,20 @@ function getStudyTypeCounts(studies: Array<{ studyType: string }>) {
   description="Research documentation on peptide combinations studied in scientific literature. Study citations, mechanisms, and research context - not dosing guides."
 >
   <!-- Hero -->
-  <div class="relative overflow-hidden border-b border-white/5">
-    <div class="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/10 via-transparent to-transparent"></div>
-    <div class="absolute top-0 right-0 w-96 h-96 bg-[var(--primary)]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-
+  <div class="relative overflow-hidden" style="border-bottom: 1px solid var(--border-c);">
     <div class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
       <div class="flex flex-wrap items-center gap-3 mb-4">
-        <span class="inline-flex items-center rounded-full bg-[var(--primary)]/20 px-3 py-1 text-xs font-medium text-primary border border-[var(--primary)]/30">
+        <span class="badge badge--primary">
           <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
           </svg>
           Research Documentation
         </span>
       </div>
-      <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl" style="font-family: var(--font-display);">
+      <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl tracking-tight" style="color: var(--ink); font-weight: 500;">
         Multi-Peptide Research Overviews
       </h1>
-      <p class="mt-6 max-w-2xl text-xl text-white/80 leading-relaxed">
+      <p class="mt-6 max-w-2xl text-xl leading-relaxed" style="color: var(--ink-muted);">
         Documentation of what researchers have studied regarding peptide combinations. These pages summarize published research with citations - they are not dosing guides or protocol recommendations.
       </p>
     </div>
@@ -56,24 +53,24 @@ function getStudyTypeCounts(studies: Array<{ studyType: string }>) {
 
   <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
     <!-- Research disclaimer callout -->
-    <div class="mb-8 glass-card-default p-6 border-blue-500/30">
+    <div class="mb-8 glass-card-default p-6" style="border-color: var(--primary-border);">
       <div class="flex gap-4">
-        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400">
+        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl" style="background: var(--primary-soft); color: var(--primary-c);">
           <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
         </div>
         <div>
-          <h4 class="font-bold text-blue-400 mb-1">Research Documentation, Not Protocols</h4>
-          <p class="text-white/80 text-sm leading-relaxed">
-            These pages document <strong class="text-white">what researchers have studied</strong> in peer-reviewed literature. Doses mentioned are those used <strong class="text-white">in specific studies</strong>, not recommendations. This is educational content about research findings, not treatment guidance.
+          <h4 class="font-bold mb-1" style="color: var(--primary-c);">Research Documentation, Not Protocols</h4>
+          <p class="text-sm leading-relaxed" style="color: var(--ink-muted);">
+            These pages document <strong style="color: var(--ink);">what researchers have studied</strong> in peer-reviewed literature. Doses mentioned are those used <strong style="color: var(--ink);">in specific studies</strong>, not recommendations. This is educational content about research findings, not treatment guidance.
           </p>
         </div>
       </div>
     </div>
 
-    <p class="mb-8 text-white/70">
-      Showing <span class="text-white font-bold">{sortedProtocols.length}</span> research overviews
+    <p class="mb-8" style="color: var(--ink-muted);">
+      Showing <span class="font-bold" style="color: var(--ink);">{sortedProtocols.length}</span> research overviews
     </p>
 
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-1">
@@ -95,16 +92,16 @@ function getStudyTypeCounts(studies: Array<{ studyType: string }>) {
                   <span class="inline-flex items-center rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider border text-[var(--primary)] bg-[var(--primary)]/10 border-[var(--primary)]/30">
                     Research Overview
                   </span>
-                  <span class="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium border text-white/70 bg-white/5 border-white/10">
+                  <span class="badge badge--muted">
                     {protocol.data.studies.length} Studies
                   </span>
                 </div>
 
-                <h2 class="text-xl font-bold text-white group-hover:text-primary transition-colors">
+                <h2 class="font-serif text-xl group-hover:text-[color:var(--primary-c)] transition-colors" style="color: var(--ink); font-weight: 500;">
                   {protocol.data.title}
                 </h2>
 
-                <p class="mt-2 text-sm text-white/70 line-clamp-2">
+                <p class="mt-2 text-sm line-clamp-2" style="color: var(--ink-muted);">
                   {protocol.data.description}
                 </p>
 
@@ -121,14 +118,14 @@ function getStudyTypeCounts(studies: Array<{ studyType: string }>) {
               <!-- Study type breakdown -->
               <div class="flex flex-wrap lg:flex-col gap-2 lg:w-48 lg:shrink-0">
                 {Object.entries(studyCounts).map(([type, count]) => (
-                  <span class={`inline-flex items-center rounded-full px-2 py-1 text-xs font-medium ${studyTypeBadges[type]?.bg || 'bg-white/10'} ${studyTypeBadges[type]?.text || 'text-white/70'} border border-current/20`}>
+                  <span class="inline-flex items-center rounded-full px-2 py-1 text-xs font-medium" style={studyTypeBadges[type]?.style || 'background: var(--paper-2); color: var(--ink-muted);'}>
                     {count} {studyTypeBadges[type]?.label || type}
                   </span>
                 ))}
               </div>
 
-              <div class="hidden lg:flex w-10 h-10 rounded-xl bg-white/5 border border-white/10 items-center justify-center group-hover:bg-[var(--primary)]/10 group-hover:border-[var(--primary)]/30 transition-all flex-shrink-0">
-                <svg class="h-5 w-5 text-white/60 group-hover:text-primary group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="hidden lg:flex w-10 h-10 rounded-xl items-center justify-center group-hover:bg-[color:var(--primary-soft)] transition-all flex-shrink-0" style="background: var(--paper-2); border: 1px solid var(--border-c);">
+                <svg class="h-5 w-5 group-hover:text-[color:var(--primary-c)] group-hover:translate-x-0.5 transition-all" style="color: var(--ink-dim);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                 </svg>
               </div>
@@ -140,38 +137,38 @@ function getStudyTypeCounts(studies: Array<{ studyType: string }>) {
 
     <!-- Legend -->
     <div class="mt-12 glass-card-default p-6">
-      <h3 class="font-bold text-white mb-4">Study Type Legend</h3>
+      <h3 class="font-bold mb-4" style="color: var(--ink);">Study Type Legend</h3>
       <div class="flex flex-wrap gap-4">
         <div class="flex items-center gap-2">
-          <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
-          <span class="text-sm text-white/80">Human RCT - Randomized controlled trials in humans</span>
+          <span class="w-3 h-3 rounded-full" style="background: var(--research);"></span>
+          <span class="text-sm" style="color: var(--ink-muted);">Human RCT - Randomized controlled trials in humans</span>
         </div>
         <div class="flex items-center gap-2">
-          <span class="w-3 h-3 rounded-full bg-blue-500"></span>
-          <span class="text-sm text-white/80">Human Observational - Non-randomized human studies</span>
+          <span class="w-3 h-3 rounded-full" style="background: var(--primary-c);"></span>
+          <span class="text-sm" style="color: var(--ink-muted);">Human Observational - Non-randomized human studies</span>
         </div>
         <div class="flex items-center gap-2">
-          <span class="w-3 h-3 rounded-full bg-amber-500"></span>
-          <span class="text-sm text-white/80">Animal Study - Preclinical animal research</span>
+          <span class="w-3 h-3 rounded-full" style="background: var(--compound);"></span>
+          <span class="text-sm" style="color: var(--ink-muted);">Animal Study - Preclinical animal research</span>
         </div>
         <div class="flex items-center gap-2">
-          <span class="w-3 h-3 rounded-full bg-purple-500"></span>
-          <span class="text-sm text-white/80">In Vitro - Cell culture or laboratory studies</span>
+          <span class="w-3 h-3 rounded-full" style="background: var(--ink-dim);"></span>
+          <span class="text-sm" style="color: var(--ink-muted);">In Vitro - Cell culture or laboratory studies</span>
         </div>
       </div>
     </div>
 
     <!-- Disclaimer -->
-    <div class="mt-8 rounded-xl border-2 border-blue-500/40 bg-blue-500/10 p-6 backdrop-blur-sm">
+    <div class="mt-8 rounded-xl p-6" style="border: 2px solid var(--primary-border); background: var(--primary-soft);">
       <div class="flex items-start gap-4">
         <div class="flex-shrink-0">
-          <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-6 h-6" style="color: var(--primary-c);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
         </div>
         <div>
-          <p class="text-blue-200/80 text-sm">
-            <strong class="text-blue-400">Disclaimer:</strong> This information is for educational purposes only. It does not constitute medical advice, treatment recommendations, or dosing guidance. Many peptides discussed are not approved for human use. Always consult qualified healthcare providers for medical decisions.
+          <p class="text-sm" style="color: var(--ink-muted);">
+            <strong style="color: var(--primary-c);">Disclaimer:</strong> This information is for educational purposes only. It does not constitute medical advice, treatment recommendations, or dosing guidance. Many peptides discussed are not approved for human use. Always consult qualified healthcare providers for medical decisions.
           </p>
         </div>
       </div>

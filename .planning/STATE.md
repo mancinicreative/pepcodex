@@ -1,14 +1,40 @@
 # Project State: PepCodex
 
-*Last updated: 2026-04-13*
+*Last updated: 2026-05-29*
 
 ## Current Phase
 
-**v6.0 Phase 35 — Content Refresh & New Dossiers** — IN PROGRESS
+**v6.0 Phase 36 — PepTracker Brand Re-skin** — IN PROGRESS (on branch `feat/peptracker-rebrand`, awaiting review/merge)
+*(Phase 35 Content Refresh paused — resume after rebrand merges)*
 
 ## Active Work
 
-### Phase 35: Content Refresh & New Dossiers
+### Phase 36: PepTracker Brand Re-skin (branch `feat/peptracker-rebrand`)
+
+**Goal:** Re-skin the entire site from dark glassmorphism → the PepTracker "specimen catalogue"
+brand (cream paper, warm ink, single cobalt accent, five signals, Newsreader/Geist/Geist Mono,
+vial motifs, editorial Vol./plates/drawers/specimen-sheet language).
+**Plan:** `.planning/phases/36-peptracker-rebrand/PLAN.md`
+**Source:** PepTracker Brand System v3 + PepCodex Home/Dossier mockups (refs in `.design-refs/`).
+
+| Chunk | Focus | Commit | Status |
+|-------|-------|--------|--------|
+| 1 | Tokens + self-hosted fonts + shell (global.css, BaseLayout) | 46f902d | DONE |
+| 2 | Vial component + paper/editorial component sweep (~25) | a0adf7f | DONE |
+| 3 | Home as the catalogue | 5e1d5d2 | DONE |
+| 4 | Dossier as a specimen sheet | 9711979 | DONE |
+| 5 | Remaining content layouts (8) | 0778be7 | DONE |
+| 6 | Listing + utility pages (28) | b918f96 | DONE |
+| — | Lazyweb design-improve: sticky-header ledgers (trials, regulatory) | 5bba6d9 | DONE |
+
+- Full build green: astro + pagefind, **1,223 pages, 0 errors**.
+- Lazyweb chain run (brainstorm → research → improve); reports in `.lazyweb/` (gitignored).
+- **Design backlog** (needs greenlight): Plates⇄Ledger view toggle on listings; comparison/interaction
+  matrix as color-coded grid; "Appears in N comparisons/conditions" backlinks; evidence reading-key legend.
+- **Note:** a pre-existing uncommitted `pepcodex.com → www.pepcodex.com` domain change sits in the working
+  tree (SEO schema, api/subscribe, llms*.ts) — left untouched, not part of the rebrand.
+
+### Phase 35: Content Refresh & New Dossiers (PAUSED)
 
 **Goal:** Bring PepCodex current with Feb-Mar 2026 developments. New dossiers for recently approved/near-approval peptides, update 15+ stale dossiers, publish high-priority blog posts.
 

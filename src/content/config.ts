@@ -88,7 +88,14 @@ const peptides = defineCollection({
         position: z.number(),
         property: aminoAcidProperty,
       })),
+      // Optional fuller identification fields (mockup spec sheet)
+      cas: z.string().optional(),               // "137525-51-0"
+      halfLife: z.string().optional(),          // "~30 min · oral stable"
+      routes: z.string().optional(),            // "IP · IM · oral · topical"
+      isoelectricPoint: z.string().optional(),  // "pI 5.74"
     }).optional(),
+    // Balanced critique — "Where the case weakens" (per-peptide, authored)
+    limitations: z.array(z.string()).optional(),
     // NEW: Evidence-chained benefits for detailed research breakdown
     evidenceChainedBenefits: z.array(z.object({
       mechanism: z.object({

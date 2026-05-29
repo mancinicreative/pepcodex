@@ -14,6 +14,10 @@ interface MolecularInfo {
   type: string;
   sequence: string;
   aminoAcids: AminoAcid[];
+  cas?: string;
+  halfLife?: string;
+  routes?: string;
+  isoelectricPoint?: string;
 }
 
 interface Props {
@@ -83,6 +87,30 @@ const propertyColors = {
                 <div class="eyebrow mb-1">Mol. weight</div>
                 <div class="text-[color:var(--ink)] font-medium">{molecularInfo.weight}</div>
               </div>
+              {molecularInfo.halfLife && (
+                <div>
+                  <div class="eyebrow mb-1">Half-life</div>
+                  <div class="text-[color:var(--ink)] font-medium">{molecularInfo.halfLife}</div>
+                </div>
+              )}
+              {molecularInfo.isoelectricPoint && (
+                <div>
+                  <div class="eyebrow mb-1">Isoelectric pt</div>
+                  <div class="text-[color:var(--ink)] font-medium">{molecularInfo.isoelectricPoint}</div>
+                </div>
+              )}
+              {molecularInfo.routes && (
+                <div>
+                  <div class="eyebrow mb-1">Routes</div>
+                  <div class="text-[color:var(--ink)] font-medium">{molecularInfo.routes}</div>
+                </div>
+              )}
+              {molecularInfo.cas && (
+                <div>
+                  <div class="eyebrow mb-1">CAS</div>
+                  <div class="text-[color:var(--ink-muted)] font-mono text-sm">{molecularInfo.cas}</div>
+                </div>
+              )}
               <div class="col-span-2 md:col-span-3">
                 <div class="eyebrow mb-1">Sequence</div>
                 <div class="text-[color:var(--ink-muted)] font-mono text-sm break-all">{molecularInfo.sequence}</div>

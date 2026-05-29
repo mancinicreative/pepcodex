@@ -535,6 +535,10 @@
     color: rgba(251, 247, 238, 0.92) !important;
     background: transparent !important;
     padding: 0 !important;
+    border: none !important;
+  }
+  .prose-invert pre code .line {
+    display: block;
   }
   .prose-invert code {
     @apply px-1.5 py-0.5 rounded text-sm font-mono;

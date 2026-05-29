@@ -26,6 +26,7 @@ const { Content } = await peptide.render();
 
 <DossierLayout
   name={peptide.data.name}
+  slug={peptide.slug}
   aliases={peptide.data.aliases}
   category={peptide.data.category}
   evidenceStrength={peptide.data.evidenceStrength}
@@ -40,6 +41,8 @@ const { Content } = await peptide.render();
   qualityChecklist={peptide.data.qualityChecklist}
   regulatoryStatus={peptide.data.regulatoryStatus}
   ratings={peptide.data.ratings}
+  anecdotalReports={peptide.data.anecdotalReports}
+  limitations={peptide.data.limitations}
   metaTitle={peptide.data.metaTitle}
   metaDescription={peptide.data.metaDescription}
 >

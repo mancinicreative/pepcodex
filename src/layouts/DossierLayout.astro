@@ -1,5 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
+import fs from 'node:fs';
+import path from 'node:path';
 import BaseLayout from './BaseLayout.astro';
 import ArticleSchema from '../components/SEO/ArticleSchema.astro';
 import BreadcrumbSchema from '../components/SEO/BreadcrumbSchema.astro';
@@ -16,6 +18,7 @@ import Timeline from '../components/Timeline.astro';
 import QualityChecklist from '../components/QualityChecklist.astro';
 import RatingCard from '../components/RatingCard.astro';
 import Vial from '../components/Vial.astro';
+import TrialTable from '../components/TrialTable.astro';
 
 // Type definitions for peptide interactions
 interface Interaction {
@@ -39,6 +42,16 @@ interface MolecularInfo {
   type: string;
   sequence: string;
   aminoAcids: AminoAcid[];
+  cas?: string;
+  halfLife?: string;
+  routes?: string;
+  isoelectricPoint?: string;
+}
+
+interface AnecdotalReports {
+  positive: string[];
+  negative: string[];
+  communityNotes?: string;
 }
 
 interface KeyFinding {
@@ -96,8 +109,11 @@ interface SafetyInfo {
 
 interface Props {
   name: string;
+  slug?: string;
   aliases: string[];
   category: string;
+  anecdotalReports?: AnecdotalReports;
+  limitations?: string[];
   // Safety info for banner
   safetyInfo?: SafetyInfo;
   evidenceStrength: 'high' | 'moderate' | 'low' | 'very-low';
@@ -149,8 +165,11 @@ interface Props {
 
 const {
   name,
+  slug: slugProp,
   aliases,
   category,
+  anecdotalReports,
+  limitations = [],
   evidenceStrength,
   lastUpdated,
   summary,
@@ -200,13 +219,42 @@ const regConfig = regulatoryStatus ? regulatoryConfig[regulatoryStatus.status] :
 // Roman numeral for entry framing (hybrid editorial accent)
 const catLabel = categoryLabels[category] || category;
 
+// Load this peptide's registered clinical trials from its source pack (if one exists)
+const dossierSlug = (Astro.props.slug as string) || name.toLowerCase().replace(/\s+/g, '-');
+let peptideTrials: any[] = [];
+try {
+  const packPath = path.join(process.cwd(), 'data', 'source-packs', `${dossierSlug}.json`);
+  if (fs.existsSync(packPath)) {
+    const pack = JSON.parse(fs.readFileSync(packPath, 'utf-8'));
+    peptideTrials = (pack.trials || []).map((t: any) => ({
+      nctId: t.nctId || t.id || 'Unknown',
+      title: t.title,
+      status: t.status || 'unknown',
+      phase: t.phase || 'N/A',
+      conditions: t.conditions || [],
+      interventions: t.interventions || [],
+      enrollmentTarget: t.enrollmentTarget,
+      startDate: t.startDate,
+      completionDate: t.completionDate,
+      peptide: name,
+    }));
+  }
+} catch (e) { peptideTrials = []; }
+
+const hasTrials = peptideTrials.length > 0;
+const hasAnecdotal = Boolean(anecdotalReports && (((anecdotalReports.positive || []).length + (anecdotalReports.negative || []).length) > 0));
+const hasLimitations = limitations.length > 0;
+
 // Section navigation - CONSOLIDATED STRUCTURE
 // Order: Overview (includes molecular) → Mechanism → Evidence → Timeline → Quality → Interactions → References
 const allSections = [
   { id: 'overview', label: 'Overview', always: true },
   { id: 'mechanism-of-action', label: 'Mechanism', always: true },
   { id: 'evidence-chain', label: 'Evidence', requires: 'evidenceChainedBenefits' },
-  { id: 'timeline', label: 'What to Expect', requires: 'timeline' },
+  { id: 'anecdotal', label: 'Community', requires: 'anecdotal' },
+  { id: 'limitations', label: 'Critique', requires: 'limitations' },
+  { id: 'trials', label: 'Trials', requires: 'trials' },
+  { id: 'timeline', label: 'Timeline', requires: 'timeline' },
   { id: 'quality-checklist', label: 'Quality', requires: 'qualityChecklist' },
   { id: 'peptide-interactions', label: 'Interactions', requires: 'interactions' },
   { id: 'references', label: 'References', always: true },
@@ -218,13 +266,24 @@ const dataAvailability: Record<string, boolean> = {
   evidenceChainedBenefits: Boolean(evidenceChainedBenefits && evidenceChainedBenefits.length > 0),
   interactions: Boolean(interactions && interactions.length > 0),
   qualityChecklist: Boolean(qualityChecklist),
+  limitations: hasLimitations,
+  trials: hasTrials,
+  anecdotal: hasAnecdotal,
 };
+
+function toRomanNav(n: number): string {
+  const map: [number, string][] = [[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']];
+  let r = ''; let x = n;
+  for (const [v, s] of map) { while (x >= v) { r += s; x -= v; } }
+  return r;
+}
 
 const sections = allSections
   .filter(section => section.always || (section.requires && dataAvailability[section.requires]))
   .map((section, index) => ({
     ...section,
     num: String(index + 1).padStart(2, '0'),
+    roman: toRomanNav(index + 1),
   }));
 
 // Tags from category and evidence
@@ -494,7 +553,7 @@ const clinicalPct = sources.count ? Math.round((sources.human / sources.count) *
               class="section-btn w-full text-left px-3 py-2.5 rounded-lg transition-all duration-200 flex items-center gap-3 group text-[color:var(--ink-muted)] hover:text-[color:var(--ink)] hover:bg-[color:var(--paper-2)] border border-transparent"
             >
               <span class="w-7 h-7 rounded-md flex items-center justify-center text-[10px] border section-num shrink-0" style="background: var(--paper-2); border-color: var(--border-c); color: var(--ink-dim); font-family: var(--font-mono);">
-                {section.num}
+                {section.roman}
               </span>
               <span class="uppercase tracking-wide text-[11px] truncate" style="font-family: var(--font-mono);">{section.label}</span>
               {section.isNew && (
@@ -533,6 +592,85 @@ const clinicalPct = sources.count ? Math.round((sources.human / sources.count) *
                 </section>
               )}
 
+              <!-- From outside the literature (anecdotal community reports) -->
+              {hasAnecdotal && (
+                <section id="anecdotal" class="not-prose mt-12 pt-8 border-t border-[color:var(--border-c)]">
+                  <div class="mb-8">
+                    <p class="eyebrow" style="color: var(--ink-dim);">From outside the literature</p>
+                    <h2 class="font-serif text-3xl tracking-tight mt-1" style="color: var(--ink); font-weight: 500;">Community reports</h2>
+                    <p class="mt-1 text-sm" style="color: var(--ink-muted);">Unverified anecdotal reports from community discussion — <strong style="color: var(--ink);">not evidence</strong>, included for context and kept separate from the cited research.</p>
+                  </div>
+                  <div class="grid md:grid-cols-2 gap-4">
+                    {anecdotalReports && anecdotalReports.positive && anecdotalReports.positive.length > 0 && (
+                      <div class="panel-inset p-5">
+                        <p class="eyebrow mb-3" style="color: var(--research);">Reported positives</p>
+                        <ul class="space-y-2.5">
+                          {anecdotalReports.positive.map((item) => (
+                            <li class="flex gap-2.5 text-sm" style="color: var(--ink-muted);">
+                              <span class="signal-dot signal-dot--research mt-1.5 flex-none"></span>
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    {anecdotalReports && anecdotalReports.negative && anecdotalReports.negative.length > 0 && (
+                      <div class="panel-inset p-5">
+                        <p class="eyebrow mb-3" style="color: var(--danger);">Reported negatives</p>
+                        <ul class="space-y-2.5">
+                          {anecdotalReports.negative.map((item) => (
+                            <li class="flex gap-2.5 text-sm" style="color: var(--ink-muted);">
+                              <span class="signal-dot signal-dot--danger mt-1.5 flex-none"></span>
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                  {anecdotalReports && anecdotalReports.communityNotes && (
+                    <p class="mt-5 font-serif italic text-lg leading-snug" style="color: var(--ink-muted);">“{anecdotalReports.communityNotes}”</p>
+                  )}
+                  <div class="mt-5 panel-inset p-4 flex items-start gap-3" style="border-left: 3px solid var(--compound);">
+                    <svg class="w-4 h-4 flex-none mt-0.5" style="color: #9a6418;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                    <p class="text-xs leading-relaxed" style="color: var(--ink-muted);">Self-reported, unverified accounts — not clinical evidence and no substitute for the cited research. Anecdotes are prone to selection bias and placebo effects.</p>
+                  </div>
+                </section>
+              )}
+
+              <!-- Where the case weakens (limitations) -->
+              {hasLimitations && (
+                <section id="limitations" class="not-prose mt-12 pt-8 border-t border-[color:var(--border-c)]">
+                  <div class="mb-8">
+                    <p class="eyebrow" style="color: var(--ink-dim);">Critique</p>
+                    <h2 class="font-serif text-3xl tracking-tight mt-1" style="color: var(--ink); font-weight: 500;">Where the case weakens</h2>
+                    <p class="mt-1 text-sm" style="color: var(--ink-muted);">An honest accounting of the limitations in the evidence base for {name}.</p>
+                  </div>
+                  <ol class="space-y-5">
+                    {limitations.map((lim, i) => (
+                      <li class="flex gap-4">
+                        <span class="flex-none eyebrow pt-1" style="color: var(--compound); font-size: 0.72rem;">{String(i + 1).padStart(3, '0')}</span>
+                        <p class="leading-relaxed" style="color: var(--ink);">{lim}</p>
+                      </li>
+                    ))}
+                  </ol>
+                </section>
+              )}
+
+              <!-- What is being studied now (clinical trials) -->
+              {hasTrials && (
+                <section id="trials" class="not-prose mt-12 pt-8 border-t border-[color:var(--border-c)]">
+                  <div class="mb-8">
+                    <p class="eyebrow" style="color: var(--ink-dim);">Clinical trials</p>
+                    <h2 class="font-serif text-3xl tracking-tight mt-1" style="color: var(--ink); font-weight: 500;">What is being studied now</h2>
+                    <p class="mt-1 text-sm" style="color: var(--ink-muted);">Registered human trials involving {name}, sourced from ClinicalTrials.gov.</p>
+                  </div>
+                  <div class="glass-card overflow-hidden">
+                    <TrialTable trials={peptideTrials} />
+                  </div>
+                </section>
+              )}
+
               <!-- Timeline "What to Expect" -->
               {timeline && timeline.length > 0 && (
                 <section id="timeline" class="not-prose mt-12 pt-8 border-t border-[color:var(--border-c)]">
@@ -559,7 +697,7 @@ const clinicalPct = sources.count ? Math.round((sources.human / sources.count) *
                 <div class="mb-8">
                   <p class="eyebrow" style="color: var(--ink-dim);">Sources</p>
                   <h2 class="font-serif text-3xl tracking-tight mt-1" style="color: var(--ink); font-weight: 500;">
-                    References
+                    Cited works
                   </h2>
                 </div>
 
@@ -634,7 +772,7 @@ const clinicalPct = sources.count ? Math.round((sources.human / sources.count) *
                 <div class="mb-8">
                   <p class="eyebrow" style="color: var(--ink-dim);">How we rate</p>
                   <h3 class="font-serif text-3xl tracking-tight mt-1" style="color: var(--ink); font-weight: 500;">
-                    Methodology Note
+                    On reading this entry
                   </h3>
                 </div>
 

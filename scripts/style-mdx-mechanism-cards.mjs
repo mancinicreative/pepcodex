@@ -21,8 +21,8 @@ function walk(dir) {
   return out;
 }
 
-const CARD = /<div class="bg-\[color:var\(--paper-2\)\] rounded-xl p-5 border border-\[[^\]]*\]">(\s*<div class="font-semibold)/g;
-const NEW = '<div class="bg-[color:var(--paper-2)] rounded-lg p-5 border-l-[3px] border-l-[color:var(--primary-c)]">$1';
+const CARD = /<div class="bg-\[color:var\(--paper-2\)\] rounded-lg p-5 border-l-\[3px\] border-l-\[color:var\(--primary-c\)\]">(\s*<div class="font-semibold)/g;
+const NEW = '<div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">$1';
 
 let filesChanged = 0, total = 0;
 for (const file of dirs.flatMap(walk)) {

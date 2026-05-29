@@ -46,32 +46,32 @@ peptidesForCondition.sort((a, b) =>
   evidenceOrder[a.data.evidenceStrength] - evidenceOrder[b.data.evidenceStrength]
 );
 
-// Category-specific accent colors
+// Category-specific accent colors — neutralized to cobalt accent
 const categoryAccents: Record<string, string> = {
-  'metabolic': 'var(--primary)',
-  'repair-recovery': 'var(--accent)',
-  'hormonal': 'hsl(280 80% 60%)',
-  'longevity': 'hsl(45 90% 55%)',
-  'cognitive': 'hsl(200 80% 60%)',
-  'immune': 'hsl(142 70% 45%)',
-  'other': 'var(--primary)',
+  'metabolic': 'var(--primary-c)',
+  'repair-recovery': 'var(--primary-c)',
+  'hormonal': 'var(--primary-c)',
+  'longevity': 'var(--primary-c)',
+  'cognitive': 'var(--primary-c)',
+  'immune': 'var(--primary-c)',
+  'other': 'var(--primary-c)',
 };
 
 const accentColor = categoryAccents[category];
 
-// Evidence badge config
+// Evidence badge config — research (green), cobalt, compound (amber), danger
 const evidenceConfig: Record<string, { color: string; label: string }> = {
-  'high': { color: 'hsl(142 70% 45%)', label: 'High' },
-  'moderate': { color: 'var(--primary)', label: 'Moderate' },
-  'low': { color: 'hsl(45 90% 55%)', label: 'Low' },
-  'very-low': { color: 'hsl(0 70% 55%)', label: 'Very Low' },
+  'high': { color: 'var(--research)', label: 'High' },
+  'moderate': { color: 'var(--primary-c)', label: 'Moderate' },
+  'low': { color: 'var(--compound)', label: 'Low' },
+  'very-low': { color: 'var(--danger)', label: 'Very Low' },
 };
 
 // SEO
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const breadcrumbItems = [
-  { name: 'Home', url: Astro.site?.toString() || 'https://pepcodex.com' },
-  { name: 'Conditions', url: `${Astro.site || 'https://pepcodex.com'}conditions/` },
+  { name: 'Home', url: Astro.site?.toString() || 'https://www.pepcodex.com' },
+  { name: 'Conditions', url: `${Astro.site || 'https://www.pepcodex.com'}conditions/` },
   { name: conditionName, url: canonicalURL.toString() },
 ];
 
@@ -83,42 +83,37 @@ const allConditionHubs = await getCollection('conditions');
   <BreadcrumbSchema items={breadcrumbItems} />
 
   <!-- Hero Section -->
-  <div class="relative overflow-hidden border-b border-white/5">
-    <!-- Background Effects -->
-    <div class="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/10 via-transparent to-cyan-500/5"></div>
-    <div class="absolute top-0 right-0 w-96 h-96 bg-[var(--primary)]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-    <div class="absolute bottom-0 left-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
-
+  <div class="relative overflow-hidden" style="border-bottom: 1px solid var(--border-c);">
     <div class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
       <!-- Breadcrumb -->
-      <nav class="flex items-center gap-2 text-sm text-white/60 mb-6 flex-wrap" aria-label="Breadcrumb">
-        <a href="/" class="hover:text-white transition-colors">Home</a>
+      <nav class="flex items-center gap-2 text-sm text-[color:var(--ink-muted)] mb-6 flex-wrap" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-[color:var(--ink)] transition-colors">Home</a>
         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="m9 18 6-6-6-6"/>
         </svg>
-        <a href="/conditions" class="hover:text-white transition-colors">Conditions</a>
+        <a href="/conditions" class="hover:text-[color:var(--ink)] transition-colors">Conditions</a>
         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="m9 18 6-6-6-6"/>
         </svg>
-        <span class="text-white">{conditionName}</span>
+        <span class="text-[color:var(--ink)]">{conditionName}</span>
       </nav>
 
       <div class="flex items-center gap-4 mb-4">
         <span
           class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border"
-          style={`color: ${accentColor}; background: ${accentColor}15; border-color: ${accentColor}30;`}
+          style={`color: ${accentColor}; background: var(--primary-soft); border-color: var(--primary-border);`}
         >
           {category.replace('-', ' & ')}
         </span>
-        <span class="text-sm text-white/60">
+        <span class="text-sm text-[color:var(--ink-muted)]">
           {peptidesForCondition.length} peptide{peptidesForCondition.length !== 1 ? 's' : ''} studied
         </span>
       </div>
 
-      <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl" style="font-family: var(--font-display);">
+      <h1 class="text-4xl tracking-tight sm:text-5xl lg:text-6xl" style="font-family: var(--font-serif); font-weight: 500; color: var(--ink);">
         {title}
       </h1>
-      <p class="mt-6 max-w-3xl text-xl text-white/80 leading-relaxed">
+      <p class="mt-6 max-w-3xl text-xl leading-relaxed text-[color:var(--ink-muted)]">
         {description}
       </p>
     </div>
@@ -132,7 +127,7 @@ const allConditionHubs = await getCollection('conditions');
         <!-- Research Overview Card -->
         <section class="glass-card-default p-8">
           <div class="flex items-center gap-3 mb-6">
-            <div class="w-10 h-10 rounded-xl bg-[var(--primary)]/10 border border-[var(--primary)]/30 flex items-center justify-center">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background: var(--primary-soft); border: 1px solid var(--primary-border);">
               <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
                 <polyline points="14,2 14,8 20,8"/>
@@ -140,14 +135,14 @@ const allConditionHubs = await getCollection('conditions');
                 <line x1="16" y1="17" x2="8" y2="17"/>
               </svg>
             </div>
-            <h2 class="text-2xl font-bold text-white" style="font-family: var(--font-display);">
+            <h2 class="text-2xl" style="font-family: var(--font-serif); font-weight: 500; color: var(--ink);">
               Research Overview
             </h2>
           </div>
 
           <div class="prose prose-invert prose-lg max-w-none">
             {researchOverview.split('\n\n').map((paragraph: string) => (
-              <p class="text-white/85 leading-relaxed mb-4 last:mb-0">
+              <p class="leading-relaxed mb-4 last:mb-0 text-[color:var(--ink-muted)]">
                 {paragraph}
               </p>
             ))}
@@ -160,14 +155,14 @@ const allConditionHubs = await getCollection('conditions');
         <!-- Peptides Studied Section -->
         <section class="glass-card-default p-8">
           <div class="flex items-center gap-3 mb-6">
-            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center">
-              <svg class="w-5 h-5 text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background: var(--primary-soft); border: 1px solid var(--primary-border);">
+              <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/>
                 <path d="M8.5 2h7"/>
                 <path d="M7 16h10"/>
               </svg>
             </div>
-            <h2 class="text-2xl font-bold text-white" style="font-family: var(--font-display);">
+            <h2 class="text-2xl" style="font-family: var(--font-serif); font-weight: 500; color: var(--ink);">
               Peptides Studied for {conditionName}
             </h2>
           </div>
@@ -185,32 +180,33 @@ const allConditionHubs = await getCollection('conditions');
                 return (
                   <a
                     href={conditionData ? `/peptides/${peptide.slug}/${conditionData.slug}` : `/peptides/${peptide.slug}`}
-                    class="group p-5 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-500/30 hover:bg-cyan-500/5 transition-all"
+                    class="group p-5 rounded-xl transition-all hover:border-[color:var(--primary-border)] hover:bg-[color:var(--primary-soft)]"
+                    style="background: var(--paper-2); border: 1px solid var(--border-c);"
                   >
                     <div class="flex items-start justify-between mb-3">
-                      <h3 class="font-bold text-white group-hover:text-cyan-400 transition-colors text-lg">
+                      <h3 class="text-lg transition-colors text-[color:var(--ink)] group-hover:text-primary" style="font-family: var(--font-serif); font-weight: 500;">
                         {peptide.data.name}
                       </h3>
                       <span
                         class="px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wider border shrink-0"
-                        style={`color: ${evidence.color}; background: ${evidence.color}15; border-color: ${evidence.color}30;`}
+                        style={`color: ${evidence.color}; background: var(--paper); border-color: var(--border-c);`}
                       >
                         {evidence.label}
                       </span>
                     </div>
 
-                    <p class="text-sm text-white/60 line-clamp-2 mb-3">
+                    <p class="text-sm line-clamp-2 mb-3 text-[color:var(--ink-muted)]">
                       {peptide.data.summary}
                     </p>
 
                     <div class="flex items-center justify-between">
-                      <span class="text-xs text-white/40">
+                      <span class="text-xs text-[color:var(--ink-dim)]">
                         {peptide.data.sources.human > 0
                           ? `${peptide.data.sources.human} human studies`
                           : `${peptide.data.sources.preclinical} preclinical studies`
                         }
                       </span>
-                      <svg class="w-4 h-4 text-white/40 group-hover:text-cyan-400 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <svg class="w-4 h-4 transition-colors text-[color:var(--ink-dim)] group-hover:text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="m9 18 6-6-6-6"/>
                       </svg>
                     </div>
@@ -219,23 +215,23 @@ const allConditionHubs = await getCollection('conditions');
               })}
             </div>
           ) : (
-            <p class="text-white/60">
+            <p class="text-[color:var(--ink-muted)]">
               No peptides currently documented for this condition. Check back for updates.
             </p>
           )}
         </section>
 
         <!-- Disclaimer -->
-        <div class="rounded-2xl border border-[var(--accent)]/30 bg-[var(--accent)]/5 p-6">
+        <div class="rounded-xl p-6 panel-inset" style="border-left: 3px solid var(--compound);">
           <div class="flex gap-4">
-            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--accent)]/10 text-[var(--accent)]">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl" style="background: rgba(203,135,52,0.15); color: #9a6418;">
               <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
               </svg>
             </div>
             <div>
-              <h4 class="font-bold text-[var(--accent)] mb-1 text-base">Important Disclaimer</h4>
-              <p class="text-white/80 text-sm leading-relaxed">
+              <h4 class="mb-1 text-base" style="font-family: var(--font-serif); font-weight: 500; color: #9a6418;">Important Disclaimer</h4>
+              <p class="text-sm leading-relaxed text-[color:var(--ink-muted)]">
                 This page summarizes research findings and does not constitute medical advice. The peptides listed may or may not have regulatory approval. Always consult a qualified healthcare provider before making any health decisions.
               </p>
             </div>
@@ -247,33 +243,33 @@ const allConditionHubs = await getCollection('conditions');
       <div class="space-y-6">
         <!-- Quick Stats Card -->
         <div class="glass-card-default p-6">
-          <h3 class="text-sm font-bold uppercase tracking-wider text-white/60 mb-4">
+          <h3 class="eyebrow mb-4">
             Quick Stats
           </h3>
 
           <div class="space-y-4">
             <div class="flex justify-between items-center">
-              <span class="text-white/70">Total Peptides</span>
-              <span class="font-bold text-white">{peptidesForCondition.length}</span>
+              <span class="text-[color:var(--ink-muted)]">Total Peptides</span>
+              <span class="font-bold text-[color:var(--ink)]">{peptidesForCondition.length}</span>
             </div>
 
             <div class="flex justify-between items-center">
-              <span class="text-white/70">High Evidence</span>
-              <span class="font-bold text-white">
+              <span class="text-[color:var(--ink-muted)]">High Evidence</span>
+              <span class="font-bold text-[color:var(--ink)]">
                 {peptidesForCondition.filter(p => p.data.evidenceStrength === 'high').length}
               </span>
             </div>
 
             <div class="flex justify-between items-center">
-              <span class="text-white/70">Moderate Evidence</span>
-              <span class="font-bold text-white">
+              <span class="text-[color:var(--ink-muted)]">Moderate Evidence</span>
+              <span class="font-bold text-[color:var(--ink)]">
                 {peptidesForCondition.filter(p => p.data.evidenceStrength === 'moderate').length}
               </span>
             </div>
 
             <div class="flex justify-between items-center">
-              <span class="text-white/70">Last Updated</span>
-              <span class="font-bold text-white">
+              <span class="text-[color:var(--ink-muted)]">Last Updated</span>
+              <span class="font-bold text-[color:var(--ink)]">
                 {lastUpdated.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
               </span>
             </div>
@@ -283,7 +279,7 @@ const allConditionHubs = await getCollection('conditions');
         <!-- Related Conditions Card -->
         {allConditionHubs.length > 1 && (
           <div class="glass-card-default p-6">
-            <h3 class="text-sm font-bold uppercase tracking-wider text-white/60 mb-4">
+            <h3 class="eyebrow mb-4">
               Related Conditions
             </h3>
             <nav class="space-y-2 max-h-64 overflow-y-auto scrollbar-thin">
@@ -293,7 +289,7 @@ const allConditionHubs = await getCollection('conditions');
                 .map((conditionHub) => (
                   <a
                     href={`/conditions/${conditionHub.slug}`}
-                    class="block text-sm text-white/70 hover:text-primary transition-colors py-1"
+                    class="block text-sm text-[color:var(--ink-muted)] hover:text-primary transition-colors py-1"
                   >
                     {conditionHub.data.conditionName}
                   </a>
@@ -307,14 +303,14 @@ const allConditionHubs = await getCollection('conditions');
         <div class="glass-card-default p-6">
           <a
             href="/conditions"
-            class="flex items-center justify-center gap-2 w-full bg-white text-black font-bold py-3 rounded-xl text-sm uppercase tracking-wider hover:bg-[var(--primary)] hover:text-white transition-all"
+            class="btn btn-ink w-full py-3 rounded-xl text-sm uppercase tracking-wider"
           >
             Browse All Conditions
           </a>
 
           <a
             href="/peptides"
-            class="flex items-center justify-center gap-2 w-full mt-3 bg-white/10 text-white font-bold py-3 rounded-xl text-sm uppercase tracking-wider hover:bg-white/20 transition-all"
+            class="btn btn-paper w-full mt-3 py-3 rounded-xl text-sm uppercase tracking-wider"
           >
             Browse All Peptides
           </a>
@@ -341,11 +337,11 @@ const allConditionHubs = await getCollection('conditions');
     background: transparent;
   }
   .scrollbar-thin::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--border-strong);
     border-radius: 2px;
   }
   .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--ink-dim);
   }
 
   .line-clamp-2 {

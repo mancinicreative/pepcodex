@@ -4,6 +4,37 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "pepcodex.com" }],
+      "destination": "https://www.pepcodex.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/clinics/honolulu.mdx",
+      "destination": "/clinics/honolulu",
+      "permanent": true
+    },
+    {
+      "source": "/clinics/st-louis.mdx",
+      "destination": "/clinics/st-louis",
+      "permanent": true
+    },
+    {
+      "source": "/clinics/scottsdale.mdx",
+      "destination": "/clinics/scottsdale",
+      "permanent": true
+    },
+    {
+      "source": "/clinics/irvine.mdx",
+      "destination": "/clinics/irvine",
+      "permanent": true
+    },
+    {
+      "source": "/clinics/pittsburgh.mdx",
+      "destination": "/clinics/pittsburgh",
+      "permanent": true
+    },
+    {
       "source": "/peptide/:slug",
       "destination": "/peptides/:slug",
       "permanent": true

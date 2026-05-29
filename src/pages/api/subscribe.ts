@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 
 export const prerender = false;
 
-const ALLOWED_ORIGIN = 'https://pepcodex.com';
+const ALLOWED_ORIGIN = 'https://www.pepcodex.com';
 
 // Simple in-memory rate limiter (per serverless instance)
 // Not perfect across cold starts, but catches most abuse within a warm instance
@@ -139,7 +139,7 @@ export const POST: APIRoute = async ({ request }) => {
           utm_source: source || 'website',
           utm_medium: 'organic',
           utm_campaign: 'pepcodex',
-          referring_site: 'https://pepcodex.com',
+          referring_site: 'https://www.pepcodex.com',
         }),
       }
     );

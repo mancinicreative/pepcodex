@@ -294,6 +294,10 @@ const citationText = `PepCodex. ${name}: Evidence Dossier. Retrieved ${new Date(
 
 // Connective tissue: how many comparisons actually exist for this peptide
 const comparisonCount = comparators.filter(c => findComparisonSlug(c)).length;
+
+// Verdict card evidence mix (real shares of the cited source base)
+const preclinicalPct = sources.count ? Math.round((sources.preclinical / sources.count) * 100) : 0;
+const clinicalPct = sources.count ? Math.round((sources.human / sources.count) * 100) : 0;
 ---
 
 <BaseLayout title={metaTitle || name} description={metaDescription || summary}>
@@ -398,7 +402,7 @@ const comparisonCount = comparators.filter(c => findComparisonSlug(c)).length;
       <!-- Right: verdict / evidence card -->
       <div class="lg:col-span-5">
         <div class="glass-card relative overflow-hidden p-6 h-full flex flex-col">
-          <div class="signal-bar absolute top-0 left-0 right-0 rounded-none"></div>
+          <div class="absolute top-0 left-0 right-0 h-[3px]" style={`background: ${currentEvidence.color};`}></div>
 
           <div class="flex items-start justify-between">
             <span class="eyebrow">Research evidence</span>
@@ -416,24 +420,24 @@ const comparisonCount = comparators.filter(c => findComparisonSlug(c)).length;
           </div>
           <p class="mt-1.5 eyebrow" style="color: var(--ink-dim);">{verdictLine}</p>
 
-          <!-- Source breakdown bars -->
+          <!-- Evidence mix — real share of the cited source base -->
           <dl class="mt-6 space-y-3.5">
             {[
-              { label: 'Total sources', val: sources.count, color: 'var(--ink-dim)' },
-              { label: 'Human studies', val: sources.human, color: 'var(--research)' },
-              { label: 'Preclinical', val: sources.preclinical, color: 'var(--compound)' },
+              { label: 'Preclinical', pct: preclinicalPct, color: 'var(--compound)' },
+              { label: 'Clinical', pct: clinicalPct, color: 'var(--research)' },
             ].map((row) => (
               <div>
                 <div class="flex items-center justify-between mb-1">
                   <dt class="eyebrow" style="font-size: 0.64rem;">{row.label}</dt>
-                  <dd class="text-sm" style="color: var(--ink); font-family: var(--font-mono); font-weight: 500;">{row.val}</dd>
+                  <dd class="text-sm" style="color: var(--ink); font-family: var(--font-mono); font-weight: 500;">{row.pct}%</dd>
                 </div>
                 <div class="h-1.5 rounded-full overflow-hidden" style="background: var(--paper-2);">
-                  <div class="h-full rounded-full" style={`width: ${sources.count ? Math.max(4, Math.round((row.val / sources.count) * 100)) : 0}%; background: ${row.color};`}></div>
+                  <div class="h-full rounded-full" style={`width: ${Math.max(2, row.pct)}%; background: ${row.color};`}></div>
                 </div>
               </div>
             ))}
           </dl>
+          <p class="mt-3 eyebrow" style="color: var(--ink-dim); font-size: 0.62rem;">Based on {sources.count} cited sources</p>
 
           {ratings && (
             <div class="mt-5 pt-5" style="border-top: 1px solid var(--border-c);">
@@ -525,12 +529,6 @@ const comparisonCount = comparators.filter(c => findComparisonSlug(c)).length;
               <!-- Evidence-Chained Benefits -->
               {evidenceChainedBenefits && evidenceChainedBenefits.length > 0 && (
                 <section id="evidence-chain" class="not-prose mt-12 pt-8 border-t border-[color:var(--border-c)]">
-                  <div class="space-y-2 mb-8">
-                    <h2 class="font-serif text-3xl tracking-tight" style="color: var(--ink); font-weight: 500;">
-                      Evidence-Chained Benefits
-                    </h2>
-                    <div class="h-1 w-16 rounded-full" style="background: var(--primary-c);"></div>
-                  </div>
                   <EvidenceChain benefits={evidenceChainedBenefits} peptideName={name} />
                 </section>
               )}
@@ -558,11 +556,11 @@ const comparisonCount = comparators.filter(c => findComparisonSlug(c)).length;
 
               <!-- References Section -->
               <section id="references" class="not-prose mt-12 pt-8 border-t border-[color:var(--border-c)]">
-                <div class="space-y-2 mb-8">
-                  <h2 class="font-serif text-3xl tracking-tight" style="color: var(--ink); font-weight: 500;">
+                <div class="mb-8">
+                  <p class="eyebrow" style="color: var(--ink-dim);">Sources</p>
+                  <h2 class="font-serif text-3xl tracking-tight mt-1" style="color: var(--ink); font-weight: 500;">
                     References
                   </h2>
-                  <div class="h-1 w-16 rounded-full" style="background: var(--primary-c);"></div>
                 </div>
 
                 <div class="panel-inset p-6">
@@ -633,11 +631,11 @@ const comparisonCount = comparators.filter(c => findComparisonSlug(c)).length;
 
               <!-- Methodology Note -->
               <section id="methodology-note" class="mt-12 pt-8 border-t border-[color:var(--border-c)]">
-                <div class="space-y-2 mb-8">
-                  <h3 class="font-serif text-3xl tracking-tight" style="color: var(--ink); font-weight: 500;">
+                <div class="mb-8">
+                  <p class="eyebrow" style="color: var(--ink-dim);">How we rate</p>
+                  <h3 class="font-serif text-3xl tracking-tight mt-1" style="color: var(--ink); font-weight: 500;">
                     Methodology Note
                   </h3>
-                  <div class="h-1 w-16 rounded-full" style="background: var(--primary-c);"></div>
                 </div>
 
                 <div class="panel-inset p-6">

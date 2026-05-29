@@ -44,51 +44,57 @@ import NewsletterForm from './NewsletterForm.astro';
 </div>
 
 <script>
-  // Guard: don't show if already dismissed this session
-  if (!sessionStorage.getItem('exit-popup-dismissed')) {
+  // One-time newsletter prompt. Persisted across sessions via localStorage so it
+  // only ever appears once per visitor — never on repeat page views or navigation.
+  const SEEN_KEY = 'pep-newsletter-seen';
+
+  if (!localStorage.getItem(SEEN_KEY)) {
     const popup = document.getElementById('exit-popup');
     let triggered = false;
+    let armed = false;
+
+    // Grace period: don't allow any trigger for the first few seconds, so it can
+    // never fire on load or while the reader is still settling into the page.
+    setTimeout(() => { armed = true; }, 6000);
+
+    function markSeen() {
+      try { localStorage.setItem(SEEN_KEY, '1'); } catch {}
+    }
 
     function showPopup() {
-      if (triggered) return;
+      if (triggered || !armed) return;
       triggered = true;
+      markSeen(); // mark seen the moment it shows — guarantees true one-time behaviour
       if (popup) popup.style.display = 'flex';
     }
 
-    // Desktop: mouseleave from viewport top
+    function hidePopup() {
+      if (popup) popup.style.display = 'none';
+      markSeen();
+    }
+
+    // Desktop: genuine exit intent (cursor leaves the top of the viewport)
     document.addEventListener('mouseleave', (e) => {
       if (e.clientY < 10) showPopup();
     });
 
-    // Mobile: scroll depth 60%
+    // Mobile/no-mouse: only after the reader has reached the very end of the page
     window.addEventListener('scroll', () => {
       const scrollPct = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight;
-      if (scrollPct > 0.6) showPopup();
+      if (scrollPct > 0.9) showPopup();
     }, { passive: true });
 
     // Close handlers
     if (popup) {
       const closeBtn = popup.querySelector('[data-close]');
-      if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-          popup.style.display = 'none';
-          sessionStorage.setItem('exit-popup-dismissed', 'true');
-        });
-      }
+      if (closeBtn) closeBtn.addEventListener('click', hidePopup);
 
       popup.addEventListener('click', (e) => {
-        if (e.target === popup) {
-          popup.style.display = 'none';
-          sessionStorage.setItem('exit-popup-dismissed', 'true');
-        }
+        if (e.target === popup) hidePopup();
       });
 
-      // ESC key closes popup
       document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && popup.style.display === 'flex') {
-          popup.style.display = 'none';
-          sessionStorage.setItem('exit-popup-dismissed', 'true');
-        }
+        if (e.key === 'Escape' && popup.style.display === 'flex') hidePopup();
       });
     }
   }

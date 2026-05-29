@@ -89,20 +89,20 @@ const sizeClasses = {
 
   // Category labels and colors
   const categoryConfig: Record<string, { label: string; color: string }> = {
-    'metabolic': { label: 'Metabolic', color: 'hsl(45 90% 55%)' },
-    'repair-recovery': { label: 'Repair', color: 'hsl(142 70% 45%)' },
-    'hormonal': { label: 'Hormonal', color: 'hsl(280 80% 60%)' },
-    'longevity': { label: 'Longevity', color: 'hsl(200 80% 55%)' },
-    'cognitive': { label: 'Cognitive', color: 'hsl(320 70% 55%)' },
-    'immune': { label: 'Immune', color: 'hsl(30 80% 55%)' },
-    'other': { label: 'Other', color: 'hsl(220 15% 60%)' },
+    'metabolic': { label: 'Metabolic', color: 'var(--primary-c)' },
+    'repair-recovery': { label: 'Repair', color: 'var(--primary-c)' },
+    'hormonal': { label: 'Hormonal', color: 'var(--primary-c)' },
+    'longevity': { label: 'Longevity', color: 'var(--primary-c)' },
+    'cognitive': { label: 'Cognitive', color: 'var(--primary-c)' },
+    'immune': { label: 'Immune', color: 'var(--primary-c)' },
+    'other': { label: 'Other', color: 'var(--ink-dim)' },
   };
 
   const evidenceConfig: Record<string, { label: string; color: string }> = {
-    'high': { label: 'High Evidence', color: 'hsl(142 70% 45%)' },
-    'moderate': { label: 'Moderate', color: 'var(--primary)' },
-    'low': { label: 'Low Evidence', color: 'hsl(45 90% 55%)' },
-    'very-low': { label: 'Very Low', color: 'hsl(0 70% 55%)' },
+    'high': { label: 'High Evidence', color: 'var(--research)' },
+    'moderate': { label: 'Moderate', color: 'var(--primary-c)' },
+    'low': { label: 'Low Evidence', color: '#9a6418' },
+    'very-low': { label: 'Very Low', color: 'var(--danger)' },
   };
 
   // Load the peptide search index

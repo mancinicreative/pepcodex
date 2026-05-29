@@ -1,4 +1,6 @@
 ---
+import AnnotatedVial from './AnnotatedVial.astro';
+
 interface AminoAcid {
   code: string;
   name: string;
@@ -20,9 +22,10 @@ interface Props {
   aliases?: string[];
   category: string;
   molecularInfo?: MolecularInfo;
+  evidenceStrength?: 'high' | 'moderate' | 'low' | 'very-low';
 }
 
-const { peptideName, summary, aliases = [], category, molecularInfo } = Astro.props;
+const { peptideName, summary, aliases = [], category, molecularInfo, evidenceStrength = 'low' } = Astro.props;
 
 // Property colors for amino acids (biochemical property categorization)
 const propertyColors = {
@@ -59,33 +62,40 @@ const propertyColors = {
         <span class="eyebrow">Identity</span>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {aliases.length > 0 && (
-          <div class="col-span-2 md:col-span-4">
-            <div class="eyebrow mb-1">Also Known As</div>
-            <div class="text-[color:var(--ink-muted)] text-sm">{aliases.join(' • ')}</div>
+      <div class={molecularInfo ? 'grid md:grid-cols-[210px_1fr] gap-6 items-start' : ''}>
+        {molecularInfo && (
+          <div class="flex justify-center md:justify-start md:border-r md:border-[color:var(--border-c)] md:pr-6">
+            <AnnotatedVial strength={evidenceStrength} chainLength={molecularInfo.chainLength} weight={molecularInfo.weight} />
           </div>
         )}
-        {molecularInfo && (
-          <>
-            <div>
-              <div class="eyebrow mb-1">Type</div>
-              <div class="text-[color:var(--ink)] font-medium">{molecularInfo.type}</div>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {aliases.length > 0 && (
+            <div class="col-span-2 md:col-span-3">
+              <div class="eyebrow mb-1">Also Known As</div>
+              <div class="text-[color:var(--ink-muted)] text-sm">{aliases.join(' • ')}</div>
             </div>
-            <div>
-              <div class="eyebrow mb-1">Length</div>
-              <div class="text-[color:var(--ink)] font-medium">{molecularInfo.chainLength} amino acids</div>
-            </div>
-            <div>
-              <div class="eyebrow mb-1">Weight</div>
-              <div class="text-[color:var(--ink)] font-medium">{molecularInfo.weight}</div>
-            </div>
-            <div>
-              <div class="eyebrow mb-1">Sequence</div>
-              <div class="text-[color:var(--ink-muted)] font-mono text-sm">{molecularInfo.sequence}</div>
-            </div>
-          </>
-        )}
+          )}
+          {molecularInfo && (
+            <>
+              <div>
+                <div class="eyebrow mb-1">Class</div>
+                <div class="text-[color:var(--ink)] font-medium">{molecularInfo.type}</div>
+              </div>
+              <div>
+                <div class="eyebrow mb-1">Length</div>
+                <div class="text-[color:var(--ink)] font-medium">{molecularInfo.chainLength} amino acids</div>
+              </div>
+              <div>
+                <div class="eyebrow mb-1">Mol. weight</div>
+                <div class="text-[color:var(--ink)] font-medium">{molecularInfo.weight}</div>
+              </div>
+              <div class="col-span-2 md:col-span-3">
+                <div class="eyebrow mb-1">Sequence</div>
+                <div class="text-[color:var(--ink-muted)] font-mono text-sm break-all">{molecularInfo.sequence}</div>
+              </div>
+            </>
+          )}
+        </div>
       </div>
     </div>
 

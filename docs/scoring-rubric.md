@@ -1,6 +1,6 @@
 # PepCodex Scoring Rubric — Source of Truth
 
-**Version:** 2.3 (draft — both axes calibrated & locked; pending schema migration + dossier re-scoring)
+**Version:** 2.4 (draft — both axes + community-reported effectiveness basis; calibrated & locked; pending schema migration + dossier re-scoring)
 **Date:** 2026-05-29
 **Status:** Two-axis model defined — **Axis 1: Evidence Score** (5 dimensions, 20 elements, ~80 bands) and **Axis 2: Effectiveness Score** (4 elements). Deterministic bands defined for both. NOT yet calibrated against a test set; NOT yet implemented in the schema. Point *allocations* are an evidence-informed proposal to be validated in calibration; the *criteria* are grounded in the cited frameworks.
 
@@ -275,7 +275,12 @@ Rounded to the nearest whole number.
 
 The five dimensions above are **Axis 1: the Evidence Score** — how *proven* a compound is. This is **Axis 2: the Effectiveness Score** — how *large the demonstrated effect is when it works*. The two are scored and displayed **independently and always together** (e.g., "Evidence 100 · Effectiveness 77").
 
-**Scoring gate.** The Effectiveness Score is computed **only when ≥1 quantified *human* efficacy estimate exists.** With no human efficacy data the value is **"Not Established"** — *not* a low number (a low number would falsely imply a measured-but-small effect). This keeps preclinical/anecdotal hype off the axis. **Weak or low-quality human estimates still count** — they are scored and carry a **Very Low** confidence flag; "Not Established" is reserved for the *complete absence* of human efficacy data.
+**Scoring basis** — every Effectiveness value has one of three bases, **always displayed with the number** (precedence: Clinical → Community-reported → Not Established):
+- **A · Clinically demonstrated** — ≥1 quantified *human* efficacy estimate exists → scored via **E1–E4** below (0–100) with a High/Moderate/Low confidence flag. Weak/low-quality human estimates still count and carry a **Very Low** flag.
+- **B · Community-reported** — *no* clinical efficacy data, but meaningful, consistent real-world reports of effect → scored via the **CR1–CR3** sub-rubric below (**capped at 50** by construction), always labeled *"community-reported · not clinically demonstrated."*
+- **C · Not Established** — neither clinical data nor a meaningful community effect signal (e.g., preclinical-only compounds).
+
+Clinical data always wins precedence: if Basis A applies, use it — the compound's community signal still appears in the Evidence axis's Community Experience dimension. The Normalization and Confidence rules below govern **Basis A**.
 
 **Normalization rule (cross-indication comparability).** Never compare raw effect sizes across different conditions — placebo response and outcome variance are disease-specific. Judge each compound's effect **relative to placebo and to the best existing option *within its own primary indication***, then map onto the shared category bands below. The *category* (trivial → transformative), not the absolute number, is the comparable unit across conditions.
 
@@ -313,14 +318,26 @@ The five dimensions above are **Axis 1: the Evidence Score** — how *proven* a 
 | 19–26 | Top-tier in indirect comparison (high NMA SUCRA/P-score) vs active comparators |
 | 27–30 | Head-to-head superiority over standard of care |
 
-*Effectiveness Score = E1 + E2 + E3 + E4, out of 100.*
+*Basis A (Clinically demonstrated) Effectiveness Score = E1 + E2 + E3 + E4, out of 100.*
+
+### Basis B — Community-reported effectiveness (CR1–CR3, max 50)
+*Used only when there is **no** clinical efficacy data but meaningful real-world user reports of effect exist. Maxes at 50 by construction (the structural cap — anecdote cannot establish high effectiveness). Always labeled "community-reported · not clinically demonstrated" with a **Very Low** confidence flag. Scores the **reported effect** — distinct from the Evidence axis's Community Experience dimension, which scores **usage** (how much/consistently used), not reported efficacy.*
+
+| Element | Max | 0 → max gradient |
+|---|---|---|
+| **CR1. Reported effect strength** | 20 | vague/minimal benefit → moderate consistent benefit → strong, dramatic, frequently-reported benefit |
+| **CR2. Consistency of reported effect** | 18 | contradictory → mixed → highly consistent across reports |
+| **CR3. Breadth & independence of reports** | 12 | single source / echo chamber → several venues → broad, independent, cross-community |
+
+*Basis B (Community-reported) Effectiveness Score = CR1 + CR2 + CR3, out of 50.*
 
 ### Effectiveness guardrails (mandatory)
 1. Labeled **"demonstrated effect magnitude — not a recommendation, endorsement, or safety claim."**
-2. Always displayed **paired with the Evidence Score** and the confidence flag — never alone.
-3. **"Not Established"** wherever no quantified human efficacy estimate exists.
-4. Prefer ARR/NNT and SMD over relative risk reduction (RRR inflates apparent size at low baseline risk).
-5. Surrogate-only effects are flagged and scored low on E3 regardless of magnitude.
+2. Always displayed **paired with the Evidence Score** *and* the scoring basis (Clinical / Community-reported) + confidence flag — never alone, never without its basis.
+3. **Community-reported scores are hard-capped at 50, always carry the label "community-reported · not clinically demonstrated," and must read visually distinct from a clinical score** so they can't be mistaken for measured efficacy. Forbidden verbs apply ("works/effective/proven").
+4. **"Not Established"** wherever there is neither clinical efficacy data nor a meaningful community effect signal.
+5. Prefer ARR/NNT and SMD over relative risk reduction (RRR inflates apparent size at low baseline risk).
+6. Surrogate-only effects are flagged and scored low on E3 regardless of magnitude.
 
 ---
 
@@ -343,7 +360,7 @@ The five dimensions above are **Axis 1: the Evidence Score** — how *proven* a 
 
 ## Future work (not in this document)
 
-- **Calibration** (done 2026-05-29): both axes calibrated against the test set (semaglutide, retatrutide, thymosin α-1, thymalin, BPC-157, FOXO4-DRI). Evidence ordering validated; Effectiveness behavior validated (retatrutide ~92 > semaglutide ~81; "Not Established" fires for no-human-data compounds). Bands locked.
+- **Calibration** (done 2026-05-29): both axes calibrated against the test set (semaglutide, retatrutide, thymosin α-1, thymalin, BPC-157, FOXO4-DRI). Evidence ordering validated; Effectiveness behavior validated (retatrutide ~92 > semaglutide ~81; community-reported basis lifts BPC-157 to ~45 "community-reported"; "Not Established" reserved for compounds with neither clinical nor community effect signal). Bands locked.
 - **Evidence-axis tuning** (resolved 2026-05-29): ① preclinical evidence foundation added as element **1E (10 pts)** — preclinical-only compounds are no longer all floored (FOXO4-DRI Research Depth ~8 → ~14); ② science-first ordering **confirmed** — BPC-157 below thymalin accepted; the gap narrows (~49 vs ~52) once BPC-157's large preclinical program is credited, but ordering holds.
 - **Schema migration**: extend `ratings` from the current 1–5 / 4-field model to the two-axis model — Evidence (5 dimensions, element-level 0–100) + Effectiveness (4 elements 0–100 or "Not Established", plus a confidence flag); map `evidenceStrength` to the Research Depth axis to end the current contradiction.
 - **Re-scoring workflow**: re-score all ~102 dossiers against this rubric — one dossier per dedicated agent, each agent producing the 20 element scores with cited evidence, written to the dossier's `ratings` block. This document is the agent's scoring manual.

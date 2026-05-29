@@ -299,6 +299,9 @@ const lastRevised = lastUpdated
 
 // Citation string for the Cite action
 const citationText = `PepCodex. ${name}: Evidence Dossier. Retrieved ${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}, from ${articleUrl}`;
+
+// Connective tissue: how many comparisons actually exist for this peptide
+const comparisonCount = comparators.filter(c => findComparisonSlug(c)).length;
 ---
 
 <BaseLayout title={metaTitle || name} description={metaDescription || summary}>
@@ -354,6 +357,7 @@ const citationText = `PepCodex. ${name}: Evidence Dossier. Retrieved ${new Date(
       <span>Entry <span style="color: var(--ink);">{String(entryNum).padStart(3, '0')}</span> / {totalEntries}</span>
       {lastRevised && <span>Last revised <span style="color: var(--ink);">{lastRevised}</span></span>}
       <span><span style="color: var(--ink);">{sources.count}</span> sources</span>
+      {comparisonCount > 0 && <a href="#compare" class="transition-colors hover:text-[color:var(--ink)]"><span style="color: var(--ink);">{comparisonCount}</span> comparisons</a>}
       <a href="/methodology" class="transition-colors hover:text-[color:var(--ink)] md:ml-auto">Methodology →</a>
     </div>
 
@@ -691,7 +695,7 @@ const citationText = `PepCodex. ${name}: Evidence Dossier. Retrieved ${new Date(
 
     <!-- Compare Section -->
     {comparators.length > 0 && (
-      <section class="mt-20">
+      <section id="compare" class="mt-20 scroll-mt-24">
         <div class="flex items-center justify-between pb-4 mb-8" style="border-bottom: 1px solid var(--border-c);">
           <h2 class="font-serif text-2xl" style="color: var(--ink); font-weight: 500;">Compare {name}</h2>
         </div>

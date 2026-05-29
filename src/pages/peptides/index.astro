@@ -2,6 +2,7 @@
 import HubLayout from '../../layouts/HubLayout.astro';
 import SearchBar from '../../components/SearchBar.astro';
 import PeptideCard from '../../components/PeptideCard.astro';
+import EvidenceKey from '../../components/EvidenceKey.astro';
 import { getCollection } from 'astro:content';
 
 const allPeptides = await getCollection('peptides');
@@ -122,11 +123,12 @@ const compoundTypes = [
     </div>
   </div>
 
-  <!-- Peptide count -->
-  <div class="mb-8 flex items-center justify-between">
+  <!-- Peptide count + evidence key -->
+  <div class="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4" style="border-bottom: 1px solid var(--border-c);">
     <p class="text-sm" style="color: var(--ink-muted);">
       Showing <span id="peptide-count" class="font-bold" style="color: var(--ink);">{peptides.length}</span> peptides
     </p>
+    <EvidenceKey />
   </div>
 
   <!-- Peptide list by letter -->

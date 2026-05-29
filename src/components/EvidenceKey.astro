@@ -1,0 +1,18 @@
+---
+/** Compact reading-key explaining the evidence dot scale + vial fill colours. */
+const levels = [
+  { dots: '●●●●', label: 'High', color: 'var(--research)' },
+  { dots: '●●●○', label: 'Moderate', color: 'var(--primary-c)' },
+  { dots: '●●○○', label: 'Low', color: '#9a6418' },
+  { dots: '●○○○', label: 'Very low', color: 'var(--danger)' },
+];
+---
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1.5">
+  <span class="eyebrow" style="color: var(--ink-dim);">Evidence key</span>
+  {levels.map((l) => (
+    <span class="inline-flex items-center gap-1.5 text-xs" style="font-family: var(--font-mono); color: var(--ink-muted);">
+      <span style={`color: ${l.color}; letter-spacing: -1.5px;`} aria-hidden="true">{l.dots}</span>
+      {l.label}
+    </span>
+  ))}
+</div>

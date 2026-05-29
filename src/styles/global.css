@@ -200,6 +200,12 @@
     background: var(--primary-soft);
     color: var(--ink);
   }
+  /* Accessible focus ring (keyboard nav only) */
+  :focus-visible {
+    outline: 2px solid var(--primary-c);
+    outline-offset: 2px;
+    border-radius: 3px;
+  }
   /* Search result highlights */
   mark {
     background: rgba(203, 135, 52, 0.28);

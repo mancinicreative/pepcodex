@@ -31,6 +31,15 @@ const compoundTypeLabels: Record<string, string> = {
   'glycoprotein': 'Glycoprotein',
 };
 const showCompoundType = compoundType !== 'peptide';
+
+// Two-tone name — trailing token containing a digit rendered in accent
+let namePrefix = name;
+let nameSuffix = '';
+const _lastDash = name.lastIndexOf('-');
+if (_lastDash > 0 && /\d/.test(name.slice(_lastDash + 1))) {
+  namePrefix = name.slice(0, _lastDash + 1);
+  nameSuffix = name.slice(_lastDash + 1);
+}
 ---
 
 <a
@@ -43,7 +52,7 @@ const showCompoundType = compoundType !== 'peptide';
       <div class="min-w-0">
         <span class="eyebrow">{categoryLabels[category] || category}</span>
         <h3 class="font-serif text-[1.7rem] leading-tight mt-1 transition-colors group-hover:text-[color:var(--primary-c)]" style="color: var(--ink); font-weight: 500;">
-          {name}
+          {namePrefix}{nameSuffix && <em style="color: var(--primary-c);">{nameSuffix}</em>}
         </h3>
       </div>
       <Vial strength={evidenceStrength} size="md" class="shrink-0 -mt-1" />

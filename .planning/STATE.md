@@ -4,7 +4,7 @@
 
 ## Current Phase
 
-**v6.0 Phase 36 — PepTracker Brand Re-skin** — IN PROGRESS (on branch `feat/peptracker-rebrand`, awaiting review/merge)
+**v6.0 Phase 36 — PepTracker Brand Re-skin** — AUDITED & PUSHED, PR open into `main` (awaiting merge → Vercel prod)
 *(Phase 35 Content Refresh paused — resume after rebrand merges)*
 
 ## Active Work
@@ -26,7 +26,14 @@ vial motifs, editorial Vol./plates/drawers/specimen-sheet language).
 | 5 | Remaining content layouts (8) | 0778be7 | DONE |
 | 6 | Listing + utility pages (28) | b918f96 | DONE |
 | — | Lazyweb design-improve: sticky-header ledgers (trials, regulatory) | 5bba6d9 | DONE |
+| 7 | Dossier two-column specimen sheet + chip-flow MechanismPathways (88 dossiers) | eb1acaa | DONE |
+| 8 | Newsletter exit-popup → one-time, no mid-read triggers | c38cade | DONE |
 
+- **Brand-coverage audit (2026-05-29):** static sweep (templates + content) + visual pass of all
+  35 page templates → PASS. One leftover fixed (GLP-1 safety boxed warning → danger tokens).
+  Workflow + results in `.planning/phases/36-peptracker-rebrand/BRAND-AUDIT.md`.
+- **Pushed** `feat/peptracker-rebrand` (→ c38cade) to origin; PR into `main` to open (gh not installed —
+  manual link). Production unchanged until merged.
 - Full build green: astro + pagefind, **1,223 pages, 0 errors**.
 - Lazyweb chain run (brainstorm → research → improve); reports in `.lazyweb/` (gitignored).
 - **Design backlog** (needs greenlight): Plates⇄Ledger view toggle on listings; comparison/interaction

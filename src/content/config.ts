@@ -46,6 +46,37 @@ const ratingsSchema = z.object({
   reviewNotes: z.string().optional(),
 });
 
+// Two-axis scoring model (rubric v2.4 — see docs/scoring-rubric.md)
+const confidenceFlag = z.enum(['high', 'moderate', 'low', 'very-low']);
+const effectivenessBasis = z.enum(['clinical', 'community-reported', 'not-established']);
+
+const evidenceScore = z.object({
+  researchDepth: z.number().min(0).max(100),
+  mechanism: z.number().min(0).max(100),
+  plausibility: z.number().min(0).max(100),
+  globalCoverage: z.number().min(0).max(100),
+  communityExperience: z.number().min(0).max(100),
+  overall: z.number().min(0).max(100),       // weighted composite (validated by qa-scoring)
+  label: z.enum(['well-evidenced', 'emerging', 'early-limited', 'preliminary', 'insufficient']),
+  elements: z.record(z.string(), z.number()).optional(), // optional element-level audit trail
+});
+
+const effectivenessScore = z.object({
+  basis: effectivenessBasis,
+  score: z.number().min(0).max(100).optional(),   // omitted iff basis === 'not-established'
+  confidence: confidenceFlag.optional(),          // required for 'clinical'/'community-reported'
+  primaryIndication: z.string().optional(),
+});
+
+const scoringSchema = z.object({
+  rubricVersion: z.string().default('2.4'),
+  evidence: evidenceScore,
+  effectiveness: effectivenessScore,
+  lastScored: z.coerce.date(),
+  citations: z.array(z.string()).default([]),     // PMIDs/DOIs/URLs backing the scores
+  notes: z.string().optional(),
+});
+
 const peptides = defineCollection({
   type: 'content',
   schema: z.object({
@@ -165,8 +196,10 @@ const peptides = defineCollection({
       question: z.string(),
       answer: z.string(),
     })).optional(),
-    // NEW: Multi-dimension evidence ratings (Phase 36)
+    // Legacy 1–5 ratings (retained during migration; removed once all dossiers carry `scoring`)
     ratings: ratingsSchema.optional(),
+    // NEW: two-axis scoring (rubric v2.4 — see docs/scoring-rubric.md)
+    scoring: scoringSchema.optional(),
     // SEO fields
     ...seoFields,
   }),

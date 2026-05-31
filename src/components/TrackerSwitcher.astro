@@ -1,0 +1,57 @@
+---
+/**
+ * TrackerSwitcher.astro
+ * Shared segmented control linking the two trackers (Regulatory ⇄ Clinical Trials).
+ * Sits at the top of /regulatory-tracker and /trials so each is one click from the other.
+ */
+interface Props {
+  active: 'regulatory' | 'trials';
+}
+const { active } = Astro.props;
+
+const tabs = [
+  { id: 'regulatory', label: 'Regulatory', href: '/regulatory-tracker' },
+  { id: 'trials', label: 'Clinical Trials', href: '/trials' },
+] as const;
+---
+
+<nav class="tracker-switcher" aria-label="Trackers">
+  {tabs.map((t) => (
+    <a
+      href={t.href}
+      class:list={["tracker-tab", { "tracker-tab--active": active === t.id }]}
+      aria-current={active === t.id ? 'page' : undefined}
+    >
+      {t.label}
+    </a>
+  ))}
+</nav>
+
+<style>
+  .tracker-switcher {
+    display: inline-flex;
+    gap: 3px;
+    padding: 3px;
+    border-radius: 10px;
+    background: var(--paper-2);
+    border: 1px solid var(--border-c);
+  }
+  .tracker-tab {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.45rem 0.95rem;
+    border-radius: 7px;
+    color: var(--ink-muted);
+    transition: color 0.15s, background 0.15s;
+    white-space: nowrap;
+  }
+  .tracker-tab:hover {
+    color: var(--ink);
+  }
+  .tracker-tab--active {
+    background: var(--primary-c);
+    color: #fbf7ee;
+  }
+</style>

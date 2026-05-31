@@ -1,5 +1,7 @@
 ---
-import HubLayout from '../../layouts/HubLayout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../../components/SEO/BreadcrumbSchema.astro';
+import TrackerSwitcher from '../../components/TrackerSwitcher.astro';
 import TrialTable from '../../components/TrialTable.astro';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -40,23 +42,17 @@ interface Trial {
   peptide: string;
 }
 
-// Get the source-packs directory path
 const sourcePacksDir = path.join(process.cwd(), 'data', 'source-packs');
-
-// Read all JSON files from source-packs directory
 let allTrials: Trial[] = [];
 
 try {
   const files = fs.readdirSync(sourcePacksDir);
-
   for (const file of files) {
     if (file.endsWith('.json')) {
       const filePath = path.join(sourcePacksDir, file);
       const content = fs.readFileSync(filePath, 'utf-8');
       const sourcePack: SourcePack = JSON.parse(content);
-
       if (sourcePack.trials && sourcePack.trials.length > 0) {
-        // Handle peptide being either string or object
         const peptideName = typeof sourcePack.peptide === 'string'
           ? sourcePack.peptide
           : sourcePack.peptide.name;
@@ -70,7 +66,7 @@ try {
           enrollmentTarget: trial.enrollmentTarget,
           startDate: trial.startDate,
           completionDate: trial.completionDate,
-          peptide: peptideName
+          peptide: peptideName,
         }));
         allTrials.push(...trialsWithPeptide);
       }
@@ -80,10 +76,10 @@ try {
   console.error('Error reading source packs:', error);
 }
 
-// Sort by status (active first), then by completion date
+// Sort by status (active/recruiting first), then by completion date
 const statusOrder: Record<string, number> = {
-  'active': 0,
-  'recruiting': 1,
+  'recruiting': 0,
+  'active': 1,
   'not yet recruiting': 2,
   'completed': 3,
   'terminated': 4,
@@ -95,237 +91,240 @@ allTrials.sort((a, b) => {
   const statusA = statusOrder[(a.status || '').toLowerCase()] ?? 99;
   const statusB = statusOrder[(b.status || '').toLowerCase()] ?? 99;
   if (statusA !== statusB) return statusA - statusB;
-
-  // Then sort by completion date
   const dateA = a.completionDate ? new Date(a.completionDate).getTime() : Infinity;
   const dateB = b.completionDate ? new Date(b.completionDate).getTime() : Infinity;
   return dateA - dateB;
 });
 
-// Get unique values for filters
-const uniqueStatuses = [...new Set(allTrials.map(t => (t.status || 'unknown').toLowerCase()))];
+// Filter dropdown values
 const uniquePhases = [...new Set(allTrials.map(t => t.phase || 'N/A'))].sort();
 const uniquePeptides = [...new Set(allTrials.map(t => t.peptide))].sort();
 
-// Count by status for stats
-const activeCount = allTrials.filter(t => (t.status || '').toLowerCase() === 'active' || (t.status || '').toLowerCase() === 'recruiting').length;
-const completedCount = allTrials.filter(t => (t.status || '').toLowerCase() === 'completed').length;
+// Status-group counts for the clickable summary/filter cards
+const lc = (s: string) => (s || '').toLowerCase();
+const recruitingCount = allTrials.filter(t => ['recruiting', 'not yet recruiting'].includes(lc(t.status))).length;
+const activeCount = allTrials.filter(t => lc(t.status) === 'active').length;
+const completedCount = allTrials.filter(t => lc(t.status) === 'completed').length;
+const endedCount = allTrials.filter(t => ['terminated', 'withdrawn', 'suspended'].includes(lc(t.status))).length;
+
+// Card config — group filters mirroring the regulatory tracker's status cards
+const statusCards = [
+  { group: 'recruiting', label: 'Recruiting', count: recruitingCount, style: 'background: rgba(203,135,52,.14); color: #9a6418; border: 1px solid rgba(203,135,52,.30);' },
+  { group: 'active', label: 'Active', count: activeCount, style: 'background: rgba(20,118,74,.12); color: var(--research); border: 1px solid rgba(20,118,74,.28);' },
+  { group: 'completed', label: 'Completed', count: completedCount, style: 'background: var(--primary-soft); color: var(--primary-c); border: 1px solid var(--primary-border);' },
+  { group: 'ended', label: 'Ended', count: endedCount, style: 'background: rgba(185,61,66,.10); color: var(--danger); border: 1px solid rgba(185,61,66,.28);' },
+];
 ---
 
-<HubLayout
+<BaseLayout
   title="Clinical Trial Tracker"
-  description="Track ongoing and completed clinical trials for peptides. Filter by phase, status, and compound."
+  description="Track ongoing and completed clinical trials for peptides, sourced from ClinicalTrials.gov. Filter by status, phase, and compound."
 >
-  <!-- Stats overview -->
-  <div class="mb-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
-    <div class="rounded-xl p-4" style="border: 1px solid var(--primary-border); background: var(--primary-soft);">
-      <div class="text-2xl font-bold" style="color: var(--primary-c);">{allTrials.length}</div>
-      <div class="text-sm" style="color: var(--ink-muted);">Total Trials</div>
-    </div>
-    <div class="rounded-xl p-4" style="border: 1px solid rgba(20,118,74,.24); background: rgba(20,118,74,.10);">
-      <div class="text-2xl font-bold" style="color: var(--research);">{activeCount}</div>
-      <div class="text-sm" style="color: var(--ink-muted);">Active/Recruiting</div>
-    </div>
-    <div class="rounded-xl p-4" style="border: 1px solid var(--primary-border); background: var(--primary-soft);">
-      <div class="text-2xl font-bold" style="color: var(--primary-c);">{completedCount}</div>
-      <div class="text-sm" style="color: var(--ink-muted);">Completed</div>
-    </div>
-    <div class="rounded-xl p-4" style="border: 1px solid var(--border-c); background: var(--paper-2);">
-      <div class="text-2xl font-bold" style="color: var(--ink);">{uniquePeptides.length}</div>
-      <div class="text-sm" style="color: var(--ink-muted);">Peptides Tracked</div>
-    </div>
-  </div>
+  <BreadcrumbSchema items={[
+    { name: 'Home', url: 'https://www.pepcodex.com/' },
+    { name: 'Clinical Trials', url: 'https://www.pepcodex.com/trials/' },
+  ]} />
 
-  <!-- Filters -->
-  <div class="mb-6 flex flex-wrap items-center gap-4">
-    <!-- Status filter -->
-    <div class="flex items-center gap-2">
-      <label for="filter-status" class="text-sm font-medium" style="color: var(--ink-muted);">Status:</label>
-      <select
-        id="filter-status"
-        class="filter-select rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent cursor-pointer"
-        style="background: var(--paper-2); border: 1px solid var(--border-c); color: var(--ink);"
-      >
-        <option value="all">All Statuses</option>
-        {uniqueStatuses.map((status) => (
-          <option value={status}>{status.charAt(0).toUpperCase() + status.slice(1)}</option>
-        ))}
-      </select>
+  <div class="max-w-6xl mx-auto">
+    <!-- Header -->
+    <div class="mb-8">
+      <div class="flex items-center gap-2 text-sm mb-4" style="color: var(--ink-dim);">
+        <a href="/" class="transition-colors hover:text-[color:var(--ink)]">Home</a>
+        <span>/</span>
+        <span style="color: var(--ink-muted);">Clinical Trials</span>
+      </div>
+      <h1 class="font-serif text-3xl md:text-4xl mb-3" style="color: var(--ink); font-weight: 500;">
+        Clinical Trial Tracker
+      </h1>
+      <p class="text-lg leading-relaxed max-w-3xl" style="color: var(--ink-muted);">
+        {allTrials.length} registered trials across {uniquePeptides.length} peptides, sourced from ClinicalTrials.gov. Updated as registrations change.
+      </p>
+      <div class="mt-5">
+        <TrackerSwitcher active="trials" />
+      </div>
     </div>
 
-    <!-- Phase filter -->
-    <div class="flex items-center gap-2">
-      <label for="filter-phase" class="text-sm font-medium" style="color: var(--ink-muted);">Phase:</label>
+    <!-- Status summary cards (clickable filters) -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+      {statusCards.map(c => (
+        <button
+          data-filter={c.group}
+          class="filter-btn rounded-xl p-4 text-left transition-all hover:scale-[1.02] cursor-pointer"
+          style={c.style}
+        >
+          <div class="text-2xl font-bold mb-1">{c.count}</div>
+          <div class="text-sm opacity-80">{c.label}</div>
+        </button>
+      ))}
+    </div>
+
+    <!-- Search + filter bar -->
+    <div class="flex flex-col sm:flex-row gap-3 mb-6">
+      <div class="relative flex-1">
+        <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style="color: var(--ink-dim);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.3-4.3" />
+        </svg>
+        <input
+          type="search"
+          id="trial-search"
+          placeholder="Search by NCT ID, title, or peptide..."
+          class="trial-input w-full pl-10 pr-4 py-2.5 rounded-lg text-sm focus:outline-none"
+          style="background: var(--paper-2); border: 1px solid var(--border-c); color: var(--ink);"
+        />
+      </div>
       <select
         id="filter-phase"
-        class="filter-select rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent cursor-pointer"
+        class="trial-select px-4 py-2.5 rounded-lg text-sm focus:outline-none"
         style="background: var(--paper-2); border: 1px solid var(--border-c); color: var(--ink);"
       >
         <option value="all">All Phases</option>
-        {uniquePhases.map((phase) => (
-          <option value={phase}>{phase}</option>
+        {uniquePhases.map(phase => (
+          <option value={phase}>Phase {phase}</option>
         ))}
       </select>
-    </div>
-
-    <!-- Peptide filter -->
-    <div class="flex items-center gap-2">
-      <label for="filter-peptide" class="text-sm font-medium" style="color: var(--ink-muted);">Peptide:</label>
       <select
         id="filter-peptide"
-        class="filter-select rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent cursor-pointer"
+        class="trial-select px-4 py-2.5 rounded-lg text-sm focus:outline-none"
         style="background: var(--paper-2); border: 1px solid var(--border-c); color: var(--ink);"
       >
         <option value="all">All Peptides</option>
-        {uniquePeptides.map((peptide) => (
+        {uniquePeptides.map(peptide => (
           <option value={peptide.toLowerCase()}>{peptide}</option>
         ))}
       </select>
+      <button
+        id="trial-reset"
+        class="px-4 py-2.5 rounded-lg text-sm transition-colors hidden hover:text-[color:var(--ink)]"
+        style="border: 1px solid var(--border-c); color: var(--ink-muted);"
+      >
+        Clear Filters
+      </button>
     </div>
 
-    <!-- Clear filters button -->
-    <button
-      id="clear-filters"
-      class="text-sm font-medium transition-colors hover:text-[color:var(--ink)]"
-      style="color: var(--ink-dim);"
-    >
-      Clear filters
-    </button>
+    <!-- Table -->
+    <div id="trial-table-wrap" class="rounded-xl overflow-hidden" style="border: 1px solid var(--border-c);">
+      <TrialTable trials={allTrials} />
+    </div>
+
+    <!-- Empty state (hidden by default) -->
+    <div id="empty-state" class="hidden py-16 text-center">
+      <svg class="mx-auto h-12 w-12" style="color: var(--ink-dim);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      <p class="mt-4 text-lg" style="color: var(--ink-muted);">No trials match your filters.</p>
+      <button id="clear-filters-empty" class="mt-4 text-sm font-medium transition-colors hover:text-[color:var(--ink)]" style="color: var(--primary-c);">
+        Clear all filters
+      </button>
+    </div>
+
+    <!-- Results count -->
+    <div class="mt-4 text-sm" style="color: var(--ink-dim);">
+      <span id="trial-count">{allTrials.length}</span> of {allTrials.length} trials shown
+    </div>
+
+    <!-- Data source note -->
+    <div class="mt-8 p-4 rounded-xl" style="border: 1px solid var(--border-c); background: var(--paper-2);">
+      <p class="text-xs leading-relaxed" style="color: var(--ink-dim);">
+        <strong style="color: var(--ink-muted);">Data source:</strong> Trial information is sourced from
+        <a href="https://clinicaltrials.gov" target="_blank" rel="noopener noreferrer" class="hover:text-[color:var(--ink)] hover:underline" style="color: var(--primary-c);">ClinicalTrials.gov</a>
+        and our curated source packs. Click any NCT ID for the full registry record. Status may change without notice — verify through official channels.
+      </p>
+    </div>
   </div>
 
-  <!-- Result count -->
-  <p class="mb-4 text-sm" style="color: var(--ink-muted);">
-    Showing <span id="trial-count">{allTrials.length}</span> of {allTrials.length} trials
-  </p>
-
-  <!-- Trial table -->
-  <div class="rounded-xl border overflow-hidden" style="border-color: var(--border-c); background: var(--paper);">
-    <TrialTable trials={allTrials} />
-  </div>
-
-  <!-- Empty state (hidden by default) -->
-  <div id="empty-state" class="hidden py-16 text-center">
-    <svg class="mx-auto h-12 w-12" style="color: var(--ink-dim);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-    <p class="mt-4 text-lg" style="color: var(--ink-muted);">No trials match your filters.</p>
-    <button
-      id="clear-filters-empty"
-      class="mt-4 text-sm font-medium text-primary hover:text-[var(--accent)] transition-colors"
-    >
-      Clear all filters
-    </button>
-  </div>
-
-  <!-- Data source note -->
-  <div class="mt-8 rounded-xl p-4" style="border: 1px solid var(--border-c); background: var(--primary-soft);">
-    <p class="text-sm" style="color: var(--ink-muted);">
-      <strong style="color: var(--ink);">Data Source:</strong> Trial information is sourced from
-      <a href="https://clinicaltrials.gov" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-[var(--accent)] hover:underline transition-colors">ClinicalTrials.gov</a>
-      and our curated source packs. Click any NCT ID to view the full trial record.
-    </p>
-  </div>
-</HubLayout>
+  <style>
+    .trial-input option, .trial-select option { background-color: var(--paper); color: var(--ink); }
+  </style>
+</BaseLayout>
 
 <script>
-  const statusSelect = document.getElementById('filter-status') as HTMLSelectElement;
+  const search = document.getElementById('trial-search') as HTMLInputElement;
   const phaseSelect = document.getElementById('filter-phase') as HTMLSelectElement;
   const peptideSelect = document.getElementById('filter-peptide') as HTMLSelectElement;
-  const trialRows = document.querySelectorAll('.trial-row');
-  const trialCards = document.querySelectorAll('.trial-card');
-  const trialCount = document.getElementById('trial-count');
-  const emptyState = document.getElementById('empty-state');
-  const tableContainer = document.querySelector('.rounded-xl.border');
+  const resetBtn = document.getElementById('trial-reset') as HTMLButtonElement;
+  const countEl = document.getElementById('trial-count')!;
+  const emptyState = document.getElementById('empty-state')!;
+  const tableWrap = document.getElementById('trial-table-wrap')!;
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const rows = document.querySelectorAll('.trial-row');
+  const cards = document.querySelectorAll('.trial-card');
 
-  let activeFilters: Record<string, string> = {
-    status: 'all',
-    phase: 'all',
-    peptide: 'all',
-  };
+  let activeGroup = '';
+
+  function groupOf(status: string): string {
+    if (status === 'recruiting' || status === 'not yet recruiting') return 'recruiting';
+    if (status === 'active') return 'active';
+    if (status === 'completed') return 'completed';
+    if (status === 'terminated' || status === 'withdrawn' || status === 'suspended') return 'ended';
+    return 'other';
+  }
+
+  function matches(el: HTMLElement): boolean {
+    const status = (el.dataset.status || '').toLowerCase();
+    const phase = el.dataset.phase || '';
+    const peptide = (el.dataset.peptide || '').toLowerCase();
+    const text = (el.textContent || '').toLowerCase();
+    const q = search.value.toLowerCase().trim();
+    const matchGroup = !activeGroup || groupOf(status) === activeGroup;
+    const matchPhase = phaseSelect.value === 'all' || phase === phaseSelect.value;
+    const matchPeptide = peptideSelect.value === 'all' || peptide === peptideSelect.value;
+    const matchSearch = !q || text.includes(q);
+    return matchGroup && matchPhase && matchPeptide && matchSearch;
+  }
 
   function applyFilters() {
-    let visibleCount = 0;
-
-    // Filter both rows and cards
-    const allElements = [...trialRows, ...trialCards];
-
-    allElements.forEach((item) => {
-      const el = item as HTMLElement;
-      const status = el.dataset.status;
-      const phase = el.dataset.phase;
-      const peptide = el.dataset.peptide;
-
-      const matchesStatus = activeFilters.status === 'all' || status === activeFilters.status;
-      const matchesPhase = activeFilters.phase === 'all' || phase === activeFilters.phase;
-      const matchesPeptide = activeFilters.peptide === 'all' || peptide === activeFilters.peptide;
-
-      if (matchesStatus && matchesPhase && matchesPeptide) {
-        el.classList.remove('hidden');
-        // Only count unique items (avoid double counting row + card)
-        if (el.classList.contains('trial-row')) {
-          visibleCount++;
-        }
-      } else {
-        el.classList.add('hidden');
-      }
+    let visible = 0;
+    rows.forEach(r => {
+      const ok = matches(r as HTMLElement);
+      (r as HTMLElement).classList.toggle('hidden', !ok);
+      if (ok) visible++;
+    });
+    cards.forEach(c => {
+      (c as HTMLElement).classList.toggle('hidden', !matches(c as HTMLElement));
     });
 
-    // If only cards visible (mobile), count those instead
-    if (visibleCount === 0) {
-      trialCards.forEach((card) => {
-        if (!card.classList.contains('hidden')) {
-          visibleCount++;
-        }
-      });
-    }
+    countEl.textContent = String(visible);
 
-    // Update count
-    if (trialCount) trialCount.textContent = String(visibleCount);
+    const anyFilter = activeGroup || search.value.trim() || phaseSelect.value !== 'all' || peptideSelect.value !== 'all';
+    resetBtn.classList.toggle('hidden', !anyFilter);
 
-    // Show/hide empty state
-    if (visibleCount === 0) {
-      emptyState?.classList.remove('hidden');
-      tableContainer?.classList.add('hidden');
+    if (visible === 0) {
+      emptyState.classList.remove('hidden');
+      tableWrap.classList.add('hidden');
     } else {
-      emptyState?.classList.add('hidden');
-      tableContainer?.classList.remove('hidden');
+      emptyState.classList.add('hidden');
+      tableWrap.classList.remove('hidden');
     }
+
+    filterBtns.forEach(b => {
+      const el = b as HTMLElement;
+      if (el.dataset.filter === activeGroup) {
+        el.style.outline = '2px solid var(--primary-c)';
+        el.style.outlineOffset = '2px';
+      } else {
+        el.style.outline = '';
+        el.style.outlineOffset = '';
+      }
+    });
   }
 
-  // Add event listeners to select dropdowns
-  statusSelect?.addEventListener('change', () => {
-    activeFilters.status = statusSelect.value;
-    applyFilters();
-  });
-
-  phaseSelect?.addEventListener('change', () => {
-    activeFilters.phase = phaseSelect.value;
-    applyFilters();
-  });
-
-  peptideSelect?.addEventListener('change', () => {
-    activeFilters.peptide = peptideSelect.value;
-    applyFilters();
-  });
-
-  // Clear filters function
-  function clearAllFilters() {
-    activeFilters = { status: 'all', phase: 'all', peptide: 'all' };
-    if (statusSelect) statusSelect.value = 'all';
-    if (phaseSelect) phaseSelect.value = 'all';
-    if (peptideSelect) peptideSelect.value = 'all';
+  function clearAll() {
+    search.value = '';
+    phaseSelect.value = 'all';
+    peptideSelect.value = 'all';
+    activeGroup = '';
     applyFilters();
   }
 
-  // Clear filters buttons (main and empty state)
-  document.getElementById('clear-filters')?.addEventListener('click', clearAllFilters);
-  document.getElementById('clear-filters-empty')?.addEventListener('click', clearAllFilters);
+  search.addEventListener('input', applyFilters);
+  phaseSelect.addEventListener('change', applyFilters);
+  peptideSelect.addEventListener('change', applyFilters);
+  filterBtns.forEach(b => b.addEventListener('click', () => {
+    const g = (b as HTMLElement).dataset.filter || '';
+    activeGroup = activeGroup === g ? '' : g;
+    applyFilters();
+  }));
+  resetBtn.addEventListener('click', clearAll);
+  document.getElementById('clear-filters-empty')?.addEventListener('click', clearAll);
 </script>
-
-<style>
-  /* Style select dropdown options for the paper theme */
-  .filter-select option {
-    background-color: var(--paper);
-    color: var(--ink);
-  }
-</style>

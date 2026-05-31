@@ -1,6 +1,11 @@
 {
   "peptide": "tb-500",
-  "aliases": ["Thymosin Beta 4", "Tβ4", "TB4", "TMSB4X"],
+  "aliases": [
+    "Thymosin Beta 4",
+    "Tβ4",
+    "TB4",
+    "TMSB4X"
+  ],
   "generated": "2026-01-22",
   "category": "repair-recovery",
   "coreLibrary": {
@@ -361,14 +366,386 @@
     ]
   },
   "trials": [
-    {"id": "NCT00832091", "title": "Thymosin Beta 4 in Venous Stasis Ulcers", "phase": "2", "status": "completed", "sponsor": "RegeneRx Biopharmaceuticals", "region": "USA"},
-    {"id": "NCT00408083", "title": "Thymosin Beta 4 Eye Drops for Dry Eye", "phase": "2", "status": "completed", "sponsor": "RegeneRx Biopharmaceuticals", "region": "USA"},
-    {"id": "NCT01387347", "title": "Thymosin Beta 4 Dry Eye Controlled Adverse Environment", "phase": "2", "status": "completed", "sponsor": "RegeneRx Biopharmaceuticals", "region": "USA"},
-    {"id": "NCT02016131", "title": "SEER-1: RGN-259 for Neurotrophic Keratopathy", "phase": "3", "status": "completed", "sponsor": "RegeneRx/HLB Therapeutics", "region": "USA"},
-    {"id": "NCT03967665", "title": "SEER-2: RGN-259 for Neurotrophic Keratopathy", "phase": "3", "status": "recruiting", "sponsor": "RegeneRx/HLB Therapeutics", "region": "USA"},
-    {"id": "EUCTR2018-002231-14", "title": "SEER-3: RGN-259 for Neurotrophic Keratopathy", "phase": "3", "status": "failed primary endpoint", "sponsor": "HLB Therapeutics", "region": "EU"},
-    {"id": "NCT01311518", "title": "RGN-352 for Acute Myocardial Infarction", "phase": "1", "status": "completed", "sponsor": "RegeneRx Biopharmaceuticals", "region": "USA"},
-    {"id": "ACTRN12610000287033", "title": "Tβ4 in Horse Tendon Injuries", "phase": "Veterinary", "status": "completed", "sponsor": "Racing Victoria", "region": "Australia"}
+    {
+      "id": "NCT00832091",
+      "title": "Thymosin Beta 4 in Venous Stasis Ulcers",
+      "phase": "2",
+      "status": "completed",
+      "sponsor": "RegeneRx Biopharmaceuticals",
+      "region": "USA",
+      "enrollment": 72,
+      "conditions": [
+        "Venous Stasis Ulcers"
+      ],
+      "interventions": [
+        "Thymosin Beta 4",
+        "Placebo"
+      ],
+      "startDate": "2006-07",
+      "completionDate": "2009-01"
+    },
+    {
+      "id": "NCT00408083",
+      "title": "Thymosin Beta 4 Eye Drops for Dry Eye",
+      "phase": "2",
+      "status": "completed",
+      "sponsor": "RegeneRx Biopharmaceuticals",
+      "region": "USA"
+    },
+    {
+      "id": "NCT01387347",
+      "title": "Thymosin Beta 4 Dry Eye Controlled Adverse Environment",
+      "phase": "2",
+      "status": "completed",
+      "sponsor": "RegeneRx Biopharmaceuticals",
+      "region": "USA",
+      "enrollment": 72,
+      "conditions": [
+        "Dry Eye Syndrome",
+        "Dry Eye"
+      ],
+      "interventions": [
+        "Thymosin beta 4",
+        "Placebo"
+      ],
+      "startDate": "2011-08",
+      "completionDate": "2011-10"
+    },
+    {
+      "id": "NCT02016131",
+      "title": "SEER-1: RGN-259 for Neurotrophic Keratopathy",
+      "phase": "3",
+      "status": "completed",
+      "sponsor": "RegeneRx/HLB Therapeutics",
+      "region": "USA"
+    },
+    {
+      "id": "NCT03967665",
+      "title": "SEER-2: RGN-259 for Neurotrophic Keratopathy",
+      "phase": "3",
+      "status": "recruiting",
+      "sponsor": "RegeneRx/HLB Therapeutics",
+      "region": "USA"
+    },
+    {
+      "id": "EUCTR2018-002231-14",
+      "title": "SEER-3: RGN-259 for Neurotrophic Keratopathy",
+      "phase": "3",
+      "status": "failed primary endpoint",
+      "sponsor": "HLB Therapeutics",
+      "region": "EU"
+    },
+    {
+      "id": "NCT01311518",
+      "title": "RGN-352 for Acute Myocardial Infarction",
+      "phase": "2",
+      "status": "withdrawn",
+      "sponsor": "RegeneRx Biopharmaceuticals",
+      "region": "USA",
+      "enrollment": 0,
+      "conditions": [
+        "Acute Myocardial Infarction",
+        "ST Elevation Myocardial Infarction",
+        "STEMI"
+      ],
+      "interventions": [
+        "Drug: Placebo",
+        "Drug: Injectable Thymosin beta 4"
+      ],
+      "startDate": "2019-07",
+      "completionDate": "2020-07"
+    },
+    {
+      "id": "ACTRN12610000287033",
+      "title": "Tβ4 in Horse Tendon Injuries",
+      "phase": "Veterinary",
+      "status": "completed",
+      "sponsor": "Racing Victoria",
+      "region": "Australia"
+    },
+    {
+      "id": "NCT07586865",
+      "title": "Recombinant Human Thymosin Beta 4 for Injection(NL005) for Acute Myocardial Infarction",
+      "phase": "2",
+      "status": "not yet recruiting",
+      "enrollment": 189,
+      "conditions": [
+        "Acute Myocardial Infarction (AMI)",
+        "Acute Myocardial Infarction of Anterior Wall",
+        "Acute Myocardial Infarction With ST Elevation",
+        "Acute Myocardial Infarction of Left Ventricle",
+        "Acute Myocardial Infarction With ST Segment Elevation"
+      ],
+      "interventions": [
+        "Recombinant Human Thymosin Beta 4 Injection (NL005)",
+        "Placebo"
+      ],
+      "startDate": "2026-05-18",
+      "completionDate": "2027-08-17"
+    },
+    {
+      "id": "NCT07487363",
+      "title": "TB-500 (Thymosin Beta 4 17-23 Fragment) for Cardiovascular Biomarkers in Stable ASCVD",
+      "phase": "1/2",
+      "status": "recruiting",
+      "enrollment": 80,
+      "conditions": [
+        "Atherosclerotic Cardiovascular Diseases",
+        "Endothelial Dysfunction"
+      ],
+      "interventions": [
+        "TB-500",
+        "Placebo"
+      ],
+      "startDate": "2026-02-05",
+      "completionDate": "2027-02-14"
+    },
+    {
+      "id": "NCT05555589",
+      "title": "Assessment of the Safety and Efficacy of 0.1% RGN-259 Ophthalmic Solution for the Treatment of NK: SEER-2",
+      "phase": "3",
+      "status": "recruiting",
+      "enrollment": 70,
+      "conditions": [
+        "Neurotrophic Keratopathy"
+      ],
+      "interventions": [
+        "RGN-259",
+        "Placebo"
+      ],
+      "startDate": "2023-04-11",
+      "completionDate": "2026-04-30"
+    },
+    {
+      "id": "NCT05984134",
+      "title": "Efficacy and Safety Study of Thymosin Beta 4 in Patients With Acute Myocardial Infarction",
+      "phase": "2",
+      "status": "completed",
+      "enrollment": 90,
+      "conditions": [
+        "Acute Myocardial Infarction"
+      ],
+      "interventions": [
+        "NL005 Middle Dose",
+        "NL005 High Dose",
+        "Placebo"
+      ],
+      "startDate": "2022-07-15",
+      "completionDate": "2023-05-26"
+    },
+    {
+      "id": "NCT05485818",
+      "title": "Safety and Efficacy Study of Thymosin Beta 4 in Patients With Acute Myocardial Infarction.Infarction",
+      "phase": "2",
+      "status": "completed",
+      "enrollment": 62,
+      "conditions": [
+        "Acute Myocardial Infarction"
+      ],
+      "interventions": [
+        "Low Dose",
+        "Middle Dose",
+        "High Dose",
+        "Placebo"
+      ],
+      "startDate": "2020-11-23",
+      "completionDate": "2021-09-30"
+    },
+    {
+      "id": "NCT03937882",
+      "title": "Assessment of the Safety and Efficacy of RGN-259 Ophthalmic Solutions for Dry Eye Syndrome: ARISE-3",
+      "phase": "3",
+      "status": "completed",
+      "enrollment": 700,
+      "conditions": [
+        "Dry Eye Syndromes",
+        "Dry Eye"
+      ],
+      "interventions": [
+        "RGN-259",
+        "Placebo"
+      ],
+      "startDate": "2019-05-24",
+      "completionDate": "2020-11-08"
+    },
+    {
+      "id": "NCT04555850",
+      "title": "A Phase 1b Study of Thymosin Beta 4 in Healthy Volunteers",
+      "phase": "1",
+      "status": "completed",
+      "enrollment": 30,
+      "conditions": [
+        "Healthy"
+      ],
+      "interventions": [
+        "Recombinant Human Thymosin β4",
+        "Placebo"
+      ],
+      "startDate": "2018-07-30",
+      "completionDate": "2019-02-18"
+    },
+    {
+      "id": "NCT04555824",
+      "title": "A Phase 1a Study of Thymosin Beta 4 in Healthy Volunteers",
+      "phase": "1",
+      "status": "completed",
+      "enrollment": 54,
+      "conditions": [
+        "Healthy"
+      ],
+      "interventions": [
+        "Recombinant Human Thymosin β4",
+        "Placebo"
+      ],
+      "startDate": "2017-07-17",
+      "completionDate": "2018-02-20"
+    },
+    {
+      "id": "NCT02974907",
+      "title": "Assessment of the Safety and Efficacy of RGN-259 Ophthalmic Solutions for Dry Eye Syndrome : ARISE-2",
+      "phase": "3",
+      "status": "completed",
+      "enrollment": 601,
+      "conditions": [
+        "Dry Eye Syndrome"
+      ],
+      "interventions": [
+        "RGN-259",
+        "Placebo"
+      ],
+      "startDate": "2016-11",
+      "completionDate": "2017-09"
+    },
+    {
+      "id": "NCT02600429",
+      "title": "Assessment of the Safety and Efficacy Study of RGN-259 Ophthalmic Solutions for Neurotrophic Keratopathy : SEER-1",
+      "phase": "3",
+      "status": "terminated",
+      "enrollment": 18,
+      "conditions": [
+        "Neurotrophic Keratopathy"
+      ],
+      "interventions": [
+        "RGN-259",
+        "Placebo"
+      ],
+      "startDate": "2015-09-17",
+      "completionDate": "2019-11-20"
+    },
+    {
+      "id": "NCT02597803",
+      "title": "Assessment of the Safety and Efficacy of RGN-259 Ophthalmic Solutions for Dry Eye Syndrome: ARISE-1",
+      "phase": "2/3",
+      "status": "completed",
+      "enrollment": 317,
+      "conditions": [
+        "Dry Eye Syndrome"
+      ],
+      "interventions": [
+        "RGN-259",
+        "Placebo"
+      ],
+      "startDate": "2015-09",
+      "completionDate": "2016-06"
+    },
+    {
+      "id": "NCT02668055",
+      "title": "Slow-release Tb4 Collagen and Chitosan Porous Sponge Scaffolds Skin Substitute Treatment is Difficult to Heal Wounds",
+      "phase": "1",
+      "status": "completed",
+      "enrollment": 20,
+      "conditions": [
+        "Wounds"
+      ],
+      "interventions": [
+        "TB4"
+      ],
+      "startDate": "2012-01",
+      "completionDate": "2015-12"
+    },
+    {
+      "id": "NCT01393132",
+      "title": "Comparative Study of Thymosin Beta 4 Eye Drops vs. Vehicle in the Treatment of Severe Dry Eye",
+      "phase": "2",
+      "status": "completed",
+      "enrollment": 9,
+      "conditions": [
+        "Dry Eye",
+        "Sjogren's Syndrome",
+        "Graft vs. Host Disease"
+      ],
+      "interventions": [
+        "Thymosin Beta 4 eye drops",
+        "Vehicle Control"
+      ],
+      "startDate": "2011-03",
+      "completionDate": "2012-12"
+    },
+    {
+      "id": "NCT00743769",
+      "title": "A Phase 1 Safety Study of the Intravenous Administration of Thymosin Beta in Healthy Volunteers",
+      "phase": "1",
+      "status": "withdrawn",
+      "enrollment": 0,
+      "conditions": [
+        "Myocardial Infarction",
+        "Myocardial Ischemia"
+      ],
+      "interventions": [
+        "thymosin beta 4",
+        "Placebo"
+      ],
+      "startDate": "2008-04",
+      "completionDate": "2017-01-01"
+    },
+    {
+      "id": "NCT00598871",
+      "title": "A Phase 2 Study of the Safety and Efficacy of Thymosin Beta 4 for Treating Corneal Wounds",
+      "phase": "2",
+      "status": "terminated",
+      "enrollment": 12,
+      "conditions": [
+        "Diabetes"
+      ],
+      "interventions": [
+        "Thymosin Beta 4 (Tβ4)",
+        "Placebo"
+      ],
+      "startDate": "2007-12",
+      "completionDate": "2009-02"
+    },
+    {
+      "id": "NCT00382174",
+      "title": "Study of Thymosin Beta 4 in Patients With Pressure Ulcers",
+      "phase": "2",
+      "status": "completed",
+      "enrollment": 72,
+      "conditions": [
+        "Pressure Ulcers"
+      ],
+      "interventions": [
+        "Placebo",
+        "Thymosin Beta 4"
+      ],
+      "startDate": "2006-05",
+      "completionDate": "2008-12"
+    },
+    {
+      "id": "NCT00311766",
+      "title": "A Phase 2 Study on Effect of Thymosin Beta 4 on Wound Healing in Patients With Epidermolysis Bullosa",
+      "phase": "2",
+      "status": "terminated",
+      "enrollment": 30,
+      "conditions": [
+        "Epidermolysis Bullosa"
+      ],
+      "interventions": [
+        "Thymosin Beta 4",
+        "Placebo"
+      ],
+      "startDate": "2006-02",
+      "completionDate": "2010-07"
+    }
   ],
   "evidenceSummary": {
     "humanEvidence": "MODERATE",
@@ -389,7 +766,19 @@
     "preclinicalStudies": 20,
     "reviewArticles": 12,
     "openAccessCount": 14,
-    "regionsRepresented": ["USA", "Canada", "UK", "Germany", "Italy", "China", "South Korea", "Hong Kong", "Australia", "Japan"],
-    "lastUpdated": "2026-01-22"
-  }
+    "regionsRepresented": [
+      "USA",
+      "Canada",
+      "UK",
+      "Germany",
+      "Italy",
+      "China",
+      "South Korea",
+      "Hong Kong",
+      "Australia",
+      "Japan"
+    ],
+    "lastUpdated": "2026-05-31"
+  },
+  "trialsLastSynced": "2026-05-31"
 }

@@ -1,6 +1,10 @@
 {
   "peptide": "tirzepatide",
-  "aliases": ["LY3298176", "Mounjaro", "Zepbound"],
+  "aliases": [
+    "LY3298176",
+    "Mounjaro",
+    "Zepbound"
+  ],
   "generated": "2026-01-22",
   "category": "metabolic",
   "coreLibrary": {
@@ -438,23 +442,544 @@
     ]
   },
   "trials": [
-    {"id": "NCT04184622", "title": "SURMOUNT-1", "phase": "3", "status": "completed", "enrollment": 2539, "regions": ["US", "Argentina", "Brazil", "China", "India", "Japan", "Mexico", "Russia", "Taiwan"]},
-    {"id": "NCT04657003", "title": "SURMOUNT-2", "phase": "3", "status": "completed", "enrollment": 938, "regions": ["US", "Europe", "Latin America"]},
-    {"id": "NCT04657016", "title": "SURMOUNT-3", "phase": "3", "status": "completed", "enrollment": 579, "regions": ["US"]},
-    {"id": "NCT04660643", "title": "SURMOUNT-4", "phase": "3", "status": "completed", "enrollment": 670, "regions": ["US", "Europe", "Asia"]},
-    {"id": "NCT05822830", "title": "SURMOUNT-5", "phase": "3b", "status": "completed", "enrollment": 751, "regions": ["US", "Europe", "Japan", "Latin America"]},
-    {"id": "NCT05412004", "title": "SURMOUNT-OSA", "phase": "3", "status": "completed", "enrollment": 469, "regions": ["US", "Europe", "Australia", "East Asia"]},
-    {"id": "NCT03954834", "title": "SURPASS-1", "phase": "3", "status": "completed", "enrollment": 478, "regions": ["US", "India", "Japan", "Mexico", "Poland"]},
-    {"id": "NCT03987919", "title": "SURPASS-2", "phase": "3", "status": "completed", "enrollment": 1879, "regions": ["US", "Europe", "Asia-Pacific"]},
-    {"id": "NCT03882970", "title": "SURPASS-3", "phase": "3", "status": "completed", "enrollment": 1444, "regions": ["17 countries including Austria, Germany, UK, Spain, Italy"]},
-    {"id": "NCT03730662", "title": "SURPASS-4", "phase": "3", "status": "completed", "enrollment": 2002, "regions": ["14 countries with major EU enrollment"]},
-    {"id": "NCT04039503", "title": "SURPASS-5", "phase": "3", "status": "completed", "enrollment": 475, "regions": ["US", "Europe"]},
-    {"id": "NCT04255433", "title": "SURPASS-CVOT", "phase": "3", "status": "completed", "enrollment": 13299, "regions": ["24 countries globally"]},
-    {"id": "NCT04847557", "title": "SUMMIT (HFpEF)", "phase": "3", "status": "completed", "enrollment": 731, "regions": ["US", "Europe", "Japan", "Australia"]},
-    {"id": "NCT05556512", "title": "SURMOUNT-MMO", "phase": "3", "status": "recruiting", "enrollment": 15000, "regions": ["Global - 30+ countries"]},
-    {"id": "jRCT2031210504", "title": "SURPASS J-mono", "phase": "3", "status": "completed", "enrollment": 636, "regions": ["Japan"]},
-    {"id": "jRCT2031210505", "title": "SURPASS J-combo", "phase": "3", "status": "completed", "enrollment": 443, "regions": ["Japan"]},
-    {"id": "CTR20211515", "title": "China Phase 1 PK", "phase": "1", "status": "completed", "enrollment": 128, "regions": ["China"]}
+    {
+      "id": "NCT04184622",
+      "title": "SURMOUNT-1",
+      "phase": "3",
+      "status": "completed",
+      "enrollment": 2539,
+      "regions": [
+        "US",
+        "Argentina",
+        "Brazil",
+        "China",
+        "India",
+        "Japan",
+        "Mexico",
+        "Russia",
+        "Taiwan"
+      ],
+      "conditions": [
+        "Overweight",
+        "Obesity"
+      ],
+      "interventions": [
+        "Tirzepatide",
+        "Placebo"
+      ],
+      "startDate": "2019-12-04",
+      "completionDate": "2022-04-01"
+    },
+    {
+      "id": "NCT04657003",
+      "title": "SURMOUNT-2",
+      "phase": "3",
+      "status": "completed",
+      "enrollment": 938,
+      "regions": [
+        "US",
+        "Europe",
+        "Latin America"
+      ],
+      "conditions": [
+        "Type 2 Diabetes",
+        "Overweight",
+        "Obesity"
+      ],
+      "interventions": [
+        "Tirzepatide",
+        "Placebo"
+      ],
+      "startDate": "2021-03-29",
+      "completionDate": "2023-03-16"
+    },
+    {
+      "id": "NCT04657016",
+      "title": "SURMOUNT-3",
+      "phase": "3",
+      "status": "completed",
+      "enrollment": 579,
+      "regions": [
+        "US"
+      ],
+      "conditions": [
+        "Obesity",
+        "Overweight"
+      ],
+      "interventions": [
+        "Tirzepatide",
+        "Placebo"
+      ],
+      "startDate": "2021-03-29",
+      "completionDate": "2023-04-20"
+    },
+    {
+      "id": "NCT04660643",
+      "title": "SURMOUNT-4",
+      "phase": "3",
+      "status": "completed",
+      "enrollment": 783,
+      "regions": [
+        "US",
+        "Europe",
+        "Asia"
+      ],
+      "conditions": [
+        "Obesity",
+        "Overweight"
+      ],
+      "interventions": [
+        "Tirzepatide",
+        "Placebo"
+      ],
+      "startDate": "2021-03-29",
+      "completionDate": "2023-04-25"
+    },
+    {
+      "id": "NCT05822830",
+      "title": "SURMOUNT-5",
+      "phase": "3",
+      "status": "completed",
+      "enrollment": 751,
+      "regions": [
+        "US",
+        "Europe",
+        "Japan",
+        "Latin America"
+      ],
+      "conditions": [
+        "Obesity",
+        "Overweight"
+      ],
+      "interventions": [
+        "Tirzepatide",
+        "Semaglutide"
+      ],
+      "startDate": "2023-04-21",
+      "completionDate": "2024-11-13"
+    },
+    {
+      "id": "NCT05412004",
+      "title": "SURMOUNT-OSA",
+      "phase": "3",
+      "status": "completed",
+      "enrollment": 469,
+      "regions": [
+        "US",
+        "Europe",
+        "Australia",
+        "East Asia"
+      ],
+      "conditions": [
+        "Obstructive Sleep Apnea",
+        "Obesity"
+      ],
+      "interventions": [
+        "Tirzepatide",
+        "Placebo"
+      ],
+      "startDate": "2022-06-21",
+      "completionDate": "2024-03-12"
+    },
+    {
+      "id": "NCT03954834",
+      "title": "SURPASS-1",
+      "phase": "3",
+      "status": "completed",
+      "enrollment": 478,
+      "regions": [
+        "US",
+        "India",
+        "Japan",
+        "Mexico",
+        "Poland"
+      ],
+      "conditions": [
+        "Type 2 Diabetes Mellitus"
+      ],
+      "interventions": [
+        "Tirzepatide",
+        "Placebo"
+      ],
+      "startDate": "2019-06-03",
+      "completionDate": "2020-10-05"
+    },
+    {
+      "id": "NCT03987919",
+      "title": "SURPASS-2",
+      "phase": "3",
+      "status": "completed",
+      "enrollment": 1879,
+      "regions": [
+        "US",
+        "Europe",
+        "Asia-Pacific"
+      ],
+      "conditions": [
+        "Type 2 Diabetes"
+      ],
+      "interventions": [
+        "Tirzepatide",
+        "Semaglutide"
+      ],
+      "startDate": "2019-07-30",
+      "completionDate": "2021-01-28"
+    },
+    {
+      "id": "NCT03882970",
+      "title": "SURPASS-3",
+      "phase": "3",
+      "status": "completed",
+      "enrollment": 1444,
+      "regions": [
+        "17 countries including Austria, Germany, UK, Spain, Italy"
+      ],
+      "conditions": [
+        "Type 2 Diabetes Mellitus"
+      ],
+      "interventions": [
+        "Tirzepatide",
+        "Insulin Degludec"
+      ],
+      "startDate": "2019-04-01",
+      "completionDate": "2020-12-11"
+    },
+    {
+      "id": "NCT03730662",
+      "title": "SURPASS-4",
+      "phase": "3",
+      "status": "completed",
+      "enrollment": 2002,
+      "regions": [
+        "14 countries with major EU enrollment"
+      ],
+      "conditions": [
+        "Type 2 Diabetes Mellitus"
+      ],
+      "interventions": [
+        "Tirzepatide",
+        "Insulin Glargine"
+      ],
+      "startDate": "2018-11-20",
+      "completionDate": "2021-01-22"
+    },
+    {
+      "id": "NCT04039503",
+      "title": "SURPASS-5",
+      "phase": "3",
+      "status": "completed",
+      "enrollment": 475,
+      "regions": [
+        "US",
+        "Europe"
+      ],
+      "conditions": [
+        "Type 2 Diabetes"
+      ],
+      "interventions": [
+        "Tirzepatide",
+        "Placebo"
+      ],
+      "startDate": "2019-08-30",
+      "completionDate": "2020-12-22"
+    },
+    {
+      "id": "NCT04255433",
+      "title": "SURPASS-CVOT",
+      "phase": "3",
+      "status": "completed",
+      "enrollment": 13299,
+      "regions": [
+        "24 countries globally"
+      ],
+      "conditions": [
+        "Type 2 Diabetes Mellitus"
+      ],
+      "interventions": [
+        "Tirzepatide",
+        "Dulaglutide"
+      ],
+      "startDate": "2020-05-29",
+      "completionDate": "2025-06-12"
+    },
+    {
+      "id": "NCT04847557",
+      "title": "SUMMIT (HFpEF)",
+      "phase": "3",
+      "status": "completed",
+      "enrollment": 731,
+      "regions": [
+        "US",
+        "Europe",
+        "Japan",
+        "Australia"
+      ],
+      "conditions": [
+        "Obesity",
+        "Heart Failure With Preserved Ejection Fraction (HFpEF)"
+      ],
+      "interventions": [
+        "Tirzepatide",
+        "Placebo"
+      ],
+      "startDate": "2021-04-20",
+      "completionDate": "2024-07-02"
+    },
+    {
+      "id": "NCT05556512",
+      "title": "SURMOUNT-MMO",
+      "phase": "3",
+      "status": "active",
+      "enrollment": 15374,
+      "regions": [
+        "Global - 30+ countries"
+      ],
+      "conditions": [
+        "Obesity",
+        "Overweight"
+      ],
+      "interventions": [
+        "Tirzepatide",
+        "Placebo"
+      ],
+      "startDate": "2022-10-11",
+      "completionDate": "2027-10"
+    },
+    {
+      "id": "jRCT2031210504",
+      "title": "SURPASS J-mono",
+      "phase": "3",
+      "status": "completed",
+      "enrollment": 636,
+      "regions": [
+        "Japan"
+      ]
+    },
+    {
+      "id": "jRCT2031210505",
+      "title": "SURPASS J-combo",
+      "phase": "3",
+      "status": "completed",
+      "enrollment": 443,
+      "regions": [
+        "Japan"
+      ]
+    },
+    {
+      "id": "CTR20211515",
+      "title": "China Phase 1 PK",
+      "phase": "1",
+      "status": "completed",
+      "enrollment": 128,
+      "regions": [
+        "China"
+      ]
+    },
+    {
+      "id": "NCT07027969",
+      "title": "Metabolic Surgery for Atrial Fibrillation Elimination",
+      "phase": "4",
+      "status": "not yet recruiting",
+      "enrollment": 100,
+      "conditions": [
+        "Atrial Fibrillation",
+        "Obesity and Obesity-related Medical Conditions"
+      ],
+      "interventions": [
+        "Roux-en-Y Gastric Bypass or Sleeve Gastrectomy",
+        "Anti-Obesity Medication (AOM) treatment"
+      ],
+      "startDate": "2026-11-01",
+      "completionDate": "2029-12-31"
+    },
+    {
+      "id": "NCT07298915",
+      "title": "The Effect of Exercise and Tirzepatide on Weight and Health Outcomes (EXER-MED)",
+      "phase": "3",
+      "status": "not yet recruiting",
+      "enrollment": 24,
+      "conditions": [
+        "Obesity & Overweight"
+      ],
+      "interventions": [
+        "Tirzepatide",
+        "Exercise"
+      ],
+      "startDate": "2026-08",
+      "completionDate": "2026-12"
+    },
+    {
+      "id": "NCT07588438",
+      "title": "Efficacy, Safety, and Tolerability of Tirzepatide in Real-World Conditions in Paraguay.",
+      "phase": "4",
+      "status": "recruiting",
+      "enrollment": 160,
+      "conditions": [
+        "Obesity",
+        "Diabetes Mellitus, Type 2"
+      ],
+      "interventions": [
+        "Tirzepatide (LIPOLESS de Laboratorio de Productos Eticos C.E.I.S.A.)"
+      ],
+      "startDate": "2026-07-27",
+      "completionDate": "2027-08-10"
+    },
+    {
+      "id": "NCT07554638",
+      "title": "Incretin Therapies in Obesity-related HFpEF",
+      "phase": "4",
+      "status": "not yet recruiting",
+      "enrollment": 50,
+      "conditions": [
+        "Heart Failure, Diastolic",
+        "Heart Failure With Preserved Ejection Fraction",
+        "Obesity"
+      ],
+      "interventions": [
+        "Tirzepatide"
+      ],
+      "startDate": "2026-06",
+      "completionDate": "2029-04"
+    },
+    {
+      "id": "NCT07284511",
+      "title": "A Clinical Trial Using Tirzepatide to Help Adults With Type 1 Diabetes Automatically Control Their Blood Sugar",
+      "phase": "2/3",
+      "status": "recruiting",
+      "enrollment": 105,
+      "conditions": [
+        "Type 1 Diabetes",
+        "Type 1 Diabetes Mellitus",
+        "T1D",
+        "T1DM",
+        "T1DM - Type 1 Diabetes Mellitus"
+      ],
+      "interventions": [
+        "Tirzepatide",
+        "Tandem Control-IQ Automated Insulin Delivery System (with Dexcom G7 CGM)",
+        "Carbohydrate Counting",
+        "No Meal Announcement"
+      ],
+      "startDate": "2026-05-19",
+      "completionDate": "2028-01"
+    },
+    {
+      "id": "NCT07555730",
+      "title": "AI-assisted Multi-domain Lifestyle Versus Tirzepatide for Weight Loss Maintenance in Adults With Type 2 Diabetes (AIM-MAINTAIN)",
+      "phase": "4",
+      "status": "not yet recruiting",
+      "enrollment": 400,
+      "conditions": [
+        "Overweight or Obesity; Type 2 Diabetes",
+        "Weight Loss Maintenance"
+      ],
+      "interventions": [
+        "AI assisted multi-domain lifestyle intervention",
+        "Tirzepatide"
+      ],
+      "startDate": "2026-04-30",
+      "completionDate": "2028-09-30"
+    },
+    {
+      "id": "NCT07257484",
+      "title": "Tirzepatide's Role in Postmenopausal HR+ Breast Cancer Survivors",
+      "phase": "4",
+      "status": "not yet recruiting",
+      "enrollment": 30,
+      "conditions": [
+        "Obesity (Disorder)",
+        "Breast Cancer"
+      ],
+      "interventions": [
+        "Tirzepatide"
+      ],
+      "startDate": "2026-04-06",
+      "completionDate": "2027-10-06"
+    },
+    {
+      "id": "NCT07218445",
+      "title": "The Effect of Tirzepatide on Menopausal Vasomotor Symptoms and Biological Aging in Post-menopausal Women With Obesity",
+      "phase": "4",
+      "status": "recruiting",
+      "enrollment": 40,
+      "conditions": [
+        "Obesity",
+        "Menopause Hot Flashes"
+      ],
+      "interventions": [
+        "Tirzepatide",
+        "Placebo"
+      ],
+      "startDate": "2026-04",
+      "completionDate": "2027-09-18"
+    },
+    {
+      "id": "NCT07483801",
+      "title": "DECODE - Haemodynamic Effects Of Semaglutide and Tirzepatide - a Series of Pilot Studies",
+      "phase": "4",
+      "status": "not yet recruiting",
+      "enrollment": 112,
+      "conditions": [
+        "Cardiovascular Diseases"
+      ],
+      "interventions": [
+        "semaglutide",
+        "Tirzepatide"
+      ],
+      "startDate": "2026-03",
+      "completionDate": "2027-04"
+    },
+    {
+      "id": "NCT07438444",
+      "title": "A Study of Tirzepatide (LY3298176) in Adult Participants in India With Either Type 2 Diabetes Mellitus or Obesity",
+      "phase": "4",
+      "status": "recruiting",
+      "enrollment": 344,
+      "conditions": [
+        "Diabetes Mellitus, Type 2",
+        "Obesity",
+        "Overweight"
+      ],
+      "interventions": [
+        "Tirzepatide"
+      ],
+      "startDate": "2026-02-27",
+      "completionDate": "2027-10"
+    },
+    {
+      "id": "NCT07481747",
+      "title": "Efficacy and Safety of Tirzepatide Once Weekly Versus Placebo in Participants Who Are Either Obese or Overweight With Weight-Related Comorbidities (SURMOUNT-1)",
+      "phase": "3",
+      "status": "recruiting",
+      "enrollment": 2539,
+      "conditions": [
+        "Obesity",
+        "Overweight (Without Type 2 Diabetes) With Weight-related Comorbidities"
+      ],
+      "interventions": [
+        "Tirzepatide",
+        "Placebo",
+        "Reduced-calorie diet"
+      ],
+      "startDate": "2026-02-02",
+      "completionDate": "2027-02-14"
+    },
+    {
+      "id": "NCT07191873",
+      "title": "Tirzepatide in Idiopathic Intracranial Hypertension Trial",
+      "phase": "4",
+      "status": "not yet recruiting",
+      "enrollment": 60,
+      "conditions": [
+        "Idiopathic Intracranial Hypertension (IIH)"
+      ],
+      "interventions": [
+        "Tirzepatide",
+        "Tirzepatide Placebo"
+      ],
+      "startDate": "2026-02",
+      "completionDate": "2027-02"
+    }
   ],
   "evidenceSummary": {
     "humanEvidence": "HIGH",
@@ -466,7 +991,27 @@
     "humanStudies": 38,
     "preclinicalStudies": 4,
     "openAccessCount": 38,
-    "regionsCovered": ["USA", "Canada", "Europe (EU)", "UK", "Japan", "China", "South Korea", "Taiwan", "India", "Australia", "Latin America"],
-    "regulatoryAgencies": ["FDA", "EMA", "PMDA", "TGA", "Health Canada"]
-  }
+    "regionsCovered": [
+      "USA",
+      "Canada",
+      "Europe (EU)",
+      "UK",
+      "Japan",
+      "China",
+      "South Korea",
+      "Taiwan",
+      "India",
+      "Australia",
+      "Latin America"
+    ],
+    "regulatoryAgencies": [
+      "FDA",
+      "EMA",
+      "PMDA",
+      "TGA",
+      "Health Canada"
+    ],
+    "lastUpdated": "2026-05-31"
+  },
+  "trialsLastSynced": "2026-05-31"
 }

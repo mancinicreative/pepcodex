@@ -1,6 +1,12 @@
 {
   "peptide": "bpc-157",
-  "aliases": ["Body Protection Compound 157", "PL 14736", "PL-10", "Pentadecapeptide BPC 157", "Bepecin"],
+  "aliases": [
+    "Body Protection Compound 157",
+    "PL 14736",
+    "PL-10",
+    "Pentadecapeptide BPC 157",
+    "Bepecin"
+  ],
   "generated": "2026-01-22",
   "category": "repair-recovery",
   "coreLibrary": {
@@ -363,11 +369,20 @@
       "id": "NCT02637284",
       "title": "Safety, Tolerability and Pharmacokinetics of Single and Multiple Ascending Doses of PL 14736 in Healthy Male Subjects",
       "phase": "1",
-      "status": "terminated",
+      "status": "unknown",
       "enrollment": 42,
       "sponsor": "Diagen Ltd",
       "location": "Europe",
-      "notes": "Cancelled in 2016; no results ever published; enrollment completed but data not disclosed"
+      "notes": "Cancelled in 2016; no results ever published; enrollment completed but data not disclosed",
+      "conditions": [
+        "Healthy Volunteers"
+      ],
+      "interventions": [
+        "Bepecin",
+        "Placebo"
+      ],
+      "startDate": "2015-10",
+      "completionDate": "2016-02"
     },
     {
       "id": "PLIVA-IBD-Trials",
@@ -377,6 +392,23 @@
       "sponsor": "Pliva (Croatia)",
       "location": "Croatia",
       "notes": "Referenced in 2006 review paper; UC and Crohn's trials mentioned; full data never published"
+    },
+    {
+      "id": "NCT07437547",
+      "title": "BPC 157 for Acute Hamstring Muscle Strain Repair",
+      "phase": "2",
+      "status": "recruiting",
+      "enrollment": 120,
+      "conditions": [
+        "Hamstring Muscle Strain",
+        "Skeletal Muscle Injury"
+      ],
+      "interventions": [
+        "Pentadecapeptide BPC 157",
+        "Placebo"
+      ],
+      "startDate": "2026-02-02",
+      "completionDate": "2027-02-14"
     }
   ],
   "evidenceSummary": {
@@ -410,6 +442,8 @@
       "usa": 3,
       "uk": 1,
       "international": 4
-    }
-  }
+    },
+    "lastUpdated": "2026-05-31"
+  },
+  "trialsLastSynced": "2026-05-31"
 }

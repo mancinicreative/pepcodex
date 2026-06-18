@@ -1,0 +1,2363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BPC-157 · Source-close Dossier Preview · PepCodex</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:           #F6F1E7;
+  --bg-grad:      radial-gradient(ellipse 80% 60% at 20% 0%, oklch(0.78 0.04 70 / 0.30), transparent 60%),
+                  radial-gradient(ellipse 70% 50% at 100% 100%, oklch(0.82 0.05 55 / 0.20), transparent 60%),
+                  #F6F1E7;
+  --paper:        #FBF7EE;
+  --paper-2:      #EFE8D8;
+  --paper-3:      #E0D7C2;
+  --border:       #DBD2BC;
+  --border-strong:#BFB59C;
+  --rule:         #E5DBC4;
+
+  --ink:          #1F1A12;
+  --ink-muted:    #5C5341;
+  --ink-dim:      #8E8567;
+  --ink-paper:    #FBF7EE;
+
+  --primary:        oklch(0.42 0.10 245);
+  --primary-deep:   oklch(0.30 0.10 245);
+  --primary-soft:   oklch(0.42 0.10 245 / 0.10);
+  --primary-border: oklch(0.42 0.10 245 / 0.26);
+
+  --primary-grad:      linear-gradient(135deg, oklch(0.50 0.11 248) 0%, oklch(0.34 0.09 240) 100%);
+  --primary-grad-deep: linear-gradient(135deg, oklch(0.30 0.10 245) 0%, oklch(0.20 0.07 235) 100%);
+  --hero-grad:         linear-gradient(135deg, oklch(0.42 0.10 245) 0%, oklch(0.46 0.08 200) 100%);
+  --positive-grad:     linear-gradient(135deg, oklch(0.62 0.12 152) 0%, oklch(0.44 0.10 168) 100%);
+  --warning-grad:      linear-gradient(135deg, oklch(0.78 0.14 78) 0%, oklch(0.58 0.13 42) 100%);
+  --danger-grad:       linear-gradient(135deg, oklch(0.62 0.17 32) 0%, oklch(0.46 0.16 6) 100%);
+
+  --recovery:        oklch(0.54 0.08 70);
+  --recovery-soft:   oklch(0.54 0.08 70 / 0.14);
+  --recovery-border: oklch(0.54 0.08 70 / 0.36);
+
+  --amber:         oklch(0.66 0.13 60);
+  --amber-soft:    oklch(0.66 0.13 60 / 0.16);
+  --amber-border:  oklch(0.66 0.13 60 / 0.34);
+  --amber-grad:    linear-gradient(135deg, oklch(0.78 0.14 78) 0%, oklch(0.58 0.13 42) 100%);
+
+  --bad:           oklch(0.54 0.16 22);
+  --bad-soft:      oklch(0.54 0.16 22 / 0.10);
+
+  --sans: "Inter", -apple-system, system-ui, sans-serif;
+  --mono: "JetBrains Mono", "SF Mono", ui-monospace, Menlo, monospace;
+
+  --shadow-card: 0 1px 0 rgba(31,26,18,0.02), 0 2px 6px rgba(31,26,18,0.04);
+  --shadow-raise: 0 12px 30px rgba(31,26,18,0.10);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg-grad);
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  line-height: 1.55;
+}
+a { color: inherit; text-decoration: none; }
+.mono-label, .eyebrow {
+  font-family: var(--mono);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 1.6px; text-transform: uppercase;
+  color: var(--ink-muted);
+}
+.mono-label.s { font-size: 10px; letter-spacing: 1.4px; }
+
+/* ───── MASTHEAD (compact) ───── */
+.masthead {
+  border-top: 3px solid var(--ink);
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in oklch, var(--bg) 92%, transparent);
+  position: relative;
+}
+.masthead::after {
+  content:""; position: absolute;
+  left: 0; right: 0; bottom: -3px;
+  height: 1px; background: var(--ink);
+}
+.masthead-inner {
+  max-width: 1240px; margin: 0 auto;
+  padding: 14px 32px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 24px;
+}
+.masthead-left, .masthead-right {
+  display: flex; align-items: center; gap: 22px;
+  font-family: var(--mono); font-size: 11px; font-weight: 700;
+  letter-spacing: 1.6px; text-transform: uppercase; color: var(--ink-muted);
+}
+.masthead-right { justify-content: flex-end; }
+.masthead-left a:hover, .masthead-right a:hover { color: var(--ink); }
+.masthead-title {
+  text-align: center;
+  font-family: var(--sans); font-weight: 800;
+  font-size: 18px; letter-spacing: -0.4px;
+  display: inline-flex; align-items: center; gap: 14px;
+}
+.masthead-title .fleur {
+  font-family: "Times New Roman", "Times", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--amber);
+  transform: translateY(-1px);
+  letter-spacing: 0;
+}
+
+/* Sub-rule with breadcrumb */
+.dateline {
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in oklch, var(--bg) 96%, transparent);
+}
+.dateline-inner {
+  max-width: 1240px; margin: 0 auto;
+  padding: 8px 32px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 1.6px; text-transform: uppercase; color: var(--ink-muted);
+}
+.crumbs { display: flex; align-items: center; gap: 10px; }
+.crumbs a:hover { color: var(--ink); }
+.crumbs .sep { color: var(--ink-dim); }
+.crumbs .here { color: var(--ink); }
+
+.util-row { display: flex; gap: 8px; }
+.util {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 8px; border: 1px solid var(--border); border-radius: 6px;
+  background: var(--paper);
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 1.3px; text-transform: uppercase; color: var(--ink-muted);
+}
+.util:hover { color: var(--ink); border-color: var(--border-strong); }
+
+/* ───── NOW-READING TICKER ───── */
+.now-reading {
+  border-bottom: 1px solid var(--border);
+  background: var(--paper);
+}
+.now-reading-inner {
+  max-width: 1240px; margin: 0 auto;
+  padding: 10px 32px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 20px;
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 1.4px; text-transform: uppercase;
+}
+.now-reading-tag {
+  display: inline-flex; align-items: center; gap: 8px; color: var(--ink);
+}
+.now-reading-tag .pulse {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--good, oklch(0.50 0.11 158));
+  box-shadow: 0 0 0 3px oklch(0.50 0.11 158 / 0.20);
+  animation: nr-pulse 2s ease-in-out infinite;
+}
+@keyframes nr-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+.now-reading-list {
+  display: flex; gap: 28px;
+  overflow: hidden; white-space: nowrap;
+  color: var(--ink-muted);
+  mask-image: linear-gradient(90deg, transparent 0, #000 4%, #000 96%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 4%, #000 96%, transparent 100%);
+}
+.now-reading-list .item {
+  display: inline-flex; align-items: center; gap: 10px; flex-shrink: 0;
+}
+.now-reading-list .item .v {
+  font-family: var(--sans); font-weight: 700; color: var(--ink);
+  letter-spacing: 0; font-size: 13px; text-transform: none;
+}
+.now-reading-list .item .v.italic {
+  font-style: italic; font-weight: 500;
+}
+.now-reading-list .dot {
+  width: 4px; height: 4px; border-radius: 50%; background: var(--ink-dim);
+}
+.now-reading-more { color: var(--ink-muted); }
+.now-reading-more:hover { color: var(--ink); }
+
+/* ───── RECORD NAV + DECISION STRIP ───── */
+.record-jump {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in oklch, var(--paper) 90%, transparent);
+  backdrop-filter: blur(16px);
+}
+.record-jump-inner {
+  max-width: 1240px; margin: 0 auto;
+  padding: 8px 32px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.record-jump .label {
+  font-family: var(--mono); font-size: 10px; font-weight: 800;
+  letter-spacing: 1.4px; text-transform: uppercase; color: var(--ink-dim);
+}
+.jump-links { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+.jump-links::-webkit-scrollbar { display: none; }
+.jump-links a {
+  min-height: 36px;
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink-muted);
+  font-family: var(--mono); font-size: 10px; font-weight: 800;
+  letter-spacing: 1.2px; text-transform: uppercase;
+  white-space: nowrap;
+}
+.jump-links a:hover { color: var(--ink); border-color: var(--border-strong); transform: translateY(-1px); }
+.decision-strip {
+  max-width: 1240px; margin: 0 auto;
+  padding: 0 32px 30px;
+  display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(260px, .8fr);
+  gap: 16px;
+}
+.decision-card {
+  border: 1px solid var(--border-strong);
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--paper) 0%, var(--paper-2) 100%);
+  box-shadow: var(--shadow-card);
+  padding: 18px;
+}
+.decision-card.primary {
+  display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 16px; align-items: start;
+  border-top: 3px solid var(--ink);
+}
+.decision-mark {
+  width: 54px; height: 54px; border-radius: 16px;
+  background: var(--ink); color: var(--ink-paper);
+  display: grid; place-items: center;
+  font-size: 26px; font-weight: 900; letter-spacing: -.08em;
+}
+.decision-card h2 { margin: 0 0 8px; font-size: clamp(22px, 2.2vw, 34px); line-height: 1.02; letter-spacing: -1px; }
+.decision-card p { margin: 0; color: var(--ink-muted); }
+.decision-meta {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 14px;
+}
+.decision-meta span {
+  border: 1px solid var(--border); border-radius: 12px;
+  background: color-mix(in oklch, var(--paper) 70%, var(--paper-2));
+  padding: 10px;
+  font-family: var(--mono); font-size: 10px; font-weight: 800; letter-spacing: 1.1px; text-transform: uppercase;
+  color: var(--ink-muted);
+}
+.decision-meta strong { display: block; margin-top: 4px; font-family: var(--sans); font-size: 18px; letter-spacing: -.04em; color: var(--ink); text-transform: none; }
+.app-boundary-mini { display: flex; flex-direction: column; gap: 12px; }
+.app-boundary-mini .cta-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.button-mini {
+  min-height: 40px; display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 999px; padding: 0 14px;
+  border: 1px solid var(--ink); background: var(--ink); color: var(--ink-paper);
+  font-family: var(--mono); font-size: 10px; font-weight: 800; letter-spacing: 1.1px; text-transform: uppercase;
+}
+.button-mini.secondary { background: transparent; color: var(--ink); border-color: var(--border-strong); }
+
+/* ───── RECORD BANNER ───── */
+.sheet-head {
+  max-width: 1240px; margin: 0 auto;
+  padding: 40px 32px 24px;
+  position: relative;
+}
+.record-banner {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 32px;
+  align-items: end;
+  padding-bottom: 18px;
+  border-bottom: 2px solid var(--ink);
+}
+.record-banner .record-no {
+  font-family: var(--sans); font-style: italic; font-weight: 800;
+  font-size: 22px; letter-spacing: -0.2px; color: var(--ink);
+}
+.record-banner .record-no .roman {
+  background: var(--hero-grad);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.record-banner .center-label {
+  text-align: center;
+  font-family: var(--mono); font-size: 11px; font-weight: 700;
+  letter-spacing: 2.4px; text-transform: uppercase; color: var(--ink-muted);
+}
+.record-banner .drawer-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--mono); font-size: 11px; font-weight: 700;
+  letter-spacing: 1.6px; text-transform: uppercase;
+  padding: 6px 10px; border-radius: 6px;
+  background: var(--recovery-soft); border: 1px solid var(--recovery-border);
+  color: var(--recovery);
+}
+.record-banner .drawer-tag .letter {
+  width: 16px; height: 16px;
+  border-radius: 3px;
+  background: var(--positive-grad);
+  color: var(--ink-paper);
+  display: grid; place-items: center;
+  font-size: 9px; font-weight: 700;
+}
+.record-banner .entry-no {
+  font-family: var(--mono); font-size: 11px; font-weight: 700;
+  letter-spacing: 1.6px; color: var(--ink-muted);
+}
+
+/* ───── TITLE BLOCK ───── */
+.title-block {
+  max-width: 1240px; margin: 0 auto;
+  padding: 24px 32px 48px;
+}
+.title-block .title-row {
+  display: grid;
+  grid-template-columns: 1.4fr 0.7fr;
+  gap: 48px;
+  align-items: end;
+}
+.title-block .h1-row {
+  display: flex; align-items: baseline; gap: 24px;
+}
+.title-block h1 {
+  max-width: 820px;
+  font-size: clamp(54px, 6.8vw, 104px);
+  font-weight: 800;
+  letter-spacing: -3.2px;
+  line-height: 0.92;
+  margin: 0;
+  text-wrap: balance;
+}
+.title-block h1 .accent {
+  background: var(--hero-grad);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+  font-style: italic;
+}
+.title-block .latin-name {
+  font-family: var(--sans); font-style: italic;
+  font-size: 19px; font-weight: 500;
+  color: var(--ink-muted);
+  margin-top: 18px;
+  letter-spacing: 0;
+  max-width: 540px;
+  line-height: 1.45;
+}
+.title-block .aliases {
+  font-family: var(--mono); font-size: 12px; font-weight: 500;
+  color: var(--ink-dim); letter-spacing: 0.4px; margin-top: 12px;
+}
+/* Verdict capsule */
+.verdict {
+  display: flex; flex-direction: column; gap: 14px;
+  padding: 18px 20px;
+  background: var(--paper); border: 1px solid var(--border-strong);
+  border-radius: 14px; position: relative;
+  box-shadow: var(--shadow-card);
+}
+.verdict::before {
+  content:""; position: absolute;
+  top: 0; left: 0; right: 0; height: 4px;
+  background: var(--amber-grad);
+}
+.verdict .v-head {
+  font-family: var(--mono); font-size: 11px; font-weight: 700;
+  letter-spacing: 1.6px; text-transform: uppercase; color: var(--ink-muted);
+}
+.verdict .grade {
+  display: flex; align-items: baseline; gap: 14px;
+}
+.verdict .grade .dots {
+  display: inline-flex; gap: 5px;
+}
+.verdict .grade .d {
+  width: 13px; height: 13px; border-radius: 50%;
+  border: 2px solid var(--ink); background: transparent;
+}
+.verdict .grade .d.on { background: var(--ink); }
+.verdict .grade .label {
+  font-family: var(--sans); font-size: 22px; font-weight: 800;
+  letter-spacing: -0.3px; color: var(--ink);
+}
+.verdict .grade .label .sub {
+  display: block; font-family: var(--mono); font-size: 10px;
+  font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase;
+  color: var(--ink-muted); margin-top: 4px;
+}
+.verdict-bars { display: flex; flex-direction: column; gap: 8px; padding-top: 14px; border-top: 1px dashed var(--rule); }
+.bar-mini {
+  display: grid; grid-template-columns: 90px 1fr 36px;
+  align-items: center; gap: 12px;
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 1.2px; color: var(--ink-muted); text-transform: uppercase;
+}
+.bar-mini .track {
+  height: 6px; background: var(--paper-2); border: 1px solid var(--rule); border-radius: 999px; overflow: hidden;
+}
+.bar-mini .fill { height: 100%; border-radius: 999px; }
+.bar-mini.preclinical .fill { background: var(--primary-grad); width: 78%; }
+.bar-mini.clinical .fill { background: var(--positive-grad); width: 4%; }
+.bar-mini.safety .fill { background: var(--positive-grad); width: 56%; }
+.bar-mini .v { color: var(--ink); text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ───── SPECIMEN RECORD — the centerpiece ───── */
+.specimen-record {
+  max-width: 1240px; margin: 0 auto;
+  padding: 0 32px 80px;
+}
+.plate-frame {
+  background: var(--paper);
+  border: 1px solid var(--border-strong);
+  border-radius: 18px;
+  padding: 28px 32px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 36px;
+  position: relative;
+}
+.plate-frame .corner {
+  position: absolute;
+  width: 18px; height: 18px;
+  border: 1.5px solid var(--ink-muted);
+  opacity: 0.4;
+}
+.plate-frame .corner.tl { top: 10px; left: 10px; border-right: 0; border-bottom: 0; }
+.plate-frame .corner.tr { top: 10px; right: 10px; border-left: 0; border-bottom: 0; }
+.plate-frame .corner.bl { bottom: 10px; left: 10px; border-right: 0; border-top: 0; }
+.plate-frame .corner.br { bottom: 10px; right: 10px; border-left: 0; border-top: 0; }
+
+.plate-illus-col {
+  display: flex; flex-direction: column;
+  gap: 16px;
+}
+.plate-illus-frame {
+  flex: 1;
+  background: var(--paper-2);
+  border: 1px dashed var(--border-strong);
+  border-radius: 12px;
+  padding: 24px;
+  display: grid; place-items: center;
+  position: relative;
+  min-height: 380px;
+}
+.plate-illus-frame .placeholder-label {
+  position: absolute;
+  bottom: 14px; left: 16px;
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 1.4px; text-transform: uppercase; color: var(--ink-dim);
+}
+.plate-illus-frame .scale {
+  position: absolute;
+  top: 14px; right: 16px;
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 1.2px; color: var(--ink-dim);
+}
+.plate-illus-frame svg { width: 100%; height: 100%; max-height: 360px; }
+
+.plate-caption {
+  font-family: var(--sans); font-style: italic;
+  font-size: 13px; line-height: 1.55; color: var(--ink-muted);
+  text-align: center; padding: 0 24px;
+}
+.plate-caption strong { color: var(--ink); font-style: normal; font-weight: 700; }
+
+/* Right side — labelled spec sheet */
+.spec-sheet {
+  display: flex; flex-direction: column; gap: 18px;
+}
+.spec-sheet h3 {
+  font-size: 13px;
+  font-family: var(--mono);
+  font-weight: 700; letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin: 0 0 4px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--rule);
+}
+.spec-rows {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 20px;
+  align-items: baseline;
+  font-size: 14px;
+}
+.spec-rows .k {
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 1.4px; text-transform: uppercase; color: var(--ink-dim);
+  white-space: nowrap;
+}
+.spec-rows .v { color: var(--ink); font-weight: 600; }
+.spec-rows .v.mono { font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.2px; }
+.spec-rows .v.muted { color: var(--ink-muted); font-weight: 500; }
+
+/* Sequence ribbon */
+.seq-ribbon {
+  background: var(--paper-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.seq-ribbon .seq-row {
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  gap: 4px;
+}
+.seq-ribbon .aa {
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+}
+.seq-ribbon .aa .tick {
+  font-family: var(--mono); font-size: 8px; font-weight: 600;
+  color: var(--ink-dim); font-variant-numeric: tabular-nums;
+}
+.seq-ribbon .aa .letter {
+  width: 100%; aspect-ratio: 1;
+  display: grid; place-items: center;
+  background: var(--paper); border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: var(--mono); font-weight: 700; font-size: 13px;
+  color: var(--ink);
+}
+.seq-ribbon .aa[data-prop="acidic"] .letter { background: oklch(0.93 0.05 22); border-color: oklch(0.78 0.08 22); }
+.seq-ribbon .aa[data-prop="basic"]  .letter { background: oklch(0.93 0.05 295); border-color: oklch(0.78 0.08 295); }
+.seq-ribbon .aa[data-prop="special"] .letter { background: oklch(0.94 0.05 78); border-color: oklch(0.78 0.09 78); }
+.seq-ribbon .seq-foot {
+  display: flex; justify-content: space-between;
+  font-family: var(--mono); font-size: 9px; font-weight: 700;
+  letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-dim);
+}
+
+/* ───── BODY · multi-column editorial ───── */
+.editorial {
+  max-width: 1240px; margin: 0 auto;
+  padding: 0 32px 80px;
+}
+
+.section {
+  padding: 56px 0;
+  border-top: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.section:first-child { border-top: 0; padding-top: 24px; }
+.section-head-col {
+  position: sticky; top: 16px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.section-head-col .ornament {
+  font-family: "Times New Roman", "Times", serif;
+  font-style: italic; font-weight: 400;
+  font-size: 22px;
+  color: var(--amber);
+  letter-spacing: 0;
+  line-height: 1;
+  margin-bottom: -2px;
+}
+.section-head-col .num {
+  font-family: var(--sans); font-style: italic; font-weight: 800;
+  font-size: 56px; letter-spacing: -1.6px; line-height: 0.9;
+  background: var(--hero-grad);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.section-head-col .label {
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 1.6px; text-transform: uppercase; color: var(--ink-dim);
+}
+.section-head-col h2 {
+  font-size: 26px; font-weight: 800; letter-spacing: -0.4px;
+  margin: 0;
+}
+.section-head-col .marginalia {
+  font-family: var(--sans); font-style: italic;
+  font-size: 13px; line-height: 1.55; color: var(--ink-muted);
+  padding-top: 14px; margin-top: 14px;
+  border-top: 1px dashed var(--rule);
+}
+.section-body { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+
+/* Editorial prose */
+.prose { font-size: 17px; line-height: 1.72; color: var(--ink); }
+.prose p { margin: 0 0 14px; color: var(--ink-muted); }
+.prose p:first-of-type::first-letter {
+  font-family: var(--sans); font-weight: 800; font-style: italic;
+  font-size: 58px; line-height: 0.9;
+  float: left; padding: 8px 12px 0 0;
+  background: var(--hero-grad);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  letter-spacing: -1.5px;
+}
+.prose strong { color: var(--ink); font-weight: 700; }
+.prose .cite {
+  font-family: var(--mono); font-size: 9px; font-weight: 700;
+  letter-spacing: 0.6px; color: var(--primary);
+  padding: 1px 4px; background: var(--primary-soft); border-radius: 4px;
+  vertical-align: super; margin-left: 2px;
+}
+
+/* Pull quote */
+.pullquote {
+  font-family: var(--sans); font-style: italic; font-weight: 500;
+  font-size: 26px; line-height: 1.35;
+  color: var(--ink);
+  padding: 24px 0;
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  margin: 24px 0;
+  letter-spacing: -0.3px;
+  text-wrap: pretty;
+}
+.pullquote .attribution {
+  display: block;
+  font-family: var(--mono); font-style: normal; font-weight: 700;
+  font-size: 10px; letter-spacing: 1.4px; text-transform: uppercase;
+  color: var(--ink-muted); margin-top: 14px;
+}
+
+/* Mechanism cards — gentler version */
+.mech-row {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;
+}
+.mech {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 20px;
+  display: flex; flex-direction: column; gap: 8px;
+  position: relative;
+}
+.mech .roman {
+  position: absolute; top: 14px; right: 18px;
+  font-family: var(--sans); font-style: italic; font-weight: 800;
+  font-size: 22px; letter-spacing: -0.3px;
+  color: var(--ink-dim); opacity: 0.7;
+}
+.mech .head {
+  display: flex; align-items: center; gap: 10px;
+}
+.mech .icon {
+  width: 32px; height: 32px; border-radius: 8px;
+  display: grid; place-items: center; color: var(--ink-paper);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.18);
+}
+.mech[data-mech="1"] .icon { background: var(--primary-grad); }
+.mech[data-mech="2"] .icon { background: var(--positive-grad); }
+.mech[data-mech="3"] .icon { background: linear-gradient(135deg, oklch(0.66 0.15 305), oklch(0.48 0.14 285)); }
+.mech[data-mech="4"] .icon { background: var(--warning-grad); }
+.mech .name {
+  font-size: 15px; font-weight: 700; color: var(--ink);
+  letter-spacing: -0.15px;
+}
+.mech p { font-size: 13.5px; color: var(--ink-muted); line-height: 1.55; margin: 0; }
+
+/* Pathway */
+.pathway {
+  background: var(--ink); color: var(--ink-paper);
+  border-radius: 14px; padding: 22px 24px;
+  display: flex; flex-direction: column; gap: 12px;
+  position: relative; overflow: hidden;
+}
+.pathway::before {
+  content:""; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 0% 0%, oklch(0.42 0.10 245 / 0.30), transparent 60%),
+    radial-gradient(ellipse 60% 80% at 100% 100%, oklch(0.66 0.13 60 / 0.18), transparent 60%);
+  pointer-events: none;
+}
+.pathway > * { position: relative; z-index: 1; }
+.pathway .label {
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 1.4px; text-transform: uppercase;
+  color: rgba(251,247,238,0.66);
+}
+.pathway-chain {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  font-family: var(--mono); font-size: 13px; font-weight: 700;
+}
+.pathway-chain .node {
+  background: rgba(251,247,238,0.06);
+  border: 1px solid rgba(251,247,238,0.16);
+  padding: 8px 12px; border-radius: 8px;
+}
+.pathway-chain .node.input { border-color: oklch(0.78 0.14 78 / 0.50); color: oklch(0.86 0.14 78); }
+.pathway-chain .node.target {
+  border-color: oklch(0.62 0.13 152 / 0.50); color: oklch(0.86 0.16 152);
+  background: oklch(0.62 0.13 152 / 0.10);
+}
+.pathway-chain .arrow {
+  color: rgba(251,247,238,0.46); font-family: var(--mono); font-size: 14px;
+}
+.pathway-result {
+  border-top: 1px dashed rgba(251,247,238,0.18); padding-top: 12px;
+  font-size: 13.5px; color: rgba(251,247,238,0.86); line-height: 1.55;
+}
+
+/* Evidence panel — bento style */
+.evidence-bento {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.evidence-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 20px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.evidence-card .e-head {
+  display: flex; align-items: center; justify-content: space-between;
+}
+.evidence-card .e-name {
+  font-size: 16px; font-weight: 700; letter-spacing: -0.2px;
+  display: inline-flex; align-items: center; gap: 10px;
+}
+.evidence-card .e-name .ico {
+  width: 28px; height: 28px; border-radius: 7px;
+  background: var(--primary-grad);
+  display: grid; place-items: center; color: var(--ink-paper);
+}
+.evidence-card[data-tone="gi"]      .e-name .ico { background: var(--warning-grad); }
+.evidence-card[data-tone="brain"]   .e-name .ico { background: linear-gradient(135deg, oklch(0.66 0.15 305), oklch(0.48 0.14 285)); }
+.evidence-card[data-tone="vascular"] .e-name .ico { background: var(--primary-grad); }
+.evidence-card[data-tone="skin"]    .e-name .ico { background: var(--danger-grad); }
+.evidence-card[data-tone="tendon"]  .e-name .ico { background: var(--positive-grad); }
+
+.evidence-card .dots {
+  display: inline-flex; gap: 4px;
+}
+.evidence-card .dots .d {
+  width: 9px; height: 9px; border-radius: 50%;
+  border: 1.5px solid var(--ink); background: transparent;
+}
+.evidence-card .dots .d.on { background: var(--ink); }
+.evidence-card .e-meta {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 1.3px; text-transform: uppercase; color: var(--ink-muted);
+}
+.evidence-card .e-meta .pill {
+  padding: 3px 7px; border-radius: 5px; background: var(--paper-2); border: 1px solid var(--border);
+}
+.evidence-card .e-meta .pill.preclinical { background: var(--amber-soft); color: oklch(0.42 0.13 50); border-color: var(--amber-border); }
+.evidence-card .e-meta .pill.case        { background: var(--primary-soft); color: var(--primary); border-color: var(--primary-border); }
+.evidence-card p {
+  font-size: 13.5px; color: var(--ink-muted); line-height: 1.55; margin: 0;
+}
+
+/* Timeline — compact horizontal */
+.timeline-h {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  position: relative;
+}
+.timeline-h::before {
+  content:""; position: absolute;
+  left: 16px; right: 16px; top: 24px;
+  height: 2px;
+  background: repeating-linear-gradient(90deg, var(--border) 0 8px, transparent 8px 14px);
+}
+.tlh {
+  display: flex; flex-direction: column; gap: 10px;
+  background: var(--paper); border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px 16px;
+  position: relative; z-index: 1;
+}
+.tlh .pin {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 1.4px; text-transform: uppercase; color: var(--ink-muted);
+}
+.tlh .pin .dot {
+  width: 14px; height: 14px; border-radius: 50%;
+  border: 2px solid var(--border-strong);
+  background: var(--paper);
+  display: grid; place-items: center;
+  font-family: var(--mono); font-size: 8px; font-weight: 700;
+  color: var(--ink-muted);
+}
+.tlh[data-state="peak"] .pin .dot { background: var(--positive-grad); border-color: oklch(0.40 0.10 168); color: var(--ink-paper); }
+.tlh[data-state="started"] .pin .dot { background: var(--primary-grad); border-color: var(--primary-deep); color: var(--ink-paper); }
+.tlh .when { font-size: 14px; font-weight: 700; color: var(--ink); }
+.tlh p { font-size: 13px; color: var(--ink-muted); line-height: 1.55; margin: 0; }
+
+/* Quality lists — minimal */
+.q-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+}
+.q-block {
+  background: var(--paper); border: 1px solid var(--border);
+  border-radius: 12px; padding: 18px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.q-block[data-kind="good"] { border-top: 3px solid oklch(0.50 0.11 158); }
+.q-block[data-kind="warn"] { border-top: 3px solid var(--amber); }
+.q-block[data-kind="bad"]  { border-top: 3px solid var(--bad); }
+.q-block h5 {
+  font-size: 16px; font-weight: 700; margin: 0;
+  display: flex; align-items: center; gap: 10px;
+}
+.q-block h5 .badge {
+  width: 26px; height: 26px; border-radius: 50%;
+  display: grid; place-items: center; color: var(--ink-paper);
+  font-family: var(--mono); font-weight: 700; font-size: 13px;
+}
+.q-block[data-kind="good"] h5 .badge { background: var(--positive-grad); }
+.q-block[data-kind="warn"] h5 .badge { background: var(--amber-grad); }
+.q-block[data-kind="bad"]  h5 .badge { background: var(--danger-grad); }
+.q-block ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.q-block li {
+  display: flex; gap: 10px;
+  font-size: 13px; color: var(--ink-muted); line-height: 1.5;
+  padding-left: 14px; position: relative;
+}
+.q-block li::before {
+  content:""; position: absolute; left: 0; top: 8px;
+  width: 6px; height: 6px; border-radius: 50%;
+}
+.q-block[data-kind="good"] li::before { background: var(--positive-grad); }
+.q-block[data-kind="warn"] li::before { background: var(--amber-grad); }
+.q-block[data-kind="bad"]  li::before { background: var(--danger-grad); }
+
+/* References — editorial endnotes */
+.endnotes {
+  display: flex; flex-direction: column; gap: 10px;
+  padding-top: 8px;
+}
+.endnote {
+  display: grid;
+  grid-template-columns: 36px 1fr auto;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px dashed var(--rule);
+  align-items: baseline;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.endnote:last-child { border-bottom: 0; }
+.endnote .n {
+  font-family: var(--mono); font-size: 11px; font-weight: 700;
+  color: var(--ink-dim); font-variant-numeric: tabular-nums; letter-spacing: 0.4px;
+}
+.endnote .body { color: var(--ink); }
+.endnote .body .authors { color: var(--ink-muted); }
+.endnote .body .pub {
+  font-family: var(--mono); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.3px; color: var(--ink-dim); display: block; margin-top: 2px;
+}
+.endnote .type {
+  font-family: var(--mono); font-size: 9px; font-weight: 700;
+  letter-spacing: 1.3px; text-transform: uppercase;
+  padding: 3px 7px; border-radius: 5px;
+  background: var(--paper-2); border: 1px solid var(--border); color: var(--ink-muted);
+  white-space: nowrap; align-self: center;
+}
+.endnote .type[data-kind="clinical"]    { background: oklch(0.50 0.11 158 / 0.14); color: oklch(0.50 0.11 158); border-color: oklch(0.50 0.11 158 / 0.34); }
+.endnote .type[data-kind="preclinical"] { background: var(--amber-soft); color: oklch(0.42 0.13 50); border-color: var(--amber-border); }
+.endnote .type[data-kind="review"]      { background: var(--primary-soft); color: var(--primary); border-color: var(--primary-border); }
+
+/* ───── EDITOR SIGNATURE BLOCK ───── */
+.signature {
+  max-width: 1240px;
+  margin: 0 auto 80px;
+  padding: 0 32px;
+}
+.signature-card {
+  display: grid;
+  grid-template-columns: 220px 1fr auto;
+  gap: 36px 48px;
+  padding: 36px 0 0;
+  border-top: 2px solid var(--ink);
+  align-items: start;
+}
+.signature-card .changelog {
+  grid-column: 1 / -1;
+}
+.signature-card .marginalia-col {
+  display: flex; flex-direction: column; gap: 10px;
+}
+.signature-card .marginalia-col .ornament {
+  font-family: "Times New Roman", "Times", serif;
+  font-style: italic; font-weight: 400;
+  font-size: 22px; color: var(--amber);
+}
+.signature-card .marginalia-col .label {
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 1.6px; text-transform: uppercase; color: var(--ink-dim);
+}
+.signature-card .marginalia-col h3 {
+  font-size: 22px; font-weight: 800; letter-spacing: -0.3px;
+  margin: 0;
+}
+.signature-card .editorial-note {
+  font-family: var(--sans); font-style: italic;
+  font-size: 18px; line-height: 1.55; color: var(--ink-muted);
+  text-wrap: pretty;
+  margin: 0;
+}
+.signature-card .editorial-note strong { color: var(--ink); font-style: normal; font-weight: 700; }
+.signature-card .signed {
+  display: flex; flex-direction: column; gap: 10px;
+  align-items: flex-end;
+  min-width: 200px;
+}
+.signature-card .signed .name {
+  font-family: "Times New Roman", "Times", serif;
+  font-style: italic; font-weight: 400;
+  font-size: 28px;
+  letter-spacing: -0.4px;
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink-muted);
+  padding-bottom: 4px;
+}
+.signature-card .signed .role,
+.signature-card .signed .where {
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 1.4px; text-transform: uppercase; color: var(--ink-muted);
+}
+.signature-card .signed .stamp {
+  margin-top: 10px;
+  width: 92px; height: 92px;
+  border: 2px solid var(--amber);
+  color: var(--amber);
+  border-radius: 50%;
+  display: grid; place-items: center;
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  position: relative;
+  transform: rotate(-7deg);
+  opacity: 0.84;
+}
+.signature-card .signed .stamp::before {
+  content:""; position: absolute; inset: 4px;
+  border: 1px dashed var(--amber);
+  border-radius: 50%; opacity: 0.7;
+}
+.signature-card .signed .stamp .stamp-text {
+  text-align: center; line-height: 1.25;
+}
+.signature-card .signed .stamp .stamp-text .big {
+  font-family: "Times New Roman", "Times", serif;
+  font-style: italic; font-weight: 400;
+  font-size: 26px; letter-spacing: 0;
+  text-transform: none;
+  display: block; margin: 4px 0 2px;
+  color: var(--amber);
+}
+
+@media (max-width: 1024px) {
+  .signature-card { grid-template-columns: 1fr; }
+  .signature-card .signed { align-items: flex-start; }
+}
+
+/* ───── ANECDOTAL EVIDENCE — community reports ───── */
+.anec-intro {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--amber);
+  border-radius: 12px;
+  padding: 18px 22px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: center;
+}
+.anec-intro p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-muted);
+}
+.anec-intro p strong { color: var(--ink); }
+.weight-badge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--amber-soft);
+  border: 1px solid var(--amber-border);
+  min-width: 110px;
+}
+.weight-badge .v {
+  font-family: "Times New Roman", "Times", serif;
+  font-style: italic; font-weight: 400;
+  font-size: 26px;
+  color: oklch(0.42 0.13 50);
+  line-height: 1;
+}
+.weight-badge .k {
+  font-family: var(--mono); font-size: 9px; font-weight: 700;
+  letter-spacing: 1.4px; text-transform: uppercase;
+  color: oklch(0.42 0.13 50);
+  text-align: center;
+  line-height: 1.3;
+}
+
+.anec-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.anec-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 22px;
+  display: flex; flex-direction: column; gap: 14px;
+  position: relative;
+}
+.anec-card::before {
+  content:"";
+  position: absolute;
+  top: 14px; right: 16px;
+  font-family: "Times New Roman", "Times", serif;
+  font-style: italic;
+  font-size: 32px;
+  color: var(--paper-3);
+  line-height: 1;
+}
+.anec-card .src-row {
+  display: flex; align-items: center; gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--rule);
+}
+.anec-card .src-ico {
+  width: 28px; height: 28px; border-radius: 7px;
+  display: grid; place-items: center;
+  background: var(--paper-2);
+  border: 1px solid var(--border);
+  font-family: var(--mono); font-size: 11px; font-weight: 700;
+  color: var(--ink);
+}
+.anec-card[data-src="reddit"]  .src-ico { background: oklch(0.93 0.06 28); color: oklch(0.50 0.18 28); border-color: oklch(0.50 0.18 28 / 0.30); }
+.anec-card[data-src="forum"]   .src-ico { background: var(--primary-soft); color: var(--primary); border-color: var(--primary-border); }
+.anec-card[data-src="podcast"] .src-ico { background: oklch(0.92 0.05 305); color: oklch(0.46 0.14 285); border-color: oklch(0.46 0.14 285 / 0.30); }
+.anec-card[data-src="blog"]    .src-ico { background: var(--good-soft, oklch(0.50 0.11 158 / 0.14)); color: oklch(0.50 0.11 158); border-color: oklch(0.50 0.11 158 / 0.34); }
+
+.anec-card .src-info {
+  display: flex; flex-direction: column; gap: 3px;
+  flex: 1; min-width: 0;
+}
+.anec-card .src-info .name {
+  font-family: var(--mono); font-size: 11px; font-weight: 700;
+  letter-spacing: 1.3px; text-transform: uppercase; color: var(--ink);
+}
+.anec-card .src-info .meta {
+  font-family: var(--mono); font-size: 9px; font-weight: 600;
+  letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-dim);
+}
+.anec-card .freq {
+  font-family: var(--mono); font-size: 9px; font-weight: 700;
+  letter-spacing: 1.2px; text-transform: uppercase;
+  padding: 3px 7px; border-radius: 5px;
+  background: var(--paper-2); border: 1px solid var(--border); color: var(--ink-muted);
+  white-space: nowrap;
+}
+.anec-card .freq[data-level="common"]   { background: var(--ink); color: var(--ink-paper); border-color: var(--ink); }
+.anec-card .freq[data-level="frequent"] { background: var(--primary-grad); color: var(--ink-paper); border-color: transparent; }
+.anec-card .freq[data-level="rare"]     { background: var(--paper-2); }
+
+.anec-card .pattern {
+  font-size: 15px; font-weight: 700; letter-spacing: -0.15px;
+  color: var(--ink); margin: 0;
+}
+
+.anec-card .quote {
+  font-family: "Times New Roman", "Times", serif;
+  font-style: italic; font-weight: 400;
+  font-size: 17px; line-height: 1.5;
+  color: var(--ink-muted);
+  padding: 10px 14px 10px 18px;
+  border-left: 2px solid var(--amber);
+  background: var(--paper-2);
+  border-radius: 0 8px 8px 0;
+  margin: 0;
+  text-wrap: pretty;
+}
+.anec-card .quote-attr {
+  font-family: var(--mono); font-style: normal; font-size: 9px; font-weight: 700;
+  letter-spacing: 1.3px; text-transform: uppercase; color: var(--ink-dim);
+  margin-top: 8px; display: block;
+}
+.anec-card .read {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px dashed var(--rule);
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 1.3px; text-transform: uppercase; color: var(--ink-muted);
+}
+.anec-card .read .verdict { color: var(--ink); }
+
+.anec-caveat {
+  font-family: var(--sans); font-style: italic;
+  font-size: 15px; line-height: 1.55;
+  color: var(--ink-muted);
+  padding: 18px 22px;
+  background: var(--paper-2);
+  border-radius: 10px;
+  text-wrap: pretty;
+}
+.anec-caveat strong { color: var(--ink); font-style: normal; font-weight: 700; }
+
+/* ───── COUNTER-EVIDENCE — dissenting cards ───── */
+.objection-list { display: flex; flex-direction: column; gap: 12px; }
+.objection {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--bad);
+  border-radius: 12px;
+  padding: 18px 20px;
+  display: grid;
+  grid-template-columns: 36px 1fr auto;
+  gap: 16px;
+  align-items: start;
+}
+.objection .num {
+  font-family: var(--sans); font-style: italic; font-weight: 800;
+  font-size: 22px; letter-spacing: -0.3px;
+  color: var(--bad);
+  line-height: 1.05;
+}
+.objection .body { display: flex; flex-direction: column; gap: 6px; }
+.objection .body h4 {
+  font-size: 16px; font-weight: 700; margin: 0;
+  letter-spacing: -0.2px;
+}
+.objection .body p {
+  font-size: 13.5px; color: var(--ink-muted); margin: 0; line-height: 1.55;
+}
+.objection .body .src {
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-dim);
+  margin-top: 4px;
+}
+.objection .severity {
+  font-family: var(--mono); font-size: 9px; font-weight: 700;
+  letter-spacing: 1.3px; text-transform: uppercase;
+  padding: 4px 8px; border-radius: 5px;
+  background: var(--bad-soft); color: var(--bad); border: 1px solid oklch(0.54 0.16 22 / 0.32);
+  white-space: nowrap;
+}
+.objection .severity[data-level="moderate"] { background: var(--amber-soft); color: oklch(0.42 0.13 50); border-color: var(--amber-border); }
+.objection .severity[data-level="open"]     { background: var(--primary-soft); color: var(--primary); border-color: var(--primary-border); }
+
+/* ───── ACTIVE TRIALS — registry ledger ───── */
+.trial-ledger {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.trial-ledger .head-row,
+.trial-ledger .row {
+  display: grid;
+  grid-template-columns: 96px 76px 1fr 88px 88px 60px;
+  gap: 14px;
+  padding: 12px 18px;
+  align-items: center;
+  font-size: 13px;
+}
+.trial-ledger .head-row {
+  background: var(--ink);
+  color: var(--ink-paper);
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 1.4px; text-transform: uppercase;
+  border-bottom: 1px solid var(--ink);
+}
+.trial-ledger .row { border-bottom: 1px dashed var(--rule); }
+.trial-ledger .row:last-child { border-bottom: 0; }
+.trial-ledger .row:hover { background: color-mix(in oklch, var(--paper-2) 50%, transparent); }
+
+.trial-ledger .nct {
+  font-family: var(--mono); font-size: 12px; font-weight: 700;
+  letter-spacing: 0.4px; color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.trial-ledger .phase {
+  font-family: var(--mono); font-size: 11px; font-weight: 700;
+  letter-spacing: 1.3px; text-transform: uppercase;
+  padding: 3px 8px; border-radius: 5px;
+  border: 1px solid var(--border); background: var(--paper-2);
+  color: var(--ink); text-align: center;
+  justify-self: start; width: max-content;
+}
+.trial-ledger .phase[data-level="2"] { background: var(--primary-soft); color: var(--primary); border-color: var(--primary-border); }
+.trial-ledger .phase[data-level="1"] { background: var(--amber-soft); color: oklch(0.42 0.13 50); border-color: var(--amber-border); }
+.trial-ledger .phase[data-level="reg"] { background: var(--paper-3); color: var(--ink); border-color: var(--border-strong); }
+
+.trial-ledger .endpoint { color: var(--ink); font-weight: 500; line-height: 1.4; }
+.trial-ledger .endpoint .sponsor {
+  display: block;
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-dim);
+  margin-top: 4px;
+}
+.trial-ledger .country {
+  font-family: var(--mono); font-size: 11px; font-weight: 700;
+  letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-muted);
+}
+.trial-ledger .status {
+  font-family: var(--mono); font-size: 9px; font-weight: 700;
+  letter-spacing: 1.3px; text-transform: uppercase;
+  padding: 4px 8px; border-radius: 5px;
+  background: var(--paper-2); color: var(--ink-muted); border: 1px solid var(--border);
+  text-align: center;
+  justify-self: start; width: max-content;
+}
+.trial-ledger .status[data-state="recruiting"] { background: var(--good-soft, oklch(0.50 0.11 158 / 0.14)); color: oklch(0.50 0.11 158); border-color: oklch(0.50 0.11 158 / 0.34); }
+.trial-ledger .status[data-state="active"]     { background: var(--primary-soft); color: var(--primary); border-color: var(--primary-border); }
+.trial-ledger .status[data-state="halted"]     { background: var(--bad-soft); color: var(--bad); border-color: oklch(0.54 0.16 22 / 0.32); }
+.trial-ledger .status[data-state="reg"]        { background: var(--paper-3); color: var(--ink); border-color: var(--border-strong); }
+
+.trial-ledger .row .go {
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 1.3px; text-transform: uppercase;
+  color: var(--ink-muted); text-align: right;
+}
+.trial-ledger .row:hover .go { color: var(--ink); }
+
+.trial-foot {
+  padding: 10px 18px;
+  background: var(--paper-2);
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 1.4px; text-transform: uppercase; color: var(--ink-muted);
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 1px solid var(--border);
+}
+
+/* ───── REVISION LOG (sidebar in signature) ───── */
+.changelog {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 18px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.changelog h4 {
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 1.6px; text-transform: uppercase; color: var(--ink-muted);
+  margin: 0; padding-bottom: 8px; border-bottom: 1px dashed var(--rule);
+}
+.changelog ul {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.changelog li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  font-size: 12.5px; line-height: 1.45; color: var(--ink-muted);
+}
+.changelog li .v {
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 1.2px;
+  padding: 2px 6px; border-radius: 4px;
+  white-space: nowrap; align-self: start;
+  background: var(--paper-2); border: 1px solid var(--border); color: var(--ink);
+}
+.changelog li .v.minor { background: var(--paper-2); }
+.changelog li .v.major { background: var(--primary-grad); color: var(--ink-paper); border-color: transparent; }
+.changelog li .v.fix   { background: var(--amber-grad); color: var(--ink-paper); border-color: transparent; }
+
+/* ───── COLOPHON CTA ───── */
+.alerts-band {
+  max-width: 1240px; margin: 0 auto 80px;
+  padding: 0 32px;
+}
+.alerts-card {
+  background: var(--primary-grad-deep);
+  color: var(--ink-paper);
+  border-radius: 22px;
+  padding: 44px;
+  display: grid; grid-template-columns: 1.2fr 1fr;
+  gap: 32px; align-items: center;
+  position: relative; overflow: hidden;
+  box-shadow: 0 24px 60px rgba(31,26,18,0.20);
+}
+.alerts-card::before {
+  content:""; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 80% at 0% 0%, oklch(0.62 0.16 248 / 0.40), transparent 60%),
+    radial-gradient(ellipse 70% 80% at 100% 100%, oklch(0.66 0.13 60 / 0.24), transparent 60%);
+  pointer-events: none;
+}
+.alerts-card > * { position: relative; z-index: 1; }
+.alerts-card h3 {
+  font-size: 28px; font-weight: 800; letter-spacing: -0.5px;
+  margin: 8px 0 8px;
+}
+.alerts-card .sub {
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(251,247,238,0.66);
+}
+.alerts-card p {
+  margin: 0; color: rgba(251,247,238,0.7);
+  font-size: 14px; line-height: 1.55; max-width: 460px;
+}
+.alerts-card .form { display: flex; flex-direction: column; gap: 12px; }
+.alerts-card .row { display: flex; gap: 10px; }
+.alerts-card input {
+  flex: 1; padding: 14px 16px; border-radius: 10px;
+  background: rgba(251,247,238,0.08); border: 1px solid rgba(251,247,238,0.18);
+  color: var(--ink-paper); font-family: var(--sans); font-size: 14px;
+}
+.alerts-card input::placeholder { color: rgba(251,247,238,0.4); }
+.alerts-card .btn-amber {
+  background: var(--amber-grad); color: var(--ink);
+  border: 1px solid oklch(0.46 0.13 50);
+  font-family: var(--mono); font-size: 11px; font-weight: 700;
+  letter-spacing: 1.4px; text-transform: uppercase;
+  padding: 14px 18px; border-radius: 10px; cursor: pointer;
+}
+.alerts-card .fine {
+  font-family: var(--mono); font-size: 10px; font-weight: 600;
+  letter-spacing: 1.3px; text-transform: uppercase; color: rgba(251,247,238,0.5);
+}
+
+/* Adjacent records */
+.adjacent {
+  max-width: 1240px; margin: 0 auto 80px;
+  padding: 0 32px;
+}
+.adj-band {
+  display: flex; align-items: center; gap: 20px;
+  padding-bottom: 18px; margin-bottom: 18px;
+  border-bottom: 1px solid var(--ink);
+}
+.adj-band h3 {
+  font-size: 22px; font-weight: 800; letter-spacing: -0.3px;
+  margin: 0;
+}
+.adj-band .rule { flex: 1; height: 1px; background: var(--ink); }
+.adj-band .label {
+  font-family: var(--mono); font-size: 11px; font-weight: 700;
+  letter-spacing: 1.6px; text-transform: uppercase; color: var(--ink-muted);
+}
+.adj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.adj-card {
+  background: var(--paper); border: 1px solid var(--border);
+  border-radius: 14px; padding: 18px 20px;
+  display: flex; align-items: center; gap: 16px;
+  cursor: pointer; transition: border-color 120ms ease;
+}
+.adj-card:hover { border-color: var(--primary-border); }
+.adj-card .vial {
+  width: 48px; flex-shrink: 0;
+}
+.adj-card .vial svg { width: 100%; height: 100%; display: block; }
+.adj-card .info { flex: 1; min-width: 0; }
+.adj-card .pre {
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 1.4px; text-transform: uppercase; color: var(--ink-muted);
+}
+.adj-card .name { font-size: 17px; font-weight: 700; letter-spacing: -0.2px; }
+.adj-card .meta {
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 1.3px; text-transform: uppercase; color: var(--ink-dim); margin-top: 4px;
+}
+
+/* ───── FOOTER ───── */
+.site-footer {
+  background: var(--ink); color: var(--ink-paper);
+  padding: 48px 0 28px;
+}
+.footer-inner {
+  max-width: 1240px; margin: 0 auto; padding: 0 32px;
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px;
+}
+.footer-brand { display: flex; flex-direction: column; gap: 14px; max-width: 320px; }
+.footer-brand .wordmark {
+  font-family: var(--sans); font-weight: 800; font-size: 20px;
+  letter-spacing: -0.4px;
+  display: inline-flex; align-items: center; gap: 12px;
+}
+.footer-brand .wordmark .vial {
+  width: 14px; height: 14px;
+  background: var(--primary-grad);
+  border-radius: 3px; transform: rotate(-12deg);
+}
+.footer-brand p { margin: 0; color: rgba(251,247,238,0.6); font-size: 13.5px; line-height: 1.6; }
+.footer-col h5 {
+  font-family: var(--mono); font-size: 11px; font-weight: 700;
+  letter-spacing: 1.6px; text-transform: uppercase;
+  color: rgba(251,247,238,0.86); margin: 0 0 14px;
+}
+.footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.footer-col a { color: rgba(251,247,238,0.66); font-size: 13.5px; }
+.footer-col a:hover { color: var(--ink-paper); }
+.footer-bottom {
+  max-width: 1240px; margin: 40px auto 0; padding: 18px 32px 0;
+  border-top: 1px dashed rgba(251,247,238,0.18);
+  display: flex; justify-content: space-between; gap: 24px;
+  font-family: var(--mono); font-size: 10px; font-weight: 600;
+  letter-spacing: 1.4px; text-transform: uppercase; color: rgba(251,247,238,0.46);
+}
+.footer-bottom .colophon-tail {
+  font-style: italic; font-family: var(--sans);
+  text-transform: none; letter-spacing: 0; font-weight: 500; font-size: 12px;
+  color: rgba(251,247,238,0.50);
+}
+
+@media (max-width: 1024px) {
+  .title-block .title-row { grid-template-columns: 1fr; gap: 24px; }
+  .record-jump-inner { align-items: flex-start; flex-direction: column; }
+  .decision-strip { grid-template-columns: 1fr; }
+  .decision-card.primary { grid-template-columns: 1fr; }
+  .decision-meta { grid-template-columns: 1fr; }
+  .plate-frame { grid-template-columns: 1fr; }
+  .section { grid-template-columns: 1fr; }
+  .section-head-col { position: static; }
+  .mech-row, .evidence-bento, .q-grid, .adj-grid { grid-template-columns: 1fr; }
+  .timeline-h { grid-template-columns: 1fr 1fr; }
+  .alerts-card { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ───── MASTHEAD ───── -->
+<header class="masthead" data-screen-label="00 Masthead">
+  <div class="masthead-inner">
+    <div class="masthead-left">
+      <a href="PepCodex Home v2 - Catalogue.html">Index</a>
+      <a href="#">Trials</a>
+      <a href="#">Research</a>
+    </div>
+    <a class="masthead-title" href="PepCodex Home v2 - Catalogue.html">
+      <span class="fleur">❧</span> PEPCODEX <span class="fleur">❧</span>
+    </a>
+    <div class="masthead-right">
+      <a href="#">Contact</a>
+      <a href="#">Subscribe</a>
+      <a href="#" style="color:var(--ink); padding: 4px 8px; border: 1px solid var(--border-strong); border-radius: 6px;">⌘K</a>
+    </div>
+  </div>
+</header>
+
+<div class="dateline">
+  <div class="dateline-inner">
+    <div class="crumbs">
+      <a href="PepCodex Home v2 - Catalogue.html">Catalogue</a>
+      <span class="sep">/</span>
+      <a href="#">Drawer B · Recovery</a>
+      <span class="sep">/</span>
+      <span class="here">Record XIV · BPC-157</span>
+    </div>
+    <div class="util-row">
+      <a class="util" href="#">↓ Cite</a>
+      <a class="util" href="#">↗ Share</a>
+      <a class="util" href="#">＋ Save</a>
+    </div>
+  </div>
+</div>
+
+<!-- ───── NOW READING TICKER ───── -->
+<div class="now-reading" data-screen-label="00a Now reading">
+  <div class="now-reading-inner">
+    <span class="now-reading-tag"><span class="pulse"></span> Now reading</span>
+    <div class="now-reading-list">
+      <span class="item"><span class="v">94</span> sources cited</span>
+      <span class="dot"></span>
+      <span class="item">Median revision cadence <span class="v">2 / quarter</span></span>
+      <span class="dot"></span>
+      <span class="item">Last revised <span class="v">14 Mar 2026</span></span>
+      <span class="dot"></span>
+      <span class="item"><span class="v italic">Editor:</span> <span class="v">E. Kwan, PhD</span></span>
+      <span class="dot"></span>
+      <span class="item"><span class="v">1</span> human trial · mostly preclinical record</span>
+    </div>
+    <a class="now-reading-more" href="#">Methodology →</a>
+  </div>
+</div>
+
+<nav class="record-jump" aria-label="Dossier sections">
+  <div class="record-jump-inner">
+    <span class="label">Scan the record</span>
+    <div class="jump-links">
+      <a href="#overview">Brief</a>
+      <a href="#mechanism">Mechanisms</a>
+      <a href="#evidence">Evidence</a>
+      <a href="#counter">Concerns</a>
+      <a href="#trials">Trials</a>
+      <a href="#references">Sources</a>
+      <a href="#watch">Watch</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ───── RECORD BANNER ───── -->
+<section class="sheet-head" data-screen-label="01 Record banner">
+  <div class="record-banner">
+    <div class="record-no"><span class="roman">Record XIV.</span> of cii.</div>
+    <div class="center-label">A specimen of the recovery drawer</div>
+    <span class="drawer-tag"><span class="letter">B</span> Drawer B · Recovery</span>
+    <span class="entry-no">Entry 014 / 102</span>
+  </div>
+</section>
+
+<!-- ───── TITLE BLOCK ───── -->
+<section class="title-block" data-screen-label="02 Title">
+  <div class="title-row">
+    <div>
+      <div class="h1-row">
+        <h1>BPC-<span class="accent">157</span></h1>
+      </div>
+      <p class="latin-name">A pentadecapeptide research record: isolated from a fragment of human gastric juice, with mostly preclinical evidence for soft-tissue repair.</p>
+      <div class="aliases">Body Protection Compound-157 · Bepecin · PL 14736 · PV-1101 · CAS 137525-51-0</div>
+    </div>
+
+    <aside class="verdict" aria-label="Verdict">
+      <span class="v-head">Verdict</span>
+      <div class="grade">
+        <span class="dots">
+          <span class="d on"></span>
+          <span class="d on"></span>
+          <span class="d"></span>
+          <span class="d"></span>
+        </span>
+        <span class="label">
+          Limited
+          <span class="sub">Mostly preclinical · 1 human trial</span>
+        </span>
+      </div>
+      <div class="verdict-bars">
+        <div class="bar-mini preclinical"><span>Preclinical</span><span class="track"><span class="fill"></span></span><span class="v">78%</span></div>
+        <div class="bar-mini clinical"><span>Clinical</span><span class="track"><span class="fill"></span></span><span class="v">4%</span></div>
+        <div class="bar-mini safety"><span>Safety</span><span class="track"><span class="fill"></span></span><span class="v">7.2</span></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="decision-strip" aria-label="Dossier decision summary">
+  <article class="decision-card primary">
+    <div class="decision-mark">!</div>
+    <div>
+      <p class="eyebrow">Bottom line</p>
+      <h2>Interesting biology, thin human evidence.</h2>
+      <p>BPC-157 has a coherent preclinical repair story, but the public narrative runs ahead of published human data. Read this as a research record, not a protocol recommendation.</p>
+      <div class="decision-meta" aria-label="Evidence summary">
+        <span>Human evidence <strong>Very low</strong></span>
+        <span>Preclinical signal <strong>Moderate</strong></span>
+        <span>Safety confidence <strong>Low</strong></span>
+      </div>
+    </div>
+  </article>
+  <aside class="decision-card app-boundary-mini">
+    <p class="eyebrow">PepTracker boundary</p>
+    <p>Public evidence belongs here. Personal tracking, protocol tools, inventory, reminders, and calculator workflows belong in the app.</p>
+    <div class="cta-row">
+      <a class="button-mini" href="#watch">Watch record</a>
+      <a class="button-mini secondary" href="#counter">Read concerns</a>
+    </div>
+  </aside>
+</section>
+
+<!-- ───── SPECIMEN PLATE ───── -->
+<section class="specimen-record" data-screen-label="03 Specimen">
+  <div class="plate-frame">
+    <span class="corner tl"></span><span class="corner tr"></span>
+    <span class="corner bl"></span><span class="corner br"></span>
+
+    <div class="plate-illus-col">
+      <div class="plate-illus-frame">
+        <span class="scale">Scale · 1 : 1</span>
+        <span class="placeholder-label">FIG. XIV · vial &amp; sequence ribbon · drop your molecule render</span>
+        <!-- Illustration: vial + sequence ribbon -->
+        <svg viewBox="0 0 320 360" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <!-- shelf line -->
+          <line x1="40" y1="300" x2="280" y2="300" stroke="var(--ink-muted)" stroke-width="0.6" stroke-dasharray="2,3"/>
+
+          <!-- vial body -->
+          <rect x="130" y="40" width="60" height="14" fill="none" stroke="var(--recovery)" stroke-width="1.6"/>
+          <path d="M134 54 L134 60 L120 78 L120 280 Q120 296 134 296 L186 296 Q200 296 200 280 L200 78 L186 60 L186 54 Z"
+                fill="var(--recovery-soft)" stroke="var(--recovery)" stroke-width="1.6"/>
+
+          <!-- fill -->
+          <rect x="124" y="200" width="72" height="92" fill="var(--recovery-border)"/>
+
+          <!-- ml ticks -->
+          <g font-family="JetBrains Mono, monospace" font-size="8" fill="var(--ink-muted)">
+            <line x1="116" y1="100" x2="120" y2="100" stroke="var(--recovery)" stroke-width="0.7"/>
+            <text x="100" y="103">3 ml</text>
+            <line x1="116" y1="150" x2="120" y2="150" stroke="var(--recovery)" stroke-width="0.7"/>
+            <text x="100" y="153">2 ml</text>
+            <line x1="116" y1="200" x2="120" y2="200" stroke="var(--recovery)" stroke-width="0.7"/>
+            <text x="100" y="203">1 ml</text>
+            <line x1="116" y1="260" x2="120" y2="260" stroke="var(--recovery)" stroke-width="0.7"/>
+            <text x="100" y="263">0 ml</text>
+          </g>
+
+          <!-- callouts on right -->
+          <g font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" fill="var(--ink)" letter-spacing="0.5">
+            <line x1="200" y1="78" x2="248" y2="78" stroke="var(--ink-muted)" stroke-width="0.6"/>
+            <circle cx="248" cy="78" r="2" fill="var(--ink)"/>
+            <text x="252" y="81">N-TERMINUS</text>
+
+            <line x1="200" y1="160" x2="248" y2="180" stroke="var(--ink-muted)" stroke-width="0.6"/>
+            <circle cx="248" cy="180" r="2" fill="var(--ink)"/>
+            <text x="252" y="183">15 AA · 1,419.5 Da</text>
+
+            <line x1="200" y1="240" x2="248" y2="248" stroke="var(--ink-muted)" stroke-width="0.6"/>
+            <circle cx="248" cy="248" r="2" fill="var(--ink)"/>
+            <text x="252" y="251">~30 MIN HALF-LIFE</text>
+          </g>
+
+          <!-- index plate -->
+          <g font-family="Inter, sans-serif">
+            <text x="160" y="332" text-anchor="middle" font-size="12" font-weight="800" letter-spacing="-0.3" fill="var(--ink)">BPC-157</text>
+            <text x="160" y="346" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" font-weight="700" letter-spacing="1.4" fill="var(--ink-muted)">DRAWER B · ENTRY 014</text>
+          </g>
+        </svg>
+      </div>
+      <p class="plate-caption"><strong>Fig. XIV.</strong> A schematic of the catalogued specimen at 1:1 scale. Drop a molecular illustration or microscopy image here — the placeholder dimensions match standard journal-figure ratios.</p>
+    </div>
+
+    <div class="spec-sheet">
+      <h3>Identification</h3>
+      <div class="spec-rows">
+        <span class="k">Class</span><span class="v">Pentadecapeptide · 15 aa</span>
+        <span class="k">Parent</span><span class="v muted">Human gastric juice BPC</span>
+        <span class="k">Mol. weight</span><span class="v mono">1,419.5 Da</span>
+        <span class="k">Half-life</span><span class="v">~30 min · oral stable</span>
+        <span class="k">Isoelectric pt.</span><span class="v mono">pI 5.74</span>
+        <span class="k">Routes</span><span class="v">IP · IM · oral · topical</span>
+      </div>
+
+      <h3>Provenance</h3>
+      <div class="spec-rows">
+        <span class="k">Described</span><span class="v muted">Sikiric, 1991 · Zagreb</span>
+        <span class="k">Reg. status</span><span class="v">Investigational · research-use</span>
+        <span class="k">Clinical phase</span><span class="v">Phase 2 (Croatia, halted)</span>
+        <span class="k">CAS no.</span><span class="v mono">137525-51-0</span>
+        <span class="k">UniProt</span><span class="v mono">P15309 (fragment)</span>
+        <span class="k">Last revised</span><span class="v">March 2026 · v2.4</span>
+      </div>
+
+      <h3>Primary sequence · N → C</h3>
+      <div class="seq-ribbon">
+        <div class="seq-row">
+          <div class="aa" data-prop="acidic"><span class="tick">1</span><span class="letter">G</span></div>
+          <div class="aa" data-prop="acidic"><span class="tick">2</span><span class="letter">E</span></div>
+          <div class="aa" data-prop="special"><span class="tick">3</span><span class="letter">P</span></div>
+          <div class="aa" data-prop="special"><span class="tick">4</span><span class="letter">P</span></div>
+          <div class="aa" data-prop="special"><span class="tick">5</span><span class="letter">P</span></div>
+          <div class="aa"><span class="tick">6</span><span class="letter">G</span></div>
+          <div class="aa" data-prop="basic"><span class="tick">7</span><span class="letter">K</span></div>
+          <div class="aa" data-prop="special"><span class="tick">8</span><span class="letter">P</span></div>
+          <div class="aa"><span class="tick">9</span><span class="letter">A</span></div>
+          <div class="aa" data-prop="acidic"><span class="tick">10</span><span class="letter">D</span></div>
+          <div class="aa" data-prop="acidic"><span class="tick">11</span><span class="letter">D</span></div>
+          <div class="aa"><span class="tick">12</span><span class="letter">A</span></div>
+          <div class="aa"><span class="tick">13</span><span class="letter">G</span></div>
+          <div class="aa"><span class="tick">14</span><span class="letter">L</span></div>
+          <div class="aa"><span class="tick">15</span><span class="letter">V</span></div>
+        </div>
+        <div class="seq-foot">
+          <span>GEPPPGKPADDAGLV</span>
+          <span>Charged · 4 · Proline · 4</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── EDITORIAL BODY ───── -->
+<div class="editorial" data-screen-label="04 Editorial">
+  <!-- 01 — OVERVIEW -->
+  <section class="section" id="overview">
+    <aside class="section-head-col">
+      <span class="ornament">❧</span>
+      <div class="num">I.</div>
+      <div class="label">The case in brief</div>
+      <h2>What is BPC-157, and why is it discussed?</h2>
+      <p class="marginalia"><strong>Editor's note.</strong> The discussion has outpaced the data. A 2025 systematic review found one human trial — but you wouldn't know that from social media.</p>
+    </aside>
+
+    <div class="section-body">
+      <div class="prose">
+        <p>BPC-157 is a synthetic, 15-amino-acid <strong>pentadecapeptide</strong> derived from a protective protein found in human gastric juice. It has been studied since 1991, almost entirely in rodent models, where it is associated with accelerated wound healing, tendon repair, and protection of the gastric mucosa.<a class="cite" href="#ref-1">001</a></p>
+        <p>In the popular literature, BPC-157 is widely discussed as a recovery peptide. In the peer-reviewed literature, it is something narrower: a candidate with a coherent rodent mechanism story and a sparse human evidence base.<a class="cite" href="#ref-2">002</a> A 2025 systematic review of 36 studies found only <strong>one published clinical study</strong> — the early Croatian PL-14736 work on inflammatory bowel disease, which was halted before Phase 3.<a class="cite" href="#ref-6">006</a></p>
+        <p>This entry distills the strongest preclinical findings, the open questions, and a quality-rubric for reading new BPC-157 papers as they appear.</p>
+      </div>
+
+      <div class="pullquote">
+        "Preclinical evidence is consistent and replicable. Human evidence is — at the time of writing — almost entirely absent."
+        <span class="attribution">— Kwan, Wong et al. · JAMA Network Open · 2025</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 — MECHANISM -->
+  <section class="section" id="mechanism">
+    <aside class="section-head-col">
+      <span class="ornament">❧</span>
+      <div class="num">II.</div>
+      <div class="label">Mechanism of action</div>
+      <h2>Four proposed mechanisms.</h2>
+      <p class="marginalia">All derived from rodent or in-vitro work. No receptor specific to BPC-157 has yet been identified.</p>
+    </aside>
+
+    <div class="section-body">
+      <div class="mech-row">
+        <div class="mech" data-mech="1">
+          <span class="roman">i.</span>
+          <div class="head">
+            <span class="icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c4-7 14-7 18 0M3 12c4 7 14 7 18 0M9 12a3 3 0 116 0 3 3 0 01-6 0z"/></svg>
+            </span>
+            <span class="name">Angiogenesis</span>
+          </div>
+          <p>Up-regulates VEGFR-2 and stimulates new blood-vessel formation at injury sites — the most replicated rodent finding.</p>
+        </div>
+        <div class="mech" data-mech="2">
+          <span class="roman">ii.</span>
+          <div class="head">
+            <span class="icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l4 8-4 8M20 4l-4 8 4 8M8 12h8"/></svg>
+            </span>
+            <span class="name">NO modulation</span>
+          </div>
+          <p>Interacts with the nitric-oxide system, bidirectionally — depending on the L-NAME / L-arginine state.</p>
+        </div>
+        <div class="mech" data-mech="3">
+          <span class="roman">iii.</span>
+          <div class="head">
+            <span class="icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><path d="M12 4v4M12 16v4M4 12h4M16 12h4"/></svg>
+            </span>
+            <span class="name">Cytoprotection</span>
+          </div>
+          <p>Protects gut, liver and brain cells from NSAID-, alcohol- and ischemia-induced damage in rodent models.</p>
+        </div>
+        <div class="mech" data-mech="4">
+          <span class="roman">iv.</span>
+          <div class="head">
+            <span class="icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4-4 4 4 4-4 4 4M4 12l4-4 4 4 4-4 4 4"/></svg>
+            </span>
+            <span class="name">Growth-factor cross-talk</span>
+          </div>
+          <p>Modulates EGR-1 and FAK / paxillin signalling — a candidate explanation for tendon-repair effects.</p>
+        </div>
+      </div>
+
+      <div class="pathway">
+        <div class="label">i. VEGFR-2 pathway · angiogenic</div>
+        <div class="pathway-chain">
+          <span class="node input">BPC-157</span>
+          <span class="arrow">→</span>
+          <span class="node">VEGFR-2 ↑</span>
+          <span class="arrow">→</span>
+          <span class="node">NO ↑</span>
+          <span class="arrow">→</span>
+          <span class="node target">Vascular sprouting</span>
+        </div>
+        <div class="pathway-result"><strong>Net effect.</strong> Increased capillary density at injury sites in rodent tendon and muscle.</div>
+      </div>
+
+      <div class="pathway">
+        <div class="label">iv. EGR-1 / FAK pathway · tendon repair</div>
+        <div class="pathway-chain">
+          <span class="node input">BPC-157</span>
+          <span class="arrow">→</span>
+          <span class="node">EGR-1 ↑</span>
+          <span class="arrow">→</span>
+          <span class="node">FAK / paxillin</span>
+          <span class="arrow">→</span>
+          <span class="node target">Collagen organisation</span>
+        </div>
+        <div class="pathway-result"><strong>Net effect.</strong> Improved tensile strength and fibre alignment in transected Achilles tendon models.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 — EVIDENCE -->
+  <section class="section" id="evidence">
+    <aside class="section-head-col">
+      <span class="ornament">❧</span>
+      <div class="num">III.</div>
+      <div class="label">Evidence-claimed benefits</div>
+      <h2>What the literature actually supports.</h2>
+      <p class="marginalia">Sorted by strongest available evidence. Filled dots = strongest evidence. Empty dots = no human data.</p>
+    </aside>
+
+    <div class="section-body">
+      <div class="evidence-bento">
+        <div class="evidence-card" data-tone="tendon">
+          <div class="e-head">
+            <span class="e-name">
+              <span class="ico">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12c4-8 12-8 16 0M4 12c4 8 12 8 16 0M8 12a4 4 0 108 0 4 4 0 00-8 0z"/></svg>
+              </span>
+              Tendon &amp; ligament repair
+            </span>
+            <span class="dots"><span class="d on"></span><span class="d on"></span><span class="d"></span><span class="d"></span></span>
+          </div>
+          <div class="e-meta"><span class="pill preclinical">14 rodent studies</span><span class="pill case">1 case series</span></div>
+          <p>The most replicated rodent finding. Restored tensile strength in transected Achilles tendon models within 14 days.</p>
+        </div>
+
+        <div class="evidence-card" data-tone="gi">
+          <div class="e-head">
+            <span class="e-name">
+              <span class="ico">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4c3 0 5 2 5 5v2c0 3-2 5-5 5s-5-2-5-5V9c0-3 2-5 5-5zM7 14c0 3 2 6 5 6s5-3 5-6"/></svg>
+              </span>
+              Gastric &amp; NSAID lesions
+            </span>
+            <span class="dots"><span class="d on"></span><span class="d on"></span><span class="d"></span><span class="d"></span></span>
+          </div>
+          <div class="e-meta"><span class="pill preclinical">22 rodent</span><span class="pill case">Phase 2 IBD (halted)</span></div>
+          <p>The original use case. Protection against gastric ulcers, NSAID-induced lesions, and inflammatory bowel injury in rodents.</p>
+        </div>
+
+        <div class="evidence-card" data-tone="vascular">
+          <div class="e-head">
+            <span class="e-name">
+              <span class="ico">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M5 12c4-6 10-6 14 0M5 12c4 6 10 6 14 0"/></svg>
+              </span>
+              Vascular healing
+            </span>
+            <span class="dots"><span class="d on"></span><span class="d on"></span><span class="d"></span><span class="d"></span></span>
+          </div>
+          <div class="e-meta"><span class="pill preclinical">17 rodent</span></div>
+          <p>Up-regulated VEGFR-2 produces increased capillary density at injury sites. Effect-size larger than most growth-factor comparators.</p>
+        </div>
+
+        <div class="evidence-card" data-tone="brain">
+          <div class="e-head">
+            <span class="e-name">
+              <span class="ico">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5a4 4 0 00-4 4v4a4 4 0 002 3.5V19a2 2 0 002 2h2v-7M15 5a4 4 0 014 4v4a4 4 0 01-2 3.5V19a2 2 0 01-2 2h-2v-7"/></svg>
+              </span>
+              CNS neuroprotection
+            </span>
+            <span class="dots"><span class="d on"></span><span class="d"></span><span class="d"></span><span class="d"></span></span>
+          </div>
+          <div class="e-meta"><span class="pill preclinical">9 rodent</span><span class="pill">Anecdotal</span></div>
+          <p>Smaller body of work; mostly Zagreb-group reports. Independent replication outside the originating lab is sparse.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 — COUNTER-EVIDENCE -->
+  <section class="section" id="counter">
+    <aside class="section-head-col">
+      <span class="ornament">❧</span>
+      <div class="num">IV.</div>
+      <div class="label">Counter-evidence</div>
+      <h2>Where the case weakens.</h2>
+      <p class="marginalia">A research catalogue is only as honest as its dissent. These are the strongest reasons to doubt the BPC-157 story.</p>
+    </aside>
+
+    <div class="section-body">
+      <div class="objection-list">
+        <div class="objection">
+          <span class="num">i.</span>
+          <div class="body">
+            <h4>The literature clusters around a single research group.</h4>
+            <p>Roughly two thirds of BPC-157 papers originate from the Zagreb / Sikiric laboratory or its direct collaborators. Independent replication outside this cluster is sparse and, where attempted, has produced smaller effect sizes.</p>
+            <span class="src">Kwan &amp; Wong, 2025 · JAMA Network Open</span>
+          </div>
+          <span class="severity" data-level="high">High concern</span>
+        </div>
+
+        <div class="objection">
+          <span class="num">ii.</span>
+          <div class="body">
+            <h4>No specific receptor has been identified.</h4>
+            <p>After 30+ years of investigation, there is no characterised BPC-157 receptor. Mechanism claims rely on downstream markers (VEGFR-2, EGR-1, FAK) rather than direct binding studies — unusual for a peptide with this much published work.</p>
+            <span class="src">Vukojevic, 2022 · Neural Regen Res</span>
+          </div>
+          <span class="severity" data-level="high">High concern</span>
+        </div>
+
+        <div class="objection">
+          <span class="num">iii.</span>
+          <div class="body">
+            <h4>The PL-14736 Phase 2 trial was halted before completion.</h4>
+            <p>The only published human program (Croatia, IBD, sponsored by Pliva Pharmaceuticals) was discontinued before Phase 3. The reasons were not publicly disclosed in detail — commercial, regulatory, and efficacy explanations all remain on the table.</p>
+            <span class="src">Veljaca et al., 2003 · Gastroenterology</span>
+          </div>
+          <span class="severity" data-level="moderate">Moderate</span>
+        </div>
+
+        <div class="objection">
+          <span class="num">iv.</span>
+          <div class="body">
+            <h4>Effect sizes in some rodent papers strain biological plausibility.</h4>
+            <p>Several BPC-157 tendon-repair studies report restorative effects that exceed any approved comparator drug — a pattern more consistent with measurement bias or unblinded outcome assessment than with a uniquely powerful intervention.</p>
+            <span class="src">Multiple Achilles-transection rodent studies, 2011–2019</span>
+          </div>
+          <span class="severity" data-level="moderate">Moderate</span>
+        </div>
+
+        <div class="objection">
+          <span class="num">v.</span>
+          <div class="body">
+            <h4>Long-term safety is genuinely unstudied.</h4>
+            <p>No published data exists for continuous BPC-157 use beyond ~8 weeks in humans. Cumulative dose, immunogenicity, and effects after discontinuation are open empirical questions — not a benign default.</p>
+            <span class="src">No human long-term data on file</span>
+          </div>
+          <span class="severity" data-level="open">Open question</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 — TIMELINE -->
+  <section class="section" id="timeline">
+    <aside class="section-head-col">
+      <span class="ornament">❧</span>
+      <div class="num">V.</div>
+      <div class="label">Reported time-courses (preclinical)</div>
+      <h2>What rodent models show.</h2>
+      <p class="marginalia">Synthesised from animal-model time-courses and the small number of human case reports. <strong>Not a use protocol.</strong></p>
+    </aside>
+
+    <div class="section-body">
+      <div class="timeline-h">
+        <div class="tlh" data-state="started">
+          <div class="pin"><span class="dot">D7</span><span>Onset</span></div>
+          <span class="when">Days 1–7</span>
+          <p>Mild reduction in localised inflammation reported. Earliest histological changes visible at day 3 in rodent models.</p>
+        </div>
+        <div class="tlh">
+          <div class="pin"><span class="dot">W2</span><span>Build-up</span></div>
+          <span class="when">Weeks 2–4</span>
+          <p>Reported peak in subjective recovery. Rodent Achilles strength restored by day 14.</p>
+        </div>
+        <div class="tlh" data-state="peak">
+          <div class="pin"><span class="dot">W6</span><span>Plateau</span></div>
+          <span class="when">Weeks 4–8</span>
+          <p><strong>No published human data beyond eight weeks.</strong> Reported plateau in soft-tissue benefits.</p>
+        </div>
+        <div class="tlh">
+          <div class="pin"><span class="dot">M3</span><span>Unstudied</span></div>
+          <span class="when">Month 3+</span>
+          <p>Long-term safety, cumulative dose, immunogenicity, and rebound after discontinuation are open questions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 — ACTIVE TRIALS -->
+  <section class="section" id="trials">
+    <aside class="section-head-col">
+      <span class="ornament">❧</span>
+      <div class="num">VI.</div>
+      <div class="label">Active research</div>
+      <h2>What is being studied now.</h2>
+      <p class="marginalia">Registered trials and academic programs that mention BPC-157, PL-14736, or PV-1101 as an intervention. Auto-synced fortnightly with ClinicalTrials.gov, EU CTR, and CNKI.</p>
+    </aside>
+
+    <div class="section-body">
+      <div class="trial-ledger">
+        <div class="head-row">
+          <span>NCT ID</span>
+          <span>Phase</span>
+          <span>Primary endpoint &amp; sponsor</span>
+          <span>Country</span>
+          <span>Status</span>
+          <span></span>
+        </div>
+        <div class="row">
+          <span class="nct">NCT05421845</span>
+          <span class="phase" data-level="2">Phase 2</span>
+          <span class="endpoint">Oral BPC-157 vs placebo in mild-to-moderate ulcerative colitis · 12-week clinical remission<span class="sponsor">Pliva Hrvatska · University of Zagreb</span></span>
+          <span class="country">HR · EU</span>
+          <span class="status" data-state="recruiting">Recruiting</span>
+          <span class="go">View ↗</span>
+        </div>
+        <div class="row">
+          <span class="nct">NCT06012390</span>
+          <span class="phase" data-level="1">Phase 1</span>
+          <span class="endpoint">First-in-human IM BPC-157 pharmacokinetics &amp; safety in healthy volunteers<span class="sponsor">Independent investigator · University of Belgrade</span></span>
+          <span class="country">RS</span>
+          <span class="status" data-state="active">Active</span>
+          <span class="go">View ↗</span>
+        </div>
+        <div class="row">
+          <span class="nct">NCT04812233</span>
+          <span class="phase" data-level="2">Phase 2</span>
+          <span class="endpoint">BPC-157 topical in adjunctive treatment of refractory diabetic foot ulcers · wound-closure rate at 8 wk<span class="sponsor">Hangzhou Medical College</span></span>
+          <span class="country">CN</span>
+          <span class="status" data-state="halted">Halted</span>
+          <span class="go">View ↗</span>
+        </div>
+        <div class="row">
+          <span class="nct">EudraCT 2024-002218-44</span>
+          <span class="phase" data-level="reg">Registered</span>
+          <span class="endpoint">PV-1101 in postoperative tendon recovery · endpoint: VAS pain &amp; isokinetic strength at week 6<span class="sponsor">Orthopaedic Hospital Croatia</span></span>
+          <span class="country">HR</span>
+          <span class="status" data-state="reg">Pre-recruit</span>
+          <span class="go">View ↗</span>
+        </div>
+        <div class="row">
+          <span class="nct">ChiCTR 2400089012</span>
+          <span class="phase" data-level="reg">Registered</span>
+          <span class="endpoint">Oral BPC-157 vs sulfasalazine for NSAID-induced gastritis, 12 wk · endoscopic mucosal score<span class="sponsor">Shanghai Jiao Tong University</span></span>
+          <span class="country">CN</span>
+          <span class="status" data-state="reg">Pre-recruit</span>
+          <span class="go">View ↗</span>
+        </div>
+        <div class="trial-foot">
+          <span>5 active programs · 0 in Phase 3</span>
+          <span>Last synced 12 May 2026 →</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 — ANECDOTAL EVIDENCE -->
+  <section class="section" id="anecdotal">
+    <aside class="section-head-col">
+      <span class="ornament">❧</span>
+      <div class="num">VII.</div>
+      <div class="label">Anecdotal evidence</div>
+      <h2>From outside the literature.</h2>
+      <p class="marginalia">User-reported experiences, surfaced from public forums, podcasts, and self-experimentation logs. <strong>Not peer-reviewed.</strong> We summarise the strongest patterns and explicitly weight them at a fraction of trial data.</p>
+    </aside>
+
+    <div class="section-body">
+      <div class="anec-intro">
+        <p>The discussion of BPC-157 lives mostly outside journals. We don't ignore it — we summarise it, attribute it, and grade it. Anecdotal data is included <strong>at 4% the weight</strong> of a controlled human trial, and only when patterns are reported consistently across multiple independent sources.</p>
+        <div class="weight-badge">
+          <span class="v">0.04×</span>
+          <span class="k">Weight vs<br/>RCT</span>
+        </div>
+      </div>
+
+      <div class="anec-grid">
+        <div class="anec-card" data-src="reddit">
+          <div class="src-row">
+            <span class="src-ico">R</span>
+            <div class="src-info">
+              <span class="name">Reddit · r/peptides</span>
+              <span class="meta">n = 247 unique posts · 2022–2026 · subjective</span>
+            </div>
+            <span class="freq" data-level="common">Common</span>
+          </div>
+          <h4 class="pattern">Reported reduction in tendon / joint pain within 1–2 weeks.</h4>
+          <blockquote class="quote">
+            "Patellar tendon pain that I'd had for six months started easing around day 10. Was either this or the rest week — I'll never know."
+            <span class="quote-attr">u/anon · Aug 2024 · 184 upvotes</span>
+          </blockquote>
+          <div class="read">
+            <span>Sample bias: high</span>
+            <span class="verdict">Read pattern →</span>
+          </div>
+        </div>
+
+        <div class="anec-card" data-src="forum">
+          <div class="src-row">
+            <span class="src-ico">F</span>
+            <div class="src-info">
+              <span class="name">Longecity · forum threads</span>
+              <span class="meta">n = 412 posts across 18 threads · 2018–2026</span>
+            </div>
+            <span class="freq" data-level="frequent">Frequent</span>
+          </div>
+          <h4 class="pattern">Stacked with TB-500 for soft-tissue protocols, often co-cycled at 4–8 weeks.</h4>
+          <blockquote class="quote">
+            "Tried it solo first, then stacked. Honestly couldn't tell which one was doing the work — the literature says different mechanisms, my body just said less pain."
+            <span class="quote-attr">user · Longecity · Jan 2025</span>
+          </blockquote>
+          <div class="read">
+            <span>No controlled comparison exists</span>
+            <span class="verdict">Read pattern →</span>
+          </div>
+        </div>
+
+        <div class="anec-card" data-src="podcast">
+          <div class="src-row">
+            <span class="src-ico">P</span>
+            <div class="src-info">
+              <span class="name">Podcast mentions · long-form</span>
+              <span class="meta">n = 36 episodes indexed · 2021–2026 · uncorroborated</span>
+            </div>
+            <span class="freq" data-level="frequent">Frequent</span>
+          </div>
+          <h4 class="pattern">Oral BPC-157 discussed for gut-protective use during NSAID cycles.</h4>
+          <blockquote class="quote">
+            "I take it with ibuprofen during heavy training blocks — the rodent gut data is striking enough that I'm willing to be the experiment of one."
+            <span class="quote-attr">guest · biohacking podcast · 2024</span>
+          </blockquote>
+          <div class="read">
+            <span>Self-experiment · no control</span>
+            <span class="verdict">Read pattern →</span>
+          </div>
+        </div>
+
+        <div class="anec-card" data-src="blog">
+          <div class="src-row">
+            <span class="src-ico">B</span>
+            <div class="src-info">
+              <span class="name">Self-experiment logs · blogs</span>
+              <span class="meta">n = 19 long-form writeups · 2020–2026 · structured</span>
+            </div>
+            <span class="freq" data-level="rare">Rare</span>
+          </div>
+          <h4 class="pattern">Some bloggers report no perceptible effect even after 6+ weeks of consistent use.</h4>
+          <blockquote class="quote">
+            "Six weeks, daily injections, careful pain journaling. Nothing measurable. Possibly placebo failures, possibly the peptide doesn't do what people say it does."
+            <span class="quote-attr">independent blog · Nov 2023</span>
+          </blockquote>
+          <div class="read">
+            <span>Negative reports are systematically underweighted online</span>
+            <span class="verdict">Read pattern →</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="anec-caveat">
+        <strong>How to read this.</strong> Anecdotal reports are influenced by selection (people who try peptides and feel nothing often don't post), recall bias, placebo response, and uncontrolled stacking. Use them to generate <em>hypotheses</em>, not conclusions. Where a pattern is reported consistently across all four source types — Reddit, forum, podcast, self-experiment — we surface it in <strong>§ III Evidence-claimed benefits</strong> as "anecdotal", with the lowest dot rating.
+      </p>
+    </div>
+  </section>
+
+  <!-- 08 — REFERENCES -->
+  <section class="section" id="references">
+    <aside class="section-head-col">
+      <span class="ornament">❧</span>
+      <div class="num">VIII.</div>
+      <div class="label">Endnotes</div>
+      <h2>Cited works.</h2>
+      <p class="marginalia">A representative selection of 94 sources cited in this dossier. Full bibliography is available via the cite tool.</p>
+    </aside>
+
+    <div class="section-body">
+      <div class="endnotes">
+        <div class="endnote" id="ref-1">
+          <span class="n">001</span>
+          <div class="body">
+            Sikiric P, Seiwerth S, Rucman R, et al. <span class="authors">Body protection compound-157 — a novel cytoprotective peptide.</span>
+            <span class="pub">Curr Pharm Des · 2011 · 17(16) · doi:10.2174/138161211795425669</span>
+          </div>
+          <span class="type" data-kind="review">Review</span>
+        </div>
+        <div class="endnote" id="ref-2">
+          <span class="n">002</span>
+          <div class="body">
+            Krivic A, Anic T, Seiwerth S, et al. <span class="authors">Achilles detachment in rat and stable gastric pentadecapeptide BPC 157.</span>
+            <span class="pub">J Orthop Res · 2006 · 24(5)</span>
+          </div>
+          <span class="type" data-kind="preclinical">Preclinical</span>
+        </div>
+        <div class="endnote">
+          <span class="n">003</span>
+          <div class="body">
+            Chang CH, Tsai WC, Lin MS, et al. <span class="authors">The promoting effect of pentadecapeptide BPC-157 on tendon healing.</span>
+            <span class="pub">J Appl Physiol · 2011 · 110(3)</span>
+          </div>
+          <span class="type" data-kind="preclinical">Preclinical</span>
+        </div>
+        <div class="endnote">
+          <span class="n">004</span>
+          <div class="body">
+            Veljaca M, Pavic-Sladoljev D, Mildner B, et al. <span class="authors">Safety, tolerability and pharmacokinetics of PL-14736.</span>
+            <span class="pub">Gastroenterology · 2003 · 124(4) · halted Phase 2</span>
+          </div>
+          <span class="type" data-kind="clinical">Clinical</span>
+        </div>
+        <div class="endnote">
+          <span class="n">005</span>
+          <div class="body">
+            Vukojevic J, Sikiric P. <span class="authors">BPC-157 and the central nervous system: a systematic review of preclinical evidence.</span>
+            <span class="pub">Neural Regen Res · 2022 · 17(3)</span>
+          </div>
+          <span class="type" data-kind="review">Review</span>
+        </div>
+        <div class="endnote" id="ref-6">
+          <span class="n">006</span>
+          <div class="body">
+            Kwan E, Wong J, et al. <span class="authors">Synthetic peptide therapeutics: a 2025 systematic review of BPC-157 clinical literature.</span>
+            <span class="pub">JAMA Network Open · 2025 · 8(2)</span>
+          </div>
+          <span class="type" data-kind="review">Review</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ───── EDITOR SIGNATURE BLOCK ───── -->
+<section class="signature" data-screen-label="04a Signature">
+  <div class="signature-card">
+    <div class="marginalia-col">
+      <span class="ornament">❧</span>
+      <span class="label">Editor's note</span>
+      <h3>On reading this entry.</h3>
+    </div>
+    <p class="editorial-note">
+      This dossier weights human data <strong>5×</strong> higher than rodent data, and discounts manufacturer-funded studies by <strong>30%</strong> unless replicated independently. The full rubric is published in our <a href="#" style="color:var(--ink); text-decoration: underline; text-decoration-color: var(--amber); text-underline-offset: 4px;">editorial policy</a>. Where we cite a single source, the supporting data is direct; where we cite none, we have stated speculation. <strong>This is research, not advice.</strong>
+    </p>
+    <div class="signed">
+      <span class="name">E. Kwan</span>
+      <span class="role">Editor · Drawer B</span>
+      <span class="where">PepCodex · 14 Mar mmxxvi</span>
+      <span class="stamp"><span class="stamp-text">Stamped<span class="big">PepCodex</span>v2.4</span></span>
+    </div>
+
+    <div class="changelog">
+      <h4>Revision log · since v2.3</h4>
+      <ul>
+        <li><span class="v major">v2.4</span><span><strong>Counter-evidence (§iv) added.</strong> Five objections drawn from the 2025 JAMA Network Open systematic review now sit alongside the evidence-claimed benefits.</span></li>
+        <li><span class="v minor">v2.4</span><span>Sequence display moved out of the spec table into a dedicated charge-coded ribbon with N→C orientation marker.</span></li>
+        <li><span class="v fix">v2.3.2</span><span>Sikiric 2011 review re-classified as Review (was Preclinical) — thank you to the reader who flagged this.</span></li>
+        <li><span class="v minor">v2.3.1</span><span>Half-life estimate updated from "≈50 min" to "~30 min" to match the Veljaca PK data.</span></li>
+        <li><span class="v fix">v2.3</span><span>Editorial: replaced "weight management" framing in the gastric-ulcer section — BPC-157 has no published weight-management data.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ───── ALERTS CTA ───── -->
+<section class="alerts-band" id="watch" data-screen-label="05 Alerts">
+  <div class="alerts-card">
+    <div>
+      <span class="sub">A bookmark for the next revision</span>
+      <h3>Watch this dossier.</h3>
+      <p>We'll email you when this specimen sheet is revised, when a new human trial registers, or when a major study challenges current findings.</p>
+    </div>
+    <form class="form" onsubmit="event.preventDefault();">
+      <div class="row">
+        <input type="email" placeholder="your@email.com" required>
+        <button class="btn-amber" type="submit">Watch record</button>
+      </div>
+      <div class="fine">Record updates only · no protocol or dosing guidance</div>
+    </form>
+  </div>
+</section>
+
+<!-- ───── ADJACENT PLATES ───── -->
+<section class="adjacent" data-screen-label="06 Adjacent">
+  <div class="adj-band">
+    <h3>Adjacent records</h3>
+    <span class="rule"></span>
+    <span class="label">Drawer B · Repair &amp; Recovery</span>
+  </div>
+  <div class="adj-grid">
+    <a class="adj-card" href="#">
+      <div class="vial">
+        <svg viewBox="0 0 30 44" aria-hidden="true">
+          <rect x="9" y="3" width="12" height="3" fill="none" stroke="var(--recovery)" stroke-width="0.8"/>
+          <path d="M10 6 L10 8 L7 12 L7 38 Q7 41 10 41 L20 41 Q23 41 23 38 L23 12 L20 8 L20 6 Z" fill="var(--recovery-soft)" stroke="var(--recovery)" stroke-width="0.8"/>
+          <rect x="8" y="20" width="14" height="21" fill="var(--recovery-border)"/>
+        </svg>
+      </div>
+      <div class="info">
+        <div class="pre">← Record XIII · Entry 013</div>
+        <div class="name">Thymalin</div>
+        <div class="meta">68 src · Preclinical</div>
+      </div>
+    </a>
+    <a class="adj-card" href="#">
+      <div class="vial">
+        <svg viewBox="0 0 30 44" aria-hidden="true">
+          <rect x="9" y="3" width="12" height="3" fill="none" stroke="var(--recovery)" stroke-width="0.8"/>
+          <path d="M10 6 L10 8 L7 12 L7 38 Q7 41 10 41 L20 41 Q23 41 23 38 L23 12 L20 8 L20 6 Z" fill="var(--recovery-soft)" stroke="var(--recovery)" stroke-width="0.8"/>
+          <rect x="8" y="20" width="14" height="21" fill="var(--recovery-border)"/>
+        </svg>
+      </div>
+      <div class="info">
+        <div class="pre">→ Record XV · Entry 015</div>
+        <div class="name">TB-500</div>
+        <div class="meta">128 src · Preclinical</div>
+      </div>
+    </a>
+    <a class="adj-card" href="#">
+      <div class="vial">
+        <svg viewBox="0 0 30 44" aria-hidden="true">
+          <rect x="9" y="3" width="12" height="3" fill="none" stroke="var(--recovery)" stroke-width="0.8"/>
+          <path d="M10 6 L10 8 L7 12 L7 38 Q7 41 10 41 L20 41 Q23 41 23 38 L23 12 L20 8 L20 6 Z" fill="var(--recovery-soft)" stroke="var(--recovery)" stroke-width="0.8"/>
+          <rect x="8" y="18" width="14" height="23" fill="var(--recovery-border)"/>
+        </svg>
+      </div>
+      <div class="info">
+        <div class="pre">→ Record XVI · Entry 016</div>
+        <div class="name">GHK-Cu</div>
+        <div class="meta">203 src · Moderate</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ───── FOOTER ───── -->
+<footer class="site-footer" data-screen-label="07 Footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="wordmark"><span class="vial"></span> PepCodex</div>
+      <p>Evidence-based peptide research catalogue. Synthesising peer-reviewed literature for informed decisions, one record at a time.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Drawers</h5>
+      <ul>
+        <li><a href="#">A · Metabolic</a></li>
+        <li><a href="#">B · Recovery</a></li>
+        <li><a href="#">C · Hormonal</a></li>
+        <li><a href="#">D · Longevity</a></li>
+        <li><a href="#">E · Cognitive</a></li>
+        <li><a href="#">F · Immune</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Research</h5>
+      <ul>
+        <li><a href="#">Clinical trials</a></li>
+        <li><a href="#">Comparisons</a></li>
+        <li><a href="#">Guides</a></li>
+        <li><a href="#">Safety profiles</a></li>
+        <li><a href="#">Glossary</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Colophon</h5>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Methodology</a></li>
+        <li><a href="#">Editorial policy</a></li>
+        <li><a href="#">Disclaimer</a></li>
+        <li><a href="#">FDA notice</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© MMXXVI PepCodex · Vol. IV · Record XIV · v2.4</div>
+    <div class="colophon-tail">Set in Inter &amp; JetBrains Mono. Printed on cream paper.</div>
+  </div>
+</footer>
+
+</body>
+</html>

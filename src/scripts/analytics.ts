@@ -23,29 +23,6 @@ function trackSearch() {
   });
 }
 
-// Track calculator interactions
-function trackCalculators() {
-  const calcForms = document.querySelectorAll('[data-calculator]');
-  calcForms.forEach((form) => {
-    form.addEventListener('submit', (e) => {
-      const calcType = (e.currentTarget as HTMLElement).dataset.calculator || 'unknown';
-      gtag('event', 'calculator_use', { calculator_type: calcType });
-    });
-  });
-
-  // Also track calculate button clicks
-  document.querySelectorAll('button[type="submit"]').forEach((btn) => {
-    const form = btn.closest('[data-calculator]');
-    if (form) {
-      btn.addEventListener('click', () => {
-        gtag('event', 'calculator_use', {
-          calculator_type: (form as HTMLElement).dataset.calculator || 'unknown',
-        });
-      });
-    }
-  });
-}
-
 // Track comparison clicks
 function trackComparisons() {
   document.querySelectorAll('a[href*="/compare/"]').forEach((link) => {
@@ -118,7 +95,6 @@ function trackScrollDepth() {
 function init() {
   if (typeof gtag === 'undefined') return;
   trackSearch();
-  trackCalculators();
   trackComparisons();
   trackNewsletter();
   trackExternalLinks();

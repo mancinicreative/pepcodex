@@ -4,7 +4,6 @@ import OrganizationSchema from '../components/SEO/OrganizationSchema.astro';
 import DisclaimerBanner from '../components/DisclaimerBanner.astro';
 import CookieConsent from '../components/CookieConsent.astro';
 import SearchModal from '../components/SearchModal.astro';
-import ExitIntentPopup from '../components/ExitIntentPopup.astro';
 
 interface Props {
   title: string;
@@ -125,12 +124,24 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
           >
             Trials
           </a>
+          <a
+            href="/regulatory-tracker"
+            aria-current={isActive('/regulatory-tracker') ? 'page' : undefined}
+            class:list={[
+              "px-3 py-2 rounded-md transition-colors duration-200",
+              isActive('/regulatory-tracker')
+                ? "text-[color:var(--primary-c)]"
+                : "text-[color:var(--ink-muted)] hover:text-[color:var(--ink)]"
+            ]}
+          >
+            Regulatory
+          </a>
           <!-- Research Dropdown -->
           <div class="relative group">
             <button
               class:list={[
                 "flex items-center gap-1.5 px-3 py-2 rounded-md transition-colors duration-200 uppercase tracking-[0.1em]",
-                ['/compare', '/guide', '/safety', '/glossary', '/conditions', '/bioregulators'].some(p => currentPath.startsWith(p))
+                ['/compare', '/guide', '/safety', '/glossary', '/conditions', '/bioregulators', '/methodology'].some(p => currentPath.startsWith(p))
                   ? "text-[color:var(--primary-c)]"
                   : "text-[color:var(--ink-muted)] hover:text-[color:var(--ink)]"
               ]}
@@ -148,6 +159,7 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
                 <a href="/glossary" class:list={["block px-3 py-2 rounded-md transition-colors", isActive('/glossary') ? "text-[color:var(--primary-c)] bg-[color:var(--primary-soft)]" : "text-[color:var(--ink-muted)] hover:text-[color:var(--ink)] hover:bg-[color:var(--paper-2)]"]}>Glossary</a>
                 <a href="/conditions" class:list={["block px-3 py-2 rounded-md transition-colors", isActive('/conditions') ? "text-[color:var(--primary-c)] bg-[color:var(--primary-soft)]" : "text-[color:var(--ink-muted)] hover:text-[color:var(--ink)] hover:bg-[color:var(--paper-2)]"]}>Conditions</a>
                 <a href="/bioregulators" class:list={["block px-3 py-2 rounded-md transition-colors", isActive('/bioregulators') ? "text-[color:var(--primary-c)] bg-[color:var(--primary-soft)]" : "text-[color:var(--ink-muted)] hover:text-[color:var(--ink)] hover:bg-[color:var(--paper-2)]"]}>Bioregulators</a>
+                <a href="/methodology" class:list={["block px-3 py-2 rounded-md transition-colors", isActive('/methodology') ? "text-[color:var(--primary-c)] bg-[color:var(--primary-soft)]" : "text-[color:var(--ink-muted)] hover:text-[color:var(--ink)] hover:bg-[color:var(--paper-2)]"]}>Methodology</a>
               </div>
             </div>
           </div>
@@ -162,18 +174,6 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
             ]}
           >
             Blog
-          </a>
-          <a
-            href="/directory"
-            aria-current={isActive('/directory') ? 'page' : undefined}
-            class:list={[
-              "px-3 py-2 rounded-md transition-colors duration-200",
-              isActive('/directory')
-                ? "text-[color:var(--primary-c)]"
-                : "text-[color:var(--ink-muted)] hover:text-[color:var(--ink)]"
-            ]}
-          >
-            Directory
           </a>
         </div>
 
@@ -253,21 +253,21 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
             Blog
           </a>
           <a
-            href="/directory"
+            href="/regulatory-tracker"
             class:list={[
               "px-4 py-3 rounded-lg text-base transition-colors",
-              isActive('/directory')
+              isActive('/regulatory-tracker')
                 ? "text-[color:var(--primary-c)] bg-[color:var(--primary-soft)]"
                 : "text-[color:var(--ink-muted)] hover:text-[color:var(--ink)] hover:bg-[color:var(--paper-2)]"
             ]}
           >
-            Directory
+            Regulatory
           </a>
           <!-- Research (expandable) -->
           <details class="group/research">
             <summary class:list={[
               "flex items-center justify-between px-4 py-3 rounded-lg text-base transition-colors cursor-pointer list-none",
-              ['/compare', '/guide', '/safety', '/glossary', '/conditions', '/bioregulators'].some(p => currentPath.startsWith(p))
+              ['/compare', '/guide', '/safety', '/glossary', '/conditions', '/bioregulators', '/methodology'].some(p => currentPath.startsWith(p))
                 ? "text-[color:var(--primary-c)] bg-[color:var(--primary-soft)]"
                 : "text-[color:var(--ink-muted)] hover:text-[color:var(--ink)] hover:bg-[color:var(--paper-2)]"
             ]}>
@@ -283,6 +283,7 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
               <a href="/glossary" class:list={["block px-4 py-2.5 rounded-lg text-sm transition-colors", isActive('/glossary') ? "text-[color:var(--primary-c)]" : "text-[color:var(--ink-dim)] hover:text-[color:var(--ink)] hover:bg-[color:var(--paper-2)]"]}>Glossary</a>
               <a href="/conditions" class:list={["block px-4 py-2.5 rounded-lg text-sm transition-colors", isActive('/conditions') ? "text-[color:var(--primary-c)]" : "text-[color:var(--ink-dim)] hover:text-[color:var(--ink)] hover:bg-[color:var(--paper-2)]"]}>Conditions</a>
               <a href="/bioregulators" class:list={["block px-4 py-2.5 rounded-lg text-sm transition-colors", isActive('/bioregulators') ? "text-[color:var(--primary-c)]" : "text-[color:var(--ink-dim)] hover:text-[color:var(--ink)] hover:bg-[color:var(--paper-2)]"]}>Bioregulators</a>
+              <a href="/methodology" class:list={["block px-4 py-2.5 rounded-lg text-sm transition-colors", isActive('/methodology') ? "text-[color:var(--primary-c)]" : "text-[color:var(--ink-dim)] hover:text-[color:var(--ink)] hover:bg-[color:var(--paper-2)]"]}>Methodology</a>
             </div>
           </details>
           <div class="flex gap-2 mt-4 pt-4 border-t border-[color:var(--border-c)]">
@@ -460,7 +461,5 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
       });
     </script>
 
-    <!-- Exit-intent newsletter popup (all pages) -->
-    <ExitIntentPopup />
   </body>
 </html>

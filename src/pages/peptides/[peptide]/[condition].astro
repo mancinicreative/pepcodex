@@ -149,7 +149,7 @@ const currentEvidence = evidenceConfig[peptide.data.evidenceStrength];
       <!-- Main Content Column -->
       <div class="lg:col-span-2 space-y-8">
         <!-- Research Summary Card -->
-        <section class="glass-card-default p-8">
+        <section id="research-summary" class="glass-card-default p-8 scroll-mt-28">
           <div class="flex items-center gap-3 mb-6">
             <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background: var(--primary-soft); border: 1px solid var(--primary-border);">
               <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -176,7 +176,7 @@ const currentEvidence = evidenceConfig[peptide.data.evidenceStrength];
 
         <!-- Key Studies Section -->
         {condition.relevantStudies && condition.relevantStudies.length > 0 && (
-          <section class="glass-card-default p-8">
+          <section id="referenced-studies" class="glass-card-default p-8 scroll-mt-28">
             <div class="flex items-center gap-3 mb-6">
               <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background: var(--primary-soft); border: 1px solid var(--primary-border);">
                 <svg class="w-5 h-5" style="color: var(--primary-c);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -220,7 +220,7 @@ const currentEvidence = evidenceConfig[peptide.data.evidenceStrength];
 
         <!-- Related Peptides for This Condition -->
         {relatedPeptidesWithCondition.length > 0 && (
-          <section class="glass-card-default p-8">
+          <section id="related-peptides" class="glass-card-default p-8 scroll-mt-28">
             <div class="flex items-center gap-3 mb-6">
               <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background: var(--primary-soft); border: 1px solid var(--primary-border);">
                 <svg class="w-5 h-5" style="color: var(--primary-c);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -287,16 +287,16 @@ const currentEvidence = evidenceConfig[peptide.data.evidenceStrength];
             On This Page
           </h3>
           <nav class="space-y-2">
-            <a href="#" class="block text-sm hover:text-primary transition-colors py-1" style="color: var(--ink);">
+            <a href="#research-summary" class="block text-sm hover:text-primary transition-colors py-1" style="color: var(--ink);">
               Research Summary
             </a>
             {condition.relevantStudies && condition.relevantStudies.length > 0 && (
-              <a href="#" class="block text-sm hover:text-primary transition-colors py-1" style="color: var(--ink);">
+              <a href="#referenced-studies" class="block text-sm hover:text-primary transition-colors py-1" style="color: var(--ink);">
                 Referenced Studies ({condition.relevantStudies.length})
               </a>
             )}
             {relatedPeptidesWithCondition.length > 0 && (
-              <a href="#" class="block text-sm hover:text-primary transition-colors py-1" style="color: var(--ink);">
+              <a href="#related-peptides" class="block text-sm hover:text-primary transition-colors py-1" style="color: var(--ink);">
                 Related Peptides
               </a>
             )}

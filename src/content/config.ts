@@ -162,7 +162,7 @@ const peptides = defineCollection({
         cellStudies: z.number(),
         keyFindings: z.array(z.object({
           study: z.string(),
-          type: z.enum(['human-rct', 'human-observational', 'animal', 'in-vitro']),
+          type: z.enum(['human-rct', 'human-observational', 'animal', 'in-vitro', 'meta-analysis', 'review']),
           finding: z.string(),
           pmid: z.string().optional(),
         })),
@@ -374,7 +374,7 @@ const conditionHubs = defineCollection({
 });
 
 // NEW: Protocols collection for multi-peptide research overviews
-const studyType = z.enum(['human-rct', 'human-observational', 'animal', 'in-vitro']);
+const studyType = z.enum(['human-rct', 'human-observational', 'animal', 'in-vitro', 'meta-analysis', 'review']);
 
 const protocols = defineCollection({
   type: 'content',

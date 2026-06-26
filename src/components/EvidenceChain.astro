@@ -68,6 +68,8 @@ const studyTypeConfig: Record<string, { label: string; abbrev: string; color: st
   'human-observational': { label: 'Human Observational', abbrev: 'OBS', color: 'rgb(11, 81, 127)' },
   'animal': { label: 'Animal Study', abbrev: 'ANI', color: 'rgb(154, 100, 24)' },
   'in-vitro': { label: 'In Vitro', abbrev: 'IVT', color: 'rgb(92, 83, 65)' },
+  'meta-analysis': { label: 'Meta-analysis', abbrev: 'META', color: 'rgb(20, 118, 74)' },
+  'review': { label: 'Review', abbrev: 'REV', color: 'rgb(92, 83, 65)' },
 };
 ---
 
@@ -258,7 +260,7 @@ const studyTypeConfig: Record<string, { label: string; abbrev: string; color: st
           <div class="key-findings-panel hidden" data-findings-panel={index}>
             <div class="findings-list">
               {benefit.evidence.keyFindings.map(finding => {
-                const typeConfig = studyTypeConfig[finding.type];
+                const typeConfig = studyTypeConfig[finding.type] || studyTypeConfig['in-vitro'];
                 return (
                   <div class="finding-item">
                     <div class="finding-header">

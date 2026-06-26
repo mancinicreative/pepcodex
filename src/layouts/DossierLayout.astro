@@ -58,7 +58,7 @@ interface AnecdotalReports {
 
 interface KeyFinding {
   study: string;
-  type: 'human-rct' | 'human-observational' | 'animal' | 'in-vitro';
+  type: 'human-rct' | 'human-observational' | 'animal' | 'in-vitro' | 'meta-analysis' | 'review';
   finding: string;
   pmid?: string;
 }
@@ -736,12 +736,16 @@ const clinicalPct = sources.count ? Math.round((sources.human / sources.count) *
                               <div class="flex items-center gap-3">
                                 <span class="px-2 py-0.5 text-[10px] uppercase rounded" style={`font-family: var(--font-mono); ${
                                   study.type === 'human-rct' ? 'background: rgba(20,118,74,0.12); color: var(--research);' :
+                                  study.type === 'meta-analysis' ? 'background: rgba(20,118,74,0.18); color: var(--research);' :
                                   study.type === 'human-observational' ? 'background: var(--primary-soft); color: var(--primary-c);' :
+                                  study.type === 'review' ? 'background: var(--paper-2); color: var(--ink-muted);' :
                                   study.type === 'animal' ? 'background: rgba(203,135,52,0.14); color: #9a6418;' :
                                   'background: var(--paper-2); color: var(--ink-dim);'
                                 }`}>
                                   {study.type === 'human-rct' ? 'RCT' :
+                                   study.type === 'meta-analysis' ? 'Meta' :
                                    study.type === 'human-observational' ? 'Human' :
+                                   study.type === 'review' ? 'Review' :
                                    study.type === 'animal' ? 'Animal' : 'In Vitro'}
                                 </span>
                                 <span class="text-sm font-medium" style="color: var(--ink);">{study.study}</span>

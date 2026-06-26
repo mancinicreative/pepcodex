@@ -21,8 +21,8 @@ match). CHUNK=3 (OneDrive EMFILE safety). Spot-verified by hand + build gate bef
 | Chunk 0 | Surface/IA: popup, nav (drop Directory, add Regulatory+Methodology), dead anchors, dead code | DONE | 775b015 |
 | Citations B1 | GLP-1 flagship (10) | DONE — ~101 cites fixed, 10/10 verified clean | 9d67c0c |
 | Citations wave-aa | 225ac-dota-lm3, 5-amino-1mq, alixorexton, alpha-defensins, aod-9604, bpc-157, bronchogen, bt5528, cardiogen, cartalax, cerebrolysin (cerluten already clean) | DONE — ~118 cites fixed; bt5528 + alpha-defensins hand-fixed after verify | eb6454a |
-| Citations wave-ab | chelohart, chonluten, cjc-1295, cortexin, ct-388, dihexa, dsip, ecnoglutide, endoluten, epithalon, evx-01, follistatin | RUNNING (wf_ab07b3a2-1d7) | — |
-| Citations wave-ac | foxo4-dri, ghk, ghk-cu, ghrp-2, ghrp-6, glutathione, hcg, hexarelin, hmg, humanin, igf-1-lr3, ipamorelin | queued | — |
+| Citations wave-ab | cjc-1295, cortexin, ct-388, dihexa, dsip, epithalon, follistatin (5 others zero-PMID/clean) | DONE — ~56 fixes; dihexa retracted-paper hand-fix; prompts hardened for retractions | 18cbf4e |
+| Citations wave-ac | foxo4-dri, ghk, ghk-cu, ghrp-2, ghrp-6, glutathione, hcg, hexarelin, hmg, humanin, igf-1-lr3, ipamorelin | RUNNING (wf_e58bfb13-692) | — |
 | Citations wave-ad | kisspeptin, klotho, kpv, kristagen, lactoferricin, livagen, ll-37, maritide, melanotan-i, melanotan-ii, mk-0616, mk-677 | queued | — |
 | Citations wave-ae | mots-c, mrna-4157, murepavadin, na-selank-amidate, na-semax-amidate, ovagen, oveporexton, p21, pancragen, pasireotide, peg-mgf, pemvidutide | queued | — |
 | Citations wave-af | pf-08653944, pinealon, prostatilen, pt-141, retinalamin, rusfertide, selank, semax, sermorelin, shlp-2, shlp-6, sigumir | queued | — |

@@ -35,7 +35,7 @@ interactions:
       GHRH+GHRP synergy - tesamorelin (GHRH) amplifies hexarelin's (GHRP)
       GH-releasing effect. However, hexarelin's rapid desensitization limits
       practical use of this combination.
-    source: '7806864'
+    source: '9186261'
   - peptide: ghrp-6
     type: avoid
     description: >-
@@ -108,15 +108,15 @@ evidenceChainedBenefits:
         - study: Ghigo E et al. 1994
           type: human-rct
           finding: >-
-            Hexarelin produced GH response approximately 2x greater than GHRP-6
-            in healthy volunteers
-          pmid: '7806864'
-        - study: Arvat E et al. 1994
+            Hexarelin produced GH response approximately 2x greater than GHRH in
+            healthy volunteers
+          pmid: '8126144'
+        - study: Ghigo E et al. 1994
           type: human-rct
           finding: >-
-            Subcutaneous administration achieved 85-95% of IV GH response,
-            establishing practical dosing
-          pmid: '7809041'
+            Subcutaneous administration produced GH response comparable to the IV
+            route, with subcutaneous bioavailability of roughly 77%
+          pmid: '8126144'
   - mechanism:
       action: >-
         CD36 receptor binding on cardiomyocytes activating PPAR-gamma and
@@ -132,20 +132,25 @@ evidenceChainedBenefits:
       animalStudies: 6
       cellStudies: 4
       keyFindings:
-        - study: Broglio F et al. 2002
+        - study: Bisi G et al. 1999
           type: human-observational
           finding: >-
-            Acute hexarelin administration improved left ventricular ejection
-            fraction before GH peak
-          pmid: '11916712'
-        - study: Tivesten A et al. 2000
+            Acute hexarelin administration increased left ventricular ejection
+            fraction, a short-lasting positive inotropic effect appearing to be
+            independent of GH release
+          pmid: '10342360'
+        - study: Frascarelli S et al. 2003
           type: animal
-          finding: 40% reduction in infarct size in rat ischemia-reperfusion model
-          pmid: '10866686'
-        - study: Locatelli V et al. 1999
-          type: animal
-          finding: Positive inotropic effects demonstrated independent of GH release
-          pmid: '10516699'
+          finding: >-
+            Significantly reduced infarct size in isolated rat hearts subjected
+            to ischemia-reperfusion, independent of GH secretion
+          pmid: '14556085'
+        - study: Bisi G et al. 1999
+          type: human-observational
+          finding: >-
+            Positive inotropic effect (increased ejection fraction) in
+            hypopituitary adults and controls, independent of GH release
+          pmid: '10528131'
   - mechanism:
       action: >-
         GHS-R1a receptor internalization and downregulation with repeated
@@ -161,24 +166,26 @@ evidenceChainedBenefits:
       animalStudies: 3
       cellStudies: 2
       keyFindings:
-        - study: Rahim A et al. 1998
+        - study: Maccario M et al. 2002
           type: human-rct
           finding: >-
-            GH response decreased 50-80% within 4-7 days of daily dosing; no
-            sustained IGF-1 elevation
-          pmid: '9636063'
-        - study: Arvat E et al. 1997
-          type: human-observational
+            Repeated daily subcutaneous hexarelin blunted the GH response to a
+            subsequent IV dose and produced no rise in IGF-1
+          pmid: '11888836'
+        - study: Ghigo E et al. 1997
+          type: review
           finding: >-
-            Systematic comparison showed hexarelin desensitizes faster than
-            GHRP-6 and GHRP-2
-          pmid: '9285939'
+            GHRPs including hexarelin undergo partial desensitization, more
+            marked during continuous than intermittent administration
+          pmid: '9186261'
   - mechanism:
-      action: Hypothalamic GHRH neuron activation amplifying pituitary GH response
+      action: >-
+        Shift in the hypothalamic GHRH/CRH balance toward CRH during nocturnal
+        dosing
       confidence: supported
       directStudies: 4
     benefit:
-      claim: enhance slow-wave sleep architecture
+      claim: alter sleep architecture, decreasing slow-wave sleep
       qualifier: may
     evidence:
       level: low
@@ -186,23 +193,23 @@ evidenceChainedBenefits:
       animalStudies: 3
       cellStudies: 0
       keyFindings:
-        - study: Frieboes RM et al. 1999
+        - study: Frieboes RM et al. 2004
           type: human-rct
           finding: >-
-            IV hexarelin during sleep increased slow-wave sleep with transient
-            ACTH/cortisol rise
-          pmid: '10447775'
+            Repeated nocturnal hexarelin decreased slow-wave sleep (stage 4 and
+            EEG delta power) while raising GH, ACTH, cortisol and prolactin
+          pmid: '15177700'
 conditions:
   - slug: growth-hormone-stimulation
     name: Growth Hormone Stimulation
     researchSummary: >-
-      Hexarelin is the most potent synthetic GHRP for acute GH release. Human
-      studies showed GH responses approximately 2x greater than GHRP-6. However,
-      rapid desensitization (50-80% reduction within 4-7 days) ended
-      pharmaceutical development for chronic use.
+      Hexarelin is among the most potent synthetic GHRPs for acute GH release.
+      Human studies showed GH responses approximately 2x greater than GHRH.
+      However, rapid desensitization with repeated dosing ended pharmaceutical
+      development for chronic use.
     relevantStudies:
-      - '7806864'
-      - '7809041'
+      - '8126144'
+      - '11888836'
     relatedPeptides:
       - ghrp-6
       - ghrp-2
@@ -210,25 +217,25 @@ conditions:
   - slug: cardioprotection
     name: Cardioprotection
     researchSummary: >-
-      Hexarelin exhibits unique cardioprotective effects via CD36 receptor
-      binding, independent of GH release. Animal studies showed 40% reduction in
-      infarct size. Human studies demonstrated improved LVEF before GH peak.
-      This GH-independent cardiac benefit distinguishes hexarelin from other
-      GHRPs.
+      Hexarelin exhibits cardioprotective effects via myocardial GH secretagogue
+      receptor binding, independent of GH release. Animal studies showed reduced
+      infarct size in ischemia-reperfusion. Human studies demonstrated increased
+      left ventricular ejection fraction. This GH-independent cardiac benefit
+      distinguishes hexarelin from other GHRPs.
     relevantStudies:
-      - '11916712'
-      - '10866686'
-      - '10516699'
+      - '10342360'
+      - '14556085'
+      - '10528131'
     relatedPeptides: []
   - slug: sleep-enhancement
-    name: Sleep Enhancement
+    name: Sleep Effects
     researchSummary: >-
-      IV hexarelin during sleep increased slow-wave sleep in human studies,
-      though with transient ACTH and cortisol elevation. This effect relates to
-      GH's role in sleep architecture but is limited by the desensitization
-      issue.
+      Repeated nocturnal hexarelin decreased slow-wave sleep in a human study,
+      with concurrent rises in GH, ACTH, cortisol and prolactin. The authors
+      attributed the disrupted sleep to a shift in the GHRH/CRH balance toward
+      CRH.
     relevantStudies:
-      - '10447775'
+      - '15177700'
     relatedPeptides:
       - dsip
       - sermorelin
@@ -236,27 +243,27 @@ timeline:
   - period: Acute (minutes to hours)
     effects: >-
       Based on human studies: GH peak occurs 15-30 minutes after subcutaneous or
-      IV administration. GH response is approximately 2x greater than GHRP-6.
+      IV administration. GH response is approximately 2x greater than GHRH.
       Single-dose effects are potent and reliable.
-    source: 'PMID:7806864'
+    source: 'PMID:8126144'
   - period: Days 1-4
     effects: >-
       Initial doses maintain strong GH response. Subcutaneous administration
-      achieves 85-95% of IV GH response. Cardioprotective effects may occur with
-      each dose independent of GH status.
-    source: 'PMID:7809041'
+      achieves a GH response comparable to the IV route. Cardioprotective
+      effects may occur with each dose independent of GH status.
+    source: 'PMID:8126144'
   - period: Days 4-7
     effects: >-
-      Desensitization begins. GH response decreases 50-80% from initial levels.
-      No sustained IGF-1 elevation achieved. This rapid tolerance ended
-      pharmaceutical development.
-    source: 'PMID:9636063'
+      Desensitization develops with repeated dosing. The GH response to a
+      subsequent dose is blunted and no rise in IGF-1 is achieved. This tolerance
+      limited pharmaceutical development.
+    source: 'PMID:11888836'
   - period: Week 2+
     effects: >-
-      Continued daily dosing produces minimal GH response. Recovery of
-      sensitivity requires extended washout period. This desensitization profile
-      makes hexarelin unsuitable for chronic therapy.
-    source: 'PMID:9285939'
+      Continued dosing produces a desensitized GH response. Recovery of
+      sensitivity requires a washout period. This desensitization profile makes
+      hexarelin unsuitable for chronic therapy.
+    source: 'PMID:9186261'
 qualityChecklist:
   goodSigns:
     - White lyophilized powder
@@ -341,7 +348,7 @@ Hexarelin triggers powerful GH release but with a critical limitation - rapid de
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-8">
   <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
     <div class="font-semibold text-[color:var(--ink)] mb-2">GH Secretion</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Binds GHS-R1a on pituitary somatotrophs, triggering calcium release and potent GH secretion - 2-3x stronger than GHRP-6.</p>
+    <p class="text-sm text-[color:var(--ink-muted)]">Binds GHS-R1a on pituitary somatotrophs, triggering calcium release and potent GH secretion - in human studies roughly 2x the response to GHRH.</p>
   </div>
   <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
     <div class="font-semibold text-[color:var(--ink)] mb-2">Cardioprotection</div>
@@ -349,7 +356,7 @@ Hexarelin triggers powerful GH release but with a critical limitation - rapid de
   </div>
   <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
     <div class="font-semibold text-[color:var(--ink)] mb-2">Desensitization</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">High receptor affinity causes rapid receptor internalization - GH response drops 50-80% within one week of daily dosing.</p>
+    <p class="text-sm text-[color:var(--ink-muted)]">High receptor affinity causes rapid receptor internalization - the GH response to repeated dosing is blunted, with no sustained IGF-1 elevation.</p>
   </div>
   <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
     <div class="font-semibold text-[color:var(--ink)] mb-2">Selectivity</div>
@@ -357,7 +364,7 @@ Hexarelin triggers powerful GH release but with a critical limitation - rapid de
   </div>
 </div>
 
-**Key Research:** Ghigo E et al. (Turin, 1994) established hexarelin as most potent GHRP in human studies. [PMID:7806864](https://pubmed.ncbi.nlm.nih.gov/7806864/)
+**Key Research:** Ghigo E et al. (Turin, 1994) characterized hexarelin's GH-releasing activity across routes in human studies, showing a GH response about 2x greater than GHRH. [PMID:8126144](https://pubmed.ncbi.nlm.nih.gov/8126144/)
 
 ### Important Limitations
 

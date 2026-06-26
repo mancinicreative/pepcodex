@@ -34,7 +34,7 @@ interactions:
       Well-established GHRH+GHRP synergy. GHRP-6 initiates GH pulse via ghrelin
       receptor while CJC-1295 amplifies release via GHRH receptor. Greater GH
       release than either alone.
-    source: '9467534'
+    source: '7593423'
   - peptide: sermorelin
     type: synergistic
     description: >-
@@ -111,12 +111,12 @@ evidenceChainedBenefits:
       animalStudies: 15
       cellStudies: 6
       keyFindings:
-        - study: Bowers CY et al. 1990
+        - study: Hayashi S et al. 1991
           type: human-rct
           finding: >-
-            Dose-dependent GH release confirmed in healthy young men with peak
-            response at 15-30 minutes
-          pmid: '2119355'
+            Dose-related rise in plasma GH and IGF-I confirmed in healthy men
+            after intravenous and intranasal GHRP-6 administration
+          pmid: '1915110'
         - study: Pandya N et al. 1998
           type: human-observational
           finding: >-
@@ -144,12 +144,12 @@ evidenceChainedBenefits:
             GHRP-6 main action exerted at hypothalamic level; patients with
             hypothalamopituitary disconnection show blocked response
           pmid: '7883854'
-        - study: Chen C et al. 2002
-          type: in-vitro
+        - study: Devesa J 2021
+          type: review
           finding: >-
-            GHRP-6 activates PLC/calcium signaling pathway in pituitary cells
-            independent of cAMP
-          pmid: '12427878'
+            GHS-R1a activation couples to phospholipase C, generating IP3/DAG
+            and a cytosolic calcium rise that drives GH release
+          pmid: '33776931'
   - mechanism:
       action: CD36 scavenger receptor binding and Bcl-2 upregulation
       confidence: supported
@@ -163,17 +163,18 @@ evidenceChainedBenefits:
       animalStudies: 8
       cellStudies: 4
       keyFindings:
-        - study: Berlanga-Acosta J et al. 2017
+        - study: Wang L et al. 2026
           type: animal
           finding: >-
-            Reduced infarct size via Bcl-2 upregulation and mitochondrial
-            preservation in rat I/R model
-          pmid: '28270686'
-        - study: Garcia del Barco D et al. 2024
+            Attenuated myocardial tissue demise, reduced interstitial fibrosis,
+            and preserved left-ventricular systolic function in a rat permanent
+            coronary ligation model
+          pmid: '41901314'
+        - study: Berlanga-Acosta J et al. 2024
           type: animal
           finding: >-
-            Prevented doxorubicin cardiotoxicity; myocardial damage reduced from
-            91% to 42%
+            Prevented doxorubicin-induced myocardial and extra-myocardial
+            damage by upregulating Bcl-2 and preserving mitochondrial integrity
           pmid: '38873418'
   - mechanism:
       action: NPY/AgRP neuron activation and hypothalamic orexigenic signaling
@@ -191,15 +192,15 @@ evidenceChainedBenefits:
         - study: Frieboes RM et al. 1999
           type: human-observational
           finding: >-
-            IV administration increased serum GH, ACTH, and cortisol with
-            effects on sleep architecture
-          pmid: '10447771'
-        - study: Lawrence CB et al. 2003
+            Administration modulated nocturnal GH, ACTH, and cortisol secretion
+            and altered sleep stage architecture
+          pmid: '10336729'
+        - study: Hewson AK et al. 2002
           type: animal
           finding: >-
-            Strong orexigenic effect via hypothalamic circuits; galanin
-            interaction demonstrated
-          pmid: '12788101'
+            GHRP-6 activated arcuate-nucleus neurons within hypothalamic
+            appetite circuits, with responses amplified during fasting
+          pmid: '12453894'
 conditions:
   - slug: gh-deficiency
     name: GH Deficiency Assessment
@@ -209,9 +210,9 @@ conditions:
       causes of GH deficiency. However, it is not approved for therapeutic GH
       replacement.
     relevantStudies:
-      - '2119355'
-      - '7728168'
-      - '17010170'
+      - '8887178'
+      - '11322508'
+      - '7593423'
     relatedPeptides:
       - sermorelin
       - ghrp-2
@@ -224,9 +225,8 @@ conditions:
       2024 stroke trial (Phase I/II) with EGF+GHRP-6 demonstrated safety but
       efficacy remains unproven in humans.
     relevantStudies:
-      - '28270686'
+      - '41901314'
       - '38873418'
-      - '22940633'
     relatedPeptides:
       - bpc-157
   - slug: cachexia
@@ -237,18 +237,17 @@ conditions:
       more selective anamorelin (approved in Japan) has largely superseded
       GHRP-6 for cachexia research.
     relevantStudies:
-      - '10447771'
-      - '7649396'
+      - '12453894'
+      - '1446617'
     relatedPeptides:
       - ghrp-2
       - mk-677
 timeline:
   - period: 0-30 minutes
     effects: >-
-      Rapid GH release begins within minutes of administration. Peak GH response
-      typically occurs at 15-30 minutes post-injection based on human PD
-      studies.
-    source: 'PMID:2119355'
+      Rapid GH release begins within minutes of administration, with a marked
+      rise in plasma GH after intravenous dosing in healthy men.
+    source: 'PMID:1915110'
   - period: 30-60 minutes
     effects: >-
       Transient increases in cortisol and ACTH. Appetite stimulation begins.

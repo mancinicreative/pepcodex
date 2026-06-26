@@ -19,9 +19,9 @@ match). CHUNK=3 (OneDrive EMFILE safety). Spot-verified by hand + build gate bef
 | Step | Scope | Status | Commit |
 |------|-------|--------|--------|
 | Chunk 0 | Surface/IA: popup, nav (drop Directory, add Regulatory+Methodology), dead anchors, dead code | DONE | 775b015 |
-| Citations B1 | GLP-1 flagship (10): semaglutide, tirzepatide, retatrutide, liraglutide, survodutide, mazdutide, cagrilintide, cagrisema, amycretin, orforglipron | DONE — ~101 cites fixed, 10/10 verified clean (build green) | 9d67c0c |
-| Citations wave-aa | 225ac-dota-lm3, 5-amino-1mq, alixorexton, alpha-defensins, aod-9604, bpc-157, bronchogen, bt5528, cardiogen, cartalax, cerebrolysin, cerluten | RUNNING (wf_62264499-657) | — |
-| Citations wave-ab | chelohart, chonluten, cjc-1295, cortexin, ct-388, dihexa, dsip, ecnoglutide, endoluten, epithalon, evx-01, follistatin | queued | — |
+| Citations B1 | GLP-1 flagship (10) | DONE — ~101 cites fixed, 10/10 verified clean | 9d67c0c |
+| Citations wave-aa | 225ac-dota-lm3, 5-amino-1mq, alixorexton, alpha-defensins, aod-9604, bpc-157, bronchogen, bt5528, cardiogen, cartalax, cerebrolysin (cerluten already clean) | DONE — ~118 cites fixed; bt5528 + alpha-defensins hand-fixed after verify | eb6454a |
+| Citations wave-ab | chelohart, chonluten, cjc-1295, cortexin, ct-388, dihexa, dsip, ecnoglutide, endoluten, epithalon, evx-01, follistatin | RUNNING (wf_ab07b3a2-1d7) | — |
 | Citations wave-ac | foxo4-dri, ghk, ghk-cu, ghrp-2, ghrp-6, glutathione, hcg, hexarelin, hmg, humanin, igf-1-lr3, ipamorelin | queued | — |
 | Citations wave-ad | kisspeptin, klotho, kpv, kristagen, lactoferricin, livagen, ll-37, maritide, melanotan-i, melanotan-ii, mk-0616, mk-677 | queued | — |
 | Citations wave-ae | mots-c, mrna-4157, murepavadin, na-selank-amidate, na-semax-amidate, ovagen, oveporexton, p21, pancragen, pasireotide, peg-mgf, pemvidutide | queued | — |
@@ -31,6 +31,11 @@ match). CHUNK=3 (OneDrive EMFILE safety). Spot-verified by hand + build gate bef
 | Scoring rollout | populate two-axis `scoring:` on the ~83 dossiers still on legacy (after their citations are clean) | not started | — |
 | PMID guard | `scripts/qa-pmids.mjs` build-time resolver + commit audit tooling | not started | — |
 | Final QA + merge | working-tree reconcile, full build, visual/a11y, merge → Vercel prod | not started | — |
+
+## Re-score flags (scoring phase must RE-score these, not just the 83 unscored)
+Dossiers whose existing two-axis score was built on now-corrected fabricated data:
+- **bt5528** — effectiveness score 52 was based on a fabricated 45%/67% ORR; real ORR is 6.7% (DCR 20%). Re-score down.
+- *(append as later waves surface more)*
 
 ## Per-wave loop
 launch wave → wait ~30 min → parse verdicts → hand-fix any `needs_work` residuals → `npm run build` →

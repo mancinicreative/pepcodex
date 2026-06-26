@@ -12,7 +12,8 @@
     "astro": "astro",
     "validate-links": "node scripts/validate-cross-links.mjs",
     "qa-seo": "node scripts/qa-seo.mjs",
-    "qa-scoring": "node scripts/qa-scoring.mjs"
+    "qa-scoring": "node scripts/qa-scoring.mjs",
+    "qa-pmids": "node scripts/qa-pmids.mjs --strict"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.13",

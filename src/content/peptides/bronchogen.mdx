@@ -22,7 +22,7 @@ summary: >-
   bioregulator research.
 sources:
   count: 12
-  human: 2
+  human: 0
   preclinical: 8
   openAccess: 4
 metaTitle: 'Bronchogen: Lung Bioregulator Research (2026)'
@@ -93,22 +93,23 @@ evidenceChainedBenefits:
       qualifier: may
     evidence:
       level: very-low
-      humanStudies: 1
+      humanStudies: 0
       animalStudies: 2
       cellStudies: 3
       keyFindings:
-        - study: Khavinson VK et al. 2011
-          type: in-vitro
-          finding: >-
-            AEDL peptide demonstrated selective binding to DNA sequences in
-            bronchial tissue, suggesting gene regulatory activity
-          pmid: '21809118'
         - study: Khavinson VK et al. 2014
           type: in-vitro
           finding: >-
-            Bronchogen showed tissue-specific effects on bronchial epithelial
-            cell gene expression in culture
-          pmid: '24799441'
+            AEDL peptide demonstrated sequence-specific binding to DNA (major
+            groove, N7 guanine) and regulated gene expression and protein
+            synthesis in human bronchial epithelial cells
+          pmid: '25015171'
+        - study: Ashapkin VV et al. 2015
+          type: in-vitro
+          finding: >-
+            AEDL peptide tissue-specifically affected gene expression and
+            promoter DNA methylation in aging bronchial epithelial cell cultures
+          pmid: '25761685'
   - mechanism:
       action: Stimulation of bronchial mucosal regeneration and repair
       confidence: emerging
@@ -118,23 +119,24 @@ evidenceChainedBenefits:
       qualifier: suggested to
     evidence:
       level: very-low
-      humanStudies: 1
+      humanStudies: 0
       animalStudies: 2
       cellStudies: 1
       keyFindings:
-        - study: Khavinson VK et al. 2009
+        - study: Kuzubova NA et al. 2015
           type: animal
           finding: >-
-            Administration of bronchogen to aged rats showed restoration of
-            bronchial epithelium morphology
-          pmid: '19489741'
-        - study: Trofimova SV et al. 2010
-          type: human-observational
+            In a rat model of obstructive lung pathology, one month of
+            bronchogen reversed bronchial epithelium remodeling (goblet-cell
+            hyperplasia, squamous metaplasia) and restored ciliated cells
+          pmid: '26468022'
+        - study: Titova ON et al. 2017
+          type: animal
           finding: >-
-            Elderly patients with chronic bronchitis showed improved respiratory
-            function markers after bronchogen treatment in open-label
-            observation
-          pmid: '20597340'
+            In a rat COPD model, bronchogen restored bronchial epithelium
+            structure and functional activity, increasing secretory IgA and
+            surfactant protein B
+          pmid: '30199201'
   - mechanism:
       action: Regulation of local immune responses in respiratory mucosa
       confidence: emerging
@@ -148,30 +150,32 @@ evidenceChainedBenefits:
       animalStudies: 2
       cellStudies: 2
       keyFindings:
-        - study: Khavinson VK et al. 2012
+        - study: Titova ON et al. 2017
           type: animal
           finding: >-
-            Bronchogen administration modulated cytokine profiles in bronchial
-            lavage fluid of treated animals
-          pmid: '22616891'
-        - study: Linkova NS et al. 2013
+            Bronchogen normalized the proinflammatory cytokine and enzyme
+            profile in bronchoalveolar lavage fluid and raised secretory IgA in
+            a rat model of obstructive lung pathology
+          pmid: '30199201'
+        - study: Khavinson VK et al. 2012
           type: in-vitro
           finding: >-
-            AEDL peptide influenced expression of immune-related genes in
-            bronchial epithelial cell cultures
-          pmid: '23844712'
+            AEDL peptide tissue-specifically stimulated expression of the immune
+            chemokine gene CXCL12 and differentiation factor Hoxa3 in bronchial
+            epithelial cell cultures
+          pmid: '22808515'
 conditions:
   - slug: chronic-bronchitis
     name: Chronic Bronchitis
     researchSummary: >-
       Bronchogen was developed specifically for bronchial conditions. Russian
-      observational studies report improvements in respiratory function markers
-      in elderly patients with chronic bronchitis. No controlled clinical trials
-      exist. All evidence is from single research group without independent
-      replication.
+      animal studies report reversal of bronchial epithelium remodeling and
+      reduced airway inflammation in rat models of obstructive lung pathology.
+      No human clinical trials exist. All evidence is from a single research
+      group without independent replication.
     relevantStudies:
-      - '20597340'
-      - '19489741'
+      - '26468022'
+      - '30199201'
     relatedPeptides:
       - thymalin
       - thymosin-alpha-1
@@ -179,24 +183,25 @@ conditions:
     name: Respiratory Aging
     researchSummary: >-
       Russian research suggests bronchogen may address age-related decline in
-      bronchial tissue function. Animal studies show restoration of bronchial
-      epithelium morphology in aged subjects. Claims of gene expression
-      modulation for tissue maintenance. No Western validation of these effects.
+      bronchial tissue function. Organotypic culture studies report stimulation
+      of reparative processes in lung tissue from aged rats, and cell-culture
+      work links the peptide to age-dependent changes in bronchial gene
+      expression. No Western validation of these effects.
     relevantStudies:
-      - '19489741'
-      - '21809118'
+      - '17152728'
+      - '25761685'
     relatedPeptides:
       - epithalon
       - vilon
   - slug: copd
     name: Chronic Obstructive Pulmonary Disease
     researchSummary: >-
-      Some Russian studies have examined bronchogen in the context of COPD as
-      part of combination bioregulator protocols. Evidence is extremely limited,
-      observational only, and not replicated outside Russia. Should not be
-      considered as COPD treatment.
+      Some Russian studies have examined bronchogen in rat models of chronic
+      obstructive pulmonary disease. Evidence is extremely limited, preclinical
+      only, and not replicated outside Russia. Should not be considered as COPD
+      treatment.
     relevantStudies:
-      - '20597340'
+      - '26468022'
     relatedPeptides:
       - thymalin
 timeline:
@@ -205,19 +210,19 @@ timeline:
       Based on Russian protocols: Initial effects on bronchial tissue gene
       expression may begin. Cell culture studies suggest peptide-DNA
       interactions occur within days. No validated human pharmacokinetic data.
-    source: 'PMID:21809118'
+    source: 'PMID:25015171'
   - period: Week 2-4
     effects: >-
       Russian protocols typically involve treatment courses of 10-20 days.
       Claimed effects on bronchial mucosal regeneration may develop. Immune
       modulation in respiratory tract suggested.
-    source: 'PMID:19489741'
+    source: 'PMID:26468022'
   - period: Week 4-8
     effects: >-
       Extended treatment in Russian studies shows claimed improvements in
       respiratory function markers. Tissue regeneration effects reported in
       animal models. Human response timelines are speculative.
-    source: 'PMID:20597340'
+    source: 'PMID:30199201'
   - period: Week 8+
     effects: >-
       Long-term effects based on Russian observational studies in elderly

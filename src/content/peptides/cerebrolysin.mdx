@@ -103,22 +103,23 @@ evidenceChainedBenefits:
         - study: Alvarez XA et al. 2006
           type: human-rct
           finding: >-
-            10mL and 30mL doses significantly improved ADAS-cog scores vs
-            placebo in 279 mild-moderate AD patients; effects persisted 3 months
-            post-treatment
+            In 279 mild-moderate AD patients the 10mL dose significantly improved
+            ADAS-cog and global function (CIBIC+) vs placebo at week 24; higher
+            doses improved global outcome but not cognition (reversed U-shaped
+            dose-response)
           pmid: '16420392'
         - study: Gauthier S et al. 2015
           type: human-rct
           finding: >-
-            Meta-analysis of 6 RCTs (N=784) showed OR 3.32 for clinical
-            improvement, comparable to cholinesterase inhibitors
-          pmid: '25792495'
-        - study: Rockenstein E et al. 2007
+            Meta-analysis of 6 RCTs showed OR 3.32 for global clinical
+            improvement at 4 weeks, with a favorable benefit-risk ratio
+          pmid: '25832905'
+        - study: Rockenstein E et al. 2011
           type: animal
           finding: >-
-            Reduced amyloid plaque burden and increased neurogenesis in APP
-            transgenic mice
-          pmid: '17115170'
+            Reduced amyloid plaque burden and ameliorated memory deficits in APP
+            transgenic mice, with effects persisting after treatment interruption
+          pmid: '21793038'
   - mechanism:
       action: >-
         Sonic hedgehog pathway activation promoting neurogenesis and
@@ -134,24 +135,26 @@ evidenceChainedBenefits:
       animalStudies: 6
       cellStudies: 2
       keyFindings:
-        - study: Muresanu DF et al. 2016 (CARS)
+        - study: Muresanu DF et al. 2015 (CARS)
           type: human-rct
           finding: >-
-            Significant improvement in Action Research Arm Test (ARAT: 40.0 vs
-            29.3, p<0.01) with NNT=5 for clinically meaningful arm improvement
-          pmid: '26564101'
+            Large superiority on the Action Research Arm Test at day 90
+            (Mann-Whitney estimator 0.71, p<0.0001) in early-rehabilitation
+            stroke patients
+          pmid: '26564102'
         - study: Zhang L et al. 2013
           type: animal
           finding: >-
             Activated sonic hedgehog signaling, enhanced oligodendrogenesis and
             remyelination in rat stroke model
           pmid: '23696546'
-        - study: Zhang C et al. 2010
+        - study: Zhang L et al. 2013
           type: animal
           finding: >-
-            Enhanced neurogenesis and angiogenesis in ischemic penumbra via
-            sonic hedgehog pathway
-          pmid: '20857502'
+            Enhanced neural progenitor proliferation, neurogenesis and axonal
+            remodeling in the peri-infarct area; SHH inhibition reversed the
+            functional recovery
+          pmid: '23696546'
   - mechanism:
       action: Anti-apoptotic signaling via PI3K/Akt pathway activation
       confidence: supported
@@ -168,15 +171,16 @@ evidenceChainedBenefits:
         - study: Hartbauer M et al. 2001
           type: in-vitro
           finding: >-
-            Protected cultured neurons against glutamate excitotoxicity and
-            promoted neurite outgrowth in dose-dependent manner
-          pmid: '11459077'
-        - study: Guekht AB et al. 2011
+            Protected cultured brain neurons against degeneration under cell
+            stress and promoted neurite (axon-like process) outgrowth,
+            attributed to the peptide fraction
+          pmid: '11459078'
+        - study: Guekht AB et al. 2010
           type: human-rct
           finding: >-
-            Significant improvement in ADAS-cog+ and CGI in 242 vascular
-            dementia patients, with notable executive function domain benefit
-          pmid: '20634095'
+            Significant improvement in ADAS-cog+ (10.6 vs 4.4 points) and CIBIC+
+            in 242 vascular dementia patients after 24 weeks of treatment
+          pmid: '20656516'
   - mechanism:
       action: Tau phosphorylation reduction and amyloid modulation
       confidence: emerging
@@ -193,29 +197,30 @@ evidenceChainedBenefits:
         - study: Ubhi K et al. 2009
           type: animal
           finding: >-
-            Reduced tau hyperphosphorylation and neurofibrillary pathology in
-            APP/tau double transgenic mice
-          pmid: '19277687'
-        - study: Rockenstein E et al. 2007
+            Reduced tau phosphorylation (GSK3beta/CDK5-dependent sites) and
+            ameliorated neurodegeneration in APP transgenic mice injected with
+            mutant TAU
+          pmid: '19252918'
+        - study: Rockenstein E et al. 2002
           type: animal
           finding: >-
-            Decreased amyloid plaque burden in APP transgenic mice with improved
-            behavioral deficits
-          pmid: '17115170'
+            Decreased amyloid burden and Abeta(1-42) levels and ameliorated
+            synaptic alterations in hAPP transgenic mice
+          pmid: '12456076'
 conditions:
   - slug: stroke
     name: Stroke
     researchSummary: >-
       Cerebrolysin is approved in 50+ countries for stroke treatment. The CARS
-      trial demonstrated significant motor recovery with NNT=5 for clinically
-      meaningful arm improvement. However, the largest trial (CASTA, N=1070)
+      trial demonstrated significant upper-limb motor recovery at day 90.
+      However, the largest trial (CASTA, N=1070)
       failed its primary endpoint, with benefit only seen in severe stroke
       subgroups. Cochrane reviews conclude no convincing evidence for mortality
       or dependence reduction.
     relevantStudies:
-      - '26564101'
-      - '22246687'
-      - '20857502'
+      - '26564102'
+      - '22282884'
+      - '23696546'
     relatedPeptides:
       - semax
       - cortexin
@@ -223,14 +228,14 @@ conditions:
     name: Alzheimer's Disease
     researchSummary: >-
       Multiple Phase 3 trials and meta-analyses support cerebrolysin for
-      mild-moderate Alzheimer's disease. A meta-analysis of 6 RCTs (N=784)
-      showed OR 3.32 for clinical improvement, comparable to cholinesterase
-      inhibitors. Effects include improved ADAS-cog scores that persist 3 months
-      post-treatment.
+      mild-moderate Alzheimer's disease. A meta-analysis of 6 RCTs
+      showed OR 3.32 for global clinical improvement at 4 weeks, with
+      benefit sustained at 6 months. Pivotal trials report improved ADAS-cog
+      scores during treatment.
     relevantStudies:
       - '16420392'
-      - '25792495'
-      - '17115170'
+      - '25832905'
+      - '21793038'
     relatedPeptides:
       - dihexa
       - semax
@@ -238,25 +243,25 @@ conditions:
     name: Vascular Dementia
     researchSummary: >-
       Cerebrolysin has shown benefit in vascular dementia trials. A study of 242
-      patients demonstrated significant improvement in ADAS-cog+ and CGI scores,
-      with notable executive function domain benefit. The neuroprotective and
+      patients demonstrated significant improvement in both ADAS-cog+ and CIBIC+
+      scores after 24 weeks of treatment. The neuroprotective and
       neuroplasticity-promoting effects may be particularly relevant for
       vascular cognitive impairment.
     relevantStudies:
-      - '20634095'
-      - '25792495'
+      - '20656516'
+      - '25832905'
     relatedPeptides:
       - semax
   - slug: traumatic-brain-injury
     name: Traumatic Brain Injury
     researchSummary: >-
       Cerebrolysin is used for traumatic brain injury in multiple countries.
-      Preclinical studies show enhanced neurogenesis and angiogenesis in the
-      ischemic penumbra. Clinical trials have shown improved outcomes, though
+      Preclinical stroke models show enhanced neurogenesis, oligodendrogenesis
+      and axonal remodeling. Clinical trials have shown improved outcomes, though
       large definitive trials are limited.
     relevantStudies:
       - '23696546'
-      - '20857502'
+      - '11459078'
     relatedPeptides:
       - bpc-157
       - semax
@@ -269,16 +274,16 @@ timeline:
     source: 'PMID:16420392'
   - period: Week 2-4
     effects: >-
-      CARS stroke trial showed significant motor improvements emerging by 3-4
-      weeks. Cognitive improvements in dementia trials become measurable. Sonic
-      hedgehog pathway activation promotes ongoing neurogenesis.
-    source: 'PMID:26564101'
+      The CARS stroke trial delivered its 21-day treatment course alongside
+      early rehabilitation. Cognitive improvements in dementia trials become
+      measurable. Sonic hedgehog pathway activation promotes ongoing neurogenesis.
+    source: 'PMID:26564102'
   - period: Week 4-8
     effects: >-
       Sustained neuroplasticity effects. Alzheimer's trials showed continued
       ADAS-cog improvement through treatment period. Motor recovery in stroke
       continues to progress.
-    source: 'PMID:25792495'
+    source: 'PMID:25832905'
   - period: Week 8+
     effects: >-
       Effects persist 3 months post-treatment in Alzheimer's studies. Long-term
@@ -339,8 +344,8 @@ scoring:
   lastScored: 2026-05-29
   citations:
     - '25832905'
-    - '26564101'
-    - '22246687'
+    - '26564102'
+    - '22282884'
     - '16420392'
     - '20656516'
     - '10.1002/14651858.CD007026.pub3'
@@ -356,7 +361,7 @@ scoring:
     Global coverage: studied across 50+ countries with independent replication
     and multi-regulator approval. Community experience: limited niche enthusiast
     discussion, no notable recurring adverse signal. Effectiveness basis is
-    clinical (quantified human estimates: CARS NNT=5, AD meta-analysis OR 3.32)
+    clinical (quantified human estimates: CARS day-90 ARAT Mann-Whitney 0.71, AD meta-analysis OR 3.32)
     but magnitude is modest, mixed across endpoints, and Cochrane found no
     convincing stroke mortality/dependence benefit, so confidence is low.
 anecdotalReports:
@@ -411,11 +416,11 @@ Cerebrolysin contains small protein fragments that mimic natural brain growth fa
   </div>
 </div>
 
-**Key Research:** CARS trial (Muresanu DF et al. 2016) demonstrated significant motor recovery with NNT=5 in stroke patients. [PMID:26564101](https://pubmed.ncbi.nlm.nih.gov/26564101/). Alzheimer's meta-analysis (Gauthier S et al. 2015) showed OR 3.32 for clinical improvement across 6 RCTs. [PMID:25792495](https://pubmed.ncbi.nlm.nih.gov/25792495/)
+**Key Research:** CARS trial (Muresanu DF et al. 2015) demonstrated significant upper-limb motor recovery (day-90 Action Research Arm Test, Mann-Whitney 0.71) in stroke patients. [PMID:26564102](https://pubmed.ncbi.nlm.nih.gov/26564102/). Alzheimer's meta-analysis (Gauthier S et al. 2015) showed OR 3.32 for global clinical improvement across 6 RCTs. [PMID:25832905](https://pubmed.ncbi.nlm.nih.gov/25832905/)
 
 ### Important Limitations
 
-- Largest stroke trial (CASTA, N=1070) **failed primary endpoint** - benefit only in severe subgroup [PMID:22246687]
+- Largest stroke trial (CASTA, N=1070) **failed primary endpoint** - benefit only in severe subgroup [PMID:22282884]
 - Cochrane reviews conclude "**no convincing evidence**" for mortality/dependence reduction in stroke
 - Complex mixture composition makes identifying active components difficult
 - **Not FDA-approved** despite 50+ country approvals - no NDA filed

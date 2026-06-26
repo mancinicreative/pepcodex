@@ -12,9 +12,9 @@ comparators:
 summary: >-
   A first-in-class Bicycle Toxin Conjugate (BTC) targeting EphA2-expressing
   tumors, developed by Bicycle Therapeutics. Combines a constrained bicyclic
-  peptide targeting moiety with the cytotoxic payload MMAE. Phase 1/2 dose
-  expansion ongoing with 67% ORR reported in EphA2-positive urothelial cancer
-  patients.
+  peptide targeting moiety with the cytotoxic payload MMAE. The first-in-human
+  Phase I (45 patients, advanced solid tumors) reported a 6.7% overall response
+  rate and 20% disease control at the recommended Phase 2 dose; expansion ongoing.
 sources:
   count: 18
   human: 8
@@ -57,12 +57,12 @@ evidenceChainedBenefits:
       animalStudies: 10
       cellStudies: 5
       keyFindings:
-        - study: Bicycle Therapeutics Phase 1/2 Data 2024
+        - study: Bashir B et al. 2024
           type: human-observational
           finding: >-
-            67% overall response rate in EphA2-positive urothelial cancer
-            patients
-          pmid: NCT04180371
+            6.7% overall response rate and 20% disease control at the
+            recommended Phase 2 dose (n=45, advanced solid tumors)
+          pmid: '39231383'
         - study: Preclinical xenograft studies
           type: animal
           finding: >-
@@ -87,11 +87,11 @@ evidenceChainedBenefits:
           finding: >-
             MMAE demonstrates potent subnanomolar cytotoxicity via tubulin
             polymerization inhibition
-          pmid: '12778056'
+          pmid: '12778055'
         - study: Francisco JA et al. 2003
           type: animal
           finding: MMAE-conjugates show selective tumor killing in CD30+ models
-          pmid: '12893756'
+          pmid: '12714494'
   - mechanism:
       action: >-
         Enhanced tumor penetration due to small molecular size (~7 kDa vs ~150
@@ -112,7 +112,7 @@ evidenceChainedBenefits:
           finding: >-
             Bicyclic peptide platform demonstrates rapid tissue distribution and
             tumor accumulation
-          pmid: '32738260'
+          pmid: '32398269'
         - study: Preclinical biodistribution
           type: animal
           finding: >-
@@ -123,12 +123,13 @@ conditions:
   - slug: urothelial-cancer
     name: Urothelial Cancer
     researchSummary: >-
-      BT5528 has shown promising preliminary results in EphA2-positive
-      urothelial cancer patients. Phase 1/2 data reported a 67% overall response
-      rate in this population, with most responses being partial responses.
-      EphA2 is overexpressed in 50-70% of urothelial tumors.
+      BT5528 has been studied in patients with advanced EphA2-expressing solid
+      tumors, including urothelial cancer. The first-in-human Phase I reported a
+      6.7% overall response rate and 20% disease control at the recommended
+      Phase 2 dose across all enrolled tumor types. EphA2 is overexpressed in
+      50-70% of urothelial tumors.
     relevantStudies:
-      - NCT04180371
+      - '39231383'
     relatedPeptides:
       - enfortumab-vedotin
   - slug: solid-tumors
@@ -139,8 +140,8 @@ conditions:
       overexpression is associated with aggressive disease and poor prognosis
       across these tumor types.
     relevantStudies:
-      - NCT04180371
-      - '20495582'
+      - '39231383'
+      - '41782030'
     relatedPeptides: []
 timeline:
   - period: Week 1-2
@@ -148,19 +149,19 @@ timeline:
       Drug administration via weekly IV infusion. Initial target engagement and
       tumor cell internalization occurring. Early safety monitoring for
       MMAE-related effects including nausea and fatigue.
-    source: NCT04180371
+    source: 'PMID:39231383'
   - period: Week 2-4
     effects: >-
       Continued weekly dosing. MMAE-mediated cytotoxicity in EphA2+ tumor cells.
       Monitoring for peripheral neuropathy onset. First tumor assessments
       typically around week 6-8.
-    source: NCT04180371
+    source: 'PMID:39231383'
   - period: Week 4-8
     effects: >-
       Initial response assessment by imaging. In clinical trials, responses
       observed as early as first assessment. Ongoing monitoring for cumulative
       neuropathy.
-    source: NCT04180371
+    source: 'PMID:39231383'
   - period: Week 8+
     effects: >-
       Continued treatment until progression or unacceptable toxicity. Duration
@@ -211,7 +212,7 @@ scoring:
     basis: clinical
     score: 52
     confidence: very-low
-    primaryIndication: EphA2-positive urothelial cancer
+    primaryIndication: advanced EphA2-positive solid tumors
   lastScored: 2026-05-29
   citations:
     - '39231383'
@@ -219,17 +220,16 @@ scoring:
     - '41782030'
     - '32398269'
     - '12778055'
-    - 'NCT04180371'
   notes: >-
-    Research Depth: single open-label uncontrolled Phase 1/2 (n~128), no RCT, plus
+    Research Depth: single open-label uncontrolled Phase 1 (n=45 published), no RCT, plus
     a substantial multi-model preclinical program. Mechanism: EphA2 target with
     measured affinity (KD 0.88-2.67 nM), full characterized chain to MMAE-driven
     G2/M arrest. Plausibility: mechanism-to-tumor-response established in humans,
     coherent with validated ADC/MMAE class biology. Global Coverage: single-sponsor
     (Bicycle Therapeutics) program, multi-site US/UK trial, modest literature,
     investigational registration only. Community Experience: no meaningful real-world
-    or off-label use signal. Effectiveness basis clinical (ORR ~45% urothelial,
-    single-arm, immature) with very-low confidence.
+    or off-label use signal. Effectiveness basis clinical (ORR 6.7%, DCR 20% across
+    advanced solid tumors, single-arm, immature) with very-low confidence.
 anecdotalReports:
   positive: []
   negative: []
@@ -277,7 +277,7 @@ BT5528 works as a precision "smart missile" delivering chemotherapy directly to 
   </div>
 </div>
 
-**Key Research:** Phase 1/2 NCT04180371 demonstrates 67% ORR in EphA2+ urothelial cancer. [ClinicalTrials.gov](https://clinicaltrials.gov/study/NCT04180371)
+**Key Research:** The first-in-human Phase I (Bashir B et al., *J Clin Oncol* 2024; [PMID 39231383](https://pubmed.ncbi.nlm.nih.gov/39231383/)) reported a 6.7% overall response rate and 20% disease control at the recommended Phase 2 dose across advanced solid tumors. [Trial NCT04180371](https://clinicaltrials.gov/study/NCT04180371)
 
 ### Important Limitations
 

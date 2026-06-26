@@ -124,13 +124,13 @@ evidenceChainedBenefits:
           finding: >-
             Demonstrated LptD as specific target of protegrin-derived
             peptidomimetics in P. aeruginosa
-          pmid: '20929775'
-        - study: Martin-Loeches I et al. 2017
+          pmid: '20167788'
+        - study: Sader HS et al. 2018
           type: in-vitro
           finding: >-
-            Global surveillance showed MIC90 of 0.12 mcg/mL against clinical P.
-            aeruginosa isolates
-          pmid: '28348105'
+            SENTRY surveillance of XDR P. aeruginosa showed murepavadin MIC50/90
+            of 0.12/0.25 mg/L, 8-fold more active than colistin
+          pmid: '29901750'
   - mechanism:
       action: Disruption of outer membrane integrity via LPS depletion
       confidence: established
@@ -144,18 +144,19 @@ evidenceChainedBenefits:
       animalStudies: 3
       cellStudies: 4
       keyFindings:
-        - study: Ekkelenkamp MB et al. 2019
-          type: human-rct
+        - study: Martin-Loeches I et al. 2018
+          type: review
           finding: >-
-            Phase 2 trial showed 64% clinical cure rate in nosocomial pneumonia
-            with murepavadin plus standard care
-          pmid: '31076415'
-        - study: Bernardini F et al. 2017
+            Murepavadin advanced to Phase 3 development for HABP/VABP, with
+            potent activity against carbapenemase-producing and
+            colistin-resistant P. aeruginosa
+          pmid: '29451043'
+        - study: Melchers MJ et al. 2019
           type: animal
           finding: >-
-            Mouse pneumonia model demonstrated 2-log CFU reduction and survival
-            benefit
-          pmid: '27956425'
+            Neutropenic mouse lung-infection model defined PK/PD targets, with
+            an AUC/MIC of ~40 producing a 1-log CFU kill
+          pmid: '30642931'
   - mechanism:
       action: Species-specific targeting of P. aeruginosa LptD protein structure
       confidence: established
@@ -172,15 +173,16 @@ evidenceChainedBenefits:
         - study: Andolina G et al. 2018
           type: in-vitro
           finding: >-
-            Cryo-EM structure revealed species-specific LptD binding explaining
-            narrow spectrum activity
-          pmid: '29540583'
-        - study: Werneburg M et al. 2012
+            Photo-crosslinking localized binding to the Pseudomonas-specific
+            N-terminal insert and periplasmic domain of LptD, consistent with
+            narrow-spectrum activity
+          pmid: '29359918'
+        - study: Srinivas N et al. 2010
           type: in-vitro
           finding: >-
-            LptD sequence differences between species account for P. aeruginosa
-            selectivity
-          pmid: '22851654'
+            Peptidomimetics specifically inhibited Pseudomonas spp. via the LptD
+            homolog while sparing other Gram-negative and Gram-positive bacteria
+          pmid: '20167788'
   - mechanism:
       action: High local concentration delivery via inhaled formulation
       confidence: supported
@@ -194,31 +196,31 @@ evidenceChainedBenefits:
       animalStudies: 2
       cellStudies: 0
       keyFindings:
-        - study: Pfefferle K et al. 2020
+        - study: Melchers MJ et al. 2019
           type: animal
           finding: >-
-            Inhaled formulation achieved high lung concentrations with minimal
-            systemic exposure
-          pmid: '32451187'
-        - study: RESPIRE-CF Phase 2 2024
-          type: human-rct
+            Murepavadin distributed into pulmonary epithelial lining fluid in
+            infected animals, supporting lung-targeted exposure
+          pmid: '30642931'
+        - study: Díez-Aguilar M et al. 2021
+          type: in-vitro
           finding: >-
-            Inhaled murepavadin well tolerated with minimal nephrotoxicity
-            signal
-          pmid: ''
+            Murepavadin developed as an inhaled therapy retained potent activity
+            against cystic fibrosis P. aeruginosa isolates in sputum and lung
+            surfactant
+          pmid: '33367642'
 conditions:
   - slug: pseudomonas-pneumonia
     name: Pseudomonas Pneumonia
     researchSummary: >-
       Murepavadin was developed specifically for nosocomial pneumonia caused by
-      P. aeruginosa. Phase 2 trials showed clinical cure rates of 64% with
-      murepavadin plus standard care. However, Phase 3 IV trials (PRISM) were
-      discontinued due to nephrotoxicity concerns. The inhaled formulation
-      continues development.
+      P. aeruginosa and advanced to Phase 3 development for HABP/VABP. However,
+      Phase 3 IV trials were discontinued due to nephrotoxicity concerns. The
+      inhaled formulation continues development.
     relevantStudies:
-      - '31076415'
-      - '27956425'
-      - '28348105'
+      - '29451043'
+      - '30642931'
+      - '29901750'
     relatedPeptides:
       - ll-37
       - lactoferricin
@@ -226,51 +228,51 @@ conditions:
     name: Cystic Fibrosis Infections
     researchSummary: >-
       Chronic P. aeruginosa infection is a major cause of morbidity in CF
-      patients. Inhaled murepavadin is in Phase 3 trials (RESPIRE-CF) for this
-      indication. Phase 2 data showed sputum CFU reduction with acceptable
-      tolerability and minimal systemic exposure.
+      patients. Murepavadin is being developed as an inhaled therapy for this
+      indication. In vitro studies show potent activity against CF P. aeruginosa
+      isolates that is retained in artificial sputum and lung surfactant, though
+      resistant mutants can arise.
     relevantStudies:
-      - '32041718'
-      - '32451187'
+      - '33367642'
     relatedPeptides:
       - ll-37
   - slug: bronchiectasis-infections
     name: Bronchiectasis Infections
     researchSummary: >-
-      Non-CF bronchiectasis patients with chronic P. aeruginosa infection are
-      being studied in Phase 3 RESPIRE trials. The inhaled formulation aims to
-      provide targeted antibiotic delivery with reduced systemic side effects
-      compared to IV antibiotics.
+      Non-CF bronchiectasis patients with chronic P. aeruginosa infection are a
+      target population for the inhaled formulation, which aims to provide
+      targeted antibiotic delivery with reduced systemic side effects compared
+      to IV antibiotics.
     relevantStudies:
-      - '32451187'
+      - '29451043'
     relatedPeptides:
       - ll-37
       - lactoferricin
 timeline:
   - period: Hours 1-6
     effects: >-
-      Based on Phase 1 data: Peak plasma concentrations achieved at end of IV
-      infusion. Inhaled formulation achieves high lung concentrations within
-      minutes of administration.
-    source: 'PMID:29866868'
+      Based on Phase 1 data: peak plasma concentrations are achieved at the end
+      of the IV infusion, with a geometric mean half-life of roughly 2.5-5.3 h
+      and dose-proportional, linear pharmacokinetics.
+    source: 'PMID:29437621'
   - period: Days 1-3
     effects: >-
-      In clinical trials, bactericidal activity observed within 24-48 hours.
-      Time-dependent killing pattern requires sustained exposure above MIC.
-      Post-antibiotic effect of 1-2 hours noted in vitro.
-    source: 'PMID:28348105'
+      In vitro, murepavadin is bactericidal against most P. aeruginosa strains
+      within 1-5 hours at higher concentrations, consistent with sustained
+      exposure above the MIC.
+    source: 'PMID:33367642'
   - period: Days 3-7
     effects: >-
-      Phase 2 trials assessed outcomes at test-of-cure visits. Microbiological
-      eradication observed in 50% of patients by day 7. Clinical improvement
-      typically evident within treatment course.
-    source: 'PMID:31076415'
+      Exposure to murepavadin increases in renal impairment (AUC roughly 2- to
+      2.5-fold higher), so the elimination half-life lengthens over a multi-day
+      course and dose adjustment is warranted with reduced renal function.
+    source: 'PMID:30012756'
   - period: Days 7-14
     effects: >-
-      Standard treatment duration in clinical trials was 7-14 days.
-      Nephrotoxicity signal in IV formulation became apparent with prolonged
-      treatment. Inhaled formulation studied up to 28 days.
-    source: 'PMID:31076415'
+      With prolonged IV treatment, a nephrotoxicity signal led to discontinuation
+      of the Phase 3 IV program; development has since focused on the inhaled
+      formulation.
+    source: 'PMID:31554212'
 qualityChecklist:
   goodSigns:
     - 'Clear, colorless solution after reconstitution'
@@ -333,7 +335,7 @@ mechanismPathways:
     outcomeSignal: research
 ---
 
-Murepavadin is the first-in-class Outer Membrane Protein Targeting Antibiotic (OMPTA), specifically targeting the LptD protein in Pseudomonas aeruginosa. Its mechanism is supported by extensive structural and biochemical studies including cryo-EM confirmation of its binding site.
+Murepavadin is the first-in-class Outer Membrane Protein Targeting Antibiotic (OMPTA), specifically targeting the LptD protein in Pseudomonas aeruginosa. Its mechanism is supported by extensive structural and biochemical studies, including photo-crosslinking work that localized its binding site on LptD.
 
 ### How It Works (Simplified)
 
@@ -358,7 +360,7 @@ Murepavadin acts as a precision weapon against P. aeruginosa by blocking a criti
   </div>
 </div>
 
-**Key Research:** Andolina G et al. (Switzerland, 2018) confirmed LptD binding mechanism via cryo-EM structure. [PMID:29540583](https://pubmed.ncbi.nlm.nih.gov/29540583/)
+**Key Research:** Andolina G et al. (Switzerland, 2018) mapped the LptD binding site using photo-crosslinking and mass-spectrometry-based proteomics, localizing the interaction to the Pseudomonas-specific periplasmic segment of LptD. [PMID:29359918](https://pubmed.ncbi.nlm.nih.gov/29359918/)
 
 ### Important Limitations
 

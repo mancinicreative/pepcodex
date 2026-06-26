@@ -109,13 +109,15 @@ evidenceChainedBenefits:
         - study: Colao A et al. 2012
           type: human-rct
           finding: >-
-            26.3% of patients achieved UFC normalization at 6 months in Phase 3
-            trial (N=162)
-          pmid: '22990096'
-        - study: Lacroix A et al. 2018
+            UFC normalization at month 6 without dose increase in 26.3% of the
+            900 mcg twice-daily arm in the Phase 3 trial (N=162)
+          pmid: '22397653'
+        - study: Petersenn S et al. 2017
           type: human-rct
-          finding: Sustained efficacy demonstrated over 5-year follow-up in responders
-          pmid: '29174517'
+          finding: >-
+            Sustained UFC reduction maintained through 5 years in the subset of
+            responders continuing open-label pasireotide
+          pmid: '28597198'
   - mechanism:
       action: Suppression of GH secretion via SSTR2/5 on somatotroph adenomas
       confidence: established
@@ -129,12 +131,12 @@ evidenceChainedBenefits:
       animalStudies: 2
       cellStudies: 1
       keyFindings:
-        - study: Gadelha MR et al. 2017
+        - study: Gadelha MR et al. 2014
           type: human-rct
           finding: >-
-            PAOLA trial: 31.3% achieved biochemical control vs 19.2% with
-            octreotide (p=0.007)
-          pmid: '28253614'
+            PAOLA trial: 15% (40 mg) and 20% (60 mg) achieved biochemical control
+            on pasireotide LAR vs 0% on continued octreotide/lanreotide (p<0.0001)
+          pmid: '25260838'
         - study: Colao A et al. 2014
           type: human-rct
           finding: >-
@@ -157,15 +159,16 @@ evidenceChainedBenefits:
         - study: Henry RR et al. 2013
           type: human-rct
           finding: >-
-            Direct demonstration of insulin suppression mechanism via SSTR5 in
-            healthy volunteers
-          pmid: '23345097'
-        - study: Fleseriu M et al. 2018
-          type: human-observational
+            Mechanistic study in healthy volunteers: insulin secretion fell by
+            ~62-78% with reduced incretin (GLP-1, GIP) responses and no change in
+            insulin sensitivity
+          pmid: '23733372'
+        - study: Silverstein JM et al. 2016
+          type: review
           finding: >-
-            Hyperglycemia management consensus: 40-70% incidence, requires
-            proactive monitoring
-          pmid: '29855803'
+            Review of pasireotide hyperglycemia: 57-73% incidence across Cushing's
+            and acromegaly trials, manageable with antidiabetic agents
+          pmid: '27405306'
   - mechanism:
       action: >-
         Gi/Go protein activation leading to adenylyl cyclase inhibition and
@@ -184,13 +187,15 @@ evidenceChainedBenefits:
         - study: Bruns C et al. 2002
           type: in-vitro
           finding: >-
-            Characterized multi-SSTR binding profile and antiproliferative
-            signaling pathways
-          pmid: '12200368'
-        - study: Sheppard M et al. 2015
-          type: human-observational
-          finding: Tumor volume reduction observed in pooled acromegaly trial analysis
-          pmid: '26573920'
+            Characterized the broad SSTR1/2/3/5 binding profile of SOM230, with
+            30-40 fold higher sst1/sst5 affinity than octreotide
+          pmid: '11980628'
+        - study: Colao A et al. 2016
+          type: review
+          finding: >-
+            Review of somatostatin analog therapy reporting significant pituitary
+            tumor volume reduction in acromegaly (81% on pasireotide LAR)
+          pmid: '26290466'
 conditions:
   - slug: cushings-disease
     name: Cushing's Disease
@@ -201,26 +206,27 @@ conditions:
       extensions show sustained efficacy in responders for up to 5 years. Works
       by suppressing ACTH secretion from corticotroph adenomas via SSTR5.
     relevantStudies:
-      - '22990096'
-      - '24476079'
-      - '29174517'
-      - '30219838'
+      - '22397653'
+      - '24533697'
+      - '28597198'
+      - '23746264'
     relatedPeptides:
       - octreotide
       - lanreotide
   - slug: acromegaly
     name: Acromegaly
     researchSummary: >-
-      FDA-approved for acromegaly in 2014. PAOLA trial demonstrated superiority
-      over octreotide LAR in SSA-resistant patients (31.3% vs 19.2% biochemical
-      control, p=0.007). Also superior as first-line medical therapy in
-      treatment-naive patients. Particularly effective in tumors with high SSTR5
-      expression.
+      FDA-approved for acromegaly in 2014. The PAOLA trial demonstrated
+      superiority over continued octreotide/lanreotide in inadequately controlled
+      patients (15-20% biochemical control on pasireotide LAR vs 0% on active
+      control, p<0.0001). Also superior to octreotide LAR as first-line medical
+      therapy in treatment-naive patients. Particularly effective in tumors with
+      high SSTR5 expression.
     relevantStudies:
-      - '28253614'
+      - '25260838'
       - '24423324'
-      - '25337926'
-      - '26573920'
+      - '26290466'
+      - '26906713'
     relatedPeptides:
       - octreotide
       - lanreotide
@@ -233,8 +239,8 @@ conditions:
       COOPERATE-2 trial evaluated combination with everolimus. Not FDA-approved
       for this indication but represents area of ongoing research.
     relevantStudies:
-      - '25667288'
-      - '26282658'
+      - '28327907'
+      - '25911185'
     relatedPeptides:
       - octreotide
       - lanreotide
@@ -245,13 +251,13 @@ timeline:
       reduction measurable within days. GH suppression in acromegaly occurs
       rapidly. Hyperglycemia may develop within first week - weekly FPG
       monitoring recommended.
-    source: 'PMID:22990096'
+    source: 'PMID:22397653'
   - period: Week 2-4
     effects: >-
       Continued hormone suppression. UFC levels decrease in Cushing's
       responders. IGF-1 reduction observed in acromegaly patients. Glucose
       levels typically stabilize or may require antidiabetic therapy initiation.
-    source: 'PMID:28253614'
+    source: 'PMID:25260838'
   - period: Month 1-3
     effects: >-
       Assessment of biochemical response at 2-3 months. Dose titration based on
@@ -264,7 +270,7 @@ timeline:
       be assessed. Long-term responders maintain biochemical control. Some
       patients develop tolerance requiring dose adjustment or combination
       therapy.
-    source: 'PMID:29174517'
+    source: 'PMID:28597198'
 qualityChecklist:
   goodSigns:
     - 'FDA-approved pharmaceutical product (Signifor, Signifor LAR)'
@@ -352,7 +358,7 @@ Pasireotide mimics somatostatin, acting as a multi-receptor "brake" on hormone s
   </div>
 </div>
 
-**Key Research:** Colao A et al. (2012) demonstrated 26.3% UFC normalization in Cushing's disease Phase 3 trial. [PMID:22990096](https://pubmed.ncbi.nlm.nih.gov/22990096/)
+**Key Research:** Colao A et al. (2012) demonstrated 26.3% UFC normalization (900 mcg twice-daily arm) in the Cushing's disease Phase 3 trial. [PMID:22397653](https://pubmed.ncbi.nlm.nih.gov/22397653/)
 
 ### Important Limitations
 

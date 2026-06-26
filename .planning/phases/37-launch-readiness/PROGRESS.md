@@ -22,8 +22,10 @@ match). CHUNK=3 (OneDrive EMFILE safety). Spot-verified by hand + build gate bef
 | Citations B1 | GLP-1 flagship (10) | DONE — ~101 cites fixed, 10/10 verified clean | 9d67c0c |
 | Citations wave-aa | 225ac-dota-lm3, 5-amino-1mq, alixorexton, alpha-defensins, aod-9604, bpc-157, bronchogen, bt5528, cardiogen, cartalax, cerebrolysin (cerluten already clean) | DONE — ~118 cites fixed; bt5528 + alpha-defensins hand-fixed after verify | eb6454a |
 | Citations wave-ab | cjc-1295, cortexin, ct-388, dihexa, dsip, epithalon, follistatin (5 others zero-PMID/clean) | DONE — ~56 fixes; dihexa retracted-paper hand-fix; prompts hardened for retractions | 18cbf4e |
-| Citations wave-ac | foxo4-dri, ghk, ghk-cu, ghrp-2, ghrp-6, glutathione, hcg, hexarelin, hmg, humanin, igf-1-lr3, ipamorelin | RUNNING (wf_e58bfb13-692) | — |
-| Citations wave-ad | kisspeptin, klotho, kpv, kristagen, lactoferricin, livagen, ll-37, maritide, melanotan-i, melanotan-ii, mk-0616, mk-677 | queued | — |
+| Citations wave-ac | ghk, ghk-cu, ghrp-2, ghrp-6, glutathione, hcg, hexarelin, hmg, humanin, igf-1-lr3, ipamorelin (foxo4-dri clean) | DONE — ~123 fixes, all clean | 25357c1 |
+| **Build-blocker fix** | agents used off-enum `keyFindings.type` ('review','cell') → broke build; fixed enum+layout+EvidenceChain. **Earlier "green" reports were misread (trailing grep exit, not npm).** | DONE | 4d6b9f2 |
+| UX research | examine/cochrane/drugs.com/mdcalc patterns → UX-RESEARCH.md + plan Chunk 0b (TOC, facet counts, verdict sentence, legend) | DONE | 22523a3 |
+| Citations wave-ad | kisspeptin, klotho, kpv, kristagen, lactoferricin, livagen, ll-37, maritide, melanotan-i, melanotan-ii, mk-0616, mk-677 | RUNNING (wf_bcc5bd57-b86) | — |
 | Citations wave-ae | mots-c, mrna-4157, murepavadin, na-selank-amidate, na-semax-amidate, ovagen, oveporexton, p21, pancragen, pasireotide, peg-mgf, pemvidutide | queued | — |
 | Citations wave-af | pf-08653944, pinealon, prostatilen, pt-141, retinalamin, rusfertide, selank, semax, sermorelin, shlp-2, shlp-6, sigumir | queued | — |
 | Citations wave-ag | slu-pp-332, ss-31, stamakort, sulanemadlin, suprefort, svetinorm, tb-500, tesamorelin, testagen, thymalin, thymogen, thymosin-alpha-1 | queued | — |

@@ -10,9 +10,9 @@ comparators:
   - tirzepatide
   - semaglutide
 summary: >-
-  A triple GIP/GLP-1/glucagon receptor agonist in Phase 3 development. First
-  Phase 3 results (TRIUMPH-4) show 28.7% weight loss at 68 weeks, with earlier
-  Phase 2 data showing 24.2% at 48 weeks.
+  A triple GIP/GLP-1/glucagon receptor agonist. Phase 2 data show 24.2% weight
+  loss at 48 weeks (12mg), the largest reduction reported for an incretin-based
+  therapy. The Phase 3 TRIUMPH registrational program is ongoing.
 sources:
   count: 124
   human: 15
@@ -147,9 +147,12 @@ evidenceChainedBenefits:
             24.2% weight loss at 48 weeks with 12mg dose in Phase 2 obesity
             trial
           pmid: '37366315'
-        - study: TRIUMPH-4 2025
+        - study: Giblin K et al. 2025 (TRIUMPH program design)
           type: human-rct
-          finding: '28.7% weight loss at 68 weeks, 71.2 lbs average in Phase 3'
+          finding: >-
+            Phase 3 TRIUMPH registrational program (>5,800 participants)
+            evaluating retatrutide for obesity and related complications;
+            primary weight-management endpoint is percent change in body weight
           pmid: '41090431'
   - mechanism:
       action: >-
@@ -192,14 +195,15 @@ evidenceChainedBenefits:
         - study: Sanyal AJ et al. 2024
           type: human-rct
           finding: >-
-            81-82% liver fat reduction at 48 weeks, with 89-93% achieving normal
-            liver fat levels
+            81-82% relative liver fat reduction at 24 weeks (8mg/12mg), with
+            79-86% achieving normal liver fat (<5%)
           pmid: '38858523'
-        - study: Preclinical hepatic studies
-          type: animal
+        - study: Sanyal AJ et al. 2024 (mechanistic analysis)
+          type: human-rct
           finding: >-
-            Improved hepatic oxidative phosphorylation and mitochondrial
-            function
+            Liver fat reductions were significantly related to changes in body
+            weight, abdominal fat, and measures of improved insulin sensitivity
+            and lipid metabolism
           pmid: '38858523'
   - mechanism:
       action: GCGR-mediated thermogenesis in brown adipose tissue
@@ -217,10 +221,10 @@ evidenceChainedBenefits:
         - study: Preclinical metabolic studies
           type: animal
           finding: >-
-            Glucagon receptor activation increases thermogenesis and metabolic
-            rate by 10-15%
-          pmid: '36354040'
-        - study: Body composition substudy 2025
+            Glucagon receptor activation is proposed to increase energy
+            expenditure and thermogenesis, a mechanism that distinguishes the
+            triple agonist from GLP-1/GIP dual agonists
+        - study: Coskun T et al. 2025 (body composition substudy)
           type: human-rct
           finding: >-
             Effects on body composition in T2D patients demonstrating
@@ -233,8 +237,8 @@ conditions:
       Retatrutide has demonstrated the most substantial weight loss of any
       incretin-based therapy in clinical trials. Phase 2 data showed up to 24.2%
       weight loss at 48 weeks (12mg dose), with 93% of participants achieving at
-      least 10% weight loss and 83% achieving at least 15%. The first Phase 3
-      results (TRIUMPH-4) showed 28.7% weight loss at 68 weeks.
+      least 10% weight loss and 83% achieving at least 15%. The Phase 3 TRIUMPH
+      registrational program is ongoing.
     relevantStudies:
       - '37366315'
       - '36354040'
@@ -258,10 +262,10 @@ conditions:
   - slug: fatty-liver-disease
     name: Fatty Liver Disease
     researchSummary: >-
-      Retatrutide showed extraordinary efficacy in MASLD, with 81-82% reduction
-      in liver fat at 48 weeks. Among treated patients, 89-93% achieved
-      normalization of liver fat (HFF below 5%), compared to 0% with placebo.
-      The glucagon receptor component enables direct hepatic effects.
+      Retatrutide showed extraordinary efficacy in MASLD, with 81-82% relative
+      reduction in liver fat at 24 weeks (8mg/12mg). Among treated patients,
+      79-86% achieved normalization of liver fat (below 5%), compared to 0% with
+      placebo. The glucagon receptor component enables direct hepatic effects.
     relevantStudies:
       - '38858523'
     relatedPeptides:
@@ -294,9 +298,9 @@ timeline:
     source: 'PMID:37366315'
   - period: Week 48+
     effects: >-
-      Phase 3 TRIUMPH-4 showed 28.7% weight loss at 68 weeks, suggesting
-      continued efficacy beyond 48 weeks. Long-term maintenance data from
-      TRIUMPH-6 (116 weeks) pending.
+      Long-term efficacy and maintenance beyond 48 weeks are being evaluated in
+      the Phase 3 TRIUMPH registrational program; published results were not yet
+      available at the time of review.
     source: 'PMID:41090431'
 faqs:
   - question: What is retatrutide?
@@ -312,9 +316,10 @@ faqs:
       available through clinical trials.
   - question: How effective is retatrutide for weight loss?
     answer: >-
-      Phase 3 TRIUMPH-4 results showed 28.7% mean weight loss at 68 weeks.
-      Earlier Phase 2 data demonstrated 24.2% weight loss at 48 weeks, with 83%
-      of participants achieving at least 15% weight loss.
+      Phase 2 data demonstrated 24.2% mean weight loss at 48 weeks with the 12mg
+      dose, with 83% of participants achieving at least 15% weight loss. This is
+      the largest reduction reported for an incretin-based therapy. Phase 3
+      TRIUMPH results are pending.
   - question: What is the evidence for retatrutide?
     answer: >-
       Evidence is high-quality from Phase 2/3 clinical trials. Published data
@@ -360,10 +365,10 @@ ratings:
   lastReviewed: 2026-04-13T00:00:00.000Z
   reviewNotes: >-
     First triple GIP/GLP-1/glucagon agonist in Phase 3 (TRIUMPH program). Phase
-    2 data show 24.2% weight loss; Phase 3 (TRIUMPH-4) shows 28.7% at 68 weeks.
-    Global Eli Lilly trials with independent replication across multiple Phase 2
-    and 3 studies. Triple agonist mechanism well-characterized through receptor
-    binding studies and clinical PK/PD data.
+    2 data show 24.2% weight loss at 48 weeks; the Phase 3 TRIUMPH
+    registrational program is ongoing with results not yet published. Global Eli
+    Lilly trials across multiple Phase 1/2 studies. Triple agonist mechanism
+    well-characterized through clinical PK/PD data.
   anecdotalEvidence: 3
 anecdotalReports:
   positive:
@@ -415,7 +420,7 @@ mechanismPathways:
       - node: Brown fat
         outcome: Thermogenesis ↑
       - node: Energy expenditure
-        outcome: 10–15% increase
+        outcome: Increased
   - name: Hepatic Glucagon Pathway
     label: Liver-Specific Effects
     steps:
@@ -456,19 +461,17 @@ Retatrutide activates three hormone receptors simultaneously, providing comprehe
 
 **Key Research:** Jastreboff AM et al. (2023) demonstrated 24.2% weight loss at 48 weeks in Phase 2. [PMID:37366315](https://pubmed.ncbi.nlm.nih.gov/37366315/)
 
-### Phase 3 Clinical Data (2025-2026)
+### Phase 3 Clinical Program (TRIUMPH)
 
-**TRIUMPH-4 Trial:** The TRIUMPH-4 Phase 3 trial demonstrated 28.7% body weight reduction at 48 weeks with retatrutide. A notable co-primary endpoint showed 75.8% improvement in knee pain scores, suggesting musculoskeletal benefits from significant weight loss.
+**TRIUMPH registrational program:** The Phase 3 TRIUMPH program consists of four multicenter, randomized, double-blind trials enrolling over 5,800 participants, evaluating weekly subcutaneous retatrutide against placebo for obesity and two related complications — obstructive sleep apnea (OSA) and knee osteoarthritis (OA). It uses a basket trial design: two weight-management trials (TRIUMPH-1 and TRIUMPH-2) with OSA/OA protocols nested within, one weight-management trial in a population with cardiovascular disease (TRIUMPH-3), and one stand-alone knee OA trial (TRIUMPH-4). The primary weight-management endpoint is percent change in body weight. [PMID:41090431](https://pubmed.ncbi.nlm.nih.gov/41090431/)
 
-**Safety — Dysesthesia Signal:** Phase 3 data identified dysesthesia (abnormal skin sensation) as a treatment-emergent adverse event occurring in approximately 20.9% of participants at higher doses, representing a novel safety signal not prominently observed with other incretin therapies.
-
-**Ongoing Program:** Six additional Phase 3 trials are expected to report results through 2026, covering type 2 diabetes (TRANSCEND program), cardiovascular outcomes, and hepatic endpoints.
+**Status:** Published Phase 3 efficacy and safety results were not yet available in the peer-reviewed literature at the time of this review; the program is ongoing.
 
 ### Important Limitations
 
 - Retatrutide is an investigational drug not yet approved by FDA/EMA
-- Long-term safety beyond 68 weeks is still being evaluated in Phase 3 trials
-- Dysesthesia (abnormal skin sensation) reported in ~20.9% of Phase 3 participants
-- Cardiovascular and kidney outcomes data pending (TRIUMPH-Outcomes ongoing)
-- Head-to-head comparison to tirzepatide results pending (TRIUMPH-5 ongoing)
+- Long-term safety beyond the 48-week Phase 2 data is still being evaluated in the Phase 3 program
+- Gastrointestinal adverse events were dose-related and the most common in Phase 2 trials
+- Cardiovascular, kidney, and hepatic outcomes data from the Phase 3 program are pending
+- Head-to-head comparisons against approved incretin therapies are not yet published
 - Not available outside clinical trials; any other source is illegitimate

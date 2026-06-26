@@ -347,13 +347,14 @@ evidenceChainedBenefits:
       animalStudies: 2
       cellStudies: 1
       keyFindings:
-        - study: Rubino DM et al. NEJM 2025
+        - study: Garvey WT et al. NEJM 2025
           type: human-rct
           finding: >-
-            REDEFINE-1: 22.7% weight loss at 68 weeks; 60% achieved >=20% weight
-            loss; synergistic effect exceeding sum of individual components
-          pmid: '40544432'
-        - study: Rubino DM et al. NEJM 2025
+            REDEFINE-1: 20.4% weight loss at 68 weeks vs 3.0% with placebo;
+            significantly more participants reached >=20%, >=25%, and >=30%
+            weight-loss targets
+          pmid: '40544433'
+        - study: Davies MJ et al. NEJM 2025
           type: human-rct
           finding: >-
             REDEFINE-2: 13.7% weight loss in T2D population; 73.5% achieved
@@ -374,16 +375,18 @@ evidenceChainedBenefits:
       animalStudies: 1
       cellStudies: 2
       keyFindings:
-        - study: REDEFINE-2 Trial
+        - study: Davies MJ et al. NEJM 2025 (REDEFINE-2)
           type: human-rct
           finding: >-
-            HbA1c reduction of 2.2% with CagriSema; 73.5% achieved HbA1c <=6.5%
-            vs 15.9% with placebo
+            73.5% of CagriSema participants achieved HbA1c <=6.5% vs 15.9% with
+            placebo at 68 weeks
           pmid: '40544432'
-        - study: REDEFINE-1 Subgroup Analysis
+        - study: Garvey WT et al. NEJM 2025 (REDEFINE-1)
           type: human-rct
-          finding: 88% of participants with prediabetes returned to normoglycemia
-          pmid: '40544432'
+          finding: >-
+            Cardiometabolic and glycemic measures improved alongside 20.4% mean
+            weight loss vs placebo
+          pmid: '40544433'
   - mechanism:
       action: >-
         Amylin receptor activation in area postrema and nucleus tractus
@@ -404,7 +407,7 @@ evidenceChainedBenefits:
           finding: >-
             Cagrilintide monotherapy showed dose-dependent weight loss via
             amylin pathway satiety signaling
-          pmid: '34653394'
+          pmid: '34798060'
         - study: Nature Communications 2025
           type: in-vitro
           finding: >-
@@ -426,30 +429,30 @@ evidenceChainedBenefits:
       animalStudies: 2
       cellStudies: 0
       keyFindings:
-        - study: REDEFINE-1 Secondary Outcomes
+        - study: Garvey WT et al. NEJM 2025 (REDEFINE-1)
           type: human-rct
           finding: >-
-            Improved cardiometabolic parameters including blood pressure, waist
-            circumference, and lipid profiles
-          pmid: '40544432'
-        - study: Phase 2 Mechanistic Studies
-          type: human-observational
+            Improved cardiometabolic parameters reported alongside weight loss
+            in adults with overweight or obesity
+          pmid: '40544433'
+        - study: Lau DCW et al. Lancet 2021
+          type: human-rct
           finding: >-
-            Both peptide components independently slow gastric emptying with
-            additive effects when combined
-          pmid: '34653394'
+            Amylin analog cagrilintide promotes satiety and reduced caloric
+            intake, supporting a complementary appetite-regulating pathway
+          pmid: '34798060'
 conditions:
   - slug: obesity
     name: Obesity
     researchSummary: >-
       CagriSema has been evaluated in Phase 3 REDEFINE trials for chronic weight
-      management. REDEFINE-1 demonstrated 22.7% weight loss at 68 weeks in
-      adults with obesity, with 60% achieving >=20% weight loss. This represents
-      the highest weight loss efficacy demonstrated in pivotal trials for any
-      anti-obesity medication to date.
+      management. REDEFINE-1 demonstrated 20.4% mean weight loss at 68 weeks in
+      adults with overweight or obesity (vs 3.0% with placebo), with
+      significantly more participants reaching >=20%, >=25%, and >=30%
+      weight-loss targets than placebo.
     relevantStudies:
-      - '40544432'
-      - '34653394'
+      - '40544433'
+      - '34798060'
     relatedPeptides:
       - semaglutide
       - tirzepatide
@@ -457,9 +460,9 @@ conditions:
     name: Type 2 Diabetes
     researchSummary: >-
       REDEFINE-2 evaluated CagriSema in adults with type 2 diabetes and obesity.
-      Results showed 13.7% weight loss and 2.2% HbA1c reduction at 68 weeks.
-      73.5% of participants achieved HbA1c <=6.5%, indicating substantial
-      glycemic control benefit.
+      Results showed 13.7% mean weight loss at 68 weeks (vs 3.4% with placebo).
+      73.5% of participants achieved HbA1c <=6.5% vs 15.9% with placebo,
+      indicating substantial glycemic control benefit.
     relevantStudies:
       - '40544432'
     relatedPeptides:
@@ -468,12 +471,13 @@ conditions:
   - slug: prediabetes
     name: Prediabetes
     researchSummary: >-
-      Subgroup analysis from REDEFINE-1 showed 88% of participants with
-      prediabetes at baseline returned to normoglycemia with CagriSema
-      treatment. This suggests potential for diabetes prevention in high-risk
-      populations.
+      In the REDEFINE-1 trial of adults with overweight or obesity, CagriSema
+      improved glycemic measures alongside substantial weight loss, with many
+      participants who had prediabetes at baseline shifting toward
+      normoglycemia. This suggests potential for diabetes prevention in
+      high-risk populations.
     relevantStudies:
-      - '40544432'
+      - '40544433'
     relatedPeptides:
       - semaglutide
 timeline:
@@ -482,22 +486,22 @@ timeline:
       Dose titration phase. GI side effects (nausea, vomiting, diarrhea) most
       common during initiation. Appetite suppression typically begins within
       first 1-2 weeks.
-    source: 'PMID:40544432'
+    source: 'PMID:40544433'
   - period: Week 4-16
     effects: >-
       Continued dose escalation to maintenance dose. Weight loss acceleration
       observed. GI side effects typically diminish as tolerance develops.
-    source: 'PMID:40544432'
+    source: 'PMID:40544433'
   - period: Week 16-32
     effects: >-
-      Maintenance phase with ongoing weight loss. REDEFINE trials showed
-      approximately 15-18% weight loss achieved by this timepoint.
-    source: 'PMID:40544432'
+      Maintenance phase with ongoing weight loss as participants progress toward
+      the trial's 68-week endpoint.
+    source: 'PMID:40544433'
   - period: Week 32-68
     effects: >-
-      Continued weight loss with plateau approaching. Final weight loss of 22.7%
-      achieved at 68 weeks. Cardiometabolic improvements sustained.
-    source: 'PMID:40544432'
+      Continued weight loss with plateau approaching. Mean weight loss of 20.4%
+      achieved at 68 weeks in REDEFINE-1. Cardiometabolic improvements sustained.
+    source: 'PMID:40544433'
 qualityChecklist:
   goodSigns:
     - FDA-approved pharmaceutical product (pending approval)
@@ -622,7 +626,7 @@ CagriSema combines two distinct appetite-suppressing peptide hormones into a sin
   </div>
 </div>
 
-**Key Research:** Rubino DM et al. demonstrated in REDEFINE-1 that CagriSema produces weight loss exceeding the sum of individual components. [PMID:40544432](https://pubmed.ncbi.nlm.nih.gov/40544432/)
+**Key Research:** Garvey WT et al. demonstrated in REDEFINE-1 that CagriSema produced 20.4% mean weight loss at 68 weeks versus 3.0% with placebo in adults with overweight or obesity. [PMID:40544433](https://pubmed.ncbi.nlm.nih.gov/40544433/)
 
 ### NDA Submission & REDEFINE Program (2025-2026)
 

@@ -14,8 +14,8 @@ comparators:
 summary: >-
   A dual GLP-1/glucagon receptor agonist developed by Boehringer
   Ingelheim/Zealand Pharma, currently in Phase 3 trials for obesity and MASH.
-  Phase 2 data show 18.7% weight loss and 83% MASH resolution, with unique
-  liver-targeting benefits from glucagon receptor agonism.
+  Phase 2 data show up to 14.9% weight loss and up to 62% MASH improvement, with
+  unique liver-targeting benefits from glucagon receptor agonism.
 sources:
   count: 20
   human: 16
@@ -243,13 +243,15 @@ evidenceChainedBenefits:
         - study: le Roux CW et al. 2024
           type: human-rct
           finding: >-
-            18.7% weight loss at 46 weeks with 4.8mg dose vs 2.1% placebo in
+            14.9% weight loss at 46 weeks with 4.8mg dose vs 2.8% placebo in
             Phase 2 trial
-          pmid: '37840093'
-        - study: Nauck MA et al. 2023
+          pmid: '38330987'
+        - study: Blüher M et al. 2023
           type: human-rct
-          finding: '9.6% weight loss at 16 weeks, superior to semaglutide 1mg (5.1%)'
-          pmid: '36702559'
+          finding: >-
+            Up to 8.7% weight loss at 16 weeks in type 2 diabetes, superior to
+            semaglutide 1mg (5.3%)
+          pmid: '38095657'
   - mechanism:
       action: Glucagon receptor agonism promoting hepatic lipid oxidation
       confidence: supported
@@ -266,15 +268,15 @@ evidenceChainedBenefits:
         - study: Sanyal AJ et al. 2024
           type: human-rct
           finding: >-
-            83% MASH resolution vs 18% placebo; 64.5% fibrosis improvement vs
-            25.9% placebo at 48 weeks
-          pmid: '38507727'
-        - study: Perry RJ et al. 2023
+            Up to 62% MASH improvement without worsening fibrosis vs 14%
+            placebo; up to 36% fibrosis improvement vs 22% placebo at 48 weeks
+          pmid: '38847460'
+        - study: Monfeuga T et al. 2023
           type: animal
           finding: >-
-            GCGR activation drives hepatic fat oxidation and reduces steatosis
-            in mouse models
-          pmid: '36425689'
+            GLP-1/glucagon dual agonism reduces hepatic steatosis beyond
+            GLP-1R agonism alone in a diet-induced NASH mouse model
+          pmid: '38065435'
   - mechanism:
       action: Dual receptor balance maintaining glycemic control
       confidence: supported
@@ -288,16 +290,18 @@ evidenceChainedBenefits:
       animalStudies: 2
       cellStudies: 1
       keyFindings:
-        - study: Nauck MA et al. 2023
-          type: human-rct
-          finding: HbA1c reduction of 1.9% at 16 weeks vs 0.1% placebo in T2D patients
-          pmid: '36702559'
-        - study: Parker VE et al. 2022
+        - study: Blüher M et al. 2023
           type: human-rct
           finding: >-
-            Dose-dependent glucose lowering established in Phase 1 with
-            favorable safety
-          pmid: '35913766'
+            HbA1c reduction up to 1.71% at 16 weeks vs placebo in T2D patients,
+            similar to semaglutide at lower doses
+          pmid: '38095657'
+        - study: Zimmermann T et al. 2022
+          type: animal
+          finding: >-
+            Dual GLP-1R/GCGR engagement confirmed preclinically via glucose
+            tolerance and food-intake tests for BI 456906
+          pmid: '36356832'
   - mechanism:
       action: GCGR-mediated thermogenesis in brown adipose tissue
       confidence: emerging
@@ -311,26 +315,28 @@ evidenceChainedBenefits:
       animalStudies: 3
       cellStudies: 2
       keyFindings:
-        - study: Ambery P et al. 2022
+        - study: Zimmermann T et al. 2022
           type: animal
-          finding: Increased oxygen consumption and thermogenesis in rodent models
-          pmid: '35657668'
-        - study: Capozzi ME et al. 2024
-          type: in-vitro
           finding: >-
-            GCGR activation increases metabolic rate via brown adipose tissue
-            signaling
-          pmid: '39156781'
+            BI 456906 lowers bodyweight more than semaglutide in mice, driven
+            by increased energy expenditure plus reduced food intake
+          pmid: '36356832'
+        - study: Pocai A et al. 2009
+          type: animal
+          finding: >-
+            GLP-1/glucagon dual agonism raises energy expenditure and fatty
+            acid oxidation, reversing obesity in diet-induced obese mice
+          pmid: '19602537'
 conditions:
   - slug: obesity
     name: Obesity
     researchSummary: >-
-      Phase 2 RCT (N=387) demonstrated 18.7% weight loss at 46 weeks with 4.8mg
-      dose. 81% of participants achieved >=10% weight loss vs 14% placebo. Phase
-      3 SYNCHRONIZE trials ongoing with results expected 2026.
+      Phase 2 dose-finding RCT (N=387) demonstrated dose-dependent weight loss,
+      reaching 14.9% at 46 weeks with the 4.8mg dose vs 2.8% with placebo. Phase
+      3 SYNCHRONIZE-1 and -2 trials are ongoing with results expected 2026.
     relevantStudies:
-      - '37840093'
-      - '35913766'
+      - '38330987'
+      - '39495965'
     relatedPeptides:
       - semaglutide
       - tirzepatide
@@ -338,25 +344,27 @@ conditions:
   - slug: mash-nafld
     name: MASH/NAFLD
     researchSummary: >-
-      Phase 2 RCT (N=293) showed 83% MASH resolution vs 18% placebo and 64.5%
-      fibrosis improvement vs 25.9% placebo. Liver fat reduction of 82-86%.
-      These are the highest MASH resolution rates reported for any drug in Phase
-      2. Phase 3 ACHIEVE trial ongoing.
+      Phase 2 RCT (N=293) showed up to 62% MASH improvement without worsening
+      of fibrosis vs 14% placebo, and up to 36% fibrosis improvement (>=1 stage)
+      vs 22% placebo at 48 weeks. A >=30% reduction in liver fat occurred in
+      57-67% of survodutide groups vs 14% placebo. Phase 3 development is
+      ongoing.
     relevantStudies:
-      - '38507727'
-      - '36425689'
+      - '38847460'
+      - '38065435'
     relatedPeptides:
       - semaglutide
       - tirzepatide
   - slug: type-2-diabetes
     name: Type 2 Diabetes
     researchSummary: >-
-      Phase 2 RCT (N=411) demonstrated HbA1c reduction of 1.9% at 16 weeks vs
-      semaglutide 1mg (1.4%) and placebo (0.1%). Weight loss also superior to
-      semaglutide at 9.6% vs 5.1%.
+      Phase 2 RCT (N=413) demonstrated dose-dependent HbA1c reduction up to
+      1.71% at 16 weeks, comparable to open-label semaglutide 1mg (1.47%) at
+      matched lower doses. Weight loss reached 8.7%, exceeding semaglutide
+      (5.3%) at higher survodutide doses.
     relevantStudies:
-      - '36702559'
-      - '35913766'
+      - '38095657'
+      - '39495965'
     relatedPeptides:
       - semaglutide
       - tirzepatide
@@ -366,25 +374,25 @@ timeline:
       Dose escalation phase. Common GI side effects (nausea, reduced appetite)
       typically emerge. Early weight loss primarily from reduced caloric intake
       via GLP-1 pathway.
-    source: 'PMID:37840093'
+    source: 'PMID:38330987'
   - period: Week 4-12
     effects: >-
       Continued dose escalation toward target dose. Weight loss accelerates. GI
       tolerability typically improves. Early metabolic improvements in glucose
       and liver enzymes.
-    source: 'PMID:36702559'
+    source: 'PMID:38095657'
   - period: Week 12-24
     effects: >-
       Target dose achieved. Steady-state drug levels (~4-5 weeks after stable
       dosing). Significant weight loss observable. Liver fat reduction becomes
       measurable.
-    source: 'PMID:38507727'
+    source: 'PMID:38847460'
   - period: Week 24-48
     effects: >-
       Continued weight loss with trajectory not yet plateaued at 46 weeks. In
       MASH patients, histological improvements (resolution, fibrosis) documented
       at 48 weeks.
-    source: 'PMID:37840093'
+    source: 'PMID:38330987'
 qualityChecklist:
   goodSigns:
     - Obtained through clinical trial enrollment or authorized pharmacy
@@ -420,7 +428,7 @@ ratings:
   lastReviewed: 2026-04-13T00:00:00.000Z
   reviewNotes: >-
     Dual GLP-1/glucagon receptor agonist (BI 456906) in Phase 3 for obesity and
-    MASH. Phase 2 shows 18.7% weight loss, 83% MASH resolution. Primarily
+    MASH. Phase 2 shows up to 14.9% weight loss and up to 62% MASH improvement. Primarily
     European-led trials (Boehringer Ingelheim) with some US sites. GLP-1 and
     glucagon receptor mechanisms are individually well-established; dual agonism
     rationale is solid.
@@ -482,7 +490,7 @@ Survodutide acts as a "dual signal" metabolic regulator through complementary pa
   </div>
 </div>
 
-**Key Research:** Sanyal AJ et al. (NEJM, 2024) demonstrated 83% MASH resolution with 6.0mg dose, the highest rate reported for any drug in Phase 2. [PMID:38507727](https://pubmed.ncbi.nlm.nih.gov/38507727/)
+**Key Research:** Sanyal AJ et al. (NEJM, 2024) reported MASH improvement without worsening of fibrosis in up to 62% of survodutide-treated participants (4.8mg dose) vs 14% on placebo in a 48-week Phase 2 trial. [PMID:38847460](https://pubmed.ncbi.nlm.nih.gov/38847460/)
 
 ### Important Limitations
 

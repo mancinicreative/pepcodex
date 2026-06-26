@@ -16,17 +16,18 @@ comparators:
 summary: >-
   A synthetic tripeptide (Lys-Glu-Asp) developed by Russian scientist Vladimir
   Khavinson, claimed to support vascular health by modulating endothelial gene
-  expression. Russian studies suggest cardiovascular protective effects. No
-  Western clinical validation or regulatory approval anywhere.
+  expression. The only published primary research is Russian in-vitro work on
+  cultured endothelium. No animal vascular studies, no human clinical
+  validation, and no regulatory approval anywhere.
 sources:
-  count: 12
-  human: 2
-  preclinical: 8
-  openAccess: 5
+  count: 2
+  human: 0
+  preclinical: 2
+  openAccess: 0
 metaTitle: 'Vesugen: Vascular Bioregulator Research (2026)'
 metaDescription: >-
-  Evidence-graded review of vesugen covering 12 citations on research evidence.
-  Updated Feb 2026.
+  Evidence-graded review of vesugen covering the available in-vitro research
+  evidence. Updated Feb 2026.
 interactions:
   - peptide: cardiogen
     type: compatible
@@ -81,104 +82,105 @@ evidenceChainedBenefits:
         Modulation of endothelial cell gene expression affecting vascular
         function
       confidence: emerging
-      directStudies: 3
+      directStudies: 2
     benefit:
       claim: support healthy vascular endothelium
       qualifier: suggested to
     evidence:
       level: very-low
-      humanStudies: 1
-      animalStudies: 3
-      cellStudies: 4
+      humanStudies: 0
+      animalStudies: 0
+      cellStudies: 2
       keyFindings:
-        - study: Khavinson VK et al. 2010
+        - study: Kozlov KL et al. 2016
           type: in-vitro
           finding: >-
-            KED peptide demonstrated binding affinity to DNA sequences
-            associated with endothelial cell function
-          pmid: '20513505'
-        - study: Khavinson VK et al. 2012
+            In cultured normal, atherosclerotic and restenotic endothelium, KED
+            peptide normalized endothelin-1 expression (which was elevated in
+            atherosclerosis and restenosis) and restored cell interactions via
+            connexin expression
+          pmid: '28539025'
+        - study: Khavinson VK et al. 2014
           type: in-vitro
           finding: >-
-            Vesugen modulated gene expression in cultured endothelial cells
-            related to vascular tone regulation
-          pmid: '22738622'
+            Short vasoprotective peptides reduced expression of E-selectin, an
+            adhesion molecule involved in atherosclerotic plaque formation, in
+            aging vascular cell cultures
+          pmid: '25408528'
   - mechanism:
-      action: Regulation of nitric oxide pathway and vasodilation factors
+      action: Regulation of vascular tone factors (endothelin-1)
       confidence: emerging
-      directStudies: 2
+      directStudies: 1
     benefit:
       claim: promote healthy blood flow
       qualifier: may
     evidence:
       level: very-low
       humanStudies: 0
-      animalStudies: 2
-      cellStudies: 2
+      animalStudies: 0
+      cellStudies: 1
       keyFindings:
-        - study: Khavinson VK et al. 2011
-          type: animal
+        - study: Kozlov KL et al. 2016
+          type: in-vitro
           finding: >-
-            Aged rats treated with Vesugen showed improved vascular reactivity
-            and endothelial-dependent relaxation
-          pmid: '21728902'
-        - study: Anisimov VN et al. 2008
-          type: animal
-          finding: >-
-            Short peptides including KED demonstrated effects on cardiovascular
-            parameters in aging animal models
-          pmid: '18437550'
+            In cultured endothelium, KED peptide normalized expression of
+            endothelin-1, a potent vasoconstrictor whose expression was elevated
+            in atherosclerosis and restenosis; no animal or human blood-flow
+            data exist
+          pmid: '28539025'
   - mechanism:
-      action: Antioxidant protection of vascular endothelium
+      action: Geroprotective regulation of endothelial cell maintenance (sirtuin1)
       confidence: emerging
-      directStudies: 2
+      directStudies: 1
     benefit:
-      claim: reduce oxidative damage to blood vessels
+      claim: support endothelial cell maintenance during aging
       qualifier: may
     evidence:
       level: very-low
       humanStudies: 0
-      animalStudies: 2
+      animalStudies: 0
       cellStudies: 1
       keyFindings:
-        - study: Khavinson VK et al. 2009
-          type: animal
+        - study: Kozlov KL et al. 2016
+          type: in-vitro
           finding: >-
-            Vesugen treatment reduced markers of oxidative stress in vascular
-            tissue of aged animals
-          pmid: '19549824'
+            In cultured endothelium, the geroprotective effect of KED peptide was
+            associated with increased expression of sirtuin1, a protein involved
+            in DNA repair; classic oxidative-stress endpoints were not measured
+          pmid: '28539025'
   - mechanism:
-      action: Modulation of age-related vascular gene expression changes
+      action: Modulation of age-related vascular cell renewal
       confidence: emerging
-      directStudies: 2
+      directStudies: 1
     benefit:
       claim: support healthy vascular aging
       qualifier: suggested to
     evidence:
       level: very-low
-      humanStudies: 1
-      animalStudies: 2
+      humanStudies: 0
+      animalStudies: 0
       cellStudies: 1
       keyFindings:
-        - study: Khavinson VK et al. 2013
-          type: human-observational
+        - study: Khavinson VK et al. 2014
+          type: in-vitro
           finding: >-
-            Elderly patients showed improved markers of vascular function
-            following Vesugen administration in uncontrolled observational study
-          pmid: '23721215'
+            In aging vascular cell cultures, short vasoprotective peptides
+            activated cell renewal, increasing Ki-67 proliferation marker
+            expression and reducing p53 synthesis; no human studies of KED in
+            vascular aging exist
+          pmid: '25408528'
 conditions:
   - slug: cardiovascular-health
     name: Cardiovascular Health
     researchSummary: >-
       Vesugen is marketed for cardiovascular support based on claimed effects on
-      vascular endothelium gene expression. Russian research reports improved
-      endothelial function in cell culture and animal models. One small
-      uncontrolled human observational study reported improved vascular markers.
-      No controlled human clinical trials exist.
+      vascular endothelium gene expression. Russian in-vitro research reports
+      normalization of endothelin-1 and reduced E-selectin expression in
+      cultured endothelium. No animal or human clinical studies of KED in
+      cardiovascular outcomes exist.
     relevantStudies:
-      - '20513505'
-      - '22738622'
-      - '21728902'
+      - '28539025'
+      - '25408528'
     relatedPeptides:
       - cardiogen
       - bpc-157
@@ -186,12 +188,13 @@ conditions:
     name: Vascular Aging
     researchSummary: >-
       Vesugen is proposed to counteract age-related vascular changes by
-      modulating endothelial gene expression. Animal studies suggest improved
-      vascular reactivity in aged subjects. The peptide's effects on human
-      vascular aging are unconfirmed in controlled trials.
+      modulating endothelial gene expression. In-vitro studies in aging vascular
+      cell cultures report activated cell renewal (increased Ki-67, reduced p53)
+      and increased sirtuin1 expression. The peptide's effects on human vascular
+      aging are unconfirmed; no animal or controlled human trials exist.
     relevantStudies:
-      - '21728902'
-      - '23721215'
+      - '28539025'
+      - '25408528'
     relatedPeptides:
       - epithalon
       - ghk-cu
@@ -199,38 +202,35 @@ conditions:
     name: Endothelial Function
     researchSummary: >-
       The proposed primary target of Vesugen is vascular endothelium. Cell
-      culture studies show gene expression changes in endothelial cells. Animal
-      models demonstrate improved endothelial-dependent vasodilation. Human
-      clinical validation is lacking.
+      culture studies show gene expression changes in endothelial cells,
+      including normalized endothelin-1 and restored connexin-mediated cell
+      interactions. No animal endothelial-function or human clinical data exist.
     relevantStudies:
-      - '22738622'
-      - '21728902'
+      - '28539025'
     relatedPeptides:
       - bpc-157
 timeline:
   - period: Week 1-2
     effects: >-
-      Based on preclinical data: Initial effects on endothelial gene expression
-      may begin. Cell culture studies show changes in vascular-related gene
-      markers within days of treatment.
-    source: 'PMID:22738622'
+      Based on in-vitro data only: changes in endothelial gene expression
+      (e.g. endothelin-1, connexin) have been observed in cultured cells. No
+      human time-course data exist.
+    source: 'PMID:28539025'
   - period: Week 2-4
     effects: >-
-      Continued treatment in animal models shows progressive effects on vascular
-      parameters. Endothelial function improvements may develop. Russian
-      protocols typically involve 10-20 day treatment cycles.
-    source: 'PMID:21728902'
+      No animal or human dosing-response data exist for KED in vascular tissue.
+      Russian protocols are described anecdotally as 10-20 day cycles, but
+      these are not supported by published pharmacological studies.
   - period: Week 4-8
     effects: >-
-      Animal studies report measurable improvements in vascular reactivity with
-      extended treatment. Oxidative stress markers may decrease. Effects in
-      humans are uncharacterized.
-    source: 'PMID:19549824'
+      In-vitro studies report effects on vascular-cell renewal markers
+      (Ki-67, p53) and adhesion molecules (E-selectin). No measured effects in
+      animals or humans are documented.
+    source: 'PMID:25408528'
   - period: Week 8+
     effects: >-
-      Long-term effects are based on Russian observational studies in elderly
-      patients. Optimal treatment duration and cycling protocols are not
-      established. Human pharmacokinetics are unknown.
+      No long-term human data exist. Optimal treatment duration and cycling
+      protocols are not established, and human pharmacokinetics are unknown.
 faqs:
   - question: What is Vesugen?
     answer: >-
@@ -245,15 +245,15 @@ faqs:
       originates from Russian institutes associated with Khavinson.
   - question: What is the evidence for Vesugen?
     answer: >-
-      Evidence is very low quality, consisting primarily of Russian preclinical
-      studies (cell culture and animal models) and one small uncontrolled human
-      observational study. No independent Western research has validated any
-      claims.
+      Evidence is very low quality, consisting only of Russian in-vitro studies
+      in cultured endothelial and vascular cells. There are no published animal
+      vascular studies and no human studies. No independent Western research has
+      validated any claims.
   - question: Does Vesugen improve cardiovascular health?
     answer: >-
       There is no controlled clinical evidence that Vesugen improves
-      cardiovascular health in humans. While Russian cell and animal studies
-      suggest effects on endothelial function, translation to meaningful
+      cardiovascular health in humans. While Russian in-vitro studies suggest
+      effects on endothelial gene expression, translation to meaningful
       cardiovascular benefits in humans is completely unconfirmed.
   - question: How does Vesugen differ from Cardiogen?
     answer: >-
@@ -297,10 +297,10 @@ ratings:
   overall: 1.65
   lastReviewed: 2026-04-13T00:00:00.000Z
   reviewNotes: >-
-    Russian bioregulator (Khavinson lab); synthetic vascular tripeptide. Some
-    human observational data from Russian vascular studies. No independent
-    Western clinical trials. Vascular bioregulation mechanism proposed but lacks
-    Western validation.
+    Russian bioregulator (Khavinson lab); synthetic vascular tripeptide.
+    Evidence limited to Russian in-vitro studies on cultured endothelium; no
+    animal vascular or human data. No independent Western clinical trials.
+    Vascular bioregulation mechanism proposed but lacks Western validation.
   anecdotalEvidence: 1
 anecdotalReports:
   positive: []
@@ -360,8 +360,8 @@ Vesugen targets vascular health through endothelial gene modulation and related 
 
 - 100% of research from Russian institutes associated with Khavinson
 - No independent Western replication of any findings
-- No controlled human clinical trials exist
-- One small uncontrolled observational study in elderly patients
+- Only in-vitro (cultured-cell) studies exist; no animal vascular studies
+- No human studies of any kind have been published
 - Human pharmacokinetics, bioavailability, and optimal dosing unknown
 - Translation from cell culture to meaningful cardiovascular benefits is **unconfirmed**
 - Regulatory status: Not approved anywhere; unregulated research peptide

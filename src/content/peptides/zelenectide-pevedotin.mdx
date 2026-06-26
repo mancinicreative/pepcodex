@@ -11,10 +11,11 @@ comparators:
   - sacituzumab-govitecan
 summary: >-
   A first-in-class Bicycle Drug Conjugate (BDC) targeting Nectin-4 for solid
-  tumors, developed by Bicycle Therapeutics. Demonstrates 45% overall response
-  rate in metastatic urothelial cancer with a novel bicyclic peptide platform
-  approximately 40x smaller than traditional antibody-drug conjugates. Phase 2/3
-  Duravelo-2 registrational trial ongoing.
+  tumors, developed by Bicycle Therapeutics. In the Duravelo-1 Phase 1/2
+  dose-escalation study it produced a 38% objective response rate (8/21) in
+  urothelial carcinoma using a novel bicyclic peptide platform much smaller than
+  traditional antibody-drug conjugates. Phase 2/3 Duravelo-2 registrational
+  trial ongoing.
 sources:
   count: 28
   human: 22
@@ -125,18 +126,20 @@ evidenceChainedBenefits:
       animalStudies: 6
       cellStudies: 8
       keyFindings:
-        - study: Hanna KS et al. 2024
-          type: human-observational
+        - study: Baldini C et al. 2025
+          type: human-rct
           finding: >-
-            45% ORR with 11.1 month median duration of response in 2L+
-            metastatic urothelial carcinoma
-          pmid: 10.1016/j.annonc.2024.10.743
-        - study: Bennett G et al. 2020
+            38% objective response rate (8/21) with 11.1 month median duration
+            of response in urothelial carcinoma in the Duravelo-1 Phase 1/2
+            dose-escalation study
+          pmid: '41197088'
+        - study: Rigby M et al. 2022
           type: animal
           finding: >-
-            Bicycle platform demonstrates superior tumor penetration vs
-            traditional ADCs in xenograft models
-          pmid: '32241873'
+            Bicycle Toxin Conjugate shows significant antitumor activity across
+            cancer models, superior or equivalent to an enfortumab vedotin
+            analog
+          pmid: '36112771'
   - mechanism:
       action: >-
         Rapid tumor penetration due to small molecular size (~40x smaller than
@@ -152,18 +155,19 @@ evidenceChainedBenefits:
       animalStudies: 6
       cellStudies: 4
       keyFindings:
-        - study: Bennett G et al. 2020
+        - study: Rigby M et al. 2022
           type: animal
           finding: >-
-            Full tumor spheroid penetration in <6 hours vs >24 hours for
-            traditional ADCs
-          pmid: '32241873'
-        - study: Rigby M et al. 2020
-          type: in-vitro
+            Small hydrophilic peptide rapidly diffuses through tissue to
+            penetrate tumors, with renal elimination and a 1-2 hour half-life in
+            rat and non-human primate
+          pmid: '36112771'
+        - study: Cigliola A et al. 2025
+          type: review
           finding: >-
-            Optimized BDC synthesis achieving sub-nanomolar Nectin-4 binding
-            affinity
-          pmid: '32226607'
+            Bicyclic molecular design enhances tumor penetration and minimizes
+            systemic toxicity relative to anti-Nectin-4 antibody-drug conjugates
+          pmid: '40401457'
   - mechanism:
       action: >-
         MMAE release and tubulin polymerization inhibition causing mitotic
@@ -179,16 +183,19 @@ evidenceChainedBenefits:
       animalStudies: 6
       cellStudies: 10
       keyFindings:
-        - study: Powles T et al. 2024
-          type: human-observational
+        - study: Baldini C et al. 2025
+          type: human-rct
           finding: >-
-            Durable responses with 11% complete response rate in heavily
-            pretreated mUC population
-          pmid: ASCO-GU-527
-        - study: Tagawa ST et al. 2023
-          type: human-observational
-          finding: Confirmed safety profile and efficacy in expansion cohorts
-          pmid: ASCO-4504
+            Durable responses with 11.1 month median duration of response and a
+            57% clinical benefit rate in urothelial carcinoma after a median of
+            three prior lines of therapy
+          pmid: '41197088'
+        - study: Rigby M et al. 2022
+          type: animal
+          finding: >-
+            MMAE payload delivery drives significant antitumor activity in
+            Nectin-4-expressing preclinical tumor models
+          pmid: '36112771'
   - mechanism:
       action: Fast systemic clearance reducing off-target tissue exposure
       confidence: supported
@@ -202,24 +209,28 @@ evidenceChainedBenefits:
       animalStudies: 4
       cellStudies: 0
       keyFindings:
-        - study: Phase 1/2 Pooled Safety Data 2024
-          type: human-observational
+        - study: Cigliola A et al. 2025
+          type: review
           finding: >-
-            12% treatment discontinuation rate due to AEs vs ~20% for enfortumab
-            vedotin; lower skin toxicity rates
-          pmid: NCT04561362
-        - study: Petrylak DP et al. 2022
-          type: human-observational
-          finding: Established RP2D of 5 mg/kg weekly with manageable safety profile
-          pmid: JCO-2022
+            Innovative molecular design minimizes systemic toxicity relative to
+            the anti-Nectin-4 antibody-drug conjugate enfortumab vedotin
+          pmid: '40401457'
+        - study: Baldini C et al. 2025
+          type: human-rct
+          finding: >-
+            Generally well-tolerated safety profile; recommended Phase 2 dose of
+            5.0 mg/m2 once weekly, with peripheral neuropathy (33%), neutropenia
+            (22%) and skin reactions (22%) as common adverse events
+          pmid: '41197088'
 conditions:
   - slug: urothelial-carcinoma
     name: Metastatic Urothelial Carcinoma
     researchSummary: >-
-      Primary indication with robust Phase 1/2 clinical data. 45% ORR in heavily
-      pretreated 2L+ population (100% prior checkpoint inhibitor, 87% prior
-      platinum). FDA Breakthrough Therapy Designation granted 2023. Phase 2/3
-      Duravelo-2 registrational trial ongoing.
+      Primary indication with Phase 1/2 clinical data. In the Duravelo-1
+      dose-escalation study, urothelial carcinoma patients (median three prior
+      lines of therapy) had a 38% objective response rate (8/21) and a 57%
+      clinical benefit rate, with an 11.1 month median duration of response.
+      Phase 2/3 Duravelo-2 registrational trial ongoing.
     relevantStudies:
       - NCT04561362
       - NCT05936528
@@ -258,16 +269,15 @@ timeline:
     source: NCT04561362
   - period: Week 8-12
     effects: >-
-      First radiographic response assessment. In Phase 1/2 trials, responses
-      observed across this timeframe. Disease control rate of 77% (CR + PR +
-      SD).
-    source: ASCO-2024
+      First radiographic response assessment. In the Duravelo-1 Phase 1/2 study,
+      responses were observed across this timeframe, with a 48% clinical benefit
+      rate across tumor types (57% in urothelial carcinoma).
+    source: PMID:41197088
   - period: Month 3+
     effects: >-
-      Median duration of response 11.1 months in responders. Continued weekly
-      dosing until progression or unacceptable toxicity. Some patients achieve
-      durable complete responses.
-    source: Ann-Oncol-2024
+      Median duration of response 11.1 months in responders. Continued dosing
+      until progression or unacceptable toxicity.
+    source: PMID:41197088
 qualityChecklist:
   goodSigns:
     - Administered only in clinical trial settings under medical supervision
@@ -356,7 +366,7 @@ Zelenectide pevedotin functions as a precision "smart missile" targeting cancer 
   </div>
 </div>
 
-**Key Research:** Bennett G et al. (2020) demonstrated superior tumor penetration of Bicycle platform vs ADCs. [PMID:32241873](https://pubmed.ncbi.nlm.nih.gov/32241873/)
+**Key Research:** Rigby M, Bennett G et al. (2022) characterized BT8009 as a small hydrophilic Bicycle Toxin Conjugate that rapidly diffuses through tissue to penetrate Nectin-4-expressing tumors, with antitumor activity superior or equivalent to an enfortumab vedotin analog in preclinical models. [PMID:36112771](https://pubmed.ncbi.nlm.nih.gov/36112771/)
 
 ### Important Limitations
 

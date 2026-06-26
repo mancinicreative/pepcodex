@@ -72,18 +72,19 @@ evidenceChainedBenefits:
       animalStudies: 3
       cellStudies: 2
       keyFindings:
-        - study: Khavinson VK et al. 2002
+        - study: Khavinson VKh et al. 2003
           type: in-vitro
           finding: >-
-            Retinal peptide extract demonstrated proliferative effects on
-            cultured retinal pigment epithelium cells
-          pmid: '12455622'
-        - study: Trofimova SV et al. 2008
+            Retinalamin tissue-specifically stimulated proliferation of cultured
+            retinal and pigment epithelial cells
+          pmid: '12937684'
+        - study: Kharintseva SV 2011
           type: human-observational
           finding: >-
-            Clinical improvement in visual acuity and retinal function observed
-            in patients with diabetic retinopathy after retinalamin treatment
-          pmid: '18589620'
+            Retinalamin used adjunctively with photocoagulation reported to
+            improve treatment outcomes in elderly patients with diabetic
+            macular edema
+          pmid: '22184988'
   - mechanism:
       action: Modulation of local growth factors and cytokines in retinal tissue
       confidence: emerging
@@ -97,18 +98,20 @@ evidenceChainedBenefits:
       animalStudies: 2
       cellStudies: 1
       keyFindings:
-        - study: Maksimov VY et al. 2005
-          type: animal
-          finding: >-
-            Reduced photoreceptor degeneration observed in light-damaged rat
-            retinas treated with retinalamin
-          pmid: '15895752'
-        - study: Khavinson VK et al. 2012
+        - study: Khvatova AV et al. 2005
           type: human-observational
           finding: >-
-            Stabilization of visual function in age-related macular degeneration
-            patients over 6-month follow-up
-          pmid: '22834678'
+            Stabilization of the degenerative process over 18 months and
+            improved visual acuity in 82% of children with retinal abiotrophy
+            (dystrophy) treated with retinalamin
+          pmid: '15881150'
+        - study: Trofimova SB et al. 2006
+          type: human-observational
+          finding: >-
+            Improved visual function and quality of life reported in elderly
+            patients with involutional (age-related) retinal pathology after
+            retinalamin therapy
+          pmid: '16676805'
   - mechanism:
       action: Enhancement of retinal microcirculation and metabolic processes
       confidence: emerging
@@ -122,18 +125,20 @@ evidenceChainedBenefits:
       animalStudies: 1
       cellStudies: 0
       keyFindings:
-        - study: Neroev VV et al. 2010
+        - study: Dorofeev DA et al. 2021
           type: human-observational
           finding: >-
-            Improved retinal hemodynamics documented by Doppler imaging
-            following parabulbar retinalamin injections
-          pmid: '20521756'
-        - study: Trofimova SV et al. 2006
+            OCT-angiography pilot study reported a trend toward improved retinal
+            vascular bed parameters (notably the deep vascular plexus) after
+            repeated retinalamin courses in advanced glaucoma
+          pmid: '33610151'
+        - study: Malakhova AI et al. 2024
           type: human-observational
           finding: >-
-            Enhanced ERG responses and improved central visual field sensitivity
-            after treatment course
-          pmid: '16758824'
+            Significant changes in pattern and flash electroretinography
+            parameters recorded in diabetic retinopathy patients after a course
+            of retinalamin
+          pmid: '38450466'
   - mechanism:
       action: Anti-apoptotic effects on retinal ganglion cells and photoreceptors
       confidence: emerging
@@ -147,18 +152,20 @@ evidenceChainedBenefits:
       animalStudies: 3
       cellStudies: 2
       keyFindings:
-        - study: Khavinson VK et al. 2005
-          type: animal
-          finding: >-
-            Reduced apoptosis markers in retinal ganglion cells of glaucoma
-            model rats
-          pmid: '15896124'
-        - study: Koroleva IA et al. 2009
+        - study: Avetisov SE et al. 2019
           type: in-vitro
           finding: >-
-            Decreased caspase-3 activation in oxidatively stressed retinal cell
-            cultures
-          pmid: '19458124'
+            Retinalamin was non-cytotoxic and significantly increased the
+            proportion of viable cells in glutamate-excitotoxicity-damaged
+            cultured retinal ganglion cells
+          pmid: '30830079'
+        - study: Suetov AA et al. 2021
+          type: animal
+          finding: >-
+            In a rabbit model of photochemical retinal damage, no significant
+            functional or morphological anti-apoptotic effect of retinalamin was
+            detected (TUNEL assay), tempering the anti-apoptotic hypothesis
+          pmid: '34726859'
 conditions:
   - slug: macular-degeneration
     name: Age-Related Macular Degeneration
@@ -169,8 +176,8 @@ conditions:
       injections. No Western clinical trials have evaluated these claims; all
       evidence comes from Russian studies.
     relevantStudies:
-      - '22834678'
-      - '20521756'
+      - '16676805'
+      - '33610151'
     relatedPeptides:
       - epithalon
       - cortexin
@@ -183,8 +190,8 @@ conditions:
       diabetic management in clinical protocols. No Western validation studies
       exist.
     relevantStudies:
-      - '18589620'
-      - '16758824'
+      - '22184988'
+      - '38450466'
     relatedPeptides:
       - cortexin
   - slug: retinal-dystrophy
@@ -195,8 +202,8 @@ conditions:
       disease stabilization in some patients. Evidence quality is low by Western
       standards; controlled trials are lacking.
     relevantStudies:
-      - '12455622'
-      - '15895752'
+      - '12937684'
+      - '15881150'
     relatedPeptides:
       - cortexin
       - epithalon
@@ -208,7 +215,7 @@ conditions:
       effects on ganglion cells. Not a primary glaucoma treatment; used
       alongside IOP-lowering therapies. Limited clinical evidence.
     relevantStudies:
-      - '15896124'
+      - '30830079'
     relatedPeptides:
       - cortexin
       - semax
@@ -218,19 +225,19 @@ timeline:
       Initial treatment phase. In Russian clinical protocols, patients typically
       receive 5-10 daily injections. Some studies report subjective improvement
       in visual comfort within the first week of treatment.
-    source: 'PMID:18589620'
+    source: 'PMID:22184988'
   - period: Week 2-4
     effects: >-
       Measurable changes in electrophysiological parameters (ERG) reported by
       week 2-3 in some studies. Visual acuity improvements may begin to
       manifest. Full injection course typically completed.
-    source: 'PMID:16758824'
+    source: 'PMID:38450466'
   - period: Week 4-8
     effects: >-
       Peak effect period following completion of treatment course. Russian
       studies measure outcomes at 4-8 weeks post-treatment. Improvements in
       visual field sensitivity and contrast sensitivity documented.
-    source: 'PMID:22834678'
+    source: 'PMID:16676805'
   - period: Week 8+
     effects: >-
       Long-term maintenance phase. Russian protocols often recommend repeat

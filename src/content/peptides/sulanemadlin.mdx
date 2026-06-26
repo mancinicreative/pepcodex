@@ -124,12 +124,13 @@ evidenceChainedBenefits:
       animalStudies: 6
       cellStudies: 8
       keyFindings:
-        - study: Saleh MN et al. 2019
+        - study: Saleh MN et al. 2021
           type: human-rct
           finding: >-
-            Phase 1/2 trial demonstrated 59% disease control rate in TP53wt
-            solid tumors and lymphomas with confirmed p53 pathway activation
-          pmid: '31852831'
+            First-in-human Phase 1 trial demonstrated 59% disease control rate
+            in TP53 wild-type solid tumors and lymphomas, with serum MIC-1
+            elevation confirming p53 pathway activation
+          pmid: '34301750'
         - study: Chang YS et al. 2013
           type: animal
           finding: >-
@@ -143,26 +144,28 @@ evidenceChainedBenefits:
       confidence: supported
       directStudies: 5
     benefit:
-      claim: reduce chemotherapy-induced neutropenia
-      qualifier: shown to
+      claim: protect normal tissues from chemotherapy-induced toxicity
+      qualifier: suggested to
     evidence:
-      level: moderate
-      humanStudies: 2
+      level: low
+      humanStudies: 1
       animalStudies: 3
       cellStudies: 4
       keyFindings:
-        - study: Tolcher AW et al. 2022
-          type: human-rct
-          finding: >-
-            Grade 4 neutropenia reduced from 63% to 21% when sulanemadlin
-            administered before chemotherapy
-          pmid: '35789377'
-        - study: Aileron preclinical 2021
+        - study: Guerlavais V et al. 2023
           type: animal
           finding: >-
-            Bone marrow protection from 5-FU and cyclophosphamide demonstrated
-            in mouse models
-          pmid: '35789377'
+            At lower doses, sulanemadlin transiently arrests the cell cycle in
+            healthy tissues to protect them from chemotherapy without protecting
+            TP53-mutant cancer cells
+          pmid: '37439511'
+        - study: Falandry C et al. 2023
+          type: review
+          finding: >-
+            Cell-cycle-arrest chemoprotection was clinically tested, but a
+            randomized controlled study failed to show significant activity and
+            development was placed on hold
+          pmid: '37036091'
   - mechanism:
       action: >-
         High-affinity MDMX inhibition overcoming resistance seen with MDM2-only
@@ -187,9 +190,9 @@ evidenceChainedBenefits:
         - study: Bernal F et al. 2010
           type: animal
           finding: >-
-            Stapled peptide mechanism overcomes MDMX-mediated resistance to p53
-            activation
-          pmid: '20541702'
+            A stapled p53 helix preferentially targets MDMX (HDMX) and overcomes
+            MDMX-mediated suppression of p53 in vitro and in vivo
+          pmid: '21075307'
 conditions:
   - slug: tp53-wild-type-cancers
     name: TP53 Wild-Type Cancers
@@ -199,21 +202,23 @@ conditions:
       responses in peripheral T-cell lymphoma. Requires molecular confirmation
       of TP53wt status for patient selection.
     relevantStudies:
-      - '31852831'
-      - '32304659'
-      - '34373580'
+      - '34301750'
+      - '23946421'
+      - '33663585'
     relatedPeptides:
       - idasanutlin
       - navtemadlin
   - slug: chemotherapy-toxicity-prevention
     name: Chemotherapy Toxicity Prevention
     researchSummary: >-
-      Novel chemoprotection application uses sulanemadlin to induce transient G1
-      arrest in normal cells before chemotherapy exposure. Phase 1 data
-      demonstrated significant reduction in grade 4 neutropenia (63% to 21%)
-      enabling maintained chemotherapy dose intensity.
+      A chemoprotection application explored using sulanemadlin to induce
+      transient cell-cycle arrest in normal cells before chemotherapy exposure,
+      sparing healthy tissue while not protecting TP53-mutant tumor cells. Early
+      clinical signals were promising, but a randomized controlled study failed
+      to show significant activity and development was placed on hold.
     relevantStudies:
-      - '35789377'
+      - '37439511'
+      - '37036091'
     relatedPeptides: []
   - slug: retinoblastoma
     name: Retinoblastoma
@@ -227,28 +232,30 @@ conditions:
 timeline:
   - period: Week 1-2
     effects: >-
-      IV infusion on days 1, 4, 8, 11 of 21-day cycle. Rapid p53 pathway
-      activation confirmed by serum MIC-1/GDF-15 elevation within hours of
-      dosing. Dose-dependent pharmacodynamic response observed.
-    source: 'PMID:31852831'
+      Administered by intravenous infusion on a weekly or twice-weekly schedule.
+      Rapid p53 pathway activation confirmed by serum MIC-1 elevation, a
+      pharmacodynamic biomarker. Dose-dependent pharmacokinetic and
+      pharmacodynamic response observed.
+    source: 'PMID:34301750'
   - period: Week 2-4
     effects: >-
       Disease stabilization may become apparent. Tumor marker changes and
-      imaging assessment typically at cycle 2. Chemoprotection effect (reduced
-      neutropenia) evident by day 14 in combination protocols.
-    source: 'PMID:35789377'
+      imaging assessment typically at cycle 2. In the separately investigated
+      chemoprotection setting, low doses transiently arrest the cell cycle in
+      healthy tissues; clinical benefit was not confirmed in a randomized study.
+    source: 'PMID:37439511'
   - period: Week 4-8
     effects: >-
-      Response assessment per RECIST criteria. Lymphoma responses observed as
-      early as cycle 2-3. Continued tolerability with low rates of dose-limiting
-      toxicity. Cumulative fatigue possible.
-    source: 'PMID:32304659'
+      Response assessment per RECIST criteria. Confirmed complete and partial
+      responses were observed across schedules. Continued tolerability with low
+      rates of dose-limiting toxicity. Cumulative fatigue possible.
+    source: 'PMID:34301750'
   - period: Week 8+
     effects: >-
-      Durable disease control in responding patients. Some responses maintained
-      beyond 6 months. Long-term treatment feasible due to favorable hematologic
-      safety profile compared to MDM2-only inhibitors.
-    source: 'PMID:34373580'
+      Durable disease control in responding patients, with six patients treated
+      for over one year. Notably, no grade 3/4 thrombocytopenia was observed,
+      reflecting a favorable hematologic safety profile.
+    source: 'PMID:34301750'
 qualityChecklist:
   goodSigns:
     - Administered only in clinical trial settings with proper monitoring
@@ -336,7 +343,7 @@ Sulanemadlin acts as a "decoy" that frees p53 to resume its cancer-fighting func
   </div>
 </div>
 
-**Key Research:** Saleh MN et al. (USA, 2019) demonstrated 59% disease control rate with low hematologic toxicity in Phase 1/2 trial. [PMID:31852831](https://pubmed.ncbi.nlm.nih.gov/31852831/)
+**Key Research:** Saleh MN et al. (USA, 2021) demonstrated a 59% disease control rate with low hematologic toxicity in a first-in-human Phase 1 trial. [PMID:34301750](https://pubmed.ncbi.nlm.nih.gov/34301750/)
 
 ### Important Limitations
 

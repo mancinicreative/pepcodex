@@ -31,7 +31,7 @@ interactions:
     description: >-
       GHRH+GHRP synergy is well-established. Tesamorelin (GHRH) and ipamorelin
       (GHRP) act through complementary pathways for enhanced GH release.
-    source: '18174396'
+    source: '9186309'
   - peptide: ghrp-6
     type: synergistic
     description: >-
@@ -57,7 +57,7 @@ interactions:
     description: >-
       Tesamorelin increases GH which can affect glucose homeostasis. Monitor
       blood glucose carefully in diabetic patients.
-    source: '31530668'
+    source: '25038357'
   - peptide: tirzepatide
     type: caution
     description: >-
@@ -298,12 +298,13 @@ evidenceChainedBenefits:
             12-month RCT showed 37% relative reduction in liver fat fraction;
             35% achieved HFF <5% vs 4% placebo
           pmid: '31611038'
-        - study: Stanley TL et al. JCEM 2022
+        - study: Fourman LT et al. Clin Infect Dis 2021
           type: human-rct
           finding: >-
-            Tesamorelin prevented fibrosis progression in NAFLD patients over 12
-            months
-          pmid: '34989813'
+            In the 12-month tesamorelin NAFLD trial, 38% of placebo-treated
+            participants had hepatic fibrosis progression, against which
+            tesamorelin was protective
+          pmid: '32270862'
   - mechanism:
       action: >-
         Restoration of physiologic IGF-1 levels and GH pulsatility improving
@@ -319,12 +320,13 @@ evidenceChainedBenefits:
       animalStudies: 1
       cellStudies: 0
       keyFindings:
-        - study: Stanley TL et al. JAMA 2014
-          type: human-rct
+        - study: Sivakumar T et al. HIV Med 2011
+          type: meta-analysis
           finding: >-
-            Demonstrated 1.4 kg increase in lean body mass alongside VAT
-            reduction
-          pmid: '25038357'
+            Meta-analysis of 10 RCTs (n=1511) showed GH-axis treatments
+            (including tesamorelin) increased lean body mass by 1.31 kg vs
+            placebo
+          pmid: '21265979'
         - study: Koutkia P et al. JAMA 2004
           type: human-rct
           finding: Early Phase 2 trial showed mean IGF-1 increase of 81% from baseline
@@ -344,18 +346,19 @@ evidenceChainedBenefits:
       animalStudies: 0
       cellStudies: 0
       keyFindings:
-        - study: Stanley TL et al. JCI Insight 2020
+        - study: Fourman LT et al. JCI Insight 2020
           type: human-observational
           finding: >-
-            Hepatic transcriptomic analysis revealed improved oxidative
-            phosphorylation signatures
-          pmid: '32663195'
-        - study: Lo J et al. Hepatology 2022
+            Hepatic transcriptomic analysis revealed tesamorelin increased
+            oxidative phosphorylation gene sets and decreased inflammation/tissue
+            repair signatures
+          pmid: '32701508'
+        - study: Fourman LT et al. Sci Rep 2021
           type: human-observational
           finding: >-
-            Mechanistic analysis showed decreased hepatic inflammatory markers
-            with treatment
-          pmid: '34716710'
+            Proteomic analysis showed tesamorelin reduced pro-inflammatory and
+            pro-fibrotic mediators (VEGFA, TGFB1, CSF1) versus placebo
+          pmid: '34006921'
 conditions:
   - slug: hiv-lipodystrophy
     name: HIV Lipodystrophy
@@ -432,9 +435,9 @@ conditions:
       disease.
     relevantStudies:
       - '31611038'
-      - '32663195'
-      - '34989813'
-      - '34716710'
+      - '32701508'
+      - '32270862'
+      - '34006921'
     relatedPeptides:
       - semaglutide
       - tirzepatide

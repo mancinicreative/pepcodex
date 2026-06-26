@@ -197,15 +197,16 @@ evidenceChainedBenefits:
         - study: Romani L et al. 2004
           type: in-vitro
           finding: >-
-            TLR2/TLR9 identified as primary receptors for Ta1 on dendritic
-            cells, triggering NF-kB and MAPK activation
-          pmid: '15308104'
-        - study: Garaci E et al. 2003
-          type: human-rct
+            Ta1 activated dendritic cells through Toll-like receptor and
+            MyD88-dependent signaling, driving p38 MAPK/NF-kB activation and
+            IL-12 production
+          pmid: '14982877'
+        - study: Yang YM et al. 2003
+          type: human-observational
           finding: >-
-            Clinical trials showed increased CD4+ T-cell counts and enhanced
-            T-cell function in immunocompromised patients
-          pmid: '16009087'
+            Ta1 increased CD4+ T-cell counts and improved cellular immune
+            function in elderly cancer patients
+          pmid: '12970939'
   - mechanism:
       action: >-
         Upregulation of MHC class II expression and antigen presentation
@@ -221,18 +222,19 @@ evidenceChainedBenefits:
       animalStudies: 3
       cellStudies: 4
       keyFindings:
-        - study: Romani L et al. 2004
+        - study: Giacomini E et al. 2015
           type: in-vitro
           finding: >-
-            Enhanced dendritic cell maturation with increased MHC II and
-            costimulatory molecule expression
-          pmid: '15308104'
-        - study: Tuthill C et al. 2000
+            Enhanced human dendritic cell maturation with increased HLA class I
+            and II surface expression following viral TLR stimulation
+          pmid: '26096650'
+        - study: Jiang YF et al. 2010
           type: human-rct
           finding: >-
-            Improved antigen-specific immune responses in hepatitis B patients
-            receiving Ta1 adjuvant therapy
-          pmid: '9758296'
+            Increased proportion of cytokine-producing T-cells and stronger Th1
+            immune responses in HBeAg-positive chronic hepatitis B patients
+            receiving Ta1
+          pmid: '21227010'
   - mechanism:
       action: >-
         Modulation of cytokine network with increased IL-2, IL-12,
@@ -248,18 +250,19 @@ evidenceChainedBenefits:
       animalStudies: 4
       cellStudies: 3
       keyFindings:
-        - study: Garaci E et al. 1994
+        - study: Jiang YF et al. 2010
           type: human-rct
           finding: >-
             Increased IFN-gamma and IL-2 production in patients receiving Ta1
             for chronic hepatitis B
-          pmid: '9758296'
-        - study: Pica F et al. 1998
+          pmid: '21227010'
+        - study: Moscarella S et al. 1998
           type: human-rct
           finding: >-
-            Ta1 combination with IFN-alpha showed enhanced sustained viral
-            response in hepatitis C patients
-          pmid: '18237816'
+            Ta1 combination with IFN-alpha showed significantly higher
+            end-of-treatment virological response than IFN-alpha alone in
+            chronic hepatitis C patients
+          pmid: '9831367'
   - mechanism:
       action: Enhancement of NK cell proliferation and cytotoxic activity
       confidence: supported
@@ -273,18 +276,18 @@ evidenceChainedBenefits:
       animalStudies: 3
       cellStudies: 2
       keyFindings:
-        - study: Garaci E et al. 2003
+        - study: Yang YM et al. 2003
           type: human-observational
           finding: >-
-            Increased NK cell activity and perforin/granzyme production in
-            cancer patients receiving Ta1 adjuvant therapy
-          pmid: '16009087'
-        - study: Romani L et al. 2004
-          type: in-vitro
+            Increased NK cell activity in elderly cancer patients receiving Ta1
+            adjuvant therapy
+          pmid: '12970939'
+        - study: Ohmori H et al. 2001
+          type: animal
           finding: >-
-            Enhanced NK cell proliferation and improved cytotoxic function
-            against tumor cell lines
-          pmid: '15308104'
+            Ta1 restored natural killer and lymphokine-activated killer cell
+            activity in cyclophosphamide-immunosuppressed mice
+          pmid: '11322651'
 conditions:
   - slug: hepatitis-b
     name: Hepatitis B
@@ -296,8 +299,8 @@ conditions:
       (thymosin alpha-1) is approved in China, Italy, and 35+ other countries
       for hepatitis B. It is not FDA-approved in the United States.
     relevantStudies:
-      - '9758296'
-      - '16009087'
+      - '15482167'
+      - '18078676'
     relatedPeptides: []
   - slug: hepatitis-c
     name: Hepatitis C
@@ -308,8 +311,8 @@ conditions:
       populations. With the advent of direct-acting antivirals (DAAs), the role
       of thymosin alpha-1 in HCV treatment has diminished.
     relevantStudies:
-      - '9758296'
-      - '18237816'
+      - '9831367'
+      - '20536462'
     relatedPeptides: []
   - slug: cancer-immunotherapy
     name: Cancer Immunotherapy
@@ -320,8 +323,8 @@ conditions:
       peptide restores immune function that is often suppressed in cancer
       patients.
     relevantStudies:
-      - '16009087'
-      - '15308104'
+      - '12970939'
+      - '11322651'
     relatedPeptides: []
   - slug: immunodeficiency
     name: Immunodeficiency
@@ -332,8 +335,8 @@ conditions:
       adjuvant therapy, post-chemotherapy immune recovery, and elderly
       immunosenescence.
     relevantStudies:
-      - '9758296'
-      - '18237816'
+      - '11322651'
+      - '12970939'
     relatedPeptides:
       - ll-37
   - slug: viral-infections
@@ -345,8 +348,8 @@ conditions:
       The broad immunostimulatory effects may benefit viral infections where
       T-cell responses are important for clearance.
     relevantStudies:
-      - '9758296'
-      - '15308104'
+      - '37845598'
+      - '26096650'
     relatedPeptides:
       - ll-37
   - slug: aging-immune-function
@@ -358,7 +361,7 @@ conditions:
       enhancing T-cell maturation and activity. Studies in elderly populations
       show improved immune parameters.
     relevantStudies:
-      - '18237816'
+      - '12970939'
     relatedPeptides:
       - epithalon
       - mots-c
@@ -368,19 +371,19 @@ timeline:
       Based on clinical trials: Initial immune system modulation begins. T-cell
       maturation and dendritic cell activation observed. In hepatitis trials,
       immune markers begin to change within first 2 weeks.
-    source: 'PMID:9758296'
+    source: 'PMID:21227010'
   - period: Week 2-8
     effects: >-
       Immune enhancement effects become more pronounced. Clinical trials showed
       increased CD4+ T-cell counts and improved cytokine profiles. In hepatitis
       B trials, viral load reduction may begin.
-    source: 'PMID:9758296'
+    source: 'PMID:21227010'
   - period: Week 8-24
     effects: >-
       Studies show sustained immune enhancement with continued administration.
       Hepatitis B/C trials demonstrated viral response improvements over 24-52
       weeks of treatment.
-    source: 'PMID:9758296'
+    source: 'PMID:18078676'
   - period: Month 6+
     effects: >-
       Long-term studies in hepatitis and cancer adjuvant therapy show maintained
@@ -477,10 +480,10 @@ scoring:
     - "39814420"
     - "23327199"
     - "37845598"
-    - "16009087"
-    - "15308104"
-    - "9758296"
-    - "18237816"
+    - "21227010"
+    - "12970939"
+    - "18078676"
+    - "9831367"
   notes: >-
     Research Depth: meta-analyses of multiple RCTs exist (COVID-19 SR/MA, sepsis
     Phase 3 TESTS n=1106, ETASS n=361), >1,000 human subjects, but pooled
@@ -554,7 +557,7 @@ Thymosin alpha-1 acts as an "immune training officer" that enhances multiple arm
   </div>
 </div>
 
-**Key Research:** Romani L et al. (2004) identified TLR2/TLR9 signaling as the primary mechanism for dendritic cell activation by thymosin alpha-1. [PMID:15308104](https://pubmed.ncbi.nlm.nih.gov/15308104/)
+**Key Research:** Romani L et al. (2004) showed that thymosin alpha-1 activates dendritic cells for Th1 immunity through Toll-like receptor and MyD88-dependent signaling. [PMID:14982877](https://pubmed.ncbi.nlm.nih.gov/14982877/)
 
 ### Important Limitations
 

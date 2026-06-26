@@ -13,7 +13,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="mt-4 text-xl" style="color: var(--ink-muted);">
         How we handle your data with respect and transparency.
       </p>
-      <p class="mt-2 text-sm" style="color: var(--ink-dim);">Last updated: January 2026</p>
+      <p class="mt-2 text-sm" style="color: var(--ink-dim);">Last updated: June 2026</p>
     </header>
 
     <div class="prose prose-invert prose-lg max-w-none">
@@ -23,11 +23,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p>
           PepCodex ("we," "our," or "us") respects your privacy and is committed to protecting your
           personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard
-          your information when you visit our website pepcodex.com ("the Website").
+          your information when you visit pepcodex.com ("the Website") or use the PepTracker
+          mobile app ("PepTracker" or "the App").
         </p>
         <p>
           Please read this Privacy Policy carefully. If you do not agree with the terms of this
-          Privacy Policy, please do not access the Website.
+          Privacy Policy, please do not access the Website or use the App.
         </p>
       </section>
 
@@ -76,6 +77,44 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </li>
         </ul>
 
+        <h3>PepTracker Mobile App Data</h3>
+        <p>
+          PepTracker is designed as a local-first mobile app. Protocols, doses, vials, weight
+          entries, body-fat entries, check-ins, side effects, injection sites, bloodwork values,
+          reminders, profile preferences, and unit settings are stored on your device with local
+          app storage and SQLite. PepTracker does not require an account for V1 tracking features
+          and does not sync this tracking data to a PepTracker backend.
+        </p>
+        <p>
+          Health-tracking data from the App does not leave your device unless you choose to export
+          or share it through your operating system's share sheet, connect a third-party service
+          described below, or submit information to us separately through a support channel.
+        </p>
+
+        <h3>Health Connect on Android</h3>
+        <p>
+          If you connect Health Connect on Android, PepTracker requests read access only for weight
+          and body-fat records. Authorized records are imported into the App's local database so
+          they can appear beside your protocol logs and trends. PepTracker does not write data back
+          to Health Connect and does not request broader Health Connect categories in V1.
+        </p>
+
+        <h3>Purchases and Subscriptions</h3>
+        <p>
+          Premium subscriptions are processed by Apple, Google, and RevenueCat. RevenueCat manages
+          anonymous purchase and entitlement state for the App. PepTracker V1 does not collect a
+          name, email address, password, or account login for core tracking features.
+        </p>
+
+        <h3>Crash and Error Reports</h3>
+        <p>
+          Production builds of the App may send crash and error diagnostics to Sentry when crash
+          reporting is configured. The App is designed to scrub events before upload by removing
+          user and request context, dropping event extras and log parameters, redacting health-like
+          key/value text from messages, exception values, and stack context, stripping breadcrumb
+          data, and disabling performance tracing and session replay.
+        </p>
+
         <h3>Cookies and Tracking Technologies</h3>
         <p>
           We use cookies and similar tracking technologies to collect information about your
@@ -95,6 +134,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <li>Analyze usage patterns to improve user experience</li>
           <li>Monitor and analyze trends, usage, and activities</li>
           <li>Detect, prevent, and address technical issues</li>
+          <li>Process App subscription status and Premium entitlement state</li>
+          <li>Import Health Connect data only when you grant permission</li>
+          <li>Schedule App reminders locally on your device</li>
           <li>Comply with legal obligations</li>
         </ul>
 
@@ -169,6 +211,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <li>Website hosting providers</li>
           <li>Email service providers (for newsletter delivery)</li>
           <li>Analytics providers</li>
+          <li>Payment and subscription entitlement providers</li>
+          <li>Crash and error reporting providers</li>
         </ul>
         <p>
           These service providers are contractually obligated to use your information only for
@@ -207,7 +251,32 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <strong>Contact Form Submissions:</strong> Retained for up to 2 years or until the
             inquiry is resolved
           </li>
+          <li>
+            <strong>PepTracker App Data:</strong> Stored locally on your device until you delete it,
+            uninstall the App, or clear local app data. We cannot recover local App data that you
+            delete or lose.
+          </li>
         </ul>
+      </section>
+
+      <!-- App Data Controls -->
+      <section id="app-data-controls" class="mt-12">
+        <h2>PepTracker App Data Controls</h2>
+        <p>
+          PepTracker includes a Clear All Data / Delete My Data control that removes local SQLite
+          records, app preference keys, and scheduled local notifications from your device. Because
+          V1 is local-first and has no PepTracker account backend, deleted local App data cannot be
+          recovered by PepTracker.
+        </p>
+        <p>
+          You can revoke Health Connect access in the App's data-source controls or through Android
+          Health Connect settings. Revoking access stops future imports.
+        </p>
+        <p>
+          Exports are user-initiated. When you export Text, JSON, or HTML data, the App assembles
+          the selected payload locally and hands it to the operating system share sheet. The
+          destination app or service you choose controls its own privacy practices.
+        </p>
       </section>
 
       <!-- Your Rights -->
@@ -298,7 +367,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <section id="children" class="mt-12">
         <h2>Children's Privacy</h2>
         <p>
-          The Website is not intended for individuals under the age of 18. We do not knowingly
+          The Website and App are not intended for individuals under the age of 18. We do not knowingly
           collect personal information from children under 18. If you are a parent or guardian
           and believe that your child has provided us with personal information, please contact
           us so that we can delete the information.
@@ -309,8 +378,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <section id="third-party-links" class="mt-12">
         <h2>Third-Party Links</h2>
         <p>
-          The Website may contain links to third-party websites, including scientific journals,
-          research databases, and regulatory agencies. We are not responsible for the privacy
+          The Website and App may contain links to third-party websites, including scientific journals,
+          research databases, regulatory agencies, and App Store or Google Play subscription
+          management surfaces. We are not responsible for the privacy
           practices of these third-party websites. We encourage you to review the privacy
           policies of any website you visit.
         </p>

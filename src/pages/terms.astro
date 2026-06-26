@@ -13,7 +13,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="mt-4 text-xl" style="color: var(--ink-muted);">
         Please read these terms carefully before using PepCodex.
       </p>
-      <p class="mt-2 text-sm" style="color: var(--ink-dim);">Last updated: January 2026</p>
+      <p class="mt-2 text-sm" style="color: var(--ink-dim);">Last updated: June 2026</p>
     </header>
 
     <div class="prose prose-invert prose-lg max-w-none">
@@ -21,14 +21,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <section id="agreement">
         <h2>1. Agreement to Terms</h2>
         <p>
-          By accessing or using PepCodex (pepcodex.com, "the Website"), you agree to be bound by
-          these Terms of Service ("Terms"). If you do not agree to all of these Terms, you are
-          prohibited from using or accessing this Website.
+          By accessing or using PepCodex (pepcodex.com, "the Website") or the PepTracker mobile
+          app ("PepTracker" or "the App"), you agree to be bound by these Terms of Service
+          ("Terms"). If you do not agree to all of these Terms, you are prohibited from using or
+          accessing the Website or App.
         </p>
         <p>
-          These Terms apply to all visitors, users, and others who access or use the Website.
+          These Terms apply to all visitors, users, and others who access or use the Website or App.
           We reserve the right to modify these Terms at any time. Your continued use of the
-          Website following the posting of revised Terms means you accept and agree to the changes.
+          Website or App following the posting of revised Terms means you accept and agree to the changes.
         </p>
       </section>
 
@@ -49,9 +50,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <li>Links to primary research sources</li>
           <li>A glossary of scientific terms</li>
           <li>Newsletter subscription services</li>
+          <li>PepTracker mobile app protocol tracking, local reminders, calculations, and exports</li>
         </ul>
         <p>
-          <strong>The Website does NOT provide:</strong>
+          <strong>The Website and App do NOT provide:</strong>
         </p>
         <ul>
           <li>Medical advice, diagnosis, or treatment recommendations</li>
@@ -61,9 +63,50 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </ul>
       </section>
 
+      <!-- PepTracker Mobile App -->
+      <section id="peptracker-app" class="mt-12">
+        <h2>3. PepTracker Mobile App</h2>
+        <p>
+          PepTracker is a local-first tracking app for user-entered protocols, doses, vials,
+          weight entries, body-fat entries, side effects, injection sites, bloodwork values,
+          reminders, calculations, and exports. V1 tracking features do not require a PepTracker
+          account or backend sync.
+        </p>
+        <p>
+          You are responsible for the accuracy, safety, and legality of the information you enter
+          into the App. PepTracker cannot recover local App data that you delete, lose, or do not
+          back up through your own device backup system.
+        </p>
+        <p>
+          Local notifications are reminders only. They are not emergency alerts, medical advice,
+          dosing instructions, or a substitute for professional care.
+        </p>
+      </section>
+
+      <!-- Subscriptions -->
+      <section id="subscriptions" class="mt-12">
+        <h2>4. Subscriptions</h2>
+        <p>
+          PepTracker Premium may unlock features such as additional active protocols, bloodwork
+          tracking, and export access. Subscriptions are processed by the App Store or Google Play,
+          and entitlement state may be managed through RevenueCat.
+        </p>
+        <p>
+          Auto-renewing subscriptions renew automatically unless cancelled through your App Store
+          or Google Play account settings before renewal. Pricing, billing period, trial
+          availability, renewal timing, cancellation, refunds, taxes, and store account management
+          are controlled by the applicable store terms and the active store product configuration.
+        </p>
+        <p>
+          Premium access is tied to the store account and entitlement state available to the App.
+          Use the App's Restore Purchases option if you need to refresh entitlement state after
+          reinstalling or changing devices.
+        </p>
+      </section>
+
       <!-- Educational Purpose -->
       <section id="educational-purpose" class="mt-12">
-        <h2>3. Educational Purpose Only</h2>
+        <h2>5. Educational Purpose Only</h2>
 
         <div class="not-prose my-8 rounded-xl p-6" style="border: 1px solid var(--primary-border); background: var(--primary-soft);">
           <div class="flex items-start gap-4">
@@ -75,7 +118,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <div>
               <h3 class="font-serif text-lg mb-2" style="color: var(--primary-deep); font-weight: 500;">Important Notice</h3>
               <p style="color: var(--ink-muted);">
-                All content on PepCodex is for educational and informational purposes only.
+                All content on PepCodex and all tracking surfaces in PepTracker are for educational,
+                organizational, and personal recordkeeping purposes only.
                 It is not intended to be a substitute for professional medical advice, diagnosis,
                 or treatment.
               </p>
@@ -110,7 +154,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <!-- Intellectual Property -->
       <section id="intellectual-property" class="mt-12">
-        <h2>4. Intellectual Property Rights</h2>
+        <h2>6. Intellectual Property Rights</h2>
         <p>
           Unless otherwise indicated, the Website and all content, features, and functionality
           (including but not limited to all information, software, text, displays, images, and
@@ -156,7 +200,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <!-- User Conduct -->
       <section id="user-conduct" class="mt-12">
-        <h2>5. User Conduct</h2>
+        <h2>7. User Conduct</h2>
         <p>
           By using the Website, you agree NOT to:
         </p>
@@ -191,7 +235,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <!-- Third-Party Links -->
       <section id="third-party-links" class="mt-12">
-        <h2>6. Third-Party Links and Content</h2>
+        <h2>8. Third-Party Links and Content</h2>
         <p>
           The Website contains links to third-party websites, including scientific journals,
           research databases, clinical trial registries, and regulatory agencies. These links
@@ -213,7 +257,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <!-- Newsletter -->
       <section id="newsletter" class="mt-12">
-        <h2>7. Newsletter and Communications</h2>
+        <h2>9. Newsletter and Communications</h2>
         <p>
           If you subscribe to our newsletter:
         </p>
@@ -236,7 +280,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <!-- Disclaimers -->
       <section id="disclaimers" class="mt-12">
-        <h2>8. Disclaimers</h2>
+        <h2>10. Disclaimers</h2>
         <p>
           THE WEBSITE AND ITS CONTENT ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT ANY
           WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.
@@ -259,7 +303,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <!-- Limitation of Liability -->
       <section id="limitation" class="mt-12">
-        <h2>9. Limitation of Liability</h2>
+        <h2>11. Limitation of Liability</h2>
         <p>
           TO THE MAXIMUM EXTENT PERMITTED BY LAW, PEPCODEX, ITS OWNERS, EMPLOYEES, CONTRIBUTORS,
           AND AFFILIATES SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL,
@@ -290,7 +334,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <!-- Indemnification -->
       <section id="indemnification" class="mt-12">
-        <h2>10. Indemnification</h2>
+        <h2>12. Indemnification</h2>
         <p>
           You agree to defend, indemnify, and hold harmless PepCodex, its owners, employees,
           contributors, and affiliates from and against any and all claims, damages, obligations,
@@ -312,7 +356,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <!-- Governing Law -->
       <section id="governing-law" class="mt-12">
-        <h2>11. Governing Law and Jurisdiction</h2>
+        <h2>13. Governing Law and Jurisdiction</h2>
         <p>
           These Terms shall be governed by and construed in accordance with the laws of the
           United States, without regard to its conflict of law provisions.
@@ -331,7 +375,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <!-- Severability -->
       <section id="severability" class="mt-12">
-        <h2>12. Severability</h2>
+        <h2>14. Severability</h2>
         <p>
           If any provision of these Terms is held to be unenforceable or invalid, such provision
           will be changed and interpreted to accomplish the objectives of such provision to the
@@ -342,7 +386,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <!-- Waiver -->
       <section id="waiver" class="mt-12">
-        <h2>13. Waiver</h2>
+        <h2>15. Waiver</h2>
         <p>
           The failure of PepCodex to enforce any right or provision of these Terms will not be
           considered a waiver of those rights. The waiver of any such right or provision will
@@ -353,18 +397,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <!-- Entire Agreement -->
       <section id="entire-agreement" class="mt-12">
-        <h2>14. Entire Agreement</h2>
+        <h2>16. Entire Agreement</h2>
         <p>
           These Terms, together with the <a href="/privacy">Privacy Policy</a>,
           <a href="/disclaimer">Disclaimer</a>, <a href="/cookie-policy">Cookie Policy</a>,
           and any other legal notices published by PepCodex on the Website, constitute the
-          entire agreement between you and PepCodex concerning the Website.
+          entire agreement between you and PepCodex concerning the Website and App.
         </p>
       </section>
 
       <!-- Changes -->
       <section id="changes" class="mt-12">
-        <h2>15. Changes to Terms</h2>
+        <h2>17. Changes to Terms</h2>
         <p>
           We reserve the right, at our sole discretion, to modify or replace these Terms at
           any time. If a revision is material, we will provide at least 30 days' notice prior
@@ -379,7 +423,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <!-- Contact -->
       <section id="contact" class="mt-12">
-        <h2>16. Contact Information</h2>
+        <h2>18. Contact Information</h2>
         <p>
           If you have any questions about these Terms, please contact us:
         </p>

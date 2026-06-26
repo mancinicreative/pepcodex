@@ -25,8 +25,8 @@ match). CHUNK=3 (OneDrive EMFILE safety). Spot-verified by hand + build gate bef
 | Citations wave-ac | ghk, ghk-cu, ghrp-2, ghrp-6, glutathione, hcg, hexarelin, hmg, humanin, igf-1-lr3, ipamorelin (foxo4-dri clean) | DONE — ~123 fixes, all clean | 25357c1 |
 | **Build-blocker fix** | agents used off-enum `keyFindings.type` ('review','cell') → broke build; fixed enum+layout+EvidenceChain. **Earlier "green" reports were misread (trailing grep exit, not npm).** | DONE | 4d6b9f2 |
 | UX research | examine/cochrane/drugs.com/mdcalc patterns → UX-RESEARCH.md + plan Chunk 0b (TOC, facet counts, verdict sentence, legend) | DONE | 22523a3 |
-| Citations wave-ad | kisspeptin, klotho, kpv, kristagen, lactoferricin, livagen, ll-37, maritide, melanotan-i, melanotan-ii, mk-0616, mk-677 | RUNNING (wf_bcc5bd57-b86) | — |
-| Citations wave-ae | mots-c, mrna-4157, murepavadin, na-selank-amidate, na-semax-amidate, ovagen, oveporexton, p21, pancragen, pasireotide, peg-mgf, pemvidutide | queued | — |
+| Citations wave-ad | kisspeptin, klotho, kpv, kristagen, lactoferricin, livagen, ll-37, melanotan-i, melanotan-ii, mk-677 (maritide, mk-0616 clean) | DONE — ~96 fixes, all clean | daa50c3 |
+| Citations wave-ae | mots-c, mrna-4157, murepavadin, na-selank-amidate, na-semax-amidate, ovagen, oveporexton, p21, pancragen, pasireotide, peg-mgf, pemvidutide | RUNNING (wf_e5a8aab7-cc3) | — |
 | Citations wave-af | pf-08653944, pinealon, prostatilen, pt-141, retinalamin, rusfertide, selank, semax, sermorelin, shlp-2, shlp-6, sigumir | queued | — |
 | Citations wave-ag | slu-pp-332, ss-31, stamakort, sulanemadlin, suprefort, svetinorm, tb-500, tesamorelin, testagen, thymalin, thymogen, thymosin-alpha-1 | queued | — |
 | Citations wave-ah | thymulin, ventfort, vesugen, vilon, visoluten, vk2735, vladonix, zelenectide-pevedotin | queued | — |

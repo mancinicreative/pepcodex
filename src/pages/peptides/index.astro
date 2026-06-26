@@ -31,6 +31,10 @@ const compoundTypes = [
   { value: 'protein', label: 'Protein' },
   { value: 'glycoprotein', label: 'Glycoprotein' },
 ];
+
+// Per-value facet counts (total available per value — faceted-browse style; ClinicalTrials.gov/PubChem)
+const countBy = (key: 'category' | 'evidenceStrength' | 'compoundType', val: string) =>
+  peptides.filter((p) => (p.data as any)[key] === val).length;
 ---
 
 <HubLayout
@@ -50,7 +54,7 @@ const compoundTypes = [
           data-filter="category"
           data-value="all"
         >
-          All
+          All <span class="ml-1 text-[0.7rem] opacity-55" style="font-family: var(--font-mono);">{peptides.length}</span>
         </button>
         {categories.map((cat) => (
           <button
@@ -58,7 +62,7 @@ const compoundTypes = [
             data-filter="category"
             data-value={cat}
           >
-            {cat.replace('-', ' & ').replace(/\b\w/g, l => l.toUpperCase())}
+            {cat.replace('-', ' & ').replace(/\b\w/g, l => l.toUpperCase())} <span class="ml-1 text-[0.7rem] opacity-55" style="font-family: var(--font-mono);">{countBy('category', cat)}</span>
           </button>
         ))}
       </div>
@@ -71,7 +75,7 @@ const compoundTypes = [
           data-filter="evidence"
           data-value="all"
         >
-          All
+          All <span class="ml-1 text-[0.7rem] opacity-55" style="font-family: var(--font-mono);">{peptides.length}</span>
         </button>
         {evidenceLevels.map((level) => (
           <button
@@ -79,7 +83,7 @@ const compoundTypes = [
             data-filter="evidence"
             data-value={level}
           >
-            {level.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}
+            {level.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())} <span class="ml-1 text-[0.7rem] opacity-55" style="font-family: var(--font-mono);">{countBy('evidenceStrength', level)}</span>
           </button>
         ))}
       </div>
@@ -92,7 +96,7 @@ const compoundTypes = [
           data-filter="compound"
           data-value="all"
         >
-          All
+          All <span class="ml-1 text-[0.7rem] opacity-55" style="font-family: var(--font-mono);">{peptides.length}</span>
         </button>
         {compoundTypes.map((type) => (
           <button
@@ -100,7 +104,7 @@ const compoundTypes = [
             data-filter="compound"
             data-value={type.value}
           >
-            {type.label}
+            {type.label} <span class="ml-1 text-[0.7rem] opacity-55" style="font-family: var(--font-mono);">{countBy('compoundType', type.value)}</span>
           </button>
         ))}
       </div>

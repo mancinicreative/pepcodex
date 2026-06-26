@@ -29,10 +29,11 @@ match). CHUNK=3 (OneDrive EMFILE safety). Spot-verified by hand + build gate bef
 | Citations wave-ae | mots-c, mrna-4157, murepavadin, na-selank-amidate, na-semax-amidate, oveporexton, p21, pasireotide, pemvidutide (ovagen, pancragen, peg-mgf clean) | DONE — ~72 fixes (mots-c 10/11 fabricated), all clean | 4f1f9f9 |
 | Citations wave-af | pinealon, prostatilen, pt-141, retinalamin, selank, semax, sermorelin, shlp-2, shlp-6 (pf-08653944, rusfertide, sigumir clean) | DONE — ~98 fixes, all clean | 035b4e0 |
 | Citations wave-ag | slu-pp-332, ss-31, sulanemadlin, tb-500, tesamorelin, thymalin, thymogen, thymosin-alpha-1 (stamakort, suprefort, svetinorm, testagen clean) | DONE — ~86 fixes, all clean (qualifier enum fix) | fa01857 |
-| Citations wave-ah | thymulin, ventfort, vesugen, vilon, visoluten, vk2735, vladonix, zelenectide-pevedotin | RUNNING (wf_2bfccd67-983) — **final wave** | — |
-| Citations wave-ah | thymulin, ventfort, vesugen, vilon, visoluten, vk2735, vladonix, zelenectide-pevedotin | queued | — |
-| Scoring rollout | populate two-axis `scoring:` on the ~83 dossiers still on legacy (after their citations are clean) | not started | — |
-| PMID guard | `scripts/qa-pmids.mjs` build-time resolver + commit audit tooling | not started | — |
+| Citations wave-ah | thymulin, vesugen, vilon, zelenectide-pevedotin (ventfort, visoluten, vk2735, vladonix clean) | DONE — final wave; vilon timeline hand-fix | bd92603 |
+| **CITATION GATE COMPLETE** | **102/102 audited · 670 PMIDs resolved · 591 fixes (528 replaced + 5 removed + 58 relabeled) · 195 kept · guard PASS: 587 unique PMIDs all resolve** | **DONE & VALIDATED** | — |
+| PMID guard | `scripts/qa-pmids.mjs` + `npm run qa-pmids` (strict) | DONE | 158fb67 |
+| Scoring rollout | populate two-axis `scoring:` on the ~83 legacy dossiers (citations now clean) + re-score bt5528 | NEXT | — |
+| Chunk 0b UX polish | dossier TOC, facet counts, plain-language verdict, evidence legend (UX-RESEARCH §A) | NEXT | — |
 | Final QA + merge | working-tree reconcile, full build, visual/a11y, merge → Vercel prod | not started | — |
 
 ## Re-score flags (scoring phase must RE-score these, not just the 83 unscored)

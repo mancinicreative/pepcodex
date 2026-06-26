@@ -44,6 +44,19 @@ every cited PMID resolves to the paper it claims, and the flagship two-axis scor
 5. **Newsletter popup** — DONE (verify it no longer renders in the build).
 - **Verify:** `npm run build` green; nav renders Regulatory + Methodology; no Directory in nav; anchors jump.
 - **Commit:** `feat(launch): nav surfaces trackers+methodology, drop directory stub, fix dead anchors/code`
+- **STATUS: DONE** (commit 775b015). A1/A3/A5/A8 of the UX research are covered here.
+
+---
+
+## Chunk 0b — UX launch-polish (from UX-RESEARCH.md, A-tier; low-effort "wire what exists")
+*Grounded in `.planning/phases/37-launch-readiness/UX-RESEARCH.md` (examine.com / Cochrane / drugs.com / MDCalc patterns + code verification). These are "finish & surface," not net-new builds.*
+1. **A2 — Wire the existing `TableOfContents` into `DossierLayout`** (sticky "On this page" desktop rail + mobile jump menu). It already auto-generates from `<h2>/<h3>` and ships in Blog/Safety/Guide/Protocol layouts; dossiers are the longest pages and have no in-page nav.
+2. **A4 — Per-value result counts on `/peptides` facets** ("High (23)", "Metabolic (31)"); order most-used first. Prevents zero-result dead ends.
+3. **A6 — One-sentence plain-language verdict** above `RatingCard` (reuse `verdictLine` + banned-content guardrails; jargon-free, no dosing). Completes the 5-second read.
+4. **A7 — Ship the `EvidenceKey` legend** consistently near any grade display (listing + dossier headers); component already exists.
+- **Verify:** build green; TOC renders + jumps on a dossier; facet counts correct; verdict sentence present.
+- **Commit:** `feat(launch): wire dossier TOC, facet counts, plain-language verdict, evidence legend`
+- *(V1.5/V2 UX — per-outcome condition matrix, counted "Appears in N" backlinks, ranked condition hubs, card⇄table toggle, /tools hub — deferred to fast-follow per UX-RESEARCH §B/§C; all gated behind citation verification.)*
 
 ---
 

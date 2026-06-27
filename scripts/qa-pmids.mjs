@@ -21,26 +21,50 @@ const add = (pmid, file) => {
   pmidFiles.get(pmid).add(file);
 };
 
-// Walk arbitrary frontmatter, collecting bare-number PMIDs (pmid:, relevantStudies[],
-// scoring.citations[]) and "PMID:123" strings. DOIs/URLs are ignored by these patterns.
-function walk(node, file) {
+// Frontmatter keys whose values are citations. A value in one of these must be a real,
+// renderable reference (numeric PMID | NCT######## | DOI | "PMID:123"); a placeholder
+// (N/A, TBD, ...) or any other unrecognized string is a fabrication risk — the render
+// guard (src/utils/citation.ts) hides it, but it must never have shipped in the first place.
+const CITATION_KEYS = new Set(['pmid', 'source', 'doi', 'relevantStudies', 'citations']);
+const isResolvableCitation = (s) =>
+  /^\d{6,9}$/.test(s) ||                 // bare PMID
+  /^PMID:\s*\d{6,9}$/i.test(s) ||        // PMID:123
+  /^NCT\d{8}$/i.test(s) ||               // ClinicalTrials.gov id
+  /^(DOI:)?10\.\d{4,9}\/\S+$/i.test(s) ||// DOI (with or without prefix)
+  /^PMC\d{4,}$/i.test(s) ||              // PubMed Central id
+  /^https?:\/\/\S+$/i.test(s);           // explicit URL (primary source / press release)
+const badCites = []; // { file, key, value } — placeholders & free-text in citation fields
+
+// Walk frontmatter tracking the enclosing key, collecting numeric PMIDs to resolve AND
+// flagging placeholder/unrecognized values that sit in a citation field.
+function walk(node, file, key) {
   if (node == null) return;
   if (typeof node === 'string') {
     const s = node.trim();
     if (/^\d{6,9}$/.test(s)) add(s, file);
     const m = s.match(/PMID:\s*(\d{6,9})/i);
     if (m) add(m[1], file);
+    if (CITATION_KEYS.has(key) && s && !isResolvableCitation(s)) badCites.push({ file, key, value: s });
     return;
   }
-  if (Array.isArray(node)) return node.forEach((n) => walk(n, file));
-  if (typeof node === 'object') return Object.values(node).forEach((n) => walk(n, file));
+  if (Array.isArray(node)) return node.forEach((n) => walk(n, file, key)); // items inherit parent key
+  if (typeof node === 'object') return Object.entries(node).forEach(([k, n]) => walk(n, file, k));
 }
 
 for (const file of files) {
   const { data, content } = matter(fs.readFileSync(path.join(dir, file), 'utf-8'));
-  walk(data, file);
+  walk(data, file, null);
   // Body: PMID:123 and pubmed.ncbi.nlm.nih.gov/123
   for (const m of content.matchAll(/(?:PMID:?\s*|pubmed\.ncbi\.nlm\.nih\.gov\/)(\d{6,9})/gi)) add(m[1], file);
+}
+
+// Placeholder/free-text values in citation fields are a worklist for the citation-verification
+// pass, NOT a build-breaker: the render guard (src/utils/citation.ts) already prevents them from
+// emitting a broken link, and many are legitimate-but-informal provenance (company disclosure,
+// conference abstract) on cutting-edge dossiers that genuinely lack a PMID/NCT/DOI yet.
+if (badCites.length) {
+  console.warn(`\nWORKLIST: ${badCites.length} placeholder/free-text citation value(s) to formalize or remove (non-blocking):`);
+  for (const b of badCites) console.warn(`  • ${b.file}  ${b.key}: ${JSON.stringify(b.value)}`);
 }
 
 const pmids = [...pmidFiles.keys()];

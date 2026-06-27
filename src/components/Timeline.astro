@@ -3,6 +3,8 @@
  * Timeline.astro - "What to Expect" horizontal phase cards based on study observations.
  * All data is based on published research, not anecdotal reports.
  */
+import { resolveCitation } from '../utils/citation';
+
 interface TimelineEntry {
   period: string;           // "Week 1-2"
   effects: string;          // "Based on study observations..."
@@ -48,22 +50,22 @@ const gridLgClass = ({ 1: 'lg:grid-cols-1', 2: 'lg:grid-cols-2', 3: 'lg:grid-col
         </div>
         <div class="font-serif text-xl leading-tight mb-2" style="color: var(--ink); font-weight: 500;">{entry.period}</div>
         <p class="text-sm leading-relaxed flex-grow" style="color: var(--ink-muted);">{entry.effects}</p>
-        {entry.source && (
+        {(() => { const cite = resolveCitation(entry.source); return cite.href && (
           <a
-            href={`https://pubmed.ncbi.nlm.nih.gov/${entry.source.replace('PMID:', '').trim()}/`}
+            href={cite.href}
             target="_blank"
             rel="noopener noreferrer"
             class="mt-4 inline-flex items-center gap-1.5 eyebrow transition-colors hover:text-[color:var(--primary-c)]"
             style="color: var(--ink-dim); font-size: 0.6rem;"
-            title="View study on PubMed"
+            title={cite.kind === 'nct' ? 'View trial on ClinicalTrials.gov' : 'View study on PubMed'}
           >
             <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
               <polyline points="14,2 14,8 20,8"></polyline>
             </svg>
-            {entry.source}
+            {cite.label}
           </a>
-        )}
+        ); })()}
       </div>
     ))}
   </div>

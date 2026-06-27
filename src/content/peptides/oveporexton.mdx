@@ -14,9 +14,9 @@ summary: >-
   A first-in-class oral orexin receptor 2 (OX2R) selective agonist developed by
   Takeda for narcolepsy type 1. Though not a peptide itself, oveporexton
   restores orexin peptide signaling lost due to autoimmune destruction of
-  orexin-producing neurons. Phase 3 trials demonstrate significant reductions in
-  excessive daytime sleepiness and cataplexy, with FDA Breakthrough Therapy
-  designation.
+  orexin-producing neurons. A Phase 2 trial (NEJM 2025) demonstrated significant
+  reductions in excessive daytime sleepiness and cataplexy; Phase 3 trials are
+  ongoing. Granted FDA Breakthrough Therapy designation.
 sources:
   count: 28
   human: 22
@@ -80,18 +80,18 @@ evidenceChainedBenefits:
       animalStudies: 4
       cellStudies: 2
       keyFindings:
-        - study: ORCHESTRA-NT1 Phase 3
+        - study: TAK-861-2001 (Phase 2 RCT, NT1)
           type: human-rct
           finding: >-
             Significant reduction in Epworth Sleepiness Scale scores vs placebo
             in NT1 patients
-          pmid: TBD
-        - study: Phase 2 dose-finding
+          pmid: '40367374'
+        - study: TAK-861-2001 dose-finding (Phase 2)
           type: human-rct
           finding: >-
             Dose-dependent improvements in sleepiness measures establishing
             optimal dosing
-          pmid: TBD
+          pmid: '40367374'
   - mechanism:
       action: Restoration of orexin signaling stabilizing sleep-wake boundaries
       confidence: established
@@ -105,12 +105,12 @@ evidenceChainedBenefits:
       animalStudies: 4
       cellStudies: 0
       keyFindings:
-        - study: ORCHESTRA-NT1 Phase 3
+        - study: TAK-861-2001 (Phase 2 RCT, NT1)
           type: human-rct
           finding: >-
-            Approximately 70-80% reduction in weekly cataplexy attacks vs
-            placebo
-          pmid: TBD
+            Significant reduction in weekly cataplexy rate vs placebo (e.g. 2.48
+            vs 8.76 attacks/week at week 8 with the 2/5 mg dose)
+          pmid: '40367374'
         - study: Chemelli et al. 1999
           type: animal
           finding: >-
@@ -132,10 +132,10 @@ evidenceChainedBenefits:
       animalStudies: 6
       cellStudies: 2
       keyFindings:
-        - study: ORCHESTRA-NT1 Phase 3
+        - study: TAK-861-2001 (Phase 2 RCT, NT1)
           type: human-rct
-          finding: Significant improvement in MWT sleep latency vs placebo
-          pmid: TBD
+          finding: Significant improvement in MWT sleep latency vs placebo (primary endpoint)
+          pmid: '40367374'
         - study: Willie et al. 2003
           type: animal
           finding: OX2R more important for wake promotion than OX1R in knockout models
@@ -168,12 +168,14 @@ conditions:
     name: Narcolepsy Type 1
     researchSummary: >-
       Oveporexton is specifically developed for NT1, caused by autoimmune
-      destruction of orexin-producing neurons. Phase 3 ORCHESTRA-NT1 trial
-      demonstrated significant improvements in ESS, cataplexy frequency, and
-      MWT. FDA Breakthrough Therapy designation granted 2021.
+      destruction of orexin-producing neurons. The Phase 2 trial TAK-861-2001
+      (NCT05687903, NEJM 2025) demonstrated significant improvements in MWT sleep
+      latency (primary), ESS, and weekly cataplexy rate; Phase 3 trials
+      (NCT06470828, NCT06505031) are completed with results pending publication.
+      FDA Breakthrough Therapy designation.
     relevantStudies:
-      - TBD-NEJM
-      - NCT04592510
+      - '40367374'
+      - NCT05687903
     relatedPeptides:
       - orexin-a
       - orexin-b
@@ -181,50 +183,51 @@ conditions:
     name: Narcolepsy Type 2
     researchSummary: >-
       NT2 patients have excessive sleepiness without cataplexy and usually
-      normal CSF orexin. ORCHESTRA-NT2 trial (NCT04808037) is ongoing to
-      evaluate if OX2R agonism benefits this population with less clear orexin
-      dysfunction.
+      normal CSF orexin. The Phase 2 trial NCT05687916 evaluated whether OX2R
+      agonism benefits this population with less clear orexin dysfunction.
     relevantStudies:
-      - NCT04808037
+      - NCT05687916
     relatedPeptides:
       - orexin-a
       - orexin-b
   - slug: excessive-daytime-sleepiness
     name: Excessive Daytime Sleepiness
     researchSummary: >-
-      Primary endpoint of ORCHESTRA-NT1 showed significant ESS reduction.
+      In TAK-861-2001 the primary endpoint (MWT sleep latency) improved
+      significantly, and ESS (secondary) was also significantly reduced.
       Oveporexton promotes wakefulness through direct OX2R activation in arousal
       centers, addressing the underlying orexin deficiency.
     relevantStudies:
-      - NCT04592510
-      - NCT03748979
+      - NCT05687903
+      - '40367374'
     relatedPeptides:
       - modafinil
       - pitolisant
 timeline:
   - period: Week 1-2
     effects: >-
-      Based on Phase 2/3 data: Rapid onset of wake-promoting effects. Patients
+      Based on Phase 2 data: Rapid onset of wake-promoting effects. Patients
       may notice reduced daytime sleepiness within first weeks. Cataplexy
       frequency begins to decrease.
-    source: NCT04592510
+    source: NCT05687903
   - period: Week 2-4
     effects: >-
-      Continued improvement in wakefulness measures. Phase 3 endpoints assessed
+      Continued improvement in wakefulness measures. Phase 2 endpoints assessed
       at multiple timepoints showed progressive benefit. Optimal steady-state
       drug levels achieved.
-    source: NCT03748979
+    source: NCT05687903
   - period: Week 4-8
     effects: >-
-      Full therapeutic effects observed in clinical trials. ESS improvements
-      stabilize. Cataplexy reduction maintained at approximately 70-80% from
-      baseline.
-    source: NEJM 2024
+      Full therapeutic effects observed in the Phase 2 trial. ESS improvements
+      stabilize and weekly cataplexy rate is significantly reduced vs placebo
+      through week 8.
+    source: NCT05687903
   - period: Week 8+
     effects: >-
-      Long-term extension studies (NCT04950842) ongoing to assess durability.
-      Preliminary data suggests sustained efficacy. Safety monitoring continues.
-    source: NCT04950842
+      Long-term extension study (NCT05816382) ongoing to assess durability.
+      Safety monitoring continues. Phase 3 trials completed in 2025 with results
+      pending publication.
+    source: NCT05816382
 qualityChecklist:
   goodSigns:
     - Pharmaceutical-grade product from licensed manufacturer (once approved)
@@ -249,8 +252,9 @@ regulatoryStatus:
   status: investigational
   lastUpdated: '2026-02-18'
   notes: >-
-    Phase 1 clinical trials for obesity (Novo Nordisk). Next-gen anti-obesity
-    candidate.
+    Phase 3 narcolepsy type 1 trials (Takeda) completed in 2025 with results
+    pending publication; additional Phase 3 ongoing. FDA Breakthrough Therapy
+    designation. Not yet FDA-approved.
 ratings:
   researchDepth: 4
   globalCoverage: 3
@@ -290,8 +294,8 @@ scoring:
     Research Depth 70: best verified human evidence is a single adequately-powered,
     double-blind, placebo-controlled multicenter Phase 2 RCT (Dauvilliers et al.,
     NEJM 2025, PMID 40367374, NCT05687903, n=112) — 1A=28 (single RCT n>=50; the
-    dossier's "ORCHESTRA-NT1 Phase 3" with pmid:TBD does NOT resolve to any
-    published trial on PubMed, so it is not credited), 1B=15 (low-RoB RCT, no
+    real Phase 3 trials NCT06470828/NCT06505031 are completed but not yet
+    published, so Phase 3 efficacy is not credited), 1B=15 (low-RoB RCT, no
     systematic review yet), 1C=6 (total human N ~112, 50-300 band), 1D=13 (direct:
     NT1 population, oral route, MWT/ESS/cataplexy outcomes), 1E=8 (substantial
     multi-model preclinical foundation: orexin and OX2R knockouts PMID 10481909 /

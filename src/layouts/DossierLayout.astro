@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import fs from 'node:fs';
 import path from 'node:path';
+import { resolveCitation } from '../utils/citation';
 import BaseLayout from './BaseLayout.astro';
 import ArticleSchema from '../components/SEO/ArticleSchema.astro';
 import BreadcrumbSchema from '../components/SEO/BreadcrumbSchema.astro';
@@ -711,23 +712,24 @@ const clinicalPct = sources.count ? Math.round((sources.human / sources.count) *
                       <h3 class="font-serif text-xl" style="color: var(--ink); font-weight: 500;">Key Studies Cited</h3>
                       <div class="grid gap-2">
                         {(() => {
-                          // Collect unique studies from evidence chain
+                          // Collect unique CITED studies (only those with a resolvable citation)
                           const studies = new Map();
                           evidenceChainedBenefits.forEach(benefit => {
                             benefit.evidence.keyFindings.forEach(finding => {
-                              if (finding.pmid && !studies.has(finding.pmid)) {
-                                studies.set(finding.pmid, {
+                              const cite = resolveCitation(finding.pmid);
+                              if (cite.href && !studies.has(cite.source)) {
+                                studies.set(cite.source, {
                                   study: finding.study,
                                   type: finding.type,
                                   finding: finding.finding,
-                                  pmid: finding.pmid
+                                  cite
                                 });
                               }
                             });
                           });
                           return Array.from(studies.values()).map(study => (
                             <a
-                              href={`https://pubmed.ncbi.nlm.nih.gov/${study.pmid}/`}
+                              href={study.cite.href}
                               target="_blank"
                               rel="noopener noreferrer"
                               class="flex items-center justify-between p-3 rounded-lg transition-all group"
@@ -751,7 +753,7 @@ const clinicalPct = sources.count ? Math.round((sources.human / sources.count) *
                                 <span class="text-sm font-medium" style="color: var(--ink);">{study.study}</span>
                               </div>
                               <div class="flex items-center gap-2 group-hover:text-[color:var(--primary-c)]" style="color: var(--ink-dim);">
-                                <span class="text-xs">PMID:{study.pmid}</span>
+                                <span class="text-xs">{study.cite.label}</span>
                                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                   <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                                 </svg>

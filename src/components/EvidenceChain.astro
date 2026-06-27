@@ -4,6 +4,7 @@
  * Visual display of evidence-chained benefits with mechanism -> benefit -> evidence breakdown
  * Features: collapsible key findings, study type breakdown, confidence indicators
  */
+import { resolveCitation } from '../utils/citation';
 
 interface KeyFinding {
   study: string;
@@ -261,6 +262,7 @@ const studyTypeConfig: Record<string, { label: string; abbrev: string; color: st
             <div class="findings-list">
               {benefit.evidence.keyFindings.map(finding => {
                 const typeConfig = studyTypeConfig[finding.type] || studyTypeConfig['in-vitro'];
+                const cite = resolveCitation(finding.pmid);
                 return (
                   <div class="finding-item">
                     <div class="finding-header">
@@ -271,14 +273,14 @@ const studyTypeConfig: Record<string, { label: string; abbrev: string; color: st
                         {typeConfig.abbrev}
                       </span>
                       <span class="finding-study">{finding.study}</span>
-                      {finding.pmid && (
+                      {cite.href && (
                         <a
-                          href={`https://pubmed.ncbi.nlm.nih.gov/${finding.pmid}/`}
+                          href={cite.href}
                           target="_blank"
                           rel="noopener noreferrer"
                           class="pmid-link"
                         >
-                          PMID:{finding.pmid}
+                          {cite.label}
                         </a>
                       )}
                     </div>

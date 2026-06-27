@@ -4,6 +4,7 @@
  * Displays peptide interactions with color-coded badges
  * Types: synergistic (green), compatible (blue), caution (yellow), avoid (red)
  */
+import { resolveCitation } from '../utils/citation';
 
 interface Interaction {
   peptide: string;
@@ -166,22 +167,22 @@ function formatPeptideName(slug: string): string {
             </p>
 
             <!-- Source citation if available -->
-            {interaction.source && (
+            {(() => { const cite = resolveCitation(interaction.source); return cite.href && (
               <div class="flex items-center gap-2 text-xs" style="color: var(--ink-dim);">
                 <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
                   <polyline points="14,2 14,8 20,8"/>
                 </svg>
                 <a
-                  href={`https://pubmed.ncbi.nlm.nih.gov/${interaction.source}`}
+                  href={cite.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   class="hover:text-primary transition-colors"
                 >
-                  PMID: {interaction.source}
+                  {cite.label}
                 </a>
               </div>
-            )}
+            ); })()}
 
             <!-- Hover arrow indicator -->
             <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">

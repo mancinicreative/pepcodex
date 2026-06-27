@@ -12,9 +12,9 @@ comparators:
   - retatrutide
 summary: >-
   A bispecific peptide-antibody conjugate combining GLP-1 receptor agonism with
-  GIP receptor antagonism. Unique mechanism opposite to tirzepatide. Phase 2
-  showed ~20% weight loss at 52 weeks with once-monthly dosing. MARITIME Phase 3
-  program initiated.
+  GIP receptor antagonism. Unique mechanism opposite to tirzepatide. The
+  published Phase 2 trial (NCT05669599) showed up to ~16% weight loss at 52
+  weeks with once-monthly dosing. MARITIME Phase 3 program ongoing.
 sources:
   count: 14
   human: 12
@@ -69,14 +69,17 @@ evidenceChainedBenefits:
       animalStudies: 2
       cellStudies: 0
       keyFindings:
-        - study: Amgen Phase 2 (2025)
+        - study: Jastreboff et al., NEJM 2025 (Phase 2, NCT05669599)
           type: human-rct
           finding: >-
-            ~20% weight loss at 52 weeks vs 2.6% placebo in obesity without
-            diabetes
-        - study: Amgen Phase 2 T2D (2025)
+            Up to -16.2% body weight at week 52 vs -2.5% placebo in the obesity
+            cohort (treatment-policy estimand)
+        - study: Jastreboff et al., NEJM 2025 (Phase 2, NCT05669599)
           type: human-rct
-          finding: ~17% weight loss at 52 weeks vs 1.4% placebo in T2D patients
+          finding: >-
+            Up to -12.3% body weight at week 52 vs -1.7% placebo in the
+            obesity-with-type-2-diabetes cohort, with HbA1c reductions of 1.2 to
+            1.6 percentage points
   - mechanism:
       action: GIP receptor antagonism altering nutrient partitioning and fat storage
       confidence: supported
@@ -90,14 +93,14 @@ evidenceChainedBenefits:
       animalStudies: 2
       cellStudies: 0
       keyFindings:
-        - study: Amgen Mechanistic Studies
-          type: human-observational
+        - study: Douros et al., J Clin Med 2025 (review)
+          type: review
           finding: >-
-            GIP antagonism produces comparable weight loss to GIP agonism,
-            suggesting complex GIP biology
-        - study: Phase 2 Subgroup Analysis
+            GIPR agonism and antagonism can each add weight loss when paired with
+            GLP-1R agonism — a paradox that remains mechanistically unresolved
+        - study: Jastreboff et al., NEJM 2025 (Phase 2, NCT05669599)
           type: human-rct
-          finding: 'No weight loss plateau observed at 52 weeks, curves still declining'
+          finding: 'Weight-loss curves had not plateaued by week 52'
   - mechanism:
       action: Extended half-life antibody portion enabling monthly dosing
       confidence: established
@@ -111,23 +114,31 @@ evidenceChainedBenefits:
       animalStudies: 2
       cellStudies: 0
       keyFindings:
-        - study: Amgen PK Studies
-          type: human-observational
-          finding: 21-day half-life of antibody portion allows monthly dosing interval
-        - study: Phase 2 Dosing
+        - study: Wu et al., J Med Chem 2026 (AMG 133 discovery)
+          type: animal
+          finding: >-
+            Conjugating GLP-1 peptide to an anti-GIPR antibody markedly prolonged
+            systemic exposure, supporting a once-monthly dosing profile
+        - study: Jastreboff et al., NEJM 2025 (Phase 2, NCT05669599)
           type: human-rct
           finding: >-
-            Monthly dosing (21mg → 35mg → 70mg titration) well tolerated with
-            sustained efficacy
+            Once-every-4-weeks subcutaneous administration produced sustained
+            efficacy; gastrointestinal events were less frequent with a lower
+            starting dose and gradual escalation
 conditions:
   - slug: obesity
     name: Obesity
     researchSummary: >-
-      Phase 2 trials demonstrated approximately 20% weight loss at 52 weeks in
-      patients with BMI ≥30 or ≥27 with comorbidities. Weight loss curves showed
-      no plateau at study end. The MARITIME Phase 3 program was initiated in
-      2025 to confirm efficacy in larger populations over 72 weeks.
-    relevantStudies: []
+      The published Phase 2 dose-ranging trial (NCT05669599; Jastreboff et al.,
+      NEJM 2025) demonstrated up to -16.2% body weight at 52 weeks vs -2.5% with
+      placebo in adults with obesity (BMI ≥30, or ≥27 with comorbidities), and
+      weight-loss curves had not plateaued by study end. The MARITIME Phase 3
+      program (including NCT06858839 in obesity without diabetes) was initiated
+      in 2025 to confirm efficacy in larger populations; those trials are
+      ongoing and have not yet reported.
+    relevantStudies:
+      - NCT05669599
+      - NCT06858839
     relatedPeptides:
       - tirzepatide
       - semaglutide
@@ -135,32 +146,39 @@ conditions:
   - slug: type-2-diabetes
     name: Type 2 Diabetes
     researchSummary: >-
-      Phase 2 trials in T2D patients with obesity showed approximately 17%
-      weight loss at 52 weeks along with significant HbA1c improvements. The
-      MARITIME-2 Phase 3 trial is evaluating efficacy in this population over 72
-      weeks.
-    relevantStudies: []
+      In the obesity-with-type-2-diabetes cohort of the published Phase 2 trial
+      (NCT05669599; Jastreboff et al., NEJM 2025), maridebart cafraglutide
+      produced up to -12.3% body weight at 52 weeks vs -1.7% with placebo, along
+      with HbA1c reductions of 1.2 to 1.6 percentage points. The MARITIME-2
+      Phase 3 trial (NCT06858878) is evaluating efficacy in adults with type 2
+      diabetes and obesity or overweight; it is ongoing and has not yet
+      reported.
+    relevantStudies:
+      - NCT05669599
+      - NCT06858878
     relatedPeptides:
       - tirzepatide
       - semaglutide
 timeline:
   - period: Week 1-4
     effects: >-
-      Titration phase beginning at 21mg monthly. GI side effects (nausea,
-      vomiting, diarrhea) most common during initial dosing. Early appetite
-      suppression typically observed.
+      Once-monthly subcutaneous dosing begins, often with a lower starting dose
+      and gradual escalation. Gastrointestinal side effects (nausea, vomiting,
+      diarrhea) are most common during initial dosing. Early appetite
+      suppression is typically observed.
   - period: Week 4-8
     effects: >-
-      Dose escalation to 35mg then 70mg. Continued weight loss trajectory. GI
-      symptoms typically diminish as body adjusts to medication.
+      Continued dose escalation and weight-loss trajectory. GI symptoms
+      typically diminish as the body adjusts to the medication.
   - period: Week 8-24
     effects: >-
-      Maintenance dosing at 70mg monthly. Phase 2 data showed substantial and
+      Maintenance dosing. Phase 2 data (NCT05669599) showed substantial and
       progressive weight loss through this period with no plateau.
   - period: Week 24-52
     effects: >-
-      Continued weight loss with curves still declining at 52 weeks. Mean weight
-      loss approximately 20% in non-diabetic obesity population.
+      Continued weight loss with curves still declining at 52 weeks. In the
+      published Phase 2 trial, mean body-weight reduction reached up to -16.2%
+      in the obesity (non-diabetic) cohort.
 qualityChecklist:
   goodSigns:
     - Supplied through legitimate clinical trial or healthcare provider
@@ -289,7 +307,7 @@ MariTide's bispecific design targets metabolic pathways through two distinct act
   </div>
   <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
     <div class="font-semibold text-[color:var(--ink)] mb-2">Extended Half-Life</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">The antibody component provides a 21-day half-life, enabling once-monthly dosing—the longest interval in the obesity drug class.</p>
+    <p class="text-sm text-[color:var(--ink-muted)]">The antibody component greatly prolongs systemic exposure, enabling a once-monthly dosing interval—among the longest in the obesity drug class.</p>
   </div>
   <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
     <div class="font-semibold text-[color:var(--ink)] mb-2">Sustained Efficacy</div>
@@ -297,7 +315,7 @@ MariTide's bispecific design targets metabolic pathways through two distinct act
   </div>
 </div>
 
-**Key Research:** Amgen Phase 2 (ADA 2025) demonstrated ~20% weight loss at 52 weeks with monthly dosing. [Amgen Press Release](https://www.amgen.com/newsroom/press-releases/2025/06/results-from-amgens-phase-2-obesity-study-of-monthly-maritide-presented-at-the-american-diabetes-association-85th-scientific-sessions)
+**Key Research:** The peer-reviewed Phase 2 dose-ranging trial (Jastreboff et al., *NEJM* 2025; [PMID 40549887](https://pubmed.ncbi.nlm.nih.gov/40549887/); [NCT05669599](https://clinicaltrials.gov/study/NCT05669599)) reported up to -16.2% body weight at 52 weeks vs -2.5% with placebo in the obesity cohort, with once-monthly dosing. Topline results were first presented at ADA 2025. [Amgen Press Release](https://www.amgen.com/newsroom/press-releases/2025/06/results-from-amgens-phase-2-obesity-study-of-monthly-maritide-presented-at-the-american-diabetes-association-85th-scientific-sessions)
 
 ### Important Limitations
 

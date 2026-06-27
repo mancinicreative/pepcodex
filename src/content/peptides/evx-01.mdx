@@ -11,10 +11,10 @@ comparators:
   - mRNA-4157
 summary: >-
   A personalized neoantigen peptide vaccine developed by Evaxion Biotech using
-  AI-driven neoantigen prediction. Phase 1 data in melanoma showed 67% overall
-  response rate when combined with anti-PD-1 therapy, with neoantigen-specific
-  T-cell responses detected in all patients. Distinct from mRNA-based approaches
-  like mRNA-4157.
+  AI-driven neoantigen prediction. Phase 1/2 data in melanoma showed a 67%
+  objective response rate (8/12; 6 partial, 2 complete) when combined with
+  anti-PD-1 therapy, with neoantigen-specific T-cell responses detected in all
+  patients. Distinct from mRNA-based approaches like mRNA-4157.
 sources:
   count: 18
   human: 12
@@ -59,18 +59,18 @@ evidenceChainedBenefits:
       animalStudies: 4
       cellStudies: 2
       keyFindings:
-        - study: Evaxion Phase 1/2a 2023
+        - study: Mørk SK et al. 2024 (NCT03715985 dose-escalation)
           type: human-observational
           finding: >-
-            100% T-cell response rate (12/12 patients) with neoantigen-specific
-            CD8+ and CD4+ T cells detected
-          pmid: NCT03715985
-        - study: ESMO Congress 2023
+            EVX-01-specific T-cell responses detected in all 12 treated patients
+            (100%), with both CD4+ and CD8+ responses; CD4+ responses dominated
+          pmid: '38782542'
+        - study: Mørk SK et al. 2024 (NCT03715985 dose-escalation)
           type: human-observational
           finding: >-
-            Median 9 of 15 vaccine peptides induced measurable T-cell responses
-            per patient
-          pmid: Conference Abstract
+            Magnitude of IFN-gamma ELISpot responses correlated with individual
+            peptide dose across the three dose-escalation cohorts
+          pmid: '38782542'
   - mechanism:
       action: >-
         Synthetic long peptide (SLP) design enabling both CD4+ and CD8+ T-cell
@@ -86,10 +86,13 @@ evidenceChainedBenefits:
       animalStudies: 2
       cellStudies: 1
       keyFindings:
-        - study: Evaxion Phase 1/2a Follow-up
+        - study: Mørk SK et al. 2024 (NCT03715985 dose-escalation)
           type: human-observational
-          finding: T-cell responses persisted beyond 1 year in responding patients
-          pmid: NCT03715985
+          finding: >-
+            Vaccine-induced T-cell responses persisted for up to 14 months from
+            the last vaccination, though reactive-cell frequency decreased over
+            time
+          pmid: '38782542'
         - study: Ott PA et al. 2017
           type: human-observational
           finding: >-
@@ -111,25 +114,28 @@ evidenceChainedBenefits:
       animalStudies: 3
       cellStudies: 0
       keyFindings:
-        - study: Evaxion Phase 1/2a 2023
+        - study: Mørk SK et al. 2024 (NCT03715985 dose-escalation)
           type: human-observational
           finding: >-
-            67% overall response rate (8/12) vs historical 40% with
-            pembrolizumab alone
-          pmid: NCT03715985
-        - study: Evaxion Phase 1/2a 2023
+            67% objective response rate (8/12: 6 partial, 2 complete) in
+            anti-PD-1-treated patients; all 4 patients at the highest dose
+            level responded (1 complete, 3 partial)
+          pmid: '38782542'
+        - study: Mørk SK et al. 2024 (NCT03715985 dose-escalation)
           type: human-observational
-          finding: 25% complete response rate with durable responses beyond 2 years
-          pmid: NCT03715985
+          finding: >-
+            2 of 12 patients (17%) achieved a complete response; one patient had
+            an ongoing durable response (CR continuing past 16 months)
+          pmid: '38782542'
 conditions:
   - slug: melanoma
     name: Melanoma
     researchSummary: >-
-      EVX-01 has been evaluated in a Phase 1/2a trial (NCT03715985) in advanced
-      melanoma patients naive to checkpoint inhibitors. In combination with
-      pembrolizumab, 67% overall response rate was observed (8/12 patients),
-      with 25% complete responses and 100% T-cell immunogenicity. All evidence
-      is from a single small open-label trial.
+      EVX-01 has been evaluated in a Phase 1/2 trial (NCT03715985, NeoPepVac)
+      in advanced solid tumors including melanoma, with anti-PD-1 therapy. In
+      the 12 metastatic-melanoma patients, a 67% objective response rate was
+      observed (8/12: 6 partial, 2 complete responses), with 100% T-cell
+      immunogenicity. All evidence is from a single small open-label trial.
     relevantStudies:
       - NCT03715985
       - '28678778'
@@ -157,8 +163,11 @@ timeline:
     source: NCT03715985
   - period: 6+ months
     effects: >-
-      Long-term follow-up showed 88% of responders maintained response at 12
-      months, 63% at 24 months. T-cell responses persisted beyond 1 year.
+      In the Phase 1/2 trial, most responses were not durable: one patient had
+      an ongoing complete response (continuing past 16 months) while the
+      remaining responders eventually progressed. Vaccine-induced T-cell
+      responses were still detectable up to 14 months after the last
+      vaccination, though their frequency declined over time.
     source: NCT03715985
 qualityChecklist:
   goodSigns:
@@ -299,7 +308,7 @@ EVX-01 is a personalized cancer vaccine that trains the immune system to attack 
   </div>
 </div>
 
-**Key Research:** Phase 1/2a trial (NCT03715985) demonstrated 100% T-cell immunogenicity and 67% ORR in melanoma.
+**Key Research:** The Phase 1/2 trial (NCT03715985) demonstrated 100% T-cell immunogenicity and a 67% objective response rate (8/12; 6 partial, 2 complete) in melanoma when combined with anti-PD-1 therapy.
 
 ### Important Limitations
 

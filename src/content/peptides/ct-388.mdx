@@ -10,10 +10,14 @@ comparators:
   - semaglutide
   - survodutide
 summary: >-
-  A dual GLP-1/GIP receptor agonist acquired by Roche through the $2.7 billion
-  Carmot Therapeutics acquisition in 2024. Phase 1b results showed 18.8%
-  placebo-adjusted weight loss at 24 weeks, positioning it as a competitive
-  obesity therapeutic with a mechanism similar to tirzepatide.
+  A dual GLP-1/GIP receptor agonist (INN enicepatide; also RO7795068) acquired
+  by Roche through the $2.7 billion Carmot Therapeutics acquisition in 2024. The
+  published Phase 1 trial (NCT04838405) showed 4.7-8.0% mean weight loss vs 0.5%
+  placebo over 4 weeks; a more widely reported ~18.8% placebo-adjusted figure at
+  24 weeks comes from an unpublished Phase 1 extension reported via press release.
+  Phase 2 obesity and T2D trials are completed or ongoing and Phase 3 began in
+  2026, positioning it as a competitive obesity therapeutic with a mechanism
+  similar to tirzepatide.
 sources:
   count: 8
   human: 6
@@ -71,18 +75,20 @@ evidenceChainedBenefits:
       animalStudies: 2
       cellStudies: 2
       keyFindings:
-        - study: CT-388 Phase 1b (Roche/Carmot)
+        - study: Chakravarthy MV et al. 2025 (CT-388 Phase 1, NCT04838405)
           type: human-rct
           finding: >-
-            18.8% placebo-adjusted weight loss at 24 weeks in adults with
-            obesity
-          pmid: N/A
-        - study: Carmot Phase 1 FIH
+            Mean weight loss of 4.7% to 8.0% across CT-388 doses vs 0.5% with
+            placebo at day 29 (4 weeks) in adults with overweight or obesity;
+            a ~18.8% placebo-adjusted figure at 24 weeks is from an unpublished
+            extension reported only via press release
+          pmid: '41319798'
+        - study: Chakravarthy MV et al. 2025 (CT-388 Phase 1, NCT04838405)
           type: human-rct
           finding: >-
-            Established safety profile and weekly dosing feasibility with linear
-            pharmacokinetics
-          pmid: N/A
+            Generally well tolerated with a safety profile consistent with other
+            incretin therapies; pharmacokinetics supported once-weekly dosing
+          pmid: '41319798'
   - mechanism:
       action: >-
         GIP receptor activation enhancing insulin secretion and adipocyte
@@ -98,17 +104,17 @@ evidenceChainedBenefits:
       animalStudies: 2
       cellStudies: 3
       keyFindings:
-        - study: Willard FS et al. 2020
+        - study: Willard FS et al. 2020 (tirzepatide, class mechanism)
           type: in-vitro
           finding: >-
-            GLP-1/GIP dual agonism produces synergistic effects on insulin
-            secretion and glucose homeostasis
+            Dual GIP/GLP-1 receptor agonism (shown for tirzepatide) drives
+            cAMP-biased GLP-1 receptor signaling that enhances insulin secretion
           pmid: '32730231'
-        - study: Samms RJ et al. 2021
-          type: in-vitro
+        - study: Samms RJ et al. 2021 (tirzepatide, class mechanism)
+          type: animal
           finding: >-
-            GIP receptor activation directly improves adipocyte function and
-            lipid metabolism
+            GIP receptor agonism mediates weight-independent insulin
+            sensitization via white adipose tissue glucose disposal in obese mice
           pmid: '34003802'
   - mechanism:
       action: Dual incretin receptor synergy producing enhanced satiety signaling
@@ -123,27 +129,32 @@ evidenceChainedBenefits:
       animalStudies: 2
       cellStudies: 2
       keyFindings:
-        - study: Campbell JE et al. 2023
+        - study: El K, Campbell JE et al. 2023 (tirzepatide, class mechanism)
           type: in-vitro
           finding: >-
-            Dual incretin agonism biology explains enhanced efficacy over
+            Dual incretin agonism (shown for tirzepatide) requires GIPR for
+            hormone secretion from human islets, supporting added efficacy over
             mono-agonists
           pmid: '37277609'
-        - study: CT-388 Phase 1b
+        - study: Chakravarthy MV et al. 2025 (CT-388 Phase 1, NCT04838405)
           type: human-rct
           finding: >-
-            24-week weight loss (18.8%) exceeds typical GLP-1 agonist results at
-            similar timepoint
-          pmid: N/A
+            Published 4-week weight loss of 4.7-8.0% vs 0.5% placebo is large for
+            an early-phase study; a reported ~18.8% at 24 weeks remains
+            unpublished (press release only)
+          pmid: '41319798'
 conditions:
   - slug: obesity
     name: Obesity
     researchSummary: >-
-      CT-388 has demonstrated significant weight loss in Phase 1b clinical
-      trials. The 18.8% placebo-adjusted weight loss at 24 weeks is competitive
-      with or exceeds early-timepoint data from tirzepatide. The dual GLP-1/GIP
-      mechanism is the same as the FDA-approved tirzepatide (Mounjaro/Zepbound).
+      The published CT-388 Phase 1 trial (NCT04838405) showed mean weight loss
+      of 4.7-8.0% vs 0.5% placebo at 4 weeks. A widely reported ~18.8%
+      placebo-adjusted weight loss at 24 weeks comes from an unpublished Phase 1
+      extension (press release, not peer-reviewed). The dual GLP-1/GIP mechanism
+      is the same class as the FDA-approved tirzepatide (Mounjaro/Zepbound).
+      Phase 2 obesity trials (NCT06525935) are completed with results pending.
     relevantStudies:
+      - '41319798'
       - '32730231'
       - '34003802'
       - '37277609'
@@ -157,8 +168,11 @@ conditions:
       The GLP-1/GIP dual agonist mechanism has proven effective for glycemic
       control with tirzepatide. CT-388 is expected to have similar
       glucose-lowering effects through enhanced insulin secretion and improved
-      insulin sensitivity. Phase 2 trials in T2D are planned or ongoing.
+      insulin sensitivity. A Phase 2 T2D trial (NCT06628362) is active and not
+      yet recruiting to completion; published CT-388 glycemic data so far come
+      from the Phase 1 trial (NCT04838405).
     relevantStudies:
+      - '41319798'
       - '32730231'
       - '37277609'
     relatedPeptides:
@@ -181,22 +195,23 @@ conditions:
 timeline:
   - period: Week 1-4
     effects: >-
-      Based on Phase 1b data: Initial GI adaptation period with potential
-      nausea, decreased appetite. Early weight loss begins during dose
-      escalation phase. Glucose improvements may be seen in diabetic patients.
-    source: Phase 1b data
+      Based on the published Phase 1 trial: initial GI adaptation period with
+      potential nausea and decreased appetite. Mean weight loss of 4.7-8.0% vs
+      0.5% placebo was observed by day 29, with improved glycemic parameters.
+    source: 'PMID:41319798 (NCT04838405)'
   - period: Week 4-12
     effects: >-
-      Continued weight loss as dose escalation proceeds. GI side effects
-      typically diminish. Phase 1b showed dose-response relationship across
-      treatment arms with ongoing weight reduction.
-    source: Phase 1b data
+      Continued weight loss expected as dose escalation proceeds and GI side
+      effects typically diminish, based on incretin-class experience. CT-388
+      data beyond 4 weeks are not yet published.
+    source: 'PMID:41319798 (NCT04838405)'
   - period: Week 12-24
     effects: >-
-      Phase 1b demonstrated 18.8% placebo-adjusted weight loss by 24 weeks.
-      Weight loss trajectory suggested no plateau at this timepoint, indicating
-      continued efficacy expected with longer treatment.
-    source: Phase 1b data
+      A reported ~18.8% placebo-adjusted weight loss by 24 weeks comes from an
+      unpublished Phase 1 extension (press release only, not peer-reviewed) and
+      should be treated as preliminary. Peer-reviewed 24-week and 48-week data
+      from the Phase 2 trials are pending.
+    source: Roche press release (unpublished; not peer-reviewed)
   - period: Week 24+
     effects: >-
       Based on tirzepatide data, continued weight loss expected through 52-72
@@ -229,8 +244,8 @@ regulatoryStatus:
   status: investigational
   lastUpdated: '2026-02-18'
   notes: >-
-    Phase 2 clinical trials for obesity (Carmot Therapeutics/Roche). GLP-1/GIP
-    dual agonist.
+    Phase 2 obesity/T2D trials completed or active; Phase 3 program began 2026
+    (Carmot Therapeutics/Roche). GLP-1/GIP dual agonist (INN enicepatide).
 ratings:
   researchDepth: 3
   globalCoverage: 2
@@ -322,7 +337,7 @@ mechanismPathways:
     outcomeSignal: research
 ---
 
-CT-388 is a dual GLP-1/GIP receptor agonist currently in Phase 2 clinical development. Its mechanism is well-characterized based on the established biology of incretin hormones.
+CT-388 (INN enicepatide; also RO7795068) is a dual GLP-1/GIP receptor agonist that has completed Phase 1 and Phase 2 obesity trials, with Phase 3 trials beginning in 2026. Its mechanism is well-characterized based on the established biology of incretin hormones.
 
 ### How It Works (Simplified)
 
@@ -347,12 +362,12 @@ CT-388 activates two hormone receptors simultaneously to reduce appetite and imp
   </div>
 </div>
 
-**Key Research:** Willard FS et al. (2020) established the mechanistic basis for GLP-1/GIP dual agonism. [PMID:32730231](https://pubmed.ncbi.nlm.nih.gov/32730231/)
+**Key Research:** Chakravarthy MV et al. (2025) reported the first published CT-388 clinical data, including the Phase 1 trial (NCT04838405). [PMID:41319798](https://pubmed.ncbi.nlm.nih.gov/41319798/) Willard FS et al. (2020) established the mechanistic basis for cAMP-biased GLP-1/GIP dual agonism (in the related agent tirzepatide). [PMID:32730231](https://pubmed.ncbi.nlm.nih.gov/32730231/)
 
 ### Important Limitations
 
 - CT-388 is investigational and not yet FDA approved
-- Phase 1b data only; longer-term efficacy and safety data pending
+- Only Phase 1 efficacy data are peer-reviewed (4-week timepoint); the ~18.8% at 24 weeks is from an unpublished press release, and Phase 2/3 results are pending
 - Specific receptor binding affinities not publicly disclosed
 - Head-to-head comparisons with tirzepatide not yet available
 - Long-term cardiovascular outcomes data not yet established

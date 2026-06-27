@@ -1,0 +1,41 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import CalculatorLayout from '../../../layouts/CalculatorLayout.astro';
+
+export async function getStaticPaths() {
+  const calculators = await getCollection('calculators', (entry) =>
+    entry.data.calculatorType === 'reconstitution'
+  );
+  return calculators.map((calc) => ({
+    params: { slug: calc.data.peptideSlug },
+    props: { calc },
+  }));
+}
+
+// Support both static and SSR modes
+let calc = Astro.props.calc;
+if (!calc) {
+  const { slug } = Astro.params;
+  const allCalcs = await getCollection('calculators');
+  calc = allCalcs.find((c) => c.data.peptideSlug === slug && c.data.calculatorType === 'reconstitution');
+}
+
+if (!calc) {
+  return Astro.redirect('/404');
+}
+
+const { Content } = await calc.render();
+---
+
+<CalculatorLayout
+  name={calc.data.name}
+  peptideSlug={calc.data.peptideSlug}
+  calculatorType={calc.data.calculatorType}
+  inputs={calc.data.inputs}
+  disclaimer={calc.data.disclaimer}
+  lastUpdated={calc.data.lastUpdated}
+  metaTitle={calc.data.metaTitle}
+  metaDescription={calc.data.metaDescription}
+>
+  <Content />
+</CalculatorLayout>

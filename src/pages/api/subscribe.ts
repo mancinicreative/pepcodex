@@ -3,6 +3,20 @@ import type { APIRoute } from 'astro';
 export const prerender = false;
 
 const ALLOWED_ORIGIN = 'https://www.pepcodex.com';
+function normalizeOrigin(origin: string): string | null {
+  try {
+    return new URL(origin).origin;
+  } catch {
+    return null;
+  }
+}
+
+const ALLOWED_ORIGINS = new Set(
+  (import.meta.env.PEPCODEX_ALLOWED_ORIGINS || ALLOWED_ORIGIN)
+    .split(',')
+    .map((origin: string) => normalizeOrigin(origin.trim()))
+    .filter((origin: string | null): origin is string => Boolean(origin))
+);
 
 // Simple in-memory rate limiter (per serverless instance)
 // Not perfect across cold starts, but catches most abuse within a warm instance
@@ -42,30 +56,60 @@ function corsHeaders(origin?: string | null): Record<string, string> {
     'Content-Type': 'application/json',
   };
 
-  // Only set CORS headers for the allowed origin
-  if (origin === ALLOWED_ORIGIN) {
-    headers['Access-Control-Allow-Origin'] = ALLOWED_ORIGIN;
+  // Only set CORS headers for explicitly allowed origins
+  if (origin && ALLOWED_ORIGINS.has(origin)) {
+    headers['Access-Control-Allow-Origin'] = origin;
     headers['Vary'] = 'Origin';
   }
 
   return headers;
 }
 
-export const POST: APIRoute = async ({ request }) => {
+function isAllowedRequest(origin?: string | null, referer?: string | null): boolean {
+  if (origin) {
+    return ALLOWED_ORIGINS.has(origin);
+  }
+
+  // Some same-origin/server-to-server requests may omit Origin. If a Referer is
+  // present, require it to come from an allowed origin. If both are absent, let
+  // the rate limiter and Beehiiv validation handle non-browser clients.
+  if (referer) {
+    try {
+      return ALLOWED_ORIGINS.has(new URL(referer).origin);
+    } catch {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+export const POST: APIRoute = async ({ request, clientAddress }) => {
   const origin = request.headers.get('origin');
+  const referer = request.headers.get('referer');
+
+  if (!isAllowedRequest(origin, referer)) {
+    return new Response(
+      JSON.stringify({ success: false, message: 'Request origin not allowed.' }),
+      { status: 403, headers: corsHeaders(origin) }
+    );
+  }
 
   // Cleanup stale rate limit entries periodically
   if (rateLimitMap.size > 1000) {
     cleanupRateLimitMap();
   }
 
-  // Rate limiting
+  // Rate limiting — key on the TRUSTED client address from the @astrojs/vercel
+  // adapter, NOT a client-spoofable X-Forwarded-For. Fall back to x-real-ip, then
+  // the RIGHTMOST (Vercel-appended) XFF hop — never the client-controlled leftmost.
   const ip =
-    request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
-    request.headers.get('x-real-ip') ||
+    clientAddress ||
+    request.headers.get('x-real-ip')?.trim() ||
+    request.headers.get('x-forwarded-for')?.split(',').pop()?.trim() ||
     'unknown';
 
-  if (isRateLimited(ip)) {
+  if (isRateLimited('ip:' + ip)) {
     return new Response(
       JSON.stringify({
         success: false,
@@ -120,6 +164,16 @@ export const POST: APIRoute = async ({ request }) => {
       return new Response(
         JSON.stringify({ success: false, message: 'Please enter a valid email.' }),
         { status: 400, headers: corsHeaders(origin) }
+      );
+    }
+
+    // Per-email rate limit — blocks subscription-bombing a single address even if
+    // the source IP is rotated/spoofed (defense-in-depth alongside the IP limit).
+    const normalizedEmail = email.toLowerCase().trim();
+    if (isRateLimited('email:' + normalizedEmail)) {
+      return new Response(
+        JSON.stringify({ success: false, message: 'Too many requests. Please try again later.' }),
+        { status: 429, headers: corsHeaders(origin) }
       );
     }
 
@@ -195,8 +249,8 @@ export const OPTIONS: APIRoute = async ({ request }) => {
     'Access-Control-Allow-Headers': 'Content-Type',
   };
 
-  if (origin === ALLOWED_ORIGIN) {
-    headers['Access-Control-Allow-Origin'] = ALLOWED_ORIGIN;
+  if (origin && ALLOWED_ORIGINS.has(origin)) {
+    headers['Access-Control-Allow-Origin'] = origin;
     headers['Vary'] = 'Origin';
   }
 

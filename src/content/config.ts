@@ -400,6 +400,20 @@ const protocols = defineCollection({
   }),
 });
 
+// Calculator collection for peptide-specific calculator landing pages
+const calculators = defineCollection({
+  type: 'content',
+  schema: z.object({
+    name: z.string(),
+    peptideSlug: z.string(),
+    calculatorType: z.enum(['reconstitution', 'accumulation', 'blend']),
+    inputs: z.array(z.string()),
+    disclaimer: z.string().default("This calculator is for research and educational purposes only. It does not provide medical advice, dosing recommendations, or treatment guidance."),
+    lastUpdated: z.coerce.date(),
+    ...seoFields,
+  }),
+});
+
 export const collections = {
   peptides,
   comparisons,
@@ -412,4 +426,5 @@ export const collections = {
   cities,
   protocols,
   conditions: conditionHubs,
+  calculators,
 };

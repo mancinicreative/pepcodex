@@ -19,8 +19,8 @@ summary: >-
   clearance. Research is very early-stage with minimal published data.
 sources:
   count: 12
-  human: 1
-  preclinical: 11
+  human: 0
+  preclinical: 12
   openAccess: 6
 metaTitle: 'SHLP-6: Mitochondrial Peptide Research (2026)'
 metaDescription: >-
@@ -156,8 +156,8 @@ evidenceChainedBenefits:
     evidence:
       level: very-low
       humanStudies: 0
-      animalStudies: 2
-      cellStudies: 8
+      animalStudies: 0
+      cellStudies: 1
       keyFindings:
         - study: Cobb LJ et al. 2016
           type: in-vitro
@@ -168,11 +168,11 @@ evidenceChainedBenefits:
         - study: Cobb LJ et al. 2016
           type: in-vitro
           finding: >-
-            Increased caspase activation and decreased cell viability in
-            multiple cell lines
+            Increased apoptosis (DNA fragmentation) in two cell lines (NIT-1 and
+            22Rv1), opposite of the cytoprotective SHLP2/SHLP3
           pmid: '27070352'
   - mechanism:
-      action: Mitochondrial pathway modulation affecting cell survival
+      action: Mitochondrial-derived pro-apoptotic signaling (pathway unidentified)
       confidence: emerging
       directStudies: 1
     benefit:
@@ -187,8 +187,8 @@ evidenceChainedBenefits:
         - study: Cobb LJ et al. 2016
           type: in-vitro
           finding: >-
-            Decreased ATP levels suggesting mitochondrial involvement in
-            pro-apoptotic mechanism
+            SHLP6 is encoded in mitochondrial 16S rRNA and was the only SHLP to
+            increase apoptosis; the downstream pathway was not characterized
           pmid: '27070352'
 conditions:
   - slug: senescent-cell-accumulation
@@ -219,16 +219,16 @@ conditions:
 timeline:
   - period: Acute
     effects: >-
-      In vitro studies show SHLP-6 induces apoptosis markers within hours of
-      exposure. Increased caspase activation and decreased cell viability
-      observed in culture. No in vivo or human timeline data available.
+      In the single in vitro study, SHLP-6 increased apoptosis (DNA
+      fragmentation) and decreased cell viability in cultured cells over a 24-72h
+      assay window. No in vivo or human timeline data available.
     source: 'PMID:27070352'
   - period: Short-term
     effects: >-
-      Cell culture studies demonstrate continued pro-apoptotic effects with
-      sustained exposure. ATP depletion and mitochondrial effects observed. In
-      vivo pharmacokinetics completely unknown.
-    source: 'PMID:27070352'
+      No dedicated short-term studies exist. Effects beyond the initial
+      apoptosis assay are uncharacterized, and in vivo pharmacokinetics are
+      completely unknown.
+    source: N/A
   - period: Long-term
     effects: >-
       No long-term studies exist for SHLP-6. Duration of effect, accumulation,
@@ -339,16 +339,16 @@ SHLP-6 is unique among mitochondria-derived peptides for promoting cell death ra
     <p class="text-sm text-[color:var(--ink-muted)]">Unlike humanin and other SHLPs that protect cells, SHLP-6 promotes programmed cell death through unknown mechanisms.</p>
   </div>
   <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
-    <div class="font-semibold text-[color:var(--ink)] mb-2">Caspase Activation</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Increases caspase cascade activation, the enzymatic pathway responsible for executing apoptosis in cells.</p>
+    <div class="font-semibold text-[color:var(--ink)] mb-2">Increased Apoptosis</div>
+    <p class="text-sm text-[color:var(--ink-muted)]">Increased apoptosis (DNA fragmentation) in cultured cells. The specific death pathway (e.g. caspase cascade) was not characterized in the source study.</p>
   </div>
   <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
     <div class="font-semibold text-[color:var(--ink)] mb-2">Mitochondrial Effects</div>
     <p class="text-sm text-[color:var(--ink-muted)]">May counteract humanin's BAX inhibition and promote cytochrome c release, triggering mitochondrial apoptosis pathway.</p>
   </div>
   <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
-    <div class="font-semibold text-[color:var(--ink)] mb-2">ATP Depletion</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Decreases cellular ATP levels, suggesting direct mitochondrial involvement in its cell death-promoting activity.</p>
+    <div class="font-semibold text-[color:var(--ink)] mb-2">Mitochondrial Origin</div>
+    <p class="text-sm text-[color:var(--ink-muted)]">Encoded within the mitochondrial 16S rRNA region, like humanin and the other SHLPs. How its mitochondrial origin links to its pro-apoptotic effect is not established.</p>
   </div>
 </div>
 

@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "check": "node scripts/validate-cross-links.mjs && node scripts/qa-seo.mjs && node scripts/qa-scoring.mjs",
+    "check": "node scripts/validate-cross-links.mjs && node scripts/qa-seo.mjs && node scripts/qa-scoring.mjs && node scripts/qa-pmids.mjs --strict",
     "prebuild": "npm run check",
     "build": "astro build",
     "postbuild": "npx pagefind --site dist",

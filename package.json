@@ -13,7 +13,8 @@
     "validate-links": "node scripts/validate-cross-links.mjs",
     "qa-seo": "node scripts/qa-seo.mjs",
     "qa-scoring": "node scripts/qa-scoring.mjs",
-    "qa-pmids": "node scripts/qa-pmids.mjs --strict"
+    "qa-pmids": "node scripts/qa-pmids.mjs --strict",
+    "qa-retractions": "node scripts/qa-retractions.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.14",

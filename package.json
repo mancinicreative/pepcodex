@@ -14,7 +14,8 @@
     "qa-seo": "node scripts/qa-seo.mjs",
     "qa-scoring": "node scripts/qa-scoring.mjs",
     "qa-pmids": "node scripts/qa-pmids.mjs --strict",
-    "qa-retractions": "node scripts/qa-retractions.mjs"
+    "qa-retractions": "node scripts/qa-retractions.mjs",
+    "refresh-trials-all": "node scripts/refresh-trials-all.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.14",

@@ -1,0 +1,28 @@
+---
+import JsonLd from './JsonLd.astro';
+
+interface Props {
+  term: string;
+  definition: string;
+  url: string;
+  aliases?: string[];
+}
+
+const { term, definition, url, aliases = [] } = Astro.props;
+
+const definedTermData = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": term,
+  "description": definition,
+  "url": url,
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "PepCodex Glossary",
+    "url": "https://pepcodex.com/glossary/"
+  },
+  ...(aliases.length > 0 && { "alternateName": aliases })
+};
+---
+
+<JsonLd data={definedTermData} />

@@ -2,6 +2,7 @@
 import BaseLayout from './BaseLayout.astro';
 import ArticleSchema from '../components/SEO/ArticleSchema.astro';
 import BreadcrumbSchema from '../components/SEO/BreadcrumbSchema.astro';
+import DefinedTermSchema from '../components/SEO/DefinedTermSchema.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
 import { getCollection } from 'astro:content';
 
@@ -79,6 +80,12 @@ const relatedTermData = relatedTerms
     dateModified={lastUpdated}
   />
   <BreadcrumbSchema items={breadcrumbItems} />
+  <DefinedTermSchema
+    term={term}
+    definition={definition}
+    url={articleUrl}
+    aliases={aliases}
+  />
 
   <article class="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
     <!-- Back Link -->

@@ -1,0 +1,581 @@
+{
+  "slug": "buserelin",
+  "name": "Buserelin",
+  "classification": "BUILD",
+  "priority": 12,
+  "generated": "2026-08-06",
+  "generatedBy": "coverage triage run - every identifier below was fetched live from PubMed / ClinicalTrials.gov / openFDA during this run",
+  "identity": {
+    "inn": "Buserelin (as buserelin acetate)",
+    "brand": [
+      "Suprefact",
+      "Suprecur (ex-US)"
+    ],
+    "developmentCode": "HOE 766, ICI 123215",
+    "developer": "Originally Hoechst",
+    "class": "Synthetic nonapeptide GnRH agonist",
+    "siteContext": "Fourth GnRH agonist. Distinctive because it is NOT FDA-approved, which makes it a genuine regulatory-tracker entry rather than a duplicate of goserelin."
+  },
+  "regulatoryStatus": {
+    "source": "openFDA /drug/drugsfda.json, fetched 2026-08-06",
+    "note": "openFDA drugsfda returned NO record for buserelin under generic_name, substance_name or brand_name during this run. That is evidence of absence of a US approval, not proof - it is approved in other jurisdictions. State it as 'no US FDA approval found in openFDA' and verify the non-US status against a named national regulator before publishing any approval claim.",
+    "openFDA": {
+      "queried": [
+        {
+          "field": "openfda.generic_name",
+          "value": "buserelin acetate",
+          "hit": false
+        },
+        {
+          "field": "openfda.generic_name",
+          "value": "buserelin",
+          "hit": false
+        },
+        {
+          "field": "openfda.substance_name",
+          "value": "buserelin",
+          "hit": false
+        }
+      ],
+      "result": null
+    }
+  },
+  "evidenceBase": {
+    "pubmedRecordsScreened": 37,
+    "pubmedRecordsConfirmedNamingCompound": 37,
+    "selected": [
+      {
+        "pmid": "9519356",
+        "title": "Maximum androgen blockade using LHRH agonist buserelin in combination with short-term (two weeks) or long-term (continuous) cyproterone acetate is not superior to standard androgen deprivation in the treatment of advanced prostate cancer. Final analysis of EORTC GU Group Trial 30843. European Organization for Research and Treatment of Cancer (EROTC) Genito-Urinary Tract Cancer Cooperative Group.",
+        "journal": "Eur Urol",
+        "pubdate": "1998",
+        "firstAuthor": "de Voogt HJ",
+        "doi": "10.1159/000019547",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Comparative Study",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "phase 3 maximum androgen blockade in advanced prostate cancer (EORTC 30843) - combination NOT superior",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "8908651",
+        "title": "The effect of Buserelin versus conventional antiandrogenic treatment in patients with T2-4NXM1 prostatic cancer. A prospective, randomized multicentre phase III trial. The \"Danish Buserelin Study Group\".",
+        "journal": "Scand J Urol Nephrol",
+        "pubdate": "1996 Aug",
+        "firstAuthor": "Bruun E",
+        "doi": "10.3109/00365599609182309",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Clinical Trial, Phase III",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial"
+        ],
+        "role": "phase 3 vs conventional antiandrogen therapy in prostate cancer (Danish Buserelin Study Group)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "10841825",
+        "title": "Combined treatment with buserelin and tamoxifen in premenopausal metastatic breast cancer: a randomized study.",
+        "journal": "J Natl Cancer Inst",
+        "pubdate": "2000 Jun 7",
+        "firstAuthor": "Klijn JG",
+        "doi": "10.1093/jnci/92.11.903",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial"
+        ],
+        "role": "randomised trial of buserelin + tamoxifen in premenopausal metastatic breast cancer (JNCI)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "18653184",
+        "title": "Dienogest is as effective as intranasal buserelin acetate for the relief of pain symptoms associated with endometriosis--a randomized, double-blind, multicenter, controlled trial.",
+        "journal": "Fertil Steril",
+        "pubdate": "2009 Mar",
+        "firstAuthor": "Harada T",
+        "doi": "10.1016/j.fertnstert.2007.12.080",
+        "publicationTypes": [
+          "Clinical Trial, Phase III",
+          "Comparative Study",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "phase 3, dienogest as effective as intranasal buserelin for endometriosis pain",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "10686191",
+        "title": "Ovarian stimulation with HMG: results of a prospective randomized phase III European study comparing the luteinizing hormone-releasing hormone (LHRH)-antagonist cetrorelix and the LHRH-agonist buserelin. European Cetrorelix Study Group.",
+        "journal": "Hum Reprod",
+        "pubdate": "2000 Mar",
+        "firstAuthor": "Albano C",
+        "doi": "10.1093/humrep/15.3.526",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Clinical Trial, Phase III",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial"
+        ],
+        "role": "phase 3, cetrorelix (GnRH antagonist) vs buserelin for ovarian stimulation",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "1353540",
+        "title": "Buserelin treatment of cryptorchidism: a randomized, double-blind, placebo-controlled study.",
+        "journal": "J Urol",
+        "pubdate": "1992 Aug",
+        "firstAuthor": "Bica DT",
+        "doi": "10.1016/s0022-5347(17)36670-3",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Journal Article",
+          "Randomized Controlled Trial"
+        ],
+        "role": "randomised double-blind placebo-controlled trial in cryptorchidism",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "7769051",
+        "title": "A prospective randomized single-blind comparative trial of nafarelin acetate with buserelin in long-protocol gonadotrophin-releasing hormone analogue controlled in-vitro fertilization cycles.",
+        "journal": "Hum Reprod",
+        "pubdate": "1995 Feb",
+        "firstAuthor": "Lockwood GM",
+        "doi": "10.1093/oxfordjournals.humrep.a135930",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Comparative Study",
+          "Journal Article",
+          "Randomized Controlled Trial"
+        ],
+        "role": "randomised comparison of nafarelin vs buserelin in IVF",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "8027276",
+        "title": "A prospective randomized comparison of two gonadotrophin-releasing hormone agonists, nafarelin acetate and buserelin acetate, in in-vitro fertilization-embryo transfer.",
+        "journal": "Hum Reprod",
+        "pubdate": "1994 Feb",
+        "firstAuthor": "Goldman JA",
+        "doi": "10.1093/oxfordjournals.humrep.a138486",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Journal Article",
+          "Randomized Controlled Trial"
+        ],
+        "role": "randomised comparison of nafarelin and buserelin in IVF-embryo transfer",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "1595789",
+        "title": "Buserelin acetate versus expectant management in the treatment of infertility associated with minimal or mild endometriosis: a randomized clinical trial.",
+        "journal": "Am J Obstet Gynecol",
+        "pubdate": "1992 May",
+        "firstAuthor": "Fedele L",
+        "doi": "10.1016/0002-9378(92)91602-7",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Comparative Study",
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "buserelin vs expectant management in endometriosis-associated infertility",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "8458450",
+        "title": "Buserelin acetate in the treatment of pelvic pain associated with minimal and mild endometriosis: a controlled study.",
+        "journal": "Fertil Steril",
+        "pubdate": "1993 Mar",
+        "firstAuthor": "Fedele L",
+        "doi": "10.1016/s0015-0282(16)55792-6",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "controlled study in pelvic pain associated with minimal and mild endometriosis",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "2529770",
+        "title": "Buserelin versus danazol in the treatment of endometriosis-associated infertility.",
+        "journal": "Am J Obstet Gynecol",
+        "pubdate": "1989 Oct",
+        "firstAuthor": "Fedele L",
+        "doi": "10.1016/0002-9378(89)90739-4",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Comparative Study",
+          "Journal Article",
+          "Randomized Controlled Trial"
+        ],
+        "role": "buserelin vs danazol in endometriosis-associated infertility",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "1838426",
+        "title": "The use of the LHRH-analogue Buserelin in the treatment of prostatic cancer. A 10-year review on 1522 patients treated in 119 centres on 4 continents.",
+        "journal": "Scand J Urol Nephrol Suppl",
+        "pubdate": "1991",
+        "firstAuthor": "de Voogt HJ",
+        "doi": null,
+        "publicationTypes": [
+          "Journal Article",
+          "Meta-Analysis"
+        ],
+        "role": "10-year review of 1522 patients across 119 centres",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      }
+    ]
+  },
+  "registeredTrials": {
+    "source": "ClinicalTrials.gov API v2 query.intr, fetched 2026-08-06",
+    "totalReturned": 41,
+    "drugMatched": 23,
+    "selected": [
+      {
+        "nct": "NCT00936390",
+        "acronym": null,
+        "title": "Radiation Therapy With or Without Androgen-Deprivation Therapy in Treating Patients With Prostate Cancer",
+        "sponsor": "Radiation Therapy Oncology Group",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2009-09",
+        "primaryCompletion": "2020-10-03",
+        "enrollment": 1538,
+        "conditions": [
+          "Prostate Cancer"
+        ],
+        "interventions": [
+          "bicalutamide",
+          "flutamide (anti-androgen therapy)",
+          "LHRH agonist (antagonist) therapy (leuprolide, goserelin, buserelin, triptorelin, degarelix)",
+          "Dose-Escalated Radiation Therapy"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT01492972",
+        "acronym": null,
+        "title": "Hypo-fractionated Radiation Therapy With or Without Androgen Suppression for Intermediate Risk Prostate Cancer",
+        "sponsor": "Proton Collaborative Group",
+        "phase": "PHASE3",
+        "status": "RECRUITING",
+        "start": "2012-01",
+        "primaryCompletion": "2027-12",
+        "enrollment": 192,
+        "conditions": [
+          "Prostate Cancer"
+        ],
+        "interventions": [
+          "Radiation",
+          "Androgen Suppression Therapy (leuprolide, goserelin, buserelin, or triptorelin)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00651326",
+        "acronym": "DART",
+        "title": "Androgen Suppression and Radiation With/Out Docetaxel in High-Risk Localized Prostate Cancer",
+        "sponsor": "NCIC Clinical Trials Group",
+        "phase": "PHASE3",
+        "status": "TERMINATED",
+        "start": "2008-06-02",
+        "primaryCompletion": "2010-05-14",
+        "enrollment": 48,
+        "conditions": [
+          "Prostate Cancer"
+        ],
+        "interventions": [
+          "bicalutamide",
+          "buserelin",
+          "flutamide",
+          "goserelin",
+          "leuprolide acetate",
+          "neoadjuvant therapy",
+          "quality-of-life assessment",
+          "radiation therapy",
+          "Docetaxel"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00002633",
+        "acronym": null,
+        "title": "Hormone Therapy With or Without Surgery or Radiation Therapy in Treating Patients With Prostate Cancer",
+        "sponsor": "NCIC Clinical Trials Group",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "1995-02-08",
+        "primaryCompletion": "2011-09-23",
+        "enrollment": 361,
+        "conditions": [
+          "Prostate Cancer"
+        ],
+        "interventions": [
+          "bicalutamide",
+          "buserelin",
+          "flutamide",
+          "goserelin",
+          "leuprolide acetate",
+          "nilutamide",
+          "orchiectomy",
+          "radiation therapy"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT01636505",
+        "acronym": null,
+        "title": "The Results of Preimplantation Genetic Diagnosis and Preimplantation Genetic Screening of Embryos Obtained From GnRH-agonist Long and GnRH-antagonist Ovarian Stimulation Protocol",
+        "sponsor": "European Hospital",
+        "phase": "PHASE3",
+        "status": "UNKNOWN",
+        "start": "2012-09",
+        "primaryCompletion": "2013-02",
+        "enrollment": 200,
+        "conditions": [
+          "Embryo's Genetic and Chromosomal Quality"
+        ],
+        "interventions": [
+          "ghrh antagonist (cetrotide/orgalutran)",
+          "gnrh agonist (suprefact)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00175396",
+        "acronym": null,
+        "title": "Androgen Suppression Combined With Elective Nodal and Dose Escalated Radiation Therapy",
+        "sponsor": "University of British Columbia",
+        "phase": "PHASE3",
+        "status": "UNKNOWN",
+        "start": "2004-05",
+        "primaryCompletion": "2011-12",
+        "enrollment": 400,
+        "conditions": [
+          "Prostate Cancer"
+        ],
+        "interventions": [
+          "Androgen suppression, radiotherapy (Androgen suppression: non-steroidal androgen (any of flutamide, nilutamide or bicalutamide (bicalutamide is almost always used)., LHRH monotherapy: buserelin acetate or leuprolide acetate.)",
+          "Androgen suppression, radiotherapy, iodine 125 brachytherapy"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00567580",
+        "acronym": null,
+        "title": "Prostate Radiation Therapy or Short-Term Androgen Deprivation Therapy and Pelvic Lymph Node Radiation Therapy With or Without Prostate Radiation Therapy in Treating Patients With a Rising Prostate Specific Antigen (PSA) After Surgery for Prostate Cancer",
+        "sponsor": "Radiation Therapy Oncology Group",
+        "phase": "PHASE3",
+        "status": "UNKNOWN",
+        "start": "2008-02",
+        "primaryCompletion": "2018-07-12",
+        "enrollment": 1792,
+        "conditions": [
+          "Prostate Cancer"
+        ],
+        "interventions": [
+          "PBRT (Prostate bed radiotherapy, Three-Dimensional Conformal Radiation Therapy (3D-CRT), Intensity modulated RT (IMRT))",
+          "PLNRT (Pelvic lymph node radiotherapy)",
+          "AA (flutamide, bicalutamide)",
+          "LHRH agonist (leuprolide, goserelin, buserelin, triptorelin)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT01546987",
+        "acronym": null,
+        "title": "Hormone Therapy, Radiation Therapy, and Steroid 17alpha-monooxygenase TAK-700 in Treating Patients With High-Risk Prostate Cancer",
+        "sponsor": "Radiation Therapy Oncology Group",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2012-05",
+        "primaryCompletion": "2021-11-01",
+        "enrollment": 239,
+        "conditions": [
+          "Prostate Cancer"
+        ],
+        "interventions": [
+          "GnRH agonist (LHRH analog, leuprolide, goserelin, buserelin, triptorelin, Gonadotropin-releasing hormone (GnRH) Agonist, LHRH agonist)",
+          "Anti-androgen (flutamide, bicalutamide, androgen suppression)",
+          "TAK-700",
+          "Radiation therapy"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00823602",
+        "acronym": null,
+        "title": "Agonist Gonadotropin-Releasing Hormone (GnRH) Versus Antagonist GnRH",
+        "sponsor": "Yazd Research & Clinical Center for Infertility",
+        "phase": "PHASE3",
+        "status": "UNKNOWN",
+        "start": "2008-03",
+        "primaryCompletion": "2008-10",
+        "enrollment": 2,
+        "conditions": [
+          "Infertility"
+        ],
+        "interventions": [
+          "ganirelix",
+          "suprefact"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00749853",
+        "acronym": null,
+        "title": "Efficacy of Ovarian Stimulation Based on FSHR Genotype Status",
+        "sponsor": "Medical University of Vienna",
+        "phase": "PHASE3",
+        "status": "SUSPENDED",
+        "start": "2015-05",
+        "primaryCompletion": "2015-05",
+        "enrollment": 165,
+        "conditions": [
+          "Sterility"
+        ],
+        "interventions": [
+          "follicle stimulating hormone (buserelin, r-hFSH, r-hLH)",
+          "follicle stimulating hormone (buserelin, r-hFSH, HCG)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT04513717",
+        "acronym": null,
+        "title": "Two Studies for Patients With High Risk Prostate Cancer Testing Less Intense Treatment for Patients With a Low Gene Risk Score and Testing a More Intense Treatment for Patients With a High Gene Risk Score, The PREDICT-RT Trial",
+        "sponsor": "NRG Oncology",
+        "phase": "PHASE3",
+        "status": "ACTIVE_NOT_RECRUITING",
+        "start": "2021-01-21",
+        "primaryCompletion": "2033-12-31",
+        "enrollment": 2753,
+        "conditions": [
+          "Prostate Adenocarcinoma",
+          "Stage III Prostate Cancer AJCC v8",
+          "Stage IVA Prostate Cancer AJCC v8"
+        ],
+        "interventions": [
+          "Apalutamide (ARN 509, ARN-509, ARN509, Erleada, JNJ 56021927, JNJ-56021927)",
+          "Bicalutamide (Casodex, Cassotide, Cosudex, ICI 176,334, ICI 176334, Utamide)",
+          "Biospecimen Collection (Biological Sample Collection, Biospecimen Collected, Specimen Collection)",
+          "Bone Scan (Bone Scintigraphy)",
+          "Buserelin (6-[O-(1,1-Dimethylethyl)-D-serine]-9-(N-ethyl-L-prolinamide)-10-deglycinamide-luteinizing Hormone-releasing Factor (Pig), BSRL, Busereline, Etilamide, HOE 766, HOE-766, HOE766, ICI 123215, ICI-123215, ICI123215, S74 6766, S74-6766, S746766, Tiloryth)",
+          "Computed Tomography (CAT, CAT Scan, Computed Axial Tomography, Computerized Axial Tomography, Computerized axial tomography (procedure), Computerized Tomography, Computerized Tomography (CT) scan, CT, CT Scan, tomography)",
+          "Degarelix (ASP 3550, ASP-3550, ASP3550, FE 200486, FE-200486, FE200486, Firmagon)",
+          "Flutamide (4'-Nitro-3'-trifluoromethylisobutyranilide, Apimid, Cebatrol, Chimax, Cytomid, Drogenil, Euflex, Eulexine, Flucinom, Flucinome, Flugerel, Fluken, Flulem, FLUT, Fluta-Gry, Flutabene, Flutacan, Flutamex, Flutamin, Flutan, Flutaplex, Fugerel, Grisetin, Niftolide, Oncosal, Profamid, Propanamide, 2-Methyl-N-(4-nitro-3-(trifluoromethyl)phenyl)-, Prostacur, Prostadirex, Prostica, Prostogenat, Sch 13521, Tafenil, Tecnoflut, Testotard)",
+          "Goserelin (ICI-118630)",
+          "Histrelin",
+          "Leuprolide (Leuprorelin)",
+          "Magnetic Resonance Elastography (MRE)",
+          "Positron Emission Tomography (Medical Imaging, Positron Emission Tomography, PET, PET Scan, Positron emission tomography (procedure), Positron Emission Tomography Scan, Positron-Emission Tomography, PT)",
+          "Quality-of-Life Assessment (Quality of Life Assessment)",
+          "Questionnaire Administration",
+          "Radiation Therapy (Cancer Radiotherapy, Energy Type, ENERGY_TYPE, Irradiate, Irradiated, Irradiation, Radiation, Radiation Therapy, NOS, Radiotherapeutics, Radiotherapy, RT, Therapy, Radiation)",
+          "Relugolix (N-(4-(1-((2,6-Difluorophenyl)methyl)-5-((dimethylamino)methyl)-1,2,3,4-tetrahydro-3-(6-methoxy-3-pyridazinyl)-2,4-dioxothieno(2,3-d)pyrimidin-6-yl)phenyl)-N'-methoxyurea, Orgovyx, Relumina, TAK 385, TAK-385, TAK385)",
+          "Triptorelin (6-D-Tryptophan-LH-RH, 6-D-Tryptophanluteinizing Hormone-releasing Factor, AY 25650, AY-25650, AY25650, CL 118532, CL-118,532, CL-118532, CL118532, Detryptoreline)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00003653",
+        "acronym": null,
+        "title": "Hormone Therapy in Treating Patients With Rising PSA Levels Following Radiation Therapy for Prostate Cancer",
+        "sponsor": "NCIC Clinical Trials Group",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "1999-01-05",
+        "primaryCompletion": "2010-10-04",
+        "enrollment": 1386,
+        "conditions": [
+          "Prostate Cancer"
+        ],
+        "interventions": [
+          "bicalutamide",
+          "buserelin",
+          "cyproterone acetate",
+          "flutamide",
+          "goserelin",
+          "leuprolide acetate",
+          "nilutamide"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT05050084",
+        "acronym": null,
+        "title": "Two Studies for Patients With Unfavorable Intermediate Risk Prostate Cancer Testing Less Intense Treatment for Patients With a Low Gene Risk Score and Testing a More Intense Treatment for Patients With a Higher Gene Risk Score, The Guidance Trial",
+        "sponsor": "NRG Oncology",
+        "phase": "PHASE3",
+        "status": "ACTIVE_NOT_RECRUITING",
+        "start": "2021-12-06",
+        "primaryCompletion": "2026-11-11",
+        "enrollment": 2050,
+        "conditions": [
+          "Prostate Adenocarcinoma"
+        ],
+        "interventions": [
+          "Bicalutamide (Casodex, Cassotide, Cosudex, ICI 176,334, ICI 176334, Utamide)",
+          "Buserelin (6-[O-(1,1-Dimethylethyl)-D-serine]-9-(N-ethyl-L-prolinamide)-10-deglycinamide-luteinizing Hormone-releasing Factor (Pig), BSRL, Busereline, Etilamide, HOE 766, HOE-766, HOE766, ICI 123215, ICI-123215, ICI123215, S74 6766, S74-6766, S746766, Tiloryth)",
+          "Darolutamide (Antiandrogen ODM-201, BAY 1841788, BAY-1841788, BAY1841788, Nubeqa, ODM 201, ODM-201, ODM201)",
+          "Degarelix (ASP 3550, ASP-3550, ASP3550, FE 200486, FE-200486, FE200486, Firmagon)",
+          "Flutamide (4'-Nitro-3'-trifluoromethylisobutyranilide, Apimid, Cebatrol, Chimax, Cytomid, Drogenil, Euflex, Eulexine, Flucinom, Flucinome, Flugerel, Fluken, Flulem, FLUT, Fluta-Gry, Flutabene, Flutacan, Flutamex, Flutamin, Flutan, Flutaplex, Fugerel, Grisetin, Niftolide, Oncosal, Profamid, Propanamide, 2-Methyl-N-(4-nitro-3-(trifluoromethyl)phenyl)-, Prostacur, Prostadirex, Prostica, Prostogenat, Sch 13521, Tafenil, Tecnoflut, Testotard)",
+          "Goserelin (ICI-118630)",
+          "Histrelin",
+          "Leuprolide (Leuprorelin)",
+          "Radiation Therapy (Cancer Radiotherapy, Energy Type, ENERGY_TYPE, Irradiate, Irradiated, Irradiation, Radiation, Radiation Therapy, NOS, Radiotherapeutics, Radiotherapy, RT, Therapy, Radiation)",
+          "Relugolix (N-(4-(1-((2,6-Difluorophenyl)methyl)-5-((dimethylamino)methyl)-1,2,3,4-tetrahydro-3-(6-methoxy-3-pyridazinyl)-2,4-dioxothieno(2,3-d)pyrimidin-6-yl)phenyl)-N'-methoxyurea, Orgovyx, Relumina, TAK 385, TAK-385, TAK385)",
+          "Triptorelin (6-D-Tryptophan-LH-RH, 6-D-Tryptophanluteinizing Hormone-releasing Factor, AY 25650, AY-25650, AY25650, CL 118532, CL-118,532, CL-118532, CL118532, Detryptoreline)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT02703584",
+        "acronym": null,
+        "title": "Co Administration of GnRH Agonist and hCG for Final Oocyte Maturation",
+        "sponsor": "Mount Sinai Hospital, Canada",
+        "phase": "PHASE4",
+        "status": "COMPLETED",
+        "start": "2016-03",
+        "primaryCompletion": "2018-09",
+        "enrollment": 276,
+        "conditions": [
+          "Infertility"
+        ],
+        "interventions": [
+          "Buseralin (Suprefact)",
+          "Placebo (normal saline)",
+          "pregnyl (hCG)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      }
+    ]
+  },
+  "negativeOrNullFindings": [
+    "PMID 9519356 - the trial's own title states the combination was NOT superior to standard androgen deprivation.",
+    "PMID 18653184 - dienogest, a non-peptide, was as effective as buserelin.",
+    "PMID 10686191 - a GnRH antagonist comparison; the agonist is not automatically the better option."
+  ],
+  "cautions": [
+    "MAJOR: a large share of the buserelin literature is VETERINARY (mares, cows, bitches, pigs). PMIDs 11393219, 10734431, 14629665, 11393215 and 35410205 appeared in the screened human query and are animal-husbandry studies. Every buserelin citation must be checked for species before use.",
+    "Lowest-priority BUILD on this list: no US approval, oldest literature, and the most contaminated search space."
+  ],
+  "couldNotConfirm": [
+    "Current marketing authorisation status outside the US. openFDA covers US applications only and no non-US regulator was queried in this run."
+  ]
+}

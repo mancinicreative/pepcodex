@@ -1,0 +1,408 @@
+{
+  "slug": "histrelin",
+  "name": "Histrelin",
+  "classification": "BUILD",
+  "priority": 11,
+  "generated": "2026-08-06",
+  "generatedBy": "coverage triage run - every identifier below was fetched live from PubMed / ClinicalTrials.gov / openFDA during this run",
+  "identity": {
+    "inn": "Histrelin (as histrelin acetate)",
+    "brand": [
+      "Supprelin LA",
+      "Vantas (prostate cancer indication)"
+    ],
+    "developmentCode": "RL 0903, SPD 424",
+    "developer": "Endo Operations (US application holder)",
+    "class": "Synthetic nonapeptide GnRH agonist delivered as a 12-month subcutaneous hydrogel implant",
+    "siteContext": "Completes the GnRH agonist set alongside goserelin and triptorelin; distinctive as a once-yearly implant."
+  },
+  "regulatoryStatus": {
+    "source": "openFDA /drug/drugsfda.json, fetched 2026-08-06",
+    "note": "Supprelin LA NDA022058. The prostate cancer product (Vantas) and the paediatric product are separate presentations - verify which is currently marketed before writing.",
+    "openFDA": {
+      "queried": [
+        {
+          "field": "openfda.generic_name",
+          "value": "histrelin acetate",
+          "hit": true
+        }
+      ],
+      "result": {
+        "total": 1,
+        "applications": [
+          {
+            "applicationNumber": "NDA022058",
+            "sponsor": "ENDO OPERATIONS",
+            "brandNames": [
+              "SUPPRELIN LA"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "SUBCUTANEOUS"
+            ],
+            "earliestApprovalDate": "20070503"
+          }
+        ]
+      }
+    }
+  },
+  "evidenceBase": {
+    "pubmedRecordsScreened": 29,
+    "pubmedRecordsConfirmedNamingCompound": 29,
+    "selected": [
+      {
+        "pmid": "25803268",
+        "title": "Long-Term Continuous Suppression With Once-Yearly Histrelin Subcutaneous Implants for the Treatment of Central Precocious Puberty: A Final Report of a Phase 3 Multicenter Trial.",
+        "journal": "J Clin Endocrinol Metab",
+        "pubdate": "2015 Jun",
+        "firstAuthor": "Silverman LA",
+        "doi": "10.1210/jc.2014-3031",
+        "publicationTypes": [
+          "Clinical Trial, Phase III",
+          "Journal Article",
+          "Multicenter Study",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "final report of the phase 3 multicentre trial in central precocious puberty",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "17327379",
+        "title": "Efficacy and safety of histrelin subdermal implant in children with central precocious puberty: a multicenter trial.",
+        "journal": "J Clin Endocrinol Metab",
+        "pubdate": "2007 May",
+        "firstAuthor": "Eugster EA",
+        "doi": "10.1210/jc.2006-2479",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Journal Article",
+          "Multicenter Study",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "earlier multicentre efficacy and safety trial in children",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "16239357",
+        "title": "An evaluation of the pharmacokinetics and pharmacodynamics of the histrelin implant for the palliative treatment of prostate cancer.",
+        "journal": "J Clin Pharmacol",
+        "pubdate": "2005 Nov",
+        "firstAuthor": "Dineen MK",
+        "doi": "10.1177/0091270005281043",
+        "publicationTypes": [
+          "Clinical Trial, Phase III",
+          "Journal Article",
+          "Multicenter Study"
+        ],
+        "role": "phase 3 pharmacokinetics and pharmacodynamics of the implant in prostate cancer",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "34147047",
+        "title": "Clinical characteristics and treatment patterns with histrelin acetate subcutaneous implants vs. leuprolide injections in children with precocious puberty: a real-world study using a US claims database.",
+        "journal": "J Pediatr Endocrinol Metab",
+        "pubdate": "2021 Aug 26",
+        "firstAuthor": "Silverman LA",
+        "doi": "10.1515/jpem-2020-0721",
+        "publicationTypes": [
+          "Comparative Study",
+          "Journal Article"
+        ],
+        "role": "real-world claims comparison, histrelin implant vs leuprolide injections",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "36625262",
+        "title": "Long-term experience with the use of a single histrelin implant beyond one year in patients with central precocious puberty.",
+        "journal": "J Pediatr Endocrinol Metab",
+        "pubdate": "2023 Mar 28",
+        "firstAuthor": "Ray LA",
+        "doi": "10.1515/jpem-2022-0557",
+        "publicationTypes": [
+          "Journal Article"
+        ],
+        "role": "long-term experience with a single implant beyond one year",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "32104750",
+        "title": "Histrelin Implantation and Growth Outcomes in Children With Congenital Adrenal Hyperplasia: An Institutional Experience.",
+        "journal": "J Endocr Soc",
+        "pubdate": "2020 Feb 1",
+        "firstAuthor": "Swendiman RA",
+        "doi": "10.1210/jendso/bvz004",
+        "publicationTypes": [
+          "Journal Article"
+        ],
+        "role": "growth outcomes in congenital adrenal hyperplasia",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "25899147",
+        "title": "Histrelin for central precocious puberty-a single surgeon experience.",
+        "journal": "J Surg Res",
+        "pubdate": "2015 Oct",
+        "firstAuthor": "Rosati S",
+        "doi": "10.1016/j.jss.2015.03.071",
+        "publicationTypes": [
+          "Journal Article"
+        ],
+        "role": "single-surgeon series in central precocious puberty",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "26683629",
+        "title": "Experience with the Histrelin Implant in Pediatric Patients.",
+        "journal": "Endocr Dev",
+        "pubdate": "2016",
+        "firstAuthor": "Eugster EA",
+        "doi": "10.1159/000439330",
+        "publicationTypes": [
+          "Journal Article",
+          "Review"
+        ],
+        "role": "review of paediatric experience with the implant",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "19228148",
+        "title": "A review of the use of histrelin acetate in the treatment of prostate cancer.",
+        "journal": "BJU Int",
+        "pubdate": "2009 Mar",
+        "firstAuthor": "Crawford ED",
+        "doi": "10.1111/j.1464-410X.2009.08384.x",
+        "publicationTypes": [
+          "Journal Article",
+          "Research Support, Non-U.S. Gov't",
+          "Review"
+        ],
+        "role": "review of histrelin acetate in prostate cancer",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "20329807",
+        "title": "Histrelin: in advanced prostate cancer.",
+        "journal": "Drugs",
+        "pubdate": "2010 Mar 26",
+        "firstAuthor": "Deeks ED",
+        "doi": "10.2165/11204800-000000000-00000",
+        "publicationTypes": [
+          "Journal Article",
+          "Review"
+        ],
+        "role": "drug profile in advanced prostate cancer",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      }
+    ]
+  },
+  "registeredTrials": {
+    "source": "ClinicalTrials.gov API v2 query.intr, fetched 2026-08-06",
+    "totalReturned": 15,
+    "drugMatched": 12,
+    "selected": [
+      {
+        "nct": "NCT01697384",
+        "acronym": null,
+        "title": "Study to Evaluate Efficacy and Safety of Histrelin Subdermal Implant in Men With Advanced Prostate Cancer",
+        "sponsor": "Endo USA Inc., a Keenova Therapeutics Company",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2000-04",
+        "primaryCompletion": "2003-08",
+        "enrollment": 138,
+        "conditions": [
+          "Prostate Cancer",
+          "Adenocarcinoma of the Prostate"
+        ],
+        "interventions": [
+          "histrelin acetate (Vantas)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT04787744",
+        "acronym": "VA STARPORT",
+        "title": "Veterans Affairs Seamless Phase II/III Randomized Trial of STAndard Systemic theRapy With or Without PET-directed Local Therapy for Oligometastatic pRosTate Cancer",
+        "sponsor": "VA Office of Research and Development",
+        "phase": "PHASE2/PHASE3",
+        "status": "RECRUITING",
+        "start": "2021-07-01",
+        "primaryCompletion": "2026-09-30",
+        "enrollment": 464,
+        "conditions": [
+          "Prostate Cancer",
+          "Oligometastasis",
+          "Oligorecurrence",
+          "Recurrent Prostate Cancer",
+          "Metastatic Prostate Cancer",
+          "De Novo Prostate Cancer"
+        ],
+        "interventions": [
+          "PET-directed Local Therapy using Surgery",
+          "PET-directed Local Therapy using Radiation",
+          "Salvage Local Therapy for locally recurrent disease",
+          "Goserelin, Histrelin, Leuprolide & Triptorelin",
+          "ADT + Nilutamide, Flutamide, & Bicalutamide",
+          "Degarelix & Relugolix",
+          "ADT + Docetaxel +/- prednisone",
+          "ADT + Abiraterone + Prednisone",
+          "ADT + Abiraterone + Methylprednisolone",
+          "ADT + Apalutamide",
+          "ADT + Enzalutamide",
+          "Prostate-directed Radiation for De novo oligometastatic prostate cancer"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT03678025",
+        "acronym": null,
+        "title": "Standard Systemic Therapy With or Without Definitive Treatment in Treating Participants With Metastatic Prostate Cancer",
+        "sponsor": "SWOG Cancer Research Network",
+        "phase": "PHASE3",
+        "status": "RECRUITING",
+        "start": "2018-09-24",
+        "primaryCompletion": "2028-04-01",
+        "enrollment": 1273,
+        "conditions": [
+          "Castration Levels of Testosterone",
+          "Metastatic Prostatic Adenocarcinoma",
+          "Stage IV Prostate Cancer AJCC v8",
+          "Stage IVA Prostate Cancer AJCC v8",
+          "Stage IVB Prostate Cancer AJCC v8"
+        ],
+        "interventions": [
+          "Abiraterone (CB 7598)",
+          "Bicalutamide (Casodex, Cosudex, ICI 176,334, ICI 176334)",
+          "Degarelix (FE200486, Firmagon)",
+          "Docetaxel (Docecad, RP56976, Taxotere, Taxotere Injection Concentrate)",
+          "Flutamide (4'-Nitro-3'-trifluoromethylisobutyranilide, Apimid, Cebatrol, Chimax, Cytomid, Drogenil, Euflex, Eulexine, Flucinom, Flucinome, Flugerel, Fluken, Flulem, FLUT, Fluta-Gry, Flutabene, Flutacan, Flutamex, Flutamin, Flutan, Flutaplex, Fugerel, Grisetin, Niftolide, Oncosal, Profamid, Propanamide, 2-Methyl-N-(4-nitro-3-(trifluoromethyl)phenyl)-, Prostacur, Prostadirex, Prostica, Prostogenat, SCH 13521, Tafenil, Tecnoflut, Testotard)",
+          "Goserelin Acetate (ZDX, Zoladex)",
+          "Histrelin Acetate (Supprelin, Vantas)",
+          "Leuprolide Acetate (A-43818, Abbott 43818, Abbott-43818, Carcinil, Depo-Eligard, Eligard, Enanton, Enantone, Enantone-Gyn, Ginecrin, LEUP, Leuplin, Leuprorelin Acetate, Lucrin, Lucrin Depot, Lupron, Lupron Depot, Lupron Depot-3 Month, Lupron Depot-4 Month, Lupron Depot-Ped, Procren, Procrin, Prostap, TAP-144, Trenantone, Uno-Enantone, Viadur)",
+          "Nilutamide (Anandron, Nilandron, RU-23908)",
+          "Orchiectomy (Castration, Male Castration, Male Gonadectomy, orchidectomy)",
+          "Prednisone (.delta.1-Cortisone, 1, 2-Dehydrocortisone, Adasone, Cortancyl, Dacortin, DeCortin, Decortisyl, Decorton, Delta 1-Cortisone, Delta-Dome, Deltacortene, Deltacortisone, Deltadehydrocortisone, Deltasone, Deltison, Deltra, Econosone, Lisacort, Meprosona-F, Metacortandracin, Meticorten, Ofisolona, Orasone, Panafcort, Panasol-S, Paracort, PRED, Predicor, Predicorten, Prednicen-M, Prednicort, Prednidib, Prednilonga, Predniment, Prednisonum, Prednitone, Promifen, Servisone, SK-Prednisone)",
+          "Quality-of-Life Assessment (Quality of Life Assessment)",
+          "Radiation Therapy (Cancer Radiotherapy, Irradiate, Irradiated, irradiation, Radiation, Radiotherapeutics, RADIOTHERAPY, RT, Therapy, Radiation)",
+          "Radical Prostatectomy (Prostatovesiculectomy)",
+          "Triptorelin (6-D-Tryptophan-LH-RH, 6-D-Tryptophanluteinizing Hormone-releasing Factor, AY-25650, CL-118,532, Decapeptyl, Detryptoreline)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00779103",
+        "acronym": null,
+        "title": "Histrelin Subcutaneous Implant in Children With Central Precocious Puberty",
+        "sponsor": "Endo USA Inc., a Keenova Therapeutics Company",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2004-09",
+        "primaryCompletion": "2011-08",
+        "enrollment": 36,
+        "conditions": [
+          "Central Precocious Puberty"
+        ],
+        "interventions": [
+          "Histrelin Subcutaneous Implant (Supprelin LA, implant therapy, histrelin implant)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT04513717",
+        "acronym": null,
+        "title": "Two Studies for Patients With High Risk Prostate Cancer Testing Less Intense Treatment for Patients With a Low Gene Risk Score and Testing a More Intense Treatment for Patients With a High Gene Risk Score, The PREDICT-RT Trial",
+        "sponsor": "NRG Oncology",
+        "phase": "PHASE3",
+        "status": "ACTIVE_NOT_RECRUITING",
+        "start": "2021-01-21",
+        "primaryCompletion": "2033-12-31",
+        "enrollment": 2753,
+        "conditions": [
+          "Prostate Adenocarcinoma",
+          "Stage III Prostate Cancer AJCC v8",
+          "Stage IVA Prostate Cancer AJCC v8"
+        ],
+        "interventions": [
+          "Apalutamide (ARN 509, ARN-509, ARN509, Erleada, JNJ 56021927, JNJ-56021927)",
+          "Bicalutamide (Casodex, Cassotide, Cosudex, ICI 176,334, ICI 176334, Utamide)",
+          "Biospecimen Collection (Biological Sample Collection, Biospecimen Collected, Specimen Collection)",
+          "Bone Scan (Bone Scintigraphy)",
+          "Buserelin (6-[O-(1,1-Dimethylethyl)-D-serine]-9-(N-ethyl-L-prolinamide)-10-deglycinamide-luteinizing Hormone-releasing Factor (Pig), BSRL, Busereline, Etilamide, HOE 766, HOE-766, HOE766, ICI 123215, ICI-123215, ICI123215, S74 6766, S74-6766, S746766, Tiloryth)",
+          "Computed Tomography (CAT, CAT Scan, Computed Axial Tomography, Computerized Axial Tomography, Computerized axial tomography (procedure), Computerized Tomography, Computerized Tomography (CT) scan, CT, CT Scan, tomography)",
+          "Degarelix (ASP 3550, ASP-3550, ASP3550, FE 200486, FE-200486, FE200486, Firmagon)",
+          "Flutamide (4'-Nitro-3'-trifluoromethylisobutyranilide, Apimid, Cebatrol, Chimax, Cytomid, Drogenil, Euflex, Eulexine, Flucinom, Flucinome, Flugerel, Fluken, Flulem, FLUT, Fluta-Gry, Flutabene, Flutacan, Flutamex, Flutamin, Flutan, Flutaplex, Fugerel, Grisetin, Niftolide, Oncosal, Profamid, Propanamide, 2-Methyl-N-(4-nitro-3-(trifluoromethyl)phenyl)-, Prostacur, Prostadirex, Prostica, Prostogenat, Sch 13521, Tafenil, Tecnoflut, Testotard)",
+          "Goserelin (ICI-118630)",
+          "Histrelin",
+          "Leuprolide (Leuprorelin)",
+          "Magnetic Resonance Elastography (MRE)",
+          "Positron Emission Tomography (Medical Imaging, Positron Emission Tomography, PET, PET Scan, Positron emission tomography (procedure), Positron Emission Tomography Scan, Positron-Emission Tomography, PT)",
+          "Quality-of-Life Assessment (Quality of Life Assessment)",
+          "Questionnaire Administration",
+          "Radiation Therapy (Cancer Radiotherapy, Energy Type, ENERGY_TYPE, Irradiate, Irradiated, Irradiation, Radiation, Radiation Therapy, NOS, Radiotherapeutics, Radiotherapy, RT, Therapy, Radiation)",
+          "Relugolix (N-(4-(1-((2,6-Difluorophenyl)methyl)-5-((dimethylamino)methyl)-1,2,3,4-tetrahydro-3-(6-methoxy-3-pyridazinyl)-2,4-dioxothieno(2,3-d)pyrimidin-6-yl)phenyl)-N'-methoxyurea, Orgovyx, Relumina, TAK 385, TAK-385, TAK385)",
+          "Triptorelin (6-D-Tryptophan-LH-RH, 6-D-Tryptophanluteinizing Hormone-releasing Factor, AY 25650, AY-25650, AY25650, CL 118532, CL-118,532, CL-118532, CL118532, Detryptoreline)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT05050084",
+        "acronym": null,
+        "title": "Two Studies for Patients With Unfavorable Intermediate Risk Prostate Cancer Testing Less Intense Treatment for Patients With a Low Gene Risk Score and Testing a More Intense Treatment for Patients With a Higher Gene Risk Score, The Guidance Trial",
+        "sponsor": "NRG Oncology",
+        "phase": "PHASE3",
+        "status": "ACTIVE_NOT_RECRUITING",
+        "start": "2021-12-06",
+        "primaryCompletion": "2026-11-11",
+        "enrollment": 2050,
+        "conditions": [
+          "Prostate Adenocarcinoma"
+        ],
+        "interventions": [
+          "Bicalutamide (Casodex, Cassotide, Cosudex, ICI 176,334, ICI 176334, Utamide)",
+          "Buserelin (6-[O-(1,1-Dimethylethyl)-D-serine]-9-(N-ethyl-L-prolinamide)-10-deglycinamide-luteinizing Hormone-releasing Factor (Pig), BSRL, Busereline, Etilamide, HOE 766, HOE-766, HOE766, ICI 123215, ICI-123215, ICI123215, S74 6766, S74-6766, S746766, Tiloryth)",
+          "Darolutamide (Antiandrogen ODM-201, BAY 1841788, BAY-1841788, BAY1841788, Nubeqa, ODM 201, ODM-201, ODM201)",
+          "Degarelix (ASP 3550, ASP-3550, ASP3550, FE 200486, FE-200486, FE200486, Firmagon)",
+          "Flutamide (4'-Nitro-3'-trifluoromethylisobutyranilide, Apimid, Cebatrol, Chimax, Cytomid, Drogenil, Euflex, Eulexine, Flucinom, Flucinome, Flugerel, Fluken, Flulem, FLUT, Fluta-Gry, Flutabene, Flutacan, Flutamex, Flutamin, Flutan, Flutaplex, Fugerel, Grisetin, Niftolide, Oncosal, Profamid, Propanamide, 2-Methyl-N-(4-nitro-3-(trifluoromethyl)phenyl)-, Prostacur, Prostadirex, Prostica, Prostogenat, Sch 13521, Tafenil, Tecnoflut, Testotard)",
+          "Goserelin (ICI-118630)",
+          "Histrelin",
+          "Leuprolide (Leuprorelin)",
+          "Radiation Therapy (Cancer Radiotherapy, Energy Type, ENERGY_TYPE, Irradiate, Irradiated, Irradiation, Radiation, Radiation Therapy, NOS, Radiotherapeutics, Radiotherapy, RT, Therapy, Radiation)",
+          "Relugolix (N-(4-(1-((2,6-Difluorophenyl)methyl)-5-((dimethylamino)methyl)-1,2,3,4-tetrahydro-3-(6-methoxy-3-pyridazinyl)-2,4-dioxothieno(2,3-d)pyrimidin-6-yl)phenyl)-N'-methoxyurea, Orgovyx, Relumina, TAK 385, TAK-385, TAK385)",
+          "Triptorelin (6-D-Tryptophan-LH-RH, 6-D-Tryptophanluteinizing Hormone-releasing Factor, AY 25650, AY-25650, AY25650, CL 118532, CL-118,532, CL-118532, CL118532, Detryptoreline)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT01394263",
+        "acronym": null,
+        "title": "Study of Histrelin Subdermal Implant in Patients With Prostate Cancer",
+        "sponsor": "Endo USA Inc., a Keenova Therapeutics Company",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2000-05",
+        "primaryCompletion": "2001-12",
+        "enrollment": 59,
+        "conditions": [
+          "Prostate Cancer",
+          "Adenocarcinoma of the Prostate"
+        ],
+        "interventions": [
+          "Histrelin hydrogel implant (Vantas)",
+          "Zoladex goserelin implant (Zoladex)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      }
+    ]
+  },
+  "negativeOrNullFindings": [
+    "There are NO randomised controlled trials of histrelin in the screened set - the phase 3 evidence is single-arm. Evidence grading should reflect that, not borrow confidence from the GnRH agonist class as a whole.",
+    "PMID 34147047 is a claims-database comparison, which carries confounding-by-indication that a dossier must state."
+  ],
+  "cautions": [
+    "Evidence strength for this compound is materially weaker than for goserelin or triptorelin despite the same drug class. Grade it on its own literature.",
+    "Implant site reactions and implant breakage are the distinctive harms of this delivery form and are covered in the surgical-series papers."
+  ],
+  "couldNotConfirm": []
+}

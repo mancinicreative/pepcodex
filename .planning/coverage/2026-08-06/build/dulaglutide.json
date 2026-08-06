@@ -1,0 +1,575 @@
+{
+  "slug": "dulaglutide",
+  "name": "Dulaglutide",
+  "classification": "BUILD",
+  "priority": 1,
+  "generated": "2026-08-06",
+  "generatedBy": "coverage triage run - every identifier below was fetched live from PubMed / ClinicalTrials.gov / openFDA during this run",
+  "identity": {
+    "inn": "Dulaglutide",
+    "brand": [
+      "Trulicity"
+    ],
+    "developmentCode": "LY2189265",
+    "developer": "Eli Lilly and Company",
+    "class": "Once-weekly GLP-1 receptor agonist; GLP-1 analogue peptide covalently linked to a modified human IgG4 Fc fragment",
+    "siteContext": "The site already covers semaglutide, liraglutide, tirzepatide, orforglipron, ecnoglutide, survodutide, mazdutide, pemvidutide, retatrutide, cagrilintide and CagriSema. Dulaglutide is the largest-selling GLP-1 with no dossier."
+  },
+  "regulatoryStatus": {
+    "source": "openFDA /drug/drugsfda.json, fetched 2026-08-06",
+    "note": "openFDA returns a single BLA. Distinguish: dulaglutide is FDA-approved (not filed, not investigational).",
+    "openFDA": {
+      "queried": [
+        {
+          "field": "openfda.generic_name",
+          "value": "dulaglutide",
+          "hit": true
+        }
+      ],
+      "result": {
+        "total": 1,
+        "applications": [
+          {
+            "applicationNumber": "BLA125469",
+            "sponsor": "ELI LILLY AND CO",
+            "brandNames": [
+              "TRULICITY"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "INJECTION"
+            ],
+            "earliestApprovalDate": "20140918"
+          }
+        ]
+      }
+    }
+  },
+  "evidenceBase": {
+    "pubmedRecordsScreened": 87,
+    "pubmedRecordsConfirmedNamingCompound": 86,
+    "selected": [
+      {
+        "pmid": "31189511",
+        "title": "Dulaglutide and cardiovascular outcomes in type 2 diabetes (REWIND): a double-blind, randomised placebo-controlled trial.",
+        "journal": "Lancet",
+        "pubdate": "2019 Jul 13",
+        "firstAuthor": "Gerstein HC",
+        "doi": "10.1016/S0140-6736(19)31149-3",
+        "publicationTypes": [
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial"
+        ],
+        "role": "pivotal cardiovascular outcome trial (REWIND)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "31189509",
+        "title": "Dulaglutide and renal outcomes in type 2 diabetes: an exploratory analysis of the REWIND randomised, placebo-controlled trial.",
+        "journal": "Lancet",
+        "pubdate": "2019 Jul 13",
+        "firstAuthor": "Gerstein HC",
+        "doi": "10.1016/S0140-6736(19)31150-X",
+        "publicationTypes": [
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial"
+        ],
+        "role": "REWIND renal outcomes, exploratory analysis",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "31924562",
+        "title": "The effect of dulaglutide on stroke: an exploratory analysis of the REWIND trial.",
+        "journal": "Lancet Diabetes Endocrinol",
+        "pubdate": "2020 Feb",
+        "firstAuthor": "Gerstein HC",
+        "doi": "10.1016/S2213-8587(19)30423-1",
+        "publicationTypes": [
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial"
+        ],
+        "role": "REWIND stroke, exploratory analysis",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "29910024",
+        "title": "Dulaglutide versus insulin glargine in patients with type 2 diabetes and moderate-to-severe chronic kidney disease (AWARD-7): a multicentre, open-label, randomised trial.",
+        "journal": "Lancet Diabetes Endocrinol",
+        "pubdate": "2018 Aug",
+        "firstAuthor": "Tuttle KR",
+        "doi": "10.1016/S2213-8587(18)30104-9",
+        "publicationTypes": [
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "phase 3 in moderate-to-severe CKD (AWARD-7)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "24842985",
+        "title": "Efficacy and safety of dulaglutide monotherapy versus metformin in type 2 diabetes in a randomized controlled trial (AWARD-3).",
+        "journal": "Diabetes Care",
+        "pubdate": "2014 Aug",
+        "firstAuthor": "Umpierrez G",
+        "doi": "10.2337/dc13-2759",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "phase 3 monotherapy vs metformin (AWARD-3)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "24742660",
+        "title": "Efficacy and safety of dulaglutide versus sitagliptin after 52 weeks in type 2 diabetes in a randomized controlled trial (AWARD-5).",
+        "journal": "Diabetes Care",
+        "pubdate": "2014 Aug",
+        "firstAuthor": "Nauck M",
+        "doi": "10.2337/dc13-2761",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, N.I.H., Extramural",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "phase 3 vs sitagliptin, 52 weeks (AWARD-5)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "25912221",
+        "title": "Safety and efficacy of once-weekly dulaglutide versus sitagliptin after 2 years in metformin-treated patients with type 2 diabetes (AWARD-5): a randomized, phase III study.",
+        "journal": "Diabetes Obes Metab",
+        "pubdate": "2015 Sep",
+        "firstAuthor": "Weinstock RS",
+        "doi": "10.1111/dom.12479",
+        "publicationTypes": [
+          "Clinical Trial, Phase III",
+          "Comparative Study",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "phase 3 vs sitagliptin, 2-year (AWARD-5)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "29483060",
+        "title": "Dulaglutide as add-on therapy to SGLT2 inhibitors in patients with inadequately controlled type 2 diabetes (AWARD-10): a 24-week, randomised, double-blind, placebo-controlled trial.",
+        "journal": "Lancet Diabetes Endocrinol",
+        "pubdate": "2018 May",
+        "firstAuthor": "Ludvik B",
+        "doi": "10.1016/S2213-8587(18)30023-8",
+        "publicationTypes": [
+          "Clinical Trial, Phase III",
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't",
+          "Equivalence Trial"
+        ],
+        "role": "phase 3 add-on to SGLT2 inhibitor (AWARD-10)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "33397768",
+        "title": "Efficacy and Safety of Dulaglutide 3.0 mg and 4.5 mg Versus Dulaglutide 1.5 mg in Metformin-Treated Patients With Type 2 Diabetes in a Randomized Controlled Trial (AWARD-11).",
+        "journal": "Diabetes Care",
+        "pubdate": "2021 Mar",
+        "firstAuthor": "Frias JP",
+        "doi": "10.2337/dc20-1473",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't",
+          "Equivalence Trial"
+        ],
+        "role": "phase 3 dose escalation 3.0/4.5 mg (AWARD-11)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "35658022",
+        "title": "Once-Weekly Dulaglutide for the Treatment of Youths with Type 2 Diabetes.",
+        "journal": "N Engl J Med",
+        "pubdate": "2022 Aug 4",
+        "firstAuthor": "Arslanian SA",
+        "doi": "10.1056/NEJMoa2204601",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial"
+        ],
+        "role": "phase 3 in youth with type 2 diabetes (AWARD-PEDS)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "29397376",
+        "title": "Semaglutide versus dulaglutide once weekly in patients with type 2 diabetes (SUSTAIN 7): a randomised, open-label, phase 3b trial.",
+        "journal": "Lancet Diabetes Endocrinol",
+        "pubdate": "2018 Apr",
+        "firstAuthor": "Pratley RE",
+        "doi": "10.1016/S2213-8587(18)30024-X",
+        "publicationTypes": [
+          "Clinical Trial, Phase III",
+          "Comparative Study",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't",
+          "Equivalence Trial"
+        ],
+        "role": "head-to-head vs semaglutide (SUSTAIN 7) - dulaglutide inferior on HbA1c and weight",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "35914543",
+        "title": "Efficacy and safety of tirzepatide monotherapy compared with dulaglutide in Japanese patients with type 2 diabetes (SURPASS J-mono): a double-blind, multicentre, randomised, phase 3 trial.",
+        "journal": "Lancet Diabetes Endocrinol",
+        "pubdate": "2022 Sep",
+        "firstAuthor": "Inagaki N",
+        "doi": "10.1016/S2213-8587(22)00188-7",
+        "publicationTypes": [
+          "Clinical Trial, Phase III",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "head-to-head vs tirzepatide (SURPASS J-mono) - dulaglutide inferior",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "40183678",
+        "title": "Comparison of Dose Escalation Versus Switching to Tirzepatide Among People With Type 2 Diabetes Inadequately Controlled on Lower Doses of Dulaglutide : A Randomized Clinical Trial.",
+        "journal": "Ann Intern Med",
+        "pubdate": "2025 May",
+        "firstAuthor": "Billings LK",
+        "doi": "10.7326/ANNALS-24-03849",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Multicenter Study",
+          "Clinical Trial, Phase IV",
+          "Comparative Study"
+        ],
+        "role": "phase 4 dose escalation vs switching to tirzepatide",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "34984808",
+        "title": "Dulaglutide and incident atrial fibrillation or flutter in patients with type 2 diabetes: A post hoc analysis from the REWIND randomized trial.",
+        "journal": "Diabetes Obes Metab",
+        "pubdate": "2022 Apr",
+        "firstAuthor": "Raubenheimer PJ",
+        "doi": "10.1111/dom.14634",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "safety - atrial fibrillation/flutter post hoc from REWIND",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      }
+    ]
+  },
+  "registeredTrials": {
+    "source": "ClinicalTrials.gov API v2 query.intr, fetched 2026-08-06",
+    "totalReturned": 100,
+    "drugMatched": 93,
+    "selected": [
+      {
+        "nct": "NCT01624259",
+        "acronym": "AWARD-6",
+        "title": "A Study Comparing the Effect of Dulaglutide With Liraglutide in Type 2 Diabetes",
+        "sponsor": "Eli Lilly and Company",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2012-06",
+        "primaryCompletion": "2013-11",
+        "enrollment": 599,
+        "conditions": [
+          "Type 2 Diabetes"
+        ],
+        "interventions": [
+          "LY2189265 (Dulaglutide)",
+          "Liraglutide",
+          "Metformin"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT06257966",
+        "acronym": null,
+        "title": "A Phase 3 Study to Evaluate the Efficacy of JY09 Compared With Dulaglutide in Combination Therapy Diabetes Mellitus Type 2 Patients With Metformin",
+        "sponsor": "Beijing Dongfang Biotech Co., Ltd.",
+        "phase": "PHASE3",
+        "status": "ACTIVE_NOT_RECRUITING",
+        "start": "2024-07-17",
+        "primaryCompletion": "2026-10-01",
+        "enrollment": 600,
+        "conditions": [
+          "Type2 Diabetes Mellitus"
+        ],
+        "interventions": [
+          "Exendin-4 Fc fusion protein injection(1.2mg） (JY09(1.2mg))",
+          "Exendin-4 Fc fusion protein injection（2.4mg） (JY09(2.4mg))",
+          "Dulaglutide",
+          "Metformin"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT03495102",
+        "acronym": "AWARD-11",
+        "title": "A Study of the Efficacy and Safety of Dulaglutide (LY2189265) in Participants With Type 2 Diabetes",
+        "sponsor": "Eli Lilly and Company",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2018-04-05",
+        "primaryCompletion": "2019-05-28",
+        "enrollment": 1842,
+        "conditions": [
+          "Diabetes Mellitus, Type 2"
+        ],
+        "interventions": [
+          "Dulaglutide (LY2189265)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT04255433",
+        "acronym": "SURPASS-CVOT",
+        "title": "A Study of Tirzepatide (LY3298176) Compared With Dulaglutide on Major Cardiovascular Events in Participants With Type 2 Diabetes",
+        "sponsor": "Eli Lilly and Company",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2020-05-29",
+        "primaryCompletion": "2025-06-12",
+        "enrollment": 13299,
+        "conditions": [
+          "Type 2 Diabetes Mellitus"
+        ],
+        "interventions": [
+          "Tirzepatide (LY3298176)",
+          "Dulaglutide (LY2189265)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT07156539",
+        "acronym": null,
+        "title": "A Phase 3 Study of HS-20094 in Patients With T2DM",
+        "sponsor": "Jiangsu Hansoh Pharmaceutical Co., Ltd.",
+        "phase": "PHASE3",
+        "status": "NOT_YET_RECRUITING",
+        "start": "2025-09-30",
+        "primaryCompletion": "2027-03-30",
+        "enrollment": 546,
+        "conditions": [
+          "Type 2 Diabetes"
+        ],
+        "interventions": [
+          "HS-20094 Injection",
+          "Dulaglutide Injection"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT01558271",
+        "acronym": null,
+        "title": "A Study of LY2189265 in Japanese Participants With Type 2 Diabetes Mellitus",
+        "sponsor": "Eli Lilly and Company",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2012-03",
+        "primaryCompletion": "2013-10",
+        "enrollment": 492,
+        "conditions": [
+          "Type 2 Diabetes Mellitus"
+        ],
+        "interventions": [
+          "LY2189265 (Dulaglutide)",
+          "Placebo",
+          "Liraglutide"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT07668336",
+        "acronym": "ACHIEVE-PEDS",
+        "title": "A Study of Orforglipron (LY3502970) Compared With Dulaglutide in Pediatric Participants With Type 2 Diabetes",
+        "sponsor": "Eli Lilly and Company",
+        "phase": "PHASE3",
+        "status": "NOT_YET_RECRUITING",
+        "start": "2026-09",
+        "primaryCompletion": "2030-03",
+        "enrollment": 170,
+        "conditions": [
+          "Diabetes Mellitus, Type 2"
+        ],
+        "interventions": [
+          "Orforglipron (LY3502970)",
+          "Dulaglutide (LY2189265)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT05606913",
+        "acronym": null,
+        "title": "A Study of IBI362 in Participants With Type 2 Diabetes",
+        "sponsor": "Innovent Biologics (Suzhou) Co. Ltd.",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2023-01-06",
+        "primaryCompletion": "2024-01-26",
+        "enrollment": 731,
+        "conditions": [
+          "Type 2 Diabetes"
+        ],
+        "interventions": [
+          "dulaglutide",
+          "IBI362"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT01394952",
+        "acronym": "REWIND",
+        "title": "Researching Cardiovascular Events With a Weekly Incretin in Diabetes (REWIND)",
+        "sponsor": "Eli Lilly and Company",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2011-07-22",
+        "primaryCompletion": "2018-08-21",
+        "enrollment": 9901,
+        "conditions": [
+          "Cardiovascular Disease",
+          "Diabetes Mellitus, Type 2"
+        ],
+        "interventions": [
+          "Dulaglutide (LY2189265)",
+          "Placebo"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT01191268",
+        "acronym": null,
+        "title": "A Study in Participants With Type 2 Diabetes Mellitus (AWARD-4)",
+        "sponsor": "Eli Lilly and Company",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2010-11",
+        "primaryCompletion": "2012-02",
+        "enrollment": 884,
+        "conditions": [
+          "Diabetes Mellitus, Type 2"
+        ],
+        "interventions": [
+          "Insulin Glargine",
+          "LY2189265 (Dulaglutide)",
+          "Insulin Lispro"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00734474",
+        "acronym": null,
+        "title": "A Study of LY2189265 Compared to Sitagliptin in Participants With Type 2 Diabetes Mellitus on Metformin",
+        "sponsor": "Eli Lilly and Company",
+        "phase": "PHASE2/PHASE3",
+        "status": "COMPLETED",
+        "start": "2008-08",
+        "primaryCompletion": "2011-06",
+        "enrollment": 1202,
+        "conditions": [
+          "Diabetes Mellitus, Type 2"
+        ],
+        "interventions": [
+          "LY2189265 (Dulaglutide, Trulicity)",
+          "Sitagliptin",
+          "Placebo solution",
+          "Placebo tablet",
+          "Metformin"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT03015220",
+        "acronym": "PIONEER 10",
+        "title": "Safety and Efficacy of Oral Semaglutide Versus Dulaglutide Both in Combination With One OAD (Oral Antidiabetic Drug) in Japanese Subjects With Type 2 Diabetes",
+        "sponsor": "Novo Nordisk A/S",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2017-01-10",
+        "primaryCompletion": "2018-07-12",
+        "enrollment": 458,
+        "conditions": [
+          "Diabetes",
+          "Diabetes Mellitus, Type 2"
+        ],
+        "interventions": [
+          "Semaglutide",
+          "Dulaglutide"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT01584232",
+        "acronym": null,
+        "title": "A Study of Dulaglutide in Japanese Participants With Type 2 Diabetes Mellitus",
+        "sponsor": "Eli Lilly and Company",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2012-04",
+        "primaryCompletion": "2013-07",
+        "enrollment": 361,
+        "conditions": [
+          "Type 2 Diabetes Mellitus"
+        ],
+        "interventions": [
+          "LY2189265 (Dulaglutide)",
+          "Insulin glargine",
+          "Sulfonylureas (SU)",
+          "Biguanide (BG)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT07282041",
+        "acronym": "RADIANT",
+        "title": "Role of GLP1 RA Dulaglutide on Severe Intracranial Atherosclerosis",
+        "sponsor": "National University of Singapore",
+        "phase": "PHASE2/PHASE3",
+        "status": "RECRUITING",
+        "start": "2025-12-17",
+        "primaryCompletion": "2030-12-01",
+        "enrollment": 130,
+        "conditions": [
+          "Intracranial Atherosclerosis",
+          "Stroke, Ischemic"
+        ],
+        "interventions": [
+          "Dulaglutide"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      }
+    ]
+  },
+  "negativeOrNullFindings": [
+    "PMID 29397376 (SUSTAIN 7) and PMID 35914543 (SURPASS J-mono) are head-to-head trials in which dulaglutide was the comparator and was outperformed. A dossier that cites only AWARD trials would misrepresent where dulaglutide sits in the current class.",
+    "PMID 34984808 examines atrial fibrillation/flutter incidence in REWIND - include rather than only efficacy post hocs."
+  ],
+  "cautions": [
+    "REWIND is the CV outcome trial; do not conflate it with the AWARD phase 3 programme.",
+    "AWARD trial numbering runs to at least AWARD-11 plus regional variants (AWARD-JPN, AWARD-CHN3, AWARD-PEDS). Do not treat 'AWARD' as one trial.",
+    "Estimand discipline: check whether any weight or HbA1c figure quoted is the treatment-regimen estimand from the publication or a sponsor efficacy estimand."
+  ],
+  "couldNotConfirm": []
+}

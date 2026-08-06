@@ -1,0 +1,817 @@
+{
+  "slug": "octreotide",
+  "name": "Octreotide",
+  "classification": "BUILD",
+  "priority": 2,
+  "generated": "2026-08-06",
+  "generatedBy": "coverage triage run - every identifier below was fetched live from PubMed / ClinicalTrials.gov / openFDA during this run",
+  "identity": {
+    "inn": "Octreotide (as octreotide acetate)",
+    "brand": [
+      "Sandostatin",
+      "Sandostatin LAR Depot",
+      "Mycapssa (oral)",
+      "Bynfezia Pen"
+    ],
+    "developmentCode": "SMS 201-995",
+    "developer": "Originator Novartis (Sandostatin); Chiesi (Mycapssa); Sun Pharma (Bynfezia); Camurus CAM2029 in development",
+    "class": "Synthetic cyclic octapeptide somatostatin analogue, SSTR2/SSTR5-preferring",
+    "siteContext": "The site already has a pasireotide dossier that names octreotide as its primary comparator in six interaction entries and in the pasireotide-vs-mk-677 comparison page - so the site references a compound it does not document."
+  },
+  "regulatoryStatus": {
+    "source": "openFDA /drug/drugsfda.json, fetched 2026-08-06",
+    "note": "Multiple approvals across 40 years plus many ANDAs. Distinguish the depot (LAR), oral (Mycapssa) and immediate-release forms - they are different applications with different approval dates. NOTE: the two openFDA generic_name spellings return DIFFERENT application sets. Oral Mycapssa is only returned by generic_name:\"octreotide\". Always run both spellings.",
+    "openFDA": {
+      "queried": [
+        {
+          "field": "openfda.generic_name",
+          "value": "octreotide acetate",
+          "hit": true
+        }
+      ],
+      "result": {
+        "total": 16,
+        "applications": [
+          {
+            "applicationNumber": "ANDA216839",
+            "sponsor": "GLAND",
+            "brandNames": [
+              "OCTREOTIDE ACETATE"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "INJECTION"
+            ],
+            "earliestApprovalDate": "20230622"
+          },
+          {
+            "applicationNumber": "ANDA079198",
+            "sponsor": "MYLAN INSTITUTIONAL",
+            "brandNames": [
+              "OCTREOTIDE ACETATE (PRESERVATIVE FREE)"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "INJECTION"
+            ],
+            "earliestApprovalDate": "20110210"
+          },
+          {
+            "applicationNumber": "NDA213224",
+            "sponsor": "SUN PHARM",
+            "brandNames": [
+              "BYNFEZIA PEN"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "SUBCUTANEOUS"
+            ],
+            "earliestApprovalDate": "20240927"
+          },
+          {
+            "applicationNumber": "ANDA077450",
+            "sponsor": "FRESENIUS KABI USA",
+            "brandNames": [
+              "OCTREOTIDE ACETATE"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "INJECTION"
+            ],
+            "earliestApprovalDate": "20060210"
+          },
+          {
+            "applicationNumber": "ANDA077457",
+            "sponsor": "FRESENIUS KABI USA",
+            "brandNames": [
+              "OCTREOTIDE ACETATE (PRESERVATIVE FREE)"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "INJECTION"
+            ],
+            "earliestApprovalDate": "20060210"
+          },
+          {
+            "applicationNumber": "ANDA075957",
+            "sponsor": "MEITHEAL",
+            "brandNames": [
+              "OCTREOTIDE ACETATE"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "INJECTION"
+            ],
+            "earliestApprovalDate": "20051003"
+          },
+          {
+            "applicationNumber": "ANDA076313",
+            "sponsor": "WEST-WARD PHARMS INT",
+            "brandNames": [
+              "OCTREOTIDE ACETATE (PRESERVATIVE FREE)"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "INJECTION"
+            ],
+            "earliestApprovalDate": "20050328"
+          },
+          {
+            "applicationNumber": "ANDA203765",
+            "sponsor": "HERITAGE",
+            "brandNames": [
+              "OCTREOTIDE ACETATE"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "INJECTION"
+            ],
+            "earliestApprovalDate": "20180907"
+          },
+          {
+            "applicationNumber": "ANDA076330",
+            "sponsor": "WEST-WARD PHARMS INT",
+            "brandNames": [
+              "OCTREOTIDE ACETATE"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "INJECTION"
+            ],
+            "earliestApprovalDate": "20050408"
+          },
+          {
+            "applicationNumber": "ANDA216589",
+            "sponsor": "MYLAN LABS LTD",
+            "brandNames": [
+              "OCTREOTIDE ACETATE"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "INJECTION"
+            ],
+            "earliestApprovalDate": "20251212"
+          },
+          {
+            "applicationNumber": "ANDA217860",
+            "sponsor": "SHUANGCHENG",
+            "brandNames": [
+              "OCTREOTIDE ACETATE"
+            ],
+            "marketingStatus": [
+              "Discontinued"
+            ],
+            "routes": [
+              "INJECTION"
+            ],
+            "earliestApprovalDate": "20240502"
+          },
+          {
+            "applicationNumber": "NDA021008",
+            "sponsor": "NOVARTIS",
+            "brandNames": [
+              "SANDOSTATIN LAR"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "INJECTION"
+            ],
+            "earliestApprovalDate": "19981125"
+          },
+          {
+            "applicationNumber": "NDA019667",
+            "sponsor": "NOVARTIS",
+            "brandNames": [
+              "SANDOSTATIN"
+            ],
+            "marketingStatus": [
+              "Discontinued",
+              "Prescription"
+            ],
+            "routes": [
+              "INJECTION"
+            ],
+            "earliestApprovalDate": "19881021"
+          },
+          {
+            "applicationNumber": "ANDA204669",
+            "sponsor": "HERITAGE",
+            "brandNames": [
+              "OCTREOTIDE ACETATE"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "INJECTION"
+            ],
+            "earliestApprovalDate": "20181227"
+          },
+          {
+            "applicationNumber": "ANDA216807",
+            "sponsor": "GLAND",
+            "brandNames": [
+              "OCTREOTIDE ACETATE"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "INJECTION"
+            ],
+            "earliestApprovalDate": "20230613"
+          },
+          {
+            "applicationNumber": "ANDA210317",
+            "sponsor": "TEVA PHARMS USA INC",
+            "brandNames": [
+              "OCTREOTIDE ACETATE"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "INJECTION"
+            ],
+            "earliestApprovalDate": "20231205"
+          }
+        ]
+      }
+    },
+    "supplementaryGenericNameQuery": {
+      "query": "openfda.generic_name:\"octreotide\"",
+      "additionalApplicationsNotReturnedByTheOctreotideAcetateQuery": [
+        {
+          "applicationNumber": "NDA208232",
+          "sponsor": "CHIESI",
+          "brandNames": [
+            "MYCAPSSA"
+          ],
+          "marketingStatus": [
+            "Prescription"
+          ],
+          "routes": [
+            "ORAL"
+          ],
+          "earliestApprovalDate": "20200626"
+        }
+      ]
+    }
+  },
+  "evidenceBase": {
+    "pubmedRecordsScreened": 105,
+    "pubmedRecordsConfirmedNamingCompound": 104,
+    "selected": [
+      {
+        "pmid": "19704057",
+        "title": "Placebo-controlled, double-blind, prospective, randomized study on the effect of octreotide LAR in the control of tumor growth in patients with metastatic neuroendocrine midgut tumors: a report from the PROMID Study Group.",
+        "journal": "J Clin Oncol",
+        "pubdate": "2009 Oct 1",
+        "firstAuthor": "Rinke A",
+        "doi": "10.1200/JCO.2009.22.8510",
+        "publicationTypes": [
+          "Clinical Trial, Phase III",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "pivotal antiproliferative trial in midgut NETs (PROMID)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "30852564",
+        "title": "Health-Related Quality of Life for Long-Acting Octreotide versus Placebo in Patients with Metastatic Midgut Neuroendocrine Tumors in the Phase 3 PROMID Trial.",
+        "journal": "Neuroendocrinology",
+        "pubdate": "2019",
+        "firstAuthor": "Rinke A",
+        "doi": "10.1159/000499469",
+        "publicationTypes": [
+          "Clinical Trial, Phase III",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "PROMID quality-of-life analysis",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "34793718",
+        "title": "(177)Lu-Dotatate plus long-acting octreotide versus high‑dose long-acting octreotide in patients with midgut neuroendocrine tumours (NETTER-1): final overall survival and long-term safety results from an open-label, randomised, controlled, phase 3 trial.",
+        "journal": "Lancet Oncol",
+        "pubdate": "2021 Dec",
+        "firstAuthor": "Strosberg JR",
+        "doi": "10.1016/S1470-2045(21)00572-6",
+        "publicationTypes": [
+          "Clinical Trial, Phase III",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "NETTER-1 final overall survival - octreotide as the high-dose control arm",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "38851203",
+        "title": "[(177)Lu]Lu-DOTA-TATE plus long-acting octreotide versus high‑dose long-acting octreotide for the treatment of newly diagnosed, advanced grade 2-3, well-differentiated, gastroenteropancreatic neuroendocrine tumours (NETTER-2): an open-label, randomised, phase 3 study.",
+        "journal": "Lancet",
+        "pubdate": "2024 Jun 29",
+        "firstAuthor": "Singh S",
+        "doi": "10.1016/S0140-6736(24)00701-3",
+        "publicationTypes": [
+          "Journal Article",
+          "Clinical Trial, Phase III",
+          "Randomized Controlled Trial",
+          "Multicenter Study",
+          "Research Support, Non-U.S. Gov't",
+          "Equivalence Trial"
+        ],
+        "role": "NETTER-2 - octreotide as the high-dose control arm",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "41111031",
+        "title": "(177)Lu-Dotatate versus high-dose long-acting octreotide for the treatment of patients with advanced, grade 1-2, well-differentiated gastroenteropancreatic neuroendocrine tumours (XT-XTR008-3-01): an open-label, randomised, phase III trial.",
+        "journal": "Ann Oncol",
+        "pubdate": "2025 Dec",
+        "firstAuthor": "Xu J",
+        "doi": "10.1016/j.annonc.2025.08.3758",
+        "publicationTypes": [
+          "Journal Article",
+          "Clinical Trial, Phase III",
+          "Randomized Controlled Trial",
+          "Multicenter Study",
+          "Comparative Study"
+        ],
+        "role": "phase 3 177Lu-Dotatate vs high-dose octreotide (XT-XTR008-3-01)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "41719493",
+        "title": "Axitinib and Long-Acting Octreotide in Advanced Extrapancreatic Neuroendocrine Tumors: A Randomized, Double-Blind, Placebo-Controlled, Phase III Clinical Trial (AXINET, GETNE 1107).",
+        "journal": "J Clin Oncol",
+        "pubdate": "2026 Mar 20",
+        "firstAuthor": "Garcia-Carbonero R",
+        "doi": "10.1200/JCO-25-01808",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Clinical Trial, Phase III",
+          "Multicenter Study"
+        ],
+        "role": "phase 3 axitinib + octreotide LAR (AXINET, GETNE 1107)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "39378125",
+        "title": "Octreotide Subcutaneous Depot for Acromegaly: A Randomized, Double-blind, Placebo-controlled Phase 3 Trial, ACROINNOVA 1.",
+        "journal": "J Clin Endocrinol Metab",
+        "pubdate": "2025 May 19",
+        "firstAuthor": "Ferone D",
+        "doi": "10.1210/clinem/dgae707",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Clinical Trial, Phase III",
+          "Multicenter Study",
+          "Equivalence Trial"
+        ],
+        "role": "phase 3 octreotide subcutaneous depot in acromegaly (ACROINNOVA 1)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "38158089",
+        "title": "Standard of Care Versus Octreotide in Angiodysplasia-Related Bleeding (the OCEAN Study): A Multicenter Randomized Controlled Trial.",
+        "journal": "Gastroenterology",
+        "pubdate": "2024 Apr",
+        "firstAuthor": "Goltstein LCMJ",
+        "doi": "10.1053/j.gastro.2023.12.020",
+        "publicationTypes": [
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "RCT in angiodysplasia-related bleeding (OCEAN) - reduced transfusion need",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "41090987",
+        "title": "One vs Five Days of Octreotide Infusion for Acute Esophageal Variceal Bleeding: A Randomized Controlled Trial.",
+        "journal": "Am J Gastroenterol",
+        "pubdate": "2026 Aug 1",
+        "firstAuthor": "Chirapongsathorn S",
+        "doi": "10.14309/ajg.0000000000003791",
+        "publicationTypes": [
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Equivalence Trial"
+        ],
+        "role": "RCT of 1 vs 5 days octreotide infusion in acute variceal bleeding",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "11231948",
+        "title": "Octreotide for acute esophageal variceal bleeding: a meta-analysis.",
+        "journal": "Gastroenterology",
+        "pubdate": "2001 Mar",
+        "firstAuthor": "Corley DA",
+        "doi": "10.1053/gast.2001.22451",
+        "publicationTypes": [
+          "Journal Article",
+          "Meta-Analysis",
+          "Research Support, Non-U.S. Gov't",
+          "Research Support, U.S. Gov't, P.H.S."
+        ],
+        "role": "meta-analysis, octreotide for acute oesophageal variceal bleeding",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "9412308",
+        "title": "Somatostatin or octreotide compared with H2 antagonists and placebo in the management of acute nonvariceal upper gastrointestinal hemorrhage: a meta-analysis.",
+        "journal": "Ann Intern Med",
+        "pubdate": "1997 Dec 15",
+        "firstAuthor": "Imperiale TF",
+        "doi": "10.7326/0003-4819-127-12-199712150-00002",
+        "publicationTypes": [
+          "Comparative Study",
+          "Journal Article",
+          "Meta-Analysis",
+          "Research Support, Non-U.S. Gov't",
+          "Research Support, U.S. Gov't, Non-P.H.S."
+        ],
+        "role": "meta-analysis, somatostatin/octreotide vs H2 antagonists in non-variceal upper GI haemorrhage",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "25644760",
+        "title": "Terlipressin plus albumin versus midodrine and octreotide plus albumin in the treatment of hepatorenal syndrome: A randomized trial.",
+        "journal": "Hepatology",
+        "pubdate": "2015 Aug",
+        "firstAuthor": "Cavallin M",
+        "doi": "10.1002/hep.27709",
+        "publicationTypes": [
+          "Comparative Study",
+          "Journal Article",
+          "Randomized Controlled Trial"
+        ],
+        "role": "RCT in hepatorenal syndrome where midodrine + octreotide was the LOSING arm against terlipressin",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "38662619",
+        "title": "Somatostatin Versus Octreotide for Prevention of Postoperative Pancreatic Fistula: The PREFIPS Randomized Clinical Trial: A FRENCH 007-ACHBT Study.",
+        "journal": "Ann Surg",
+        "pubdate": "2024 Aug 1",
+        "firstAuthor": "Gaujoux S",
+        "doi": "10.1097/SLA.0000000000006313",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Multicenter Study",
+          "Comparative Study"
+        ],
+        "role": "RCT, somatostatin vs octreotide for postoperative pancreatic fistula (PREFIPS)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "9127169",
+        "title": "A randomized, controlled trial of octreotide in the management of patients with acute pancreatitis.",
+        "journal": "Int J Pancreatol",
+        "pubdate": "1997 Feb",
+        "firstAuthor": "McKay C",
+        "doi": "10.1007/BF02785915",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Journal Article",
+          "Randomized Controlled Trial"
+        ],
+        "role": "RCT of octreotide in acute pancreatitis",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      }
+    ]
+  },
+  "registeredTrials": {
+    "source": "ClinicalTrials.gov API v2 query.intr, fetched 2026-08-06",
+    "totalReturned": 126,
+    "drugMatched": 100,
+    "selected": [
+      {
+        "nct": "NCT00372697",
+        "acronym": null,
+        "title": "Efficacy/Safety of Octreotide Acetate in Patients With Uncontrolled Acromegaly",
+        "sponsor": "Novartis Pharmaceuticals",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2005-12",
+        "primaryCompletion": "2007-10",
+        "enrollment": 28,
+        "conditions": [
+          "Acromegaly"
+        ],
+        "interventions": [
+          "Octreotide acetate 30 mg suspension (Sandostatin LAR)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00003057",
+        "acronym": null,
+        "title": "Octreotide Compared With Loperamide Hydrochloride for Chemotherapy-Related Diarrhea in Patients With Colorectal Cancer",
+        "sponsor": "Eastern Cooperative Oncology Group",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "1997-03-26",
+        "primaryCompletion": "2000-05",
+        "enrollment": 500,
+        "conditions": [
+          "Colorectal Cancer",
+          "Diarrhea"
+        ],
+        "interventions": [
+          "loperamide hydrochloride",
+          "octreotide acetate"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00248131",
+        "acronym": null,
+        "title": "Extension Study of Long-term Safety and Tolerability of Octreotide Acetate in Patients With Moderately Severe or Severe Non-proliferative Diabetic Retinopathy or Low Risk Proliferative Diabetic Retinopathy",
+        "sponsor": "Novartis Pharmaceuticals",
+        "phase": "PHASE3",
+        "status": "TERMINATED",
+        "start": "2005-11",
+        "primaryCompletion": "2006-07",
+        "enrollment": 260,
+        "conditions": [
+          "Diabetic Retinopathy"
+        ],
+        "interventions": [
+          "Octreotide acetate in microspheres"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT05477576",
+        "acronym": "ACTION-1",
+        "title": "Study of RYZ101 Compared With SOC in Pts w Inoperable SSTR+ Well-differentiated GEP-NET That Has Progressed Following 177Lu-SSA Therapy",
+        "sponsor": "RayzeBio, Inc.",
+        "phase": "PHASE3",
+        "status": "RECRUITING",
+        "start": "2022-03-24",
+        "primaryCompletion": "2026-12",
+        "enrollment": 338,
+        "conditions": [
+          "GEP-NET",
+          "Gastroenteropancreatic Neuroendocrine Tumor",
+          "Gastroenteropancreatic Neuroendocrine Tumor Disease",
+          "Neuroendocrine Tumors",
+          "Carcinoid",
+          "Carcinoid Tumor",
+          "Pancreatic NET"
+        ],
+        "interventions": [
+          "RYZ101",
+          "Everolimus",
+          "Sunitinib",
+          "Octreotide",
+          "Lanreotide"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00495846",
+        "acronym": "SS-HCC",
+        "title": "GH, IGF-I and Somatostatin Analogues in Hepatocellular Carcinoma",
+        "sponsor": "Federico II University",
+        "phase": "PHASE2/PHASE3",
+        "status": "COMPLETED",
+        "start": "2007-04",
+        "primaryCompletion": "2008-04",
+        "enrollment": 25,
+        "conditions": [
+          "Advanced Hepatocellular Carcinoma"
+        ],
+        "interventions": [
+          "Octreotide-LAR, Lanreotide Autogel (Sandostatin-LAR, Ipstyl 120 mg, Somatuline Depot)",
+          "Locoregional treatments"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT07057622",
+        "acronym": null,
+        "title": "A Phase III Clinical Study to Compare the Safety and Efficacy of 177Lu-DOTATATE Injection and Long-acting Oxytrexine in Adult Patients With NETs",
+        "sponsor": "HTA Co., Ltd.",
+        "phase": "PHASE3",
+        "status": "RECRUITING",
+        "start": "2023-12-12",
+        "primaryCompletion": "2026-11-24",
+        "enrollment": 184,
+        "conditions": [
+          "NETS Ga68 Lu177"
+        ],
+        "interventions": [
+          "177Lu-DOTATATE injection",
+          "Octreotide LAR (Long-acting release)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00412061",
+        "acronym": "RADIANT-2",
+        "title": "Everolimus and Octreotide in Patients With Advanced Carcinoid Tumor",
+        "sponsor": "Novartis Pharmaceuticals",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2006-12",
+        "primaryCompletion": "2010-04",
+        "enrollment": 429,
+        "conditions": [
+          "Carcinoid Tumor",
+          "Malignant Carcinoid Syndrome"
+        ],
+        "interventions": [
+          "Octreotide (Sandostatin LAR® Depot)",
+          "Placebo",
+          "Everolimus (RAD001)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT03972488",
+        "acronym": "NETTER-2",
+        "title": "Study to Evaluate the Efficacy and Safety of Lutathera in Patients With Grade 2 and Grade 3 Advanced GEP-NET",
+        "sponsor": "Advanced Accelerator Applications",
+        "phase": "PHASE3",
+        "status": "ACTIVE_NOT_RECRUITING",
+        "start": "2020-01-08",
+        "primaryCompletion": "2023-07-20",
+        "enrollment": 226,
+        "conditions": [
+          "Gastro-enteropancreatic Neuroendocrine Tumor"
+        ],
+        "interventions": [
+          "Lutathera (AAA601)",
+          "30 mg Octreotide long acting repeatable (LAR) (Sandostatin LAR Depot) (SOM230)",
+          "2.5% Lys-Arg sterile amino acid solution",
+          "High dose 60 mg octreotide long-acting repeatable"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00426153",
+        "acronym": null,
+        "title": "Octreotide in Severe Polycystic Liver Disease",
+        "sponsor": "Mayo Clinic",
+        "phase": "PHASE2/PHASE3",
+        "status": "COMPLETED",
+        "start": "2007-01",
+        "primaryCompletion": "2008-10",
+        "enrollment": 42,
+        "conditions": [
+          "Polycystic Kidney, Autosomal Dominant",
+          "Polycystic Liver Disease",
+          "Hepatomegaly",
+          "Liver Diseases",
+          "Kidney, Polycystic",
+          "Abdominal Pain"
+        ],
+        "interventions": [
+          "Octreotide (Octreotide LAR® Depot)",
+          "Placebo (Placebo injection)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00248157",
+        "acronym": null,
+        "title": "Extension Study of the Long-term Safety and Tolerability of Octreotide Acetate in Patients With Moderately Severe or Severe Non-proliferative Diabetic Retinopathy or Low Risk Proliferative Diabetic Retinopathy",
+        "sponsor": "Novartis Pharmaceuticals",
+        "phase": "PHASE3",
+        "status": "TERMINATED",
+        "start": "2005-11",
+        "primaryCompletion": "2006-05",
+        "enrollment": 105,
+        "conditions": [
+          "Diabetic Retinopathy"
+        ],
+        "interventions": [
+          "Octreotide acetate in microspheres"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00092287",
+        "acronym": null,
+        "title": "Comparison of Lanreotide Autogel® and Sandostatin LAR Depot in the Treatment of Clinical Symptoms Associated With Carcinoid Syndrome",
+        "sponsor": "Ipsen",
+        "phase": "PHASE3",
+        "status": "TERMINATED",
+        "start": "2004-07",
+        "enrollment": 4,
+        "conditions": [
+          "Malignant Carcinoid Syndrome"
+        ],
+        "interventions": [
+          "lanreotide Autogel (somatostatin analogue)",
+          "Sandostatin long acting release (LAR) Depot (somatostatin analogue)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00582426",
+        "acronym": "LARCID",
+        "title": "Evaluation of Octreotide LAR in Prevention of Chemotherapy-induced Diarrhea",
+        "sponsor": "Novartis Pharmaceuticals",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2008-04",
+        "primaryCompletion": "2010-09",
+        "enrollment": 139,
+        "conditions": [
+          "Chemotherapy-induced Diarrhea"
+        ],
+        "interventions": [
+          "Octreotide Long Acting Release (Octreotide LAR, Sandostatin LAR)",
+          "Standard Treatment"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT06062719",
+        "acronym": null,
+        "title": "Role of Octreotide in Non Variceal Bleeding",
+        "sponsor": "National Hepatology & Tropical Medicine Research Institute",
+        "phase": "PHASE2/PHASE3",
+        "status": "UNKNOWN",
+        "start": "2023-08-23",
+        "primaryCompletion": "2024-09",
+        "enrollment": 56,
+        "conditions": [
+          "Non-variceal Gastrointestinal Bleeding"
+        ],
+        "interventions": [
+          "PPI group",
+          "PPI plus octreotide"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00240045",
+        "acronym": null,
+        "title": "The Use of Drugs to Improve Kidney Function in Patients With Liver and Kidney Dysfunction",
+        "sponsor": "University of Alberta",
+        "phase": "PHASE2/PHASE3",
+        "status": "COMPLETED",
+        "start": "2005-10",
+        "enrollment": 9,
+        "conditions": [
+          "Type 2 Hepatorenal Syndrome",
+          "Refractory Ascites"
+        ],
+        "interventions": [
+          "Midodrine, albumin, octreotide LAR",
+          "midodrine, octreotide, albumin"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      }
+    ]
+  },
+  "negativeOrNullFindings": [
+    "PMID 25644760 - the midodrine + octreotide regimen was inferior to terlipressin + albumin in hepatorenal syndrome.",
+    "PMID 34793718 and PMID 38851203 both use high-dose octreotide as the comparator arm that 177Lu-Dotatate beats; octreotide is the control that loses in modern NET trials.",
+    "PMID 9127169 (acute pancreatitis) is an indication where octreotide has been tested and is not standard - check the direction of the result before citing."
+  ],
+  "cautions": [
+    "Octreotide appears in dozens of trials as a background or control therapy rather than the compound under test. Do not present a control-arm result as evidence of octreotide efficacy.",
+    "CAM2029 (subcutaneous depot) and Mycapssa (oral) are distinct formulations - do not merge their trial results with Sandostatin LAR."
+  ],
+  "couldNotConfirm": []
+}

@@ -143,7 +143,19 @@ try {
       const xml = await ef.text();
       for (const c of xml.split(/<PubmedArticle[ >]/).slice(1)) {
         const pm = (c.match(/<PMID[^>]*>(\d+)<\/PMID>/) || [])[1];
-        const text = c.replace(/<[^>]+>/g, ' ');
+        /* MINE THE TITLE AND ABSTRACT ONLY — never the whole record.
+         *
+         * efetch returns <ReferenceList>, which on a review can be 61 KB against a 1.6 KB abstract.
+         * Stripping tags from the whole chunk therefore mined the bibliography, and every name any
+         * cited paper mentioned became a "candidate". That produced three pure artefacts: MB-231
+         * from the MDA-MB-231 cell line, and MCT-24 and CIR-20 from DOI fragments
+         * (10.1158/1535-7163.MCT-24-0002, 10.1158/2326-6066.CIR-20-0527). It also attributed a
+         * spaceflight-manufacturing paper to teriparatide and an oral-semaglutide formulation paper
+         * to exenatide. A compound discussed in a paper's references is not what that paper is
+         * about. */
+        const title = (c.match(/<ArticleTitle[^>]*>([\s\S]*?)<\/ArticleTitle>/) || [])[1] || '';
+        const abstract = [...c.matchAll(/<AbstractText[^>]*>([\s\S]*?)<\/AbstractText>/g)].map((m) => m[1]).join(' ');
+        const text = `${title} ${abstract}`.replace(/<[^>]+>/g, ' ');
         // Compound-shaped tokens: a name ending in a peptide-drug suffix, or a development code.
         for (const m of text.matchAll(/\b([A-Z][a-z]{3,}(?:tide|relin|orexton)|[A-Z]{2,4}-\d{2,5})\b/g)) {
           const nm = m[1];

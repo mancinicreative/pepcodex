@@ -1,0 +1,632 @@
+{
+  "slug": "teriparatide",
+  "name": "Teriparatide",
+  "classification": "BUILD",
+  "priority": 4,
+  "generated": "2026-08-06",
+  "generatedBy": "coverage triage run - every identifier below was fetched live from PubMed / ClinicalTrials.gov / openFDA during this run",
+  "identity": {
+    "inn": "Teriparatide",
+    "brand": [
+      "Forteo",
+      "Forsteo",
+      "Bonsity"
+    ],
+    "developmentCode": "LY333334",
+    "otherNames": [
+      "recombinant human parathyroid hormone (1-34)",
+      "rhPTH(1-34)"
+    ],
+    "developer": "Eli Lilly (Forteo); Alvogen/Pfenex (Bonsity); multiple ANDA holders",
+    "class": "34-amino-acid N-terminal fragment of human parathyroid hormone; osteoanabolic PTH1 receptor agonist",
+    "siteContext": "The site has no bone/osteoanabolic peptide coverage at all despite covering GH secretagogues and repair-recovery peptides."
+  },
+  "regulatoryStatus": {
+    "source": "openFDA /drug/drugsfda.json, fetched 2026-08-06",
+    "note": "Forteo NDA021318, plus a separate 505(b)(2) (Bonsity) and multiple generics. The historical boxed warning about osteosarcoma was removed from US labelling - do NOT state the current warning status from memory; read the current label via openFDA /drug/label.json before writing.",
+    "openFDA": {
+      "queried": [
+        {
+          "field": "openfda.generic_name",
+          "value": "teriparatide",
+          "hit": true
+        }
+      ],
+      "result": {
+        "total": 5,
+        "applications": [
+          {
+            "applicationNumber": "ANDA211097",
+            "sponsor": "APOTEX",
+            "brandNames": [
+              "TERIPARATIDE"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "SUBCUTANEOUS"
+            ],
+            "earliestApprovalDate": "20231116"
+          },
+          {
+            "applicationNumber": "ANDA213641",
+            "sponsor": "AMPHASTAR PHARMS INC",
+            "brandNames": [
+              "TERIPARATIDE"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "SUBCUTANEOUS"
+            ],
+            "earliestApprovalDate": "20251212"
+          },
+          {
+            "applicationNumber": "NDA021318",
+            "sponsor": "LILLY",
+            "brandNames": [
+              "FORTEO"
+            ],
+            "marketingStatus": [
+              "Prescription",
+              "Discontinued"
+            ],
+            "routes": [
+              "SUBCUTANEOUS"
+            ],
+            "earliestApprovalDate": "20021126"
+          },
+          {
+            "applicationNumber": "NDA211939",
+            "sponsor": "ALVOGEN",
+            "brandNames": [
+              "BONSITY"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "SUBCUTANEOUS"
+            ],
+            "earliestApprovalDate": "20191004"
+          },
+          {
+            "applicationNumber": "ANDA208569",
+            "sponsor": "TEVA PHARMS USA",
+            "brandNames": [
+              "TERIPARATIDE"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "SUBCUTANEOUS"
+            ],
+            "earliestApprovalDate": "20231116"
+          }
+        ]
+      }
+    }
+  },
+  "evidenceBase": {
+    "pubmedRecordsScreened": 91,
+    "pubmedRecordsConfirmedNamingCompound": 91,
+    "selected": [
+      {
+        "pmid": "29129436",
+        "title": "Effects of teriparatide and risedronate on new fractures in post-menopausal women with severe osteoporosis (VERO): a multicentre, double-blind, double-dummy, randomised controlled trial.",
+        "journal": "Lancet",
+        "pubdate": "2018 Jan 20",
+        "firstAuthor": "Kendler DL",
+        "doi": "10.1016/S0140-6736(17)32137-2",
+        "publicationTypes": [
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "pivotal head-to-head fracture trial vs risedronate (VERO)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "29329484",
+        "title": "Effects of Teriparatide Compared with Risedronate on the Risk of Fractures in Subgroups of Postmenopausal Women with Severe Osteoporosis: The VERO Trial.",
+        "journal": "J Bone Miner Res",
+        "pubdate": "2018 May",
+        "firstAuthor": "Geusens P",
+        "doi": "10.1002/jbmr.3384",
+        "publicationTypes": [
+          "Comparative Study",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial"
+        ],
+        "role": "VERO subgroup analysis",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "23683600",
+        "title": "Teriparatide and denosumab, alone or combined, in women with postmenopausal osteoporosis: the DATA study randomised trial.",
+        "journal": "Lancet",
+        "pubdate": "2013 Jul 6",
+        "firstAuthor": "Tsai JN",
+        "doi": "10.1016/S0140-6736(13)60856-9",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "teriparatide + denosumab combination (DATA)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "26144908",
+        "title": "Denosumab and teriparatide transitions in postmenopausal osteoporosis (the DATA-Switch study): extension of a randomised controlled trial.",
+        "journal": "Lancet",
+        "pubdate": "2015 Sep 19",
+        "firstAuthor": "Leder BZ",
+        "doi": "10.1016/S0140-6736(15)61120-5",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, N.I.H., Extramural",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "DATA-Switch extension",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "31447409",
+        "title": "Combination denosumab and high dose teriparatide for postmenopausal osteoporosis (DATA-HD): a randomised, controlled phase 4 trial.",
+        "journal": "Lancet Diabetes Endocrinol",
+        "pubdate": "2019 Oct",
+        "firstAuthor": "Tsai JN",
+        "doi": "10.1016/S2213-8587(19)30255-4",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, N.I.H., Extramural",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "phase 4 high-dose teriparatide + denosumab (DATA-HD)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "31419313",
+        "title": "Standard Versus Cyclic Teriparatide and Denosumab Treatment for Osteoporosis: A Randomized Trial.",
+        "journal": "J Bone Miner Res",
+        "pubdate": "2020 Feb",
+        "firstAuthor": "Cosman F",
+        "doi": "10.1002/jbmr.3850",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "standard vs cyclic teriparatide RCT",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "16234962",
+        "title": "Combination teriparatide and raloxifene therapy for postmenopausal osteoporosis: results from a 6-month double-blind placebo-controlled trial.",
+        "journal": "J Bone Miner Res",
+        "pubdate": "2005 Nov",
+        "firstAuthor": "Deal C",
+        "doi": "10.1359/JBMR.050714",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "teriparatide + raloxifene RCT",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "34002252",
+        "title": "A randomized, controlled trial of once-weekly teriparatide injection versus alendronate in patients at high risk of osteoporotic fracture: primary results of the Japanese Osteoporosis Intervention Trial-05.",
+        "journal": "Osteoporos Int",
+        "pubdate": "2021 Nov",
+        "firstAuthor": "Hagino H",
+        "doi": "10.1007/s00198-021-05996-2",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial"
+        ],
+        "role": "once-weekly teriparatide vs alendronate (JOINT-05)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "39343826",
+        "title": "Association between renal function and fracture incidence during treatment with teriparatide or alendronate: an exploratory subgroup analysis of the Japanese Osteoporosis Intervention Trial-05.",
+        "journal": "Osteoporos Int",
+        "pubdate": "2024 Dec",
+        "firstAuthor": "Takeuchi Y",
+        "doi": "10.1007/s00198-024-07260-9",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Multicenter Study"
+        ],
+        "role": "JOINT-05 renal function subgroup",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "32614699",
+        "title": "Teriparatide Promotes Bone Healing in Medication-Related Osteonecrosis of the Jaw: A Placebo-Controlled, Randomized Trial.",
+        "journal": "J Clin Oncol",
+        "pubdate": "2020 Sep 10",
+        "firstAuthor": "Sim IW",
+        "doi": "10.1200/JCO.19.02192",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "RCT in medication-related osteonecrosis of the jaw",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "26932738",
+        "title": "Does Teriparatide Improve Femoral Neck Fracture Healing: Results From A Randomized Placebo-controlled Trial.",
+        "journal": "Clin Orthop Relat Res",
+        "pubdate": "2016 May",
+        "firstAuthor": "Bhandari M",
+        "doi": "10.1007/s11999-015-4669-z",
+        "publicationTypes": [
+          "Clinical Trial, Phase III",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "NULL RESULT - femoral neck fracture healing; no difference vs placebo, trial stopped early for slow accrual",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "42133304",
+        "title": "Teriparatide Plus Zoledronic Acid for Osteogenesis Imperfecta: A Randomized Clinical Trial.",
+        "journal": "JAMA",
+        "pubdate": "2026 Jul 14",
+        "firstAuthor": "Hald JD",
+        "doi": "10.1001/jama.2026.6889",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Multicenter Study"
+        ],
+        "role": "2026 RCT in osteogenesis imperfecta (JAMA)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "26092063",
+        "title": "FRAX and the effect of teriparatide on vertebral and non-vertebral fracture.",
+        "journal": "Osteoporos Int",
+        "pubdate": "2015 Nov",
+        "firstAuthor": "Harvey NC",
+        "doi": "10.1007/s00198-015-3173-3",
+        "publicationTypes": [
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "FRAX-stratified analysis of fracture effect",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "34383100",
+        "title": "Teriparatide and pelvic fracture healing: a phase 2 randomized controlled trial.",
+        "journal": "Osteoporos Int",
+        "pubdate": "2022 Jan",
+        "firstAuthor": "Nieves JW",
+        "doi": "10.1007/s00198-021-06065-4",
+        "publicationTypes": [
+          "Clinical Trial, Phase II",
+          "Journal Article",
+          "Randomized Controlled Trial"
+        ],
+        "role": "phase 2 RCT, pelvic fracture healing",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      }
+    ]
+  },
+  "registeredTrials": {
+    "source": "ClinicalTrials.gov API v2 query.intr, fetched 2026-08-06",
+    "totalReturned": 123,
+    "drugMatched": 114,
+    "selected": [
+      {
+        "nct": "NCT01796301",
+        "acronym": "STRUCTURE",
+        "title": "An Open-label Study to Evaluate the Effect of Treatment With Romosozumab or Teriparatide in Postmenopausal Women",
+        "sponsor": "Amgen",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2013-01-31",
+        "primaryCompletion": "2015-05-14",
+        "enrollment": 436,
+        "conditions": [
+          "Postmenopausal Osteoporosis"
+        ],
+        "interventions": [
+          "Romozosumab (AMG 785)",
+          "Teriparatide (Forteo, Forsteo)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT04750460",
+        "acronym": "TeriCa",
+        "title": "Injection of Teriparatide to Prevent Hypocalcemia After Parathyroidectomy in Dialysis Patients (TeriCa).",
+        "sponsor": "Saint Petersburg State University, Russia",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2021-03-01",
+        "primaryCompletion": "2022-02-16",
+        "enrollment": 20,
+        "conditions": [
+          "Secondary Hyperparathyroidism",
+          "Chronic Kidney Disease-Mineral and Bone Disorder",
+          "Dialysis",
+          "Hypocalcemia",
+          "Hypoparathyroidism"
+        ],
+        "interventions": [
+          "Teriparatide (Forsteo)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT07028320",
+        "acronym": null,
+        "title": "To Evaluate the Efficacy and Safety of SAL056 for Postmenopausal Women With Osteoporosis at High Fracture Risk",
+        "sponsor": "Shenzhen Salubris Pharmaceuticals Co., Ltd.",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2021-12-03",
+        "primaryCompletion": "2023-12-30",
+        "enrollment": 493,
+        "conditions": [
+          "Postmenopausal Women With Osteoporosis"
+        ],
+        "interventions": [
+          "SAL056 (56.5μg) (Teriparatide for Injection)",
+          "Alendronate"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT01896011",
+        "acronym": null,
+        "title": "Effect of Teriparatide on Fracture Healing in Patients With Incomplete Atypical Femur Fractures",
+        "sponsor": "University Health Network, Toronto",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2013-07",
+        "primaryCompletion": "2021-12",
+        "enrollment": 34,
+        "conditions": [
+          "Non Displaced Atypical Femoral Fractures"
+        ],
+        "interventions": [
+          "Teriparatide 20 mcg (Brand name Forteo)",
+          "Placebo"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT02091492",
+        "acronym": "TERAFRAP",
+        "title": "Teriparatide for Fracture Repair in Humans",
+        "sponsor": "Medical University of Vienna",
+        "phase": "PHASE3",
+        "status": "WITHDRAWN",
+        "start": "2014-06",
+        "primaryCompletion": "2015-09",
+        "enrollment": 0,
+        "conditions": [
+          "Osteoporosis, Age-Related",
+          "Humeral Fractures"
+        ],
+        "interventions": [
+          "Teriparatide (Forteo)",
+          "Placebo"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT01343004",
+        "acronym": "ACTIVE",
+        "title": "Study to Evaluate the Safety and Efficacy of BA058 (Abaloparatide) for Prevention of Fracture in Postmenopausal Women",
+        "sponsor": "Radius Health, Inc.",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2011-04",
+        "primaryCompletion": "2014-10",
+        "enrollment": 2463,
+        "conditions": [
+          "Osteoporosis",
+          "Postmenopausal Osteoporosis"
+        ],
+        "interventions": [
+          "Placebo",
+          "BA058 80 mcg (abaloparatide, Abaloparatide-SC)",
+          "teriparatide (Forteo, Forsteo)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00542984",
+        "acronym": null,
+        "title": "Comparison Medications in the Treatment of Postmenopausal Women With Osteoporosis",
+        "sponsor": "Eli Lilly and Company",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2003-08",
+        "enrollment": 70,
+        "conditions": [
+          "Osteoporosis, Postmenopausal"
+        ],
+        "interventions": [
+          "teriparatide 20 micrograms/day subcutaneous (LY333334)",
+          "salmon calcitonin 100 IU/day subcutaneous"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT01473602",
+        "acronym": null,
+        "title": "Second Study of the Effect of Teriparatide on Hip Fracture Healing",
+        "sponsor": "Eli Lilly and Company",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2012-01",
+        "primaryCompletion": "2013-11",
+        "enrollment": 39,
+        "conditions": [
+          "Femur Neck Fracture"
+        ],
+        "interventions": [
+          "Teriparatide (Forteo, Forsteo, LY333334)",
+          "Placebo",
+          "Calcium supplementation",
+          "Vitamin D supplementation"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00543218",
+        "acronym": null,
+        "title": "PTH Comparison in Post Menopausal Women",
+        "sponsor": "Eli Lilly and Company",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2002-12",
+        "enrollment": 63,
+        "conditions": [
+          "Osteoporosis, Post-Menopausal"
+        ],
+        "interventions": [
+          "teriparatide 20 micrograms/day subcutaneous (LY333334)",
+          "calcitonin 100 IU/day subcutaneous"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00051558",
+        "acronym": null,
+        "title": "Comparison of Teriparatide With Alendronate for Treating Glucocorticoid-Induced Osteoporosis",
+        "sponsor": "Eli Lilly and Company",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2002-11",
+        "primaryCompletion": "2006-07",
+        "enrollment": 428,
+        "conditions": [
+          "Osteoporosis"
+        ],
+        "interventions": [
+          "Teriparatide (LY333334, Forteo, Forsteo)",
+          "Alendronate Sodium",
+          "Placebo",
+          "Placebo"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT01473589",
+        "acronym": null,
+        "title": "Effect of Teriparatide on Hip Fracture Healing",
+        "sponsor": "Eli Lilly and Company",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2012-02",
+        "primaryCompletion": "2013-12",
+        "enrollment": 122,
+        "conditions": [
+          "Femur Neck Fracture"
+        ],
+        "interventions": [
+          "Teriparatide (Forteo, Forsteo, LY333334)",
+          "Placebo",
+          "Calcium supplementation",
+          "Vitamin D supplementation"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT04921124",
+        "acronym": "PHAB",
+        "title": "Pharmacokinetic and PHarmacodynamic Analysis and Evaluation of Teriparatide (PTH 1-34) Between Sexes",
+        "sponsor": "Norfolk and Norwich University Hospitals NHS Foundation Trust",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2021-05-24",
+        "primaryCompletion": "2021-07-05",
+        "enrollment": 30,
+        "conditions": [
+          "Stress Fracture"
+        ],
+        "interventions": [
+          "Teriparatide"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00343252",
+        "acronym": null,
+        "title": "Effect of Teriparatide Compared to Risedronate on Back Pain in Women With a Spine Fracture Caused by Osteoporosis",
+        "sponsor": "Eli Lilly and Company",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2006-06",
+        "primaryCompletion": "2009-06",
+        "enrollment": 712,
+        "conditions": [
+          "Osteoporosis, Postmenopausal",
+          "Back Pain",
+          "Spinal Fracture"
+        ],
+        "interventions": [
+          "teriparatide (LY333334, Forteo, Forsteo)",
+          "risedronate (Actonel)",
+          "placebo (LY333334, Forteo, Forsteo)",
+          "placebo (Actonel)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT01611571",
+        "acronym": "RPM",
+        "title": "Combination Risedronate - Parathyroid Hormone Trial in Male Osteoporosis",
+        "sponsor": "Columbia University",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2003-12",
+        "primaryCompletion": "2011-11",
+        "enrollment": 31,
+        "conditions": [
+          "Osteoporosis"
+        ],
+        "interventions": [
+          "Risedronate (Actonel, Risedronic Acid)",
+          "Teriparatide (PTH1-34, Forteo)",
+          "Placebo Teriparatide (Teriparatide, PTH1-34, Forteo)",
+          "placebo Risedronate (Risedronate, Risedronic Acid)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      }
+    ]
+  },
+  "negativeOrNullFindings": [
+    "PMID 26932738 - teriparatide did not improve femoral neck fracture healing or reduce revision surgery vs placebo (88% vs 84% revision-free, p=0.743). The fracture-healing use case is a common claim with a null trial behind it.",
+    "PMID 39343826 stratifies fracture incidence by renal function - a subgroup where the answer is not uniform."
+  ],
+  "cautions": [
+    "The osteosarcoma signal came from rat carcinogenicity work and drove a US boxed warning and a lifetime-use limit that have since changed. Verify the CURRENT label text via openFDA before making any statement about warnings or duration limits.",
+    "JOINT-05 is a once-weekly Japanese regimen; do not generalise its effect sizes to daily teriparatide."
+  ],
+  "couldNotConfirm": []
+}

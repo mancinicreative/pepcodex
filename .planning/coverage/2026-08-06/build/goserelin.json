@@ -1,0 +1,641 @@
+{
+  "slug": "goserelin",
+  "name": "Goserelin",
+  "classification": "BUILD",
+  "priority": 7,
+  "generated": "2026-08-06",
+  "generatedBy": "coverage triage run - every identifier below was fetched live from PubMed / ClinicalTrials.gov / openFDA during this run",
+  "identity": {
+    "inn": "Goserelin (as goserelin acetate)",
+    "brand": [
+      "Zoladex"
+    ],
+    "developmentCode": "ICI-118630",
+    "developer": "Originally ICI/AstraZeneca; US applications now held by TerSera",
+    "class": "Synthetic decapeptide GnRH (LHRH) agonist delivered as a subcutaneous depot implant",
+    "siteContext": "The site covers kisspeptin, hCG and HMG on the reproductive axis but no GnRH agonist. Goserelin is the most-studied of the four GnRH agonists on this candidate list."
+  },
+  "regulatoryStatus": {
+    "source": "openFDA /drug/drugsfda.json, fetched 2026-08-06",
+    "note": "Two NDAs (different depot strengths). Note the site's monthly scan surfaced goserelin 12 times but almost entirely as a background androgen-deprivation or ovarian-suppression arm in oncology trials, not as the compound under test.",
+    "openFDA": {
+      "queried": [
+        {
+          "field": "openfda.generic_name",
+          "value": "goserelin",
+          "hit": true
+        }
+      ],
+      "result": {
+        "total": 2,
+        "applications": [
+          {
+            "applicationNumber": "NDA019726",
+            "sponsor": "TERSERA",
+            "brandNames": [
+              "ZOLADEX"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "IMPLANTATION"
+            ],
+            "earliestApprovalDate": "19891229"
+          },
+          {
+            "applicationNumber": "NDA020578",
+            "sponsor": "TERSERA",
+            "brandNames": [
+              "ZOLADEX"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "IMPLANTATION"
+            ],
+            "earliestApprovalDate": "19960111"
+          }
+        ]
+      }
+    }
+  },
+  "evidenceBase": {
+    "pubmedRecordsScreened": 79,
+    "pubmedRecordsConfirmedNamingCompound": 79,
+    "selected": [
+      {
+        "pmid": "25738668",
+        "title": "Goserelin for ovarian protection during breast-cancer adjuvant chemotherapy.",
+        "journal": "N Engl J Med",
+        "pubdate": "2015 Mar 5",
+        "firstAuthor": "Moore HC",
+        "doi": "10.1056/NEJMoa1413204",
+        "publicationTypes": [
+          "Clinical Trial, Phase III",
+          "Comparative Study",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, N.I.H., Extramural",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "pivotal RCT of ovarian protection during breast cancer chemotherapy (POEMS, NEJM)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "22265697",
+        "title": "Neoadjuvant anastrozole versus tamoxifen in patients receiving goserelin for premenopausal breast cancer (STAGE): a double-blind, randomised phase 3 trial.",
+        "journal": "Lancet Oncol",
+        "pubdate": "2012 Apr",
+        "firstAuthor": "Masuda N",
+        "doi": "10.1016/S1470-2045(11)70373-4",
+        "publicationTypes": [
+          "Clinical Trial, Phase III",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "phase 3 neoadjuvant anastrozole vs tamoxifen with goserelin (STAGE)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "35862873",
+        "title": "Twenty-Year Benefit From Adjuvant Goserelin and Tamoxifen in Premenopausal Patients With Breast Cancer in a Controlled Randomized Clinical Trial.",
+        "journal": "J Clin Oncol",
+        "pubdate": "2022 Dec 10",
+        "firstAuthor": "Johansson A",
+        "doi": "10.1200/JCO.21.02844",
+        "publicationTypes": [
+          "Randomized Controlled Trial",
+          "Journal Article",
+          "Research Support, N.I.H., Extramural",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "20-year follow-up of adjuvant goserelin + tamoxifen",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "12488405",
+        "title": "Randomized adjuvant trial of tamoxifen and goserelin versus cyclophosphamide, methotrexate, and fluorouracil: evidence for the superiority of treatment with endocrine blockade in premenopausal patients with hormone-responsive breast cancer--Austrian Breast and Colorectal Cancer Study Group Trial 5.",
+        "journal": "J Clin Oncol",
+        "pubdate": "2002 Dec 15",
+        "firstAuthor": "Jakesz R",
+        "doi": "10.1200/JCO.2002.09.112",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Comparative Study",
+          "Journal Article",
+          "Randomized Controlled Trial"
+        ],
+        "role": "adjuvant goserelin + tamoxifen vs CMF chemotherapy (ABCSG-5)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "9508182",
+        "title": "Multicenter randomized clinical trial of goserelin versus surgical ovariectomy in premenopausal patients with receptor-positive metastatic breast cancer: an intergroup study.",
+        "journal": "J Clin Oncol",
+        "pubdate": "1998 Mar",
+        "firstAuthor": "Taylor CW",
+        "doi": "10.1200/JCO.1998.16.3.994",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Comparative Study",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, U.S. Gov't, P.H.S."
+        ],
+        "role": "RCT vs surgical ovariectomy in metastatic breast cancer",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "8367920",
+        "title": "Goserelin acetate and flutamide versus bilateral orchiectomy: a phase III EORTC trial (30853). EORTC GU Group and EORTC Data Center.",
+        "journal": "Urology",
+        "pubdate": "1993 Aug",
+        "firstAuthor": "Denis LJ",
+        "doi": "10.1016/0090-4295(93)90634-m",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Clinical Trial, Phase III",
+          "Comparative Study",
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "phase 3 goserelin + flutamide vs orchiectomy (EORTC 30853)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "14530912",
+        "title": "Bone mineral density in premenopausal women treated for node-positive early breast cancer with 2 years of goserelin or 6 months of cyclophosphamide, methotrexate and 5-fluorouracil (CMF).",
+        "journal": "Osteoporos Int",
+        "pubdate": "2003 Dec",
+        "firstAuthor": "Fogelman I",
+        "doi": "10.1007/s00198-003-1508-y",
+        "publicationTypes": [
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "SAFETY - bone mineral density during 2 years of goserelin",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "28394498",
+        "title": "Degarelix Versus Goserelin Plus Bicalutamide in the Short-Term Relief of Lower Urinary Tract Symptoms in Prostate Cancer Patients: Results of a Pooled Analysis.",
+        "journal": "Low Urin Tract Symptoms",
+        "pubdate": "2017 May",
+        "firstAuthor": "Mason M",
+        "doi": "10.1111/luts.12114",
+        "publicationTypes": [
+          "Clinical Trial, Phase III",
+          "Comparative Study",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial"
+        ],
+        "role": "pooled analysis, degarelix vs goserelin + bicalutamide for lower urinary tract symptoms",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "17919549",
+        "title": "Goserelin acetate 10.8 mg plus iron versus iron monotherapy prior to surgery in premenopausal women with iron-deficiency anemia due to uterine leiomyomas: results from a Phase III, randomized, multicenter, double-blind, controlled trial.",
+        "journal": "Clin Ther",
+        "pubdate": "2007 Aug",
+        "firstAuthor": "Muneyyirci-Delale O",
+        "doi": "10.1016/j.clinthera.2007.08.024",
+        "publicationTypes": [
+          "Clinical Trial, Phase III",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "phase 3 in iron-deficiency anaemia due to uterine leiomyomas",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "12798886",
+        "title": "A randomized, placebo-controlled, dose-ranging trial comparing fulvestrant with goserelin in premenopausal patients with uterine fibroids awaiting hysterectomy.",
+        "journal": "Fertil Steril",
+        "pubdate": "2003 Jun",
+        "firstAuthor": "Donnez J",
+        "doi": "10.1016/s0015-0282(03)00261-9",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Comparative Study",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "RCT, fulvestrant vs goserelin in uterine fibroids",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "11207003",
+        "title": "Randomized trial of adjuvant tamoxifen and/or goserelin in premenopausal breast cancer--self-rated physiological effects and symptoms.",
+        "journal": "Acta Oncol",
+        "pubdate": "2000",
+        "firstAuthor": "Nystedt M",
+        "doi": "10.1080/02841860050215945",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Comparative Study",
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "patient-reported physiological effects and symptoms in a randomised adjuvant trial",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "29097444",
+        "title": "RAZOR: A Phase II Open Randomized Trial of Screening Plus Goserelin and Raloxifene Versus Screening Alone in Premenopausal Women at Increased Risk of Breast Cancer.",
+        "journal": "Cancer Epidemiol Biomarkers Prev",
+        "pubdate": "2018 Jan",
+        "firstAuthor": "Howell A",
+        "doi": "10.1158/1055-9965.EPI-17-0158",
+        "publicationTypes": [
+          "Clinical Trial, Phase II",
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "phase 2 RCT in premenopausal women at increased breast cancer risk (RAZOR)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "22972694",
+        "title": "Analysis of Ki-67 expression with neoadjuvant anastrozole or tamoxifen in patients receiving goserelin for premenopausal breast cancer.",
+        "journal": "Cancer",
+        "pubdate": "2013 Feb 15",
+        "firstAuthor": "Iwata H",
+        "doi": "10.1002/cncr.27818",
+        "publicationTypes": [
+          "Clinical Trial, Phase III",
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "Ki-67 biomarker analysis from the neoadjuvant STAGE trial",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "11331640",
+        "title": "A randomized controlled trial of goserelin and medroxyprogesterone acetate in the treatment of pelvic congestion.",
+        "journal": "Hum Reprod",
+        "pubdate": "2001 May",
+        "firstAuthor": "Soysal ME",
+        "doi": "10.1093/humrep/16.5.931",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Comparative Study",
+          "Journal Article",
+          "Randomized Controlled Trial"
+        ],
+        "role": "RCT in pelvic congestion syndrome",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      }
+    ]
+  },
+  "registeredTrials": {
+    "source": "ClinicalTrials.gov API v2 query.intr, fetched 2026-08-06",
+    "totalReturned": 114,
+    "drugMatched": 95,
+    "selected": [
+      {
+        "nct": "NCT00936390",
+        "acronym": null,
+        "title": "Radiation Therapy With or Without Androgen-Deprivation Therapy in Treating Patients With Prostate Cancer",
+        "sponsor": "Radiation Therapy Oncology Group",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2009-09",
+        "primaryCompletion": "2020-10-03",
+        "enrollment": 1538,
+        "conditions": [
+          "Prostate Cancer"
+        ],
+        "interventions": [
+          "bicalutamide",
+          "flutamide (anti-androgen therapy)",
+          "LHRH agonist (antagonist) therapy (leuprolide, goserelin, buserelin, triptorelin, degarelix)",
+          "Dose-Escalated Radiation Therapy"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT04423211",
+        "acronym": null,
+        "title": "Treating Prostate Cancer That Has Come Back After Surgery With Apalutamide and Targeted Radiation Based on PET Imaging",
+        "sponsor": "ECOG-ACRIN Cancer Research Group",
+        "phase": "PHASE3",
+        "status": "RECRUITING",
+        "start": "2020-10-08",
+        "primaryCompletion": "2032-12-31",
+        "enrollment": 804,
+        "conditions": [
+          "Biochemically Recurrent Prostate Carcinoma",
+          "Metastatic Prostate Carcinoma",
+          "Prostate Adenocarcinoma",
+          "Stage IVB Prostate Cancer AJCC v8"
+        ],
+        "interventions": [
+          "3-Dimensional Conformal Radiation Therapy (3-dimensional radiation therapy, 3D Conformal, 3D CONFORMAL RADIATION THERAPY, 3D CRT, 3D radiotherapy, 3D-CRT, Conformal Therapy, Radiation Conformal Therapy, Radiation, 3D Conformal, Three dimensional external beam radiation therapy (procedure))",
+          "Apalutamide (ARN 509, ARN-509, ARN509, Erleada, JNJ 56021927, JNJ-56021927)",
+          "Computed Tomography (CAT, CAT Scan, Computed Axial Tomography, Computerized Axial Tomography, Computerized axial tomography (procedure), Computerized Tomography, CT, CT Scan, tomography)",
+          "Degarelix (FE200486, Firmagon)",
+          "External Beam Radiation Therapy (Definitive Radiation Therapy, EBRT, External Beam Radiation, External Beam Radiotherapy, External Beam Radiotherapy (conventional), External Beam RT, external radiation, External Radiation Therapy, external-beam radiation, Radiation, External Beam, Teleradiotherapy, Teletherapy, Teletherapy Radiation)",
+          "Fluciclovine F18 ((18F)Fluciclovine, (18F)GE-148, 18F-Fluciclovine, [18F]FACBC, Anti-(18f)FABC, Anti-1-Amino-3-[18F]Fluorocyclobutane-1-Carboxylic Acid, Anti-[18F] FACBC, Axumin, Fluciclovine (18F), FLUCICLOVINE F-18, GE-148 (18F), GE-148 F-18)",
+          "Goserelin Acetate (ZDX, Zoladex)",
+          "Intensity-Modulated Proton Therapy (IMPT)",
+          "Intensity-Modulated Radiation Therapy (IMRT, Intensity modulated radiation therapy (procedure), Intensity Modulated RT, Intensity-Modulated Radiotherapy, Radiation, Intensity-Modulated Radiotherapy)",
+          "Leuprolide Acetate (A-43818, Abbott 43818, Abbott-43818, Carcinil, Depo-Eligard, Eligard, Enanton, Enantone, Enantone-Gyn, Ginecrin, LEUP, Leuplin, Leuprorelin Acetate, Lucrin, Lucrin Depot, Lupron, Lupron Depot, Lupron Depot-3 Month, Lupron Depot-4 Month, Lupron Depot-Ped, Lutrate, Procren, Procrin, Prostap, TAP-144, Trenantone, Uno-Enantone, Viadur)",
+          "Magnetic Resonance Imaging (Magnetic Resonance, Magnetic resonance imaging (procedure), Magnetic Resonance Imaging Scan, Medical Imaging, Magnetic Resonance / Nuclear Magnetic Resonance, MR, MR Imaging, MRI, MRI Scan, NMR Imaging, NMRI, Nuclear Magnetic Resonance Imaging)",
+          "Positron Emission Tomography (Medical Imaging, Positron Emission Tomography, PET, PET Scan, Positron emission tomography (procedure), Positron Emission Tomography Scan, Positron-Emission Tomography, proton magnetic resonance spectroscopic imaging, PT)",
+          "Quality-of-Life Assessment (Quality of Life Assessment)",
+          "Questionnaire Administration",
+          "Relugolix (N-(4-(1-((2,6-Difluorophenyl)methyl)-5-((dimethylamino)methyl)-1,2,3,4-tetrahydro-3-(6-methoxy-3-pyridazinyl)-2,4-dioxothieno(2,3-d)pyrimidin-6-yl)phenyl)-N'-methoxyurea, Orgovyx, TAK 385, TAK-385)",
+          "Stereotactic Body Radiation Therapy (SABR, SBRT, Stereotactic Ablative Body Radiation Therapy)",
+          "Triptorelin (6-D-Tryptophan-LH-RH, 6-D-Tryptophanluteinizing Hormone-releasing Factor, AY-25650, CL-118,532, Detryptoreline)",
+          "Volume Modulated Arc Therapy (VMAT, Volumetric Modulated Arc Therapy (procedure))"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00223145",
+        "acronym": "PCS III",
+        "title": "Study on the Role of Hormonal Treatment for Two Dosage Levels of Prostate Radiation Therapy Versus Prostate Radiation Therapy Alone",
+        "sponsor": "Abdenour Nabid",
+        "phase": "PHASE3",
+        "status": "ACTIVE_NOT_RECRUITING",
+        "start": "2000-12",
+        "primaryCompletion": "2026-12-31",
+        "enrollment": 600,
+        "conditions": [
+          "Prostate Cancer"
+        ],
+        "interventions": [
+          "Radiotherapy 70 Gy",
+          "Radiotherapy 76 Gy",
+          "Androgen blockade (Bicalutamide 50 mg, Goserelin 10.8 mg)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT05439499",
+        "acronym": null,
+        "title": "This is a Multicenter, Randomized, Double-blind, Placebo-controlled Phase III Clinical Study Evaluating the Efficacy and Safety of FCN-437c Versus Placebo in Combination With Letrozole or Anastrozole ± Goserelin in Women With HR+ and HER2- Advanced Breast Cancer.",
+        "sponsor": "Ahon Pharmaceutical Co., Ltd.",
+        "phase": "PHASE3",
+        "status": "UNKNOWN",
+        "start": "2022-03-02",
+        "primaryCompletion": "2024-09-20",
+        "enrollment": 434,
+        "conditions": [
+          "Advanced Breast Cancer",
+          "Female Breast Cancer"
+        ],
+        "interventions": [
+          "FCN-437c, Letrozole or anastrozole, Goserelin acetate",
+          "Placebo, Letrozole or anastrozole, Goserelin acetate"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT01581944",
+        "acronym": null,
+        "title": "Gonadotropin-releasing Hormone Agonist Prior to Myomectomy",
+        "sponsor": "Mt. Hope Maternity Hospital",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2008-01",
+        "primaryCompletion": "2011-12",
+        "enrollment": 68,
+        "conditions": [
+          "Fibroids"
+        ],
+        "interventions": [
+          "2 Doses Goserelin (Gonadotropin Releasing Hormone Agonist)",
+          "3 Doses Goserelin (Gonadotropin Releasing Hormone Agonist)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00831233",
+        "acronym": null,
+        "title": "Symptomatic Study Investigating Degarelix in Patients Suffering From Prostate Cancer",
+        "sponsor": "Ferring Pharmaceuticals",
+        "phase": "PHASE3",
+        "status": "TERMINATED",
+        "start": "2009-04",
+        "primaryCompletion": "2010-06",
+        "enrollment": 42,
+        "conditions": [
+          "Prostate Cancer"
+        ],
+        "interventions": [
+          "Degarelix (FE200486)",
+          "Goserelin (Zoladex)",
+          "Bicalutamide (Casodex)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT04181203",
+        "acronym": "CARLHA-2",
+        "title": "Combined Apalutamide, Radiotherapy, and LHRH Agonist in Prostate Cancer Patients After Prostatectomy",
+        "sponsor": "UNICANCER",
+        "phase": "PHASE3",
+        "status": "ACTIVE_NOT_RECRUITING",
+        "start": "2020-01-09",
+        "primaryCompletion": "2028-09-28",
+        "enrollment": 490,
+        "conditions": [
+          "Prostate Cancer"
+        ],
+        "interventions": [
+          "Apalutamide (ARN-509)",
+          "Salvage radiotherapy (SRT)",
+          "Luteinising Hormone Releasing Hormone agonist (LHRHa) (leuprolide, goserelin, triptorelin acetate)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00541047",
+        "acronym": null,
+        "title": "RADICALS - Radiotherapy and Androgen Deprivation In Combination After Local Surgery",
+        "sponsor": "University College, London",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2007-11",
+        "primaryCompletion": "2022-07-27",
+        "enrollment": 4236,
+        "conditions": [
+          "Gastrointestinal Complications",
+          "Prostate Cancer",
+          "Sexual Dysfunction",
+          "Urinary Complications"
+        ],
+        "interventions": [
+          "bicalutamide",
+          "goserelin acetate",
+          "leuprolide acetate",
+          "adjuvant therapy",
+          "quality-of-life assessment",
+          "radiation therapy"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT02532400",
+        "acronym": "COMPETE",
+        "title": "Neoadjuvant Aromatase Inhibitor(AI) With Ovarian Suppression Versus Chemotherapy in Premenopausal Breast Cancer Patients",
+        "sponsor": "Ruijin Hospital",
+        "phase": "PHASE3",
+        "status": "TERMINATED",
+        "start": "2016-03",
+        "primaryCompletion": "2019-03",
+        "enrollment": 21,
+        "conditions": [
+          "Breast Cancer"
+        ],
+        "interventions": [
+          "Neoadjuvant endocrine therapy (Goserelin and AI)",
+          "Neoadjuvant chemotherapy (TEC)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT01492972",
+        "acronym": null,
+        "title": "Hypo-fractionated Radiation Therapy With or Without Androgen Suppression for Intermediate Risk Prostate Cancer",
+        "sponsor": "Proton Collaborative Group",
+        "phase": "PHASE3",
+        "status": "RECRUITING",
+        "start": "2012-01",
+        "primaryCompletion": "2027-12",
+        "enrollment": 192,
+        "conditions": [
+          "Prostate Cancer"
+        ],
+        "interventions": [
+          "Radiation",
+          "Androgen Suppression Therapy (leuprolide, goserelin, buserelin, or triptorelin)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00303784",
+        "acronym": "PATCH",
+        "title": "Prostate Adenocarcinoma TransCutaneous Hormones",
+        "sponsor": "University College, London",
+        "phase": "PHASE3",
+        "status": "UNKNOWN",
+        "start": "2006-03",
+        "primaryCompletion": "2021-08",
+        "enrollment": 2200,
+        "conditions": [
+          "Anemia",
+          "Cardiovascular Complications",
+          "Hot Flashes",
+          "Osteoporosis",
+          "Prostate Cancer"
+        ],
+        "interventions": [
+          "Goserelin (Zoladex)",
+          "Estradiol (FemSeven)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00948805",
+        "acronym": null,
+        "title": "Evaluation of the Luteolytic Effect of a Gonadotropin Releasing Hormone (GnRH) Agonist After the Administration of Human Chorionic Gonadotropin (hCG) in the Initial Follicular Phase a Its Influence on the Prognosis of in Vitro Fertilization Treatment",
+        "sponsor": "University of Sao Paulo",
+        "phase": "PHASE3",
+        "status": "UNKNOWN",
+        "start": "2009-01",
+        "primaryCompletion": "2009-12",
+        "enrollment": 25,
+        "conditions": [
+          "Infertility"
+        ],
+        "interventions": [
+          "GnRH agonist (Ovidrel, Zoladex, Gonal)",
+          "Control (Zoladex, Ovidrel, Gonal)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT02535221",
+        "acronym": null,
+        "title": "Neoadjuvant Endocrine Therapy Versus Chemotherapy in Premenopausal Patients With ER+ & HER2- Breast Cancer",
+        "sponsor": "Peking University",
+        "phase": "PHASE3",
+        "status": "RECRUITING",
+        "start": "2015-07-29",
+        "primaryCompletion": "2026-06-30",
+        "enrollment": 234,
+        "conditions": [
+          "Breast Cancer"
+        ],
+        "interventions": [
+          "Goserelin+TAM+AI (Endocrine therapy)",
+          "Epirubicin+CTX+5-Fu (Chemotherapy)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT04787744",
+        "acronym": "VA STARPORT",
+        "title": "Veterans Affairs Seamless Phase II/III Randomized Trial of STAndard Systemic theRapy With or Without PET-directed Local Therapy for Oligometastatic pRosTate Cancer",
+        "sponsor": "VA Office of Research and Development",
+        "phase": "PHASE2/PHASE3",
+        "status": "RECRUITING",
+        "start": "2021-07-01",
+        "primaryCompletion": "2026-09-30",
+        "enrollment": 464,
+        "conditions": [
+          "Prostate Cancer",
+          "Oligometastasis",
+          "Oligorecurrence",
+          "Recurrent Prostate Cancer",
+          "Metastatic Prostate Cancer",
+          "De Novo Prostate Cancer"
+        ],
+        "interventions": [
+          "PET-directed Local Therapy using Surgery",
+          "PET-directed Local Therapy using Radiation",
+          "Salvage Local Therapy for locally recurrent disease",
+          "Goserelin, Histrelin, Leuprolide & Triptorelin",
+          "ADT + Nilutamide, Flutamide, & Bicalutamide",
+          "Degarelix & Relugolix",
+          "ADT + Docetaxel +/- prednisone",
+          "ADT + Abiraterone + Prednisone",
+          "ADT + Abiraterone + Methylprednisolone",
+          "ADT + Apalutamide",
+          "ADT + Enzalutamide",
+          "Prostate-directed Radiation for De novo oligometastatic prostate cancer"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      }
+    ]
+  },
+  "negativeOrNullFindings": [
+    "PMID 14530912 documents bone mineral density loss - the defining harm of sustained GnRH agonist therapy and the reason duration is limited.",
+    "PMID 11207003 reports the symptom burden patients actually experience, which efficacy trials do not surface.",
+    "PMID 28394498 is a comparison in which a GnRH ANTAGONIST (degarelix) is assessed against goserelin - relevant context for whether agonists remain first choice."
+  ],
+  "cautions": [
+    "GnRH agonists cause an initial testosterone/oestrogen surge ('flare') before suppression. Any mechanism description must include this or it is incomplete.",
+    "Goserelin, triptorelin, buserelin, histrelin and leuprolide are separate compounds that appear together in the same trial arms. Confirm which one a result belongs to before attributing it."
+  ],
+  "couldNotConfirm": []
+}

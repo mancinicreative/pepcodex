@@ -45,6 +45,7 @@ import matter from 'gray-matter';
 
 const APPLY = process.argv.includes('--apply');
 const NO_OA = process.argv.includes('--no-oa');
+let oaResolved = false;   // did the PMC lookup actually produce data this run?
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const UA = { 'User-Agent': 'PepCodex-counts/1.0 (mailto:admin@pepcodex.com)' };
 
@@ -125,7 +126,14 @@ for (const f of fs.readdirSync('src/content/peptides').filter((x) => x.endsWith(
   rows.push({
     slug, file: `src/content/peptides/${f}`, raw,
     declared: fm.data.sources,
-    next: { count: live.length, human, preclinical, openAccess: 0 },
+    /* openAccess starts as the DECLARED value, not 0.
+     *
+     * It used to start at 0 and only get filled when the PMC lookup ran. That meant `--no-oa`, and
+     * any failure of the lookup, silently wrote a hard 0 to every dossier — asserting "no
+     * open-access sources" for 91 pages on the strength of a request that never happened. It is the
+     * same silent-zero shape this sweep has been correcting everywhere else, sitting in the tool
+     * doing the correcting. Not computing a value is not the same as computing zero. */
+    next: { count: live.length, human, preclinical, openAccess: fm.data.sources?.openAccess ?? 0 },
     pmids: live.filter((id) => id.startsWith('PMID:')).map((id) => id.slice(5)),
   });
 }
@@ -143,25 +151,54 @@ if (!NO_OA) {
    * access, which is not a plausible rate for a corpus that includes NEJM and Lancet papers.
    * Passing `id=a&id=b&id=c` returns one linkset per id, which is the question actually being
    * asked. Verified against the API before relying on it. */
-  for (let i = 0; i < all.length; i += 100) {
-    const batch = all.slice(i, i + 100);
-    try {
-      const qs = batch.map((id) => `id=${id}`).join('&');
-      const r = await fetch(
-        `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?dbfrom=pubmed&db=pmc&retmode=json&${qs}`,
-        { headers: UA });
-      if (r.ok) {
+  /* BATCH SIZE 50, and failures are COUNTED.
+   *
+   * At 100 ids the request throws outright ("terminated") — verified against the API at 20, 50 and
+   * 100. The old `catch {}` swallowed that silently, so six of seven batches failed and only the
+   * tail resolved. The result looked like data and was not: every dossier with a non-zero
+   * openAccess fell in the s-z tail of the alphabet, because those were the only PMIDs in the one
+   * batch that survived. Open-access status does not correlate with alphabetical position, which is
+   * what gave it away. */
+  let batchFailures = 0;
+  /* Retry before giving up. A single transient 5xx or reset should not veto the whole refresh —
+   * but a batch that fails every attempt must still count, because silently dropping it is exactly
+   * how the s-z artefact happened. */
+  for (let i = 0; i < all.length; i += 50) {
+    const batch = all.slice(i, i + 50);
+    const qs = batch.map((id) => `id=${id}`).join('&');
+    let got = false;
+    for (let attempt = 0; attempt < 3 && !got; attempt++) {
+      if (attempt) await sleep(1200 * attempt);
+      try {
+        const r = await fetch(
+          `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?dbfrom=pubmed&db=pmc&retmode=json&${qs}`,
+          { headers: UA });
+        if (!r.ok) continue;
         for (const set of (await r.json()).linksets || []) {
           const has = (set.linksetdbs || []).some((l) => (l.links || []).length);
           if (has) (set.ids || []).forEach((id) => oa.add(String(id)));
         }
-      }
-    } catch { /* leave unresolved rather than assert */ }
-    process.stdout.write('.');
+        got = true;
+      } catch { /* retry */ }
+    }
+    if (!got) batchFailures++;
+    process.stdout.write(got ? '.' : 'x');
     await sleep(380);
   }
-  console.log(` ${oa.size} in PMC`);
-  for (const r of rows) r.next.openAccess = r.pmids.filter((p) => oa.has(p)).length;
+
+  if (batchFailures) {
+    console.warn(`
+  WARNING: ${batchFailures} PMC batch(es) failed. A partial result would understate open access
+  for every dossier whose PMIDs were in a failed batch, so openAccess is left UNCHANGED.`);
+    oaResolved = false;
+  } else if (!oa.size) {
+    console.warn('  WARNING: 0 of the queried PMIDs resolved in PMC. That is not a plausible result,');
+    console.warn('  so the lookup is assumed to have failed and openAccess is left UNCHANGED.');
+    oaResolved = false;
+  } else {
+    for (const r of rows) r.next.openAccess = r.pmids.filter((p) => oa.has(p)).length;
+    oaResolved = true;
+  }
 }
 
 // ---- report + write --------------------------------------------------------------------------
@@ -177,6 +214,7 @@ for (const r of worst.slice(0, 12)) {
 const inflated = changed.filter((r) => r.declared.count > r.next.count).length;
 const understated = changed.filter((r) => r.declared.count < r.next.count).length;
 console.log(`\noverstated: ${inflated}   understated: ${understated}   unchanged count: ${changed.length - inflated - understated}`);
+console.log(`openAccess: ${oaResolved ? 'refreshed from PMC' : 'NOT refreshed this run — existing values preserved'}`);
 console.log(`declared total across site: ${rows.reduce((a, r) => a + (r.declared.count || 0), 0)} -> ${rows.reduce((a, r) => a + r.next.count, 0)}`);
 
 if (!APPLY) { console.log('\nNo files written. Re-run with --apply.'); process.exit(0); }

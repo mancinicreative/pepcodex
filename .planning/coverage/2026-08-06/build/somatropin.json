@@ -1,0 +1,640 @@
+{
+  "slug": "somatropin",
+  "name": "Somatropin",
+  "classification": "BUILD",
+  "priority": 10,
+  "generated": "2026-08-06",
+  "generatedBy": "coverage triage run - every identifier below was fetched live from PubMed / ClinicalTrials.gov / openFDA during this run",
+  "identity": {
+    "inn": "Somatropin",
+    "brand": [
+      "Norditropin",
+      "Humatrope",
+      "Genotropin",
+      "Omnitrope",
+      "Serostim",
+      "Zomacton"
+    ],
+    "otherNames": [
+      "recombinant human growth hormone",
+      "rhGH"
+    ],
+    "developer": "Novo Nordisk, Eli Lilly, Pfizer, Sandoz, EMD Serono, Ferring",
+    "class": "191-amino-acid recombinant human growth hormone (a protein, not a short peptide)",
+    "siteContext": "The site covers nine GH secretagogues and GHRH analogues - CJC-1295, ipamorelin, sermorelin, tesamorelin, hexarelin, GHRP-2, GHRP-6, MK-677, AOD-9604 - but not the hormone all of them are meant to raise. This is the reference compound the whole category is implicitly compared against."
+  },
+  "regulatoryStatus": {
+    "source": "openFDA /drug/drugsfda.json, fetched 2026-08-06",
+    "note": "Multiple BLAs with different approval dates and some Discontinued products; long-acting successors (lonapegsomatropin, somatrogon, somapacitan) are DIFFERENT molecules and are approved separately. Do not attribute their trial results to somatropin.",
+    "openFDA": {
+      "queried": [
+        {
+          "field": "openfda.generic_name",
+          "value": "somatropin",
+          "hit": true
+        }
+      ],
+      "result": {
+        "total": 5,
+        "applications": [
+          {
+            "applicationNumber": "BLA021148",
+            "sponsor": "NOVO NORDISK INC",
+            "brandNames": [
+              "NORDITROPIN FLEXPRO",
+              "NORDITROPIN NORDIFLEX",
+              "NORDITROPIN"
+            ],
+            "marketingStatus": [
+              "Prescription",
+              "Discontinued"
+            ],
+            "routes": [
+              "INJECTION"
+            ],
+            "earliestApprovalDate": "20000620"
+          },
+          {
+            "applicationNumber": "BLA019640",
+            "sponsor": "LILLY",
+            "brandNames": [
+              "HUMATROPE"
+            ],
+            "marketingStatus": [
+              "Discontinued",
+              "Prescription"
+            ],
+            "routes": [
+              "INJECTION"
+            ],
+            "earliestApprovalDate": "19861016"
+          },
+          {
+            "applicationNumber": "BLA020604",
+            "sponsor": "EMD SERONO",
+            "brandNames": [
+              "SEROSTIM",
+              "SEROSTIM LQ"
+            ],
+            "marketingStatus": [
+              "Prescription",
+              "Discontinued"
+            ],
+            "routes": [
+              "INJECTION",
+              "SUBCUTANEOUS"
+            ],
+            "earliestApprovalDate": "19960823"
+          },
+          {
+            "applicationNumber": "BLA021426",
+            "sponsor": "SANDOZ",
+            "brandNames": [
+              "OMNITROPE"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "INJECTION"
+            ],
+            "earliestApprovalDate": "20060530"
+          },
+          {
+            "applicationNumber": "BLA019774",
+            "sponsor": "FERRING",
+            "brandNames": [
+              "ZOMACTON",
+              "BIO-TROPIN"
+            ],
+            "marketingStatus": [
+              "Prescription",
+              "Discontinued"
+            ],
+            "routes": [
+              "INJECTION"
+            ],
+            "earliestApprovalDate": "19950525"
+          }
+        ]
+      }
+    }
+  },
+  "evidenceBase": {
+    "pubmedRecordsScreened": 89,
+    "pubmedRecordsConfirmedNamingCompound": 89,
+    "selected": [
+      {
+        "pmid": "8967668",
+        "title": "Effects of physiologic growth hormone therapy on bone density and body composition in patients with adult-onset growth hormone deficiency. A randomized, placebo-controlled trial.",
+        "journal": "Ann Intern Med",
+        "pubdate": "1996 Dec 1",
+        "firstAuthor": "Baum HB",
+        "doi": "10.7326/0003-4819-125-11-199612010-00003",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't",
+          "Research Support, U.S. Gov't, P.H.S."
+        ],
+        "role": "RCT of physiologic GH on bone density and body composition in adult-onset GHD (Ann Intern Med)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "10896637",
+        "title": "Effects of growth hormone administration on inflammatory and other cardiovascular risk markers in men with growth hormone deficiency. A randomized, controlled clinical trial.",
+        "journal": "Ann Intern Med",
+        "pubdate": "2000 Jul 18",
+        "firstAuthor": "Sesmilo G",
+        "doi": "10.7326/0003-4819-133-2-200007180-00010",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't",
+          "Research Support, U.S. Gov't, P.H.S."
+        ],
+        "role": "RCT of GH on inflammatory and cardiovascular risk markers (Ann Intern Med)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "8626839",
+        "title": "Outcome of a four-year randomized study of daily versus three times weekly somatropin treatment in prepubertal naive growth hormone-deficient children. Genentech Study Group.",
+        "journal": "J Clin Endocrinol Metab",
+        "pubdate": "1996 May",
+        "firstAuthor": "MacGillivray MH",
+        "doi": "10.1210/jcem.81.5.8626839",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Comparative Study",
+          "Journal Article",
+          "Randomized Controlled Trial"
+        ],
+        "role": "4-year RCT of daily vs three-times-weekly somatropin in children",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "8989238",
+        "title": "Adult growth hormone (GH)-deficient patients demonstrate heterogeneity between childhood onset and adult onset before and during human GH treatment. Adult Growth Hormone Deficiency Study Group.",
+        "journal": "J Clin Endocrinol Metab",
+        "pubdate": "1997 Jan",
+        "firstAuthor": "Attanasio AF",
+        "doi": "10.1210/jcem.82.1.3643",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "childhood-onset vs adult-onset GHD heterogeneity during GH treatment",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "12054164",
+        "title": "The effects of growth hormone replacement therapy on bone metabolism in adult-onset growth hormone deficiency: a 2-year open randomized controlled multicenter trial.",
+        "journal": "J Bone Miner Res",
+        "pubdate": "2002 Jun",
+        "firstAuthor": "Bex M",
+        "doi": "10.1359/jbmr.2002.17.6.1081",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "2-year randomised multicentre trial of bone metabolism in adult-onset GHD",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "17280527",
+        "title": "Effect of growth hormone replacement on BMD in adult-onset growth hormone deficiency.",
+        "journal": "J Bone Miner Res",
+        "pubdate": "2007 May",
+        "firstAuthor": "Snyder PJ",
+        "doi": "10.1359/jbmr.070205",
+        "publicationTypes": [
+          "Comparative Study",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "RCT of GH replacement on bone mineral density in adult-onset GHD",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "10703931",
+        "title": "Growth hormone treatment in adults with adult-onset growth hormone deficiency increases iliac crest trabecular bone turnover: a 1-year, double-blind, randomized, placebo-controlled study.",
+        "journal": "J Bone Miner Res",
+        "pubdate": "2000 Feb",
+        "firstAuthor": "Brixen K",
+        "doi": "10.1359/jbmr.2000.15.2.293",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "1-year double-blind placebo-controlled bone turnover study",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "21411551",
+        "title": "Effects of once-weekly sustained-release growth hormone: a double-blind, placebo-controlled study in adult growth hormone deficiency.",
+        "journal": "J Clin Endocrinol Metab",
+        "pubdate": "2011 Jun",
+        "firstAuthor": "Biller BM",
+        "doi": "10.1210/jc.2010-2819",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "RCT of once-weekly sustained-release GH in adult GHD",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "35405011",
+        "title": "Efficacy and Safety of Weekly Somatrogon vs Daily Somatropin in Children With Growth Hormone Deficiency: A Phase 3 Study.",
+        "journal": "J Clin Endocrinol Metab",
+        "pubdate": "2022 Jun 16",
+        "firstAuthor": "Deal CL",
+        "doi": "10.1210/clinem/dgac220",
+        "publicationTypes": [
+          "Clinical Trial, Phase III",
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "phase 3 weekly somatrogon vs daily somatropin in children",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "32603494",
+        "title": "Similar safety and efficacy in previously treated adults with growth hormone deficiency randomized to once-weekly somapacitan or daily growth hormone.",
+        "journal": "Clin Endocrinol (Oxf)",
+        "pubdate": "2020 Nov",
+        "firstAuthor": "Otsuka F",
+        "doi": "10.1111/cen.14273",
+        "publicationTypes": [
+          "Clinical Trial, Phase III",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "RCT, once-weekly somapacitan vs daily GH in previously treated adults",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "41420532",
+        "title": "Efficacy and Safety of Once-Weekly Lonapegsomatropin in Adults With Growth Hormone Deficiency: foresiGHt Trial Results.",
+        "journal": "J Clin Endocrinol Metab",
+        "pubdate": "2026 May 19",
+        "firstAuthor": "Biller BMK",
+        "doi": "10.1210/clinem/dgaf680",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Multicenter Study"
+        ],
+        "role": "2026 phase 3 once-weekly lonapegsomatropin in adults (foresiGHt)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "27118206",
+        "title": "Comparison of low-normal and high-normal IGF-1 target levels during growth hormone replacement therapy: A randomized clinical trial in adult growth hormone deficiency.",
+        "journal": "Eur J Intern Med",
+        "pubdate": "2016 Jun",
+        "firstAuthor": "van Bunderen CC",
+        "doi": "10.1016/j.ejim.2016.03.026",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial"
+        ],
+        "role": "RCT comparing low-normal vs high-normal IGF-1 targets during GH replacement",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "24300782",
+        "title": "Somatropin treatment of spinal muscular atrophy: a placebo-controlled, double-blind crossover pilot study.",
+        "journal": "Neuromuscul Disord",
+        "pubdate": "2014 Feb",
+        "firstAuthor": "Kirschner J",
+        "doi": "10.1016/j.nmd.2013.10.011",
+        "publicationTypes": [
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "NEGATIVE - placebo-controlled crossover pilot in spinal muscular atrophy",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "29109363",
+        "title": "Efficacy and safety of two doses of Norditropin(®) (somatropin) in short stature due to Noonan syndrome: a 2-year randomized, double-blind, multicenter trial in Japanese patients.",
+        "journal": "Endocr J",
+        "pubdate": "2018 Feb 26",
+        "firstAuthor": "Ozono K",
+        "doi": "10.1507/endocrj.EJ17-0313",
+        "publicationTypes": [
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial"
+        ],
+        "role": "randomised trial of two Norditropin doses in Noonan syndrome",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      }
+    ]
+  },
+  "registeredTrials": {
+    "source": "ClinicalTrials.gov API v2 query.intr, fetched 2026-08-06",
+    "totalReturned": 133,
+    "drugMatched": 90,
+    "selected": [
+      {
+        "nct": "NCT00234533",
+        "acronym": "OPTIMA",
+        "title": "Study to Define Optimal IGF-1 Monitoring in Children Treated With NutropinAq",
+        "sponsor": "Ipsen",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2004-06",
+        "primaryCompletion": "2008-07",
+        "enrollment": 251,
+        "conditions": [
+          "Turner Syndrome",
+          "Renal Insufficiency, Chronic",
+          "Pituitary Diseases",
+          "Dwarfism"
+        ],
+        "interventions": [
+          "Somatropin (rDNA origin)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00501514",
+        "acronym": null,
+        "title": "Effects of Growth Hormone on Exercise Capacity",
+        "sponsor": "Federico II University",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "1997-11",
+        "enrollment": 22,
+        "conditions": [
+          "Chronic Heart Failure"
+        ],
+        "interventions": [
+          "Growth hormone"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT03033121",
+        "acronym": "GH 3 wk dose",
+        "title": "Three-times-weekly Versus Daily Growth Hormone (GH) Treatment in naïve GH-deficient Children",
+        "sponsor": "University of Palermo",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2016-01-01",
+        "primaryCompletion": "2017-01-01",
+        "enrollment": 32,
+        "conditions": [
+          "Growth Hormone Treatment"
+        ],
+        "interventions": [
+          "Growth Hormone"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00174421",
+        "acronym": null,
+        "title": "Treatment Of Short Stature With Genotropin In Children Born Small For Gestational Age Until Final Height",
+        "sponsor": "Pfizer",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2001-04",
+        "enrollment": 36,
+        "conditions": [
+          "Growth Disorder"
+        ],
+        "interventions": [
+          "Treatment with Genotropin in different dosages"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT01626833",
+        "acronym": "OREX",
+        "title": "Severe Decrease of Growth Velocity in Children With Anorexia Nervosa.Therapeutic Trial of Growth Hormone",
+        "sponsor": "Assistance Publique - Hôpitaux de Paris",
+        "phase": "PHASE2/PHASE3",
+        "status": "COMPLETED",
+        "start": "2013-03",
+        "primaryCompletion": "2021-03",
+        "enrollment": 15,
+        "conditions": [
+          "Anorexia Nervosa",
+          "Interruption of Growth",
+          "Delayed Puberty",
+          "Osteopenia With Failure of Acquisition of Bone Mass"
+        ],
+        "interventions": [
+          "SOMATROPINE* : Norditropine® simplexx® (SOMATROPINE)",
+          "Placebo"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00396097",
+        "acronym": null,
+        "title": "Individualized, Target-Driven Treatment Of Children With Idiopathic Short Stature",
+        "sponsor": "Pfizer",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2006-12",
+        "primaryCompletion": "2012-08",
+        "enrollment": 316,
+        "conditions": [
+          "Idiopathic Short Stature"
+        ],
+        "interventions": [
+          "Genotropin",
+          "Genotropin"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00965484",
+        "acronym": null,
+        "title": "Genotropin Study Assessing Use of Injection Pen",
+        "sponsor": "Pfizer",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2009-10",
+        "primaryCompletion": "2010-01",
+        "enrollment": 136,
+        "conditions": [
+          "Growth Hormone Deficiency",
+          "Idiopathic Short Stature"
+        ],
+        "interventions": [
+          "New Genotropin Pen"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00781547",
+        "acronym": "GHDM",
+        "title": "Growth Hormone Treatment in Men With High Risk of Developing Type 2 Diabetes Mellitus",
+        "sponsor": "Göteborg University",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "1999-01",
+        "primaryCompletion": "2003-09",
+        "enrollment": 40,
+        "conditions": [
+          "Abdominal Obesity",
+          "Metabolic Syndrome",
+          "Obesity"
+        ],
+        "interventions": [
+          "recombinant human growth hormone"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT02413138",
+        "acronym": null,
+        "title": "Versartis Trial in Pre-pubertal Japanese Children With Growth Hormone Deficiency (GHD) to Assess Long-Acting Growth Hormone (Somavaratan, VRS-317)",
+        "sponsor": "Versartis Inc.",
+        "phase": "PHASE2/PHASE3",
+        "status": "TERMINATED",
+        "start": "2015-08-08",
+        "primaryCompletion": "2017-11-30",
+        "enrollment": 41,
+        "conditions": [
+          "Pediatric Growth Hormone Deficiency",
+          "Growth Disorders"
+        ],
+        "interventions": [
+          "Somavaratan (VRS-317) (Long acting recombinant human growth hormone)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00625872",
+        "acronym": "SGA-POWER",
+        "title": "Neuromuscular Changes In Small For Gestational Age Children During Somatropin Therapy",
+        "sponsor": "Pfizer",
+        "phase": "PHASE3",
+        "status": "TERMINATED",
+        "start": "2008-07",
+        "primaryCompletion": "2011-03",
+        "enrollment": 23,
+        "conditions": [
+          "Growth Hormone Therapy",
+          "Infant, Small for Gestational Age"
+        ],
+        "interventions": [
+          "Somatropin",
+          "Somatropin"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00519558",
+        "acronym": null,
+        "title": "Growth Hormone Deficiency in Adults (GHDA)",
+        "sponsor": "Novo Nordisk A/S",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2003-05-31",
+        "primaryCompletion": "2005-01-24",
+        "enrollment": 121,
+        "conditions": [
+          "Growth Hormone Disorder",
+          "Adult Growth Hormone Deficiency"
+        ],
+        "interventions": [
+          "somatropin"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT03245333",
+        "acronym": null,
+        "title": "A Study of Recombinant Human Growth Hormone Injection for Short Children With Small for Small for Gestational Age(SGA)",
+        "sponsor": "Changchun GeneScience Pharmaceutical Co., Ltd.",
+        "phase": "PHASE3",
+        "status": "UNKNOWN",
+        "start": "2014-12",
+        "primaryCompletion": "2017-12",
+        "enrollment": 120,
+        "conditions": [
+          "Small for Gestational Age Infant"
+        ],
+        "interventions": [
+          "Recombinant Human Growth Hormone Injection (rhGH Injection)",
+          "Recombinant Human Growth Hormone Injection (rhGH Injection)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT03075644",
+        "acronym": null,
+        "title": "A Trial to Evaluate the Safety of Once Weekly Dosing of Somapacitan (NNC0195-0092) and Daily Norditropin® FlexPro® for 52 Weeks in Previously Human Growth Hormone Treated Japanese Adults With Growth Hormone Deficiency",
+        "sponsor": "Novo Nordisk A/S",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2017-03-03",
+        "primaryCompletion": "2018-10-04",
+        "enrollment": 62,
+        "conditions": [
+          "Growth Hormone Disorder",
+          "Adult Growth Hormone Deficiency"
+        ],
+        "interventions": [
+          "somapacitan",
+          "Norditropin"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT02770157",
+        "acronym": "SGA",
+        "title": "Efficacy and Safety of DA-3002 in Short Children Borns SGA.",
+        "sponsor": "Dong-A ST Co., Ltd.",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2016-02-26",
+        "primaryCompletion": "2019-08-28",
+        "enrollment": 75,
+        "conditions": [
+          "Infant, Small for Gestational Age"
+        ],
+        "interventions": [
+          "DA-3002",
+          "Genotropin®"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      }
+    ]
+  },
+  "negativeOrNullFindings": [
+    "PMID 24300782 - no benefit in spinal muscular atrophy.",
+    "The long-acting comparators (PMIDs 35405011, 32603494, 41420532) are trials designed to show non-inferiority TO daily somatropin; they position somatropin as the standard being displaced, which is the honest framing.",
+    "This dossier's largest integrity risk is the anti-ageing use case. The screened set contains no RCT supporting GH for healthy ageing; say so explicitly rather than omitting the question."
+  ],
+  "cautions": [
+    "Somatropin is a 191-residue protein. If the site defines its scope as peptides, publishing this requires an explicit editorial decision about proteins - flag it rather than assume.",
+    "Somatrogon, somapacitan, lonapegsomatropin and somavaratan are separate molecules with their own approvals. Attributing their results to somatropin would repeat the parent/derivative error already documented in this repo's lessons file.",
+    "Non-medical use of GH is heavily searched. The no-dosing, no-sourcing and no-medical-advice bans are load-bearing on this page."
+  ],
+  "couldNotConfirm": []
+}

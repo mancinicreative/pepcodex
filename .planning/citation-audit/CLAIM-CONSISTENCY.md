@@ -13,7 +13,7 @@ the copy-error signature** and are listed first.
 - **51%** — src/content/comparisons/cagrilintide-vs-semaglutide.mdx, src/content/comparisons/pemvidutide-vs-semaglutide.mdx
 
 ### REDEFINE-2  ⚠️ near-miss
-- **13.7%** — src/content/blog/cagrisema-nda-filed.mdx, src/content/blog/cagrisema-phase3-endpoint.mdx
+- **13.7%** — src/content/blog/cagrisema-nda-filed.mdx, src/content/blog/cagrisema-phase3-endpoint.mdx, src/content/comparisons/cagrisema-vs-tirzepatide.mdx
 - **3.4%** — src/content/blog/cagrisema-nda-filed.mdx
 - **15.7%** — src/content/blog/cagrisema-nda-filed.mdx
 - **3.1%** — src/content/blog/cagrisema-nda-filed.mdx
@@ -32,14 +32,13 @@ the copy-error signature** and are listed first.
 - **28.3%** — src/content/blog/retatrutide-direct-comparison.mdx
 - **30.3%** — src/content/blog/retatrutide-phase3-triple-agonist.mdx
 
-### REDEFINE-1
-- **20.4%** — src/content/blog/2025-glp1-year-review.mdx, src/content/blog/best-peptide-for-weight-loss-2026.mdx, src/content/blog/cagrilintide-semaglutide-approval.mdx, src/content/blog/cagrisema-nda-filed-glp1-amylin-combo.mdx, src/content/blog/cagrisema-nda-filed.mdx, src/content/comparisons/cagrisema-vs-tirzepatide.mdx, src/content/peptides/amycretin.mdx, src/content/peptides/cagrilintide.mdx, src/content/peptides/cagrisema.mdx
-- **14.9%** — src/content/blog/2025-glp1-year-review.mdx
-- **40.4%** — src/content/blog/cagrisema-nda-filed.mdx
-
 ### SURMOUNT-5
 - **20.2%** — src/content/blog/best-peptide-for-weight-loss-2026.mdx, src/content/blog/semaglutide-vs-tirzepatide-2026.mdx
 - **13.7%** — src/content/blog/best-peptide-for-weight-loss-2026.mdx, src/content/blog/semaglutide-vs-tirzepatide-2026.mdx
+
+### REDEFINE-1
+- **20.4%** — src/content/blog/best-peptide-for-weight-loss-2026.mdx, src/content/blog/cagrilintide-semaglutide-approval.mdx, src/content/blog/cagrisema-nda-filed-glp1-amylin-combo.mdx, src/content/blog/cagrisema-nda-filed.mdx, src/content/comparisons/cagrisema-vs-tirzepatide.mdx, src/content/peptides/amycretin.mdx, src/content/peptides/cagrilintide.mdx, src/content/peptides/cagrisema.mdx
+- **40.4%** — src/content/blog/cagrisema-nda-filed.mdx
 
 ### ATTAIN-1
 - **11.2%** — src/content/blog/orforglipron-14-percent-weight-loss.mdx, src/content/blog/orforglipron-attain-1-results.mdx, src/content/peptides/orforglipron.mdx

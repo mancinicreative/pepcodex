@@ -1,0 +1,669 @@
+{
+  "slug": "triptorelin",
+  "name": "Triptorelin",
+  "classification": "BUILD",
+  "priority": 8,
+  "generated": "2026-08-06",
+  "generatedBy": "coverage triage run - every identifier below was fetched live from PubMed / ClinicalTrials.gov / openFDA during this run",
+  "identity": {
+    "inn": "Triptorelin (as triptorelin pamoate or acetate)",
+    "brand": [
+      "Trelstar",
+      "Triptodur",
+      "Decapeptyl (ex-US)"
+    ],
+    "developmentCode": "AY-25650, CL-118532",
+    "otherNames": [
+      "D-Trp6-LHRH"
+    ],
+    "developer": "US applications held by Verity Pharmaceuticals and Azurity",
+    "class": "Synthetic decapeptide GnRH (LHRH) agonist",
+    "siteContext": "Same reproductive-axis gap as goserelin; triptorelin has the stronger fertility-preservation evidence base including two JAMA trials."
+  },
+  "regulatoryStatus": {
+    "source": "openFDA /drug/drugsfda.json, fetched 2026-08-06",
+    "note": "Three Trelstar NDAs of differing depot durations plus Triptodur for central precocious puberty. Salt forms (pamoate, acetate) are formulation variants of one compound, not separate compounds.",
+    "openFDA": {
+      "queried": [
+        {
+          "field": "openfda.generic_name",
+          "value": "triptorelin pamoate",
+          "hit": true
+        }
+      ],
+      "result": {
+        "total": 3,
+        "applications": [
+          {
+            "applicationNumber": "NDA021288",
+            "sponsor": "VERITY",
+            "brandNames": [
+              "TRELSTAR"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "INTRAMUSCULAR"
+            ],
+            "earliestApprovalDate": "20010629"
+          },
+          {
+            "applicationNumber": "NDA022437",
+            "sponsor": "VERITY",
+            "brandNames": [
+              "TRELSTAR"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "INTRAMUSCULAR"
+            ],
+            "earliestApprovalDate": "20100310"
+          },
+          {
+            "applicationNumber": "NDA020715",
+            "sponsor": "VERITY",
+            "brandNames": [
+              "TRELSTAR"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "INTRAMUSCULAR"
+            ],
+            "earliestApprovalDate": "20000615"
+          }
+        ]
+      }
+    }
+  },
+  "evidenceBase": {
+    "pubmedRecordsScreened": 68,
+    "pubmedRecordsConfirmedNamingCompound": 68,
+    "selected": [
+      {
+        "pmid": "21771987",
+        "title": "Effect of the gonadotropin-releasing hormone analogue triptorelin on the occurrence of chemotherapy-induced early menopause in premenopausal women with breast cancer: a randomized trial.",
+        "journal": "JAMA",
+        "pubdate": "2011 Jul 20",
+        "firstAuthor": "Del Mastro L",
+        "doi": "10.1001/jama.2011.991",
+        "publicationTypes": [
+          "Clinical Trial, Phase III",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "pivotal RCT of ovarian protection during chemotherapy (PROMISE-GIM6, JAMA 2011)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "26720025",
+        "title": "Ovarian Suppression With Triptorelin During Adjuvant Breast Cancer Chemotherapy and Long-term Ovarian Function, Pregnancies, and Disease-Free Survival: A Randomized Clinical Trial.",
+        "journal": "JAMA",
+        "pubdate": "2015 Dec 22-29",
+        "firstAuthor": "Lambertini M",
+        "doi": "10.1001/jama.2015.17291",
+        "publicationTypes": [
+          "Clinical Trial, Phase III",
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "PROMISE-GIM6 long-term ovarian function, pregnancies and disease-free survival (JAMA 2015)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "22231041",
+        "title": "Randomized trial using gonadotropin-releasing hormone agonist triptorelin for the preservation of ovarian function during (neo)adjuvant chemotherapy for breast cancer.",
+        "journal": "J Clin Oncol",
+        "pubdate": "2012 Feb 10",
+        "firstAuthor": "Munster PN",
+        "doi": "10.1200/JCO.2011.34.6890",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, N.I.H., Extramural"
+        ],
+        "role": "NULL RESULT - menses resumed in 88% triptorelin vs 90% control, p=0.36",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "30589600",
+        "title": "Neoadjuvant Degarelix Versus Triptorelin in Premenopausal Patients Who Receive Letrozole for Locally Advanced Endocrine-Responsive Breast Cancer: A Randomized Phase II Trial.",
+        "journal": "J Clin Oncol",
+        "pubdate": "2019 Feb 10",
+        "firstAuthor": "Dellapasqua S",
+        "doi": "10.1200/JCO.18.00296",
+        "publicationTypes": [
+          "Clinical Trial, Phase II",
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "phase 2 RCT, neoadjuvant degarelix vs triptorelin with letrozole",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "39754976",
+        "title": "Ten-year update of HOBOE phase III trial comparing triptorelin plus either tamoxifen or letrozole or zoledronic acid + letrozole in premenopausal hormone receptor-positive early breast cancer patients.",
+        "journal": "ESMO Open",
+        "pubdate": "2025 Jan",
+        "firstAuthor": "Gravina A",
+        "doi": "10.1016/j.esmoop.2024.104085",
+        "publicationTypes": [
+          "Journal Article",
+          "Clinical Trial, Phase III",
+          "Randomized Controlled Trial",
+          "Multicenter Study"
+        ],
+        "role": "10-year update of the HOBOE phase 3 trial",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "36653328",
+        "title": "Endocrine Responses to Triptorelin in Healthy Women, Women With Polycystic Ovary Syndrome, and Women With Hypothalamic Amenorrhea.",
+        "journal": "J Clin Endocrinol Metab",
+        "pubdate": "2023 Jun 16",
+        "firstAuthor": "Abbara A",
+        "doi": "10.1210/clinem/dgad026",
+        "publicationTypes": [
+          "Randomized Controlled Trial",
+          "Journal Article",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "mechanistic endocrine response study in healthy women, PCOS and hypothalamic amenorrhoea",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "25676588",
+        "title": "Randomized, double-blind, dose-escalation trial of triptorelin for ovary protection in childhood-onset systemic lupus erythematosus.",
+        "journal": "Arthritis Rheumatol",
+        "pubdate": "2015 May",
+        "firstAuthor": "Brunner HI",
+        "doi": "10.1002/art.39024",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, N.I.H., Extramural",
+          "Research Support, Non-U.S. Gov't",
+          "Research Support, U.S. Gov't, P.H.S."
+        ],
+        "role": "RCT for ovarian protection in childhood-onset SLE",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "35947347",
+        "title": "Assessment of Two Formulations of Triptorelin in Chinese Patients with Endometriosis: A Phase 3, Randomized Controlled Trial.",
+        "journal": "Adv Ther",
+        "pubdate": "2022 Oct",
+        "firstAuthor": "Li X",
+        "doi": "10.1007/s12325-022-02264-5",
+        "publicationTypes": [
+          "Clinical Trial, Phase III",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't",
+          "Equivalence Trial"
+        ],
+        "role": "phase 3 in endometriosis, Chinese population",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "7781864",
+        "title": "A randomized, comparative trial of triptorelin depot (D-Trp6-LHRH) and danazol in the treatment of endometriosis.",
+        "journal": "Eur J Obstet Gynecol Reprod Biol",
+        "pubdate": "1995 Mar",
+        "firstAuthor": "Cirkel U",
+        "doi": "10.1016/0028-2243(94)02016-8",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Comparative Study",
+          "Journal Article",
+          "Randomized Controlled Trial"
+        ],
+        "role": "randomised comparison vs danazol in endometriosis",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "19135657",
+        "title": "A randomized, controlled clinical trial comparing the effects of aromatase inhibitor (letrozole) and gonadotropin-releasing hormone agonist (triptorelin) on uterine leiomyoma volume and hormonal status.",
+        "journal": "Fertil Steril",
+        "pubdate": "2010 Jan",
+        "firstAuthor": "Parsanezhad ME",
+        "doi": "10.1016/j.fertnstert.2008.09.064",
+        "publicationTypes": [
+          "Comparative Study",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial"
+        ],
+        "role": "RCT, letrozole vs triptorelin for uterine leiomyoma",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "21693037",
+        "title": "Letrozole and norethisterone acetate versus letrozole and triptorelin in the treatment of endometriosis related pain symptoms: a randomized controlled trial.",
+        "journal": "Reprod Biol Endocrinol",
+        "pubdate": "2011 Jun 21",
+        "firstAuthor": "Ferrero S",
+        "doi": "10.1186/1477-7827-9-88",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial"
+        ],
+        "role": "RCT, letrozole + norethisterone vs letrozole + triptorelin for endometriosis pain",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "8822422",
+        "title": "Efficacy and safety of recombinant follicle stimulating hormone (Puregon) in infertile women pituitary-suppressed with triptorelin undergoing in-vitro fertilization: a prospective, randomized, assessor-blind, multicentre trial.",
+        "journal": "Hum Reprod",
+        "pubdate": "1995 Dec",
+        "firstAuthor": "Hedon B",
+        "doi": "10.1093/oxfordjournals.humrep.a135866",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Comparative Study",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "multicentre RCT of recombinant FSH in triptorelin-suppressed IVF cycles",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "15193471",
+        "title": "An open and randomized study comparing the efficacy of standard danazol and modified triptorelin regimens for postoperative disease management of moderate to severe endometriosis.",
+        "journal": "Fertil Steril",
+        "pubdate": "2004 Jun",
+        "firstAuthor": "Wong AY",
+        "doi": "10.1016/j.fertnstert.2003.12.020",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Journal Article",
+          "Randomized Controlled Trial"
+        ],
+        "role": "randomised comparison of danazol and triptorelin regimens after endometriosis surgery",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "41611266",
+        "title": "[Efficacy and safety of triptorelin acetate microspheres for injection versus triptorelin acetate for injection in Chinese patients with endometriosis: a multicenter, randomized, double-blind, phase Ⅲ non-inferiority clinical trial].",
+        "journal": "Zhonghua Fu Chan Ke Za Zhi",
+        "pubdate": "2026 Jan 25",
+        "firstAuthor": "Zhao AM",
+        "doi": "10.3760/cma.j.cn112141-20250421-00161",
+        "publicationTypes": [
+          "Clinical Trial, Phase III",
+          "English Abstract",
+          "Equivalence Trial",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial"
+        ],
+        "role": "2026 phase 3 non-inferiority trial of two triptorelin formulations",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      }
+    ]
+  },
+  "registeredTrials": {
+    "source": "ClinicalTrials.gov API v2 query.intr, fetched 2026-08-06",
+    "totalReturned": 123,
+    "drugMatched": 92,
+    "selected": [
+      {
+        "nct": "NCT00936390",
+        "acronym": null,
+        "title": "Radiation Therapy With or Without Androgen-Deprivation Therapy in Treating Patients With Prostate Cancer",
+        "sponsor": "Radiation Therapy Oncology Group",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2009-09",
+        "primaryCompletion": "2020-10-03",
+        "enrollment": 1538,
+        "conditions": [
+          "Prostate Cancer"
+        ],
+        "interventions": [
+          "bicalutamide",
+          "flutamide (anti-androgen therapy)",
+          "LHRH agonist (antagonist) therapy (leuprolide, goserelin, buserelin, triptorelin, degarelix)",
+          "Dose-Escalated Radiation Therapy"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00311636",
+        "acronym": null,
+        "title": "Triptorelin in Preventing Early Menopause in Premenopausal Women Who Are Receiving Chemotherapy for Stage I, Stage II, or Stage III Breast Cancer That Has Been Removed By Surgery",
+        "sponsor": "Gruppo Italiano Mammella (GIM)",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2003-09",
+        "primaryCompletion": "2008-01",
+        "enrollment": 280,
+        "conditions": [
+          "Breast Cancer"
+        ],
+        "interventions": [
+          "cyclophosphamide",
+          "docetaxel",
+          "doxorubicin hydrochloride",
+          "epirubicin hydrochloride",
+          "fluorouracil",
+          "methotrexate",
+          "paclitaxel",
+          "triptorelin",
+          "adjuvant therapy"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT04423211",
+        "acronym": null,
+        "title": "Treating Prostate Cancer That Has Come Back After Surgery With Apalutamide and Targeted Radiation Based on PET Imaging",
+        "sponsor": "ECOG-ACRIN Cancer Research Group",
+        "phase": "PHASE3",
+        "status": "RECRUITING",
+        "start": "2020-10-08",
+        "primaryCompletion": "2032-12-31",
+        "enrollment": 804,
+        "conditions": [
+          "Biochemically Recurrent Prostate Carcinoma",
+          "Metastatic Prostate Carcinoma",
+          "Prostate Adenocarcinoma",
+          "Stage IVB Prostate Cancer AJCC v8"
+        ],
+        "interventions": [
+          "3-Dimensional Conformal Radiation Therapy (3-dimensional radiation therapy, 3D Conformal, 3D CONFORMAL RADIATION THERAPY, 3D CRT, 3D radiotherapy, 3D-CRT, Conformal Therapy, Radiation Conformal Therapy, Radiation, 3D Conformal, Three dimensional external beam radiation therapy (procedure))",
+          "Apalutamide (ARN 509, ARN-509, ARN509, Erleada, JNJ 56021927, JNJ-56021927)",
+          "Computed Tomography (CAT, CAT Scan, Computed Axial Tomography, Computerized Axial Tomography, Computerized axial tomography (procedure), Computerized Tomography, CT, CT Scan, tomography)",
+          "Degarelix (FE200486, Firmagon)",
+          "External Beam Radiation Therapy (Definitive Radiation Therapy, EBRT, External Beam Radiation, External Beam Radiotherapy, External Beam Radiotherapy (conventional), External Beam RT, external radiation, External Radiation Therapy, external-beam radiation, Radiation, External Beam, Teleradiotherapy, Teletherapy, Teletherapy Radiation)",
+          "Fluciclovine F18 ((18F)Fluciclovine, (18F)GE-148, 18F-Fluciclovine, [18F]FACBC, Anti-(18f)FABC, Anti-1-Amino-3-[18F]Fluorocyclobutane-1-Carboxylic Acid, Anti-[18F] FACBC, Axumin, Fluciclovine (18F), FLUCICLOVINE F-18, GE-148 (18F), GE-148 F-18)",
+          "Goserelin Acetate (ZDX, Zoladex)",
+          "Intensity-Modulated Proton Therapy (IMPT)",
+          "Intensity-Modulated Radiation Therapy (IMRT, Intensity modulated radiation therapy (procedure), Intensity Modulated RT, Intensity-Modulated Radiotherapy, Radiation, Intensity-Modulated Radiotherapy)",
+          "Leuprolide Acetate (A-43818, Abbott 43818, Abbott-43818, Carcinil, Depo-Eligard, Eligard, Enanton, Enantone, Enantone-Gyn, Ginecrin, LEUP, Leuplin, Leuprorelin Acetate, Lucrin, Lucrin Depot, Lupron, Lupron Depot, Lupron Depot-3 Month, Lupron Depot-4 Month, Lupron Depot-Ped, Lutrate, Procren, Procrin, Prostap, TAP-144, Trenantone, Uno-Enantone, Viadur)",
+          "Magnetic Resonance Imaging (Magnetic Resonance, Magnetic resonance imaging (procedure), Magnetic Resonance Imaging Scan, Medical Imaging, Magnetic Resonance / Nuclear Magnetic Resonance, MR, MR Imaging, MRI, MRI Scan, NMR Imaging, NMRI, Nuclear Magnetic Resonance Imaging)",
+          "Positron Emission Tomography (Medical Imaging, Positron Emission Tomography, PET, PET Scan, Positron emission tomography (procedure), Positron Emission Tomography Scan, Positron-Emission Tomography, proton magnetic resonance spectroscopic imaging, PT)",
+          "Quality-of-Life Assessment (Quality of Life Assessment)",
+          "Questionnaire Administration",
+          "Relugolix (N-(4-(1-((2,6-Difluorophenyl)methyl)-5-((dimethylamino)methyl)-1,2,3,4-tetrahydro-3-(6-methoxy-3-pyridazinyl)-2,4-dioxothieno(2,3-d)pyrimidin-6-yl)phenyl)-N'-methoxyurea, Orgovyx, TAK 385, TAK-385)",
+          "Stereotactic Body Radiation Therapy (SABR, SBRT, Stereotactic Ablative Body Radiation Therapy)",
+          "Triptorelin (6-D-Tryptophan-LH-RH, 6-D-Tryptophanluteinizing Hormone-releasing Factor, AY-25650, CL-118,532, Detryptoreline)",
+          "Volume Modulated Arc Therapy (VMAT, Volumetric Modulated Arc Therapy (procedure))"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT06150703",
+        "acronym": "SOLOAGO",
+        "title": "Luteal Phase Support With GnRH Agonist After GnRH Agonist Triggering in IVF/ICSI Cycles",
+        "sponsor": "Assistance Publique - Hôpitaux de Paris",
+        "phase": "PHASE3",
+        "status": "RECRUITING",
+        "start": "2024-06-27",
+        "primaryCompletion": "2027-09",
+        "enrollment": 652,
+        "conditions": [
+          "In Vitro Fertilization",
+          "ICSI Intracytoplasmic Spermatozoid Injection"
+        ],
+        "interventions": [
+          "Ovulation induction with hCG + Luteal phase support with vaginal progesterone",
+          "Ovulation triggering by Triptorelin + Luteal phase support by Nafarelin"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT04181203",
+        "acronym": "CARLHA-2",
+        "title": "Combined Apalutamide, Radiotherapy, and LHRH Agonist in Prostate Cancer Patients After Prostatectomy",
+        "sponsor": "UNICANCER",
+        "phase": "PHASE3",
+        "status": "ACTIVE_NOT_RECRUITING",
+        "start": "2020-01-09",
+        "primaryCompletion": "2028-09-28",
+        "enrollment": 490,
+        "conditions": [
+          "Prostate Cancer"
+        ],
+        "interventions": [
+          "Apalutamide (ARN-509)",
+          "Salvage radiotherapy (SRT)",
+          "Luteinising Hormone Releasing Hormone agonist (LHRHa) (leuprolide, goserelin, triptorelin acetate)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT01492972",
+        "acronym": null,
+        "title": "Hypo-fractionated Radiation Therapy With or Without Androgen Suppression for Intermediate Risk Prostate Cancer",
+        "sponsor": "Proton Collaborative Group",
+        "phase": "PHASE3",
+        "status": "RECRUITING",
+        "start": "2012-01",
+        "primaryCompletion": "2027-12",
+        "enrollment": 192,
+        "conditions": [
+          "Prostate Cancer"
+        ],
+        "interventions": [
+          "Radiation",
+          "Androgen Suppression Therapy (leuprolide, goserelin, buserelin, or triptorelin)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT04787744",
+        "acronym": "VA STARPORT",
+        "title": "Veterans Affairs Seamless Phase II/III Randomized Trial of STAndard Systemic theRapy With or Without PET-directed Local Therapy for Oligometastatic pRosTate Cancer",
+        "sponsor": "VA Office of Research and Development",
+        "phase": "PHASE2/PHASE3",
+        "status": "RECRUITING",
+        "start": "2021-07-01",
+        "primaryCompletion": "2026-09-30",
+        "enrollment": 464,
+        "conditions": [
+          "Prostate Cancer",
+          "Oligometastasis",
+          "Oligorecurrence",
+          "Recurrent Prostate Cancer",
+          "Metastatic Prostate Cancer",
+          "De Novo Prostate Cancer"
+        ],
+        "interventions": [
+          "PET-directed Local Therapy using Surgery",
+          "PET-directed Local Therapy using Radiation",
+          "Salvage Local Therapy for locally recurrent disease",
+          "Goserelin, Histrelin, Leuprolide & Triptorelin",
+          "ADT + Nilutamide, Flutamide, & Bicalutamide",
+          "Degarelix & Relugolix",
+          "ADT + Docetaxel +/- prednisone",
+          "ADT + Abiraterone + Prednisone",
+          "ADT + Abiraterone + Methylprednisolone",
+          "ADT + Apalutamide",
+          "ADT + Enzalutamide",
+          "Prostate-directed Radiation for De novo oligometastatic prostate cancer"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00659373",
+        "acronym": "Co-SOFT",
+        "title": "Brain Function in Premenopausal Women Receiving Tamoxifen With or Without Ovarian Function Suppression for Early-Stage Breast Cancer on Clinical Trial IBCSG 24-02",
+        "sponsor": "ETOP IBCSG Partners Foundation",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2007-12",
+        "primaryCompletion": "2014-12",
+        "enrollment": 86,
+        "conditions": [
+          "Breast Cancer",
+          "Fatigue",
+          "Sleep Disorders"
+        ],
+        "interventions": [
+          "Tamoxifen (Nolvadex)",
+          "triptorelin (GnRH analogue, Trelstar Depot, Decapeptyl Depot)",
+          "Exemestane (Aromasin)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT04753177",
+        "acronym": null,
+        "title": "The Neoadjuvant Combined Hormone Therapy in Premenopausal Women With Locally Advanced ER+/HER2- Breast Cancer",
+        "sponsor": "Saint Petersburg State Budgetary Healthcare Institution, City Clinical Oncology Dispensary",
+        "phase": "PHASE2/PHASE3",
+        "status": "UNKNOWN",
+        "start": "2021-01-28",
+        "primaryCompletion": "2023-01-28",
+        "enrollment": 120,
+        "conditions": [
+          "The Neoadjuvant Therapy"
+        ],
+        "interventions": [
+          "Ribocyclib, fulvestrant, triptorelin",
+          "Doxorubicin, cyclophosphamide, paclitaxel"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT04356664",
+        "acronym": "DECATEC",
+        "title": "Benefit of GnRH Agonist Before Frozen Embryo Transfer in Patients With Endometriosis and/or Adenomyosis",
+        "sponsor": "Hopital Foch",
+        "phase": "PHASE2/PHASE3",
+        "status": "RECRUITING",
+        "start": "2021-03-18",
+        "primaryCompletion": "2026-06-18",
+        "enrollment": 180,
+        "conditions": [
+          "Endometriosis",
+          "Adenomyosis",
+          "Infertility, Female"
+        ],
+        "interventions": [
+          "GnRH agonist (Decapeptyl 3 mg)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT04537078",
+        "acronym": null,
+        "title": "Progestin Primed Double Stimulation Protocol Versus Flexible GnRH Antagonist Protocol in Poor Responders",
+        "sponsor": "El Shatby University Hospital for Obstetrics and Gynecology",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2020-09-01",
+        "primaryCompletion": "2021-03-01",
+        "enrollment": 90,
+        "conditions": [
+          "Infertility, Female"
+        ],
+        "interventions": [
+          "Duphaston",
+          "Gonadotropin (Fostimon, Menopure, Menogon, Gonapure)",
+          "Cetrotide Injectable Product",
+          "Decapeptyl",
+          "Chorionic Gonadotropin (choriomon)",
+          "Combined Oral Contraceptive (Gynera)",
+          "Cyclo-Progynova",
+          "progesterone (prontogest)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT01020448",
+        "acronym": "Triptocare",
+        "title": "Effect of Triptorelin (Decapeptyl®) 22.5 mg on Two Biomarkers in Patients With Advanced Prostate Cancer",
+        "sponsor": "Ipsen",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2009-11",
+        "primaryCompletion": "2011-11",
+        "enrollment": 339,
+        "conditions": [
+          "Prostate Cancer"
+        ],
+        "interventions": [
+          "Triptorelin (Decapeptyl®)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT03678025",
+        "acronym": null,
+        "title": "Standard Systemic Therapy With or Without Definitive Treatment in Treating Participants With Metastatic Prostate Cancer",
+        "sponsor": "SWOG Cancer Research Network",
+        "phase": "PHASE3",
+        "status": "RECRUITING",
+        "start": "2018-09-24",
+        "primaryCompletion": "2028-04-01",
+        "enrollment": 1273,
+        "conditions": [
+          "Castration Levels of Testosterone",
+          "Metastatic Prostatic Adenocarcinoma",
+          "Stage IV Prostate Cancer AJCC v8",
+          "Stage IVA Prostate Cancer AJCC v8",
+          "Stage IVB Prostate Cancer AJCC v8"
+        ],
+        "interventions": [
+          "Abiraterone (CB 7598)",
+          "Bicalutamide (Casodex, Cosudex, ICI 176,334, ICI 176334)",
+          "Degarelix (FE200486, Firmagon)",
+          "Docetaxel (Docecad, RP56976, Taxotere, Taxotere Injection Concentrate)",
+          "Flutamide (4'-Nitro-3'-trifluoromethylisobutyranilide, Apimid, Cebatrol, Chimax, Cytomid, Drogenil, Euflex, Eulexine, Flucinom, Flucinome, Flugerel, Fluken, Flulem, FLUT, Fluta-Gry, Flutabene, Flutacan, Flutamex, Flutamin, Flutan, Flutaplex, Fugerel, Grisetin, Niftolide, Oncosal, Profamid, Propanamide, 2-Methyl-N-(4-nitro-3-(trifluoromethyl)phenyl)-, Prostacur, Prostadirex, Prostica, Prostogenat, SCH 13521, Tafenil, Tecnoflut, Testotard)",
+          "Goserelin Acetate (ZDX, Zoladex)",
+          "Histrelin Acetate (Supprelin, Vantas)",
+          "Leuprolide Acetate (A-43818, Abbott 43818, Abbott-43818, Carcinil, Depo-Eligard, Eligard, Enanton, Enantone, Enantone-Gyn, Ginecrin, LEUP, Leuplin, Leuprorelin Acetate, Lucrin, Lucrin Depot, Lupron, Lupron Depot, Lupron Depot-3 Month, Lupron Depot-4 Month, Lupron Depot-Ped, Procren, Procrin, Prostap, TAP-144, Trenantone, Uno-Enantone, Viadur)",
+          "Nilutamide (Anandron, Nilandron, RU-23908)",
+          "Orchiectomy (Castration, Male Castration, Male Gonadectomy, orchidectomy)",
+          "Prednisone (.delta.1-Cortisone, 1, 2-Dehydrocortisone, Adasone, Cortancyl, Dacortin, DeCortin, Decortisyl, Decorton, Delta 1-Cortisone, Delta-Dome, Deltacortene, Deltacortisone, Deltadehydrocortisone, Deltasone, Deltison, Deltra, Econosone, Lisacort, Meprosona-F, Metacortandracin, Meticorten, Ofisolona, Orasone, Panafcort, Panasol-S, Paracort, PRED, Predicor, Predicorten, Prednicen-M, Prednicort, Prednidib, Prednilonga, Predniment, Prednisonum, Prednitone, Promifen, Servisone, SK-Prednisone)",
+          "Quality-of-Life Assessment (Quality of Life Assessment)",
+          "Radiation Therapy (Cancer Radiotherapy, Irradiate, Irradiated, irradiation, Radiation, Radiotherapeutics, RADIOTHERAPY, RT, Therapy, Radiation)",
+          "Radical Prostatectomy (Prostatovesiculectomy)",
+          "Triptorelin (6-D-Tryptophan-LH-RH, 6-D-Tryptophanluteinizing Hormone-releasing Factor, AY-25650, CL-118,532, Decapeptyl, Detryptoreline)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT06795191",
+        "acronym": "KATANA E6M",
+        "title": "Efficacy, Safety, and Pharmacokinetics of FP-014, 22.5 mg in Patients With Advanced Prostate Cancer",
+        "sponsor": "Foresee Pharmaceuticals Co., Ltd.",
+        "phase": "PHASE3",
+        "status": "WITHDRAWN",
+        "start": "2025-06-01",
+        "primaryCompletion": "2027-11-30",
+        "enrollment": 0,
+        "conditions": [
+          "Prostate Cancer"
+        ],
+        "interventions": [
+          "Triptorelin Mesylate"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      }
+    ]
+  },
+  "negativeOrNullFindings": [
+    "PMID 22231041 (Munster, JCO) found NO benefit of triptorelin for ovarian preservation, directly contradicting PROMISE-GIM6. This disagreement is the honest state of the evidence and must be shown, not resolved by picking a side.",
+    "PMID 19135657 and PMID 21693037 are trials where triptorelin was the comparator that did not win."
+  ],
+  "cautions": [
+    "PROMISE-GIM6 (PMID 21771987) and its long-term report (PMID 26720025) are the SAME trial reported twice - do not count them as two independent trials.",
+    "Triptorelin Pamoate appeared as a separate candidate in this scan; it is the same compound in a different salt.",
+    "Same flare-effect and bone-density cautions as goserelin."
+  ],
+  "couldNotConfirm": []
+}

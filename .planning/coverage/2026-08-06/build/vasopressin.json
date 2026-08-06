@@ -1,0 +1,714 @@
+{
+  "slug": "vasopressin",
+  "name": "Vasopressin",
+  "classification": "BUILD",
+  "priority": 9,
+  "generated": "2026-08-06",
+  "generatedBy": "coverage triage run - every identifier below was fetched live from PubMed / ClinicalTrials.gov / openFDA during this run",
+  "identity": {
+    "inn": "Vasopressin",
+    "brand": [
+      "Vasostrict",
+      "and multiple generic and premixed presentations"
+    ],
+    "otherNames": [
+      "arginine vasopressin",
+      "AVP",
+      "antidiuretic hormone",
+      "argipressin"
+    ],
+    "developer": "Par/Endo (Vasostrict) plus many ANDA holders",
+    "class": "Endogenous cyclic nonapeptide hormone; V1a/V2 receptor agonist used as a vasopressor",
+    "siteContext": "The site covers other endogenous signalling peptides (kisspeptin, humanin, klotho). Vasopressin is the endogenous parent of terlipressin and desmopressin."
+  },
+  "regulatoryStatus": {
+    "source": "openFDA /drug/drugsfda.json, fetched 2026-08-06",
+    "note": "Vasostrict NDA204485 was the first FDA approval of a long-marketed unapproved drug; there are now many ANDAs and premixed NDAs with different approval dates and some Discontinued statuses. Do not present one approval date as 'the' approval.",
+    "openFDA": {
+      "queried": [
+        {
+          "field": "openfda.generic_name",
+          "value": "vasopressin",
+          "hit": true
+        }
+      ],
+      "result": {
+        "total": 10,
+        "applications": [
+          {
+            "applicationNumber": "ANDA213206",
+            "sponsor": "FRESENIUS KABI USA",
+            "brandNames": [
+              "VASOPRESSIN"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "INTRAVENOUS"
+            ],
+            "earliestApprovalDate": "20230526"
+          },
+          {
+            "applicationNumber": "ANDA213988",
+            "sponsor": "DR REDDYS",
+            "brandNames": [
+              "VASOPRESSIN IN DEXTROSE 5%",
+              "VASOPRESSIN"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "INTRAVENOUS"
+            ],
+            "earliestApprovalDate": "20240508"
+          },
+          {
+            "applicationNumber": "NDA217766",
+            "sponsor": "LONG GROVE PHARMS",
+            "brandNames": [
+              "VASOPRESSIN IN SODIUM CHLORIDE 0.9%"
+            ],
+            "marketingStatus": [
+              "Prescription",
+              "Discontinued"
+            ],
+            "routes": [
+              "INTRAVENOUS"
+            ],
+            "earliestApprovalDate": "20240711"
+          },
+          {
+            "applicationNumber": "NDA204485",
+            "sponsor": "PH HEALTH",
+            "brandNames": [
+              "VASOSTRICT"
+            ],
+            "marketingStatus": [
+              "Discontinued",
+              "Prescription"
+            ],
+            "routes": [
+              "INTRAVENOUS"
+            ],
+            "earliestApprovalDate": "20140417"
+          },
+          {
+            "applicationNumber": "ANDA216963",
+            "sponsor": "GLAND",
+            "brandNames": [
+              "VASOPRESSIN IN DEXTROSE 5%",
+              "VASOPRESSIN"
+            ],
+            "marketingStatus": [
+              "Prescription",
+              "None (Tentative Approval)"
+            ],
+            "routes": [
+              "INTRAVENOUS"
+            ],
+            "earliestApprovalDate": "20240209"
+          },
+          {
+            "applicationNumber": "ANDA211857",
+            "sponsor": "AMPHASTAR PHARMS INC",
+            "brandNames": [
+              "VASOPRESSIN"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "INTRAVENOUS"
+            ],
+            "earliestApprovalDate": "20220718"
+          },
+          {
+            "applicationNumber": "ANDA212944",
+            "sponsor": "AMNEAL",
+            "brandNames": [
+              "VASOPRESSIN"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "INTRAVENOUS"
+            ],
+            "earliestApprovalDate": "20220805"
+          },
+          {
+            "applicationNumber": "NDA212593",
+            "sponsor": "AM REGENT",
+            "brandNames": [
+              "VASOPRESSIN"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "INTRAVENOUS"
+            ],
+            "earliestApprovalDate": "20200803"
+          },
+          {
+            "applicationNumber": "NDA217569",
+            "sponsor": "BAXTER HLTHCARE CORP",
+            "brandNames": [
+              "VASOPRESSIN IN SODIUM CHLORIDE 0.9%"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "INTRAVENOUS"
+            ],
+            "earliestApprovalDate": "20230929"
+          },
+          {
+            "applicationNumber": "ANDA214314",
+            "sponsor": "EUGIA PHARMA",
+            "brandNames": [
+              "VASOPRESSIN"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "INTRAVENOUS"
+            ],
+            "earliestApprovalDate": "20220815"
+          }
+        ]
+      }
+    }
+  },
+  "evidenceBase": {
+    "pubmedRecordsScreened": 104,
+    "pubmedRecordsConfirmedNamingCompound": 102,
+    "selected": [
+      {
+        "pmid": "18305265",
+        "title": "Vasopressin versus norepinephrine infusion in patients with septic shock.",
+        "journal": "N Engl J Med",
+        "pubdate": "2008 Feb 28",
+        "firstAuthor": "Russell JA",
+        "doi": "10.1056/NEJMoa067373",
+        "publicationTypes": [
+          "Comparative Study",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "pivotal RCT vs norepinephrine in septic shock (VASST, NEJM)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "27483065",
+        "title": "Effect of Early Vasopressin vs Norepinephrine on Kidney Failure in Patients With Septic Shock: The VANISH Randomized Clinical Trial.",
+        "journal": "JAMA",
+        "pubdate": "2016 Aug 2",
+        "firstAuthor": "Gordon AC",
+        "doi": "10.1001/jama.2016.10485",
+        "publicationTypes": [
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "RCT, early vasopressin vs norepinephrine on kidney failure (VANISH, JAMA)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "23860985",
+        "title": "Vasopressin, steroids, and epinephrine and neurologically favorable survival after in-hospital cardiac arrest: a randomized clinical trial.",
+        "journal": "JAMA",
+        "pubdate": "2013 Jul 17",
+        "firstAuthor": "Mentzelopoulos SD",
+        "doi": "10.1001/jama.2013.7832",
+        "publicationTypes": [
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "RCT, vasopressin + steroids + epinephrine in in-hospital cardiac arrest (JAMA)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "34990764",
+        "title": "Vasopressin and glucocorticoids for in-hospital cardiac arrest: A systematic review and meta-analysis of individual participant data.",
+        "journal": "Resuscitation",
+        "pubdate": "2022 Feb",
+        "firstAuthor": "Holmberg MJ",
+        "doi": "10.1016/j.resuscitation.2021.12.030",
+        "publicationTypes": [
+          "Journal Article",
+          "Meta-Analysis",
+          "Systematic Review"
+        ],
+        "role": "individual participant data meta-analysis, vasopressin and glucocorticoids in in-hospital cardiac arrest",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "31062052",
+        "title": "Vasopressin in septic shock: an individual patient data meta-analysis of randomised controlled trials.",
+        "journal": "Intensive Care Med",
+        "pubdate": "2019 Jun",
+        "firstAuthor": "Nagendran M",
+        "doi": "10.1007/s00134-019-05620-2",
+        "publicationTypes": [
+          "Journal Article",
+          "Meta-Analysis",
+          "Systematic Review"
+        ],
+        "role": "individual patient data meta-analysis in septic shock",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "12732600",
+        "title": "Arginine vasopressin in advanced vasodilatory shock: a prospective, randomized, controlled study.",
+        "journal": "Circulation",
+        "pubdate": "2003 May 13",
+        "firstAuthor": "Dünser MW",
+        "doi": "10.1161/01.CIR.0000066692.71008.BB",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "RCT in advanced vasodilatory shock",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "9386112",
+        "title": "A prospective randomized trial of arginine vasopressin in the treatment of vasodilatory shock after left ventricular assist device placement.",
+        "journal": "Circulation",
+        "pubdate": "1997 Nov 4",
+        "firstAuthor": "Argenziano M",
+        "doi": null,
+        "publicationTypes": [
+          "Clinical Trial",
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "RCT after left ventricular assist device placement",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "17019548",
+        "title": "Vasopressin or norepinephrine in early hyperdynamic septic shock: a randomized clinical trial.",
+        "journal": "Intensive Care Med",
+        "pubdate": "2006 Nov",
+        "firstAuthor": "Lauzier F",
+        "doi": "10.1007/s00134-006-0378-0",
+        "publicationTypes": [
+          "Comparative Study",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "RCT in early hyperdynamic septic shock",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "19841897",
+        "title": "The effects of vasopressin on acute kidney injury in septic shock.",
+        "journal": "Intensive Care Med",
+        "pubdate": "2010 Jan",
+        "firstAuthor": "Gordon AC",
+        "doi": "10.1007/s00134-009-1687-x",
+        "publicationTypes": [
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, N.I.H., Extramural",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "effect on acute kidney injury in septic shock",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "31609774",
+        "title": "Vasopressin Versus Norepinephrine for the Management of Septic Shock in Cancer Patients: The VANCS II Randomized Clinical Trial.",
+        "journal": "Crit Care Med",
+        "pubdate": "2019 Dec",
+        "firstAuthor": "Hajjar LA",
+        "doi": "10.1097/CCM.0000000000004023",
+        "publicationTypes": [
+          "Comparative Study",
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "RCT in cancer patients with septic shock (VANCS II)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "19237882",
+        "title": "Interaction of vasopressin infusion, corticosteroid treatment, and mortality of septic shock.",
+        "journal": "Crit Care Med",
+        "pubdate": "2009 Mar",
+        "firstAuthor": "Russell JA",
+        "doi": "10.1097/CCM.0b013e3181961ace",
+        "publicationTypes": [
+          "Comparative Study",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "interaction of vasopressin, corticosteroids and mortality",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "23786655",
+        "title": "Cardiac ischemia in patients with septic shock randomized to vasopressin or norepinephrine.",
+        "journal": "Crit Care",
+        "pubdate": "2013 Jun 20",
+        "firstAuthor": "Mehta S",
+        "doi": "10.1186/cc12789",
+        "publicationTypes": [
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial"
+        ],
+        "role": "SAFETY - cardiac ischaemia in patients randomised to vasopressin or norepinephrine",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "29801010",
+        "title": "Association of Vasopressin Plus Catecholamine Vasopressors vs Catecholamines Alone With Atrial Fibrillation in Patients With Distributive Shock: A Systematic Review and Meta-analysis.",
+        "journal": "JAMA",
+        "pubdate": "2018 May 8",
+        "firstAuthor": "McIntyre WF",
+        "doi": "10.1001/jama.2018.4528",
+        "publicationTypes": [
+          "Comparative Study",
+          "Journal Article",
+          "Meta-Analysis",
+          "Research Support, Non-U.S. Gov't",
+          "Systematic Review"
+        ],
+        "role": "SAFETY - meta-analysis, atrial fibrillation with vasopressin plus catecholamines (JAMA)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "19608718",
+        "title": "Vasopressin in pediatric vasodilatory shock: a multicenter randomized controlled trial.",
+        "journal": "Am J Respir Crit Care Med",
+        "pubdate": "2009 Oct 1",
+        "firstAuthor": "Choong K",
+        "doi": "10.1164/rccm.200902-0221OC",
+        "publicationTypes": [
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "NEGATIVE - multicentre RCT in paediatric vasodilatory shock",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      }
+    ]
+  },
+  "registeredTrials": {
+    "source": "ClinicalTrials.gov API v2 query.intr, fetched 2026-08-06",
+    "totalReturned": 127,
+    "drugMatched": 44,
+    "selected": [
+      {
+        "nct": "NCT01718613",
+        "acronym": "VANCS II",
+        "title": "Vasopressin Versus Norepinephrine for the Management of Septic Shock in Cancer Patients",
+        "sponsor": "Instituto do Cancer do Estado de São Paulo",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2012-11",
+        "primaryCompletion": "2014-03",
+        "enrollment": 250,
+        "conditions": [
+          "Septic Shock"
+        ],
+        "interventions": [
+          "Vasopressin",
+          "Norepinephrine"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT07199894",
+        "acronym": null,
+        "title": "Omegapres Versus Solifenacin and Mirabegron Combination Therapy in Treatment of Primary MNE",
+        "sponsor": "Mansoura University",
+        "phase": "PHASE3",
+        "status": "RECRUITING",
+        "start": "2024-12-01",
+        "primaryCompletion": "2025-12-01",
+        "enrollment": 120,
+        "conditions": [
+          "Nocturnal Enuresis in Children"
+        ],
+        "interventions": [
+          "Mirabegron (beta3-adrenoceptor agonist), Anticholinergics",
+          "Desmopressin (DDAVP)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT05139849",
+        "acronym": "VAST-A",
+        "title": "VAsopressin and STeroids in Addition to Adrenaline in Cardiac Arrest - a Randomized Clinical Trial",
+        "sponsor": "Tiohundra AB",
+        "phase": "PHASE3",
+        "status": "RECRUITING",
+        "start": "2021-11-17",
+        "primaryCompletion": "2027-01-31",
+        "enrollment": 1276,
+        "conditions": [
+          "Cardiac Arrest;In-hospital Cardiac Arrest; Methylprednisolone; Vasopressin; Adrenaline; Randomized Clinical Trial"
+        ],
+        "interventions": [
+          "Vasopressin; Methylprednisolone; Hydrocortisone",
+          "Sodium chloride"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT06344442",
+        "acronym": null,
+        "title": "Low-dose Arginine-vasopressin Supplementation on Post-transplant Acute Kidney Injury After Liver Transplantation (AVENIR Trial)",
+        "sponsor": "Assistance Publique - Hôpitaux de Paris",
+        "phase": "PHASE3",
+        "status": "RECRUITING",
+        "start": "2025-04-16",
+        "primaryCompletion": "2025-05-16",
+        "enrollment": 304,
+        "conditions": [
+          "Acute Kidney Injury Post Liver Transplantation"
+        ],
+        "interventions": [
+          "Arginine vasopressin",
+          "Norepinephrine"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT07067866",
+        "acronym": "WAVES",
+        "title": "Weaning Approaches for Vasopressin in Sepsis",
+        "sponsor": "Hospital Nossa Senhora da Conceicao",
+        "phase": "PHASE3",
+        "status": "RECRUITING",
+        "start": "2025-10-01",
+        "primaryCompletion": "2027-12-31",
+        "enrollment": 82,
+        "conditions": [
+          "Septic Shock"
+        ],
+        "interventions": [
+          "Titrated weaning of vasopressin.",
+          "Abrupt weaning of vasopressin."
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT07423156",
+        "acronym": "TXA-VASO-PP",
+        "title": "Tranexamic Acid vs Vasopressin in Placenta Previa Trial",
+        "sponsor": "Allama Iqbal Medical College",
+        "phase": "PHASE3",
+        "status": "NOT_YET_RECRUITING",
+        "start": "2026-03-01",
+        "primaryCompletion": "2026-08-31",
+        "enrollment": 58,
+        "conditions": [
+          "Placenta Previa"
+        ],
+        "interventions": [
+          "Group A: Tranexamic acid (Inj Transamin 1gm)",
+          "Group B: Vasopressin (Novapressin)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00729794",
+        "acronym": "VSE-2",
+        "title": "Vasopressin, Epinephrine, and Steroids for Cardiac Arrest",
+        "sponsor": "University of Athens",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2008-09",
+        "primaryCompletion": "2010-11",
+        "enrollment": 300,
+        "conditions": [
+          "Cardiac Arrest"
+        ],
+        "interventions": [
+          "Vasopressin, Epinephrine, Methylprednisolone, Hydrocortisone",
+          "Standard CPR Protocol with Epinephrine and two Placebos"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT04501861",
+        "acronym": null,
+        "title": "Hemodynamic Effect of Norepinephrine Versus Vasopressin on the Pulmonary Circulation in Cardiac Surgery Patients:",
+        "sponsor": "The Cleveland Clinic",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2020-11-05",
+        "primaryCompletion": "2023-08-22",
+        "enrollment": 153,
+        "conditions": [
+          "Cardiac Disease"
+        ],
+        "interventions": [
+          "Vasopressin",
+          "Norepinephrine"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT03088345",
+        "acronym": "VAMP",
+        "title": "Early Use of Vasopressin in Post-Fontan Management",
+        "sponsor": "Medical College of Wisconsin",
+        "phase": "PHASE2/PHASE3",
+        "status": "COMPLETED",
+        "start": "2017-03-06",
+        "primaryCompletion": "2018-11-01",
+        "enrollment": 20,
+        "conditions": [
+          "Circulatory Perfusion Disorder",
+          "Congenital Heart Disease",
+          "Single-ventricle"
+        ],
+        "interventions": [
+          "Vasopressin, Arginine (Arginine Vasopressin)",
+          "Placebo (Normal Saline)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT03483753",
+        "acronym": "VANCSIII",
+        "title": "Vasopressin or Norepinephrine in Vasoplegic Shock After Non-cardiac Surgery",
+        "sponsor": "University of Sao Paulo",
+        "phase": "PHASE2/PHASE3",
+        "status": "WITHDRAWN",
+        "start": "2019-01",
+        "primaryCompletion": "2023-10-02",
+        "enrollment": 0,
+        "conditions": [
+          "Circulatory Shock",
+          "Non-cardiac Surgery"
+        ],
+        "interventions": [
+          "Vasopressin (Blinded Vasopressin)",
+          "Norepinephrine (Blinded Norepinephrine)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT04591990",
+        "acronym": "HYVAPRESS",
+        "title": "HYdrocortisone and VAsopressin in Post-RESuscitation Syndrome",
+        "sponsor": "Assistance Publique - Hôpitaux de Paris",
+        "phase": "PHASE3",
+        "status": "RECRUITING",
+        "start": "2021-05-27",
+        "primaryCompletion": "2025-12",
+        "enrollment": 380,
+        "conditions": [
+          "Postresuscitation Syndrome"
+        ],
+        "interventions": [
+          "Administration of AVP",
+          "Administration of placebo AVP",
+          "Administration of placebo hydrocortisone",
+          "Administration of hydrocortisone"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT01742689",
+        "acronym": null,
+        "title": "Analgesic Efficacy of Intranasal Desmopressin in Acute Renal Colic",
+        "sponsor": "Tehran University of Medical Sciences",
+        "phase": "PHASE3",
+        "status": "UNKNOWN",
+        "start": "2012-03",
+        "primaryCompletion": "2013-03",
+        "enrollment": 88,
+        "conditions": [
+          "Renal Colic",
+          "Pain"
+        ],
+        "interventions": [
+          "Desmopressin intranasal spray (DDAVP, DesmoMelt, Stimate, Minirin,Desmex)",
+          "Placebo intranasal spray",
+          "Indomethacin suppository (Indocin, Indocid, Indochron, INDOMET)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00379522",
+        "acronym": null,
+        "title": "Vasopressin in Traumatic Hemorrhagic Shock Study",
+        "sponsor": "Volker Wenzel",
+        "phase": "PHASE2/PHASE3",
+        "status": "COMPLETED",
+        "start": "2010-07",
+        "primaryCompletion": "2014-10",
+        "enrollment": 64,
+        "conditions": [
+          "Shock",
+          "Hypovolemia",
+          "Hemorrhagic Shock"
+        ],
+        "interventions": [
+          "Vasopressin (Pressyn, CPREssin, Pitressin)",
+          "Saline placebo (Kochsalz, Saline)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00995839",
+        "acronym": null,
+        "title": "Terlipressin in Septic Shock: Effects on Microcirculation",
+        "sponsor": "University of Roma La Sapienza",
+        "phase": "PHASE2/PHASE3",
+        "status": "COMPLETED",
+        "start": "2008-11",
+        "primaryCompletion": "2010-02",
+        "enrollment": 60,
+        "conditions": [
+          "Septic Shock",
+          "Sepsis"
+        ],
+        "interventions": [
+          "continuous infusion of terlipressin",
+          "Arginine vasopressin",
+          "terlipressin bolus administration"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      }
+    ]
+  },
+  "negativeOrNullFindings": [
+    "PMID 19608718 - the paediatric trial did not show benefit.",
+    "PMID 27483065 (VANISH) did not meet its primary kidney-failure-free-days endpoint; VASST (PMID 18305265) did not show a mortality difference overall. Vasopressin's story is a sequence of neutral primary endpoints with subgroup signals - state that plainly.",
+    "PMIDs 23786655 and 29801010 carry the ischaemia and atrial fibrillation harms."
+  ],
+  "cautions": [
+    "This is an intravenous critical-care drug. The no-dosing and no-medical-advice bans are the binding constraint on this page; describe trial designs and outcomes without any administration guidance.",
+    "Selepressin (PMID 28807037 in the screened set) is a selective V1a agonist, a DIFFERENT compound - do not fold its results into vasopressin.",
+    "Terlipressin and desmopressin are analogues, not vasopressin. Keep the evidence bases separate."
+  ],
+  "couldNotConfirm": []
+}

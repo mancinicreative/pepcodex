@@ -1,0 +1,435 @@
+{
+  "slug": "abaloparatide",
+  "name": "Abaloparatide",
+  "classification": "BUILD",
+  "priority": 5,
+  "generated": "2026-08-06",
+  "generatedBy": "coverage triage run - every identifier below was fetched live from PubMed / ClinicalTrials.gov / openFDA during this run",
+  "identity": {
+    "inn": "Abaloparatide",
+    "brand": [
+      "Tymlos"
+    ],
+    "developmentCode": "BA058",
+    "otherNames": [
+      "PTHrP(1-34) analogue"
+    ],
+    "developer": "Radius Health",
+    "class": "Synthetic 34-amino-acid analogue of parathyroid hormone-related protein; selective PTH1 receptor agonist",
+    "siteContext": "Natural pair page with teriparatide; the site's comparison-page format fits this well."
+  },
+  "regulatoryStatus": {
+    "source": "openFDA /drug/drugsfda.json, fetched 2026-08-06",
+    "note": "Single NDA (Tymlos). A transdermal patch formulation was tested and did not match the subcutaneous form - see PMID 37417725 - so do not describe a transdermal product as available.",
+    "openFDA": {
+      "queried": [
+        {
+          "field": "openfda.generic_name",
+          "value": "abaloparatide",
+          "hit": true
+        }
+      ],
+      "result": {
+        "total": 1,
+        "applications": [
+          {
+            "applicationNumber": "NDA208743",
+            "sponsor": "RADIUS",
+            "brandNames": [
+              "TYMLOS"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "SUBCUTANEOUS"
+            ],
+            "earliestApprovalDate": "20170428"
+          }
+        ]
+      }
+    }
+  },
+  "evidenceBase": {
+    "pubmedRecordsScreened": 75,
+    "pubmedRecordsConfirmedNamingCompound": 71,
+    "selected": [
+      {
+        "pmid": "27533157",
+        "title": "Effect of Abaloparatide vs Placebo on New Vertebral Fractures in Postmenopausal Women With Osteoporosis: A Randomized Clinical Trial.",
+        "journal": "JAMA",
+        "pubdate": "2016 Aug 16",
+        "firstAuthor": "Miller PD",
+        "doi": "10.1001/jama.2016.11136",
+        "publicationTypes": [
+          "Clinical Trial, Phase III",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "pivotal phase 3 vertebral fracture trial (ACTIVE, JAMA)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "29800372",
+        "title": "ACTIVExtend: 24 Months of Alendronate After 18 Months of Abaloparatide or Placebo for Postmenopausal Osteoporosis.",
+        "journal": "J Clin Endocrinol Metab",
+        "pubdate": "2018 Aug 1",
+        "firstAuthor": "Bone HG",
+        "doi": "10.1210/jc.2018-00163",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "ACTIVExtend, 24 months of alendronate after abaloparatide",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "30635696",
+        "title": "Bone turnover markers to explain changes in lumbar spine BMD with abaloparatide and teriparatide: results from ACTIVE.",
+        "journal": "Osteoporos Int",
+        "pubdate": "2019 Mar",
+        "firstAuthor": "Eastell R",
+        "doi": "10.1007/s00198-018-04819-1",
+        "publicationTypes": [
+          "Clinical Trial, Phase III",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial"
+        ],
+        "role": "bone turnover markers in ACTIVE",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "35977548",
+        "title": "Abaloparatide Increases Lumbar Spine and Hip BMD in Japanese Patients With Osteoporosis: The Phase 3 ACTIVE-J Study.",
+        "journal": "J Clin Endocrinol Metab",
+        "pubdate": "2022 Sep 28",
+        "firstAuthor": "Matsumoto T",
+        "doi": "10.1210/clinem/dgac486",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "phase 3 in Japanese patients (ACTIVE-J)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "36190391",
+        "title": "The Efficacy and Safety of Abaloparatide-SC in Men With Osteoporosis: A Randomized Clinical Trial.",
+        "journal": "J Bone Miner Res",
+        "pubdate": "2022 Dec",
+        "firstAuthor": "Czerwinski E",
+        "doi": "10.1002/jbmr.4719",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "phase 3 in men (ATOM)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "39791502",
+        "title": "Bone turnover markers predict changes in bone mineral density in men treated with abaloparatide: results from the abaloparatide for the treatment of men with osteoporosis (ATOM) study.",
+        "journal": "J Bone Miner Res",
+        "pubdate": "2025 Mar 15",
+        "firstAuthor": "Eastell R",
+        "doi": "10.1093/jbmr/zjaf003",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Clinical Trial, Phase III",
+          "Multicenter Study"
+        ],
+        "role": "ATOM bone turnover marker analysis",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "37417725",
+        "title": "Efficacy and Safety of Transdermal Abaloparatide in Postmenopausal Women with Osteoporosis: A Randomized Study.",
+        "journal": "J Bone Miner Res",
+        "pubdate": "2023 Oct",
+        "firstAuthor": "Lewiecki EM",
+        "doi": "10.1002/jbmr.4877",
+        "publicationTypes": [
+          "Randomized Controlled Trial",
+          "Journal Article",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "NEGATIVE - transdermal abaloparatide inferior to subcutaneous (lumbar spine BMD treatment difference -3.72%)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "36588166",
+        "title": "Effect of Abaloparatide on Bone Microarchitecture Assessed by Trabecular Bone Score in Women With Osteoporosis: Post Hoc Analysis of ACTIVE and ACTIVExtend.",
+        "journal": "J Bone Miner Res",
+        "pubdate": "2023 Apr",
+        "firstAuthor": "Cosman F",
+        "doi": "10.1002/jbmr.4764",
+        "publicationTypes": [
+          "Randomized Controlled Trial",
+          "Journal Article",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "trabecular bone score post hoc, ACTIVE and ACTIVExtend",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "40214193",
+        "title": "Probability of achieving bone mineral density treatment targets with abaloparatide and teriparatide.",
+        "journal": "J Bone Miner Res",
+        "pubdate": "2025 Jun 3",
+        "firstAuthor": "Cosman F",
+        "doi": "10.1093/jbmr/zjaf053",
+        "publicationTypes": [
+          "Comparative Study",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial"
+        ],
+        "role": "abaloparatide vs teriparatide, probability of reaching BMD targets",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "30953114",
+        "title": "Abaloparatide for risk reduction of nonvertebral and vertebral fractures in postmenopausal women with osteoporosis: a network meta-analysis.",
+        "journal": "Osteoporos Int",
+        "pubdate": "2019 Jul",
+        "firstAuthor": "Reginster J-",
+        "doi": "10.1007/s00198-019-04947-2",
+        "publicationTypes": [
+          "Journal Article",
+          "Network Meta-Analysis"
+        ],
+        "role": "network meta-analysis of fracture risk reduction",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "40047881",
+        "title": "PTH1 receptor agonists for fracture risk: a systematic review and network meta-analysis.",
+        "journal": "Osteoporos Int",
+        "pubdate": "2025 Jun",
+        "firstAuthor": "Beaudart C",
+        "doi": "10.1007/s00198-025-07440-1",
+        "publicationTypes": [
+          "Journal Article",
+          "Network Meta-Analysis",
+          "Systematic Review"
+        ],
+        "role": "2025 systematic review and network meta-analysis of PTH1 receptor agonists",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "37130601",
+        "title": "Fracture risk reduction and safety by osteoporosis treatment compared with placebo or active comparator in postmenopausal women: systematic review, network meta-analysis, and meta-regression analysis of randomised clinical trials.",
+        "journal": "BMJ",
+        "pubdate": "2023 May 2",
+        "firstAuthor": "Händel MN",
+        "doi": "10.1136/bmj-2021-068033",
+        "publicationTypes": [
+          "Systematic Review",
+          "Journal Article",
+          "Network Meta-Analysis"
+        ],
+        "role": "BMJ network meta-analysis of osteoporosis treatments incl. safety",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "36592455",
+        "title": "Effectiveness and Safety of Treatments to Prevent Fractures in People With Low Bone Mass or Primary Osteoporosis: A Living Systematic Review and Network Meta-analysis for the American College of Physicians.",
+        "journal": "Ann Intern Med",
+        "pubdate": "2023 Feb",
+        "firstAuthor": "Ayers C",
+        "doi": "10.7326/M22-0684",
+        "publicationTypes": [
+          "Journal Article",
+          "Systematic Review",
+          "Network Meta-Analysis"
+        ],
+        "role": "living systematic review and NMA for the American College of Physicians",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "41598611",
+        "title": "The Efficacy and Safety of Abaloparatide in Osteoporosis: A Systematic Review and Meta-Analysis.",
+        "journal": "J Clin Med",
+        "pubdate": "2026 Jan 14",
+        "firstAuthor": "Bonifacio M",
+        "doi": "10.3390/jcm15020673",
+        "publicationTypes": [
+          "Journal Article",
+          "Review"
+        ],
+        "role": "2026 systematic review and meta-analysis of efficacy and safety",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      }
+    ]
+  },
+  "registeredTrials": {
+    "source": "ClinicalTrials.gov API v2 query.intr, fetched 2026-08-06",
+    "totalReturned": 25,
+    "drugMatched": 20,
+    "selected": [
+      {
+        "nct": "NCT01343004",
+        "acronym": "ACTIVE",
+        "title": "Study to Evaluate the Safety and Efficacy of BA058 (Abaloparatide) for Prevention of Fracture in Postmenopausal Women",
+        "sponsor": "Radius Health, Inc.",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2011-04",
+        "primaryCompletion": "2014-10",
+        "enrollment": 2463,
+        "conditions": [
+          "Osteoporosis",
+          "Postmenopausal Osteoporosis"
+        ],
+        "interventions": [
+          "Placebo",
+          "BA058 80 mcg (abaloparatide, Abaloparatide-SC)",
+          "teriparatide (Forteo, Forsteo)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT03710889",
+        "acronym": null,
+        "title": "Early Effects of Abaloparatide on Tissue-Based Indices of Bone Formation and Resorption",
+        "sponsor": "Radius Health, Inc.",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2018-09-20",
+        "primaryCompletion": "2020-07-15",
+        "enrollment": 23,
+        "conditions": [
+          "Osteoporosis, Postmenopausal",
+          "Osteoporosis",
+          "Osteoporosis Vertebral",
+          "Osteoporosis Risk",
+          "Osteoporosis Fracture",
+          "Osteoporosis Localized to Spine",
+          "Osteoporosis, Age-Related",
+          "Osteoporosis Senile",
+          "Osteoporosis of Vertebrae"
+        ],
+        "interventions": [
+          "Abaloparatide (TYMLOS®, BA058)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT03512262",
+        "acronym": null,
+        "title": "Safety and Efficacy of Abaloparatide-SC in Men With Osteoporosis (ATOM)",
+        "sponsor": "Radius Health, Inc.",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2018-05-03",
+        "primaryCompletion": "2021-08-17",
+        "enrollment": 228,
+        "conditions": [
+          "Osteoporosis",
+          "Osteoporosis, Age-Related",
+          "Osteoporosis Localized to Spine",
+          "Age Related Osteoporosis",
+          "Osteoporosis Senile",
+          "Osteoporosis of Vertebrae"
+        ],
+        "interventions": [
+          "Abaloparatide (TYMLOS®, BA058, abaloparatide-SC)",
+          "Placebo"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT04064411",
+        "acronym": null,
+        "title": "Efficacy & Safety of Abaloparatide-Solid Microstructured Transdermal System in Postmenopausal Women With Osteoporosis",
+        "sponsor": "Radius Health, Inc.",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2019-08-05",
+        "primaryCompletion": "2021-10-05",
+        "enrollment": 511,
+        "conditions": [
+          "Postmenopausal Osteoporosis"
+        ],
+        "interventions": [
+          "abaloparatide (TYMLOS®, BA058, abaloparatide-SC)",
+          "abaloparatide solid microstructured transdermal system (BA058, abaloparatide-transdermal)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT04467983",
+        "acronym": null,
+        "title": "Abaloparatide Added to Ongoing Denosumab vs Continued Denosumab Alone",
+        "sponsor": "Hospital for Special Surgery, New York",
+        "phase": "PHASE4",
+        "status": "ACTIVE_NOT_RECRUITING",
+        "start": "2021-02-01",
+        "primaryCompletion": "2026-09-01",
+        "enrollment": 70,
+        "conditions": [
+          "Osteoporosis, Postmenopausal"
+        ],
+        "interventions": [
+          "Denosumab Injection (Prolia)",
+          "Abaloparatide (Tymlos)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT04626141",
+        "acronym": null,
+        "title": "Supracondylar Distal Femur Fractures and Abaloparatide",
+        "sponsor": "Daniel Horwitz",
+        "phase": "PHASE4",
+        "status": "WITHDRAWN",
+        "start": "2024-06",
+        "primaryCompletion": "2025-06",
+        "enrollment": 0,
+        "conditions": [
+          "Femoral Fractures"
+        ],
+        "interventions": [
+          "Abaloparatide",
+          "Placebo"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT04167163",
+        "acronym": null,
+        "title": "Abaloparatide Before Total Knee Arthroplasty",
+        "sponsor": "University of Wisconsin, Madison",
+        "phase": "PHASE4",
+        "status": "COMPLETED",
+        "start": "2020-01-10",
+        "primaryCompletion": "2025-04-03",
+        "enrollment": 58,
+        "conditions": [
+          "Osteoporosis",
+          "Arthroplasties, Knee Replacement"
+        ],
+        "interventions": [
+          "Abaloparatide (Tymlos)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      }
+    ]
+  },
+  "negativeOrNullFindings": [
+    "PMID 37417725 - the transdermal microstructured system produced a 3.72 percentage-point smaller lumbar spine BMD gain than subcutaneous abaloparatide, with administration-site reactions in 94.4% of recipients.",
+    "PMIDs 37130601, 36592455 and 30907957 are independent network meta-analyses that place abaloparatide against every alternative - use these rather than sponsor comparisons."
+  ],
+  "cautions": [
+    "Abaloparatide is a PTHrP analogue, teriparatide is a PTH fragment. They are not the same molecule class and their receptor conformational selectivity differs - do not describe them interchangeably.",
+    "ACTIVE and ACTIVExtend are one continuous programme; ATOM is the separate male study."
+  ],
+  "couldNotConfirm": []
+}

@@ -3249,7 +3249,7 @@
         },
         {
           "file": "data/source-packs/ll-37.json",
-          "where": "$.trials[2].nctId"
+          "where": "$.trials[1].nctId"
         }
       ],
       "verdict": "exists",
@@ -4201,6 +4201,14 @@
           "where": "frontmatter.sources[0].pmid"
         },
         {
+          "file": "src/content/blog/orforglipron-attain-1-results.mdx",
+          "where": "frontmatter.sources[1].url"
+        },
+        {
+          "file": "src/content/blog/orforglipron-attain-1-results.mdx",
+          "where": "frontmatter.sources[1].pmid"
+        },
+        {
           "file": "src/content/peptides/orforglipron.mdx",
           "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[0].pmid"
         },
@@ -4241,6 +4249,10 @@
         {
           "file": "src/content/blog/orforglipron-14-percent-weight-loss.mdx",
           "where": "frontmatter.sources[0].doi"
+        },
+        {
+          "file": "src/content/blog/orforglipron-attain-1-results.mdx",
+          "where": "frontmatter.sources[1].doi"
         }
       ],
       "verdict": "exists",
@@ -4352,14 +4364,6 @@
       "type": "NCT",
       "id": "NCT05869903",
       "locations": [
-        {
-          "file": "src/content/blog/orforglipron-beats-oral-semaglutide.mdx",
-          "where": "frontmatter.sources[0].url"
-        },
-        {
-          "file": "src/content/blog/orforglipron-beats-oral-semaglutide.mdx",
-          "where": "frontmatter.sources[0].nctId"
-        },
         {
           "file": "src/content/blog/orforglipron-phase3-advance.mdx",
           "where": "frontmatter.sources[2].url"
@@ -6082,6 +6086,10 @@
         {
           "file": "src/content/glossary/dual-agonist.mdx",
           "where": "frontmatter.sources[0].pmid"
+        },
+        {
+          "file": "src/content/glossary/dual-agonist.mdx",
+          "where": "body"
         },
         {
           "file": "src/content/glossary/mounjaro.mdx",
@@ -11126,6 +11134,14 @@
         {
           "file": "src/content/peptides/bronchogen.mdx",
           "where": "frontmatter.scoring.citations[9]"
+        },
+        {
+          "file": "src/content/peptides/cardiogen.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[1].evidence.keyFindings[0].pmid"
+        },
+        {
+          "file": "src/content/peptides/cardiogen.mdx",
+          "where": "frontmatter.scoring.citations[2]"
         }
       ],
       "verdict": "exists",
@@ -11633,14 +11649,6 @@
       "id": "32399807",
       "locations": [
         {
-          "file": "src/content/peptides/cardiogen.mdx",
-          "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[0].pmid"
-        },
-        {
-          "file": "src/content/peptides/cardiogen.mdx",
-          "where": "frontmatter.scoring.citations[0]"
-        },
-        {
           "file": "src/content/peptides/vilon.mdx",
           "where": "frontmatter.evidenceChainedBenefits[2].evidence.keyFindings[1].pmid"
         },
@@ -11667,14 +11675,6 @@
       "type": "PMID",
       "id": "25946838",
       "locations": [
-        {
-          "file": "src/content/peptides/cardiogen.mdx",
-          "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[1].pmid"
-        },
-        {
-          "file": "src/content/peptides/cardiogen.mdx",
-          "where": "frontmatter.scoring.citations[2]"
-        },
         {
           "file": "src/content/peptides/ovagen.mdx",
           "where": "frontmatter.scoring.citations[0]"
@@ -11711,7 +11711,7 @@
           "where": "frontmatter.scoring.citations[3]"
         }
       ],
-      "verdict": "exists",
+      "verdict": "retired",
       "authority": "pubmed",
       "evidence": {
         "title": "Peptide Regulation of Skin Fibroblast Functions during Their Aging In Vitro.",
@@ -11723,20 +11723,13 @@
         ]
       },
       "checkedAt": "2026-08-06T09:59:48.588Z",
-      "checkVersion": 1
+      "checkVersion": 1,
+      "retiredAt": "2026-08-06"
     },
     "PMID:30791821": {
       "type": "PMID",
       "id": "30791821",
       "locations": [
-        {
-          "file": "src/content/peptides/cardiogen.mdx",
-          "where": "frontmatter.evidenceChainedBenefits[1].evidence.keyFindings[0].pmid"
-        },
-        {
-          "file": "src/content/peptides/cardiogen.mdx",
-          "where": "frontmatter.scoring.citations[1]"
-        },
         {
           "file": "src/content/peptides/chonluten.mdx",
           "where": "frontmatter.scoring.citations[3]"
@@ -11769,7 +11762,7 @@
           "where": "frontmatter.scoring.citations[4]"
         }
       ],
-      "verdict": "exists",
+      "verdict": "retired",
       "authority": "pubmed",
       "evidence": {
         "title": "Peptide Regulation of Cells Renewal Processes in Kidney Tissue Cultures from Young and Old Animals.",
@@ -11781,20 +11774,13 @@
         ]
       },
       "checkedAt": "2026-08-06T09:59:49.733Z",
-      "checkVersion": 1
+      "checkVersion": 1,
+      "retiredAt": "2026-08-06"
     },
     "PMID:35408963": {
       "type": "PMID",
       "id": "35408963",
       "locations": [
-        {
-          "file": "src/content/peptides/cardiogen.mdx",
-          "where": "frontmatter.evidenceChainedBenefits[2].evidence.keyFindings[0].pmid"
-        },
-        {
-          "file": "src/content/peptides/cardiogen.mdx",
-          "where": "frontmatter.scoring.citations[8]"
-        },
         {
           "file": "src/content/peptides/chonluten.mdx",
           "where": "frontmatter.scoring.citations[0]"
@@ -11832,7 +11818,11 @@
       "locations": [
         {
           "file": "src/content/peptides/cardiogen.mdx",
-          "where": "frontmatter.scoring.citations[5]"
+          "where": "frontmatter.scoring.citations[6]"
+        },
+        {
+          "file": "src/content/peptides/cardiogen.mdx",
+          "where": "body"
         },
         {
           "file": "src/content/peptides/cartalax.mdx",
@@ -11883,10 +11873,6 @@
       "id": "31808038",
       "locations": [
         {
-          "file": "src/content/peptides/cardiogen.mdx",
-          "where": "frontmatter.scoring.citations[6]"
-        },
-        {
           "file": "src/content/peptides/ovagen.mdx",
           "where": "frontmatter.scoring.citations[3]"
         },
@@ -11922,10 +11908,6 @@
       "type": "PMID",
       "id": "12374906",
       "locations": [
-        {
-          "file": "src/content/peptides/cardiogen.mdx",
-          "where": "frontmatter.scoring.citations[7]"
-        },
         {
           "file": "src/content/peptides/cerluten.mdx",
           "where": "frontmatter.scoring.citations[3]"
@@ -17980,7 +17962,7 @@
         },
         {
           "file": "src/content/peptides/kristagen.mdx",
-          "where": "frontmatter.scoring.citations[5]"
+          "where": "frontmatter.scoring.citations[6]"
         }
       ],
       "verdict": "exists",
@@ -18004,15 +17986,7 @@
       "locations": [
         {
           "file": "src/content/peptides/kristagen.mdx",
-          "where": "frontmatter.evidenceChainedBenefits[1].evidence.keyFindings[0].pmid"
-        },
-        {
-          "file": "src/content/peptides/kristagen.mdx",
           "where": "frontmatter.timeline[1].source"
-        },
-        {
-          "file": "src/content/peptides/kristagen.mdx",
-          "where": "frontmatter.scoring.citations[1]"
         },
         {
           "file": "src/content/peptides/kristagen.mdx",
@@ -18049,7 +18023,7 @@
         },
         {
           "file": "src/content/peptides/kristagen.mdx",
-          "where": "frontmatter.scoring.citations[2]"
+          "where": "frontmatter.scoring.citations[3]"
         }
       ],
       "verdict": "exists",
@@ -18076,7 +18050,7 @@
         },
         {
           "file": "src/content/peptides/kristagen.mdx",
-          "where": "frontmatter.scoring.citations[3]"
+          "where": "frontmatter.scoring.citations[4]"
         },
         {
           "file": "src/content/peptides/thymalin.mdx",
@@ -18119,7 +18093,7 @@
         },
         {
           "file": "src/content/peptides/kristagen.mdx",
-          "where": "frontmatter.scoring.citations[4]"
+          "where": "frontmatter.scoring.citations[5]"
         },
         {
           "file": "src/content/peptides/kristagen.mdx",
@@ -30948,7 +30922,7 @@
         },
         {
           "file": "data/source-packs/cagrilintide.json",
-          "where": "$.coreLibrary.trialRegistries[6].nctId"
+          "where": "$.coreLibrary.trialRegistries[2].nctId"
         }
       ],
       "verdict": "exists",
@@ -30975,10 +30949,6 @@
       "locations": [
         {
           "file": "data/source-packs/cagrilintide.json",
-          "where": "$.coreLibrary.trialRegistries[5].url"
-        },
-        {
-          "file": "data/source-packs/cagrilintide.json",
           "where": "$.gapsAndNextResearch.missingEvidence[3].studyNeeded"
         }
       ],
@@ -30999,6 +30969,10 @@
       "type": "NCT",
       "id": "NCT06131437",
       "locations": [
+        {
+          "file": "data/source-packs/cagrilintide.json",
+          "where": "$.coreLibrary.trialRegistries[5].url"
+        },
         {
           "file": "data/source-packs/cagrilintide.json",
           "where": "$.coreLibrary.trialRegistries[5].nctId"
@@ -31030,7 +31004,7 @@
           "where": "$.coreLibrary.trialRegistries[6].url"
         }
       ],
-      "verdict": "exists",
+      "verdict": "retired",
       "authority": "clinicaltrials.gov",
       "evidence": {
         "title": "Glass Ionomer Sealant Versus Fluoride Varnish on Occlusal Caries Prevention",
@@ -31044,7 +31018,8 @@
         ]
       },
       "checkedAt": "2026-08-06T10:06:15.470Z",
-      "checkVersion": 1
+      "checkVersion": 1,
+      "retiredAt": "2026-08-06"
     },
     "PMID:3035556": {
       "type": "PMID",
@@ -32838,10 +32813,6 @@
         {
           "file": "data/source-packs/cerebrolysin.json",
           "where": "$.trials[0].nctId"
-        },
-        {
-          "file": "data/source-packs/cerebrolysin.json",
-          "where": "$.trials[35].nctId"
         }
       ],
       "verdict": "exists",
@@ -32867,10 +32838,6 @@
         {
           "file": "data/source-packs/cerebrolysin.json",
           "where": "$.trials[1].nctId"
-        },
-        {
-          "file": "data/source-packs/cerebrolysin.json",
-          "where": "$.trials[34].nctId"
         }
       ],
       "verdict": "exists",
@@ -33686,7 +33653,7 @@
       "locations": [
         {
           "file": "data/source-packs/cerebrolysin.json",
-          "where": "$.trials[36].nctId"
+          "where": "$.trials[34].nctId"
         }
       ],
       "verdict": "exists",
@@ -33711,7 +33678,7 @@
       "locations": [
         {
           "file": "data/source-packs/cerebrolysin.json",
-          "where": "$.trials[37].nctId"
+          "where": "$.trials[35].nctId"
         }
       ],
       "verdict": "exists",
@@ -33737,7 +33704,7 @@
       "locations": [
         {
           "file": "data/source-packs/cerebrolysin.json",
-          "where": "$.trials[38].nctId"
+          "where": "$.trials[36].nctId"
         }
       ],
       "verdict": "exists",
@@ -36806,7 +36773,7 @@
           "where": "$.trialRegistries[0].url"
         }
       ],
-      "verdict": "exists",
+      "verdict": "retired",
       "authority": "clinicaltrials.gov",
       "evidence": {
         "title": "Ketorolac Versus Ibuprofen to Treat Painful Episodes of Sickle Cell Disease",
@@ -36820,12 +36787,17 @@
         ]
       },
       "checkedAt": "2026-08-06T10:08:14.549Z",
-      "checkVersion": 1
+      "checkVersion": 1,
+      "retiredAt": "2026-08-06"
     },
     "NCT:NCT02449889": {
       "type": "NCT",
       "id": "NCT02449889",
       "locations": [
+        {
+          "file": "data/source-packs/hcg.json",
+          "where": "$.trialRegistries[0].url"
+        },
         {
           "file": "data/source-packs/hcg.json",
           "where": "$.trialRegistries[0].nctId"
@@ -37381,7 +37353,7 @@
           "where": "$.trialRegistries[0].url"
         }
       ],
-      "verdict": "exists",
+      "verdict": "retired",
       "authority": "clinicaltrials.gov",
       "evidence": {
         "title": "Manual Therapy in Patients With Asthma",
@@ -37395,12 +37367,17 @@
         ]
       },
       "checkedAt": "2026-08-06T10:08:26.643Z",
-      "checkVersion": 1
+      "checkVersion": 1,
+      "retiredAt": "2026-08-06"
     },
     "NCT:NCT01330771": {
       "type": "NCT",
       "id": "NCT01330771",
       "locations": [
+        {
+          "file": "data/source-packs/hmg.json",
+          "where": "$.trialRegistries[0].url"
+        },
         {
           "file": "data/source-packs/hmg.json",
           "where": "$.trialRegistries[0].nctId"
@@ -40421,10 +40398,6 @@
         {
           "file": "data/source-packs/ll-37.json",
           "where": "$.trials[0].nctId"
-        },
-        {
-          "file": "data/source-packs/ll-37.json",
-          "where": "$.trials[1].nctId"
         }
       ],
       "verdict": "exists",
@@ -51498,10 +51471,6 @@
         },
         {
           "file": "data/source-packs/tesamorelin.json",
-          "where": "$.coreLibrary.clinicalTrials[1].nctId"
-        },
-        {
-          "file": "data/source-packs/tesamorelin.json",
           "where": "$.trials[19].nctId"
         }
       ],
@@ -51526,7 +51495,7 @@
       "locations": [
         {
           "file": "data/source-packs/tesamorelin.json",
-          "where": "$.coreLibrary.clinicalTrials[2].nctId"
+          "where": "$.coreLibrary.clinicalTrials[1].nctId"
         },
         {
           "file": "data/source-packs/tesamorelin.json",
@@ -51555,7 +51524,7 @@
       "locations": [
         {
           "file": "data/source-packs/tesamorelin.json",
-          "where": "$.coreLibrary.clinicalTrials[3].nctId"
+          "where": "$.coreLibrary.clinicalTrials[2].nctId"
         },
         {
           "file": "data/source-packs/tesamorelin.json",
@@ -51583,7 +51552,7 @@
       "locations": [
         {
           "file": "data/source-packs/tesamorelin.json",
-          "where": "$.coreLibrary.clinicalTrials[4].nctId"
+          "where": "$.coreLibrary.clinicalTrials[3].nctId"
         },
         {
           "file": "data/source-packs/tesamorelin.json",
@@ -51612,7 +51581,7 @@
       "locations": [
         {
           "file": "data/source-packs/tesamorelin.json",
-          "where": "$.coreLibrary.clinicalTrials[5].nctId"
+          "where": "$.coreLibrary.clinicalTrials[4].nctId"
         },
         {
           "file": "data/source-packs/tesamorelin.json",
@@ -51640,7 +51609,7 @@
       "locations": [
         {
           "file": "data/source-packs/tesamorelin.json",
-          "where": "$.coreLibrary.clinicalTrials[6].nctId"
+          "where": "$.coreLibrary.clinicalTrials[5].nctId"
         },
         {
           "file": "data/source-packs/tesamorelin.json",
@@ -51669,7 +51638,7 @@
       "locations": [
         {
           "file": "data/source-packs/tesamorelin.json",
-          "where": "$.coreLibrary.clinicalTrials[7].nctId"
+          "where": "$.coreLibrary.clinicalTrials[6].nctId"
         },
         {
           "file": "data/source-packs/tesamorelin.json",
@@ -59064,7 +59033,235 @@
       },
       "checkedAt": "2026-08-06T13:09:42.406Z",
       "checkVersion": 1
+    },
+    "PMID:22977870": {
+      "type": "PMID",
+      "id": "22977870",
+      "locations": [
+        {
+          "file": "src/content/peptides/cardiogen.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[0].pmid"
+        },
+        {
+          "file": "src/content/peptides/cardiogen.mdx",
+          "where": "frontmatter.scoring.citations[0]"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Tetrapeptide H-Ala-Glu-Asp-Arg-OH stimulates expression of cytoskeletal and nuclear matrix proteins.",
+        "journal": "Bulletin of experimental biology and medicine",
+        "year": "2012",
+        "firstAuthor": "Khavinson VKh",
+        "pubTypes": [
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T14:03:10.601Z",
+      "checkVersion": 1
+    },
+    "PMID:36611900": {
+      "type": "PMID",
+      "id": "36611900",
+      "locations": [
+        {
+          "file": "src/content/peptides/cardiogen.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[1].pmid"
+        },
+        {
+          "file": "src/content/peptides/cardiogen.mdx",
+          "where": "frontmatter.scoring.citations[1]"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Senescence-Associated Secretory Phenotype of Cardiovascular System Cells and Inflammaging: Perspectives of Peptide Regulation.",
+        "journal": "Cells",
+        "year": "2022",
+        "firstAuthor": "Khavinson V",
+        "pubTypes": [
+          "Journal Article",
+          "Review"
+        ]
+      },
+      "checkedAt": "2026-08-06T14:03:11.394Z",
+      "checkVersion": 1
+    },
+    "PMID:20586252": {
+      "type": "PMID",
+      "id": "20586252",
+      "locations": [
+        {
+          "file": "src/content/peptides/cardiogen.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[1].evidence.keyFindings[1].pmid"
+        },
+        {
+          "file": "src/content/peptides/cardiogen.mdx",
+          "where": "frontmatter.scoring.citations[3]"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "[Peptidergic regulation of the expression of signal factors of fibroblast differentiation in the human prostate gland in cell aging].",
+        "journal": "Advances in gerontology = Uspekhi gerontologii",
+        "year": "2010",
+        "firstAuthor": "Kheĭfets OV",
+        "pubTypes": [
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T14:03:11.965Z",
+      "checkVersion": 1
+    },
+    "PMID:23581987": {
+      "type": "PMID",
+      "id": "23581987",
+      "locations": [
+        {
+          "file": "src/content/peptides/cardiogen.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[2].evidence.keyFindings[0].pmid"
+        },
+        {
+          "file": "src/content/peptides/cardiogen.mdx",
+          "where": "frontmatter.scoring.citations[4]"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Interaction of short peptides with FITC-labeled wheat histones and their complexes with deoxyribooligonucleotides.",
+        "journal": "Biochemistry. Biokhimiia",
+        "year": "2013",
+        "firstAuthor": "Fedoreyeva LI",
+        "pubTypes": [
+          "Journal Article",
+          "Research Support, Non-U.S. Gov't"
+        ]
+      },
+      "checkedAt": "2026-08-06T14:03:12.556Z",
+      "checkVersion": 1
+    },
+    "PMID:20396706": {
+      "type": "PMID",
+      "id": "20396706",
+      "locations": [
+        {
+          "file": "src/content/peptides/cardiogen.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[2].evidence.keyFindings[1].pmid"
+        },
+        {
+          "file": "src/content/peptides/cardiogen.mdx",
+          "where": "frontmatter.scoring.citations[5]"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Tumor-modifying effect of cardiogen peptide on M-1 sarcoma in senescent rats.",
+        "journal": "Bulletin of experimental biology and medicine",
+        "year": "2009",
+        "firstAuthor": "Levdik NV",
+        "pubTypes": [
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T14:03:13.131Z",
+      "checkVersion": 1
+    },
+    "PMID:35887081": {
+      "type": "PMID",
+      "id": "35887081",
+      "locations": [
+        {
+          "file": "src/content/peptides/cardiogen.mdx",
+          "where": "frontmatter.scoring.citations[7]"
+        },
+        {
+          "file": "src/content/peptides/cardiogen.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Transport of Biologically Active Ultrashort Peptides Using POT and LAT Carriers.",
+        "journal": "International journal of molecular sciences",
+        "year": "2022",
+        "firstAuthor": "Khavinson V",
+        "pubTypes": [
+          "Journal Article",
+          "Review"
+        ]
+      },
+      "checkedAt": "2026-08-06T14:03:13.715Z",
+      "checkVersion": 1
+    },
+    "PMID:22803085": {
+      "type": "PMID",
+      "id": "22803085",
+      "locations": [
+        {
+          "file": "src/content/peptides/kristagen.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[1].evidence.keyFindings[0].pmid"
+        },
+        {
+          "file": "src/content/peptides/kristagen.mdx",
+          "where": "frontmatter.scoring.citations[1]"
+        },
+        {
+          "file": "src/content/peptides/kristagen.mdx",
+          "where": "frontmatter.scoring.notes"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Effect of bioregulatory tripeptides on the culture of skin cells from young and old rats.",
+        "journal": "Bulletin of experimental biology and medicine",
+        "year": "2012",
+        "firstAuthor": "Voicekhovskaya MA",
+        "pubTypes": [
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T14:03:14.292Z",
+      "checkVersion": 1
+    },
+    "PMID:28976144": {
+      "type": "PMID",
+      "id": "28976144",
+      "locations": [
+        {
+          "file": "src/content/peptides/kristagen.mdx",
+          "where": "frontmatter.scoring.citations[2]"
+        },
+        {
+          "file": "src/content/peptides/kristagen.mdx",
+          "where": "frontmatter.scoring.notes"
+        },
+        {
+          "file": "src/content/peptides/kristagen.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "[Molecular aspects of immunoprotective activity of peptides in spleen during the ageing process].",
+        "journal": "Advances in gerontology = Uspekhi gerontologii",
+        "year": "2014",
+        "firstAuthor": "Сhervyakova NA",
+        "pubTypes": [
+          "English Abstract",
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T14:03:14.869Z",
+      "checkVersion": 1
     }
   },
-  "enumeratedAt": "2026-08-06T13:08:34.616Z"
+  "enumeratedAt": "2026-08-06T14:03:03.853Z"
 }

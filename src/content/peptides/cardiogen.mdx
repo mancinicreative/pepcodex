@@ -1,36 +1,36 @@
 ---
 name: Cardiogen
 aliases:
-  - AED
-  - Ala-Glu-Asp
-  - Cardiac tripeptide
+  - AEDR
+  - Ala-Glu-Asp-Arg
+  - H-Ala-Glu-Asp-Arg-OH
 category: other
 bioregulatorType: synthetic
 compoundType: bioregulator
 evidenceStrength: very-low
-lastUpdated: 2026-05-31T00:00:00.000Z
+lastUpdated: 2026-08-06T00:00:00.000Z
 comparators:
   - vesugen
   - epithalon
   - thymalin
 summary: >-
-  A synthetic tripeptide (Ala-Glu-Asp, AED) developed by Russian scientist
-  Vladimir Khavinson and marketed as a cardiac "bioregulator." Despite that
-  marketing, no PubMed-indexed study has examined AED in heart, cardiomyocyte,
-  or myocardial tissue. The only published AED research is in vitro and
-  non-cardiac — anti-aging gene-expression effects in cultured stem cells,
-  fibroblasts, kidney and immune cells. No human or animal data and no
-  regulatory approval anywhere.
+  A synthetic tetrapeptide (Ala-Glu-Asp-Arg, AEDR) developed by Russian
+  scientist Vladimir Khavinson and patented as a substance for restoring
+  myocardium function (US7662789). Published work is preclinical only: a
+  reported reduction in mortality after experimental myocardial infarction in
+  rats, stimulation of cytoskeletal and nuclear-matrix protein synthesis in
+  cultured fibroblasts, and organotypic heart-explant culture. No human trial,
+  no independent Western replication, and no regulatory approval anywhere.
 sources:
-  count: 9
+  count: 8
   human: 0
-  preclinical: 6
-  openAccess: 0
-metaTitle: 'Cardiogen (AED): Evidence Review — No Cardiac Studies (2026)'
+  preclinical: 5
+  openAccess: 6
+metaTitle: 'Cardiogen (AEDR): Evidence Review — Preclinical Only (2026)'
 metaDescription: >-
-  Evidence review of Cardiogen (AED tripeptide): no cardiac studies exist — the
-  only published research is in vitro, non-cardiac anti-aging cell work. 9
-  citations. Updated 2026.
+  Evidence review of Cardiogen (AEDR tetrapeptide, Ala-Glu-Asp-Arg): patented
+  for myocardium function, but all published data is Russian preclinical work.
+  8 citations. Updated 2026.
 interactions:
   - peptide: epithalon
     type: compatible
@@ -45,10 +45,10 @@ interactions:
       interaction or combination studies exist; co-use is not supported by
       evidence.
 molecularInfo:
-  weight: 333.29 Da
-  chainLength: 3
-  type: Tripeptide
-  sequence: AED
+  weight: 489.5 Da
+  chainLength: 4
+  type: Tetrapeptide
+  sequence: AEDR
   aminoAcids:
     - code: A
       name: Alanine
@@ -62,53 +62,59 @@ molecularInfo:
       name: Aspartic Acid
       position: 3
       property: negative
+    - code: R
+      name: Arginine
+      position: 4
+      property: positive
 evidenceChainedBenefits:
   - mechanism:
       action: >-
-        Cell penetration and DNA binding proposed to modulate gene expression
-        (demonstrated only in non-cardiac cultured cells)
+        Stimulation of cytoskeletal and nuclear-matrix protein synthesis,
+        proposed as the basis of the reported cardioprotective effect
       confidence: emerging
-      directStudies: 3
+      directStudies: 2
     benefit:
-      claim: shift aging-related gene expression and senescence markers in vitro
+      claim: >-
+        support cardiomyocyte structural protein synthesis and limit
+        infarct-related tissue loss (preclinical only)
       qualifier: suggested to
     evidence:
       level: very-low
       humanStudies: 0
-      animalStudies: 0
-      cellStudies: 3
+      animalStudies: 1
+      cellStudies: 1
       keyFindings:
-        - study: Ashapkin VV et al. 2020 (Mol Biol Rep)
+        - study: Khavinson VK et al. 2012 (Bull Exp Biol Med)
           type: in-vitro
           finding: >-
-            In aging human mesenchymal stem cell cultures, short Khavinson
-            peptides including AED were reported to modulate expression of
-            aging-related genes such as IGF1, FOXO1, TERT and NF-kB. Cell
-            culture only; no cardiac tissue involved.
-          pmid: '32399807'
-        - study: Khavinson VK et al. 2014 (Adv Gerontol)
-          type: in-vitro
+            The tetrapeptide H-Ala-Glu-Asp-Arg-OH increased expression of
+            cytoskeletal proteins (actin, tubulin, vimentin) 2-5 fold and
+            nuclear matrix proteins (lamin A, lamin C) 2-3 fold in cultured
+            mouse embryonic fibroblasts. The authors present this as the
+            mechanism behind the previously reported cardioprotective activity
+            of the tetrapeptide. Fibroblast culture, not cardiomyocytes.
+          pmid: '22977870'
+        - study: Khavinson V et al. 2022 (Cells, review)
+          type: review
           finding: >-
-            In renal cell cultures, tripeptides including AED were reported to
-            slow markers of cellular aging, with AED described as binding the
-            DNA minor groove and shifting p16, p21, p53 and SIRT-6 expression.
-            Not a cardiac model.
-          pmid: '25946838'
-        - study: Lin'kova NS et al. 2016 (Bull Exp Biol Med)
-          type: in-vitro
-          finding: >-
-            Short peptides including AED were reported to influence skin
-            fibroblast function during in-vitro aging. Dermal fibroblasts, not
-            cardiac cells.
-          pmid: '27259496'
+            Review reporting that AEDR was detected in the heart polypeptide
+            complex by chromato-mass spectrometry, and that in experimental
+            myocardial infarction (coronary artery ligation in rats) AEDR
+            administration reduced post-infarct mortality roughly threefold
+            versus control, with smaller necrotic zones and preserved
+            myocardial glycogen. The underlying infarct experiment is reported
+            secondhand here; PepCodex has not located the primary Russian
+            report in PubMed.
+          pmid: '36611900'
   - mechanism:
       action: >-
-        Modulation of cell differentiation and tissue renewal in cultured
-        non-cardiac tissue
+        Tissue-specific stimulation of proliferation in organotypic explant
+        culture, the standard assay of the Khavinson bioregulator programme
       confidence: emerging
       directStudies: 2
     benefit:
-      claim: influence cell differentiation and renewal in vitro
+      claim: >-
+        stimulate reparative processes in aged heart tissue explants
       qualifier: suggested to
     evidence:
       level: very-low
@@ -116,78 +122,102 @@ evidenceChainedBenefits:
       animalStudies: 0
       cellStudies: 2
       keyFindings:
-        - study: Caputi S et al. 2019 (Int J Immunopathol Pharmacol)
+        - study: Zakutskii AN et al. 2006 (Adv Gerontol, Russian)
           type: in-vitro
           finding: >-
-            An independent Italian group reported that short Khavinson peptides
-            including AED affected neuronal differentiation of cultured stem
-            cells. No cardiac context.
-          pmid: '30791821'
-        - study: Chalisova NI et al. 2015 (Bull Exp Biol Med)
+            Cardiogen, bronchogen, prostamax and pancragen were applied to
+            organotypic explant cultures of heart, lung, prostate and pancreas
+            from young (3-week) and aged (18-month) rats. At 0.05 ng/ml each
+            peptide stimulated growth in its matching tissue relative to
+            control explants. This is the only located study applying Cardiogen
+            to cardiac tissue; it is an ex-vivo explant assay, not a whole
+            animal or clinical model.
+          pmid: '17152728'
+        - study: Kheifets OV et al. 2010 (Adv Gerontol, Russian)
           type: in-vitro
           finding: >-
-            Peptides including AED were reported to affect cell-renewal
-            processes in kidney tissue cultures from young and old animals.
-            Organotypic kidney culture, not heart.
-          pmid: '26033601'
+            Cardiogen, alongside peptides T-32 and T-38, increased expression of
+            CXCL12 and ghrelin in ageing human prostate fibroblast cultures by
+            confocal microscopy. Non-cardiac tissue; included because it is one
+            of the few studies naming Cardiogen directly.
+          pmid: '20586252'
   - mechanism:
       action: >-
-        Class-level Khavinson-peptide modulation of proliferation and
-        inflammatory signaling in cultured immune cells (AED not directly tested)
+        Direct binding of the tetrapeptide to histones and histone-DNA
+        complexes, the proposed epigenetic basis of the bioregulator class
       confidence: emerging
-      directStudies: 0
+      directStudies: 1
     benefit:
-      claim: >-
-        alter proliferative and inflammatory activity in vitro (shown for the
-        Khavinson peptide class, not AED specifically)
+      claim: bind chromatin and modulate gene expression
       qualifier: suggested to
     evidence:
       level: very-low
       humanStudies: 0
-      animalStudies: 0
+      animalStudies: 1
       cellStudies: 1
       keyFindings:
-        - study: Avolio F et al. 2022 (Int J Mol Sci)
+        - study: Fedoreyeva LI et al. 2013 (Biochemistry Moscow)
           type: in-vitro
           finding: >-
-            An independent Italian group reported that Khavinson short peptides
-            (Epitalon, Vilon, Thymogen, Thymalin, Chonluten) modulated
-            proliferative activity and inflammatory pathways in the THP-1
-            monocyte/macrophage cell line. AED itself was not among the peptides
-            tested; this supports only the general Khavinson-peptide class
-            mechanism, in an immune-cell model, not cardiac.
-          pmid: '35408963'
+            Ala-Glu-Asp-Arg was one of six short Khavinson peptides shown by
+            fluorescence quenching to bind FITC-labelled wheat histones H1, H2B,
+            H3 and H4 and their complexes with deoxyribooligonucleotides. Plant
+            histones in a cell-free system — this supports the general
+            chromatin-binding premise, not a cardiac mechanism.
+          pmid: '23581987'
+        - study: Levdik NV, Knyazkin IV 2009 (Bull Exp Biol Med)
+          type: animal
+          finding: >-
+            Cardiogen injections inhibited M-1 sarcoma growth in senescent rats
+            in a dose-dependent way, via haemorrhagic necrosis and tumour-cell
+            apoptosis rather than a direct cytostatic effect. An oncology model,
+            not a cardiac one; noted because it is the only located in-vivo
+            study naming Cardiogen.
+          pmid: '20396706'
 faqs:
   - question: What is Cardiogen?
     answer: >-
-      Cardiogen is a synthetic tripeptide (Ala-Glu-Asp, or AED) from Vladimir
-      Khavinson's Russian "bioregulator" peptide program. It is sold as a
-      heart/cardiac peptide, but that cardiac framing is a marketing position —
-      no published study has tested AED in cardiac tissue.
+      Cardiogen is a synthetic tetrapeptide, Ala-Glu-Asp-Arg (AEDR), from
+      Vladimir Khavinson's Russian "bioregulator" peptide program. Khavinson's
+      group patented the sequence as a substance for restoring myocardium
+      function (US7662789, EP1758923). It is sold as a research chemical.
+  - question: Is Cardiogen the same as Cartalax?
+    answer: >-
+      No, and this is a common mix-up worth being precise about. Cartalax is the
+      tripeptide Ala-Glu-Asp (AED), a chondroprotector. Cardiogen is the
+      tetrapeptide Ala-Glu-Asp-Arg (AEDR) — one extra arginine residue. They are
+      different molecules with different molecular weights (333.29 Da versus
+      489.5 Da) and separate literatures, so a study of AED says nothing about
+      Cardiogen.
   - question: Is Cardiogen FDA approved?
     answer: >-
       No. Cardiogen is not approved by the FDA or any major regulatory agency
-      for any use, and it has never been evaluated in a human clinical trial. It
-      is sold as a research chemical.
+      for any use, and it has never been evaluated in a registered human
+      clinical trial. A patent is not an approval — it establishes a claim over
+      the molecule, not that the molecule works.
   - question: What does the research on Cardiogen actually show?
     answer: >-
-      The only PubMed-indexed research on AED is in-vitro (cell-culture) work on
-      anti-aging gene expression in non-cardiac cells — stem cells, skin
-      fibroblasts, kidney/renal cells and immune cells. There are no cardiac
-      studies, no animal studies, and no human trials. Some of this in-vitro
-      work was replicated by an independent Italian group, but the
-      cardiac-specific claim is unsupported by any study.
+      All of it is preclinical and nearly all of it is Russian. A 2022 Khavinson
+      review reports that AEDR reduced mortality about threefold after
+      experimental myocardial infarction in rats. A 2012 study found the
+      tetrapeptide raised cytoskeletal and nuclear-matrix protein synthesis in
+      cultured mouse fibroblasts. A 2006 study applied Cardiogen to organotypic
+      heart explants from young and aged rats. There are no human trials and no
+      independent Western replication of the cardiac findings.
   - question: Does Cardiogen treat or protect the heart?
     answer: >-
-      There is no evidence that Cardiogen affects the heart. No study has
-      examined AED in cardiomyocytes, myocardium, or any cardiac model. It should
-      never be used in place of evidence-based cardiac care.
+      That is not established. The cardioprotective claim rests on animal
+      infarct work reported in Russian secondary literature and on ex-vivo
+      explant culture — not on any human trial. Cardiogen should never be used
+      in place of evidence-based cardiac care.
   - question: How does Cardiogen relate to other Khavinson peptides?
     answer: >-
-      Cardiogen is one of Khavinson's tissue-labelled tripeptides (others include
-      Vesugen, Pinealon and Livagen). The tissue labels reflect marketing
-      positioning; the published AED data is generic in-vitro gene-expression
-      work, and the family as a whole lacks independent clinical validation.
+      Cardiogen is one of Khavinson's tissue-labelled short peptides (others
+      include Vesugen/KED, Pinealon/EDR, Livagen/KEDA and Cartalax/AED). The
+      family shares a proposed mechanism — cell penetration and chromatin
+      binding — and shares its central weakness: almost all of the evidence
+      comes from a single research school and lacks independent clinical
+      validation.
 qualityChecklist:
   goodSigns:
     - White lyophilized powder
@@ -195,7 +225,7 @@ qualityChecklist:
     - 'Clear, colorless solution after reconstitution'
     - Certificate of analysis showing >98% purity
     - HPLC verification of sequence
-    - Mass spectrometry confirmation (~333 Da)
+    - Mass spectrometry confirmation (~489.5 Da)
     - Proper vacuum seal on vial
   warningSigns:
     - Off-white or slightly discolored powder
@@ -213,21 +243,24 @@ qualityChecklist:
     - Cannot verify source authenticity
 regulatoryStatus:
   status: research-only
-  lastUpdated: '2026-05-31'
+  lastUpdated: '2026-08-06'
   notes: >-
-    Not FDA-approved or approved by any major agency. Marketed as a Khavinson
-    cardiac "bioregulator," but no cardiac research exists; published AED data is
-    in-vitro and non-cardiac. Sold as a research chemical.
+    Not FDA-approved or approved by any major agency. The AEDR sequence is
+    patented for restoring myocardium function (US7662789, EP1758923,
+    WO2006001728), which is a property claim rather than an efficacy finding.
+    Sold as a research chemical.
 ratings:
   researchDepth: 2
   globalCoverage: 1
   mechanismPlausibility: 2
   overall: 1.65
-  lastReviewed: 2026-04-13T00:00:00.000Z
+  lastReviewed: 2026-08-06T00:00:00.000Z
   reviewNotes: >-
-    Marketed as a cardiac bioregulator, but no cardiac study of AED exists; only
-    in-vitro non-cardiac anti-aging data, partly replicated by an independent
-    Italian group. See the scoring block for the two-axis assessment.
+    Identity corrected 2026-08-06: this dossier previously declared the
+    tripeptide AED, which is Cartalax, and carried Cartalax's citations.
+    Cardiogen is the tetrapeptide AEDR. Evidence is Russian preclinical only —
+    an animal infarct result reported in review, fibroblast protein-synthesis
+    work, and organotypic heart explants — with no independent replication.
   anecdotalEvidence: 1
 scoring:
   rubricVersion: "2.4"
@@ -243,87 +276,88 @@ scoring:
     basis: not-established
   lastScored: 2026-05-29
   citations:
-    - "PMID:32399807"
-    - "PMID:30791821"
-    - "PMID:25946838"
-    - "PMID:27259496"
-    - "PMID:26033601"
+    - "PMID:22977870"
+    - "PMID:36611900"
+    - "PMID:17152728"
+    - "PMID:20586252"
+    - "PMID:23581987"
+    - "PMID:20396706"
     - "PMID:34834147"
-    - "PMID:31808038"
-    - "PMID:12374906"
-    - "PMID:35408963"
+    - "PMID:35887081"
   notes: >-
-    Research depth: only in-vitro cell-culture data exists for AED (Ala-Glu-Asp),
-    all in NON-cardiac tissue (stem cells, fibroblasts, kidney, thymocytes); no
-    cardiac human or animal studies, no RCTs. Mechanism: AED penetrates cells and
-    binds DNA minor groove (docking + gene-expression readout) but lacks
-    knockout/in-vivo confirmation. Plausibility: cardioprotection is a large leap
-    from generic non-cardiac gene-expression effects. Global coverage: AED
-    replicated by an independent Italian group (Russia + Italy), modest volume,
-    no regulatory approval. Community experience: negligible documented use.
-    Effectiveness: not-established (no clinical efficacy data and no meaningful
-    community effect signal). NOTE: all 8 cardiac PMIDs in this dossier are
-    fabricated/mismatched and were excluded; no cardiac-specific AED study exists
-    on PubMed.
+    Research depth: preclinical only for AEDR (Ala-Glu-Asp-Arg) — one ex-vivo
+    cardiac explant study, one fibroblast protein-synthesis study, one in-vivo
+    oncology model, plus a rat infarct result reported secondhand in a 2022
+    Khavinson review; no human trials, no RCTs. Mechanism: chromatin binding
+    demonstrated in a cell-free histone assay and downstream structural-protein
+    synthesis measured in fibroblasts, but with no cardiomyocyte-level or
+    knockout confirmation. Plausibility: the infarct-mortality claim is
+    substantial but is single-school and not independently replicated. Global
+    coverage: essentially one country; the only non-Russian involvement is
+    in-silico transport modelling. Community experience: negligible documented
+    use. Effectiveness: not-established. NOTE 2026-08-06: this dossier
+    previously carried the sequence AED and cited PMIDs 32399807, 30791821,
+    25946838, 27259496 and 26033601 — those are Ala-Glu-Asp (Cartalax) papers
+    and were removed as mis-attributed. PMIDs 31808038 and 12374906 could not
+    be shown to concern AEDR and were also removed.
 anecdotalReports:
   positive: []
   negative: []
   communityNotes: No meaningful community discussion or user reports available.
 mechanismPathways:
-  - name: 'Gene Expression Pathway (in vitro, non-cardiac)'
+  - name: 'Structural Protein Synthesis Pathway (preclinical)'
     label: 'Gene Expression'
     steps:
-      - 'Cardiogen (AED)'
+      - 'Cardiogen (AEDR)'
       - 'Cell Membrane Penetration'
       - 'Nuclear Localization'
-      - 'DNA Minor-Groove Binding'
-      - 'Transcription Modulation'
-    outcome: 'Altered Aging-Related Gene Expression (cell culture)'
+      - 'Histone / DNA Binding'
+      - 'Cytoskeletal + Nuclear Matrix Protein Synthesis'
+    outcome: 'Proposed Reduction in Post-Infarct Tissue Loss (rodent)'
     outcomeSignal: research
     netEffect: >-
-      Demonstrated only in non-cardiac cultured cells (stem cells, fibroblasts,
-      kidney, immune cells). No cardiac, animal, or human data.
+      Each step is measured in a different preclinical system — histone binding
+      in a cell-free assay, protein synthesis in mouse fibroblasts, the
+      infarct-mortality outcome in rats via a review. No study connects the
+      whole chain, and there is no human data.
 ---
 
-Cardiogen is sold as a heart-specific peptide, but **no published study has ever examined its AED (Ala-Glu-Asp) tripeptide in cardiac tissue.** Every PubMed-indexed AED study is an in-vitro experiment in non-cardiac cells, focused on anti-aging gene expression. The heart framing is a marketing position, not an evidence-based one.
+Cardiogen is the tetrapeptide **Ala-Glu-Asp-Arg (AEDR)**, one of the tissue-labelled short peptides from Vladimir Khavinson's Russian bioregulator programme. Khavinson's group patented the sequence specifically as a "peptide substance restoring myocardium function," and the published preclinical work does sit in cardiac territory — but every one of those studies comes from the same research school, and none of it is a human trial.
 
 <div class="not-prose my-8 rounded-lg p-5 border" style="background: var(--primary-soft); border-color: var(--danger);">
-  <div class="font-semibold mb-2" style="color: var(--danger);">Evidence note: no cardiac data exists</div>
-  <p class="text-sm" style="color: var(--ink-muted);">No PubMed-indexed study has examined Cardiogen's AED tripeptide in heart, cardiomyocyte, or myocardial models. Published AED research is limited to in-vitro work in non-cardiac cells (stem cells, fibroblasts, kidney and immune cells). Claims of cardioprotection, anti-fibrotic, antioxidant, or cardiac-regenerative effects are not supported by any study.</p>
+  <div class="font-semibold mb-2" style="color: var(--danger);">Identity correction (August 2026)</div>
+  <p class="text-sm" style="color: var(--ink-muted);">This page previously described Cardiogen as the <strong>tripeptide AED (Ala-Glu-Asp)</strong> and cited AED studies. That was wrong. AED is <a href="/peptides/cartalax/">Cartalax</a>, a cartilage peptide; Cardiogen is the <strong>tetrapeptide AEDR</strong>, with an additional arginine and a molecular weight of 489.5 Da rather than 333.29 Da. Five citations that belonged to Cartalax have been removed and the evidence below rebuilt from AEDR literature. Sources for the corrected identity: Khavinson's own review table (PMID 34834147), the transport review PMID 35887081, PubChem CID 11583989, and patents US7662789 / EP1758923 / WO2006001728.</p>
 </div>
 
 ### How It Works (Simplified)
 
-The genuinely studied mechanisms of AED are general and non-cardiac:
-
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-8">
   <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
-    <div class="font-semibold text-[color:var(--ink)] mb-2">Cell Penetration &amp; DNA Binding</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">AED is proposed to enter cells and bind specific DNA sequences (the minor groove) — the general Khavinson "bioregulator" mechanism. Demonstrated in cultured non-cardiac cells.</p>
+    <div class="font-semibold text-[color:var(--ink)] mb-2">Origin in Heart Tissue</div>
+    <p class="text-sm text-[color:var(--ink-muted)]">Khavinson's group reports that AEDR was identified in the polypeptide complex of the heart by chromato-mass spectrometry — the standard route by which this programme derives a synthetic peptide from a tissue extract.</p>
   </div>
   <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
-    <div class="font-semibold text-[color:var(--ink)] mb-2">Anti-Aging Gene Expression (in vitro)</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">In cultured stem cells, fibroblasts and renal cells, short peptides including AED have been reported to shift aging-related genes (e.g. IGF1, FOXO1, TERT) and senescence markers (p16, p21, p53, SIRT-6).</p>
+    <div class="font-semibold text-[color:var(--ink)] mb-2">Chromatin Binding</div>
+    <p class="text-sm text-[color:var(--ink-muted)]">In a cell-free assay, Ala-Glu-Asp-Arg bound labelled histones H1, H2B, H3 and H4 and their DNA complexes. This is the shared premise of the whole bioregulator class, shown here in plant histones rather than human cardiac cells.</p>
   </div>
   <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
-    <div class="font-semibold text-[color:var(--ink)] mb-2">Cell Differentiation &amp; Renewal</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Cell-culture studies report effects on stem-cell differentiation (including neuronal) and tissue-renewal processes — entirely outside any cardiac context.</p>
+    <div class="font-semibold text-[color:var(--ink)] mb-2">Structural Protein Synthesis</div>
+    <p class="text-sm text-[color:var(--ink-muted)]">In cultured mouse embryonic fibroblasts the tetrapeptide raised actin, tubulin and vimentin 2-5 fold and lamins A and C 2-3 fold. The authors propose this as the mechanism behind the cardioprotective effect — an inference, not a measurement in heart cells.</p>
   </div>
   <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
-    <div class="font-semibold text-[color:var(--ink)] mb-2">What It Does NOT Show</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">No study demonstrates antioxidant, anti-fibrotic, ischemia-protective, or regenerative effects in heart tissue. The cardiac mechanism is hypothetical.</p>
+    <div class="font-semibold text-[color:var(--ink)] mb-2">What Is Still Missing</div>
+    <p class="text-sm text-[color:var(--ink-muted)]">No human trial, no independent replication outside the Saint Petersburg institute, and no primary PubMed-indexed report of the rat infarct experiment that the headline mortality claim rests on.</p>
   </div>
 </div>
 
-**Key context:** Khavinson's bioregulation theory proposes that short peptides penetrate cells and bind DNA to regulate gene expression in a tissue-specific way. For AED, the published evidence covers only non-cardiac cells, and the body of work is small — mostly from Khavinson-affiliated Russian groups, with some independent in-vitro replication by an Italian group. The "cardiac" designation is a product label, not a tested indication.
+**Key context:** the strongest claim attached to Cardiogen — roughly a threefold reduction in mortality after coronary artery ligation in rats — reaches us through a 2022 review by Khavinson and colleagues rather than through a primary paper we have been able to locate in PubMed. That matters. A review by the originating group restating its own unpublished-in-English result is weaker evidence than the confident phrasing suggests, and readers should treat the figure as unverified rather than as a replicated finding.
 
 ### Important Limitations
 
-- No published study has examined AED in cardiac, cardiomyocyte, or myocardial tissue
-- No animal studies and no human studies of any kind — all evidence is in vitro (cell culture)
-- No randomized controlled trials; not approved by any regulator
-- Most research comes from Khavinson-affiliated Russian groups; a minority is independent (Italian) in-vitro replication of the broader peptide class
-- AED is usually studied as one of several short peptides, not in isolation
-- The proposed cell-penetration / DNA-binding mechanism lacks knockout or in-vivo confirmation
+- The single most-cited result (post-infarct mortality in rats) is reported in review, not in a primary paper we could locate
+- No human studies of any kind and no randomized controlled trials; not approved by any regulator
+- The only located study applying Cardiogen directly to cardiac tissue is a 2006 organotypic rat-heart explant assay, published in Russian
+- Effectively all evidence originates from the Saint Petersburg Institute of Bioregulation and Gerontology; there is no independent Western replication
+- The mechanistic chain is assembled from separate systems — plant histones, mouse fibroblasts, rat explants — with no study joining them
 - Pharmacokinetics, bioavailability, and any clinical effect in humans are unknown
 - Should never replace evidence-based cardiac care

@@ -1,0 +1,646 @@
+{
+  "slug": "exenatide",
+  "name": "Exenatide",
+  "classification": "BUILD",
+  "priority": 3,
+  "generated": "2026-08-06",
+  "generatedBy": "coverage triage run - every identifier below was fetched live from PubMed / ClinicalTrials.gov / openFDA during this run",
+  "identity": {
+    "inn": "Exenatide",
+    "brand": [
+      "Byetta",
+      "Bydureon",
+      "Bydureon Pen",
+      "Bydureon BCise"
+    ],
+    "developmentCode": "AC2993",
+    "otherNames": [
+      "exendin-4 (synthetic)"
+    ],
+    "developer": "Originally Amylin Pharmaceuticals / Eli Lilly; later AstraZeneca. Generic synthetic exenatide from Amneal.",
+    "class": "GLP-1 receptor agonist; 39-amino-acid peptide, synthetic exendin-4",
+    "siteContext": "First-in-class GLP-1 receptor agonist (2005). Historical anchor for the whole metabolic category the site is built around."
+  },
+  "regulatoryStatus": {
+    "source": "openFDA /drug/drugsfda.json, fetched 2026-08-06",
+    "note": "CORRECTED. The openfda.generic_name:\"exenatide\" query returns only TWO applications; querying products.brand_name reveals two more. Full fetched picture: Bydureon NDA022200 (AP 2012-01-27) and Bydureon BCise NDA209210 (AP 2017-10-20) are Discontinued; the original AstraZeneca Byetta NDA021773 (AP 2005-04-28) is Discontinued; a second Byetta application NDA021919 (sponsor AMYLIN, AP 2009-10-30) is still Prescription; generic synthetic exenatide ANDA206697 (Amneal, AP 2024-11-19) is Prescription. Do NOT write that exenatide was withdrawn, and do NOT write that all brands remain available. The extended-release (Bydureon) form specifically is discontinued.",
+    "openFDA": {
+      "queried": [
+        {
+          "field": "openfda.generic_name",
+          "value": "exenatide",
+          "hit": true
+        }
+      ],
+      "result": {
+        "total": 2,
+        "applications": [
+          {
+            "applicationNumber": "NDA021773",
+            "sponsor": "ASTRAZENECA AB",
+            "brandNames": [
+              "BYETTA"
+            ],
+            "marketingStatus": [
+              "Discontinued"
+            ],
+            "routes": [
+              "SUBCUTANEOUS"
+            ],
+            "earliestApprovalDate": "20050428"
+          },
+          {
+            "applicationNumber": "ANDA206697",
+            "sponsor": "AMNEAL",
+            "brandNames": [
+              "EXENATIDE SYNTHETIC"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "SUBCUTANEOUS"
+            ],
+            "earliestApprovalDate": "20241119"
+          }
+        ]
+      }
+    },
+    "supplementaryBrandNameQueries": {
+      "products.brand_name:\"BYETTA\"": [
+        {
+          "applicationNumber": "NDA021919",
+          "sponsor": "AMYLIN",
+          "brandNames": [
+            "BYETTA"
+          ],
+          "marketingStatus": [
+            "Prescription"
+          ],
+          "earliestApprovalDate": "20091030"
+        },
+        {
+          "applicationNumber": "NDA021773",
+          "sponsor": "ASTRAZENECA AB",
+          "brandNames": [
+            "BYETTA"
+          ],
+          "marketingStatus": [
+            "Discontinued"
+          ],
+          "earliestApprovalDate": "20050428"
+        }
+      ],
+      "products.brand_name:\"BYDUREON\"": [
+        {
+          "applicationNumber": "NDA209210",
+          "sponsor": "ASTRAZENECA AB",
+          "brandNames": [
+            "BYDUREON BCISE"
+          ],
+          "marketingStatus": [
+            "Discontinued"
+          ],
+          "earliestApprovalDate": "20171020"
+        },
+        {
+          "applicationNumber": "NDA022200",
+          "sponsor": "ASTRAZENECA AB",
+          "brandNames": [
+            "BYDUREON PEN",
+            "BYDUREON"
+          ],
+          "marketingStatus": [
+            "Discontinued"
+          ],
+          "earliestApprovalDate": "20120127"
+        }
+      ]
+    }
+  },
+  "evidenceBase": {
+    "pubmedRecordsScreened": 105,
+    "pubmedRecordsConfirmedNamingCompound": 105,
+    "selected": [
+      {
+        "pmid": "28910237",
+        "title": "Effects of Once-Weekly Exenatide on Cardiovascular Outcomes in Type 2 Diabetes.",
+        "journal": "N Engl J Med",
+        "pubdate": "2017 Sep 28",
+        "firstAuthor": "Holman RR",
+        "doi": "10.1056/NEJMoa1612917",
+        "publicationTypes": [
+          "Comparative Study",
+          "Journal Article",
+          "Multicenter Study",
+          "Pragmatic Clinical Trial",
+          "Randomized Controlled Trial"
+        ],
+        "role": "pivotal cardiovascular outcome trial (EXSCEL)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "31010875",
+        "title": "Changes in Serum Calcitonin Concentrations, Incidence of Medullary Thyroid Carcinoma, and Impact of Routine Calcitonin Concentration Monitoring in the EXenatide Study of Cardiovascular Event Lowering (EXSCEL).",
+        "journal": "Diabetes Care",
+        "pubdate": "2019 Jun",
+        "firstAuthor": "Bethel MA",
+        "doi": "10.2337/dc18-2028",
+        "publicationTypes": [
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, N.I.H., Extramural",
+          "Research Support, U.S. Gov't, P.H.S."
+        ],
+        "role": "safety - calcitonin and medullary thyroid carcinoma monitoring in EXSCEL",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "31757838",
+        "title": "Microvascular and Cardiovascular Outcomes According to Renal Function in Patients Treated With Once-Weekly Exenatide: Insights From the EXSCEL Trial.",
+        "journal": "Diabetes Care",
+        "pubdate": "2020 Feb",
+        "firstAuthor": "Bethel MA",
+        "doi": "10.2337/dc19-1065",
+        "publicationTypes": [
+          "Journal Article",
+          "Multicenter Study",
+          "Pragmatic Clinical Trial",
+          "Randomized Controlled Trial",
+          "Research Support, N.I.H., Extramural",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "EXSCEL microvascular and CV outcomes by renal function",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "31542942",
+        "title": "Effect of Once-Weekly Exenatide in Patients With Type 2 Diabetes Mellitus With and Without Heart Failure and Heart Failure-Related Outcomes: Insights From the EXSCEL Trial.",
+        "journal": "Circulation",
+        "pubdate": "2019 Nov 12",
+        "firstAuthor": "Fudim M",
+        "doi": "10.1161/CIRCULATIONAHA.119.041659",
+        "publicationTypes": [
+          "Journal Article",
+          "Multicenter Study",
+          "Research Support, N.I.H., Extramural",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "EXSCEL heart failure subgroup",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "30082326",
+        "title": "Safety and Efficacy of Exenatide Once Weekly Plus Dapagliflozin Once Daily Versus Exenatide or Dapagliflozin Alone in Patients With Type 2 Diabetes Inadequately Controlled With Metformin Monotherapy: 52-Week Results of the DURATION-8 Randomized Controlled Trial.",
+        "journal": "Diabetes Care",
+        "pubdate": "2018 Oct",
+        "firstAuthor": "Jabbour SA",
+        "doi": "10.2337/dc18-0680",
+        "publicationTypes": [
+          "Clinical Trial, Phase III",
+          "Comparative Study",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "phase 3 exenatide + dapagliflozin (DURATION-8), 52 weeks",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "32816874",
+        "title": "Efficacy and Safety Over 2 Years of Exenatide Plus Dapagliflozin in the DURATION-8 Study: A Multicenter, Double-Blind, Phase 3, Randomized Controlled Trial.",
+        "journal": "Diabetes Care",
+        "pubdate": "2020 Oct",
+        "firstAuthor": "Jabbour SA",
+        "doi": "10.2337/dc19-1350",
+        "publicationTypes": [
+          "Clinical Trial, Phase III",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "DURATION-8, 2-year results",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "28205322",
+        "title": "Efficacy and safety of autoinjected exenatide once-weekly suspension versus sitagliptin or placebo with metformin in patients with type 2 diabetes: The DURATION-NEO-2 randomized clinical study.",
+        "journal": "Diabetes Obes Metab",
+        "pubdate": "2017 Jul",
+        "firstAuthor": "Gadde KM",
+        "doi": "10.1111/dom.12908",
+        "publicationTypes": [
+          "Clinical Trial, Phase III",
+          "Comparative Study",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial"
+        ],
+        "role": "phase 3 autoinjected exenatide ER vs sitagliptin/placebo (DURATION-NEO-2)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "29246950",
+        "title": "Efficacy and Safety of Once-Weekly Semaglutide Versus Exenatide ER in Subjects With Type 2 Diabetes (SUSTAIN 3): A 56-Week, Open-Label, Randomized Clinical Trial.",
+        "journal": "Diabetes Care",
+        "pubdate": "2018 Feb",
+        "firstAuthor": "Ahmann AJ",
+        "doi": "10.2337/dc17-0417",
+        "publicationTypes": [
+          "Clinical Trial, Phase III",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "head-to-head vs semaglutide (SUSTAIN 3) - exenatide ER inferior",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "28781108",
+        "title": "Exenatide once weekly versus placebo in Parkinson's disease: a randomised, double-blind, placebo-controlled trial.",
+        "journal": "Lancet",
+        "pubdate": "2017 Oct 7",
+        "firstAuthor": "Athauda D",
+        "doi": "10.1016/S0140-6736(17)31585-4",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial"
+        ],
+        "role": "phase 2 Parkinson's disease - POSITIVE, adjusted mean difference -3.5 MDS-UPDRS III points",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "39919773",
+        "title": "Exenatide once a week versus placebo as a potential disease-modifying treatment for people with Parkinson's disease in the UK: a phase 3, multicentre, double-blind, parallel-group, randomised, placebo-controlled trial.",
+        "journal": "Lancet",
+        "pubdate": "2025 Feb 22",
+        "firstAuthor": "Vijiaratnam N",
+        "doi": "10.1016/S0140-6736(24)02808-3",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Multicenter Study",
+          "Clinical Trial, Phase III",
+          "Research Support, N.I.H., Intramural"
+        ],
+        "role": "phase 3 Parkinson's disease - NULL; authors state no evidence to support exenatide as disease-modifying",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "31422062",
+        "title": "Cardiovascular, mortality, and kidney outcomes with GLP-1 receptor agonists in patients with type 2 diabetes: a systematic review and meta-analysis of cardiovascular outcome trials.",
+        "journal": "Lancet Diabetes Endocrinol",
+        "pubdate": "2019 Oct",
+        "firstAuthor": "Kristensen SL",
+        "doi": "10.1016/S2213-8587(19)30249-9",
+        "publicationTypes": [
+          "Journal Article",
+          "Meta-Analysis",
+          "Research Support, Non-U.S. Gov't",
+          "Systematic Review"
+        ],
+        "role": "class-level meta-analysis of GLP-1 RA cardiovascular, mortality and kidney outcomes",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "18450614",
+        "title": "Exenatide and rare adverse events.",
+        "journal": "N Engl J Med",
+        "pubdate": "2008 May 1",
+        "firstAuthor": "Cure P",
+        "doi": "10.1056/NEJMc0707137",
+        "publicationTypes": [
+          "Letter"
+        ],
+        "role": "safety - NEJM correspondence on rare adverse events",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "18456920",
+        "title": "Exenatide and rare adverse events.",
+        "journal": "N Engl J Med",
+        "pubdate": "2008 May 1",
+        "firstAuthor": "Ahmad SR",
+        "doi": null,
+        "publicationTypes": [
+          "Letter"
+        ],
+        "role": "safety - NEJM correspondence on rare adverse events (FDA authors)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "34097062",
+        "title": "Exenatide, Dapagliflozin, or Phentermine/Topiramate Differentially Affect Metabolic Profiles in Polycystic Ovary Syndrome.",
+        "journal": "J Clin Endocrinol Metab",
+        "pubdate": "2021 Sep 27",
+        "firstAuthor": "Elkind-Hirsch KE",
+        "doi": "10.1210/clinem/dgab408",
+        "publicationTypes": [
+          "Equivalence Trial",
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "randomised comparison in PCOS",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      }
+    ]
+  },
+  "registeredTrials": {
+    "source": "ClinicalTrials.gov API v2 query.intr, fetched 2026-08-06",
+    "totalReturned": 133,
+    "drugMatched": 119,
+    "selected": [
+      {
+        "nct": "NCT02432976",
+        "acronym": "ExeQOL",
+        "title": "Impact of Perioperative Exenatide Infusion on Quality of Life in Cardiac Surgery Patients",
+        "sponsor": "Centre Hospitalier Universitaire de Besancon",
+        "phase": "PHASE2/PHASE3",
+        "status": "COMPLETED",
+        "start": "2015-05",
+        "primaryCompletion": "2017-01",
+        "enrollment": 64,
+        "conditions": [
+          "Quality of Life"
+        ],
+        "interventions": [
+          "Exenatide (Byetta, Exendin-4, Incretin)",
+          "Insulin (Humalog, Insulin Lispro, Human Analog)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT01785771",
+        "acronym": null,
+        "title": "A Study to Evaluate ITCA 650 for the Treatment of Type 2 Diabetes in Patients With High Baseline HbA1c",
+        "sponsor": "Intarcia Therapeutics",
+        "phase": "PHASE3",
+        "status": "TERMINATED",
+        "start": "2013-05",
+        "primaryCompletion": "2018-01",
+        "enrollment": 100,
+        "conditions": [
+          "Type 2 Diabetes"
+        ],
+        "interventions": [
+          "ITCA 650 (exenatide in DUROS)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00917267",
+        "acronym": null,
+        "title": "A Study to Examine the Effects of Exenatide Once-Weekly Injection on Glucose Control and Safety in Asian Subjects",
+        "sponsor": "AstraZeneca",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2009-07",
+        "primaryCompletion": "2010-09",
+        "enrollment": 691,
+        "conditions": [
+          "Type 2 Diabetes Mellitus"
+        ],
+        "interventions": [
+          "exenatide once weekly",
+          "exenatide twice daily (Byetta)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT06257966",
+        "acronym": null,
+        "title": "A Phase 3 Study to Evaluate the Efficacy of JY09 Compared With Dulaglutide in Combination Therapy Diabetes Mellitus Type 2 Patients With Metformin",
+        "sponsor": "Beijing Dongfang Biotech Co., Ltd.",
+        "phase": "PHASE3",
+        "status": "ACTIVE_NOT_RECRUITING",
+        "start": "2024-07-17",
+        "primaryCompletion": "2026-10-01",
+        "enrollment": 600,
+        "conditions": [
+          "Type2 Diabetes Mellitus"
+        ],
+        "interventions": [
+          "Exendin-4 Fc fusion protein injection(1.2mg） (JY09(1.2mg))",
+          "Exendin-4 Fc fusion protein injection（2.4mg） (JY09(2.4mg))",
+          "Dulaglutide",
+          "Metformin"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00313001",
+        "acronym": null,
+        "title": "Effects of Biphasic Insulin Aspart 70/30 vs. Exenatide in Type 2 Diabetes Patients Not Reaching Blood Glucose Targets on Metformin and a Sulfonylurea.",
+        "sponsor": "Novo Nordisk A/S",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2006-04",
+        "primaryCompletion": "2007-07",
+        "enrollment": 373,
+        "conditions": [
+          "Diabetes",
+          "Diabetes Mellitus, Type 2"
+        ],
+        "interventions": [
+          "biphasic insulin aspart",
+          "exenatide"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT01885208",
+        "acronym": "SUSTAIN™ 3",
+        "title": "Efficacy and Safety of Semaglutide Once-weekly Versus Exenatide ER 2.0 mg Once-weekly as add-on to 1-2 Oral Antidiabetic Drugs (OADs) in Subjects With Type 2 Diabetes",
+        "sponsor": "Novo Nordisk A/S",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2013-12-02",
+        "primaryCompletion": "2015-07-13",
+        "enrollment": 813,
+        "conditions": [
+          "Diabetes",
+          "Diabetes Mellitus, Type 2"
+        ],
+        "interventions": [
+          "semaglutide",
+          "exenatide (Bydureon®)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00717457",
+        "acronym": null,
+        "title": "A Study of Taspoglutide Versus Exenatide for the Treatment of Patients With Type 2 Diabetes Mellitus Inadequately Controlled With Metformin, Thiazolidinedione or a Combination of Both.",
+        "sponsor": "Hoffmann-La Roche",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2008-07",
+        "primaryCompletion": "2011-03",
+        "enrollment": 1189,
+        "conditions": [
+          "Diabetes Mellitus Type 2"
+        ],
+        "interventions": [
+          "exenatide",
+          "taspoglutide",
+          "taspoglutide"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT01029886",
+        "acronym": null,
+        "title": "Safety and Efficacy of Exenatide Once Weekly Versus Liraglutide in Subjects With Type 2 Diabetes",
+        "sponsor": "AstraZeneca",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2010-01",
+        "primaryCompletion": "2011-01",
+        "enrollment": 912,
+        "conditions": [
+          "Type 2 Diabetes Mellitus"
+        ],
+        "interventions": [
+          "exenatide once weekly",
+          "liraglutide (Victoza)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00381342",
+        "acronym": null,
+        "title": "Safety and Efficacy of Exenatide as Monotherapy",
+        "sponsor": "AstraZeneca",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2006-09",
+        "primaryCompletion": "2007-09",
+        "enrollment": 233,
+        "conditions": [
+          "Type 2 Diabetes Mellitus"
+        ],
+        "interventions": [
+          "exenatide (Byetta)",
+          "exenatide (Byetta)",
+          "placebo"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00960661",
+        "acronym": null,
+        "title": "A Trial Comparing Two Therapies: Basal Insulin/Glargine, Exenatide and Metformin Therapy (BET) or Basal Insulin/Glargine, Bolus Insulin Lispro and Metformin Therapy (BBT) in Subjects With Type 2 Diabetes",
+        "sponsor": "AstraZeneca",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2009-09",
+        "primaryCompletion": "2012-08",
+        "enrollment": 1036,
+        "conditions": [
+          "Type 2 Diabetes Mellitus"
+        ],
+        "interventions": [
+          "exenatide (Byetta)",
+          "insulin lispro (Humalog)",
+          "Metformin",
+          "Insulin/ Glargine"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT01373216",
+        "acronym": "Executive",
+        "title": "Glucagon-like Peptide 1 Agonist Exenatide for Improved Glucose Control and Cardiac Function in Patients With Aortocoronary Bypass",
+        "sponsor": "Charles University, Czech Republic",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2011-06",
+        "primaryCompletion": "2014-05",
+        "enrollment": 38,
+        "conditions": [
+          "Coronary Artery Disease",
+          "Decreased Left Ventricular Function"
+        ],
+        "interventions": [
+          "Exenatide"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT04232969",
+        "acronym": "Exenatide-PD3",
+        "title": "Exenatide Once Weekly Over 2 Years as a Potential Disease Modifying Treatment for Parkinson's Disease",
+        "sponsor": "University College, London",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2020-01-20",
+        "primaryCompletion": "2024-02-24",
+        "enrollment": 194,
+        "conditions": [
+          "Parkinson's Disease"
+        ],
+        "interventions": [
+          "Exenatide extended release 2mg (Bydureon)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT02404376",
+        "acronym": "COMBAT-MI",
+        "title": "COMBinAtion Therapy in Myocardial Infarction: The COMBAT-MI Trial",
+        "sponsor": "Hospital Universitari Vall d'Hebron Research Institute",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2016-03",
+        "primaryCompletion": "2019-08",
+        "enrollment": 378,
+        "conditions": [
+          "ST Elevation Acute Myocardial Infarction"
+        ],
+        "interventions": [
+          "Exenatide",
+          "Remote Ischemic Conditioning (RIC)",
+          "Placebo"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT03671733",
+        "acronym": null,
+        "title": "Effects of GLP-1 RAs on Weight and Metabolic Indicators in Obese Patients",
+        "sponsor": "Xiangya Hospital of Central South University",
+        "phase": "PHASE3",
+        "status": "UNKNOWN",
+        "start": "2018-09-01",
+        "primaryCompletion": "2022-09-01",
+        "enrollment": 150,
+        "conditions": [
+          "Obesity"
+        ],
+        "interventions": [
+          "Liraglutide (Victoza)",
+          "Exenatide (Byetta)",
+          "Exenatide Microspheres for Injection (Bydureon)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      }
+    ]
+  },
+  "negativeOrNullFindings": [
+    "PMID 39919773 is the single most important citation here: a phase 3 trial that failed to reproduce the widely-reported phase 2 Parkinson's signal (PMID 28781108). Any exenatide page that mentions neuroprotection without this is out of date.",
+    "PMID 29246950 (SUSTAIN 3) - exenatide ER was beaten by semaglutide.",
+    "PMIDs 18450614 and 18456920 are the pancreatitis-era safety correspondence."
+  ],
+  "cautions": [
+    "Do not state that Byetta or Bydureon are currently marketed without re-checking openFDA marketing_status - the fetched record shows Discontinued for the branded products.",
+    "DURATION and AWARD are different programmes (exenatide vs dulaglutide) - do not cross them."
+  ],
+  "couldNotConfirm": [
+    "Whether the Amylin-sponsored Byetta application NDA021919 corresponds to a product physically on the market today; openFDA marketing_status reflects the application record, not shelf availability."
+  ]
+}

@@ -1,0 +1,563 @@
+{
+  "slug": "terlipressin",
+  "name": "Terlipressin",
+  "classification": "BUILD",
+  "priority": 6,
+  "generated": "2026-08-06",
+  "generatedBy": "coverage triage run - every identifier below was fetched live from PubMed / ClinicalTrials.gov / openFDA during this run",
+  "identity": {
+    "inn": "Terlipressin",
+    "brand": [
+      "Terlivaz",
+      "Glypressin (ex-US)"
+    ],
+    "otherNames": [
+      "triglycyl-lysine vasopressin"
+    ],
+    "developer": "Mallinckrodt (US)",
+    "class": "Synthetic vasopressin analogue prodrug; V1 receptor-preferring vasoconstrictor",
+    "siteContext": "No vasopressin-family coverage on the site. Terlipressin is the family member with a clean modern pivotal RCT and a distinctive regulatory story."
+  },
+  "regulatoryStatus": {
+    "source": "openFDA /drug/drugsfda.json, fetched 2026-08-06",
+    "note": "US approval is recent (Terlivaz, NDA022231) and came after earlier rejections; the label carries a serious respiratory failure warning. Read the current label via openFDA /drug/label.json rather than describing warnings from memory.",
+    "openFDA": {
+      "queried": [
+        {
+          "field": "openfda.generic_name",
+          "value": "terlipressin",
+          "hit": true
+        }
+      ],
+      "result": {
+        "total": 1,
+        "applications": [
+          {
+            "applicationNumber": "NDA022231",
+            "sponsor": "MALLINCKRODT IRELAND",
+            "brandNames": [
+              "TERLIVAZ"
+            ],
+            "marketingStatus": [
+              "Prescription"
+            ],
+            "routes": [
+              "INTRAVENOUS"
+            ],
+            "earliestApprovalDate": "20220914"
+          }
+        ]
+      }
+    }
+  },
+  "evidenceBase": {
+    "pubmedRecordsScreened": 93,
+    "pubmedRecordsConfirmedNamingCompound": 92,
+    "selected": [
+      {
+        "pmid": "33657294",
+        "title": "Terlipressin plus Albumin for the Treatment of Type 1 Hepatorenal Syndrome.",
+        "journal": "N Engl J Med",
+        "pubdate": "2021 Mar 4",
+        "firstAuthor": "Wong F",
+        "doi": "10.1056/NEJMoa2008290",
+        "publicationTypes": [
+          "Clinical Trial, Phase III",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "pivotal phase 3 in type 1 hepatorenal syndrome (CONFIRM, NEJM)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "18471513",
+        "title": "A randomized, prospective, double-blind, placebo-controlled trial of terlipressin for type 1 hepatorenal syndrome.",
+        "journal": "Gastroenterology",
+        "pubdate": "2008 May",
+        "firstAuthor": "Sanyal AJ",
+        "doi": "10.1053/j.gastro.2008.02.014",
+        "publicationTypes": [
+          "Comparative Study",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, N.I.H., Extramural",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "earlier North American phase 3 (OT-0401)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "25644760",
+        "title": "Terlipressin plus albumin versus midodrine and octreotide plus albumin in the treatment of hepatorenal syndrome: A randomized trial.",
+        "journal": "Hepatology",
+        "pubdate": "2015 Aug",
+        "firstAuthor": "Cavallin M",
+        "doi": "10.1002/hep.27709",
+        "publicationTypes": [
+          "Comparative Study",
+          "Journal Article",
+          "Randomized Controlled Trial"
+        ],
+        "role": "RCT vs midodrine + octreotide in hepatorenal syndrome",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "26659927",
+        "title": "Terlipressin given by continuous intravenous infusion versus intravenous boluses in the treatment of hepatorenal syndrome: A randomized controlled study.",
+        "journal": "Hepatology",
+        "pubdate": "2016 Mar",
+        "firstAuthor": "Cavallin M",
+        "doi": "10.1002/hep.28396",
+        "publicationTypes": [
+          "Comparative Study",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial"
+        ],
+        "role": "RCT, continuous infusion vs boluses",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "30076614",
+        "title": "Terlipressin Is Superior to Noradrenaline in the Management of Acute Kidney Injury in Acute on Chronic Liver Failure.",
+        "journal": "Hepatology",
+        "pubdate": "2020 Feb",
+        "firstAuthor": "Arora V",
+        "doi": "10.1002/hep.30208",
+        "publicationTypes": [
+          "Comparative Study",
+          "Journal Article",
+          "Randomized Controlled Trial"
+        ],
+        "role": "RCT vs noradrenaline in acute-on-chronic liver failure",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "8898643",
+        "title": "Double-blind randomized controlled trial comparing terlipressin and somatostatin for acute variceal hemorrhage. Variceal Bleeding Study Group.",
+        "journal": "Gastroenterology",
+        "pubdate": "1996 Nov",
+        "firstAuthor": "Feu F",
+        "doi": "10.1053/gast.1996.v111.pm8898643",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Comparative Study",
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "RCT vs somatostatin in acute variceal haemorrhage",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "10960437",
+        "title": "Multicenter randomized controlled trial of terlipressin versus sclerotherapy in the treatment of acute variceal bleeding: the TEST study.",
+        "journal": "Hepatology",
+        "pubdate": "2000 Sep",
+        "firstAuthor": "Escorsell A",
+        "doi": "10.1053/jhep.2000.16601",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Comparative Study",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "RCT vs sclerotherapy in acute variceal bleeding (TEST)",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "8225214",
+        "title": "Randomized controlled trial of desmopressin plus terlipressin vs. terlipressin alone for the treatment of acute variceal hemorrhage in cirrhotic patients: a multicenter, double-blind study. New Italian Endoscopic Club.",
+        "journal": "Hepatology",
+        "pubdate": "1993 Nov",
+        "firstAuthor": "de Franchis R",
+        "doi": "10.1016/0270-9139(93)90464-x",
+        "publicationTypes": [
+          "Clinical Trial",
+          "Comparative Study",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, U.S. Gov't, P.H.S."
+        ],
+        "role": "RCT, desmopressin + terlipressin vs terlipressin alone",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "22178268",
+        "title": "Short course adjuvant terlipressin in acute variceal bleeding: a randomized double blind dummy controlled trial.",
+        "journal": "J Hepatol",
+        "pubdate": "2012 Apr",
+        "firstAuthor": "Azam Z",
+        "doi": "10.1016/j.jhep.2011.11.019",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "role": "RCT, short-course adjuvant terlipressin in acute variceal bleeding",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "40704461",
+        "title": "Bradycardia and Other Arrhythmias in Patients With Hepatorenal Syndrome-Acute Kidney Injury Following Terlipressin Treatment: A Pooled Analysis of Three North American Phase III Clinical Studies.",
+        "journal": "Aliment Pharmacol Ther",
+        "pubdate": "2025 Dec",
+        "firstAuthor": "Bajaj JS",
+        "doi": "10.1111/apt.70297",
+        "publicationTypes": [
+          "Clinical Trial, Phase III",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial"
+        ],
+        "role": "SAFETY - bradycardia and arrhythmias pooled across three North American phase 3 studies",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "39073583",
+        "title": "Terlipressin use in HRS-AKI and respiratory failure.",
+        "journal": "Intensive Care Med",
+        "pubdate": "2024 Oct",
+        "firstAuthor": "Arrestier R",
+        "doi": "10.1007/s00134-024-07556-8",
+        "publicationTypes": [
+          "Letter"
+        ],
+        "role": "SAFETY - correspondence on terlipressin use in HRS-AKI and respiratory failure",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "39133282",
+        "title": "Terlipressin use in HRS-AKI and respiratory failure. Author's reply.",
+        "journal": "Intensive Care Med",
+        "pubdate": "2024 Oct",
+        "firstAuthor": "Nadim MK",
+        "doi": "10.1007/s00134-024-07585-3",
+        "publicationTypes": [
+          "Letter",
+          "Comment"
+        ],
+        "role": "SAFETY - authors' reply on respiratory failure",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "34606933",
+        "title": "Terlipressin and the Treatment of Hepatorenal Syndrome: How the CONFIRM Trial Moves the Story Forward.",
+        "journal": "Am J Kidney Dis",
+        "pubdate": "2022 May",
+        "firstAuthor": "Belcher JM",
+        "doi": "10.1053/j.ajkd.2021.08.016",
+        "publicationTypes": [
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial"
+        ],
+        "role": "critical appraisal of what CONFIRM does and does not establish",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      },
+      {
+        "pmid": "41200852",
+        "title": "Terlipressin for Hepatorenal Syndrome in Patients With Early-Stage Acute-on-Chronic Liver Failure.",
+        "journal": "Liver Int",
+        "pubdate": "2025 Dec",
+        "firstAuthor": "Rockey DC",
+        "doi": "10.1111/liv.70399",
+        "publicationTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial"
+        ],
+        "role": "2025 analysis in early-stage acute-on-chronic liver failure",
+        "verification": "fetched from PubMed esummary+efetch during this run; compound name confirmed present in title or abstract"
+      }
+    ]
+  },
+  "registeredTrials": {
+    "source": "ClinicalTrials.gov API v2 query.intr, fetched 2026-08-06",
+    "totalReturned": 83,
+    "drugMatched": 71,
+    "selected": [
+      {
+        "nct": "NCT04961528",
+        "acronym": "ACTIVE",
+        "title": "ACid Tranexamic or Terlipressin for Initial Emergency Treatment of Mild to seVere hEmoptysis: a Randomized Trial.",
+        "sponsor": "Assistance Publique - Hôpitaux de Paris",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2022-03-27",
+        "primaryCompletion": "2025-12-28",
+        "enrollment": 315,
+        "conditions": [
+          "Hemoptysis"
+        ],
+        "interventions": [
+          "Tranexamic Acid 500 MG",
+          "Terlipressin",
+          "Placebo (Normal saline placebo)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00089570",
+        "acronym": null,
+        "title": "Study of Terlipressin Versus Placebo to Treat Hepatorenal Syndrome Type 1",
+        "sponsor": "Mallinckrodt",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2004-06",
+        "primaryCompletion": "2006-03",
+        "enrollment": 112,
+        "conditions": [
+          "Hepatorenal Syndrome"
+        ],
+        "interventions": [
+          "terlipressin",
+          "Placebo"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00115947",
+        "acronym": null,
+        "title": "Renal and Cardiovascular Effects of Terlipressin in Patients With Cirrhosis and Ascites",
+        "sponsor": "Hvidovre University Hospital",
+        "phase": "PHASE2/PHASE3",
+        "status": "COMPLETED",
+        "start": "2004-12",
+        "conditions": [
+          "Cirrhosis",
+          "Ascites"
+        ],
+        "interventions": [
+          "Terlipressin"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT04028505",
+        "acronym": "TT",
+        "title": "Terlipressin Infusion in Variceal Hemorrhage",
+        "sponsor": "Aga Khan University",
+        "phase": "PHASE3",
+        "status": "UNKNOWN",
+        "start": "2018-10-25",
+        "primaryCompletion": "2020-04-25",
+        "enrollment": 128,
+        "conditions": [
+          "Terlipressin Adverse Reaction"
+        ],
+        "interventions": [
+          "Terlipressin Injectable Product (Novapressin)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT03608514",
+        "acronym": null,
+        "title": "Terlipressin Alone Versus the Standard Therapy With Catecholamines for Hepatic Patients With Septic Shock- Prospective Single Center Randomized Controlled Study.",
+        "sponsor": "National Hepatology & Tropical Medicine Research Institute",
+        "phase": "PHASE2/PHASE3",
+        "status": "UNKNOWN",
+        "start": "2018-07-01",
+        "primaryCompletion": "2020-07",
+        "enrollment": 100,
+        "conditions": [
+          "Resolution of Septic Shock With Terlipressin"
+        ],
+        "interventions": [
+          "Experimental (Terlipressin intravenous infusion)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT06815770",
+        "acronym": null,
+        "title": "Efficacy and Safety of Continuous Infusion of Terlipressin vs Bolus Terlipressin in ACLF Patients With Acute Esophageal Variceal Bleed",
+        "sponsor": "Institute of Liver and Biliary Sciences, India",
+        "phase": "PHASE2/PHASE3",
+        "status": "NOT_YET_RECRUITING",
+        "start": "2025-02-10",
+        "primaryCompletion": "2026-02-28",
+        "enrollment": 60,
+        "conditions": [
+          "Acute on Chronic Liver Failure"
+        ],
+        "interventions": [
+          "Terlipressin Injectable Product"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00995839",
+        "acronym": null,
+        "title": "Terlipressin in Septic Shock: Effects on Microcirculation",
+        "sponsor": "University of Roma La Sapienza",
+        "phase": "PHASE2/PHASE3",
+        "status": "COMPLETED",
+        "start": "2008-11",
+        "primaryCompletion": "2010-02",
+        "enrollment": 60,
+        "conditions": [
+          "Septic Shock",
+          "Sepsis"
+        ],
+        "interventions": [
+          "continuous infusion of terlipressin",
+          "Arginine vasopressin",
+          "terlipressin bolus administration"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT01637454",
+        "acronym": "Type2 HRS",
+        "title": "TYPE 2 HEPATORENAL SYNDROME",
+        "sponsor": "Post Graduate Institute of Medical Education and Research, Chandigarh",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2009-01",
+        "primaryCompletion": "2011-12",
+        "enrollment": 46,
+        "conditions": [
+          "Safety and Efficacy of Terlipressin and Noradrenaline and Predictive Factors of Response in Type 2 HRS"
+        ],
+        "interventions": [
+          "Noradrenaline",
+          "Terlipressin"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT00742690",
+        "acronym": null,
+        "title": "Terlipressin Given As I.V. Boluses Versus Terlipressin Given As Continuous Intravenous Infusion In Patients With Cirrhosis And Type 1 Hepatorenal Syndrome",
+        "sponsor": "University of Padova",
+        "phase": "PHASE2/PHASE3",
+        "status": "UNKNOWN",
+        "start": "2005-05",
+        "primaryCompletion": "2014-12",
+        "enrollment": 70,
+        "conditions": [
+          "Cirrhosis",
+          "Type 1 Hepatorenal Syndrome"
+        ],
+        "interventions": [
+          "terlipressin given by intravenous boluses and albumin",
+          "terlipressin given by continuous intravenous infusion and albumin"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT01143246",
+        "acronym": null,
+        "title": "A Placebo-Controlled, Double-Blind Study to Confirm the Reversal of Hepatorenal Syndrome Type 1 With Terlipressin",
+        "sponsor": "Mallinckrodt",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2010-10-11",
+        "primaryCompletion": "2013-02",
+        "enrollment": 196,
+        "conditions": [
+          "Hepatorenal Syndrome"
+        ],
+        "interventions": [
+          "Terlipressin (Lucassin®)",
+          "Placebo (Saline)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT02770716",
+        "acronym": null,
+        "title": "Study To Confirm Efficacy and Safety of Terlipressin in Hepatorenal Syndrome (HRS) Type 1",
+        "sponsor": "Mallinckrodt",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2016-07-13",
+        "primaryCompletion": "2019-07-24",
+        "enrollment": 300,
+        "conditions": [
+          "Hepatorenal Syndrome"
+        ],
+        "interventions": [
+          "Terlipressin",
+          "Placebo (Matching Placebo)"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT01271114",
+        "acronym": "HYSATESS-p",
+        "title": "Hypertonic Saline and Terlipressin for Sepsis-associated Hypotension",
+        "sponsor": "Hospital General de Ciudad Real",
+        "phase": "PHASE3",
+        "status": "TERMINATED",
+        "start": "2012-06",
+        "primaryCompletion": "2013-12",
+        "enrollment": 21,
+        "conditions": [
+          "Septic Shock",
+          "Sepsis-associated Hypotension"
+        ],
+        "interventions": [
+          "Hypertonic Saline and Terlipressin",
+          "Normal saline and norepinephrine"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT03822091",
+        "acronym": null,
+        "title": "Terlipressin Infusion Alone Vs Terlipressin With Noradrenaline Infusion In The Treatment of Hepatorenal Syndrome Type 1",
+        "sponsor": "Post Graduate Institute of Medical Education and Research, Chandigarh",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2019-01-28",
+        "primaryCompletion": "2020-01-30",
+        "enrollment": 60,
+        "conditions": [
+          "Type 1 HEPATO RENAL SYNDROME(HRS)"
+        ],
+        "interventions": [
+          "Terlipressin",
+          "Terlipressin and Noradrenaline"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      },
+      {
+        "nct": "NCT02970175",
+        "acronym": "TERLAB",
+        "title": "Interest of in Situ Terlipressin Administration Before the Realisation of Bronchial Biopsy",
+        "sponsor": "University Hospital, Rouen",
+        "phase": "PHASE3",
+        "status": "COMPLETED",
+        "start": "2017-06-30",
+        "primaryCompletion": "2024-04-25",
+        "enrollment": 130,
+        "conditions": [
+          "Bronchial Endoscopy"
+        ],
+        "interventions": [
+          "Terlipressin administration",
+          "bronchoscopy under local anesthesia",
+          "Biopsy sampling"
+        ],
+        "drugMatch": "confirmed - intervention string fetched from ClinicalTrials.gov API v2 contains this compound"
+      }
+    ]
+  },
+  "negativeOrNullFindings": [
+    "The respiratory failure signal is the central safety story (PMIDs 39073583, 39133282) and PMID 40704461 adds bradycardia and arrhythmia. A terlipressin page citing only CONFIRM's efficacy would be misleading.",
+    "PMID 34606933 is an explicitly critical appraisal of CONFIRM - include it rather than only the trial."
+  ],
+  "cautions": [
+    "Hepatorenal syndrome nomenclature changed from 'type 1 HRS' to 'HRS-AKI' mid-way through this literature. Trials are not directly comparable across the definitional change.",
+    "Hard content ban applies with force here: no infusion rates, no dose comparisons framed as guidance. PMID 26659927 and PMID 36542261 compare administration routes - describe that such comparisons exist without reproducing regimens."
+  ],
+  "couldNotConfirm": []
+}

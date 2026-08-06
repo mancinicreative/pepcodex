@@ -78,3 +78,33 @@ to eliminate is exactly "plausible text first, identifiers attached afterwards."
 
 The remaining eight are market forecasts, manufacturing announcements and year-in-review pieces.
 Those are trade-press territory, carry no research value, and should not return.
+
+---
+
+## Retired 2026-08-06 (second wave) — `orforglipron-beats-oral-semaglutide`
+
+Removed because its premise is a trial arm that does not exist.
+
+The post asserted that ATTAIN-2 was "the first time a next-generation oral GLP-1 has been directly
+compared to the current market leader in a Phase 3 setting", and reported orforglipron 36 mg at
+~14.7% against **oral semaglutide 14 mg at ~9.4%**.
+
+ATTAIN-2 (PMID 41275875, *Lancet* 2026, NCT05872620) is a 72-week, double-blind,
+**placebo-controlled** trial in 1,613 adults with obesity or overweight **and type 2 diabetes**,
+randomised 1:1:1:2 to orforglipron 6 mg, 12 mg, 36 mg or placebo. Weight change was −5.1% / −7.0% /
+−9.6% versus −2.5% for placebo, on the treatment-regimen estimand.
+
+There is no semaglutide arm. Every structural claim in the post was wrong — the design, the
+population, the duration (52 weeks vs 72), the comparator, the sample size, and every number. This
+is not an estimand slip or a stale figure; it is a fabricated trial design, and the headline claim
+"beats oral semaglutide head-to-head" cannot be made true by editing figures.
+
+The orforglipron dossier had ATTAIN-2 correct at −9.6% throughout, so this was an isolated blog
+fabrication rather than a site-wide error.
+
+Deleted rather than rewritten because the slug, title, excerpt, tags and thesis all encode the false
+claim; what would remain is a different post. Zero inbound links. 301 → `/peptides/orforglipron`.
+
+Found by the independent verifier agent, not by any automated gate — every identifier on the page
+resolved, so no citation check could see it. The gap is recorded in MONTHLY-REFRESH-WORKFLOW.md:
+nothing currently checks that a described trial DESIGN matches its registration.

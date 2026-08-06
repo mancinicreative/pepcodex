@@ -183,24 +183,56 @@ for (const d of dossiers) {
 /* ---------------------------------------------------------------------------------------------
  * 4. DUPLICATE_TRIAL — same NCT twice inside one pack
  * ------------------------------------------------------------------------------------------- */
+/* Only duplication WITHIN ONE ARRAY is a defect.
+ *
+ * This check originally flagged any NCT appearing twice anywhere in a pack, which reported 33
+ * findings of which 28 were legitimate: `coreLibrary.*` is the pack's bibliography and `trials[]`
+ * is what DossierLayout renders, so a registered trial correctly belongs to both. Acting on those
+ * would have stripped real bibliography entries. The 5 genuine cases were the same NCT twice in one
+ * array — cerebrolysin printed two studies twice in its rendered trial table.
+ *
+ * Also checks that a record's `url` points at its OWN identifier. Four records carried a url for a
+ * different NCT entirely — a dental sealant study, sickle-cell analgesia, asthma manual therapy —
+ * the same stale trials as the dual-identifier defect found earlier, surviving in a different
+ * field. These render as clickable links, so the reader lands on an unrelated study. */
 for (const f of fs.readdirSync('data/source-packs').filter((x) => x.endsWith('.json'))) {
   const pack = JSON.parse(fs.readFileSync(`data/source-packs/${f}`, 'utf-8'));
-  const seen = new Map();
-  (function walk(n, p) {
-    if (!n || typeof n !== 'object') return;
-    if (Array.isArray(n)) return n.forEach((x, i) => walk(x, `${p}[${i}]`));
-    const nct = n.nctId || n.nct || (typeof n.id === 'string' && /^NCT\d{8}$/i.test(n.id) ? n.id : null);
-    if (nct) {
-      const k = String(nct).toUpperCase();
-      if (!seen.has(k)) seen.set(k, []);
-      seen.get(k).push(p);
+  const byArray = new Map();
+  (function walk(node, p) {
+    if (!node || typeof node !== 'object') return;
+    if (Array.isArray(node)) {
+      node.forEach((x, i) => {
+        if (x && typeof x === 'object') {
+          const nct = x.nctId || x.nct || (typeof x.id === 'string' && /^NCT\d{8}$/i.test(x.id) ? x.id : null);
+          if (nct) {
+            if (!byArray.has(p)) byArray.set(p, new Map());
+            const m = byArray.get(p);
+            const k = String(nct).toUpperCase();
+            m.set(k, (m.get(k) || 0) + 1);
+          }
+          // url must point at this record's own identifier
+          const id = String(x.nctId || x.nct || '').toUpperCase();
+          for (const key of ['url', 'link']) {
+            const inUrl = (String(x[key] || '').match(/NCT\d{8}/i) || [])[0];
+            if (id && inUrl && id !== inUrl.toUpperCase()) {
+              findings.push({ type: 'IDENTIFIER_URL_MISMATCH', file: `data/source-packs/${f}`,
+                detail: `${p}[${i}] has nctId ${id} but its ${key} points at ${inUrl.toUpperCase()} — this renders as a link to an unrelated study` });
+            }
+          }
+        }
+        walk(x, `${p}[${i}]`);
+      });
+      return;
     }
-    Object.entries(n).forEach(([k, v]) => walk(v, `${p}.${k}`));
+    Object.entries(node).forEach(([k, v]) => walk(v, p ? `${p}.${k}` : k));
   })(pack, '');
-  for (const [nct, where] of seen) {
-    if (where.length > 1) {
-      findings.push({ type: 'DUPLICATE_TRIAL', file: `data/source-packs/${f}`,
-        detail: `${nct} stored ${where.length}x: ${where.join(' , ')} — inflates trial counts and lets two records drift into disagreeing about one study` });
+
+  for (const [arrPath, m] of byArray) {
+    for (const [nct, n] of m) {
+      if (n > 1) {
+        findings.push({ type: 'DUPLICATE_TRIAL', file: `data/source-packs/${f}`,
+          detail: `${nct} appears ${n}x inside ${arrPath} — a single array, so it renders twice and double-counts. Run \`node scripts/dedupe-trials.mjs --apply\`.` });
+      }
     }
   }
 }

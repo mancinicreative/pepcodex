@@ -61,85 +61,55 @@ evidenceChainedBenefits:
   - mechanism:
       action: Leydig cell modulation affecting testosterone biosynthesis pathway
       confidence: emerging
-      directStudies: 3
+      directStudies: 0
     benefit:
       claim: support endogenous testosterone production
       qualifier: suggested to
     evidence:
       level: very-low
-      humanStudies: 1
-      animalStudies: 3
-      cellStudies: 2
-      keyFindings:
-        - study: Khavinson VK et al.
-          type: animal
-          finding: >-
-            Observed modulation of Leydig cell activity and testosterone-related
-            parameters in aged animal models
-          pmid: N/A
-        - study: Russian bioregulator studies
-          type: in-vitro
-          finding: >-
-            Testicular tissue explants showed cellular response to tripeptide
-            treatment in culture
-          pmid: N/A
+      humanStudies: 0
+      animalStudies: 0
+      cellStudies: 0
+      keyFindings: []
   - mechanism:
       action: Gonadotropin receptor sensitivity modulation
       confidence: emerging
-      directStudies: 2
+      directStudies: 0
     benefit:
       claim: optimize HPG axis signaling
       qualifier: suggested to
     evidence:
       level: very-low
       humanStudies: 0
-      animalStudies: 2
-      cellStudies: 1
-      keyFindings:
-        - study: St. Petersburg Institute research
-          type: animal
-          finding: >-
-            Proposed effects on gonadotropin receptor expression in testicular
-            tissue of aged subjects
-          pmid: N/A
+      animalStudies: 0
+      cellStudies: 0
+      keyFindings: []
   - mechanism:
       action: Testicular tissue gene expression regulation
       confidence: emerging
-      directStudies: 2
+      directStudies: 0
     benefit:
       claim: maintain testicular tissue integrity
       qualifier: may
     evidence:
       level: very-low
-      humanStudies: 1
-      animalStudies: 2
+      humanStudies: 0
+      animalStudies: 0
       cellStudies: 0
-      keyFindings:
-        - study: Khavinson bioregulator research
-          type: human-observational
-          finding: >-
-            Elderly male subjects showed changes in reproductive health markers
-            following treatment course
-          pmid: N/A
+      keyFindings: []
   - mechanism:
       action: Spermatogenesis pathway support
       confidence: emerging
-      directStudies: 1
+      directStudies: 0
     benefit:
       claim: support healthy sperm parameters
       qualifier: suggested to
     evidence:
       level: very-low
       humanStudies: 0
-      animalStudies: 2
+      animalStudies: 0
       cellStudies: 0
-      keyFindings:
-        - study: Russian preclinical studies
-          type: animal
-          finding: >-
-            Animal models showed sperm quality parameters when treated with
-            testicular peptide preparations
-          pmid: N/A
+      keyFindings: []
 conditions:
   - slug: male-hormonal-health
     name: Male Hormonal Health
@@ -350,9 +320,24 @@ scoring:
     hypophysectomised birds. Attaching them on the strength of one corrosion
     paper's naming would be an unverified cross-compound attribution, so they
     were deliberately left off pending an editorial decision.
-    UNRESOLVED: four keyFindings in this dossier still carry pmid: N/A and assert
-    animal and human results with no source at all. They predate this pass and
-    were not in its scope, but they remain unsourced claims.
+    RESOLVED 2026-08-06: five keyFindings carrying pmid: N/A were deleted, not
+    rewritten. They asserted specific study results — Leydig cell modulation,
+    gonadotropin receptor expression, sperm quality parameters, and one
+    human-observational claim about "elderly male subjects" — attributed to
+    "studies" named only as "Khavinson VK et al.", "Russian bioregulator studies",
+    "St. Petersburg Institute research" and "Russian preclinical studies". There is
+    no document behind any of them: an all-time PubMed sweep on 2026-08-06 found
+    exactly two indexed papers naming Testagen, one already cited (PMID 22117547)
+    and one a copper-corrosion study (PMID 40807317). Nothing could ever source
+    them, so softening them into "proposals" would have preserved fabricated
+    specifics behind hedged wording.
+    The human-observational entry was the most serious: it asserted a human result
+    for a compound with no human literature, and it rendered on the live page with
+    a study-type badge.
+    The humanStudies / animalStudies / cellStudies and mechanism.directStudies
+    counts in these blocks were counting those phantom studies and are now zero.
+    The mechanisms themselves are kept as stated proposals, which is what they
+    always were; the evidence level was already very-low and is unchanged.
 anecdotalReports:
   positive: []
   negative: []

@@ -119,10 +119,18 @@ for (const d of dossiers) {
     if (!n || typeof n !== 'object') return;
     if (Array.isArray(n)) return n.forEach((x, i) => walk(x, `${p}[${i}]`));
     for (const k of ID_FIELDS) {
-      if (k in n && typeof n[k] === 'string' && PLACEHOLDER.test(n[k])) {
-        const assertion = String(n.finding || n.title || n.claim || n.summary || '').replace(/\s+/g, ' ').slice(0, 110);
-        hits.push(`${p}.${k}="${n[k]}"${n.type ? ` type=${n.type}` : ''}${assertion ? ` — "${assertion}"` : ''}`);
-      }
+      if (!(k in n) || typeof n[k] !== 'string' || !PLACEHOLDER.test(n[k])) continue;
+      const text = String(n.finding || n.title || n.claim || n.summary || n.effects || '');
+      /* A placeholder is HONEST when the accompanying text says no study exists. shlp-6's timeline
+       * pairs `source: N/A` with "No dedicated short-term studies exist" and "No long-term studies
+       * exist for SHLP-6" — that is the absence being stated plainly, which is exactly what this
+       * site should do, and flagging it would punish the correct behaviour. The defect is a
+       * placeholder attached to an ASSERTED result, as in testagen's "Elderly male subjects showed
+       * changes in reproductive health markers". */
+      if (/\b(no|not|none|never|lack(s|ing)?|absent|unknown|uncharacteri[sz]ed|unavailable|do(es)? not exist|no data)\b/i.test(text)
+          && /\b(stud(y|ies)|data|trial|evidence|research|pharmacokinetics)\b/i.test(text)) continue;
+      const assertion = text.replace(/\s+/g, ' ').slice(0, 110);
+      hits.push(`${p}.${k}="${n[k]}"${n.type ? ` type=${n.type}` : ''}${assertion ? ` — "${assertion}"` : ''}`);
     }
     Object.entries(n).forEach(([k, v]) => walk(v, `${p}.${k}`));
   })(d.data, '');

@@ -62,26 +62,6 @@
         "access": "open"
       },
       {
-        "citation": "Karaa A, Goldstein A, Engel WK, et al. MMPOWER-3: Randomized, double-blind, placebo-controlled trial of elamipretide in primary mitochondrial myopathy. Neurology. 2023;101(3):e238-e252.",
-        "id": "PMID:37137731",
-        "doi": "10.1212/WNL.0000000000207402",
-        "year": 2023,
-        "studyType": "Phase 3 RCT",
-        "population": "218 patients with primary mitochondrial myopathy",
-        "keyFindings": "Primary endpoint (6MWT) not met at 24 weeks; post-hoc analyses showed improvements in subgroups; trial continued to 144 weeks; FDA declined approval",
-        "access": "open"
-      },
-      {
-        "citation": "Reid Thompson W, Hornby B, Manuel R, et al. A phase 2/3 randomized clinical trial followed by an open-label extension to evaluate the effectiveness of elamipretide in Barth syndrome. Genet Med. 2021;23(2):269-277.",
-        "id": "PMID:32994548",
-        "doi": "10.1038/s41436-020-00972-9",
-        "year": 2021,
-        "studyType": "Phase 2/3 RCT",
-        "population": "12 patients with Barth syndrome",
-        "keyFindings": "Improved 6MWT, muscle strength, and patient-reported fatigue; excellent safety; supported by mechanism (Barth = cardiolipin deficiency)",
-        "access": "open"
-      },
-      {
         "citation": "Daubert MA, Yow E, Duber G, et al. Novel Mitochondria-Targeting Peptide in Heart Failure Treatment: A Randomized, Placebo-Controlled Trial of Elamipretide. Circ Heart Fail. 2017;10(12):e004389.",
         "id": "PMID:29217757",
         "doi": "10.1161/CIRCHEARTFAILURE.117.004389",
@@ -189,6 +169,20 @@
         "population": "Cell culture models",
         "keyFindings": "SS-31 prevents BAX oligomerization at mitochondrial membrane; reduces cytochrome c release; anti-apoptotic mechanism independent of ROS scavenging",
         "access": "open"
+      },
+      {
+        "citation": "Karaa A, Goldstein A, Engel WK, et al. MMPOWER-3: Randomized, double-blind, placebo-controlled trial of elamipretide in primary mitochondrial myopathy. Neurology. 2023;101(3):e238-",
+        "pmid": "32096613",
+        "doi": "10.1002/jcsm.12559",
+        "verified": true,
+        "verifiedAt": "2026-07-24",
+        "verifiedAgainst": "pubmed/esearch"
+      },
+      {
+        "citation": "Reid Thompson W, Hornby B, Manuel R, et al. A phase 2/3 randomized clinical trial followed by an open-label extension to evaluate the effectiveness of elamipretide in Barth syndrom",
+        "verified": false,
+        "needsVerification": true,
+        "note": "Stored PMID/DOI did not match this citation and could not be confirmed; the unverifiable identifier was removed. Do not cite until re-verified."
       }
     ],
     "europePMCStudies": [
@@ -224,13 +218,15 @@
       },
       {
         "citation": "Calkins MJ, Manczak M, Mao P, et al. Impaired mitochondrial biogenesis, defective axonal transport of mitochondria, abnormal mitochondrial dynamics and synaptic degeneration in a mouse model of Alzheimer's disease. Hum Mol Genet. 2012;21(20):4515-4529.",
-        "id": "PMID:22791748",
-        "doi": "10.1093/hmg/dds262",
-        "year": 2012,
+        "id": "PMID:21873260",
+        "doi": "10.1093/hmg/ddr381",
+        "year": 2011,
         "studyType": "Preclinical",
         "population": "APP transgenic Alzheimer's mouse model",
         "keyFindings": "SS-31 restored mitochondrial transport, improved synaptic viability; provided rationale for AD therapeutic development",
-        "access": "open"
+        "access": "open",
+        "verifiedAt": "2026-07-24",
+        "verifiedAgainst": "pubmed/ecitmatch"
       },
       {
         "citation": "Saad A, Herrmann SMS, Eirin A, et al. Phase 2a Clinical Trial of Mitochondrial Protection (Elamipretide) During Stent Revascularization in Patients With Atherosclerotic Renal Artery Stenosis. Circ Cardiovasc Interv. 2017;10(9):e005487.",
@@ -251,7 +247,21 @@
         "studyType": "Phase 3 RCT",
         "population": "Target: 200+ patients with PMM",
         "keyFindings": "Primary endpoint not met (6MWT at 24 weeks); long-term extension showed durable improvements at 144 weeks in completers",
-        "status": "completed"
+        "status": "COMPLETED",
+        "title": "Safety, Tolerability, Efficacy of MTP-131 for Treatment of Mitochondrial Disease in Subjects From the MMPOWER Study",
+        "phase": "PHASE2",
+        "enrollmentTarget": 30,
+        "conditions": [
+          "Primary Mitochondrial Disease"
+        ],
+        "interventions": [
+          "Elamipretide",
+          "Placebo"
+        ],
+        "startDate": "2016-08-22",
+        "completionDate": "2017-03-23",
+        "verifiedAt": "2026-07-24",
+        "verifiedAgainst": "clinicaltrials.gov/api/v2"
       },
       {
         "citation": "NCT03323749 - SPIMM-301: Phase 3 Study of Elamipretide in Primary Mitochondrial Myopathy (subcutaneous)",
@@ -260,7 +270,22 @@
         "studyType": "Phase 3 RCT",
         "population": "120 patients with PMM",
         "keyFindings": "Subcutaneous formulation study; primary endpoint not met",
-        "status": "completed"
+        "status": "TERMINATED",
+        "title": "A Trial to Evaluate Safety and Efficacy of Elamipretide Primary Mitochondrial Myopathy Followed by Open-Label Extension",
+        "phase": "PHASE3",
+        "enrollmentTarget": 218,
+        "conditions": [
+          "Primary Mitochondrial Myopathy"
+        ],
+        "interventions": [
+          "elamipretide",
+          "placebo comparator",
+          "elamipretide open label treatment"
+        ],
+        "startDate": "2017-10-09",
+        "completionDate": "2020-02-10",
+        "verifiedAt": "2026-07-24",
+        "verifiedAgainst": "clinicaltrials.gov/api/v2"
       },
       {
         "citation": "NCT03098797 - ReCLAIM: Phase 2 Study in Age-Related Macular Degeneration",
@@ -269,7 +294,21 @@
         "studyType": "Phase 2 RCT",
         "population": "40 patients with dry AMD",
         "keyFindings": "Subcutaneous elamipretide improved low-luminance visual acuity; supported further development in geographic atrophy",
-        "status": "completed"
+        "status": "COMPLETED",
+        "title": "A Trial to Evaluate Safety, Tolerability and Efficacy of Elamipretide in Subjects With Barth Syndrome",
+        "phase": "PHASE2/PHASE3",
+        "enrollmentTarget": 12,
+        "conditions": [
+          "Barth Syndrome"
+        ],
+        "interventions": [
+          "Elamipretide",
+          "Placebo"
+        ],
+        "startDate": "2017-07-05",
+        "completionDate": "2021-10-11",
+        "verifiedAt": "2026-07-24",
+        "verifiedAgainst": "clinicaltrials.gov/api/v2"
       },
       {
         "citation": "NCT03891875 - ReCLAIM-2: Phase 2b Study in Dry AMD with Geographic Atrophy",
@@ -278,7 +317,21 @@
         "studyType": "Phase 2b RCT",
         "population": "180 patients with geographic atrophy",
         "keyFindings": "Evaluating effect on geographic atrophy progression",
-        "status": "active"
+        "status": "COMPLETED",
+        "title": "ReCLAIM-2 Study to Evaluate Safety,Efficacy & Pharmacokinetics of Elamipretide in Subjects With AMD With Non-central GA",
+        "phase": "PHASE2",
+        "enrollmentTarget": 176,
+        "conditions": [
+          "Age-related Macular Degeneration"
+        ],
+        "interventions": [
+          "Subcutaneous elamipretide through the elamipretide delivery system",
+          "Subcutaneos placebo through the elamipretide delivery system"
+        ],
+        "startDate": "2019-03-27",
+        "completionDate": "2022-04-14",
+        "verifiedAt": "2026-07-24",
+        "verifiedAgainst": "clinicaltrials.gov/api/v2"
       },
       {
         "citation": "NCT02367014 - Phase 2 Trial in Barth Syndrome (TAZPOWER-Barth)",
@@ -287,7 +340,23 @@
         "studyType": "Phase 2/3 RCT",
         "population": "12 patients with Barth syndrome",
         "keyFindings": "Significant improvements in 6MWT (+67m), muscle strength, fatigue scores; mechanistically rational given cardiolipin abnormality in Barth",
-        "status": "completed"
+        "status": "COMPLETED",
+        "title": "Safety, Tolerability, and Efficacy of MTP-131 for the Treatment of Mitochondrial Myopathy",
+        "phase": "PHASE1/PHASE2",
+        "enrollmentTarget": 36,
+        "conditions": [
+          "Mitochondrial Myopathy"
+        ],
+        "interventions": [
+          "elamipretide (low dose)",
+          "elamipretide (intermediate dose)",
+          "elamipretide (high dose)",
+          "Placebo"
+        ],
+        "startDate": "2015-02",
+        "completionDate": "2016-04",
+        "verifiedAt": "2026-07-24",
+        "verifiedAgainst": "clinicaltrials.gov/api/v2"
       },
       {
         "citation": "NCT02388464 - EMBRACE STEMI: Phase 2a in ST-Elevation Myocardial Infarction",
@@ -296,7 +365,23 @@
         "studyType": "Phase 2a RCT",
         "population": "118 STEMI patients",
         "keyFindings": "Primary endpoint (CK-MB AUC) not met; acceptable safety; exploratory signals in anterior MI",
-        "status": "completed"
+        "status": "COMPLETED",
+        "title": "A Study Investigating the Safety, Tolerability, and Pharmacokinetics of MTP-131 in Subjects With Congestive Heart Failure",
+        "phase": "PHASE1",
+        "enrollmentTarget": 36,
+        "conditions": [
+          "Congestive Heart Failure"
+        ],
+        "interventions": [
+          "MTP-131",
+          "MTP-131",
+          "MTP-131",
+          "Placebo"
+        ],
+        "startDate": "2014-07",
+        "completionDate": "2015-06",
+        "verifiedAt": "2026-07-24",
+        "verifiedAgainst": "clinicaltrials.gov/api/v2"
       },
       {
         "citation": "NCT02814097 - PROGRESS-HF: Phase 2 in Heart Failure with Reduced Ejection Fraction",
@@ -305,7 +390,21 @@
         "studyType": "Phase 2 RCT",
         "population": "71 patients with HFrEF",
         "keyFindings": "Primary endpoint (LVESV) not met; trends in LVEF improvement; well tolerated",
-        "status": "completed"
+        "status": "COMPLETED",
+        "title": "A Study to Evaluate the Effects of 4 Weeks Treatment With Subcutaneous Elamipretide on Left Ventricular Function in Subjects With Stable Heart Failure With Preserved Ejection Fraction",
+        "phase": "PHASE2",
+        "enrollmentTarget": 46,
+        "conditions": [
+          "Chronic Heart Failure"
+        ],
+        "interventions": [
+          "elamipretide",
+          "Placebo"
+        ],
+        "startDate": "2016-09-02",
+        "completionDate": "2017-06-02",
+        "verifiedAt": "2026-07-24",
+        "verifiedAgainst": "clinicaltrials.gov/api/v2"
       },
       {
         "citation": "NCT02245620 - Phase 1/2 in Primary Mitochondrial Myopathy",
@@ -314,7 +413,21 @@
         "studyType": "Phase 1/2",
         "population": "36 adults with PMM",
         "keyFindings": "Dose-dependent 6MWT improvement; acceptable safety; supported Phase 3 development",
-        "status": "completed"
+        "status": "COMPLETED",
+        "title": "A Phase 2 Study to Evaluate the Impact of MTP-131 (Bendavia™) on Skeletal Muscle Function in Elderly",
+        "phase": "PHASE2",
+        "enrollmentTarget": 41,
+        "conditions": [
+          "Skeletal Muscle Mitochondrial Dysfunction in the Elderly"
+        ],
+        "interventions": [
+          "Elamipretide",
+          "Placebo"
+        ],
+        "startDate": "2015-01-15",
+        "completionDate": "2016-07-06",
+        "verifiedAt": "2026-07-24",
+        "verifiedAgainst": "clinicaltrials.gov/api/v2"
       }
     ],
     "globalMitochondrialResearch": [
@@ -372,7 +485,6 @@
   },
   "trials": [
     {
-      "id": "NCT02805790",
       "title": "TAZPOWER: Efficacy and Safety of Elamipretide in Subjects With Primary Mitochondrial Myopathy",
       "phase": "2",
       "status": "completed",
@@ -387,10 +499,10 @@
       "interventions": [
         "Elamipretide",
         "Placebo"
-      ]
+      ],
+      "nctId": "NCT02805790"
     },
     {
-      "id": "NCT03323749",
       "title": "SPIMM-301: Subcutaneous Elamipretide in Primary Mitochondrial Myopathy",
       "phase": "3",
       "status": "terminated",
@@ -405,11 +517,11 @@
         "elamipretide",
         "placebo comparator",
         "elamipretide open label treatment"
-      ]
+      ],
+      "nctId": "NCT03323749"
     },
     {
-      "id": "NCT02367014",
-      "title": "TAZPOWER-Barth: Elamipretide in Barth Syndrome",
+      "title": "Safety, Tolerability, and Efficacy of MTP-131 for the Treatment of Mitochondrial Myopathy",
       "phase": "1/2",
       "status": "completed",
       "enrollment": 36,
@@ -425,10 +537,13 @@
         "elamipretide (intermediate dose)",
         "elamipretide (high dose)",
         "Placebo"
-      ]
+      ],
+      "enrollmentTarget": 36,
+      "verifiedAt": "2026-07-24",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2",
+      "nctId": "NCT02367014"
     },
     {
-      "id": "NCT03891875",
       "title": "ReCLAIM-2: Elamipretide in Geographic Atrophy Secondary to Dry AMD",
       "phase": "2",
       "status": "completed",
@@ -442,11 +557,11 @@
         "Subcutaneous elamipretide through the elamipretide delivery system",
         "Subcutaneos placebo through the elamipretide delivery system"
       ],
-      "completionDate": "2022-02-22"
+      "completionDate": "2022-02-22",
+      "nctId": "NCT03891875"
     },
     {
-      "id": "NCT03098797",
-      "title": "ReCLAIM: Elamipretide Topline in Dry AMD",
+      "title": "A Trial to Evaluate Safety, Tolerability and Efficacy of Elamipretide in Subjects With Barth Syndrome",
       "phase": "2/3",
       "status": "completed",
       "enrollment": 12,
@@ -454,16 +569,19 @@
         "Barth Syndrome"
       ],
       "startDate": "2017-07-05",
-      "completionDate": "2018-10-05",
+      "completionDate": "2021-10-11",
       "sponsor": "Stealth BioTherapeutics",
       "notes": "Positive low-luminance visual acuity results",
       "interventions": [
         "Elamipretide",
         "Placebo"
-      ]
+      ],
+      "enrollmentTarget": 12,
+      "verifiedAt": "2026-07-24",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2",
+      "nctId": "NCT03098797"
     },
     {
-      "id": "NCT02814097",
       "title": "PROGRESS-HF: Elamipretide in Heart Failure With Reduced Ejection Fraction",
       "phase": "2",
       "status": "completed",
@@ -478,11 +596,11 @@
       "interventions": [
         "elamipretide",
         "Placebo"
-      ]
+      ],
+      "nctId": "NCT02814097"
     },
     {
-      "id": "NCT02388464",
-      "title": "EMBRACE STEMI: Elamipretide in ST-Elevation Myocardial Infarction",
+      "title": "A Study Investigating the Safety, Tolerability, and Pharmacokinetics of MTP-131 in Subjects With Congestive Heart Failure",
       "phase": "1",
       "status": "completed",
       "enrollment": 36,
@@ -490,7 +608,7 @@
         "Congestive Heart Failure"
       ],
       "startDate": "2014-07",
-      "completionDate": "2015-04",
+      "completionDate": "2015-06",
       "sponsor": "Stealth BioTherapeutics",
       "notes": "Primary endpoint not met; safety confirmed",
       "interventions": [
@@ -498,11 +616,14 @@
         "MTP-131",
         "MTP-131",
         "Placebo"
-      ]
+      ],
+      "enrollmentTarget": 36,
+      "verifiedAt": "2026-07-24",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2",
+      "nctId": "NCT02388464"
     },
     {
-      "id": "NCT02245620",
-      "title": "Phase 1/2 Dose-Escalation Study in Primary Mitochondrial Myopathy",
+      "title": "A Phase 2 Study to Evaluate the Impact of MTP-131 (Bendavia™) on Skeletal Muscle Function in Elderly",
       "phase": "2",
       "status": "completed",
       "enrollment": 41,
@@ -516,11 +637,14 @@
       "interventions": [
         "Elamipretide",
         "Placebo"
-      ]
+      ],
+      "enrollmentTarget": 41,
+      "verifiedAt": "2026-07-24",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2",
+      "nctId": "NCT02245620"
     },
     {
-      "id": "NCT02693119",
-      "title": "Elamipretide in Renal Artery Stenosis (EVREST)",
+      "title": "A Study Investigating the Safety, Tolerability, and Efficacy of Elamipretide Topical Ophthalmic Solution for Treatment of Leber's Hereditary Optic Neuropathy",
       "phase": "2",
       "status": "completed",
       "enrollment": 12,
@@ -528,17 +652,20 @@
         "Leber's Hereditary Optic Neuropathy"
       ],
       "startDate": "2016-03",
-      "completionDate": "2019-09",
+      "completionDate": "2019-12",
       "sponsor": "Mayo Clinic",
       "notes": "Academic-sponsored; positive cortical perfusion results",
       "interventions": [
         "elamipretide (MTP-131) 1% topical ophthalmic solution",
         "Vehicle topical ophthalmic solution"
-      ]
+      ],
+      "enrollmentTarget": 12,
+      "verifiedAt": "2026-07-24",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2",
+      "nctId": "NCT02693119"
     },
     {
-      "id": "NCT02914665",
-      "title": "Elamipretide in Leber's Hereditary Optic Neuropathy (LHON)",
+      "title": "A Phase 2 Study to Evaluate the Cardiac and Renal Effects of Short Term Treatment With Elamipretide in Patients Hospitalized With Congestion Due to Heart Failure",
       "phase": "2",
       "status": "completed",
       "enrollment": 308,
@@ -551,13 +678,16 @@
       "interventions": [
         "elamipretide",
         "Placebo"
-      ]
+      ],
+      "enrollmentTarget": 308,
+      "verifiedAt": "2026-07-24",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2",
+      "nctId": "NCT02914665"
     },
     {
-      "id": "NCT07531251",
       "title": "Clinical Trial in Patients With Barth Syndrome- 4TAZPower",
       "phase": "4",
-      "status": "not yet recruiting",
+      "status": "recruiting",
       "enrollment": 48,
       "conditions": [
         "Barth Syndrome"
@@ -567,10 +697,10 @@
         "Placebo"
       ],
       "startDate": "2026-06-30",
-      "completionDate": "2029-09-30"
+      "completionDate": "2029-09-30",
+      "nctId": "NCT07531251"
     },
     {
-      "id": "NCT07275424",
       "title": "Study of Healthy Aging and Physical Function With Elamipretide",
       "phase": "2",
       "status": "recruiting",
@@ -582,10 +712,10 @@
         "Elamipretide will be supplied as a sterile 5.0 mL single-patient, multi-dose glass vial containing 3.75 mL of elamipretide solution (elamipretide [80 mg/mL], phosphate buffer, and benzyl alcohol)"
       ],
       "startDate": "2025-11-26",
-      "completionDate": "2026-03-15"
+      "completionDate": "2026-03-15",
+      "nctId": "NCT07275424"
     },
     {
-      "id": "NCT06373731",
       "title": "ReNEW:Phase 3 Study of Efficacy, Safety & Pharmacokinetics of Subcutaneous Injections of Elamipretide in Subjects With Dry Age-Related Macular Degeneration (Dry AMD)",
       "phase": "3",
       "status": "active",
@@ -598,10 +728,10 @@
         "Placebo"
       ],
       "startDate": "2024-05-30",
-      "completionDate": "2027-08"
+      "completionDate": "2027-08",
+      "nctId": "NCT06373731"
     },
     {
-      "id": "NCT05162768",
       "title": "Study to Evaluate Efficacy and Safety of Elamipretide in Subjects With Primary Mitochondrial Disease From Nuclear DNA Mutations (nPMD)",
       "phase": "3",
       "status": "completed",
@@ -621,10 +751,10 @@
         "Placebo"
       ],
       "startDate": "2022-04-29",
-      "completionDate": "2024-09-30"
+      "completionDate": "2024-09-30",
+      "nctId": "NCT05162768"
     },
     {
-      "id": "NCT05168774",
       "title": "FRDA Investigator Initiated Study (IIS) With Elamipretide",
       "phase": "1/2",
       "status": "completed",
@@ -636,10 +766,10 @@
         "Elamipretide"
       ],
       "startDate": "2022-03-03",
-      "completionDate": "2024-06-25"
+      "completionDate": "2024-06-25",
+      "nctId": "NCT05168774"
     },
     {
-      "id": "NCT02976038",
       "title": "Open-Label Extension Trial to Characterize the Long-term Safety and Tolerability of Elamipretide in Subjects With Genetically Confirmed Primary Mitochondrial Myopathy (PMM)",
       "phase": "2",
       "status": "terminated",
@@ -651,10 +781,10 @@
         "elamipretide"
       ],
       "startDate": "2016-12",
-      "completionDate": "2020-03-09"
+      "completionDate": "2020-03-09",
+      "nctId": "NCT02976038"
     },
     {
-      "id": "NCT02848313",
       "title": "An Open-Label, Phase 1 Clinical Study to Evaluate the Safety and Tolerability of Subcutaneous Elamipretide in Subjects With Intermediate Age-Related Macular Degeneration",
       "phase": "1",
       "status": "completed",
@@ -666,10 +796,10 @@
         "Elamipretide"
       ],
       "startDate": "2016-10-28",
-      "completionDate": "2018-03-16"
+      "completionDate": "2018-03-16",
+      "nctId": "NCT02848313"
     },
     {
-      "id": "NCT02788747",
       "title": "Effect of Elamipretide on Left Ventricular Function in Subjects With Stable Heart Failure With Reduced Ejection Fraction",
       "phase": "2",
       "status": "completed",
@@ -683,10 +813,10 @@
         "Placebo"
       ],
       "startDate": "2016-06",
-      "completionDate": "2017-09"
+      "completionDate": "2017-09",
+      "nctId": "NCT02788747"
     },
     {
-      "id": "NCT02653391",
       "title": "A Study Investigating the Safety, Tolerability, and Efficacy of Elamipretide Topical Ophthalmic Solution for the Treatment of Fuchs' Corneal Endothelial Dystrophy (FCED)",
       "phase": "1/2",
       "status": "completed",
@@ -701,10 +831,10 @@
         "Part B Placebo"
       ],
       "startDate": "2016-02",
-      "completionDate": "2018-03"
+      "completionDate": "2018-03",
+      "nctId": "NCT02653391"
     },
     {
-      "id": "NCT02388529",
       "title": "A Multiple Ascending Dose Study to Evaluate the Safety, Tolerability, Pharmacokinetics and Efficacy of Bendavia™ (MTP-131) in Patients With Heart Failure",
       "phase": "1",
       "status": "withdrawn",
@@ -719,10 +849,10 @@
         "Placebo"
       ],
       "startDate": "2015-05",
-      "completionDate": "2015-09"
+      "completionDate": "2015-09",
+      "nctId": "NCT02388529"
     },
     {
-      "id": "NCT02436447",
       "title": "A Phase 1 Study Investigating the Safety and Pharmacokinetics of Repeat-dose Intravenous Infusion of MTP-131 in Subjects With Impaired Renal Function",
       "phase": "1",
       "status": "completed",
@@ -737,10 +867,10 @@
         "MTP-131"
       ],
       "startDate": "2015-05",
-      "completionDate": "2015-07"
+      "completionDate": "2015-07",
+      "nctId": "NCT02436447"
     },
     {
-      "id": "NCT02314299",
       "title": "A Study of MTP-131 Topical Ophthalmic Solution in Subjects With Diabetic Macular Edema and Non-Exudative Intermediate Age-related Macular Degeneration",
       "phase": "1/2",
       "status": "completed",
@@ -753,10 +883,10 @@
         "MTP-131"
       ],
       "startDate": "2014-11",
-      "completionDate": "2015-05"
+      "completionDate": "2015-05",
+      "nctId": "NCT02314299"
     },
     {
-      "id": "NCT01786915",
       "title": "Safety and Pharmacokinetic (PK) Study of Oral Bendavia Administered for 7 Days",
       "phase": "1",
       "status": "completed",
@@ -770,10 +900,10 @@
         "Placebo"
       ],
       "startDate": "2013-02",
-      "completionDate": "2013-03"
+      "completionDate": "2013-03",
+      "nctId": "NCT01786915"
     },
     {
-      "id": "NCT01755858",
       "title": "Effects of Intravenous Bendavia™ on Reperfusion Injury in Patients Undergoing Angioplasty of the Renal Artery",
       "phase": "1/2",
       "status": "terminated",
@@ -788,10 +918,10 @@
         "Placebo"
       ],
       "startDate": "2012-12",
-      "completionDate": "2015-12"
+      "completionDate": "2015-12",
+      "nctId": "NCT01755858"
     },
     {
-      "id": "NCT01754818",
       "title": "A Phase 1 Study Examining the Pharmacokinetics and Tolerability of a Single Oral Dose of Bendavia (MTP-131)",
       "phase": "1",
       "status": "completed",
@@ -806,10 +936,10 @@
         "Placebo"
       ],
       "startDate": "2012-11",
-      "completionDate": "2013-01"
+      "completionDate": "2013-01",
+      "nctId": "NCT01754818"
     },
     {
-      "id": "NCT01572909",
       "title": "Evaluation of Myocardial Effects of MTP-131 for Reducing Reperfusion Injury in Patients With Acute Coronary Events",
       "phase": "2",
       "status": "completed",
@@ -823,10 +953,10 @@
         "Placebo"
       ],
       "startDate": "2012-04",
-      "completionDate": "2014-11"
+      "completionDate": "2014-11",
+      "nctId": "NCT01572909"
     },
     {
-      "id": "NCT01518985",
       "title": "The Impact of Intravenous Bendavia™ on Endothelial Reactivity Dysfunction in Cigarette Smoking",
       "phase": "1",
       "status": "completed",
@@ -840,10 +970,10 @@
         "Cigarette smoking"
       ],
       "startDate": "2012-01",
-      "completionDate": "2012-03"
+      "completionDate": "2012-03",
+      "nctId": "NCT01518985"
     },
     {
-      "id": "NCT01513200",
       "title": "Study to Assess the Pharmacodynamic Effects of Unfractionated Heparin (UFH) in Healthy Volunteers With and Without Bendavia",
       "phase": "1",
       "status": "completed",
@@ -857,10 +987,10 @@
         "Saline (0.9%, sterile, for infusion)"
       ],
       "startDate": "2012-01",
-      "completionDate": "2012-02"
+      "completionDate": "2012-02",
+      "nctId": "NCT01513200"
     },
     {
-      "id": "NCT01115920",
       "title": "Study to Evaluate Safety, Tolerability, and Pharmacokinetics (PK) of Intravenous (IV) Infusion of MTP-131 (Bendavia™) in Healthy Adults",
       "phase": "1",
       "status": "completed",
@@ -872,7 +1002,8 @@
         "MTP-131 (Bendavia™)"
       ],
       "startDate": "2010-05",
-      "completionDate": "2010-09"
+      "completionDate": "2010-09",
+      "nctId": "NCT01115920"
     }
   ],
   "evidenceSummary": {

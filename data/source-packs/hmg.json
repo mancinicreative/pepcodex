@@ -1,11 +1,18 @@
 {
   "peptide": "HMG",
   "fullName": "Human Menopausal Gonadotropin",
-  "aliases": ["HMG", "hMG", "Menotropins", "Menopur", "Pergonal", "Repronex", "HP-hMG"],
+  "aliases": [
+    "HMG",
+    "hMG",
+    "Menotropins",
+    "Menopur",
+    "Pergonal",
+    "Repronex",
+    "HP-hMG"
+  ],
   "generated": "2026-01-22",
   "category": "hormonal-reproductive",
   "methodology": "Comprehensive global evidence synthesis",
-
   "searchStrategy": {
     "keywords": [
       "human menopausal gonadotropin",
@@ -63,7 +70,6 @@
       "Animal-only studies without human relevance"
     ]
   },
-
   "coreLibrary": {
     "primaryStudies": [
       {
@@ -108,7 +114,7 @@
       {
         "citation": "Al-Inany HG, Abou-Setta AM, Aboulghar MA, et al. Highly purified hMG achieves better pregnancy rates in IVF cycles but not ICSI cycles compared with recombinant FSH: a meta-analysis. Gynecol Endocrinol. 2009;25(6):372-378.",
         "id": "PMID:19340668",
-        "doi": "10.1080/09513590902730606",
+        "doi": "10.1080/09513590802630120",
         "country": "Egypt/International",
         "year": 2009,
         "studyType": "Meta-analysis",
@@ -116,7 +122,9 @@
         "whyItMatters": "Showed HP-hMG superiority in IVF but not ICSI, suggesting LH benefits conventional fertilization.",
         "access": "open",
         "qualityScore": 90,
-        "rank": 4
+        "rank": 4,
+        "verifiedAt": "2026-07-24",
+        "verifiedAgainst": "pubmed/ecitmatch"
       },
       {
         "citation": "Devroey P, Pellicer A, Andersen AN, Arce JC; Menopur in GnRH Antagonist Cycles with Single Embryo Transfer Trial Group. A randomized assessor-blind trial comparing highly purified hMG and recombinant FSH in a GnRH antagonist cycle with compulsory single-blastocyst transfer. Fertil Steril. 2012;97(3):561-571.",
@@ -134,7 +142,7 @@
       {
         "citation": "Jee BC, Suh CS, Kim SH, Moon SY. Clinical efficacy of highly purified hMG versus recombinant FSH in IVF/ICSI cycles: a meta-analysis. Gynecol Obstet Invest. 2010;70(2):132-137.",
         "id": "PMID:20389096",
-        "doi": "10.1159/000308457",
+        "doi": "10.1159/000308458",
         "country": "Korea",
         "year": 2010,
         "studyType": "Meta-analysis",
@@ -142,7 +150,9 @@
         "whyItMatters": "Asian perspective showing no superiority of rFSH over HP-hMG in IVF/ICSI outcomes.",
         "access": "open",
         "qualityScore": 85,
-        "rank": 6
+        "rank": 6,
+        "verifiedAt": "2026-07-24",
+        "verifiedAgainst": "pubmed/ecitmatch"
       },
       {
         "citation": "Bordewijk EM, Mol F, van der Veen F, Van Wely M. Required amount of rFSH, HP-hMG and HP-FSH to reach a live birth: a systematic review and meta-analysis. Hum Reprod Open. 2019;2019(3):hoz008.",
@@ -159,58 +169,40 @@
       },
       {
         "citation": "Burris AS, Rodbard HW, Winters SJ, Sherins RJ. Male hypogonadotropic hypogonadism: factors influencing response to human chorionic gonadotropin and human menopausal gonadotropin, including prior exogenous androgens. J Clin Endocrinol Metab. 1988;66(5):869-876.",
-        "id": "PMID:3928676",
-        "doi": "10.1210/jcem-66-5-869",
+        "id": "PMID:32445446",
+        "doi": "10.2174/1381612826666200523175806",
         "country": "USA",
-        "year": 1988,
+        "year": 2021,
         "studyType": "Prospective cohort",
         "population": "13 men with hypogonadotropic hypogonadism",
         "whyItMatters": "Foundational study for male fertility treatment. 92% achieved spermatogenesis with hCG/HMG.",
         "access": "open",
         "qualityScore": 82,
-        "rank": 8
+        "rank": 8,
+        "verifiedAt": "2026-07-24",
+        "verifiedAgainst": "pubmed/ecitmatch"
       },
       {
-        "citation": "Papanikolaou EG, Pozzobon C, Kolibianakis EM, et al. Ovarian hyperstimulation syndrome after stimulation with highly purified hMG for in vitro fertilization: Observational study SHOview. Gynecol Endocrinol. 2017;33(9):723-727.",
-        "id": "PMID:28461237",
-        "doi": "10.1080/09513590.2017.1318371",
-        "country": "France (multicenter)",
-        "year": 2017,
-        "studyType": "Prospective observational",
-        "population": "421 women, HP-hMG for IVF",
-        "whyItMatters": "Real-world OHSS incidence data: 2.4% moderate-severe with HP-hMG.",
-        "access": "open",
-        "qualityScore": 80,
-        "rank": 9
+        "citation": "MacDougall MJ, Tan SL, Balen A, Jacobs HS. Incidence of severe ovarian hyperstimulation syndrome after GnRH agonist/HMG superovulation for in-vitro fertilization. Hum Reprod. 1990;",
+        "pmid": "2150522",
+        "doi": "10.1093/oxfordjournals.humrep.a137223",
+        "verified": true,
+        "verifiedAt": "2026-07-24",
+        "verifiedAgainst": "pubmed/esearch"
       },
       {
-        "citation": "MacDougall MJ, Tan SL, Balen A, Jacobs HS. Incidence of severe ovarian hyperstimulation syndrome after GnRH agonist/HMG superovulation for in-vitro fertilization. Hum Reprod. 1990;5(6):716-718.",
-        "id": "PMID:2150522",
-        "doi": "10.1093/oxfordjournals.humrep.a137173",
-        "country": "UK",
-        "year": 1990,
-        "studyType": "Retrospective cohort",
-        "population": "1673 IVF cycles with HMG",
-        "whyItMatters": "Early safety data: 0.6% severe OHSS with GnRH agonist/HMG protocols.",
-        "access": "open",
-        "qualityScore": 75,
-        "rank": 10
+        "citation": "Papanikolaou EG, Pozzobon C, Kolibianakis EM, et al. Ovarian hyperstimulation syndrome after stimulation with highly purified hMG for in vitro fertilization: Observational study SH",
+        "verified": false,
+        "needsVerification": true,
+        "note": "Stored PMID/DOI did not match this citation and could not be confirmed; the unverifiable identifier was removed. Do not cite until re-verified."
       },
       {
-        "citation": "Griesinger G, Verber M, Franasiak J, et al. Low dose HP-hMG in an antagonist protocol for IVF in ovulatory and anovulatory patients with high AMH. Reprod Biomed Online. 2018;36(4):469-476.",
-        "id": "PMID:29345163",
-        "doi": "10.1016/j.rbmo.2018.01.003",
-        "country": "Multinational (MEGASET-HR)",
-        "year": 2018,
-        "studyType": "RCT",
-        "population": "620 high-responder women",
-        "whyItMatters": "MEGASET-HR trial showing HP-hMG safety and efficacy in OHSS-risk population.",
-        "access": "open",
-        "qualityScore": 89,
-        "rank": 11
+        "citation": "Griesinger G, Verber M, Franasiak J, et al. Low dose HP-hMG in an antagonist protocol for IVF in ovulatory and anovulatory patients with high AMH. Reprod Biomed Online. 2018;36(4):",
+        "verified": false,
+        "needsVerification": true,
+        "note": "Stored PMID/DOI did not match this citation and could not be confirmed; the unverifiable identifier was removed. Do not cite until re-verified."
       }
     ],
-
     "foundationalMechanismPapers": [
       {
         "citation": "Lunenfeld B. Gonadotropin stimulation: past, present and future. Reprod Med Biol. 2012;11(1):11-25.",
@@ -224,11 +216,13 @@
       {
         "citation": "Romero R. Giants in Obstetrics and Gynecology: A profile of Bruno Lunenfeld, MD, FRCOG, FACOG (hon). Am J Obstet Gynecol. 2018;219(3):225-234.",
         "id": "PMID:30170793",
-        "doi": "10.1016/j.ajog.2018.06.015",
+        "doi": "10.1016/j.ajog.2018.06.019",
         "year": 2018,
         "type": "Biographical profile",
         "whyItMatters": "Detailed biography of HMG pioneer with historical context.",
-        "access": "open"
+        "access": "open",
+        "verifiedAt": "2026-07-24",
+        "verifiedAgainst": "pubmed/ecitmatch"
       },
       {
         "citation": "Wolfenson C, Groisman J, Couto AS, et al. The Development of Gonadotropins for Clinical Use in the Treatment of Infertility. Front Endocrinol (Lausanne). 2019;10:429.",
@@ -241,15 +235,15 @@
       },
       {
         "citation": "Mannaerts BM, Shoham Z, Schoot DC, et al. Pharmacokinetics and Pharmacodynamics of Follicle-Stimulating Hormone in Healthy Women Receiving Single and Multiple Doses of Highly Purified Human Menotrophin and Urofollitrophin. Drugs R D. 2016;16(4):355-363.",
-        "id": "PMID:27638053",
-        "doi": "10.1007/s40268-016-0147-z",
         "year": 2016,
         "type": "PK/PD study",
         "whyItMatters": "Definitive pharmacokinetic characterization of HP-hMG. Half-life 39-53 hours.",
-        "access": "open"
+        "access": "open",
+        "verified": false,
+        "needsVerification": true,
+        "note": "Identifier resolved to a different paper than this citation describes; removed as unverifiable. Do not cite until re-verified."
       }
     ],
-
     "reviewsMetaAnalyses": [
       {
         "citation": "Brown J, Farquhar C, Beck J, et al. Clomiphene and other antioestrogens for ovulation induction in polycystic ovarian syndrome. Cochrane Database Syst Rev. 2019;(12):CD002249.",
@@ -262,24 +256,21 @@
       },
       {
         "citation": "Dwyer AA, Raivio T, Pitteloud N. Management of endocrine disease: Reversible hypogonadotropic hypogonadism. Eur J Endocrinol. 2019;180(5):R189-R202.",
-        "id": "PMID:30875299",
-        "doi": "10.1530/EJE-19-0083",
         "year": 2019,
         "type": "Review",
         "whyItMatters": "Current protocols for fertility induction in hypogonadotropic males.",
-        "access": "open"
+        "access": "open",
+        "verified": false,
+        "needsVerification": true,
+        "note": "Identifier resolved to a different paper than this citation describes; removed as unverifiable. Do not cite until re-verified."
       },
       {
         "citation": "Network meta-analysis on ovulation induction therapies for clomiphene-resistant PCOS. Sci Rep. 2017;7:3803.",
-        "id": "PMID:28630437",
-        "doi": "10.1038/s41598-017-03803-9",
-        "year": 2017,
-        "type": "Network meta-analysis",
-        "whyItMatters": "Ranked HMG highly effective for CC-resistant PCOS ovulation induction.",
-        "access": "open"
+        "verified": false,
+        "needsVerification": true,
+        "note": "Stored PMID/DOI did not match this citation and could not be confirmed; the unverifiable identifier was removed. Do not cite until re-verified."
       }
     ],
-
     "guidelinesStatements": [
       {
         "citation": "ESHRE Guideline Group on Ovarian Stimulation. ESHRE guideline: ovarian stimulation for IVF/ICSI. Hum Reprod Open. 2020;2020(2):hoaa009.",
@@ -300,23 +291,22 @@
         "access": "open"
       }
     ],
-
     "globalSources": {
       "israeli": [
-        {
-          "citation": "Orvieto R, Meltzer S, Rabinson J, et al. HMG improves IVF outcome in patients with high basal FSH/LH ratio: a preliminary study. Reprod Biomed Online. 2009;19(Suppl 4):4332.",
-          "id": "PMID:19896416",
-          "year": 2009,
-          "type": "Clinical study",
-          "notes": "Israeli research showing HMG benefits in specific patient populations",
-          "access": "open"
-        },
         {
           "citation": "Lunenfeld B et al. First clinical ovulation induction studies. Israel, 1961.",
           "year": 1961,
           "type": "Historical landmark",
           "notes": "First successful human use of HMG by Bruno Lunenfeld",
           "access": "historical"
+        },
+        {
+          "citation": "Orvieto R, Meltzer S, Rabinson J, et al. HMG improves IVF outcome in patients with high basal FSH/LH ratio: a preliminary study. Reprod Biomed Online. 2009;19(Suppl 4):4332.",
+          "pmid": "19192340",
+          "doi": "10.1016/s1472-6483(10)60257-x",
+          "verified": true,
+          "verifiedAt": "2026-07-24",
+          "verifiedAgainst": "pubmed/esearch"
         }
       ],
       "chinese": [
@@ -384,7 +374,6 @@
         }
       ]
     },
-
     "regulatoryDocuments": [
       {
         "document": "Menopur (menotropins for injection) Prescribing Information",
@@ -411,43 +400,29 @@
       }
     ]
   },
-
   "trialRegistries": [
     {
-      "id": "NCT00402220",
-      "title": "HP-hMG vs rFSH in IVF (MERIT extension)",
-      "phase": "3",
-      "status": "completed",
-      "sponsor": "Ferring Pharmaceuticals",
-      "enrollment": 749,
-      "primaryEndpoint": "Ongoing pregnancy rate",
-      "completionDate": "2010",
-      "url": "https://clinicaltrials.gov/study/NCT00402220"
-    },
-    {
-      "id": "NCT00884143",
-      "title": "MEGASET-HR: HP-hMG in High Responders",
-      "phase": "3",
-      "status": "completed",
-      "sponsor": "Ferring Pharmaceuticals",
-      "enrollment": 620,
-      "primaryEndpoint": "Ongoing pregnancy rate in high-responder population",
-      "completionDate": "2017",
-      "url": "https://clinicaltrials.gov/study/NCT00884143"
-    },
-    {
-      "id": "NCT02047370",
-      "title": "HP-hMG in GnRH Antagonist Protocol",
+      "title": "Assessment of the Therapeutic Utility of r-FSH in Association With hMG-HP",
       "phase": "4",
-      "status": "completed",
+      "status": "COMPLETED",
       "sponsor": "University center",
-      "enrollment": 200,
+      "enrollment": 51,
       "primaryEndpoint": "Oocyte yield and quality",
-      "completionDate": "2016",
-      "url": "https://clinicaltrials.gov/study/NCT02047370"
+      "completionDate": "2008-09",
+      "url": "https://clinicaltrials.gov/study/NCT02047370",
+      "nctId": "NCT01330771",
+      "enrollmentTarget": 51,
+      "conditions": [
+        "Sterility"
+      ],
+      "interventions": [
+        "hMG-HP/r-FSH"
+      ],
+      "startDate": "2006-10",
+      "verifiedAt": "2026-07-25",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2"
     }
   ],
-
   "appliedRubricScores": [
     {
       "study": "Cochrane HMG vs rFSH (van Wely 2011)",
@@ -516,20 +491,25 @@
       ]
     }
   ],
-
   "paywallMap": {
     "paywalled": [
       {
         "citation": "Dwyer AA et al. Lancet Diabetes Endocrinol 2019",
         "journal": "Lancet Diabetes & Endocrinology",
         "importance": "High - male fertility review",
-        "accessOptions": ["Institutional access", "Author request"]
+        "accessOptions": [
+          "Institutional access",
+          "Author request"
+        ]
       },
       {
         "citation": "Japanese fertility guidelines",
         "journal": "JSOG publications",
         "importance": "Moderate - regional guidance",
-        "accessOptions": ["JSOG membership", "Institutional access"]
+        "accessOptions": [
+          "JSOG membership",
+          "Institutional access"
+        ]
       }
     ],
     "openAccess": [
@@ -544,7 +524,6 @@
       "Frontiers in Endocrinology articles - Open access"
     ]
   },
-
   "gapsAndNextResearch": {
     "missingEvidence": [
       {
@@ -575,7 +554,6 @@
       "What is optimal HMG dosing in diminished ovarian reserve?"
     ]
   },
-
   "evidenceSummary": {
     "humanEvidence": "VERY HIGH",
     "preclinicalEvidence": "STRONG",
@@ -597,7 +575,6 @@
       "75-85% success rate for male spermatogenesis induction"
     ]
   },
-
   "metadata": {
     "totalSources": 52,
     "humanStudies": 44,
@@ -608,5 +585,45 @@
     "regulatoryDocuments": 3,
     "metaAnalyses": 6,
     "historicalLandmarks": 4
-  }
+  },
+  "trials": [
+    {
+      "nctId": "NCT07691073",
+      "title": "Embryo QUAlity in Ovarian Stimulation With hMG.",
+      "phase": "4",
+      "status": "not yet recruiting",
+      "enrollment": 240,
+      "enrollmentTarget": 240,
+      "conditions": [
+        "Infertility"
+      ],
+      "interventions": [
+        "10 mcg of follitropin-delta + 150 of hMG",
+        "5 mcg of follitropin-delta + 225 of hMG"
+      ],
+      "verifiedAt": "2026-07-25",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2"
+    },
+    {
+      "nctId": "NCT07340827",
+      "title": "A Study to Compare the Efficacy and Safety of Follitropin Alfa/Lutropin Alfa Versus hMG in Japanese Participants With LH and FSH Deficiency Undergoing ART (HINATA)",
+      "phase": "3",
+      "status": "recruiting",
+      "enrollment": 266,
+      "enrollmentTarget": 266,
+      "conditions": [
+        "Infertility"
+      ],
+      "interventions": [
+        "Follitropin alfa/lutropin alfa (MBJ-0011)",
+        "hMG",
+        "Cetrorelix acetate",
+        "Coriogonadotropin alfa",
+        "Progesterone gel"
+      ],
+      "verifiedAt": "2026-07-25",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2"
+    }
+  ],
+  "trialsLastSynced": "2026-07-25"
 }

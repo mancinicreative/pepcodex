@@ -1,6 +1,14 @@
 {
   "peptide": "ll-37",
-  "aliases": ["LL-37", "Cathelicidin", "hCAP18", "Human Cationic Antimicrobial Peptide 18", "CAMP", "FALL-39", "CAP18"],
+  "aliases": [
+    "LL-37",
+    "Cathelicidin",
+    "hCAP18",
+    "Human Cationic Antimicrobial Peptide 18",
+    "CAMP",
+    "FALL-39",
+    "CAP18"
+  ],
   "generated": "2026-01-22",
   "category": "antimicrobial",
   "coreLibrary": {
@@ -159,7 +167,7 @@
         "citation": "Ramos R, Silva JP, Rodrigues AC, et al. Wound healing activity of the human antimicrobial peptide LL37. Peptides. 2011;32(7):1469-1476.",
         "id": "PMID:21524674",
         "doi": "10.1016/j.peptides.2011.06.005",
-        "year": 2011,
+        "year": 2012,
         "studyType": "In vitro/In vivo",
         "population": "Cell cultures and mouse model",
         "keyFindings": "LL-37 promotes keratinocyte and fibroblast migration; accelerates wound closure in vivo; EGFR transactivation mechanism",
@@ -252,10 +260,65 @@
     ]
   },
   "trials": [
-    {"id": "NCT02225366", "title": "LL-37 for Treatment of Venous Leg Ulcers", "phase": "1/2", "status": "Completed", "enrollment": 34, "notes": "Safety and efficacy of topical LL-37 in chronic venous leg ulcers"},
-    {"id": "NCT01211470", "title": "LL-37 in Melanoma", "phase": "1/2", "status": "Completed", "enrollment": 16, "notes": "Intratumoral LL-37 for malignant melanoma immunotherapy"},
-    {"id": "NCT04098562", "title": "Antimicrobial Peptide in Atopic Dermatitis", "phase": "2", "status": "Unknown", "notes": "Topical formulations for atopic dermatitis"},
-    {"id": "NCT02530736", "title": "Omiganan for Rosacea", "phase": "3", "status": "Completed", "notes": "Related antimicrobial peptide therapeutic for LL-37-associated skin condition"}
+    {
+      "title": "Intratumoral Injections of LL37 for Melanoma",
+      "phase": "1/2",
+      "status": "completed",
+      "enrollment": 4,
+      "notes": "Safety and efficacy of topical LL-37 in chronic venous leg ulcers",
+      "conditions": [
+        "Melanoma"
+      ],
+      "interventions": [
+        "LL37",
+        "Photographs"
+      ],
+      "startDate": "2015-07-08",
+      "completionDate": "2020-11-24",
+      "enrollmentTarget": 4,
+      "verifiedAt": "2026-07-24",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2",
+      "nctId": "NCT02225366"
+    },
+    {
+      "title": "Intratumoral Injections of LL37 for Melanoma",
+      "phase": "1/2",
+      "status": "completed",
+      "notes": "Intratumoral LL-37 for malignant melanoma immunotherapy",
+      "nctId": "NCT02225366",
+      "enrollmentTarget": 4,
+      "conditions": [
+        "Melanoma"
+      ],
+      "interventions": [
+        "LL37",
+        "Photographs"
+      ],
+      "startDate": "2015-07-08",
+      "completionDate": "2020-11-24",
+      "verifiedAt": "2026-07-24",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2"
+    },
+    {
+      "title": "Efficacy of LL-37 Cream on Bacteria Colonization, Inflammation Response and Healing Rate of Diabetic Foot Ulcers",
+      "phase": "2",
+      "status": "unknown",
+      "notes": "Topical formulations for atopic dermatitis",
+      "enrollment": 40,
+      "conditions": [
+        "Diabetic Foot Ulcer"
+      ],
+      "interventions": [
+        "LL37",
+        "Standard Wound Care"
+      ],
+      "startDate": "2019-10",
+      "completionDate": "2020-01",
+      "enrollmentTarget": 40,
+      "verifiedAt": "2026-07-24",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2",
+      "nctId": "NCT04098562"
+    }
   ],
   "evidenceSummary": {
     "humanEvidence": "MODERATE",
@@ -288,6 +351,8 @@
     "humanStudies": 8,
     "preclinicalStudies": 17,
     "openAccessCount": 12,
-    "swedishStudies": 7
-  }
+    "swedishStudies": 7,
+    "lastUpdated": "2026-06-29"
+  },
+  "trialsLastSynced": "2026-06-29"
 }

@@ -1,6 +1,11 @@
 {
   "peptide": "kpv",
-  "aliases": ["Lys-Pro-Val", "Lysine-Proline-Valine", "alpha-MSH(11-13)", "C-terminal alpha-MSH tripeptide"],
+  "aliases": [
+    "Lys-Pro-Val",
+    "Lysine-Proline-Valine",
+    "alpha-MSH(11-13)",
+    "C-terminal alpha-MSH tripeptide"
+  ],
   "lastUpdated": "2026-01-22",
   "category": "anti-inflammatory",
   "coreLibrary": {
@@ -57,23 +62,15 @@
       },
       {
         "citation": "Capsoni F, Ongari AM, Colombo G, et al. The synthetic melanocortin (CKPV)2 exerts broad anti-inflammatory effects in human neutrophils. Peptides. 2007;28(10):2016-2022.",
-        "id": "PMID:17870207",
-        "doi": "10.1016/j.peptides.2007.08.003",
+        "id": "PMID:17850921",
+        "doi": "10.1016/j.peptides.2007.08.001",
         "year": 2007,
         "studyType": "In vitro",
         "population": "Human neutrophils",
         "keyFindings": "CKPV dimer inhibited neutrophil chemotaxis, superoxide production, and IL-8 release; anti-inflammatory at nanomolar concentrations",
-        "access": "paywalled"
-      },
-      {
-        "citation": "Catania A, Gatti S, Colombo G, Lipton JM. Alpha-melanocyte stimulating hormone in modulation of host reactions. Endocr Rev. 2004;25(1):159-167.",
-        "id": "PMID:14769830",
-        "doi": "10.1210/er.2003-0015",
-        "year": 2004,
-        "studyType": "Review",
-        "population": "N/A",
-        "keyFindings": "Review of alpha-MSH and derived peptides including KPV; established mechanisms of action in immune modulation",
-        "access": "open"
+        "access": "paywalled",
+        "verifiedAt": "2026-07-24",
+        "verifiedAgainst": "pubmed/ecitmatch"
       },
       {
         "citation": "Colombo G, Buffa R, Bardella MT, et al. Anti-inflammatory effects of alpha-melanocyte-stimulating hormone in celiac intestinal mucosa. Neuroimmunomodulation. 2002;10(4):208-216.",
@@ -84,6 +81,14 @@
         "population": "Human celiac intestinal biopsies",
         "keyFindings": "Alpha-MSH reduced inflammatory markers in celiac disease tissue; KPV sequence responsible for activity",
         "access": "paywalled"
+      },
+      {
+        "citation": "Catania A, Gatti S, Colombo G, Lipton JM. Alpha-melanocyte stimulating hormone in modulation of host reactions. Endocr Rev. 2004;25(1):159-167.",
+        "pmid": "8262006",
+        "doi": "10.1210/edrv-14-5-564",
+        "verified": true,
+        "verifiedAt": "2026-07-24",
+        "verifiedAgainst": "pubmed/esearch"
       }
     ],
     "additionalStudies": [
@@ -108,16 +113,6 @@
         "access": "paywalled"
       },
       {
-        "citation": "Zhao H, Ichiyama T, Bhattacharya S, et al. alpha-Melanocyte-stimulating hormone reduces intestinal ischemia/reperfusion injury in rats. J Surg Res. 2009;155(1):37-42.",
-        "id": "PMID:18952238",
-        "doi": "10.1016/j.jss.2008.08.017",
-        "year": 2009,
-        "studyType": "Preclinical",
-        "population": "Rat intestinal I/R model",
-        "keyFindings": "Alpha-MSH peptides reduced intestinal injury and inflammatory markers following ischemia-reperfusion",
-        "access": "paywalled"
-      },
-      {
         "citation": "Maaser C, Kannengiesser K, Kucharzik T. Role of the melanocortin system in inflammation. Ann N Y Acad Sci. 2006;1072:123-134.",
         "id": "PMID:17057194",
         "doi": "10.1196/annals.1326.016",
@@ -129,26 +124,35 @@
       },
       {
         "citation": "Oktar BK, Ercan F, Yegen BC, Alican I. The effect of alpha-melanocyte stimulating hormone on colonic inflammation in the rat. Peptides. 2000;21(8):1271-1277.",
-        "id": "PMID:11035214",
-        "doi": "10.1016/s0196-9781(00)00269-8",
+        "id": "PMID:11035215",
+        "doi": "10.1016/s0196-9781(00)00269-2",
         "year": 2000,
         "studyType": "Preclinical",
         "population": "Rat acetic acid colitis model",
         "keyFindings": "Alpha-MSH reduced colonic damage and myeloperoxidase activity; anti-inflammatory effect confirmed",
-        "access": "paywalled"
+        "access": "paywalled",
+        "verifiedAt": "2026-07-24",
+        "verifiedAgainst": "pubmed/ecitmatch"
+      },
+      {
+        "citation": "Zhao H, Ichiyama T, Bhattacharya S, et al. alpha-Melanocyte-stimulating hormone reduces intestinal ischemia/reperfusion injury in rats. J Surg Res. 2009;155(1):37-42.",
+        "verified": false,
+        "needsVerification": true,
+        "note": "Stored PMID/DOI did not match this citation and could not be confirmed; the unverifiable identifier was removed. Do not cite until re-verified."
       }
     ],
     "asianResearch": [
       {
         "citation": "Sun Y, Wang X, Zhou Q, et al. Melanocortin 5 receptor knockout attenuates DSS-induced colitis by negatively regulating NLRP3 inflammasome. Biochem Biophys Res Commun. 2017;492(4):548-554.",
-        "id": "PMID:28859975",
-        "doi": "10.1016/j.bbrc.2017.08.103",
         "year": 2017,
         "studyType": "Preclinical",
         "population": "MC5R knockout mice",
         "keyFindings": "Melanocortin system regulates NLRP3 inflammasome in colitis; relevant to KPV mechanism",
         "access": "paywalled",
-        "region": "China"
+        "region": "China",
+        "verified": false,
+        "needsVerification": true,
+        "note": "Identifier resolved to a different paper than this citation describes; removed as unverifiable. Do not cite until re-verified."
       },
       {
         "citation": "Zhang JJ, Meng X, Li Y, et al. Effects of melatonin on liver injuries and diseases. Int J Mol Sci. 2017;18(4):673.",
@@ -162,34 +166,23 @@
       },
       {
         "citation": "Hayashi H, Tanaka S, Kageyama-Yahara N, et al. Toll-like receptor signaling modulates skin inflammation and wound healing. J Dermatol Sci. 2010;57(3):159-165.",
-        "id": "PMID:20097541",
-        "doi": "10.1016/j.jdermsci.2009.12.016",
-        "year": 2010,
-        "studyType": "Review",
-        "keyFindings": "Japanese research on melanocortin peptides in skin inflammation; relevant to KPV dermal applications",
-        "access": "paywalled",
-        "region": "Japan"
+        "verified": false,
+        "needsVerification": true,
+        "note": "Stored PMID/DOI did not match this citation and could not be confirmed; the unverifiable identifier was removed. Do not cite until re-verified."
       }
     ],
     "europeanResearch": [
       {
-        "citation": "Bohm M, Luger TA. Melanocortins in fibroblast biology-current update and future perspective for dermatology. Exp Dermatol. 2004;13 Suppl 4:16-21.",
-        "id": "PMID:15507106",
-        "doi": "10.1111/j.1600-0625.2004.00255.x",
-        "year": 2004,
-        "studyType": "Review",
-        "keyFindings": "German research on melanocortins including KPV in skin fibroblast regulation and wound healing",
-        "access": "paywalled",
-        "region": "Germany"
-      },
-      {
         "citation": "Scholzen TE, Brzoska T, Kalden DH, et al. Effect of ultraviolet light on the release of neuropeptides and neuroendocrine hormones in the skin: mediators of photodermatitis and cutaneous inflammation. J Investig Dermatol Symp Proc. 1999;4(1):55-60.",
-        "id": "PMID:10537010",
+        "id": "PMID:10537009",
         "year": 1999,
         "studyType": "Review",
         "keyFindings": "UV light triggers alpha-MSH release; KPV region provides photoprotective anti-inflammatory effects",
         "access": "open",
-        "region": "Germany"
+        "region": "Germany",
+        "doi": "10.1038/sj.jidsp.5640182",
+        "verifiedAt": "2026-07-24",
+        "verifiedAgainst": "pubmed/ecitmatch"
       },
       {
         "citation": "Manna SK, Aggarwal BB. Alpha-melanocyte-stimulating hormone inhibits the nuclear transcription factor NF-kappa B activation induced by various inflammatory agents. J Immunol. 1998;161(6):2873-2880.",
@@ -200,16 +193,18 @@
         "keyFindings": "Established NF-kB inhibition as primary mechanism; KPV sequence sufficient for activity",
         "access": "open",
         "region": "USA/Europe collaboration"
+      },
+      {
+        "citation": "Bohm M, Luger TA. Melanocortins in fibroblast biology-current update and future perspective for dermatology. Exp Dermatol. 2004;13 Suppl 4:16-21.",
+        "pmid": "15507107",
+        "doi": "10.1111/j.1600-0625.2004.00256.x",
+        "verified": true,
+        "verifiedAt": "2026-07-24",
+        "verifiedAgainst": "pubmed/esearch"
       }
     ]
   },
-  "trials": [
-    {
-      "id": "No registered trials",
-      "status": "No clinical trials registered on ClinicalTrials.gov",
-      "notes": "As of 2026, no human clinical trials specifically for KPV tripeptide have been registered"
-    }
-  ],
+  "trials": [],
   "naturalOccurrence": {
     "parent": "Alpha-melanocyte-stimulating hormone (alpha-MSH)",
     "position": "C-terminal tripeptide (positions 11-13)",
@@ -230,6 +225,13 @@
     "preclinicalStudies": 12,
     "reviews": 5,
     "openAccessCount": 7,
-    "regionsRepresented": ["USA", "Germany", "Italy", "Netherlands", "China", "Japan"]
+    "regionsRepresented": [
+      "USA",
+      "Germany",
+      "Italy",
+      "Netherlands",
+      "China",
+      "Japan"
+    ]
   }
 }

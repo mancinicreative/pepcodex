@@ -1,6 +1,13 @@
 {
   "peptide": "glutathione",
-  "aliases": ["GSH", "L-Glutathione", "Gamma-L-Glutamyl-L-Cysteinyl-Glycine", "Reduced Glutathione", "Isethion", "Tathion"],
+  "aliases": [
+    "GSH",
+    "L-Glutathione",
+    "Gamma-L-Glutamyl-L-Cysteinyl-Glycine",
+    "Reduced Glutathione",
+    "Isethion",
+    "Tathion"
+  ],
   "generated": "2026-01-22",
   "category": "antioxidant",
   "coreLibrary": {
@@ -190,13 +197,9 @@
       },
       {
         "citation": "Yamada K, Yamamoto Y, Miyamoto M, et al. Bioavailability of glucosyl L-glutathione in rats and humans. J Agric Food Chem. 2022;70(15):4752-4761.",
-        "id": "PMID:35394765",
-        "doi": "10.1021/acs.jafc.2c00229",
-        "year": 2022,
-        "studyType": "Human PK",
-        "population": "16 healthy adults",
-        "keyFindings": "Glucosyl-GSH shows improved oral bioavailability vs standard GSH; 1.65-fold higher plasma GSH AUC",
-        "access": "open"
+        "verified": false,
+        "needsVerification": true,
+        "note": "Stored PMID/DOI did not match this citation and could not be confirmed; the unverifiable identifier was removed. Do not cite until re-verified."
       }
     ],
     "asianResearch": [
@@ -214,7 +217,7 @@
         "citation": "Handog EB, Datuin MS, Singzon IA. An open-label, single-arm trial of the safety and efficacy of a novel preparation of glutathione as a skin-lightening agent in Filipino women. Int J Dermatol. 2016;55(2):153-157.",
         "id": "PMID:26710910",
         "doi": "10.1111/ijd.12999",
-        "year": 2016,
+        "year": 2015,
         "studyType": "Human Open-label",
         "population": "30 Filipino women",
         "keyFindings": "Oral GSH 500mg/day for 8 weeks showed significant skin lightening; well tolerated",
@@ -222,13 +225,15 @@
       },
       {
         "citation": "Arjinpathana N, Asawanonda P. Glutathione as an oral whitening agent: a randomized, double-blind, placebo-controlled study. J Dermatolog Treat. 2012;23(2):97-102.",
-        "id": "PMID:21781017",
-        "doi": "10.3109/09546634.2010.536757",
+        "id": "PMID:20524875",
+        "doi": "10.3109/09546631003801619",
         "year": 2012,
         "studyType": "Human RCT",
         "population": "60 Thai medical students",
         "keyFindings": "500mg oral GSH twice daily for 4 weeks significantly reduced melanin index at all sites vs placebo",
-        "access": "paywalled"
+        "access": "paywalled",
+        "verifiedAt": "2026-07-24",
+        "verifiedAgainst": "pubmed/ecitmatch"
       },
       {
         "citation": "Sonthalia S, Daulatabad D, Sarkar R. Glutathione as a skin whitening agent: Facts, myths, evidence and controversies. Indian J Dermatol Venereol Leprol. 2016;82(3):262-272.",
@@ -314,51 +319,97 @@
       {
         "citation": "Chen TS, Liou SY, Chang YL. Supplementation of Emblica officinalis (Amla) extract reduces oxidative stress in uremic patients. Am J Chin Med. 2009;37(1):19-25.",
         "id": "PMID:19222108",
-        "doi": "10.1142/S0192415X09006655",
+        "doi": "10.1142/S0192415X09006680",
         "year": 2009,
         "studyType": "Human",
         "population": "30 uremic patients",
         "keyFindings": "Amla (Emblica officinalis) supplementation increased GSH levels; traditional Ayurvedic/Chinese medicine herb",
-        "access": "paywalled"
+        "access": "paywalled",
+        "verifiedAt": "2026-07-24",
+        "verifiedAgainst": "pubmed/ecitmatch"
       },
       {
         "citation": "Jiang Y, Hu L, Zhong L, et al. Chemical constituents and pharmacological effects of the active ingredients of Rhodiola: A review. J Pharm Pharmacol. 2022;74(9):1238-1252.",
-        "id": "PMID:35445419",
-        "doi": "10.1093/jpp/rgac032",
-        "year": 2022,
-        "studyType": "Review",
-        "keyFindings": "Rhodiola rosea enhances cellular GSH; traditional adaptogen mechanism elucidation",
-        "access": "open"
+        "verified": false,
+        "needsVerification": true,
+        "note": "Stored PMID/DOI did not match this citation and could not be confirmed; the unverifiable identifier was removed. Do not cite until re-verified."
       }
     ]
   },
   "trials": [
     {
-      "id": "NCT01962376",
-      "title": "Glutathione in Cystic Fibrosis",
+      "title": "The Role of Oral Glutathione on Growth Parameters in Children With Cystic Fibrosis",
       "phase": "2",
       "status": "completed",
-      "enrollment": 153,
       "condition": "Cystic Fibrosis",
-      "notes": "Inhaled glutathione study"
+      "notes": "Inhaled glutathione study",
+      "nctId": "NCT03020719",
+      "enrollmentTarget": 60,
+      "conditions": [
+        "Cystic Fibrosis"
+      ],
+      "interventions": [
+        "Oral Glutathione",
+        "Placebo"
+      ],
+      "startDate": "2017-06-14",
+      "completionDate": "2018-12-12",
+      "verifiedAt": "2026-07-24",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2"
     },
     {
-      "id": "NCT00185562",
-      "title": "IV Glutathione in Parkinson's Disease",
-      "phase": "2",
-      "status": "completed",
-      "enrollment": 21,
-      "condition": "Parkinson's Disease",
-      "notes": "Results published in Mov Disord 2009"
-    },
-    {
-      "id": "NCT02324426",
       "title": "Liposomal Glutathione in HIV",
-      "phase": "1/2",
+      "phase": "1",
       "status": "completed",
       "enrollment": 15,
       "condition": "HIV",
-      "notes": "Immune function study"
+      "notes": "Immune function study",
+      "conditions": [
+        "Parkinson's Disease"
+      ],
+      "interventions": [
+        "Reduced Glutathione"
+      ],
+      "startDate": "2014-12",
+      "completionDate": "2015-03",
+      "nctId": "NCT02324426"
+    },
+    {
+      "nctId": "NCT07690124",
+      "title": "S-Acetyl Glutathione and Performance Recovery in Soccer",
+      "phase": "N/A",
+      "status": "not yet recruiting",
+      "enrollment": 20,
+      "enrollmentTarget": 20,
+      "conditions": [
+        "Performance Recovery",
+        "Exercise-induced Inflammation",
+        "Exercise-induced Oxidative Stress"
+      ],
+      "interventions": [
+        "200 mg S-Acetyl Glutathione",
+        "500 mg S-Acetyl Glutathione",
+        "Placebo Supplementation"
+      ],
+      "verifiedAt": "2026-07-25",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2"
+    },
+    {
+      "nctId": "NCT05266417",
+      "title": "Intranasal Insulin and Glutathione as an Add-On Therapy in Parkinson's Disease",
+      "phase": "2",
+      "status": "recruiting",
+      "enrollment": 56,
+      "enrollmentTarget": 56,
+      "conditions": [
+        "Parkinson Disease"
+      ],
+      "interventions": [
+        "INS-GSH",
+        "Matched Placebos"
+      ],
+      "verifiedAt": "2026-07-25",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2"
     }
   ],
   "evidenceSummary": {
@@ -373,6 +424,16 @@
     "humanStudies": 20,
     "preclinicalStudies": 15,
     "openAccessCount": 22,
-    "globalCoverage": ["USA", "Europe", "Japan", "Thailand", "Philippines", "India", "China"]
-  }
+    "globalCoverage": [
+      "USA",
+      "Europe",
+      "Japan",
+      "Thailand",
+      "Philippines",
+      "India",
+      "China"
+    ],
+    "lastUpdated": "2026-06-29"
+  },
+  "trialsLastSynced": "2026-07-25"
 }

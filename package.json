@@ -28,7 +28,9 @@
     "verify:graph": "node scripts/verify-graph.mjs",
     "verify:full": "node scripts/verify-graph.mjs --full",
     "verify:selftest": "node scripts/verify-graph.mjs --self-test",
-    "verify:explain": "node scripts/verify-graph.mjs --explain"
+    "verify:explain": "node scripts/verify-graph.mjs --explain",
+    "source:thin": "node scripts/source-thin-dossiers.mjs",
+    "source:census": "node scripts/name-literature-census.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.14",

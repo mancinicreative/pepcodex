@@ -30,7 +30,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { isRelevant, fold } from '../verification/matchers.mjs';
+import { isRelevant, isDistinctive, fold } from '../verification/matchers.mjs';
 
 const args = process.argv.slice(2);
 const argOf = (f, d) => (args.includes(f) ? args[args.indexOf(f) + 1] : d);
@@ -79,19 +79,66 @@ const RELEVANCE_FIXTURES = [
   { names: ['thymalin'], text: 'Thymalin administration in elderly patients', want: true, note: 'long name word-boundary hit' },
   // substring must not count: "vilon" inside another word is not a hit
   { names: ['vilon'], text: 'pavilion architecture and daylighting', want: false, note: 'substring inside another word' },
+  // GENERIC-PHRASE aliases. Long enough to clear any length threshold, but they name a tissue, not
+  // a compound. Every one of these was a real false positive in the first thin-dossier scan.
+  { names: ['Stamakort', 'Gastric peptide', 'Stomach bioregulator'], want: false, note: 'stamakort matched ghrelin via "gastric peptide"',
+    text: 'Identification and characterization of a novel gastric peptide hormone: the motilin-related peptide' },
+  { names: ['Stamakort', 'Gastric mucosa peptide'], want: false, note: 'stamakort matched a ghrelin cell paper',
+    text: 'Characterisation of gastric ghrelin cells in man and other mammals' },
+  { names: ['Cerluten', 'Brain cytamin', 'Cerebral peptides'], want: false, note: 'cerluten via "cerebral peptides"',
+    text: 'cerebral peptides released during ischaemic stroke in the rat cortex' },
+  { names: ['Ventfort', 'Vascular cytamin', 'Blood vessel peptides'], want: false, note: 'ventfort via "blood vessel peptides"',
+    text: 'blood vessel peptides regulate angiogenesis in tumour microenvironments' },
+  { names: ['Suprefort', 'Pancreatic cytamin', 'Pancreas peptides'], want: false, note: 'suprefort via "pancreas peptides"',
+    text: 'pancreas peptides and islet regeneration after partial pancreatectomy' },
+  // ...but the DISTINCTIVE alias in the same set must still work
+  { names: ['Stamakort', 'Gastric peptide'], text: 'Stamakort administration in gastric mucosal atrophy', want: true, note: 'distinctive alias still matches' },
+  { names: ['Cerluten', 'Brain cytamin'], text: 'Cerluten effects on retinal pigment epithelium', want: true, note: 'distinctive alias still matches' },
+  // a legitimate long alias made of non-generic tokens must NOT be swept up by the generic guard
+  { names: ['tesamorelin', 'growth hormone releasing hormone'], want: true, note: 'GHRH is a real alias, not a generic phrase',
+    text: 'growth hormone releasing hormone analogue reduces visceral adipose tissue' },
+  // PROXIMITY for short aliases: context must be near the hit, not merely somewhere in the abstract
+  { names: ['Livagen', 'KED'], want: false, note: 'KED matched a plant protein paper via distant "peptide"',
+    text: 'Evolutionary analysis of KED-rich proteins in plants. Comparative genomics of repeat-rich sequences across angiosperms, with implications for structural biology and, separately, for peptide engineering.' },
+  { names: ['Livagen', 'KED'], text: 'Peptide KED: molecular-genetic aspects of neurogenesis regulation', want: true, note: 'KED with adjacent peptide context' },
+  // Catalogue-code prefixes are not names. A single-letter token must not rescue a generic phrase.
+  { names: ['Ventfort', 'A-14 vascular peptides'], want: false, note: '"A-14 vascular peptides" is a catalogue code plus generic words',
+    text: 'A-14 vascular peptides were compared against synthetic angiogenic factors in rabbit cornea' },
+  { names: ['Cerluten', 'A-5 brain peptides'], want: false, note: 'same shape, A-5 series',
+    text: 'A-5 brain peptides and cortical plasticity following induced ischaemia' },
+];
+
+/* Direct assertions on isDistinctive itself — the predicate the disambiguation probe depends on.
+ * If it drifts, the probe silently starts asking the wrong question, which is worse than failing. */
+const DISTINCTIVE_FIXTURES = [
+  { alias: 'Ventfort', want: true }, { alias: 'Stamakort', want: true },
+  { alias: 'Lys-Glu-Asp', want: true }, { alias: 'Hepatogen', want: true },
+  { alias: 'growth hormone releasing hormone', want: true },
+  { alias: 'thymosin beta 4', want: true },
+  { alias: 'Gastric peptide', want: false }, { alias: 'Stomach bioregulator', want: false },
+  { alias: 'Brain cytamin', want: false }, { alias: 'Cerebral peptides', want: false },
+  { alias: 'Blood vessel peptides', want: false }, { alias: 'Vascular cytamin', want: false },
+  { alias: 'Pancreatic cytamin', want: false }, { alias: 'Pancreas peptides', want: false },
+  { alias: 'Testis bioregulator', want: false }, { alias: 'Gonad peptide', want: false },
+  { alias: 'A-14 vascular peptides', want: false }, { alias: 'A-5 brain peptides', want: false },
 ];
 
 function selfTest() {
   const fails = [];
   for (const f of RELEVANCE_FIXTURES) {
     const got = isRelevant(f.names, f.text);
-    if (got !== f.want) fails.push(`${f.note}: expected ${f.want}, got ${got}`);
+    if (got !== f.want) fails.push(`isRelevant — ${f.note}: expected ${f.want}, got ${got}`);
+  }
+  for (const f of DISTINCTIVE_FIXTURES) {
+    const got = isDistinctive(f.alias);
+    if (got !== f.want) fails.push(`isDistinctive — "${f.alias}": expected ${f.want}, got ${got}`);
   }
   return fails;
 }
 
+const TOTAL_FIXTURES = RELEVANCE_FIXTURES.length + DISTINCTIVE_FIXTURES.length;
 const failures = selfTest();
-console.log(`Relevance matcher self-test: ${RELEVANCE_FIXTURES.length - failures.length}/${RELEVANCE_FIXTURES.length}`);
+console.log(`Matcher self-test: ${TOTAL_FIXTURES - failures.length}/${TOTAL_FIXTURES}`);
 if (failures.length) {
   console.error('\nABORT — the relevance filter is broken. A worklist built on it would be confident garbage.');
   failures.forEach((f) => console.error(`  FAIL  ${f}`));
@@ -144,11 +191,22 @@ fs.mkdirSync(OUT, { recursive: true });
 const summary = [];
 
 for (const p of dossiers) {
-  const term = [...new Set(p.aliases)].map((a) => `"${a}"`).join(' OR ');
+  /* Build the query from DISTINCTIVE aliases only.
+   *
+   * A generic phrase contributes nothing but noise to a PubMed query, and the noise is not
+   * harmless: "Testagen OR Testicular peptide OR Gonad peptide OR Testis bioregulator" returned
+   * 68,645 hits, and the two papers that genuinely name Testagen were nowhere in the top 200 that
+   * relevance-sorting handed back. The generic terms did not widen the net, they buried the catch.
+   * Filtering the RESULTS was never going to fix that — by then the real papers had already been
+   * crowded out of the response. So the filter has to move up into the query itself. */
+  const searchable = p.aliases.filter(isDistinctive);
+  const dropped = p.aliases.filter((a) => !isDistinctive(a));
+  const term = (searchable.length ? searchable : [p.name]).map((a) => `"${a}"`).join(' OR ');
   const rec = {
     slug: p.slug, name: p.name, verifiedNow: p.verified, floor: FLOOR, scannedAt: TODAY,
-    aliasesUsed: p.aliases, candidates: [], trials: [], notes: [],
+    aliasesUsed: searchable, aliasesDropped: dropped, candidates: [], trials: [], notes: [],
   };
+  if (dropped.length) rec.notes.push(`Query built from ${searchable.length} distinctive alias(es); dropped ${dropped.length} generic phrase(s) that would only add noise: ${dropped.map((a) => `"${a}"`).join(', ')}.`);
 
   // --- PubMed, all time ---
   let rawHits = 0;
@@ -231,17 +289,52 @@ for (const p of dossiers) {
   rec.newCount = fresh.length;
 
   /* -------------------------------------------------------------------------------------------
-   * LEARN signal — implausible volume means a broken matcher, not a busy field.
-   * The cheapest available check on a query is whether its shape makes sense. If PubMed returns
-   * hundreds of hits and the relevance filter keeps almost none, the query degraded to loose term
-   * matching and the alias set is the thing that needs fixing.
+   * DISAMBIGUATION PROBE — the decisive question, asked separately.
+   *
+   * A large raw hit count with zero relevant results is ambiguous on its own: it could mean the
+   * query degraded to loose term matching (broken alias set), or it could mean the compound simply
+   * has no literature and PubMed matched the generic words instead. Those demand opposite responses
+   * — fix the aliases, versus escalate the dossier — so guessing between them is not acceptable.
+   *
+   * The probe resolves it in one call: search the DISTINCTIVE NAME ALONE, unquoted by any alias.
+   * If that returns zero, no paper in PubMed names this compound and NO-LITERATURE is a real
+   * finding. If it returns hits while the full-alias query found nothing relevant, the alias set is
+   * genuinely broken and the verdict must not be trusted.
+   *
+   * This exists because the first run of this script could not tell the two apart and reported six
+   * LEARN flags that a human then had to resolve by hand. Resolving it by hand once is fine;
+   * leaving the loop unable to resolve it is what makes the next run cost the same again.
    * ----------------------------------------------------------------------------------------- */
   if (rawHits >= 50 && rec.relevantCount === 0 && !rec.pubmedError) {
-    rec.notes.push(`LEARN: ${rawHits} raw hits, 0 relevant. The query degraded to loose term matching — the alias set for this peptide needs review before this result is trusted as "no literature".`);
-    rec.learnSignal = true;
+    const distinctive = p.aliases.filter((a) => isDistinctive(a) && String(a).length >= 6);
+    const probeTerm = distinctive.map((a) => `"${a}"`).join(' OR ') || `"${p.name}"`;
+    try {
+      const pr = await fetchT(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&retmode=json&retmax=0&term=${encodeURIComponent(probeTerm)}`);
+      rec.nameOnlyHits = pr.ok ? Number((await pr.json()).esearchresult?.count || 0) : null;
+      await sleep(380);
+    } catch { rec.nameOnlyHits = null; }
+
+    if (rec.nameOnlyHits === 0) {
+      rec.notes.push(`CONFIRMED: PubMed returns 0 hits for the distinctive name alone (${probeTerm}). The ${rawHits} raw hits came from generic alias phrases matching unrelated papers. No paper in PubMed names this compound.`);
+    } else if (rec.nameOnlyHits === null) {
+      rec.notes.push('Disambiguation probe failed — verdict INCONCLUSIVE, do not treat as unsourceable.');
+      rec.probeFailed = true;
+    } else {
+      rec.notes.push(`LEARN: ${rawHits} raw hits and 0 relevant, but the distinctive name alone returns ${rec.nameOnlyHits} hits. The alias set is broken — fix it and re-run before trusting this verdict.`);
+      rec.learnSignal = true;
+    }
   }
 
-  rec.verdict = rec.pubmedError ? 'INCONCLUSIVE'
+  /* Alias hygiene is itself a reportable defect: a generic phrase listed as a public alias is a
+   * scientific misstatement on the page, quite apart from what it does to a query. */
+  const genericAliases = p.aliases.filter((a) => !isDistinctive(a));
+  if (genericAliases.length) {
+    rec.genericAliases = genericAliases;
+    rec.notes.push(`Alias hygiene: ${genericAliases.length} alias(es) name a tissue, not a compound — ${genericAliases.map((a) => `"${a}"`).join(', ')}. These inflate queries and are misleading as published synonyms.`);
+  }
+
+  rec.verdict = rec.pubmedError || rec.probeFailed ? 'INCONCLUSIVE'
+    : rec.learnSignal ? 'ALIASES-BROKEN'
     : rec.relevantCount === 0 ? 'NO-LITERATURE'
     : fresh.length === 0 ? 'FULLY-CITED'
     : p.verified + fresh.length >= FLOOR ? 'SOURCEABLE'
@@ -279,6 +372,7 @@ const md = [
   `| PARTIAL | real papers exist, but not enough to reach ${FLOOR} | ${byVerdict.PARTIAL || 0} |`,
   `| FULLY-CITED | everything relevant is already cited; thinness is real, not fixable | ${byVerdict['FULLY-CITED'] || 0} |`,
   `| NO-LITERATURE | no paper names this compound — an editorial problem, not a sourcing one | ${byVerdict['NO-LITERATURE'] || 0} |`,
+  `| ALIASES-BROKEN | the alias set is wrong; verdict withheld until fixed | ${byVerdict['ALIASES-BROKEN'] || 0} |`,
   `| INCONCLUSIVE | the registry did not answer; retry, do not conclude | ${byVerdict.INCONCLUSIVE || 0} |`,
   '',
   '## Per dossier',

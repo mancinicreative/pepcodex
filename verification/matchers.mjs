@@ -177,21 +177,89 @@ export const drugMatches = (aliases, registryText) => {
 };
 
 /**
- * Literature relevance. Two failure modes, both observed:
+ * Words that describe a tissue or a category rather than naming a compound. An alias built only
+ * from these is a DESCRIPTION, not a name, and must never be used to claim a paper is about a
+ * specific peptide.
+ *
+ * This list stays deliberately tight. Broadening it would start eating real names: "growth hormone
+ * releasing hormone" is a legitimate alias of tesamorelin and survives only because "growth" and
+ * "releasing" are absent here. The test is whether a token could identify a compound on its own —
+ * "gastric" cannot, "thymosin" can.
+ */
+const GENERIC_TOKENS = new Set([
+  'peptide', 'peptides', 'bioregulator', 'bioregulators', 'cytamin', 'cytamins', 'cytomax',
+  'extract', 'extracts', 'complex', 'tissue', 'tissues', 'cell', 'cells', 'cellular',
+  'brain', 'cerebral', 'neural', 'nerve', 'vascular', 'blood', 'vessel', 'vessels',
+  'gastric', 'stomach', 'mucosa', 'pancreas', 'pancreatic', 'liver', 'hepatic',
+  'testicular', 'testis', 'gonad', 'gonadal', 'ovary', 'ovarian', 'prostate', 'prostatic',
+  'kidney', 'renal', 'cartilage', 'bone', 'thymus', 'thymic', 'retina', 'retinal',
+  'lung', 'pulmonary', 'bronchial', 'heart', 'cardiac', 'muscle', 'skin', 'immune',
+  'eye', 'ocular', 'artery', 'arterial', 'vein', 'venous', 'gland', 'glandular',
+]);
+
+/**
+ * An alias is DISTINCTIVE when at least one of its tokens could identify a compound on its own.
+ *
+ * Length is not distinctiveness, and assuming it was is what broke this. "Gastric peptide" is
+ * fifteen characters, comfortably over any length threshold, and appears verbatim in ghrelin and
+ * motilin papers that have nothing to do with the peptide it was listed under — a thin-dossier
+ * scan returned 17 confident "relevant" hits for stamakort, every one of them about ghrelin.
+ * The same shape sat in four other alias sets: "brain cytamin", "cerebral peptides",
+ * "blood vessel peptides", "pancreatic cytamin", "testis bioregulator".
+ *
+ * Note this is the mirror image of the short-alias problem below. A short alias collides because it
+ * is too specific a string in too many domains; a generic phrase collides because it is not a name
+ * at all. Both produce a confident wrong answer, so both must be excluded from strong matching.
+ */
+export const isDistinctive = (alias) => {
+  const toks = fold(alias).replace(/[^a-z0-9]+/g, ' ').split(/\s+/).filter(Boolean);
+  if (!toks.length) return false;
+  // A token identifies a compound only if it is a word, not a bare digit and not a single letter.
+  // The single-letter case is not hypothetical: "A-14 vascular peptides" (an alias of ventfort)
+  // splits to ["a","14","vascular","peptides"], and counting the bare "a" as identifying made the
+  // whole generic phrase read as distinctive — which put it back into the disambiguation probe and
+  // turned a true NO-LITERATURE verdict into a spurious ALIASES-BROKEN one. The series prefixes in
+  // this vocabulary (A-5, A-11, A-14) are catalogue codes, not names.
+  return toks.some((t) => t.length >= 2 && !GENERIC_TOKENS.has(t) && !/^\d+$/.test(t));
+};
+
+/**
+ * Literature relevance. Three failure modes, all observed:
  *  1. PubMed degrades an unmatched quoted phrase into loose term matching and returns a large,
  *     confident, unrelated set ("bronchogen" -> OX40-OX40L signalling, daptomycin pneumonia).
  *  2. Short aliases are acronym collisions: NASA (N-Acetyl Selank Amidate) matched a maser and a
  *     Mars paper; AED (Cardiogen) matched defibrillators; EDL (Ovagen) a leg muscle; P21 the
  *     p21/CDKN1A gene.
- * So: a long name/alias on a word boundary, OR a short one plus domain context.
+ *  3. Long-but-generic aliases are descriptions, not names ("gastric peptide" -> ghrelin papers).
+ *
+ * So a paper counts only when it names the compound distinctly:
+ *   - a distinctive alias of >= 6 chars on a word boundary; OR
+ *   - a short alias on a word boundary WITH a domain-context word NEAR it.
+ *
+ * Proximity matters for the short case. Requiring context anywhere in the abstract let "KED" match
+ * "Evolutionary analysis of KED-rich proteins in plants", because the word "peptide" appeared
+ * somewhere else in the same abstract. Real usage puts the two together: "the tripeptide KED",
+ * "SS-31 peptide", "the CNTF-derived peptide P21".
  */
 const CONTEXT = /\b(peptide|tripeptide|dipeptide|oligopeptide|bioregulator|amino acid|analog|analogue|agonist)\b/i;
+const CONTEXT_WINDOW = 150;
+
+const contextNear = (needle, hay) => {
+  const s = String(hay);
+  const re = new RegExp(`(?<![a-z0-9])${String(needle).replace(/[.*+?^${}()|[\]\\-]/g, '\\$&')}(?![a-z0-9])`, 'ig');
+  for (const m of s.matchAll(re)) {
+    const from = Math.max(0, m.index - CONTEXT_WINDOW);
+    if (CONTEXT.test(s.slice(from, m.index + m[0].length + CONTEXT_WINDOW))) return true;
+  }
+  return false;
+};
+
 export const isRelevant = (names, text) => {
   const all = [...new Set((names || []).map((n) => String(n).toLowerCase()).filter(Boolean))];
-  const strong = all.filter((a) => a.length >= 6);
-  const weak = all.filter((a) => a.length >= 3 && a.length < 6);
+  const strong = all.filter((a) => a.length >= 6 && isDistinctive(a));
+  const weak = all.filter((a) => a.length >= 3 && a.length < 6 && isDistinctive(a));
   if (strong.some((a) => wordBoundaryHit(a, text))) return true;
-  return weak.some((a) => wordBoundaryHit(a, text)) && CONTEXT.test(text);
+  return weak.some((a) => contextNear(a, text));
 };
 
 // ---------------------------------------------------------------------------

@@ -70,12 +70,13 @@ export async function countPerAlias(aliases, opts = {}) {
  * `truncated` reports any alias whose result set was capped, because a cap that is not reported
  * reads as completeness — the quiet version of a false claim.
  */
-export async function searchPerAlias(aliases, { retmax = 200, sort = 'relevance', filter = '' } = {}) {
-  const ids = new Set();
+export async function searchPerAlias(aliases, { retmax = 200, sort = 'relevance', filter = '', primary = null, generosity = 10, floor = 15 } = {}) {
   const perAlias = [];
   const truncated = [];
+  const idsByAlias = {};
   let anyFailed = false;
-  for (const a of [...new Set(aliases)].filter(Boolean)) {
+  const list = [...new Set(aliases)].filter(Boolean);
+  for (const a of list) {
     const term = `"${a}"${filter ? ` AND ${filter}` : ''}`;
     try {
       const r = await fetchT(`${EUTILS}/esearch.fcgi?db=pubmed&retmode=json&retmax=${retmax}&sort=${sort}&term=${encodeURIComponent(term)}`);
@@ -83,13 +84,48 @@ export async function searchPerAlias(aliases, { retmax = 200, sort = 'relevance'
       const j = (await r.json()).esearchresult || {};
       const got = j.idlist || [];
       const total = Number(j.count || 0);
-      got.forEach((i) => ids.add(i));
+      idsByAlias[a] = got;
       perAlias.push({ alias: a, retrieved: got.length, total });
       if (total > retmax) truncated.push({ alias: a, retrieved: retmax, total });
     } catch { anyFailed = true; }
     await sleep(NCBI_DELAY);
   }
-  return { ids: [...ids], perAlias, truncated, anyFailed };
+
+  /* SELF-CALIBRATING GENERICITY TEST.
+   *
+   * A blocklist of anatomical words cannot be complete, and relying on one repeats the mistake that
+   * caused most of the defects in this repo: an enumerated list drifts the moment someone adds a
+   * term it does not contain. It did. The vocabulary held "gastric" and "stomach" but not
+   * "intestinal", so chonluten's alias "Intestinal peptide" sailed through and returned 29 papers
+   * about vasoactive intestinal peptide, NDNF interneurons and Lactobacillus.
+   *
+   * So ask the data instead of a list. An alias that names the SAME compound as the primary name
+   * cannot return wildly more records than the primary name does — if it returns 29 where the
+   * primary returns 0, it is naming a category, not this compound. This needs no vocabulary, and it
+   * catches words nobody thought to enumerate.
+   *
+   * Only applied when a primary name is supplied and did not itself fail, and only above an
+   * absolute floor so that small honest differences between spellings are left alone.
+   */
+  const suspectGeneric = [];
+  if (primary) {
+    const base = perAlias.find((x) => x.alias === primary);
+    if (base) {
+      const limit = Math.max(base.total * generosity, floor);
+      for (const x of perAlias) {
+        if (x.alias === primary) continue;
+        if (x.total > limit) {
+          suspectGeneric.push({ alias: x.alias, total: x.total, primaryTotal: base.total,
+            reason: `returns ${x.total} records where the primary name "${primary}" returns ${base.total}; it is naming a category, not this compound` });
+          delete idsByAlias[x.alias];
+        }
+      }
+    }
+  }
+
+  const ids = new Set();
+  for (const arr of Object.values(idsByAlias)) arr.forEach((i) => ids.add(i));
+  return { ids: [...ids], idsByAlias, perAlias, truncated, suspectGeneric, anyFailed };
 }
 
 /** Fetch title/abstract/metadata for PMIDs, in batches. Missing ids simply do not appear. */

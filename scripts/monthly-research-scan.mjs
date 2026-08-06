@@ -20,6 +20,8 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { isRelevant, isDistinctive } from '../verification/matchers.mjs';
+import { searchPerAlias } from '../verification/pubmed.mjs';
 
 const args = process.argv.slice(2);
 const DAYS = args.includes('--days') ? Number(args[args.indexOf('--days') + 1]) : null;
@@ -78,54 +80,40 @@ const summary = [];
 
 for (const p of dossiers) {
   const from = windowStart(p);
-  const term = [...new Set(p.aliases)].map((a) => `"${a}"`).join(' OR ');
+  // Query terms: distinctive aliases only, and NEVER ORed into a single query. A generic phrase
+  // ("gastric peptide") matches papers about other compounds, and PubMed silently term-splits an
+  // unmatched quoted phrase inside an OR — six selank aliases returning 0/0/0/2/2/0 alone returned
+  // 28,694 combined. searchPerAlias asks one at a time and unions the ids.
+  const searchTerms = (p.aliases.filter(isDistinctive).length ? p.aliases.filter(isDistinctive) : [p.name]);
   const out = { slug: p.slug, name: p.name, windowFrom: from.toISOString().slice(0, 10), scannedAt: TODAY,
     newPapers: [], newTrials: [], updatedTrials: [] };
 
   // --- PubMed: papers entered since the window ---
   try {
-    const q = `(${term}) AND ("${fmt(from)}"[EDAT] : "3000"[EDAT])`;
     const RETMAX = 200;
-    const es = await fetchT(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&retmode=json&retmax=${RETMAX}&sort=date&term=${encodeURIComponent(q)}`);
-    const esj = es.ok ? (await es.json()).esearchresult || {} : {};
-    const ids = esj.idlist || [];
-    // Never let a cap look like completeness. If PubMed reports more hits than we retrieved, say so
-    // in the worklist — otherwise a truncated month reads as "everything was covered", which is the
-    // quiet version of a false claim.
-    const totalHits = Number(esj.count || 0);
-    if (totalHits > RETMAX) {
-      out.truncated = { retrieved: RETMAX, availableInWindow: totalHits,
-        note: `PubMed reports ${totalHits} hits in this window but only the ${RETMAX} most recent were retrieved. Narrow the window (--days) or raise retmax for full coverage.` };
+    const dateFilter = `("${fmt(from)}"[EDAT] : "3000"[EDAT])`;
+    const res = await searchPerAlias(searchTerms, { retmax: RETMAX, sort: 'date', filter: dateFilter, primary: p.name });
+    const ids = res.ids;
+    out.queriedAliases = res.perAlias;
+    // Aliases that returned far more than the primary name are naming a category, not this
+    // compound. Their results are discarded before anything reaches the worklist, and the alias is
+    // reported so the dossier's alias list can be corrected at source.
+    if (res.suspectGeneric.length) out.suspectGenericAliases = res.suspectGeneric;
+    // Never let a cap look like completeness. A truncated window that says nothing reads as
+    // "everything was covered", which is the quiet version of a false claim.
+    if (res.truncated.length) {
+      out.truncated = { perAlias: res.truncated,
+        note: `Some aliases returned more hits than were retrieved (cap ${RETMAX}). Narrow the window (--days) or raise retmax for full coverage.` };
     }
-    await sleep(380);
+    if (res.anyFailed) out.partialQuery = true;
     const fresh = ids.filter((id) => !known.pmid.has(id));
     if (fresh.length) {
-      // RELEVANCE FILTER — do not trust the query. When a quoted phrase has no match, PubMed
-      // silently degrades to loose term matching and returns a large, entirely unrelated set:
-      // a "bronchogen" search came back with OX40-OX40L signalling, daptomycin pneumonia and
-      // phage-antibiotic synergy. Handing that to a content agent invites it to write about
-      // papers that have nothing to do with the peptide. So every hit must actually name the
-      // peptide (or an alias) in its title or abstract before it reaches a worklist.
-      // Short aliases are ACRONYM COLLISIONS waiting to happen, and they were: "NASA" (an alias of
-      // N-Acetyl Selank Amidate) matched a room-temperature maser and a paper on Mars' magnetosphere;
-      // "AED" (Cardiogen) matched Automated External Defibrillators and antiepileptic drugs; "EDL"
-      // (Ovagen) matched the extensor digitorum longus muscle; "P21" matched the p21/CDKN1A gene in
-      // unrelated cancer papers. A paper therefore only counts when it names the peptide distinctly:
-      //   - the primary name, or a long alias (>= 6 chars), matched on a word boundary; OR
-      //   - a short alias AND a peptide-context word, so "AED" alone can never qualify.
-      const wb = (needle, hay) => new RegExp(`(?<![a-z0-9])${needle.replace(/[.*+?^${}()|[\]\\-]/g, '\\$&')}(?![a-z0-9])`, 'i').test(hay);
-      // The PRIMARY NAME gets no special pass when it is short: "P21" is also the p21/CDKN1A gene,
-      // so a bare "P21" hit is not evidence a paper is about the CNTF-derived peptide P21. Short
-      // names join the weak set and must co-occur with peptide context. Genuinely short peptide
-      // names (SS-31, LL-37, KPV, DSIP) lose nothing by this — their literature says "peptide".
-      const all = [...new Set([String(p.name), p.slug.replace(/-/g, ' '), ...p.aliases])]
-        .map((a) => String(a).toLowerCase()).filter(Boolean);
-      const strong = all.filter((a) => a.length >= 6);
-      const weak = all.filter((a) => a.length >= 3 && a.length < 6);
-      const CONTEXT = /\b(peptide|tripeptide|dipeptide|oligopeptide|bioregulator|amino acid|analog|analogue|agonist)\b/i;
-      const isRelevant = (hay) =>
-        strong.some((a) => wb(a, hay))
-        || (weak.some((a) => wb(a, hay)) && CONTEXT.test(hay));
+      // RELEVANCE FILTER — do not trust the query. Uses the CANONICAL matcher from
+      // verification/matchers.mjs rather than a local copy. This filter was previously
+      // reimplemented here, and the local copy did not have the generic-phrase guard that
+      // isDistinctive adds, so long-but-meaningless aliases like "gastric peptide" would still
+      // have passed papers about entirely different compounds into the worklist.
+      const names = [...new Set([String(p.name), p.slug.replace(/-/g, ' '), ...p.aliases])];
       const text = {};
       for (let k = 0; k < fresh.length; k += 100) {
         try {
@@ -145,7 +133,7 @@ for (const p of dossiers) {
       for (const id of j.uids || []) {
         if (!j[id] || j[id].error) continue;
         const hay = text[id] || String(j[id].title || '').toLowerCase();
-        if (!isRelevant(hay)) { out.filteredOut = (out.filteredOut || 0) + 1; continue; }
+        if (!isRelevant(names, hay)) { out.filteredOut = (out.filteredOut || 0) + 1; continue; }
         const aid = (j[id].articleids || []).find((a) => a.idtype === 'doi');
         out.newPapers.push({ pmid: id, doi: aid ? aid.value : null, title: j[id].title || '',
           journal: j[id].fulljournalname || j[id].source || '', pubdate: j[id].pubdate || '',
@@ -178,8 +166,16 @@ for (const p of dossiers) {
   } catch (e) { out.ctgovError = e.message; }
   await sleep(320);
 
+  const worklist = path.join(OUT, `${p.slug}.json`);
   if (out.newPapers.length || out.newTrials.length || out.updatedTrials.length) {
-    fs.writeFileSync(path.join(OUT, `${p.slug}.json`), JSON.stringify(out, null, 2));
+    fs.writeFileSync(worklist, JSON.stringify(out, null, 2));
+  } else if (fs.existsSync(worklist)) {
+    // A nothing-found result must REMOVE any earlier worklist for this peptide, not silently leave
+    // it behind. Both runs write into the same dated directory, so a re-run after a matcher fix
+    // would otherwise leave the superseded file sitting there looking current — which is how a
+    // scan that correctly found nothing still hands an agent 29 papers about vasoactive intestinal
+    // peptide to write up. Absence of findings is itself a finding and must overwrite.
+    fs.unlinkSync(worklist);
   }
   summary.push({ slug: p.slug, from: out.windowFrom, papers: out.newPapers.length, truncated: !!out.truncated,
     newTrials: out.newTrials.length, updatedTrials: out.updatedTrials.length });

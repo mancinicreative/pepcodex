@@ -11,8 +11,50 @@ import path from 'path';
 import matter from 'gray-matter';
 
 const STRICT = process.argv.includes('--strict');
-const dir = path.resolve('src/content/peptides');
-const files = fs.existsSync(dir) ? fs.readdirSync(dir).filter((f) => f.endsWith('.mdx')) : [];
+
+// EVERY surface that can carry a citation. This script previously hardcoded src/content/peptides,
+// so data/source-packs (which RENDERS via DossierLayout + /trials) and src/content/blog were never
+// verified once — more identifiers lived outside the gate than inside it, which is exactly where
+// the 2026-07-24 fabrication audit found 253 of its 265 findings.
+//
+// DELIBERATELY NOT AN ENUMERATED LIST. Enumerating collections is the bug that caused this: the
+// site has 12 content collections and any hand-maintained list drifts the moment someone adds a
+// 13th. We walk all of src/content/** instead, so a new collection is covered the day it appears.
+const SURFACES = [
+  { dir: 'src/content', ext: /\.mdx?$/ },
+  { dir: 'data/source-packs', ext: /\.json$/ },
+];
+
+// Recursive so a nested collection (e.g. blog/2026/) can never silently escape the gate.
+function walkDir(abs, ext, out = []) {
+  if (!fs.existsSync(abs)) return out;
+  for (const e of fs.readdirSync(abs, { withFileTypes: true })) {
+    const p = path.join(abs, e.name);
+    if (e.isDirectory()) walkDir(p, ext, out);
+    else if (ext.test(e.name)) out.push(p);
+  }
+  return out;
+}
+
+// unit = { file (repo-relative label), data (frontmatter|parsed JSON), content (MDX body|'') }
+const units = [];
+for (const s of SURFACES) {
+  for (const abs of walkDir(path.resolve(s.dir), s.ext)) {
+    const label = path.relative(process.cwd(), abs).replace(/\\/g, '/');
+    const raw = fs.readFileSync(abs, 'utf-8');
+    if (abs.endsWith('.json')) {
+      try {
+        units.push({ file: label, data: JSON.parse(raw), content: '' });
+      } catch (e) {
+        console.error(`FAIL: ${label} is not valid JSON (${e.message})`);
+        process.exit(1);
+      }
+    } else {
+      const { data, content } = matter(raw);
+      units.push({ file: label, data, content });
+    }
+  }
+}
 
 // Collect { pmid -> Set(files) } from frontmatter citation fields + body.
 const pmidFiles = new Map();
@@ -27,7 +69,18 @@ const addNct = (id, file) => {
   if (!nctFiles.has(id)) nctFiles.set(id, new Set());
   nctFiles.get(id).add(file);
 };
+// DOI suffixes legitimately contain parentheses — Elsevier/Lancet ids look like
+// 10.1016/S0140-6736(21)01324-6, and 47 such DOIs are cited here. A regex that stops at ")"
+// silently truncates them into ids that resolve to nothing, so the gate then reports a real
+// citation as fabricated. Capture through parens, then drop only UNBALANCED trailing ones, which
+// is what prose like "(see 10.1234/abc)" produces.
+const trimDoi = (s) => {
+  let d = String(s).replace(/[.,;]+$/, '');
+  while (d.endsWith(')') && (d.match(/\(/g) || []).length < (d.match(/\)/g) || []).length) d = d.slice(0, -1);
+  return d;
+};
 const addDoi = (id, file) => {
+  id = trimDoi(id);
   if (!doiFiles.has(id)) doiFiles.set(id, new Set());
   doiFiles.get(id).add(file);
 };
@@ -60,7 +113,7 @@ function walk(node, file, key) {
     // DOIs: a standalone field value, or one with explicit DOI:/doi.org context (avoids prose false hits).
     const doiM = s.match(/^(?:DOI:\s*)?(10\.\d{4,9}\/\S+)$/i);
     if (doiM) addDoi(doiM[1], file);
-    for (const mm of s.matchAll(/(?:doi\.org\/|DOI:\s*)(10\.\d{4,9}\/[^\s"')\]]+)/gi)) addDoi(mm[1], file);
+    for (const mm of s.matchAll(/(?:doi\.org\/|DOI:\s*)(10\.\d{4,9}\/[^\s"'\]]+)/gi)) addDoi(mm[1], file);
     if (CITATION_KEYS.has(key) && s && !isResolvableCitation(s)) badCites.push({ file, key, value: s });
     return;
   }
@@ -68,13 +121,12 @@ function walk(node, file, key) {
   if (typeof node === 'object') return Object.entries(node).forEach(([k, n]) => walk(n, file, k));
 }
 
-for (const file of files) {
-  const { data, content } = matter(fs.readFileSync(path.join(dir, file), 'utf-8'));
+for (const { file, data, content } of units) {
   walk(data, file, null);
   // Body: PMID:123 and pubmed.ncbi.nlm.nih.gov/123
   for (const m of content.matchAll(/(?:PMID:?\s*|pubmed\.ncbi\.nlm\.nih\.gov\/)(\d{6,9})/gi)) add(m[1], file);
   for (const m of content.matchAll(/\bNCT\d{8}\b/gi)) addNct(m[0], file);
-  for (const m of content.matchAll(/(?:doi\.org\/|DOI:\s*)(10\.\d{4,9}\/[^\s"')\]]+)/gi)) addDoi(m[1], file);
+  for (const m of content.matchAll(/(?:doi\.org\/|DOI:\s*)(10\.\d{4,9}\/[^\s"'\]]+)/gi)) addDoi(m[1], file);
 }
 
 // Placeholder/free-text values in citation fields are a worklist for the citation-verification
@@ -89,35 +141,57 @@ if (badCites.length) {
 const pmids = [...pmidFiles.keys()];
 const nctIds = [...nctFiles.keys()];
 const doiIds = [...doiFiles.keys()];
-console.log(`Citation guard: ${pmids.length} PMIDs · ${nctIds.length} NCTs · ${doiIds.length} DOIs across ${files.length} dossiers.`);
+console.log(`Citation guard: ${pmids.length} PMIDs · ${nctIds.length} NCTs · ${doiIds.length} DOIs across ${units.length} files (${SURFACES.map((s) => s.dir).join(', ')}).`);
 
 const UA = { 'User-Agent': 'PepCodex-qa-pmids/1.0 (mailto:admin@pepcodex.com)' };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-const failures = []; // { type, id, files } — each resolver appends; a per-resolver outage is skipped, not failed.
+// Every external call is abort-bounded so a slow/blocked API can NEVER hang a build —
+// a timeout throws, which each resolver catches and treats as a graceful outage (skips, never fails).
+async function fetchT(url, opts = {}, ms = 12000) {
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), ms);
+  try {
+    return await fetch(url, { ...opts, signal: ctrl.signal });
+  } finally {
+    clearTimeout(t);
+  }
+}
+const failures = []; // { type, id, files }
+// Coverage tracking. A resolver that throws part-way has NOT verified its class — recording
+// failures inside the try would skip that step and let the script print PASS on zero findings,
+// i.e. the gate silently degrades to a no-op under exactly the rate-limit load a big sweep
+// creates. Coverage is therefore tracked explicitly and the gate FAILS CLOSED on incomplete
+// verification (escape hatch: ALLOW_INCOMPLETE_CITATION_CHECK=1 for an emergency deploy).
+const incomplete = []; // class names whose verification did not complete
 
 // --- PMIDs: NCBI esummary, 150/batch. Resolves iff a result entry exists with no `error`. ---
+let pmidResolved = null; // null => verification did not complete
 try {
+  const resolved = new Set();
   for (let i = 0; i < pmids.length; i += 150) {
     const batch = pmids.slice(i, i + 150);
     const url = `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&retmode=json&id=${batch.join(',')}`;
-    const res = await fetch(url, { headers: UA });
+    const res = await fetchT(url, { headers: UA });
     if (!res.ok) throw new Error(`esummary HTTP ${res.status}`);
     const r = (await res.json()).result || {};
-    const ok = new Set((r.uids || []).filter((id) => r[id] && !r[id].error));
-    for (const p of batch) if (!ok.has(p)) failures.push({ type: 'PMID', id: p, files: pmidFiles.get(p) });
+    for (const id of (r.uids || [])) if (r[id] && !r[id].error) resolved.add(id);
     await sleep(400);
   }
+  pmidResolved = resolved;
 } catch (e) {
-  console.error(`\nWARN: PMID resolution skipped (${e.message}) — NCBI outage.`);
+  incomplete.push('PMID');
+  console.error(`\nWARN: PMID verification INCOMPLETE (${e.message}) — NCBI unreachable.`);
 }
+if (pmidResolved) for (const p of pmids) if (!pmidResolved.has(p)) failures.push({ type: 'PMID', id: p, files: pmidFiles.get(p) });
 
 // --- NCTs: ClinicalTrials.gov v2 filter.ids batch. A requested NCT absent from the response = not found. ---
+let nctFound = null; // null => verification did not complete
 try {
   const found = new Set();
   for (let i = 0; i < nctIds.length; i += 50) {
     const batch = nctIds.slice(i, i + 50);
     const url = `https://clinicaltrials.gov/api/v2/studies?filter.ids=${batch.join(',')}&fields=NCTId&pageSize=100`;
-    const res = await fetch(url, { headers: UA });
+    const res = await fetchT(url, { headers: UA });
     if (!res.ok) throw new Error(`CT.gov HTTP ${res.status}`);
     for (const st of ((await res.json()).studies || [])) {
       const id = st?.protocolSection?.identificationModule?.nctId;
@@ -125,22 +199,29 @@ try {
     }
     await sleep(300);
   }
-  for (const id of nctIds) if (!found.has(id)) failures.push({ type: 'NCT', id, files: nctFiles.get(id) });
+  nctFound = found;
 } catch (e) {
-  console.error(`\nWARN: NCT resolution skipped (${e.message}) — CT.gov outage.`);
+  incomplete.push('NCT');
+  console.error(`\nWARN: NCT verification INCOMPLETE (${e.message}) — CT.gov unreachable.`);
 }
+if (nctFound) for (const id of nctIds) if (!nctFound.has(id)) failures.push({ type: 'NCT', id, files: nctFiles.get(id) });
 
 // --- DOIs: Crossref /agency (200 = exists, 404 = not). ---
+let doiBad = null; // null => verification did not complete
 try {
+  const bad = [];
   for (const doi of doiIds) {
-    const res = await fetch(`https://api.crossref.org/works/${encodeURI(doi)}/agency?mailto=admin@pepcodex.com`, { headers: UA });
-    if (res.status === 404) failures.push({ type: 'DOI', id: doi, files: doiFiles.get(doi) });
+    const res = await fetchT(`https://api.crossref.org/works/${encodeURI(doi)}/agency?mailto=admin@pepcodex.com`, { headers: UA });
+    if (res.status === 404) bad.push(doi);
     else if (res.status !== 200) throw new Error(`Crossref HTTP ${res.status}`);
     await sleep(150);
   }
+  doiBad = bad;
 } catch (e) {
-  console.error(`\nWARN: DOI resolution skipped (${e.message}) — Crossref outage.`);
+  incomplete.push('DOI');
+  console.error(`\nWARN: DOI verification INCOMPLETE (${e.message}) — Crossref unreachable.`);
 }
+if (doiBad) for (const doi of doiBad) failures.push({ type: 'DOI', id: doi, files: doiFiles.get(doi) });
 
 if (failures.length) {
   console.error(`\n${STRICT ? 'FAIL' : 'WARN'}: ${failures.length} citation(s) do NOT resolve:`);
@@ -149,4 +230,17 @@ if (failures.length) {
   }
   process.exit(STRICT ? 1 : 0);
 }
+
+// FAIL CLOSED on incomplete verification. "No failures found" is only meaningful if every class
+// was actually checked — otherwise an outage/rate-limit would print PASS while verifying nothing.
+if (incomplete.length) {
+  const escape = process.env.ALLOW_INCOMPLETE_CITATION_CHECK === '1';
+  console.error(`\n${escape ? 'WARN' : 'FAIL'}: citation verification INCOMPLETE for: ${incomplete.join(', ')}.`);
+  console.error('  No failures were found in the classes that DID complete, but coverage is partial —');
+  console.error('  this is NOT a pass. Re-run when the API is reachable, or set');
+  console.error('  ALLOW_INCOMPLETE_CITATION_CHECK=1 to deploy anyway (emergency only).');
+  if (STRICT && !escape) process.exit(1);
+  process.exit(0);
+}
+
 console.log(`PASS: every cited PMID (${pmids.length}), NCT (${nctIds.length}), and DOI (${doiIds.length}) resolves.`);

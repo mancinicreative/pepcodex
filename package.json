@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "check": "node scripts/validate-cross-links.mjs && node scripts/qa-seo.mjs && node scripts/qa-scoring.mjs && node scripts/qa-pmids.mjs --strict",
+    "check": "node scripts/qa-internal-consistency.mjs --strict && node scripts/validate-cross-links.mjs && node scripts/qa-seo.mjs && node scripts/qa-scoring.mjs && node scripts/qa-pmids.mjs --strict",
     "prebuild": "npm run check",
     "build": "astro build",
     "postbuild": "npx pagefind --site dist",
@@ -15,7 +15,20 @@
     "qa-scoring": "node scripts/qa-scoring.mjs",
     "qa-pmids": "node scripts/qa-pmids.mjs --strict",
     "qa-retractions": "node scripts/qa-retractions.mjs",
-    "refresh-trials-all": "node scripts/refresh-trials-all.mjs"
+    "refresh-trials-all": "node scripts/refresh-trials-all.mjs",
+    "qa:consistency": "node scripts/qa-internal-consistency.mjs --strict",
+    "qa:trials": "node scripts/triage-trials.mjs",
+    "qa:packcites": "node scripts/verify-pack-citations.mjs",
+    "qa:dossiercites": "node scripts/verify-dossier-citations.mjs --strict",
+    "qa:blogsources": "node scripts/verify-blog-sources.mjs",
+    "research:scan": "node scripts/monthly-research-scan.mjs",
+    "qa:claims": "node scripts/qa-claim-consistency.mjs",
+    "qa:quant": "node scripts/verify-quantitative-claims.mjs",
+    "qa:attached": "node scripts/audit-attached-identifiers.mjs",
+    "verify:graph": "node scripts/verify-graph.mjs",
+    "verify:full": "node scripts/verify-graph.mjs --full",
+    "verify:selftest": "node scripts/verify-graph.mjs --self-test",
+    "verify:explain": "node scripts/verify-graph.mjs --explain"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.14",

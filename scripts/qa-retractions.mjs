@@ -13,14 +13,50 @@ import matter from 'gray-matter';
 
 const STRICT = process.argv.includes('--strict');
 const RW_URL = 'https://api.labs.crossref.org/data/retractionwatch?mailto=admin@pepcodex.com';
-const dir = path.resolve('src/content/peptides');
-const files = fs.existsSync(dir) ? fs.readdirSync(dir).filter((f) => f.endsWith('.mdx')) : [];
+// EVERY surface, walked structurally — not `src/content/peptides` alone. This gate previously
+// checked 682 PMIDs (dossiers only) and reported PASS while `src/content/blog/what-is-dihexa.mdx`
+// cited PMID 25187433, a paper retracted for data-integrity concerns. A retraction check that
+// cannot see the blog is not a retraction check. Same enumeration bug as qa-pmids had.
+const SURFACES = [
+  { dir: 'src/content', ext: /\.mdx?$/ },
+  { dir: 'data/source-packs', ext: /\.json$/ },
+];
+function walkDir(abs, ext, out = []) {
+  if (!fs.existsSync(abs)) return out;
+  for (const e of fs.readdirSync(abs, { withFileTypes: true })) {
+    const p = path.join(abs, e.name);
+    if (e.isDirectory()) walkDir(p, ext, out);
+    else if (ext.test(e.name)) out.push(p);
+  }
+  return out;
+}
+const units = [];
+for (const s of SURFACES) {
+  for (const abs of walkDir(path.resolve(s.dir), s.ext)) {
+    const label = path.relative(process.cwd(), abs).replace(/\\/g, '/');
+    const raw = fs.readFileSync(abs, 'utf-8');
+    if (abs.endsWith('.json')) {
+      try { units.push({ file: label, data: JSON.parse(raw), content: '' }); } catch { /* qa-pmids reports bad JSON */ }
+    } else {
+      const { data, content } = matter(raw);
+      units.push({ file: label, data, content });
+    }
+  }
+}
 
 // --- collect cited PMIDs + DOIs (file-attributed), mirroring qa-pmids' extraction ---
 const pmidFiles = new Map();
 const doiFiles = new Map();
 const addP = (id, f) => { if (!pmidFiles.has(id)) pmidFiles.set(id, new Set()); pmidFiles.get(id).add(f); };
-const addD = (id, f) => { id = id.toLowerCase(); if (!doiFiles.has(id)) doiFiles.set(id, new Set()); doiFiles.get(id).add(f); };
+// DOI suffixes contain parentheses (Lancet: 10.1016/S0140-6736(21)01324-6). Capture through
+// them, then strip only UNBALANCED trailing parens, which come from prose like "(see 10.x/y)".
+const trimDoi = (s) => {
+  let d = String(s).replace(/[.,;]+$/, '');
+  const count = (str, ch) => str.split(ch).length - 1;
+  while (d.endsWith(')') && count(d, '(') < count(d, ')')) d = d.slice(0, -1);
+  return d;
+};
+const addD = (id, f) => { id = trimDoi(id); id = id.toLowerCase(); if (!doiFiles.has(id)) doiFiles.set(id, new Set()); doiFiles.get(id).add(f); };
 
 function walk(node, file) {
   if (node == null) return;
@@ -31,21 +67,20 @@ function walk(node, file) {
     if (pm) addP(pm[1], file);
     const dm = s.match(/^(?:DOI:\s*)?(10\.\d{4,9}\/\S+)$/i);
     if (dm) addD(dm[1], file);
-    for (const m of s.matchAll(/(?:doi\.org\/|DOI:\s*)(10\.\d{4,9}\/[^\s"')\]]+)/gi)) addD(m[1], file);
+    for (const m of s.matchAll(/(?:doi\.org\/|DOI:\s*)(10\.\d{4,9}\/[^\s"'\]]+)/gi)) addD(m[1], file);
     return;
   }
   if (Array.isArray(node)) return node.forEach((n) => walk(n, file));
   if (typeof node === 'object') return Object.values(node).forEach((n) => walk(n, file));
 }
 
-for (const file of files) {
-  const { data, content } = matter(fs.readFileSync(path.join(dir, file), 'utf-8'));
+for (const { file, data, content } of units) {
   walk(data, file);
   for (const m of content.matchAll(/(?:PMID:?\s*|pubmed\.ncbi\.nlm\.nih\.gov\/)(\d{6,9})/gi)) addP(m[1], file);
-  for (const m of content.matchAll(/(?:doi\.org\/|DOI:\s*)(10\.\d{4,9}\/[^\s"')\]]+)/gi)) addD(m[1], file);
+  for (const m of content.matchAll(/(?:doi\.org\/|DOI:\s*)(10\.\d{4,9}\/[^\s"'\]]+)/gi)) addD(m[1], file);
 }
 
-console.log(`Retraction watch: checking ${pmidFiles.size} PMIDs + ${doiFiles.size} DOIs against the Retraction Watch dataset.`);
+console.log(`Retraction watch: checking ${pmidFiles.size} PMIDs + ${doiFiles.size} DOIs across ${units.length} files against the Retraction Watch dataset.`);
 
 // --- minimal RFC4180 CSV parser (handles quoted fields with embedded commas/newlines/quotes) ---
 function parseCsv(text) {
@@ -86,8 +121,15 @@ try {
     if (doi && doi !== '0' && doi !== 'unavailable') retractedDois.add(doi);
   }
 } catch (e) {
-  console.error(`\nWARN: Retraction Watch check skipped (${e.message}) — dataset unreachable.`);
-  process.exit(0); // never fail the build on a dataset/network outage
+  // FAIL CLOSED under --strict. "Skipped" is not "clean": this is the only gate that would have
+  // caught PMID 25187433 (retracted for data integrity) being cited as live evidence, and a silent
+  // exit 0 on an outage is indistinguishable from a pass to anything reading the exit code.
+  // Non-strict runs still warn-and-continue, so a routine build is not held hostage to their uptime.
+  const escape = process.env.ALLOW_INCOMPLETE_RETRACTION_CHECK === '1';
+  console.error(`\n${STRICT && !escape ? 'FAIL' : 'WARN'}: Retraction Watch check did NOT run (${e.message}) — dataset unreachable.`);
+  console.error('  No retraction was ruled out. Re-run when reachable, or set');
+  console.error('  ALLOW_INCOMPLETE_RETRACTION_CHECK=1 to proceed anyway (emergency only).');
+  process.exit(STRICT && !escape ? 1 : 0);
 }
 
 const hits = [];

@@ -1,0 +1,132 @@
+{
+  "_comment": [
+    "LABELLED GROUND TRUTH for the verification graph. Every case here is REAL — drawn from the",
+    "2026-07-24/25 fabrication sweep — and each records an actual outcome, not a synthetic example.",
+    "",
+    "`shouldFlag: true`  = a genuine defect a check MUST catch (guards against false negatives).",
+    "`shouldFlag: false` = a CORRECT record a check must NOT flag (guards against false positives).",
+    "",
+    "Every shouldFlag:false case is one my own matcher got wrong at some point during the sweep and",
+    "would have destroyed real data. They exist so a future change to a matcher cannot silently",
+    "reintroduce the same error: the graph runner asserts against these before trusting any check."
+  ],
+
+  "pmid-author-match": [
+    { "id": "diacritic-jette", "shouldFlag": false, "stored": "Jette L et al. 2005", "authors": "Jetté L; Gaudreau P", "year": "2005",
+      "why": "NFD folding: stored form drops the accent. Flagged in the first pass; would have condemned a correct CJC-1295 citation." },
+    { "id": "diacritic-vilsboll", "shouldFlag": false, "stored": "Vilsboll T & Holst JJ 2004", "authors": "Vilsbøll T; Holst JJ", "year": "2004",
+      "why": "NFD does NOT decompose ø — needs explicit transliteration." },
+    { "id": "short-surname-ng", "shouldFlag": false, "stored": "Ng FM et al. 2000", "authors": "Ng FM; Bornstein J", "year": "2000",
+      "why": "A >2-char surname guard excluded Ng, Wu, Lu, El — all real surnames." },
+    { "id": "trial-code-as-year", "shouldFlag": false, "stored": "TAK-861-2001 (Phase 2 RCT, NT1)", "authors": "Dauvilliers Y", "year": "2025",
+      "why": "The year regex extracted 2001 from a trial protocol code, faking a 24-year error." },
+    { "id": "journal-in-author-field", "shouldFlag": false, "stored": "Nature Communications 2025", "authors": "Cao J", "year": "2025",
+      "why": "The study field is not always an author; it may be a journal or a descriptive label." },
+    { "id": "collective-author", "shouldFlag": false, "stored": "Fertil Steril rhCG Study Group 2001", "authors": "International Recombinant Human Chorionic Gonadotropin Study Group", "year": "2001",
+      "why": "Consortium authorship never matches a person-shaped label." },
+    { "id": "genuine-year-error", "shouldFlag": true, "stored": "Wakabayashi H et al. 2014", "authors": "Wakabayashi H", "year": "1996",
+      "why": "REAL defect found and fixed: lactoferricin cited an 18-year-wrong year." }
+  ],
+
+  "doi-extraction": [
+    { "id": "lancet-parens", "shouldFlag": false, "input": "https://doi.org/10.1016/S0140-6736(21)01324-6", "expect": "10.1016/S0140-6736(21)01324-6",
+      "why": "Elsevier/Lancet ids contain parentheses. A [^)]+ regex truncated 47 real DOIs here." },
+    { "id": "retracted-lancet-parens", "shouldFlag": false, "input": "10.1016/S0140-6736(21)01640-8", "expect": "10.1016/S0140-6736(21)01640-8",
+      "why": "This exact DOI is the RETRACTED Shi 2022 meta-analysis; truncation hid it from the retraction gate." },
+    { "id": "prose-trailing-paren", "shouldFlag": false, "input": "(see 10.1234/abc)", "expect": "10.1234/abc",
+      "why": "An unbalanced trailing paren from prose must still be stripped." },
+    { "id": "plain-doi", "shouldFlag": false, "input": "10.1038/nature12373", "expect": "10.1038/nature12373", "why": "Baseline." }
+  ],
+
+  "nct-acronym-match": [
+    { "id": "stem-collision-redefine", "shouldFlag": true, "storedAcronym": "REDEFINE CVOT", "candidateAcronym": "REDEFINE 3",
+      "why": "REAL near-miss: stem matching paired REDEFINE CVOT with REDEFINE 3 — different trials." },
+    { "id": "stem-collision-synchronize", "shouldFlag": true, "storedAcronym": "SYNCHRONIZE-1", "candidateAcronym": "SYNCHRONIZE-2",
+      "why": "Both SYNCHRONIZE-1 and -CVOT matched SYNCHRONIZE-2 before exact matching was required." },
+    { "id": "exact-tm-suffix", "shouldFlag": false, "storedAcronym": "SYNCHRONIZE-1", "candidateAcronym": "SYNCHRONIZE™-1",
+      "why": "Registry acronyms carry ™ and spacing variants; these are the SAME trial." },
+    { "id": "exact-casta", "shouldFlag": false, "storedAcronym": "CASTA", "candidateAcronym": "CASTA", "why": "Baseline exact match." }
+  ],
+
+  "nct-drug-match": [
+    { "id": "dev-code-cagrilintide", "shouldFlag": false, "slug": "cagrilintide", "interventions": ["NNC0174-0833", "Liraglutide 3.0 mg"],
+      "why": "NCT03856047 IS the real cagrilintide Phase 2; CT.gov lists it under the Novo development code." },
+    { "id": "alias-thymosin", "shouldFlag": false, "slug": "tb-500", "interventions": ["Thymosin Beta 4", "RGN-259"],
+      "why": "19 genuine tb-500 trials were flagged wrong-drug because the alias list lacked these forms." },
+    { "id": "alias-ghrh", "shouldFlag": false, "slug": "tesamorelin", "interventions": ["Growth hormone releasing hormone (GHRH) 1-44"],
+      "why": "Tesamorelin IS a GHRH(1-44) analog." },
+    { "id": "alias-tak448", "shouldFlag": false, "slug": "kisspeptin", "interventions": ["Leuprorelin", "TAK-448"],
+      "why": "TAK-448 is a kisspeptin analog." },
+    { "id": "genuine-wrong-drug", "shouldFlag": true, "slug": "cerebrolysin", "interventions": ["Degarelix", "Goserelin", "Bicalutamide"],
+      "why": "REAL defect: a degarelix prostate-cancer trial was stored as cerebrolysin's CARS stroke trial." },
+    { "id": "genuine-wrong-drug-2", "shouldFlag": true, "slug": "hcg", "interventions": ["Intravenous Ketorolac", "Ibuprofen"],
+      "why": "REAL defect: a sickle-cell pain trial stored as an hCG follicular-maturation study." }
+  ],
+
+  "title-match": [
+    { "id": "boilerplate-stem", "shouldFlag": true, "stored": "Trends in Peptide Drug Development", "real": "Trends in Antiviral Drug Development",
+      "why": "REAL defect: 3 of 4 words shared, but the DISTINGUISHING word differs — book front matter cited as a peptide article." },
+    { "id": "boilerplate-stem-2", "shouldFlag": true, "stored": "Novel Approaches to Insomnia Treatment", "real": "Novel approaches in migraine treatment",
+      "why": "REAL defect: publishing boilerplate carried the similarity score; the subject is different." },
+    { "id": "translated-title", "shouldFlag": false, "stored": "The Peptide Drug ACTH(4-7)PGP (Semax) Suppresses mRNA Transcripts", "real": "Пептидный препарат АКТГ(4-7)PGP (семакс) подавляет транскрипцию генов",
+      "why": "Russian original vs its English translation — same paper." },
+    { "id": "truncated-title", "shouldFlag": false, "stored": "Tirzepatide versus Semaglutide in Type 2 Diabetes", "real": "Tirzepatide versus Semaglutide Once Weekly in Patients with Type 2 Diabetes",
+      "why": "SURPASS-2; stored form omits a clause." },
+    { "id": "no-title-stored", "shouldFlag": false, "stored": "Dhillo WS, et al. J Clin Endocrinol Metab 2005;90(12):6609-6615", "real": "Kisspeptin-54 stimulates the hypothalamic-pituitary gonadal axis in human males",
+      "why": "Landmark kisspeptin paper with NO stored title. Title matching alone would delete it; author+year confirms it." }
+  ],
+
+  "publication-type": [
+    { "id": "has-a-comment", "shouldFlag": false, "storedTitle": "Targeted apoptosis of senescent cells restores tissue homeostasis", "realTitle": "Targeted Apoptosis of Senescent Cells Restores Tissue Homeostasis in Response to Chemotoxicity and Aging", "pubTypes": ["Journal Article", "Comment"],
+      "why": "FOXO4-DRI paper (Baar, Cell 2017). A 'Comment' pubtype can mean someone commented ON it." },
+    { "id": "case-report-is-valid", "shouldFlag": false, "storedTitle": "Dysplastic nevi and melanoma following use of Melanotan II", "realTitle": "[Eruptive dysplastic nevi following melanotan use]", "pubTypes": ["Case Reports", "Letter"],
+      "why": "A case report is a legitimate source for a safety observation." }
+  ],
+
+  "quantitative-claims": [
+    { "id": "hazard-ratio-derivation", "shouldFlag": false, "claim": "26% reduction in MACE", "source": "hazard ratio, 0.74",
+      "why": "1 - 0.74 = 26%. A correct derivation, not a fabrication." },
+    { "id": "middle-dot-decimal", "shouldFlag": false, "claim": "44% reduction in recurrence or death", "source": "hazard ratio [HR] for recurrence or death, 0·56",
+      "why": "Lancet/NEJM house style uses a MIDDLE DOT for decimals, defeating a \\d\\.\\d regex." },
+    { "id": "rounding", "shouldFlag": false, "claim": "insulin secretion fell by ~62-78%", "source": "-61.9% ... -77.5%",
+      "why": "Writers round; a rounded figure is still a correct citation." },
+    { "id": "spelled-out", "shouldFlag": false, "claim": "62 patients", "source": "Sixty-two patients with generalized anxiety",
+      "why": "Abstracts spell numbers out." },
+    { "id": "compound-name-not-measure", "shouldFlag": false, "claim": "MK-677 increases GH", "source": "A receptor in pituitary and hypothalamus",
+      "why": "677 is part of a compound name, not a quantity." },
+    { "id": "genuine-wrong-number", "shouldFlag": true, "claim": "18-35% reduction in infarct size in rabbit and sheep models", "source": "reduced infarct size in an in vivo sheep model by 15% ... by 38% to 42% in isolated guinea pig hearts",
+      "why": "REAL defect found and fixed: wrong numbers AND wrong animal models." },
+    { "id": "genuine-wrong-fold", "shouldFlag": true, "claim": "5-fold greater GIPR vs GLP-1R potency", "source": "EC50 of 0.379 nM at GIPR versus 0.617 nM at GLP-1R",
+      "why": "REAL defect: ~1.6-fold, not 5-fold." }
+  ],
+
+  "estimand": [
+    { "id": "surmount1", "shouldFlag": true, "trial": "SURMOUNT-1", "stated": 22.5, "published": 20.9, "pmid": "35658024",
+      "why": "REAL defect in 13 places: efficacy estimand headlined over the published treatment-regimen figure." },
+    { "id": "redefine1", "shouldFlag": true, "trial": "REDEFINE-1", "stated": 22.7, "published": 20.4, "pmid": "40544433", "why": "REAL defect in 4 places." },
+    { "id": "attain1", "shouldFlag": true, "trial": "ATTAIN-1", "stated": 12.4, "published": 11.2, "pmid": "40960239", "why": "REAL defect in 9 places." },
+    { "id": "different-arms-ok", "shouldFlag": false, "trial": "REDEFINE-4", "stated": 23, "published": 25.5,
+      "why": "23% is the CagriSema arm and 25.5% the tirzepatide comparator — not a contradiction." }
+  ],
+
+  "relevance-filter": [
+    { "id": "acronym-collision-nasa", "shouldFlag": true, "slug": "na-selank-amidate", "alias": "NASA", "text": "Semiconductor room-temperature maser",
+      "why": "REAL defect: the NASA alias matched a maser paper and a Mars magnetosphere study." },
+    { "id": "acronym-collision-aed", "shouldFlag": true, "slug": "cardiogen", "alias": "AED", "text": "Automated External Defibrillator Pad Application Before EMS Arrival",
+      "why": "REAL defect: AED matched defibrillators and antiepileptic drugs." },
+    { "id": "acronym-collision-edl", "shouldFlag": true, "slug": "ovagen", "alias": "EDL", "text": "extension of the vascularized extensor digitorum longus",
+      "why": "REAL defect: EDL matched a leg muscle." },
+    { "id": "phrase-degradation", "shouldFlag": true, "slug": "bronchogen", "alias": "bronchogen", "text": "OX40-OX40L Co-Stimulatory Pathway as a Shared Driver of Immune Persistence",
+      "why": "REAL defect: PubMed degrades an unmatched quoted phrase to loose term matching and returns confident noise." },
+    { "id": "genuine-hit", "shouldFlag": false, "slug": "tirzepatide", "alias": "tirzepatide", "text": "Real-world treatment satisfaction with once-weekly tirzepatide",
+      "why": "Baseline true positive." }
+  ],
+
+  "mdx-safety": [
+    { "id": "stat-lt", "shouldFlag": true, "input": "difference was significant (P<0.001)",
+      "why": "REAL defect: MDX parses <0 as a JSX tag; this failed the build with 0 pages emitted." },
+    { "id": "yaml-colon-title", "shouldFlag": true, "input": "title: AOD-9604: No Published Human Evidence",
+      "why": "REAL defect: an unquoted colon makes YAML read a nested mapping; 3 files became unparseable." },
+    { "id": "safe-prose", "shouldFlag": false, "input": "the difference was significant (P = 0.001)", "why": "Baseline." }
+  ]
+}

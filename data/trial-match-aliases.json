@@ -1,0 +1,53 @@
+{
+  "_comment": [
+    "VERIFICATION-ONLY alias map. Used by scripts/triage-trials.mjs to decide whether a registered",
+    "trial's intervention actually corresponds to a given peptide. These are DELIBERATELY NOT the",
+    "dossier's public `aliases` field: some entries here are related-but-distinct compounds (e.g.",
+    "full-length Thymosin beta-4 vs the TB-500 fragment; CagriSema vs cagrilintide alone) that are",
+    "correct to match for trial attribution but would be a scientific misstatement if published as",
+    "synonyms. Nothing in this file renders.",
+    "Each entry: development codes, brand names, and orthographic variants that appear in",
+    "ClinicalTrials.gov intervention strings."
+  ],
+  "tb-500": [
+    "thymosin beta 4", "thymosin beta-4", "thymosin b4", "thymosin β4", "tβ4",
+    "tb4", "tb-500", "rgn-259", "rgn-352", "nl005", "timbetasin", "tmsb4x"
+  ],
+  "cagrilintide": [
+    "cagrilintide", "cagrisema", "am833", "am 833", "nn9838",
+    "nnc0174-0833", "nnc0174", "nnc 0174-0833"
+  ],
+  "semaglutide": [
+    "semaglutide", "cagrisema", "ozempic", "wegovy", "rybelsus", "nn9535", "nn 9535", "semagludtide"
+  ],
+  "kisspeptin": [
+    "kisspeptin", "kiss1", "kiss-1", "metastin", "tak-448", "tak448", "tak-683", "tak683",
+    "kisspeptin-54", "kisspeptin-10", "kp-54", "kp-10", "mvt-602"
+  ],
+  "ss-31": ["ss-31", "elamipretide", "bendavia", "mtp-131", "mtp131", "ss31"],
+  "survodutide": ["survodutide", "bi 456906", "bi-456906", "bi456906", "zp6590"],
+  "tirzepatide": ["tirzepatide", "ly3298176", "ly 3298176", "mounjaro", "zepbound"],
+  "ll-37": ["ll-37", "ll37", "cathelicidin", "camp", "hcap18", "ll-37 cream"],
+  "cerebrolysin": ["cerebrolysin", "fpf-1070", "fpf 1070"],
+  "tesamorelin": [
+    "tesamorelin", "egrifta", "th9507", "th-9507",
+    "growth hormone releasing hormone", "growth hormone-releasing hormone", "ghrh", "ghrh 1-44"
+  ],
+  "glutathione": ["glutathione", "gsh", "n-acetylcysteine"],
+  "retatrutide": ["retatrutide", "ly3437943", "ly 3437943"],
+  "bpc-157": ["bpc-157", "bpc157", "bpc 157", "pl-10", "pld-116", "pl 14736"],
+  "ipamorelin": ["ipamorelin", "nnc26-0161"],
+  "hcg": ["chorionic gonadotropin", "hcg", "choriogonadotropin", "ovidrel", "pregnyl", "novarel"],
+  "hmg": ["menotropins", "hmg", "human menopausal gonadotropin", "menopur", "repronex"],
+  "epithalon": ["epithalon", "epitalon", "epithalamin", "ala-glu-asp-gly"],
+  "sermorelin": ["sermorelin", "geref", "grf 1-29", "grf(1-29)", "hgrf", "hexarelin"],
+  "ghrp-6": ["ghrp-6", "ghrp6", "growth hormone releasing peptide 6", "sk&f 110679"],
+  "ghk-cu": ["ghk-cu", "ghk", "copper tripeptide", "copper peptide", "gly-his-lys"],
+  "aod-9604": ["aod-9604", "aod9604", "aod 9604", "hgh fragment 176-191", "hgh 176-191"],
+  "pt-141": ["pt-141", "bremelanotide", "vyleesi", "pt141"],
+  "kpv": ["kpv", "lys-pro-val", "alpha-msh 11-13"],
+  "dsip": ["dsip", "delta sleep inducing peptide", "delta-sleep-inducing peptide"],
+  "selank": ["selank", "tp-7"],
+  "slu-pp-332": ["slu-pp-332", "slu pp 332"],
+  "5-amino-1mq": ["5-amino-1mq", "5-amino-1-methylquinolinium"]
+}

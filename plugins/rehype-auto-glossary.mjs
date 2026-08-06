@@ -14,10 +14,16 @@ import { visit } from 'unist-util-visit';
 const glossaryDir = path.resolve('src/content/glossary');
 const terms = [];
 
+// Retired duplicate slugs: kept on disk but 301'd in vercel.json. Never auto-link them,
+// otherwise internal links get split between a live page and a redirect.
+// off-label -> off-label-use (identical `term` and `metaTitle`).
+const RETIRED_SLUGS = new Set(['off-label']);
+
 if (fs.existsSync(glossaryDir)) {
   for (const file of fs.readdirSync(glossaryDir)) {
     if (!file.endsWith('.mdx') && !file.endsWith('.md')) continue;
     const slug = file.replace(/\.(mdx?|md)$/, '');
+    if (RETIRED_SLUGS.has(slug)) continue;
     try {
       const { data } = matter(fs.readFileSync(path.join(glossaryDir, file), 'utf-8'));
       const patterns = [data.term, ...(data.aliases || [])]

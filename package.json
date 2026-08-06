@@ -13,7 +13,18 @@
     "validate-links": "node scripts/validate-cross-links.mjs",
     "qa-seo": "node scripts/qa-seo.mjs",
     "qa-scoring": "node scripts/qa-scoring.mjs",
-    "qa-pmids": "node scripts/qa-pmids.mjs --strict"
+    "qa-pmids": "node scripts/qa-pmids.mjs --strict",
+    "gsc:sites": "node scripts/fetch-search-data.mjs --list-sites",
+    "fetch:search": "node scripts/fetch-search-data.mjs",
+    "fetch:gsc": "node scripts/fetch-search-data.mjs --gsc",
+    "fetch:ga4": "node scripts/fetch-search-data.mjs --ga4",
+    "gsc:whoami": "node scripts/fetch-search-data.mjs --whoami",
+    "graph": "node scripts/crawl-graph.mjs",
+    "graph:compare": "node scripts/crawl-graph.mjs --compare",
+    "gsc:index": "node scripts/gsc-index-diagnose.mjs",
+    "gsc:repull": "node scripts/gsc-repull.mjs",
+    "ga4:pull": "node scripts/ga4-pull.mjs",
+    "graph:check": "node scripts/crawl-graph.mjs --check"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.14",
@@ -25,10 +36,12 @@
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
+    "@google-analytics/data": "^6.1.0",
     "@pagefind/default-ui": "^1.4.0",
     "@vercel/node": "^5.5.28",
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1",
+    "googleapis": "^173.0.0",
     "gray-matter": "^4.0.3",
     "pagefind": "^1.4.0"
   }

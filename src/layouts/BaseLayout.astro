@@ -21,6 +21,12 @@ const {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const siteName = 'PepCodex';
 
+// Keep <title> inside Google's ~60-character SERP budget: append the brand suffix
+// only when it fits, otherwise render the bare title. og:/twitter: titles already
+// use the unsuffixed `title`, so social cards stay consistent either way.
+const brandedTitle = `${title} | ${siteName}`;
+const pageTitle = brandedTitle.length <= 60 ? brandedTitle : title;
+
 // Google Analytics 4 - set in environment variable
 const GA_TRACKING_ID = import.meta.env.PUBLIC_GA_TRACKING_ID;
 
@@ -45,10 +51,13 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
     <meta name="google-site-verification" content="8sNDsQp-DdfE1yFsY3N2xVcS2cnc4ecvACgyY6ON3LQ" />
 
     <!-- SEO -->
-    <title>{title} | {siteName}</title>
+    <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
-    {robots === 'noindex' && <meta name="robots" content="noindex, nofollow" />}
+    {/* `follow` is deliberate: de-indexed pages must still pass crawl paths to the pages
+        they link to. Google's crawl budget is the site's binding constraint, so cutting
+        discovery links with `nofollow` would make the real problem worse. */}
+    {robots === 'noindex' && <meta name="robots" content="noindex, follow" />}
 
     <!-- Structured Data -->
     <OrganizationSchema />
@@ -72,10 +81,13 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
       <>
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}></script>
         <script is:inline define:vars={{ GA_TRACKING_ID }}>
+          // Assign to `window` explicitly: Astro wraps `define:vars` inline scripts in an
+          // IIFE, so a bare `function gtag(){}` declaration would be function-scoped and
+          // `window.gtag` would never exist for src/scripts/analytics.ts or CookieConsent.
           window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', GA_TRACKING_ID);
+          window.gtag = function gtag(){ window.dataLayer.push(arguments); };
+          window.gtag('js', new Date());
+          window.gtag('config', GA_TRACKING_ID);
         </script>
       </>
     )}
@@ -346,6 +358,11 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
               <li><a href="/guide" class="transition-colors hover:text-[color:var(--compound)]">Guides</a></li>
               <li><a href="/safety" class="transition-colors hover:text-[color:var(--compound)]">Safety Profiles</a></li>
               <li><a href="/glossary" class="transition-colors hover:text-[color:var(--compound)]">Glossary</a></li>
+              {/* /protocols and /directory were orphaned islands — linked only from each
+                  other, so unreachable from the homepage and never crawled. Footer links
+                  put them at depth 1. Verify with `npm run graph`. */}
+              <li><a href="/protocols" class="transition-colors hover:text-[color:var(--compound)]">Protocols</a></li>
+              <li><a href="/directory" class="transition-colors hover:text-[color:var(--compound)]">Directory</a></li>
             </ul>
           </div>
 

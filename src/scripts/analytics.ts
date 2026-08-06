@@ -9,7 +9,10 @@ declare global {
 
 // Track search usage (Pagefind)
 function trackSearch() {
-  const searchInput = document.querySelector('#search-modal input[type="search"], .pagefind-ui__search-input') as HTMLInputElement | null;
+  // Target the real search field rendered by src/components/SearchModal.astro.
+  // The previous selectors (`#search-modal input[type="search"]`, `.pagefind-ui__search-input`)
+  // matched nothing — that overlay is `#search-modal-overlay` and the Pagefind default UI is unused.
+  const searchInput = document.querySelector('#modal-search-input') as HTMLInputElement | null;
   if (!searchInput) return;
 
   let debounce: ReturnType<typeof setTimeout>;

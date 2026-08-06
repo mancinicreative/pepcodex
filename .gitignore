@@ -36,3 +36,12 @@ nul
 
 # Lazyweb research artifacts (local only)
 .lazyweb/
+
+# Google API service-account credentials (NEVER commit)
+gcp-service-account*.json
+*-service-account.json
+service-account-key*.json
+credentials.json
+
+# Fetched analytics exports (large, regenerable)
+.planning/data/

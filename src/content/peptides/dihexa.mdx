@@ -99,6 +99,23 @@ evidenceChainedBenefits:
             Dihexa acts as an HGF/c-Met mimetic; its activity is attenuated by
             the HGF antagonist 6-AH, indicating HGF/c-Met dependence
           pmid: '25674052'
+        - study: Wells et al. 2024
+          type: animal
+          finding: >-
+            Negative result: in 40 Wistar rats given 3-nitropropionic acid to
+            model Huntington's disease, PNB-0408 (Dihexa) did not protect
+            against the induced weight, motor or cognitive deficits
+          pmid: '38489193'
+        - study: Ho JK & Moriarty F 2018
+          type: review
+          finding: >-
+            Systematic review of 32 experimental (non-human) studies of
+            angiotensin IV analogs including dihexa. Eight of nine studies in
+            models of cognitive deficit found benefit, but effects were most
+            reliable with intracerebroventricular delivery near the time of
+            learning - a route and timing that do not correspond to how the
+            compound is self-administered
+          pmid: '29733881'
   - mechanism:
       action: >-
         Promotion of dendritic spine formation and synaptogenesis in hippocampal
@@ -126,6 +143,29 @@ evidenceChainedBenefits:
             Synaptogenic activity attributed to activation of the HGF/c-Met
             system (review of the dihexa program)
           pmid: '25455861'
+        - study: Mathapati S et al. 2016
+          type: in-vitro
+          finding: >-
+            Independent corroboration of HGF-agonist activity outside the
+            originating lab: Dihexa is used as the hepatocyte growth factor
+            agonist in a published growth-factor-free protocol differentiating
+            human pluripotent stem cells into hepatocyte-like cells
+          pmid: '27532814'
+        - study: Siller R et al. 2015
+          type: in-vitro
+          finding: >-
+            A growth-factor-free small-molecule protocol driving human
+            pluripotent stem cells to hepatocyte-like cells relies on c-Met
+            agonism in place of recombinant HGF
+          pmid: '25937370'
+        - study: Pan et al. 2022
+          type: in-vitro
+          finding: >-
+            Dihexa, combined with vitamin C and forskolin, substituted for
+            recombinant growth factors in hepatic specification of human
+            pluripotent stem cells - functional evidence of c-Met pathway
+            engagement in a non-neural cell type
+          pmid: '35410439'
   - mechanism:
       action: Enhancement of long-term potentiation (LTP) at hippocampal synapses
       confidence: emerging
@@ -151,17 +191,38 @@ evidenceChainedBenefits:
             Augmented hippocampal synaptogenesis and synaptic connectivity in
             treated animals (electrophysiology/patch-clamp)
           pmid: '23055539'
+        - study: Weiss et al. 2021
+          type: animal
+          finding: >-
+            In a rat sciatic nerve transection-repair model, motor function at
+            8-16 weeks improved significantly with mesenchymal stem cells plus
+            Dihexa or plus G-CSF; the study tested combinations, so Dihexa's
+            independent contribution is not isolated
+          pmid: '34703584'
+        - study: Rahman et al. 2026
+          type: review
+          finding: >-
+            Orthopaedic review grouping dihexa with other neuroactive peptides
+            acting on BDNF and HGF/c-Met pathways, and concluding that despite
+            promising preclinical work there is a current lack of clinical
+            trials across this entire peptide class
+          pmid: '41490200'
 conditions:
   - slug: cognitive-enhancement
     name: Cognitive Enhancement
     researchSummary: >-
       Dihexa was developed as a cognitive enhancer based on HGF/c-Met pathway
       modulation. Rodent studies showed reversal of scopolamine-induced memory
-      deficits at extremely low doses. No human trials have been conducted, and
-      all preclinical data comes from a single research group.
+      deficits at extremely low doses. No human trials have been conducted. A
+      systematic review of 32 non-human angiotensin IV studies found benefit in
+      most cognitive-deficit models, but an independent rat study of
+      3-nitropropionic-acid-induced Huntington's-like disease found no
+      protection at all.
     relevantStudies:
       - '23055539'
       - '25455861'
+      - '29733881'
+      - '38489193'
     relatedPeptides:
       - semax
       - selank
@@ -172,9 +233,16 @@ conditions:
       The HGF/c-Met pathway targeted by Dihexa is involved in neuronal survival
       and synaptogenesis. In vitro studies showed increased dendritic spine
       density. Translation to human neuroprotection is entirely theoretical.
+      Dihexa's c-Met agonist activity is independently corroborated outside
+      neuroscience, where it substitutes for recombinant HGF in stem-cell
+      hepatocyte differentiation protocols.
     relevantStudies:
       - '23055539'
       - '34827486'
+      - '27532814'
+      - '25937370'
+      - '35410439'
+      - '34703584'
     relatedPeptides:
       - cerebrolysin
       - semax
@@ -259,6 +327,13 @@ scoring:
     - "PMID:25674052"
     - "PMID:25455861"
     - "PMID:34827486"
+    - "PMID:38489193"
+    - "PMID:34703584"
+    - "PMID:29733881"
+    - "PMID:27532814"
+    - "PMID:25937370"
+    - "PMID:35410439"
+    - "PMID:41490200"
   notes: >-
     Research Depth 10: animal data only, zero human studies (1A=6); no human
     RCT so RoB/precision/directness for human use all 0 (1B/1C/1D); modest
@@ -337,8 +412,9 @@ Dihexa is theorized to act as a cognitive enhancer through HGF/c-Met pathway mod
 
 ### Important Limitations
 
-- All research from single laboratory (Harding Lab, Washington State University)
-- Zero independent replication of any published findings
+- Cognitive research originates almost entirely from one laboratory (Harding Lab, Washington State University)
+- **A negative animal result exists** - Dihexa (PNB-0408) failed to protect rats against 3-nitropropionic-acid-induced Huntington's-like deficits. [PMID:38489193](https://pubmed.ncbi.nlm.nih.gov/38489193/)
+- **Route matters** - the systematic review of angiotensin IV analogs found effects most reliable when the peptide was delivered directly into the brain ventricles close to the time of learning, rather than systemically. [PMID:29733881](https://pubmed.ncbi.nlm.nih.gov/29733881/)
 - No human studies exist - efficacy and safety in humans completely unknown
 - HGF/c-Met pathway caution: This pathway is implicated in cancer cell proliferation; long-term effects of enhancement are theoretically concerning
 - Notice of Concern: The primary 2013 paper has a journal notice of concern

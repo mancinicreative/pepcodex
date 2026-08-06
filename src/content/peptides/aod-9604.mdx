@@ -173,6 +173,30 @@ evidenceChainedBenefits:
             AOD-9604 advanced into Phase IIa clinical development for obesity;
             early human signals did not translate into later efficacy
           pmid: '15134286'
+        - study: Halford JCG 2006
+          type: review
+          finding: >-
+            Contemporary review of the obesity pipeline listed AOD-9604 among
+            drugs then in clinical development; of that cohort only rimonabant
+            reached completed Phase III, and AOD-9604 did not
+          pmid: '16625817'
+        - study: Mendias CL et al. 2026
+          type: review
+          finding: >-
+            Sports-medicine review covering AOD-9604 among direct-to-patient
+            "grey market" peptides: favourable animal-model outcomes are common
+            across this class, but rigorous human safety data are scarce and
+            there is potential for serious harm
+          pmid: '41966639'
+        - study: Dominikowski et al. 2026
+          type: review
+          finding: >-
+            Review of self-administered GH-IGF-1 axis peptides including
+            AOD-9604 (hGH 176-191). Reported adverse effects across the class
+            span endocrine and metabolic disturbance, fluid retention,
+            myalgia/arthralgia and injection-site reactions, compounded by
+            uncertainty about product composition in unregulated supply
+          pmid: '42395176'
   - mechanism:
       action: Selective adipose tissue accumulation targeting fat cells
       confidence: emerging
@@ -198,6 +222,55 @@ evidenceChainedBenefits:
             Euglycemic clamp showed no adverse effect on insulin sensitivity,
             unlike intact growth hormone
           pmid: '11146367'
+  - mechanism:
+      action: >-
+        Intra-articular exposure of cartilage to the peptide in an induced
+        osteoarthritis model
+      confidence: emerging
+      directStudies: 1
+    benefit:
+      claim: >-
+        support cartilage repair after joint injury in animals - no human joint
+        data exist
+      qualifier: may
+    evidence:
+      level: very-low
+      humanStudies: 0
+      animalStudies: 1
+      cellStudies: 0
+      keyFindings:
+        - study: Kwon DR & Park GY 2015
+          type: animal
+          finding: >-
+            In a collagenase-induced knee osteoarthritis model in 32 rabbits,
+            weekly ultrasound-guided intra-articular AOD9604 injections improved
+            gross and histopathological cartilage scores versus saline, and the
+            AOD9604-plus-hyaluronic-acid group outperformed either agent alone.
+            Rabbit model only; the peptide's marketed joint claims rest on this
+            single study
+          pmid: '26275694'
+  - mechanism:
+      action: Pharmacokinetic characterisation and anti-doping detection
+      confidence: supported
+      directStudies: 2
+    benefit:
+      claim: be detectable and distinguishable from endogenous growth hormone
+      qualifier: shown to
+    evidence:
+      level: low
+      humanStudies: 0
+      animalStudies: 0
+      cellStudies: 2
+      keyFindings:
+        - study: Cox HD et al. 2015
+          type: in-vitro
+          finding: >-
+            A validated urine assay detects AOD9604 down to 50 pg/mL. Six
+            metabolites were identified after incubation in serum and urine, one
+            of which (CRSVEGSCG) is markedly more stable than the parent
+            peptide. The paper also records that the peptide was sold on
+            internet sites and found in vials confiscated in the USA
+          pmid: '25208511'
 conditions:
   - slug: obesity
     name: Obesity
@@ -210,6 +283,9 @@ conditions:
       - '11673763'
       - '11146367'
       - '15134286'
+      - '16625817'
+      - '41966639'
+      - '42395176'
     relatedPeptides:
       - semaglutide
       - tirzepatide
@@ -219,9 +295,16 @@ conditions:
       Unlike full-length growth hormone, AOD-9604 did not increase IGF-1 or
       worsen glucose metabolism in clinical trials. However, the lack of
       efficacy in weight loss means it offers no proven metabolic benefits.
+      Post-discontinuation, the published literature on AOD-9604 is dominated by
+      anti-doping analytical chemistry and by seized-product identification
+      rather than by efficacy research.
     relevantStudies:
       - '11713213'
       - '15134286'
+      - '25208511'
+      - '24124033'
+      - '24976118'
+      - '41490200'
     relatedPeptides:
       - tesamorelin
 timeline:
@@ -332,6 +415,14 @@ scoring:
     - "PMID:11713213"
     - "PMID:15134286"
     - "https://www.researchgate.net/publication/295313034"
+    - "PMID:25208511"
+    - "PMID:26275694"
+    - "PMID:41966639"
+    - "PMID:42395176"
+    - "PMID:41490200"
+    - "PMID:16625817"
+    - "PMID:24124033"
+    - "PMID:24976118"
   notes: >-
     Research depth: two multicenter RCTs (Phase 2a positive, pivotal Phase 2b/3
     OPTIONS n=536 null), >800 human subjects, direct obesity outcome. Mechanism:
@@ -411,5 +502,7 @@ AOD-9604 was designed to capture GH's fat-burning effects without its side effec
 - Failed human trials - Phase 2b/3 with 536 subjects showed no significant weight loss vs placebo
 - Species translation failure - Beta-3 receptor biology differs significantly between rodents and humans
 - No FDA approval - Excluded from 503A compounding list in 2024
-- WADA prohibited - Banned in sport (Section S2.5)
+- WADA prohibited - Banned in sport (Section S2.5). A validated urine assay detects it to 50 pg/mL, and a stable metabolite extends the detection window. [PMID:25208511](https://pubmed.ncbi.nlm.nih.gov/25208511/)
+- Joint/cartilage marketing rests on one rabbit study - the intra-articular osteoarthritis evidence is a single 32-rabbit collagenase model, with no human joint data at all. [PMID:26275694](https://pubmed.ncbi.nlm.nih.gov/26275694/)
+- Grey-market product risk - AOD9604 has been identified in pharmaceutical preparations seized by national authorities, and reviews of self-administered GH-axis peptides report adverse effects alongside uncertainty about what is actually in the vial. [PMID:24976118](https://pubmed.ncbi.nlm.nih.gov/24976118/), [PMID:42395176](https://pubmed.ncbi.nlm.nih.gov/42395176/)
 - All efficacy data is preclinical - Human pharmacokinetics may not support therapeutic effect

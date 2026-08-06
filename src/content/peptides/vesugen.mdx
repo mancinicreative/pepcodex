@@ -16,18 +16,20 @@ comparators:
 summary: >-
   A synthetic tripeptide (Lys-Glu-Asp) developed by Russian scientist Vladimir
   Khavinson, claimed to support vascular health by modulating endothelial gene
-  expression. The only published primary research is Russian in-vitro work on
-  cultured endothelium. No animal vascular studies, no human clinical
-  validation, and no regulatory approval anywhere.
+  expression. Vascular evidence is limited to Russian in-vitro work on cultured
+  endothelium. One small uncontrolled Russian geriatric study reported both
+  claimed benefits and adverse signals (prooxidant activity, suppressed CD34+
+  haematopoietic markers). No controlled trial, no vascular outcome data, and no
+  regulatory approval anywhere.
 sources:
-  count: 2
-  human: 0
-  preclinical: 2
+  count: 5
+  human: 1
+  preclinical: 4
   openAccess: 0
 metaTitle: 'Vesugen: Vascular Bioregulator Research (2026)'
 metaDescription: >-
-  Evidence-graded review of vesugen covering the available in-vitro research
-  evidence. Updated Feb 2026.
+  Evidence-graded review of vesugen: Russian in-vitro endothelial work, one
+  uncontrolled human study with adverse signals. Updated Aug 2026.
 interactions:
   - peptide: cardiogen
     type: compatible
@@ -169,6 +171,51 @@ evidenceChainedBenefits:
             expression and reducing p53 synthesis; no human studies of KED in
             vascular aging exist
           pmid: '25408528'
+  - mechanism:
+      action: >-
+        Systemic geroprotective effects claimed outside the vascular
+        compartment
+      confidence: emerging
+      directStudies: 3
+    benefit:
+      claim: slow biological-age markers in older adults
+      qualifier: suggested to
+    evidence:
+      level: very-low
+      humanStudies: 1
+      animalStudies: 1
+      cellStudies: 1
+      keyFindings:
+        - study: Meshchaninov VN et al. 2015
+          type: human-observational
+          finding: >-
+            In 32 uncontrolled participants aged 41-83 with polymorbidity and
+            organic brain syndrome in remission, Vesugen and Pinealon were
+            reported to slow biological-age indicators. The same study also
+            reported ADVERSE signals: prooxidant activity on chemiluminescence
+            and a significant fall in circulating CD34+ haematopoietic
+            progenitor markers, interpreted by the authors as inhibition of
+            haemopoiesis. No control group, no randomisation, no vascular
+            endpoint
+          pmid: '26390612'
+        - study: Kozina LS et al. 2008
+          type: in-vitro
+          finding: >-
+            Counter-evidence to the antioxidant claim: pinealon, vesugen, vilon
+            and epitalon showed NO direct antioxidant activity. They limited
+            lipid peroxidation of human lipoproteins by modifying lipoprotein
+            structure, and they RAISED the steady-state level of intracellular
+            reactive oxygen species while lowering the percentage of dead cells
+            in a neuronal population
+          pmid: '18546826'
+        - study: Kozina LS 2008
+          type: animal
+          finding: >-
+            In a hypobaric hypoxia model, vilon, epitalon, vesugen and pinealon
+            showed antihypoxic properties; pinealon, not vesugen, had the most
+            pronounced effect. This is the only in-vivo animal work located for
+            Vesugen and it does not address vascular endpoints
+          pmid: '18546825'
 conditions:
   - slug: cardiovascular-health
     name: Cardiovascular Health
@@ -177,10 +224,15 @@ conditions:
       vascular endothelium gene expression. Russian in-vitro research reports
       normalization of endothelin-1 and reduced E-selectin expression in
       cultured endothelium. No animal or human clinical studies of KED in
-      cardiovascular outcomes exist.
+      cardiovascular outcomes exist. The one small uncontrolled human study of
+      Vesugen measured biological-age markers rather than any cardiovascular
+      endpoint, and reported prooxidant activity and suppressed CD34+ markers
+      alongside its claimed benefits.
     relevantStudies:
       - '28539025'
       - '25408528'
+      - '26390612'
+      - '18546826'
     relatedPeptides:
       - cardiogen
       - bpc-157
@@ -191,10 +243,14 @@ conditions:
       modulating endothelial gene expression. In-vitro studies in aging vascular
       cell cultures report activated cell renewal (increased Ki-67, reduced p53)
       and increased sirtuin1 expression. The peptide's effects on human vascular
-      aging are unconfirmed; no animal or controlled human trials exist.
+      aging are unconfirmed; no controlled human trial exists. The available
+      in-vivo work is a hypobaric-hypoxia model in which Vesugen was not the
+      most active peptide tested.
     relevantStudies:
       - '28539025'
       - '25408528'
+      - '26390612'
+      - '18546825'
     relatedPeptides:
       - epithalon
       - ghk-cu
@@ -245,10 +301,13 @@ faqs:
       originates from Russian institutes associated with Khavinson.
   - question: What is the evidence for Vesugen?
     answer: >-
-      Evidence is very low quality, consisting only of Russian in-vitro studies
-      in cultured endothelial and vascular cells. There are no published animal
-      vascular studies and no human studies. No independent Western research has
-      validated any claims.
+      Evidence is very low quality. The vascular claims rest on Russian in-vitro
+      studies in cultured endothelial and vascular cells; there are no published
+      animal vascular studies and no controlled human trial of any endpoint. One
+      small uncontrolled Russian study (32 older adults) gave Vesugen alongside
+      Pinealon and reported slowed biological-age markers, but also prooxidant
+      activity and a significant fall in CD34+ haematopoietic progenitor
+      markers. No independent Western research has validated any claims.
   - question: Does Vesugen improve cardiovascular health?
     answer: >-
       There is no controlled clinical evidence that Vesugen improves
@@ -319,6 +378,9 @@ scoring:
   citations:
     - "PMID:28539025"
     - "PMID:25408528"
+    - "PMID:26390612"
+    - "PMID:18546826"
+    - "PMID:18546825"
   notes: >-
     Research Depth 6: highest tier is in-vitro only (1A=3) on cultured normal/
     atherosclerotic/restenotic endothelium (Kozlov 28539025) and aging vascular
@@ -341,6 +403,15 @@ scoring:
     reports (5A=2, 5B=6, 5C=0); negligible documented exposure leaves no clean
     tolerability signal (5D=5). Effectiveness not-established: no quantified human
     efficacy estimate and no meaningful community effect signal.
+    RESCORE PENDING (2026-08-06): the "zero human and zero animal data" premise
+    behind Research Depth 6 no longer holds. PMID:26390612 is an uncontrolled
+    human study (n=32, Vesugen co-administered with Pinealon), and PMID:18546825
+    is an in-vivo hypobaric-hypoxia model. Neither measures a vascular endpoint,
+    so directness stays low; the human study is co-intervention, uncontrolled and
+    unblinded, so RoB stays high. Community Experience 5D (no adverse signal)
+    should be revisited: PMID:26390612 reports prooxidant activity and suppressed
+    CD34+ markers. PMID:18546826 is direct counter-evidence to the dossier's
+    antioxidant mechanism claim.
 anecdotalReports:
   positive: []
   negative: []
@@ -384,8 +455,8 @@ Vesugen targets vascular health through endothelial gene modulation and related 
     <p class="text-sm text-[color:var(--ink-muted)]">May influence nitric oxide signaling and endothelial-dependent vasodilation, supporting healthy blood flow and vascular reactivity.</p>
   </div>
   <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
-    <div class="font-semibold text-[color:var(--ink)] mb-2">Antioxidant Protection</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Proposed to reduce oxidative stress in vascular tissue, protecting endothelial cells from age-related damage and dysfunction.</p>
+    <div class="font-semibold text-[color:var(--ink)] mb-2">Antioxidant Protection — contradicted</div>
+    <p class="text-sm text-[color:var(--ink-muted)]">Often claimed, but the published in-vitro work found <strong>no direct antioxidant activity</strong> for Vesugen and reported a rise in intracellular reactive oxygen species; the human study reported prooxidant activity on chemiluminescence.</p>
   </div>
   <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
     <div class="font-semibold text-[color:var(--ink)] mb-2">Vascular Aging Modulation</div>
@@ -399,8 +470,9 @@ Vesugen targets vascular health through endothelial gene modulation and related 
 
 - 100% of research from Russian institutes associated with Khavinson
 - No independent Western replication of any findings
-- Only in-vitro (cultured-cell) studies exist; no animal vascular studies
-- No human studies of any kind have been published
+- The vascular claims rest on cultured-cell studies only; no animal vascular study exists
+- **The one human study is uncontrolled and reports adverse signals** — 32 older adults given Vesugen with Pinealon showed prooxidant activity and a significant drop in CD34+ haematopoietic progenitor markers, which the authors read as inhibited haemopoiesis. [PMID:26390612](https://pubmed.ncbi.nlm.nih.gov/26390612/)
+- **The antioxidant claim is contradicted by the primary literature** — short peptides including Vesugen showed no direct antioxidant activity and raised intracellular reactive oxygen species. [PMID:18546826](https://pubmed.ncbi.nlm.nih.gov/18546826/)
 - Human pharmacokinetics, bioavailability, and optimal dosing unknown
 - Translation from cell culture to meaningful cardiovascular benefits is **unconfirmed**
 - Regulatory status: Not approved anywhere; unregulated research peptide

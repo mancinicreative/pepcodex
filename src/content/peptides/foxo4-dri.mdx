@@ -90,6 +90,47 @@ evidenceChainedBenefits:
             Selective killing of senescent fibroblasts while sparing
             non-senescent cells
           pmid: '28340339'
+        - study: Huang et al. 2021
+          type: in-vitro
+          finding: >-
+            In human chondrocytes expanded in culture, FOXO4-DRI removed more
+            than half of the highly expanded (PDL9) cells while leaving
+            minimally expanded (PDL3) chondrocytes largely unaffected. It did
+            NOT enhance the chondrogenic potential of those cells - selectivity
+            was demonstrated, functional benefit was not
+          pmid: '33996787'
+        - study: Bourgeois et al. 2025
+          type: in-vitro
+          finding: >-
+            Solution NMR structures showed FOXO4-DRI binds the disordered
+            transactivation domain of p53, forming a transiently folded complex;
+            both the FOXO4-derived region and the cell-permeability tag
+            contribute to binding
+          pmid: '40593617'
+        - study: Kong et al. 2025
+          type: in-vitro
+          finding: >-
+            In keloid organ cultures and cultured keloid fibroblasts, FOXO4-DRI
+            promoted apoptosis of senescent fibroblasts alongside nuclear
+            exclusion of phosphorylated p53 (serine 15)
+          pmid: '39994346'
+        - study: Born et al. 2023
+          type: animal
+          finding: >-
+            Counter-signal: in mouse and rat pulmonary hypertension models,
+            clearing senescent cells - by genetic suicide construct, by ABT263,
+            and by FOXO4-DRI - promoted the development and progression of
+            pulmonary hypertension. Senescent-cell clearance is not uniformly
+            beneficial
+          pmid: '36515093'
+        - study: Alameen et al. 2026
+          type: review
+          finding: >-
+            Review of the FOXO4-p53 axis in brain aging. Human data cited in
+            this literature come from other FOXO4-axis modulators (e.g.
+            high-dose fisetin), not from FOXO4-DRI itself, which remains
+            untested in humans
+          pmid: '42024235'
   - mechanism:
       action: D-retro-inverso design conferring protease resistance
       confidence: supported
@@ -130,6 +171,58 @@ evidenceChainedBenefits:
             SASP factors decreased following senescent cell clearance; p53
             mitochondrial translocation confirmed
           pmid: '28340339'
+        - study: Li et al. 2024
+          type: animal
+          finding: >-
+            In naturally aged mice, FOXO4-DRI induced apoptosis in senescent
+            Leydig cells, reduced secretion of some SASP components, and was
+            associated with improved sperm quality and spermatogenesis
+          pmid: '39025385'
+        - study: Zhang et al. 2020
+          type: animal
+          finding: >-
+            In naturally aged mice, FOXO4-DRI selectively induced p53 nuclear
+            exclusion and apoptosis in senescent Leydig cells and alleviated
+            age-related testosterone secretion insufficiency
+          pmid: '31959736'
+  - mechanism:
+      action: >-
+        Clearance of senescent fibroblasts and myofibroblasts from fibrotic
+        tissue
+      confidence: emerging
+      directStudies: 3
+    benefit:
+      claim: reduce fibrotic tissue remodelling in animal disease models
+      qualifier: may
+    evidence:
+      level: very-low
+      humanStudies: 0
+      animalStudies: 3
+      cellStudies: 2
+      keyFindings:
+        - study: Liu et al. 2023
+          type: animal
+          finding: >-
+            In bleomycin-induced pulmonary fibrosis in mice, FOXO4-DRI treatment
+            produced milder pathology and less collagen deposition than
+            bleomycin alone, with redistribution of intranuclear p53 and reduced
+            extracellular matrix protein content
+          pmid: '37074394'
+        - study: Han et al. 2022
+          type: animal
+          finding: >-
+            In the same bleomycin mouse model, FOXO4-DRI reduced senescent cells
+            and SASP expression to a degree comparable with the approved drug
+            pirfenidone, and preferentially killed TGF-beta-induced
+            myofibroblasts in culture
+          pmid: '35510614'
+        - study: Hu et al. 2025
+          type: animal
+          finding: >-
+            In naturally aged and progeroid mice, FOXO4-DRI injection was
+            reported to improve aortic function, with apoptosis of senescent
+            endothelial cells attributed to p53/BCL-2/caspase-3 signalling
+          pmid: '41625068'
 conditions:
   - slug: cellular-senescence
     name: Cellular Senescence
@@ -137,9 +230,17 @@ conditions:
       FOXO4-DRI was specifically designed to clear senescent cells by disrupting
       the FOXO4-p53 survival interaction. Preclinical studies show selective
       elimination of senescent cells with reduction in senescence markers (p16,
-      p21, SA-beta-gal). No human studies have been conducted.
+      p21, SA-beta-gal). No human studies have been conducted. Selectivity has
+      been reproduced in human cells outside the originating laboratory
+      (in-vitro-expanded chondrocytes, keloid fibroblasts), and the binding
+      target has since been resolved structurally. Clearance is not uniformly
+      beneficial: in pulmonary hypertension models it worsened disease.
     relevantStudies:
       - '28340339'
+      - '33996787'
+      - '40593617'
+      - '39994346'
+      - '36515093'
     relatedPeptides: []
   - slug: aging
     name: Aging & Longevity
@@ -147,10 +248,17 @@ conditions:
       In aged mice, FOXO4-DRI treatment restored physical fitness, improved fur
       density, and enhanced renal function. These findings suggest potential
       healthspan benefits from senescent cell clearance. Human translation is
-      completely untested.
+      completely untested. Additional aged-mouse work reports effects on
+      senescent Leydig cells (testosterone, spermatogenesis) and on the aorta,
+      all from independent Chinese groups rather than the originating
+      laboratory.
     relevantStudies:
       - '28340339'
       - '22048312'
+      - '31959736'
+      - '39025385'
+      - '41625068'
+      - '42024235'
     relatedPeptides:
       - humanin
       - mots-c
@@ -160,9 +268,15 @@ conditions:
     researchSummary: >-
       Preclinical evidence shows FOXO4-DRI improved renal function in aged mice.
       Senescent cell clearance reduced tissue dysfunction. Effects on other
-      organs and in humans are unknown.
+      organs and in humans are unknown. Two independent mouse studies report
+      reduced fibrosis in bleomycin-induced pulmonary fibrosis, but a separate
+      Circulation study found senescent-cell clearance worsened pulmonary
+      hypertension - organ-level effects are not uniformly favourable.
     relevantStudies:
       - '28340339'
+      - '37074394'
+      - '35510614'
+      - '36515093'
     relatedPeptides: []
 timeline:
   - period: Acute
@@ -238,6 +352,16 @@ scoring:
     - "10.1016/j.cell.2017.02.031"
     - "https://pubmed.ncbi.nlm.nih.gov/28340339/"
     - "10.1038/nature10600"
+    - "PMID:33996787"
+    - "PMID:40593617"
+    - "PMID:39994346"
+    - "PMID:31959736"
+    - "PMID:39025385"
+    - "PMID:37074394"
+    - "PMID:35510614"
+    - "PMID:41625068"
+    - "PMID:36515093"
+    - "PMID:42024235"
   notes: >-
     Research Depth low: animal + in-vitro only, zero human studies, modest
     single-group preclinical program (1E). Mechanism strong: FOXO4 target with
@@ -248,6 +372,15 @@ scoring:
     governance review. Community Experience minimal: niche discussion, no
     documented anecdotal effect reports. Effectiveness not-established: no human
     efficacy data and no meaningful community effect signal.
+    RESCORE PENDING (2026-08-06): the "no independent replication" premise behind
+    the Global Coverage score no longer holds. Independent groups have since
+    published FOXO4-DRI work in human chondrocytes (PMID:33996787), keloid
+    fibroblasts (PMID:39994346), aged-mouse Leydig cells (PMID:31959736,
+    PMID:39025385), two bleomycin pulmonary-fibrosis models (PMID:37074394,
+    PMID:35510614) and a solution-NMR structure of the p53 complex
+    (PMID:40593617). Research Depth is unchanged - still zero human studies -
+    and a Circulation study reports senescent-cell clearance WORSENING pulmonary
+    hypertension (PMID:36515093), which argues against raising Plausibility.
 anecdotalReports:
   positive: []
   negative: []
@@ -308,8 +441,9 @@ FOXO4-DRI triggers selective death of senescent cells through a targeted mechani
 
 ### Important Limitations
 
-- **No human trials** — All efficacy data is from mouse studies
-- **No independent replication** — Findings primarily from originating laboratory
+- **No human trials** — All efficacy data is from animal and cell studies
+- **Senolysis is not uniformly beneficial** — In mouse and rat pulmonary hypertension models, clearing senescent cells (including with FOXO4-DRI) *promoted* disease development and progression. [PMID:36515093](https://pubmed.ncbi.nlm.nih.gov/36515093/)
+- **Selectivity ≠ benefit** — In human chondrocytes FOXO4-DRI removed the senescent cells but did not improve the cells' chondrogenic potential. [PMID:33996787](https://pubmed.ncbi.nlm.nih.gov/33996787/)
 - **Safety profile unknown** — Long-term effects of senescent cell depletion unclear
 - **Complex synthesis** — D-retro-inverso peptides are difficult to manufacture
 - **Product quality concerns** — Research-grade only, variable purity

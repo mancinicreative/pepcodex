@@ -1,8 +1,8 @@
 ---
 name: Livagen
 aliases:
-  - KED
-  - Lys-Glu-Asp
+  - KEDA
+  - Lys-Glu-Asp-Ala
   - Hepatogen
 category: other
 bioregulatorType: synthetic
@@ -14,10 +14,10 @@ comparators:
   - vilon
   - thymalin
 summary: >-
-  A synthetic tripeptide (Lys-Glu-Asp) developed by Russian scientist Vladimir
-  Khavinson, claimed to support liver function and modulate hepatic gene
-  expression. Minimal Western validation exists; all research originates from
-  Russian institutions with no controlled human clinical trials.
+  A synthetic tetrapeptide (Lys-Glu-Asp-Ala) developed by Russian scientist
+  Vladimir Khavinson, claimed to support liver function and modulate hepatic
+  gene expression. Minimal Western validation exists; all research originates
+  from Russian institutions with no controlled human clinical trials.
 sources:
   count: 12
   human: 2
@@ -52,10 +52,10 @@ interactions:
       Different mechanisms for tissue support - BPC-157 broadly cytoprotective,
       Livagen specifically hepatic-focused. No known contraindications.
 molecularInfo:
-  weight: ~390 Da
-  chainLength: 3
-  type: Tripeptide
-  sequence: KED
+  weight: ~461 Da
+  chainLength: 4
+  type: Tetrapeptide
+  sequence: KEDA
   aminoAcids:
     - code: K
       name: Lysine
@@ -69,6 +69,10 @@ molecularInfo:
       name: Aspartic Acid
       position: 3
       property: negative
+    - code: A
+      name: Alanine
+      position: 4
+      property: hydrophobic
 evidenceChainedBenefits:
   - mechanism:
       action: Modulation of hepatic gene expression via epigenetic interactions
@@ -96,6 +100,21 @@ evidenceChainedBenefits:
             experimental liver-pathology models (fibrosis, hepatitis), restoring
             liver function
           pmid: '32362099'
+        - study: Riadnova IIu et al. 2002
+          type: in-vitro
+          finding: >-
+            In organotypic liver culture, immunocytochemical and morphometric
+            analysis reported that the tetrapeptide Livagen stimulated
+            structural and functional homeostasis of liver cell populations
+          pmid: '12577697'
+        - study: Brodskii VYa et al. 2001
+          type: in-vitro
+          finding: >-
+            In monolayer cultures of rat hepatocytes aged 1-24 months, Livagen
+            (Lys-Glu-Asp-Ala) increased protein synthesis, most strongly in
+            cells from old animals. Epitalon (Ala-Glu-Asp-Gly) tested in
+            parallel did NOT change protein synthesis - a specificity control
+          pmid: '15926314'
   - mechanism:
       action: Chromatin decondensation in hepatocytes enabling gene reactivation
       confidence: emerging
@@ -122,6 +141,30 @@ evidenceChainedBenefits:
             Livagen showed tissue-specific stimulation of liver explants in
             organotypic cultures from rats of various ages
           pmid: '12096446'
+        - study: Khavinson VK et al. 2002
+          type: in-vitro
+          finding: >-
+            In cultured lymphocytes from old people, Livagen activated ribosomal
+            genes, decondensed pericentromeric structural heterochromatin, and
+            released genes repressed by age-related condensation. This is ex-vivo
+            cell work, not a clinical outcome
+          pmid: '12533768'
+        - study: Lezhava T et al. 2006
+          type: in-vitro
+          finding: >-
+            In cultivated lymphocytes from 75-88 year-old donors, Epitalon,
+            Livagen and Vilon all deheterochromatinised total heterochromatin;
+            Epitalon and Livagen additionally decondensed pericentromeric
+            heterochromatin of chromosomes 1 and 9, whereas Vilon did not
+          pmid: '16705247'
+        - study: Dzhokhadze T et al. 2007
+          type: in-vitro
+          finding: >-
+            In phytohaemagglutinin-stimulated lymphocytes from 72-86 year-old
+            individuals, cells retained a radiation adaptive response and
+            Livagen showed corrective activity against copper-chloride damage.
+            Descriptive, uncontrolled ex-vivo work
+          pmid: '17921545'
   - mechanism:
       action: Upregulation of hepatic antioxidant defenses
       confidence: emerging
@@ -142,6 +185,39 @@ evidenceChainedBenefits:
             experimental liver-pathology models, an effect most pronounced in
             aging
           pmid: '32362099'
+  - mechanism:
+      action: >-
+        Resistance to intestinal hydrolysis and inhibition of peptide-degrading
+        enzymes
+      confidence: emerging
+      directStudies: 2
+    benefit:
+      claim: survive oral administration intact
+      qualifier: suggested to
+    evidence:
+      level: very-low
+      humanStudies: 0
+      animalStudies: 1
+      cellStudies: 1
+      keyFindings:
+        - study: Timofeeva NM et al. 2005
+          type: animal
+          finding: >-
+            Livagen (Lys-Glu-Asp-Ala) was reported to be weakly hydrolysed and
+            not appreciably cleaved by small-intestinal peptide hydrolases in
+            rats. After two weeks of oral administration, digestive-enzyme
+            activity fell in young rats and rose in old rats toward young
+            control levels - a bidirectional, age-dependent effect
+          pmid: '16075683'
+        - study: Kost NV et al. 2003
+          type: in-vitro
+          finding: >-
+            Livagen inhibited enkephalin-degrading enzymes in human serum
+            (IC50 20 microM) more effectively than puromycin or leupeptin. A
+            radioreceptor assay found NO interaction with mu- or delta-opioid
+            receptors of rat brain membrane - the effect is enzymatic, not
+            receptor-mediated
+          pmid: '12942748'
 conditions:
   - slug: liver-support
     name: Liver Support
@@ -154,6 +230,9 @@ conditions:
     relevantStudies:
       - '11713572'
       - '32362099'
+      - '12577697'
+      - '15926314'
+      - '16075683'
     relatedPeptides:
       - bpc-157
   - slug: hepatoprotection
@@ -166,6 +245,8 @@ conditions:
     relevantStudies:
       - '32362099'
       - '12096446'
+      - '12577697'
+      - '12942748'
     relatedPeptides:
       - bpc-157
   - slug: anti-aging
@@ -179,6 +260,9 @@ conditions:
     relevantStudies:
       - '15085253'
       - '32362099'
+      - '12533768'
+      - '16705247'
+      - '17921545'
     relatedPeptides:
       - epithalon
       - vilon
@@ -211,10 +295,12 @@ timeline:
 faqs:
   - question: What is Livagen?
     answer: >-
-      Livagen is a synthetic tripeptide (Lys-Glu-Asp, or KED) developed by
-      Russian scientist Vladimir Khavinson, claimed to support liver function
-      through modulation of hepatic gene expression. It is part of the Russian
-      bioregulator peptide research program.
+      Livagen is a synthetic tetrapeptide developed by Russian scientist
+      Vladimir Khavinson, claimed to support liver function through modulation
+      of hepatic gene expression. It is part of the Russian bioregulator peptide
+      research program. The primary literature consistently identifies its
+      sequence as Lys-Glu-Asp-Ala (KEDA); the tripeptide Lys-Glu-Asp (KED) is a
+      different bioregulator, sold as Vesugen for vascular tissue.
   - question: Is Livagen FDA approved?
     answer: >-
       No, Livagen is not approved by the FDA or any Western regulatory agency.
@@ -298,6 +384,13 @@ scoring:
     - "PMID:32362099"
     - "PMID:15085253"
     - "PMID:12096446"
+    - "PMID:12577697"
+    - "PMID:15926314"
+    - "PMID:16075683"
+    - "PMID:12942748"
+    - "PMID:12533768"
+    - "PMID:16705247"
+    - "PMID:17921545"
   notes: >-
     Research Depth 21 (1A 9: best human evidence is an uncontrolled ex-vivo
     lymphocyte-chromatin observation in senile subjects, Khavinson 2004
@@ -323,6 +416,18 @@ scoring:
     user reports). Note: Kuznik 2020 review PMID:32362099 describes KEDA
     (Lys-Glu-Asp-Ala tetrapeptide) alongside the KED tripeptide — citations are
     real and Livagen-relevant.
+    SEQUENCE CORRECTED 2026-08-06: this dossier previously described Livagen as
+    the tripeptide Lys-Glu-Asp (KED). Three primary papers name it as the
+    tetrapeptide Lys-Glu-Asp-Ala - PMID:12942748 ("Livagen (Lys-Glu-Asp-Ala)"),
+    PMID:16075683 ("Livagen (Lys-Glu-Asp-Ala) is a weakly hydrolyzed peptide")
+    and PMID:15926314 ("lyvagen (Lys-Glu-Asp-Ala)"). KED is Vesugen. Newly
+    attached citations are restricted to papers that name Livagen explicitly, so
+    no KED-only literature has been imported here.
+    RESCORE PENDING: Research Depth was set when only 4 identifiers survived
+    verification; the preclinical base is now 7 additional Livagen-named papers
+    (organotypic liver culture, rat hepatocyte cultures, rat oral
+    administration, human serum enzymology, three ex-vivo lymphocyte studies).
+    Still zero controlled human trials, so 1A-1D are unchanged.
 anecdotalReports:
   positive: []
   negative: []
@@ -331,7 +436,7 @@ mechanismPathways:
   - name: 'Hepatic Gene Expression Pathway'
     label: 'Proposed'
     steps:
-      - 'Livagen (KED)'
+      - 'Livagen (KEDA)'
       - 'DNA/Histone Interactions'
       - 'Hepatocyte Gene Modulation'
       - 'Upregulation of Liver-Specific Proteins'
@@ -380,6 +485,7 @@ Livagen targets liver function through gene expression modulation and related pa
 - No independent Western replication of any findings
 - No controlled human clinical trials have been conducted
 - Specific molecular targets and binding sites not characterized
-- Pharmacokinetics, bioavailability, and metabolism in humans unknown
+- Pharmacokinetics, bioavailability, and metabolism in humans unknown — the only relevant data is a rat study reporting that Livagen resists small-intestinal peptide hydrolases, which is not evidence of systemic absorption. [PMID:16075683](https://pubmed.ncbi.nlm.nih.gov/16075683/)
+- The human-cell work is ex vivo: cultured lymphocytes from elderly donors, not treated patients. No clinical outcome has been measured in anyone. [PMID:12533768](https://pubmed.ncbi.nlm.nih.gov/12533768/)
 - Translation from cell culture to human liver benefits is **unconfirmed**
 - Regulatory status: Not approved anywhere; research compound only

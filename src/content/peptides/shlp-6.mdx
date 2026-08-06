@@ -13,19 +13,21 @@ comparators:
   - mots-c
   - foxo4-dri
 summary: >-
-  A 22-amino acid mitochondria-derived peptide with the unique property of being
-  pro-apoptotic—the opposite of its sister peptides humanin and SHLP-2.
-  Discovered in 2016, SHLP-6 may have applications in cancer and senescent cell
-  clearance. Research is very early-stage with minimal published data.
+  A mitochondria-derived peptide reported in its 2016 discovery paper as
+  pro-apoptotic — the opposite of its sister peptides humanin and SHLP-2. Later
+  zebrafish work from a separate group reports the opposite profile
+  (antioxidant, neuroprotective), so the peptide's direction of effect is not
+  settled. Research is very early-stage with minimal published data and no
+  clinical use.
 sources:
-  count: 12
-  human: 0
-  preclinical: 12
-  openAccess: 6
+  count: 5
+  human: 1
+  preclinical: 4
+  openAccess: 3
 metaTitle: 'SHLP-6: Mitochondrial Peptide Research (2026)'
 metaDescription: >-
-  Evidence-graded review of shlp-6 covering 12 citations on longevity research.
-  Updated Feb 2026.
+  Evidence-graded review of SHLP-6: contradictory pro-apoptotic vs
+  neuroprotective findings across five studies. Updated Aug 2026.
 interactions:
   - peptide: humanin
     type: avoid
@@ -171,6 +173,24 @@ evidenceChainedBenefits:
             Increased apoptosis (DNA fragmentation) in two cell lines (NIT-1 and
             22Rv1), opposite of the cytoprotective SHLP2/SHLP3
           pmid: '27070352'
+        - study: Thamarai Kannan et al. 2025
+          type: animal
+          finding: >-
+            Direct conflict with the pro-apoptotic framing: in zebrafish larvae
+            exposed to copper sulphate, SHLP-6 reduced malformations, raised
+            survival, scavenged reactive oxygen species, increased antioxidant
+            enzyme activity and improved locomotor behaviour. In this in-vivo
+            model SHLP-6 behaved protectively, not pro-apoptotically
+          pmid: '40292418'
+        - study: Kannan et al. 2025
+          type: animal
+          finding: >-
+            Molecular docking predicted SHLP-6 interactions with apoptotic
+            proteins (caspase-8, Bcl-2, Bax, cytochrome c) and with SIRT1, IGF-1
+            and the insulin receptor; in stress-exposed zebrafish larvae SHLP-6
+            reduced developmental toxicity and raised SOD and catalase. Docking
+            scores are computational predictions, not measured binding
+          pmid: '40915070'
   - mechanism:
       action: Mitochondrial-derived pro-apoptotic signaling (pathway unidentified)
       confidence: emerging
@@ -190,6 +210,25 @@ evidenceChainedBenefits:
             SHLP6 is encoded in mitochondrial 16S rRNA and was the only SHLP to
             increase apoptosis; the downstream pathway was not characterized
           pmid: '27070352'
+        - study: Woodhead JST et al. 2020
+          type: human-observational
+          finding: >-
+            First human data touching SHLP-6: in 10 untrained young men,
+            plasma SHLP-6 responded to acute high-intensity interval exercise in
+            the same direction as humanin, while SHLP-2 did not - evidence that
+            peptides from the MT-RNR2 locus are selectively regulated. This
+            measures endogenous peptide levels; no one was given SHLP-6
+          pmid: '32271093'
+        - study: Emser et al. 2023
+          type: animal
+          finding: >-
+            The mitochondrial SNP m.3017C>T truncates SHLP6 from 20 to 9 amino
+            acids. The short isoform was more frequent in heterothermic than
+            homeothermic rodents and associated with lower minimum body
+            temperature; brown adipose mt-Shlp6 transcript levels shifted across
+            the hibernation cycle. Note this paper puts the canonical human
+            peptide at 20 amino acids
+          pmid: '37675281'
 conditions:
   - slug: senescent-cell-accumulation
     name: Senescent Cell Accumulation
@@ -198,9 +237,13 @@ conditions:
       Senescent cells resist normal apoptosis, and SHLP-6's ability to promote
       cell death could theoretically help clear these 'zombie cells.' However,
       no senolytic studies with SHLP-6 have been published, and selectivity for
-      senescent cells has not been demonstrated.
+      senescent cells has not been demonstrated. A separate group's zebrafish
+      work reports protective rather than pro-apoptotic effects, which cuts
+      against the senolytic rationale entirely.
     relevantStudies:
       - '27070352'
+      - '40292418'
+      - '40915070'
     relatedPeptides:
       - foxo4-dri
       - humanin
@@ -213,6 +256,8 @@ conditions:
       demonstrated selectivity for cancer cells over healthy cells.
     relevantStudies:
       - '27070352'
+      - '32271093'
+      - '37675281'
     relatedPeptides:
       - humanin
       - shlp-2
@@ -286,6 +331,10 @@ scoring:
   lastScored: 2026-06-27
   citations:
     - "PMID:27070352"
+    - "PMID:32271093"
+    - "PMID:37675281"
+    - "PMID:40915070"
+    - "PMID:40292418"
   notes: >-
     Research Depth 9: for SHLP-6 specifically the only cited evidence is the
     Cobb 2016 discovery paper (PMID 27070352), which is in-vitro cell data and
@@ -307,6 +356,17 @@ scoring:
     over negligible exposure (5A =8, 5B =8, 5C =6, 5D =7). Effectiveness not
     established: no quantified human efficacy estimate and no meaningful community
     effect signal (empty anecdotal reports).
+    RESCORE PENDING (2026-08-06): four additional identifiers were attached. Two
+    premises behind the score have changed. (1) "In-vitro only, one US lab" is no
+    longer accurate - there is now zebrafish in-vivo work from an independent
+    Indian group (PMID:40292418, PMID:40915070), a German/comparative-physiology
+    genetics paper (PMID:37675281) and human exercise data on endogenous SHLP-6
+    (PMID:32271093). (2) More importantly, the zebrafish work reports SHLP-6 as
+    antioxidant and neuroprotective, which CONTRADICTS the pro-apoptotic
+    identity this dossier is built on. Plausibility should not rise on citation
+    count while the direction of effect is in dispute; if anything the conflict
+    argues for lowering it. This dossier holds 5 verified identifiers against a
+    floor of 10 and cannot reach it - the literature does not exist.
 anecdotalReports:
   positive: []
   negative: []
@@ -357,8 +417,10 @@ SHLP-6 is unique among mitochondria-derived peptides for promoting cell death ra
 ### Important Limitations
 
 - Mechanism is observed but not explained at the molecular level
-- No binding partners or receptors have been identified
+- **The direction of effect is disputed** — the 2016 discovery paper reports SHLP-6 as pro-apoptotic in cell lines, while 2025 zebrafish studies report antioxidant, anti-inflammatory and neuroprotective effects. Both cannot be the whole story. [PMID:27070352](https://pubmed.ncbi.nlm.nih.gov/27070352/), [PMID:40292418](https://pubmed.ncbi.nlm.nih.gov/40292418/)
+- No binding partners or receptors have been *measured* — the only binding data are computational docking predictions. [PMID:40915070](https://pubmed.ncbi.nlm.nih.gov/40915070/)
 - No selectivity for unwanted cells (cancer, senescent) demonstrated
-- Only one primary research group has published on SHLP-6
-- In vivo effects and safety completely uncharacterized
+- **Peptide length is not settled** — this dossier lists a 22-amino-acid sequence; the mitochondrial-genetics literature describes the canonical human peptide as 20 amino acids, with a 9-residue truncated isoform arising from the m.3017C>T polymorphism. [PMID:37675281](https://pubmed.ncbi.nlm.nih.gov/37675281/)
+- No one has been given SHLP-6 — the only human data measures endogenous plasma levels after exercise. [PMID:32271093](https://pubmed.ncbi.nlm.nih.gov/32271093/)
+- In vivo mammalian effects and safety completely uncharacterized
 - Translation to human physiology is entirely speculative

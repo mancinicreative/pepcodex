@@ -88,6 +88,22 @@ evidenceChainedBenefits:
             NNMT knockdown in adipose tissue protected mice from diet-induced
             obesity and improved glucose tolerance
           pmid: '24717514'
+        - study: Dimet-Wiley et al. 2022
+          type: animal
+          finding: >-
+            5-amino-1-methylquinolinium combined with a switch to a low-fat diet
+            normalised whole-body adiposity and weight in diet-induced obese
+            mice and produced a distinct cecal microbiome pattern. The diet
+            switch alone did not normalise these measures in the same window -
+            the reported effect is of drug PLUS diet, not drug alone
+          pmid: '35013352'
+        - study: Neelakantan H et al. 2019
+          type: animal
+          finding: >-
+            A small-molecule NNMT inhibitor given to 24-month-old mice after
+            acute muscle injury was studied for effects on muscle stem cell
+            activity and regenerative capacity in aged skeletal muscle
+          pmid: '30753815'
   - mechanism:
       action: NAD+ elevation leading to enhanced sirtuin activity
       confidence: emerging
@@ -113,6 +129,31 @@ evidenceChainedBenefits:
             Liver NNMT knockdown improved hepatic metabolism via Sirt1
             activation
           pmid: '26168293'
+        - study: Li et al. 2025
+          type: animal
+          finding: >-
+            Counter-evidence on the NAD+ premise: in an aged-mouse HFpEF model,
+            a different NNMT inhibitor (AMO-NAM) sharply lowered the NNMT
+            reaction products 1-MNA, 2PY and 4PY and improved cardiac function,
+            but did NOT change NAD levels. Benefit in that model did not run
+            through NAD+ elevation
+          pmid: '40484359'
+        - study: Dong et al. 2025
+          type: animal
+          finding: >-
+            Null result: in a mouse hindlimb-ischaemia model of peripheral
+            artery disease, NNMT-inhibitor treatment did not affect limb
+            perfusion recovery or capillary density, with only a
+            non-significant trend toward less necrosis (p=0.08)
+          pmid: '41108586'
+        - study: Riederer et al. 2009
+          type: in-vitro
+          finding: >-
+            Target validation in adipose tissue: human and murine adipose
+            explants and 3T3-L1 adipocytes express enzymatically active NNMT,
+            and NNMT inhibition reduced release of homocysteine, the atherogenic
+            product of the NNMT-catalysed reaction
+          pmid: '18996527'
   - mechanism:
       action: Enhanced adipocyte energy expenditure and thermogenesis
       confidence: emerging
@@ -139,6 +180,24 @@ evidenceChainedBenefits:
             expenditure and oxygen consumption via NAD+/SIRT1 and polyamine-flux
             signalling
           pmid: '24717514'
+        - study: Akar et al. 2021
+          type: in-vitro
+          finding: >-
+            5-amino-1-methylquinolinium inhibited HeLa cervical cancer cell
+            proliferation in a concentration- and time-dependent manner with
+            apoptotic morphology, while HEK-293 cell proliferation was not
+            apparently affected. This is cell-line pharmacology, not a metabolic
+            outcome
+          pmid: '33645410'
+        - study: Puleo et al. 2026
+          type: review
+          finding: >-
+            Tempering review of the class: insufficient target engagement,
+            reduced bioavailability and unknown safety profiles have limited
+            preclinical success of NNMT inhibitors across diseases, and newer
+            chemotypes rather than the early quinolinium compounds carry the
+            translational case forward
+          pmid: '42067476'
 conditions:
   - slug: obesity
     name: Obesity
@@ -152,6 +211,9 @@ conditions:
       - '29155147'
       - '24717514'
       - '25596852'
+      - '35013352'
+      - '18996527'
+      - '42067476'
     relatedPeptides:
       - aod-9604
       - semaglutide
@@ -161,11 +223,17 @@ conditions:
       Preclinical studies show NNMT inhibition improves insulin sensitivity and
       glucose tolerance in mice. Human observational data shows NNMT expression
       correlates with insulin resistance. Translation to metabolic syndrome
-      treatment remains unproven.
+      treatment remains unproven. Studies of other NNMT inhibitors in
+      cardiovascular and limb-ischaemia models report mixed results, including a
+      null effect on limb perfusion and a benefit that did not track with NAD+
+      levels.
     relevantStudies:
       - '30552109'
       - '25596852'
       - '26168293'
+      - '40484359'
+      - '41108586'
+      - '30753815'
     relatedPeptides:
       - semaglutide
   - slug: fatty-liver
@@ -259,6 +327,12 @@ scoring:
     - "30552109"
     - "26168293"
     - "35013352"
+    - "PMID:33645410"
+    - "PMID:30753815"
+    - "PMID:42067476"
+    - "PMID:41108586"
+    - "PMID:40484359"
+    - "PMID:18996527"
   notes: >-
     Research Depth low: zero human trials, evidence is animal/in-vitro only with
     a small preclinical-foundation credit. Mechanism strong: NNMT target
@@ -336,6 +410,9 @@ The proposed mechanisms of 5-Amino-1MQ are based entirely on animal and in vitro
 ### Important Limitations
 
 - **Zero human trials** - All efficacy data is from mice only
+- **Most "NNMT inhibitor" evidence is not this compound** - much of the literature tests different NNMT-inhibitor chemotypes or genetic knockdown. Only a subset of studies actually dosed 5-amino-1MQ
+- **The NAD+ story is not settled** - in one aged-mouse heart-failure model an NNMT inhibitor improved cardiac function *without* changing NAD levels. [PMID:40484359](https://pubmed.ncbi.nlm.nih.gov/40484359/)
+- **Class translation has stalled** - a 2026 review attributes limited preclinical success across diseases to insufficient target engagement, poor bioavailability and unknown safety profiles. [PMID:42067476](https://pubmed.ncbi.nlm.nih.gov/42067476/)
 - Translation to human adipose tissue metabolism is **unconfirmed**
 - Human pharmacokinetics (absorption, half-life, dosing) completely unknown
 - NNMT expressed in multiple tissues (liver, brain, muscle) - systemic effects uncharacterized

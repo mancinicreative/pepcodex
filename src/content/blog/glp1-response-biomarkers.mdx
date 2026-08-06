@@ -1,5 +1,5 @@
 ---
-title: Research Identifies Biomarkers Predicting GLP-1 Response
+title: What Predicts GLP-1 Response? The State of the Biomarker Evidence
 publishDate: 2025-10-08T00:00:00.000Z
 author: PepCodex Research Team
 category: weekly-briefing
@@ -10,9 +10,9 @@ tags:
   - semaglutide
   - tirzepatide
 excerpt: >-
-  Multi-center study identifies genetic and protein biomarkers that predict
-  response to GLP-1 medications, potentially enabling precision prescribing for
-  obesity treatment.
+  Response to GLP-1 receptor agonists varies widely between individuals. Review
+  articles describe candidate genetic and multi-omic predictors, but none are
+  validated for clinical use.
 relatedPeptides:
   - semaglutide
   - tirzepatide
@@ -22,234 +22,78 @@ relatedGlossary:
   - receptor-agonist
   - biomarker
 sources:
-  - id: glp1-biomarker-study
-    title: Predictive Biomarkers for GLP-1 Receptor Agonist Response
-    type: journal
   - id: precision-obesity-review
-    title: Toward Precision Medicine in Obesity Treatment
+    title: Precision Medicine for Obesity Treatment
     type: journal
+    url: 'https://pubmed.ncbi.nlm.nih.gov/40636093/'
+    doi: 10.1210/jendso/bvaf102
+    pmid: '40636093'
+    verifiedAt: '2026-07-24'
   - id: pharmacogenomics-glp1
-    title: Pharmacogenomics of Incretin-Based Therapies
+    title: Pharmacogenetics of incretin-based therapies
     type: journal
-evidenceLevel: moderate
+    url: 'https://pubmed.ncbi.nlm.nih.gov/41474140/'
+    doi: 10.1093/postmj/qgaf232
+    pmid: '41474140'
+    verifiedAt: '2026-07-24'
+evidenceLevel: low
 featured: false
-metaTitle: "Who Responds to GLP-1s? Biomarker Research (2025)"
+metaTitle: Who Responds to GLP-1s? Biomarker Evidence Reviewed
 metaDescription: >-
-  Multi-center study identifies genetic and protein biomarkers predicting GLP-1 response, potentially enabling precision prescribing for obesity treatment.
+  Reviews of pharmacogenetics and precision obesity medicine describe candidate
+  predictors of GLP-1 response, but no biomarker test is clinically validated.
 ---
 
-A large multi-center study has identified genetic and protein biomarkers that predict individual response to GLP-1 receptor agonist medications. The findings could enable precision prescribing, helping clinicians identify which patients are most likely to achieve significant weight loss and which may need alternative or combination approaches.
+Response to GLP-1 receptor agonist medications varies substantially between individuals. Review articles in precision obesity medicine and incretin pharmacogenetics describe candidate genetic and multi-omic predictors of that variability — but they also make clear that none of these markers are validated or available for clinical use.
 
 ## The Response Variability Problem
 
-While GLP-1 agonists like semaglutide and tirzepatide produce impressive average weight loss results, individual responses vary dramatically:
+While GLP-1 agonists like semaglutide and tirzepatide produce substantial average weight loss in trials, individual results range from very large reductions to essentially none. Clinicians currently cannot predict, before starting treatment, where a given patient will fall on that range.
 
-- **High responders:** Some patients lose 25-30% of body weight
-- **Average responders:** Many achieve 15-20% weight loss
-- **Low responders:** A subset loses less than 5%
-- **Non-responders:** Some patients show minimal response
+This creates practical problems:
 
-Currently, clinicians cannot predict who will fall into which category before starting treatment. This creates challenges:
-
-- Patients may spend months on ineffective therapy
-- Insurance coverage often requires failed trials before alternatives
+- Patients may spend months on therapy that does not work for them
+- Insurance coverage often requires documented failure before alternatives are approved
 - Healthcare costs accumulate without benefit for non-responders
-- Patient frustration and dropout increase [precision-obesity-review]
+- Patient frustration and treatment dropout increase
 
-## The PREDICT-GLP Study
+Obesity is a heterogeneous condition, and reviewers have argued that treatment selection should eventually incorporate genetic, physiological, and behavioural characteristics rather than being applied uniformly [precision-obesity-review].
 
-### Study Design
+## What the Genetics Research Has Found
 
-The PREDICT-GLP study pooled data and samples from 4,200 patients treated with GLP-1 agonists across 12 academic medical centers. Researchers analyzed:
+A review of the pharmacogenetics of incretin-based therapies reports that missense variants of the *GLP1R* gene — which encodes the GLP-1 receptor itself — have been associated with the effects of GLP-1 receptor agonists and DPP-4 inhibitors on glycaemic control and on weight. The review identifies several additional genes with apparent pharmacogenetic relevance to this drug class [pharmacogenomics-glp1].
 
-- Genetic samples (genome-wide association)
-- Baseline protein biomarkers (188 proteins)
-- Metabolomic profiles (320 metabolites)
-- Clinical characteristics
-- Treatment outcomes at 6 and 12 months
+Two caveats are essential to how these findings should be read:
 
-### Defining Response
+- The associations are reported from research cohorts, not from prospective trials that assigned treatment based on genotype.
+- The review's own conclusion is that these findings are **not yet applied clinically**, and represent early progress toward precision medicine rather than a usable test [pharmacogenomics-glp1].
 
-Patients were categorized by 12-month weight loss:
+## The Broader Multi-Omics Argument
 
-| Category | Weight Loss | Percentage |
-|----------|-------------|------------|
-| High responders | >20% | 28% |
-| Average responders | 10-20% | 45% |
-| Low responders | 5-10% | 18% |
-| Non-responders | less than 5% | 9% |
+Beyond single-gene pharmacogenetics, precision obesity medicine proposals argue for combining multi-omic technologies — genomics, metabolomics and related approaches — with physiological and behavioural phenotyping to guide mechanism-based treatment selection [precision-obesity-review].
 
-## Key Biomarker Findings
+This is a research programme, not current practice. Reviewers describe it as a direction for the field rather than a set of validated tools.
 
-### Genetic Variants
+## Why This Is Not Yet Clinically Usable
 
-Several genetic variants predicted response [glp1-biomarker-study]:
+Several gaps separate the current literature from a test a clinician could order:
 
-**GLP1R Gene Variants:**
-The gene encoding the GLP-1 receptor showed the strongest associations:
+**No validated predictive panel.** There is no established, prospectively validated combination of markers that reliably sorts patients into responders and non-responders before treatment.
 
-- **rs6923761 (Gly168Ser):** Associated with 3.2% greater weight loss
-- **rs3765467:** Associated with reduced appetite suppression
-- **rs10305420:** Associated with greater nausea susceptibility
+**Testing infrastructure.** Genetic testing is not routine in obesity practice, protein biomarker panels generally require specialised laboratories, and metabolomic profiling remains a research technique.
 
-**Other Significant Genes:**
+**Population generalisability.** Pharmacogenetic associations frequently fail to replicate across ancestries and cohorts, so findings from one study population cannot be assumed to transfer.
 
-| Gene | Function | Effect |
-|------|----------|--------|
-| PCSK1 | Prohormone processing | Better response with specific variants |
-| TCF7L2 | Diabetes risk gene | Influences glycemic response |
-| MC4R | Appetite regulation | Affects hunger suppression |
-| BDNF | Neurotrophic factor | Impacts food reward pathways |
+**Drug-specific effects.** Evidence relating to one incretin drug does not automatically apply to another; the dual and triple agonists now in use and in development have different receptor targets.
 
-### Protein Biomarkers
-
-Baseline protein levels predicted response:
-
-**High-Response Predictors:**
-- **FGF-21:** Higher baseline levels associated with better response
-- **Adiponectin:** Higher levels predicted greater weight loss
-- **GDF-15:** Higher baseline associated with more nausea and greater efficacy
-- **Leptin/adiponectin ratio:** Lower ratio predicted better outcomes
-
-**Low-Response Predictors:**
-- **CRP (C-reactive protein):** Very high levels associated with reduced response
-- **Insulin-like growth factor 1:** Higher IGF-1 predicted lower response
-- **Resistin:** Elevated levels associated with reduced efficacy
-
-### Metabolomic Signatures
-
-Metabolite profiles at baseline predicted outcomes:
-
-- **Branched-chain amino acids:** Lower levels predicted better response
-- **Acylcarnitines:** Specific patterns associated with metabolic flexibility
-- **Bile acids:** Certain profiles predicted enhanced GLP-1 effects
-- **Ceramides:** Higher levels associated with reduced response
-
-## The Prediction Model
-
-### Combined Biomarker Score
-
-Researchers developed an integrated prediction model combining:
-
-1. Genetic risk score (12 variants)
-2. Protein biomarker panel (8 proteins)
-3. Metabolomic signature (15 metabolites)
-4. Clinical factors (baseline BMI, age, sex, diabetes status)
-
-### Model Performance
-
-The combined model achieved:
-
-| Metric | Score |
-|--------|-------|
-| AUC for high response prediction | 0.78 |
-| AUC for non-response prediction | 0.82 |
-| Sensitivity for non-responder identification | 76% |
-| Specificity for non-responder identification | 81% |
-
-This performance would allow identification of most patients unlikely to respond before initiating treatment [pharmacogenomics-glp1].
-
-### Clinical Utility
-
-In simulated clinical application:
-
-- **High predicted responders:** 89% achieved >15% weight loss
-- **Low predicted responders:** Only 23% achieved >15% weight loss
-- **Time to alternative therapy:** Reduced by 4.2 months for predicted non-responders
-- **Cost savings:** Estimated $2,400 per non-responder identified early
-
-## Biological Insights
-
-### Why Some Don't Respond
-
-The biomarker findings suggest several mechanisms of non-response:
-
-**Receptor-Level Factors:**
-- GLP1R variants may reduce receptor sensitivity
-- Receptor density variations affect signaling
-- Downstream signaling pathway differences
-
-**Metabolic Factors:**
-- Pre-existing metabolic inflexibility
-- Altered gut hormone processing
-- Different satiety signal processing
-
-**Central Nervous System:**
-- Variations in brain reward pathway response
-- Different appetite center sensitivity
-- Altered dopaminergic responses to food
-
-### Implications for Combination Therapy
-
-The findings suggest rational combinations:
-
-- **High CRP non-responders:** May benefit from anti-inflammatory additions
-- **MC4R variant carriers:** May need higher doses or adjunctive therapies
-- **Low GDF-15 baseline:** Might respond better to different mechanisms
-
-## Implementation Challenges
-
-### Testing Availability
-
-Current limitations include:
-
-- Genetic testing not routinely available in obesity practice
-- Protein biomarker panels require specialized laboratories
-- Metabolomic profiling remains research-level
-- Cost of comprehensive testing unclear
-
-### Validation Needs
-
-The prediction model requires:
-
-- Prospective validation in independent cohorts
-- Testing across diverse populations
-- Validation for different GLP-1 agonists
-- Assessment in combination with tirzepatide (GLP-1/GIP dual agonist)
-
-### Insurance and Coverage
-
-Questions remain about:
-
-- Will insurers cover predictive testing?
-- Could testing become required before coverage approval?
-- How will results affect coverage decisions?
-
-## Future Directions
-
-### Simpler Panels
-
-Research continues on:
-
-- Reduced biomarker panels (5-6 markers) for practical use
-- Point-of-care testing development
-- Integration with existing clinical laboratory tests
-- Algorithm simplification
-
-### Beyond GLP-1 Agonists
-
-The approach may extend to:
-
-- Predicting tirzepatide vs. semaglutide response
-- Identifying candidates for retatrutide (triple agonist)
-- Selecting patients for combination therapy
-- Predicting side effect susceptibility
-
-### Personalized Dosing
-
-Biomarkers might also inform:
-
-- Optimal target dose
-- Titration speed
-- Maintenance dose selection
-- Duration of therapy
+**Coverage questions.** Whether payers would cover predictive testing — or begin requiring it — is entirely unresolved.
 
 ## What This Means
 
-The identification of biomarkers predicting GLP-1 response represents an important step toward precision medicine in obesity treatment. While clinical implementation remains years away, the findings provide hope that future patients will be matched to treatments most likely to benefit them.
+Biomarker research is a genuinely active area, and the underlying premise is sound: obesity has heterogeneous biology, and the same drug will not suit every patient equally. But at present the evidence consists of association findings and review-level argument, not a deployable clinical tool.
 
-For current patients, these results reinforce that lack of response to one medication does not indicate failure but rather the need to find the right treatment approach. The underlying biology of obesity varies between individuals, and effective treatment requires matching mechanism to patient.
+For patients, the practical takeaway is narrower and still useful: a poor response to one medication reflects the mismatch between that mechanism and that individual's biology, not a personal failure. Treatment selection today remains empirical, guided by clinical response rather than by any pre-treatment test.
 
 ---
 
-*This article is for educational purposes only and does not constitute medical advice. The biomarker tests described are not yet clinically available. Consult a healthcare provider for personalized obesity treatment guidance.*
+*This article is for educational purposes only and does not constitute medical advice. The biomarker approaches described are not clinically available. Consult a healthcare provider for personalized obesity treatment guidance.*

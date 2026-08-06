@@ -40,7 +40,11 @@ const SELF_TEST = process.argv.includes('--self-test');
 /* Instructional constructions — each is a way of telling someone what to do. */
 const ADVICE = [
   { name: 'appropriateness-judgement', re: /\b(?:is|are|would be|remains?)\s+(?:generally\s+|often\s+|usually\s+)?(?:appropriate|advisable|preferable|the preferred (?:option|choice|agent))\b/i },
-  { name: 'may-be-considered', re: /\b(?:may|can|should|could)\s+be\s+(?:considered|used|added|combined|switched|substituted|initiated|started|continued|discontinued)\b/i },
+  /* "It can be used: monotherapy / combination" under an approval description is an INDICATION
+   * LIST — it enumerates what a regulator authorised, not what a reader should do. An
+   * "approved"/"indicated"/"authorised" nearby is a strong signal of that. */
+  { name: 'may-be-considered', re: /\b(?:may|can|should|could)\s+be\s+(?:considered|used|added|combined|switched|substituted|initiated|started|continued|discontinued)\b/i,
+    unless: /\b(?:approved|indicated|authoris|authoriz|licen[cs]ed)\b/i },
   { name: 'should-directive', re: /\b(?:patients?|users?|individuals?|clinicians?|you)\s+should\b/i },
   { name: 'recommended', re: /\brecommended\s+(?:per|for|as|in|when|first)\b/i },
   /* "first-line" alone is descriptive, not instructional. Trials are routinely run "as first-line
@@ -50,28 +54,125 @@ const ADVICE = [
   { name: 'first-line', re: /\b(?:recommend\w*|prefer\w*|choose|select|opt for|should use)\b[^.]{0,60}\b(?:first|second|third)[- ]line\b|\b(?:first|second|third)[- ]line\b[^.]{0,40}\b(?:is recommended|should be|is preferred|is the choice)\b/i },
   /* "use" is deliberately absent from the verb list below: it is noun/verb ambiguous, and
    * "use for erectile dysfunction is not approved" is a factual statement, not an instruction. */
-  { name: 'imperative-monitoring', re: /(?:^|[.;:]\s+|\*\s+)(?:monitor|avoid|discontinue|titrate|screen)\s+(?:for|with|the|a|an|if|when|in|closely|careful)/i },
+  /* The boundary must include "- " and "| " list/table markers, not just "* ".
+   * It originally accepted only "* ", and semaglutide-safety.mdx:49 carried
+   * "- **Pancreatitis** — Discontinue if suspected" — a bare clinical imperative on a safety page,
+   * sitting UNFLAGGED next to an identical line that was flagged, purely because of the bullet
+   * character. A gate that depends on markdown punctuation is not checking what it claims to. */
+  /* Allow an OBJECT between the imperative verb and its condition: "Discontinue semaglutide if
+   * pancreatitis is suspected" is the same instruction as "Discontinue if suspected", and a
+   * pattern that only accepted the bare form missed it. */
+  { name: 'imperative-monitoring', re: /(?:^|[.;:—–]\s*|[*\-|]\s+)(?:monitor|discontinue|titrate|screen)\s+(?:\w+\s+){0,2}(?:for|with|the|a|an|if|when|in|closely|careful)/i },
+  /* "avoid" is split out and NOT addressee-exempt. The other clinical imperatives take a person or
+   * a drug as their implied object; "avoid" just as readily governs a chemical process —
+   * "Avoid acetylation when the free N-terminus is required" is synthesis guidance in a glossary
+   * entry, with nobody in it. */
+  { name: 'imperative-avoid', re: /(?:^|[.;:—–]\s*|[*\-|]\s+)avoid\s+(?:\w+\s+){0,2}(?:for|with|the|a|an|if|when|in|closely|careful)/i },
   /* Words may sit between the verb and the noun — the real line was "requires careful GLUCOSE
    * monitoring", which a pattern tolerating only "careful" missed. */
-  { name: 'requires-management', re: /\brequires?\s+(?:\w+\s+){0,3}(?:monitoring|supervision|management|adjustment)\b/i },
+  /* "requires a prescription" / "requires medical supervision" describes what KIND of drug
+   * something is — a regulatory fact, not a management instruction. Excluded explicitly, because
+   * it appears in disclaimer lines and under "Administration" headings across the site. */
+  { name: 'requires-management', re: /\brequires?\s+(?:\w+\s+){0,3}(?:monitoring|supervision|management|adjustment)\b/i,
+    unless: /\brequires?\s+(?:a\s+)?(?:prescription|medical supervision|physician supervision|clinical supervision)\b|prescription[- ]only/i },
   { name: 'is-indicated-for-people', re: /\b(?:is|are)\s+indicated\s+(?:for|in)\s+(?:patients?|people|individuals|those)\b/i },
 ];
 
-/* DISCLAIMERS — the site telling a reader to seek professional care. Never advice. */
-const DISCLAIMER = /\b(?:consult|speak (?:to|with)|talk to|seek)\b[^.]{0,60}\b(?:healthcare|health care|doctor|physician|clinician|provider|professional|medical)\b|not (?:constitute |intended as )?medical advice|educational purposes only|for informational purposes/i;
+/* DISCLAIMERS — the site telling a reader to seek professional care. Never advice.
+ * Role nouns must allow plurals: the real line is "consult qualified professionalS", and a
+ * singular-only pattern flagged the site's own safety language as if it were advice. */
+const DISCLAIMER = /\b(?:consult|speak (?:to|with)|talk to|seek|discuss|communicat\w+)\b[^.]{0,90}\b(?:healthcare|health care|doctors?|physicians?|clinicians?|providers?|professionals?|specialists?|pharmacists?|hepatologists?|gastroenterologists?|endocrinologists?|oncologists?|medical team)\b|not (?:constitute |intended as )?medical advice|educational purposes only|for informational purposes|requires? (?:a )?(?:prescription|medical supervision)/i;
+
+/* STRUCTURAL EXCLUSIONS — shapes that cannot be instruction whatever verbs they contain.
+ *
+ *  A QUESTION asks rather than directs. "Which patients should transition?" is a section heading
+ *  on a news post.
+ *  A HEADING is a label: "### Can Be Used" is a contents entry, not a recommendation.
+ *  "considered a proven / established treatment" is EPISTEMIC — a statement about how much is
+ *  known. That is the hedging this site should be doing, and the opposite of an instruction.
+ *  "should know" / "should be aware" is informational framing: "What patients should know" is a
+ *  metaDescription, not direction. */
+const NOT_INSTRUCTION = /\?\s*$|^\s*#{1,6}\s|\bconsidered (?:a |an )?(?:proven|established|effective|safe|standard|experimental|investigational|unproven|preliminary|speculative)\b|\bshould (?:know|be aware|expect|understand|note)\b/i;
+
+/* ADVICE REQUIRES AN ADDRESSEE.
+ *
+ * This is the sharpest available test and it came from an editor working the glossary: real advice
+ * necessarily has someone it is addressed to. Five false positives in that collection were a verb
+ * governing a molecule, a cell, an FDA designation or a pharmacokinetic parameter — "Avoid
+ * acetylation when the free N-terminus is required", "The goal is appropriate autophagy",
+ * "Understanding Vd helps determine if loading doses are appropriate". None has a person in it.
+ *
+ * A bare predicate has no addressee either: "- Requires medical management" and
+ * "| Ensure safety | Require monitoring and reporting |" are predicates of the heading or row label
+ * above them, not sentences directed at anyone.
+ *
+ * So a line only counts as instruction when it names a person who could act on it, or a specific
+ * compound that a person would take. Every one of the passages actually rewritten in this pass
+ * satisfies that; none of the false positives does. */
+/* "men" must not match MEN 2 — Multiple Endocrine Neoplasia type 2, which appears in boxed-warning
+ * and contraindication tables across the site. A negative lookahead for a following digit keeps
+ * "men should" working while excluding the syndrome. */
+const HAS_ADDRESSEE = /\b(?:patients?|users?|individuals?|people|clinicians?|prescribers?|physicians?|doctors?|you|your|providers?|someone|anyone|adults?|men(?!\s*\d)|women)\b/i;
+
+/* A named compound also counts as an addressee-bearing subject: "Discontinue semaglutide if ..."
+ * is an instruction even without a person noun. Built from the dossier slugs at load time so it
+ * stays current as the corpus grows, rather than from a hand-listed vocabulary that would drift. */
+const COMPOUND_NAMES = (() => {
+  try {
+    const names = fs.readdirSync('src/content/peptides')
+      .filter((f) => f.endsWith('.mdx'))
+      .map((f) => f.replace(/\.mdx$/, '').replace(/-/g, '[- ]?'))
+      .filter((n) => n.length >= 4);
+    return new RegExp(`\\b(?:${names.join('|')})\\b`, 'i');
+  } catch { return /$^/; }
+})();
 
 /* REPORTING — the sentence attributes the statement to a document, a study or an author. */
 const ATTRIBUTED = /\b(?:label|labell?ing|prescribing information|package insert|guideline|guidance|FDA|EMA|NICE|monograph|authors?|investigators?|trial|study|studies|paper|review|per the|according to|reported|observed|protocol specified)\b|were (?:randomi[sz]ed|assigned|given|treated|monitored)/i;
 
 /* NEGATION — the site declining to recommend. The window is wide because the negator is often the
  * sentence subject: "No peptide in this class should be considered a substitute for ...". */
-const NEGATED = /\b(?:cannot|can ?not|can't|should ?not|shouldn't|must ?not|is ?not|are ?not|isn't|aren't|no|never|not)\s+(?:\w+\s+){0,7}(?:recommend|advis|appropriate|consider|indicated|approved|establish)/i;
+const NEGATED = /\b(?:cannot|can ?not|can't|should ?not|shouldn't|must ?not|is ?not|are ?not|isn't|aren't|neither|nor|no|never|not)\s+(?:\w+\s+){0,7}(?:recommend|advis|appropriate|consider|indicated|approved|establish|interpret|assume|substitute|replace|rely)/i;
+
+/* The addressee rule applies to patterns that need a SUBJECT to be instructional. It must NOT
+ * apply to the imperative mood or to explicit recommendation verbs, because those are
+ * self-addressing: "Monitor for additive effects" names nobody and is unambiguously directed at
+ * the reader, and "recommended per prescribing guidelines" is a recommendation with or without a
+ * patient noun. Applying the rule to them suppressed four true positives, including the original
+ * pasireotide findings this gate was built for. */
+const ADDRESSEE_EXEMPT = new Set(['imperative-monitoring', 'recommended', 'first-line', 'should-directive', 'is-indicated-for-people']);
+
+/* A TABLE CELL IS A LABEL, NOT A SENTENCE — so the addressee rule applies inside one even for the
+ * imperatives that are otherwise exempt.
+ *
+ * Widening the imperative pattern to accept an object (needed for "Discontinue semaglutide if ...")
+ * pulled in a run of table rows that are not clinical at all: cold-chain's "Monitor location and
+ * conditions" is shipping logistics, lipidation's "Screen attachment sites" is protein engineering,
+ * biomarker's "Monitor adverse effects" names a category of biomarker. A cell carries a fragment
+ * whose subject is the row or column header, so requiring a person or a compound inside the cell
+ * itself is the right test.
+ *
+ * The cost is accepted knowingly: a genuinely clinical cell like "| Diabetic retinopathy | Monitor
+ * closely |" is also suppressed. That row reads as "this is a monitored risk", which is closer to
+ * description than instruction, and losing it is cheaper than a gate that flags a courier's
+ * temperature log. */
+const IS_TABLE_CELL = /\|/;
 
 const isAdvice = (line) => {
+  if (NOT_INSTRUCTION.test(line)) return null;
   if (DISCLAIMER.test(line)) return null;
   if (NEGATED.test(line)) return null;
   if (ATTRIBUTED.test(line)) return null;
-  for (const p of ADVICE) if (p.re.test(line)) return p.name;
+  /* A pattern may carry its own `unless` — a context that makes THAT construction legitimate even
+   * though the general shape is instructional. Kept per-pattern rather than in the global
+   * exclusions, so an exemption earned by one construction does not silently excuse the others. */
+  for (const p of ADVICE) {
+    if (!p.re.test(line)) continue;
+    if (p.unless && p.unless.test(line)) continue;
+    const exempt = ADDRESSEE_EXEMPT.has(p.name) && !IS_TABLE_CELL.test(line);
+    if (!exempt && !HAS_ADDRESSEE.test(line) && !COMPOUND_NAMES.test(line)) continue;
+    return p.name;
+  }
   return null;
 };
 
@@ -107,6 +208,25 @@ const FIXTURES = [
   { t: 'Superior to octreotide LAR as first-line medical therapy in treatment-naive acromegaly.', want: false, note: 'first-line describing a trial population' },
   // ...but must still FLAG it when paired with a recommending verb
   { t: 'Metformin is recommended as first-line therapy for this indication.', want: true, note: 'first-line plus a recommending verb' },
+  // must NOT flag — real false positives from the first site-wide sweep
+  { t: 'Individuals should consult qualified professionals regarding their specific circumstances.', want: false, note: 'disclaimer with a plural role noun' },
+  { t: 'Individuals should not interpret preclinical research as applicable to human self-treatment.', want: false, note: 'negated directive — a correct caution' },
+  { t: 'What patients should know.', want: false, note: 'informational framing in a metaDescription' },
+  { t: '- Switching from Zepbound: Which patients should transition?', want: false, note: 'a question heading' },
+  { t: 'Neither is recommended for human use outside of clinical trials.', want: false, note: 'neither as negator' },
+  { t: 'Despite the promising results, several important questions remain before pemvidutide can be considered a proven treatment.', want: false, note: 'epistemic, not clinical' },
+  { t: '### Can Be Used', want: false, note: 'a markdown heading' },
+  // must NOT flag — no addressee: the verb governs a molecule, a process, a designation or a parameter
+  { t: 'Avoid acetylation when the free N-terminus is required for biological activity.', want: false, note: 'synthesis chemistry, no person' },
+  { t: 'The goal is appropriate autophagy that maintains cellular health without over-degrading necessary components.', want: false, note: 'a cellular process' },
+  { t: 'Understanding Vd helps determine if loading doses are appropriate for a given compartment model.', want: false, note: 'a pharmacokinetic parameter' },
+  { t: '- Requires medical management', want: false, note: 'a bare predicate with no subject' },
+  { t: '| Ensure safety | Require monitoring and reporting |', want: false, note: 'a table cell describing a regulatory pathway' },
+  { t: 'Both have limited evidence and should be considered experimental.', want: false, note: 'epistemic caution — the correct posture' },
+  // ...but a named compound IS an addressee-bearing subject even with no person noun
+  { t: 'Discontinue semaglutide if pancreatitis is suspected.', want: true, note: 'named compound as subject' },
+  // and the bullet-marker boundary must catch list items, not only asterisks
+  { t: '- **Pancreatitis** — Discontinue if suspected in any patient', want: true, note: 'dash bullet, previously missed' },
 ];
 
 const fails = FIXTURES.filter((f) => !!isAdvice(f.t) !== f.want)

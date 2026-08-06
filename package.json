@@ -39,7 +39,8 @@
     "loop:offline": "node scripts/content-loop.mjs --offline",
     "loop:heal": "node scripts/content-loop.mjs --heal",
     "discover:gaps": "node scripts/discover-coverage-gaps.mjs",
-    "qa:concerns": "node scripts/qa-expressions-of-concern.mjs"
+    "qa:concerns": "node scripts/qa-expressions-of-concern.mjs",
+    "qa:advice": "node scripts/qa-medical-advice.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.14",

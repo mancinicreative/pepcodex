@@ -29,27 +29,34 @@ approval. You cannot cite your way to a source for a thing that was never there.
 
 ## Removed
 
-| slug | last commit before removal | 301 → |
-|---|---|---|
-| `2025-glp1-year-review` | `2423083` | `/peptides/semaglutide` |
-| `2025-peptide-approvals-record` | `cafc336` | `/blog` |
-| `2025-peptide-market-outlook` | `2423083` | `/blog` |
-| `ai-peptide-drug-discovery` | `2423083` | `/blog` |
-| `centenarian-longevity-peptide` | `2423083` | `/peptides/mots-c` |
-| `china-tirzepatide-biosimilar` | `2423083` | `/peptides/tirzepatide` |
-| `epithalon-safety` | `2bb50fe` | `/peptides/epithalon` |
-| `eu-peptide-research-consortium` | `2423083` | `/blog` |
-| `glp1-manufacturing-online` | `2423083` | `/peptides/semaglutide` |
-| `peptide-antiviral-coronavirus` | `2423083` | `/blog` |
-| `peptide-cancer-vaccines-melanoma` | `2423083` | `/blog` |
-| `peptide-drug-conjugate-tumors` | `2423083` | `/blog` |
-| `peptide-market-80b-projection` | `2423083` | `/blog` |
+All thirteen were committed in their final rewritten state at **`42078b6`** immediately before
+removal, specifically so the "correcting the record" text is recoverable rather than lost to a
+working-tree delete.
+
+| slug | 301 → |
+|---|---|
+| `2025-glp1-year-review` | `/peptides/semaglutide` |
+| `2025-peptide-approvals-record` | `/blog` |
+| `2025-peptide-market-outlook` | `/blog` |
+| `ai-peptide-drug-discovery` | `/blog` |
+| `centenarian-longevity-peptide` | `/peptides/mots-c` |
+| `china-tirzepatide-biosimilar` | `/peptides/tirzepatide` |
+| `epithalon-safety` | `/peptides/epithalon` |
+| `eu-peptide-research-consortium` | `/blog` |
+| `glp1-manufacturing-online` | `/peptides/semaglutide` |
+| `peptide-antiviral-coronavirus` | `/blog` |
+| `peptide-cancer-vaccines-melanoma` | `/blog` |
+| `peptide-drug-conjugate-tumors` | `/blog` |
+| `peptide-market-80b-projection` | `/blog` |
 
 Recover any of them with:
 
 ```bash
-git show 2423083:src/content/blog/<slug>.mdx
+git show 42078b6:src/content/blog/<slug>.mdx
 ```
+
+The 301s are inserted directly after the apex-to-www host rule in `vercel.json`, ahead of every
+other entry, so no later wildcard can shadow them.
 
 ## Topics worth rebuilding from sources (not restoring)
 

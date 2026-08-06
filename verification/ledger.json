@@ -1814,6 +1814,10 @@
         },
         {
           "file": "src/content/blog/what-is-dihexa.mdx",
+          "where": "frontmatter.sources[1].note"
+        },
+        {
+          "file": "src/content/blog/what-is-dihexa.mdx",
           "where": "body"
         }
       ],
@@ -7690,6 +7694,10 @@
         {
           "file": "src/content/blog/what-is-dihexa.mdx",
           "where": "frontmatter.sources[1].url"
+        },
+        {
+          "file": "src/content/blog/what-is-dihexa.mdx",
+          "where": "frontmatter.sources[1].pmid"
         },
         {
           "file": "src/content/peptides/dihexa.mdx",
@@ -43938,6 +43946,22 @@
       "id": "29246950",
       "locations": [
         {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[1].evidence.keyFindings[0].pmid"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "frontmatter.scoring.citations[2]"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        },
+        {
           "file": "data/source-packs/semaglutide.json",
           "where": "$.coreLibrary.primaryStudies[10].id"
         }
@@ -45130,6 +45154,22 @@
       "type": "PMID",
       "id": "31422062",
       "locations": [
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[2].evidence.keyFindings[1].pmid"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "frontmatter.scoring.citations[1]"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        },
         {
           "file": "data/source-packs/semaglutide.json",
           "where": "$.coreLibrary.reviewsMetaAnalyses[9].id"
@@ -52319,6 +52359,30 @@
       "id": "35914543",
       "locations": [
         {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.interactions[1].description"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[3].evidence.keyFindings[1].pmid"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.faqs[3].answer"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.scoring.citations[6]"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        },
+        {
           "file": "data/source-packs/tirzepatide.json",
           "where": "$.coreLibrary.japaneseStudies[0].id"
         }
@@ -52822,6 +52886,18 @@
       "type": "NCT",
       "id": "NCT04255433",
       "locations": [
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.faqs[3].answer"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        },
         {
           "file": "data/source-packs/tirzepatide.json",
           "where": "$.trials[11].nctId"
@@ -53356,6 +53432,34 @@
         {
           "file": "src/content/comparisons/ozempic-vs-wegovy.mdx",
           "where": "frontmatter.sources[2].pmid"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.interactions[0].description"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.limitations[0]"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[3].evidence.keyFindings[0].pmid"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.faqs[2].answer"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.scoring.citations[5]"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
         }
       ],
       "verdict": "exists",
@@ -54791,6 +54895,14 @@
       "type": "NCT",
       "id": "NCT07668336",
       "locations": [
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.interactions[3].description"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        },
         {
           "file": "data/source-packs/orforglipron.json",
           "where": "$.trials[1].nctId"
@@ -59261,7 +59373,1834 @@
       },
       "checkedAt": "2026-08-06T14:03:14.869Z",
       "checkVersion": 1
+    },
+    "PMID:40183678": {
+      "type": "PMID",
+      "id": "40183678",
+      "locations": [
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.interactions[1].description"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.limitations[0]"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[3].evidence.keyFindings[2].pmid"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.faqs[3].answer"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.scoring.citations[7]"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Comparison of Dose Escalation Versus Switching to Tirzepatide Among People With Type 2 Diabetes Inadequately Controlled on Lower Doses of Dulaglutide : A Randomized Clinical Trial.",
+        "journal": "Annals of internal medicine",
+        "year": "2025",
+        "firstAuthor": "Billings LK",
+        "pubTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Multicenter Study",
+          "Clinical Trial, Phase IV",
+          "Comparative Study"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:32.698Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT01624259": {
+      "type": "NCT",
+      "id": "NCT01624259",
+      "locations": [
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.interactions[2].description"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "A Study Comparing the Effect of Dulaglutide With Liraglutide in Type 2 Diabetes",
+        "acronym": "AWARD-6",
+        "status": "COMPLETED",
+        "phase": "PHASE3",
+        "enrollment": 599,
+        "interventions": [
+          "LY2189265",
+          "Liraglutide",
+          "Metformin"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:33.292Z",
+      "checkVersion": 1
+    },
+    "PMID:31189511": {
+      "type": "PMID",
+      "id": "31189511",
+      "locations": [
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.limitations[1]"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.limitations[2]"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.limitations[7]"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[1].evidence.keyFindings[0].pmid"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.faqs[4].answer"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.scoring.citations[0]"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Dulaglutide and cardiovascular outcomes in type 2 diabetes (REWIND): a double-blind, randomised placebo-controlled trial.",
+        "journal": "Lancet (London, England)",
+        "year": "2019",
+        "firstAuthor": "Gerstein HC",
+        "pubTypes": [
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:34.022Z",
+      "checkVersion": 1
+    },
+    "PMID:31189509": {
+      "type": "PMID",
+      "id": "31189509",
+      "locations": [
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.limitations[3]"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[2].evidence.keyFindings[0].pmid"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.scoring.citations[1]"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Dulaglutide and renal outcomes in type 2 diabetes: an exploratory analysis of the REWIND randomised, placebo-controlled trial.",
+        "journal": "Lancet (London, England)",
+        "year": "2019",
+        "firstAuthor": "Gerstein HC",
+        "pubTypes": [
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:34.602Z",
+      "checkVersion": 1
+    },
+    "PMID:31924562": {
+      "type": "PMID",
+      "id": "31924562",
+      "locations": [
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.limitations[3]"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[1].evidence.keyFindings[1].pmid"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.scoring.citations[2]"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "The effect of dulaglutide on stroke: an exploratory analysis of the REWIND trial.",
+        "journal": "The lancet. Diabetes & endocrinology",
+        "year": "2020",
+        "firstAuthor": "Gerstein HC",
+        "pubTypes": [
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:35.476Z",
+      "checkVersion": 1
+    },
+    "PMID:34984808": {
+      "type": "PMID",
+      "id": "34984808",
+      "locations": [
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.limitations[4]"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[1].evidence.keyFindings[2].pmid"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.scoring.citations[8]"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Dulaglutide and incident atrial fibrillation or flutter in patients with type 2 diabetes: A post hoc analysis from the REWIND randomized trial.",
+        "journal": "Diabetes, obesity & metabolism",
+        "year": "2022",
+        "firstAuthor": "Raubenheimer PJ",
+        "pubTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:36.080Z",
+      "checkVersion": 1
+    },
+    "PMID:35658022": {
+      "type": "PMID",
+      "id": "35658022",
+      "locations": [
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.limitations[5]"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[5].pmid"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Once-Weekly Dulaglutide for the Treatment of Youths with Type 2 Diabetes.",
+        "journal": "The New England journal of medicine",
+        "year": "2022",
+        "firstAuthor": "Arslanian SA",
+        "pubTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:36.653Z",
+      "checkVersion": 1
+    },
+    "PMID:25912221": {
+      "type": "PMID",
+      "id": "25912221",
+      "locations": [
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.limitations[6]"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[2].pmid"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Safety and efficacy of once-weekly dulaglutide versus sitagliptin after 2 years in metformin-treated patients with type 2 diabetes (AWARD-5): a randomized, phase III study.",
+        "journal": "Diabetes, obesity & metabolism",
+        "year": "2015",
+        "firstAuthor": "Weinstock RS",
+        "pubTypes": [
+          "Clinical Trial, Phase III",
+          "Comparative Study",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:37.219Z",
+      "checkVersion": 1
+    },
+    "PMID:24842985": {
+      "type": "PMID",
+      "id": "24842985",
+      "locations": [
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[0].pmid"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Efficacy and safety of dulaglutide monotherapy versus metformin in type 2 diabetes in a randomized controlled trial (AWARD-3).",
+        "journal": "Diabetes care",
+        "year": "2014",
+        "firstAuthor": "Umpierrez G",
+        "pubTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:37.784Z",
+      "checkVersion": 1
+    },
+    "PMID:24742660": {
+      "type": "PMID",
+      "id": "24742660",
+      "locations": [
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[1].pmid"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Efficacy and safety of dulaglutide versus sitagliptin after 52 weeks in type 2 diabetes in a randomized controlled trial (AWARD-5).",
+        "journal": "Diabetes care",
+        "year": "2014",
+        "firstAuthor": "Nauck M",
+        "pubTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, N.I.H., Extramural",
+          "Research Support, Non-U.S. Gov't"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:38.352Z",
+      "checkVersion": 1
+    },
+    "PMID:29483060": {
+      "type": "PMID",
+      "id": "29483060",
+      "locations": [
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[3].pmid"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Dulaglutide as add-on therapy to SGLT2 inhibitors in patients with inadequately controlled type 2 diabetes (AWARD-10): a 24-week, randomised, double-blind, placebo-controlled trial.",
+        "journal": "The lancet. Diabetes & endocrinology",
+        "year": "2018",
+        "firstAuthor": "Ludvik B",
+        "pubTypes": [
+          "Clinical Trial, Phase III",
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't",
+          "Equivalence Trial"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:38.946Z",
+      "checkVersion": 1
+    },
+    "PMID:33397768": {
+      "type": "PMID",
+      "id": "33397768",
+      "locations": [
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[4].pmid"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.scoring.citations[4]"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Efficacy and Safety of Dulaglutide 3.0 mg and 4.5 mg Versus Dulaglutide 1.5 mg in Metformin-Treated Patients With Type 2 Diabetes in a Randomized Controlled Trial (AWARD-11).",
+        "journal": "Diabetes care",
+        "year": "2021",
+        "firstAuthor": "Frias JP",
+        "pubTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't",
+          "Equivalence Trial"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:39.507Z",
+      "checkVersion": 1
+    },
+    "PMID:29910024": {
+      "type": "PMID",
+      "id": "29910024",
+      "locations": [
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[2].evidence.keyFindings[1].pmid"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.scoring.citations[3]"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Dulaglutide versus insulin glargine in patients with type 2 diabetes and moderate-to-severe chronic kidney disease (AWARD-7): a multicentre, open-label, randomised trial.",
+        "journal": "The lancet. Diabetes & endocrinology",
+        "year": "2018",
+        "firstAuthor": "Tuttle KR",
+        "pubTypes": [
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:40.283Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT01394952": {
+      "type": "NCT",
+      "id": "NCT01394952",
+      "locations": [
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "frontmatter.faqs[4].answer"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Researching Cardiovascular Events With a Weekly Incretin in Diabetes (REWIND)",
+        "acronym": "REWIND",
+        "status": "COMPLETED",
+        "phase": "PHASE3",
+        "enrollment": 9901,
+        "interventions": [
+          "Dulaglutide",
+          "Placebo"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:40.871Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT03015220": {
+      "type": "NCT",
+      "id": "NCT03015220",
+      "locations": [
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Safety and Efficacy of Oral Semaglutide Versus Dulaglutide Both in Combination With One OAD (Oral Antidiabetic Drug) in Japanese Subjects With Type 2 Diabetes",
+        "acronym": "PIONEER 10",
+        "status": "COMPLETED",
+        "phase": "PHASE3",
+        "enrollment": 458,
+        "interventions": [
+          "Semaglutide",
+          "Dulaglutide"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:41.326Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT03495102": {
+      "type": "NCT",
+      "id": "NCT03495102",
+      "locations": [
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "A Study of the Efficacy and Safety of Dulaglutide (LY2189265) in Participants With Type 2 Diabetes",
+        "acronym": "AWARD-11",
+        "status": "COMPLETED",
+        "phase": "PHASE3",
+        "enrollment": 1842,
+        "interventions": [
+          "Dulaglutide"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:41.795Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07282041": {
+      "type": "NCT",
+      "id": "NCT07282041",
+      "locations": [
+        {
+          "file": "src/content/peptides/dulaglutide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Role of GLP1 RA Dulaglutide on Severe Intracranial Atherosclerosis",
+        "acronym": "RADIANT",
+        "status": "RECRUITING",
+        "phase": "PHASE2/PHASE3",
+        "enrollment": 130,
+        "interventions": [
+          "Dulaglutide"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:42.251Z",
+      "checkVersion": 1
+    },
+    "PMID:28205322": {
+      "type": "PMID",
+      "id": "28205322",
+      "locations": [
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[0].pmid"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "frontmatter.scoring.citations[5]"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Efficacy and safety of autoinjected exenatide once-weekly suspension versus sitagliptin or placebo with metformin in patients with type 2 diabetes: The DURATION-NEO-2 randomized clinical study.",
+        "journal": "Diabetes, obesity & metabolism",
+        "year": "2017",
+        "firstAuthor": "Gadde KM",
+        "pubTypes": [
+          "Clinical Trial, Phase III",
+          "Comparative Study",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:42.762Z",
+      "checkVersion": 1
+    },
+    "PMID:30082326": {
+      "type": "PMID",
+      "id": "30082326",
+      "locations": [
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[1].pmid"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "frontmatter.scoring.citations[3]"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Safety and Efficacy of Exenatide Once Weekly Plus Dapagliflozin Once Daily Versus Exenatide or Dapagliflozin Alone in Patients With Type 2 Diabetes Inadequately Controlled With Metformin Monotherapy: 52-Week Results of the DURATION-8 Randomized Controlled Trial.",
+        "journal": "Diabetes care",
+        "year": "2018",
+        "firstAuthor": "Jabbour SA",
+        "pubTypes": [
+          "Clinical Trial, Phase III",
+          "Comparative Study",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:43.568Z",
+      "checkVersion": 1
+    },
+    "PMID:32816874": {
+      "type": "PMID",
+      "id": "32816874",
+      "locations": [
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[2].pmid"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "frontmatter.scoring.citations[4]"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Efficacy and Safety Over 2 Years of Exenatide Plus Dapagliflozin in the DURATION-8 Study: A Multicenter, Double-Blind, Phase 3, Randomized Controlled Trial.",
+        "journal": "Diabetes care",
+        "year": "2020",
+        "firstAuthor": "Jabbour SA",
+        "pubTypes": [
+          "Clinical Trial, Phase III",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:44.140Z",
+      "checkVersion": 1
+    },
+    "PMID:34097062": {
+      "type": "PMID",
+      "id": "34097062",
+      "locations": [
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[1].evidence.keyFindings[1].pmid"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "frontmatter.scoring.citations[11]"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Exenatide, Dapagliflozin, or Phentermine/Topiramate Differentially Affect Metabolic Profiles in Polycystic Ovary Syndrome.",
+        "journal": "The Journal of clinical endocrinology and metabolism",
+        "year": "2021",
+        "firstAuthor": "Elkind-Hirsch KE",
+        "pubTypes": [
+          "Equivalence Trial",
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:44.713Z",
+      "checkVersion": 1
+    },
+    "PMID:28910237": {
+      "type": "PMID",
+      "id": "28910237",
+      "locations": [
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[2].evidence.keyFindings[0].pmid"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "frontmatter.scoring.citations[0]"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Effects of Once-Weekly Exenatide on Cardiovascular Outcomes in Type 2 Diabetes.",
+        "journal": "The New England journal of medicine",
+        "year": "2017",
+        "firstAuthor": "Holman RR",
+        "pubTypes": [
+          "Comparative Study",
+          "Journal Article",
+          "Multicenter Study",
+          "Pragmatic Clinical Trial",
+          "Randomized Controlled Trial"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:45.416Z",
+      "checkVersion": 1
+    },
+    "PMID:31542942": {
+      "type": "PMID",
+      "id": "31542942",
+      "locations": [
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[2].evidence.keyFindings[2].pmid"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "frontmatter.scoring.citations[10]"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Effect of Once-Weekly Exenatide in Patients With Type 2 Diabetes Mellitus With and Without Heart Failure and Heart Failure-Related Outcomes: Insights From the EXSCEL Trial.",
+        "journal": "Circulation",
+        "year": "2019",
+        "firstAuthor": "Fudim M",
+        "pubTypes": [
+          "Journal Article",
+          "Multicenter Study",
+          "Research Support, N.I.H., Extramural",
+          "Research Support, Non-U.S. Gov't"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:45.978Z",
+      "checkVersion": 1
+    },
+    "PMID:28781108": {
+      "type": "PMID",
+      "id": "28781108",
+      "locations": [
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "frontmatter.scoring.citations[6]"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Exenatide once weekly versus placebo in Parkinson's disease: a randomised, double-blind, placebo-controlled trial.",
+        "journal": "Lancet (London, England)",
+        "year": "2017",
+        "firstAuthor": "Athauda D",
+        "pubTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:46.762Z",
+      "checkVersion": 1
+    },
+    "PMID:39919773": {
+      "type": "PMID",
+      "id": "39919773",
+      "locations": [
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "frontmatter.scoring.citations[7]"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Exenatide once a week versus placebo as a potential disease-modifying treatment for people with Parkinson's disease in the UK: a phase 3, multicentre, double-blind, parallel-group, randomised, placebo-controlled trial.",
+        "journal": "Lancet (London, England)",
+        "year": "2025",
+        "firstAuthor": "Vijiaratnam N",
+        "pubTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Multicenter Study",
+          "Clinical Trial, Phase III",
+          "Research Support, N.I.H., Intramural"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:47.342Z",
+      "checkVersion": 1
+    },
+    "PMID:31010875": {
+      "type": "PMID",
+      "id": "31010875",
+      "locations": [
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "frontmatter.scoring.citations[8]"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Changes in Serum Calcitonin Concentrations, Incidence of Medullary Thyroid Carcinoma, and Impact of Routine Calcitonin Concentration Monitoring in the EXenatide Study of Cardiovascular Event Lowering (EXSCEL).",
+        "journal": "Diabetes care",
+        "year": "2019",
+        "firstAuthor": "Bethel MA",
+        "pubTypes": [
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, N.I.H., Extramural",
+          "Research Support, U.S. Gov't, P.H.S."
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:48.150Z",
+      "checkVersion": 1
+    },
+    "PMID:31757838": {
+      "type": "PMID",
+      "id": "31757838",
+      "locations": [
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "frontmatter.scoring.citations[9]"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Microvascular and Cardiovascular Outcomes According to Renal Function in Patients Treated With Once-Weekly Exenatide: Insights From the EXSCEL Trial.",
+        "journal": "Diabetes care",
+        "year": "2020",
+        "firstAuthor": "Bethel MA",
+        "pubTypes": [
+          "Journal Article",
+          "Multicenter Study",
+          "Pragmatic Clinical Trial",
+          "Randomized Controlled Trial",
+          "Research Support, N.I.H., Extramural",
+          "Research Support, Non-U.S. Gov't"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:48.770Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT02432976": {
+      "type": "NCT",
+      "id": "NCT02432976",
+      "locations": [
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Impact of Perioperative Exenatide Infusion on Quality of Life in Cardiac Surgery Patients",
+        "acronym": "ExeQOL",
+        "status": "COMPLETED",
+        "phase": "PHASE2/PHASE3",
+        "enrollment": 64,
+        "interventions": [
+          "Exenatide",
+          "Insulin"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:49.350Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT01373216": {
+      "type": "NCT",
+      "id": "NCT01373216",
+      "locations": [
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Glucagon-like Peptide 1 Agonist Exenatide for Improved Glucose Control and Cardiac Function in Patients With Aortocoronary Bypass",
+        "acronym": "Executive",
+        "status": "COMPLETED",
+        "phase": "PHASE3",
+        "enrollment": 38,
+        "interventions": [
+          "Exenatide"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:49.817Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT02404376": {
+      "type": "NCT",
+      "id": "NCT02404376",
+      "locations": [
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "COMBinAtion Therapy in Myocardial Infarction: The COMBAT-MI Trial",
+        "acronym": "COMBAT-MI",
+        "status": "COMPLETED",
+        "phase": "PHASE3",
+        "enrollment": 378,
+        "interventions": [
+          "Exenatide",
+          "Remote Ischemic Conditioning (RIC)",
+          "Placebo"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:50.281Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT01785771": {
+      "type": "NCT",
+      "id": "NCT01785771",
+      "locations": [
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "A Study to Evaluate ITCA 650 for the Treatment of Type 2 Diabetes in Patients With High Baseline HbA1c",
+        "acronym": "",
+        "status": "TERMINATED",
+        "phase": "PHASE3",
+        "enrollment": 100,
+        "interventions": [
+          "ITCA 650 (exenatide in DUROS)"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:50.991Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT03671733": {
+      "type": "NCT",
+      "id": "NCT03671733",
+      "locations": [
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Effects of GLP-1 RAs on Weight and Metabolic Indicators in Obese Patients",
+        "acronym": "",
+        "status": "UNKNOWN",
+        "phase": "PHASE3",
+        "enrollment": 150,
+        "interventions": [
+          "Liraglutide",
+          "Exenatide",
+          "Exenatide Microspheres for Injection"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:51.450Z",
+      "checkVersion": 1
+    },
+    "PMID:18450614": {
+      "type": "PMID",
+      "id": "18450614",
+      "locations": [
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Exenatide and rare adverse events.",
+        "journal": "The New England journal of medicine",
+        "year": "2008",
+        "firstAuthor": "Cure P",
+        "pubTypes": [
+          "Letter"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:52.349Z",
+      "checkVersion": 1
+    },
+    "PMID:18456920": {
+      "type": "PMID",
+      "id": "18456920",
+      "locations": [
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/exenatide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Exenatide and rare adverse events.",
+        "journal": "The New England journal of medicine",
+        "year": "2008",
+        "firstAuthor": "Ahmad SR",
+        "pubTypes": [
+          "Letter"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:52.913Z",
+      "checkVersion": 1
+    },
+    "PMID:39378125": {
+      "type": "PMID",
+      "id": "39378125",
+      "locations": [
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[1].pmid"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "frontmatter.scoring.citations[5]"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Octreotide Subcutaneous Depot for Acromegaly: A Randomized, Double-blind, Placebo-controlled Phase 3 Trial, ACROINNOVA 1.",
+        "journal": "The Journal of clinical endocrinology and metabolism",
+        "year": "2025",
+        "firstAuthor": "Ferone D",
+        "pubTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Clinical Trial, Phase III",
+          "Multicenter Study",
+          "Equivalence Trial"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:53.676Z",
+      "checkVersion": 1
+    },
+    "PMID:19704057": {
+      "type": "PMID",
+      "id": "19704057",
+      "locations": [
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[1].evidence.keyFindings[0].pmid"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "frontmatter.scoring.citations[0]"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Placebo-controlled, double-blind, prospective, randomized study on the effect of octreotide LAR in the control of tumor growth in patients with metastatic neuroendocrine midgut tumors: a report from the PROMID Study Group.",
+        "journal": "Journal of clinical oncology : official journal of the American Society of Clinical Oncology",
+        "year": "2009",
+        "firstAuthor": "Rinke A",
+        "pubTypes": [
+          "Clinical Trial, Phase III",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:54.457Z",
+      "checkVersion": 1
+    },
+    "PMID:30852564": {
+      "type": "PMID",
+      "id": "30852564",
+      "locations": [
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[1].evidence.keyFindings[1].pmid"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "frontmatter.scoring.citations[1]"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Health-Related Quality of Life for Long-Acting Octreotide versus Placebo in Patients with Metastatic Midgut Neuroendocrine Tumors in the Phase 3 PROMID Trial.",
+        "journal": "Neuroendocrinology",
+        "year": "2019",
+        "firstAuthor": "Rinke A",
+        "pubTypes": [
+          "Clinical Trial, Phase III",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:55.081Z",
+      "checkVersion": 1
+    },
+    "PMID:11231948": {
+      "type": "PMID",
+      "id": "11231948",
+      "locations": [
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[2].evidence.keyFindings[0].pmid"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "frontmatter.scoring.citations[7]"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Octreotide for acute esophageal variceal bleeding: a meta-analysis.",
+        "journal": "Gastroenterology",
+        "year": "2001",
+        "firstAuthor": "Corley DA",
+        "pubTypes": [
+          "Journal Article",
+          "Meta-Analysis",
+          "Research Support, Non-U.S. Gov't",
+          "Research Support, U.S. Gov't, P.H.S."
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:55.667Z",
+      "checkVersion": 1
+    },
+    "PMID:41090987": {
+      "type": "PMID",
+      "id": "41090987",
+      "locations": [
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[2].evidence.keyFindings[1].pmid"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "One vs Five Days of Octreotide Infusion for Acute Esophageal Variceal Bleeding: A Randomized Controlled Trial.",
+        "journal": "The American journal of gastroenterology",
+        "year": "2026",
+        "firstAuthor": "Chirapongsathorn S",
+        "pubTypes": [
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Equivalence Trial"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:56.235Z",
+      "checkVersion": 1
+    },
+    "PMID:9412308": {
+      "type": "PMID",
+      "id": "9412308",
+      "locations": [
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[2].evidence.keyFindings[2].pmid"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "frontmatter.scoring.citations[8]"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Somatostatin or octreotide compared with H2 antagonists and placebo in the management of acute nonvariceal upper gastrointestinal hemorrhage: a meta-analysis.",
+        "journal": "Annals of internal medicine",
+        "year": "1997",
+        "firstAuthor": "Imperiale TF",
+        "pubTypes": [
+          "Comparative Study",
+          "Journal Article",
+          "Meta-Analysis",
+          "Research Support, Non-U.S. Gov't",
+          "Research Support, U.S. Gov't, Non-P.H.S."
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:56.801Z",
+      "checkVersion": 1
+    },
+    "PMID:38158089": {
+      "type": "PMID",
+      "id": "38158089",
+      "locations": [
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[3].evidence.keyFindings[0].pmid"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "frontmatter.scoring.citations[6]"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Standard of Care Versus Octreotide in Angiodysplasia-Related Bleeding (the OCEAN Study): A Multicenter Randomized Controlled Trial.",
+        "journal": "Gastroenterology",
+        "year": "2024",
+        "firstAuthor": "Goltstein LCMJ",
+        "pubTypes": [
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:57.367Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT00372697": {
+      "type": "NCT",
+      "id": "NCT00372697",
+      "locations": [
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "frontmatter.conditions[0].researchSummary"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Efficacy/Safety of Octreotide Acetate in Patients With Uncontrolled Acromegaly",
+        "acronym": "",
+        "status": "COMPLETED",
+        "phase": "PHASE3",
+        "enrollment": 28,
+        "interventions": [
+          "Octreotide acetate 30 mg suspension"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:57.976Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT05477576": {
+      "type": "NCT",
+      "id": "NCT05477576",
+      "locations": [
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "frontmatter.conditions[1].researchSummary"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Study of RYZ101 Compared With SOC in Pts w Inoperable SSTR+ Well-differentiated GEP-NET That Has Progressed Following 177Lu-SSA Therapy",
+        "acronym": "ACTION-1",
+        "status": "RECRUITING",
+        "phase": "PHASE3",
+        "enrollment": 338,
+        "interventions": [
+          "RYZ101",
+          "Everolimus",
+          "Sunitinib",
+          "Octreotide",
+          "Lanreotide"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:58.434Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07057622": {
+      "type": "NCT",
+      "id": "NCT07057622",
+      "locations": [
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "frontmatter.conditions[1].researchSummary"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "A Phase III Clinical Study to Compare the Safety and Efficacy of 177Lu-DOTATATE Injection and Long-acting Oxytrexine in Adult Patients With NETs",
+        "acronym": "",
+        "status": "RECRUITING",
+        "phase": "PHASE3",
+        "enrollment": 184,
+        "interventions": [
+          "177Lu-DOTATATE injection",
+          "Octreotide LAR (Long-acting release)"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:58.887Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT00248131": {
+      "type": "NCT",
+      "id": "NCT00248131",
+      "locations": [
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "frontmatter.limitations[5]"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Extension Study of Long-term Safety and Tolerability of Octreotide Acetate in Patients With Moderately Severe or Severe Non-proliferative Diabetic Retinopathy or Low Risk Proliferative Diabetic Retinopathy",
+        "acronym": "",
+        "status": "TERMINATED",
+        "phase": "PHASE3",
+        "enrollment": 260,
+        "interventions": [
+          "Octreotide acetate in microspheres"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:59.347Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT00248157": {
+      "type": "NCT",
+      "id": "NCT00248157",
+      "locations": [
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "frontmatter.limitations[5]"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Extension Study of the Long-term Safety and Tolerability of Octreotide Acetate in Patients With Moderately Severe or Severe Non-proliferative Diabetic Retinopathy or Low Risk Proliferative Diabetic Retinopathy",
+        "acronym": "",
+        "status": "TERMINATED",
+        "phase": "PHASE3",
+        "enrollment": 105,
+        "interventions": [
+          "Octreotide acetate in microspheres"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:23:59.810Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT00092287": {
+      "type": "NCT",
+      "id": "NCT00092287",
+      "locations": [
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "frontmatter.limitations[5]"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Comparison of Lanreotide Autogel® and Sandostatin LAR Depot in the Treatment of Clinical Symptoms Associated With Carcinoid Syndrome",
+        "acronym": "",
+        "status": "TERMINATED",
+        "phase": "PHASE3",
+        "enrollment": 4,
+        "interventions": [
+          "lanreotide Autogel (somatostatin analogue)",
+          "Sandostatin long acting release (LAR) Depot (somatostatin analogue)"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:24:00.277Z",
+      "checkVersion": 1
+    },
+    "PMID:34793718": {
+      "type": "PMID",
+      "id": "34793718",
+      "locations": [
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "frontmatter.scoring.citations[2]"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "(177)Lu-Dotatate plus long-acting octreotide versus high‑dose long-acting octreotide in patients with midgut neuroendocrine tumours (NETTER-1): final overall survival and long-term safety results from an open-label, randomised, controlled, phase 3 trial.",
+        "journal": "The Lancet. Oncology",
+        "year": "2021",
+        "firstAuthor": "Strosberg JR",
+        "pubTypes": [
+          "Clinical Trial, Phase III",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:24:00.992Z",
+      "checkVersion": 1
+    },
+    "PMID:38851203": {
+      "type": "PMID",
+      "id": "38851203",
+      "locations": [
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "frontmatter.scoring.citations[3]"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "[(177)Lu]Lu-DOTA-TATE plus long-acting octreotide versus high‑dose long-acting octreotide for the treatment of newly diagnosed, advanced grade 2-3, well-differentiated, gastroenteropancreatic neuroendocrine tumours (NETTER-2): an open-label, randomised, phase 3 study.",
+        "journal": "Lancet (London, England)",
+        "year": "2024",
+        "firstAuthor": "Singh S",
+        "pubTypes": [
+          "Journal Article",
+          "Clinical Trial, Phase III",
+          "Randomized Controlled Trial",
+          "Multicenter Study",
+          "Research Support, Non-U.S. Gov't",
+          "Equivalence Trial"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:24:01.570Z",
+      "checkVersion": 1
+    },
+    "PMID:41111031": {
+      "type": "PMID",
+      "id": "41111031",
+      "locations": [
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "frontmatter.scoring.citations[4]"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "(177)Lu-Dotatate versus high-dose long-acting octreotide for the treatment of patients with advanced, grade 1-2, well-differentiated gastroenteropancreatic neuroendocrine tumours (XT-XTR008-3-01): an open-label, randomised, phase III trial.",
+        "journal": "Annals of oncology : official journal of the European Society for Medical Oncology",
+        "year": "2025",
+        "firstAuthor": "Xu J",
+        "pubTypes": [
+          "Journal Article",
+          "Clinical Trial, Phase III",
+          "Randomized Controlled Trial",
+          "Multicenter Study",
+          "Comparative Study"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:24:02.336Z",
+      "checkVersion": 1
+    },
+    "PMID:25644760": {
+      "type": "PMID",
+      "id": "25644760",
+      "locations": [
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "frontmatter.scoring.citations[9]"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Terlipressin plus albumin versus midodrine and octreotide plus albumin in the treatment of hepatorenal syndrome: A randomized trial.",
+        "journal": "Hepatology (Baltimore, Md.)",
+        "year": "2015",
+        "firstAuthor": "Cavallin M",
+        "pubTypes": [
+          "Comparative Study",
+          "Journal Article",
+          "Randomized Controlled Trial"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:24:03.129Z",
+      "checkVersion": 1
+    },
+    "PMID:38662619": {
+      "type": "PMID",
+      "id": "38662619",
+      "locations": [
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "frontmatter.scoring.citations[10]"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Somatostatin Versus Octreotide for Prevention of Postoperative Pancreatic Fistula: The PREFIPS Randomized Clinical Trial: A FRENCH 007-ACHBT Study.",
+        "journal": "Annals of surgery",
+        "year": "2024",
+        "firstAuthor": "Gaujoux S",
+        "pubTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Multicenter Study",
+          "Comparative Study"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:24:03.708Z",
+      "checkVersion": 1
+    },
+    "PMID:9127169": {
+      "type": "PMID",
+      "id": "9127169",
+      "locations": [
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "frontmatter.scoring.citations[11]"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "A randomized, controlled trial of octreotide in the management of patients with acute pancreatitis.",
+        "journal": "International journal of pancreatology : official journal of the International Association of Pancreatology",
+        "year": "1997",
+        "firstAuthor": "McKay C",
+        "pubTypes": [
+          "Clinical Trial",
+          "Journal Article",
+          "Randomized Controlled Trial"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:24:04.290Z",
+      "checkVersion": 1
+    },
+    "PMID:41719493": {
+      "type": "PMID",
+      "id": "41719493",
+      "locations": [
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/octreotide.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Axitinib and Long-Acting Octreotide in Advanced Extrapancreatic Neuroendocrine Tumors: A Randomized, Double-Blind, Placebo-Controlled, Phase III Clinical Trial (AXINET, GETNE 1107).",
+        "journal": "Journal of clinical oncology : official journal of the American Society of Clinical Oncology",
+        "year": "2026",
+        "firstAuthor": "Garcia-Carbonero R",
+        "pubTypes": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Clinical Trial, Phase III",
+          "Multicenter Study"
+        ]
+      },
+      "checkedAt": "2026-08-06T15:24:04.902Z",
+      "checkVersion": 1
     }
   },
-  "enumeratedAt": "2026-08-06T14:03:03.853Z"
+  "enumeratedAt": "2026-08-06T15:23:32.247Z"
 }

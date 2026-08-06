@@ -14,6 +14,7 @@
     "qa-seo": "node scripts/qa-seo.mjs",
     "qa-scoring": "node scripts/qa-scoring.mjs",
     "qa-pmids": "node scripts/qa-pmids.mjs --strict",
+    "qa-retractions": "node scripts/qa-retractions.mjs",
     "gsc:sites": "node scripts/fetch-search-data.mjs --list-sites",
     "fetch:search": "node scripts/fetch-search-data.mjs",
     "fetch:gsc": "node scripts/fetch-search-data.mjs --gsc",
@@ -21,10 +22,10 @@
     "gsc:whoami": "node scripts/fetch-search-data.mjs --whoami",
     "graph": "node scripts/crawl-graph.mjs",
     "graph:compare": "node scripts/crawl-graph.mjs --compare",
+    "graph:check": "node scripts/crawl-graph.mjs --check",
     "gsc:index": "node scripts/gsc-index-diagnose.mjs",
     "gsc:repull": "node scripts/gsc-repull.mjs",
-    "ga4:pull": "node scripts/ga4-pull.mjs",
-    "graph:check": "node scripts/crawl-graph.mjs --check"
+    "ga4:pull": "node scripts/ga4-pull.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.14",

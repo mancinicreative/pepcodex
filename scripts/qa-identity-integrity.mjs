@@ -144,22 +144,39 @@ for (const d of dossiers) {
 /* ---------------------------------------------------------------------------------------------
  * 3. STALE_SOURCE_COUNT
  * ------------------------------------------------------------------------------------------- */
+/* ONE definition of "a source", shared with scripts/reconcile-source-counts.mjs.
+ *
+ * This check originally walked the dossier frontmatter only. The reconciler counts what the page
+ * actually renders — ledger-verified identifiers anywhere in the file, INCLUDING the body, plus the
+ * pack trials the layout reads. Those two definitions disagreed, so after the reconciler wrote
+ * correct numbers this gate still flagged 32 dossiers as stale. A gate that contradicts the tool
+ * that fixes it trains its reader to ignore both. The definition below is the renderer's. */
+const ledgerCounts = new Map();
+{
+  const led = JSON.parse(fs.readFileSync('verification/ledger.json', 'utf-8'));
+  for (const e of Object.values(led.entries)) {
+    if (e.verdict !== 'exists') continue;
+    const id = `${e.type}:${String(e.id).toUpperCase()}`;
+    for (const file of new Set((e.locations || []).map((l) => l.file))) {
+      if (!ledgerCounts.has(file)) ledgerCounts.set(file, new Set());
+      ledgerCounts.get(file).add(id);
+    }
+  }
+}
 for (const d of dossiers) {
   const declared = d.data?.sources?.count;
   if (typeof declared !== 'number') continue;
-  const ids = new Set();
-  (function walk(n) {
-    if (!n || typeof n !== 'object') return;
-    if (Array.isArray(n)) return n.forEach(walk);
-    if (n.pmid && /^\d{6,9}$/.test(String(n.pmid))) ids.add(`P${n.pmid}`);
-    if (n.doi && String(n.doi).startsWith('10.')) ids.add(`D${String(n.doi).toLowerCase()}`);
-    if (n.nctId && /^NCT\d{8}$/i.test(String(n.nctId))) ids.add(`N${String(n.nctId).toUpperCase()}`);
-    Object.values(n).forEach(walk);
-  })(d.data);
-  // Only flag a MATERIAL overstatement — small drift is bookkeeping, a 10x gap is a credibility claim.
-  if (declared > ids.size * 2 && declared - ids.size >= 5) {
+  const ids = new Set(ledgerCounts.get(`src/content/peptides/${d.slug}.mdx`) || []);
+  const packPath = `data/source-packs/${d.slug}.json`;
+  if (fs.existsSync(packPath)) {
+    for (const t of (JSON.parse(fs.readFileSync(packPath, 'utf-8')).trials || [])) {
+      const nct = t.nctId || t.id;
+      if (nct && /^NCT\d{8}$/i.test(String(nct))) ids.add(`NCT:${String(nct).toUpperCase()}`);
+    }
+  }
+  if (declared !== ids.size) {
     findings.push({ type: 'STALE_SOURCE_COUNT', file: `peptides/${d.slug}.mdx`,
-      detail: `sources.count declares ${declared} but only ${ids.size} distinct identifier(s) are present — this number renders as a credibility signal and is embedded into generated comparison pages` });
+      detail: `sources.count declares ${declared} but ${ids.size} verified identifier(s) are rendered — this number appears as a credibility signal on the dossier, in search results, and in every generated comparison. Run \`npm run fix:counts -- --apply\`.` });
   }
 }
 

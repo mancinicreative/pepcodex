@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "check": "node scripts/qa-internal-consistency.mjs --strict && node scripts/qa-identity-integrity.mjs && node scripts/qa-staleness.mjs && node scripts/validate-cross-links.mjs && node scripts/qa-seo.mjs && node scripts/qa-scoring.mjs && node scripts/qa-pmids.mjs --strict",
+    "check": "node scripts/qa-internal-consistency.mjs --strict && node scripts/qa-identity-integrity.mjs && node scripts/qa-comparison-counts.mjs --strict && node scripts/qa-staleness.mjs && node scripts/validate-cross-links.mjs && node scripts/qa-seo.mjs && node scripts/qa-scoring.mjs && node scripts/qa-pmids.mjs --strict",
     "prebuild": "npm run check",
     "build": "astro build",
     "postbuild": "npx pagefind --site dist",
@@ -32,7 +32,9 @@
     "source:thin": "node scripts/source-thin-dossiers.mjs",
     "source:census": "node scripts/name-literature-census.mjs",
     "qa:staleness": "node scripts/qa-staleness.mjs",
-    "qa:identity": "node scripts/qa-identity-integrity.mjs"
+    "qa:identity": "node scripts/qa-identity-integrity.mjs",
+    "qa:counts": "node scripts/qa-comparison-counts.mjs",
+    "fix:counts": "node scripts/reconcile-source-counts.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.14",

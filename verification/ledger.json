@@ -11098,6 +11098,10 @@
         {
           "file": "src/content/peptides/testagen.mdx",
           "where": "frontmatter.scoring.citations[0]"
+        },
+        {
+          "file": "src/content/peptides/testagen.mdx",
+          "where": "frontmatter.scoring.notes"
         }
       ],
       "verdict": "exists",
@@ -16849,6 +16853,14 @@
         {
           "file": "src/content/peptides/shlp-6.mdx",
           "where": "body"
+        },
+        {
+          "file": "src/content/peptides/shlp-6.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/shlp-6.mdx",
+          "where": "body"
         }
       ],
       "verdict": "exists",
@@ -19397,6 +19409,14 @@
       "type": "PMID",
       "id": "40421736",
       "locations": [
+        {
+          "file": "src/content/comparisons/mazdutide-vs-semaglutide.mdx",
+          "where": "frontmatter.sources[1].url"
+        },
+        {
+          "file": "src/content/comparisons/mazdutide-vs-semaglutide.mdx",
+          "where": "frontmatter.sources[1].pmid"
+        },
         {
           "file": "src/content/peptides/mazdutide.mdx",
           "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[0].pmid"
@@ -23069,6 +23089,10 @@
         {
           "file": "src/content/peptides/pf-08653944.mdx",
           "where": "body"
+        },
+        {
+          "file": "data/source-packs/pf-08653944.json",
+          "where": "$.trials[3].nctId"
         }
       ],
       "verdict": "exists",
@@ -44609,6 +44633,14 @@
       "id": "31539622",
       "locations": [
         {
+          "file": "src/content/comparisons/liraglutide-vs-semaglutide.mdx",
+          "where": "frontmatter.sources[2].url"
+        },
+        {
+          "file": "src/content/comparisons/liraglutide-vs-semaglutide.mdx",
+          "where": "frontmatter.sources[2].pmid"
+        },
+        {
           "file": "data/source-packs/semaglutide.json",
           "where": "$.coreLibrary.primaryStudies[25].id"
         }
@@ -44636,6 +44668,10 @@
       "type": "DOI",
       "id": "10.1016/j.diabet.2019.101117",
       "locations": [
+        {
+          "file": "src/content/comparisons/liraglutide-vs-semaglutide.mdx",
+          "where": "frontmatter.sources[2].doi"
+        },
         {
           "file": "data/source-packs/semaglutide.json",
           "where": "$.coreLibrary.primaryStudies[25].doi"
@@ -55577,7 +55613,3458 @@
       },
       "checkedAt": "2026-08-06T10:14:41.226Z",
       "checkVersion": 1
+    },
+    "PMID:35013352": {
+      "type": "PMID",
+      "id": "35013352",
+      "locations": [
+        {
+          "file": "src/content/peptides/5-amino-1mq.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[2].pmid"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Reduced calorie diet combined with NNMT inhibition establishes a distinct microbiome in DIO mice.",
+        "journal": "Scientific reports",
+        "year": "2022",
+        "firstAuthor": "Dimet-Wiley A",
+        "pubTypes": [
+          "Journal Article",
+          "Research Support, N.I.H., Extramural",
+          "Research Support, U.S. Gov't, Non-P.H.S."
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:35.012Z",
+      "checkVersion": 1
+    },
+    "PMID:30753815": {
+      "type": "PMID",
+      "id": "30753815",
+      "locations": [
+        {
+          "file": "src/content/peptides/5-amino-1mq.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[3].pmid"
+        },
+        {
+          "file": "src/content/peptides/5-amino-1mq.mdx",
+          "where": "frontmatter.scoring.citations[7]"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Small molecule nicotinamide N-methyltransferase inhibitor activates senescent muscle stem cells and improves regenerative capacity of aged skeletal muscle.",
+        "journal": "Biochemical pharmacology",
+        "year": "2019",
+        "firstAuthor": "Neelakantan H",
+        "pubTypes": [
+          "Journal Article",
+          "Research Support, N.I.H., Extramural",
+          "Research Support, Non-U.S. Gov't"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:35.584Z",
+      "checkVersion": 1
+    },
+    "PMID:40484359": {
+      "type": "PMID",
+      "id": "40484359",
+      "locations": [
+        {
+          "file": "src/content/peptides/5-amino-1mq.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[1].evidence.keyFindings[2].pmid"
+        },
+        {
+          "file": "src/content/peptides/5-amino-1mq.mdx",
+          "where": "frontmatter.scoring.citations[10]"
+        },
+        {
+          "file": "src/content/peptides/5-amino-1mq.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/5-amino-1mq.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Nicotinamide-N-methyltransferase inhibition improves cardiac function and structure in a heart failure with preserved ejection fraction mouse model.",
+        "journal": "Pharmacological research",
+        "year": "2025",
+        "firstAuthor": "Li S",
+        "pubTypes": [
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:36.358Z",
+      "checkVersion": 1
+    },
+    "PMID:41108586": {
+      "type": "PMID",
+      "id": "41108586",
+      "locations": [
+        {
+          "file": "src/content/peptides/5-amino-1mq.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[1].evidence.keyFindings[3].pmid"
+        },
+        {
+          "file": "src/content/peptides/5-amino-1mq.mdx",
+          "where": "frontmatter.scoring.citations[9]"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Nicotinamide N-methyltransferase inhibition improves limb function in experimental peripheral artery disease.",
+        "journal": "Physiological reports",
+        "year": "2025",
+        "firstAuthor": "Dong G",
+        "pubTypes": [
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:36.929Z",
+      "checkVersion": 1
+    },
+    "PMID:18996527": {
+      "type": "PMID",
+      "id": "18996527",
+      "locations": [
+        {
+          "file": "src/content/peptides/5-amino-1mq.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[1].evidence.keyFindings[4].pmid"
+        },
+        {
+          "file": "src/content/peptides/5-amino-1mq.mdx",
+          "where": "frontmatter.scoring.citations[11]"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Adipose tissue as a source of nicotinamide N-methyltransferase and homocysteine.",
+        "journal": "Atherosclerosis",
+        "year": "2009",
+        "firstAuthor": "Riederer M",
+        "pubTypes": [
+          "Journal Article",
+          "Research Support, Non-U.S. Gov't"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:37.711Z",
+      "checkVersion": 1
+    },
+    "PMID:33645410": {
+      "type": "PMID",
+      "id": "33645410",
+      "locations": [
+        {
+          "file": "src/content/peptides/5-amino-1mq.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[2].evidence.keyFindings[2].pmid"
+        },
+        {
+          "file": "src/content/peptides/5-amino-1mq.mdx",
+          "where": "frontmatter.scoring.citations[6]"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Small molecule inhibitor of nicotinamide N-methyltransferase shows anti-proliferative activity in HeLa cells.",
+        "journal": "Journal of obstetrics and gynaecology : the journal of the Institute of Obstetrics and Gynaecology",
+        "year": "2021",
+        "firstAuthor": "Akar S",
+        "pubTypes": [
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:38.476Z",
+      "checkVersion": 1
+    },
+    "PMID:42067476": {
+      "type": "PMID",
+      "id": "42067476",
+      "locations": [
+        {
+          "file": "src/content/peptides/5-amino-1mq.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[2].evidence.keyFindings[3].pmid"
+        },
+        {
+          "file": "src/content/peptides/5-amino-1mq.mdx",
+          "where": "frontmatter.scoring.citations[8]"
+        },
+        {
+          "file": "src/content/peptides/5-amino-1mq.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/5-amino-1mq.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Emerging opportunities for nicotinamide N-methyltransferase (NNMT) inhibitor clinical translation.",
+        "journal": "Trends in pharmacological sciences",
+        "year": "2026",
+        "firstAuthor": "Puleo N",
+        "pubTypes": [
+          "Journal Article",
+          "Review"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:39.074Z",
+      "checkVersion": 1
+    },
+    "PMID:16625817": {
+      "type": "PMID",
+      "id": "16625817",
+      "locations": [
+        {
+          "file": "src/content/peptides/aod-9604.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[1].evidence.keyFindings[2].pmid"
+        },
+        {
+          "file": "src/content/peptides/aod-9604.mdx",
+          "where": "frontmatter.scoring.citations[10]"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Obesity drugs in clinical development.",
+        "journal": "Current opinion in investigational drugs (London, England : 2000)",
+        "year": "2006",
+        "firstAuthor": "Halford JC",
+        "pubTypes": [
+          "Journal Article",
+          "Review"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:39.834Z",
+      "checkVersion": 1
+    },
+    "PMID:41966639": {
+      "type": "PMID",
+      "id": "41966639",
+      "locations": [
+        {
+          "file": "src/content/peptides/aod-9604.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[1].evidence.keyFindings[3].pmid"
+        },
+        {
+          "file": "src/content/peptides/aod-9604.mdx",
+          "where": "frontmatter.scoring.citations[7]"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Safety and Efficacy of Approved and Unapproved Peptide Therapies for Musculoskeletal Injuries and Athletic Performance.",
+        "journal": "Sports medicine (Auckland, N.Z.)",
+        "year": "2026",
+        "firstAuthor": "Mendias CL",
+        "pubTypes": [
+          "Journal Article",
+          "Review"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:40.411Z",
+      "checkVersion": 1
+    },
+    "PMID:42395176": {
+      "type": "PMID",
+      "id": "42395176",
+      "locations": [
+        {
+          "file": "src/content/peptides/aod-9604.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[1].evidence.keyFindings[4].pmid"
+        },
+        {
+          "file": "src/content/peptides/aod-9604.mdx",
+          "where": "frontmatter.scoring.citations[8]"
+        },
+        {
+          "file": "src/content/peptides/aod-9604.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/aod-9604.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "The emerging landscape of performance-enhancing peptides modulating GH-IGF1 axis: bridging the gap between clinical evidence and patient self-administration.",
+        "journal": "Frontiers in endocrinology",
+        "year": "2026",
+        "firstAuthor": "Dominikowski A",
+        "pubTypes": [
+          "Journal Article",
+          "Review"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:40.987Z",
+      "checkVersion": 1
+    },
+    "PMID:26275694": {
+      "type": "PMID",
+      "id": "26275694",
+      "locations": [
+        {
+          "file": "src/content/peptides/aod-9604.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[3].evidence.keyFindings[0].pmid"
+        },
+        {
+          "file": "src/content/peptides/aod-9604.mdx",
+          "where": "frontmatter.scoring.citations[6]"
+        },
+        {
+          "file": "src/content/peptides/aod-9604.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/aod-9604.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Effect of Intra-articular Injection of AOD9604 with or without Hyaluronic Acid in Rabbit Osteoarthritis Model.",
+        "journal": "Annals of clinical and laboratory science",
+        "year": "2015",
+        "firstAuthor": "Kwon DR",
+        "pubTypes": [
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:41.673Z",
+      "checkVersion": 1
+    },
+    "PMID:25208511": {
+      "type": "PMID",
+      "id": "25208511",
+      "locations": [
+        {
+          "file": "src/content/peptides/aod-9604.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[4].evidence.keyFindings[0].pmid"
+        },
+        {
+          "file": "src/content/peptides/aod-9604.mdx",
+          "where": "frontmatter.scoring.citations[5]"
+        },
+        {
+          "file": "src/content/peptides/aod-9604.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/aod-9604.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Detection and in vitro metabolism of AOD9604.",
+        "journal": "Drug testing and analysis",
+        "year": "2015",
+        "firstAuthor": "Cox HD",
+        "pubTypes": [
+          "Journal Article",
+          "Research Support, N.I.H., Extramural",
+          "Validation Study"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:42.250Z",
+      "checkVersion": 1
+    },
+    "PMID:41490200": {
+      "type": "PMID",
+      "id": "41490200",
+      "locations": [
+        {
+          "file": "src/content/peptides/aod-9604.mdx",
+          "where": "frontmatter.scoring.citations[9]"
+        },
+        {
+          "file": "src/content/peptides/dihexa.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[2].evidence.keyFindings[3].pmid"
+        },
+        {
+          "file": "src/content/peptides/dihexa.mdx",
+          "where": "frontmatter.scoring.citations[10]"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Therapeutic Peptides in Orthopaedics: Applications, Challenges, and Future Directions.",
+        "journal": "Journal of the American Academy of Orthopaedic Surgeons. Global research & reviews",
+        "year": "2026",
+        "firstAuthor": "Rahman OF",
+        "pubTypes": [
+          "Journal Article",
+          "Review"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:43.019Z",
+      "checkVersion": 1
+    },
+    "PMID:24124033": {
+      "type": "PMID",
+      "id": "24124033",
+      "locations": [
+        {
+          "file": "src/content/peptides/aod-9604.mdx",
+          "where": "frontmatter.scoring.citations[11]"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "AOD-9604 does not influence the WADA hGH isoform immunoassay.",
+        "journal": "Drug testing and analysis",
+        "year": "2013",
+        "firstAuthor": "Orlovius AK",
+        "pubTypes": [
+          "Letter",
+          "Research Support, Non-U.S. Gov't"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:43.786Z",
+      "checkVersion": 1
+    },
+    "PMID:24976118": {
+      "type": "PMID",
+      "id": "24976118",
+      "locations": [
+        {
+          "file": "src/content/peptides/aod-9604.mdx",
+          "where": "frontmatter.scoring.citations[12]"
+        },
+        {
+          "file": "src/content/peptides/aod-9604.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/aod-9604.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Identification and characterization of peptide drugs in unknown pharmaceutical preparations seized by the Belgian authorities: case report on AOD9604.",
+        "journal": "Drug testing and analysis",
+        "year": "2014",
+        "firstAuthor": "Vanhee C",
+        "pubTypes": [
+          "Letter"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:44.349Z",
+      "checkVersion": 1
+    },
+    "PMID:38489193": {
+      "type": "PMID",
+      "id": "38489193",
+      "locations": [
+        {
+          "file": "src/content/peptides/dihexa.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[2].pmid"
+        },
+        {
+          "file": "src/content/peptides/dihexa.mdx",
+          "where": "frontmatter.scoring.citations[4]"
+        },
+        {
+          "file": "src/content/peptides/dihexa.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/dihexa.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Effects of an Angiotensin IV Analog on 3-Nitropropionic Acid-Induced Huntington's Disease-Like Symptoms in Rats.",
+        "journal": "Journal of Huntington's disease",
+        "year": "2024",
+        "firstAuthor": "Wells RG",
+        "pubTypes": [
+          "Journal Article",
+          "Research Support, Non-U.S. Gov't"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:45.126Z",
+      "checkVersion": 1
+    },
+    "PMID:29733881": {
+      "type": "PMID",
+      "id": "29733881",
+      "locations": [
+        {
+          "file": "src/content/peptides/dihexa.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[3].pmid"
+        },
+        {
+          "file": "src/content/peptides/dihexa.mdx",
+          "where": "frontmatter.scoring.citations[6]"
+        },
+        {
+          "file": "src/content/peptides/dihexa.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/dihexa.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Cognitive benefits of angiotensin IV and angiotensin-(1-7): A systematic review of experimental studies.",
+        "journal": "Neuroscience and biobehavioral reviews",
+        "year": "2018",
+        "firstAuthor": "Ho JK",
+        "pubTypes": [
+          "Journal Article",
+          "Systematic Review"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:45.693Z",
+      "checkVersion": 1
+    },
+    "PMID:27532814": {
+      "type": "PMID",
+      "id": "27532814",
+      "locations": [
+        {
+          "file": "src/content/peptides/dihexa.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[1].evidence.keyFindings[2].pmid"
+        },
+        {
+          "file": "src/content/peptides/dihexa.mdx",
+          "where": "frontmatter.scoring.citations[7]"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Small-Molecule-Directed Hepatocyte-Like Cell Differentiation of Human Pluripotent Stem Cells.",
+        "journal": "Current protocols in stem cell biology",
+        "year": "2016",
+        "firstAuthor": "Mathapati S",
+        "pubTypes": [
+          "Journal Article",
+          "Research Support, Non-U.S. Gov't"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:46.457Z",
+      "checkVersion": 1
+    },
+    "PMID:25937370": {
+      "type": "PMID",
+      "id": "25937370",
+      "locations": [
+        {
+          "file": "src/content/peptides/dihexa.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[1].evidence.keyFindings[3].pmid"
+        },
+        {
+          "file": "src/content/peptides/dihexa.mdx",
+          "where": "frontmatter.scoring.citations[8]"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Small-molecule-driven hepatocyte differentiation of human pluripotent stem cells.",
+        "journal": "Stem cell reports",
+        "year": "2015",
+        "firstAuthor": "Siller R",
+        "pubTypes": [
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:47.047Z",
+      "checkVersion": 1
+    },
+    "PMID:35410439": {
+      "type": "PMID",
+      "id": "35410439",
+      "locations": [
+        {
+          "file": "src/content/peptides/dihexa.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[1].evidence.keyFindings[4].pmid"
+        },
+        {
+          "file": "src/content/peptides/dihexa.mdx",
+          "where": "frontmatter.scoring.citations[9]"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Efficiently generate functional hepatic cells from human pluripotent stem cells by complete small-molecule strategy.",
+        "journal": "Stem cell research & therapy",
+        "year": "2022",
+        "firstAuthor": "Pan T",
+        "pubTypes": [
+          "Journal Article",
+          "Research Support, Non-U.S. Gov't"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:47.618Z",
+      "checkVersion": 1
+    },
+    "PMID:34703584": {
+      "type": "PMID",
+      "id": "34703584",
+      "locations": [
+        {
+          "file": "src/content/peptides/dihexa.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[2].evidence.keyFindings[2].pmid"
+        },
+        {
+          "file": "src/content/peptides/dihexa.mdx",
+          "where": "frontmatter.scoring.citations[5]"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Stem cell, Granulocyte-Colony Stimulating Factor and/or Dihexa to promote limb function recovery in a rat sciatic nerve damage-repair model: Experimental animal studies.",
+        "journal": "Annals of medicine and surgery (2012)",
+        "year": "2021",
+        "firstAuthor": "Weiss JB",
+        "pubTypes": [
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:48.207Z",
+      "checkVersion": 1
+    },
+    "PMID:33996787": {
+      "type": "PMID",
+      "id": "33996787",
+      "locations": [
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[2].pmid"
+        },
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "frontmatter.scoring.citations[3]"
+        },
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "frontmatter.scoring.notes"
+        },
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Senolytic Peptide FOXO4-DRI Selectively Removes Senescent Cells From in vitro Expanded Human Chondrocytes.",
+        "journal": "Frontiers in bioengineering and biotechnology",
+        "year": "2021",
+        "firstAuthor": "Huang Y",
+        "pubTypes": [
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:48.991Z",
+      "checkVersion": 1
+    },
+    "PMID:40593617": {
+      "type": "PMID",
+      "id": "40593617",
+      "locations": [
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[3].pmid"
+        },
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "frontmatter.scoring.citations[4]"
+        },
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "frontmatter.scoring.notes"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "The disordered p53 transactivation domain is the target of FOXO4 and the senolytic compound FOXO4-DRI.",
+        "journal": "Nature communications",
+        "year": "2025",
+        "firstAuthor": "Bourgeois B",
+        "pubTypes": [
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:49.749Z",
+      "checkVersion": 1
+    },
+    "PMID:39994346": {
+      "type": "PMID",
+      "id": "39994346",
+      "locations": [
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[4].pmid"
+        },
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "frontmatter.scoring.citations[5]"
+        },
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "frontmatter.scoring.notes"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "FOXO4-DRI induces keloid senescent fibroblast apoptosis by promoting nuclear exclusion of upregulated p53-serine 15 phosphorylation.",
+        "journal": "Communications biology",
+        "year": "2025",
+        "firstAuthor": "Kong YX",
+        "pubTypes": [
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:50.325Z",
+      "checkVersion": 1
+    },
+    "PMID:36515093": {
+      "type": "PMID",
+      "id": "36515093",
+      "locations": [
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[5].pmid"
+        },
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "frontmatter.scoring.citations[11]"
+        },
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "frontmatter.scoring.notes"
+        },
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Eliminating Senescent Cells Can Promote Pulmonary Hypertension Development and Progression.",
+        "journal": "Circulation",
+        "year": "2023",
+        "firstAuthor": "Born E",
+        "pubTypes": [
+          "Journal Article",
+          "Research Support, Non-U.S. Gov't"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:50.909Z",
+      "checkVersion": 1
+    },
+    "PMID:42024235": {
+      "type": "PMID",
+      "id": "42024235",
+      "locations": [
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[6].pmid"
+        },
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "frontmatter.scoring.citations[12]"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Targeting the FOXO4-p53 axis by retro-inverso peptide senolytic agents: a pharmacological strategy to mitigate brain aging and cognitive decline.",
+        "journal": "Naunyn-Schmiedeberg's archives of pharmacology",
+        "year": "2026",
+        "firstAuthor": "Alameen AAM",
+        "pubTypes": [
+          "Journal Article",
+          "Review"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:51.734Z",
+      "checkVersion": 1
+    },
+    "PMID:39025385": {
+      "type": "PMID",
+      "id": "39025385",
+      "locations": [
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[2].evidence.keyFindings[1].pmid"
+        },
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "frontmatter.scoring.citations[7]"
+        },
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "frontmatter.scoring.notes"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "FOXO4-DRI improves spermatogenesis in aged mice through reducing senescence-associated secretory phenotype secretion from Leydig cells.",
+        "journal": "Experimental gerontology",
+        "year": "2024",
+        "firstAuthor": "Li Y",
+        "pubTypes": [
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:52.593Z",
+      "checkVersion": 1
+    },
+    "PMID:31959736": {
+      "type": "PMID",
+      "id": "31959736",
+      "locations": [
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[2].evidence.keyFindings[2].pmid"
+        },
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "frontmatter.scoring.citations[6]"
+        },
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "frontmatter.scoring.notes"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "FOXO4-DRI alleviates age-related testosterone secretion insufficiency by targeting senescent Leydig cells in aged mice.",
+        "journal": "Aging",
+        "year": "2020",
+        "firstAuthor": "Zhang C",
+        "pubTypes": [
+          "Journal Article",
+          "Research Support, Non-U.S. Gov't"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:53.157Z",
+      "checkVersion": 1
+    },
+    "PMID:37074394": {
+      "type": "PMID",
+      "id": "37074394",
+      "locations": [
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[3].evidence.keyFindings[0].pmid"
+        },
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "frontmatter.scoring.citations[8]"
+        },
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "frontmatter.scoring.notes"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "FOXO4-D-Retro-Inverso targets extracellular matrix production in fibroblasts and ameliorates bleomycin-induced pulmonary fibrosis in mice.",
+        "journal": "Naunyn-Schmiedeberg's archives of pharmacology",
+        "year": "2023",
+        "firstAuthor": "Liu Y",
+        "pubTypes": [
+          "Journal Article",
+          "Research Support, Non-U.S. Gov't"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:53.730Z",
+      "checkVersion": 1
+    },
+    "PMID:35510614": {
+      "type": "PMID",
+      "id": "35510614",
+      "locations": [
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[3].evidence.keyFindings[1].pmid"
+        },
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "frontmatter.scoring.citations[9]"
+        },
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "frontmatter.scoring.notes"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "FOXO4 peptide targets myofibroblast ameliorates bleomycin-induced pulmonary fibrosis in mice through ECM-receptor interaction pathway.",
+        "journal": "Journal of cellular and molecular medicine",
+        "year": "2022",
+        "firstAuthor": "Han X",
+        "pubTypes": [
+          "Journal Article",
+          "Research Support, Non-U.S. Gov't"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:54.303Z",
+      "checkVersion": 1
+    },
+    "PMID:41625068": {
+      "type": "PMID",
+      "id": "41625068",
+      "locations": [
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[3].evidence.keyFindings[2].pmid"
+        },
+        {
+          "file": "src/content/peptides/foxo4-dri.mdx",
+          "where": "frontmatter.scoring.citations[10]"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "FOXO4-DRI regulates endothelial cell senescence via the P53 signaling pathway.",
+        "journal": "Frontiers in bioengineering and biotechnology",
+        "year": "2025",
+        "firstAuthor": "Hu Z",
+        "pubTypes": [
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:54.885Z",
+      "checkVersion": 1
+    },
+    "PMID:12577697": {
+      "type": "PMID",
+      "id": "12577697",
+      "locations": [
+        {
+          "file": "src/content/peptides/livagen.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[2].pmid"
+        },
+        {
+          "file": "src/content/peptides/livagen.mdx",
+          "where": "frontmatter.scoring.citations[4]"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "[Functional morphology of an organotypic liver culture exposed to the peptide livagen].",
+        "journal": "Advances in gerontology = Uspekhi gerontologii",
+        "year": "2002",
+        "firstAuthor": "Riadnova IIu",
+        "pubTypes": [
+          "English Abstract",
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:55.486Z",
+      "checkVersion": 1
+    },
+    "PMID:15926314": {
+      "type": "PMID",
+      "id": "15926314",
+      "locations": [
+        {
+          "file": "src/content/peptides/livagen.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[3].pmid"
+        },
+        {
+          "file": "src/content/peptides/livagen.mdx",
+          "where": "frontmatter.scoring.citations[5]"
+        },
+        {
+          "file": "src/content/peptides/livagen.mdx",
+          "where": "frontmatter.scoring.notes"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "[Rhythm of protein synthesis in cultures of hepatocytes from rats of different ages. Norm and effect of the peptide livagen].",
+        "journal": "Izvestiia Akademii nauk. Seriia biologicheskaia",
+        "year": "2001",
+        "firstAuthor": "Brodskiĭ VIa",
+        "pubTypes": [
+          "English Abstract",
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:56.077Z",
+      "checkVersion": 1
+    },
+    "PMID:12533768": {
+      "type": "PMID",
+      "id": "12533768",
+      "locations": [
+        {
+          "file": "src/content/peptides/livagen.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[1].evidence.keyFindings[2].pmid"
+        },
+        {
+          "file": "src/content/peptides/livagen.mdx",
+          "where": "frontmatter.scoring.citations[8]"
+        },
+        {
+          "file": "src/content/peptides/livagen.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/livagen.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Effects of Livagen peptide on chromatin activation in lymphocytes from old people.",
+        "journal": "Bulletin of experimental biology and medicine",
+        "year": "2002",
+        "firstAuthor": "Khavinson VKh",
+        "pubTypes": [
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:56.681Z",
+      "checkVersion": 1
+    },
+    "PMID:16705247": {
+      "type": "PMID",
+      "id": "16705247",
+      "locations": [
+        {
+          "file": "src/content/peptides/livagen.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[1].evidence.keyFindings[3].pmid"
+        },
+        {
+          "file": "src/content/peptides/livagen.mdx",
+          "where": "frontmatter.scoring.citations[9]"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Anti-aging peptide bioregulators induce reactivation of chromatin.",
+        "journal": "Georgian medical news",
+        "year": "2006",
+        "firstAuthor": "Lezhava T",
+        "pubTypes": [
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:57.266Z",
+      "checkVersion": 1
+    },
+    "PMID:17921545": {
+      "type": "PMID",
+      "id": "17921545",
+      "locations": [
+        {
+          "file": "src/content/peptides/livagen.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[1].evidence.keyFindings[4].pmid"
+        },
+        {
+          "file": "src/content/peptides/livagen.mdx",
+          "where": "frontmatter.scoring.citations[10]"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "[Variability of radiation-induced adaptive response in old age individuals and their correction by Peptide bioregulator -Livagen].",
+        "journal": "Georgian medical news",
+        "year": "2007",
+        "firstAuthor": "Dzhokhadze TA",
+        "pubTypes": [
+          "English Abstract",
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:57.845Z",
+      "checkVersion": 1
+    },
+    "PMID:16075683": {
+      "type": "PMID",
+      "id": "16075683",
+      "locations": [
+        {
+          "file": "src/content/peptides/livagen.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[3].evidence.keyFindings[0].pmid"
+        },
+        {
+          "file": "src/content/peptides/livagen.mdx",
+          "where": "frontmatter.scoring.citations[6]"
+        },
+        {
+          "file": "src/content/peptides/livagen.mdx",
+          "where": "frontmatter.scoring.notes"
+        },
+        {
+          "file": "src/content/peptides/livagen.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/livagen.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "[Effect of peptide Livagen on activity of digestive enzymes in gastrointestinal tract and non-digestive organs in rats of different ages].",
+        "journal": "Advances in gerontology = Uspekhi gerontologii",
+        "year": "2005",
+        "firstAuthor": "Timofeeva NM",
+        "pubTypes": [
+          "English Abstract",
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:58.419Z",
+      "checkVersion": 1
+    },
+    "PMID:12942748": {
+      "type": "PMID",
+      "id": "12942748",
+      "locations": [
+        {
+          "file": "src/content/peptides/livagen.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[3].evidence.keyFindings[1].pmid"
+        },
+        {
+          "file": "src/content/peptides/livagen.mdx",
+          "where": "frontmatter.scoring.citations[7]"
+        },
+        {
+          "file": "src/content/peptides/livagen.mdx",
+          "where": "frontmatter.scoring.notes"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "[Effect of new peptide bioregulators livagen and epitalon on enkephalin-degrading enzymes in human serum].",
+        "journal": "Izvestiia Akademii nauk. Seriia biologicheskaia",
+        "year": "2003",
+        "firstAuthor": "Kost NV",
+        "pubTypes": [
+          "English Abstract",
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:58.997Z",
+      "checkVersion": 1
+    },
+    "PMID:40292418": {
+      "type": "PMID",
+      "id": "40292418",
+      "locations": [
+        {
+          "file": "src/content/peptides/shlp-6.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[2].pmid"
+        },
+        {
+          "file": "src/content/peptides/shlp-6.mdx",
+          "where": "frontmatter.scoring.citations[4]"
+        },
+        {
+          "file": "src/content/peptides/shlp-6.mdx",
+          "where": "frontmatter.scoring.notes"
+        },
+        {
+          "file": "src/content/peptides/shlp-6.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/shlp-6.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "SHLP6: a novel NLRP3 and Cav1 modulating agent in Cu-induced oxidative stress and neurodegeneration.",
+        "journal": "Frontiers in molecular neuroscience",
+        "year": "2025",
+        "firstAuthor": "Thamarai Kannan H",
+        "pubTypes": [
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:08:59.589Z",
+      "checkVersion": 1
+    },
+    "PMID:40915070": {
+      "type": "PMID",
+      "id": "40915070",
+      "locations": [
+        {
+          "file": "src/content/peptides/shlp-6.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[3].pmid"
+        },
+        {
+          "file": "src/content/peptides/shlp-6.mdx",
+          "where": "frontmatter.scoring.citations[3]"
+        },
+        {
+          "file": "src/content/peptides/shlp-6.mdx",
+          "where": "frontmatter.scoring.notes"
+        },
+        {
+          "file": "src/content/peptides/shlp-6.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/shlp-6.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "In-silico modeling of SHLP6: A novel mitochondrial peptide controlling neurodegeneration and cellular aging.",
+        "journal": "Computers in biology and medicine",
+        "year": "2025",
+        "firstAuthor": "Kannan HT",
+        "pubTypes": [
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:00.151Z",
+      "checkVersion": 1
+    },
+    "PMID:32271093": {
+      "type": "PMID",
+      "id": "32271093",
+      "locations": [
+        {
+          "file": "src/content/peptides/shlp-6.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[1].evidence.keyFindings[1].pmid"
+        },
+        {
+          "file": "src/content/peptides/shlp-6.mdx",
+          "where": "frontmatter.scoring.citations[1]"
+        },
+        {
+          "file": "src/content/peptides/shlp-6.mdx",
+          "where": "frontmatter.scoring.notes"
+        },
+        {
+          "file": "src/content/peptides/shlp-6.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/shlp-6.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "High-intensity interval exercise increases humanin, a mitochondrial encoded peptide, in the plasma and muscle of men.",
+        "journal": "Journal of applied physiology (Bethesda, Md. : 1985)",
+        "year": "2020",
+        "firstAuthor": "Woodhead JST",
+        "pubTypes": [
+          "Journal Article",
+          "Research Support, Non-U.S. Gov't"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:00.724Z",
+      "checkVersion": 1
+    },
+    "PMID:37675281": {
+      "type": "PMID",
+      "id": "37675281",
+      "locations": [
+        {
+          "file": "src/content/peptides/shlp-6.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[1].evidence.keyFindings[2].pmid"
+        },
+        {
+          "file": "src/content/peptides/shlp-6.mdx",
+          "where": "frontmatter.scoring.citations[2]"
+        },
+        {
+          "file": "src/content/peptides/shlp-6.mdx",
+          "where": "frontmatter.scoring.notes"
+        },
+        {
+          "file": "src/content/peptides/shlp-6.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/shlp-6.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Mitochondrial polymorphism m.3017C>T of SHLP6 relates to heterothermy.",
+        "journal": "Frontiers in physiology",
+        "year": "2023",
+        "firstAuthor": "Emser SV",
+        "pubTypes": [
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:01.301Z",
+      "checkVersion": 1
+    },
+    "PMID:22708467": {
+      "type": "PMID",
+      "id": "22708467",
+      "locations": [
+        {
+          "file": "src/content/peptides/sigumir.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[1].pmid"
+        },
+        {
+          "file": "src/content/peptides/sigumir.mdx",
+          "where": "frontmatter.scoring.citations[2]"
+        },
+        {
+          "file": "src/content/peptides/sigumir.mdx",
+          "where": "frontmatter.scoring.notes"
+        },
+        {
+          "file": "src/content/peptides/sigumir.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/sigumir.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "[Application of bioregulating therapy in complex treatment of temporomandibular joint diseases in people of elderly and senile age].",
+        "journal": "Advances in gerontology = Uspekhi gerontologii",
+        "year": "2012",
+        "firstAuthor": "Iordanishvili AK",
+        "pubTypes": [
+          "Clinical Trial",
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:01.868Z",
+      "checkVersion": 1
+    },
+    "PMID:32362097": {
+      "type": "PMID",
+      "id": "32362097",
+      "locations": [
+        {
+          "file": "src/content/peptides/sigumir.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[0].evidence.keyFindings[2].pmid"
+        },
+        {
+          "file": "src/content/peptides/sigumir.mdx",
+          "where": "frontmatter.scoring.citations[3]"
+        },
+        {
+          "file": "src/content/peptides/sigumir.mdx",
+          "where": "frontmatter.scoring.notes"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "[Age features of bioregulatory therapy of dental diseases.].",
+        "journal": "Advances in gerontology = Uspekhi gerontologii",
+        "year": "2020",
+        "firstAuthor": "Pinelis IS",
+        "pubTypes": [
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:02.643Z",
+      "checkVersion": 1
+    },
+    "PMID:40807317": {
+      "type": "PMID",
+      "id": "40807317",
+      "locations": [
+        {
+          "file": "src/content/peptides/testagen.mdx",
+          "where": "frontmatter.scoring.citations[3]"
+        },
+        {
+          "file": "src/content/peptides/testagen.mdx",
+          "where": "frontmatter.scoring.notes"
+        },
+        {
+          "file": "src/content/peptides/testagen.mdx",
+          "where": "frontmatter.scoring.notes"
+        },
+        {
+          "file": "src/content/peptides/testagen.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/testagen.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "The Inhibitory Effect and Adsorption Properties of Testagen Peptide on Copper Surfaces in Saline Environments: An Experimental and Computational Study.",
+        "journal": "Molecules (Basel, Switzerland)",
+        "year": "2025",
+        "firstAuthor": "Dobriţescu A",
+        "pubTypes": [
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:03.224Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT02733133": {
+      "type": "NCT",
+      "id": "NCT02733133",
+      "locations": [
+        {
+          "file": "src/content/peptides/testagen.mdx",
+          "where": "frontmatter.scoring.notes"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Product Transference Study of Testagen™ TDS®-Testosterone",
+        "acronym": "TRANSFERENCE",
+        "status": "NOT_YET_RECRUITING",
+        "phase": "PHASE2",
+        "enrollment": 96,
+        "interventions": [
+          "Testagen® TDS Testosterone 5% HypoSpray®"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:03.823Z",
+      "checkVersion": 1
+    },
+    "PMID:23658898": {
+      "type": "PMID",
+      "id": "23658898",
+      "locations": [
+        {
+          "file": "src/content/peptides/testagen.mdx",
+          "where": "frontmatter.scoring.notes"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Effect of peptides Lys-Glu-Asp-Gly and Ala-Glu-Asp-Gly on the morphology of the thymus in hypophysectomized young and old birds.",
+        "journal": "Bulletin of experimental biology and medicine",
+        "year": "2013",
+        "firstAuthor": "Pateyk AV",
+        "pubTypes": [
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:04.535Z",
+      "checkVersion": 1
+    },
+    "PMID:22268052": {
+      "type": "PMID",
+      "id": "22268052",
+      "locations": [
+        {
+          "file": "src/content/peptides/testagen.mdx",
+          "where": "frontmatter.scoring.notes"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Effects of peptides Lys-Glu-Asp-Gly and Ala-Glu-Asp-Gly on hormonal activity and structure of the thyroid gland in hypophysectomized young chickens and old hens.",
+        "journal": "Bulletin of experimental biology and medicine",
+        "year": "2011",
+        "firstAuthor": "Kuznik BI",
+        "pubTypes": [
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:05.305Z",
+      "checkVersion": 1
+    },
+    "PMID:19024016": {
+      "type": "PMID",
+      "id": "19024016",
+      "locations": [
+        {
+          "file": "src/content/peptides/testagen.mdx",
+          "where": "frontmatter.scoring.notes"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "Effect of tetrapeptides Lys-Glu-Asp-Gly and Ala-Glu-Asp-Gly on the structure and function of the thyroid gland in neonatally hypophysectomized chickens.",
+        "journal": "Bulletin of experimental biology and medicine",
+        "year": "2008",
+        "firstAuthor": "Kuznik BI",
+        "pubTypes": [
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:06.064Z",
+      "checkVersion": 1
+    },
+    "PMID:21809626": {
+      "type": "PMID",
+      "id": "21809626",
+      "locations": [
+        {
+          "file": "src/content/peptides/testagen.mdx",
+          "where": "frontmatter.scoring.notes"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "[Effects of Lys-Glu-Asp-Gly and Ala-Glu-Asp-Gly peptides on hormonal activity and thyroid morphology in hypophysectomized mature and old birds].",
+        "journal": "Advances in gerontology = Uspekhi gerontologii",
+        "year": "2011",
+        "firstAuthor": "Kuznik BI",
+        "pubTypes": [
+          "English Abstract",
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:06.628Z",
+      "checkVersion": 1
+    },
+    "PMID:20731122": {
+      "type": "PMID",
+      "id": "20731122",
+      "locations": [
+        {
+          "file": "src/content/peptides/testagen.mdx",
+          "where": "frontmatter.scoring.notes"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "[Effects of hypophyseal Lys-Glu-Asp-Gly and Ala-Glu-Asp-Gly synthetic peptides on immunity, hemostasis, morphology and functions of the thyroid gland in neonatally hypophysectomized chicken and one-year-old birds].",
+        "journal": "Patologicheskaia fiziologiia i eksperimental'naia terapiia",
+        "year": "2010",
+        "firstAuthor": "Kuznik BI",
+        "pubTypes": [
+          "English Abstract",
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:07.514Z",
+      "checkVersion": 1
+    },
+    "PMID:26390612": {
+      "type": "PMID",
+      "id": "26390612",
+      "locations": [
+        {
+          "file": "src/content/peptides/vesugen.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[4].evidence.keyFindings[0].pmid"
+        },
+        {
+          "file": "src/content/peptides/vesugen.mdx",
+          "where": "frontmatter.scoring.citations[2]"
+        },
+        {
+          "file": "src/content/peptides/vesugen.mdx",
+          "where": "frontmatter.scoring.notes"
+        },
+        {
+          "file": "src/content/peptides/vesugen.mdx",
+          "where": "frontmatter.scoring.notes"
+        },
+        {
+          "file": "src/content/peptides/vesugen.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/vesugen.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "[EFFECT OF SYNTHETIC PEPTIDES ON AGING OF PATIENTS WITH CHRONIC POLYMORBIDITY AND ORGANIC BRAIN SYNDROME OF THE CENTRAL NERVOUS SYSTEM IN REMISSION].",
+        "journal": "Advances in gerontology = Uspekhi gerontologii",
+        "year": "2015",
+        "firstAuthor": "Meshchaninov VN",
+        "pubTypes": [
+          "English Abstract",
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:08.100Z",
+      "checkVersion": 1
+    },
+    "PMID:18546826": {
+      "type": "PMID",
+      "id": "18546826",
+      "locations": [
+        {
+          "file": "src/content/peptides/vesugen.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[4].evidence.keyFindings[1].pmid"
+        },
+        {
+          "file": "src/content/peptides/vesugen.mdx",
+          "where": "frontmatter.scoring.citations[3]"
+        },
+        {
+          "file": "src/content/peptides/vesugen.mdx",
+          "where": "frontmatter.scoring.notes"
+        },
+        {
+          "file": "src/content/peptides/vesugen.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/vesugen.mdx",
+          "where": "body"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "[Biological activity of regulatory peptides in model experiments in vitro].",
+        "journal": "Advances in gerontology = Uspekhi gerontologii",
+        "year": "2008",
+        "firstAuthor": "Kozina LS",
+        "pubTypes": [
+          "English Abstract",
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:08.677Z",
+      "checkVersion": 1
+    },
+    "PMID:18546825": {
+      "type": "PMID",
+      "id": "18546825",
+      "locations": [
+        {
+          "file": "src/content/peptides/vesugen.mdx",
+          "where": "frontmatter.evidenceChainedBenefits[4].evidence.keyFindings[2].pmid"
+        },
+        {
+          "file": "src/content/peptides/vesugen.mdx",
+          "where": "frontmatter.scoring.citations[4]"
+        },
+        {
+          "file": "src/content/peptides/vesugen.mdx",
+          "where": "frontmatter.scoring.notes"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "pubmed",
+      "evidence": {
+        "title": "[Investigation of antihypoxic properties of short peptides].",
+        "journal": "Advances in gerontology = Uspekhi gerontologii",
+        "year": "2008",
+        "firstAuthor": "Kozina LS",
+        "pubTypes": [
+          "Journal Article"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:09.243Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07745504": {
+      "type": "NCT",
+      "id": "NCT07745504",
+      "locations": [
+        {
+          "file": "data/source-packs/cagrilintide.json",
+          "where": "$.trials[21].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "A Research Study to Compare Two Different Versions of Injectable Cagrilintide and Placebo in People With Excess Body Weight",
+        "acronym": "RENEW 4",
+        "status": "NOT_YET_RECRUITING",
+        "phase": "PHASE3",
+        "enrollment": 285,
+        "interventions": [
+          "Cagrilintide",
+          "Placebo cagrilintide",
+          "Placebo semaglutide"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:09.835Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07748507": {
+      "type": "NCT",
+      "id": "NCT07748507",
+      "locations": [
+        {
+          "file": "data/source-packs/glutathione.json",
+          "where": "$.trials[4].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Comparison of Gingival Depigmentation Using Microneedling and Microneedling With Glutathione Gel - A Split Mouth Clinical Trial",
+        "acronym": "",
+        "status": "COMPLETED",
+        "phase": "NA",
+        "enrollment": 15,
+        "interventions": [
+          "Microneedling using Dermapen device",
+          "Microneedling with 0.5 % Glutathione gel"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:10.300Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT05654922": {
+      "type": "NCT",
+      "id": "NCT05654922",
+      "locations": [
+        {
+          "file": "data/source-packs/glutathione.json",
+          "where": "$.trials[5].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Study to Evaluate ARINA-1 in the Prevention of Bronchiolitis Obliterans Progression in Participants With Bilateral Lung Transplant",
+        "acronym": "",
+        "status": "RECRUITING",
+        "phase": "PHASE3",
+        "enrollment": 100,
+        "interventions": [
+          "ARINA-1",
+          "Standard of care only"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:10.770Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07304440": {
+      "type": "NCT",
+      "id": "NCT07304440",
+      "locations": [
+        {
+          "file": "data/source-packs/glutathione.json",
+          "where": "$.trials[6].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Adia MED of Winter Park LLC Autism Spectrum Disorder Research Study",
+        "acronym": "",
+        "status": "RECRUITING",
+        "phase": "PHASE1/PHASE2",
+        "enrollment": 100,
+        "interventions": [
+          "Umbilical Cord Blood-Derived Stem Cells and Exosomes",
+          "Glutathione"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:11.235Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07572890": {
+      "type": "NCT",
+      "id": "NCT07572890",
+      "locations": [
+        {
+          "file": "data/source-packs/glutathione.json",
+          "where": "$.trials[7].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Adia Med of Winter Park LLC Chronic Kidney Disease Research Study",
+        "acronym": "",
+        "status": "RECRUITING",
+        "phase": "PHASE1",
+        "enrollment": 100,
+        "interventions": [
+          "Umbilical Cord Blood-Derived Stem Cells and Exosomes",
+          "Glutathione IV",
+          "Glutathione Spray",
+          "Placebo IV",
+          "Placebo Glutathione IV",
+          "Placebo Spray"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:11.688Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07633002": {
+      "type": "NCT",
+      "id": "NCT07633002",
+      "locations": [
+        {
+          "file": "data/source-packs/hcg.json",
+          "where": "$.trialRegistries[1].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "The Application of HCG in Luteal Support for Frozen Embryo Transfer in Ovulation Cycle of Obese Women",
+        "acronym": "",
+        "status": "NOT_YET_RECRUITING",
+        "phase": "NA",
+        "enrollment": 750,
+        "interventions": [
+          "Human Chorionic Gonadotropin"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:12.186Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07225829": {
+      "type": "NCT",
+      "id": "NCT07225829",
+      "locations": [
+        {
+          "file": "data/source-packs/liraglutide.json",
+          "where": "$.trials[3].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "A Trial to Investigate the Safety and Efficacy of Intra-articular 4P004 Injection in Subjects With Knee Synovitis and Osteoarthritis",
+        "acronym": "INFLAM MOTION",
+        "status": "ACTIVE_NOT_RECRUITING",
+        "phase": "PHASE2",
+        "enrollment": 129,
+        "interventions": [
+          "4P004",
+          "Placebo (NaCl 0.9%)"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:12.648Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07226765": {
+      "type": "NCT",
+      "id": "NCT07226765",
+      "locations": [
+        {
+          "file": "data/source-packs/maritide.json",
+          "where": "$.trials[7].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Maridebart Cafraglutide Versus Placebo in Adult Participants With Obstructive Sleep Apnea Not on Positive Airway Pressure (PAP) Therapy",
+        "acronym": "MARITIME-OSA-2",
+        "status": "RECRUITING",
+        "phase": "PHASE3",
+        "enrollment": 250,
+        "interventions": [
+          "Maridebart cafraglutide",
+          "Placebo"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:13.119Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07226778": {
+      "type": "NCT",
+      "id": "NCT07226778",
+      "locations": [
+        {
+          "file": "data/source-packs/maritide.json",
+          "where": "$.trials[8].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Comparing the Extent to Which Maridebart Cafraglutide (AMG 133) is Made Available in the Body When Administered Using Two Subcutaneous (SC) Presentations",
+        "acronym": "",
+        "status": "COMPLETED",
+        "phase": "PHASE1",
+        "enrollment": 348,
+        "interventions": [
+          "Maridebart Cafraglutide"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:13.583Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07225686": {
+      "type": "NCT",
+      "id": "NCT07225686",
+      "locations": [
+        {
+          "file": "data/source-packs/maritide.json",
+          "where": "$.trials[9].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Maridebart Cafraglutide Versus Placebo in Adult Participants With Obstructive Sleep Apnea on Positive Airway Pressure Therapy",
+        "acronym": "MARITIME-OSA-1",
+        "status": "RECRUITING",
+        "phase": "PHASE3",
+        "enrollment": 250,
+        "interventions": [
+          "Maridebart cafraglutide",
+          "Placebo"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:14.056Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07654062": {
+      "type": "NCT",
+      "id": "NCT07654062",
+      "locations": [
+        {
+          "file": "data/source-packs/mazdutide.json",
+          "where": "$.trials[4].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Mazdutide for Adults With Prediabetes: A Randomized, Double-Blind, Placebo-Controlled Trial (DREAM-PRE)",
+        "acronym": "DREAM-PRE",
+        "status": "NOT_YET_RECRUITING",
+        "phase": "PHASE4",
+        "enrollment": 150,
+        "interventions": [
+          "Mazdutide",
+          "Placebo",
+          "Standardized Lifestyle Intervention"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:14.524Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07633639": {
+      "type": "NCT",
+      "id": "NCT07633639",
+      "locations": [
+        {
+          "file": "data/source-packs/mazdutide.json",
+          "where": "$.trials[5].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "GLP-1 Therapy After Bariatric Surgery in Chinese Patients With Obesity",
+        "acronym": "",
+        "status": "RECRUITING",
+        "phase": "NA",
+        "enrollment": 200,
+        "interventions": [
+          "LSG-Semaglutide group",
+          "LSG-Mazdutide group",
+          "LSG-Tirzepatide group",
+          "LSG group"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:14.993Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT06184568": {
+      "type": "NCT",
+      "id": "NCT06184568",
+      "locations": [
+        {
+          "file": "data/source-packs/mazdutide.json",
+          "where": "$.trials[6].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "A Study Comparing IBI362 vs Semaglutide in Chinese Adults With Early Type 2 Diabetes and Obesity",
+        "acronym": "",
+        "status": "COMPLETED",
+        "phase": "PHASE3",
+        "enrollment": 349,
+        "interventions": [
+          "IBI362",
+          "Semaglutide"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:15.457Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07657676": {
+      "type": "NCT",
+      "id": "NCT07657676",
+      "locations": [
+        {
+          "file": "data/source-packs/mazdutide.json",
+          "where": "$.trials[7].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Effect of Mazdutide on Coronary Plaque in Patients With Coronary Atherosclerosis and Overweight or Obesity",
+        "acronym": "",
+        "status": "NOT_YET_RECRUITING",
+        "phase": "PHASE4",
+        "enrollment": 116,
+        "interventions": [
+          "Mazdutide",
+          "Placebo"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:15.920Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07300280": {
+      "type": "NCT",
+      "id": "NCT07300280",
+      "locations": [
+        {
+          "file": "data/source-packs/mk-0616.json",
+          "where": "$.trials[4].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "A Clinical Trial of Enlicitide and Rosuvastatin in Healthy Adults (MK-0616-039)",
+        "acronym": "",
+        "status": "RECRUITING",
+        "phase": "PHASE1",
+        "enrollment": 60,
+        "interventions": [
+          "MK-0616A",
+          "Enlicitide",
+          "Rosuvastatin"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:16.383Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07739537": {
+      "type": "NCT",
+      "id": "NCT07739537",
+      "locations": [
+        {
+          "file": "data/source-packs/orforglipron.json",
+          "where": "$.trials[15].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "PATHS-T2D: A Recall-by-Genotype Study of Physiologic and Pharmacologic Responses",
+        "acronym": "PATHS-T2D",
+        "status": "NOT_YET_RECRUITING",
+        "phase": "PHASE4",
+        "enrollment": 100,
+        "interventions": [
+          "Orforglipron"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:16.838Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT06993792": {
+      "type": "NCT",
+      "id": "NCT06993792",
+      "locations": [
+        {
+          "file": "data/source-packs/orforglipron.json",
+          "where": "$.trials[16].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "A Master Protocol for Orforglipron (LY3502970) in Participants With Obesity or Overweight With and Without Type 2 Diabetes",
+        "acronym": "",
+        "status": "ACTIVE_NOT_RECRUITING",
+        "phase": "PHASE3",
+        "enrollment": 1400,
+        "interventions": [
+          "Orforglipron",
+          "Placebo"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:17.304Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07613307": {
+      "type": "NCT",
+      "id": "NCT07613307",
+      "locations": [
+        {
+          "file": "data/source-packs/orforglipron.json",
+          "where": "$.trials[17].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "A Study of Orforglipron (LY3502970) in Participants With Type 2 Diabetes Who Observe Ramadan Fasting",
+        "acronym": "ACHIEVE-RAM",
+        "status": "NOT_YET_RECRUITING",
+        "phase": "PHASE3",
+        "enrollment": 130,
+        "interventions": [
+          "Orforglipron"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:17.768Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT05936138": {
+      "type": "NCT",
+      "id": "NCT05936138",
+      "locations": [
+        {
+          "file": "data/source-packs/orforglipron.json",
+          "where": "$.trials[18].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "A Phase 1, Parallel, Single-Dose, Open-Label, Single-Period Study of LY3502970 in Participants With Normal Renal Function and Participants With Renal Impairment.",
+        "acronym": "",
+        "status": "COMPLETED",
+        "phase": "PHASE1",
+        "enrollment": 24,
+        "interventions": [
+          "LY3502970"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:18.329Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT06972459": {
+      "type": "NCT",
+      "id": "NCT06972459",
+      "locations": [
+        {
+          "file": "data/source-packs/orforglipron.json",
+          "where": "$.trials[19].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "A Study of Orforglipron (LY3502970) in Participants With Obesity or Overweight and at Least One Weight-Related Comorbidity",
+        "acronym": "",
+        "status": "ACTIVE_NOT_RECRUITING",
+        "phase": "PHASE3",
+        "enrollment": 800,
+        "interventions": [
+          "Orforglipron",
+          "Placebo"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:18.790Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07729332": {
+      "type": "NCT",
+      "id": "NCT07729332",
+      "locations": [
+        {
+          "file": "data/source-packs/orforglipron.json",
+          "where": "$.trials[20].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Switching to Oral Weight Management Pharmacotherapy to Prevent Weight Regain After GLP-1 Therapy Discontinuation",
+        "acronym": "",
+        "status": "NOT_YET_RECRUITING",
+        "phase": "PHASE4",
+        "enrollment": 60,
+        "interventions": [
+          "Phentermine Pill",
+          "Orforglipron"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:19.252Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT06814938": {
+      "type": "NCT",
+      "id": "NCT06814938",
+      "locations": [
+        {
+          "file": "data/source-packs/semaglutide.json",
+          "where": "$.trials[21].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "A Study of a Novel Precision Medicine Approach For Obesity",
+        "acronym": "",
+        "status": "ACTIVE_NOT_RECRUITING",
+        "phase": "PHASE4",
+        "enrollment": 135,
+        "interventions": [
+          "Semaglutide",
+          "Placebo"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:19.754Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT04873245": {
+      "type": "NCT",
+      "id": "NCT04873245",
+      "locations": [
+        {
+          "file": "data/source-packs/semaglutide.json",
+          "where": "$.trials[22].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Lifestyle Counseling and Medication for Adolescent Weight Management",
+        "acronym": "QUEST",
+        "status": "COMPLETED",
+        "phase": "PHASE2",
+        "enrollment": 120,
+        "interventions": [
+          "Intensive Behavioral Program",
+          "Semaglutide and Behavioral Program"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:20.222Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07642635": {
+      "type": "NCT",
+      "id": "NCT07642635",
+      "locations": [
+        {
+          "file": "data/source-packs/semaglutide.json",
+          "where": "$.trials[23].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Glucagon-Like Peptide-1 Receptor Agonists to Attenuate Metabolic Risk in Individuals With Duchenne Muscular Dystrophy",
+        "acronym": "",
+        "status": "NOT_YET_RECRUITING",
+        "phase": "PHASE1/PHASE2",
+        "enrollment": 30,
+        "interventions": [
+          "Semaglutide (Rybelsus®)",
+          "Placebo"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:20.680Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT05616013": {
+      "type": "NCT",
+      "id": "NCT05616013",
+      "locations": [
+        {
+          "file": "data/source-packs/semaglutide.json",
+          "where": "$.trials[24].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Safety and Efficacy of Bimagrumab and Semaglutide in Adults Who Are Overweight or Obese",
+        "acronym": "",
+        "status": "COMPLETED",
+        "phase": "PHASE2",
+        "enrollment": 507,
+        "interventions": [
+          "Bimagrumab",
+          "Semaglutide",
+          "Placebo"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:21.144Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT06548490": {
+      "type": "NCT",
+      "id": "NCT06548490",
+      "locations": [
+        {
+          "file": "data/source-packs/semaglutide.json",
+          "where": "$.trials[25].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "GLP-1R Agonist Treatment for Opioid Use Disorder",
+        "acronym": "",
+        "status": "RECRUITING",
+        "phase": "PHASE2",
+        "enrollment": 200,
+        "interventions": [
+          "Semaglutide Pen Injector",
+          "Placebo"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:21.608Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07563699": {
+      "type": "NCT",
+      "id": "NCT07563699",
+      "locations": [
+        {
+          "file": "data/source-packs/semaglutide.json",
+          "where": "$.trials[26].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Safety, Tolerability and Efficacy of Semaglutide Depot in Subjects With Type-2 Diabetes Mellitus",
+        "acronym": "",
+        "status": "NOT_YET_RECRUITING",
+        "phase": "PHASE1/PHASE2",
+        "enrollment": 24,
+        "interventions": [
+          "SG Depot 2 mg",
+          "SG Depot 4 mg",
+          "SG Depot 6 mg",
+          "SG Depot 8 mg"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:22.075Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07218354": {
+      "type": "NCT",
+      "id": "NCT07218354",
+      "locations": [
+        {
+          "file": "data/source-packs/semaglutide.json",
+          "where": "$.trials[27].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Cessation or Reduction of Alcohol Consumption in Veterans: A Randomized, Double-Blind, Placebo-Controlled Phase 3 Trial to Evaluate the Efficacy and Safety of a GLP-1 Receptor Agonist Semaglutide in U.S. Veterans With Alcohol Use Disorder",
+        "acronym": "CRAVE",
+        "status": "RECRUITING",
+        "phase": "PHASE3",
+        "enrollment": 622,
+        "interventions": [
+          "Semaglutide",
+          "Placebo"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:22.544Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07677995": {
+      "type": "NCT",
+      "id": "NCT07677995",
+      "locations": [
+        {
+          "file": "data/source-packs/semaglutide.json",
+          "where": "$.trials[28].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Free Fatty Acid Effects In Type 2 Diabetes",
+        "acronym": "",
+        "status": "ENROLLING_BY_INVITATION",
+        "phase": "NA",
+        "enrollment": 60,
+        "interventions": [
+          "Omega-3 Fatty Acids",
+          "Semaglutide 0.25 mg",
+          "Placebo"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:23.004Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07695454": {
+      "type": "NCT",
+      "id": "NCT07695454",
+      "locations": [
+        {
+          "file": "data/source-packs/semaglutide.json",
+          "where": "$.trials[29].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Imaging in Semaglutide Study",
+        "acronym": "",
+        "status": "NOT_YET_RECRUITING",
+        "phase": "",
+        "enrollment": 10,
+        "interventions": [
+          "31P-MRS and MRI"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:23.475Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT06423599": {
+      "type": "NCT",
+      "id": "NCT06423599",
+      "locations": [
+        {
+          "file": "data/source-packs/semaglutide.json",
+          "where": "$.trials[30].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Effect of Weight Loss on Physical and Cardiac Performance in People With Obesity and Heart Failure",
+        "acronym": "FIT-HF",
+        "status": "RECRUITING",
+        "phase": "PHASE2/PHASE3",
+        "enrollment": 100,
+        "interventions": [
+          "Semaglutide Injectable Product",
+          "Calorie-restricted diet"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:24.268Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT05726227": {
+      "type": "NCT",
+      "id": "NCT05726227",
+      "locations": [
+        {
+          "file": "data/source-packs/semaglutide.json",
+          "where": "$.trials[31].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "A Research Study on How Well Semaglutide Helps Children and Teenagers With Excess Body Weight Lose Weight",
+        "acronym": "STEP Young",
+        "status": "ACTIVE_NOT_RECRUITING",
+        "phase": "PHASE3",
+        "enrollment": 210,
+        "interventions": [
+          "Semaglutide",
+          "Placebo"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:24.729Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07619495": {
+      "type": "NCT",
+      "id": "NCT07619495",
+      "locations": [
+        {
+          "file": "data/source-packs/semaglutide.json",
+          "where": "$.trials[32].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Injectable Semaglutide vs Dulaglutide in Individuals at Cardiovascular Risk",
+        "acronym": "",
+        "status": "COMPLETED",
+        "phase": "",
+        "enrollment": 120000,
+        "interventions": [
+          "Semaglutide",
+          "Dulaglutide"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:25.185Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07539415": {
+      "type": "NCT",
+      "id": "NCT07539415",
+      "locations": [
+        {
+          "file": "data/source-packs/semaglutide.json",
+          "where": "$.trials[33].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "A Phase 1 Clinical Trial to Assess the Safety of DWRX5003 and Relative Bioavailability to DWC202502 and DWC202503 in Healthy Adult Volunteers",
+        "acronym": "",
+        "status": "RECRUITING",
+        "phase": "PHASE1",
+        "enrollment": 72,
+        "interventions": [
+          "DWRX5003",
+          "DWC202502",
+          "DWC202503",
+          "DWRX5003P"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:25.648Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07509112": {
+      "type": "NCT",
+      "id": "NCT07509112",
+      "locations": [
+        {
+          "file": "data/source-packs/semaglutide.json",
+          "where": "$.trials[34].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Semaglutide for Treatment of People With Methamphetamine Use Disorder: the SHIFT Study",
+        "acronym": "SHIFT",
+        "status": "NOT_YET_RECRUITING",
+        "phase": "PHASE2",
+        "enrollment": 40,
+        "interventions": [
+          "12 weeks of weekly subcutaneous semaglutide injection"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:26.113Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07272837": {
+      "type": "NCT",
+      "id": "NCT07272837",
+      "locations": [
+        {
+          "file": "data/source-packs/semaglutide.json",
+          "where": "$.trials[35].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Impact of Semaglutide (Ozempic/Wegovy®) on Heart and Muscle Mass",
+        "acronym": "GLIMMER",
+        "status": "RECRUITING",
+        "phase": "",
+        "enrollment": 50,
+        "interventions": []
+      },
+      "checkedAt": "2026-08-06T13:09:26.631Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT06575738": {
+      "type": "NCT",
+      "id": "NCT06575738",
+      "locations": [
+        {
+          "file": "data/source-packs/semaglutide.json",
+          "where": "$.trials[36].nctId"
+        },
+        {
+          "file": "data/source-packs/tirzepatide.json",
+          "where": "$.trials[49].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Physiologic Response to Bariatric Surgery and the Impact of Adjunct Semaglutide in Adolescents",
+        "acronym": "PRESSURE",
+        "status": "RECRUITING",
+        "phase": "PHASE1",
+        "enrollment": 40,
+        "interventions": [
+          "Injectable semaglutide or injectable tirzepatide",
+          "Standard postoperative care"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:27.169Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07743983": {
+      "type": "NCT",
+      "id": "NCT07743983",
+      "locations": [
+        {
+          "file": "data/source-packs/semaglutide.json",
+          "where": "$.trials[37].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "A Study of BGM0504 in Early T2DM With Obesity",
+        "acronym": "",
+        "status": "RECRUITING",
+        "phase": "PHASE3",
+        "enrollment": 372,
+        "interventions": [
+          "BGM0504",
+          "semaglutide"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:27.637Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT06072963": {
+      "type": "NCT",
+      "id": "NCT06072963",
+      "locations": [
+        {
+          "file": "data/source-packs/semaglutide.json",
+          "where": "$.trials[38].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "COMMETS- Combination MCI Metabolic Syndrome",
+        "acronym": "",
+        "status": "RECRUITING",
+        "phase": "PHASE2",
+        "enrollment": 80,
+        "interventions": [
+          "Semaglutide",
+          "Intranasal insulin",
+          "Semaglutide placebo",
+          "Intranasal insulin placebo"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:28.112Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07727473": {
+      "type": "NCT",
+      "id": "NCT07727473",
+      "locations": [
+        {
+          "file": "data/source-packs/semaglutide.json",
+          "where": "$.trials[39].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Preoperative Semaglutide Prior to Radical Prostatectomy",
+        "acronym": "",
+        "status": "NOT_YET_RECRUITING",
+        "phase": "EARLY_PHASE1",
+        "enrollment": 20,
+        "interventions": [
+          "Semaglutide 2.4 mg"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:28.680Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07732218": {
+      "type": "NCT",
+      "id": "NCT07732218",
+      "locations": [
+        {
+          "file": "data/source-packs/semaglutide.json",
+          "where": "$.trials[40].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Efficacy of Once Weekly Semaglutide in Patients With Type 2 Diabetes: a Non Randomized Clinical Trial",
+        "acronym": "",
+        "status": "COMPLETED",
+        "phase": "PHASE4",
+        "enrollment": 95,
+        "interventions": [
+          "Semaglutide (Ozempic®)"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:29.220Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT06299098": {
+      "type": "NCT",
+      "id": "NCT06299098",
+      "locations": [
+        {
+          "file": "data/source-packs/semaglutide.json",
+          "where": "$.trials[41].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "A Study to Test if Trevogrumab or Trevogrumab With Garetosmab When Taken With Semaglutide is Safe and How Well They Work in Adult Patients With Obesity for Weight Loss, Fat Loss, and Lean Mass Preservation",
+        "acronym": "COURAGE",
+        "status": "ACTIVE_NOT_RECRUITING",
+        "phase": "PHASE2",
+        "enrollment": 1005,
+        "interventions": [
+          "Trevogrumab-Part A",
+          "Trevogrumab-Part B and Part C",
+          "Garetosmab",
+          "Semaglutide",
+          "Matching Placebo-Part A",
+          "Matching Placebo-Trevogrumab",
+          "Matching Placebo-Garetosmab"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:29.672Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT06024356": {
+      "type": "NCT",
+      "id": "NCT06024356",
+      "locations": [
+        {
+          "file": "data/source-packs/thymosin-alpha-1.json",
+          "where": "$.trials[2].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Neoadjuvant Chemoradiotherapy Combined With PD-1 Inhibitor and Thymalfasin for Locally Advanced Mid-low Rectal Cancer",
+        "acronym": "",
+        "status": "COMPLETED",
+        "phase": "",
+        "enrollment": 47,
+        "interventions": [
+          "Thymalfasin"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:30.124Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT06139419": {
+      "type": "NCT",
+      "id": "NCT06139419",
+      "locations": [
+        {
+          "file": "data/source-packs/thymosin-alpha-1.json",
+          "where": "$.trials[3].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "The Impact of Thymosin α-1 on the Efficacy of Concurrent Chemoradiotherapy Followed by Immunotherpay Consolidation for Locally Advanced NSCLC",
+        "acronym": "",
+        "status": "COMPLETED",
+        "phase": "PHASE2",
+        "enrollment": 114,
+        "interventions": [
+          "definitive radiotherapy",
+          "induction chemo-immunotherapy",
+          "concurrent chemotherapy",
+          "Immunotheapy consolidation",
+          "Thymosin Alpha1"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:30.593Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07644897": {
+      "type": "NCT",
+      "id": "NCT07644897",
+      "locations": [
+        {
+          "file": "data/source-packs/thymosin-alpha-1.json",
+          "where": "$.trials[4].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Thymosin Alpha 1 Combined With Anti-PD-1 Monoclonal Antibody in Elderly Patients With Advanced Melanoma",
+        "acronym": "",
+        "status": "RECRUITING",
+        "phase": "PHASE2",
+        "enrollment": 55,
+        "interventions": [
+          "Thymosin Alpha 1 and Anti-PD-1 monoclonal antibody"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:31.139Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07602699": {
+      "type": "NCT",
+      "id": "NCT07602699",
+      "locations": [
+        {
+          "file": "data/source-packs/tirzepatide.json",
+          "where": "$.trials[37].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Multi-Site Trial of Tirzepatide for Smoking Cessation",
+        "acronym": "",
+        "status": "RECRUITING",
+        "phase": "PHASE2",
+        "enrollment": 300,
+        "interventions": [
+          "Tirzepatide",
+          "Placebo"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:31.600Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07671391": {
+      "type": "NCT",
+      "id": "NCT07671391",
+      "locations": [
+        {
+          "file": "data/source-packs/tirzepatide.json",
+          "where": "$.trials[38].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "A Randomized, Double-blind, Placebo-controlled Study Evaluating the Effect of LAE102 Injection in Combination With Tirzepatide on Body in Obese Participants",
+        "acronym": "",
+        "status": "NOT_YET_RECRUITING",
+        "phase": "PHASE2",
+        "enrollment": 60,
+        "interventions": [
+          "LAE102 +Tirzepatide",
+          "LAE102 placebo,+Tirzepatide"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:32.117Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07715929": {
+      "type": "NCT",
+      "id": "NCT07715929",
+      "locations": [
+        {
+          "file": "data/source-packs/tirzepatide.json",
+          "where": "$.trials[39].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Effect of Tirzepatide on Recurrence of Atrial Fibrillation After Catheter Ablation in Obese Patients",
+        "acronym": "TEAR-AF",
+        "status": "NOT_YET_RECRUITING",
+        "phase": "PHASE4",
+        "enrollment": 710,
+        "interventions": [
+          "Tirzepatide",
+          "Structured Lifestyle Intervention"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:32.581Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT06651177": {
+      "type": "NCT",
+      "id": "NCT06651177",
+      "locations": [
+        {
+          "file": "data/source-packs/tirzepatide.json",
+          "where": "$.trials[40].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Evaluation of Tirzepatide as an Adjunct to Buprenorphine for the Treatment of Opioid Use Disorder",
+        "acronym": "TAB",
+        "status": "RECRUITING",
+        "phase": "PHASE2",
+        "enrollment": 310,
+        "interventions": [
+          "Tirzepatide",
+          "Placebo"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:33.050Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT06893211": {
+      "type": "NCT",
+      "id": "NCT06893211",
+      "locations": [
+        {
+          "file": "data/source-packs/tirzepatide.json",
+          "where": "$.trials[41].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Effect of Tirzepatide on Brown Adipose Tissue in Obesity",
+        "acronym": "TABFAT",
+        "status": "COMPLETED",
+        "phase": "PHASE2",
+        "enrollment": 34,
+        "interventions": [
+          "Tirzepatide",
+          "Placebo"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:33.516Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07693608": {
+      "type": "NCT",
+      "id": "NCT07693608",
+      "locations": [
+        {
+          "file": "data/source-packs/tirzepatide.json",
+          "where": "$.trials[42].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "An Open-Label Tirzepatide Trial for Comorbid Obesity and Stimulant Use Disorder",
+        "acronym": "TRI-MR",
+        "status": "NOT_YET_RECRUITING",
+        "phase": "PHASE2",
+        "enrollment": 45,
+        "interventions": [
+          "Tirzepatide"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:33.982Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07747805": {
+      "type": "NCT",
+      "id": "NCT07747805",
+      "locations": [
+        {
+          "file": "data/source-packs/tirzepatide.json",
+          "where": "$.trials[43].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "GLP-1 Agonists for Lung Function Improvement and Muscle Restoration in COPD",
+        "acronym": "GLIMR COPD",
+        "status": "NOT_YET_RECRUITING",
+        "phase": "PHASE2",
+        "enrollment": 30,
+        "interventions": [
+          "Tirzepatide"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:34.441Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07382024": {
+      "type": "NCT",
+      "id": "NCT07382024",
+      "locations": [
+        {
+          "file": "data/source-packs/tirzepatide.json",
+          "where": "$.trials[44].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Tirzepatide to Reduce rEcurrence And Burden After Ablation of Atrial Fibrillation",
+        "acronym": "TREAT-AF",
+        "status": "NOT_YET_RECRUITING",
+        "phase": "NA",
+        "enrollment": 200,
+        "interventions": [
+          "Tirzepatide",
+          "Standard Care (in control arm)"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:34.910Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07262762": {
+      "type": "NCT",
+      "id": "NCT07262762",
+      "locations": [
+        {
+          "file": "data/source-packs/tirzepatide.json",
+          "where": "$.trials[45].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Spartina® (Tirzepatide) Effectiveness and Safety Evaluation",
+        "acronym": "",
+        "status": "COMPLETED",
+        "phase": "",
+        "enrollment": 175,
+        "interventions": []
+      },
+      "checkedAt": "2026-08-06T13:09:35.383Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT06937086": {
+      "type": "NCT",
+      "id": "NCT06937086",
+      "locations": [
+        {
+          "file": "data/source-packs/tirzepatide.json",
+          "where": "$.trials[46].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Mirikizumab Administered at the Same Time as Tirzepatide in Adult Participants With Moderately to Severely Active Ulcerative Colitis and Obesity or Overweight: Phase 3b Study",
+        "acronym": "COMMIT-UC",
+        "status": "RECRUITING",
+        "phase": "PHASE3",
+        "enrollment": 350,
+        "interventions": [
+          "Mirikizumab",
+          "Mirikizumab",
+          "Tirzepatide",
+          "Placebo"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:35.855Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07046819": {
+      "type": "NCT",
+      "id": "NCT07046819",
+      "locations": [
+        {
+          "file": "data/source-packs/tirzepatide.json",
+          "where": "$.trials[47].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Tirzepatide in MetALD",
+        "acronym": "",
+        "status": "RECRUITING",
+        "phase": "PHASE2",
+        "enrollment": 120,
+        "interventions": [
+          "Tirzepatide",
+          "Placebo"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:36.321Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07527910": {
+      "type": "NCT",
+      "id": "NCT07527910",
+      "locations": [
+        {
+          "file": "data/source-packs/tirzepatide.json",
+          "where": "$.trials[48].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "A Phase 2a Study of ALN-PNP With and Without a GLP1R Agonist in Adult Patients With Homozygous PNPLA3-Related MASLD",
+        "acronym": "",
+        "status": "RECRUITING",
+        "phase": "PHASE2",
+        "enrollment": 204,
+        "interventions": [
+          "ALN-PNP",
+          "Tirzepatide",
+          "Placebo"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:36.783Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT06588283": {
+      "type": "NCT",
+      "id": "NCT06588283",
+      "locations": [
+        {
+          "file": "data/source-packs/tirzepatide.json",
+          "where": "$.trials[50].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Ixekizumab Concomitantly Administered With Tirzepatide in Adults With Moderate-to-Severe Plaque Psoriasis and Obesity or Overweight",
+        "acronym": "TOGETHER-PsO",
+        "status": "COMPLETED",
+        "phase": "PHASE3",
+        "enrollment": 281,
+        "interventions": [
+          "Ixekizumab",
+          "Tirzepatide"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:37.243Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07559500": {
+      "type": "NCT",
+      "id": "NCT07559500",
+      "locations": [
+        {
+          "file": "data/source-packs/tirzepatide.json",
+          "where": "$.trials[51].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Tirzepatide s Dopaminergic Effects in Alcohol Use Disorders (AUD)",
+        "acronym": "",
+        "status": "RECRUITING",
+        "phase": "PHASE1",
+        "enrollment": 176,
+        "interventions": [
+          "Tirzepatide",
+          "Placebo",
+          "[11C]raclopride plus drug",
+          "[11C]NNC-112"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:37.709Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07676331": {
+      "type": "NCT",
+      "id": "NCT07676331",
+      "locations": [
+        {
+          "file": "data/source-packs/tirzepatide.json",
+          "where": "$.trials[52].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Clinical Study of Local and Systemic Biological Impact of GLP1/GIP-Receptor Agonists in Patients With Breast Cancer: The CLARA Trial",
+        "acronym": "CLARA",
+        "status": "NOT_YET_RECRUITING",
+        "phase": "PHASE2",
+        "enrollment": 168,
+        "interventions": [
+          "Tirzepatide",
+          "Letrozole (Aromatase Inhibitors)"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:38.174Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT06934642": {
+      "type": "NCT",
+      "id": "NCT06934642",
+      "locations": [
+        {
+          "file": "data/source-packs/tirzepatide.json",
+          "where": "$.trials[53].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Effect of Tirzepatide on Markers of MASLD in Patients With Obesity",
+        "acronym": "",
+        "status": "RECRUITING",
+        "phase": "EARLY_PHASE1",
+        "enrollment": 8,
+        "interventions": [
+          "Tirzepatide"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:38.680Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT06162715": {
+      "type": "NCT",
+      "id": "NCT06162715",
+      "locations": [
+        {
+          "file": "data/source-packs/tirzepatide.json",
+          "where": "$.trials[54].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "GLP-1 Receptor Agonists Post-Bariatric Surgery (GRABS) Pilot Trial",
+        "acronym": "GRABS-0",
+        "status": "ACTIVE_NOT_RECRUITING",
+        "phase": "PHASE2/PHASE3",
+        "enrollment": 30,
+        "interventions": [
+          "Tirzepatide",
+          "Standard of Care post-gastric bypass"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:39.156Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07734792": {
+      "type": "NCT",
+      "id": "NCT07734792",
+      "locations": [
+        {
+          "file": "data/source-packs/tirzepatide.json",
+          "where": "$.trials[55].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Tirzepatide in Thrombectomy-Treated Acute Ischemic Stroke: A Randomized Trial",
+        "acronym": "TOPAZ",
+        "status": "NOT_YET_RECRUITING",
+        "phase": "PHASE2/PHASE3",
+        "enrollment": 430,
+        "interventions": [
+          "Tirzepatide",
+          "Standard Medical Care (SMC)"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:39.616Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT06603571": {
+      "type": "NCT",
+      "id": "NCT06603571",
+      "locations": [
+        {
+          "file": "data/source-packs/tirzepatide.json",
+          "where": "$.trials[56].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "A Study to Investigate Weight Management With LY3841136 and Tirzepatide (LY3298176), Alone or in Combination, in Adult Participants With Obesity or Overweight With Type 2 Diabetes",
+        "acronym": "",
+        "status": "ACTIVE_NOT_RECRUITING",
+        "phase": "PHASE2",
+        "enrollment": 367,
+        "interventions": [
+          "LY3841136",
+          "Tirzepatide",
+          "Placebo"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:40.076Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07417618": {
+      "type": "NCT",
+      "id": "NCT07417618",
+      "locations": [
+        {
+          "file": "data/source-packs/tirzepatide.json",
+          "where": "$.trials[57].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "INcreTin-based thERapies for Cardiovascular Event PrevenTion in Patients With and Without ASCVD (INTERCEPT-ASCVD)",
+        "acronym": "INTERCEPT",
+        "status": "COMPLETED",
+        "phase": "",
+        "enrollment": 60000,
+        "interventions": [
+          "Dulaglutide",
+          "Semaglutide",
+          "Tirzepatide",
+          "Sitagliptin"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:40.542Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT06864026": {
+      "type": "NCT",
+      "id": "NCT06864026",
+      "locations": [
+        {
+          "file": "data/source-packs/tirzepatide.json",
+          "where": "$.trials[58].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "A Study to Investigate Effectiveness of Tirzepatide Following Initiation of Ixekizumab in Participants With Active Psoriatic Arthritis and Overweight or Obesity in Clinical Practice (TOGETHER AMPLIFY-PsA)",
+        "acronym": "",
+        "status": "RECRUITING",
+        "phase": "PHASE4",
+        "enrollment": 200,
+        "interventions": [
+          "Tirzepatide"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:41.010Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07728318": {
+      "type": "NCT",
+      "id": "NCT07728318",
+      "locations": [
+        {
+          "file": "data/source-packs/tirzepatide.json",
+          "where": "$.trials[59].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "Efficacy, Safety, and Treatment Satisfaction of Once-Weekly Tirzepatide in Obese Type 2 Diabetic Patients",
+        "acronym": "",
+        "status": "NOT_YET_RECRUITING",
+        "phase": "NA",
+        "enrollment": 52,
+        "interventions": [
+          "Tirzepatide + Standard Therapy (Intervention Group)",
+          "Standard Oral Antidiabetic Drugs (OADs)"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:41.475Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT07697391": {
+      "type": "NCT",
+      "id": "NCT07697391",
+      "locations": [
+        {
+          "file": "data/source-packs/tirzepatide.json",
+          "where": "$.trials[60].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "AI-Assisted Lifestyle Intervention Versus Tirzepatide for Obesity and Newly Diagnosed Type 2 Diabetes",
+        "acronym": "AI-LIFE-T2D-OB",
+        "status": "NOT_YET_RECRUITING",
+        "phase": "PHASE4",
+        "enrollment": 285,
+        "interventions": [
+          "AI-Assisted Intensive Lifestyle Intervention",
+          "Tirzepatide",
+          "Standard Lifestyle Management"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:41.940Z",
+      "checkVersion": 1
+    },
+    "NCT:NCT06700538": {
+      "type": "NCT",
+      "id": "NCT06700538",
+      "locations": [
+        {
+          "file": "data/source-packs/tirzepatide.json",
+          "where": "$.trials[61].nctId"
+        }
+      ],
+      "verdict": "exists",
+      "authority": "clinicaltrials.gov",
+      "evidence": {
+        "title": "A First-In-Human Study of ARO-INHBE in Adults With Obesity With and Without Type 2 Diabetes Mellitus",
+        "acronym": "",
+        "status": "RECRUITING",
+        "phase": "PHASE1/PHASE2",
+        "enrollment": 180,
+        "interventions": [
+          "ARO-INHBE",
+          "Placebo",
+          "Tirzepatide"
+        ]
+      },
+      "checkedAt": "2026-08-06T13:09:42.406Z",
+      "checkVersion": 1
     }
   },
-  "enumeratedAt": "2026-08-06T10:13:58.172Z"
+  "enumeratedAt": "2026-08-06T13:08:34.616Z"
 }

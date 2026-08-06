@@ -89,11 +89,12 @@ for (const p of dossiers) {
     newPapers: [], newTrials: [], updatedTrials: [] };
 
   // --- PubMed: papers entered since the window ---
+  let ids = [];
   try {
     const RETMAX = 200;
     const dateFilter = `("${fmt(from)}"[EDAT] : "3000"[EDAT])`;
     const res = await searchPerAlias(searchTerms, { retmax: RETMAX, sort: 'date', filter: dateFilter, primary: p.name });
-    const ids = res.ids;
+    ids = res.ids;
     out.queriedAliases = res.perAlias;
     // Aliases that returned far more than the primary name are naming a category, not this
     // compound. Their results are discarded before anything reaches the worklist, and the alias is
@@ -128,9 +129,35 @@ for (const p of dossiers) {
         } catch (e) { /* fall back to title-only below */ }
         await sleep(400);
       }
-      const su = await fetchT(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&retmode=json&id=${fresh.join(',')}`);
-      const j = su.ok ? (await su.json()).result || {} : {};
-      for (const id of j.uids || []) {
+      /* esummary MUST be batched, and its failures must be loud.
+       *
+       * This was one call carrying every fresh PMID in the query string, while the efetch loop
+       * directly above it batched at 100. Glutathione produced ~900 fresh ids, the URL blew past
+       * the length NCBI accepts, the request failed, `result` came back empty — and the scan
+       * reported "0 new papers" for a compound with 1,808 records in the window. No error, no
+       * warning: a failed request rendered as an absence of findings, which is the single most
+       * dangerous way for a discovery step to break, because nothing downstream can tell the
+       * difference between "quiet window" and "we never asked".
+       */
+      const j = {};
+      const uids = [];
+      let summaryFailures = 0;
+      for (let k = 0; k < fresh.length; k += 100) {
+        const batch = fresh.slice(k, k + 100);
+        try {
+          const su = await fetchT(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&retmode=json&id=${batch.join(',')}`);
+          if (!su.ok) { summaryFailures++; continue; }
+          const r = (await su.json()).result || {};
+          for (const id of r.uids || []) { j[id] = r[id]; uids.push(id); }
+        } catch { summaryFailures++; }
+        await sleep(380);
+      }
+      if (summaryFailures) {
+        out.partialQuery = true;
+        out.summaryBatchesFailed = summaryFailures;
+        out.notes = [...(out.notes || []), `${summaryFailures} esummary batch(es) failed — this worklist is INCOMPLETE. Re-run before treating it as coverage.`];
+      }
+      for (const id of uids) {
         if (!j[id] || j[id].error) continue;
         const hay = text[id] || String(j[id].title || '').toLowerCase();
         if (!isRelevant(names, hay)) { out.filteredOut = (out.filteredOut || 0) + 1; continue; }
@@ -165,6 +192,18 @@ for (const p of dossiers) {
     }
   } catch (e) { out.ctgovError = e.message; }
   await sleep(320);
+
+  /* SILENT-ZERO GUARD.
+   *
+   * "The registry returned ids, none of them survived, and none were even filtered" is not a quiet
+   * window — it is the signature of a request that failed without saying so. It is exactly what
+   * glutathione looked like when the unbatched esummary call was silently rejected: 1,808 records
+   * in the window, 0 reported, 0 filtered, no error anywhere. Downstream, that is indistinguishable
+   * from genuine absence, so it has to be caught here or not at all. */
+  if (ids.length && !out.newPapers.length && !out.filteredOut && !out.partialQuery) {
+    out.silentZero = true;
+    out.notes = [...(out.notes || []), `SUSPECT: ${ids.length} record(s) retrieved but 0 reported and 0 filtered. A discovery step failed without raising an error. Do NOT treat this as "nothing new".`];
+  }
 
   const worklist = path.join(OUT, `${p.slug}.json`);
   if (out.newPapers.length || out.newTrials.length || out.updatedTrials.length) {

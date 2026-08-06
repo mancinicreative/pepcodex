@@ -1,0 +1,32 @@
+═══ STAGE 1: matcher self-tests (against real observed defects) ═══
+
+  ok    authoring-safety         3/3 cases
+  ok    claim-consistency        4/4 cases
+  ok    identifiers-resolve      4/4 cases
+  ok    dossier-citations        7/7 cases
+  ok    trial-attribution        10/10 cases
+  ok    pack-citations           5/5 cases
+  ok    attached-identifiers     2/2 cases
+  ok    quantitative-claims      7/7 cases
+  ok    discovery-relevance      5/5 cases
+
+  47 passed · 0 failed
+
+═══ STAGE 2: corpus checks in dependency order ═══
+
+  PASS  authoring-safety         PASS: no contradicting facts, count mismatches, or patterned identifiers.
+  PASS  internal-consistency     PASS: no contradicting facts, count mismatches, or patterned identifiers.
+  PASS  claim-consistency        Wrote .planning/citation-audit/CLAIM-CONSISTENCY.md
+  PASS  identifiers-resolve      PASS: every cited PMID (1083), NCT (333), and DOI (512) resolves.
+  PASS  dossier-citations        Wrote .planning/citation-audit/dossier-citation-suspects.json
+  PASS  trial-attribution        Wrote .planning/citation-audit/trial-triage.json + TRIAL-TRIAGE.md
+  PASS  pack-citations           Wrote .planning/citation-audit/pack-citations.json
+  PASS  attached-identifiers     Wrote .planning/citation-audit/attached-identifier-audit.json
+  PASS  retractions              PASS: no cited PMID/DOI is in the Retraction Watch retracted set (29530 retracted PM
+  PASS  quantitative-claims      Wrote .planning/citation-audit/QUANTITATIVE-REVIEW.md
+  PASS  discovery-relevance      relevance filter is applied inside monthly-research-scan.mjs; validated by self-test
+
+═══ VERDICT ═══
+  {"pass":11}
+  All executed checks passed, and every matcher was validated first.
+GRAPH_EXIT=0

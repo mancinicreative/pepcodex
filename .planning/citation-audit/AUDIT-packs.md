@@ -1,0 +1,407 @@
+# Fabrication Audit — 2026-07-24
+
+Surface: `packs` · records 1131 · findings **239**
+
+
+## packs (239)
+
+- **[critical/R]** `10.2337/db18-0458` in `data/source-packs/5-amino-1mq.json` (5-amino-1mq)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1006/meth.1997.0437` in `data/source-packs/aod-9604.json` (aod-9604)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/s0167-0115(01)00289-7` in `data/source-packs/aod-9604.json` (aod-9604)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1038/sj.ijo.0802229` in `data/source-packs/aod-9604.json` (aod-9604)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1111/j.1749-6632.2005.tb15012.x` in `data/source-packs/aod-9604.json` (aod-9604)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/j.bcp.2006.02.020` in `data/source-packs/aod-9604.json` (aod-9604)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1155/2013/194973` in `data/source-packs/aod-9604.json` (aod-9604)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1007/s40265-019-01138-0` in `data/source-packs/aod-9604.json` (aod-9604)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1080/19440049.2020.1842529` in `data/source-packs/aod-9604.json` (aod-9604)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1080/17425255.2022.2104644` in `data/source-packs/aod-9604.json` (aod-9604)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.3390/jpm15030131` in `data/source-packs/bpc-157.json` (bpc-157)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.2174/1570159X14666160325095811` in `data/source-packs/bpc-157.json` (bpc-157)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.2174/138161211796197205` in `data/source-packs/bpc-157.json` (bpc-157)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.2174/1570159X19666211029104441` in `data/source-packs/bpc-157.json` (bpc-157)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.3389/fphar.2022.813504` in `data/source-packs/bpc-157.json` (bpc-157)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.3748/wjg.v25.i28.3851` in `data/source-packs/bpc-157.json` (bpc-157)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1038/s41591-023-02532-5` in `data/source-packs/cagrilintide.json` (cagrilintide)
+  - DOI not registered with Crossref
+- **[critical/T+D]** `NCT06024720` in `data/source-packs/cagrilintide.json` (cagrilintide)
+  - stored "REDEFINE 3: Effect of CagriSema Compared to Tirzepatide on Body Weight in People With Obesity" but CT.gov says "[Trial of device that is not approved or cleared by the U.S. FDA]" (interventions: n/a)
+- **[critical/T+D]** `NCT05803421` in `data/source-packs/cagrilintide.json` (cagrilintide)
+  - stored "REDEFINE CVOT: CagriSema Cardiovascular Outcomes Trial" but CT.gov says "A Study of Daily Oral Orforglipron (LY3502970) Compared With Insulin Glargine in Participants With Type 2 Diabetes and Obesity or Overweight at Increased Cardiovascular Risk" (interventions: orforglipron insulin glargine)
+- **[critical/T+D]** `NCT04163354` in `data/source-packs/cagrilintide.json` (cagrilintide)
+  - stored "Phase 1b PK/PD Study of Cagrilintide + Semaglutide" but CT.gov says "Glass Ionomer Sealant Versus Fluoride Varnish on Occlusal Caries Prevention" (interventions: 5% sodium fluoride varnish (naf) glass ionomer sealant (gis))
+- **[critical/T+D]** `NCT03856047` in `data/source-packs/cagrilintide.json` (cagrilintide)
+  - stored "Phase 2 Cagrilintide Monotherapy for Weight Management" but CT.gov says "Research Study Investigating How Well NNC0174-0833 Works in People Suffering From Overweight or Obesity." (interventions: nnc0174-0833 placebo (nnc0174-0833) liraglutide 3.0 mg placebo (liraglutide 3.0 mg))
+- **[critical/T+D]** `NCT04163354` in `data/source-packs/cagrilintide.json` (cagrilintide)
+  - stored "Phase 1b Cagrilintide + Semaglutide Combination PK/PD" but CT.gov says "Glass Ionomer Sealant Versus Fluoride Varnish on Occlusal Caries Prevention" (interventions: 5% sodium fluoride varnish (naf) glass ionomer sealant (gis))
+- **[critical/T+D]** `NCT06024720` in `data/source-packs/cagrilintide.json` (cagrilintide)
+  - stored "REDEFINE 3: CagriSema vs Tirzepatide" but CT.gov says "[Trial of device that is not approved or cleared by the U.S. FDA]" (interventions: n/a)
+- **[critical/T+D]** `NCT05803421` in `data/source-packs/cagrilintide.json` (cagrilintide)
+  - stored "REDEFINE CVOT: CagriSema Cardiovascular Outcomes" but CT.gov says "A Study of Daily Oral Orforglipron (LY3502970) Compared With Insulin Glargine in Participants With Type 2 Diabetes and Obesity or Overweight at Increased Cardiovascular Risk" (interventions: orforglipron insulin glargine)
+- **[critical/T+D]** `NCT00833248` in `data/source-packs/cerebrolysin.json` (cerebrolysin)
+  - stored "Cerebrolysin and Recovery After Stroke (CARS)" but CT.gov says "Neoadjuvant Study Investigating Degarelix in Patients Suffering From Prostate Cancer" (interventions: degarelix goserelin bicalutamide)
+- **[critical/T+D]** `NCT01822860` in `data/source-packs/cerebrolysin.json` (cerebrolysin)
+  - stored "Cerebrolysin and Recovery After Stroke 2 (CARS2)" but CT.gov says "Chlorthalidone Compared to Hydrochlorothiazide on Endothelial Function" (interventions: chlorthalidone 12.5 mg hydrochlorothiazide 25 mg placebo)
+- **[critical/T+D]** `NCT00715026` in `data/source-packs/cerebrolysin.json` (cerebrolysin)
+  - stored "Cerebrolysin Acute Stroke Treatment in Asia (CASTA)" but CT.gov says "Trilogy AB Acetabular Hip System Post Approval Study" (interventions: trilogy ab acetabular hip implant system)
+- **[critical/T+D]** `NCT00728182` in `data/source-packs/cerebrolysin.json` (cerebrolysin)
+  - stored "Cerebrolysin in Vascular Dementia" but CT.gov says "Evaluating Neuroprotection in Aneurysm Coiling Therapy" (interventions: na-1 placebo)
+- **[critical/T+D]** `NCT01819545` in `data/source-packs/cerebrolysin.json` (cerebrolysin)
+  - stored "E-CARS Extension Study" but CT.gov says "The Study of microRNA 107 (miRNA 107) and Beta-amyloid Precursor Protein-cleaving Enzyme 1 (BACE1) Messenger Ribonucleic Acid (mRNA) Gene Expression in Cerebrospinal Fluid and Peripheral Blood of Alzheimer's Disease" (interventions: n/a)
+- **[critical/R]** `10.1016/0149-7634(84)90022-6` in `data/source-packs/dsip.json` (dsip)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1046/j.1365-2346.2001.00876.x` in `data/source-packs/dsip.json` (dsip)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1007/s10522-025-10153-7` in `data/source-packs/epithalon.json` (epithalon)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1023/a:1024912215579` in `data/source-packs/epithalon.json` (epithalon)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1023/a:1011341719622` in `data/source-packs/epithalon.json` (epithalon)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1023/b:bebm.0000016126.93200.b3` in `data/source-packs/epithalon.json` (epithalon)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1023/a:1012381116867` in `data/source-packs/epithalon.json` (epithalon)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1023/a:1010204805571` in `data/source-packs/epithalon.json` (epithalon)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1023/a:1021353705592` in `data/source-packs/epithalon.json` (epithalon)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/S0047-6374(97)00079-0` in `data/source-packs/epithalon.json` (epithalon)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.3389/fphar.2020.606711` in `data/source-packs/epithalon.json` (epithalon)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1046/j.1524-475x.2000.00011.x` in `data/source-packs/ghk-cu.json` (ghk-cu)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/s0923-1811(02)00115-6` in `data/source-packs/ghk-cu.json` (ghk-cu)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1002/adfm.202416881` in `data/source-packs/ghk-cu.json` (ghk-cu)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1134/S1068162024010333` in `data/source-packs/ghk-cu.json` (ghk-cu)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1007/s00403-022-02345-7` in `data/source-packs/ghk-cu.json` (ghk-cu)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.3390/molecules27021234` in `data/source-packs/ghk-cu.json` (ghk-cu)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1248/bpb.b20-00567` in `data/source-packs/ghk-cu.json` (ghk-cu)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.3390/ijms21234567` in `data/source-packs/ghk-cu.json` (ghk-cu)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/j.ijpharm.2019.06.045` in `data/source-packs/ghk-cu.json` (ghk-cu)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.3390/ijms20123456` in `data/source-packs/ghk-cu.json` (ghk-cu)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.21203/rs.3.rs-1234567` in `data/source-packs/ghk-cu.json` (ghk-cu)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.3390/biomedicines11021234` in `data/source-packs/ghk-cu.json` (ghk-cu)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/j.msec.2023.114234` in `data/source-packs/ghk-cu.json` (ghk-cu)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1002/adfm.202212345` in `data/source-packs/ghk-cu.json` (ghk-cu)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.3390/pharmaceutics14031234` in `data/source-packs/ghk-cu.json` (ghk-cu)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.3390/jcm10081234` in `data/source-packs/ghk-cu.json` (ghk-cu)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1210/jcem.83.5.4748` in `data/source-packs/ghrp-6.json` (ghrp-6)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/j.ghir.2017.04.005` in `data/source-packs/ghrp-6.json` (ghrp-6)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.3389/fphar.2024.1367372` in `data/source-packs/ghrp-6.json` (ghrp-6)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/j.regpep.2008.10.014` in `data/source-packs/ghrp-6.json` (ghrp-6)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1210/en.2003-0174` in `data/source-packs/ghrp-6.json` (ghrp-6)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/s0306-4530(99)00002-x` in `data/source-packs/ghrp-6.json` (ghrp-6)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1210/endo-126-4-2257` in `data/source-packs/ghrp-6.json` (ghrp-6)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1046/j.1365-2826.1995.00698.x` in `data/source-packs/ghrp-6.json` (ghrp-6)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1046/j.1365-2826.1995.00651.x` in `data/source-packs/ghrp-6.json` (ghrp-6)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/j.beem.2016.05.006` in `data/source-packs/ghrp-6.json` (ghrp-6)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1210/jc.2003-031776` in `data/source-packs/ghrp-6.json` (ghrp-6)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/j.ghir.2005.10.007` in `data/source-packs/ghrp-6.json` (ghrp-6)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1097/01.med.0000195921.18971.48` in `data/source-packs/ghrp-6.json` (ghrp-6)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/0196-9781(84)90110-8` in `data/source-packs/ghrp-6.json` (ghrp-6)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/0006-2952(76)90308-4` in `data/source-packs/ghrp-6.json` (ghrp-6)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/j.regpep.2007.04.008` in `data/source-packs/ghrp-6.json` (ghrp-6)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/j.yjmcc.2005.08.016` in `data/source-packs/ghrp-6.json` (ghrp-6)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/j.yfrne.2015.08.003` in `data/source-packs/ghrp-6.json` (ghrp-6)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1073/pnas.052708199` in `data/source-packs/ghrp-6.json` (ghrp-6)
+  - DOI not registered with Crossref
+- **[critical/R]** `11799101` in `data/source-packs/ghrp-6.json` (ghrp-6)
+  - PMID does not resolve on PubMed
+- **[critical/R]** `10.1016/S1054-3589(01)50005-6` in `data/source-packs/ghrp-6.json` (ghrp-6)
+  - DOI not registered with Crossref
+- **[critical/R]** `17010170` in `data/source-packs/ghrp-6.json` (ghrp-6)
+  - PMID does not resolve on PubMed
+- **[critical/R]** `10.1007/s00726-004-0130-2` in `data/source-packs/ghrp-6.json` (ghrp-6)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1186/s12929-015-0196-9` in `data/source-packs/ghrp-6.json` (ghrp-6)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/S0024-3205(02)02094-3` in `data/source-packs/ghrp-6.json` (ghrp-6)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1021/acs.jafc.2c00229` in `data/source-packs/glutathione.json` (glutathione)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.3109/09546634.2010.536757` in `data/source-packs/glutathione.json` (glutathione)
+  - DOI not registered with Crossref
+- **[critical/T+D]** `NCT01962376` in `data/source-packs/glutathione.json` (glutathione)
+  - stored "Glutathione in Cystic Fibrosis" but CT.gov says "Preoperative Chemotherapy With Bevacizumab For Potentially Resectable Gastric Cancer With Liver Metastasis" (interventions: oxaliplatin;capecitabine oxaliplatin;capecitabine;bevacizumab)
+- **[critical/T+D]** `NCT00185562` in `data/source-packs/glutathione.json` (glutathione)
+  - stored "IV Glutathione in Parkinson's Disease" but CT.gov says "A Pilot Trial of Adalimumab for the Treatment of Osteoarthritis" (interventions: adalimumab)
+- **[critical/R]** `10.1016/0140-6736(92)90865-Y` in `data/source-packs/hcg.json` (hcg)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/S0015-0282(01)01851-8` in `data/source-packs/hcg.json` (hcg)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.3389/fendo.2021.769085` in `data/source-packs/hcg.json` (hcg)
+  - DOI not registered with Crossref
+- **[critical/T+D]** `NCT00115336` in `data/source-packs/hcg.json` (hcg)
+  - stored "Recombinant Human Chorionic Gonadotropin for Final Follicular Maturation" but CT.gov says "Ketorolac Versus Ibuprofen to Treat Painful Episodes of Sickle Cell Disease" (interventions: intravenous ketorolac ibuprofen)
+- **[critical/T+D]** `NCT00338520` in `data/source-packs/hcg.json` (hcg)
+  - stored "Study of Recombinant hCG (Ovidrel) vs Urinary hCG in IVF" but CT.gov says "Hyperphenylalaninemia in Cerebral Malaria" (interventions: n/a)
+- **[critical/T+D]** `NCT01681550` in `data/source-packs/hcg.json` (hcg)
+  - stored "Comparison of hCG Doses for Ovulation Triggering" but CT.gov says "A Cohort Study of Incretin-based Therapy Combined With Insulin in Type 2 Diabetic Patients for 5 Years" (interventions: incretin-based therapy)
+- **[critical/T+D]** `NCT02203994` in `data/source-packs/hcg.json` (hcg)
+  - stored "Double Trigger (GnRH Agonist + hCG) in Poor Responders" but CT.gov says "Extracorporeal Shock Wave Therapy (ESWT) for the Treatment of Spasticity in Persons With Spinal Cord Injury" (interventions: duolith® sd 1 "t-top" (storz medical ag, switzerland))
+- **[critical/R]** `10.1080/09513590902730606` in `data/source-packs/hmg.json` (hmg)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1210/jcem-66-5-869` in `data/source-packs/hmg.json` (hmg)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1007/s40268-016-0147-z` in `data/source-packs/hmg.json` (hmg)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1530/EJE-19-0083` in `data/source-packs/hmg.json` (hmg)
+  - DOI not registered with Crossref
+- **[critical/T+D]** `NCT00402220` in `data/source-packs/hmg.json` (hmg)
+  - stored "HP-hMG vs rFSH in IVF (MERIT extension)" but CT.gov says "A Double-blind Sham Controlled Trial of rTMS in Treatment Resistant Major Depression" (interventions: tms sham tms)
+- **[critical/T+D]** `NCT00884143` in `data/source-packs/hmg.json` (hmg)
+  - stored "MEGASET-HR: HP-hMG in High Responders" but CT.gov says "Observational Triveneto Study on the Use of Adjuvant Hormonal Therapies in the Treatment of Hormone-responsive Breast Cancer" (interventions: n/a)
+- **[critical/T+D]** `NCT02047370` in `data/source-packs/hmg.json` (hmg)
+  - stored "HP-hMG in GnRH Antagonist Protocol" but CT.gov says "Manual Therapy in Patients With Asthma" (interventions: diaphragm stretching placebo)
+- **[critical/R]** `10.1054/ghir.1999.9006` in `data/source-packs/ipamorelin.json` (ipamorelin)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1530/eje.0.1440091` in `data/source-packs/ipamorelin.json` (ipamorelin)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/0024-3205(94)00510-5` in `data/source-packs/ipamorelin.json` (ipamorelin)
+  - DOI not registered with Crossref
+- **[critical/T+D]** `NCT02664935` in `data/source-packs/kisspeptin.json` (kisspeptin)
+  - stored "Kisspeptin Trigger for Final Oocyte Maturation" but CT.gov says "National Lung Matrix Trial: Multi-drug Phase II Trial in Non-Small Cell Lung Cancer" (interventions: azd4547 vistusertib palbociclib crizotinib selumetinib docetaxel azd5363 osimertinib durvalumab sitravatinib azd6738)
+- **[critical/T+D]** `NCT03336840` in `data/source-packs/kisspeptin.json` (kisspeptin)
+  - stored "Kisspeptin in Hypothalamic Amenorrhea" but CT.gov says "Effect of Metformin and Probiotics in Reproductive-aged Patients With Polycystic Ovary Syndrome" (interventions: metformin tablets promets probiotics powder 1. metformin tablets; 2. promets probiotics powder)
+- **[critical/T+D]** `NCT01952223` in `data/source-packs/kisspeptin.json` (kisspeptin)
+  - stored "Effects of Kisspeptin on Reproductive Hormones" but CT.gov says "A Phase III of Cabazitaxel and Pelvic Radiotherapy in Localized Prostate Cancer and High-risk Features of Relapse" (interventions: cabazitaxel pelvic radiotherapy prostate radiotherapy)
+- **[critical/T+D]** `NCT02897674` in `data/source-packs/kisspeptin.json` (kisspeptin)
+  - stored "Kisspeptin-10 Effects on LH Secretion" but CT.gov says "Effect of Palm Olein Intake on Lipid Profile and Fat Deposition" (interventions: palm olein interesterified palm olein soybean oil)
+- **[critical/R]** `10.1016/s0196-9781(00)00269-8` in `data/source-packs/kpv.json` (kpv)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/j.jdermsci.2009.12.016` in `data/source-packs/kpv.json` (kpv)
+  - DOI not registered with Crossref
+- **[critical/T+D]** `NCT02225366` in `data/source-packs/ll-37.json` (ll-37)
+  - stored "LL-37 for Treatment of Venous Leg Ulcers" but CT.gov says "Intratumoral Injections of LL37 for Melanoma" (interventions: ll37 photographs)
+- **[critical/T+D]** `NCT01211470` in `data/source-packs/ll-37.json` (ll-37)
+  - stored "LL-37 in Melanoma" but CT.gov says "Initial Treatment for Acute Bacterial Skin Infections (ABSSSI) Caused by Staphylococcus Aureus" (interventions: daptomycin pmx-30063-investigational drug)
+- **[critical/T+D]** `NCT02530736` in `data/source-packs/ll-37.json` (ll-37)
+  - stored "Omiganan for Rosacea" but CT.gov says "Responsiveness and MID of 4 Metre Gait Speed in Idiopathic Pulmonary Fibrosis" (interventions: 4 metre gait speed)
+- **[critical/R]** `19499411` in `data/source-packs/selank.json` (selank)
+  - PMID does not resolve on PubMed
+- **[critical/R]** `10.2337/dc23-2367` in `data/source-packs/semaglutide.json` (semaglutide)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1210/endo-126-6-3195` in `data/source-packs/sermorelin.json` (sermorelin)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1210/jcem.83.4.4618` in `data/source-packs/sermorelin.json` (sermorelin)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1080/095137199276328` in `data/source-packs/sermorelin.json` (sermorelin)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1530/acta.0.1230125` in `data/source-packs/sermorelin.json` (sermorelin)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/0022-4731(88)90102-3` in `data/source-packs/sermorelin.json` (sermorelin)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1530/acta.0.1200577` in `data/source-packs/sermorelin.json` (sermorelin)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/0022-3999(87)90125-9` in `data/source-packs/sermorelin.json` (sermorelin)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1111/j.1365-2265.1987.tb02327.x` in `data/source-packs/sermorelin.json` (sermorelin)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1210/jcem.60-6-3916765` in `data/source-packs/sermorelin.json` (sermorelin)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1126/science.6142044` in `data/source-packs/sermorelin.json` (sermorelin)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1126/science.6142045` in `data/source-packs/sermorelin.json` (sermorelin)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/0140-6736(84)91215-5` in `data/source-packs/sermorelin.json` (sermorelin)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/j.cger.2011.06.002` in `data/source-packs/sermorelin.json` (sermorelin)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1089/rej.2006.0517` in `data/source-packs/sermorelin.json` (sermorelin)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1530/eje.0.1450283` in `data/source-packs/sermorelin.json` (sermorelin)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1046/j.1365-2265.1997.3221031.x` in `data/source-packs/sermorelin.json` (sermorelin)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1046/j.1365-2265.2004.02010.x` in `data/source-packs/sermorelin.json` (sermorelin)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1046/j.1365-2265.2002.01468.x` in `data/source-packs/sermorelin.json` (sermorelin)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/0024-3205(94)00708-7` in `data/source-packs/sermorelin.json` (sermorelin)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1006/frne.2001.0234` in `data/source-packs/sermorelin.json` (sermorelin)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/s0031-9384(89)80083-3` in `data/source-packs/sermorelin.json` (sermorelin)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1093/sleep/16.2.125` in `data/source-packs/sermorelin.json` (sermorelin)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1530/eje.0.1350522` in `data/source-packs/sermorelin.json` (sermorelin)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1515/jpem.1987.2.4.263` in `data/source-packs/sermorelin.json` (sermorelin)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1515/jpem.1987.2.3.187` in `data/source-packs/sermorelin.json` (sermorelin)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1021/acs.jmedchem.3c00418` in `data/source-packs/slu-pp-332.json` (slu-pp-332)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1038/s41436-020-00972-9` in `data/source-packs/ss-31.json` (ss-31)
+  - DOI not registered with Crossref
+- **[critical/T+D]** `NCT05486065` in `data/source-packs/survodutide.json` (survodutide)
+  - stored "ACHIEVE: A Study of Survodutide in Adults With MASH and Fibrosis" but CT.gov says "A Research Study to Look Into How Well Semaglutide Medicine Works at Different Doses in People With Type 2 Diabetes and Overweight" (interventions: semaglutide placebo)
+- **[critical/T+D]** `NCT05642455` in `data/source-packs/survodutide.json` (survodutide)
+  - stored "SYNCHRONIZE-1: Survodutide for Weight Management in Adults With Obesity" but CT.gov says "SPEARHEAD-3 Pediatric Study" (interventions: afamitresgene autoleucel)
+- **[critical/T+D]** `NCT05642468` in `data/source-packs/survodutide.json` (survodutide)
+  - stored "SYNCHRONIZE-2: Survodutide for Weight Management in Adults With Obesity and Type 2 Diabetes" but CT.gov says "Safety and Tolerability of A3907 in Primary Sclerosing Cholangitis" (interventions: ritivixibat)
+- **[critical/T+D]** `NCT05607667` in `data/source-packs/survodutide.json` (survodutide)
+  - stored "SYNCHRONIZE-CVOT: Cardiovascular Outcomes With Survodutide" but CT.gov says "Clinical Trial in China for Aortic Valve Stenosis" (interventions: transcatheter aortic valve replacement)
+- **[critical/R]** `NCT05179576` in `data/source-packs/survodutide.json` (survodutide)
+  - NCT does not exist on ClinicalTrials.gov
+- **[critical/T+D]** `NCT04043793` in `data/source-packs/survodutide.json` (survodutide)
+  - stored "Phase 1 First-in-Human Study of BI 456906" but CT.gov says "ICU-acquired Colonization and Infection Related to MDR in Immunocompromised Patients" (interventions: n/a)
+- **[critical/R]** `10.1517/14712598.2015.1056720` in `data/source-packs/tb-500.json` (tb-500)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1517/14712598.2015.1005595` in `data/source-packs/tb-500.json` (tb-500)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1007/s00018-018-2778-3` in `data/source-packs/tb-500.json` (tb-500)
+  - DOI not registered with Crossref
+- **[critical/T+D]** `NCT00408083` in `data/source-packs/tb-500.json` (tb-500)
+  - stored "Thymosin Beta 4 Eye Drops for Dry Eye" but CT.gov says "Crossover Study With MultiHance vs a Comparator for Peripheral MRA" (interventions: multihance magnevist)
+- **[critical/T+D]** `NCT02016131` in `data/source-packs/tb-500.json` (tb-500)
+  - stored "SEER-1: RGN-259 for Neurotrophic Keratopathy" but CT.gov says "CQDSA in Evaluation of Prognosis After EVAR" (interventions: n/a)
+- **[critical/T+D]** `NCT03967665` in `data/source-packs/tb-500.json` (tb-500)
+  - stored "SEER-2: RGN-259 for Neurotrophic Keratopathy" but CT.gov says "Risk Stratification-directed NAC for Prevention of Poor Hematopoietic Reconstitution" (interventions: n-acetyl-l-cysteine)
+- **[critical/R]** `NCT00435136` in `data/source-packs/tesamorelin.json` (tesamorelin)
+  - NCT does not exist on ClinicalTrials.gov
+- **[critical/T+D]** `NCT04410354` in `data/source-packs/tesamorelin.json` (tesamorelin)
+  - stored "Tesamorelin in HIV-Associated Lipodystrophy (Long-term Extension)" but CT.gov says "Study of Merimepodib in Combination With Remdesivir in Adult Patients With Advanced COVID-19" (interventions: merimepodib matching placebo remdesivir)
+- **[critical/T+D]** `NCT05234567` in `data/source-packs/tesamorelin.json` (tesamorelin)
+  - stored "Tesamorelin Cardiovascular Outcomes in HIV" but CT.gov says "A Prospective Sub-Study of the Global Hypophosphatasia Registry" (interventions: asfotase alfa)
+- **[critical/R]** `10.1056/NEJMoa2410956` in `data/source-packs/tirzepatide.json` (tirzepatide)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1056/NEJMoa2415789` in `data/source-packs/tirzepatide.json` (tirzepatide)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1056/NEJMoa2410377` in `data/source-packs/tirzepatide.json` (tirzepatide)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/S2213-8587(22)00196-8` in `data/source-packs/tirzepatide.json` (tirzepatide)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/S2213-8587(23)00229-9` in `data/source-packs/tirzepatide.json` (tirzepatide)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.2337/dc22-1992` in `data/source-packs/tirzepatide.json` (tirzepatide)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.3803/EnM.2023.1891` in `data/source-packs/tirzepatide.json` (tirzepatide)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/S2213-8587(23)00369-4` in `data/source-packs/tirzepatide.json` (tirzepatide)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/S2213-8587(24)00044-8` in `data/source-packs/tirzepatide.json` (tirzepatide)
+  - DOI not registered with Crossref
+- **[critical/R]** `10.1016/j.molmet.2023.101673` in `data/source-packs/tirzepatide.json` (tirzepatide)
+  - DOI not registered with Crossref
+- **[high/T]** `NCT04982575` in `data/source-packs/cagrilintide.json` (cagrilintide)
+  - title mismatch — stored "CagriSema Once Weekly in Adults Living With Obesity or Overweight" vs real "Research Study to Look at How Well Cagrilintide Together With Semaglutide Works in People With Type 2 Diabetes"
+- **[high/T]** `NCT04940078` in `data/source-packs/cagrilintide.json` (cagrilintide)
+  - title mismatch — stored "Phase 2 CagriSema in Type 2 Diabetes" vs real "A Research Study to Compare Blood Levels of Cagrilintide and Semaglutide After Combined Versus Separate Injections in People With Overweight or Obesity"
+- **[high/T]** `NCT05567796` in `data/source-packs/cagrilintide.json` (cagrilintide)
+  - title mismatch — stored "REDEFINE 1: CagriSema vs Semaglutide in Obesity" vs real "A Research Study to See How Well CagriSema Helps People With Excess Body Weight Lose Weight"
+- **[high/T]** `NCT05394519` in `data/source-packs/cagrilintide.json` (cagrilintide)
+  - title mismatch — stored "REDEFINE 2: CagriSema in Obesity with T2D" vs real "A Research Study to See How Well CagriSema Helps People With Type 2 Diabetes and Excess Body Weight Lose Weight"
+- **[high/T]** `NCT04098562` in `data/source-packs/ll-37.json` (ll-37)
+  - title mismatch — stored "Antimicrobial Peptide in Atopic Dermatitis" vs real "Efficacy of LL-37 Cream on Bacteria Colonization, Inflammation Response and Healing Rate of Diabetic Foot Ulcers"
+- **[high/T]** `NCT05929066` in `data/source-packs/retatrutide.json` (retatrutide)
+  - title mismatch — stored "TRIUMPH-1: Obesity without T2D" vs real "A Study of Retatrutide (LY3437943) in Participants Who Have Obesity or Overweight"
+- **[high/T]** `NCT06662383` in `data/source-packs/retatrutide.json` (retatrutide)
+  - title mismatch — stored "TRIUMPH-5: Head-to-head vs Tirzepatide" vs real "A Study of Retatrutide (LY3437943) Compared to Tirzepatide (LY3298176) in Adults Who Have Obesity"
+- **[high/T]** `NCT06859268` in `data/source-packs/retatrutide.json` (retatrutide)
+  - title mismatch — stored "TRIUMPH-6: Long-term Maintenance (116 weeks)" vs real "A Study of Retatrutide (LY3437943) in the Maintenance of Weight Reduction in Individuals With Obesity"
+- **[high/T]** `NCT03574597` in `data/source-packs/semaglutide.json` (semaglutide)
+  - title mismatch — stored "PIONEER 9 - Oral Semaglutide in Japanese Patients (Japan-specific)" vs real "Semaglutide Effects on Heart Disease and Stroke in Patients With Overweight or Obesity"
+- **[high/T]** `NCT03574584` in `data/source-packs/semaglutide.json` (semaglutide)
+  - title mismatch — stored "PIONEER 10 - Oral Semaglutide vs Dulaglutide in Japanese Patients" vs real "A Research Study of NNC0165-1562 and Semaglutide in People Who Are Overweight or Obese"
+- **[high/T]** `NCT04074161` in `data/source-packs/semaglutide.json` (semaglutide)
+  - title mismatch — stored "STEP 6 - Semaglutide in East Asian Population (Japan/Korea)" vs real "Research Study to Investigate How Well Semaglutide Works Compared to Liraglutide in People Living With Overweight or Obesity"
+- **[high/T]** `NCT03989232` in `data/source-packs/semaglutide.json` (semaglutide)
+  - title mismatch — stored "SUSTAIN China - Semaglutide in Chinese Patients with T2D" vs real "A Research Study to Compare Two Doses of Semaglutide Taken Once Weekly in People With Type 2 Diabetes"
+- **[high/T]** `NCT03914326` in `data/source-packs/semaglutide.json` (semaglutide)
+  - title mismatch — stored "SOUL - Cardiovascular Outcomes with Oral Semaglutide" vs real "A Heart Disease Study of Semaglutide in Patients With Type 2 Diabetes"
+- **[high/T]** `NCT04822181` in `data/source-packs/semaglutide.json` (semaglutide)
+  - title mismatch — stored "ESSENCE - Semaglutide in MASH with Liver Fibrosis" vs real "Research Study on Whether Semaglutide Works in People With Non-alcoholic Steatohepatitis (NASH)"
+- **[high/T]** `NCT05564117` in `data/source-packs/semaglutide.json` (semaglutide)
+  - title mismatch — stored "OASIS 4 - Oral Semaglutide 25mg for Obesity" vs real "Research Study Looking at How Well Semaglutide Tablets Taken Once Daily Work in People Who Have a Body Weight Above the Healthy Range"
+- **[high/T]** `NCT02128932` in `data/source-packs/semaglutide.json` (semaglutide)
+  - title mismatch — stored "SUSTAIN-6: Cardiovascular Outcomes Trial" vs real "Efficacy and Safety of Semaglutide Once Weekly Versus Insulin Glargine Once Daily as add-on to Metformin With or Without Sulphonylurea in Insulin-naïve Subjects With Type 2 Diabetes"
+- **[high/T]** `NCT04777396` in `data/source-packs/semaglutide.json` (semaglutide)
+  - title mismatch — stored "FLOW: Kidney Outcomes in T2D with CKD" vs real "A Research Study Investigating Semaglutide in People With Early Alzheimer's Disease (EVOKE)"
+- **[high/T]** `NCT06977438` in `data/source-packs/semaglutide.json` (semaglutide)
+  - title mismatch — stored "Promoting Healthy Children and Youth" vs real "GLP-1 Plus Lifestyle for Overall Wellness: Find Your Way Forward"
+- **[high/T]** `NCT02805790` in `data/source-packs/ss-31.json` (ss-31)
+  - title mismatch — stored "TAZPOWER: Efficacy and Safety of Elamipretide in Subjects With Primary Mitochondrial Myopathy" vs real "Safety, Tolerability, Efficacy of MTP-131 for Treatment of Mitochondrial Disease in Subjects From the MMPOWER Study"
+- **[high/T]** `NCT02367014` in `data/source-packs/ss-31.json` (ss-31)
+  - title mismatch — stored "TAZPOWER-Barth: Elamipretide in Barth Syndrome" vs real "Safety, Tolerability, and Efficacy of MTP-131 for the Treatment of Mitochondrial Myopathy"
+- **[high/T]** `NCT03098797` in `data/source-packs/ss-31.json` (ss-31)
+  - title mismatch — stored "ReCLAIM: Elamipretide Topline in Dry AMD" vs real "A Trial to Evaluate Safety, Tolerability and Efficacy of Elamipretide in Subjects With Barth Syndrome"
+- **[high/T]** `NCT02388464` in `data/source-packs/ss-31.json` (ss-31)
+  - title mismatch — stored "EMBRACE STEMI: Elamipretide in ST-Elevation Myocardial Infarction" vs real "A Study Investigating the Safety, Tolerability, and Pharmacokinetics of MTP-131 in Subjects With Congestive Heart Failure"
+- **[high/T]** `NCT02245620` in `data/source-packs/ss-31.json` (ss-31)
+  - title mismatch — stored "Phase 1/2 Dose-Escalation Study in Primary Mitochondrial Myopathy" vs real "A Phase 2 Study to Evaluate the Impact of MTP-131 (Bendavia™) on Skeletal Muscle Function in Elderly"
+- **[high/T]** `NCT02693119` in `data/source-packs/ss-31.json` (ss-31)
+  - title mismatch — stored "Elamipretide in Renal Artery Stenosis (EVREST)" vs real "A Study Investigating the Safety, Tolerability, and Efficacy of Elamipretide Topical Ophthalmic Solution for Treatment of Leber's Hereditary Optic Neuropathy"
+- **[high/T]** `NCT02914665` in `data/source-packs/ss-31.json` (ss-31)
+  - title mismatch — stored "Elamipretide in Leber's Hereditary Optic Neuropathy (LHON)" vs real "A Phase 2 Study to Evaluate the Cardiac and Renal Effects of Short Term Treatment With Elamipretide in Patients Hospitalized With Congestion Due to Heart Failure"
+- **[high/T]** `NCT04771273` in `data/source-packs/survodutide.json` (survodutide)
+  - title mismatch — stored "Phase 2 Study of BI 456906 in NASH/MASH" vs real "A Study to Test Safety and Efficacy of Survodutide (BI456906) in Adults With Non-alcoholic Steatohepatitis (NASH) and Fibrosis (F1-F3)"
+- **[high/T]** `NCT02572323` in `data/source-packs/tesamorelin.json` (tesamorelin)
+  - title mismatch — stored "Tesamorelin Effects on Abdominal Fat and Metabolic Parameters (TEAME)" vs real "Phase II Trial of Tesamorelin for Cognition in Aging HIV-Infected Persons"
+- **[high/T]** `NCT03375788` in `data/source-packs/tesamorelin.json` (tesamorelin)
+  - title mismatch — stored "Tesamorelin to Reduce Liver Fat and Fibrosis in NASH" vs real "Growth Hormone Releasing Hormone Analog to Improve Nonalcoholic Fatty Liver Disease and Associated Cardiovascular Risk"
+- **[high/T]** `NCT04184622` in `data/source-packs/tirzepatide.json` (tirzepatide)
+  - title mismatch — stored "SURMOUNT-1" vs real "A Study of Tirzepatide (LY3298176) in Participants With Obesity or Overweight"
+- **[high/T]** `NCT04657003` in `data/source-packs/tirzepatide.json` (tirzepatide)
+  - title mismatch — stored "SURMOUNT-2" vs real "A Study of Tirzepatide (LY3298176) in Participants With Type 2 Diabetes Who Have Obesity or Are Overweight"
+- **[high/T]** `NCT04657016` in `data/source-packs/tirzepatide.json` (tirzepatide)
+  - title mismatch — stored "SURMOUNT-3" vs real "A Study of Tirzepatide (LY3298176) In Participants After A Lifestyle Weight Loss Program"
+- **[high/T]** `NCT04660643` in `data/source-packs/tirzepatide.json` (tirzepatide)
+  - title mismatch — stored "SURMOUNT-4" vs real "A Study of Tirzepatide (LY3298176) in Participants With Obesity or Overweight for the Maintenance of Weight Loss"
+- **[high/T]** `NCT05822830` in `data/source-packs/tirzepatide.json` (tirzepatide)
+  - title mismatch — stored "SURMOUNT-5" vs real "A Study of Tirzepatide (LY3298176) in Participants With Obesity or Overweight With Weight Related Comorbidities"
+- **[high/T]** `NCT05412004` in `data/source-packs/tirzepatide.json` (tirzepatide)
+  - title mismatch — stored "SURMOUNT-OSA" vs real "Obstructive Sleep Apnea Master Protocol GPIF: A Study of Tirzepatide (LY3298176) in Participants With Obstructive Sleep Apnea"
+- **[high/T]** `NCT03954834` in `data/source-packs/tirzepatide.json` (tirzepatide)
+  - title mismatch — stored "SURPASS-1" vs real "A Study of Tirzepatide (LY3298176) in Participants With Type 2 Diabetes Not Controlled With Diet and Exercise Alone"

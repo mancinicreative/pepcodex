@@ -1,0 +1,439 @@
+
+> peptide-library@0.0.1 prebuild
+> npm run check
+
+
+> peptide-library@0.0.1 check
+> node scripts/qa-internal-consistency.mjs --strict && node scripts/validate-cross-links.mjs && node scripts/qa-seo.mjs && node scripts/qa-scoring.mjs && node scripts/qa-pmids.mjs --strict
+
+Internal consistency: 1105 distinct identifiers checked.
+
+ADVISORY: 1 label variance(s) — same record, different editorial titles (non-blocking):
+  • NCT:NCT05567796
+      "A Research Study to See How Well CagriSema Helps People With Excess Body Weight Lose Weight" (cagrilintide.json.coreLibrary.primaryStudies[7])  VS  "REDEFINE 1: Effect of CagriSema on Body Weight in People With Obesity" (cagrilintide.json.coreLibrary.trialRegistries[3])  VS  "REDEFINE 1: CagriSema vs Semaglutide in Obesity" (cagrilintide.json.trials[3])
+
+PASS: no contradicting facts, count mismatches, or patterned identifiers.
+Collection sizes:
+  peptides: 102 items
+  glossary: 215 items
+  comparisons: 279 items
+  blog: 154 items
+  guides: 36 items
+  safety: 31 items
+  protocols: 3 items
+  conditions: 15 items
+
+WARNINGS (314) — content quality (missing cross-links):
+  ⚠ blog/antimicrobial-peptides-cancer-potential.mdx -> relatedPeptides: "defensins" not found in peptides
+  ⚠ blog/cagrisema-nda-filed-glp1-amylin-combo.mdx -> relatedPeptides: "pramlintide" not found in peptides
+  ⚠ blog/heat-stable-peptide-delivery.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ blog/oxytocin-autism-cognition.mdx -> relatedPeptides: "oxytocin" not found in peptides
+  ⚠ blog/oxytocin-autism-meta-analysis-optimal-dosing.mdx -> relatedPeptides: "oxytocin" not found in peptides
+  ⚠ blog/peptide-migraine-nasal-spray.mdx -> relatedPeptides: "cgrp-antagonists" not found in peptides
+  ⚠ blog/peptide-protacs-emerge-cancer-treatment.mdx -> relatedPeptides: "peptide-drug-conjugates" not found in peptides
+  ⚠ blog/ai-peptide-drug-discovery.mdx -> relatedGlossary: "peptide-therapeutics" not found in glossary
+  ⚠ blog/ai-peptide-drug-discovery.mdx -> relatedGlossary: "drug-discovery" not found in glossary
+  ⚠ blog/ai-peptide-drug-discovery.mdx -> relatedGlossary: "machine-learning" not found in glossary
+  ⚠ blog/amycretin-phase2-results.mdx -> relatedGlossary: "amylin" not found in glossary
+  ⚠ blog/antimicrobial-peptides-cancer-potential.mdx -> relatedGlossary: "antimicrobial-peptides" not found in glossary
+  ⚠ blog/antimicrobial-peptides-cancer-potential.mdx -> relatedGlossary: "immunomodulation" not found in glossary
+  ⚠ blog/aod9604-human-efficacy.mdx -> relatedGlossary: "growth-hormone-fragment" not found in glossary
+  ⚠ blog/aod9604-human-efficacy.mdx -> relatedGlossary: "clinical-efficacy" not found in glossary
+  ⚠ blog/bpc-157-first-human-safety-data.mdx -> relatedGlossary: "gastric-pentadecapeptide" not found in glossary
+  ⚠ blog/bpc-157-first-human-safety-data.mdx -> relatedGlossary: "angiogenesis" not found in glossary
+  ⚠ blog/bpc-157-systematic-review-musculoskeletal.mdx -> relatedGlossary: "angiogenesis" not found in glossary
+  ⚠ blog/bpc-157-systematic-review-musculoskeletal.mdx -> relatedGlossary: "growth-factors" not found in glossary
+  ⚠ blog/bpc157-gut-brain-axis.mdx -> relatedGlossary: "gut-brain-axis" not found in glossary
+  ⚠ blog/bpc157-gut-brain-axis.mdx -> relatedGlossary: "neuroprotection" not found in glossary
+  ⚠ blog/cagrilintide-redefine-1-amylin-validated.mdx -> relatedGlossary: "amylin" not found in glossary
+  ⚠ blog/cagrilintide-semaglutide-approval.mdx -> relatedGlossary: "amylin" not found in glossary
+  ⚠ blog/cagrilintide-semaglutide-approval.mdx -> relatedGlossary: "combination-therapy" not found in glossary
+  ⚠ blog/cagrisema-nda-filed-glp1-amylin-combo.mdx -> relatedGlossary: "amylin" not found in glossary
+  ⚠ blog/cagrisema-nda-filed.mdx -> relatedGlossary: "amylin" not found in glossary
+  ⚠ blog/cancer-peptide-vaccine-breakthrough.mdx -> relatedGlossary: "neoantigen" not found in glossary
+  ⚠ blog/cancer-peptide-vaccine-breakthrough.mdx -> relatedGlossary: "immunotherapy" not found in glossary
+  ⚠ blog/cancer-peptide-vaccine-breakthrough.mdx -> relatedGlossary: "peptide-vaccine" not found in glossary
+  ⚠ blog/dihexa-memory-enhancement.mdx -> relatedGlossary: "nootropic" not found in glossary
+  ⚠ blog/dihexa-memory-enhancement.mdx -> relatedGlossary: "synaptic-plasticity" not found in glossary
+  ⚠ blog/dihexa-memory-enhancement.mdx -> relatedGlossary: "hepatocyte-growth-factor" not found in glossary
+  ⚠ blog/epithalon-safety.mdx -> relatedGlossary: "telomeres" not found in glossary
+  ⚠ blog/epithalon-telomerase-human-cells.mdx -> relatedGlossary: "telomere" not found in glossary
+  ⚠ blog/eu-peptide-research-consortium.mdx -> relatedGlossary: "peptide-therapeutics" not found in glossary
+  ⚠ blog/eu-peptide-research-consortium.mdx -> relatedGlossary: "drug-development" not found in glossary
+  ⚠ blog/fda-compounding-oversight.mdx -> relatedGlossary: "fda" not found in glossary
+  ⚠ blog/fda-tightens-peptide-compounding-rules.mdx -> relatedGlossary: "compounding" not found in glossary
+  ⚠ blog/fda-tightens-peptide-compounding-rules.mdx -> relatedGlossary: "bulk-drug-substance" not found in glossary
+  ⚠ blog/fda-tightens-peptide-compounding-rules.mdx -> relatedGlossary: "503a-pharmacy" not found in glossary
+  ⚠ blog/ghkcu-stem-cell-differentiation.mdx -> relatedGlossary: "copper-peptide" not found in glossary
+  ⚠ blog/ghkcu-stem-cell-differentiation.mdx -> relatedGlossary: "stem-cell" not found in glossary
+  ⚠ blog/ghkcu-stem-cell-differentiation.mdx -> relatedGlossary: "wound-healing" not found in glossary
+  ⚠ blog/glp1-kidney-disease-outcomes.mdx -> relatedGlossary: "ckd" not found in glossary
+  ⚠ blog/glp1-kidney-disease-outcomes.mdx -> relatedGlossary: "egfr" not found in glossary
+  ⚠ blog/glp1-kidney-protection-confirmed.mdx -> relatedGlossary: "nephroprotection" not found in glossary
+  ⚠ blog/glp1-shortage-easing.mdx -> relatedGlossary: "peptide-manufacturing" not found in glossary
+  ⚠ blog/glp1-shortage-easing.mdx -> relatedGlossary: "drug-shortage" not found in glossary
+  ⚠ blog/humanin-neuroprotective-trial.mdx -> relatedGlossary: "neuroprotection" not found in glossary
+  ⚠ blog/humanin-neuroprotective-trial.mdx -> relatedGlossary: "neurodegeneration" not found in glossary
+  ⚠ blog/ll37-wound-healing.mdx -> relatedGlossary: "wound-healing" not found in glossary
+  ⚠ blog/ll37-wound-healing.mdx -> relatedGlossary: "cathelicidin" not found in glossary
+  ⚠ blog/motsc-human-trials.mdx -> relatedGlossary: "mitochondria" not found in glossary
+  ⚠ blog/motsc-human-trials.mdx -> relatedGlossary: "insulin-sensitivity" not found in glossary
+  ⚠ blog/oral-semaglutide-cv-approval.mdx -> relatedGlossary: "cardiovascular-outcomes" not found in glossary
+  ⚠ blog/oxytocin-autism-cognition.mdx -> relatedGlossary: "social-cognition" not found in glossary
+  ⚠ blog/oxytocin-autism-cognition.mdx -> relatedGlossary: "autism-spectrum-disorder" not found in glossary
+  ⚠ blog/oxytocin-autism-meta-analysis-optimal-dosing.mdx -> relatedGlossary: "oxytocin" not found in glossary
+  ⚠ blog/oxytocin-autism-meta-analysis-optimal-dosing.mdx -> relatedGlossary: "social-cognition" not found in glossary
+  ⚠ blog/pemvidutide-crl-more-data.mdx -> relatedGlossary: "mash" not found in glossary
+  ⚠ blog/pemvidutide-impact-mash-resolution.mdx -> relatedGlossary: "mash" not found in glossary
+  ⚠ blog/pemvidutide-impact-mash-resolution.mdx -> relatedGlossary: "nafld" not found in glossary
+  ⚠ blog/peptide-antibiotic-resistant-bacteria.mdx -> relatedGlossary: "antibiotic-resistance" not found in glossary
+  ⚠ blog/peptide-antibiotic-resistant-bacteria.mdx -> relatedGlossary: "gram-negative" not found in glossary
+  ⚠ blog/peptide-antiviral-coronavirus.mdx -> relatedGlossary: "receptor" not found in glossary
+  ⚠ blog/peptide-antiviral-coronavirus.mdx -> relatedGlossary: "cell-penetrating-peptide" not found in glossary
+  ⚠ blog/peptide-cart-tumor-penetration.mdx -> relatedGlossary: "cell-penetrating-peptide" not found in glossary
+  ⚠ blog/peptide-cart-tumor-penetration.mdx -> relatedGlossary: "immunotherapy" not found in glossary
+  ⚠ blog/peptide-cart-tumor-penetration.mdx -> relatedGlossary: "car-t-cell" not found in glossary
+  ⚠ blog/peptide-hydrogel-joints.mdx -> relatedGlossary: "osteoarthritis" not found in glossary
+  ⚠ blog/peptide-hydrogel-joints.mdx -> relatedGlossary: "cartilage" not found in glossary
+  ⚠ blog/peptide-protacs-emerge-cancer-treatment.mdx -> relatedGlossary: "protac" not found in glossary
+  ⚠ blog/peptide-protacs-emerge-cancer-treatment.mdx -> relatedGlossary: "ubiquitin" not found in glossary
+  ⚠ blog/peptide-protacs-emerge-cancer-treatment.mdx -> relatedGlossary: "targeted-protein-degradation" not found in glossary
+  ⚠ blog/peptide-stapling-oral-delivery.mdx -> relatedGlossary: "stapled-peptide" not found in glossary
+  ⚠ blog/peptide-stapling-oral-delivery.mdx -> relatedGlossary: "macrocycle" not found in glossary
+  ⚠ blog/selank-anxiolytic-study.mdx -> relatedGlossary: "anxiolytic" not found in glossary
+  ⚠ blog/selank-anxiolytic-study.mdx -> relatedGlossary: "nootropic" not found in glossary
+  ⚠ blog/selank-anxiolytic-study.mdx -> relatedGlossary: "gaba" not found in glossary
+  ⚠ blog/semaglutide-fails-alzheimers-evoke-trial.mdx -> relatedGlossary: "neurodegeneration" not found in glossary
+  ⚠ blog/semaglutide-fails-alzheimers-evoke-trial.mdx -> relatedGlossary: "alzheimers-disease" not found in glossary
+  ⚠ blog/semaglutide-soul-cardiovascular.mdx -> relatedGlossary: "cardiovascular-outcomes" not found in glossary
+  ⚠ blog/semaglutide-soul-cardiovascular.mdx -> relatedGlossary: "chronic-kidney-disease" not found in glossary
+  ⚠ blog/semax-neuroprotection-stroke.mdx -> relatedGlossary: "neuroprotection" not found in glossary
+  ⚠ blog/semax-neuroprotection-stroke.mdx -> relatedGlossary: "bdnf" not found in glossary
+  ⚠ blog/ss31-mitochondrial-heart-failure.mdx -> relatedGlossary: "cardiolipin" not found in glossary
+  ⚠ blog/ss31-mitochondrial-heart-failure.mdx -> relatedGlossary: "heart-failure" not found in glossary
+  ⚠ blog/survodutide-phase3-mash.mdx -> relatedGlossary: "mash" not found in glossary
+  ⚠ blog/tesamorelin-liver-fat-hiv.mdx -> relatedGlossary: "nafld" not found in glossary
+  ⚠ blog/tesamorelin-liver-fat-hiv.mdx -> relatedGlossary: "hepatic-steatosis" not found in glossary
+  ⚠ blog/thymosin-alpha-1-aging-immunosenescence.mdx -> relatedGlossary: "immunosenescence" not found in glossary
+  ⚠ blog/thymosin-alpha-1-aging-immunosenescence.mdx -> relatedGlossary: "thymus" not found in glossary
+  ⚠ blog/thymosin-alpha-1-aging-immunosenescence.mdx -> relatedGlossary: "t-cells" not found in glossary
+  ⚠ blog/tirzepatide-10-year-cvd-risk-analysis.mdx -> relatedGlossary: "cardiovascular-outcomes" not found in glossary
+  ⚠ blog/tirzepatide-summit-heart-failure.mdx -> relatedGlossary: "heart-failure" not found in glossary
+  ⚠ blog/tirzepatide-surmount-osa.mdx -> relatedGlossary: "obstructive-sleep-apnea" not found in glossary
+  ⚠ blog/what-are-longevity-peptides.mdx -> relatedGlossary: "telomeres" not found in glossary
+  ⚠ blog/what-are-nootropic-peptides.mdx -> relatedGlossary: "nootropic" not found in glossary
+  ⚠ blog/what-are-recovery-peptides.mdx -> relatedGlossary: "tissue-repair" not found in glossary
+  ⚠ blog/what-is-dihexa.mdx -> relatedGlossary: "nootropic" not found in glossary
+  ⚠ blog/what-is-epithalon.mdx -> relatedGlossary: "telomeres" not found in glossary
+  ⚠ blog/what-is-ghk-cu.mdx -> relatedGlossary: "collagen" not found in glossary
+  ⚠ blog/what-is-humanin.mdx -> relatedGlossary: "mitochondria" not found in glossary
+  ⚠ blog/what-is-ll-37.mdx -> relatedGlossary: "antimicrobial" not found in glossary
+  ⚠ blog/what-is-melanotan.mdx -> relatedGlossary: "melanocyte" not found in glossary
+  ⚠ blog/what-is-tb-500.mdx -> relatedGlossary: "tissue-repair" not found in glossary
+  ⚠ blog/what-is-tb-500.mdx -> relatedGlossary: "wound-healing" not found in glossary
+  ⚠ blog/what-is-thymalin.mdx -> relatedGlossary: "thymus" not found in glossary
+  ⚠ glossary/adverse-event.mdx -> relatedPeptides: "dulaglutide" not found in peptides
+  ⚠ glossary/aggregation.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/allosteric-modulation.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/allosteric-modulation.mdx -> relatedPeptides: "glucagon" not found in peptides
+  ⚠ glossary/amidation.mdx -> relatedPeptides: "oxytocin" not found in peptides
+  ⚠ glossary/amidation.mdx -> relatedPeptides: "vasopressin" not found in peptides
+  ⚠ glossary/bla-application.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/bla-application.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/bla-application.mdx -> relatedPeptides: "erythropoietin" not found in peptides
+  ⚠ glossary/black-box-warning.mdx -> relatedPeptides: "dulaglutide" not found in peptides
+  ⚠ glossary/black-box-warning.mdx -> relatedPeptides: "exenatide" not found in peptides
+  ⚠ glossary/body-composition.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/carrier-protein.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/carrier-protein.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/chain-length.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/clinical-endpoint.mdx -> relatedPeptides: "dulaglutide" not found in peptides
+  ⚠ glossary/cohort-study.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/cold-chain.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/competitive-inhibition.mdx -> relatedPeptides: "ace-inhibitors" not found in peptides
+  ⚠ glossary/competitive-inhibition.mdx -> relatedPeptides: "dpp-4-inhibitors" not found in peptides
+  ⚠ glossary/contraindication.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/contraindication.mdx -> relatedPeptides: "dulaglutide" not found in peptides
+  ⚠ glossary/cross-sectional-study.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/cross-talk.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/cross-talk.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/cross-talk.mdx -> relatedPeptides: "igf-1" not found in peptides
+  ⚠ glossary/cyclization.mdx -> relatedPeptides: "cyclosporine" not found in peptides
+  ⚠ glossary/cyclization.mdx -> relatedPeptides: "oxytocin" not found in peptides
+  ⚠ glossary/dephosphorylation.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/dephosphorylation.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/desensitization-protocol.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/disulfide-bond.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/disulfide-bond.mdx -> relatedPeptides: "oxytocin" not found in peptides
+  ⚠ glossary/disulfide-bond.mdx -> relatedPeptides: "vasopressin" not found in peptides
+  ⚠ glossary/drug-interaction.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/endocytosis.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/endocytosis.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/enzyme-inhibition.mdx -> relatedPeptides: "ace-inhibitors" not found in peptides
+  ⚠ glossary/enzyme-inhibition.mdx -> relatedPeptides: "dpp-4-inhibitors" not found in peptides
+  ⚠ glossary/enzyme-inhibition.mdx -> relatedPeptides: "protease-inhibitors" not found in peptides
+  ⚠ glossary/exocytosis.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/exocytosis.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/feedforward-activation.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/first-pass-metabolism.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/gene-expression.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/gene-expression.mdx -> relatedPeptides: "igf-1" not found in peptides
+  ⚠ glossary/gene-expression.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/glycemic-control.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/glycemic-control.mdx -> relatedPeptides: "dulaglutide" not found in peptides
+  ⚠ glossary/glycosylation.mdx -> relatedPeptides: "erythropoietin" not found in peptides
+  ⚠ glossary/glycosylation.mdx -> relatedPeptides: "follicle-stimulating-hormone" not found in peptides
+  ⚠ glossary/glycosylation.mdx -> relatedPeptides: "interferon-beta" not found in peptides
+  ⚠ glossary/immunogenicity.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/immunogenicity.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/injection-site-rotation.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/intravenous-injection.mdx -> relatedPeptides: "vasopressin" not found in peptides
+  ⚠ glossary/intravenous-injection.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/intravenous-injection.mdx -> relatedPeptides: "glucagon" not found in peptides
+  ⚠ glossary/inverse-agonist.mdx -> relatedPeptides: "agouti-related-peptide" not found in peptides
+  ⚠ glossary/inverse-agonist.mdx -> relatedPeptides: "somatostatin" not found in peptides
+  ⚠ glossary/ion-channel.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/ion-channel.mdx -> relatedPeptides: "glucagon" not found in peptides
+  ⚠ glossary/isoelectric-point.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/lipidation.mdx -> relatedPeptides: "insulin-detemir" not found in peptides
+  ⚠ glossary/lipidation.mdx -> relatedPeptides: "insulin-degludec" not found in peptides
+  ⚠ glossary/lipodystrophy.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/lipolysis.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/loading-dose.mdx -> relatedPeptides: "heparin" not found in peptides
+  ⚠ glossary/molecular-weight.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/non-competitive-inhibition.mdx -> relatedPeptides: "somatostatin" not found in peptides
+  ⚠ glossary/non-competitive-inhibition.mdx -> relatedPeptides: "octreotide" not found in peptides
+  ⚠ glossary/nuclear-receptor.mdx -> relatedPeptides: "thyroid-hormone" not found in peptides
+  ⚠ glossary/nuclear-receptor.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/orphan-drug.mdx -> relatedPeptides: "setmelanotide" not found in peptides
+  ⚠ glossary/partial-agonist.mdx -> relatedPeptides: "buprenorphine" not found in peptides
+  ⚠ glossary/partial-agonist.mdx -> relatedPeptides: "aripiprazole" not found in peptides
+  ⚠ glossary/pegylation.mdx -> relatedPeptides: "pegvisomant" not found in peptides
+  ⚠ glossary/pegylation.mdx -> relatedPeptides: "certolizumab-pegol" not found in peptides
+  ⚠ glossary/phosphorylation.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/phosphorylation.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/phosphorylation.mdx -> relatedPeptides: "igf-1" not found in peptides
+  ⚠ glossary/post-translational-modification.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/post-translational-modification.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/primary-structure.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/priority-review.mdx -> relatedPeptides: "dulaglutide" not found in peptides
+  ⚠ glossary/protein-synthesis.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/protein-synthesis.mdx -> relatedPeptides: "igf-1" not found in peptides
+  ⚠ glossary/protein-synthesis.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/quaternary-structure.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/quaternary-structure.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/receptor-downregulation.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/receptor-downregulation.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/receptor-internalization.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/receptor-internalization.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/safety-profile.mdx -> relatedPeptides: "dulaglutide" not found in peptides
+  ⚠ glossary/safety-profile.mdx -> relatedPeptides: "exenatide" not found in peptides
+  ⚠ glossary/second-messenger.mdx -> relatedPeptides: "glucagon" not found in peptides
+  ⚠ glossary/secondary-structure.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/secondary-structure.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/substrate-binding.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/substrate-binding.mdx -> relatedPeptides: "glucagon" not found in peptides
+  ⚠ glossary/substrate-binding.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/surrogate-endpoint.mdx -> relatedPeptides: "dulaglutide" not found in peptides
+  ⚠ glossary/tertiary-structure.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/tertiary-structure.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/therapeutic-window.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/titration.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/transcription-factor.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/transcription-factor.mdx -> relatedPeptides: "igf-1" not found in peptides
+  ⚠ glossary/transcription-factor.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/transporter-protein.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/tyrosine-kinase-receptor.mdx -> relatedPeptides: "igf-1" not found in peptides
+  ⚠ glossary/tyrosine-kinase-receptor.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/ubiquitination.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/ubiquitination.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/ubiquitination.mdx -> relatedPeptides: "igf-1" not found in peptides
+  ⚠ glossary/bmi.mdx -> relatedTerms: "weight-loss" not found in glossary
+  ⚠ glossary/carrier-protein.mdx -> relatedTerms: "albumin" not found in glossary
+  ⚠ glossary/catabolic.mdx -> relatedTerms: "cortisol" not found in glossary
+  ⚠ glossary/compassionate-use.mdx -> relatedTerms: "investigational" not found in glossary
+  ⚠ glossary/confidence-interval.mdx -> relatedTerms: "p-value" not found in glossary
+  ⚠ glossary/cyclization.mdx -> relatedTerms: "stability" not found in glossary
+  ⚠ glossary/double-blind.mdx -> relatedTerms: "randomization" not found in glossary
+  ⚠ glossary/fda-approval.mdx -> relatedTerms: "investigational" not found in glossary
+  ⚠ glossary/glucagon.mdx -> relatedTerms: "glucose" not found in glossary
+  ⚠ glossary/lipidation.mdx -> relatedTerms: "albumin" not found in glossary
+  ⚠ glossary/lipolysis.mdx -> relatedTerms: "metabolism" not found in glossary
+  ⚠ glossary/lipolysis.mdx -> relatedTerms: "adipose-tissue" not found in glossary
+  ⚠ glossary/longitudinal-study.mdx -> relatedTerms: "prospective" not found in glossary
+  ⚠ glossary/lyophilization.mdx -> relatedTerms: "stability" not found in glossary
+  ⚠ glossary/obesity.mdx -> relatedTerms: "metabolism" not found in glossary
+  ⚠ glossary/observational-study.mdx -> relatedTerms: "retrospective" not found in glossary
+  ⚠ glossary/off-label-use.mdx -> relatedTerms: "investigational" not found in glossary
+  ⚠ glossary/off-label.mdx -> relatedTerms: "investigational" not found in glossary
+  ⚠ glossary/peer-review.mdx -> relatedTerms: "journal" not found in glossary
+  ⚠ glossary/phase-i-trial.mdx -> relatedTerms: "dose-escalation" not found in glossary
+  ⚠ glossary/priority-review.mdx -> relatedTerms: "fast-track" not found in glossary
+  ⚠ glossary/subcutaneous.mdx -> relatedTerms: "intramuscular" not found in glossary
+  ⚠ glossary/thermogenesis.mdx -> relatedTerms: "metabolism" not found in glossary
+  ⚠ glossary/thermogenesis.mdx -> relatedTerms: "brown-fat" not found in glossary
+  ⚠ peptides/225ac-dota-lm3.mdx -> interactions: "lutathera" not found in peptides
+  ⚠ peptides/225ac-dota-lm3.mdx -> interactions: "octreotide" not found in peptides
+  ⚠ peptides/225ac-dota-lm3.mdx -> interactions: "lanreotide" not found in peptides
+  ⚠ peptides/5-amino-1mq.mdx -> interactions: "nmn" not found in peptides
+  ⚠ peptides/5-amino-1mq.mdx -> interactions: "nicotinamide-riboside" not found in peptides
+  ⚠ peptides/5-amino-1mq.mdx -> interactions: "resveratrol" not found in peptides
+  ⚠ peptides/alixorexton.mdx -> interactions: "danavorexton" not found in peptides
+  ⚠ peptides/alixorexton.mdx -> interactions: "suvorexant" not found in peptides
+  ⚠ peptides/alixorexton.mdx -> interactions: "modafinil" not found in peptides
+  ⚠ peptides/alixorexton.mdx -> interactions: "sodium-oxybate" not found in peptides
+  ⚠ peptides/alpha-defensins.mdx -> interactions: "beta-defensins" not found in peptides
+  ⚠ peptides/bt5528.mdx -> interactions: "antibody-drug-conjugates" not found in peptides
+  ⚠ peptides/bt5528.mdx -> interactions: "enfortumab-vedotin" not found in peptides
+  ⚠ peptides/chonluten.mdx -> interactions: "laennec" not found in peptides
+  ⚠ peptides/dsip.mdx -> interactions: "melatonin" not found in peptides
+  ⚠ peptides/evx-01.mdx -> interactions: "pembrolizumab" not found in peptides
+  ⚠ peptides/follistatin.mdx -> interactions: "hgh" not found in peptides
+  ⚠ peptides/follistatin.mdx -> interactions: "myostatin-inhibitors" not found in peptides
+  ⚠ peptides/glutathione.mdx -> interactions: "n-acetylcysteine" not found in peptides
+  ⚠ peptides/glutathione.mdx -> interactions: "alpha-lipoic-acid" not found in peptides
+  ⚠ peptides/glutathione.mdx -> interactions: "vitamin-c" not found in peptides
+  ⚠ peptides/glutathione.mdx -> interactions: "acetaminophen" not found in peptides
+  ⚠ peptides/hcg.mdx -> interactions: "gonadorelin" not found in peptides
+  ⚠ peptides/hcg.mdx -> interactions: "clomiphene" not found in peptides
+  ⚠ peptides/hmg.mdx -> interactions: "gonadorelin" not found in peptides
+  ⚠ peptides/hmg.mdx -> interactions: "growth-hormone" not found in peptides
+  ⚠ peptides/hmg.mdx -> interactions: "testosterone" not found in peptides
+  ⚠ peptides/igf-1-lr3.mdx -> interactions: "hgh" not found in peptides
+  ⚠ peptides/igf-1-lr3.mdx -> interactions: "igf-1" not found in peptides
+  ⚠ peptides/igf-1-lr3.mdx -> interactions: "insulin" not found in peptides
+  ⚠ peptides/igf-1-lr3.mdx -> interactions: "mgf" not found in peptides
+  ⚠ peptides/kisspeptin.mdx -> interactions: "gonadorelin" not found in peptides
+  ⚠ peptides/kisspeptin.mdx -> interactions: "clomiphene" not found in peptides
+  ⚠ peptides/liraglutide.mdx -> interactions: "exenatide" not found in peptides
+  ⚠ peptides/mrna-4157.mdx -> interactions: "pembrolizumab" not found in peptides
+  ⚠ peptides/mrna-4157.mdx -> interactions: "nivolumab" not found in peptides
+  ⚠ peptides/mrna-4157.mdx -> interactions: "ipilimumab" not found in peptides
+  ⚠ peptides/murepavadin.mdx -> interactions: "colistin" not found in peptides
+  ⚠ peptides/oveporexton.mdx -> interactions: "orexin-a" not found in peptides
+  ⚠ peptides/oveporexton.mdx -> interactions: "orexin-b" not found in peptides
+  ⚠ peptides/oveporexton.mdx -> interactions: "suvorexant" not found in peptides
+  ⚠ peptides/oveporexton.mdx -> interactions: "lemborexant" not found in peptides
+  ⚠ peptides/oveporexton.mdx -> interactions: "modafinil" not found in peptides
+  ⚠ peptides/oveporexton.mdx -> interactions: "pitolisant" not found in peptides
+  ⚠ peptides/pasireotide.mdx -> interactions: "octreotide" not found in peptides
+  ⚠ peptides/pasireotide.mdx -> interactions: "lanreotide" not found in peptides
+  ⚠ peptides/pasireotide.mdx -> interactions: "pegvisomant" not found in peptides
+  ⚠ peptides/pasireotide.mdx -> interactions: "cabergoline" not found in peptides
+  ⚠ peptides/pasireotide.mdx -> interactions: "metformin" not found in peptides
+  ⚠ peptides/pasireotide.mdx -> interactions: "insulin" not found in peptides
+  ⚠ peptides/slu-pp-332.mdx -> interactions: "aicar" not found in peptides
+  ⚠ peptides/slu-pp-332.mdx -> interactions: "gw501516" not found in peptides
+  ⚠ peptides/slu-pp-332.mdx -> interactions: "sr9009" not found in peptides
+  ⚠ peptides/slu-pp-332.mdx -> interactions: "metformin" not found in peptides
+  ⚠ peptides/ss-31.mdx -> interactions: "mitoq" not found in peptides
+  ⚠ peptides/ss-31.mdx -> interactions: "coq10" not found in peptides
+  ⚠ peptides/ss-31.mdx -> interactions: "nad-precursors" not found in peptides
+  ⚠ peptides/ss-31.mdx -> interactions: "urolithin-a" not found in peptides
+  ⚠ peptides/ss-31.mdx -> interactions: "idebenone" not found in peptides
+  ⚠ peptides/sulanemadlin.mdx -> interactions: "idasanutlin" not found in peptides
+  ⚠ peptides/sulanemadlin.mdx -> interactions: "navtemadlin" not found in peptides
+  ⚠ peptides/sulanemadlin.mdx -> interactions: "milademetan" not found in peptides
+  ⚠ peptides/thymulin.mdx -> interactions: "zinc-supplements" not found in peptides
+  ⚠ peptides/zelenectide-pevedotin.mdx -> interactions: "enfortumab-vedotin" not found in peptides
+  ⚠ peptides/zelenectide-pevedotin.mdx -> interactions: "pembrolizumab" not found in peptides
+  ⚠ peptides/zelenectide-pevedotin.mdx -> interactions: "sacituzumab-govitecan" not found in peptides
+
+INFO: 158 expected non-matching refs (comparators, guide terms) — use --verbose to see
+
+Validation complete:
+  References checked: 3737
+  Errors:   0
+  Warnings: 314
+  Info:     158
+
+PASS: No structural errors
+  (314 warnings — content quality improvements available)
+WARNINGS (4) — trailing-slash drift (cosmetic, not index-blocking):
+  ⚠ src\pages\llms-full.txt.ts: 4 trailing-slash URL(s) vs no-slash canonical (e.g. https://www.pepcodex.com/methodology/, https://www.pepcodex.com/trials/)
+  ⚠ src\pages\llms.txt.ts: 109 trailing-slash URL(s) vs no-slash canonical (e.g. https://www.pepcodex.com/peptides/{slug}/, https://www.pepcodex.com/compare/{peptideA}-vs-{peptideB}/)
+  ⚠ src\pages\regulatory-tracker.astro: 1 trailing-slash URL(s) vs no-slash canonical (e.g. https://www.pepcodex.com/regulatory-tracker/)
+  ⚠ src\pages\trials\index.astro: 1 trailing-slash URL(s) vs no-slash canonical (e.g. https://www.pepcodex.com/trials/)
+
+SEO guard complete:
+  Files scanned: 1049
+  Canonical origin: https://www.pepcodex.com
+  Errors:   0
+  Warnings: 4
+
+PASS: canonical integrity OK
+Scoring validator: 102/102 dossiers scored.
+PASS: scoring integrity OK
+
+WORKLIST: 44 placeholder/free-text citation value(s) to formalize or remove (non-blocking):
+  • src/content/peptides/5-amino-1mq.mdx  source: "No data available"
+  • src/content/peptides/amycretin.mdx  source: "Class effects from semaglutide/tirzepatide trials"
+  • src/content/peptides/amycretin.mdx  source: "Oral phase 1 trial (Gasiorek A et al. 2025, Lancet; PMID 40550229)"
+  • src/content/peptides/amycretin.mdx  source: "Subcutaneous phase 1b/2a trial (Dahl K et al. 2025, Lancet; PMID 40550231)"
+  • src/content/peptides/amycretin.mdx  source: "Subcutaneous phase 1b/2a trial (Dahl K et al. 2025, Lancet; PMID 40550231)"
+  • src/content/peptides/aod-9604.mdx  source: "Phase 2b/3 OPTIONS Study"
+  • src/content/peptides/chonluten.mdx  source: "Russian bioregulator literature"
+  • src/content/peptides/chonluten.mdx  source: "Russian bioregulator literature"
+  • src/content/peptides/chonluten.mdx  source: "Russian bioregulator literature"
+  • src/content/peptides/ct-388.mdx  source: "PMID:41319798 (NCT04838405)"
+  • src/content/peptides/ct-388.mdx  source: "PMID:41319798 (NCT04838405)"
+  • src/content/peptides/ct-388.mdx  source: "Roche press release (unpublished; not peer-reviewed)"
+  • src/content/peptides/ovagen.mdx  source: "Russian preclinical research"
+  • src/content/peptides/ovagen.mdx  source: "Russian preclinical research"
+  • src/content/peptides/ovagen.mdx  source: "Russian preclinical research"
+  • src/content/peptides/pt-141.mdx  pmid: "N/A"
+  • src/content/peptides/shlp-6.mdx  source: "N/A"
+  • src/content/peptides/shlp-6.mdx  source: "N/A"
+  • src/content/peptides/testagen.mdx  pmid: "N/A"
+  • src/content/peptides/testagen.mdx  pmid: "N/A"
+  • src/content/peptides/testagen.mdx  pmid: "N/A"
+  • src/content/peptides/testagen.mdx  pmid: "N/A"
+  • src/content/peptides/testagen.mdx  pmid: "N/A"
+  • src/content/peptides/testagen.mdx  source: "Khavinson bioregulator protocols"
+  • src/content/peptides/testagen.mdx  source: "Theoretical based on bioregulator model"
+  • src/content/peptides/testagen.mdx  source: "Theoretical based on bioregulator model"
+  • src/content/peptides/vk2735.mdx  pmid: "NA"
+  • src/content/peptides/vk2735.mdx  pmid: "NA"
+  • data/source-packs/ghk-cu.json  source: "Human plasma, urine, saliva"
+  • data/source-packs/hcg.json  source: "CNKI"
+  • data/source-packs/hcg.json  source: "J-STAGE"
+  • data/source-packs/hcg.json  source: "EMA"
+  • data/source-packs/hcg.json  source: "FDA"
+  • data/source-packs/hcg.json  source: "FDA"
+  • data/source-packs/hcg.json  source: "FDA"
+  • data/source-packs/hcg.json  source: "EMA"
+  • data/source-packs/hmg.json  source: "CNKI"
+  • data/source-packs/hmg.json  source: "PMC/CNKI"
+  • data/source-packs/hmg.json  source: "EMA"
+  • data/source-packs/hmg.json  source: "Spanish Fertility Society"
+  • data/source-packs/hmg.json  source: "Russian Association of Human Reproduction"
+  • data/source-packs/hmg.json  source: "FDA"
+  • data/source-packs/hmg.json  source: "FDA"
+  • data/source-packs/hmg.json  source: "EMA"
+Citation guard: 1084 PMIDs · 333 NCTs · 513 DOIs across 980 files (src/content, data/source-packs).
+PASS: every cited PMID (1084), NCT (333), and DOI (513) resolves.
+
+> peptide-library@0.0.1 build
+> astro build
+
+[2m05:13:41[22m [34m[content][39m Syncing content
+[2m05:13:41[22m [34m[content][39m Content config changed
+[2m05:13:41[22m [34m[content][39m Clearing content store
+[33m[1m05:13:41[22m [WARN] [glob-loader][39m No files found matching "**/*{.md,.mdx},!**/_*/**/*{.md,.mdx},!**/_*{.md,.mdx}" in directory "src\content\pages"
+[2m05:13:43[22m [34m[content][39m Synced content
+[2m05:13:43[22m [34m[types][39m Generated [2m4.75s[22m
+[2m05:13:45[22m [34m[build][39m output: [34m"static"[39m
+[2m05:13:45[22m [34m[build][39m mode: [34m"server"[39m
+[2m05:13:45[22m [34m[build][39m directory: [34mC:\Users\manci\OneDrive\Documents\00_Claude\peptide-library\dist\[39m
+[2m05:13:45[22m [34m[build][39m adapter: [32m@astrojs/vercel[39m
+[2m05:13:45[22m [34m[build][39m Collecting build info...
+[2m05:13:45[22m [34m[build][39m [32m✓ Completed in 7.17s.[39m
+[2m05:13:51[22m [34m[build][39m Building server entrypoints...
+[31m[1m05:14:03[22m [ERROR] [vite][39m [31m✗[39m Build failed in 12.21s
+[@mdx-js/rollup] Unexpected character `0` (U+0030) before name, expected a character that can start a name, such as a letter, `$`, or `_`
+file: C:/Users/manci/OneDrive/Documents/00_Claude/peptide-library/src/content/blog/cagrilintide-semaglutide-approval.mdx:55:364
+  [1mLocation:[22m
+    [4mC:/Users/manci/OneDrive/Documents/00_Claude/peptide-library/src/content/blog/cagrilintide-semaglutide-approval.mdx:55:364[24m
+  [1mStack trace:[22m
+[2m    at Object.transform (file:///C:/Users/manci/OneDrive/Documents/00_Claude/peptide-library/node_modules/@astrojs/mdx/dist/vite-plugin-mdx.js:62:15)[22m
+REAL_BUILD_EXIT=1

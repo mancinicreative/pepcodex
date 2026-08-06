@@ -1,0 +1,1748 @@
+
+> peptide-library@0.0.1 prebuild
+> npm run check
+
+
+> peptide-library@0.0.1 check
+> node scripts/qa-internal-consistency.mjs --strict && node scripts/validate-cross-links.mjs && node scripts/qa-seo.mjs && node scripts/qa-scoring.mjs && node scripts/qa-pmids.mjs --strict
+
+Internal consistency: 1194 distinct identifiers checked.
+
+ADVISORY: 1 label variance(s) — same record, different editorial titles (non-blocking):
+  • NCT:NCT05567796
+      "A Research Study to See How Well CagriSema Helps People With Excess Body Weight Lose Weight" (cagrilintide.json.coreLibrary.primaryStudies[7])  VS  "REDEFINE 1: Effect of CagriSema on Body Weight in People With Obesity" (cagrilintide.json.coreLibrary.trialRegistries[3])  VS  "REDEFINE 1: CagriSema vs Semaglutide in Obesity" (cagrilintide.json.trials[3])
+
+PASS: no contradicting facts, count mismatches, or patterned identifiers.
+Collection sizes:
+  peptides: 102 items
+  glossary: 215 items
+  comparisons: 279 items
+  blog: 154 items
+  guides: 36 items
+  safety: 31 items
+  protocols: 3 items
+  conditions: 15 items
+
+WARNINGS (314) — content quality (missing cross-links):
+  ⚠ blog/antimicrobial-peptides-cancer-potential.mdx -> relatedPeptides: "defensins" not found in peptides
+  ⚠ blog/cagrisema-nda-filed-glp1-amylin-combo.mdx -> relatedPeptides: "pramlintide" not found in peptides
+  ⚠ blog/heat-stable-peptide-delivery.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ blog/oxytocin-autism-cognition.mdx -> relatedPeptides: "oxytocin" not found in peptides
+  ⚠ blog/oxytocin-autism-meta-analysis-optimal-dosing.mdx -> relatedPeptides: "oxytocin" not found in peptides
+  ⚠ blog/peptide-migraine-nasal-spray.mdx -> relatedPeptides: "cgrp-antagonists" not found in peptides
+  ⚠ blog/peptide-protacs-emerge-cancer-treatment.mdx -> relatedPeptides: "peptide-drug-conjugates" not found in peptides
+  ⚠ blog/ai-peptide-drug-discovery.mdx -> relatedGlossary: "peptide-therapeutics" not found in glossary
+  ⚠ blog/ai-peptide-drug-discovery.mdx -> relatedGlossary: "drug-discovery" not found in glossary
+  ⚠ blog/ai-peptide-drug-discovery.mdx -> relatedGlossary: "machine-learning" not found in glossary
+  ⚠ blog/amycretin-phase2-results.mdx -> relatedGlossary: "amylin" not found in glossary
+  ⚠ blog/antimicrobial-peptides-cancer-potential.mdx -> relatedGlossary: "antimicrobial-peptides" not found in glossary
+  ⚠ blog/antimicrobial-peptides-cancer-potential.mdx -> relatedGlossary: "immunomodulation" not found in glossary
+  ⚠ blog/aod9604-human-efficacy.mdx -> relatedGlossary: "growth-hormone-fragment" not found in glossary
+  ⚠ blog/aod9604-human-efficacy.mdx -> relatedGlossary: "clinical-efficacy" not found in glossary
+  ⚠ blog/bpc-157-first-human-safety-data.mdx -> relatedGlossary: "gastric-pentadecapeptide" not found in glossary
+  ⚠ blog/bpc-157-first-human-safety-data.mdx -> relatedGlossary: "angiogenesis" not found in glossary
+  ⚠ blog/bpc-157-systematic-review-musculoskeletal.mdx -> relatedGlossary: "angiogenesis" not found in glossary
+  ⚠ blog/bpc-157-systematic-review-musculoskeletal.mdx -> relatedGlossary: "growth-factors" not found in glossary
+  ⚠ blog/bpc157-gut-brain-axis.mdx -> relatedGlossary: "gut-brain-axis" not found in glossary
+  ⚠ blog/bpc157-gut-brain-axis.mdx -> relatedGlossary: "neuroprotection" not found in glossary
+  ⚠ blog/cagrilintide-redefine-1-amylin-validated.mdx -> relatedGlossary: "amylin" not found in glossary
+  ⚠ blog/cagrilintide-semaglutide-approval.mdx -> relatedGlossary: "amylin" not found in glossary
+  ⚠ blog/cagrilintide-semaglutide-approval.mdx -> relatedGlossary: "combination-therapy" not found in glossary
+  ⚠ blog/cagrisema-nda-filed-glp1-amylin-combo.mdx -> relatedGlossary: "amylin" not found in glossary
+  ⚠ blog/cagrisema-nda-filed.mdx -> relatedGlossary: "amylin" not found in glossary
+  ⚠ blog/cancer-peptide-vaccine-breakthrough.mdx -> relatedGlossary: "neoantigen" not found in glossary
+  ⚠ blog/cancer-peptide-vaccine-breakthrough.mdx -> relatedGlossary: "immunotherapy" not found in glossary
+  ⚠ blog/cancer-peptide-vaccine-breakthrough.mdx -> relatedGlossary: "peptide-vaccine" not found in glossary
+  ⚠ blog/dihexa-memory-enhancement.mdx -> relatedGlossary: "nootropic" not found in glossary
+  ⚠ blog/dihexa-memory-enhancement.mdx -> relatedGlossary: "synaptic-plasticity" not found in glossary
+  ⚠ blog/dihexa-memory-enhancement.mdx -> relatedGlossary: "hepatocyte-growth-factor" not found in glossary
+  ⚠ blog/epithalon-safety.mdx -> relatedGlossary: "telomeres" not found in glossary
+  ⚠ blog/epithalon-telomerase-human-cells.mdx -> relatedGlossary: "telomere" not found in glossary
+  ⚠ blog/eu-peptide-research-consortium.mdx -> relatedGlossary: "peptide-therapeutics" not found in glossary
+  ⚠ blog/eu-peptide-research-consortium.mdx -> relatedGlossary: "drug-development" not found in glossary
+  ⚠ blog/fda-compounding-oversight.mdx -> relatedGlossary: "fda" not found in glossary
+  ⚠ blog/fda-tightens-peptide-compounding-rules.mdx -> relatedGlossary: "compounding" not found in glossary
+  ⚠ blog/fda-tightens-peptide-compounding-rules.mdx -> relatedGlossary: "bulk-drug-substance" not found in glossary
+  ⚠ blog/fda-tightens-peptide-compounding-rules.mdx -> relatedGlossary: "503a-pharmacy" not found in glossary
+  ⚠ blog/ghkcu-stem-cell-differentiation.mdx -> relatedGlossary: "copper-peptide" not found in glossary
+  ⚠ blog/ghkcu-stem-cell-differentiation.mdx -> relatedGlossary: "stem-cell" not found in glossary
+  ⚠ blog/ghkcu-stem-cell-differentiation.mdx -> relatedGlossary: "wound-healing" not found in glossary
+  ⚠ blog/glp1-kidney-disease-outcomes.mdx -> relatedGlossary: "ckd" not found in glossary
+  ⚠ blog/glp1-kidney-disease-outcomes.mdx -> relatedGlossary: "egfr" not found in glossary
+  ⚠ blog/glp1-kidney-protection-confirmed.mdx -> relatedGlossary: "nephroprotection" not found in glossary
+  ⚠ blog/glp1-shortage-easing.mdx -> relatedGlossary: "peptide-manufacturing" not found in glossary
+  ⚠ blog/glp1-shortage-easing.mdx -> relatedGlossary: "drug-shortage" not found in glossary
+  ⚠ blog/humanin-neuroprotective-trial.mdx -> relatedGlossary: "neuroprotection" not found in glossary
+  ⚠ blog/humanin-neuroprotective-trial.mdx -> relatedGlossary: "neurodegeneration" not found in glossary
+  ⚠ blog/ll37-wound-healing.mdx -> relatedGlossary: "wound-healing" not found in glossary
+  ⚠ blog/ll37-wound-healing.mdx -> relatedGlossary: "cathelicidin" not found in glossary
+  ⚠ blog/motsc-human-trials.mdx -> relatedGlossary: "mitochondria" not found in glossary
+  ⚠ blog/motsc-human-trials.mdx -> relatedGlossary: "insulin-sensitivity" not found in glossary
+  ⚠ blog/oral-semaglutide-cv-approval.mdx -> relatedGlossary: "cardiovascular-outcomes" not found in glossary
+  ⚠ blog/oxytocin-autism-cognition.mdx -> relatedGlossary: "social-cognition" not found in glossary
+  ⚠ blog/oxytocin-autism-cognition.mdx -> relatedGlossary: "autism-spectrum-disorder" not found in glossary
+  ⚠ blog/oxytocin-autism-meta-analysis-optimal-dosing.mdx -> relatedGlossary: "oxytocin" not found in glossary
+  ⚠ blog/oxytocin-autism-meta-analysis-optimal-dosing.mdx -> relatedGlossary: "social-cognition" not found in glossary
+  ⚠ blog/pemvidutide-crl-more-data.mdx -> relatedGlossary: "mash" not found in glossary
+  ⚠ blog/pemvidutide-impact-mash-resolution.mdx -> relatedGlossary: "mash" not found in glossary
+  ⚠ blog/pemvidutide-impact-mash-resolution.mdx -> relatedGlossary: "nafld" not found in glossary
+  ⚠ blog/peptide-antibiotic-resistant-bacteria.mdx -> relatedGlossary: "antibiotic-resistance" not found in glossary
+  ⚠ blog/peptide-antibiotic-resistant-bacteria.mdx -> relatedGlossary: "gram-negative" not found in glossary
+  ⚠ blog/peptide-antiviral-coronavirus.mdx -> relatedGlossary: "receptor" not found in glossary
+  ⚠ blog/peptide-antiviral-coronavirus.mdx -> relatedGlossary: "cell-penetrating-peptide" not found in glossary
+  ⚠ blog/peptide-cart-tumor-penetration.mdx -> relatedGlossary: "cell-penetrating-peptide" not found in glossary
+  ⚠ blog/peptide-cart-tumor-penetration.mdx -> relatedGlossary: "immunotherapy" not found in glossary
+  ⚠ blog/peptide-cart-tumor-penetration.mdx -> relatedGlossary: "car-t-cell" not found in glossary
+  ⚠ blog/peptide-hydrogel-joints.mdx -> relatedGlossary: "osteoarthritis" not found in glossary
+  ⚠ blog/peptide-hydrogel-joints.mdx -> relatedGlossary: "cartilage" not found in glossary
+  ⚠ blog/peptide-protacs-emerge-cancer-treatment.mdx -> relatedGlossary: "protac" not found in glossary
+  ⚠ blog/peptide-protacs-emerge-cancer-treatment.mdx -> relatedGlossary: "ubiquitin" not found in glossary
+  ⚠ blog/peptide-protacs-emerge-cancer-treatment.mdx -> relatedGlossary: "targeted-protein-degradation" not found in glossary
+  ⚠ blog/peptide-stapling-oral-delivery.mdx -> relatedGlossary: "stapled-peptide" not found in glossary
+  ⚠ blog/peptide-stapling-oral-delivery.mdx -> relatedGlossary: "macrocycle" not found in glossary
+  ⚠ blog/selank-anxiolytic-study.mdx -> relatedGlossary: "anxiolytic" not found in glossary
+  ⚠ blog/selank-anxiolytic-study.mdx -> relatedGlossary: "nootropic" not found in glossary
+  ⚠ blog/selank-anxiolytic-study.mdx -> relatedGlossary: "gaba" not found in glossary
+  ⚠ blog/semaglutide-fails-alzheimers-evoke-trial.mdx -> relatedGlossary: "neurodegeneration" not found in glossary
+  ⚠ blog/semaglutide-fails-alzheimers-evoke-trial.mdx -> relatedGlossary: "alzheimers-disease" not found in glossary
+  ⚠ blog/semaglutide-soul-cardiovascular.mdx -> relatedGlossary: "cardiovascular-outcomes" not found in glossary
+  ⚠ blog/semaglutide-soul-cardiovascular.mdx -> relatedGlossary: "chronic-kidney-disease" not found in glossary
+  ⚠ blog/semax-neuroprotection-stroke.mdx -> relatedGlossary: "neuroprotection" not found in glossary
+  ⚠ blog/semax-neuroprotection-stroke.mdx -> relatedGlossary: "bdnf" not found in glossary
+  ⚠ blog/ss31-mitochondrial-heart-failure.mdx -> relatedGlossary: "cardiolipin" not found in glossary
+  ⚠ blog/ss31-mitochondrial-heart-failure.mdx -> relatedGlossary: "heart-failure" not found in glossary
+  ⚠ blog/survodutide-phase3-mash.mdx -> relatedGlossary: "mash" not found in glossary
+  ⚠ blog/tesamorelin-liver-fat-hiv.mdx -> relatedGlossary: "nafld" not found in glossary
+  ⚠ blog/tesamorelin-liver-fat-hiv.mdx -> relatedGlossary: "hepatic-steatosis" not found in glossary
+  ⚠ blog/thymosin-alpha-1-aging-immunosenescence.mdx -> relatedGlossary: "immunosenescence" not found in glossary
+  ⚠ blog/thymosin-alpha-1-aging-immunosenescence.mdx -> relatedGlossary: "thymus" not found in glossary
+  ⚠ blog/thymosin-alpha-1-aging-immunosenescence.mdx -> relatedGlossary: "t-cells" not found in glossary
+  ⚠ blog/tirzepatide-10-year-cvd-risk-analysis.mdx -> relatedGlossary: "cardiovascular-outcomes" not found in glossary
+  ⚠ blog/tirzepatide-summit-heart-failure.mdx -> relatedGlossary: "heart-failure" not found in glossary
+  ⚠ blog/tirzepatide-surmount-osa.mdx -> relatedGlossary: "obstructive-sleep-apnea" not found in glossary
+  ⚠ blog/what-are-longevity-peptides.mdx -> relatedGlossary: "telomeres" not found in glossary
+  ⚠ blog/what-are-nootropic-peptides.mdx -> relatedGlossary: "nootropic" not found in glossary
+  ⚠ blog/what-are-recovery-peptides.mdx -> relatedGlossary: "tissue-repair" not found in glossary
+  ⚠ blog/what-is-dihexa.mdx -> relatedGlossary: "nootropic" not found in glossary
+  ⚠ blog/what-is-epithalon.mdx -> relatedGlossary: "telomeres" not found in glossary
+  ⚠ blog/what-is-ghk-cu.mdx -> relatedGlossary: "collagen" not found in glossary
+  ⚠ blog/what-is-humanin.mdx -> relatedGlossary: "mitochondria" not found in glossary
+  ⚠ blog/what-is-ll-37.mdx -> relatedGlossary: "antimicrobial" not found in glossary
+  ⚠ blog/what-is-melanotan.mdx -> relatedGlossary: "melanocyte" not found in glossary
+  ⚠ blog/what-is-tb-500.mdx -> relatedGlossary: "tissue-repair" not found in glossary
+  ⚠ blog/what-is-tb-500.mdx -> relatedGlossary: "wound-healing" not found in glossary
+  ⚠ blog/what-is-thymalin.mdx -> relatedGlossary: "thymus" not found in glossary
+  ⚠ glossary/adverse-event.mdx -> relatedPeptides: "dulaglutide" not found in peptides
+  ⚠ glossary/aggregation.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/allosteric-modulation.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/allosteric-modulation.mdx -> relatedPeptides: "glucagon" not found in peptides
+  ⚠ glossary/amidation.mdx -> relatedPeptides: "oxytocin" not found in peptides
+  ⚠ glossary/amidation.mdx -> relatedPeptides: "vasopressin" not found in peptides
+  ⚠ glossary/bla-application.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/bla-application.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/bla-application.mdx -> relatedPeptides: "erythropoietin" not found in peptides
+  ⚠ glossary/black-box-warning.mdx -> relatedPeptides: "dulaglutide" not found in peptides
+  ⚠ glossary/black-box-warning.mdx -> relatedPeptides: "exenatide" not found in peptides
+  ⚠ glossary/body-composition.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/carrier-protein.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/carrier-protein.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/chain-length.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/clinical-endpoint.mdx -> relatedPeptides: "dulaglutide" not found in peptides
+  ⚠ glossary/cohort-study.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/cold-chain.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/competitive-inhibition.mdx -> relatedPeptides: "ace-inhibitors" not found in peptides
+  ⚠ glossary/competitive-inhibition.mdx -> relatedPeptides: "dpp-4-inhibitors" not found in peptides
+  ⚠ glossary/contraindication.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/contraindication.mdx -> relatedPeptides: "dulaglutide" not found in peptides
+  ⚠ glossary/cross-sectional-study.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/cross-talk.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/cross-talk.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/cross-talk.mdx -> relatedPeptides: "igf-1" not found in peptides
+  ⚠ glossary/cyclization.mdx -> relatedPeptides: "cyclosporine" not found in peptides
+  ⚠ glossary/cyclization.mdx -> relatedPeptides: "oxytocin" not found in peptides
+  ⚠ glossary/dephosphorylation.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/dephosphorylation.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/desensitization-protocol.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/disulfide-bond.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/disulfide-bond.mdx -> relatedPeptides: "oxytocin" not found in peptides
+  ⚠ glossary/disulfide-bond.mdx -> relatedPeptides: "vasopressin" not found in peptides
+  ⚠ glossary/drug-interaction.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/endocytosis.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/endocytosis.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/enzyme-inhibition.mdx -> relatedPeptides: "ace-inhibitors" not found in peptides
+  ⚠ glossary/enzyme-inhibition.mdx -> relatedPeptides: "dpp-4-inhibitors" not found in peptides
+  ⚠ glossary/enzyme-inhibition.mdx -> relatedPeptides: "protease-inhibitors" not found in peptides
+  ⚠ glossary/exocytosis.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/exocytosis.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/feedforward-activation.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/first-pass-metabolism.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/gene-expression.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/gene-expression.mdx -> relatedPeptides: "igf-1" not found in peptides
+  ⚠ glossary/gene-expression.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/glycemic-control.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/glycemic-control.mdx -> relatedPeptides: "dulaglutide" not found in peptides
+  ⚠ glossary/glycosylation.mdx -> relatedPeptides: "erythropoietin" not found in peptides
+  ⚠ glossary/glycosylation.mdx -> relatedPeptides: "follicle-stimulating-hormone" not found in peptides
+  ⚠ glossary/glycosylation.mdx -> relatedPeptides: "interferon-beta" not found in peptides
+  ⚠ glossary/immunogenicity.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/immunogenicity.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/injection-site-rotation.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/intravenous-injection.mdx -> relatedPeptides: "vasopressin" not found in peptides
+  ⚠ glossary/intravenous-injection.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/intravenous-injection.mdx -> relatedPeptides: "glucagon" not found in peptides
+  ⚠ glossary/inverse-agonist.mdx -> relatedPeptides: "agouti-related-peptide" not found in peptides
+  ⚠ glossary/inverse-agonist.mdx -> relatedPeptides: "somatostatin" not found in peptides
+  ⚠ glossary/ion-channel.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/ion-channel.mdx -> relatedPeptides: "glucagon" not found in peptides
+  ⚠ glossary/isoelectric-point.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/lipidation.mdx -> relatedPeptides: "insulin-detemir" not found in peptides
+  ⚠ glossary/lipidation.mdx -> relatedPeptides: "insulin-degludec" not found in peptides
+  ⚠ glossary/lipodystrophy.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/lipolysis.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/loading-dose.mdx -> relatedPeptides: "heparin" not found in peptides
+  ⚠ glossary/molecular-weight.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/non-competitive-inhibition.mdx -> relatedPeptides: "somatostatin" not found in peptides
+  ⚠ glossary/non-competitive-inhibition.mdx -> relatedPeptides: "octreotide" not found in peptides
+  ⚠ glossary/nuclear-receptor.mdx -> relatedPeptides: "thyroid-hormone" not found in peptides
+  ⚠ glossary/nuclear-receptor.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/orphan-drug.mdx -> relatedPeptides: "setmelanotide" not found in peptides
+  ⚠ glossary/partial-agonist.mdx -> relatedPeptides: "buprenorphine" not found in peptides
+  ⚠ glossary/partial-agonist.mdx -> relatedPeptides: "aripiprazole" not found in peptides
+  ⚠ glossary/pegylation.mdx -> relatedPeptides: "pegvisomant" not found in peptides
+  ⚠ glossary/pegylation.mdx -> relatedPeptides: "certolizumab-pegol" not found in peptides
+  ⚠ glossary/phosphorylation.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/phosphorylation.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/phosphorylation.mdx -> relatedPeptides: "igf-1" not found in peptides
+  ⚠ glossary/post-translational-modification.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/post-translational-modification.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/primary-structure.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/priority-review.mdx -> relatedPeptides: "dulaglutide" not found in peptides
+  ⚠ glossary/protein-synthesis.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/protein-synthesis.mdx -> relatedPeptides: "igf-1" not found in peptides
+  ⚠ glossary/protein-synthesis.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/quaternary-structure.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/quaternary-structure.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/receptor-downregulation.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/receptor-downregulation.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/receptor-internalization.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/receptor-internalization.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/safety-profile.mdx -> relatedPeptides: "dulaglutide" not found in peptides
+  ⚠ glossary/safety-profile.mdx -> relatedPeptides: "exenatide" not found in peptides
+  ⚠ glossary/second-messenger.mdx -> relatedPeptides: "glucagon" not found in peptides
+  ⚠ glossary/secondary-structure.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/secondary-structure.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/substrate-binding.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/substrate-binding.mdx -> relatedPeptides: "glucagon" not found in peptides
+  ⚠ glossary/substrate-binding.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/surrogate-endpoint.mdx -> relatedPeptides: "dulaglutide" not found in peptides
+  ⚠ glossary/tertiary-structure.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/tertiary-structure.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/therapeutic-window.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/titration.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/transcription-factor.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/transcription-factor.mdx -> relatedPeptides: "igf-1" not found in peptides
+  ⚠ glossary/transcription-factor.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/transporter-protein.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/tyrosine-kinase-receptor.mdx -> relatedPeptides: "igf-1" not found in peptides
+  ⚠ glossary/tyrosine-kinase-receptor.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/ubiquitination.mdx -> relatedPeptides: "growth-hormone" not found in peptides
+  ⚠ glossary/ubiquitination.mdx -> relatedPeptides: "insulin" not found in peptides
+  ⚠ glossary/ubiquitination.mdx -> relatedPeptides: "igf-1" not found in peptides
+  ⚠ glossary/bmi.mdx -> relatedTerms: "weight-loss" not found in glossary
+  ⚠ glossary/carrier-protein.mdx -> relatedTerms: "albumin" not found in glossary
+  ⚠ glossary/catabolic.mdx -> relatedTerms: "cortisol" not found in glossary
+  ⚠ glossary/compassionate-use.mdx -> relatedTerms: "investigational" not found in glossary
+  ⚠ glossary/confidence-interval.mdx -> relatedTerms: "p-value" not found in glossary
+  ⚠ glossary/cyclization.mdx -> relatedTerms: "stability" not found in glossary
+  ⚠ glossary/double-blind.mdx -> relatedTerms: "randomization" not found in glossary
+  ⚠ glossary/fda-approval.mdx -> relatedTerms: "investigational" not found in glossary
+  ⚠ glossary/glucagon.mdx -> relatedTerms: "glucose" not found in glossary
+  ⚠ glossary/lipidation.mdx -> relatedTerms: "albumin" not found in glossary
+  ⚠ glossary/lipolysis.mdx -> relatedTerms: "metabolism" not found in glossary
+  ⚠ glossary/lipolysis.mdx -> relatedTerms: "adipose-tissue" not found in glossary
+  ⚠ glossary/longitudinal-study.mdx -> relatedTerms: "prospective" not found in glossary
+  ⚠ glossary/lyophilization.mdx -> relatedTerms: "stability" not found in glossary
+  ⚠ glossary/obesity.mdx -> relatedTerms: "metabolism" not found in glossary
+  ⚠ glossary/observational-study.mdx -> relatedTerms: "retrospective" not found in glossary
+  ⚠ glossary/off-label-use.mdx -> relatedTerms: "investigational" not found in glossary
+  ⚠ glossary/off-label.mdx -> relatedTerms: "investigational" not found in glossary
+  ⚠ glossary/peer-review.mdx -> relatedTerms: "journal" not found in glossary
+  ⚠ glossary/phase-i-trial.mdx -> relatedTerms: "dose-escalation" not found in glossary
+  ⚠ glossary/priority-review.mdx -> relatedTerms: "fast-track" not found in glossary
+  ⚠ glossary/subcutaneous.mdx -> relatedTerms: "intramuscular" not found in glossary
+  ⚠ glossary/thermogenesis.mdx -> relatedTerms: "metabolism" not found in glossary
+  ⚠ glossary/thermogenesis.mdx -> relatedTerms: "brown-fat" not found in glossary
+  ⚠ peptides/225ac-dota-lm3.mdx -> interactions: "lutathera" not found in peptides
+  ⚠ peptides/225ac-dota-lm3.mdx -> interactions: "octreotide" not found in peptides
+  ⚠ peptides/225ac-dota-lm3.mdx -> interactions: "lanreotide" not found in peptides
+  ⚠ peptides/5-amino-1mq.mdx -> interactions: "nmn" not found in peptides
+  ⚠ peptides/5-amino-1mq.mdx -> interactions: "nicotinamide-riboside" not found in peptides
+  ⚠ peptides/5-amino-1mq.mdx -> interactions: "resveratrol" not found in peptides
+  ⚠ peptides/alixorexton.mdx -> interactions: "danavorexton" not found in peptides
+  ⚠ peptides/alixorexton.mdx -> interactions: "suvorexant" not found in peptides
+  ⚠ peptides/alixorexton.mdx -> interactions: "modafinil" not found in peptides
+  ⚠ peptides/alixorexton.mdx -> interactions: "sodium-oxybate" not found in peptides
+  ⚠ peptides/alpha-defensins.mdx -> interactions: "beta-defensins" not found in peptides
+  ⚠ peptides/bt5528.mdx -> interactions: "antibody-drug-conjugates" not found in peptides
+  ⚠ peptides/bt5528.mdx -> interactions: "enfortumab-vedotin" not found in peptides
+  ⚠ peptides/chonluten.mdx -> interactions: "laennec" not found in peptides
+  ⚠ peptides/dsip.mdx -> interactions: "melatonin" not found in peptides
+  ⚠ peptides/evx-01.mdx -> interactions: "pembrolizumab" not found in peptides
+  ⚠ peptides/follistatin.mdx -> interactions: "hgh" not found in peptides
+  ⚠ peptides/follistatin.mdx -> interactions: "myostatin-inhibitors" not found in peptides
+  ⚠ peptides/glutathione.mdx -> interactions: "n-acetylcysteine" not found in peptides
+  ⚠ peptides/glutathione.mdx -> interactions: "alpha-lipoic-acid" not found in peptides
+  ⚠ peptides/glutathione.mdx -> interactions: "vitamin-c" not found in peptides
+  ⚠ peptides/glutathione.mdx -> interactions: "acetaminophen" not found in peptides
+  ⚠ peptides/hcg.mdx -> interactions: "gonadorelin" not found in peptides
+  ⚠ peptides/hcg.mdx -> interactions: "clomiphene" not found in peptides
+  ⚠ peptides/hmg.mdx -> interactions: "gonadorelin" not found in peptides
+  ⚠ peptides/hmg.mdx -> interactions: "growth-hormone" not found in peptides
+  ⚠ peptides/hmg.mdx -> interactions: "testosterone" not found in peptides
+  ⚠ peptides/igf-1-lr3.mdx -> interactions: "hgh" not found in peptides
+  ⚠ peptides/igf-1-lr3.mdx -> interactions: "igf-1" not found in peptides
+  ⚠ peptides/igf-1-lr3.mdx -> interactions: "insulin" not found in peptides
+  ⚠ peptides/igf-1-lr3.mdx -> interactions: "mgf" not found in peptides
+  ⚠ peptides/kisspeptin.mdx -> interactions: "gonadorelin" not found in peptides
+  ⚠ peptides/kisspeptin.mdx -> interactions: "clomiphene" not found in peptides
+  ⚠ peptides/liraglutide.mdx -> interactions: "exenatide" not found in peptides
+  ⚠ peptides/mrna-4157.mdx -> interactions: "pembrolizumab" not found in peptides
+  ⚠ peptides/mrna-4157.mdx -> interactions: "nivolumab" not found in peptides
+  ⚠ peptides/mrna-4157.mdx -> interactions: "ipilimumab" not found in peptides
+  ⚠ peptides/murepavadin.mdx -> interactions: "colistin" not found in peptides
+  ⚠ peptides/oveporexton.mdx -> interactions: "orexin-a" not found in peptides
+  ⚠ peptides/oveporexton.mdx -> interactions: "orexin-b" not found in peptides
+  ⚠ peptides/oveporexton.mdx -> interactions: "suvorexant" not found in peptides
+  ⚠ peptides/oveporexton.mdx -> interactions: "lemborexant" not found in peptides
+  ⚠ peptides/oveporexton.mdx -> interactions: "modafinil" not found in peptides
+  ⚠ peptides/oveporexton.mdx -> interactions: "pitolisant" not found in peptides
+  ⚠ peptides/pasireotide.mdx -> interactions: "octreotide" not found in peptides
+  ⚠ peptides/pasireotide.mdx -> interactions: "lanreotide" not found in peptides
+  ⚠ peptides/pasireotide.mdx -> interactions: "pegvisomant" not found in peptides
+  ⚠ peptides/pasireotide.mdx -> interactions: "cabergoline" not found in peptides
+  ⚠ peptides/pasireotide.mdx -> interactions: "metformin" not found in peptides
+  ⚠ peptides/pasireotide.mdx -> interactions: "insulin" not found in peptides
+  ⚠ peptides/slu-pp-332.mdx -> interactions: "aicar" not found in peptides
+  ⚠ peptides/slu-pp-332.mdx -> interactions: "gw501516" not found in peptides
+  ⚠ peptides/slu-pp-332.mdx -> interactions: "sr9009" not found in peptides
+  ⚠ peptides/slu-pp-332.mdx -> interactions: "metformin" not found in peptides
+  ⚠ peptides/ss-31.mdx -> interactions: "mitoq" not found in peptides
+  ⚠ peptides/ss-31.mdx -> interactions: "coq10" not found in peptides
+  ⚠ peptides/ss-31.mdx -> interactions: "nad-precursors" not found in peptides
+  ⚠ peptides/ss-31.mdx -> interactions: "urolithin-a" not found in peptides
+  ⚠ peptides/ss-31.mdx -> interactions: "idebenone" not found in peptides
+  ⚠ peptides/sulanemadlin.mdx -> interactions: "idasanutlin" not found in peptides
+  ⚠ peptides/sulanemadlin.mdx -> interactions: "navtemadlin" not found in peptides
+  ⚠ peptides/sulanemadlin.mdx -> interactions: "milademetan" not found in peptides
+  ⚠ peptides/thymulin.mdx -> interactions: "zinc-supplements" not found in peptides
+  ⚠ peptides/zelenectide-pevedotin.mdx -> interactions: "enfortumab-vedotin" not found in peptides
+  ⚠ peptides/zelenectide-pevedotin.mdx -> interactions: "pembrolizumab" not found in peptides
+  ⚠ peptides/zelenectide-pevedotin.mdx -> interactions: "sacituzumab-govitecan" not found in peptides
+
+INFO: 158 expected non-matching refs (comparators, guide terms) — use --verbose to see
+
+Validation complete:
+  References checked: 3737
+  Errors:   0
+  Warnings: 314
+  Info:     158
+
+PASS: No structural errors
+  (314 warnings — content quality improvements available)
+WARNINGS (4) — trailing-slash drift (cosmetic, not index-blocking):
+  ⚠ src\pages\llms-full.txt.ts: 4 trailing-slash URL(s) vs no-slash canonical (e.g. https://www.pepcodex.com/methodology/, https://www.pepcodex.com/trials/)
+  ⚠ src\pages\llms.txt.ts: 109 trailing-slash URL(s) vs no-slash canonical (e.g. https://www.pepcodex.com/peptides/{slug}/, https://www.pepcodex.com/compare/{peptideA}-vs-{peptideB}/)
+  ⚠ src\pages\regulatory-tracker.astro: 1 trailing-slash URL(s) vs no-slash canonical (e.g. https://www.pepcodex.com/regulatory-tracker/)
+  ⚠ src\pages\trials\index.astro: 1 trailing-slash URL(s) vs no-slash canonical (e.g. https://www.pepcodex.com/trials/)
+
+SEO guard complete:
+  Files scanned: 1050
+  Canonical origin: https://www.pepcodex.com
+  Errors:   0
+  Warnings: 4
+
+PASS: canonical integrity OK
+Scoring validator: 102/102 dossiers scored.
+PASS: scoring integrity OK
+
+WORKLIST: 44 placeholder/free-text citation value(s) to formalize or remove (non-blocking):
+  • src/content/peptides/5-amino-1mq.mdx  source: "No data available"
+  • src/content/peptides/amycretin.mdx  source: "Class effects from semaglutide/tirzepatide trials"
+  • src/content/peptides/amycretin.mdx  source: "Oral phase 1 trial (Gasiorek A et al. 2025, Lancet; PMID 40550229)"
+  • src/content/peptides/amycretin.mdx  source: "Subcutaneous phase 1b/2a trial (Dahl K et al. 2025, Lancet; PMID 40550231)"
+  • src/content/peptides/amycretin.mdx  source: "Subcutaneous phase 1b/2a trial (Dahl K et al. 2025, Lancet; PMID 40550231)"
+  • src/content/peptides/aod-9604.mdx  source: "Phase 2b/3 OPTIONS Study"
+  • src/content/peptides/chonluten.mdx  source: "Russian bioregulator literature"
+  • src/content/peptides/chonluten.mdx  source: "Russian bioregulator literature"
+  • src/content/peptides/chonluten.mdx  source: "Russian bioregulator literature"
+  • src/content/peptides/ct-388.mdx  source: "PMID:41319798 (NCT04838405)"
+  • src/content/peptides/ct-388.mdx  source: "PMID:41319798 (NCT04838405)"
+  • src/content/peptides/ct-388.mdx  source: "Roche press release (unpublished; not peer-reviewed)"
+  • src/content/peptides/ovagen.mdx  source: "Russian preclinical research"
+  • src/content/peptides/ovagen.mdx  source: "Russian preclinical research"
+  • src/content/peptides/ovagen.mdx  source: "Russian preclinical research"
+  • src/content/peptides/pt-141.mdx  pmid: "N/A"
+  • src/content/peptides/shlp-6.mdx  source: "N/A"
+  • src/content/peptides/shlp-6.mdx  source: "N/A"
+  • src/content/peptides/testagen.mdx  pmid: "N/A"
+  • src/content/peptides/testagen.mdx  pmid: "N/A"
+  • src/content/peptides/testagen.mdx  pmid: "N/A"
+  • src/content/peptides/testagen.mdx  pmid: "N/A"
+  • src/content/peptides/testagen.mdx  pmid: "N/A"
+  • src/content/peptides/testagen.mdx  source: "Khavinson bioregulator protocols"
+  • src/content/peptides/testagen.mdx  source: "Theoretical based on bioregulator model"
+  • src/content/peptides/testagen.mdx  source: "Theoretical based on bioregulator model"
+  • src/content/peptides/vk2735.mdx  pmid: "NA"
+  • src/content/peptides/vk2735.mdx  pmid: "NA"
+  • data/source-packs/ghk-cu.json  source: "Human plasma, urine, saliva"
+  • data/source-packs/hcg.json  source: "CNKI"
+  • data/source-packs/hcg.json  source: "J-STAGE"
+  • data/source-packs/hcg.json  source: "EMA"
+  • data/source-packs/hcg.json  source: "FDA"
+  • data/source-packs/hcg.json  source: "FDA"
+  • data/source-packs/hcg.json  source: "FDA"
+  • data/source-packs/hcg.json  source: "EMA"
+  • data/source-packs/hmg.json  source: "CNKI"
+  • data/source-packs/hmg.json  source: "PMC/CNKI"
+  • data/source-packs/hmg.json  source: "EMA"
+  • data/source-packs/hmg.json  source: "Spanish Fertility Society"
+  • data/source-packs/hmg.json  source: "Russian Association of Human Reproduction"
+  • data/source-packs/hmg.json  source: "FDA"
+  • data/source-packs/hmg.json  source: "FDA"
+  • data/source-packs/hmg.json  source: "EMA"
+Citation guard: 1103 PMIDs · 405 NCTs · 512 DOIs across 992 files (src/content, data/source-packs).
+PASS: every cited PMID (1103), NCT (405), and DOI (512) resolves.
+
+> peptide-library@0.0.1 build
+> astro build
+
+[2m06:18:54[22m [34m[content][39m Syncing content
+[2m06:18:54[22m [34m[content][39m Content config changed
+[2m06:18:54[22m [34m[content][39m Clearing content store
+[33m[1m06:18:54[22m [WARN] [glob-loader][39m No files found matching "**/*{.md,.mdx},!**/_*/**/*{.md,.mdx},!**/_*{.md,.mdx}" in directory "src\content\pages"
+[2m06:18:55[22m [34m[content][39m Synced content
+[2m06:18:55[22m [34m[types][39m Generated [2m2.58s[22m
+[2m06:18:56[22m [34m[build][39m output: [34m"static"[39m
+[2m06:18:56[22m [34m[build][39m mode: [34m"server"[39m
+[2m06:18:56[22m [34m[build][39m directory: [34mC:\Users\manci\OneDrive\Documents\00_Claude\peptide-library\dist\[39m
+[2m06:18:56[22m [34m[build][39m adapter: [32m@astrojs/vercel[39m
+[2m06:18:56[22m [34m[build][39m Collecting build info...
+[2m06:18:56[22m [34m[build][39m [32m✓ Completed in 3.33s.[39m
+[2m06:18:59[22m [34m[build][39m Building server entrypoints...
+[2m06:20:53[22m [34m[vite][39m [32m✓ built in 1m 54s[39m
+[2m06:20:53[22m [34m[build][39m [32m✓ Completed in 114.20s.[39m
+
+[42m[30m building client (vite) [39m[49m
+[2m06:20:53[22m [34m[vite][39m transforming...
+[2m06:20:53[22m [34m[vite][39m [32m✓[39m 22 modules transformed.
+[2m06:20:54[22m [34m[vite][39m rendering chunks...
+[2m06:20:54[22m [34m[vite][39m computing gzip size...
+[2m06:20:54[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/SearchBar.astro_astro_type_script_index_0_lang.2OvXeFYQ.js    [39m[1m[2m7.91 kB[22m[1m[22m[2m │ gzip: 2.70 kB[22m
+[2m06:20:54[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/SearchModal.astro_astro_type_script_index_0_lang.DtuB740Y.js  [39m[1m[2m8.97 kB[22m[1m[22m[2m │ gzip: 2.97 kB[22m
+[2m06:20:54[22m [34m[vite][39m [32m✓ built in 473ms[39m
+
+[42m[30m prerendering static routes [39m[49m
+[2m06:20:58[22m [32m▶[39m src/pages/404.astro
+[2m06:20:58[22m   [34m└─[39m [2m/404.html[22m [2m(+306ms)[22m 
+[2m06:20:59[22m [32m▶[39m src/pages/about.astro
+[2m06:20:59[22m   [34m└─[39m [2m/about/index.html[22m [2m(+9ms)[22m 
+[2m06:20:59[22m [32m▶[39m src/pages/advertising-policy.astro
+[2m06:20:59[22m   [34m└─[39m [2m/advertising-policy/index.html[22m [2m(+9ms)[22m 
+[2m06:20:59[22m [35mλ[39m src/pages/api/peptide-search.json.ts
+[2m06:20:59[22m   [34m└─[39m [2m/api/peptide-search.json[22m [2m(+140ms)[22m 
+[2m06:20:59[22m [32m▶[39m src/pages/bioregulators.astro
+[2m06:20:59[22m   [34m└─[39m [2m/bioregulators/index.html[22m [2m(+82ms)[22m 
+[2m06:20:59[22m [32m▶[39m src/pages/blog/[slug].astro
+[2m06:20:59[22m   [34m├─[39m [2m/blog/retatrutide-phase3-triple-agonist/index.html[22m [2m(+59ms)[22m 
+[2m06:20:59[22m   [34m├─[39m [2m/blog/best-peptide-for-weight-loss-2026/index.html[22m [2m(+34ms)[22m 
+[2m06:20:59[22m   [34m├─[39m [2m/blog/is-bpc-157-safe/index.html[22m [2m(+30ms)[22m 
+[2m06:20:59[22m   [34m├─[39m [2m/blog/retatrutide-phase-3-results-2026/index.html[22m [2m(+35ms)[22m 
+[2m06:20:59[22m   [34m├─[39m [2m/blog/semaglutide-vs-tirzepatide-2026/index.html[22m [2m(+44ms)[22m 
+[2m06:20:59[22m   [34m├─[39m [2m/blog/new-gh-secretagogue-safety/index.html[22m [2m(+30ms)[22m 
+[2m06:20:59[22m   [34m├─[39m [2m/blog/peptide-biosensor-pathogen/index.html[22m [2m(+38ms)[22m 
+[2m06:20:59[22m   [34m├─[39m [2m/blog/tirzepatide-cancer-incidence/index.html[22m [2m(+126ms)[22m 
+[2m06:20:59[22m   [34m├─[39m [2m/blog/glp1-telehealth-access/index.html[22m [2m(+20ms)[22m 
+[2m06:20:59[22m   [34m├─[39m [2m/blog/pentapeptide-hair-follicle/index.html[22m [2m(+14ms)[22m 
+[2m06:20:59[22m   [34m├─[39m [2m/blog/survodutide-fda-submission-mash/index.html[22m [2m(+16ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/peptide-drug-conjugate-solid-tumors/index.html[22m [2m(+15ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/dsip-sleep-quality-study/index.html[22m [2m(+17ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/orforglipron-14-percent-weight-loss/index.html[22m [2m(+21ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/thymulin-vaccine-response/index.html[22m [2m(+14ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/fda-peptide-stability-guidance/index.html[22m [2m(+10ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/glp1-manufacturing-online/index.html[22m [2m(+29ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/2025-peptide-market-outlook/index.html[22m [2m(+11ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/2025-peptide-approvals-record/index.html[22m [2m(+16ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/microneedle-peptide-delivery/index.html[22m [2m(+10ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/natriuretic-peptide-heart-failure/index.html[22m [2m(+11ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/2025-glp1-year-review/index.html[22m [2m(+11ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/oral-semaglutide-25mg-approval/index.html[22m [2m(+16ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/peptide-antibiotic-resistant-bacteria/index.html[22m [2m(+14ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/cagrisema-nda-filed/index.html[22m [2m(+18ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/aod9604-human-efficacy/index.html[22m [2m(+13ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/tirzepatide-surmount-osa/index.html[22m [2m(+12ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/ss31-mitochondrial-heart-failure/index.html[22m [2m(+11ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/peptide-stapling-oral-delivery/index.html[22m [2m(+12ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/ai-peptide-drug-discovery/index.html[22m [2m(+15ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/tesamorelin-liver-fat-hiv/index.html[22m [2m(+14ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/cagrilintide-semaglutide-approval/index.html[22m [2m(+11ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/dihexa-memory-enhancement/index.html[22m [2m(+9ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/peptide-cart-tumor-penetration/index.html[22m [2m(+10ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/glp1-shortage-easing/index.html[22m [2m(+11ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/humanin-neuroprotective-trial/index.html[22m [2m(+17ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/what-is-ghk-cu/index.html[22m [2m(+11ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/oxytocin-autism-cognition/index.html[22m [2m(+15ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/amycretin-phase2-results/index.html[22m [2m(+16ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/what-is-mounjaro/index.html[22m [2m(+11ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/wegovy-pill-launches-us/index.html[22m [2m(+16ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/epithalon-safety/index.html[22m [2m(+15ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/eu-peptide-research-consortium/index.html[22m [2m(+10ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/ghkcu-stem-cell-differentiation/index.html[22m [2m(+13ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/what-is-mk-677/index.html[22m [2m(+12ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/semaglutide-soul-cardiovascular/index.html[22m [2m(+13ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/why-animal-studies-arent-enough/index.html[22m [2m(+14ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/cancer-peptide-vaccine-breakthrough/index.html[22m [2m(+13ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/selank-anxiolytic-study/index.html[22m [2m(+23ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/lilly-manufacturing-expansion/index.html[22m [2m(+16ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/peptide-drug-conjugates-cbx-12-oncology/index.html[22m [2m(+17ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/ll37-wound-healing/index.html[22m [2m(+18ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/glp1-kidney-disease-outcomes/index.html[22m [2m(+13ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/glp1-safety-overview/index.html[22m [2m(+15ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/what-is-ll-37/index.html[22m [2m(+12ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/bpc157-gut-brain-axis/index.html[22m [2m(+14ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/how-do-peptides-work/index.html[22m [2m(+14ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/pemvidutide-crl-more-data/index.html[22m [2m(+14ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/peptide-protacs-emerge-cancer-treatment/index.html[22m [2m(+18ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/retatrutide-direct-comparison/index.html[22m [2m(+18ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/what-is-semaglutide/index.html[22m [2m(+21ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/peptide-migraine-nasal-spray/index.html[22m [2m(+14ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/epithalon-telomerase-human-cells/index.html[22m [2m(+21ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/what-is-bpc-157/index.html[22m [2m(+19ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/peptide-clinical-trial-phases/index.html[22m [2m(+22ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/peptide-hydrogel-joints/index.html[22m [2m(+24ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/glp1-response-biomarkers/index.html[22m [2m(+13ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/what-is-ipamorelin/index.html[22m [2m(+11ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/orforglipron-beats-oral-semaglutide/index.html[22m [2m(+17ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/zepbound-sleep-apnea-approval/index.html[22m [2m(+16ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/motsc-human-trials/index.html[22m [2m(+15ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/retatrutide-triumph-4-weight-loss-pain-relief/index.html[22m [2m(+21ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/peptide-antiviral-coronavirus/index.html[22m [2m(+21ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/what-is-epithalon/index.html[22m [2m(+10ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/tirzepatide-summit-heart-failure/index.html[22m [2m(+13ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/what-is-retatrutide/index.html[22m [2m(+16ms)[22m 
+[2m06:21:00[22m   [34m├─[39m [2m/blog/pemvidutide-breakthrough-designation-mash/index.html[22m [2m(+19ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/semax-neuroprotection-stroke/index.html[22m [2m(+19ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/what-are-glp1-agonists/index.html[22m [2m(+19ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/fda-compounding-oversight/index.html[22m [2m(+15ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/survodutide-phase3-mash/index.html[22m [2m(+11ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/what-are-gh-secretagogues/index.html[22m [2m(+13ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/melanotan-safety/index.html[22m [2m(+13ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/cell-penetrating-peptides-cancer-immunotherapy/index.html[22m [2m(+14ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/heat-stable-peptide-delivery/index.html[22m [2m(+15ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/glp1-dementia-risk-study/index.html[22m [2m(+11ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/tirzepatide-10-year-cvd-risk-analysis/index.html[22m [2m(+9ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/peptide-drug-conjugate-tumors/index.html[22m [2m(+8ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/oxytocin-autism-meta-analysis-optimal-dosing/index.html[22m [2m(+15ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/cagrilintide-redefine-1-amylin-validated/index.html[22m [2m(+15ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/pemvidutide-eu-mash-approval/index.html[22m [2m(+14ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/surmount-5-tirzepatide-vs-semaglutide/index.html[22m [2m(+15ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/thymosin-alpha1-elderly-immune/index.html[22m [2m(+14ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/novo-manufacturing-expansion/index.html[22m [2m(+16ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/what-are-nootropic-peptides/index.html[22m [2m(+16ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/antimicrobial-peptides-cancer-potential/index.html[22m [2m(+11ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/tb500-wound-healing-trial/index.html[22m [2m(+12ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/antimicrobial-peptide-funding/index.html[22m [2m(+11ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/bpc-157-first-human-safety-data/index.html[22m [2m(+11ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/bpc-157-systematic-review-musculoskeletal/index.html[22m [2m(+14ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/fda-semaglutide-shortage-extended/index.html[22m [2m(+18ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/how-to-read-peptide-research/index.html[22m [2m(+15ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/centenarian-longevity-peptide/index.html[22m [2m(+18ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/peptide-market-80b-projection/index.html[22m [2m(+23ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/semaglutide-fails-alzheimers-evoke-trial/index.html[22m [2m(+21ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/orforglipron-phase3-advance/index.html[22m [2m(+11ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/what-is-tb-500/index.html[22m [2m(+10ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/growth-hormone-peptides-safety/index.html[22m [2m(+14ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/pemvidutide-impact-mash-resolution/index.html[22m [2m(+13ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/peptide-cancer-vaccines-melanoma/index.html[22m [2m(+14ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/china-tirzepatide-biosimilar/index.html[22m [2m(+11ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/orforglipron-attain-1-results/index.html[22m [2m(+12ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/amgen-maritide-phase2/index.html[22m [2m(+11ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/peptide-vs-protein/index.html[22m [2m(+15ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/tirzepatide-safety/index.html[22m [2m(+15ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/glp1-alcohol-cravings-research/index.html[22m [2m(+17ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/what-is-rybelsus/index.html[22m [2m(+12ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/fda-compounded-semaglutide-warning/index.html[22m [2m(+13ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/pt-141-safety/index.html[22m [2m(+12ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/cagrisema-phase3-endpoint/index.html[22m [2m(+18ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/oral-bpc157-formulation/index.html[22m [2m(+34ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/what-is-tirzepatide/index.html[22m [2m(+26ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/lilly-q2-tirzepatide-revenue/index.html[22m [2m(+17ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/what-are-recovery-peptides/index.html[22m [2m(+14ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/retatrutide-phase3-enrollment/index.html[22m [2m(+13ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/survodutide-phase-2-mash-results/index.html[22m [2m(+14ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/semaglutide-safety/index.html[22m [2m(+13ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/unregulated-peptides-safety/index.html[22m [2m(+14ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/how-do-glp-1-agonists-work/index.html[22m [2m(+17ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/what-is-cjc-1295/index.html[22m [2m(+12ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/are-peptides-safe/index.html[22m [2m(+13ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/peptide-evidence-levels-explained/index.html[22m [2m(+12ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/glp1-kidney-protection-confirmed/index.html[22m [2m(+12ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/aod-9604-safety/index.html[22m [2m(+32ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/what-is-sermorelin/index.html[22m [2m(+10ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/fda-tightens-peptide-compounding-rules/index.html[22m [2m(+10ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/what-is-wegovy/index.html[22m [2m(+24ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/what-is-zepbound/index.html[22m [2m(+14ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/what-is-humanin/index.html[22m [2m(+24ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/what-is-thymalin/index.html[22m [2m(+12ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/cagrisema-nda-filed-glp1-amylin-combo/index.html[22m [2m(+11ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/flow-trial-semaglutide-kidney-protection/index.html[22m [2m(+13ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/tesamorelin-safety/index.html[22m [2m(+14ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/oral-semaglutide-cv-approval/index.html[22m [2m(+12ms)[22m 
+[2m06:21:01[22m   [34m├─[39m [2m/blog/thymosin-alpha-1-aging-immunosenescence/index.html[22m [2m(+10ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/blog/generic-saxenda-fda-approval/index.html[22m [2m(+12ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/blog/what-is-ozempic/index.html[22m [2m(+12ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/blog/what-is-pt-141/index.html[22m [2m(+14ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/blog/what-are-longevity-peptides/index.html[22m [2m(+12ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/blog/semaglutide-reduces-alcohol-cravings/index.html[22m [2m(+14ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/blog/what-is-dihexa/index.html[22m [2m(+12ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/blog/what-is-tesamorelin/index.html[22m [2m(+12ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/blog/what-is-melanotan/index.html[22m [2m(+12ms)[22m 
+[2m06:21:02[22m   [34m└─[39m [2m/blog/recovery-peptides-safety/index.html[22m [2m(+12ms)[22m 
+[2m06:21:02[22m [32m▶[39m src/pages/blog/index.astro
+[2m06:21:02[22m   [34m└─[39m [2m/blog/index.html[22m [2m(+43ms)[22m 
+[2m06:21:02[22m [32m▶[39m src/pages/calculator/reconstitution/[slug].astro
+[2m06:21:02[22m   [34m├─[39m [2m/calculator/reconstitution/igf-1-lr3/index.html[22m [2m(+12ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/calculator/reconstitution/cagrilintide/index.html[22m [2m(+15ms)[22m 
+[2m06:21:02[22m   [34m└─[39m [2m/calculator/reconstitution/hexarelin/index.html[22m [2m(+13ms)[22m 
+[2m06:21:02[22m [32m▶[39m src/pages/category/[category].astro
+[2m06:21:02[22m   [34m├─[39m [2m/category/metabolic/index.html[22m [2m(+37ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/category/repair-recovery/index.html[22m [2m(+36ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/category/hormonal/index.html[22m [2m(+45ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/category/longevity/index.html[22m [2m(+43ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/category/cognitive/index.html[22m [2m(+46ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/category/immune/index.html[22m [2m(+59ms)[22m 
+[2m06:21:02[22m   [34m└─[39m [2m/category/other/index.html[22m [2m(+43ms)[22m 
+[2m06:21:02[22m [32m▶[39m src/pages/clinics/[city].astro
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/atlanta/index.html[22m [2m(+21ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/austin/index.html[22m [2m(+9ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/arlington/index.html[22m [2m(+14ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/albuquerque/index.html[22m [2m(+11ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/anaheim/index.html[22m [2m(+20ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/baltimore/index.html[22m [2m(+12ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/chicago/index.html[22m [2m(+14ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/cincinnati/index.html[22m [2m(+7ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/boston/index.html[22m [2m(+7ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/charlotte/index.html[22m [2m(+8ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/colorado-springs/index.html[22m [2m(+6ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/columbus/index.html[22m [2m(+6ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/detroit/index.html[22m [2m(+6ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/cleveland/index.html[22m [2m(+6ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/dallas/index.html[22m [2m(+8ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/el-paso/index.html[22m [2m(+6ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/fresno/index.html[22m [2m(+12ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/fort-worth/index.html[22m [2m(+8ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/denver/index.html[22m [2m(+7ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/honolulu/index.html[22m [2m(+9ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/houston/index.html[22m [2m(+6ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/indianapolis/index.html[22m [2m(+6ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/irvine/index.html[22m [2m(+6ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/jacksonville/index.html[22m [2m(+8ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/long-beach/index.html[22m [2m(+10ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/las-vegas/index.html[22m [2m(+8ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/los-angeles/index.html[22m [2m(+10ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/kansas-city/index.html[22m [2m(+8ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/louisville/index.html[22m [2m(+8ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/memphis/index.html[22m [2m(+14ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/miami/index.html[22m [2m(+6ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/milwaukee/index.html[22m [2m(+9ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/minneapolis/index.html[22m [2m(+7ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/nashville/index.html[22m [2m(+7ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/new-york/index.html[22m [2m(+11ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/oakland/index.html[22m [2m(+5ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/oklahoma-city/index.html[22m [2m(+7ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/new-orleans/index.html[22m [2m(+6ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/omaha/index.html[22m [2m(+11ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/mesa/index.html[22m [2m(+11ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/orlando/index.html[22m [2m(+12ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/phoenix/index.html[22m [2m(+28ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/philadelphia/index.html[22m [2m(+6ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/portland/index.html[22m [2m(+6ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/riverside/index.html[22m [2m(+8ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/pittsburgh/index.html[22m [2m(+8ms)[22m 
+[2m06:21:02[22m   [34m├─[39m [2m/clinics/sacramento/index.html[22m [2m(+5ms)[22m 
+[2m06:21:03[22m   [34m├─[39m [2m/clinics/raleigh/index.html[22m [2m(+8ms)[22m 
+[2m06:21:03[22m   [34m├─[39m [2m/clinics/san-antonio/index.html[22m [2m(+7ms)[22m 
+[2m06:21:03[22m   [34m├─[39m [2m/clinics/san-diego/index.html[22m [2m(+13ms)[22m 
+[2m06:21:03[22m   [34m├─[39m [2m/clinics/san-francisco/index.html[22m [2m(+8ms)[22m 
+[2m06:21:03[22m   [34m├─[39m [2m/clinics/seattle/index.html[22m [2m(+7ms)[22m 
+[2m06:21:03[22m   [34m├─[39m [2m/clinics/st-louis/index.html[22m [2m(+9ms)[22m 
+[2m06:21:03[22m   [34m├─[39m [2m/clinics/san-jose/index.html[22m [2m(+6ms)[22m 
+[2m06:21:03[22m   [34m├─[39m [2m/clinics/scottsdale/index.html[22m [2m(+10ms)[22m 
+[2m06:21:03[22m   [34m├─[39m [2m/clinics/tampa/index.html[22m [2m(+6ms)[22m 
+[2m06:21:03[22m   [34m├─[39m [2m/clinics/tucson/index.html[22m [2m(+8ms)[22m 
+[2m06:21:03[22m   [34m├─[39m [2m/clinics/washington-dc/index.html[22m [2m(+7ms)[22m 
+[2m06:21:03[22m   [34m├─[39m [2m/clinics/tulsa/index.html[22m [2m(+5ms)[22m 
+[2m06:21:03[22m   [34m└─[39m [2m/clinics/virginia-beach/index.html[22m [2m(+10ms)[22m 
+[2m06:21:03[22m [32m▶[39m src/pages/clinics/index.astro
+[2m06:21:03[22m   [34m└─[39m [2m/clinics/index.html[22m [2m(+8ms)[22m 
+[2m06:21:03[22m [32m▶[39m src/pages/compare/index.astro
+[2m06:21:03[22m   [34m└─[39m [2m/compare/index.html[22m [2m(+16ms)[22m 
+[2m06:21:03[22m [32m▶[39m src/pages/compare/[...slug].astro
+[2m06:21:03[22m   [34m├─[39m [2m/compare/5-amino-1mq-vs-amycretin/index.html[22m [2m(+53ms)[22m 
+[2m06:21:03[22m   [34m├─[39m [2m/compare/5-amino-1mq-vs-aod-9604/index.html[22m [2m(+47ms)[22m 
+[2m06:21:03[22m   [34m├─[39m [2m/compare/5-amino-1mq-vs-cagrilintide/index.html[22m [2m(+40ms)[22m 
+[2m06:21:03[22m   [34m├─[39m [2m/compare/5-amino-1mq-vs-ct-388/index.html[22m [2m(+39ms)[22m 
+[2m06:21:03[22m   [34m├─[39m [2m/compare/5-amino-1mq-vs-maritide/index.html[22m [2m(+44ms)[22m 
+[2m06:21:03[22m   [34m├─[39m [2m/compare/5-amino-1mq-vs-pemvidutide/index.html[22m [2m(+44ms)[22m 
+[2m06:21:03[22m   [34m├─[39m [2m/compare/5-amino-1mq-vs-liraglutide/index.html[22m [2m(+63ms)[22m 
+[2m06:21:03[22m   [34m├─[39m [2m/compare/5-amino-1mq-vs-mazdutide/index.html[22m [2m(+47ms)[22m 
+[2m06:21:03[22m   [34m├─[39m [2m/compare/5-amino-1mq-vs-cagrisema/index.html[22m [2m(+62ms)[22m 
+[2m06:21:03[22m   [34m├─[39m [2m/compare/5-amino-1mq-vs-orforglipron/index.html[22m [2m(+60ms)[22m 
+[2m06:21:03[22m   [34m├─[39m [2m/compare/5-amino-1mq-vs-retatrutide/index.html[22m [2m(+64ms)[22m 
+[2m06:21:03[22m   [34m├─[39m [2m/compare/5-amino-1mq-vs-survodutide/index.html[22m [2m(+58ms)[22m 
+[2m06:21:03[22m   [34m├─[39m [2m/compare/5-amino-1mq-vs-slu-pp-332/index.html[22m [2m(+57ms)[22m 
+[2m06:21:03[22m   [34m├─[39m [2m/compare/5-amino-1mq-vs-semaglutide/index.html[22m [2m(+91ms)[22m 
+[2m06:21:03[22m   [34m├─[39m [2m/compare/5-amino-1mq-vs-tirzepatide/index.html[22m [2m(+48ms)[22m 
+[2m06:21:03[22m   [34m├─[39m [2m/compare/alixorexton-vs-oveporexton/index.html[22m [2m(+46ms)[22m 
+[2m06:21:04[22m   [34m├─[39m [2m/compare/amycretin-vs-cagrilintide/index.html[22m [2m(+50ms)[22m 
+[2m06:21:04[22m   [34m├─[39m [2m/compare/5-amino-1mq-vs-vk2735/index.html[22m [2m(+51ms)[22m 
+[2m06:21:04[22m   [34m├─[39m [2m/compare/amycretin-vs-cagrisema/index.html[22m [2m(+46ms)[22m 
+[2m06:21:04[22m   [34m├─[39m [2m/compare/amycretin-vs-aod-9604/index.html[22m [2m(+38ms)[22m 
+[2m06:21:04[22m   [34m├─[39m [2m/compare/amycretin-vs-ct-388/index.html[22m [2m(+42ms)[22m 
+[2m06:21:04[22m   [34m├─[39m [2m/compare/amycretin-vs-maritide/index.html[22m [2m(+51ms)[22m 
+[2m06:21:04[22m   [34m├─[39m [2m/compare/amycretin-vs-liraglutide/index.html[22m [2m(+64ms)[22m 
+[2m06:21:04[22m   [34m├─[39m [2m/compare/amycretin-vs-orforglipron/index.html[22m [2m(+50ms)[22m 
+[2m06:21:04[22m   [34m├─[39m [2m/compare/amycretin-vs-pemvidutide/index.html[22m [2m(+49ms)[22m 
+[2m06:21:04[22m   [34m├─[39m [2m/compare/amycretin-vs-retatrutide/index.html[22m [2m(+56ms)[22m 
+[2m06:21:04[22m   [34m├─[39m [2m/compare/amycretin-vs-semaglutide/index.html[22m [2m(+62ms)[22m 
+[2m06:21:04[22m   [34m├─[39m [2m/compare/amycretin-vs-slu-pp-332/index.html[22m [2m(+46ms)[22m 
+[2m06:21:04[22m   [34m├─[39m [2m/compare/amycretin-vs-survodutide/index.html[22m [2m(+41ms)[22m 
+[2m06:21:04[22m   [34m├─[39m [2m/compare/amycretin-vs-mazdutide/index.html[22m [2m(+45ms)[22m 
+[2m06:21:04[22m   [34m├─[39m [2m/compare/amycretin-vs-tirzepatide/index.html[22m [2m(+59ms)[22m 
+[2m06:21:04[22m   [34m├─[39m [2m/compare/amycretin-vs-vk2735/index.html[22m [2m(+55ms)[22m 
+[2m06:21:04[22m   [34m├─[39m [2m/compare/aod-9604-vs-cagrisema/index.html[22m [2m(+59ms)[22m 
+[2m06:21:04[22m   [34m├─[39m [2m/compare/aod-9604-vs-cagrilintide/index.html[22m [2m(+56ms)[22m 
+[2m06:21:04[22m   [34m├─[39m [2m/compare/aod-9604-vs-liraglutide/index.html[22m [2m(+69ms)[22m 
+[2m06:21:05[22m   [34m├─[39m [2m/compare/aod-9604-vs-ct-388/index.html[22m [2m(+56ms)[22m 
+[2m06:21:05[22m   [34m├─[39m [2m/compare/aod-9604-vs-mazdutide/index.html[22m [2m(+49ms)[22m 
+[2m06:21:05[22m   [34m├─[39m [2m/compare/aod-9604-vs-maritide/index.html[22m [2m(+43ms)[22m 
+[2m06:21:05[22m   [34m├─[39m [2m/compare/aod-9604-vs-orforglipron/index.html[22m [2m(+37ms)[22m 
+[2m06:21:05[22m   [34m├─[39m [2m/compare/aod-9604-vs-mk-677/index.html[22m [2m(+50ms)[22m 
+[2m06:21:05[22m   [34m├─[39m [2m/compare/aod-9604-vs-retatrutide/index.html[22m [2m(+45ms)[22m 
+[2m06:21:05[22m   [34m├─[39m [2m/compare/aod-9604-vs-pemvidutide/index.html[22m [2m(+42ms)[22m 
+[2m06:21:05[22m   [34m├─[39m [2m/compare/aod-9604-vs-slu-pp-332/index.html[22m [2m(+44ms)[22m 
+[2m06:21:05[22m   [34m├─[39m [2m/compare/aod-9604-vs-semaglutide/index.html[22m [2m(+64ms)[22m 
+[2m06:21:05[22m   [34m├─[39m [2m/compare/aod-9604-vs-tirzepatide/index.html[22m [2m(+56ms)[22m 
+[2m06:21:05[22m   [34m├─[39m [2m/compare/aod-9604-vs-survodutide/index.html[22m [2m(+43ms)[22m 
+[2m06:21:05[22m   [34m├─[39m [2m/compare/bpc-157-vs-chonluten/index.html[22m [2m(+42ms)[22m 
+[2m06:21:05[22m   [34m├─[39m [2m/compare/aod-9604-vs-vk2735/index.html[22m [2m(+42ms)[22m 
+[2m06:21:05[22m   [34m├─[39m [2m/compare/bpc-157-vs-ghk/index.html[22m [2m(+41ms)[22m 
+[2m06:21:05[22m   [34m├─[39m [2m/compare/bpc-157-vs-ghk-cu-vs-tb-500/index.html[22m [2m(+71ms)[22m 
+[2m06:21:05[22m   [34m├─[39m [2m/compare/bpc-157-vs-ll-37/index.html[22m [2m(+61ms)[22m 
+[2m06:21:05[22m   [34m├─[39m [2m/compare/bpc-157-vs-tb-500/index.html[22m [2m(+55ms)[22m 
+[2m06:21:05[22m   [34m├─[39m [2m/compare/bronchogen-vs-epithalon/index.html[22m [2m(+44ms)[22m 
+[2m06:21:05[22m   [34m├─[39m [2m/compare/bronchogen-vs-thymalin/index.html[22m [2m(+42ms)[22m 
+[2m06:21:05[22m   [34m├─[39m [2m/compare/bpc-157-vs-sigumir/index.html[22m [2m(+57ms)[22m 
+[2m06:21:05[22m   [34m├─[39m [2m/compare/cagrilintide-vs-cagrisema/index.html[22m [2m(+47ms)[22m 
+[2m06:21:06[22m   [34m├─[39m [2m/compare/cagrilintide-vs-ct-388/index.html[22m [2m(+52ms)[22m 
+[2m06:21:06[22m   [34m├─[39m [2m/compare/cagrilintide-vs-maritide/index.html[22m [2m(+52ms)[22m 
+[2m06:21:06[22m   [34m├─[39m [2m/compare/cagrilintide-vs-liraglutide/index.html[22m [2m(+57ms)[22m 
+[2m06:21:06[22m   [34m├─[39m [2m/compare/bronchogen-vs-vilon/index.html[22m [2m(+58ms)[22m 
+[2m06:21:06[22m   [34m├─[39m [2m/compare/cagrilintide-vs-mazdutide/index.html[22m [2m(+60ms)[22m 
+[2m06:21:06[22m   [34m├─[39m [2m/compare/cagrilintide-vs-orforglipron/index.html[22m [2m(+43ms)[22m 
+[2m06:21:06[22m   [34m├─[39m [2m/compare/cagrilintide-vs-pemvidutide/index.html[22m [2m(+52ms)[22m 
+[2m06:21:06[22m   [34m├─[39m [2m/compare/cagrilintide-vs-retatrutide/index.html[22m [2m(+42ms)[22m 
+[2m06:21:06[22m   [34m├─[39m [2m/compare/cagrilintide-vs-semaglutide/index.html[22m [2m(+44ms)[22m 
+[2m06:21:06[22m   [34m├─[39m [2m/compare/cagrilintide-vs-slu-pp-332/index.html[22m [2m(+38ms)[22m 
+[2m06:21:06[22m   [34m├─[39m [2m/compare/cagrilintide-vs-survodutide/index.html[22m [2m(+62ms)[22m 
+[2m06:21:06[22m   [34m├─[39m [2m/compare/cagrilintide-vs-tirzepatide/index.html[22m [2m(+68ms)[22m 
+[2m06:21:06[22m   [34m├─[39m [2m/compare/cagrisema-vs-ct-388/index.html[22m [2m(+49ms)[22m 
+[2m06:21:06[22m   [34m├─[39m [2m/compare/cagrilintide-vs-vk2735/index.html[22m [2m(+51ms)[22m 
+[2m06:21:06[22m   [34m├─[39m [2m/compare/cagrisema-vs-liraglutide/index.html[22m [2m(+50ms)[22m 
+[2m06:21:06[22m   [34m├─[39m [2m/compare/cagrisema-vs-mazdutide/index.html[22m [2m(+49ms)[22m 
+[2m06:21:06[22m   [34m├─[39m [2m/compare/cagrisema-vs-maritide/index.html[22m [2m(+42ms)[22m 
+[2m06:21:06[22m   [34m├─[39m [2m/compare/cagrisema-vs-orforglipron/index.html[22m [2m(+41ms)[22m 
+[2m06:21:06[22m   [34m├─[39m [2m/compare/cagrisema-vs-pemvidutide/index.html[22m [2m(+38ms)[22m 
+[2m06:21:06[22m   [34m├─[39m [2m/compare/cagrisema-vs-retatrutide/index.html[22m [2m(+44ms)[22m 
+[2m06:21:07[22m   [34m├─[39m [2m/compare/cagrisema-vs-semaglutide/index.html[22m [2m(+50ms)[22m 
+[2m06:21:07[22m   [34m├─[39m [2m/compare/cagrisema-vs-slu-pp-332/index.html[22m [2m(+53ms)[22m 
+[2m06:21:07[22m   [34m├─[39m [2m/compare/cagrisema-vs-survodutide/index.html[22m [2m(+41ms)[22m 
+[2m06:21:07[22m   [34m├─[39m [2m/compare/cagrisema-vs-tirzepatide/index.html[22m [2m(+45ms)[22m 
+[2m06:21:07[22m   [34m├─[39m [2m/compare/cardiogen-vs-epithalon/index.html[22m [2m(+50ms)[22m 
+[2m06:21:07[22m   [34m├─[39m [2m/compare/cagrisema-vs-vk2735/index.html[22m [2m(+46ms)[22m 
+[2m06:21:07[22m   [34m├─[39m [2m/compare/cardiogen-vs-vesugen/index.html[22m [2m(+49ms)[22m 
+[2m06:21:07[22m   [34m├─[39m [2m/compare/cardiogen-vs-ventfort/index.html[22m [2m(+41ms)[22m 
+[2m06:21:07[22m   [34m├─[39m [2m/compare/cardiogen-vs-thymalin/index.html[22m [2m(+44ms)[22m 
+[2m06:21:07[22m   [34m├─[39m [2m/compare/cerebrolysin-vs-p21/index.html[22m [2m(+53ms)[22m 
+[2m06:21:07[22m   [34m├─[39m [2m/compare/cerebrolysin-vs-semax/index.html[22m [2m(+64ms)[22m 
+[2m06:21:07[22m   [34m├─[39m [2m/compare/cerluten-vs-cortexin/index.html[22m [2m(+42ms)[22m 
+[2m06:21:07[22m   [34m├─[39m [2m/compare/cerluten-vs-pinealon/index.html[22m [2m(+41ms)[22m 
+[2m06:21:07[22m   [34m├─[39m [2m/compare/cerluten-vs-selank/index.html[22m [2m(+43ms)[22m 
+[2m06:21:07[22m   [34m├─[39m [2m/compare/cerluten-vs-semax/index.html[22m [2m(+61ms)[22m 
+[2m06:21:07[22m   [34m├─[39m [2m/compare/cjc-1295-vs-ipamorelin/index.html[22m [2m(+52ms)[22m 
+[2m06:21:07[22m   [34m├─[39m [2m/compare/chonluten-vs-thymalin/index.html[22m [2m(+43ms)[22m 
+[2m06:21:07[22m   [34m├─[39m [2m/compare/chonluten-vs-epithalon/index.html[22m [2m(+52ms)[22m 
+[2m06:21:07[22m   [34m├─[39m [2m/compare/cjc-1295-vs-mk-677/index.html[22m [2m(+58ms)[22m 
+[2m06:21:07[22m   [34m├─[39m [2m/compare/chonluten-vs-stamakort/index.html[22m [2m(+49ms)[22m 
+[2m06:21:08[22m   [34m├─[39m [2m/compare/cjc-1295-vs-tesamorelin/index.html[22m [2m(+70ms)[22m 
+[2m06:21:08[22m   [34m├─[39m [2m/compare/cjc-1295-vs-sermorelin/index.html[22m [2m(+64ms)[22m 
+[2m06:21:08[22m   [34m├─[39m [2m/compare/cortexin-vs-cerebrolysin/index.html[22m [2m(+50ms)[22m 
+[2m06:21:08[22m   [34m├─[39m [2m/compare/cortexin-vs-epithalon/index.html[22m [2m(+41ms)[22m 
+[2m06:21:08[22m   [34m├─[39m [2m/compare/cortexin-vs-pinealon/index.html[22m [2m(+61ms)[22m 
+[2m06:21:08[22m   [34m├─[39m [2m/compare/cortexin-vs-retinalamin/index.html[22m [2m(+43ms)[22m 
+[2m06:21:08[22m   [34m├─[39m [2m/compare/cortexin-vs-semax/index.html[22m [2m(+46ms)[22m 
+[2m06:21:08[22m   [34m├─[39m [2m/compare/ct-388-vs-liraglutide/index.html[22m [2m(+38ms)[22m 
+[2m06:21:08[22m   [34m├─[39m [2m/compare/ct-388-vs-maritide/index.html[22m [2m(+44ms)[22m 
+[2m06:21:08[22m   [34m├─[39m [2m/compare/ct-388-vs-mazdutide/index.html[22m [2m(+44ms)[22m 
+[2m06:21:08[22m   [34m├─[39m [2m/compare/cortexin-vs-selank/index.html[22m [2m(+40ms)[22m 
+[2m06:21:08[22m   [34m├─[39m [2m/compare/ct-388-vs-orforglipron/index.html[22m [2m(+49ms)[22m 
+[2m06:21:08[22m   [34m├─[39m [2m/compare/ct-388-vs-pemvidutide/index.html[22m [2m(+57ms)[22m 
+[2m06:21:08[22m   [34m├─[39m [2m/compare/ct-388-vs-retatrutide/index.html[22m [2m(+40ms)[22m 
+[2m06:21:08[22m   [34m├─[39m [2m/compare/ct-388-vs-slu-pp-332/index.html[22m [2m(+41ms)[22m 
+[2m06:21:08[22m   [34m├─[39m [2m/compare/ct-388-vs-survodutide/index.html[22m [2m(+49ms)[22m 
+[2m06:21:08[22m   [34m├─[39m [2m/compare/ct-388-vs-tirzepatide/index.html[22m [2m(+60ms)[22m 
+[2m06:21:08[22m   [34m├─[39m [2m/compare/ct-388-vs-semaglutide/index.html[22m [2m(+62ms)[22m 
+[2m06:21:08[22m   [34m├─[39m [2m/compare/ct-388-vs-vk2735/index.html[22m [2m(+53ms)[22m 
+[2m06:21:08[22m   [34m├─[39m [2m/compare/dihexa-vs-cerebrolysin/index.html[22m [2m(+51ms)[22m 
+[2m06:21:09[22m   [34m├─[39m [2m/compare/dihexa-vs-p21/index.html[22m [2m(+56ms)[22m 
+[2m06:21:09[22m   [34m├─[39m [2m/compare/dihexa-vs-semax/index.html[22m [2m(+52ms)[22m 
+[2m06:21:09[22m   [34m├─[39m [2m/compare/dihexa-vs-selank/index.html[22m [2m(+58ms)[22m 
+[2m06:21:09[22m   [34m├─[39m [2m/compare/dsip-vs-selank/index.html[22m [2m(+79ms)[22m 
+[2m06:21:09[22m   [34m├─[39m [2m/compare/dsip-vs-semax/index.html[22m [2m(+67ms)[22m 
+[2m06:21:09[22m   [34m├─[39m [2m/compare/endoluten-vs-pinealon/index.html[22m [2m(+46ms)[22m 
+[2m06:21:09[22m   [34m├─[39m [2m/compare/endoluten-vs-thymalin/index.html[22m [2m(+62ms)[22m 
+[2m06:21:09[22m   [34m├─[39m [2m/compare/epithalon-vs-humanin/index.html[22m [2m(+64ms)[22m 
+[2m06:21:09[22m   [34m├─[39m [2m/compare/epithalon-vs-livagen/index.html[22m [2m(+48ms)[22m 
+[2m06:21:09[22m   [34m├─[39m [2m/compare/endoluten-vs-epithalon/index.html[22m [2m(+46ms)[22m 
+[2m06:21:09[22m   [34m├─[39m [2m/compare/epithalon-vs-ovagen/index.html[22m [2m(+56ms)[22m 
+[2m06:21:09[22m   [34m├─[39m [2m/compare/epithalon-vs-mots-c/index.html[22m [2m(+38ms)[22m 
+[2m06:21:09[22m   [34m├─[39m [2m/compare/epithalon-vs-pancragen/index.html[22m [2m(+38ms)[22m 
+[2m06:21:09[22m   [34m├─[39m [2m/compare/epithalon-vs-pinealon/index.html[22m [2m(+40ms)[22m 
+[2m06:21:09[22m   [34m├─[39m [2m/compare/epithalon-vs-retinalamin/index.html[22m [2m(+35ms)[22m 
+[2m06:21:09[22m   [34m├─[39m [2m/compare/epithalon-vs-prostatilen/index.html[22m [2m(+34ms)[22m 
+[2m06:21:09[22m   [34m├─[39m [2m/compare/epithalon-vs-stamakort/index.html[22m [2m(+34ms)[22m 
+[2m06:21:09[22m   [34m├─[39m [2m/compare/epithalon-vs-svetinorm/index.html[22m [2m(+44ms)[22m 
+[2m06:21:09[22m   [34m├─[39m [2m/compare/epithalon-vs-testagen/index.html[22m [2m(+44ms)[22m 
+[2m06:21:09[22m   [34m├─[39m [2m/compare/epithalon-vs-sigumir/index.html[22m [2m(+35ms)[22m 
+[2m06:21:09[22m   [34m├─[39m [2m/compare/epithalon-vs-suprefort/index.html[22m [2m(+37ms)[22m 
+[2m06:21:10[22m   [34m├─[39m [2m/compare/epithalon-vs-thymalin/index.html[22m [2m(+39ms)[22m 
+[2m06:21:10[22m   [34m├─[39m [2m/compare/epithalon-vs-ventfort/index.html[22m [2m(+36ms)[22m 
+[2m06:21:10[22m   [34m├─[39m [2m/compare/epithalon-vs-vesugen/index.html[22m [2m(+35ms)[22m 
+[2m06:21:10[22m   [34m├─[39m [2m/compare/epithalon-vs-vilon/index.html[22m [2m(+40ms)[22m 
+[2m06:21:10[22m   [34m├─[39m [2m/compare/foxo4-dri-vs-epithalon/index.html[22m [2m(+45ms)[22m 
+[2m06:21:10[22m   [34m├─[39m [2m/compare/follistatin-vs-igf-1-lr3/index.html[22m [2m(+37ms)[22m 
+[2m06:21:10[22m   [34m├─[39m [2m/compare/ghrp-2-vs-ghrp-6/index.html[22m [2m(+40ms)[22m 
+[2m06:21:10[22m   [34m├─[39m [2m/compare/foxo4-dri-vs-shlp-6/index.html[22m [2m(+41ms)[22m 
+[2m06:21:10[22m   [34m├─[39m [2m/compare/ghk-cu-vs-bpc-157/index.html[22m [2m(+40ms)[22m 
+[2m06:21:10[22m   [34m├─[39m [2m/compare/ghrp-2-vs-ipamorelin/index.html[22m [2m(+43ms)[22m 
+[2m06:21:10[22m   [34m├─[39m [2m/compare/ghrp-2-vs-hexarelin/index.html[22m [2m(+35ms)[22m 
+[2m06:21:10[22m   [34m├─[39m [2m/compare/ghk-vs-ghk-cu/index.html[22m [2m(+47ms)[22m 
+[2m06:21:10[22m   [34m├─[39m [2m/compare/ghrp-2-vs-mk-677/index.html[22m [2m(+42ms)[22m 
+[2m06:21:10[22m   [34m├─[39m [2m/compare/ghrp-6-vs-ipamorelin/index.html[22m [2m(+42ms)[22m 
+[2m06:21:10[22m   [34m├─[39m [2m/compare/ghrp-6-vs-sermorelin/index.html[22m [2m(+47ms)[22m 
+[2m06:21:10[22m   [34m├─[39m [2m/compare/glutathione-vs-ss-31/index.html[22m [2m(+73ms)[22m 
+[2m06:21:10[22m   [34m├─[39m [2m/compare/hcg-vs-hmg/index.html[22m [2m(+67ms)[22m 
+[2m06:21:10[22m   [34m├─[39m [2m/compare/hcg-vs-kisspeptin/index.html[22m [2m(+72ms)[22m 
+[2m06:21:10[22m   [34m├─[39m [2m/compare/hexarelin-vs-ghrp-6/index.html[22m [2m(+60ms)[22m 
+[2m06:21:10[22m   [34m├─[39m [2m/compare/ghrp-6-vs-mk-677/index.html[22m [2m(+51ms)[22m 
+[2m06:21:10[22m   [34m├─[39m [2m/compare/hexarelin-vs-ipamorelin/index.html[22m [2m(+72ms)[22m 
+[2m06:21:11[22m   [34m├─[39m [2m/compare/humanin-vs-shlp-6/index.html[22m [2m(+53ms)[22m 
+[2m06:21:11[22m   [34m├─[39m [2m/compare/ipamorelin-vs-cjc-1295/index.html[22m [2m(+45ms)[22m 
+[2m06:21:11[22m   [34m├─[39m [2m/compare/kpv-vs-bpc-157/index.html[22m [2m(+55ms)[22m 
+[2m06:21:11[22m   [34m├─[39m [2m/compare/kristagen-vs-thymalin/index.html[22m [2m(+63ms)[22m 
+[2m06:21:11[22m   [34m├─[39m [2m/compare/kristagen-vs-vilon/index.html[22m [2m(+55ms)[22m 
+[2m06:21:11[22m   [34m├─[39m [2m/compare/liraglutide-vs-maritide/index.html[22m [2m(+51ms)[22m 
+[2m06:21:11[22m   [34m├─[39m [2m/compare/kpv-vs-thymosin-alpha-1/index.html[22m [2m(+75ms)[22m 
+[2m06:21:11[22m   [34m├─[39m [2m/compare/kristagen-vs-thymosin-alpha-1/index.html[22m [2m(+54ms)[22m 
+[2m06:21:11[22m   [34m├─[39m [2m/compare/liraglutide-vs-mazdutide/index.html[22m [2m(+47ms)[22m 
+[2m06:21:11[22m   [34m├─[39m [2m/compare/liraglutide-vs-pemvidutide/index.html[22m [2m(+55ms)[22m 
+[2m06:21:11[22m   [34m├─[39m [2m/compare/liraglutide-vs-orforglipron/index.html[22m [2m(+51ms)[22m 
+[2m06:21:11[22m   [34m├─[39m [2m/compare/liraglutide-vs-retatrutide/index.html[22m [2m(+42ms)[22m 
+[2m06:21:11[22m   [34m├─[39m [2m/compare/liraglutide-vs-semaglutide/index.html[22m [2m(+51ms)[22m 
+[2m06:21:11[22m   [34m├─[39m [2m/compare/liraglutide-vs-slu-pp-332/index.html[22m [2m(+51ms)[22m 
+[2m06:21:11[22m   [34m├─[39m [2m/compare/liraglutide-vs-survodutide/index.html[22m [2m(+54ms)[22m 
+[2m06:21:11[22m   [34m├─[39m [2m/compare/livagen-vs-ovagen/index.html[22m [2m(+39ms)[22m 
+[2m06:21:11[22m   [34m├─[39m [2m/compare/livagen-vs-svetinorm/index.html[22m [2m(+42ms)[22m 
+[2m06:21:11[22m   [34m├─[39m [2m/compare/livagen-vs-thymalin/index.html[22m [2m(+54ms)[22m 
+[2m06:21:11[22m   [34m├─[39m [2m/compare/liraglutide-vs-tirzepatide/index.html[22m [2m(+50ms)[22m 
+[2m06:21:12[22m   [34m├─[39m [2m/compare/livagen-vs-vilon/index.html[22m [2m(+46ms)[22m 
+[2m06:21:12[22m   [34m├─[39m [2m/compare/liraglutide-vs-vk2735/index.html[22m [2m(+51ms)[22m 
+[2m06:21:12[22m   [34m├─[39m [2m/compare/ll-37-vs-alpha-defensins/index.html[22m [2m(+49ms)[22m 
+[2m06:21:12[22m   [34m├─[39m [2m/compare/maritide-vs-orforglipron/index.html[22m [2m(+44ms)[22m 
+[2m06:21:12[22m   [34m├─[39m [2m/compare/maritide-vs-retatrutide/index.html[22m [2m(+50ms)[22m 
+[2m06:21:12[22m   [34m├─[39m [2m/compare/maritide-vs-semaglutide/index.html[22m [2m(+46ms)[22m 
+[2m06:21:12[22m   [34m├─[39m [2m/compare/maritide-vs-slu-pp-332/index.html[22m [2m(+46ms)[22m 
+[2m06:21:12[22m   [34m├─[39m [2m/compare/ll-37-vs-lactoferricin/index.html[22m [2m(+47ms)[22m 
+[2m06:21:12[22m   [34m├─[39m [2m/compare/maritide-vs-pemvidutide/index.html[22m [2m(+46ms)[22m 
+[2m06:21:12[22m   [34m├─[39m [2m/compare/maritide-vs-mazdutide/index.html[22m [2m(+41ms)[22m 
+[2m06:21:12[22m   [34m├─[39m [2m/compare/ll-37-vs-kpv/index.html[22m [2m(+43ms)[22m 
+[2m06:21:12[22m   [34m├─[39m [2m/compare/maritide-vs-survodutide/index.html[22m [2m(+37ms)[22m 
+[2m06:21:12[22m   [34m├─[39m [2m/compare/maritide-vs-tirzepatide/index.html[22m [2m(+37ms)[22m 
+[2m06:21:12[22m   [34m├─[39m [2m/compare/mazdutide-vs-semaglutide/index.html[22m [2m(+39ms)[22m 
+[2m06:21:12[22m   [34m├─[39m [2m/compare/mk-677-vs-ipamorelin/index.html[22m [2m(+52ms)[22m 
+[2m06:21:12[22m   [34m├─[39m [2m/compare/mazdutide-vs-survodutide/index.html[22m [2m(+37ms)[22m 
+[2m06:21:12[22m   [34m├─[39m [2m/compare/mazdutide-vs-tirzepatide/index.html[22m [2m(+39ms)[22m 
+[2m06:21:12[22m   [34m├─[39m [2m/compare/mk-677-vs-cjc-1295/index.html[22m [2m(+46ms)[22m 
+[2m06:21:12[22m   [34m├─[39m [2m/compare/mots-c-vs-humanin/index.html[22m [2m(+55ms)[22m 
+[2m06:21:12[22m   [34m├─[39m [2m/compare/maritide-vs-vk2735/index.html[22m [2m(+60ms)[22m 
+[2m06:21:12[22m   [34m├─[39m [2m/compare/mk-677-vs-sermorelin/index.html[22m [2m(+39ms)[22m 
+[2m06:21:12[22m   [34m├─[39m [2m/compare/mots-c-vs-shlp-2/index.html[22m [2m(+33ms)[22m 
+[2m06:21:13[22m   [34m├─[39m [2m/compare/mots-c-vs-shlp-6/index.html[22m [2m(+37ms)[22m 
+[2m06:21:13[22m   [34m├─[39m [2m/compare/na-selank-amidate-vs-semax/index.html[22m [2m(+42ms)[22m 
+[2m06:21:13[22m   [34m├─[39m [2m/compare/mots-c-vs-ss-31/index.html[22m [2m(+46ms)[22m 
+[2m06:21:13[22m   [34m├─[39m [2m/compare/na-selank-amidate-vs-na-semax-amidate/index.html[22m [2m(+33ms)[22m 
+[2m06:21:13[22m   [34m├─[39m [2m/compare/na-semax-amidate-vs-selank/index.html[22m [2m(+36ms)[22m 
+[2m06:21:13[22m   [34m├─[39m [2m/compare/orforglipron-vs-semaglutide/index.html[22m [2m(+41ms)[22m 
+[2m06:21:13[22m   [34m├─[39m [2m/compare/oral-vs-injectable-semaglutide/index.html[22m [2m(+38ms)[22m 
+[2m06:21:13[22m   [34m├─[39m [2m/compare/orforglipron-vs-tirzepatide/index.html[22m [2m(+37ms)[22m 
+[2m06:21:13[22m   [34m├─[39m [2m/compare/ovagen-vs-svetinorm/index.html[22m [2m(+48ms)[22m 
+[2m06:21:13[22m   [34m├─[39m [2m/compare/ovagen-vs-thymalin/index.html[22m [2m(+66ms)[22m 
+[2m06:21:13[22m   [34m├─[39m [2m/compare/ozempic-vs-mounjaro/index.html[22m [2m(+63ms)[22m 
+[2m06:21:13[22m   [34m├─[39m [2m/compare/p21-vs-semax/index.html[22m [2m(+55ms)[22m 
+[2m06:21:13[22m   [34m├─[39m [2m/compare/ozempic-vs-wegovy/index.html[22m [2m(+48ms)[22m 
+[2m06:21:13[22m   [34m├─[39m [2m/compare/pancragen-vs-thymalin/index.html[22m [2m(+42ms)[22m 
+[2m06:21:13[22m   [34m├─[39m [2m/compare/pemvidutide-vs-semaglutide/index.html[22m [2m(+51ms)[22m 
+[2m06:21:13[22m   [34m├─[39m [2m/compare/pancragen-vs-vilon/index.html[22m [2m(+58ms)[22m 
+[2m06:21:13[22m   [34m├─[39m [2m/compare/pancragen-vs-suprefort/index.html[22m [2m(+49ms)[22m 
+[2m06:21:13[22m   [34m├─[39m [2m/compare/pasireotide-vs-mk-677/index.html[22m [2m(+56ms)[22m 
+[2m06:21:13[22m   [34m├─[39m [2m/compare/pemvidutide-vs-survodutide/index.html[22m [2m(+49ms)[22m 
+[2m06:21:13[22m   [34m├─[39m [2m/compare/pemvidutide-vs-tirzepatide/index.html[22m [2m(+49ms)[22m 
+[2m06:21:13[22m   [34m├─[39m [2m/compare/pinealon-vs-semax/index.html[22m [2m(+59ms)[22m 
+[2m06:21:14[22m   [34m├─[39m [2m/compare/prostatilen-vs-thymalin/index.html[22m [2m(+53ms)[22m 
+[2m06:21:14[22m   [34m├─[39m [2m/compare/prostatilen-vs-vilon/index.html[22m [2m(+53ms)[22m 
+[2m06:21:14[22m   [34m├─[39m [2m/compare/pt-141-vs-kisspeptin/index.html[22m [2m(+58ms)[22m 
+[2m06:21:14[22m   [34m├─[39m [2m/compare/retatrutide-vs-semaglutide/index.html[22m [2m(+50ms)[22m 
+[2m06:21:14[22m   [34m├─[39m [2m/compare/retatrutide-vs-survodutide/index.html[22m [2m(+56ms)[22m 
+[2m06:21:14[22m   [34m├─[39m [2m/compare/pt-141-vs-melanotan-ii/index.html[22m [2m(+44ms)[22m 
+[2m06:21:14[22m   [34m├─[39m [2m/compare/retatrutide-vs-tirzepatide/index.html[22m [2m(+51ms)[22m 
+[2m06:21:14[22m   [34m├─[39m [2m/compare/retinalamin-vs-thymalin/index.html[22m [2m(+56ms)[22m 
+[2m06:21:14[22m   [34m├─[39m [2m/compare/rybelsus-vs-ozempic/index.html[22m [2m(+80ms)[22m 
+[2m06:21:14[22m   [34m├─[39m [2m/compare/selank-vs-na-selank-amidate/index.html[22m [2m(+64ms)[22m 
+[2m06:21:14[22m   [34m├─[39m [2m/compare/semaglutide-vs-liraglutide/index.html[22m [2m(+54ms)[22m 
+[2m06:21:14[22m   [34m├─[39m [2m/compare/sermorelin-vs-mk-677/index.html[22m [2m(+62ms)[22m 
+[2m06:21:14[22m   [34m├─[39m [2m/compare/semax-vs-na-semax-amidate/index.html[22m [2m(+54ms)[22m 
+[2m06:21:14[22m   [34m├─[39m [2m/compare/semaglutide-vs-tirzepatide/index.html[22m [2m(+63ms)[22m 
+[2m06:21:14[22m   [34m├─[39m [2m/compare/selank-vs-semax/index.html[22m [2m(+53ms)[22m 
+[2m06:21:14[22m   [34m├─[39m [2m/compare/sermorelin-vs-ipamorelin/index.html[22m [2m(+63ms)[22m 
+[2m06:21:14[22m   [34m├─[39m [2m/compare/sermorelin-vs-tesamorelin/index.html[22m [2m(+52ms)[22m 
+[2m06:21:14[22m   [34m├─[39m [2m/compare/shlp-2-vs-humanin/index.html[22m [2m(+61ms)[22m 
+[2m06:21:15[22m   [34m├─[39m [2m/compare/shlp-2-vs-shlp-6/index.html[22m [2m(+65ms)[22m 
+[2m06:21:15[22m   [34m├─[39m [2m/compare/shlp-2-vs-ss-31/index.html[22m [2m(+62ms)[22m 
+[2m06:21:15[22m   [34m├─[39m [2m/compare/sigumir-vs-tb-500/index.html[22m [2m(+48ms)[22m 
+[2m06:21:15[22m   [34m├─[39m [2m/compare/ss-31-vs-mots-c/index.html[22m [2m(+72ms)[22m 
+[2m06:21:15[22m   [34m├─[39m [2m/compare/suprefort-vs-vilon/index.html[22m [2m(+62ms)[22m 
+[2m06:21:15[22m   [34m├─[39m [2m/compare/stamakort-vs-thymalin/index.html[22m [2m(+56ms)[22m 
+[2m06:21:15[22m   [34m├─[39m [2m/compare/survodutide-vs-tirzepatide/index.html[22m [2m(+65ms)[22m 
+[2m06:21:15[22m   [34m├─[39m [2m/compare/survodutide-vs-semaglutide/index.html[22m [2m(+55ms)[22m 
+[2m06:21:15[22m   [34m├─[39m [2m/compare/ss-31-vs-humanin/index.html[22m [2m(+78ms)[22m 
+[2m06:21:15[22m   [34m├─[39m [2m/compare/tb-500-vs-ghk-cu/index.html[22m [2m(+81ms)[22m 
+[2m06:21:15[22m   [34m├─[39m [2m/compare/tb-500-vs-ll-37/index.html[22m [2m(+58ms)[22m 
+[2m06:21:15[22m   [34m├─[39m [2m/compare/tesamorelin-vs-ghrp-6/index.html[22m [2m(+64ms)[22m 
+[2m06:21:15[22m   [34m├─[39m [2m/compare/tb-500-vs-thymosin-alpha-1/index.html[22m [2m(+63ms)[22m 
+[2m06:21:15[22m   [34m├─[39m [2m/compare/tesamorelin-vs-ipamorelin/index.html[22m [2m(+51ms)[22m 
+[2m06:21:15[22m   [34m├─[39m [2m/compare/tesamorelin-vs-mk-677/index.html[22m [2m(+56ms)[22m 
+[2m06:21:15[22m   [34m├─[39m [2m/compare/testagen-vs-vilon/index.html[22m [2m(+49ms)[22m 
+[2m06:21:16[22m   [34m├─[39m [2m/compare/testagen-vs-thymalin/index.html[22m [2m(+83ms)[22m 
+[2m06:21:16[22m   [34m├─[39m [2m/compare/tesamorelin-vs-sermorelin/index.html[22m [2m(+76ms)[22m 
+[2m06:21:16[22m   [34m├─[39m [2m/compare/thymalin-vs-thymogen/index.html[22m [2m(+63ms)[22m 
+[2m06:21:16[22m   [34m├─[39m [2m/compare/thymalin-vs-thymosin-alpha-1/index.html[22m [2m(+47ms)[22m 
+[2m06:21:16[22m   [34m├─[39m [2m/compare/thymalin-vs-vladonix/index.html[22m [2m(+49ms)[22m 
+[2m06:21:16[22m   [34m├─[39m [2m/compare/thymalin-vs-vilon/index.html[22m [2m(+60ms)[22m 
+[2m06:21:16[22m   [34m├─[39m [2m/compare/thymogen-vs-thymulin/index.html[22m [2m(+50ms)[22m 
+[2m06:21:16[22m   [34m├─[39m [2m/compare/thymogen-vs-thymosin-alpha-1/index.html[22m [2m(+55ms)[22m 
+[2m06:21:16[22m   [34m├─[39m [2m/compare/thymogen-vs-vladonix/index.html[22m [2m(+54ms)[22m 
+[2m06:21:16[22m   [34m├─[39m [2m/compare/thymogen-vs-vilon/index.html[22m [2m(+57ms)[22m 
+[2m06:21:16[22m   [34m├─[39m [2m/compare/thymosin-alpha-1-vs-ll-37/index.html[22m [2m(+80ms)[22m 
+[2m06:21:16[22m   [34m├─[39m [2m/compare/thymosin-alpha-1-vs-thymalin/index.html[22m [2m(+64ms)[22m 
+[2m06:21:16[22m   [34m├─[39m [2m/compare/thymosin-alpha-1-vs-thymulin/index.html[22m [2m(+68ms)[22m 
+[2m06:21:16[22m   [34m├─[39m [2m/compare/thymosin-alpha-1-vs-vladonix/index.html[22m [2m(+65ms)[22m 
+[2m06:21:16[22m   [34m├─[39m [2m/compare/tirzepatide-vs-liraglutide/index.html[22m [2m(+55ms)[22m 
+[2m06:21:16[22m   [34m├─[39m [2m/compare/thymulin-vs-thymalin/index.html[22m [2m(+57ms)[22m 
+[2m06:21:17[22m   [34m├─[39m [2m/compare/thymosin-alpha-1-vs-vilon/index.html[22m [2m(+49ms)[22m 
+[2m06:21:17[22m   [34m├─[39m [2m/compare/tirzepatide-vs-retatrutide/index.html[22m [2m(+60ms)[22m 
+[2m06:21:17[22m   [34m├─[39m [2m/compare/tirzepatide-vs-semaglutide/index.html[22m [2m(+57ms)[22m 
+[2m06:21:17[22m   [34m├─[39m [2m/compare/vesugen-vs-vilon/index.html[22m [2m(+46ms)[22m 
+[2m06:21:17[22m   [34m├─[39m [2m/compare/ventfort-vs-vesugen/index.html[22m [2m(+53ms)[22m 
+[2m06:21:17[22m   [34m├─[39m [2m/compare/vilon-vs-vladonix/index.html[22m [2m(+63ms)[22m 
+[2m06:21:17[22m   [34m├─[39m [2m/compare/vk2735-vs-semaglutide/index.html[22m [2m(+61ms)[22m 
+[2m06:21:17[22m   [34m├─[39m [2m/compare/vk2735-vs-tirzepatide/index.html[22m [2m(+57ms)[22m 
+[2m06:21:17[22m   [34m└─[39m [2m/compare/wegovy-vs-zepbound/index.html[22m [2m(+48ms)[22m 
+[2m06:21:17[22m [32m▶[39m src/pages/conditions/index.astro
+[2m06:21:17[22m   [34m└─[39m [2m/conditions/index.html[22m [2m(+47ms)[22m 
+[2m06:21:17[22m [32m▶[39m src/pages/conditions/[...slug].astro
+[2m06:21:17[22m   [34m├─[39m [2m/conditions/fat-loss/index.html[22m [2m(+57ms)[22m 
+[2m06:21:17[22m   [34m├─[39m [2m/conditions/cognition/index.html[22m [2m(+55ms)[22m 
+[2m06:21:17[22m   [34m├─[39m [2m/conditions/anti-aging/index.html[22m [2m(+59ms)[22m 
+[2m06:21:17[22m   [34m├─[39m [2m/conditions/joint-pain/index.html[22m [2m(+62ms)[22m 
+[2m06:21:17[22m   [34m├─[39m [2m/conditions/gut-health/index.html[22m [2m(+57ms)[22m 
+[2m06:21:17[22m   [34m├─[39m [2m/conditions/inflammation/index.html[22m [2m(+42ms)[22m 
+[2m06:21:17[22m   [34m├─[39m [2m/conditions/injury-recovery/index.html[22m [2m(+50ms)[22m 
+[2m06:21:17[22m   [34m├─[39m [2m/conditions/healing/index.html[22m [2m(+64ms)[22m 
+[2m06:21:18[22m   [34m├─[39m [2m/conditions/hair-growth/index.html[22m [2m(+77ms)[22m 
+[2m06:21:18[22m   [34m├─[39m [2m/conditions/immune-support/index.html[22m [2m(+68ms)[22m 
+[2m06:21:18[22m   [34m├─[39m [2m/conditions/longevity/index.html[22m [2m(+76ms)[22m 
+[2m06:21:18[22m   [34m├─[39m [2m/conditions/sleep/index.html[22m [2m(+47ms)[22m 
+[2m06:21:18[22m   [34m├─[39m [2m/conditions/muscle-growth/index.html[22m [2m(+44ms)[22m 
+[2m06:21:18[22m   [34m├─[39m [2m/conditions/skin/index.html[22m [2m(+42ms)[22m 
+[2m06:21:18[22m   [34m└─[39m [2m/conditions/weight-loss/index.html[22m [2m(+46ms)[22m 
+[2m06:21:18[22m [32m▶[39m src/pages/contact.astro
+[2m06:21:18[22m   [34m└─[39m [2m/contact/index.html[22m [2m(+5ms)[22m 
+[2m06:21:18[22m [32m▶[39m src/pages/cookie-policy.astro
+[2m06:21:18[22m   [34m└─[39m [2m/cookie-policy/index.html[22m [2m(+4ms)[22m 
+[2m06:21:18[22m [32m▶[39m src/pages/directory.astro
+[2m06:21:18[22m   [34m└─[39m [2m/directory/index.html[22m [2m(+3ms)[22m 
+[2m06:21:18[22m [32m▶[39m src/pages/disclaimer.astro
+[2m06:21:18[22m   [34m└─[39m [2m/disclaimer/index.html[22m [2m(+3ms)[22m 
+[2m06:21:18[22m [32m▶[39m src/pages/editorial-policy.astro
+[2m06:21:18[22m   [34m└─[39m [2m/editorial-policy/index.html[22m [2m(+5ms)[22m 
+[2m06:21:18[22m [32m▶[39m src/pages/fda-notice.astro
+[2m06:21:18[22m   [34m└─[39m [2m/fda-notice/index.html[22m [2m(+3ms)[22m 
+[2m06:21:18[22m [32m▶[39m src/pages/glossary/index.astro
+[2m06:21:18[22m   [34m└─[39m [2m/glossary/index.html[22m [2m(+14ms)[22m 
+[2m06:21:18[22m [32m▶[39m src/pages/glossary/[...slug].astro
+[2m06:21:18[22m   [34m├─[39m [2m/glossary/accelerated-approval/index.html[22m [2m(+68ms)[22m 
+[2m06:21:18[22m   [34m├─[39m [2m/glossary/adverse-event/index.html[22m [2m(+82ms)[22m 
+[2m06:21:18[22m   [34m├─[39m [2m/glossary/aggregation/index.html[22m [2m(+79ms)[22m 
+[2m06:21:18[22m   [34m├─[39m [2m/glossary/a1c/index.html[22m [2m(+69ms)[22m 
+[2m06:21:18[22m   [34m├─[39m [2m/glossary/acetylation/index.html[22m [2m(+62ms)[22m 
+[2m06:21:18[22m   [34m├─[39m [2m/glossary/allosteric-modulation/index.html[22m [2m(+46ms)[22m 
+[2m06:21:18[22m   [34m├─[39m [2m/glossary/amino-acid-sequence/index.html[22m [2m(+58ms)[22m 
+[2m06:21:18[22m   [34m├─[39m [2m/glossary/amino-acid/index.html[22m [2m(+54ms)[22m 
+[2m06:21:19[22m   [34m├─[39m [2m/glossary/amidation/index.html[22m [2m(+89ms)[22m 
+[2m06:21:19[22m   [34m├─[39m [2m/glossary/anabolic/index.html[22m [2m(+55ms)[22m 
+[2m06:21:19[22m   [34m├─[39m [2m/glossary/antimicrobial-peptide/index.html[22m [2m(+63ms)[22m 
+[2m06:21:19[22m   [34m├─[39m [2m/glossary/apoptosis/index.html[22m [2m(+80ms)[22m 
+[2m06:21:19[22m   [34m├─[39m [2m/glossary/area-under-curve/index.html[22m [2m(+68ms)[22m 
+[2m06:21:19[22m   [34m├─[39m [2m/glossary/appetite-suppression/index.html[22m [2m(+71ms)[22m 
+[2m06:21:19[22m   [34m├─[39m [2m/glossary/bacteriostatic-water/index.html[22m [2m(+73ms)[22m 
+[2m06:21:19[22m   [34m├─[39m [2m/glossary/autophagy/index.html[22m [2m(+77ms)[22m 
+[2m06:21:19[22m   [34m├─[39m [2m/glossary/bioavailability/index.html[22m [2m(+85ms)[22m 
+[2m06:21:19[22m   [34m├─[39m [2m/glossary/binding-affinity/index.html[22m [2m(+65ms)[22m 
+[2m06:21:19[22m   [34m├─[39m [2m/glossary/biomarker/index.html[22m [2m(+76ms)[22m 
+[2m06:21:19[22m   [34m├─[39m [2m/glossary/bla-application/index.html[22m [2m(+77ms)[22m 
+[2m06:21:19[22m   [34m├─[39m [2m/glossary/black-box-warning/index.html[22m [2m(+69ms)[22m 
+[2m06:21:20[22m   [34m├─[39m [2m/glossary/bmi/index.html[22m [2m(+67ms)[22m 
+[2m06:21:20[22m   [34m├─[39m [2m/glossary/blood-brain-barrier/index.html[22m [2m(+67ms)[22m 
+[2m06:21:20[22m   [34m├─[39m [2m/glossary/body-composition/index.html[22m [2m(+85ms)[22m 
+[2m06:21:20[22m   [34m├─[39m [2m/glossary/breakthrough-therapy/index.html[22m [2m(+63ms)[22m 
+[2m06:21:20[22m   [34m├─[39m [2m/glossary/c-terminus/index.html[22m [2m(+60ms)[22m 
+[2m06:21:20[22m   [34m├─[39m [2m/glossary/carrier-protein/index.html[22m [2m(+70ms)[22m 
+[2m06:21:20[22m   [34m├─[39m [2m/glossary/case-control-study/index.html[22m [2m(+67ms)[22m 
+[2m06:21:20[22m   [34m├─[39m [2m/glossary/catabolic/index.html[22m [2m(+65ms)[22m 
+[2m06:21:20[22m   [34m├─[39m [2m/glossary/chain-length/index.html[22m [2m(+68ms)[22m 
+[2m06:21:20[22m   [34m├─[39m [2m/glossary/clearance/index.html[22m [2m(+72ms)[22m 
+[2m06:21:20[22m   [34m├─[39m [2m/glossary/clinical-endpoint/index.html[22m [2m(+82ms)[22m 
+[2m06:21:20[22m   [34m├─[39m [2m/glossary/clinical-trial/index.html[22m [2m(+73ms)[22m 
+[2m06:21:20[22m   [34m├─[39m [2m/glossary/compassionate-use/index.html[22m [2m(+93ms)[22m 
+[2m06:21:20[22m   [34m├─[39m [2m/glossary/cold-chain/index.html[22m [2m(+81ms)[22m 
+[2m06:21:21[22m   [34m├─[39m [2m/glossary/competitive-inhibition/index.html[22m [2m(+82ms)[22m 
+[2m06:21:21[22m   [34m├─[39m [2m/glossary/compounding-pharmacy/index.html[22m [2m(+85ms)[22m 
+[2m06:21:21[22m   [34m├─[39m [2m/glossary/cohort-study/index.html[22m [2m(+84ms)[22m 
+[2m06:21:21[22m   [34m├─[39m [2m/glossary/confidence-interval/index.html[22m [2m(+77ms)[22m 
+[2m06:21:21[22m   [34m├─[39m [2m/glossary/contraindication/index.html[22m [2m(+70ms)[22m 
+[2m06:21:21[22m   [34m├─[39m [2m/glossary/cross-sectional-study/index.html[22m [2m(+83ms)[22m 
+[2m06:21:21[22m   [34m├─[39m [2m/glossary/cytokine/index.html[22m [2m(+56ms)[22m 
+[2m06:21:21[22m   [34m├─[39m [2m/glossary/cross-talk/index.html[22m [2m(+73ms)[22m 
+[2m06:21:21[22m   [34m├─[39m [2m/glossary/cyclization/index.html[22m [2m(+73ms)[22m 
+[2m06:21:21[22m   [34m├─[39m [2m/glossary/dalton/index.html[22m [2m(+71ms)[22m 
+[2m06:21:21[22m   [34m├─[39m [2m/glossary/degradation/index.html[22m [2m(+65ms)[22m 
+[2m06:21:21[22m   [34m├─[39m [2m/glossary/desensitization-protocol/index.html[22m [2m(+51ms)[22m 
+[2m06:21:21[22m   [34m├─[39m [2m/glossary/disulfide-bond/index.html[22m [2m(+51ms)[22m 
+[2m06:21:21[22m   [34m├─[39m [2m/glossary/dephosphorylation/index.html[22m [2m(+68ms)[22m 
+[2m06:21:22[22m   [34m├─[39m [2m/glossary/dose-response-curve/index.html[22m [2m(+68ms)[22m 
+[2m06:21:22[22m   [34m├─[39m [2m/glossary/double-blind/index.html[22m [2m(+49ms)[22m 
+[2m06:21:22[22m   [34m├─[39m [2m/glossary/dpp-4/index.html[22m [2m(+79ms)[22m 
+[2m06:21:22[22m   [34m├─[39m [2m/glossary/dosing/index.html[22m [2m(+61ms)[22m 
+[2m06:21:22[22m   [34m├─[39m [2m/glossary/drug-interaction/index.html[22m [2m(+67ms)[22m 
+[2m06:21:22[22m   [34m├─[39m [2m/glossary/ec50/index.html[22m [2m(+76ms)[22m 
+[2m06:21:22[22m   [34m├─[39m [2m/glossary/dual-agonist/index.html[22m [2m(+77ms)[22m 
+[2m06:21:22[22m   [34m├─[39m [2m/glossary/efficacy/index.html[22m [2m(+48ms)[22m 
+[2m06:21:22[22m   [34m├─[39m [2m/glossary/ema-approval/index.html[22m [2m(+51ms)[22m 
+[2m06:21:22[22m   [34m├─[39m [2m/glossary/endocytosis/index.html[22m [2m(+55ms)[22m 
+[2m06:21:22[22m   [34m├─[39m [2m/glossary/endogenous-peptide/index.html[22m [2m(+55ms)[22m 
+[2m06:21:22[22m   [34m├─[39m [2m/glossary/enzymatic-degradation/index.html[22m [2m(+63ms)[22m 
+[2m06:21:22[22m   [34m├─[39m [2m/glossary/enzyme-inhibition/index.html[22m [2m(+73ms)[22m 
+[2m06:21:22[22m   [34m├─[39m [2m/glossary/fast-track-designation/index.html[22m [2m(+77ms)[22m 
+[2m06:21:22[22m   [34m├─[39m [2m/glossary/fda-approval/index.html[22m [2m(+62ms)[22m 
+[2m06:21:22[22m   [34m├─[39m [2m/glossary/feedback-inhibition/index.html[22m [2m(+78ms)[22m 
+[2m06:21:23[22m   [34m├─[39m [2m/glossary/feedforward-activation/index.html[22m [2m(+64ms)[22m 
+[2m06:21:23[22m   [34m├─[39m [2m/glossary/exocytosis/index.html[22m [2m(+78ms)[22m 
+[2m06:21:23[22m   [34m├─[39m [2m/glossary/first-pass-metabolism/index.html[22m [2m(+60ms)[22m 
+[2m06:21:23[22m   [34m├─[39m [2m/glossary/g-protein-coupled-receptor/index.html[22m [2m(+68ms)[22m 
+[2m06:21:23[22m   [34m├─[39m [2m/glossary/gastric-emptying/index.html[22m [2m(+58ms)[22m 
+[2m06:21:23[22m   [34m├─[39m [2m/glossary/gene-expression/index.html[22m [2m(+67ms)[22m 
+[2m06:21:23[22m   [34m├─[39m [2m/glossary/ghrelin/index.html[22m [2m(+61ms)[22m 
+[2m06:21:23[22m   [34m├─[39m [2m/glossary/ghrh/index.html[22m [2m(+68ms)[22m 
+[2m06:21:23[22m   [34m├─[39m [2m/glossary/ghrp/index.html[22m [2m(+67ms)[22m 
+[2m06:21:23[22m   [34m├─[39m [2m/glossary/gip/index.html[22m [2m(+54ms)[22m 
+[2m06:21:23[22m   [34m├─[39m [2m/glossary/glp-1/index.html[22m [2m(+79ms)[22m 
+[2m06:21:23[22m   [34m├─[39m [2m/glossary/glucagon/index.html[22m [2m(+62ms)[22m 
+[2m06:21:23[22m   [34m├─[39m [2m/glossary/glycemic-control/index.html[22m [2m(+55ms)[22m 
+[2m06:21:23[22m   [34m├─[39m [2m/glossary/glycosylation/index.html[22m [2m(+52ms)[22m 
+[2m06:21:23[22m   [34m├─[39m [2m/glossary/gmp-certified/index.html[22m [2m(+57ms)[22m 
+[2m06:21:24[22m   [34m├─[39m [2m/glossary/gmp/index.html[22m [2m(+62ms)[22m 
+[2m06:21:24[22m   [34m├─[39m [2m/glossary/growth-hormone-secretagogue/index.html[22m [2m(+67ms)[22m 
+[2m06:21:24[22m   [34m├─[39m [2m/glossary/half-life/index.html[22m [2m(+61ms)[22m 
+[2m06:21:24[22m   [34m├─[39m [2m/glossary/growth-hormone/index.html[22m [2m(+64ms)[22m 
+[2m06:21:24[22m   [34m├─[39m [2m/glossary/hplc/index.html[22m [2m(+63ms)[22m 
+[2m06:21:24[22m   [34m├─[39m [2m/glossary/hydrophilicity/index.html[22m [2m(+59ms)[22m 
+[2m06:21:24[22m   [34m├─[39m [2m/glossary/ic50/index.html[22m [2m(+56ms)[22m 
+[2m06:21:24[22m   [34m├─[39m [2m/glossary/hydrophobicity/index.html[22m [2m(+68ms)[22m 
+[2m06:21:24[22m   [34m├─[39m [2m/glossary/igf-1/index.html[22m [2m(+60ms)[22m 
+[2m06:21:24[22m   [34m├─[39m [2m/glossary/immunogenicity/index.html[22m [2m(+66ms)[22m 
+[2m06:21:24[22m   [34m├─[39m [2m/glossary/in-vitro-study/index.html[22m [2m(+59ms)[22m 
+[2m06:21:24[22m   [34m├─[39m [2m/glossary/in-vitro/index.html[22m [2m(+54ms)[22m 
+[2m06:21:24[22m   [34m├─[39m [2m/glossary/incretin/index.html[22m [2m(+61ms)[22m 
+[2m06:21:24[22m   [34m├─[39m [2m/glossary/in-vivo-study/index.html[22m [2m(+69ms)[22m 
+[2m06:21:24[22m   [34m├─[39m [2m/glossary/in-vivo/index.html[22m [2m(+64ms)[22m 
+[2m06:21:24[22m   [34m├─[39m [2m/glossary/ind-application/index.html[22m [2m(+62ms)[22m 
+[2m06:21:24[22m   [34m├─[39m [2m/glossary/injection-site-rotation/index.html[22m [2m(+63ms)[22m 
+[2m06:21:25[22m   [34m├─[39m [2m/glossary/insulin-resistance/index.html[22m [2m(+63ms)[22m 
+[2m06:21:25[22m   [34m├─[39m [2m/glossary/insulin-syringe/index.html[22m [2m(+70ms)[22m 
+[2m06:21:25[22m   [34m├─[39m [2m/glossary/insulin/index.html[22m [2m(+57ms)[22m 
+[2m06:21:25[22m   [34m├─[39m [2m/glossary/intention-to-treat/index.html[22m [2m(+63ms)[22m 
+[2m06:21:25[22m   [34m├─[39m [2m/glossary/intramuscular-injection/index.html[22m [2m(+62ms)[22m 
+[2m06:21:25[22m   [34m├─[39m [2m/glossary/intravenous-injection/index.html[22m [2m(+62ms)[22m 
+[2m06:21:25[22m   [34m├─[39m [2m/glossary/inverse-agonist/index.html[22m [2m(+64ms)[22m 
+[2m06:21:25[22m   [34m├─[39m [2m/glossary/isoelectric-point/index.html[22m [2m(+58ms)[22m 
+[2m06:21:25[22m   [34m├─[39m [2m/glossary/lipidation/index.html[22m [2m(+66ms)[22m 
+[2m06:21:25[22m   [34m├─[39m [2m/glossary/ligand-binding/index.html[22m [2m(+59ms)[22m 
+[2m06:21:25[22m   [34m├─[39m [2m/glossary/ion-channel/index.html[22m [2m(+64ms)[22m 
+[2m06:21:25[22m   [34m├─[39m [2m/glossary/lipodystrophy/index.html[22m [2m(+65ms)[22m 
+[2m06:21:25[22m   [34m├─[39m [2m/glossary/lipolysis/index.html[22m [2m(+62ms)[22m 
+[2m06:21:25[22m   [34m├─[39m [2m/glossary/liquid-chromatography/index.html[22m [2m(+63ms)[22m 
+[2m06:21:25[22m   [34m├─[39m [2m/glossary/longitudinal-study/index.html[22m [2m(+63ms)[22m 
+[2m06:21:26[22m   [34m├─[39m [2m/glossary/lyophilization/index.html[22m [2m(+64ms)[22m 
+[2m06:21:26[22m   [34m├─[39m [2m/glossary/loading-dose/index.html[22m [2m(+61ms)[22m 
+[2m06:21:26[22m   [34m├─[39m [2m/glossary/maintenance-dose/index.html[22m [2m(+61ms)[22m 
+[2m06:21:26[22m   [34m├─[39m [2m/glossary/mass-spectrometry/index.html[22m [2m(+64ms)[22m 
+[2m06:21:26[22m   [34m├─[39m [2m/glossary/mechanism-of-action/index.html[22m [2m(+65ms)[22m 
+[2m06:21:26[22m   [34m├─[39m [2m/glossary/meta-analysis/index.html[22m [2m(+62ms)[22m 
+[2m06:21:26[22m   [34m├─[39m [2m/glossary/metabolic-syndrome/index.html[22m [2m(+60ms)[22m 
+[2m06:21:26[22m   [34m├─[39m [2m/glossary/mitochondrial-peptide/index.html[22m [2m(+53ms)[22m 
+[2m06:21:26[22m   [34m├─[39m [2m/glossary/molecular-weight/index.html[22m [2m(+66ms)[22m 
+[2m06:21:26[22m   [34m├─[39m [2m/glossary/n-terminus/index.html[22m [2m(+57ms)[22m 
+[2m06:21:26[22m   [34m├─[39m [2m/glossary/nda-application/index.html[22m [2m(+56ms)[22m 
+[2m06:21:26[22m   [34m├─[39m [2m/glossary/mounjaro/index.html[22m [2m(+63ms)[22m 
+[2m06:21:26[22m   [34m├─[39m [2m/glossary/neuropeptide/index.html[22m [2m(+61ms)[22m 
+[2m06:21:26[22m   [34m├─[39m [2m/glossary/neuroplasticity/index.html[22m [2m(+70ms)[22m 
+[2m06:21:26[22m   [34m├─[39m [2m/glossary/non-competitive-inhibition/index.html[22m [2m(+69ms)[22m 
+[2m06:21:26[22m   [34m├─[39m [2m/glossary/obesity/index.html[22m [2m(+75ms)[22m 
+[2m06:21:27[22m   [34m├─[39m [2m/glossary/nuclear-receptor/index.html[22m [2m(+47ms)[22m 
+[2m06:21:27[22m   [34m├─[39m [2m/glossary/observational-study/index.html[22m [2m(+62ms)[22m 
+[2m06:21:27[22m   [34m├─[39m [2m/glossary/off-label-use/index.html[22m [2m(+47ms)[22m 
+[2m06:21:27[22m   [34m├─[39m [2m/glossary/open-label/index.html[22m [2m(+54ms)[22m 
+[2m06:21:27[22m   [34m├─[39m [2m/glossary/orphan-drug/index.html[22m [2m(+61ms)[22m 
+[2m06:21:27[22m   [34m├─[39m [2m/glossary/oxidation/index.html[22m [2m(+61ms)[22m 
+[2m06:21:27[22m   [34m├─[39m [2m/glossary/off-label/index.html[22m [2m(+52ms)[22m 
+[2m06:21:27[22m   [34m├─[39m [2m/glossary/oxidative-stress/index.html[22m [2m(+58ms)[22m 
+[2m06:21:27[22m   [34m├─[39m [2m/glossary/ozempic/index.html[22m [2m(+57ms)[22m 
+[2m06:21:27[22m   [34m├─[39m [2m/glossary/partial-agonist/index.html[22m [2m(+63ms)[22m 
+[2m06:21:27[22m   [34m├─[39m [2m/glossary/peak-level/index.html[22m [2m(+65ms)[22m 
+[2m06:21:27[22m   [34m├─[39m [2m/glossary/peer-review/index.html[22m [2m(+67ms)[22m 
+[2m06:21:27[22m   [34m├─[39m [2m/glossary/peptide-bioregulator/index.html[22m [2m(+59ms)[22m 
+[2m06:21:27[22m   [34m├─[39m [2m/glossary/peptide-stability/index.html[22m [2m(+69ms)[22m 
+[2m06:21:27[22m   [34m├─[39m [2m/glossary/pegylation/index.html[22m [2m(+84ms)[22m 
+[2m06:21:27[22m   [34m├─[39m [2m/glossary/peptide-hormone/index.html[22m [2m(+65ms)[22m 
+[2m06:21:27[22m   [34m├─[39m [2m/glossary/peptide-cycle/index.html[22m [2m(+54ms)[22m 
+[2m06:21:28[22m   [34m├─[39m [2m/glossary/peptide/index.html[22m [2m(+68ms)[22m 
+[2m06:21:28[22m   [34m├─[39m [2m/glossary/peptide-bond/index.html[22m [2m(+68ms)[22m 
+[2m06:21:28[22m   [34m├─[39m [2m/glossary/pharmacodynamics/index.html[22m [2m(+66ms)[22m 
+[2m06:21:28[22m   [34m├─[39m [2m/glossary/pharmacokinetics/index.html[22m [2m(+54ms)[22m 
+[2m06:21:28[22m   [34m├─[39m [2m/glossary/phase-3-trial/index.html[22m [2m(+61ms)[22m 
+[2m06:21:28[22m   [34m├─[39m [2m/glossary/phase-ii-trial/index.html[22m [2m(+53ms)[22m 
+[2m06:21:28[22m   [34m├─[39m [2m/glossary/phosphorylation/index.html[22m [2m(+60ms)[22m 
+[2m06:21:28[22m   [34m├─[39m [2m/glossary/phase-i-trial/index.html[22m [2m(+62ms)[22m 
+[2m06:21:28[22m   [34m├─[39m [2m/glossary/plasma-concentration/index.html[22m [2m(+56ms)[22m 
+[2m06:21:28[22m   [34m├─[39m [2m/glossary/placebo-controlled/index.html[22m [2m(+68ms)[22m 
+[2m06:21:28[22m   [34m├─[39m [2m/glossary/phase-iii-trial/index.html[22m [2m(+66ms)[22m 
+[2m06:21:28[22m   [34m├─[39m [2m/glossary/pmid/index.html[22m [2m(+63ms)[22m 
+[2m06:21:28[22m   [34m├─[39m [2m/glossary/placebo/index.html[22m [2m(+63ms)[22m 
+[2m06:21:28[22m   [34m├─[39m [2m/glossary/post-translational-modification/index.html[22m [2m(+71ms)[22m 
+[2m06:21:28[22m   [34m├─[39m [2m/glossary/potency/index.html[22m [2m(+74ms)[22m 
+[2m06:21:28[22m   [34m├─[39m [2m/glossary/protein/index.html[22m [2m(+64ms)[22m 
+[2m06:21:29[22m   [34m├─[39m [2m/glossary/primary-structure/index.html[22m [2m(+70ms)[22m 
+[2m06:21:29[22m   [34m├─[39m [2m/glossary/primary-endpoint/index.html[22m [2m(+74ms)[22m 
+[2m06:21:29[22m   [34m├─[39m [2m/glossary/proteolysis/index.html[22m [2m(+73ms)[22m 
+[2m06:21:29[22m   [34m├─[39m [2m/glossary/preclinical-study/index.html[22m [2m(+69ms)[22m 
+[2m06:21:29[22m   [34m├─[39m [2m/glossary/protein-synthesis/index.html[22m [2m(+67ms)[22m 
+[2m06:21:29[22m   [34m├─[39m [2m/glossary/quaternary-structure/index.html[22m [2m(+71ms)[22m 
+[2m06:21:29[22m   [34m├─[39m [2m/glossary/purity/index.html[22m [2m(+59ms)[22m 
+[2m06:21:29[22m   [34m├─[39m [2m/glossary/priority-review/index.html[22m [2m(+60ms)[22m 
+[2m06:21:29[22m   [34m├─[39m [2m/glossary/randomized-controlled-trial/index.html[22m [2m(+54ms)[22m 
+[2m06:21:29[22m   [34m├─[39m [2m/glossary/receptor-agonist/index.html[22m [2m(+46ms)[22m 
+[2m06:21:29[22m   [34m├─[39m [2m/glossary/receptor-internalization/index.html[22m [2m(+65ms)[22m 
+[2m06:21:29[22m   [34m├─[39m [2m/glossary/reconstitution/index.html[22m [2m(+54ms)[22m 
+[2m06:21:29[22m   [34m├─[39m [2m/glossary/receptor-desensitization/index.html[22m [2m(+80ms)[22m 
+[2m06:21:29[22m   [34m├─[39m [2m/glossary/receptor-antagonist/index.html[22m [2m(+71ms)[22m 
+[2m06:21:29[22m   [34m├─[39m [2m/glossary/research-chemical/index.html[22m [2m(+60ms)[22m 
+[2m06:21:30[22m   [34m├─[39m [2m/glossary/receptor-downregulation/index.html[22m [2m(+61ms)[22m 
+[2m06:21:30[22m   [34m├─[39m [2m/glossary/research-use-only/index.html[22m [2m(+69ms)[22m 
+[2m06:21:30[22m   [34m├─[39m [2m/glossary/rybelsus/index.html[22m [2m(+52ms)[22m 
+[2m06:21:30[22m   [34m├─[39m [2m/glossary/receptor-binding/index.html[22m [2m(+55ms)[22m 
+[2m06:21:30[22m   [34m├─[39m [2m/glossary/secondary-structure/index.html[22m [2m(+52ms)[22m 
+[2m06:21:30[22m   [34m├─[39m [2m/glossary/satiety/index.html[22m [2m(+64ms)[22m 
+[2m06:21:30[22m   [34m├─[39m [2m/glossary/senolytic/index.html[22m [2m(+68ms)[22m 
+[2m06:21:30[22m   [34m├─[39m [2m/glossary/second-messenger/index.html[22m [2m(+61ms)[22m 
+[2m06:21:30[22m   [34m├─[39m [2m/glossary/secretagogue/index.html[22m [2m(+57ms)[22m 
+[2m06:21:30[22m   [34m├─[39m [2m/glossary/selectivity/index.html[22m [2m(+63ms)[22m 
+[2m06:21:30[22m   [34m├─[39m [2m/glossary/signal-transduction/index.html[22m [2m(+66ms)[22m 
+[2m06:21:30[22m   [34m├─[39m [2m/glossary/solid-phase-synthesis/index.html[22m [2m(+53ms)[22m 
+[2m06:21:30[22m   [34m├─[39m [2m/glossary/specificity/index.html[22m [2m(+55ms)[22m 
+[2m06:21:30[22m   [34m├─[39m [2m/glossary/safety-profile/index.html[22m [2m(+58ms)[22m 
+[2m06:21:30[22m   [34m├─[39m [2m/glossary/statistical-significance/index.html[22m [2m(+63ms)[22m 
+[2m06:21:30[22m   [34m├─[39m [2m/glossary/subcutaneous-injection/index.html[22m [2m(+62ms)[22m 
+[2m06:21:30[22m   [34m├─[39m [2m/glossary/subcutaneous/index.html[22m [2m(+72ms)[22m 
+[2m06:21:31[22m   [34m├─[39m [2m/glossary/substrate-binding/index.html[22m [2m(+64ms)[22m 
+[2m06:21:31[22m   [34m├─[39m [2m/glossary/steady-state/index.html[22m [2m(+63ms)[22m 
+[2m06:21:31[22m   [34m├─[39m [2m/glossary/surrogate-endpoint/index.html[22m [2m(+78ms)[22m 
+[2m06:21:31[22m   [34m├─[39m [2m/glossary/sterile-water/index.html[22m [2m(+62ms)[22m 
+[2m06:21:31[22m   [34m├─[39m [2m/glossary/synthetic-peptide/index.html[22m [2m(+61ms)[22m 
+[2m06:21:31[22m   [34m├─[39m [2m/glossary/telomerase/index.html[22m [2m(+58ms)[22m 
+[2m06:21:31[22m   [34m├─[39m [2m/glossary/systematic-review/index.html[22m [2m(+62ms)[22m 
+[2m06:21:31[22m   [34m├─[39m [2m/glossary/therapeutic-window/index.html[22m [2m(+68ms)[22m 
+[2m06:21:31[22m   [34m├─[39m [2m/glossary/tertiary-structure/index.html[22m [2m(+64ms)[22m 
+[2m06:21:31[22m   [34m├─[39m [2m/glossary/titration/index.html[22m [2m(+65ms)[22m 
+[2m06:21:31[22m   [34m├─[39m [2m/glossary/thymic-peptide/index.html[22m [2m(+57ms)[22m 
+[2m06:21:31[22m   [34m├─[39m [2m/glossary/transporter-protein/index.html[22m [2m(+66ms)[22m 
+[2m06:21:31[22m   [34m├─[39m [2m/glossary/trough-level/index.html[22m [2m(+78ms)[22m 
+[2m06:21:31[22m   [34m├─[39m [2m/glossary/transcription-factor/index.html[22m [2m(+78ms)[22m 
+[2m06:21:31[22m   [34m├─[39m [2m/glossary/thermogenesis/index.html[22m [2m(+64ms)[22m 
+[2m06:21:32[22m   [34m├─[39m [2m/glossary/triple-agonist/index.html[22m [2m(+77ms)[22m 
+[2m06:21:32[22m   [34m├─[39m [2m/glossary/type-2-diabetes/index.html[22m [2m(+69ms)[22m 
+[2m06:21:32[22m   [34m├─[39m [2m/glossary/ubiquitination/index.html[22m [2m(+70ms)[22m 
+[2m06:21:32[22m   [34m├─[39m [2m/glossary/tyrosine-kinase-receptor/index.html[22m [2m(+52ms)[22m 
+[2m06:21:32[22m   [34m├─[39m [2m/glossary/zepbound/index.html[22m [2m(+58ms)[22m 
+[2m06:21:32[22m   [34m├─[39m [2m/glossary/wegovy/index.html[22m [2m(+59ms)[22m 
+[2m06:21:32[22m   [34m└─[39m [2m/glossary/volume-of-distribution/index.html[22m [2m(+62ms)[22m 
+[2m06:21:32[22m [32m▶[39m src/pages/guide/index.astro
+[2m06:21:32[22m   [34m└─[39m [2m/guide/index.html[22m [2m(+6ms)[22m 
+[2m06:21:32[22m [32m▶[39m src/pages/guide/[...slug].astro
+[2m06:21:32[22m   [34m├─[39m [2m/guide/how-do-glp-1-agonists-work/index.html[22m [2m(+60ms)[22m 
+[2m06:21:32[22m   [34m├─[39m [2m/guide/how-to-read-peptide-research/index.html[22m [2m(+59ms)[22m 
+[2m06:21:32[22m   [34m├─[39m [2m/guide/are-peptides-safe/index.html[22m [2m(+55ms)[22m 
+[2m06:21:32[22m   [34m├─[39m [2m/guide/peptide-evidence-levels-explained/index.html[22m [2m(+56ms)[22m 
+[2m06:21:32[22m   [34m├─[39m [2m/guide/peptide-vs-protein/index.html[22m [2m(+55ms)[22m 
+[2m06:21:32[22m   [34m├─[39m [2m/guide/how-do-peptides-work/index.html[22m [2m(+71ms)[22m 
+[2m06:21:32[22m   [34m├─[39m [2m/guide/what-are-gh-secretagogues/index.html[22m [2m(+71ms)[22m 
+[2m06:21:32[22m   [34m├─[39m [2m/guide/what-are-glp1-agonists/index.html[22m [2m(+63ms)[22m 
+[2m06:21:33[22m   [34m├─[39m [2m/guide/what-are-longevity-peptides/index.html[22m [2m(+65ms)[22m 
+[2m06:21:33[22m   [34m├─[39m [2m/guide/peptide-clinical-trial-phases/index.html[22m [2m(+54ms)[22m 
+[2m06:21:33[22m   [34m├─[39m [2m/guide/what-are-nootropic-peptides/index.html[22m [2m(+63ms)[22m 
+[2m06:21:33[22m   [34m├─[39m [2m/guide/what-are-recovery-peptides/index.html[22m [2m(+59ms)[22m 
+[2m06:21:33[22m   [34m├─[39m [2m/guide/what-is-cjc-1295/index.html[22m [2m(+69ms)[22m 
+[2m06:21:33[22m   [34m├─[39m [2m/guide/what-is-bpc-157/index.html[22m [2m(+74ms)[22m 
+[2m06:21:33[22m   [34m├─[39m [2m/guide/what-is-dihexa/index.html[22m [2m(+78ms)[22m 
+[2m06:21:33[22m   [34m├─[39m [2m/guide/what-is-ghk-cu/index.html[22m [2m(+77ms)[22m 
+[2m06:21:33[22m   [34m├─[39m [2m/guide/what-is-epithalon/index.html[22m [2m(+78ms)[22m 
+[2m06:21:33[22m   [34m├─[39m [2m/guide/what-is-ipamorelin/index.html[22m [2m(+64ms)[22m 
+[2m06:21:33[22m   [34m├─[39m [2m/guide/what-is-ll-37/index.html[22m [2m(+48ms)[22m 
+[2m06:21:33[22m   [34m├─[39m [2m/guide/what-is-humanin/index.html[22m [2m(+46ms)[22m 
+[2m06:21:33[22m   [34m├─[39m [2m/guide/what-is-melanotan/index.html[22m [2m(+57ms)[22m 
+[2m06:21:33[22m   [34m├─[39m [2m/guide/what-is-mk-677/index.html[22m [2m(+53ms)[22m 
+[2m06:21:33[22m   [34m├─[39m [2m/guide/what-is-ozempic/index.html[22m [2m(+56ms)[22m 
+[2m06:21:33[22m   [34m├─[39m [2m/guide/what-is-retatrutide/index.html[22m [2m(+46ms)[22m 
+[2m06:21:34[22m   [34m├─[39m [2m/guide/what-is-pt-141/index.html[22m [2m(+64ms)[22m 
+[2m06:21:34[22m   [34m├─[39m [2m/guide/what-is-sermorelin/index.html[22m [2m(+62ms)[22m 
+[2m06:21:34[22m   [34m├─[39m [2m/guide/what-is-rybelsus/index.html[22m [2m(+50ms)[22m 
+[2m06:21:34[22m   [34m├─[39m [2m/guide/what-is-mounjaro/index.html[22m [2m(+61ms)[22m 
+[2m06:21:34[22m   [34m├─[39m [2m/guide/what-is-tb-500/index.html[22m [2m(+53ms)[22m 
+[2m06:21:34[22m   [34m├─[39m [2m/guide/what-is-semaglutide/index.html[22m [2m(+58ms)[22m 
+[2m06:21:34[22m   [34m├─[39m [2m/guide/what-is-tesamorelin/index.html[22m [2m(+49ms)[22m 
+[2m06:21:34[22m   [34m├─[39m [2m/guide/what-is-thymalin/index.html[22m [2m(+51ms)[22m 
+[2m06:21:34[22m   [34m├─[39m [2m/guide/what-is-tirzepatide/index.html[22m [2m(+51ms)[22m 
+[2m06:21:34[22m   [34m├─[39m [2m/guide/what-is-zepbound/index.html[22m [2m(+46ms)[22m 
+[2m06:21:34[22m   [34m├─[39m [2m/guide/what-is-wegovy/index.html[22m [2m(+51ms)[22m 
+[2m06:21:34[22m   [34m└─[39m [2m/guide/why-animal-studies-arent-enough/index.html[22m [2m(+46ms)[22m 
+[2m06:21:34[22m [35mλ[39m src/pages/llms-full.txt.ts
+[2m06:21:34[22m   [34m└─[39m [2m/llms-full.txt[22m [2m(+61ms)[22m 
+[2m06:21:34[22m [35mλ[39m src/pages/llms.txt.ts
+[2m06:21:34[22m   [34m└─[39m [2m/llms.txt[22m [2m(+2ms)[22m 
+[2m06:21:34[22m [32m▶[39m src/pages/methodology.astro
+[2m06:21:34[22m   [34m└─[39m [2m/methodology/index.html[22m [2m(+3ms)[22m 
+[2m06:21:34[22m [32m▶[39m src/pages/newsletter.astro
+[2m06:21:34[22m   [34m└─[39m [2m/newsletter/index.html[22m [2m(+3ms)[22m 
+[2m06:21:34[22m [32m▶[39m src/pages/peptides/[peptide]/[condition].astro
+[2m06:21:34[22m   [34m├─[39m [2m/peptides/225ac-dota-lm3/neuroendocrine-tumors/index.html[22m [2m(+39ms)[22m 
+[2m06:21:34[22m   [34m├─[39m [2m/peptides/225ac-dota-lm3/gep-nets/index.html[22m [2m(+36ms)[22m 
+[2m06:21:34[22m   [34m├─[39m [2m/peptides/225ac-dota-lm3/lu177-refractory-nets/index.html[22m [2m(+33ms)[22m 
+[2m06:21:34[22m   [34m├─[39m [2m/peptides/alixorexton/narcolepsy-type-1/index.html[22m [2m(+33ms)[22m 
+[2m06:21:34[22m   [34m├─[39m [2m/peptides/alixorexton/excessive-daytime-sleepiness/index.html[22m [2m(+35ms)[22m 
+[2m06:21:34[22m   [34m├─[39m [2m/peptides/alixorexton/cataplexy/index.html[22m [2m(+33ms)[22m 
+[2m06:21:34[22m   [34m├─[39m [2m/peptides/bpc-157/tendonitis/index.html[22m [2m(+30ms)[22m 
+[2m06:21:35[22m   [34m├─[39m [2m/peptides/bpc-157/muscle-tears/index.html[22m [2m(+40ms)[22m 
+[2m06:21:35[22m   [34m├─[39m [2m/peptides/bpc-157/gut-healing/index.html[22m [2m(+34ms)[22m 
+[2m06:21:35[22m   [34m├─[39m [2m/peptides/5-amino-1mq/obesity/index.html[22m [2m(+30ms)[22m 
+[2m06:21:35[22m   [34m├─[39m [2m/peptides/5-amino-1mq/metabolic-syndrome/index.html[22m [2m(+34ms)[22m 
+[2m06:21:35[22m   [34m├─[39m [2m/peptides/5-amino-1mq/fatty-liver/index.html[22m [2m(+33ms)[22m 
+[2m06:21:35[22m   [34m├─[39m [2m/peptides/amycretin/obesity/index.html[22m [2m(+29ms)[22m 
+[2m06:21:35[22m   [34m├─[39m [2m/peptides/amycretin/type-2-diabetes/index.html[22m [2m(+34ms)[22m 
+[2m06:21:35[22m   [34m├─[39m [2m/peptides/amycretin/metabolic-syndrome/index.html[22m [2m(+39ms)[22m 
+[2m06:21:35[22m   [34m├─[39m [2m/peptides/alpha-defensins/bacterial-infections/index.html[22m [2m(+37ms)[22m 
+[2m06:21:35[22m   [34m├─[39m [2m/peptides/alpha-defensins/inflammatory-bowel-disease/index.html[22m [2m(+43ms)[22m 
+[2m06:21:35[22m   [34m├─[39m [2m/peptides/alpha-defensins/viral-infections/index.html[22m [2m(+40ms)[22m 
+[2m06:21:35[22m   [34m├─[39m [2m/peptides/bronchogen/chronic-bronchitis/index.html[22m [2m(+42ms)[22m 
+[2m06:21:35[22m   [34m├─[39m [2m/peptides/bronchogen/respiratory-aging/index.html[22m [2m(+41ms)[22m 
+[2m06:21:35[22m   [34m├─[39m [2m/peptides/bronchogen/copd/index.html[22m [2m(+41ms)[22m 
+[2m06:21:35[22m   [34m├─[39m [2m/peptides/aod-9604/obesity/index.html[22m [2m(+42ms)[22m 
+[2m06:21:35[22m   [34m├─[39m [2m/peptides/aod-9604/metabolic-syndrome/index.html[22m [2m(+45ms)[22m 
+[2m06:21:35[22m   [34m├─[39m [2m/peptides/cagrilintide/obesity/index.html[22m [2m(+50ms)[22m 
+[2m06:21:35[22m   [34m├─[39m [2m/peptides/cagrilintide/type-2-diabetes/index.html[22m [2m(+36ms)[22m 
+[2m06:21:35[22m   [34m├─[39m [2m/peptides/cagrilintide/metabolic-syndrome/index.html[22m [2m(+43ms)[22m 
+[2m06:21:35[22m   [34m├─[39m [2m/peptides/bt5528/urothelial-cancer/index.html[22m [2m(+38ms)[22m 
+[2m06:21:35[22m   [34m├─[39m [2m/peptides/bt5528/solid-tumors/index.html[22m [2m(+39ms)[22m 
+[2m06:21:35[22m   [34m├─[39m [2m/peptides/cagrisema/obesity/index.html[22m [2m(+48ms)[22m 
+[2m06:21:35[22m   [34m├─[39m [2m/peptides/cagrisema/type-2-diabetes/index.html[22m [2m(+54ms)[22m 
+[2m06:21:35[22m   [34m├─[39m [2m/peptides/cagrisema/prediabetes/index.html[22m [2m(+44ms)[22m 
+[2m06:21:35[22m   [34m├─[39m [2m/peptides/cerebrolysin/stroke/index.html[22m [2m(+37ms)[22m 
+[2m06:21:36[22m   [34m├─[39m [2m/peptides/cerebrolysin/alzheimers-disease/index.html[22m [2m(+37ms)[22m 
+[2m06:21:36[22m   [34m├─[39m [2m/peptides/cerebrolysin/vascular-dementia/index.html[22m [2m(+33ms)[22m 
+[2m06:21:36[22m   [34m├─[39m [2m/peptides/cerebrolysin/traumatic-brain-injury/index.html[22m [2m(+39ms)[22m 
+[2m06:21:36[22m   [34m├─[39m [2m/peptides/cartalax/cartilage-degeneration/index.html[22m [2m(+41ms)[22m 
+[2m06:21:36[22m   [34m├─[39m [2m/peptides/cartalax/aging-related-joint-decline/index.html[22m [2m(+34ms)[22m 
+[2m06:21:36[22m   [34m├─[39m [2m/peptides/chonluten/digestive-health/index.html[22m [2m(+51ms)[22m 
+[2m06:21:36[22m   [34m├─[39m [2m/peptides/chonluten/gi-protection/index.html[22m [2m(+43ms)[22m 
+[2m06:21:36[22m   [34m├─[39m [2m/peptides/chonluten/age-related-gi-decline/index.html[22m [2m(+48ms)[22m 
+[2m06:21:36[22m   [34m├─[39m [2m/peptides/cjc-1295/growth-hormone-deficiency/index.html[22m [2m(+50ms)[22m 
+[2m06:21:36[22m   [34m├─[39m [2m/peptides/cjc-1295/anti-aging/index.html[22m [2m(+46ms)[22m 
+[2m06:21:36[22m   [34m├─[39m [2m/peptides/cjc-1295/muscle-growth/index.html[22m [2m(+39ms)[22m 
+[2m06:21:36[22m   [34m├─[39m [2m/peptides/cjc-1295/fat-loss/index.html[22m [2m(+49ms)[22m 
+[2m06:21:36[22m   [34m├─[39m [2m/peptides/cjc-1295/sleep-improvement/index.html[22m [2m(+46ms)[22m 
+[2m06:21:36[22m   [34m├─[39m [2m/peptides/cjc-1295/recovery/index.html[22m [2m(+41ms)[22m 
+[2m06:21:36[22m   [34m├─[39m [2m/peptides/cortexin/stroke-recovery/index.html[22m [2m(+52ms)[22m 
+[2m06:21:36[22m   [34m├─[39m [2m/peptides/cortexin/cognitive-impairment/index.html[22m [2m(+48ms)[22m 
+[2m06:21:36[22m   [34m├─[39m [2m/peptides/cortexin/pediatric-neurodevelopment/index.html[22m [2m(+38ms)[22m 
+[2m06:21:36[22m   [34m├─[39m [2m/peptides/ct-388/obesity/index.html[22m [2m(+51ms)[22m 
+[2m06:21:36[22m   [34m├─[39m [2m/peptides/ct-388/type-2-diabetes/index.html[22m [2m(+44ms)[22m 
+[2m06:21:36[22m   [34m├─[39m [2m/peptides/ct-388/metabolic-syndrome/index.html[22m [2m(+51ms)[22m 
+[2m06:21:36[22m   [34m├─[39m [2m/peptides/dihexa/cognitive-enhancement/index.html[22m [2m(+61ms)[22m 
+[2m06:21:36[22m   [34m├─[39m [2m/peptides/dihexa/neuroprotection/index.html[22m [2m(+54ms)[22m 
+[2m06:21:37[22m   [34m├─[39m [2m/peptides/dihexa/alzheimers-disease/index.html[22m [2m(+40ms)[22m 
+[2m06:21:37[22m   [34m├─[39m [2m/peptides/evx-01/melanoma/index.html[22m [2m(+51ms)[22m 
+[2m06:21:37[22m   [34m├─[39m [2m/peptides/dsip/insomnia/index.html[22m [2m(+49ms)[22m 
+[2m06:21:37[22m   [34m├─[39m [2m/peptides/dsip/chronic-pain/index.html[22m [2m(+39ms)[22m 
+[2m06:21:37[22m   [34m├─[39m [2m/peptides/dsip/oxidative-stress/index.html[22m [2m(+46ms)[22m 
+[2m06:21:37[22m   [34m├─[39m [2m/peptides/foxo4-dri/cellular-senescence/index.html[22m [2m(+47ms)[22m 
+[2m06:21:37[22m   [34m├─[39m [2m/peptides/foxo4-dri/aging/index.html[22m [2m(+42ms)[22m 
+[2m06:21:37[22m   [34m├─[39m [2m/peptides/foxo4-dri/age-related-organ-decline/index.html[22m [2m(+42ms)[22m 
+[2m06:21:37[22m   [34m├─[39m [2m/peptides/follistatin/muscular-dystrophy/index.html[22m [2m(+46ms)[22m 
+[2m06:21:37[22m   [34m├─[39m [2m/peptides/follistatin/inclusion-body-myositis/index.html[22m [2m(+41ms)[22m 
+[2m06:21:37[22m   [34m├─[39m [2m/peptides/follistatin/muscle-growth/index.html[22m [2m(+42ms)[22m 
+[2m06:21:37[22m   [34m├─[39m [2m/peptides/follistatin/aging-muscle/index.html[22m [2m(+49ms)[22m 
+[2m06:21:37[22m   [34m├─[39m [2m/peptides/epithalon/anti-aging/index.html[22m [2m(+36ms)[22m 
+[2m06:21:37[22m   [34m├─[39m [2m/peptides/epithalon/telomere-maintenance/index.html[22m [2m(+41ms)[22m 
+[2m06:21:37[22m   [34m├─[39m [2m/peptides/epithalon/sleep-quality/index.html[22m [2m(+47ms)[22m 
+[2m06:21:37[22m   [34m├─[39m [2m/peptides/epithalon/longevity/index.html[22m [2m(+36ms)[22m 
+[2m06:21:37[22m   [34m├─[39m [2m/peptides/ghk-cu/skin-aging/index.html[22m [2m(+39ms)[22m 
+[2m06:21:37[22m   [34m├─[39m [2m/peptides/ghk-cu/wound-healing/index.html[22m [2m(+39ms)[22m 
+[2m06:21:37[22m   [34m├─[39m [2m/peptides/ghk-cu/hair-growth/index.html[22m [2m(+45ms)[22m 
+[2m06:21:37[22m   [34m├─[39m [2m/peptides/ghk-cu/scar-treatment/index.html[22m [2m(+36ms)[22m 
+[2m06:21:37[22m   [34m├─[39m [2m/peptides/ghk-cu/skin-repair/index.html[22m [2m(+38ms)[22m 
+[2m06:21:37[22m   [34m├─[39m [2m/peptides/ghk/wound-healing/index.html[22m [2m(+31ms)[22m 
+[2m06:21:37[22m   [34m├─[39m [2m/peptides/ghk/skin-aging/index.html[22m [2m(+40ms)[22m 
+[2m06:21:37[22m   [34m├─[39m [2m/peptides/ghk/gene-expression/index.html[22m [2m(+47ms)[22m 
+[2m06:21:38[22m   [34m├─[39m [2m/peptides/ghrp-2/gh-deficiency-diagnosis/index.html[22m [2m(+38ms)[22m 
+[2m06:21:38[22m   [34m├─[39m [2m/peptides/ghrp-2/age-related-gh-decline/index.html[22m [2m(+40ms)[22m 
+[2m06:21:38[22m   [34m├─[39m [2m/peptides/ghrp-6/gh-deficiency/index.html[22m [2m(+47ms)[22m 
+[2m06:21:38[22m   [34m├─[39m [2m/peptides/ghrp-6/cardiac-protection/index.html[22m [2m(+38ms)[22m 
+[2m06:21:38[22m   [34m├─[39m [2m/peptides/ghrp-6/cachexia/index.html[22m [2m(+36ms)[22m 
+[2m06:21:38[22m   [34m├─[39m [2m/peptides/glutathione/oxidative-stress/index.html[22m [2m(+37ms)[22m 
+[2m06:21:38[22m   [34m├─[39m [2m/peptides/glutathione/liver-health/index.html[22m [2m(+31ms)[22m 
+[2m06:21:38[22m   [34m├─[39m [2m/peptides/glutathione/skin-health/index.html[22m [2m(+34ms)[22m 
+[2m06:21:38[22m   [34m├─[39m [2m/peptides/hexarelin/growth-hormone-stimulation/index.html[22m [2m(+36ms)[22m 
+[2m06:21:38[22m   [34m├─[39m [2m/peptides/hexarelin/cardioprotection/index.html[22m [2m(+32ms)[22m 
+[2m06:21:38[22m   [34m├─[39m [2m/peptides/hexarelin/sleep-enhancement/index.html[22m [2m(+40ms)[22m 
+[2m06:21:38[22m   [34m├─[39m [2m/peptides/hcg/infertility-female/index.html[22m [2m(+38ms)[22m 
+[2m06:21:38[22m   [34m├─[39m [2m/peptides/hcg/hypogonadism/index.html[22m [2m(+33ms)[22m 
+[2m06:21:38[22m   [34m├─[39m [2m/peptides/hcg/cryptorchidism/index.html[22m [2m(+37ms)[22m 
+[2m06:21:38[22m   [34m├─[39m [2m/peptides/humanin/neurodegeneration/index.html[22m [2m(+38ms)[22m 
+[2m06:21:38[22m   [34m├─[39m [2m/peptides/humanin/metabolic-health/index.html[22m [2m(+33ms)[22m 
+[2m06:21:38[22m   [34m├─[39m [2m/peptides/humanin/aging/index.html[22m [2m(+37ms)[22m 
+[2m06:21:38[22m   [34m├─[39m [2m/peptides/humanin/cardiovascular/index.html[22m [2m(+38ms)[22m 
+[2m06:21:38[22m   [34m├─[39m [2m/peptides/hmg/female-infertility/index.html[22m [2m(+41ms)[22m 
+[2m06:21:38[22m   [34m├─[39m [2m/peptides/hmg/male-hypogonadotropic-hypogonadism/index.html[22m [2m(+48ms)[22m 
+[2m06:21:38[22m   [34m├─[39m [2m/peptides/hmg/ivf-outcomes/index.html[22m [2m(+47ms)[22m 
+[2m06:21:38[22m   [34m├─[39m [2m/peptides/ipamorelin/growth-hormone-release/index.html[22m [2m(+45ms)[22m 
+[2m06:21:38[22m   [34m├─[39m [2m/peptides/ipamorelin/anti-aging/index.html[22m [2m(+49ms)[22m 
+[2m06:21:38[22m   [34m├─[39m [2m/peptides/ipamorelin/sleep-improvement/index.html[22m [2m(+49ms)[22m 
+[2m06:21:38[22m   [34m├─[39m [2m/peptides/ipamorelin/recovery/index.html[22m [2m(+44ms)[22m 
+[2m06:21:39[22m   [34m├─[39m [2m/peptides/ipamorelin/body-composition/index.html[22m [2m(+49ms)[22m 
+[2m06:21:39[22m   [34m├─[39m [2m/peptides/ipamorelin/bone-health/index.html[22m [2m(+46ms)[22m 
+[2m06:21:39[22m   [34m├─[39m [2m/peptides/igf-1-lr3/muscle-growth/index.html[22m [2m(+37ms)[22m 
+[2m06:21:39[22m   [34m├─[39m [2m/peptides/igf-1-lr3/muscle-wasting/index.html[22m [2m(+42ms)[22m 
+[2m06:21:39[22m   [34m├─[39m [2m/peptides/igf-1-lr3/diabetes/index.html[22m [2m(+35ms)[22m 
+[2m06:21:39[22m   [34m├─[39m [2m/peptides/kisspeptin/ivf-trigger/index.html[22m [2m(+35ms)[22m 
+[2m06:21:39[22m   [34m├─[39m [2m/peptides/kisspeptin/hypothalamic-amenorrhea/index.html[22m [2m(+38ms)[22m 
+[2m06:21:39[22m   [34m├─[39m [2m/peptides/kisspeptin/hypoactive-sexual-desire/index.html[22m [2m(+43ms)[22m 
+[2m06:21:39[22m   [34m├─[39m [2m/peptides/lactoferricin/bacterial-infections/index.html[22m [2m(+34ms)[22m 
+[2m06:21:39[22m   [34m├─[39m [2m/peptides/lactoferricin/fungal-infections/index.html[22m [2m(+43ms)[22m 
+[2m06:21:39[22m   [34m├─[39m [2m/peptides/lactoferricin/cancer/index.html[22m [2m(+49ms)[22m 
+[2m06:21:39[22m   [34m├─[39m [2m/peptides/kpv/inflammatory-bowel-disease/index.html[22m [2m(+43ms)[22m 
+[2m06:21:39[22m   [34m├─[39m [2m/peptides/kpv/gut-inflammation/index.html[22m [2m(+42ms)[22m 
+[2m06:21:39[22m   [34m├─[39m [2m/peptides/kpv/skin-inflammation/index.html[22m [2m(+54ms)[22m 
+[2m06:21:39[22m   [34m├─[39m [2m/peptides/kpv/anti-inflammatory/index.html[22m [2m(+124ms)[22m 
+[2m06:21:39[22m   [34m├─[39m [2m/peptides/livagen/liver-support/index.html[22m [2m(+216ms)[22m 
+[2m06:21:39[22m   [34m├─[39m [2m/peptides/livagen/hepatoprotection/index.html[22m [2m(+207ms)[22m 
+[2m06:21:40[22m   [34m├─[39m [2m/peptides/livagen/anti-aging/index.html[22m [2m(+42ms)[22m 
+[2m06:21:40[22m   [34m├─[39m [2m/peptides/kristagen/immune-support/index.html[22m [2m(+39ms)[22m 
+[2m06:21:40[22m   [34m├─[39m [2m/peptides/kristagen/immunosenescence/index.html[22m [2m(+50ms)[22m 
+[2m06:21:40[22m   [34m├─[39m [2m/peptides/kristagen/thymus-function/index.html[22m [2m(+34ms)[22m 
+[2m06:21:40[22m   [34m├─[39m [2m/peptides/ll-37/infections/index.html[22m [2m(+40ms)[22m 
+[2m06:21:40[22m   [34m├─[39m [2m/peptides/ll-37/wound-healing/index.html[22m [2m(+35ms)[22m 
+[2m06:21:40[22m   [34m├─[39m [2m/peptides/ll-37/inflammation/index.html[22m [2m(+35ms)[22m 
+[2m06:21:40[22m   [34m├─[39m [2m/peptides/ll-37/antimicrobial-resistance/index.html[22m [2m(+41ms)[22m 
+[2m06:21:40[22m   [34m├─[39m [2m/peptides/ll-37/skin-infections/index.html[22m [2m(+42ms)[22m 
+[2m06:21:40[22m   [34m├─[39m [2m/peptides/liraglutide/type-2-diabetes/index.html[22m [2m(+39ms)[22m 
+[2m06:21:40[22m   [34m├─[39m [2m/peptides/liraglutide/obesity/index.html[22m [2m(+43ms)[22m 
+[2m06:21:40[22m   [34m├─[39m [2m/peptides/liraglutide/cardiovascular-disease/index.html[22m [2m(+51ms)[22m 
+[2m06:21:40[22m   [34m├─[39m [2m/peptides/maritide/obesity/index.html[22m [2m(+43ms)[22m 
+[2m06:21:40[22m   [34m├─[39m [2m/peptides/maritide/type-2-diabetes/index.html[22m [2m(+43ms)[22m 
+[2m06:21:40[22m   [34m├─[39m [2m/peptides/melanotan-i/erythropoietic-protoporphyria/index.html[22m [2m(+45ms)[22m 
+[2m06:21:40[22m   [34m├─[39m [2m/peptides/melanotan-i/vitiligo/index.html[22m [2m(+36ms)[22m 
+[2m06:21:40[22m   [34m├─[39m [2m/peptides/mazdutide/obesity/index.html[22m [2m(+42ms)[22m 
+[2m06:21:40[22m   [34m├─[39m [2m/peptides/mazdutide/type-2-diabetes/index.html[22m [2m(+42ms)[22m 
+[2m06:21:40[22m   [34m├─[39m [2m/peptides/mazdutide/nafld/index.html[22m [2m(+31ms)[22m 
+[2m06:21:40[22m   [34m├─[39m [2m/peptides/melanotan-ii/tanning/index.html[22m [2m(+41ms)[22m 
+[2m06:21:40[22m   [34m├─[39m [2m/peptides/melanotan-ii/skin-protection/index.html[22m [2m(+38ms)[22m 
+[2m06:21:41[22m   [34m├─[39m [2m/peptides/melanotan-ii/sexual-dysfunction/index.html[22m [2m(+36ms)[22m 
+[2m06:21:41[22m   [34m├─[39m [2m/peptides/melanotan-ii/appetite-suppression/index.html[22m [2m(+53ms)[22m 
+[2m06:21:41[22m   [34m├─[39m [2m/peptides/mrna-4157/melanoma/index.html[22m [2m(+53ms)[22m 
+[2m06:21:41[22m   [34m├─[39m [2m/peptides/mrna-4157/nsclc/index.html[22m [2m(+43ms)[22m 
+[2m06:21:41[22m   [34m├─[39m [2m/peptides/mrna-4157/solid-tumors/index.html[22m [2m(+45ms)[22m 
+[2m06:21:41[22m   [34m├─[39m [2m/peptides/mk-677/muscle-wasting/index.html[22m [2m(+41ms)[22m 
+[2m06:21:41[22m   [34m├─[39m [2m/peptides/mk-677/bone-density/index.html[22m [2m(+32ms)[22m 
+[2m06:21:41[22m   [34m├─[39m [2m/peptides/mk-677/sleep-quality/index.html[22m [2m(+49ms)[22m 
+[2m06:21:41[22m   [34m├─[39m [2m/peptides/mk-677/growth-hormone-deficiency/index.html[22m [2m(+42ms)[22m 
+[2m06:21:41[22m   [34m├─[39m [2m/peptides/mk-677/body-composition/index.html[22m [2m(+43ms)[22m 
+[2m06:21:41[22m   [34m├─[39m [2m/peptides/mk-677/anti-aging/index.html[22m [2m(+39ms)[22m 
+[2m06:21:41[22m   [34m├─[39m [2m/peptides/murepavadin/pseudomonas-pneumonia/index.html[22m [2m(+35ms)[22m 
+[2m06:21:41[22m   [34m├─[39m [2m/peptides/murepavadin/cystic-fibrosis-infections/index.html[22m [2m(+31ms)[22m 
+[2m06:21:41[22m   [34m├─[39m [2m/peptides/murepavadin/bronchiectasis-infections/index.html[22m [2m(+36ms)[22m 
+[2m06:21:41[22m   [34m├─[39m [2m/peptides/na-selank-amidate/anxiety/index.html[22m [2m(+36ms)[22m 
+[2m06:21:41[22m   [34m├─[39m [2m/peptides/na-selank-amidate/cognitive-enhancement/index.html[22m [2m(+30ms)[22m 
+[2m06:21:41[22m   [34m├─[39m [2m/peptides/na-selank-amidate/stress-resilience/index.html[22m [2m(+36ms)[22m 
+[2m06:21:41[22m   [34m├─[39m [2m/peptides/na-semax-amidate/cognitive-enhancement/index.html[22m [2m(+36ms)[22m 
+[2m06:21:41[22m   [34m├─[39m [2m/peptides/na-semax-amidate/neuroprotection/index.html[22m [2m(+33ms)[22m 
+[2m06:21:41[22m   [34m├─[39m [2m/peptides/mots-c/metabolic-syndrome/index.html[22m [2m(+34ms)[22m 
+[2m06:21:41[22m   [34m├─[39m [2m/peptides/mots-c/aging/index.html[22m [2m(+34ms)[22m 
+[2m06:21:41[22m   [34m├─[39m [2m/peptides/mots-c/exercise-mimetic/index.html[22m [2m(+31ms)[22m 
+[2m06:21:41[22m   [34m├─[39m [2m/peptides/orforglipron/obesity/index.html[22m [2m(+38ms)[22m 
+[2m06:21:41[22m   [34m├─[39m [2m/peptides/orforglipron/type-2-diabetes/index.html[22m [2m(+37ms)[22m 
+[2m06:21:41[22m   [34m├─[39m [2m/peptides/orforglipron/metabolic-syndrome/index.html[22m [2m(+40ms)[22m 
+[2m06:21:41[22m   [34m├─[39m [2m/peptides/ovagen/liver-support/index.html[22m [2m(+41ms)[22m 
+[2m06:21:42[22m   [34m├─[39m [2m/peptides/ovagen/hepatoprotection/index.html[22m [2m(+38ms)[22m 
+[2m06:21:42[22m   [34m├─[39m [2m/peptides/oveporexton/narcolepsy-type-1/index.html[22m [2m(+40ms)[22m 
+[2m06:21:42[22m   [34m├─[39m [2m/peptides/oveporexton/narcolepsy-type-2/index.html[22m [2m(+41ms)[22m 
+[2m06:21:42[22m   [34m├─[39m [2m/peptides/oveporexton/excessive-daytime-sleepiness/index.html[22m [2m(+45ms)[22m 
+[2m06:21:42[22m   [34m├─[39m [2m/peptides/p21/cognitive-decline/index.html[22m [2m(+37ms)[22m 
+[2m06:21:42[22m   [34m├─[39m [2m/peptides/p21/alzheimers-research/index.html[22m [2m(+42ms)[22m 
+[2m06:21:42[22m   [34m├─[39m [2m/peptides/p21/neurogenesis/index.html[22m [2m(+42ms)[22m 
+[2m06:21:42[22m   [34m├─[39m [2m/peptides/pemvidutide/obesity/index.html[22m [2m(+41ms)[22m 
+[2m06:21:42[22m   [34m├─[39m [2m/peptides/pemvidutide/mash/index.html[22m [2m(+55ms)[22m 
+[2m06:21:42[22m   [34m├─[39m [2m/peptides/pemvidutide/metabolic-syndrome/index.html[22m [2m(+47ms)[22m 
+[2m06:21:42[22m   [34m├─[39m [2m/peptides/pinealon/cognitive-decline/index.html[22m [2m(+44ms)[22m 
+[2m06:21:42[22m   [34m├─[39m [2m/peptides/pinealon/oxidative-stress/index.html[22m [2m(+41ms)[22m 
+[2m06:21:42[22m   [34m├─[39m [2m/peptides/pinealon/neurodegeneration/index.html[22m [2m(+38ms)[22m 
+[2m06:21:42[22m   [34m├─[39m [2m/peptides/pt-141/erectile-dysfunction/index.html[22m [2m(+40ms)[22m 
+[2m06:21:42[22m   [34m├─[39m [2m/peptides/pt-141/sexual-dysfunction/index.html[22m [2m(+41ms)[22m 
+[2m06:21:42[22m   [34m├─[39m [2m/peptides/pt-141/low-libido/index.html[22m [2m(+38ms)[22m 
+[2m06:21:42[22m   [34m├─[39m [2m/peptides/pt-141/female-sexual-dysfunction/index.html[22m [2m(+43ms)[22m 
+[2m06:21:42[22m   [34m├─[39m [2m/peptides/pasireotide/cushings-disease/index.html[22m [2m(+36ms)[22m 
+[2m06:21:42[22m   [34m├─[39m [2m/peptides/pasireotide/acromegaly/index.html[22m [2m(+39ms)[22m 
+[2m06:21:42[22m   [34m├─[39m [2m/peptides/pasireotide/neuroendocrine-tumors/index.html[22m [2m(+36ms)[22m 
+[2m06:21:42[22m   [34m├─[39m [2m/peptides/prostatilen/chronic-prostatitis/index.html[22m [2m(+39ms)[22m 
+[2m06:21:42[22m   [34m├─[39m [2m/peptides/prostatilen/benign-prostatic-hyperplasia/index.html[22m [2m(+39ms)[22m 
+[2m06:21:42[22m   [34m├─[39m [2m/peptides/prostatilen/male-reproductive-health/index.html[22m [2m(+31ms)[22m 
+[2m06:21:42[22m   [34m├─[39m [2m/peptides/retinalamin/macular-degeneration/index.html[22m [2m(+41ms)[22m 
+[2m06:21:42[22m   [34m├─[39m [2m/peptides/retinalamin/diabetic-retinopathy/index.html[22m [2m(+38ms)[22m 
+[2m06:21:43[22m   [34m├─[39m [2m/peptides/retinalamin/retinal-dystrophy/index.html[22m [2m(+33ms)[22m 
+[2m06:21:43[22m   [34m├─[39m [2m/peptides/retinalamin/glaucoma/index.html[22m [2m(+35ms)[22m 
+[2m06:21:43[22m   [34m├─[39m [2m/peptides/retatrutide/obesity/index.html[22m [2m(+38ms)[22m 
+[2m06:21:43[22m   [34m├─[39m [2m/peptides/retatrutide/type-2-diabetes/index.html[22m [2m(+33ms)[22m 
+[2m06:21:43[22m   [34m├─[39m [2m/peptides/retatrutide/fatty-liver-disease/index.html[22m [2m(+43ms)[22m 
+[2m06:21:43[22m   [34m├─[39m [2m/peptides/selank/anxiety/index.html[22m [2m(+69ms)[22m 
+[2m06:21:43[22m   [34m├─[39m [2m/peptides/selank/stress/index.html[22m [2m(+46ms)[22m 
+[2m06:21:43[22m   [34m├─[39m [2m/peptides/selank/cognitive-enhancement/index.html[22m [2m(+43ms)[22m 
+[2m06:21:43[22m   [34m├─[39m [2m/peptides/selank/immune-support/index.html[22m [2m(+45ms)[22m 
+[2m06:21:43[22m   [34m├─[39m [2m/peptides/semaglutide/weight-loss/index.html[22m [2m(+38ms)[22m 
+[2m06:21:43[22m   [34m├─[39m [2m/peptides/semaglutide/obesity/index.html[22m [2m(+51ms)[22m 
+[2m06:21:43[22m   [34m├─[39m [2m/peptides/semaglutide/type-2-diabetes/index.html[22m [2m(+41ms)[22m 
+[2m06:21:43[22m   [34m├─[39m [2m/peptides/semaglutide/metabolic-syndrome/index.html[22m [2m(+38ms)[22m 
+[2m06:21:43[22m   [34m├─[39m [2m/peptides/semaglutide/appetite-control/index.html[22m [2m(+44ms)[22m 
+[2m06:21:43[22m   [34m├─[39m [2m/peptides/semaglutide/cardiovascular-disease/index.html[22m [2m(+46ms)[22m 
+[2m06:21:43[22m   [34m├─[39m [2m/peptides/semaglutide/kidney-disease/index.html[22m [2m(+45ms)[22m 
+[2m06:21:43[22m   [34m├─[39m [2m/peptides/semaglutide/fatty-liver-disease/index.html[22m [2m(+39ms)[22m 
+[2m06:21:43[22m   [34m├─[39m [2m/peptides/semaglutide/heart-failure/index.html[22m [2m(+42ms)[22m 
+[2m06:21:43[22m   [34m├─[39m [2m/peptides/semaglutide/sleep-apnea/index.html[22m [2m(+32ms)[22m 
+[2m06:21:43[22m   [34m├─[39m [2m/peptides/semax/cognitive-enhancement/index.html[22m [2m(+38ms)[22m 
+[2m06:21:43[22m   [34m├─[39m [2m/peptides/semax/stroke-recovery/index.html[22m [2m(+44ms)[22m 
+[2m06:21:43[22m   [34m├─[39m [2m/peptides/semax/neuroprotection/index.html[22m [2m(+43ms)[22m 
+[2m06:21:43[22m   [34m├─[39m [2m/peptides/semax/optic-nerve-disorders/index.html[22m [2m(+57ms)[22m 
+[2m06:21:44[22m   [34m├─[39m [2m/peptides/semax/attention-deficit/index.html[22m [2m(+56ms)[22m 
+[2m06:21:44[22m   [34m├─[39m [2m/peptides/shlp-2/metabolic-syndrome/index.html[22m [2m(+42ms)[22m 
+[2m06:21:44[22m   [34m├─[39m [2m/peptides/shlp-2/parkinsons-disease/index.html[22m [2m(+45ms)[22m 
+[2m06:21:44[22m   [34m├─[39m [2m/peptides/shlp-2/age-related-macular-degeneration/index.html[22m [2m(+46ms)[22m 
+[2m06:21:44[22m   [34m├─[39m [2m/peptides/shlp-6/senescent-cell-accumulation/index.html[22m [2m(+41ms)[22m 
+[2m06:21:44[22m   [34m├─[39m [2m/peptides/shlp-6/cancer-research/index.html[22m [2m(+42ms)[22m 
+[2m06:21:44[22m   [34m├─[39m [2m/peptides/sermorelin/growth-hormone-deficiency/index.html[22m [2m(+48ms)[22m 
+[2m06:21:44[22m   [34m├─[39m [2m/peptides/sermorelin/anti-aging/index.html[22m [2m(+40ms)[22m 
+[2m06:21:44[22m   [34m├─[39m [2m/peptides/sermorelin/sleep-improvement/index.html[22m [2m(+42ms)[22m 
+[2m06:21:44[22m   [34m├─[39m [2m/peptides/sermorelin/cognitive-function/index.html[22m [2m(+44ms)[22m 
+[2m06:21:44[22m   [34m├─[39m [2m/peptides/sermorelin/body-composition/index.html[22m [2m(+41ms)[22m 
+[2m06:21:44[22m   [34m├─[39m [2m/peptides/slu-pp-332/exercise-intolerance/index.html[22m [2m(+47ms)[22m 
+[2m06:21:44[22m   [34m├─[39m [2m/peptides/slu-pp-332/metabolic-dysfunction/index.html[22m [2m(+47ms)[22m 
+[2m06:21:44[22m   [34m├─[39m [2m/peptides/slu-pp-332/muscle-wasting/index.html[22m [2m(+48ms)[22m 
+[2m06:21:44[22m   [34m├─[39m [2m/peptides/sulanemadlin/tp53-wild-type-cancers/index.html[22m [2m(+56ms)[22m 
+[2m06:21:44[22m   [34m├─[39m [2m/peptides/sulanemadlin/chemotherapy-toxicity-prevention/index.html[22m [2m(+37ms)[22m 
+[2m06:21:44[22m   [34m├─[39m [2m/peptides/sulanemadlin/retinoblastoma/index.html[22m [2m(+36ms)[22m 
+[2m06:21:44[22m   [34m├─[39m [2m/peptides/ss-31/primary-mitochondrial-myopathy/index.html[22m [2m(+34ms)[22m 
+[2m06:21:44[22m   [34m├─[39m [2m/peptides/ss-31/barth-syndrome/index.html[22m [2m(+50ms)[22m 
+[2m06:21:44[22m   [34m├─[39m [2m/peptides/ss-31/heart-failure/index.html[22m [2m(+41ms)[22m 
+[2m06:21:44[22m   [34m├─[39m [2m/peptides/ss-31/age-related-macular-degeneration/index.html[22m [2m(+42ms)[22m 
+[2m06:21:44[22m   [34m├─[39m [2m/peptides/survodutide/obesity/index.html[22m [2m(+39ms)[22m 
+[2m06:21:44[22m   [34m├─[39m [2m/peptides/survodutide/mash-nafld/index.html[22m [2m(+45ms)[22m 
+[2m06:21:45[22m   [34m├─[39m [2m/peptides/survodutide/type-2-diabetes/index.html[22m [2m(+39ms)[22m 
+[2m06:21:45[22m   [34m├─[39m [2m/peptides/tb-500/muscle-injury/index.html[22m [2m(+39ms)[22m 
+[2m06:21:45[22m   [34m├─[39m [2m/peptides/tb-500/tissue-repair/index.html[22m [2m(+40ms)[22m 
+[2m06:21:45[22m   [34m├─[39m [2m/peptides/tb-500/hair-loss/index.html[22m [2m(+41ms)[22m 
+[2m06:21:45[22m   [34m├─[39m [2m/peptides/tb-500/wound-healing/index.html[22m [2m(+41ms)[22m 
+[2m06:21:45[22m   [34m├─[39m [2m/peptides/tb-500/cardiac-repair/index.html[22m [2m(+44ms)[22m 
+[2m06:21:45[22m   [34m├─[39m [2m/peptides/tb-500/corneal-healing/index.html[22m [2m(+44ms)[22m 
+[2m06:21:45[22m   [34m├─[39m [2m/peptides/tb-500/anti-fibrosis/index.html[22m [2m(+46ms)[22m 
+[2m06:21:45[22m   [34m├─[39m [2m/peptides/tesamorelin/hiv-lipodystrophy/index.html[22m [2m(+33ms)[22m 
+[2m06:21:45[22m   [34m├─[39m [2m/peptides/tesamorelin/visceral-fat-reduction/index.html[22m [2m(+37ms)[22m 
+[2m06:21:45[22m   [34m├─[39m [2m/peptides/tesamorelin/fatty-liver-disease/index.html[22m [2m(+38ms)[22m 
+[2m06:21:45[22m   [34m├─[39m [2m/peptides/tesamorelin/growth-hormone-optimization/index.html[22m [2m(+33ms)[22m 
+[2m06:21:45[22m   [34m├─[39m [2m/peptides/tesamorelin/body-composition/index.html[22m [2m(+46ms)[22m 
+[2m06:21:45[22m   [34m├─[39m [2m/peptides/tesamorelin/cognitive-function/index.html[22m [2m(+39ms)[22m 
+[2m06:21:45[22m   [34m├─[39m [2m/peptides/testagen/male-hormonal-health/index.html[22m [2m(+31ms)[22m 
+[2m06:21:45[22m   [34m├─[39m [2m/peptides/testagen/testicular-function/index.html[22m [2m(+43ms)[22m 
+[2m06:21:45[22m   [34m├─[39m [2m/peptides/testagen/age-related-decline/index.html[22m [2m(+44ms)[22m 
+[2m06:21:45[22m   [34m├─[39m [2m/peptides/testagen/male-fertility/index.html[22m [2m(+31ms)[22m 
+[2m06:21:45[22m   [34m├─[39m [2m/peptides/thymalin/immunodeficiency/index.html[22m [2m(+38ms)[22m 
+[2m06:21:45[22m   [34m├─[39m [2m/peptides/thymalin/post-viral-immune-dysfunction/index.html[22m [2m(+34ms)[22m 
+[2m06:21:45[22m   [34m├─[39m [2m/peptides/thymalin/age-related-immune-decline/index.html[22m [2m(+40ms)[22m 
+[2m06:21:45[22m   [34m├─[39m [2m/peptides/thymogen/immunodeficiency/index.html[22m [2m(+45ms)[22m 
+[2m06:21:45[22m   [34m├─[39m [2m/peptides/thymogen/respiratory-infections/index.html[22m [2m(+37ms)[22m 
+[2m06:21:45[22m   [34m├─[39m [2m/peptides/thymogen/diabetes-complications/index.html[22m [2m(+36ms)[22m 
+[2m06:21:45[22m   [34m├─[39m [2m/peptides/thymulin/immune-dysfunction/index.html[22m [2m(+43ms)[22m 
+[2m06:21:46[22m   [34m├─[39m [2m/peptides/thymulin/zinc-deficiency/index.html[22m [2m(+45ms)[22m 
+[2m06:21:46[22m   [34m├─[39m [2m/peptides/thymulin/inflammatory-pain/index.html[22m [2m(+36ms)[22m 
+[2m06:21:46[22m   [34m├─[39m [2m/peptides/thymosin-alpha-1/hepatitis-b/index.html[22m [2m(+49ms)[22m 
+[2m06:21:46[22m   [34m├─[39m [2m/peptides/thymosin-alpha-1/hepatitis-c/index.html[22m [2m(+39ms)[22m 
+[2m06:21:46[22m   [34m├─[39m [2m/peptides/thymosin-alpha-1/cancer-immunotherapy/index.html[22m [2m(+36ms)[22m 
+[2m06:21:46[22m   [34m├─[39m [2m/peptides/thymosin-alpha-1/immunodeficiency/index.html[22m [2m(+39ms)[22m 
+[2m06:21:46[22m   [34m├─[39m [2m/peptides/thymosin-alpha-1/viral-infections/index.html[22m [2m(+42ms)[22m 
+[2m06:21:46[22m   [34m├─[39m [2m/peptides/thymosin-alpha-1/aging-immune-function/index.html[22m [2m(+32ms)[22m 
+[2m06:21:46[22m   [34m├─[39m [2m/peptides/tirzepatide/weight-loss/index.html[22m [2m(+35ms)[22m 
+[2m06:21:46[22m   [34m├─[39m [2m/peptides/tirzepatide/obesity/index.html[22m [2m(+33ms)[22m 
+[2m06:21:46[22m   [34m├─[39m [2m/peptides/tirzepatide/type-2-diabetes/index.html[22m [2m(+31ms)[22m 
+[2m06:21:46[22m   [34m├─[39m [2m/peptides/tirzepatide/glucose-control/index.html[22m [2m(+34ms)[22m 
+[2m06:21:46[22m   [34m├─[39m [2m/peptides/tirzepatide/sleep-apnea/index.html[22m [2m(+39ms)[22m 
+[2m06:21:46[22m   [34m├─[39m [2m/peptides/tirzepatide/metabolic-syndrome/index.html[22m [2m(+35ms)[22m 
+[2m06:21:46[22m   [34m├─[39m [2m/peptides/tirzepatide/heart-failure/index.html[22m [2m(+37ms)[22m 
+[2m06:21:46[22m   [34m├─[39m [2m/peptides/tirzepatide/fatty-liver-disease/index.html[22m [2m(+40ms)[22m 
+[2m06:21:46[22m   [34m├─[39m [2m/peptides/vesugen/cardiovascular-health/index.html[22m [2m(+36ms)[22m 
+[2m06:21:46[22m   [34m├─[39m [2m/peptides/vesugen/vascular-aging/index.html[22m [2m(+37ms)[22m 
+[2m06:21:46[22m   [34m├─[39m [2m/peptides/vesugen/endothelial-function/index.html[22m [2m(+42ms)[22m 
+[2m06:21:46[22m   [34m├─[39m [2m/peptides/vk2735/obesity/index.html[22m [2m(+36ms)[22m 
+[2m06:21:46[22m   [34m├─[39m [2m/peptides/vk2735/type-2-diabetes/index.html[22m [2m(+43ms)[22m 
+[2m06:21:46[22m   [34m├─[39m [2m/peptides/vilon/immune-support/index.html[22m [2m(+39ms)[22m 
+[2m06:21:46[22m   [34m├─[39m [2m/peptides/vilon/thymus-function/index.html[22m [2m(+41ms)[22m 
+[2m06:21:46[22m   [34m├─[39m [2m/peptides/vilon/immunosenescence/index.html[22m [2m(+40ms)[22m 
+[2m06:21:46[22m   [34m├─[39m [2m/peptides/zelenectide-pevedotin/urothelial-carcinoma/index.html[22m [2m(+39ms)[22m 
+[2m06:21:46[22m   [34m├─[39m [2m/peptides/zelenectide-pevedotin/pancreatic-cancer/index.html[22m [2m(+35ms)[22m 
+[2m06:21:46[22m   [34m└─[39m [2m/peptides/zelenectide-pevedotin/breast-cancer/index.html[22m [2m(+52ms)[22m 
+[2m06:21:47[22m [32m▶[39m src/pages/peptides/[slug].astro
+[2m06:21:47[22m   [34m├─[39m [2m/peptides/225ac-dota-lm3/index.html[22m [2m(+121ms)[22m 
+[2m06:21:47[22m   [34m├─[39m [2m/peptides/alixorexton/index.html[22m [2m(+115ms)[22m 
+[2m06:21:47[22m   [34m├─[39m [2m/peptides/bpc-157/index.html[22m [2m(+116ms)[22m 
+[2m06:21:47[22m   [34m├─[39m [2m/peptides/5-amino-1mq/index.html[22m [2m(+111ms)[22m 
+[2m06:21:47[22m   [34m├─[39m [2m/peptides/amycretin/index.html[22m [2m(+107ms)[22m 
+[2m06:21:47[22m   [34m├─[39m [2m/peptides/alpha-defensins/index.html[22m [2m(+106ms)[22m 
+[2m06:21:47[22m   [34m├─[39m [2m/peptides/bronchogen/index.html[22m [2m(+97ms)[22m 
+[2m06:21:47[22m   [34m├─[39m [2m/peptides/aod-9604/index.html[22m [2m(+107ms)[22m 
+[2m06:21:47[22m   [34m├─[39m [2m/peptides/cagrilintide/index.html[22m [2m(+96ms)[22m 
+[2m06:21:48[22m   [34m├─[39m [2m/peptides/bt5528/index.html[22m [2m(+95ms)[22m 
+[2m06:21:48[22m   [34m├─[39m [2m/peptides/cagrisema/index.html[22m [2m(+122ms)[22m 
+[2m06:21:48[22m   [34m├─[39m [2m/peptides/cerebrolysin/index.html[22m [2m(+133ms)[22m 
+[2m06:21:48[22m   [34m├─[39m [2m/peptides/chelohart/index.html[22m [2m(+97ms)[22m 
+[2m06:21:48[22m   [34m├─[39m [2m/peptides/cardiogen/index.html[22m [2m(+100ms)[22m 
+[2m06:21:48[22m   [34m├─[39m [2m/peptides/cartalax/index.html[22m [2m(+114ms)[22m 
+[2m06:21:48[22m   [34m├─[39m [2m/peptides/chonluten/index.html[22m [2m(+113ms)[22m 
+[2m06:21:48[22m   [34m├─[39m [2m/peptides/cerluten/index.html[22m [2m(+95ms)[22m 
+[2m06:21:48[22m   [34m├─[39m [2m/peptides/cjc-1295/index.html[22m [2m(+105ms)[22m 
+[2m06:21:49[22m   [34m├─[39m [2m/peptides/cortexin/index.html[22m [2m(+104ms)[22m 
+[2m06:21:49[22m   [34m├─[39m [2m/peptides/ct-388/index.html[22m [2m(+101ms)[22m 
+[2m06:21:49[22m   [34m├─[39m [2m/peptides/dihexa/index.html[22m [2m(+95ms)[22m 
+[2m06:21:49[22m   [34m├─[39m [2m/peptides/evx-01/index.html[22m [2m(+99ms)[22m 
+[2m06:21:49[22m   [34m├─[39m [2m/peptides/ecnoglutide/index.html[22m [2m(+112ms)[22m 
+[2m06:21:49[22m   [34m├─[39m [2m/peptides/endoluten/index.html[22m [2m(+101ms)[22m 
+[2m06:21:49[22m   [34m├─[39m [2m/peptides/dsip/index.html[22m [2m(+108ms)[22m 
+[2m06:21:49[22m   [34m├─[39m [2m/peptides/foxo4-dri/index.html[22m [2m(+93ms)[22m 
+[2m06:21:49[22m   [34m├─[39m [2m/peptides/follistatin/index.html[22m [2m(+89ms)[22m 
+[2m06:21:49[22m   [34m├─[39m [2m/peptides/epithalon/index.html[22m [2m(+101ms)[22m 
+[2m06:21:50[22m   [34m├─[39m [2m/peptides/ghk-cu/index.html[22m [2m(+103ms)[22m 
+[2m06:21:50[22m   [34m├─[39m [2m/peptides/ghk/index.html[22m [2m(+93ms)[22m 
+[2m06:21:50[22m   [34m├─[39m [2m/peptides/ghrp-2/index.html[22m [2m(+90ms)[22m 
+[2m06:21:50[22m   [34m├─[39m [2m/peptides/ghrp-6/index.html[22m [2m(+98ms)[22m 
+[2m06:21:50[22m   [34m├─[39m [2m/peptides/glutathione/index.html[22m [2m(+90ms)[22m 
+[2m06:21:50[22m   [34m├─[39m [2m/peptides/hexarelin/index.html[22m [2m(+100ms)[22m 
+[2m06:21:50[22m   [34m├─[39m [2m/peptides/hcg/index.html[22m [2m(+94ms)[22m 
+[2m06:21:50[22m   [34m├─[39m [2m/peptides/humanin/index.html[22m [2m(+104ms)[22m 
+[2m06:21:50[22m   [34m├─[39m [2m/peptides/hmg/index.html[22m [2m(+93ms)[22m 
+[2m06:21:50[22m   [34m├─[39m [2m/peptides/ipamorelin/index.html[22m [2m(+100ms)[22m 
+[2m06:21:51[22m   [34m├─[39m [2m/peptides/igf-1-lr3/index.html[22m [2m(+109ms)[22m 
+[2m06:21:51[22m   [34m├─[39m [2m/peptides/kisspeptin/index.html[22m [2m(+93ms)[22m 
+[2m06:21:51[22m   [34m├─[39m [2m/peptides/lactoferricin/index.html[22m [2m(+87ms)[22m 
+[2m06:21:51[22m   [34m├─[39m [2m/peptides/kpv/index.html[22m [2m(+92ms)[22m 
+[2m06:21:51[22m   [34m├─[39m [2m/peptides/klotho/index.html[22m [2m(+94ms)[22m 
+[2m06:21:51[22m   [34m├─[39m [2m/peptides/livagen/index.html[22m [2m(+98ms)[22m 
+[2m06:21:51[22m   [34m├─[39m [2m/peptides/kristagen/index.html[22m [2m(+99ms)[22m 
+[2m06:21:51[22m   [34m├─[39m [2m/peptides/ll-37/index.html[22m [2m(+102ms)[22m 
+[2m06:21:51[22m   [34m├─[39m [2m/peptides/liraglutide/index.html[22m [2m(+91ms)[22m 
+[2m06:21:51[22m   [34m├─[39m [2m/peptides/maritide/index.html[22m [2m(+108ms)[22m 
+[2m06:21:51[22m   [34m├─[39m [2m/peptides/melanotan-i/index.html[22m [2m(+123ms)[22m 
+[2m06:21:52[22m   [34m├─[39m [2m/peptides/mazdutide/index.html[22m [2m(+139ms)[22m 
+[2m06:21:52[22m   [34m├─[39m [2m/peptides/melanotan-ii/index.html[22m [2m(+107ms)[22m 
+[2m06:21:52[22m   [34m├─[39m [2m/peptides/mk-0616/index.html[22m [2m(+91ms)[22m 
+[2m06:21:52[22m   [34m├─[39m [2m/peptides/mrna-4157/index.html[22m [2m(+91ms)[22m 
+[2m06:21:52[22m   [34m├─[39m [2m/peptides/mk-677/index.html[22m [2m(+90ms)[22m 
+[2m06:21:52[22m   [34m├─[39m [2m/peptides/murepavadin/index.html[22m [2m(+96ms)[22m 
+[2m06:21:52[22m   [34m├─[39m [2m/peptides/na-selank-amidate/index.html[22m [2m(+91ms)[22m 
+[2m06:21:52[22m   [34m├─[39m [2m/peptides/na-semax-amidate/index.html[22m [2m(+86ms)[22m 
+[2m06:21:52[22m   [34m├─[39m [2m/peptides/mots-c/index.html[22m [2m(+105ms)[22m 
+[2m06:21:53[22m   [34m├─[39m [2m/peptides/orforglipron/index.html[22m [2m(+93ms)[22m 
+[2m06:21:53[22m   [34m├─[39m [2m/peptides/ovagen/index.html[22m [2m(+100ms)[22m 
+[2m06:21:53[22m   [34m├─[39m [2m/peptides/oveporexton/index.html[22m [2m(+92ms)[22m 
+[2m06:21:53[22m   [34m├─[39m [2m/peptides/pancragen/index.html[22m [2m(+88ms)[22m 
+[2m06:21:53[22m   [34m├─[39m [2m/peptides/p21/index.html[22m [2m(+118ms)[22m 
+[2m06:21:53[22m   [34m├─[39m [2m/peptides/pemvidutide/index.html[22m [2m(+90ms)[22m 
+[2m06:21:53[22m   [34m├─[39m [2m/peptides/pf-08653944/index.html[22m [2m(+97ms)[22m 
+[2m06:21:53[22m   [34m├─[39m [2m/peptides/peg-mgf/index.html[22m [2m(+98ms)[22m 
+[2m06:21:53[22m   [34m├─[39m [2m/peptides/pinealon/index.html[22m [2m(+100ms)[22m 
+[2m06:21:53[22m   [34m├─[39m [2m/peptides/pt-141/index.html[22m [2m(+100ms)[22m 
+[2m06:21:53[22m   [34m├─[39m [2m/peptides/pasireotide/index.html[22m [2m(+99ms)[22m 
+[2m06:21:54[22m   [34m├─[39m [2m/peptides/prostatilen/index.html[22m [2m(+103ms)[22m 
+[2m06:21:54[22m   [34m├─[39m [2m/peptides/retinalamin/index.html[22m [2m(+101ms)[22m 
+[2m06:21:54[22m   [34m├─[39m [2m/peptides/rusfertide/index.html[22m [2m(+109ms)[22m 
+[2m06:21:54[22m   [34m├─[39m [2m/peptides/retatrutide/index.html[22m [2m(+125ms)[22m 
+[2m06:21:54[22m   [34m├─[39m [2m/peptides/selank/index.html[22m [2m(+98ms)[22m 
+[2m06:21:54[22m   [34m├─[39m [2m/peptides/semaglutide/index.html[22m [2m(+93ms)[22m 
+[2m06:21:54[22m   [34m├─[39m [2m/peptides/semax/index.html[22m [2m(+99ms)[22m 
+[2m06:21:54[22m   [34m├─[39m [2m/peptides/shlp-2/index.html[22m [2m(+112ms)[22m 
+[2m06:21:54[22m   [34m├─[39m [2m/peptides/shlp-6/index.html[22m [2m(+98ms)[22m 
+[2m06:21:55[22m   [34m├─[39m [2m/peptides/sermorelin/index.html[22m [2m(+103ms)[22m 
+[2m06:21:55[22m   [34m├─[39m [2m/peptides/sigumir/index.html[22m [2m(+91ms)[22m 
+[2m06:21:55[22m   [34m├─[39m [2m/peptides/slu-pp-332/index.html[22m [2m(+100ms)[22m 
+[2m06:21:55[22m   [34m├─[39m [2m/peptides/sulanemadlin/index.html[22m [2m(+101ms)[22m 
+[2m06:21:55[22m   [34m├─[39m [2m/peptides/stamakort/index.html[22m [2m(+96ms)[22m 
+[2m06:21:55[22m   [34m├─[39m [2m/peptides/suprefort/index.html[22m [2m(+99ms)[22m 
+[2m06:21:55[22m   [34m├─[39m [2m/peptides/ss-31/index.html[22m [2m(+114ms)[22m 
+[2m06:21:55[22m   [34m├─[39m [2m/peptides/svetinorm/index.html[22m [2m(+107ms)[22m 
+[2m06:21:55[22m   [34m├─[39m [2m/peptides/survodutide/index.html[22m [2m(+118ms)[22m 
+[2m06:21:55[22m   [34m├─[39m [2m/peptides/tb-500/index.html[22m [2m(+121ms)[22m 
+[2m06:21:56[22m   [34m├─[39m [2m/peptides/tesamorelin/index.html[22m [2m(+110ms)[22m 
+[2m06:21:56[22m   [34m├─[39m [2m/peptides/testagen/index.html[22m [2m(+98ms)[22m 
+[2m06:21:56[22m   [34m├─[39m [2m/peptides/thymalin/index.html[22m [2m(+101ms)[22m 
+[2m06:21:56[22m   [34m├─[39m [2m/peptides/thymogen/index.html[22m [2m(+120ms)[22m 
+[2m06:21:56[22m   [34m├─[39m [2m/peptides/thymulin/index.html[22m [2m(+107ms)[22m 
+[2m06:21:56[22m   [34m├─[39m [2m/peptides/thymosin-alpha-1/index.html[22m [2m(+99ms)[22m 
+[2m06:21:56[22m   [34m├─[39m [2m/peptides/tirzepatide/index.html[22m [2m(+102ms)[22m 
+[2m06:21:56[22m   [34m├─[39m [2m/peptides/vesugen/index.html[22m [2m(+86ms)[22m 
+[2m06:21:56[22m   [34m├─[39m [2m/peptides/visoluten/index.html[22m [2m(+90ms)[22m 
+[2m06:21:56[22m   [34m├─[39m [2m/peptides/ventfort/index.html[22m [2m(+109ms)[22m 
+[2m06:21:57[22m   [34m├─[39m [2m/peptides/vk2735/index.html[22m [2m(+105ms)[22m 
+[2m06:21:57[22m   [34m├─[39m [2m/peptides/vilon/index.html[22m [2m(+99ms)[22m 
+[2m06:21:57[22m   [34m├─[39m [2m/peptides/vladonix/index.html[22m [2m(+103ms)[22m 
+[2m06:21:57[22m   [34m└─[39m [2m/peptides/zelenectide-pevedotin/index.html[22m [2m(+107ms)[22m 
+[2m06:21:57[22m [32m▶[39m src/pages/peptides/index.astro
+[2m06:21:57[22m   [34m└─[39m [2m/peptides/index.html[22m [2m(+54ms)[22m 
+[2m06:21:57[22m [32m▶[39m src/pages/privacy.astro
+[2m06:21:57[22m   [34m└─[39m [2m/privacy/index.html[22m [2m(+3ms)[22m 
+[2m06:21:57[22m [32m▶[39m src/pages/protocols/[slug].astro
+[2m06:21:57[22m   [34m├─[39m [2m/protocols/bpc-157-tb-500/index.html[22m [2m(+12ms)[22m 
+[2m06:21:57[22m   [34m├─[39m [2m/protocols/cjc-1295-ipamorelin/index.html[22m [2m(+10ms)[22m 
+[2m06:21:57[22m   [34m└─[39m [2m/protocols/gh-secretagogue-combinations/index.html[22m [2m(+11ms)[22m 
+[2m06:21:57[22m [32m▶[39m src/pages/protocols/index.astro
+[2m06:21:57[22m   [34m└─[39m [2m/protocols/index.html[22m [2m(+4ms)[22m 
+[2m06:21:57[22m [32m▶[39m src/pages/regulatory-tracker.astro
+[2m06:21:57[22m   [34m└─[39m [2m/regulatory-tracker/index.html[22m [2m(+39ms)[22m 
+[2m06:21:57[22m [32m▶[39m src/pages/safety/index.astro
+[2m06:21:57[22m   [34m└─[39m [2m/safety/index.html[22m [2m(+4ms)[22m 
+[2m06:21:57[22m [32m▶[39m src/pages/safety/[...slug].astro
+[2m06:21:57[22m   [34m├─[39m [2m/safety/dihexa-safety/index.html[22m [2m(+10ms)[22m 
+[2m06:21:57[22m   [34m├─[39m [2m/safety/bpc-157-safety/index.html[22m [2m(+9ms)[22m 
+[2m06:21:57[22m   [34m├─[39m [2m/safety/epithalon-safety/index.html[22m [2m(+10ms)[22m 
+[2m06:21:57[22m   [34m├─[39m [2m/safety/cjc-1295-safety/index.html[22m [2m(+10ms)[22m 
+[2m06:21:57[22m   [34m├─[39m [2m/safety/dsip-safety/index.html[22m [2m(+10ms)[22m 
+[2m06:21:57[22m   [34m├─[39m [2m/safety/glp1-safety-overview/index.html[22m [2m(+17ms)[22m 
+[2m06:21:57[22m   [34m├─[39m [2m/safety/ghk-cu-safety/index.html[22m [2m(+11ms)[22m 
+[2m06:21:57[22m   [34m├─[39m [2m/safety/growth-hormone-peptides-safety/index.html[22m [2m(+9ms)[22m 
+[2m06:21:57[22m   [34m├─[39m [2m/safety/aod-9604-safety/index.html[22m [2m(+10ms)[22m 
+[2m06:21:57[22m   [34m├─[39m [2m/safety/foxo4-dri-safety/index.html[22m [2m(+13ms)[22m 
+[2m06:21:57[22m   [34m├─[39m [2m/safety/humanin-safety/index.html[22m [2m(+13ms)[22m 
+[2m06:21:57[22m   [34m├─[39m [2m/safety/ipamorelin-safety/index.html[22m [2m(+10ms)[22m 
+[2m06:21:57[22m   [34m├─[39m [2m/safety/kpv-safety/index.html[22m [2m(+11ms)[22m 
+[2m06:21:57[22m   [34m├─[39m [2m/safety/ll-37-safety/index.html[22m [2m(+9ms)[22m 
+[2m06:21:57[22m   [34m├─[39m [2m/safety/liraglutide-safety/index.html[22m [2m(+32ms)[22m 
+[2m06:21:57[22m   [34m├─[39m [2m/safety/mk-677-safety/index.html[22m [2m(+11ms)[22m 
+[2m06:21:57[22m   [34m├─[39m [2m/safety/melanotan-safety/index.html[22m [2m(+9ms)[22m 
+[2m06:21:57[22m   [34m├─[39m [2m/safety/mots-c-safety/index.html[22m [2m(+9ms)[22m 
+[2m06:21:57[22m   [34m├─[39m [2m/safety/pt-141-safety/index.html[22m [2m(+10ms)[22m 
+[2m06:21:57[22m   [34m├─[39m [2m/safety/recovery-peptides-safety/index.html[22m [2m(+11ms)[22m 
+[2m06:21:57[22m   [34m├─[39m [2m/safety/retatrutide-safety/index.html[22m [2m(+15ms)[22m 
+[2m06:21:57[22m   [34m├─[39m [2m/safety/selank-safety/index.html[22m [2m(+12ms)[22m 
+[2m06:21:57[22m   [34m├─[39m [2m/safety/semaglutide-safety/index.html[22m [2m(+9ms)[22m 
+[2m06:21:57[22m   [34m├─[39m [2m/safety/sermorelin-safety/index.html[22m [2m(+9ms)[22m 
+[2m06:21:57[22m   [34m├─[39m [2m/safety/semax-safety/index.html[22m [2m(+10ms)[22m 
+[2m06:21:57[22m   [34m├─[39m [2m/safety/ss-31-safety/index.html[22m [2m(+12ms)[22m 
+[2m06:21:58[22m   [34m├─[39m [2m/safety/tb-500-safety/index.html[22m [2m(+11ms)[22m 
+[2m06:21:58[22m   [34m├─[39m [2m/safety/tesamorelin-safety/index.html[22m [2m(+11ms)[22m 
+[2m06:21:58[22m   [34m├─[39m [2m/safety/tirzepatide-safety/index.html[22m [2m(+10ms)[22m 
+[2m06:21:58[22m   [34m├─[39m [2m/safety/thymosin-alpha-1-safety/index.html[22m [2m(+10ms)[22m 
+[2m06:21:58[22m   [34m└─[39m [2m/safety/unregulated-peptides-safety/index.html[22m [2m(+16ms)[22m 
+[2m06:21:58[22m [32m▶[39m src/pages/terms.astro
+[2m06:21:58[22m   [34m└─[39m [2m/terms/index.html[22m [2m(+3ms)[22m 
+[2m06:21:58[22m [32m▶[39m src/pages/trials/index.astro
+[2m06:21:58[22m   [34m└─[39m [2m/trials/index.html[22m [2m(+96ms)[22m 
+[2m06:21:58[22m [32m▶[39m src/pages/index.astro
+[2m06:21:58[22m   [34m└─[39m [2m/index.html[22m [2m(+65ms)[22m 
+[2m06:21:58[22m [32m✓ Completed in 59.48s.
+[39m
+[2m06:21:59[22m [34m[build][39m Rearranging server assets...
+[2m06:22:02[22m [34m[@astrojs/vercel][39m Bundling function ..\..\..\..\dist\server\entry.mjs
+[2m06:22:07[22m [34m[build][39m Waiting for integration [1m"@astrojs/vercel"[22m, hook [1m"astro:build:done"[22m...
+[2m06:22:09[22m [34m[@astrojs/sitemap][39m `sitemap-index.xml` created at `dist\client`
+[2m06:22:09[22m [34m[@astrojs/vercel][39m Copying static files to .vercel/output/static
+[2m06:22:13[22m [34m[build][39m Server built in [1m200.24s[22m
+[2m06:22:13[22m [34m[build][39m [1mComplete![22m
+
+> peptide-library@0.0.1 postbuild
+> npx pagefind --site dist
+
+
+Running Pagefind v1.4.0 (Extended)
+Running from: "C:\\Users\\manci\\OneDrive\\Documents\\00_Claude\\peptide-library"
+Source:       "dist"
+Output:       "dist\\pagefind"
+
+[Walking source directory]
+Found 1221 files matching **/*.{html}
+
+[Parsing files]
+Did not find a data-pagefind-body element on the site.
+↳ Indexing all <body> elements on the site.
+
+[Reading languages]
+Discovered 1 language: en
+
+[Building search indexes]
+Total: 
+  Indexed 1 language
+  Indexed 1221 pages
+  Indexed 22417 words
+  Indexed 0 filters
+  Indexed 0 sorts
+
+Finished in 8.109 seconds
+REAL_BUILD_EXIT=0

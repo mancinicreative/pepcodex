@@ -1,0 +1,19 @@
+═══ VERIFICATION LOOP — runs until a full pass finds nothing new ═══
+
+── round 1 ──
+ENUMERATE: 2019 distinct identifiers  {"PMID":1102,"DOI":512,"NCT":405}
+  new 89 · locations updated 45 · retired 5
+VERIFY: 89 pending of 2024 total
+  verified 25/89  verified 50/89  verified 75/89
+  completed 89  (unreachable this pass: 0)
+ASSESS: {"exists":2019,"retired":5}
+  review queue: 0  ·  new fixture candidates: 0
+
+CONVERGED after 1 round(s): every identifier has a verdict.
+LEDGER  2024 identifiers  (enumerated 2026-08-06T10:13:58.172Z)
+  {"exists":2019,"retired":5}
+    PMID  {"exists":1102,"retired":3}
+    DOI   {"exists":512,"retired":1}
+    NCT   {"exists":405,"retired":1}
+  COVERAGE: 2019/2019 live identifiers verified (100.0%)
+LOOP_EXIT=0

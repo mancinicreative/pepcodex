@@ -15,6 +15,21 @@ const seoFields = {
   robots: z.enum(['index', 'noindex']).default('index'),
 };
 
+// Shared citation list. Comparisons, glossary terms and condition hubs name specific
+// clinical trials (STEP-1, SURMOUNT-1, ...) in body copy; without this field the page had
+// nowhere to carry the verified identifier for the trial it was describing.
+// Identifiers + provenance are explicit because zod strips unknown keys.
+const sourcesArray = z.array(z.object({
+  id: z.string(),
+  title: z.string(),
+  url: z.string().optional(),
+  type: z.enum(['journal', 'trial', 'regulatory', 'preprint', 'news']).optional(),
+  pmid: z.string().optional(),
+  doi: z.string().optional(),
+  nctId: z.string().optional(),
+  verifiedAt: z.string().optional(),
+})).default([]);
+
 // Amino acid property types for color coding in molecular structure display
 const aminoAcidProperty = z.enum(['hydrophobic', 'polar', 'positive', 'negative', 'modified']);
 
@@ -219,6 +234,7 @@ const comparisons = defineCollection({
       question: z.string(),
       answer: z.string(),
     })).optional(),
+    sources: sourcesArray,
     ...seoFields,
   }),
 });
@@ -237,6 +253,13 @@ const guides = defineCollection({
       title: z.string(),
       url: z.string().optional(),
       type: z.enum(['journal', 'trial', 'regulatory', 'preprint', 'news']).optional(),
+      // Identifiers + provenance. Zod strips unknown keys, so without these the verified PMID/DOI/
+      // NCT attached to a source was silently discarded at build time — the citation looked checked
+      // in the file and reached the template with nothing to link to.
+      pmid: z.string().optional(),
+      doi: z.string().optional(),
+      nctId: z.string().optional(),
+      verifiedAt: z.string().optional(),
     })).default([]),
     ...seoFields,
   }),
@@ -254,6 +277,13 @@ const safety = defineCollection({
       title: z.string(),
       url: z.string().optional(),
       type: z.enum(['journal', 'trial', 'regulatory', 'preprint', 'news']).optional(),
+      // Identifiers + provenance. Zod strips unknown keys, so without these the verified PMID/DOI/
+      // NCT attached to a source was silently discarded at build time — the citation looked checked
+      // in the file and reached the template with nothing to link to.
+      pmid: z.string().optional(),
+      doi: z.string().optional(),
+      nctId: z.string().optional(),
+      verifiedAt: z.string().optional(),
     })).default([]),
     ...seoFields,
   }),
@@ -296,6 +326,13 @@ const blog = defineCollection({
       title: z.string(),
       url: z.string().optional(),
       type: z.enum(['journal', 'trial', 'regulatory', 'preprint', 'news']).optional(),
+      // Identifiers + provenance. Zod strips unknown keys, so without these the verified PMID/DOI/
+      // NCT attached to a source was silently discarded at build time — the citation looked checked
+      // in the file and reached the template with nothing to link to.
+      pmid: z.string().optional(),
+      doi: z.string().optional(),
+      nctId: z.string().optional(),
+      verifiedAt: z.string().optional(),
     })).default([]),
     evidenceLevel: z.enum(['high', 'moderate', 'low', 'very-low']).optional(),
     featured: z.boolean().default(false),
@@ -320,6 +357,7 @@ const glossary = defineCollection({
     relatedTerms: z.array(z.string()).default([]), // Other glossary term slugs
     category: z.enum(['mechanism', 'administration', 'research', 'regulatory', 'general']).default('general'),
     lastUpdated: z.coerce.date(),
+    sources: sourcesArray,
     ...seoFields,
   }),
 });
@@ -369,6 +407,7 @@ const conditionHubs = defineCollection({
     category: category,                   // metabolic, repair-recovery, etc.
     relatedConditions: z.array(z.string()).default([]), // other condition slugs
     lastUpdated: z.coerce.date(),
+    sources: sourcesArray,
     ...seoFields,
   }),
 });
@@ -389,7 +428,11 @@ const protocols = defineCollection({
       year: z.number(),
       pmid: z.string().optional(),
       studyType: studyType,
-      dosesUsed: z.string(), // what doses were used in THIS study
+      // Optional: not every cited study HAS a dose. In-vitro and observational work has none, and a
+      // required field here pressures whoever fills it to invent one rather than leave it blank —
+      // the same pressure that produced "200 mcg/kg in rat rotator cuff models" for a paper that was
+      // actually cell-culture work. Absent is a valid, honest answer.
+      dosesUsed: z.string().optional(), // what doses were used in THIS study
       findings: z.string(),
     })),
     mechanism: z.string(), // why these peptides might work together

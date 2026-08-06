@@ -3,6 +3,18 @@ import BaseLayout from './BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import BreadcrumbSchema from '../components/SEO/BreadcrumbSchema.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
+import SourcesList from '../components/SourcesList.astro';
+
+interface Source {
+  id: string;
+  title: string;
+  url?: string;
+  type?: 'journal' | 'trial' | 'regulatory' | 'preprint' | 'news';
+  pmid?: string;
+  doi?: string;
+  nctId?: string;
+  verifiedAt?: string;
+}
 
 interface Props {
   title: string;
@@ -13,6 +25,7 @@ interface Props {
   category?: 'metabolic' | 'hormonal' | 'repair-recovery' | 'cognitive' | 'immune' | 'longevity' | 'other';
   relatedConditions?: string[];
   lastUpdated: Date;
+  sources?: Source[];
   metaTitle?: string;
   metaDescription?: string;
 }
@@ -26,6 +39,7 @@ const {
   category = 'other',
   relatedConditions = [],
   lastUpdated,
+  sources = [],
   metaTitle,
   metaDescription,
 } = Astro.props;
@@ -151,6 +165,7 @@ const allConditionHubs = await getCollection('conditions');
 
         <!-- Slot for additional MDX content -->
         <slot />
+        <SourcesList sources={sources} />
 
         <!-- Peptides Studied Section -->
         <section class="glass-card-default p-8">

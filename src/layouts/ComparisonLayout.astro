@@ -4,6 +4,18 @@ import EvidenceBadge from '../components/EvidenceBadge.astro';
 import FAQSchema from '../components/SEO/FAQSchema.astro';
 import BreadcrumbSchema from '../components/SEO/BreadcrumbSchema.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
+import SourcesList from '../components/SourcesList.astro';
+
+interface Source {
+  id: string;
+  title: string;
+  url?: string;
+  type?: 'journal' | 'trial' | 'regulatory' | 'preprint' | 'news';
+  pmid?: string;
+  doi?: string;
+  nctId?: string;
+  verifiedAt?: string;
+}
 
 interface FAQItem {
   question: string;
@@ -26,11 +38,12 @@ interface Props {
   lastUpdated: Date;
   summary: string;
   faqs?: FAQItem[];
+  sources?: Source[];
   metaTitle?: string;
   metaDescription?: string;
 }
 
-const { title, peptideA, peptideB, category, lastUpdated, summary, faqs = [], metaTitle, metaDescription } = Astro.props;
+const { title, peptideA, peptideB, category, lastUpdated, summary, faqs = [], sources = [], metaTitle, metaDescription } = Astro.props;
 
 const categoryLabels: Record<string, string> = {
   'metabolic': 'Metabolic',
@@ -130,6 +143,7 @@ const breadcrumbItems = [
     <!-- Main comparison content -->
     <div class="prose prose-invert prose-lg max-w-none">
       <slot />
+      <SourcesList sources={sources} />
     </div>
 
     <!-- Footer links -->

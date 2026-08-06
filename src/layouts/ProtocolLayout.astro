@@ -9,7 +9,7 @@ interface Study {
   year: number;
   pmid?: string;
   studyType: 'human-rct' | 'human-observational' | 'animal' | 'in-vitro';
-  dosesUsed: string;
+  dosesUsed?: string;
   findings: string;
 }
 
@@ -162,10 +162,12 @@ const breadcrumbItems = [
                 )}
 
                 <div class="mt-3 space-y-2">
-                  <div>
-                    <span class="text-xs uppercase tracking-wider font-medium" style="color: var(--ink-dim);">Doses Used in Study:</span>
-                    <p class="text-sm mt-1" style="color: var(--ink-muted);">{study.dosesUsed}</p>
-                  </div>
+                  {study.dosesUsed && (
+                    <div>
+                      <span class="text-xs uppercase tracking-wider font-medium" style="color: var(--ink-dim);">Doses Used in Study:</span>
+                      <p class="text-sm mt-1" style="color: var(--ink-muted);">{study.dosesUsed}</p>
+                    </div>
+                  )}
                   <div>
                     <span class="text-xs uppercase tracking-wider font-medium" style="color: var(--ink-dim);">Findings:</span>
                     <p class="text-sm mt-1" style="color: var(--ink-muted);">{study.findings}</p>

@@ -1,0 +1,77 @@
+---
+// Renders the "Sources & Citations" block for content types whose frontmatter carries a
+// `sources` array (comparisons, glossary, condition hubs). Identifiers are resolved through
+// resolveCitation so a PMID links to PubMed, an NCT to ClinicalTrials.gov, a DOI to doi.org,
+// and an unresolvable value links to nothing rather than to a broken PubMed URL.
+import { resolveCitation } from '../utils/citation';
+
+interface Source {
+  id: string;
+  title: string;
+  url?: string;
+  type?: 'journal' | 'trial' | 'regulatory' | 'preprint' | 'news';
+  pmid?: string;
+  doi?: string;
+  nctId?: string;
+  verifiedAt?: string;
+}
+
+interface Props {
+  sources?: Source[];
+  heading?: string;
+}
+
+const { sources = [], heading = 'Sources & Citations' } = Astro.props;
+
+function identifierFor(source: Source) {
+  return resolveCitation(source.pmid || source.nctId || source.doi || null);
+}
+
+function linkFor(source: Source): string | null {
+  if (source.url) return source.url;
+  return identifierFor(source).href;
+}
+---
+
+{sources.length > 0 && (
+  <section class="mt-12 not-prose">
+    <h2 class="font-serif text-xl mb-4" style="font-family: var(--font-serif); font-weight: 500; color: var(--ink);">
+      {heading}
+    </h2>
+    <div class="rounded-xl border border-[color:var(--border-c)] bg-[color:var(--paper)] overflow-hidden">
+      <ul class="divide-y divide-[color:var(--border-c)]">
+        {sources.map((source, index) => {
+          const href = linkFor(source);
+          const citation = identifierFor(source);
+          return (
+            <li class="p-4">
+              <div class="flex items-start gap-3">
+                <span class="flex-shrink-0 w-6 h-6 rounded-full bg-[color:var(--primary-soft)] text-primary text-xs flex items-center justify-center font-medium">
+                  {index + 1}
+                </span>
+                <div class="flex-grow min-w-0">
+                  <span class="text-xs text-[color:var(--ink-dim)] uppercase tracking-wide">{source.type || 'source'}</span>
+                  <div class="mt-1">
+                    {href ? (
+                      <a
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-primary hover:underline transition-colors"
+                      >{source.title}</a>
+                    ) : (
+                      <span style="color: var(--ink);">{source.title}</span>
+                    )}
+                  </div>
+                  {citation.label && (
+                    <p class="text-xs text-[color:var(--ink-dim)] mt-1">{citation.label}</p>
+                  )}
+                </div>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  </section>
+)}

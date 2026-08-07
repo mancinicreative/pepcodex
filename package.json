@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "check": "node scripts/validate-cross-links.mjs && node scripts/qa-seo.mjs && node scripts/qa-scoring.mjs && node scripts/qa-pmids.mjs --strict",
+    "check": "node scripts/validate-cross-links.mjs && node scripts/qa-seo.mjs && node scripts/qa-scoring.mjs && node scripts/qa-pmids.mjs --strict && node scripts/qa-source-identifiers.mjs --strict",
     "prebuild": "npm run check",
     "build": "astro build",
     "postbuild": "npx pagefind --site dist",
@@ -25,7 +25,8 @@
     "graph:check": "node scripts/crawl-graph.mjs --check",
     "gsc:index": "node scripts/gsc-index-diagnose.mjs",
     "gsc:repull": "node scripts/gsc-repull.mjs",
-    "ga4:pull": "node scripts/ga4-pull.mjs"
+    "ga4:pull": "node scripts/ga4-pull.mjs",
+    "qa-sources": "node scripts/qa-source-identifiers.mjs --strict"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.14",

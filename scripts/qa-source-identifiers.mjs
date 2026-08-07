@@ -94,9 +94,47 @@ if (offenders.length) {
   if (more > 0) console.log(`    ... and ${more} more file(s)`);
 }
 
-if (STRICT && offenders.length) {
-  console.error(`\n  FAIL: ${offenders.length} source entries have no PMID, DOI, URL or NCT id.`);
-  console.error(`  Every factual claim must trace to something a reader can verify.`);
-  process.exit(1);
+// ---------------------------------------------------------------------------
+// RATCHET MODE
+// A gate that fails on all 211 known offenders would fail every build and get
+// switched off within a day. Instead we baseline the known backlog and fail only on
+// NEW violations — so the number can only go down. Remediate a file, re-run with
+// --update-baseline, and it can never regress.
+// ---------------------------------------------------------------------------
+const BASELINE = path.join('.planning', 'citation-baseline.json');
+const key = (o) => `${o.file}::${o.id}`;
+const current = new Set(offenders.map(key));
+
+if (process.argv.includes('--update-baseline')) {
+  fs.mkdirSync(path.dirname(BASELINE), { recursive: true });
+  fs.writeFileSync(
+    BASELINE,
+    JSON.stringify({ updated: new Date().toISOString().slice(0, 10), count: current.size, entries: [...current].sort() }, null, 2)
+  );
+  console.log(`\n  baseline written: ${current.size} known offenders -> ${BASELINE}\n`);
+  process.exit(0);
 }
-console.log(offenders.length ? '\n  (report only — use --strict to fail the build)\n' : '\n  PASS: every cited source carries a verifiable identifier.\n');
+
+if (STRICT) {
+  if (!fs.existsSync(BASELINE)) {
+    console.error(`\n  FAIL: no baseline at ${BASELINE}. Run with --update-baseline first.`);
+    process.exit(1);
+  }
+  const baseline = new Set(JSON.parse(fs.readFileSync(BASELINE, 'utf8')).entries);
+  const added = [...current].filter((k) => !baseline.has(k));
+  const fixed = [...baseline].filter((k) => !current.has(k));
+
+  if (fixed.length) console.log(`\n  ${fixed.length} previously-flagged citation(s) fixed since the baseline.`);
+
+  if (added.length) {
+    console.error(`\n  FAIL: ${added.length} NEW citation(s) with no PMID, DOI, URL or NCT id:`);
+    added.slice(0, 20).forEach((k) => console.error(`    ${k}`));
+    console.error(`\n  Every factual claim must trace to something a reader can verify.`);
+    console.error(`  Fix the citation, or run --update-baseline only if this is a deliberate,`);
+    console.error(`  reviewed exception.`);
+    process.exit(1);
+  }
+  console.log(`\n  PASS (ratchet): no new unverifiable citations. Backlog: ${current.size}.\n`);
+} else {
+  console.log(offenders.length ? '\n  (report only — use --strict for the ratchet)\n' : '\n  PASS: every cited source carries a verifiable identifier.\n');
+}

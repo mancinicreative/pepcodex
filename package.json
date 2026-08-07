@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "check": "node scripts/qa-internal-consistency.mjs --strict && node scripts/qa-identity-integrity.mjs && node scripts/qa-comparison-counts.mjs --strict && node scripts/qa-staleness.mjs && node scripts/validate-cross-links.mjs && node scripts/qa-seo.mjs && node scripts/qa-scoring.mjs && node scripts/qa-pmids.mjs --strict",
+    "check": "node scripts/qa-internal-consistency.mjs --strict && node scripts/qa-identity-integrity.mjs && node scripts/qa-comparison-counts.mjs --strict && node scripts/qa-staleness.mjs && node scripts/qa-medical-advice.mjs --strict && node scripts/validate-cross-links.mjs && node scripts/qa-seo.mjs && node scripts/qa-scoring.mjs && node scripts/qa-pmids.mjs --strict",
     "prebuild": "npm run check",
     "build": "astro build",
     "postbuild": "npx pagefind --site dist",

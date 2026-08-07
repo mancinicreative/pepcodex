@@ -81,7 +81,28 @@ const ADVICE = [
 /* DISCLAIMERS — the site telling a reader to seek professional care. Never advice.
  * Role nouns must allow plurals: the real line is "consult qualified professionalS", and a
  * singular-only pattern flagged the site's own safety language as if it were advice. */
-const DISCLAIMER = /\b(?:consult|speak (?:to|with)|talk to|seek|discuss|communicat\w+)\b[^.]{0,90}\b(?:healthcare|health care|doctors?|physicians?|clinicians?|providers?|professionals?|specialists?|pharmacists?|hepatologists?|gastroenterologists?|endocrinologists?|oncologists?|medical team)\b|not (?:constitute |intended as )?medical advice|educational purposes only|for informational purposes|requires? (?:a )?(?:prescription|medical supervision)/i;
+const DISCLAIMER = /\b(?:consult|speak (?:to|with)|talk to|seek|discuss|communicat\w+)\b[^.]{0,90}\b(?:healthcare|health care|doctors?|physicians?|clinicians?|providers?|professionals?|specialists?|pharmacists?|hepatologists?|gastroenterologists?|endocrinologists?|oncologists?|medical team)\b|not (?:constitute |intended as )?medical advice|educational purposes only|for informational purposes|requires? (?:a )?(?:prescription|medical supervision|physician oversight|clinical oversight|specialist supervision)/i;
+
+/* A REFERRAL is a disclaimer with different grammar.
+ *
+ * The disclaimer pattern keys on a "consult"-type verb, so it misses the form where the CLINICIAN
+ * is the subject: "An allergist/immunologist can determine if desensitization is appropriate for
+ * your specific situation." That performs exactly the protective function — it hands the decision
+ * to a professional — and is common in FAQ answers. Reported by the editor working the glossary. */
+const REFERRAL = /\b(?:an?\s+)?(?:allergist|immunologist|endocrinologist|oncologist|hepatologist|gastroenterologist|cardiologist|specialist|physician|doctor|clinician|prescriber|provider|healthcare team)\b[^.]{0,60}\b(?:can|will|should|must)\s+(?:determine|decide|assess|evaluate|advise|judge|weigh)/i;
+
+/* REPORTING A CONSENSUS is not making a recommendation.
+ *
+ * "Surgical orchiopexy is now preferred as first-line treatment" describes what the field settled
+ * on — and on the hcg page it is sourced, to the AUA Guideline cited in that same file. "Current
+ * standard of care remains appropriate for most patients" is a caution against substituting an
+ * investigational drug for established care. Both are the site describing practice, not directing
+ * it, and both were reported as false positives by the editors. */
+/* Bare "guidelines" is deliberately NOT in this list. It appears on both sides: "guidelines
+ * recommend X" reports someone else's position, but "recommended per prescribing guidelines" is
+ * the site making the recommendation and citing guidelines as backing — which is the original
+ * pasireotide finding this whole gate was built for. Including the word suppressed it. */
+const CONSENSUS = /\b(?:standard of care|standard treatment|current practice)\b|\bstandard\b[^.]{0,30}\b(?:monitoring|care|treatment|practice|follow-up)\b[^.]{0,30}\bremains?\b|\bis (?:now |currently )?(?:preferred|standard|the standard|established practice)\b|\brecommended for (?:older|younger|adult|pediatric|elderly|at-risk|high-risk)\b/i;
 
 /* STRUCTURAL EXCLUSIONS — shapes that cannot be instruction whatever verbs they contain.
  *
@@ -158,9 +179,32 @@ const ADDRESSEE_EXEMPT = new Set(['imperative-monitoring', 'recommended', 'first
  * temperature log. */
 const IS_TABLE_CELL = /\|/;
 
-const isAdvice = (line) => {
+/* A BULLET'S SUBJECT COMES FROM ITS HEADING.
+ *
+ * Two false positives survived every line-level rule because the line alone genuinely is ambiguous:
+ *   "### Monitoring Technology"  ->  "- **Real-time GPS tracking** - Monitor location and conditions"
+ *   "**Registry Studies:**"      ->  "- Monitor rare adverse events"
+ * Both are imperatives with no addressee, and both describe a subject named above them — shipping
+ * equipment, and what a study design does. Neither is directed at a person.
+ *
+ * But suppressing every addressee-less imperative bullet would lose real advice: the section that
+ * read "## Monitoring Recommendations" over "- Monitor for gallbladder symptoms" has no person noun
+ * anywhere in it either, and it was unambiguously instruction.
+ *
+ * The heading is what separates them. A section headed "Recommendations", "Precautions" or
+ * "Management" is making recommendations; one headed "Monitoring Technology" is describing kit.
+ * So an addressee-less imperative counts as instruction only under an instructional heading. */
+/* "Considerations" is deliberately absent. It is far too weak a signal: the site has "Treatment
+ * Considerations", "Seasonal Considerations" (shipping temperature ranges) and "Key Considerations"
+ * (pharmacokinetics), and including the word made all three read as instructional sections. Only
+ * headings that announce direction qualify. */
+const INSTRUCTIONAL_HEADING = /\b(?:recommendation|precaution|guidance|advice|management|what to do|monitoring requirements|dosing|administration|when to (?:use|stop|start|switch))\b/i;
+
+const isAdvice = (line, heading = '') => {
   if (NOT_INSTRUCTION.test(line)) return null;
   if (DISCLAIMER.test(line)) return null;
+  if (REFERRAL.test(line)) return null;
+  if (CONSENSUS.test(line)) return null;
   if (NEGATED.test(line)) return null;
   if (ATTRIBUTED.test(line)) return null;
   /* A pattern may carry its own `unless` — a context that makes THAT construction legitimate even
@@ -170,7 +214,17 @@ const isAdvice = (line) => {
     if (!p.re.test(line)) continue;
     if (p.unless && p.unless.test(line)) continue;
     const exempt = ADDRESSEE_EXEMPT.has(p.name) && !IS_TABLE_CELL.test(line);
-    if (!exempt && !HAS_ADDRESSEE.test(line) && !COMPOUND_NAMES.test(line)) continue;
+    /* A table cell never borrows its section's heading as an addressee. The cell is a label whose
+     * subject is its own row or column, so an instructional heading above the table does not make
+     * every cell in it an instruction — cold-chain's shipping table sits under "Seasonal
+     * Considerations", loading-dose's PK table under "Key Considerations". */
+    const addressed = HAS_ADDRESSEE.test(line) || COMPOUND_NAMES.test(line)
+      || (!IS_TABLE_CELL.test(line) && INSTRUCTIONAL_HEADING.test(heading));
+    if (!exempt && !addressed) continue;
+    /* An addressee-less imperative in a BULLET needs its heading to be instructional. Without that,
+     * it is a predicate of whatever the section is about — GPS trackers, study designs — and not a
+     * direction to anyone. */
+    if (exempt && /^\s*[-*]\s/.test(line) && !addressed) continue;
     return p.name;
   }
   return null;
@@ -227,6 +281,16 @@ const FIXTURES = [
   { t: 'Discontinue semaglutide if pancreatitis is suspected.', want: true, note: 'named compound as subject' },
   // and the bullet-marker boundary must catch list items, not only asterisks
   { t: '- **Pancreatitis** — Discontinue if suspected in any patient', want: true, note: 'dash bullet, previously missed' },
+  // must NOT flag — a referral is a disclaimer with the clinician as subject
+  { t: 'An allergist/immunologist can determine if desensitization is appropriate for your specific situation.', want: false, note: 'referral, clinician as subject' },
+  { t: 'Your prescriber will decide whether the combination is appropriate.', want: false, note: 'referral, second form' },
+  // must NOT flag — reporting an established consensus is not making a recommendation
+  { t: 'While meta-analyses show approximately 19% success rate, surgical orchiopexy is now preferred as first-line treatment.', want: false, note: 'consensus reporting, sourced to a guideline on the same page' },
+  { t: '- Current standard of care remains appropriate for most patients', want: false, note: 'caution against substituting an investigational drug' },
+  { t: 'It could improve responses to pneumococcal, shingles and other vaccines recommended for older adults.', want: false, note: 'reporting an existing vaccine schedule' },
+  // must NOT flag — a property of the therapy that points at professional care
+  { t: '- Requires monitoring: Fertility applications require physician oversight and ultrasound monitoring', want: false, note: 'requires physician oversight is disclaimer-shaped' },
+  { t: '**Monitoring:** Standard heart failure monitoring remains appropriate', want: false, note: 'reporting that a trial did not change practice' },
 ];
 
 const fails = FIXTURES.filter((f) => !!isAdvice(f.t) !== f.want)
@@ -258,9 +322,14 @@ for (const file of files) {
   try { fm = matter(fs.readFileSync(file, 'utf-8')); } catch { continue; }
 
   const scan = (text, where) => {
+    /* Track the nearest heading or bolded list label so a bullet can be judged against the subject
+     * its section establishes, not just against its own words. */
+    let heading = '';
     for (const line of String(text).split(/\n|(?<=[.!?])\s+/)) {
-      const hit = isAdvice(line);
-      if (hit) findings.push({ file: rel, where, pattern: hit, line: line.trim().slice(0, 150) });
+      const h = line.match(/^\s*#{1,6}\s+(.+)$/) || line.match(/^\s*\*\*([^*]{3,60}):?\*\*:?\s*$/);
+      if (h) { heading = h[1]; continue; }
+      const hit = isAdvice(line, heading);
+      if (hit) findings.push({ file: rel, where, heading, pattern: hit, line: line.trim().slice(0, 150) });
     }
   };
   // Frontmatter prose renders, so it is in scope.

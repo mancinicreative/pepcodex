@@ -72,6 +72,24 @@ const lastmodMap = buildLastmodMap();
 // A `noindex` meta tag does NOT save crawl budget on its own — Google still has to fetch
 // the page to read the tag. Dropping these from the sitemap is what actually stops the site
 // advertising them for crawl. They stay published and internally linked for readers.
+// Blog posts placed on citation-integrity hold (frontmatter `robots: noindex`). An Aug-2026
+// audit checked every claim in 67 posts against PubMed and ClinicalTrials.gov; 31 describe
+// studies that do not exist. They stay published for anyone holding a link, but must not be
+// advertised for crawl or indexing until rewritten from real sources.
+function noindexedBlogUrls() {
+  const urls = new Set();
+  const dir = path.resolve('./src/content/blog');
+  if (!fs.existsSync(dir)) return urls;
+  for (const file of fs.readdirSync(dir)) {
+    if (!/\.mdx?$/.test(file)) continue;
+    const { data } = matter(fs.readFileSync(path.join(dir, file), 'utf8'));
+    if (data.robots === 'noindex') {
+      urls.add(`https://www.pepcodex.com/blog/${file.replace(/\.mdx?$/, '')}`);
+    }
+  }
+  return urls;
+}
+
 function noindexedGlossaryUrls() {
   const urls = new Set();
   const dir = path.resolve('./src/content/glossary');
@@ -89,6 +107,7 @@ function noindexedGlossaryUrls() {
 const SITEMAP_EXCLUDE = new Set([
   'https://www.pepcodex.com/glossary/off-label',
   ...noindexedGlossaryUrls(),
+  ...noindexedBlogUrls(),
 ]);
 
 // https://astro.build/config

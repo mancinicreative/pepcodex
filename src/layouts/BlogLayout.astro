@@ -28,6 +28,11 @@ interface Props {
   nextPost?: { slug: string; title: string } | null;
   metaTitle?: string;
   metaDescription?: string;
+  // Citation-integrity hold. An Aug-2026 audit verified every claim in 67 posts against
+  // PubMed and ClinicalTrials.gov: 32 describe studies that do not exist (e.g. `semax AND
+  // rotarod` returns ZERO PubMed results). Flagged posts stay published for anyone holding a
+  // link, but leave the index and sitemap until rewritten from real sources.
+  robots?: 'index' | 'noindex';
 }
 
 const {
@@ -46,6 +51,7 @@ const {
   nextPost,
   metaTitle,
   metaDescription,
+  robots = 'index',
 } = Astro.props;
 
 const categoryLabels: Record<string, string> = {
@@ -110,7 +116,7 @@ const peptideSlugs = new Set((await getCollection('peptides')).map((p) => p.slug
 const glossarySlugs = new Set((await getCollection('glossary')).map((g) => g.slug));
 ---
 
-<BaseLayout title={metaTitle || title} description={metaDescription || excerpt}>
+<BaseLayout title={metaTitle || title} description={metaDescription || excerpt} robots={robots}>
   <BreadcrumbSchema items={breadcrumbItems} />
   <article class="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
     <!-- Header -->

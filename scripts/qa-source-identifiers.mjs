@@ -63,6 +63,11 @@ for (const col of COLLECTIONS) {
     if (cur) entries.push(cur);
 
     for (const e of entries) {
+      // Only citation-shaped entries count. The `peptides` collection uses `sources` as a
+      // STATS OBJECT (count/human/preclinical/openAccess/globalRegions), so its nested
+      // `- USA`, `- Denmark` ... list items are not citations at all — treating them as such
+      // produced a false "mk-677 has 10 unverifiable sources" report.
+      if (!/(^|\s)(id|title)\s*:/.test(e)) continue;
       sourcesScanned++;
       if (hasIdentifier(e)) sourcesOk++;
       else {

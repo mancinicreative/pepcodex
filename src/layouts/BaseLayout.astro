@@ -28,7 +28,12 @@ const brandedTitle = `${title} | ${siteName}`;
 const pageTitle = brandedTitle.length <= 60 ? brandedTitle : title;
 
 // Google Analytics 4 - set in environment variable
-const GA_TRACKING_ID = import.meta.env.PUBLIC_GA_TRACKING_ID;
+// `.trim()` is load-bearing: the Vercel env var carries a trailing newline, so production was
+// rendering gtag('config', "G-1M56CNL8CK\n"). The URL parser strips it from the <script src>,
+// which is why the library still loaded and the breakage was invisible — but the config call
+// received a measurement ID with a literal newline in it. Trimming at the read makes this
+// immune to whitespace in the env var rather than depending on the dashboard staying clean.
+const GA_TRACKING_ID = import.meta.env.PUBLIC_GA_TRACKING_ID?.trim();
 
 // Get current path for nav highlighting
 const currentPath = Astro.url.pathname;

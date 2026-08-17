@@ -1,4 +1,4 @@
-# Cross-surface Claim Consistency — 2026-08-06
+# Cross-surface Claim Consistency — 2026-08-17
 
 The same named trial stated with different percentages in different files. Multiple values can be
 legitimate (weight loss vs responder rate vs AE rate). **Near-miss values a few points apart are
@@ -32,6 +32,11 @@ the copy-error signature** and are listed first.
 - **28.3%** — src/content/blog/retatrutide-direct-comparison.mdx
 - **30.3%** — src/content/blog/retatrutide-phase3-triple-agonist.mdx
 
+### SYNCHRONIZE-1
+- **13%** — src/content/peptides/survodutide.mdx
+- **95%** — src/content/peptides/survodutide.mdx
+- **5.4%** — src/content/peptides/survodutide.mdx
+
 ### SURMOUNT-5
 - **20.2%** — src/content/blog/best-peptide-for-weight-loss-2026.mdx, src/content/blog/semaglutide-vs-tirzepatide-2026.mdx
 - **13.7%** — src/content/blog/best-peptide-for-weight-loss-2026.mdx, src/content/blog/semaglutide-vs-tirzepatide-2026.mdx
@@ -43,3 +48,7 @@ the copy-error signature** and are listed first.
 ### ATTAIN-1
 - **11.2%** — src/content/blog/orforglipron-14-percent-weight-loss.mdx, src/content/blog/orforglipron-attain-1-results.mdx, src/content/peptides/orforglipron.mdx
 - **2.1%** — src/content/peptides/orforglipron.mdx
+
+### SURPASS-CVOT
+- **11.6%** — src/content/peptides/dulaglutide.mdx
+- **4.8%** — src/content/peptides/dulaglutide.mdx

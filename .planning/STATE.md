@@ -25,17 +25,27 @@ from a 3-month search; sweep found 4 published trials declared unpublished (SURP
 41406444, SYNCHRONIZE-1 42253238, STEP 12 42575111, OASIS 2 40758358). All corrected; surviving
 absence claims are now dated and falsifiable.
 
-BLOCKED / GATES (decisions Lucas owns, PRD §6): D1 affiliates (evidence says defer all) ·
-D2 scope policy · D3 analytics — toolkit RESTORED from origin/main (9 scripts + npm entries),
-credentials expired (`invalid_rapt`), needs owner `gcloud auth application-default login` ·
-D4 five unsourceable bioregulators · **D5 branch merge — `feat/scoring-and-freshness` is
-25 ahead / 7 behind `origin/main` (merge-base 253eb38); main has the 398-link fix + 31 held
-posts; blog editing (Workstream C) is blocked until merged.**
+**D5 MERGE DONE (374a999, 2026-08-17)** — origin/main merged in; branch now 31 ahead / 0 behind.
+Resolutions decided per-file against the merge-base (see the merge commit message): our verified
+rewrites over main's noindex holds (30 blogs), main's A-vs-B duplicate consolidation accepted
+(9 comparisons deleted, twins + 301s verified), our distinctive aliases over main's generic
+tissue aliases (6 bioregulators — both branches independently converged on the same A-numbers),
+our ledger-derived counts over base's inflated ones (semax, tesamorelin), schema/config UNION.
+Main's `qa-source-identifiers` ratchet now runs at the END of `npm run check` and immediately
+caught 2 strip-don't-guess remnants, resolved live (SCALE PMID 26132939, orforglipron phase 2
+PMID 37351564). Merged tree: check exit 0 end to end, build sole-occupant 1,208 pages / Errors 0
+(1,217 − 9 deleted duplicates). Workstream C is UNBLOCKED.
 
-Wave 2 remaining (dispatch AFTER D5 merge): blog-optimizer (22 optimize + 35 retire-301),
-blog-writer (marketing-brief lanes), fact-check standing agent. Known small follow-ups:
-1 staleness false positive (TRIUMPH-1 blog line is TRUE, source-pack status triggers it);
-freshness scout missed in-window SYNCHRONIZE-1 (audit its queries before next run).
+OPEN GATES (decisions Lucas owns, PRD §6): D1 affiliates (evidence says defer all) ·
+D2 scope policy · D3 analytics — toolkit restored + merged, credentials expired
+(`invalid_rapt`), needs owner `gcloud auth application-default login` ·
+D4 five unsourceable bioregulators.
+
+Wave 2 remaining: blog-optimizer (22 optimize posts NOW; the 35 retire-301s are PREPARED as a
+manifest but ship only on Lucas's confirmation), blog-writer (marketing-brief lanes),
+fact-check standing agent. Known small follow-ups: 1 staleness false positive (TRIUMPH-1 blog
+line is TRUE, source-pack status triggers it); freshness scout missed in-window SYNCHRONIZE-1
+(audit its queries before next run); 2 baselined identifier-less sources (dihexa, dsip).
 
 ---
 

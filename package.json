@@ -40,7 +40,15 @@
     "loop:heal": "node scripts/content-loop.mjs --heal",
     "discover:gaps": "node scripts/discover-coverage-gaps.mjs",
     "qa:concerns": "node scripts/qa-expressions-of-concern.mjs",
-    "qa:advice": "node scripts/qa-medical-advice.mjs"
+    "qa:advice": "node scripts/qa-medical-advice.mjs",
+    "gsc:sites": "node scripts/fetch-search-data.mjs --list-sites",
+    "fetch:search": "node scripts/fetch-search-data.mjs",
+    "fetch:gsc": "node scripts/fetch-search-data.mjs --gsc",
+    "fetch:ga4": "node scripts/fetch-search-data.mjs --ga4",
+    "gsc:whoami": "node scripts/fetch-search-data.mjs --whoami",
+    "gsc:index": "node scripts/gsc-index-diagnose.mjs",
+    "gsc:repull": "node scripts/gsc-repull.mjs",
+    "ga4:pull": "node scripts/ga4-pull.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.14",
@@ -49,7 +57,9 @@
     "@tailwindcss/vite": "^4.1.18",
     "@vercel/analytics": "^1.6.1",
     "astro": "^5.18.1",
-    "tailwindcss": "^4.1.18"
+    "tailwindcss": "^4.1.18",
+    "googleapis": "^173.0.0",
+    "@google-analytics/data": "^6.1.0"
   },
   "devDependencies": {
     "@pagefind/default-ui": "^1.4.0",

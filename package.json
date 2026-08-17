@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "check": "node scripts/validate-cross-links.mjs && node scripts/qa-seo.mjs && node scripts/qa-scoring.mjs && node scripts/qa-pmids.mjs --strict && node scripts/qa-source-identifiers.mjs --strict",
+    "check": "node scripts/validate-cross-links.mjs && node scripts/qa-seo.mjs && node scripts/qa-scoring.mjs && node scripts/qa-pmids.mjs --strict && node scripts/qa-source-identifiers.mjs --strict && node scripts/qa-citation-keys.mjs --strict && node scripts/qa-url-dois.mjs --strict && node scripts/qa-source-titles.mjs --strict",
     "prebuild": "npm run check",
     "build": "astro build",
     "postbuild": "npx pagefind --site dist",
@@ -26,7 +26,10 @@
     "gsc:index": "node scripts/gsc-index-diagnose.mjs",
     "gsc:repull": "node scripts/gsc-repull.mjs",
     "ga4:pull": "node scripts/ga4-pull.mjs",
-    "qa-sources": "node scripts/qa-source-identifiers.mjs --strict"
+    "qa-sources": "node scripts/qa-source-identifiers.mjs --strict",
+    "qa-keys": "node scripts/qa-citation-keys.mjs",
+    "qa-url-dois": "node scripts/qa-url-dois.mjs",
+    "qa-titles": "node scripts/qa-source-titles.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.14",

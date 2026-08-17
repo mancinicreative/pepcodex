@@ -55,8 +55,10 @@ say so explicitly when citing them, because there is no treatment-regimen figure
   (12 mg) vs −0.81% placebo.
 
 ### `survodutide` — first published phase 3
-- **PMID 42252333** · 2026-06-07 · Nature Medicine · DOI `10.1038/s41591-026-04479-3` · NCT06632457, NCT06632444
+- **PMID 42252333** · 2026-06-07 · Nature Medicine · DOI `10.1038/s41591-026-04479-3` · NCT06309992
   **SYNCHRONIZE-MASLD**, phase 3, n=216, 48 weeks; both co-primary endpoints met.
+  *(Corrected 2026-08-17: was wrongly attributed to NCT06632457/NCT06632444 — those are LIVERAGE /
+  LIVERAGE-Cirrhosis, still recruiting. NCT06309992 confirmed by live CT.gov fetch.)*
   **Dossier says** (lastUpdated 2026-01-22) Breakthrough Therapy designation for MASH and *"Phase 3
   programmes in obesity and MASH"*. **Now true:** the MASH/MASLD phase 3 has read out and is published.
   Use the treatment-regimen figures in the table above.

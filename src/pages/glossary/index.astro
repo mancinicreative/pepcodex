@@ -4,7 +4,13 @@ import BreadcrumbSchema from '../../components/SEO/BreadcrumbSchema.astro';
 import ItemListSchema from '../../components/SEO/ItemListSchema.astro';
 import { getCollection } from 'astro:content';
 
-const glossary = await getCollection('glossary');
+// Retired duplicate slugs: kept on disk but 301'd in vercel.json, so the index must not
+// list them (they would show the same term twice and link into a redirect).
+// off-label -> off-label-use (identical `term` and `metaTitle`; off-label-use is the
+// newer, fuller entry and the better-ranking URL).
+const RETIRED_SLUGS = new Set(['off-label']);
+
+const glossary = (await getCollection('glossary')).filter((t) => !RETIRED_SLUGS.has(t.slug));
 
 // Sort alphabetically
 const sortedGlossary = glossary.sort((a, b) =>

@@ -42,3 +42,12 @@ nul
 
 # Runtime lock
 .claude/scheduled_tasks.lock
+
+# Google API service-account credentials (NEVER commit)
+gcp-service-account*.json
+*-service-account.json
+service-account-key*.json
+credentials.json
+
+# Fetched analytics exports (large, regenerable)
+.planning/data/

@@ -47,6 +47,7 @@ const { Content } = await post.render();
   nextPost={Astro.props.nextPost}
   metaTitle={post.data.metaTitle}
   metaDescription={post.data.metaDescription}
+  robots={post.data.robots}
 >
   <Content />
 </BlogLayout>

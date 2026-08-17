@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "check": "node scripts/qa-internal-consistency.mjs --strict && node scripts/qa-identity-integrity.mjs && node scripts/qa-comparison-counts.mjs --strict && node scripts/qa-staleness.mjs && node scripts/qa-medical-advice.mjs --strict && node scripts/validate-cross-links.mjs && node scripts/qa-seo.mjs && node scripts/qa-scoring.mjs && node scripts/qa-pmids.mjs --strict",
+    "check": "node scripts/qa-internal-consistency.mjs --strict && node scripts/qa-identity-integrity.mjs && node scripts/qa-comparison-counts.mjs --strict && node scripts/qa-staleness.mjs && node scripts/qa-medical-advice.mjs --strict && node scripts/validate-cross-links.mjs && node scripts/qa-seo.mjs && node scripts/qa-scoring.mjs && node scripts/qa-pmids.mjs --strict && node scripts/qa-source-identifiers.mjs --strict",
     "prebuild": "npm run check",
     "build": "astro build",
     "postbuild": "npx pagefind --site dist",
@@ -46,9 +46,13 @@
     "fetch:gsc": "node scripts/fetch-search-data.mjs --gsc",
     "fetch:ga4": "node scripts/fetch-search-data.mjs --ga4",
     "gsc:whoami": "node scripts/fetch-search-data.mjs --whoami",
+    "graph": "node scripts/crawl-graph.mjs",
+    "graph:compare": "node scripts/crawl-graph.mjs --compare",
+    "graph:check": "node scripts/crawl-graph.mjs --check",
     "gsc:index": "node scripts/gsc-index-diagnose.mjs",
     "gsc:repull": "node scripts/gsc-repull.mjs",
-    "ga4:pull": "node scripts/ga4-pull.mjs"
+    "ga4:pull": "node scripts/ga4-pull.mjs",
+    "qa-sources": "node scripts/qa-source-identifiers.mjs --strict"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.14",
@@ -62,10 +66,12 @@
     "@google-analytics/data": "^6.1.0"
   },
   "devDependencies": {
+    "@google-analytics/data": "^6.1.0",
     "@pagefind/default-ui": "^1.4.0",
     "@vercel/node": "^5.5.28",
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1",
+    "googleapis": "^173.0.0",
     "gray-matter": "^4.0.3",
     "pagefind": "^1.4.0"
   }

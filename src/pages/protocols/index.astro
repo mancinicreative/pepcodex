@@ -78,7 +78,10 @@ function getStudyTypeCounts(studies: Array<{ studyType: string }>) {
         const studyCounts = getStudyTypeCounts(protocol.data.studies);
         return (
           <a
-            href={`/protocols/${protocol.data.slug}`}
+            {/* `protocol.data.slug` does not exist — the protocols schema has no slug field,
+                so every card linked to /protocols/undefined (a live 404) and left all three
+                protocol pages orphaned. Mirror getStaticPaths in [slug].astro exactly. */}
+            href={`/protocols/${protocol.id.replace(/\.mdx?$/, '')}`}
             class="glass-card-interactive p-6 group"
           >
             <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6">

@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from './BaseLayout.astro';
 import TableOfContents from '../components/TableOfContents.astro';
 import BreadcrumbSchema from '../components/SEO/BreadcrumbSchema.astro';
@@ -27,6 +28,11 @@ interface Props {
   nextPost?: { slug: string; title: string } | null;
   metaTitle?: string;
   metaDescription?: string;
+  // Citation-integrity hold. An Aug-2026 audit verified every claim in 67 posts against
+  // PubMed and ClinicalTrials.gov: 32 describe studies that do not exist (e.g. `semax AND
+  // rotarod` returns ZERO PubMed results). Flagged posts stay published for anyone holding a
+  // link, but leave the index and sitemap until rewritten from real sources.
+  robots?: 'index' | 'noindex';
 }
 
 const {
@@ -45,6 +51,7 @@ const {
   nextPost,
   metaTitle,
   metaDescription,
+  robots = 'index',
 } = Astro.props;
 
 const categoryLabels: Record<string, string> = {
@@ -99,9 +106,17 @@ const breadcrumbItems = [
   { name: 'Blog', url: `${siteBase}blog/` },
   { name: title, url: Astro.url.toString() },
 ];
+
+// Only link related entities that actually exist. `relatedPeptides` / `relatedGlossary` are
+// free-text slugs in frontmatter with no referential integrity, and rendering them blind
+// produced ~330 live 404s across the blog — every one of which burns crawl budget on a site
+// where Google already refuses to fetch 75% of pages. Missing targets render as plain text
+// so the editorial signal survives without the dead link. Verify with `npm run graph`.
+const peptideSlugs = new Set((await getCollection('peptides')).map((p) => p.slug));
+const glossarySlugs = new Set((await getCollection('glossary')).map((g) => g.slug));
 ---
 
-<BaseLayout title={metaTitle || title} description={metaDescription || excerpt}>
+<BaseLayout title={metaTitle || title} description={metaDescription || excerpt} robots={robots}>
   <BreadcrumbSchema items={breadcrumbItems} />
   <article class="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
     <!-- Header -->
@@ -240,16 +255,21 @@ const breadcrumbItems = [
                 Related Peptides
               </h3>
               <ul class="space-y-2">
-                {relatedPeptides.map(peptide => (
-                  <li>
-                    <a
-                      href={`/peptides/${peptide}`}
-                      class="text-sm text-primary hover:text-[color:var(--primary-deep)] hover:underline transition-colors"
-                    >
-                      {peptide.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
-                    </a>
-                  </li>
-                ))}
+                {relatedPeptides.map(peptide => {
+                  const label = peptide.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+                  return (
+                    <li>
+                      {peptideSlugs.has(peptide) ? (
+                        <a
+                          href={`/peptides/${peptide}`}
+                          class="text-sm text-primary hover:text-[color:var(--primary-deep)] hover:underline transition-colors"
+                        >{label}</a>
+                      ) : (
+                        <span class="text-sm text-[color:var(--ink-2)]">{label}</span>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           )}
@@ -264,7 +284,7 @@ const breadcrumbItems = [
                 Key Terms
               </h3>
               <div class="flex flex-wrap gap-2">
-                {relatedGlossary.map(term => (
+                {relatedGlossary.filter(term => glossarySlugs.has(term)).map(term => (
                   <a
                     href={`/glossary/${term}`}
                     class="inline-flex items-center rounded-full bg-[color:var(--primary-soft)] px-3 py-1 text-xs font-medium text-[color:var(--primary-c)] border border-[color:var(--primary-border)] hover:bg-[color:var(--sand)] transition-colors"

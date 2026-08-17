@@ -167,7 +167,9 @@ const categoryLabels: Record<string, string> = {
                   data-category={p.data.category}
                 >
                   <td class="px-4 py-3">
-                    <a href={`/peptides/${p.id}/`} class="font-medium hover:text-[var(--primary)] transition-colors" style="color: var(--ink);">
+                    {/* `p.id` retains the .mdx extension and the trailing slash forces a 308 —
+                        both wasted crawl. Use the collection slug, matching getStaticPaths. */}
+                    <a href={`/peptides/${p.slug}`} class="font-medium hover:text-[var(--primary)] transition-colors" style="color: var(--ink);">
                       {p.data.name}
                     </a>
                     {p.data.aliases.length > 0 && (

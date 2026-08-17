@@ -137,6 +137,12 @@ interface Props {
     openAccess: number;
   };
   comparators: string[];
+  // Condition sub-pages generated from this dossier's frontmatter. Linking them here is
+  // load-bearing for SEO, not decoration: without it the /peptides/<slug>/<condition>
+  // pages are reachable only from each other, forming an island Google can find in the
+  // sitemap but never reach by link — 151 of 290 were unreachable before this existed.
+  // Verify with `npm run graph`.
+  conditions?: { slug: string; name: string; researchSummary?: string }[];
   pharmacokinetics?: {
     halfLife?: string;
     bioavailability?: string;
@@ -189,6 +195,7 @@ const {
   summary,
   sources,
   comparators,
+  conditions = [],
   pharmacokinetics,
   relatedPeptides = [],
   molecularInfo,
@@ -323,6 +330,32 @@ function findComparisonSlug(compSlug: string): string | null {
   return match ? match.slug : null;
 }
 
+
+// Every comparison page that involves THIS dossier, derived from the collection rather than
+// the `comparators` frontmatter list. 548 such relationships exist but only 286 comparators are
+// declared, so ~half of all /compare/ pages had no link from either peptide they compare —
+// which is why 209 of them sit at <=2 inbound links and 86% have never earned an impression.
+// Discovery, not content quality, was the constraint. Verify with `npm run graph`.
+// The dedicated safety profile for this compound, if one exists. Dossiers did not link these,
+// leaving 30 /safety/ pages at <=2 inbound links despite being the natural next read.
+const allSafety = await getCollection('safety');
+const safetyPage = allSafety.find((s) => s.slug === `${dossierSlug}-safety`) ?? null;
+
+// Reuses `dossierSlug` declared above (line ~245) — the real collection slug, not the
+// name-derived `currentSlug`, which diverges for 5 dossiers.
+const relatedComparisons = allComparisons
+  .filter((c) => c.slug.startsWith(`${dossierSlug}-vs-`) || c.slug.endsWith(`-vs-${dossierSlug}`))
+  .map((c) => {
+    const other = c.slug.startsWith(`${dossierSlug}-vs-`)
+      ? c.slug.slice(`${dossierSlug}-vs-`.length)
+      : c.slug.slice(0, -`-vs-${dossierSlug}`.length);
+    const match = allPeptides.find((p) => p.slug === other);
+    return {
+      slug: c.slug,
+      otherName: match?.data.name ?? other.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
+    };
+  })
+  .sort((a, b) => a.otherName.localeCompare(b.otherName));
 
 // SEO: Breadcrumb data
 const breadcrumbItems = [
@@ -872,6 +905,89 @@ const clinicalPct = sources.count ? Math.round((sources.human / sources.count) *
         </section>
       ) : null;
     })()}
+
+    <!-- Safety profile — dedicated page for this compound, if one exists -->
+    {safetyPage && (
+      <section class="mt-12">
+        <a
+          href={`/safety/${safetyPage.slug}`}
+          class="flex items-center justify-between gap-4 p-5 transition-colors"
+          style="border: 1px solid var(--border-c); background: var(--paper-2);"
+        >
+          <span>
+            <span class="font-mono text-xs uppercase tracking-wider block mb-1" style="color: var(--ink-3);">
+              Safety profile
+            </span>
+            <span class="font-serif text-lg" style="color: var(--ink);">
+              {name}: adverse events, contraindications and monitoring
+            </span>
+          </span>
+          <span class="font-mono text-sm" style="color: var(--ink-3);">→</span>
+        </a>
+      </section>
+    )}
+
+    <!-- Compared With — the crawl path to every /compare/ page involving this dossier -->
+    {relatedComparisons.length > 0 && (
+      <section class="mt-12">
+        <div class="flex items-center justify-between pb-4 mb-8" style="border-bottom: 1px solid var(--border-c);">
+          <h2 class="font-serif text-2xl" style="color: var(--ink); font-weight: 500;">Compared With</h2>
+          <span class="font-mono text-xs uppercase tracking-wider" style="color: var(--ink-3);">
+            {relatedComparisons.length} {relatedComparisons.length === 1 ? 'comparison' : 'comparisons'}
+          </span>
+        </div>
+        <ul class="flex flex-wrap gap-2">
+          {relatedComparisons.map((c) => (
+            <li>
+              <a
+                href={`/compare/${c.slug}`}
+                class="inline-flex items-center px-3 py-2 text-sm transition-colors"
+                style="border: 1px solid var(--border-c); background: var(--paper-2); color: var(--ink);"
+              >
+                <span class="font-mono text-xs mr-2" style="color: var(--ink-3);">vs</span>
+                {c.otherName}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <!-- Conditions Studied — the crawl path to this dossier's condition sub-pages -->
+    {conditions.length > 0 && (
+      <section class="mt-12">
+        <div class="flex items-center justify-between pb-4 mb-8" style="border-bottom: 1px solid var(--border-c);">
+          <h2 class="font-serif text-2xl" style="color: var(--ink); font-weight: 500;">Conditions Studied</h2>
+          <span class="font-mono text-xs uppercase tracking-wider" style="color: var(--ink-3);">
+            {conditions.length} {conditions.length === 1 ? 'entry' : 'entries'}
+          </span>
+        </div>
+        <ul class="grid gap-4 md:grid-cols-2">
+          {conditions.map((c) => (
+            <li>
+              <a
+                {/* Use the REAL collection slug, never `currentSlug` — that is derived from
+                    the display name and diverges for 5 dossiers (hcg, melanotan-i, mrna-4157,
+                    na-selank-amidate, na-semax-amidate), producing links to URLs that do not
+                    exist and leaving their condition pages unreachable. */}
+                href={`/peptides/${slugProp ?? currentSlug}/${c.slug}`}
+                class="block p-4 transition-colors"
+                style="border: 1px solid var(--border-c); background: var(--paper-2);"
+              >
+                <span class="font-serif text-lg block" style="color: var(--ink);">
+                  {name} for {c.name}
+                </span>
+                {c.researchSummary && (
+                  <span class="text-sm mt-1 block" style="color: var(--ink-2);">
+                    {c.researchSummary.length > 130 ? `${c.researchSummary.slice(0, 130).trim()}…` : c.researchSummary}
+                  </span>
+                )}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
 
     <!-- Related Content (Internal Linking) -->
     <RelatedEntities

@@ -37,7 +37,7 @@ const articleUrl = Astro.url.toString();
 ---
 
 <BaseLayout
-  title={metaTitle || `${name} — PepCodex`}
+  title={metaTitle || name}
   description={metaDescription || `Research calculator for ${name}. Educational tool only.`}
 >
   <ArticleSchema

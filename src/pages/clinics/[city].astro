@@ -21,6 +21,8 @@ const { name, state, stateAbbr, metaDescription, content, population } = city.da
 
 // Get clinics for this city
 const allClinics = await getCollection('clinics');
+// Referential integrity for the "Common Peptides Offered" cards below.
+const peptideSlugSet = new Set((await getCollection('peptides')).map((p) => p.slug));
 const cityClinics = allClinics.filter(
   clinic => clinic.data.city.toLowerCase() === name.toLowerCase()
 );
@@ -77,9 +79,15 @@ const commonPeptides = [
 ];
 ---
 
+{/* Deindexed 2026-07: 61 clinic URLs produced 311 impressions and 2 clicks in 5.8 months
+    (90% never surfaced at all), while consuming a crawl budget the site cannot spare —
+    Google has yet to crawl even /peptides. Pages stay live for direct visitors and keep
+    passing internal links (noindex, follow). Reverse by removing robots= here and the
+    /clinics/ rule in astro.config.mjs. */}
 <BaseLayout
   title={`Peptide Clinics in ${name}, ${stateAbbr}`}
   description={metaDescription}
+  robots="noindex"
 >
   <BreadcrumbSchema items={breadcrumbs} />
   <FAQSchema items={faqItems} />
@@ -295,19 +303,29 @@ const commonPeptides = [
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-      {commonPeptides.map((peptide) => (
-        <a
-          href={`/peptides/${peptide.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
-          class="glass-card glass-card--interactive p-4"
-        >
-          <h3 class="font-semibold mb-1" style="color: var(--text-high);">
-            {peptide.name}
-          </h3>
-          <p class="text-sm" style="color: var(--text-medium);">
-            For {peptide.use}
-          </p>
-        </a>
-      ))}
+      {/* Slugs derived from a display name are not real URLs — "Thymosin Beta-4" resolved to
+          /peptides/thymosin-beta-4, which does not exist (the dossier is tb-500), producing 60
+          live 404s across these pages. Link only when the dossier exists; otherwise render the
+          card without an href. */}
+      {commonPeptides.map((peptide) => {
+        const derived = peptide.name.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+        const exists = peptideSlugSet.has(derived);
+        const Card = (
+          <>
+            <h3 class="font-semibold mb-1" style="color: var(--text-high);">
+              {peptide.name}
+            </h3>
+            <p class="text-sm" style="color: var(--text-medium);">
+              For {peptide.use}
+            </p>
+          </>
+        );
+        return exists ? (
+          <a href={`/peptides/${derived}`} class="glass-card glass-card--interactive p-4">{Card}</a>
+        ) : (
+          <div class="glass-card p-4">{Card}</div>
+        );
+      })}
     </div>
   </section>
 

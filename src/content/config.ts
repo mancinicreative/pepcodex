@@ -358,6 +358,11 @@ const glossary = defineCollection({
     category: z.enum(['mechanism', 'administration', 'research', 'regulatory', 'general']).default('general'),
     lastUpdated: z.coerce.date(),
     sources: sourcesArray,
+    // Generic scientific terms (autophagy, pharmacokinetics, ...) rank ~50-80 against
+    // Wikipedia/NIH and earn nothing, while consuming a crawl budget the site cannot
+    // spare. Flagged terms stay published for readers and keep passing internal links,
+    // but are dropped from the index and the sitemap. See scripts/classify-glossary.mjs.
+    noindex: z.boolean().default(false),
     ...seoFields,
   }),
 });

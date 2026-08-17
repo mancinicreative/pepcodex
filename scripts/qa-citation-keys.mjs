@@ -39,8 +39,14 @@ for (const col of COLLECTIONS) {
     const parts = raw.split(/\r?\n---\r?\n/);
     if (parts.length < 2) continue;
     const fm = parts[0];
-    // Strip fenced code blocks before scanning: `[foo-bar]` inside a code sample is not a citation.
-    const body = parts.slice(1).join('\n---\n').replace(/```[\s\S]*?```/g, '');
+    // Strip code before scanning — `[foo-bar]` inside a code sample is not a citation.
+    // Inline spans matter as much as fenced blocks here: this site quotes PubMed query syntax
+    // like `semax AND humans[mesh]`, where [mesh] is a MeSH field tag, not a citation key.
+    const body = parts
+      .slice(1)
+      .join('\n---\n')
+      .replace(/```[\s\S]*?```/g, '')
+      .replace(/`[^`\n]*`/g, '');
 
     filesScanned++;
 

@@ -1,8 +1,45 @@
 # Project State: PepCodex
 
-*Last updated: 2026-07-25*
+*Last updated: 2026-08-17*
 
-## VERIFIED END STATE (2026-08-06) — every line from a re-run, not a claim
+## PHASE 40 — GROWTH ENGINE (active) · plan: `.planning/phases/40-growth-engine/PRD.md`
+
+**Ledger: 2,274 / 2,274 live identifiers verified (100%)** — 1,248 PMID · 512 DOI · 514 NCT
+(+75 this pass, converged in one round; note `verify:graph` does NOT feed the ledger —
+`verify-loop.mjs --enumerate` then `--loop` does).
+
+Wave 1 (research) DONE — three agents, artifacts in `.planning/phases/40-growth-engine/research/`:
+- `UPDATE-WORKLIST.md` — 50 verified freshness findings (2026-05-17→08-17), 19 dossiers
+- `BLOG-AUDIT.md` + `blog-checklist.csv` — 140 posts: refresh 55 · retire-301 35 · optimize 22 ·
+  keep 28; **site conversion 31,704 impressions → 81 clicks / 177 days; app CTAs on site: 0**
+- `MARKETING-BRIEF.md` — Gate D1 evidence: defer all affiliate lanes, reject research-chem
+  vendors permanently; Examine-style own-product (PepTracker) funnel; KPI = % sitemap with ≥1
+  impression, baseline 24.4%
+
+Wave 2 partial — DONE: 17 dossiers updated from the worklist (zenagamtide rename, SURPASS-CVOT
+published result HR 0.92 noninferior-not-superior, REIMAGINE, SYNCHRONIZE-1/-MASLD two-estimand
+handling, ATTAIN-1 estimand resolution, COURAGE-2 miss) + teriparatide/abaloparatide pair written
+(49 live-verified ids; FORTEO boxed warning is GONE from current label — 5.1 warning now).
+**Error class caught in review: window-scoped absence claims** — "no publication found" written
+from a 3-month search; sweep found 4 published trials declared unpublished (SURPASS-CVOT NEJM
+41406444, SYNCHRONIZE-1 42253238, STEP 12 42575111, OASIS 2 40758358). All corrected; surviving
+absence claims are now dated and falsifiable.
+
+BLOCKED / GATES (decisions Lucas owns, PRD §6): D1 affiliates (evidence says defer all) ·
+D2 scope policy · D3 analytics — toolkit RESTORED from origin/main (9 scripts + npm entries),
+credentials expired (`invalid_rapt`), needs owner `gcloud auth application-default login` ·
+D4 five unsourceable bioregulators · **D5 branch merge — `feat/scoring-and-freshness` is
+25 ahead / 7 behind `origin/main` (merge-base 253eb38); main has the 398-link fix + 31 held
+posts; blog editing (Workstream C) is blocked until merged.**
+
+Wave 2 remaining (dispatch AFTER D5 merge): blog-optimizer (22 optimize + 35 retire-301),
+blog-writer (marketing-brief lanes), fact-check standing agent. Known small follow-ups:
+1 staleness false positive (TRIUMPH-1 blog line is TRUE, source-pack status triggers it);
+freshness scout missed in-window SYNCHRONIZE-1 (audit its queries before next run).
+
+---
+
+## PRIOR VERIFIED END STATE (2026-08-06) — every line from a re-run, not a claim
 
 **Ledger: 2,019 / 2,019 live identifiers verified (100%)** — 1,102 PMID · 512 DOI · 405 NCT.
 Each was fetched from its authority individually; `verification/ledger.json` holds the verdict and

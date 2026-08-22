@@ -1,9 +1,14 @@
 # PepCodex Project Guidelines
 
-## Current Status (2026-04-13)
-- **Phase:** v6.0 Phase 35 — Content Refresh & New Dossiers
-- **Active:** 6 new dossiers, 15 dossier updates, 10 blog posts, regulatory reclassification
-- **See:** `.planning/STATE.md`, `.planning/phases/35-content-refresh/`
+## Current Status (2026-08-22)
+
+- **What this is:** pepcodex.com — owned traffic for PepTracker. **Not a third company.**
+  Affiliate / selling peptides is parked until the app can convert clicks already here.
+- **Phase:** 40 — growth engine. Truth: `.planning/STATE.md` (last stamped 2026-08-17).
+- **Binding constraint:** crawl budget, not "publish more." Measured Aug 2026: 923 of
+  1,221 pages had never received an impression. Site conversion 31,704 impressions →
+  81 clicks / 177 days; **app CTAs on site: 0.** Adding URLs makes indexing worse.
+- **April 2026 "Phase 35" is dead.** Do not boot from that date.
 
 ## Content Rules (HARD)
 

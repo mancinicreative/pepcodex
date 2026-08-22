@@ -1,6 +1,7 @@
 ---
 title: Cell-Penetrating Peptides in Cancer Immunotherapy
 publishDate: 2025-09-19T00:00:00.000Z
+lastUpdated: 2026-08-17T00:00:00.000Z
 author: PepCodex Research Team
 category: deep-dive
 tags:
@@ -9,202 +10,169 @@ tags:
   - cancer
   - immunotherapy
 excerpt: >-
-  Cell-penetrating peptides are emerging as versatile delivery vehicles for
-  cancer immunotherapy. This deep dive explores the science, current research,
-  and clinical potential of CPPs.
+  Cell-penetrating peptides are proposed as delivery vehicles for cancer
+  immunotherapy. One cell-permeating peptide has reached human trials, and
+  peptide cancer vaccines have published data. Most of the field has not.
 relatedPeptides:
-  - ll-37
+  - sulanemadlin
+  - evx-01
+  - mrna-4157
 relatedGlossary:
   - peptide
   - mechanism-of-action
   - clinical-trial
 sources:
-  - id: nature-cpp-review
-    title: 'Cell-Penetrating Peptides: Design, Mechanisms, and Applications'
-    url: 'https://www.nature.com/articles/s41573-024-00912-5'
-    type: journal
-  - id: jci-cpp-immunotherapy
+  - id: sulanemadlin-discovery
     title: >-
-      Cell-Penetrating Peptides for Intracellular Delivery of Cancer
-      Immunotherapeutics
-    url: 'https://www.jci.org/articles/view/165432'
+      Discovery of Sulanemadlin (ALRN-6924), the First Cell-Permeating,
+      Stabilized α-Helical Peptide in Clinical Development
     type: journal
-  - id: nct-cpp-trial
-    title: Phase I Study of CPP-Delivered Tumor Antigen Vaccine
-    type: trial
-    verified: false
-    note: >-
-      Stored NCT NCT05234567 registers a different study ("A Prospective
-      Sub-Study of the Global Hypophosphatasia Registry"); removed as
-      unverifiable.
-  - id: frontiers-cpp-oncology
-    title: 'Cell-Penetrating Peptides in Oncology: From Bench to Bedside'
-    url: 'https://www.frontiersin.org/journals/oncology'
+    url: 'https://pubmed.ncbi.nlm.nih.gov/37439511/'
+    pmid: '37439511'
+    verifiedAt: '2026-08-17'
+  - id: alrn6924-phase1
+    title: >-
+      Phase 1 Trial of ALRN-6924, a Dual Inhibitor of MDMX and MDM2, in Patients
+      with Solid Tumors and Lymphomas
     type: journal
-  - id: acs-cpp-design
-    title: Rational Design of Cell-Penetrating Peptides for Enhanced Tumor Targeting
-    url: 'https://pubs.acs.org/journal/jmcmar'
+    url: 'https://pubmed.ncbi.nlm.nih.gov/34301750/'
+    pmid: '34301750'
+    verifiedAt: '2026-08-17'
+  - id: evx01-dose-escalation
+    title: >-
+      Dose escalation study of a personalized peptide-based neoantigen vaccine
+      (EVX-01) in patients with metastatic melanoma
     type: journal
+    url: 'https://pubmed.ncbi.nlm.nih.gov/38782542/'
+    pmid: '38782542'
+    verifiedAt: '2026-08-17'
+  - id: neoantigen-vaccine-melanoma
+    title: An immunogenic personal neoantigen vaccine for patients with melanoma
+    type: journal
+    url: 'https://pubmed.ncbi.nlm.nih.gov/28678778/'
+    pmid: '28678778'
+    verifiedAt: '2026-08-17'
 evidenceLevel: low
 featured: false
-metaTitle: Cell-Penetrating Peptides in Cancer Therapy (2025)
+metaTitle: 'Cell-Penetrating Peptides in Cancer Therapy: The Evidence'
 metaDescription: >-
-  How cell-penetrating peptides deliver immunotherapy drugs past cell membranes.
-  Science, current research, and clinical potential of CPPs.
+  One cell-permeating stabilized peptide has completed a phase 1 cancer trial.
+  Most cell-penetrating peptide immunotherapy remains preclinical.
 ---
 
-The cell membrane presents a fundamental barrier to drug delivery. Large molecules, charged compounds, and most biologics cannot freely cross this lipid bilayer, limiting therapeutic options for intracellular targets. Cell-penetrating peptides (CPPs) offer a potential solution, and their application in cancer immunotherapy represents one of the most promising areas of current research.
+**Correction notice (2026-08-17):** An earlier version of this deep dive carried five
+sources. One was a trial entry whose registration number belonged to an unrelated study and
+had already been marked unverifiable while still being cited in the body. Two were journal
+homepages with no article identifier. Two more were article URLs that resolve to nothing in
+this site's verification ledger. All five have been removed, along with the claims that
+depended on them — including a list of named cell-penetrating peptide programmes and their
+trial phases. The article has been rebuilt on peptide programmes with retrievable
+publications.
+
+The cell membrane is a real barrier to drug delivery. Charged compounds and most biologics
+cannot cross it, which puts intracellular targets out of reach. Cell-penetrating peptides
+(CPPs) are the proposed answer. This page separates the mechanism, which is well described,
+from the clinical record, which is thin.
 
 ## What We Know
 
-### Understanding Cell-Penetrating Peptides
+### What a Cell-Penetrating Peptide Is
 
-Cell-penetrating peptides are short amino acid sequences, typically 5-30 residues, capable of translocating across cell membranes while carrying molecular cargo. First discovered in the late 1980s with the HIV-1 TAT protein, the field has expanded to include dozens of characterized CPPs with varying properties [nature-cpp-review].
+CPPs are short sequences, typically 5–30 residues, that cross cell membranes while carrying
+cargo. Classes are usually grouped by physicochemistry:
 
-**Common CPP classes include:**
+| Class | Example | Characteristic |
+|---|---|---|
+| Cationic | Polyarginine | Rich in arginine and lysine; charge-mediated uptake |
+| Amphipathic | Penetratin | Both hydrophobic and charged regions |
+| Hydrophobic | Transportan | Lipid membrane interaction |
 
-| Class | Example | Characteristics |
-|-------|---------|-----------------|
-| Cationic | TAT, polyarginine | Rich in arginine/lysine; charge-mediated uptake |
-| Amphipathic | Penetratin, MAP | Both hydrophobic and charged regions |
-| Hydrophobic | Pep-7, transportan | Lipid membrane interaction |
+Entry is described through several routes — direct translocation, endocytosis, and transient
+membrane disruption — and most CPPs appear to use more than one depending on structure, cargo
+size, cell type and concentration. This plurality is precisely what makes
+[mechanism](/glossary/mechanism-of-action) studies difficult and rational design uncertain.
 
-### Mechanisms of Cellular Entry
+### The One That Reached the Clinic
 
-CPPs can enter cells through multiple pathways:
+The clearest verified case is [sulanemadlin](/peptides/sulanemadlin) (ALRN-6924), described
+in its discovery paper as the first cell-permeating, stabilised α-helical peptide to enter
+clinical development [sulanemadlin-discovery]. It is a stapled peptide that inhibits the
+MDMX and MDM2 interaction with p53 — an intracellular protein-protein interaction, which is
+exactly the target class CPP chemistry exists to reach.
 
-1. **Direct translocation:** CPPs insert into the membrane and flip to the interior
-2. **Endocytosis:** Cells actively take up CPPs through vesicular mechanisms
-3. **Pore formation:** Some CPPs create transient membrane disruptions
+It has completed a phase 1 trial in patients with solid tumors and lymphomas
+[alrn6924-phase1]. That is a genuine milestone for the concept: a peptide designed to get
+inside cells, given to patients, taken through dose escalation, published.
 
-The specific mechanism depends on CPP structure, cargo size, cell type, and concentration. Most CPPs utilize multiple pathways simultaneously, making mechanistic studies challenging [nature-cpp-review].
+It is also one compound. A single phase 1 programme does not establish a delivery platform.
 
-### Applications in Cancer Immunotherapy
+### Peptide Cancer Vaccines — a Related but Distinct Track
 
-The intersection of CPPs and cancer immunotherapy has generated significant research interest. Key applications include:
+Peptide-based cancer vaccines are often discussed alongside CPPs because both involve
+delivering peptide material to immune cells. The evidence here is stronger, and it does not
+depend on cell-penetrating chemistry.
 
-**Antigen Delivery**
+A personalised peptide-based neoantigen vaccine, [EVX-01](/peptides/evx-01), has a published
+dose-escalation study in patients with metastatic melanoma [evx01-dose-escalation]. The
+broader approach was established by an earlier study demonstrating that a personal neoantigen
+vaccine could be immunogenic in melanoma patients [neoantigen-vaccine-melanoma]. Related
+individualised neoantigen work is covered in the
+[cancer peptide vaccine briefing](/blog/cancer-peptide-vaccine-breakthrough) and in the
+[mRNA-4157 dossier](/peptides/mrna-4157).
 
-CPPs can deliver tumor antigens directly to antigen-presenting cells, potentially enhancing immune recognition of cancer cells. Early-phase trials have explored CPP-conjugated tumor peptides as cancer vaccines, aiming to stimulate cytotoxic T cell responses against specific tumor markers [nct-cpp-trial].
-
-**Intracellular Antibody Delivery**
-
-Antibodies typically cannot cross cell membranes, limiting their targets to cell surface or secreted proteins. CPP conjugation may enable delivery of antibodies or antibody fragments to intracellular targets, opening new therapeutic possibilities [jci-cpp-immunotherapy].
-
-**Immune Checkpoint Modulation**
-
-Researchers have explored using CPPs to deliver peptide inhibitors of intracellular immune checkpoint regulators. While PD-1 and CTLA-4 inhibitors have transformed oncology, many immune regulatory proteins reside inside cells beyond the reach of traditional antibodies.
-
-**Enhanced Neoantigen Vaccines**
-
-CPP-facilitated delivery of personalized neoantigen peptides may improve vaccine immunogenicity. By ensuring efficient uptake and presentation by dendritic cells, CPPs could enhance the effectiveness of personalized cancer vaccines [frontiers-cpp-oncology].
-
-### Current Clinical Development
-
-Several CPP-based cancer immunotherapy approaches have entered clinical trials:
-
-- **p28 (azurin-derived CPP):** Investigated for glioblastoma and melanoma
-- **TAT-fusion proteins:** Various constructs in Phase I/II development
-- **CPP-antigen conjugates:** Cancer vaccine applications in early trials
-
-Most programs remain in Phase I or II, focusing on safety, optimal dosing, and preliminary efficacy signals.
+The distinction matters. These vaccines work because antigen-presenting cells take up and
+present peptide antigen — an existing biological pathway. They are not evidence that CPP
+conjugation improves anything.
 
 ## What We Don't Know
 
-### Fundamental Scientific Questions
+**Whether CPP delivery beats the alternatives.** The field lacks systematic head-to-head
+comparisons of CPP delivery against lipid nanoparticles, viral vectors, exosomes or
+electroporation for any specific immunotherapy cargo. Lipid nanoparticles in particular have
+a large and successful clinical record that CPPs do not.
 
-**Mechanism Clarity**
+**Endosomal escape.** Many CPPs enter by endocytosis and remain trapped in endosomes, never
+reaching their target. This is the field's central unsolved technical problem.
 
-Despite decades of research, the precise mechanisms governing CPP cellular entry remain incompletely understood. This complicates rational design and optimization of CPP-cargo conjugates [acs-cpp-design].
+**Cell-type selectivity.** Most CPPs have none inherently. A delivery vehicle that enters
+every cell is a poor fit for a cytotoxic payload.
 
-**Endosomal Escape**
+**Immunogenicity on repeat administration.** Whether repeated dosing provokes a response
+against the carrier itself is not characterised.
 
-A major limitation is endosomal trapping. Many CPPs enter cells via endocytosis but remain trapped in endosomal vesicles, unable to reach their intracellular targets. Strategies to enhance endosomal escape are under investigation but not yet optimized.
+**Manufacturing.** Conjugation chemistry, purification, stability and quality control have to
+be re-solved for each cargo.
 
-**Cell Type Specificity**
+### Claims This Page Deliberately Does Not Make
 
-Most CPPs lack inherent cell selectivity, potentially leading to off-target delivery. Engineering tumor-selective CPPs represents an active area of research.
-
-### Clinical Unknowns
-
-**Immunogenicity**
-
-Repeated administration of CPP-cargo conjugates may elicit immune responses against the delivery vehicle itself, potentially limiting efficacy or causing adverse reactions.
-
-**Optimal Cargo Matching**
-
-Which cargoes benefit most from CPP delivery? The field lacks systematic comparisons of CPP delivery versus alternative approaches for specific therapeutic applications.
-
-**Manufacturing Scale-Up**
-
-Producing CPP-cargo conjugates at clinical scale presents challenges. Conjugation chemistry, purification, stability, and quality control all require optimization for each specific application.
-
-### Comparison to Alternative Approaches
-
-CPPs represent one of several intracellular delivery strategies. Alternatives include:
-
-- **Lipid nanoparticles (LNPs):** Proven success with mRNA vaccines
-- **Viral vectors:** Efficient but with immunogenicity concerns
-- **Exosomes:** Natural delivery vehicles with complex biology
-- **Direct electroporation:** Effective but limited to ex vivo applications
-
-The relative advantages of CPPs versus these alternatives for specific immunotherapy applications remain to be established.
-
-## What's Next
-
-### Research Priorities
-
-**Next-Generation CPP Design**
-
-Rational design approaches using structural biology, computational modeling, and high-throughput screening may yield CPPs with improved properties including enhanced endosomal escape, tumor selectivity, and reduced immunogenicity [acs-cpp-design].
-
-**Combination Strategies**
-
-Combining CPP-delivered immunotherapeutics with established treatments (checkpoint inhibitors, chemotherapy, radiation) represents a logical clinical development path. Synergistic approaches may overcome limitations of single-agent CPP therapies.
-
-**Platform Technologies**
-
-Several companies are developing CPP-based delivery platforms applicable across multiple cargo types. If successful, these platforms could accelerate development of CPP-delivered immunotherapeutics.
-
-### Clinical Development Outlook
-
-The path from early-phase trials to approved therapies is long and uncertain. Key milestones to watch include:
-
-- **Phase II efficacy signals:** Early trials need to show meaningful clinical responses
-- **Biomarker development:** Identifying patients most likely to benefit
-- **Manufacturing advances:** Demonstrating scalable, consistent production
-
-### Integration with Existing Immunotherapy
-
-Perhaps the greatest near-term opportunity lies in enhancing existing immunotherapy approaches. CPPs could potentially improve:
-
-- Therapeutic cancer vaccine immunogenicity
-- CAR-T cell manufacturing (ex vivo protein delivery)
-- Dendritic cell therapy optimization
-- Adoptive cell therapy enhancement
+PepCodex previously listed specific CPP programmes — an azurin-derived peptide in
+glioblastoma and melanoma, TAT-fusion constructs in phase I/II, CPP-antigen conjugates in
+cancer vaccine trials — with their development stages. No retrievable citation for those
+stage assignments could be found, and they have been removed rather than restated. The
+underlying compounds may well exist; the claim being withdrawn is this site's assertion about
+their clinical status.
 
 ## How Strong Is the Evidence?
 
-**Evidence Level: Early**
+**Evidence level: low.**
 
-The evidence supporting CPPs in cancer immunotherapy is categorized as "early" because:
+1. **Preclinical predominance.** Most CPP evidence is cell culture and animal work.
+2. **One clinical anchor.** Sulanemadlin's phase 1 is the verified human data point for a
+   cell-permeating peptide in oncology on this site.
+3. **No approvals.** No CPP-based cancer immunotherapy has regulatory approval as of
+   2026-08-17.
+4. **Mechanistic gaps.** Entry route, endosomal escape and selectivity remain open.
 
-1. **Preclinical predominance:** Most evidence comes from cell culture and animal studies
-2. **Limited clinical data:** Few randomized trials; mostly Phase I safety/feasibility studies
-3. **No approved products:** No CPP-based cancer immunotherapy has received regulatory approval
-4. **Mechanistic gaps:** Fundamental questions about CPP biology remain unanswered
-
-However, the field shows genuine promise:
-
-- **Proof of concept established:** CPPs can deliver functional cargo to cancer cells
-- **Multiple clinical programs:** Active pharmaceutical development validates commercial interest
-- **Biological rationale:** Intracellular targets represent significant therapeutic opportunity
-- **Advancing technology:** CPP design and manufacturing capabilities continue to improve
-
-The translation from laboratory promise to clinical utility remains the key challenge. Many delivery technologies have shown preclinical potential but failed in clinical development. CPPs face similar hurdles, and their ultimate therapeutic value in cancer immunotherapy will only be established through rigorous clinical trials.
-
-For researchers and clinicians following this field, the next several years will be critical in determining whether CPPs can fulfill their promise as immunotherapy delivery vehicles or whether alternative approaches will prove superior for accessing intracellular cancer targets.
+The honest framing is that CPPs are a delivery *hypothesis* with one clinical proof point and
+a large preclinical literature, sitting next to a peptide-vaccine field that has real trial
+data and does not rely on them. Many delivery technologies have shown preclinical promise and
+failed in development. Whether this one converts will be settled by
+[clinical trials](/glossary/clinical-trial) that have mostly not run yet. For the chemistry
+that made sulanemadlin possible, see
+[peptide stapling and oral delivery](/blog/peptide-stapling-oral-delivery).
 
 ---
 
-*This article is for educational purposes only and does not constitute medical advice. Cell-penetrating peptide therapies discussed are investigational and not approved for clinical use. Consult a healthcare provider for personalized medical guidance.*
+*This article is for educational purposes only and does not constitute medical advice.
+Cell-penetrating peptide therapies discussed are investigational and not approved for clinical
+use. Consult a healthcare provider for personalized medical guidance.*

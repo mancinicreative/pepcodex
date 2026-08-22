@@ -1,36 +1,64 @@
 ---
 title: "What is Zepbound?"
 publishDate: 2025-07-07
-lastUpdated: 2025-07-07
+lastUpdated: 2026-08-17
 author: "PepCodex Research Team"
 category: "guide"
 tags: ["zepbound", "tirzepatide", "weight-loss", "obesity", "glp-1", "gip", "fda-approved"]
-excerpt: "An introduction to Zepbound, the brand name for tirzepatide approved for weight management. Learn what clinical trials show about this dual GIP/GLP-1 agonist for obesity."
-relatedPeptides: ["tirzepatide"]
-relatedGlossary: ["glp-1", "gip", "obesity", "bmi"]
+excerpt: "Zepbound is tirzepatide branded for weight management, and its label now carries a second indication: moderate-to-severe obstructive sleep apnea in adults with obesity. What the SURMOUNT trials showed."
+relatedPeptides: ["tirzepatide", "semaglutide", "retatrutide"]
+relatedGlossary: ["glp-1", "gip", "obesity", "bmi", "fda-approval", "dual-agonist"]
 peptide: "tirzepatide"
 peptideCategory: "metabolic"
 difficulty: "beginner"
-metaTitle: "What is Zepbound? Tirzepatide for Weight Loss"
-metaDescription: "Zepbound (tirzepatide) is FDA-approved for weight management. SURMOUNT trial results, how it differs from Mounjaro, and what to expect."
+metaTitle: "What is Zepbound? Tirzepatide, SURMOUNT, and the OSA Indication"
+metaDescription: "Zepbound (tirzepatide) is FDA-approved for weight management and, since a later supplement, for moderate-to-severe obstructive sleep apnea in adults with obesity."
 sources:
   - id: "pmid-35658024"
     title: "Tirzepatide Once Weekly for the Treatment of Obesity (SURMOUNT-1)"
     url: "https://pubmed.ncbi.nlm.nih.gov/35658024/"
+    pmid: "35658024"
     type: "journal"
+    verifiedAt: "2026-08-17"
   - id: "pmid-38078870"
     title: "Continued Treatment With Tirzepatide for Maintenance of Weight Reduction (SURMOUNT-4)"
     url: "https://pubmed.ncbi.nlm.nih.gov/38078870/"
+    pmid: "38078870"
     type: "journal"
+    verifiedAt: "2026-08-17"
   - id: "pmid-37385275"
     title: "Tirzepatide once weekly for the treatment of obesity in people with type 2 diabetes (SURMOUNT-2)"
     url: "https://pubmed.ncbi.nlm.nih.gov/37385275/"
+    pmid: "37385275"
     type: "journal"
+    verifiedAt: "2026-08-17"
+  - id: "surmount-osa"
+    title: "Tirzepatide for the Treatment of Obstructive Sleep Apnea and Obesity (SURMOUNT-OSA)"
+    url: "https://doi.org/10.1056/NEJMoa2404881"
+    pmid: "38912654"
+    doi: "10.1056/NEJMoa2404881"
+    type: "journal"
+    verifiedAt: "2026-08-17"
+  - id: "zepbound-label"
+    title: "ZEPBOUND (tirzepatide) prescribing information, indications and usage (openFDA drug label)"
+    url: "https://api.fda.gov/drug/label.json?search=openfda.brand_name:%22ZEPBOUND%22"
+    type: "regulatory"
+    verifiedAt: "2026-08-17"
+  - id: "surmount5-nejm"
+    title: "Tirzepatide as Compared with Semaglutide for the Treatment of Obesity (SURMOUNT-5)"
+    url: "https://doi.org/10.1056/NEJMoa2416394"
+    pmid: "40353578"
+    doi: "10.1056/NEJMoa2416394"
+    nctId: "NCT05822830"
+    type: "journal"
+    verifiedAt: "2026-08-17"
 ---
 
 ## What is Zepbound?
 
-Zepbound is the brand name for tirzepatide when used for chronic weight management. Approved by the FDA in November 2023, it's the same active ingredient as Mounjaro but approved specifically for obesity and overweight.
+Zepbound is the brand name for [tirzepatide](/peptides/tirzepatide) when used for chronic weight management. Approved by the FDA in November 2023, it is the same active ingredient as Mounjaro but approved for a different set of indications.
+
+The current label covers two things, and the second one is often missed. Alongside a reduced-calorie diet and increased physical activity, ZEPBOUND is indicated to reduce excess body weight and maintain weight reduction long term in adults with obesity or overweight with at least one weight-related comorbid condition, **and to treat moderate to severe obstructive sleep apnea (OSA) in adults with obesity** [zepbound-label].
 
 ## How is Zepbound Different from Mounjaro?
 
@@ -55,10 +83,13 @@ The dual-receptor activity (targeting both GIP and GLP-1) may explain why tirzep
 
 ## Who is Zepbound Approved For?
 
-### FDA-Approved Indication
-Adults with:
+### FDA-Approved Indications
+
+**Weight management** — adults with:
 - **Obesity** (BMI of 30 or higher), OR
 - **Overweight** (BMI of 27 or higher) with at least one weight-related condition (hypertension, type 2 diabetes, dyslipidemia, obstructive sleep apnea, or cardiovascular disease)
+
+**Obstructive sleep apnea** — adults with obesity and moderate-to-severe OSA [zepbound-label]. This is a separate indication added after the original approval, and tirzepatide is the first medication to carry one.
 
 ### Not Approved For
 - Type 2 diabetes (use Mounjaro)
@@ -76,7 +107,15 @@ The SURMOUNT clinical trials showed substantial weight loss:
 | SURMOUNT-3 | Additional loss after a 12-wk lifestyle lead-in (all had already lost ≥5%) | −18.4% vs +2.5% placebo |
 | SURMOUNT-4 | Weight maintenance study | Maintained vs regain with placebo |
 
-These results represent some of the highest weight loss seen in obesity medication trials.
+These results represent some of the highest weight loss seen in obesity medication trials. The SURMOUNT-1 figure of 20.9% is the published NEJM result [pmid-35658024]; a figure of 22.5% circulates for the same trial and is the efficacy estimand from the sponsor's communications, not the published primary analysis.
+
+### The Sleep Apnea Trial
+
+SURMOUNT-OSA is a separate programme and the basis of the second indication. It randomised 469 adults with moderate-to-severe obstructive sleep apnea and obesity to tirzepatide or placebo for 52 weeks, with the apnea-hypopnea index as the primary measure [surmount-osa]. It is covered in more depth in the [SURMOUNT-OSA briefing](/blog/tirzepatide-surmount-osa).
+
+### Against Semaglutide
+
+SURMOUNT-5 is the only randomised head-to-head. Over 72 weeks in 751 adults with obesity but without type 2 diabetes, least-squares mean weight change was −20.2% with tirzepatide and −13.7% with semaglutide (P&lt;0.001) [surmount5-nejm]. The trial was open-label, since the two products use different delivery devices. The [tirzepatide vs semaglutide comparison](/compare/tirzepatide-vs-semaglutide) sets out the rest.
 
 ## Key Facts
 

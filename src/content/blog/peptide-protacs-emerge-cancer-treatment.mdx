@@ -1,6 +1,7 @@
 ---
 title: Peptide PROTACs Emerge as Promising Approach for Cancer Treatment
 publishDate: 2025-10-20T00:00:00.000Z
+lastUpdated: 2026-08-17T00:00:00.000Z
 author: PepCodex Research Team
 category: research-digest
 tags:
@@ -13,47 +14,85 @@ excerpt: >-
   previously undruggable cancer targets, opening new therapeutic possibilities
   beyond traditional small molecule approaches.
 relatedPeptides:
-  - peptide-drug-conjugates
+  - bt5528
+  - zelenectide-pevedotin
+  - evx-01
 relatedGlossary:
-  - protac
-  - ubiquitin
-  - targeted-protein-degradation
+  - ubiquitination
+  - proteolysis
+  - in-vitro-study
+  - in-vivo-study
+  - preclinical-study
+  - binding-affinity
 sources:
-  - id: nature-chem-bio-2025
-    title: Peptide-Based PROTACs for Targeted Degradation of Oncoproteins
-    url: 'https://www.nature.com/nchembio'
+  - id: peptide-protac-review
+    title: 'The Peptide PROTAC Modality: A New Strategy for Drug Discovery'
+    url: 'https://doi.org/10.1002/mco2.70133'
+    pmid: '40135198'
+    doi: 10.1002/mco2.70133
     type: journal
-  - id: cell-chem-bio-review
-    title: Expanding the PROTAC Toolbox with Peptide Ligands
-    url: 'https://www.cell.com/cell-chemical-biology'
+    verifiedAt: '2026-08-17'
+  - id: protac-brca2
+    title: >-
+      A Peptide-Based PROTAC Degrader of BRCA2 Sensitizes Metastatic
+      Castration-Resistant Prostate Cancer to PARP Inhibition
+    url: 'https://doi.org/10.1158/0008-5472.CAN-24-4096'
+    pmid: '40729484'
+    doi: 10.1158/0008-5472.CAN-24-4096
     type: journal
-  - id: jmc-peptide-protac
-    title: Design and Optimization of Peptidic PROTAC Degraders
-    url: 'https://pubs.acs.org/journal/jmcmar'
+    verifiedAt: '2026-08-17'
+  - id: protac-p300
+    title: >-
+      Discovery of a peptide proteolysis-targeting chimera (PROTAC) drug of p300
+      for prostate cancer therapy
+    url: 'https://doi.org/10.1016/j.ebiom.2024.105212'
+    pmid: '38954976'
+    doi: 10.1016/j.ebiom.2024.105212
     type: journal
-  - id: oncology-preprint
-    title: In Vivo Efficacy of Peptide PROTACs in Solid Tumor Models
-    url: 'https://www.biorxiv.org'
-    type: preprint
+    verifiedAt: '2026-08-17'
+  - id: protac-foxm1
+    title: Self-Assembled Peptide PROTAC Prodrugs Targeting FOXM1 for Cancer Therapy
+    url: 'https://doi.org/10.1021/acs.molpharmaceut.5c00219'
+    pmid: '40367368'
+    doi: 10.1021/acs.molpharmaceut.5c00219
+    type: journal
+    verifiedAt: '2026-08-17'
+  - id: protac-mdm2
+    title: >-
+      Study on the design, synthesis and activity of MDM2/MDMX anti-tumor stapled
+      peptide PROTAC
+    url: 'https://doi.org/10.1038/s41598-025-18026-6'
+    pmid: '40999047'
+    doi: 10.1038/s41598-025-18026-6
+    type: journal
+    verifiedAt: '2026-08-17'
+  - id: protac-pka
+    title: Targeted Degradation of Protein Kinase A via a Stapled Peptide PROTAC
+    url: 'https://doi.org/10.1021/acschembio.4c00237'
+    pmid: '39137166'
+    doi: 10.1021/acschembio.4c00237
+    type: journal
+    verifiedAt: '2026-08-17'
 evidenceLevel: low
 featured: false
-metaTitle: "Peptide PROTACs for Cancer: What Research Shows"
+metaTitle: 'Peptide PROTACs in Cancer: the Published Preclinical Record'
 metaDescription: >-
-  Peptide-based PROTACs selectively degrade undruggable cancer targets. Review
-  the research on this emerging protein degradation approach.
+  Peptide PROTACs have degraded BRCA2, p300, FOXM1 and MDM2 in published
+  preclinical work. What each study actually showed, and why none of it has
+  reached a human trial.
 ---
 
 A growing body of research is demonstrating the potential of peptide-based proteolysis targeting chimeras (PROTACs) to degrade cancer-driving proteins that have resisted traditional drug development approaches. Recent publications from multiple research groups suggest this emerging technology could expand the range of treatable cancers while offering advantages over small molecule PROTACs in certain applications.
 
 ## What We Know
 
-PROTACs represent a fundamentally different approach to drug development than conventional therapies. Rather than inhibiting a target protein's function, PROTACs recruit the cell's own protein disposal machinery to physically eliminate the target, offering potential advantages including activity against proteins lacking traditional "druggable" binding sites [cell-chem-bio-review].
+PROTACs represent a fundamentally different approach to drug development than conventional therapies. Rather than inhibiting a target protein's function, PROTACs recruit the cell's own protein disposal machinery to physically eliminate the target, offering potential advantages including activity against proteins lacking traditional "druggable" binding sites [peptide-protac-review].
 
 A PROTAC molecule consists of three components: a ligand that binds the target protein, a ligand that recruits an E3 ubiquitin ligase, and a linker connecting them. When the PROTAC brings the target protein and E3 ligase into proximity, the target becomes tagged with ubiquitin chains and subsequently destroyed by the proteasome.
 
 ### Why Peptides?
 
-Most PROTACs in clinical development utilize small molecule ligands for both the target and E3 ligase. While effective, small molecules face limitations in the protein surfaces they can engage. Many oncologically relevant proteins, including transcription factors and protein-protein interaction surfaces, lack the deep binding pockets that small molecules require [nature-chem-bio-2025].
+Most PROTACs in clinical development utilize small molecule ligands for both the target and E3 ligase. While effective, small molecules face limitations in the protein surfaces they can engage. Many oncologically relevant proteins, including transcription factors and protein-protein interaction surfaces, lack the deep binding pockets that small molecules require [peptide-protac-review].
 
 Peptide-based PROTACs offer several potential advantages:
 
@@ -65,13 +104,22 @@ Peptide-based PROTACs offer several potential advantages:
 
 **Natural ligand derivation:** Many peptide PROTAC ligands derive from natural protein-protein interactions, providing a starting point for design.
 
-### Recent Research Findings
+### Published Examples
 
-Several recent publications have advanced the field. A study in Nature Chemical Biology demonstrated peptide PROTACs capable of degrading c-Myc, a transcription factor implicated in numerous cancers but historically considered undruggable [nature-chem-bio-2025]. The researchers designed peptides based on known c-Myc interaction partners and successfully induced degradation in cell culture models.
+The clearest way to judge this field is to look at what has actually been degraded, in what system, and published where. Four peer-reviewed examples from 2024–2025 give the shape of it.
 
-Another research group reported peptide PROTACs targeting mutant KRAS, specifically the G12D variant common in pancreatic and colorectal cancers [jmc-peptide-protac]. While small molecule KRAS-targeted therapies have emerged for G12C mutations, other KRAS variants remain challenging targets. The peptide approach achieved selective degradation of mutant KRAS while sparing wild-type protein in cellular assays.
+| Target | What was reported | System |
+|---|---|---|
+| **BRCA2** [protac-brca2] | A peptide PROTAC degraded BRCA2 in a DDB1-dependent manner, sensitising metastatic castration-resistant prostate cancer to PARP inhibition | Cancer cells; published in *Cancer Research* |
+| **p300** [protac-p300] | A peptide PROTAC of p300, a co-activator of the androgen receptor, developed for prostate cancer | Published in *EBioMedicine* |
+| **FOXM1** [protac-foxm1] | NFTP, a self-assembling peptide PROTAC prodrug carrying an integrin α-6 ligand; degraded FOXM1, inhibited survival and migration, promoted apoptosis in vitro, with efficacy in a 4T1 mouse xenograft | In vitro plus mouse xenograft |
+| **MDM2/MDMX** [protac-mdm2] | A stapled-peptide PROTAC designed against the MDM2/MDMX axis | Published in *Scientific Reports* |
 
-Preprint data from an academic consortium described in vivo efficacy in mouse tumor models, demonstrating that appropriately formulated peptide PROTACs can achieve tumor penetration and target degradation in living organisms [oncology-preprint].
+Two structural themes run through these. The first is that the **target selection is deliberate**: BRCA2, p300, FOXM1 and MDM2/MDMX are all proteins defined by interaction surfaces rather than by enzymatic pockets — precisely the class small molecules struggle with. The BRCA2 work is the most clinically pointed, because it converts a PARP-inhibitor-resistant genotype into a sensitive one rather than attacking the tumour directly [protac-brca2].
+
+The second is that **delivery is engineered, not incidental**. The FOXM1 degrader is a prodrug built from self-assembling peptides with a targeting ligand attached [protac-foxm1], and separate work has used stapled peptides to degrade protein kinase A [protac-pka]. Stapling and self-assembly are answers to the proteolysis and permeability problems described below, which tells you those problems are the binding constraint on the whole modality.
+
+**None of these is a human result.** Every entry above is cell culture or mouse.
 
 ## What We Don't Know
 
@@ -105,7 +153,9 @@ The evidence for peptide PROTACs currently qualifies as early-stage or preclinic
 - Manufacturing scalability and cost-effectiveness
 - Advantages over alternative approaches in head-to-head comparisons
 
-The in vivo data reported in preprints requires peer-reviewed validation [oncology-preprint]. Mouse tumor models, while valuable for early development, often fail to predict human outcomes accurately. The gap between preclinical promise and clinical success in oncology drug development is well-documented.
+The in-vivo data that exists is a mouse xenograft [protac-foxm1]. Mouse tumour models, while valuable for early development, often fail to predict human outcomes accurately, and the gap between preclinical promise and clinical success in oncology is well documented.
+
+For contrast, peptide-based oncology approaches that *have* reached human trials on this site use different mechanisms entirely — see the dossiers for [BT5528](/peptides/bt5528) and [zelenectide pevedotin](/peptides/zelenectide-pevedotin), both peptide-drug conjugates rather than degraders.
 
 ## What's Next
 

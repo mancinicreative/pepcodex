@@ -24,30 +24,32 @@ the copy-error signature** and are listed first.
 - **22%** — src/content/comparisons/vk2735-vs-tirzepatide.mdx
 
 ### REDEFINE-4  ⚠️ near-miss
-- **23%** — src/content/blog/cagrisema-nda-filed.mdx, src/content/peptides/cagrisema.mdx
+- **23%** — src/content/blog/cagrisema-nda-filed-glp1-amylin-combo.mdx, src/content/blog/cagrisema-nda-filed.mdx, src/content/peptides/cagrisema.mdx
+- **25.5%** — src/content/blog/cagrisema-nda-filed-glp1-amylin-combo.mdx, src/content/peptides/cagrisema.mdx
 - **20%** — src/content/peptides/cagrisema.mdx
-- **25.5%** — src/content/peptides/cagrisema.mdx
-
-### TRIUMPH-1  ⚠️ near-miss
-- **28.3%** — src/content/blog/retatrutide-direct-comparison.mdx
-- **30.3%** — src/content/blog/retatrutide-phase3-triple-agonist.mdx
-
-### SYNCHRONIZE-1
-- **13%** — src/content/peptides/survodutide.mdx
-- **95%** — src/content/peptides/survodutide.mdx
-- **5.4%** — src/content/peptides/survodutide.mdx
 
 ### SURMOUNT-5
-- **20.2%** — src/content/blog/best-peptide-for-weight-loss-2026.mdx, src/content/blog/semaglutide-vs-tirzepatide-2026.mdx
+- **20.2%** — src/content/blog/best-peptide-for-weight-loss-2026.mdx, src/content/blog/semaglutide-vs-tirzepatide-2026.mdx, src/content/blog/surmount-5-tirzepatide-vs-semaglutide.mdx
 - **13.7%** — src/content/blog/best-peptide-for-weight-loss-2026.mdx, src/content/blog/semaglutide-vs-tirzepatide-2026.mdx
+- **95%** — src/content/blog/semaglutide-vs-tirzepatide-2026.mdx
 
 ### REDEFINE-1
-- **20.4%** — src/content/blog/best-peptide-for-weight-loss-2026.mdx, src/content/blog/cagrilintide-semaglutide-approval.mdx, src/content/blog/cagrisema-nda-filed-glp1-amylin-combo.mdx, src/content/blog/cagrisema-nda-filed.mdx, src/content/comparisons/cagrisema-vs-tirzepatide.mdx, src/content/peptides/amycretin.mdx, src/content/peptides/cagrilintide.mdx, src/content/peptides/cagrisema.mdx
+- **20.4%** — src/content/blog/best-peptide-for-weight-loss-2026.mdx, src/content/blog/cagrilintide-redefine-1-amylin-validated.mdx, src/content/blog/cagrilintide-semaglutide-approval.mdx, src/content/blog/cagrisema-nda-filed-glp1-amylin-combo.mdx, src/content/blog/cagrisema-nda-filed.mdx, src/content/comparisons/cagrisema-vs-tirzepatide.mdx, src/content/peptides/amycretin.mdx, src/content/peptides/cagrilintide.mdx, src/content/peptides/cagrisema.mdx
+- **11%** — src/content/blog/cagrilintide-redefine-1-amylin-validated.mdx
 - **40.4%** — src/content/blog/cagrisema-nda-filed.mdx
+
+### SYNCHRONIZE-1
+- **13%** — src/content/blog/survodutide-phase3-mash.mdx, src/content/peptides/survodutide.mdx
+- **95%** — src/content/peptides/survodutide.mdx
+- **5.4%** — src/content/peptides/survodutide.mdx
 
 ### ATTAIN-1
 - **11.2%** — src/content/blog/orforglipron-14-percent-weight-loss.mdx, src/content/blog/orforglipron-attain-1-results.mdx, src/content/peptides/orforglipron.mdx
 - **2.1%** — src/content/peptides/orforglipron.mdx
+
+### SURMOUNT5
+- **20.2%** — src/content/blog/what-is-tirzepatide.mdx, src/content/blog/what-is-wegovy.mdx, src/content/blog/what-is-zepbound.mdx
+- **13.7%** — src/content/blog/what-is-tirzepatide.mdx, src/content/blog/what-is-wegovy.mdx, src/content/blog/what-is-zepbound.mdx
 
 ### SURPASS-CVOT
 - **11.6%** — src/content/peptides/dulaglutide.mdx

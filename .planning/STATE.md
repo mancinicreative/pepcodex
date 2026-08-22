@@ -41,9 +41,34 @@ D2 scope policy · D3 analytics — toolkit restored + merged, credentials expir
 (`invalid_rapt`), needs owner `gcloud auth application-default login` ·
 D4 five unsourceable bioregulators.
 
-Wave 2 remaining: blog-optimizer (22 optimize posts NOW; the 35 retire-301s are PREPARED as a
-manifest but ship only on Lucas's confirmation), blog-writer (marketing-brief lanes),
-fact-check standing agent. Known small follow-ups: 1 staleness false positive (TRIUMPH-1 blog
+**RETIREMENT CANCELLED (Lucas, 2026-08-17): "don't delete a third of the blog — fix all blog
+posts."** No blog post gets deleted or 301'd. The 35 former retire-301 posts move to the
+optimize track. Any retirement manifest is an analysis record only — never execute it.
+
+**Batch fan-out (Lucas, 2026-08-17): sets of 10, max 3 concurrent editors (OneDrive EMFILE
+cap), independent adversarial review per set before commit.** The review layer is load-bearing:
+it has found exactly ONE CRITICAL error per set so far, each invisible to every automated gate.
+
+COMMITTED: **R1 `581936f`** (10 GLP-1 demand posts; review caught a false-absence claim that
+SURPASS-CVOT was unpublished — PMID 41406444 exists; also removed live banned content: a
+purchasing-guidance block in ghk-cu, a mg-by-week dosing table in what-is-tirzepatide) ·
+**R2 `9fed6fb`** (10 pipeline posts, 3 rewrites w/ correction notices; review caught
+SYNCHRONIZE-MASLD pinned to the LIVERAGE registrations — correct NCT is **NCT06309992**,
+live-verified, fixed in the post, the survodutide dossier, UPDATE-WORKLIST.md AND
+new-findings/survodutide.json so it cannot recontaminate a later batch).
+
+UNCOMMITTED, IN REVIEW: optimizer set (22 optimize + 4 adjacent — found a FIFTH integrity class:
+fabricated studies hidden behind dangling body citation IDs + journal-homepage "sources"; guard
+script queued as a background task) · R3 (removed an entire nonexistent 148,432-patient kidney
+study, the fabricated TRIUMPH toplines, and an untraceable 21% pooled figure).
+IN FLIGHT: R4 (BPC/TB/thymosin cluster), R5 (oncology/delivery cluster, warned about the
+homepage-source fabrication pattern).
+QUEUE: R6 (~6 refresh remaining), then the 35 former-retire posts — **finding: 33/35 have
+same-slug twins in guides//safety/ (near-duplicates competing for one query); fix =
+differentiate each pair, NOT fatten both halves. Merge-with-redirect would be the stronger SEO
+play but removes URLs — Lucas's call; differentiate-only proceeds by default.**
+Editors are worklist-locked (ledger + UPDATE-WORKLIST + new-findings only); gaps go to
+NEEDS-VERIFICATION-R*.md, never invented. Commit per set, only after its review passes. Known small follow-ups: 1 staleness false positive (TRIUMPH-1 blog
 line is TRUE, source-pack status triggers it); freshness scout missed in-window SYNCHRONIZE-1
 (audit its queries before next run); 2 baselined identifier-less sources (dihexa, dsip).
 

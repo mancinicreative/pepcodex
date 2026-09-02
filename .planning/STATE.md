@@ -1,6 +1,16 @@
-# Project State: PepCodex
+﻿# Project State: PepCodex
 
 *Last updated: 2026-09-02*
+
+## PAUSED 2026-09-02
+
+- Branch: `feat/scoring-and-freshness` (not `main`; not production).
+- Work SHA already on origin: `90f51d5` (`90f51d59c301d2162f7f267bd61a806cae2d4c4f`). Wave 0 clinic/protocol/directory freeze, cited-only leftover drain, and W0-6 reconstitution calculators (mass/volume only; tesamorelin calculator not 301'd; old tesamorelin 301 removed from `vercel.json`).
+- Next unstarted slice: **W0-7** sitewide `X-Robots-Tag` (do not start). W0-6 done on disk and in `90f51d5`.
+- Judge paused. TICK37 UNCLOSED — not KEEP.
+- Leftover refill frozen.
+- Blocked on Lucas: Other Models, TICK6-PRICE, WAF/GA4 Admin, production ship.
+
 
 ## SEO Engine playbook (2026-09-01) — Wave 2 in progress
 

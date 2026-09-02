@@ -385,7 +385,7 @@ Leftover (not this slice): `src/content/cities/*.mdx` `metaDescription` still sa
 
 ## Next slice (unblocked)
 
-**W0-6 · Calculators — strip dosing product** — `src/content/calculators/*.mdx`, `CalculatorLayout.astro`, reconstitution `[slug].astro`. Dilution math only, or unpublish. Do **not** add a 301 for `/calculator/reconstitution/tesamorelin` on `main`. No HowTo schema. No new calculator URLs. Then W0-7…W0-9. Do not start Wave 1.
+**W0-6 · Calculators — strip dosing product** — done this session (see below). Then **W0-7**.
 
 ## Blockers
 
@@ -393,4 +393,87 @@ Leftover (not this slice): `src/content/cities/*.mdx` `metaDescription` still sa
 - **Production hotfix PR** — clean worktree from `origin/main`, commit, push, Lucas merge. Not this session. Do not merge this branch.
 - **WAF apply** — still Lucas.
 - **TICK37 KEEP** — UNCLOSED; do not Grok-stamp.
+
+---
+
+# W0-6 · Calculators — strip dosing product
+
+**Agent:** implementer (this session)
+**Plan:** `.planning/master-audit-2026-09-02/CURSOR-IMPLEMENTATION-PLAN.md` · Wave 0 · **W0-6** (HANDOFF T-06 / A-011 / B-011)
+**Branch:** `feat/scoring-and-freshness` (dirty). Did **not** checkout `origin/main`. Did **not** live-GET pepcodex.com.
+**Commit:** none (Lucas did not ask). **Judge / KEEP:** none.
+**Status:** **done** (source-level). Live GET on production still **blocked on Lucas**.
+
+## Why this slice
+
+All four reconstitution pages listed “Desired dose (mcg): the amount you want to draw per administration” and told the reader the tool returns **volume per dose**. There is no interactive widget — the product *was* that copy. Plan: dilution math only, or unpublish. Kept the four existing URLs (net URL **0**). **Did not 301** `/calculator/reconstitution/tesamorelin` (live is 200; this branch had a 301 that would kill that 200 — removed it). No HowTo schema. No new `/calculator/*`.
+
+## What changed
+
+- Four calculator MDX: dropped desired-dose input, volume-per-dose output, peptide-specific “typical vial” tables, and “How to Use” (qa-banned `how to use`). Body is mass ÷ volume → mg/mL / mcg/mL only. Tesamorelin keeps HIV-associated lipodystrophy / Egrifta prescribing-information pointer to the existing dossier (no invented label URL).
+- `CalculatorLayout.astro`: no `/calculator/` crumb (no index page; would 404 + trailing slash). Peptide dossier href Set-guarded from `getCollection('peptides')` (`entry.slug`), no trailing slash. Misses render as text. HowToSchema not imported.
+- `vercel.json`: **removed** the feature-branch 301 `/calculator/reconstitution/tesamorelin` → `/peptides/tesamorelin`. Tesamorelin calculator stays a 200 on this tree. Left `/calculator/accumulation/retatrutide` 301 (not in the W0-6 URL list).
+- `[slug].astro`: unread for edit — `getStaticPaths` still emits the same four `peptideSlug` routes.
+
+Net sitemap URL: **0**. lastUpdated bumped on the four MDX (product claim changed). No `BaseLayout.astro`. No W0-7 `X-Robots-Tag` edit.
+
+## Files touched
+
+- `src/content/calculators/tesamorelin-reconstitution.mdx`
+- `src/content/calculators/igf-1-lr3-reconstitution.mdx`
+- `src/content/calculators/hexarelin-reconstitution.mdx`
+- `src/content/calculators/cagrilintide-reconstitution.mdx`
+- `src/layouts/CalculatorLayout.astro`
+- `vercel.json` (tesamorelin calculator 301 removed only)
+
+## Commands actually run
+
+```text
+git branch --show-current
+git status -sb
+Select-String calculator / HowTo / desired dose (src + vercel)
+node scripts/qa-banned-content.js src/content/calculators/tesamorelin-reconstitution.mdx
+node scripts/qa-banned-content.js src/content/calculators/igf-1-lr3-reconstitution.mdx
+node scripts/qa-banned-content.js src/content/calculators/hexarelin-reconstitution.mdx
+node scripts/qa-banned-content.js src/content/calculators/cagrilintide-reconstitution.mdx
+node scripts/qa-medical-advice.mjs
+```
+
+Did **not** run `astro build` / `graph:check` / Quality Judge. Did **not** curl production. Did **not** add a tesamorelin 301.
+
+## Check results (source, not rendered HTML)
+
+| Check | Result |
+|---|---|
+| `desired dose` / `volume per dose` in calculator MDX + layout + `[slug].astro` | **0** |
+| Typical-vial tables | **gone** |
+| HowToSchema on calculator pages | **not imported** |
+| qa-banned-content (4 MDX) | **PASS** each |
+| qa:advice (`qa-medical-advice.mjs`, 877 files) | **PASS** (includes calculators) |
+| Tesamorelin calculator 301 in `vercel.json` | **removed** (not added) |
+| New `/calculator/*` URLs | **none** (same 4 reconstitution slugs) |
+| `/calculator/reconstitution/tesamorelin` | **still a built path** (200, not 301) |
+
+Local GET of calculator HTML is **not** done this slice.
+
+## Next slice (unblocked)
+
+**W0-7 · Sitewide `X-Robots-Tag: index, follow`** — delete the blanket `vercel.json` `/(.*)` header, or emit `noindex, follow` only on noindex routes (`/clinics*`, generic glossary, 404). Homepage must stay indexable. Then W0-8…W0-9. Do not start Wave 1.
+
+## Blockers
+
+- **Live GET of `/calculator/reconstitution/tesamorelin` on production `main`** — **blocked on Lucas**. This-branch source no longer 301s that URL and no longer advertises desired-dose → draw volume. pepcodex.com still serves whatever `main` has until the same MDX/layout ship (without copying this branch’s old tesamorelin 301).
+- **Production hotfix PR** — clean worktree from `origin/main`, commit, push, Lucas merge. Not this session. Do not merge this branch. Do not copy the accumulation/retatrutide 301 onto `main` unless that live URL is already gone.
+- **WAF apply** — still Lucas.
+- **TICK37 KEEP** — UNCLOSED; do not Grok-stamp.
+
+
+## PAUSED 2026-09-02
+
+- Branch: `feat/scoring-and-freshness` (not `main`; not production).
+- Work SHA already on origin: `90f51d5` (`90f51d59c301d2162f7f267bd61a806cae2d4c4f`). Wave 0 clinic/protocol/directory freeze, cited-only leftover drain, and W0-6 reconstitution calculators (mass/volume only; tesamorelin calculator not 301'd; old tesamorelin 301 removed from `vercel.json`).
+- Next unstarted slice: **W0-7** sitewide `X-Robots-Tag` (do not start). W0-6 done on disk and in `90f51d5`.
+- Judge paused. TICK37 UNCLOSED — not KEEP.
+- Leftover refill frozen.
+- Blocked on Lucas: Other Models, TICK6-PRICE, WAF/GA4 Admin, production ship.
 

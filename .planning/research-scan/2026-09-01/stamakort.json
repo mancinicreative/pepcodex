@@ -1,0 +1,39 @@
+{
+  "slug": "stamakort",
+  "name": "Stamakort",
+  "windowFrom": "2026-02-01",
+  "scannedAt": "2026-09-01",
+  "newPapers": [],
+  "newTrials": [],
+  "updatedTrials": [],
+  "queriedAliases": [
+    {
+      "alias": "Stamakort",
+      "retrieved": 0,
+      "total": 0
+    },
+    {
+      "alias": "Stamakort A-10",
+      "retrieved": 200,
+      "total": 5443
+    }
+  ],
+  "suspectGenericAliases": [
+    {
+      "alias": "Stamakort A-10",
+      "total": 5443,
+      "primaryTotal": 0,
+      "reason": "returns 5443 records where the primary name \"Stamakort\" returns 0; it is naming a category, not this compound"
+    }
+  ],
+  "truncated": {
+    "perAlias": [
+      {
+        "alias": "Stamakort A-10",
+        "retrieved": 200,
+        "total": 5443
+      }
+    ],
+    "note": "Some aliases returned more hits than were retrieved (cap 200). Narrow the window (--days) or raise retmax for full coverage."
+  }
+}

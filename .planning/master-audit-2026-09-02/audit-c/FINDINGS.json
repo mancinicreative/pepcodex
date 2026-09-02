@@ -1,0 +1,373 @@
+{
+  "audit": "C",
+  "date": "2026-09-02",
+  "auditor": "Audit C — directory marketplace / affiliate / consumer-trust / clinic-acquisition",
+  "mode": "AUDIT ONLY",
+  "finding_count": 22,
+  "severity_counts": { "critical": 3, "high": 8, "medium": 9, "low": 2 },
+  "findings": [
+    {
+      "id": "C-001",
+      "severity": "critical",
+      "category": "clinic_integrity",
+      "title": "All 52 clinic records are fictional placeholders, not real businesses",
+      "summary": "Every clinic MDX uses an IANA-reserved example.com website, a NANPA-reserved 555 telephone, an empty body, no license/NPI/clinician, and a nickname-generator trade name. Independent web searches of a stratified 11-clinic sample (featured, unverified, prestige-address, and orphan records) found zero matching businesses. Nearby real clinics have different legal names and addresses.",
+      "surfaces": ["CLINIC-RECORD-1176", "CLINIC-RECORD-1177", "CLINIC-RECORD-1178", "CLINIC-RECORD-1179", "CLINIC-RECORD-1180", "CLINIC-RECORD-1181", "CLINIC-RECORD-1182", "CLINIC-RECORD-1183", "CLINIC-RECORD-1184", "CLINIC-RECORD-1185", "CLINIC-RECORD-1186", "CLINIC-RECORD-1187", "CLINIC-RECORD-1188", "CLINIC-RECORD-1189", "CLINIC-RECORD-1190", "CLINIC-RECORD-1191", "CLINIC-RECORD-1192", "CLINIC-RECORD-1193", "CLINIC-RECORD-1194", "CLINIC-RECORD-1195", "CLINIC-RECORD-1196", "CLINIC-RECORD-1197", "CLINIC-RECORD-1198", "CLINIC-RECORD-1199", "CLINIC-RECORD-1200", "CLINIC-RECORD-1201", "CLINIC-RECORD-1202", "CLINIC-RECORD-1203", "CLINIC-RECORD-1204", "CLINIC-RECORD-1205", "CLINIC-RECORD-1206", "CLINIC-RECORD-1207", "CLINIC-RECORD-1208", "CLINIC-RECORD-1209", "CLINIC-RECORD-1210", "CLINIC-RECORD-1211", "CLINIC-RECORD-1212", "CLINIC-RECORD-1213", "CLINIC-RECORD-1214", "CLINIC-RECORD-1215", "CLINIC-RECORD-1216", "CLINIC-RECORD-1217", "CLINIC-RECORD-1218", "CLINIC-RECORD-1219", "CLINIC-RECORD-1220", "CLINIC-RECORD-1221", "CLINIC-RECORD-1222", "CLINIC-RECORD-1223", "CLINIC-RECORD-1224", "CLINIC-RECORD-1225", "CLINIC-RECORD-1226", "CLINIC-RECORD-1227", "DIRECTORY-1252", "CITY-CLINIC-PAGE-1152"],
+      "evidence": [
+        "CLINIC-RECORDS.csv: clinic_placeholder_websites 52 / clinic_placeholder_phones 10; Audit C file read confirms 52/52 example.com and 52/52 555 phones",
+        "Live https://www.pepcodex.com/clinics/new-york (2026-09-02): Manhattan Peptide Clinic, Verified badge, 445 Park Avenue, tel:2125550600, https://example.com/manhattan-peptide",
+        "HEAD https://example.com/manhattan-peptide → 404",
+        "Web search 2026-09-02: no 'Manhattan Peptide Clinic' at 445 Park Avenue; real Park Avenue peptide practice is Dr. GolBerg at 910 Park Avenue",
+        "Same null result for Alamo Wellness & Peptide Center, Prime Wellness Scottsdale, Vitality Wellness Center (Miami), Regenerative Health Institute (9000 Wilshire), Beacon Wellness Boston, Pacific Integrative Wellness (450 Sutter), Treasure Valley Peptide Institute, Northwest Peptide & Wellness, Queen City Peptide Institute, Elite Wellness & Longevity Center (875 N Michigan)"
+      ],
+      "impact": "Direct visitors to noindexed /clinics/[city] are shown invented healthcare businesses with Call and Website buttons. This is a consumer-trust failure and a deceptive-practices exposure even while pages are noindex,follow.",
+      "recommendation": "Quarantine/remove all 52 records before any outreach, paid listing, or reindex. Do not treat them as a prospect list. First step is deletion or a clearly labeled demo-data takedown, not sales.",
+      "confidence": "high",
+      "legal_review": true,
+      "status_if_clinic": "FICTIONAL_PLACEHOLDER"
+    },
+    {
+      "id": "C-002",
+      "severity": "critical",
+      "category": "consumer_trust",
+      "title": "50 of 52 fictional clinics display a green Verified badge; copy claims listings were vetted",
+      "summary": "verifiedListing defaults false in Zod but is set true on 50 records. ClinicCard and FeaturedClinicCard render a success 'Verified' badge. /clinics index: 'We verify listings to ensure you're connecting with legitimate healthcare providers.' City FAQ (×60): 'Verified listings in our directory have been vetted for these criteria' (licensed professionals, compounding-pharmacy sourcing, labs, transparent pricing). Schema has no verification source, last-checked date, or license field. The two verifiedListing:false records (Pacific SF, Northwest Seattle) are still example.com/555 placeholders.",
+      "surfaces": ["TEMPLATE-1281", "TEMPLATE-1282", "TEMPLATE-1297", "DIRECTORY-1252", "src/content/config.ts"],
+      "evidence": [
+        "src/components/ClinicCard.astro lines 38-45: verifiedListing && badge 'Verified'",
+        "src/pages/clinics/index.astro: 'We verify listings to ensure you're connecting with legitimate healthcare providers.'",
+        "src/pages/clinics/[city].astro FAQ item 2: 'Verified listings in our directory have been vetted for these criteria.'",
+        "INVENTORY-SUMMARY.json: clinic_verified_true 50"
+      ],
+      "impact": "FTC Endorsement Guides (16 CFR 255) and the 2024 Fake Reviews and Testimonials Rule treat fabricated independent quality signals as deceptive. A 'Verified' badge on a nonexistent clinic is an endorsement of a business that does not exist.",
+      "recommendation": "Remove Verified UI until an independent methodology exists. Never sell the badge. Document last-checked + source on every live listing.",
+      "confidence": "high",
+      "legal_review": true
+    },
+    {
+      "id": "C-003",
+      "severity": "high",
+      "category": "multiplied_template_claims",
+      "title": "City FAQPage schema and meta copy invent verified providers, typical peptide menus, and $100–$300 consults across ~60 pages",
+      "summary": "Shared FAQs in [city].astro emit FAQPage JSON-LD on every city URL. Empty cities still say the city 'has multiple peptide therapy clinics'. All 60 city metaDescriptions say 'verified providers'. Consult price $100-$300 is unsourced. Typical menus (BPC-157, semaglutide, CJC-1295/ipamorelin) are asserted as what clinics in that city 'typically offer' even when the only listed clinic is fictional or the city has zero clinics.",
+      "surfaces": ["TEMPLATE-1297", "TEMPLATE-1288", "CITY-CLINIC-PAGE-1116", "CITY-CLINIC-PAGE-1117", "CITY-CLINIC-PAGE-1132", "CITY-CLINIC-PAGE-1152", "CITY-CLINIC-PAGE-1173"],
+      "evidence": [
+        "src/pages/clinics/[city].astro faqItems: if cityClinics.length===0 answer uses 'multiple'",
+        "FAQ: 'Initial consultations typically range from $100-$300'",
+        "Live /clinics/new-york 2026-09-02: FAQPage=true, 3 ld+json blocks, robots noindex,follow",
+        "All 60 city MDX metaDescription strings contain 'verified providers' (grep 2026-09-02)",
+        "12 cities have zero clinic records (Anaheim, Arlington, El Paso, Fort Worth, Fresno, Irvine, Long Beach, Mesa, Oakland, Riverside, Tulsa, Virginia Beach) but still ship the FAQ"
+      ],
+      "impact": "Template claims multiply. noindex,follow still serves the claims to humans and to any crawler that fetches. FAQ schema on a noindexed page is lower SEO risk than indexable doorway pages, but it remains a truth-in-advertising problem for anyone who lands there.",
+      "recommendation": "Delete or rewrite FAQs to omit verification, prices, and 'multiple clinics' unless a counted, verified inventory exists. Empty cities must not claim providers.",
+      "confidence": "high",
+      "legal_review": true
+    },
+    {
+      "id": "C-004",
+      "severity": "high",
+      "category": "paid_placement",
+      "title": "Featured Partners get priority placement while advertising-policy does not define or label clinic featured listings",
+      "summary": "Three records (Prime Wellness Scottsdale, Regenerative Health Institute, Vitality Wellness Center) have featured:true and render in a 'Featured Clinics' ribbon via FeaturedClinicCard. Index stats: '3 Featured Partners'. CTAs: 'Featured listings get priority placement' / 'Featured Listing Options' → /advertising-policy. Advertising policy (live, last updated January 2026) lists founding partners, newsletter sponsorships, and educational partnerships only. It does not mention clinic featured listings, prices, or that Featured is paid. Current Sponsors section is empty. Featured is not labeled 'Sponsored'.",
+      "surfaces": ["CLINIC-RECORD-1214", "CLINIC-RECORD-1217", "CLINIC-RECORD-1226", "DIRECTORY-1252", "TRUST-1230", "TEMPLATE-1282"],
+      "evidence": [
+        "Live /clinics 2026-09-02: '3 Featured Partners' and 'Featured listings get priority placement'",
+        "Live /advertising-policy: 'We list all current sponsors on this page' + empty founding-partners pitch; no clinic SKU",
+        "FeaturedClinicCard.astro: 'Featured' ribbon, not 'Sponsored'"
+      ],
+      "impact": "If Featured is or becomes paid, undisclosed ranking influence + fake businesses in the paid slot is both FTC material-connection and fake-listing exposure. Even if currently unpaid demo data, the CTA sells priority placement.",
+      "recommendation": "Do not sell featured listings on the current inventory. If a paid SKU launches later, label Sponsored, keep organic sort independent of payment, and never bundle Verified. LEGAL REVIEW before any healthcare advertising SKU.",
+      "confidence": "high",
+      "legal_review": true
+    },
+    {
+      "id": "C-005",
+      "severity": "high",
+      "category": "consumer_harm",
+      "title": "Call and Website buttons point at 555 numbers and example.com 404s",
+      "summary": "ClinicCard/FeaturedClinicCard emit tel: links (digits only) and target=_blank website links with rel=noopener noreferrer only. Live NY page: Call → tel:2125550600; Website → https://example.com/manhattan-peptide (404). No warning that the listing is a placeholder.",
+      "surfaces": ["TEMPLATE-1281", "TEMPLATE-1282", "CITY-CLINIC-PAGE-1152"],
+      "evidence": [
+        "ClinicCard.astro href={`tel:${phone.replace(/[^0-9+]/g, '')}`}",
+        "Live probe 2026-09-02: example.com/manhattan-peptide HTTP 404"
+      ],
+      "impact": "Users who trust Verified may dial unassigned numbers or land on example.com. Harm is operational and reputational now; if numbers were ever real-but-wrong, harm would be worse.",
+      "recommendation": "Disable Call/Website on unverified records. Never ship example.com in production UI.",
+      "confidence": "high",
+      "legal_review": false
+    },
+    {
+      "id": "C-006",
+      "severity": "high",
+      "category": "legal_ftc",
+      "title": "Fictional healthcare listings + independent-quality claims trigger FTC deception and fake-reviews rule analysis",
+      "summary": "16 CFR 255 (Endorsement Guides, updated 2023) requires endorsements to be honest and material connections disclosed. The August 2024 Fake Reviews and Testimonials Rule prohibits reviews/testimonials by someone who does not exist, and prohibits misrepresenting that a site provides independent reviews of a category that includes the operator's own commercial interest. A directory of invented clinics with Verified badges is closer to fabricated independent listings than to labeled demo content.",
+      "surfaces": ["DIRECTORY-1252", "DIRECTORY-1237", "TRUST-1230"],
+      "evidence": [
+        "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-255",
+        "https://www.ftc.gov/news-events/news/press-releases/2024/08/federal-trade-commission-announces-final-rule-banning-fake-reviews-testimonials",
+        "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+      ],
+      "impact": "Civil-penalty exposure if the Rule's 'someone who does not exist' prong is read onto business listings/testimonials. Even if counsel distinguishes listings from 'reviews,' Section 5 deception still applies to Verified + 'legitimate healthcare providers.' LEGAL REVIEW — not a conclusion of liability.",
+      "recommendation": "Counsel review before any directory remains publicly reachable. Quarantine is the conservative operational move.",
+      "confidence": "high",
+      "legal_review": true
+    },
+    {
+      "id": "C-007",
+      "severity": "high",
+      "category": "legal_fda_compounding",
+      "title": "Clinic menus advertise compounded/research peptides FDA has flagged or proposed to exclude from 503A bulks",
+      "summary": "Across 52 records, menus include BPC-157 (30), TB-500 (17), MK-677/ibutamoren (6), Semax (7), Epithalon/Epitalon (14), MOTS-c (2), KPV (1), LL-37 (1), Kisspeptin (1), DSIP (2), plus GLP-1s. FDA Category 2 / significant-safety-risk pages list BPC-157 and LL-37 among others; 503A Category 2 includes ibutamoren mesylate and kisspeptin-10. July 23–24 2026 PCAC briefing proposed BPC-157, TB-500, MOTS-c, Semax, Epitalon, KPV, DSIP/emideltide NOT be included on the 503A bulks list (FDA proposal; committee outcome not independently confirmed here). Site policies already ban vendor recommendations and dosing. Directory copy still tells users clinics offer these as therapies and that reputable clinics source from FDA-registered compounders.",
+      "surfaces": ["DIRECTORY-1252", "TEMPLATE-1297", "TRUST-1240"],
+      "evidence": [
+        "https://www.fda.gov/drugs/human-drug-compounding/certain-bulk-drug-substances-use-compounding-may-present-significant-safety-risks",
+        "https://www.fda.gov/media/94155/download (503A categories updated May 14, 2026 — Ibutamoren Mesylate, Kisspeptin-10 in Category 2)",
+        "https://www.fda.gov/advisory-committees/advisory-committee-calendar/july-23-24-2026-meeting-pharmacy-compounding-advisory-committee-07232026",
+        "https://www.fda.gov/drugs/drug-alerts-and-statements/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss (compounded GLP-1 concerns; retatrutide/cagrilintide cannot be compounded)",
+        "Peptide-menu counts from 52 MDX files 2026-09-02"
+      ],
+      "impact": "Even as education-adjacent directory copy, asserting that named clinics 'offer' BPC-157/TB-500/MK-677 as therapy, and that PepCodex vetted compounding-pharmacy sourcing, conflicts with the site's own sourcing ban and with FDA compounding posture. LEGAL REVIEW.",
+      "recommendation": "Do not rebuild a clinic directory that markets Category 2 / non-bulks peptides as offered services. If a future directory exists, restrict displayed services to named, licensed, inspectable offerings and do not invent menus.",
+      "confidence": "high",
+      "legal_review": true
+    },
+    {
+      "id": "C-008",
+      "severity": "high",
+      "category": "google_spam",
+      "title": "60 near-duplicate city pages match doorway + scaled-content patterns; currently noindex and sitemap-excluded",
+      "summary": "Google spam policies (developers.google.com/search/docs/essentials/spam-policies, reviewed 2026-08-28) define doorway abuse as pages created to rank for similar queries and scaled content abuse as many pages generated primarily to manipulate rankings. 60 city pages share one FAQ template, ~230–317 character unique-but-formulaic content, and identical 'verified providers' metas. Historical comment in [city].astro: 61 clinic URLs produced 311 impressions and 2 clicks in 5.8 months. They are now robots=noindex,follow and filtered from the sitemap. /directory remains indexable and promises a 'curated list of verified' clinics as Coming Soon. Expired-domain abuse: not evidenced. Site-reputation abuse: clinic block is first-party, not third-party parasite SEO.",
+      "surfaces": ["TEMPLATE-1297", "DIRECTORY-1237", "DIRECTORY-1252"],
+      "evidence": [
+        "https://developers.google.com/search/docs/essentials/spam-policies (doorway abuse, scaled content abuse, site reputation policy, expired domain abuse)",
+        "astro.config.mjs filter drops /clinics",
+        "Live /clinics and /clinics/new-york: meta robots noindex, follow",
+        "Live /directory: no robots meta (indexable), title 'Directory - Coming Soon'"
+      ],
+      "impact": "Re-indexing this set without unique verified businesses would recreate doorway/scaled-content risk and waste crawl budget (project constraint). noindex does not erase human-facing deception.",
+      "recommendation": "Keep deindexed. Do not reindex city pages until real, unique, verified listings exist. Do not add more city URLs. Consider removing the template from the build entirely.",
+      "confidence": "high",
+      "legal_review": false
+    },
+    {
+      "id": "C-009",
+      "severity": "medium",
+      "category": "product_contradiction",
+      "title": "Indexable /directory says Coming Soon while noindexed /clinics already lists 52 clinics as live",
+      "summary": "Footer and llms.txt advertise 'Clinic Directory' at /directory. That page is indexable, promises verified clinics and telehealth, and asks people to get listed. /clinics is a separate live directory of 52 listings, noindex, not in footer. Contact form includes Directory Listing Request. Users and models are told the directory has not launched while a fake directory is already serving.",
+      "surfaces": ["DIRECTORY-1237", "DIRECTORY-1252", "MACHINE-1261", "MACHINE-1262", "TEMPLATE-1266", "TRUST-1235"],
+      "evidence": [
+        "Live /directory 2026-09-02: Coming Soon, no robots meta",
+        "src/pages/llms.txt.ts: 'Clinic Directory: .../directory'",
+        "src/pages/llms-full.txt.ts: 'US peptide clinic finder'",
+        "BaseLayout.astro footer link /directory not /clinics"
+      ],
+      "impact": "Confuses product state. Indexable Coming Soon page still claims 'verified' future listings. llms.txt can spread the finder claim into AI systems.",
+      "recommendation": "Pick one URL. Until real listings exist, /directory should not claim verified clinics. Remove 'US peptide clinic finder' from llms files.",
+      "confidence": "high",
+      "legal_review": false
+    },
+    {
+      "id": "C-010",
+      "severity": "medium",
+      "category": "privacy",
+      "title": "Directory/partnership leads go to FormSubmit.co with captcha disabled; privacy policy omits this processor and health-adjacent free text",
+      "summary": "contact.astro posts to https://formsubmit.co/info@pepcodex.com, _captcha=false, subjects include Directory Listing Request and Partnership. Privacy policy (June 2026) covers GA4, Beehiiv-like newsletter, PepTracker local data, Sentry, RevenueCat — not FormSubmit, not clinic-lead content, not potential PHI in free-text messages. Newsletter uses /api/subscribe → Beehiiv. No clinic-specific retention, DPA, or 'do not submit health information' warning on the listing-request path.",
+      "surfaces": ["TRUST-1235", "TRUST-1246", "API-1265"],
+      "evidence": [
+        "src/pages/contact.astro action=https://formsubmit.co/info@pepcodex.com _captcha=false",
+        "src/pages/privacy.astro last updated June 2026 — no FormSubmit mention"
+      ],
+      "impact": "Health-adjacent lead data (patient inquiries or clinic PHI dumps) would sit at a third-party form host. Not automatically HIPAA, but a privacy and security gap if the directory becomes a referral service. LEGAL REVIEW if lead-gen launches.",
+      "recommendation": "Do not collect clinic/patient leads on this stack. If contact remains, name the processor, enable captcha/bot controls, add a no-PHI notice, and execute a DPA. See PAID-LISTING-MODEL.md privacy questions.",
+      "confidence": "high",
+      "legal_review": true
+    },
+    {
+      "id": "C-011",
+      "severity": "medium",
+      "category": "process_gap",
+      "title": "No clinic correction, appeal, claim, reporting, or audit-trail process exists",
+      "summary": "Editorial policy describes content corrections. Contact has Content Correction and Directory Listing Request. There is no clinic-claim flow, no public complaint path, no last-checked field, no changelog, no takedown SLA, no identity verification for a clinic asserting 'this is not us.' Schema cannot store verification source.",
+      "surfaces": ["TRUST-1239", "TRUST-1235", "src/content/config.ts"],
+      "evidence": [
+        "clinics collection schema: name, city, state, address, phone, website, services, peptides, featured, verifiedListing, description, seoFields — no lastChecked, no source, no license",
+        "editorial-policy.astro corrections apply to editorial content, not listings"
+      ],
+      "impact": "If a real business were defamed by a colliding invented name (e.g. 'Queen City Wellness' vs Cincinnati/Charlotte nicknames), there is no operational way to process the complaint except a generic contact form.",
+      "recommendation": "Do not relaunch listings without claim/correction/takedown SLAs. Draft in PAID-LISTING-MODEL.md.",
+      "confidence": "high",
+      "legal_review": false
+    },
+    {
+      "id": "C-012",
+      "severity": "medium",
+      "category": "schema_gap",
+      "title": "Clinic/city Zod schemas cannot represent a real healthcare listing",
+      "summary": "No legal entity name vs DBA, ownership, NPI, license number/jurisdiction, operating status, hours, telehealth flag, insurance, prices, last_checked, verification_source, or clinician. State is a free string mixing 'TX' and 'Texas'. featured and verifiedListing are booleans with no audit fields.",
+      "surfaces": ["src/content/config.ts"],
+      "evidence": ["src/content/config.ts clinics collection lines 371-387; cities 390-401"],
+      "impact": "Any future real listing would still look like a marketing card. The schema pressures invention the same way a required dose field does.",
+      "recommendation": "Do not collect live listings in this schema. Redesign before ingesting real clinics.",
+      "confidence": "high",
+      "legal_review": false
+    },
+    {
+      "id": "C-013",
+      "severity": "medium",
+      "category": "inventory_hygiene",
+      "title": "Four clinics are orphaned from city pages; 12 city pages have zero clinics but still claim providers",
+      "summary": "Commonwealth Wellness Center (Richmond), Gold Coast (Fort Lauderdale), Treasure Valley (Boise), Wasatch (Salt Lake City) have no matching cities collection name, so [city].astro never renders them. 12 city pages have 0 clinics. FAQ fallback still says 'multiple'. Index clinic-count badges are also broken (clinicCountByCity keys from slugified clinic.city vs city.id).",
+      "surfaces": ["CLINIC-RECORD-1188", "CLINIC-RECORD-1196", "CLINIC-RECORD-1224", "CLINIC-RECORD-1227", "DIRECTORY-1252", "CITY-CLINIC-PAGE-1117"],
+      "evidence": [
+        "Live /clinics popular cities show no 'N clinics' badges 2026-09-02",
+        "src/pages/clinics/index.astro clinicCountByCity[city.id] vs clinic.data.city slug"
+      ],
+      "impact": "Directory is not a working product even as a demo: listings vanish, empty cities still market verified providers, counts do not show.",
+      "recommendation": "Quarantine all. Do not patch counts on fake data.",
+      "confidence": "high",
+      "legal_review": false
+    },
+    {
+      "id": "C-014",
+      "severity": "low",
+      "category": "engineering",
+      "title": "Index clinic-count-by-city never displays on live /clinics",
+      "summary": "clinicCountByCity is keyed by slugified clinic.data.city; lookup uses city.id. Live popular-city cards have no clinic counts. Separate issue from city.id.mdx trailing-extension lessons, but same class of derived-key bugs.",
+      "surfaces": ["DIRECTORY-1252"],
+      "evidence": ["Live /clinics 2026-09-02 popular cities: New York, Los Angeles, etc. with no clinic-count badge"],
+      "impact": "Cosmetic on a noindexed page; diagnostic that the directory was never productized.",
+      "recommendation": "Do not spend crawl or eng budget fixing counts for fictional inventory.",
+      "confidence": "high",
+      "legal_review": false
+    },
+    {
+      "id": "C-015",
+      "severity": "high",
+      "category": "unsupported_claims",
+      "title": "Listings assert board-certified physicians, Harvard affiliation, stem cell therapy, and other unearned credentials",
+      "summary": "Vitality Wellness Center: 'board-certified physicians'. Beacon Wellness: 'Harvard-affiliated expertise'. Regenerative Health Institute: Stem Cell Therapy service. Texas Metabolic: Diabetes Prevention. Prime Wellness: Performance Enhancement. No named clinicians, licenses, or board certifications exist to check. These are invented professional claims.",
+      "surfaces": ["CLINIC-RECORD-1226", "CLINIC-RECORD-1179", "CLINIC-RECORD-1217", "CLINIC-RECORD-1223", "CLINIC-RECORD-1214"],
+      "evidence": [
+        "vitality-wellness-miami.mdx description",
+        "beacon-wellness-boston.mdx description",
+        "regenerative-health-la.mdx services includes Stem Cell Therapy"
+      ],
+      "impact": "Unauthorized practice / credential advertising risk if treated as real; consumer deception if treated as demo that looks real. Several states restrict healthcare advertising of board certification and affiliations.",
+      "recommendation": "Delete copy. Never allow affiliation or board-cert claims without a verified license record.",
+      "confidence": "high",
+      "legal_review": true
+    },
+    {
+      "id": "C-016",
+      "severity": "medium",
+      "category": "policy_conflict",
+      "title": "About, Terms, Editorial, and Advertising policies conflict with the live directory",
+      "summary": "About: 'We don't recommend sources.' Terms: site does NOT provide product recommendations, sourcing, or healthcare services. Editorial excludes sourcing/purchasing. Advertising rejects peptide-vendor ads and pay-for-play. Directory: Get Listed Free, Featured priority, research-peptide clinic menus, Call/Website to providers.",
+      "surfaces": ["TRUST-1229", "TRUST-1250", "TRUST-1239", "TRUST-1230", "DIRECTORY-1252"],
+      "evidence": [
+        "src/pages/about.astro What We Don't Do",
+        "src/pages/terms.astro section 2",
+        "src/pages/advertising-policy.astro What We Don't Accept"
+      ],
+      "impact": "Policy vs product. A future paid clinic SKU without a policy rewrite would be an undisclosed exception.",
+      "recommendation": "Keep policies. Remove or fully rebuild the directory to match them. Draft rewrite lives in PAID-LISTING-MODEL.md — do not ship without legal review.",
+      "confidence": "high",
+      "legal_review": true
+    },
+    {
+      "id": "C-017",
+      "severity": "medium",
+      "category": "city_copy",
+      "title": "City content asserts local market and regulatory facts that are unsourced",
+      "summary": "Examples: Phoenix content claims 'Arizona's favorable regulatory environment has attracted numerous integrative medicine practices.' Seattle claims 'numerous peptide therapy clinics' and 'evidence-based protocols' while the only Seattle record is a fictional unverified placeholder. DC content names Bethesda and Arlington (not DC). Anaheim content names Newport Beach. All metas claim verified providers.",
+      "surfaces": ["CITY-CLINIC-PAGE-1158", "CITY-CLINIC-PAGE-1169", "CITY-CLINIC-PAGE-1175", "CITY-CLINIC-PAGE-1117"],
+      "evidence": [
+        "src/content/cities/phoenix.mdx content field",
+        "src/content/cities/seattle.mdx content field"
+      ],
+      "impact": "Unsourced legal/regulatory characterization of a US state. Multiplied across the template set as local SEO filler.",
+      "recommendation": "Strip regulatory and 'numerous clinics' claims. City pages should not exist without real listings.",
+      "confidence": "high",
+      "legal_review": true
+    },
+    {
+      "id": "C-018",
+      "severity": "high",
+      "category": "acquisition_ops",
+      "title": "Outreach and clinic acquisition must not use the current 52 records as a prospect list",
+      "summary": "Names collide with real nearby businesses (Alamo Peptides vendor, Pacific Integrative Psychiatry, Treasure Valley Aesthetics, Queen City Wellness as a generic label, Live Well Clinics on Michigan Ave). Emailing or calling those names as if they were the listing would be false personalization and possible impersonation of a listing relationship.",
+      "surfaces": ["CLINIC-RECORD-1176", "CLINIC-RECORD-1210", "CLINIC-RECORD-1224", "CLINIC-RECORD-1215"],
+      "evidence": ["Independent web searches 2026-09-02 — see CLINIC-VERIFICATION.json"],
+      "impact": "Outreach on this file would contact the wrong entities or invent emails. Playbook marked DRAFT — NOT SENT.",
+      "recommendation": "Quarantine first. Discovery of real clinics is a new pipeline from public sources, not this MDX folder.",
+      "confidence": "high",
+      "legal_review": true
+    },
+    {
+      "id": "C-019",
+      "severity": "medium",
+      "category": "affiliate",
+      "title": "Research-chem and peptide-vendor affiliates are incompatible with site policy and FDA compounding posture",
+      "summary": "Advertising policy already bans peptide-vendor advertising. Editorial excludes sourcing. Nearby name collisions include research-chem vendors (Alamo Peptides, Northwest Peptides). Commission on those programs would purchase a sourcing recommendation. Program terms were not enrolled into; several vendor sites are age-gated research-use-only. Marked REJECT in AFFILIATE-MATRIX.md. Commission terms: UNVERIFIABLE because programs were not opened/enrolled (authorization boundary).",
+      "surfaces": ["TRUST-1230", "TRUST-1239", "TRUST-1240"],
+      "evidence": [
+        "advertising-policy.astro What We Don't Accept: Advertising for peptide vendors or sources",
+        "alamopeptides.com and northwestpeptides.com are research-use vendors, not clinics"
+      ],
+      "impact": "Any such affiliate would be pay-for-sourcing, contradict the FDA notice, and risk Google thin-affiliation / site-reputation issues if parked on pepcodex.com.",
+      "recommendation": "REJECT research-chem affiliates. Do not enroll. See AFFILIATE-MATRIX.md.",
+      "confidence": "high",
+      "legal_review": true
+    },
+    {
+      "id": "C-020",
+      "severity": "low",
+      "category": "product_leak",
+      "title": "Directory 'verified' language does not leak into peptide dossiers; it does leak into llms.txt, footer, contact, and city metas",
+      "summary": "Homepage has no /clinics CTA (PepTracker/catalogue positioning). DossierLayout grep found no clinic-directory CTAs. Leak surfaces: footer /directory, llms.txt/llms-full.txt, contact subject, advertising-policy CTA from clinic pages, all 60 city metas, /directory coming-soon copy.",
+      "surfaces": ["HOME-1228", "MACHINE-1261", "MACHINE-1262", "TEMPLATE-1266", "DIRECTORY-1237"],
+      "evidence": [
+        "src/pages/index.astro CTAs: /peptides and /methodology only",
+        "grep /clinics in src/content/peptides: no directory links (hits are 'clinical')"
+      ],
+      "impact": "Editorial firewall around dossiers is currently intact for clinic CTAs. Machine/footer surfaces still advertise a finder.",
+      "recommendation": "Keep dossiers clean. Fix llms/footer/directory copy independently of any clinic relaunch.",
+      "confidence": "high",
+      "legal_review": false
+    },
+    {
+      "id": "C-021",
+      "severity": "medium",
+      "category": "wada_performance",
+      "title": "Several listings advertise performance enhancement and MK-677 (ibutamoren), a WADA-relevant / FDA Category 2 substance",
+      "summary": "MK-677 appears on 6 clinic menus (Brew City, Gateway, Midwest Performance, Pikes Peak, Wasatch, etc.). Prime Wellness lists Performance Enhancement. FDA 503A Category 2 includes Ibutamoren Mesylate. Site has USADA/WADA research resources elsewhere; directory does not disclose sport-drug status.",
+      "surfaces": ["CLINIC-RECORD-1182", "CLINIC-RECORD-1195", "CLINIC-RECORD-1204", "CLINIC-RECORD-1212", "CLINIC-RECORD-1227", "CLINIC-RECORD-1214"],
+      "evidence": [
+        "https://www.fda.gov/media/94155/download Category 2: Ibutamoren Mesylate",
+        "clinic MDX peptides arrays"
+      ],
+      "impact": "If ever attached to real clinics, this is both compounding and sport-anti-doping messaging. On fictional clinics it is still an unsourced therapy claim.",
+      "recommendation": "Do not republish MK-677/performance menus. LEGAL REVIEW for any future sports-adjacent clinic SKU.",
+      "confidence": "high",
+      "legal_review": true
+    },
+    {
+      "id": "C-022",
+      "severity": "medium",
+      "category": "state_telehealth_advertising",
+      "title": "No in-person vs telehealth flag; /directory promises telehealth peptide protocols; state advertising/telehealth rules not implemented",
+      "summary": "US states generally require a practitioner to be licensed in the patient's state for telehealth. Many medical boards restrict advertising of services, testimonials, and board certification (e.g. CA B&P advertising; TX Medical Board advertising rules; FL Board of Medicine). The directory does not collect license jurisdiction, does not geo-gate, and promises 'Remote consultations with licensed physicians specializing in peptide protocols' on an indexable page. This audit does not map all 50 states. LEGAL REVIEW required before any telehealth listing SKU. Do not assume referral fees or healthcare advertising are lawful.",
+      "surfaces": ["DIRECTORY-1237", "src/content/config.ts"],
+      "evidence": [
+        "src/pages/directory.astro Telehealth Providers blurb",
+        "No telehealth field in clinic schema"
+      ],
+      "impact": "A national peptide telehealth directory is a licensed-healthcare advertising product, not a blog section.",
+      "recommendation": "DEFER telehealth listings until counsel maps target states. See PAID-LISTING-MODEL.md legal checklist.",
+      "confidence": "medium",
+      "legal_review": true
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+import fs from "fs";
+
+const body = `---
+title: 5-Amino-1MQ vs VK2735
+peptideA: 5-amino-1mq
+peptideB: vk2735
+category: metabolic
+lastUpdated: 2026-09-02T00:00:00.000Z
+summary: >-
+  Cross-trial comparison of the NNMT inhibitor 5-amino-1-methylquinolinium
+  (5-Amino-1MQ) with Viking Therapeutics' GIP/GLP-1 agonist VK2735 (VENTURE,
+  13 weeks). Not a head-to-head RCT. This page found no published human
+  obesity RCT for 5-Amino-1MQ as of 2026-09-02. Oral VK2735 and VANQUISH are
+  design-only.
+metaTitle: "5-Amino-1MQ vs VK2735: Which Has Better Evidence?"
+metaDescription: >-
+  VENTURE 15 mg −14.7% vs −1.7% at 13 weeks (estimand not named). No human
+  obesity RCT percent for 5-Amino-1MQ on this page.
+faqs:
+  - question: What is the main difference between 5-Amino-1MQ and VK2735?
+    answer: >-
+      5-Amino-1MQ is the research name for 5-amino-1-methylquinolinium, a
+      small-molecule NNMT inhibitor. VK2735 is an investigational dual
+      GIP/GLP-1 receptor agonist. This page does not treat mouse
+      NNMT-inhibitor studies and VENTURE as one head-to-head result.
+  - question: 'Which has more clinical evidence, 5-Amino-1MQ or VK2735?'
+    answer: >-
+      There is no published head-to-head obesity RCT on this page. PubMed
+      aliases and ClinicalTrials.gov queries on 2026-09-02 returned no human
+      obesity RCT for 5-Amino-1MQ. VK2735 has a published Phase 2
+      subcutaneous weight trial (VENTURE). This page does not quote a live
+      source census.
+  - question: Are 5-Amino-1MQ and VK2735 FDA approved?
+    answer: >-
+      As of 2026-09-02, openFDA drugsfda returned no application for
+      generic_name 5-amino-1mq, 5-amino-1-methylquinolinium, or vk2735. Both
+      compounds are investigational on this page.
+  - question: Can 5-Amino-1MQ and VK2735 be used together?
+    answer: >-
+      There is no published clinical trial on this page that randomised
+      5-Amino-1MQ plus VK2735. Combination safety and efficacy are not
+      established here. This page does not recommend a combination.
+sources:
+  - id: nnmti-dio-mice-pmid-35013352
+    title: >-
+      Reduced calorie diet combined with NNMT inhibition establishes a
+      distinct microbiome in DIO mice
+    url: 'https://pubmed.ncbi.nlm.nih.gov/35013352/'
+    type: journal
+    pmid: '35013352'
+    doi: 10.1038/s41598-021-03670-5
+    verifiedAt: '2026-09-02'
+  - id: venture-pmid-41508550
+    title: >-
+      Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight
+      Management: Phase 2, Randomized, 13-Week VENTURE Study
+    url: 'https://pubmed.ncbi.nlm.nih.gov/41508550/'
+    type: journal
+    pmid: '41508550'
+    nctId: NCT06068946
+    doi: 10.1002/oby.70106
+    verifiedAt: '2026-09-02'
+  - id: nct05203237
+    title: Phase 1 Study to Evaluate the Safety and Tolerability of VK2735
+    url: 'https://clinicaltrials.gov/study/NCT05203237'
+    type: trial
+    nctId: NCT05203237
+    verifiedAt: '2026-09-02'
+  - id: nct06828055
+    title: VK2735 for Weight Management Phase 2 (oral formulation)
+    url: 'https://clinicaltrials.gov/study/NCT06828055'
+    type: trial
+    nctId: NCT06828055
+    verifiedAt: '2026-09-02'
+  - id: nct07104500
+    title: VK2735 for Weight Management Phase 3 (VANQUISH 1)
+    url: 'https://clinicaltrials.gov/study/NCT07104500'
+    type: trial
+    nctId: NCT07104500
+    verifiedAt: '2026-09-02'
+  - id: nct07104383
+    title: VK2735 for Weight Management Type 2 Diabetes Phase 3 (VANQUISH 2)
+    url: 'https://clinicaltrials.gov/study/NCT07104383'
+    type: trial
+    nctId: NCT07104383
+    verifiedAt: '2026-09-02'
+---
+
+## Overview
+
+[5-Amino-1MQ](/peptides/5-amino-1mq) is the research name used on this site for 5-amino-1-methylquinolinium, a small-molecule nicotinamide N-methyltransferase (NNMT) inhibitor. [VK2735](/peptides/vk2735) is Viking Therapeutics' investigational dual GIP/GLP-1 receptor agonist. The mouse NNMT-inhibitor papers fetched this run and VENTURE are separate programmes. This page does not collapse them into one efficacy ratio.
+
+Related pages: [5-Amino-1MQ vs semaglutide](/compare/5-amino-1mq-vs-semaglutide) and [VK2735 vs semaglutide](/compare/vk2735-vs-semaglutide).
+
+## Key Facts
+
+| Aspect | 5-Amino-1MQ | VK2735 |
+|--------|-------------|--------|
+| **Class on this page** | NNMT inhibitor (small molecule) [nnmti-dio-mice-pmid-35013352] | GIP and GLP-1 receptor agonist [venture-pmid-41508550] |
+| **Human obesity RCT quoted here** | None found in this run | VENTURE 13-week weight trial [venture-pmid-41508550] |
+| **Lead figure here** | No RCT percent in a fetched abstract | 15 mg −14.7% vs −1.7% at 13 weeks; estimand not named [venture-pmid-41508550] |
+| **FDA (openFDA drugsfda, 2026-09-02)** | NOT_FOUND | NOT_FOUND |
+
+## Clinical Trial Data
+
+These are not head-to-head RCTs. Do not convert VENTURE percents into a 5-Amino-1MQ ratio.
+
+### 5-Amino-1MQ — no human obesity RCT on this page
+
+PubMed esearch on 2026-09-02 (per alias, not OR-joined): \`"5-Amino-1MQ"\` count 0; \`"5-amino-1-MQ"\` count 0; \`"5-Amino-1-methylquinolinium"\` count 3 (PMIDs 39067875, 35013352, 33645410). PubMed \`"5-Amino-1MQ" AND "VK2735"\` and \`"5-amino-1-methylquinolinium" AND "VK2735"\` each returned 0. ClinicalTrials.gov v2 search for \`5-Amino-1MQ\`, \`5-amino-1-methylquinolinium\`, and \`NNMT 5-amino\` each returned 0 studies (hasResults not applicable).
+
+None of the three PubMed hits is a human obesity RCT. PMID 35013352 is a diet-induced obese (DIO) mouse microbiome paper. The abstract names 5-amino-1-methylquinolinium as the NNMT inhibitor used with a low-fat diet and describes whole-body adiposity and weight loss in mice relative to diet switch alone. The abstract does **not** publish a body-weight percent. This page does not invent one [nnmti-dio-mice-pmid-35013352].
+
+PMID 39067875 title-matched as an NNMT / urothelial bladder cancer CAF paper. It used 5-Amino-1-methylquinolinium iodide in UBC mouse models. It is not an obesity RCT and is not quoted as a weight-change result. PMID 33645410 title did not name 5-amino-1-methylquinolinium; it is a HeLa-cell paper and is not quoted.
+
+This page does not invent a human obesity Phase 3 programme for 5-Amino-1MQ.
+
+### VENTURE (subcutaneous VK2735, 13 weeks)
+
+**VENTURE** (PMID 41508550, NCT06068946): Phase 2, randomized, double-blind, placebo-controlled study of weekly subcutaneous VK2735 in adults with obesity or overweight and at least one weight-related comorbidity. Participants with diabetes mellitus were ineligible. Primary endpoint: percent change from baseline in body weight at week 13. Secondary efficacy endpoints included the proportion of participants losing ≥5% and ≥10% of baseline weight.
+
+Mean weight reduction with active treatment ranged from 9.2 kg (2.5 mg) to 14.6 kg (15 mg), corresponding to **9.1%** and **14.7%**; placebo 1.8 kg (**1.7%**). Across active-treatment groups, ≥5% loss occurred in 93% (130/140) vs 12% (4/34) placebo. Common adverse events were gastrointestinal and decreased in reported frequency after titration to steady state. The abstract lists ≥10% as a secondary endpoint and does **not** publish that figure. The abstract does **not** name a treatment-regimen versus efficacy estimand [venture-pmid-41508550].
+
+ClinicalTrials.gov lists NCT06068946 as completed Phase 2 (enrollment 176 actual; primary completion 2024-02-27 actual; hasResults **false** as of 2026-09-02). Lead sponsor: Viking Therapeutics, Inc. Figures above are from the journal abstract, not a results module. PubMed \`NCT06068946\` on 2026-09-02 returned PMID 41508550 only.
+
+## Oral VK2735 and VANQUISH (design only)
+
+PubMed searches on 2026-09-02 for NCT05203237, NCT06828055, NCT07104500, NCT07104383, \`"VANQUISH-1"\`, and \`"VANQUISH-2"\` returned **0** publications. CT.gov hasResults is **false** on each record below. This page quotes design fields only.
+
+| Record | Design fetched 2026-09-02 | Results |
+|--------|---------------------------|---------|
+| **NCT05203237** Phase 1 | COMPLETED. Enrollment 92 actual. Primary completion 2024-11-04 actual [nct05203237] | hasResults false. No published percent. |
+| **NCT06828055** Phase 2 oral | 13-week oral formulation. COMPLETED. Enrollment 280 actual. Primary completion 2025-06-24 actual [nct06828055] | hasResults false. No published percent. |
+| **NCT07104500** VANQUISH 1 | Phase 3 subcutaneous, 78 weeks, no type 2 diabetes. ACTIVE_NOT_RECRUITING. Enrollment 4500 estimated. Primary completion 2027-07-01 estimated [nct07104500] | hasResults false. |
+| **NCT07104383** VANQUISH 2 | Phase 3 subcutaneous, 78 weeks, with type 2 diabetes. ACTIVE_NOT_RECRUITING. Enrollment 1100 estimated. Primary completion 2027-07-01 estimated [nct07104383] | hasResults false. |
+
+This page does not quote an unpublished oral VK2735 weight-loss percent.
+
+## No published head-to-head RCT
+
+A PubMed search on 2026-09-02 for \`"5-Amino-1MQ" AND "VK2735"\` and \`"5-amino-1-methylquinolinium" AND "VK2735"\` each returned 0 records. This page does not invent a head-to-head obesity RCT.
+
+## Regulatory Status
+
+| Aspect | 5-Amino-1MQ | VK2735 |
+|--------|-------------|--------|
+| **FDA (openFDA drugsfda, 2026-09-02)** | NOT_FOUND (\`5-amino-1mq\`; \`5-amino-1-methylquinolinium\`) | NOT_FOUND (\`vk2735\`) |
+| **Quoted published study** | DIO mouse microbiome paper; no RCT percent | VENTURE Phase 2; estimand not named |
+| **Registered human trial (CT.gov this run)** | 0 studies | VENTURE completed Phase 2; VANQUISH 1/2 registered; no results module |
+
+This page does not invent a 5-Amino-1MQ approval year or a 5-Amino-1MQ obesity Phase 3.
+
+## Summary
+
+| Factor | 5-Amino-1MQ | VK2735 |
+|--------|-------------|--------|
+| **Mechanism** | NNMT inhibition (preclinical papers) | GIP / GLP-1 |
+| **Lead weight figure here** | No human obesity RCT percent | VENTURE 15 mg −14.7% vs −1.7% (13 wk; estimand not named) |
+| **Availability on this page** | No openFDA application | Investigational |
+
+### Key Takeaways
+
+1. **Cross-trial, not head-to-head:** 5-Amino-1MQ has no human obesity RCT on this page; VENTURE is a 13-week Phase 2 result with no estimand named in the abstract. PubMed H2H queries returned 0 on 2026-09-02.
+2. **5-Amino-1MQ:** street-name aliases returned 0; the chemical-name search returned 3 papers, none a human obesity RCT. The DIO mouse abstract names the compound and publishes **no** percent (PMID 35013352). CT.gov queries returned 0 studies as of 2026-09-02. This page does not invent a 5-Amino-1MQ obesity Phase 3.
+3. **VENTURE:** 15 mg **14.7%** vs placebo **1.7%** at 13 weeks; ≥5% in 93% (130/140) vs 12% (4/34) (PMID 41508550). Do not convert those percents into a 5-Amino-1MQ ratio.
+4. **Oral VK2735 and VANQUISH:** design only as of 2026-09-02 (hasResults false; PubMed 0).
+5. **openFDA:** no 5-Amino-1MQ or VK2735 application as of 2026-09-02.
+
+---
+
+*This comparison is for educational purposes only. 5-Amino-1MQ and VK2735 are investigational on this page.*
+`;
+
+const crlf = body.replace(/\r?\n/g, "\r\n");
+const dest = "src/content/comparisons/5-amino-1mq-vs-vk2735.mdx";
+fs.writeFileSync(dest, crlf, "utf8");
+const raw = fs.readFileSync(dest, "utf8");
+const crlfCount = (raw.match(/\r\n/g) || []).length;
+const lfOnly = (raw.match(/(?<!\r)\n/g) || []).length;
+console.log("wrote", dest, "bytes", Buffer.byteLength(raw), "CRLF", crlfCount, "LF-only", lfOnly);

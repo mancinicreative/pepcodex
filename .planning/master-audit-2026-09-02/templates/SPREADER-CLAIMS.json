@@ -1,0 +1,385 @@
+{
+  "audit_date": "2026-09-02",
+  "auditor": "templates-schema-a11y-spreader",
+  "scope": "Hardcoded user-visible claims, ratings, FAQ answers, and JSON-LD strings in templates/layouts/SEO components — not content-collection prose.",
+  "page_count_basis": {
+    "source": ".planning/master-audit-2026-09-02/INVENTORY-SUMMARY.json",
+    "peptide": 107,
+    "peptide-condition": 295,
+    "comparison": 269,
+    "guide": 36,
+    "safety": 31,
+    "glossary": 215,
+    "blog": 140,
+    "protocol": 3,
+    "condition": 15,
+    "calculator": 4,
+    "city-clinic-page": 60,
+    "clinic-record": 52,
+    "clinic_verified_true": 50,
+    "home": 1,
+    "html_pages_approx": "All layouts wrap BaseLayout; HTML surfaces in inventory exceed 1,200."
+  },
+  "claims": [
+    {
+      "id": "SC-001",
+      "claim": "Evidence-based peptide research library. Comprehensive dossiers with citations, not advice.",
+      "file": "src/layouts/BaseLayout.astro",
+      "lines": "16-17",
+      "exact": "description = 'Evidence-based peptide research library. Comprehensive dossiers with citations, not advice.'",
+      "estimated_page_count_affected": 1200,
+      "issue": "Default meta description on every page that does not pass its own description. Also duplicated into Organization JSON-LD."
+    },
+    {
+      "id": "SC-002",
+      "claim": "Evidence-based peptide research catalogue. Synthesising peer-reviewed literature for informed decisions, one drawer at a time.",
+      "file": "src/layouts/BaseLayout.astro",
+      "lines": "335-337",
+      "exact": "Evidence-based peptide research catalogue. Synthesising peer-reviewed literature for informed decisions, one drawer at a time.",
+      "estimated_page_count_affected": 1200,
+      "issue": "Sitewide footer claim. Uncited marketing of evidence synthesis."
+    },
+    {
+      "id": "SC-003",
+      "claim": "Organization JSON-LD: name PepCodex, url https://www.pepcodex.com, logo https://www.pepcodex.com/logo.png, sameAs [].",
+      "file": "src/components/SEO/OrganizationSchema.astro",
+      "lines": "4-12",
+      "exact": "\"logo\": \"https://www.pepcodex.com/logo.png\"",
+      "estimated_page_count_affected": 1200,
+      "issue": "logo.png is not in public/ (only favicon.svg, og-default.png). sameAs is an empty array. Injected on every BaseLayout page."
+    },
+    {
+      "id": "SC-004",
+      "claim": "Educational content only. Not medical advice. Consult a healthcare professional before making health decisions.",
+      "file": "src/components/DisclaimerBanner.astro",
+      "lines": "40-43",
+      "exact": "Educational content only. Not medical advice. Consult a healthcare professional before making health decisions.",
+      "estimated_page_count_affected": 1200,
+      "issue": "Sitewide. Appropriate disclaimer; dismissible for 7 days via localStorage. Not a medical claim."
+    },
+    {
+      "id": "SC-005",
+      "claim": "Drug JSON-LD: @type Drug; administrationRoute Subcutaneous injection; legalStatus Research use only - not FDA approved for human use.",
+      "file": "src/layouts/DossierLayout.astro",
+      "lines": "427-436",
+      "exact": "administrationRoute=\"Subcutaneous injection\"\n    legalStatus=\"Research use only - not FDA approved for human use\"",
+      "estimated_page_count_affected": 107,
+      "issue": "Hardcoded onto every peptide dossier. Contradicts 17 dossiers with regulatoryStatus.status: approved (e.g. semaglutide.mdx line 720). Route is false for oral (Rybelsus), implants, IV radioligands, etc. Schema.org Drug is the wrong type for research peptides / bioregulators / supplements."
+    },
+    {
+      "id": "SC-006",
+      "claim": "SafetyBanner fdaStatus Not FDA Approved; wadaStatus WADA Prohibited.",
+      "file": "src/layouts/DossierLayout.astro",
+      "lines": "582-587",
+      "exact": "fdaStatus=\"Not FDA Approved\"\n      wadaStatus=\"WADA Prohibited\"",
+      "estimated_page_count_affected": 107,
+      "issue": "Ignores DossierLayout safetyInfo prop (declared, never destructured or passed) and peptide.regulatoryStatus. Spreads false FDA/WADA labels onto FDA-approved drugs (semaglutide, tirzepatide, liraglutide, tesamorelin, etc.)."
+    },
+    {
+      "id": "SC-007",
+      "claim": "Not approved for human use by any regulatory agency; Limited human clinical trial data; Consult a healthcare provider before use.",
+      "file": "src/components/SafetyBanner.astro",
+      "lines": "32-36",
+      "exact": "'Not approved for human use by any regulatory agency',\n  'Limited human clinical trial data',\n  'Consult a healthcare provider before use'",
+      "estimated_page_count_affected": 107,
+      "issue": "Default warnings always used because DossierLayout never passes keyWarnings. False for approved, well-studied drugs."
+    },
+    {
+      "id": "SC-008",
+      "claim": "This dossier synthesizes available evidence from peer-reviewed literature, regulatory documents, and clinical trial registries. Evidence strength ratings follow a modified GRADE approach.",
+      "file": "src/layouts/DossierLayout.astro",
+      "lines": "815-817",
+      "exact": "This dossier synthesizes available evidence from peer-reviewed literature, regulatory documents, and clinical trial registries. Evidence strength ratings follow a modified GRADE approach.",
+      "estimated_page_count_affected": 107,
+      "issue": "Hardcoded methodology claim on every dossier. GRADE claim is not sourced on the page."
+    },
+    {
+      "id": "SC-009",
+      "claim": "Full reference list available on request. All citations link to PubMed for verification.",
+      "file": "src/layouts/DossierLayout.astro",
+      "lines": "803-805",
+      "exact": "Full reference list available on request. All citations link to PubMed for verification.",
+      "estimated_page_count_affected": 107,
+      "issue": "Not all citations are PMIDs; NCT/DOI/unresolvable ids exist. 'Available on request' is unverifiable."
+    },
+    {
+      "id": "SC-010",
+      "claim": "New dossiers and major study summaries delivered to your inbox. Evidence-graded, citation-backed research you can trust.",
+      "file": "src/layouts/DossierLayout.astro",
+      "lines": "849-850",
+      "exact": "Evidence-graded, citation-backed research you can trust.",
+      "estimated_page_count_affected": 107,
+      "issue": "Trust language in newsletter CTA."
+    },
+    {
+      "id": "SC-011",
+      "claim": "Generally safe to combine based on known mechanisms",
+      "file": "src/components/InteractionMatrix.astro",
+      "lines": "59-61",
+      "exact": "description: 'Generally safe to combine based on known mechanisms'",
+      "estimated_page_count_affected": 107,
+      "issue": "Hardcoded 'safe' language for every 'compatible' interaction row on dossiers that have interactions."
+    },
+    {
+      "id": "SC-012",
+      "claim": "Effectiveness axis label; Demonstrated effect magnitude — not a recommendation or safety claim.",
+      "file": "src/components/RatingCard.astro",
+      "lines": "116-134",
+      "exact": "Effectiveness\n...\nDemonstrated effect magnitude — not a recommendation or safety claim.",
+      "estimated_page_count_affected": 107,
+      "issue": "Editorial scores rendered as /100 bars. Not schema.org AggregateRating (good). Still user-visible 'Effectiveness' ratings that can be read as efficacy claims."
+    },
+    {
+      "id": "SC-013",
+      "claim": "Quality checklist: Visual indicators to help evaluate {peptideName} product quality; For Research Evaluation Only; Professional laboratory testing (HPLC, mass spectrometry) provides definitive quality verification.",
+      "file": "src/components/QualityChecklist.astro",
+      "lines": "37-38, 182-186",
+      "exact": "Visual indicators to help evaluate {peptideName} product quality",
+      "estimated_page_count_affected": 107,
+      "issue": "DossierLayout labels the section eyebrow 'Sourcing'. Site content rules ban sourcing/purchasing guidance. Template still frames product-quality evaluation."
+    },
+    {
+      "id": "SC-014",
+      "claim": "What to expect / Timeline of observations / Individual responses vary.",
+      "file": "src/layouts/DossierLayout.astro",
+      "lines": "707",
+      "exact": "eyebrow=\"What to expect\" title=\"Timeline of observations\" note=\"Phases observed in published studies. Individual responses vary.\"",
+      "estimated_page_count_affected": 107,
+      "issue": "Hardcoded 'What to expect' framing can be read as predicted patient effects. Timeline.astro repeats the same strings."
+    },
+    {
+      "id": "SC-015",
+      "claim": "High Evidence: Multiple high-quality human RCTs with consistent results (and sibling evidence labels).",
+      "file": "src/components/EvidenceBadge.astro",
+      "lines": "9-41",
+      "exact": "description: 'Multiple high-quality human RCTs with consistent results'",
+      "estimated_page_count_affected": 376,
+      "issue": "Label text is user-visible on dossiers, comparisons, and homepage drawer lists. Description strings are in config but not currently rendered. Spreads a GRADE-like definition wherever the badge is used."
+    },
+    {
+      "id": "SC-016",
+      "claim": "Disclaimer: This comparison is for educational purposes only... Always consult a qualified healthcare provider before making treatment decisions.",
+      "file": "src/layouts/ComparisonLayout.astro",
+      "lines": "184-187",
+      "exact": "This comparison is for educational purposes only and does not constitute medical advice. Individual responses to medications vary. Always consult a qualified healthcare provider before making treatment decisions.",
+      "estimated_page_count_affected": 269,
+      "issue": "Hardcoded; implies compared items are medications. FAQPage JSON-LD is emitted from content faqs when present (not hardcoded answers)."
+    },
+    {
+      "id": "SC-017",
+      "claim": "This article is for educational purposes only and does not constitute medical advice... should not be used for diagnosis, treatment, or prevention of any disease.",
+      "file": "src/layouts/BlogLayout.astro",
+      "lines": "314-317",
+      "exact": "This article is for educational purposes only and does not constitute medical advice. The information presented is based on current research but should not be used for diagnosis, treatment, or prevention of any disease.",
+      "estimated_page_count_affected": 140,
+      "issue": "Appropriate disclaimer. Also sidebar 'Notice' with shorter copy. Reading time is fabricated from excerpt.length/200+5, not word count of the body."
+    },
+    {
+      "id": "SC-018",
+      "claim": "This educational guide does not constitute medical advice... should not be used for diagnosis, treatment, or prevention of any disease.",
+      "file": "src/layouts/GuideLayout.astro",
+      "lines": "196-221",
+      "exact": "This guide is for educational purposes only. It is not medical advice.",
+      "estimated_page_count_affected": 36,
+      "issue": "Hardcoded GLP-1 Safety Overview link (lines 186-189) is shown for any guide that has a peptide prop, including non-GLP-1 guides."
+    },
+    {
+      "id": "SC-019",
+      "claim": "This glossary entry is for educational purposes only and does not constitute medical advice.",
+      "file": "src/layouts/GlossaryLayout.astro",
+      "lines": "205-208",
+      "exact": "This glossary entry is for educational purposes only and does not constitute medical advice. Always consult a qualified healthcare provider for medical questions.",
+      "estimated_page_count_affected": 215,
+      "issue": "Article JSON-LD used for glossary definitions (not DefinedTerm / MedicalWebPage)."
+    },
+    {
+      "id": "SC-020",
+      "claim": "This page summarizes research findings... The peptides listed may or may not have regulatory approval.",
+      "file": "src/layouts/ConditionLayout.astro",
+      "lines": "248-251",
+      "exact": "This page summarizes research findings and does not constitute medical advice. The peptides listed may or may not have regulatory approval.",
+      "estimated_page_count_affected": 15,
+      "issue": "Hardcoded. NewsletterForm variant='compact' is not a real variant so the CTA renders empty."
+    },
+    {
+      "id": "SC-021",
+      "claim": "Research Documentation, Not Dosing Guidance. The doses mentioned are those used in specific studies, not recommendations.",
+      "file": "src/layouts/ProtocolLayout.astro",
+      "lines": "87-91",
+      "exact": "This page documents what researchers have studied in scientific literature. The doses mentioned are those used in specific studies, not recommendations. This is not a protocol guide and should not be used as dosing advice.",
+      "estimated_page_count_affected": 3,
+      "issue": "Mitigating copy; still renders a 'Doses Used in Study' field. HowToSchema exists but is unused (no HowTo JSON-LD currently)."
+    },
+    {
+      "id": "SC-022",
+      "claim": "For Educational Purposes Only; This content is not intended to diagnose, treat, cure, or prevent any disease.",
+      "file": "src/layouts/SafetyLayout.astro",
+      "lines": "87-90, 224-226",
+      "exact": "This content is not intended to diagnose, treat, cure, or prevent any disease.",
+      "estimated_page_count_affected": 31,
+      "issue": "Appropriate disclaimer. Newsletter heading 'Safety Alerts' / 'Get notified about new safety data, FDA decisions, and adverse event reports.'"
+    },
+    {
+      "id": "SC-023",
+      "claim": "Research calculator for {name}. Educational tool only.",
+      "file": "src/layouts/CalculatorLayout.astro",
+      "lines": "40-47",
+      "exact": "description={metaDescription || `Research calculator for ${name}. Educational tool only.`}",
+      "estimated_page_count_affected": 4,
+      "issue": "Article JSON-LD on a calculator. Dark-theme leftover classes (text-white, bg-white/5) on paper background."
+    },
+    {
+      "id": "SC-024",
+      "claim": "City FAQ: {name} has {n|multiple} peptide therapy clinics offering services including BPC-157, semaglutide, and growth hormone secretagogues. Use our directory to find verified providers in your area.",
+      "file": "src/pages/clinics/[city].astro",
+      "lines": "47-51",
+      "exact": "Use our directory to find verified providers in your area.",
+      "estimated_page_count_affected": 60,
+      "issue": "Hardcoded FAQ answers + FAQPage JSON-LD. If cityClinics.length===0 the answer still says 'multiple' clinics. Pages are noindex but FAQ schema still emits if crawled. Inventory: 52 clinic records, 50 verifiedListing true, 52 placeholder websites."
+    },
+    {
+      "id": "SC-025",
+      "claim": "Verified listings in our directory have been vetted for these criteria.",
+      "file": "src/pages/clinics/[city].astro",
+      "lines": "52-55",
+      "exact": "Verified listings in our directory have been vetted for these criteria.",
+      "estimated_page_count_affected": 60,
+      "issue": "Unsourced vetting claim in FAQ JSON-LD. ClinicCard/FeaturedClinicCard render a 'Verified' badge from verifiedListing."
+    },
+    {
+      "id": "SC-026",
+      "claim": "Peptide clinics in {name} typically offer BPC-157 for tissue repair, semaglutide and tirzepatide for metabolic health, CJC-1295 with ipamorelin for growth hormone support...",
+      "file": "src/pages/clinics/[city].astro",
+      "lines": "56-59",
+      "exact": "Peptide clinics in ${name} typically offer BPC-157 for tissue repair, semaglutide and tirzepatide for metabolic health, CJC-1295 with ipamorelin for growth hormone support, and various other research peptides depending on patient needs.",
+      "estimated_page_count_affected": 60,
+      "issue": "Unverified indication claims (tissue repair, metabolic health, GH support) templated per city. Also repeated as Common Peptides cards with 'For {use}'."
+    },
+    {
+      "id": "SC-027",
+      "claim": "Yes, most peptide therapies require a prescription... Reputable peptide clinics in {name} will conduct a thorough medical evaluation...",
+      "file": "src/pages/clinics/[city].astro",
+      "lines": "60-63",
+      "exact": "Yes, most peptide therapies require a prescription from a licensed healthcare provider.",
+      "estimated_page_count_affected": 60,
+      "issue": "Legal/medical FAQ hardcoded for every city."
+    },
+    {
+      "id": "SC-028",
+      "claim": "Initial consultations typically range from $100-$300, with monthly peptide costs varying by type.",
+      "file": "src/pages/clinics/[city].astro",
+      "lines": "64-67",
+      "exact": "Initial consultations typically range from $100-$300, with monthly peptide costs varying by type.",
+      "estimated_page_count_affected": 60,
+      "issue": "Uncited price range multiplied across 60 city pages and FAQ JSON-LD."
+    },
+    {
+      "id": "SC-029",
+      "claim": "Peptides from FDA-registered compounding pharmacies.",
+      "file": "src/pages/clinics/[city].astro",
+      "lines": "243",
+      "exact": "Peptides from FDA-registered compounding pharmacies",
+      "estimated_page_count_affected": 60,
+      "issue": "Sourcing guidance in a 'What to Look For' template. Content rules ban sourcing/purchasing guidance."
+    },
+    {
+      "id": "SC-030",
+      "claim": "Badge text: Verified; Featured.",
+      "file": "src/components/ClinicCard.astro",
+      "lines": "38-44",
+      "exact": "Verified",
+      "estimated_page_count_affected": 60,
+      "issue": "User-visible 'Verified' on cards when verifiedListing is true (50 of 52 clinic records). FeaturedClinicCard also hardcodes 'Featured' ribbon."
+    },
+    {
+      "id": "SC-031",
+      "claim": "Discover verified peptide therapy clinics... clinics offering BPC-157, Semaglutide, and other research peptides.",
+      "file": "src/pages/clinics/index.astro",
+      "lines": "41-61",
+      "exact": "Discover verified peptide therapy clinics in your city. Browse our directory of clinics offering BPC-157, Semaglutide, and other research peptides across the United States.",
+      "estimated_page_count_affected": 1,
+      "issue": "Directory hub (noindex). 'Verified' + lists research peptides as clinic offerings. Not in INVENTORY template list but is the parent of city templates."
+    },
+    {
+      "id": "SC-032",
+      "claim": "No. 03 lands this summer. / The PepCodex Catalogue · Vol. IV / Issue Spring 2026",
+      "file": "src/pages/index.astro",
+      "lines": "66, 75, 268-272",
+      "exact": "No. 03 lands this summer.",
+      "estimated_page_count_affected": 1,
+      "issue": "Dated/inconsistent volume claims (Vol. IV, Spring 2026, No. 03 this summer) with no citation. Home has newsletter CTA but no AppWaitlistCTA."
+    },
+    {
+      "id": "SC-033",
+      "claim": "We do not provide dosing, protocols, or sourcing information.",
+      "file": "src/pages/index.astro",
+      "lines": "288-291",
+      "exact": "We do not provide dosing, protocols, or sourcing information.",
+      "estimated_page_count_affected": 1,
+      "issue": "Contradicted by ProtocolLayout dose fields, QualityChecklist sourcing section, clinic compounding-pharmacy copy, and footer link to /protocols."
+    },
+    {
+      "id": "SC-034",
+      "claim": "Get Research Alerts / New dossiers and major study summaries delivered to your inbox. No spam, just evidence.",
+      "file": "src/components/NewsletterForm.astro",
+      "lines": "12-13",
+      "exact": "heading = 'Get Research Alerts',\n  description = 'New dossiers and major study summaries delivered to your inbox. No spam, just evidence.'",
+      "estimated_page_count_affected": 800,
+      "issue": "Default copy on every card/full form that does not override heading/description (blog, guides, calculators, glossary inline, etc.)."
+    },
+    {
+      "id": "SC-035",
+      "claim": "Get evidence-based peptide research delivered to your inbox. No spam, just science.",
+      "file": "src/components/ExitIntentPopup.astro",
+      "lines": "32-38",
+      "exact": "Get evidence-based peptide research delivered to your inbox. No spam, just science.",
+      "estimated_page_count_affected": 0,
+      "issue": "Component exists but is not imported anywhere. Zero live pages until mounted. Intrusive UX if enabled: mouseleave clientY<10 after 6s, or scroll>90% on mobile; localStorage pep-newsletter-seen."
+    },
+    {
+      "id": "SC-036",
+      "claim": "PepTracker waitlist copy (dossier/calculator/safety).",
+      "file": "src/components/AppWaitlistCTA.astro",
+      "lines": "11-28",
+      "exact": "PepTracker will let you log observations against the ${peptideName} evidence horizon. It does not recommend doses or sources. Join the waitlist — no store listing yet.",
+      "estimated_page_count_affected": 142,
+      "issue": "Present on 107 dossiers + 31 safety + 4 calculators. Absent on home, blog (140), comparisons (269), glossary (215), guides (36), conditions (15), peptide-condition (295), clinics (60). Waitlist posts to same /api/subscribe list as newsletter (source=peptracker_waitlist)."
+    },
+    {
+      "id": "SC-037",
+      "claim": "Peptide-condition disclaimer: {name} may have / has not received regulatory approval for some indications but should only be used under qualified medical supervision.",
+      "file": "src/pages/peptides/[peptide]/[condition].astro",
+      "lines": "273-276",
+      "exact": "{peptide.data.name} {peptide.data.evidenceStrength === 'high' || peptide.data.evidenceStrength === 'moderate' ? 'may have' : 'has not received'} regulatory approval for some indications but should only be used under qualified medical supervision.",
+      "estimated_page_count_affected": 295,
+      "issue": "Template invents approval status from evidenceStrength, not regulatoryStatus. High/moderate evidence ≠ FDA approval."
+    },
+    {
+      "id": "SC-038",
+      "claim": "Article JSON-LD: @type Article, author/publisher PepCodex, logo https://www.pepcodex.com/logo.png.",
+      "file": "src/components/SEO/ArticleSchema.astro",
+      "lines": "15-42",
+      "exact": "\"@type\": \"Article\"",
+      "estimated_page_count_affected": 621,
+      "issue": "Used for dossiers, glossary terms, calculators, peptide-condition pages. MedicalWebPage is never used. Broken logo URL. Not MedicalScholarlyArticle."
+    },
+    {
+      "id": "SC-039",
+      "claim": "BreadcrumbList item URLs often include trailing slash (peptides/, conditions/, compare/, blog/, glossary/, safety/, guide/, calculator/, protocols/).",
+      "file": "src/layouts/DossierLayout.astro",
+      "lines": "363-367",
+      "exact": "{ name: 'Peptides', url: `${Astro.site || 'https://www.pepcodex.com'}peptides/` }",
+      "estimated_page_count_affected": 800,
+      "issue": "Site uses trailingSlash: 'never'. Schema breadcrumbs can 308-mismatch live URLs. Clinic breadcrumbs correctly omit trailing slashes."
+    },
+    {
+      "id": "SC-040",
+      "claim": "We use cookies to enhance your browsing experience and analyze site traffic.",
+      "file": "src/components/CookieConsent.astro",
+      "lines": "63-66",
+      "exact": "We use cookies to enhance your browsing experience and analyze site traffic.",
+      "estimated_page_count_affected": 1200,
+      "issue": "User-visible. GA4 and Vercel Analytics load in BaseLayout before this banner can deny storage."
+    }
+  ]
+}

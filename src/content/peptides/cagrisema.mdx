@@ -5,18 +5,18 @@ aliases:
   - NNC0174-0833
 category: metabolic
 evidenceStrength: high
-lastUpdated: 2026-08-17T00:00:00.000Z
+lastUpdated: 2026-09-02T00:00:00.000Z
 comparators:
   - tirzepatide
   - semaglutide
   - cagrilintide
 summary: >-
-  A fixed-dose combination of cagrilintide (amylin analog) and semaglutide
-  (GLP-1 agonist). Phase 3 REDEFINE trials in obesity demonstrate 20-23% weight
-  loss at 68 weeks; the separate REIMAGINE programme reported three phase 3
-  trials in type 2 diabetes in June 2026, including the first head-to-head
-  against its own two components. NDA submitted to FDA December 2025. First
-  GLP-1/amylin combination therapy.
+  The newest verified paper is Khan et al. (PMID 42608559), a GRADE-assessed
+  meta-analysis of 7 randomised trials (n=8,069) reporting pooled kilogram
+  differences, not a percent-weight estimand. Versus semaglutide the pooled
+  mean difference was −7.58 kg; versus cagrilintide −9.24 kg; versus placebo
+  −13.99 kg. Those kilograms are not converted to percents here. Fixed-dose
+  cagrilintide plus semaglutide combination; not FDA-approved.
 sources:
   count: 14
   human: 6
@@ -374,6 +374,18 @@ evidenceChainedBenefits:
             (risk ratios 1.9 to 4.2 across that group) and increased fatigue
             (risk ratio 3.2; 92 more per 1000 people over one year)
           pmid: '42419792'
+        - study: Khan BW et al. 2026
+          type: meta-analysis
+          finding: >-
+            Systematic review and GRADE-assessed meta-analysis of 7 randomised
+            trials (n=8,069). Pooled mean difference in weight was -7.58 kg
+            versus semaglutide (95% CI -10.30 to -4.86), -9.24 kg versus
+            cagrilintide (95% CI -10.46 to -8.02), and -13.99 kg versus
+            placebo (95% CI -18.38 to -9.61). Adverse events were primarily
+            gastrointestinal and injection-site reactions, without an increase
+            in serious adverse events. Figures are pooled kilogram differences,
+            not percent weight-loss estimands from a single trial
+          pmid: '42608559'
   - mechanism:
       action: >-
         GLP-1 receptor activation enhances glucose-dependent insulin secretion
@@ -490,10 +502,14 @@ conditions:
       management. REDEFINE-1 demonstrated 20.4% mean weight loss at 68 weeks in
       adults with overweight or obesity (vs 3.0% with placebo), with
       significantly more participants reaching >=20%, >=25%, and >=30%
-      weight-loss targets than placebo.
+      weight-loss targets than placebo. The newest verified paper, Khan et al.
+      (PMID 42608559), is a GRADE meta-analysis of kilogram differences (pooled
+      −7.58 kg vs semaglutide, −9.24 kg vs cagrilintide, −13.99 kg vs placebo),
+      not a percent estimand.
     relevantStudies:
       - '40544433'
       - '34798060'
+      - '42608559'
     relatedPeptides:
       - semaglutide
       - tirzepatide
@@ -619,17 +635,20 @@ scoring:
     - 'PMID:34798060'
     - 'PMID:40204768'
     - 'DOI:10.1056/NEJMoa2502081'
+    - 'PMID:42608559'
   notes: >-
     Research depth: two large adequately-powered phase 3 RCTs (REDEFINE-1
-    n=3,417; REDEFINE-2 n=1,206) plus phase 2 dose-finding, no published
-    meta-analysis yet. Mechanism: GLP-1R and amylin/calcitonin receptor targets
+    n=3,417; REDEFINE-2 n=1,206) plus phase 2 dose-finding. A GRADE-assessed
+    meta-analysis of 7 RCTs (Khan 42608559, fetched 2026-09-01) is now cited. Mechanism: GLP-1R and amylin/calcitonin receptor targets
     validated by cryo-EM binding plus functional agonism. Plausibility: full
     mechanism-to-weight-loss chain supported and coherent with incretin-class
     biology. Global coverage: 10-12 countries but predominantly one sponsor;
     NDA under review, not yet approved. Community experience: negligible niche
     discussion for an investigational agent. Effectiveness: clinical basis,
-    ~20% weight loss (large effect, high confidence), tempered by REDEFINE-4
-    non-inferiority miss vs tirzepatide.
+    ~20% weight loss (large effect, high confidence), tempered by NCT06131437
+    (open-label tirzepatide head-to-head; CT.gov hasResults false as of
+    2026-09-02, so no percent is quoted here). Scanned 2026-09-01: skipped 42673585
+    (class SR) and 42625929 (class adolescent-obesity review).
 anecdotalReports:
   positive: []
   negative: []
@@ -686,13 +705,15 @@ CagriSema combines two distinct appetite-suppressing peptide hormones into a sin
 
 **Key Research:** Garvey WT et al. demonstrated in REDEFINE-1 that CagriSema produced 20.4% mean weight loss at 68 weeks versus 3.0% with placebo in adults with overweight or obesity. [PMID:40544433](https://pubmed.ncbi.nlm.nih.gov/40544433/)
 
+### GRADE meta-analysis in kilograms (not percent)
+
+Khan et al. ([PMID:42608559](https://pubmed.ncbi.nlm.nih.gov/42608559/)) is a systematic review and GRADE-assessed meta-analysis of 7 randomised trials (n=8,069). Pooled mean difference in weight was −7.58 kg versus [semaglutide](/peptides/semaglutide) (95% CI −10.30 to −4.86), −9.24 kg versus [cagrilintide](/peptides/cagrilintide) (95% CI −10.46 to −8.02), and −13.99 kg versus placebo (95% CI −18.38 to −9.61). Adverse events were primarily gastrointestinal and injection-site reactions, without an increase in serious adverse events. These figures are pooled kilogram differences, not percent weight-loss estimands from a single trial, and they are not converted to percents here.
+
 ### NDA Submission & REDEFINE Program (2025-2026)
 
 **NDA Filing:** Novo Nordisk filed a New Drug Application for CagriSema in December 2025, based on the REDEFINE clinical program combining cagrilintide (amylin analog) with semaglutide.
 
-**REDEFINE 4 — Head-to-Head vs Tirzepatide:** The REDEFINE 4 trial did not meet its primary endpoint of non-inferiority to tirzepatide, with CagriSema achieving 23% weight loss compared to 25.5% with tirzepatide at the highest dose. This result raised questions about CagriSema's competitive positioning against established dual-agonist therapies.
-
-**Next Steps:** Novo Nordisk has announced plans for a higher-dose CagriSema trial in H2 2026, aiming to improve upon the REDEFINE 4 results and strengthen the regulatory package.
+**REDEFINE 4 — registered tirzepatide head-to-head:** ClinicalTrials.gov NCT06131437 is an 84-week open-label (masking: none) randomised phase 3 trial of CagriSema versus tirzepatide; actual enrollment 809; primary outcome is non-inferiority on relative body-weight change at week 84. Status COMPLETED (primary completion 2025-12-08; study completion 2026-01-09; last update posted 2026-02-06). As of 2026-09-02 CT.gov `hasResults` is false and a PubMed search for REDEFINE 4 + cagrilintide + tirzepatide returned 0 records, so this page does not quote a percent.
 
 **Two registered studies withdrawn:** A phase 2 study (NCT07357740) and a phase 3 study (NCT07357766) were both recorded as withdrawn on 9 July 2026. ClinicalTrials.gov gives the same stated reason for each: "The study is withdrawn due to strategic reasons." Withdrawn means the studies never enrolled a participant, so no data exist from either. The registry does not say what the strategic reasons were.
 
@@ -711,7 +732,7 @@ All three trials report their primary endpoint on the **efficacy estimand**, whi
 ### Important Limitations
 
 - Not FDA-approved; no application appears in Drugs@FDA as of 6 August 2026. Novo Nordisk reports an NDA submitted in December 2025 and under review
-- REDEFINE 4 failed non-inferiority vs tirzepatide (23% vs 25.5% weight loss)
+- REDEFINE 4 (NCT06131437) is a completed open-label tirzepatide head-to-head with no PubMed results record as of 2026-09-02; this page does not quote a percent
 - The REIMAGINE trials report their primary endpoints on the efficacy estimand only, which describes on-treatment results rather than the effect of being assigned the drug
 - Against its own GLP-1 component in REIMAGINE 2, the added glycaemic benefit of cagrilintide was 0.16 HbA1c percentage points
 - Long-term safety data beyond 68 weeks not yet available

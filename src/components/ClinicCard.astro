@@ -9,13 +9,11 @@ interface Props {
   website?: string;
   services: string[];
   peptides?: string[];
-  verifiedListing?: boolean;
   description?: string;
 }
 
 const {
   name,
-  slug,
   city,
   state,
   address,
@@ -23,26 +21,16 @@ const {
   website,
   services,
   peptides = [],
-  verifiedListing = false,
   description
 } = Astro.props;
 ---
 
 <div class="glass-card group relative block h-full">
   <div class="relative z-10 p-6 flex flex-col h-full">
-    <!-- Header with name and verified badge -->
     <div class="flex items-start justify-between gap-4 mb-3">
       <h3 class="text-xl group-hover:text-primary transition-colors" style="color: var(--ink); font-family: var(--font-serif); font-weight: 500;">
         {name}
       </h3>
-      {verifiedListing && (
-        <span class="badge badge--success flex items-center gap-1 shrink-0">
-          <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="20 6 9 17 4 12" />
-          </svg>
-          Verified
-        </span>
-      )}
     </div>
 
     <!-- Location -->

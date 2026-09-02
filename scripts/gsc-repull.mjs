@@ -82,6 +82,7 @@ const main = async () => {
       ['appearance', ['searchAppearance']],
       ['date-device', ['date', 'device']],
       ['page-device', ['page', 'device']],
+      ['page-query', ['page', 'query']],
     ];
 
     for (const [name, dims] of cuts) {

@@ -1,0 +1,672 @@
+{
+  "pack": "pepcodex-master-audit-regulatory-safety",
+  "accessDate": "2026-09-02",
+  "jurisdiction": "US",
+  "note": "Official sources only as authority. Secondary press used as leads, not as regulator decisions. DailyMed HTML DNS-failed; label text taken from FDA PDFs/press/index snippets.",
+  "sources": [
+    {
+      "id": "fda-compounding-laws",
+      "url": "https://www.fda.gov/drugs/human-drug-compounding/human-drug-compounding-laws",
+      "publisher": "U.S. Food and Drug Administration",
+      "publicationOrUpdateDate": "2024-12-17",
+      "dateType": "page_content_current_as_of",
+      "accessDate": "2026-09-02",
+      "task": 1,
+      "classification": "FACT",
+      "exactQuoteShort": "Compounded drugs are not FDA-approved. This means that FDA does not review these drugs to evaluate their safety, effectiveness, or quality before they reach patients.",
+      "pepcodexPages": [
+        "src/pages/fda-notice.astro",
+        "src/content/blog/fda-compounding-oversight.mdx",
+        "src/content/blog/fda-tightens-peptide-compounding-rules.mdx"
+      ]
+    },
+    {
+      "id": "fda-503a-bulks",
+      "url": "https://www.fda.gov/drugs/human-drug-compounding/bulk-drug-substances-used-compounding-under-section-503a-fdc-act",
+      "publisher": "U.S. Food and Drug Administration",
+      "publicationOrUpdateDate": "2026-05-14",
+      "dateType": "page_content_current_as_of",
+      "accessDate": "2026-09-02",
+      "task": 1,
+      "classification": "FACT",
+      "exactQuoteShort": "State-licensed physicians and pharmacists that compound under section 503A ... may only compound drug products using bulk drug substances that: (1) Comply with an applicable USP or NF monograph ... (2) Are components of FDA-approved drug products if an applicable USP or NF monograph does not exist; or (3) Appear on FDA’s list of bulk drug substances that can be used in compounding (the 503A bulks list) ...",
+      "pepcodexPages": [
+        "src/content/blog/fda-tightens-peptide-compounding-rules.mdx",
+        "src/content/peptides/bpc-157.mdx",
+        "src/content/peptides/tb-500.mdx"
+      ]
+    },
+    {
+      "id": "fda-503b-bulks",
+      "url": "https://www.fda.gov/drugs/human-drug-compounding/bulk-drug-substances-used-compounding-under-section-503b-fdc-act",
+      "publisher": "U.S. Food and Drug Administration",
+      "publicationOrUpdateDate": "2025-01-07",
+      "dateType": "page_content_current_as_of",
+      "accessDate": "2026-09-02",
+      "task": 1,
+      "classification": "FACT",
+      "exactQuoteShort": "Outsourcing facilities ... may not compound a drug product that includes a bulk drug substance unless: (1) The bulk drug substance appears on a list identifying bulk drug substances for which there is a clinical need (the 503B bulks list), or (2) The drug product compounded from such bulk drug substance appears on FDA’s drug shortage list at the time of compounding, distribution and dispensing.",
+      "pepcodexPages": [
+        "src/content/blog/fda-compounding-oversight.mdx",
+        "src/content/peptides/semaglutide.mdx",
+        "src/content/peptides/tirzepatide.mdx"
+      ]
+    },
+    {
+      "id": "fda-category-2",
+      "url": "https://www.fda.gov/drugs/human-drug-compounding/certain-bulk-drug-substances-use-compounding-may-present-significant-safety-risks",
+      "publisher": "U.S. Food and Drug Administration",
+      "publicationOrUpdateDate": "2026-04-22",
+      "dateType": "page_content_current_as_of",
+      "accessDate": "2026-09-02",
+      "task": 1,
+      "classification": "FACT",
+      "exactQuoteShort": "BPC-157: Compounded drugs containing BPC-157 may pose risk for immunogenicity for certain routes of administration and may have complexities with regard to peptide-related impurities and active pharmaceutical ingredient (API) characterization. FDA has identified no, or only limited, safety-related information for the proposed routes of administration. Therefore, the agency lacks sufficient information to know whether the drug would cause harm when administered to humans.",
+      "notes": "BPC-157, TB-500 (thymosin beta-4 fragment LKKTETQ), Melanotan II, AOD-9604, CJC-1295, DSIP, epitalon, GHK-Cu injectable, KPV, MOTS-c, selank, semax, thymosin-alpha-1 appear on the 'nominated but withdrawn' table, not the live Category 2 table. Live Category 2 still includes GHRP-2, GHRP-6, ibutamoren, ipamorelin acetate (503B), kisspeptin-10.",
+      "pepcodexPages": [
+        "src/content/peptides/bpc-157.mdx",
+        "src/content/peptides/tb-500.mdx",
+        "src/content/peptides/melanotan-ii.mdx",
+        "src/content/blog/fda-tightens-peptide-compounding-rules.mdx"
+      ]
+    },
+    {
+      "id": "fr-91-20465-pcac-notice",
+      "url": "https://www.federalregister.gov/documents/2026/04/16/2026-07361/pharmacy-compounding-advisory-committee-notice-of-meeting-establishment-of-a-public-docket-request",
+      "publisher": "Federal Register / FDA",
+      "publicationOrUpdateDate": "2026-04-16",
+      "citation": "91 FR 20465",
+      "documentNumber": "2026-07361",
+      "accessDate": "2026-09-02",
+      "task": 1,
+      "classification": "FACT",
+      "exactQuoteShort": "On July 23, 2026, the Committee will discuss the following bulk drug substances being considered for inclusion on the 503A Bulks List: BPC-157-related bulk drug substances ... TB-500-related bulk drug substances ...",
+      "pepcodexPages": [
+        "src/content/peptides/bpc-157.mdx",
+        "src/content/peptides/tb-500.mdx"
+      ]
+    },
+    {
+      "id": "fda-pcac-july-2026-meeting-page",
+      "url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/july-23-24-2026-meeting-pharmacy-compounding-advisory-committee-07232026",
+      "publisher": "U.S. Food and Drug Administration",
+      "publicationOrUpdateDate": "2026-08-06",
+      "dateType": "page_content_current_as_of",
+      "accessDate": "2026-09-02",
+      "task": 1,
+      "classification": "FACT",
+      "exactQuoteShort": "Advisory committees make non-binding recommendations to the FDA, which generally follows the recommendations but is not legally bound to do so.",
+      "notes": "Event materials include briefing docs, agenda, questions, roster, staff presentations. NO minutes, transcript, or vote tally posted as of 2026-08-06. Committee vote counts therefore UNKNOWN from official FDA records.",
+      "pepcodexPages": [
+        "src/content/peptides/bpc-157.mdx",
+        "src/content/peptides/tb-500.mdx"
+      ]
+    },
+    {
+      "id": "fda-pcac-bpc157-briefing-intro",
+      "url": "https://www.fda.gov/media/193342/download",
+      "publisher": "U.S. Food and Drug Administration",
+      "publicationOrUpdateDate": "2026-06-29",
+      "dateType": "document_posted_or_indexed",
+      "accessDate": "2026-09-02",
+      "task": 1,
+      "classification": "FACT",
+      "exactQuoteShort": "FDA is proposing that BPC-157 (free base) NOT be included on the 503A Bulks List.",
+      "pepcodexPages": ["src/content/peptides/bpc-157.mdx"]
+    },
+    {
+      "id": "fda-pcac-july23-presentations",
+      "url": "https://www.fda.gov/media/193773/download",
+      "publisher": "U.S. Food and Drug Administration",
+      "publicationOrUpdateDate": "2026-07-23",
+      "accessDate": "2026-09-02",
+      "task": 1,
+      "classification": "FACT",
+      "exactQuoteShort": "FDA is proposing that BPC-157 (free base) and BPC-157 acetate NOT be included on the 503A Bulks List. ... FDA is proposing that TB-500 (free base) and TB-500 acetate NOT be included on the 503A Bulks List.",
+      "pepcodexPages": [
+        "src/content/peptides/bpc-157.mdx",
+        "src/content/peptides/tb-500.mdx"
+      ]
+    },
+    {
+      "id": "fda-glp1-compounding-policy",
+      "url": "https://www.fda.gov/drugs/drug-alerts-and-statements/fda-clarifies-policies-compounders-national-glp-1-supply-begins-stabilize",
+      "publisher": "U.S. Food and Drug Administration",
+      "publicationOrUpdateDate": "2026-04-01",
+      "dateType": "page_content_current_as_of",
+      "accessDate": "2026-09-02",
+      "task": 1,
+      "classification": "FACT",
+      "exactQuoteShort": "Tirzepatide and semaglutide do not currently appear on the 503B bulks list or on FDA’s drug shortage list.",
+      "notes": "Also records tirzepatide shortage resolved 2024-12-19 (after remand of 2024-10-02); semaglutide injection shortage resolved 2025-02-21; 503A/503B wind-down dates; essentially-a-copy including semaglutide+B12 within 10% strength; four-or-fewer prescriptions/month discretion. Alternate URL under /drugs/drug-safety-and-availability/ returned 404.",
+      "pepcodexPages": [
+        "src/content/blog/fda-compounding-oversight.mdx",
+        "src/content/blog/fda-semaglutide-shortage-extended.mdx",
+        "src/content/blog/fda-compounded-semaglutide-warning.mdx",
+        "src/content/blog/glp1-shortage-easing.mdx"
+      ]
+    },
+    {
+      "id": "fr-91-23431-503b-proposal",
+      "url": "https://www.federalregister.gov/documents/2026/05/01/2026-08552/list-of-bulk-drug-substances-for-which-there-is-a-clinical-need-under-section-503b-of-the-federal",
+      "publisher": "Federal Register / FDA",
+      "publicationOrUpdateDate": "2026-05-01",
+      "citation": "91 FR 23431",
+      "documentNumber": "2026-08552",
+      "accessDate": "2026-09-02",
+      "task": 1,
+      "classification": "FACT",
+      "exactQuoteShort": "This notice identifies three bulk drug substances that FDA has considered and proposes not to include on the 503B Bulks List: semaglutide, tirzepatide, and liraglutide.",
+      "notes": "PROPOSAL, not a final determination. Comment period later extended (91 FR 38719, 2026-06-26). Final determination UNKNOWN as of 2026-09-02.",
+      "pepcodexPages": [
+        "src/content/peptides/semaglutide.mdx",
+        "src/content/peptides/tirzepatide.mdx",
+        "src/content/blog/fda-compounding-oversight.mdx"
+      ]
+    },
+    {
+      "id": "fda-press-503b-exclude-glp1",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-proposes-exclude-semaglutide-tirzepatide-and-liraglutide-503b-bulks-list",
+      "publisher": "U.S. Food and Drug Administration",
+      "publicationOrUpdateDate": "2026-04-30",
+      "accessDate": "2026-09-02",
+      "task": 1,
+      "classification": "FACT",
+      "exactQuoteShort": "When FDA-approved drugs are available, outsourcing facilities cannot lawfully compound using bulk drug substances unless there is a clear clinical need.",
+      "pepcodexPages": [
+        "src/content/blog/fda-compounding-oversight.mdx"
+      ]
+    },
+    {
+      "id": "fr-91-38719-503b-comment-extension",
+      "url": "https://www.federalregister.gov/documents/2026/06/26/2026-12937/list-of-bulk-drug-substances-for-which-there-is-a-clinical-need-under-section-503b-of-the-federal",
+      "publisher": "Federal Register / FDA",
+      "publicationOrUpdateDate": "2026-06-26",
+      "citation": "91 FR 38719",
+      "accessDate": "2026-09-02",
+      "task": 1,
+      "classification": "FACT",
+      "exactQuoteShort": "The Food and Drug Administration (FDA or the Agency) is extending the comment period for the notice entitled “List of Bulk Drug Substances for Which There Is a Clinical Need Under Section 503B of the Federal Food, Drug, and Cosmetic Act” that appeared in the Federal Register of May 1, 2026.",
+      "pepcodexPages": [
+        "src/content/blog/fda-compounding-oversight.mdx"
+      ]
+    },
+    {
+      "id": "fda-unapproved-glp1-concerns",
+      "url": "https://www.fda.gov/drugs/drug-alerts-and-statements/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss",
+      "publisher": "U.S. Food and Drug Administration",
+      "publicationOrUpdateDate": "2026-09-01",
+      "dateType": "page_content_current_as_of",
+      "accessDate": "2026-09-02",
+      "task": 2,
+      "classification": "FACT",
+      "exactQuoteShort": "Retatrutide and cagrilintide cannot be used in compounding under federal law. Additionally, these are not components of FDA-approved drugs and have not been found safe and effective for any condition. ... As of May 31, 2026, the FDA has received: 990 reports of adverse events associated with compounded semaglutide; more than 730 reports of adverse events associated with compounded tirzepatide.",
+      "pepcodexPages": [
+        "src/content/blog/fda-compounded-semaglutide-warning.mdx",
+        "src/content/peptides/semaglutide.mdx",
+        "src/content/peptides/tirzepatide.mdx",
+        "src/content/peptides/retatrutide.mdx"
+      ]
+    },
+    {
+      "id": "fda-compounded-semaglutide-dosing-errors",
+      "url": "https://www.fda.gov/drugs/human-drug-compounding/fda-alerts-health-care-providers-compounders-and-patients-dosing-errors-associated-compounded",
+      "publisher": "U.S. Food and Drug Administration",
+      "accessDate": "2026-09-02",
+      "task": 2,
+      "classification": "FACT",
+      "exactQuoteShort": "FDA has received reports of adverse events, some requiring hospitalization, that may be related to overdoses due to dosing errors associated with compounded semaglutide injectable products.",
+      "pepcodexPages": [
+        "src/content/blog/fda-compounded-semaglutide-warning.mdx"
+      ]
+    },
+    {
+      "id": "label-wegovy-injection-2026",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/215256s033lbl.pdf",
+      "publisher": "U.S. FDA / Novo Nordisk (Prescribing Information)",
+      "publicationOrUpdateDate": "2026-02",
+      "dateType": "label_revision",
+      "accessDate": "2026-09-02",
+      "task": 2,
+      "classification": "FACT",
+      "exactQuoteShort": "WARNING: RISK OF THYROID C-CELL TUMORS ... In rodents, semaglutide causes thyroid C-cell tumors at clinically relevant exposures. It is unknown whether WEGOVY causes thyroid C-cell tumors, including medullary thyroid carcinoma (MTC), in humans ... WEGOVY is contraindicated in patients with a personal or family history of MTC or in patients with Multiple Endocrine Neoplasia syndrome type 2 (MEN 2).",
+      "pepcodexPages": [
+        "src/content/peptides/semaglutide.mdx",
+        "src/content/safety/semaglutide-safety.mdx",
+        "src/content/guides/what-is-wegovy.mdx"
+      ]
+    },
+    {
+      "id": "label-mounjaro-2026",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/215866s044s045lbl.pdf",
+      "publisher": "U.S. FDA / Eli Lilly (Prescribing Information)",
+      "publicationOrUpdateDate": "2026-08",
+      "dateType": "label_revision",
+      "accessDate": "2026-09-02",
+      "task": 2,
+      "classification": "FACT",
+      "exactQuoteShort": "WARNING: RISK OF THYROID C-CELL TUMORS ... Tirzepatide causes thyroid C-cell tumors in rats. It is unknown whether MOUNJARO causes thyroid C-cell tumors, including medullary thyroid carcinoma (MTC), in humans ... MOUNJARO is contraindicated in patients with a personal or family history of MTC or in patients with Multiple Endocrine Neoplasia syndrome type 2 (MEN 2).",
+      "pepcodexPages": [
+        "src/content/peptides/tirzepatide.mdx",
+        "src/content/safety/tirzepatide-safety.mdx"
+      ]
+    },
+    {
+      "id": "label-rybelsus-ozempic-tablets-2026",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/213051Orig1s030lbl.pdf",
+      "publisher": "U.S. FDA / Novo Nordisk (Prescribing Information)",
+      "publicationOrUpdateDate": "2026-01",
+      "dateType": "label_revision",
+      "accessDate": "2026-09-02",
+      "task": 2,
+      "classification": "FACT",
+      "exactQuoteShort": "WARNING: RISK OF THYROID C-CELL TUMORS ... RYBELSUS and OZEMPIC tablets are contraindicated in patients with a personal or family history of MTC or in patients with Multiple Endocrine Neoplasia syndrome type 2 (MEN 2).",
+      "pepcodexPages": [
+        "src/content/peptides/semaglutide.mdx",
+        "src/content/safety/semaglutide-safety.mdx"
+      ]
+    },
+    {
+      "id": "fda-foundayo-press",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-new-molecular-entity-under-national-priority-voucher-program",
+      "publisher": "U.S. Food and Drug Administration",
+      "publicationOrUpdateDate": "2026-04-01",
+      "accessDate": "2026-09-02",
+      "task": [2, 5],
+      "classification": "FACT",
+      "exactQuoteShort": "The U.S. Food and Drug Administration today approved Foundayo (orforglipron) ... Foundayo is approved for use in combination with a reduced-calorie diet and increased physical activity to reduce excess body weight and maintain weight reduction long term in adults with obesity or adults with overweight in the presence of at least one weight-related comorbid condition. ... The labeling for Foundayo includes a boxed warning for thyroid C-cell tumors.",
+      "pepcodexPages": [
+        "src/content/peptides/orforglipron.mdx"
+      ]
+    },
+    {
+      "id": "nda-220934-appletter",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220934Orig1s000ltr.pdf",
+      "publisher": "U.S. FDA",
+      "publicationOrUpdateDate": "2026-04-01",
+      "accessDate": "2026-09-02",
+      "task": 5,
+      "classification": "FACT",
+      "exactQuoteShort": "This NDA provides for the use of Foundayo (orforglipron) tablets in combination with a reduced calorie diet and increased physical activity to reduce excess body weight and maintain weight reduction long term in adults with obesity or adults with overweight in the presence of at least one weight-related comorbid condition. ... It is approved, effective on the date of this letter.",
+      "pepcodexPages": ["src/content/peptides/orforglipron.mdx"]
+    },
+    {
+      "id": "fda-novel-drugs-2026",
+      "url": "https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2026",
+      "publisher": "U.S. Food and Drug Administration",
+      "publicationOrUpdateDate": "2026-08-28",
+      "dateType": "page_content_current_as_of",
+      "accessDate": "2026-09-02",
+      "task": 5,
+      "classification": "FACT",
+      "exactQuoteShort": "11. Foundayo | orforglipron | 4/1/2026 | To reduce excess body weight and maintain weight reduction long term in adults with obesity or adults with overweight in the presence of at least one weight-related comorbid condition, in combination with a reduced-calorie diet and increased physical activity",
+      "notes": "CagriSema, retatrutide, pemvidutide, survodutide do not appear on this 2026 novel-drug table through 2026-08-28.",
+      "pepcodexPages": [
+        "src/content/peptides/orforglipron.mdx",
+        "src/content/peptides/retatrutide.mdx"
+      ]
+    },
+    {
+      "id": "drugsfda-nda-218316",
+      "url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=218316",
+      "publisher": "U.S. FDA Drugs@FDA",
+      "publicationOrUpdateDate": "2025-12-22",
+      "dateType": "original_approval_action_date",
+      "accessDate": "2026-09-02",
+      "task": 5,
+      "classification": "FACT",
+      "exactQuoteShort": "NDA 218316 Company: NOVO. Products: WEGOVY SEMAGLUTIDE 1.5MG / 4MG / 9MG / 25MG TABLET;ORAL. Original approval 12/22/2025 ORIG-1 Approval Type 3 - New Dosage Form.",
+      "pepcodexPages": [
+        "src/content/peptides/semaglutide.mdx",
+        "src/content/blog/oral-semaglutide-25mg-approval.mdx"
+      ]
+    },
+    {
+      "id": "nda-218316-appletter",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/218316Orig1s000ltr.pdf",
+      "publisher": "U.S. FDA",
+      "publicationOrUpdateDate": "2025-12-22",
+      "accessDate": "2026-09-02",
+      "task": 5,
+      "classification": "FACT",
+      "exactQuoteShort": "This NDA provides for the use of Wegovy (semaglutide) tablets in combination with a reduced calorie diet and increased physical activity: To reduce the risk of major adverse cardiovascular (CV) events ... in adults with established CV disease and either obesity or overweight. To reduce excess body weight and maintain weight reduction long term in adults with obesity or overweight in the presence of at least one weight-related comorbid condition.",
+      "pepcodexPages": [
+        "src/content/peptides/semaglutide.mdx",
+        "src/content/blog/oral-semaglutide-25mg-approval.mdx"
+      ]
+    },
+    {
+      "id": "dailymed-egrifta-sv-index",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3d783378-b02d-4f19-99dd-0fc91a042224",
+      "publisher": "NIH DailyMed",
+      "publicationOrUpdateDate": "2026-07-29",
+      "dateType": "index_published_date",
+      "accessDate": "2026-09-02",
+      "task": 3,
+      "classification": "FACT",
+      "exactQuoteShort": "EGRIFTA SV is a growth hormone-releasing factor (GHRF) analog indicated for the reduction of excess abdominal fat in HIV-infected adult patients with lipodystrophy. Limitations of use: Long-term cardiovascular safety of EGRIFTA SV has not been established. Not indicated for weight loss management.",
+      "notes": "DailyMed HTML DNS failed on this machine; quote is from the DailyMed search-index extract of the same setid.",
+      "pepcodexPages": [
+        "src/content/peptides/tesamorelin.mdx",
+        "src/content/blog/tesamorelin-liver-fat-hiv.mdx",
+        "src/content/blog/what-is-tesamorelin.mdx"
+      ]
+    },
+    {
+      "id": "fda-vyleesi-approval-2019",
+      "url": "https://www.prnewswire.com/news-releases/fda-approves-new-treatment-for-hypoactive-sexual-desire-disorder-in-premenopausal-women-300872998.html",
+      "publisher": "U.S. Food and Drug Administration (PR Newswire distribution of FDA release)",
+      "publicationOrUpdateDate": "2019-06-21",
+      "accessDate": "2026-09-02",
+      "task": 4,
+      "classification": "FACT",
+      "exactQuoteShort": "The U.S. Food and Drug Administration today approved Vyleesi (bremelanotide) to treat acquired, generalized hypoactive sexual desire disorder (HSDD) in premenopausal women.",
+      "pepcodexPages": ["src/content/peptides/pt-141.mdx"]
+    },
+    {
+      "id": "vyleesi-label-pdf",
+      "url": "https://fda.report/DailyMed/9146AE05-918B-483E-B86D-933485CE36EB.pdf",
+      "publisher": "FDA label / DailyMed SPL (mirrored PDF)",
+      "publicationOrUpdateDate": "2019 (initial U.S. approval)",
+      "accessDate": "2026-09-02",
+      "task": 4,
+      "classification": "FACT",
+      "exactQuoteShort": "VYLEESI is not indicated for the treatment of HSDD in postmenopausal women or in men. VYLEESI is not indicated to enhance sexual performance.",
+      "notes": "DailyMed host DNS failed; this is a label-PDF extract of the same setid.",
+      "pepcodexPages": [
+        "src/content/peptides/pt-141.mdx",
+        "src/content/blog/pt-141-safety.mdx",
+        "src/content/blog/what-is-pt-141.mdx"
+      ]
+    },
+    {
+      "id": "novo-cagrisema-nda-2025-12-18",
+      "url": "https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=916470",
+      "publisher": "Novo Nordisk",
+      "publicationOrUpdateDate": "2025-12-18",
+      "accessDate": "2026-09-02",
+      "task": 5,
+      "classification": "FACT",
+      "exactQuoteShort": "Today, Novo Nordisk announced the submission of a New Drug Application (NDA) to the U.S. Food and Drug Administration (FDA) for once-weekly CagriSema (cagrilintide 2.4 mg and semaglutide 2.4 mg) injection ... CagriSema is not approved in the US or EU.",
+      "pepcodexPages": [
+        "src/content/blog/cagrisema-nda-filed.mdx",
+        "src/content/blog/cagrisema-nda-filed-glp1-amylin-combo.mdx"
+      ]
+    },
+    {
+      "id": "nejm-redefine-1",
+      "url": "https://www.nejm.org/doi/10.1056/NEJMoa2502081",
+      "publisher": "New England Journal of Medicine",
+      "publicationOrUpdateDate": "2025-06-22",
+      "accessDate": "2026-09-02",
+      "task": 5,
+      "classification": "FACT",
+      "exactQuoteShort": "The estimated mean percent change in body weight from baseline to week 68 was –20.4% with cagrilintide–semaglutide as compared with –3.0% with placebo (estimated difference, –17.3 percentage points; 95% confidence interval, –18.1 to –16.6; P<0.001).",
+      "pmid": "40544433",
+      "pepcodexPages": ["src/content/blog/cagrisema-nda-filed.mdx"]
+    },
+    {
+      "id": "lilly-retatrutide-what-to-know",
+      "url": "https://www.lilly.com/news/stories/what-to-know-about-retatrutide",
+      "publisher": "Eli Lilly and Company",
+      "publicationOrUpdateDate": "2026-07-23",
+      "accessDate": "2026-09-02",
+      "task": 5,
+      "classification": "FACT",
+      "exactQuoteShort": "Is retatrutide approved by the FDA? No. Retatrutide is not currently approved by the FDA and is considered an investigational medication.",
+      "pepcodexPages": ["src/content/peptides/retatrutide.mdx"]
+    },
+    {
+      "id": "lilly-q2-2026-ir",
+      "url": "https://investor.lilly.com/news-releases/news-release-details/lilly-reports-second-quarter-2026-financial-results-raises-full",
+      "publisher": "Eli Lilly and Company",
+      "publicationOrUpdateDate": "2026-08-05",
+      "accessDate": "2026-09-02",
+      "task": 5,
+      "classification": "FACT",
+      "exactQuoteShort": "The clinical data package is now complete to support global registrations for obesity, obstructive sleep apnea, and knee osteoarthritis pain, with plans to submit a Biologics License Application to the U.S. FDA in the first quarter of 2027.",
+      "pepcodexPages": ["src/content/peptides/retatrutide.mdx"]
+    },
+    {
+      "id": "altimmune-btd-pemvidutide",
+      "url": "https://ir.altimmune.com/news-releases/news-release-details/altimmune-receives-fda-breakthrough-therapy-designation",
+      "publisher": "Altimmune, Inc.",
+      "publicationOrUpdateDate": "2026-01-05",
+      "accessDate": "2026-09-02",
+      "task": 5,
+      "classification": "FACT",
+      "exactQuoteShort": "Altimmune, Inc. ... today announced the U.S. Food and Drug Administration (FDA) has granted Breakthrough Therapy Designation (BTD) for pemvidutide ... for the treatment of patients with metabolic dysfunction-associated steatohepatitis (MASH).",
+      "notes": "Company announcement of an FDA designation. Designation is not marketing approval.",
+      "pepcodexPages": [
+        "src/content/blog/pemvidutide-crl-more-data.mdx",
+        "src/content/blog/pemvidutide-breakthrough-designation-mash.mdx"
+      ]
+    },
+    {
+      "id": "altimmune-performa-phase3",
+      "url": "https://ir.altimmune.com/node/17931/pdf",
+      "publisher": "Altimmune, Inc.",
+      "publicationOrUpdateDate": "2026-08-03",
+      "accessDate": "2026-09-02",
+      "task": 5,
+      "classification": "FACT",
+      "exactQuoteShort": "Altimmune Initiates PERFORMA Phase 3 Trial of Pemvidutide in Patients with MASH",
+      "pepcodexPages": ["src/content/blog/pemvidutide-crl-more-data.mdx"]
+    },
+    {
+      "id": "boehringer-synchronize-2026",
+      "url": "https://www.boehringer-ingelheim.com/us/human-health/metabolic-diseases/positive-data-two-phase-iii-synchronize-obesity-trials",
+      "publisher": "Boehringer Ingelheim",
+      "publicationOrUpdateDate": "2026-06-07",
+      "accessDate": "2026-09-02",
+      "task": 5,
+      "classification": "FACT",
+      "exactQuoteShort": "Survodutide is an investigational agent and has not been approved for use; its efficacy and safety have not been established.",
+      "pepcodexPages": [
+        "src/content/blog/survodutide-fda-submission-mash.mdx",
+        "src/content/blog/survodutide-phase3-mash.mdx"
+      ]
+    },
+    {
+      "id": "nejm-synchronize-1-survodutide",
+      "url": "https://www.nejm.org/doi/pdf/10.1056/NEJMoa2600751",
+      "publisher": "New England Journal of Medicine",
+      "publicationOrUpdateDate": "2026-06-07",
+      "accessDate": "2026-09-02",
+      "task": 5,
+      "classification": "FACT",
+      "exactQuoteShort": "At week 76, the mean change in body weight from baseline according to the treatment-regimen estimand was –12.2% ... in the 3.6-mg group, –13.0% ... in the 6.0-mg group, and –5.4% ... in the placebo group.",
+      "pepcodexPages": ["src/content/blog/survodutide-phase3-mash.mdx"]
+    },
+    {
+      "id": "nejm-survodutide-mash-phase2",
+      "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2401755",
+      "publisher": "New England Journal of Medicine",
+      "publicationOrUpdateDate": "2024-06-07",
+      "pmid": "38847460",
+      "accessDate": "2026-09-02",
+      "task": 5,
+      "classification": "FACT",
+      "exactQuoteShort": "Improvement in MASH with no worsening of fibrosis occurred in 47% of the participants in the survodutide 2.4-mg group, 62% of those in the 4.8-mg group, and 43% of those in the 6.0-mg group, as compared with 14% of those in the placebo group.",
+      "pepcodexPages": ["src/content/blog/survodutide-fda-submission-mash.mdx"]
+    },
+    {
+      "id": "ftc-endorsements-hub",
+      "url": "https://www.ftc.gov/business-guidance/advertising-marketing/endorsements-influencers-reviews",
+      "publisher": "U.S. Federal Trade Commission",
+      "publicationOrUpdateDate": "2023-10-17",
+      "dateType": "page_indexed_or_listed",
+      "accessDate": "2026-09-02",
+      "task": 6,
+      "classification": "FACT",
+      "exactQuoteShort": "If you use consumer reviews or endorsements in your marketing, are you both meeting the standards of the FTC Act and complying with the specific prohibitions of the Rule on the Use of Consumer Reviews and Testimonials? What about the FTC's Guides Concerning Use of Endorsements and Testimonials in Advertising (Endorsement Guides), revised in 2023?",
+      "notes": "Hub HTML was thin on fetch; substance taken from linked FTC documents below.",
+      "pepcodexPages": [
+        "src/pages/editorial-policy.astro",
+        "src/pages/disclaimer.astro",
+        "src/pages/clinics/index.astro"
+      ]
+    },
+    {
+      "id": "ftc-endorsement-guides-faq",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "publisher": "U.S. Federal Trade Commission",
+      "accessDate": "2026-09-02",
+      "task": 6,
+      "classification": "FACT",
+      "exactQuoteShort": "You should disclose your relationship to the retailer clearly and conspicuously on your site, so readers can decide how much weight to give your endorsement. You could say something like, “I get commissions for purchases made through links in this post.”",
+      "pepcodexPages": [
+        "src/pages/editorial-policy.astro",
+        "src/pages/disclaimer.astro"
+      ]
+    },
+    {
+      "id": "ftc-16cfr-465-qa",
+      "url": "https://www.ftc.gov/business-guidance/resources/consumer-reviews-testimonials-rule-questions-answers",
+      "publisher": "U.S. Federal Trade Commission",
+      "publicationOrUpdateDate": "2024-11-08",
+      "accessDate": "2026-09-02",
+      "task": 6,
+      "classification": "FACT",
+      "exactQuoteShort": "The only section of the rule that applies to endorsements by entities or purported entities is Section 465.6, which prohibits a business from misrepresenting that a website, organization, or entity that it controls provides independent reviews or opinions (other than consumer reviews) about a category of businesses, products, or services including its own.",
+      "pepcodexPages": [
+        "src/pages/clinics/index.astro",
+        "src/pages/clinics/[city].astro"
+      ]
+    },
+    {
+      "id": "ftc-endorsement-guides-2023-press",
+      "url": "https://www.ftc.gov/news-events/news/press-releases/2023/06/federal-trade-commission-announces-updated-advertising-guides-combat-deceptive-reviews-endorsements",
+      "publisher": "U.S. Federal Trade Commission",
+      "publicationOrUpdateDate": "2023-06-29",
+      "accessDate": "2026-09-02",
+      "task": 6,
+      "classification": "FACT",
+      "exactQuoteShort": "The Federal Trade Commission today announced it has finalized an updated version of its Endorsement Guides, which provide agency guidance to businesses and others to ensure that advertising using reviews or endorsements is truthful.",
+      "pepcodexPages": ["src/pages/editorial-policy.astro"]
+    },
+    {
+      "id": "ftc-health-products-guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "publisher": "U.S. Federal Trade Commission",
+      "publicationOrUpdateDate": "2022-12-20",
+      "accessDate": "2026-09-02",
+      "task": 6,
+      "classification": "FACT",
+      "exactQuoteShort": "The FTC has provided detailed guidance on this subject in its Guides Concerning Use of Endorsements and Testimonials in Advertising, 16 C.F.R. § 255.",
+      "notes": "Guidance: health claims require competent and reliable scientific evidence; testimonials are treated as advertising claims; disclosures do not cure lack of substantiation.",
+      "pepcodexPages": [
+        "src/pages/fda-notice.astro",
+        "src/pages/disclaimer.astro",
+        "src/pages/clinics/index.astro"
+      ]
+    },
+    {
+      "id": "google-helpful-content",
+      "url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+      "publisher": "Google Search Central",
+      "publicationOrUpdateDate": "2025-12-10",
+      "dateType": "page_last_updated_utc",
+      "accessDate": "2026-09-02",
+      "task": 7,
+      "classification": "FACT",
+      "exactQuoteShort": "Google's automated ranking systems are designed to prioritize helpful, reliable information that's created to benefit people, and not content that's created to manipulate search engine rankings. ... our systems give even more weight to content that aligns with strong E-E-A-T for topics that could significantly impact the health, financial stability, or safety of people ... We call these “Your Money or Your Life” topics, or YMYL for short.",
+      "pepcodexPages": [
+        "src/pages/editorial-policy.astro",
+        "src/content/peptides/",
+        "src/content/blog/",
+        "src/pages/clinics/"
+      ]
+    },
+    {
+      "id": "google-spam-policies",
+      "url": "https://developers.google.com/search/docs/essentials/spam-policies",
+      "publisher": "Google Search Central",
+      "publicationOrUpdateDate": "2026-08-28",
+      "dateType": "page_last_updated_utc",
+      "accessDate": "2026-09-02",
+      "task": 7,
+      "classification": "FACT",
+      "exactQuoteShort": "Scaled content abuse is when many pages are generated for the primary purpose of manipulating search rankings and not helping users. ... Doorway abuse is when sites or pages are created to rank for specific, similar search queries. They lead users to intermediate pages that aren't as useful as the final destination. ... Expired domain abuse is where an expired domain name is purchased and repurposed primarily to manipulate search rankings ... The site reputation policy applies where third-party content is published on a host site mainly because of that host's already-established ranking signals.",
+      "pepcodexPages": [
+        "src/pages/clinics/",
+        "src/content/cities/",
+        "src/content/blog/"
+      ]
+    },
+    {
+      "id": "pubmed-39865815-withdrawn-bpc157",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39865815/",
+      "publisher": "PubMed / Current Neuropharmacology",
+      "publicationOrUpdateDate": "2025-01-24",
+      "accessDate": "2026-09-02",
+      "task": 8,
+      "classification": "FACT",
+      "exactQuoteShort": "The article has been withdrawn at the author's request from the website of the journal Current Neuropharmacology.",
+      "pmid": "39865815",
+      "notes": "Repo grep found no PepCodex citation of this PMID.",
+      "pepcodexPages": ["src/content/peptides/bpc-157.mdx"]
+    },
+    {
+      "id": "fda-warning-letters-index-2026-09-01",
+      "url": "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/compliance-actions-and-activities/warning-letters",
+      "publisher": "U.S. Food and Drug Administration",
+      "publicationOrUpdateDate": "2026-09-01",
+      "accessDate": "2026-09-02",
+      "task": 8,
+      "classification": "FACT",
+      "exactQuoteShort": "Posted 09/01/2026 ... Peak Performance Peptides ... Unapproved New Drugs/Misbranded; Royal Peptides LLC; NuScience Peptides LLC; Peptide Partners LLC; TXP Innovations LLC dba Tex Peptides ... Unapproved New Drugs/Misbranded (letter issue dates 08/24/2026).",
+      "notes": "Letter bodies not opened. Relevant as enforcement context; PepCodex states it does not sell or source.",
+      "pepcodexPages": [
+        "src/pages/fda-notice.astro",
+        "src/pages/disclaimer.astro"
+      ]
+    },
+    {
+      "id": "fda-shortage-homepage-snippets",
+      "url": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "publisher": "U.S. FDA Drug Shortages",
+      "publicationOrUpdateDate": "2026-09-01",
+      "dateType": "homepage_update_dates_visible",
+      "accessDate": "2026-09-02",
+      "task": 1,
+      "classification": "FACT",
+      "exactQuoteShort": "August 27, 2026 ... Liraglutide Injection (Currently in Shortage). August 25, 2026 ... Liraglutide Injection (Discontinuation) and (Currently in Shortage).",
+      "notes": "Presentation-level status not fully enumerated. Mixed shortage/discontinuation lines on the same ingredient. SKU-level status UNKNOWN.",
+      "pepcodexPages": ["src/content/blog/glp1-shortage-easing.mdx"]
+    }
+  ],
+  "pepcodexRepoFilesRead": [
+    ".planning/master-audit-2026-09-02/INPUTS.md",
+    "src/pages/fda-notice.astro",
+    "src/pages/disclaimer.astro",
+    "src/pages/editorial-policy.astro",
+    "src/pages/clinics/index.astro",
+    "src/content/peptides/semaglutide.mdx",
+    "src/content/peptides/tirzepatide.mdx",
+    "src/content/peptides/retatrutide.mdx",
+    "src/content/peptides/bpc-157.mdx",
+    "src/content/peptides/tb-500.mdx",
+    "src/content/peptides/tesamorelin.mdx",
+    "src/content/peptides/melanotan-ii.mdx",
+    "src/content/peptides/pt-141.mdx",
+    "src/content/peptides/orforglipron.mdx",
+    "src/content/blog/fda-compounded-semaglutide-warning.mdx",
+    "src/content/blog/fda-compounding-oversight.mdx",
+    "src/content/blog/fda-tightens-peptide-compounding-rules.mdx",
+    "src/content/blog/fda-semaglutide-shortage-extended.mdx",
+    "src/content/blog/fda-peptide-stability-guidance.mdx",
+    "src/content/blog/oral-semaglutide-25mg-approval.mdx",
+    "src/content/blog/wegovy-pill-launches-us.mdx",
+    "src/content/blog/cagrisema-nda-filed.mdx",
+    "src/content/blog/pemvidutide-eu-mash-approval.mdx",
+    "src/content/blog/pemvidutide-crl-more-data.mdx",
+    "src/content/blog/survodutide-fda-submission-mash.mdx",
+    "src/content/blog/tesamorelin-liver-fat-hiv.mdx"
+  ],
+  "didNotRead": [
+    ".planning/master-audit-2026-09-02/audit-a/",
+    ".planning/master-audit-2026-09-02/audit-b/",
+    ".planning/master-audit-2026-09-02/audit-c/"
+  ]
+}

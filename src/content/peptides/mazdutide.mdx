@@ -6,19 +6,18 @@ aliases:
   - Xinermei
 category: metabolic
 evidenceStrength: high
-lastUpdated: 2026-08-17T00:00:00.000Z
+lastUpdated: 2026-09-02T00:00:00.000Z
 comparators:
   - semaglutide
   - survodutide
   - tirzepatide
 summary: >-
-  A dual GLP-1 and glucagon receptor agonist developed by Innovent/Eli Lilly.
-  Innovent reports NMPA approval in China in 2025 for chronic weight management
-  and for type 2 diabetes; it is not FDA- or EMA-approved. The GLORY-1 trial showed 14.0%
-  weight loss at 48 weeks with the 6mg dose, and the GLORY-2 trial reported
-  16.65% at 60 weeks with the 9mg dose. The DREAMS-3 head-to-head trial vs
-  semaglutide for combined diabetes + obesity outcomes is ongoing, with results
-  not yet published.
+  The newest verified paper is Hsia et al. (PMID 42628555), a US Phase 2 trial
+  in 179 adults with obesity or overweight without type 2 diabetes (48 weeks).
+  The primary analysis is percentage body-weight change at 32 weeks on the
+  efficacy (hypothetical) estimand; the abstract does not report a
+  treatment-regimen or treatment-policy figure. Dual GLP-1/glucagon agonist.
+  Innovent reports NMPA approval in China; not FDA- or EMA-approved.
 sources:
   count: 18
   human: 12
@@ -146,6 +145,21 @@ evidenceChainedBenefits:
             year), but rated this evidence very low to low certainty — the
             weakest certainty grade in the analysis
           pmid: '42419792'
+        - study: 'Hsia SH et al. 2026 (US phase 2; NCT06124807)'
+          type: human-rct
+          finding: >-
+            US multicentre randomised placebo-controlled phase 2 trial in 179
+            adults with obesity or overweight without type 2 diabetes (48
+            weeks). The paper names the primary analysis as percentage
+            body-weight change at 32 weeks on the efficacy (hypothetical)
+            estimand; the abstract does not report a treatment-regimen or
+            treatment-policy figure. On that efficacy estimand, least-squares
+            mean change was -7.3% (3-6 mg), -15.6% (10 mg) and -18.1% (16 mg)
+            versus -0.9% with placebo; estimated treatment differences versus
+            placebo ranged from -6.5% to -17.2%. Additional reductions at 48
+            weeks were noted without abstract numbers. Discontinuation due to
+            adverse events was 20% at 16 mg, mainly gastrointestinal
+          pmid: '42628555'
   - mechanism:
       action: Glucagon receptor activation increasing hepatic fatty acid oxidation
       confidence: established
@@ -234,12 +248,15 @@ conditions:
       with 49.5% of participants achieving ≥15% weight loss. The GLORY-2 trial
       (N=461) then tested the 9mg strength over 60 weeks and reported -16.65%
       body weight versus -1.50% with placebo, with 84.3% versus 33.1% reaching
-      at least 5% reduction. Innovent announced NMPA approval in China for
-      chronic weight management on 27 June 2025 (company-reported).
+      at least 5% reduction. Hsia et al. (PMID 42628555) is a US Phase 2 trial
+      reporting the efficacy (hypothetical) estimand; the abstract does not
+      report a treatment-policy figure. Innovent announced NMPA approval in
+      China for chronic weight management on 27 June 2025 (company-reported).
     relevantStudies:
       - '40421736'
       - '42251595'
       - '38092790'
+      - '42628555'
     relatedPeptides:
       - semaglutide
       - tirzepatide
@@ -366,6 +383,7 @@ scoring:
     - "PMID:40081498"
     - "PMID:40479843"
     - "PMID:41260459"
+    - "PMID:42628555"
   notes: >-
     Research Depth 90: highest tier is meta-analysis of multiple independent
     double-blind placebo-controlled Phase 3 RCTs (1A 35) — GLORY-1 N=610
@@ -392,6 +410,9 @@ scoring:
     patient-relevant weight and cardiometabolic outcomes; superior to
     dulaglutide on HbA1c/weight, though head-to-head vs semaglutide (DREAMS-3,
     41260459) is pending and indirect comparisons place it below retatrutide.
+    Scanned 2026-09-01 (window since 2026-08-17): added Hsia 42628555 (US phase 2;
+    efficacy/hypothetical estimand labeled; no treatment-policy figure in the
+    abstract).
 anecdotalReports:
   positive: []
   negative: []
@@ -458,10 +479,16 @@ The tolerability figures deserve equal weight. Vomiting was reported by 53.1% of
 
 This trial was conducted entirely in China, in a population younger and lighter than the typical Western obesity trial cohort, which limits how far the result generalises.
 
+### US Phase 2 (Hsia) — efficacy estimand only
+
+Hsia et al. ([PMID:42628555](https://pubmed.ncbi.nlm.nih.gov/42628555/), NCT06124807) is a US multicentre randomised placebo-controlled Phase 2 trial in 179 adults with obesity or overweight without type 2 diabetes (48 weeks). The paper names the primary analysis as percentage body-weight change at 32 weeks on the **efficacy (hypothetical) estimand**. The abstract does not report a treatment-regimen or treatment-policy figure, so none is stated here.
+
+On that efficacy estimand, least-squares mean change was −7.3% (3-6 mg), −15.6% (10 mg) and −18.1% (16 mg) versus −0.9% with placebo; estimated treatment differences versus placebo ranged from −6.5% to −17.2%. Additional reductions at 48 weeks were noted without abstract numbers. Discontinuation due to adverse events was 20% at the highest strength, mainly gastrointestinal. This US Phase 2 result is not interchangeable with the China Phase 3 GLORY figures, and it is not a head-to-head against [semaglutide](/peptides/semaglutide) or [survodutide](/peptides/survodutide).
+
 ### Important Limitations
 
 - Approval is limited to China, per Innovent's own announcements (NMPA); not FDA- or EMA-approved
-- Both published phase 3 efficacy trials (GLORY-1, GLORY-2) enrolled only Chinese adults, and every mazdutide phase 3 registration found on ClinicalTrials.gov on 17 August 2026 recruits in China; no phase 3 result in another population was located
+- Both published phase 3 efficacy trials (GLORY-1, GLORY-2) enrolled only Chinese adults, and every mazdutide phase 3 registration found on ClinicalTrials.gov on 17 August 2026 recruits in China; no phase 3 result in another population was located. The US Hsia Phase 2 result is on the efficacy (hypothetical) estimand only
 - Long-term safety data beyond 60 weeks is limited
 - Head-to-head data vs tirzepatide not yet available
 - Optimal patient selection criteria still being refined

@@ -1,0 +1,78 @@
+npm notice run peptide-library@0.0.1 prebuild
+npm notice run npm run check
+npm notice run peptide-library@0.0.1 check
+npm notice run node scripts/qa-internal-consistency.mjs --strict && node scripts/qa-identity-integrity.mjs && node scripts/qa-comparison-counts.mjs --strict && node scripts/qa-staleness.mjs && node scripts/qa-medical-advice.mjs --strict && node scripts/validate-cross-links.mjs && node scripts/qa-seo.mjs && node scripts/qa-scoring.mjs && node scripts/qa-pmids.mjs --strict && node scripts/qa-source-identifiers.mjs --strict
+Internal consistency: 1394 distinct identifiers checked.
+
+ADVISORY: 1 label variance(s) — same record, different editorial titles (non-blocking):
+  • NCT:NCT05567796
+      "A Research Study to See How Well CagriSema Helps People With Excess Body Weight Lose Weight" (cagrilintide.json.coreLibrary.primaryStudies[7])  VS  "REDEFINE 1: Effect of CagriSema on Body Weight in People With Obesity" (cagrilintide.json.coreLibrary.trialRegistries[3])  VS  "REDEFINE 1: CagriSema vs Semaglutide in Obesity" (cagrilintide.json.trials[3])
+
+PASS: no contradicting facts, count mismatches, or patterned identifiers.
+Identity integrity: 107 dossiers, 43 packs.
+{
+  "STALE_SOURCE_COUNT": 6,
+  "GENERIC_ALIAS": 1
+}
+
+ADVISORY (1) — alias hygiene, non-blocking:
+  • peptides/mk-677.mdx
+      1 public alias(es) name a tissue or category rather than a compound: "L-163,191" — misleading as published synonyms, and the cause of literature-scan false positives
+
+WARN: 6 blocking finding(s)
+
+  • [STALE_SOURCE_COUNT] peptides/cagrilintide.mdx
+      sources.count declares 34 but 36 verified identifier(s) are rendered — this number appears as a credibility signal on the dossier, in search results, and in every generated comparison. Run `npm run fix:counts -- --apply`.
+  • [STALE_SOURCE_COUNT] peptides/cerluten.mdx
+      sources.count declares 3 but 4 verified identifier(s) are rendered — this number appears as a credibility signal on the dossier, in search results, and in every generated comparison. Run `npm run fix:counts -- --apply`.
+  • [STALE_SOURCE_COUNT] peptides/maritide.mdx
+      sources.count declares 21 but 23 verified identifier(s) are rendered — this number appears as a credibility signal on the dossier, in search results, and in every generated comparison. Run `npm run fix:counts -- --apply`.
+  • [STALE_SOURCE_COUNT] peptides/mazdutide.mdx
+      sources.count declares 18 but 22 verified identifier(s) are rendered — this number appears as a credibility signal on the dossier, in search results, and in every generated comparison. Run `npm run fix:counts -- --apply`.
+  • [STALE_SOURCE_COUNT] peptides/orforglipron.mdx
+      sources.count declares 37 but 40 verified identifier(s) are rendered — this number appears as a credibility signal on the dossier, in search results, and in every generated comparison. Run `npm run fix:counts -- --apply`.
+  • [STALE_SOURCE_COUNT] peptides/survodutide.mdx
+      sources.count declares 34 but 36 verified identifier(s) are rendered — this number appears as a credibility signal on the dossier, in search results, and in every generated comparison. Run `npm run fix:counts -- --apply`.
+
+Written to .planning/citation-audit/identity-findings.json
+Comparison counts: 269 pages checked against their dossiers.
+PASS: every printed count matches its dossier.
+Staleness matcher self-test: 26/26
+
+Scanned 932 content files; 64 trials with a known result.
+
+ADVISORY: 6 possible status/prose mismatch(es) — verify against a regulator, never auto-edit:
+  • peptides/cerebrolysin.mdx
+      regulatoryStatus.status = "research-only" but 2 prose assertion(s) claim approval
+      "Cerebrolysin is a porcine brain-derived peptide mixture approved in 50+ countries for stroke, dementia, and traumatic brain injury. It is NOT FDA-appr"
+  • peptides/igf-1-lr3.mdx
+      regulatoryStatus.status = "research-only" but 1 prose assertion(s) claim approval
+      "IGF-1 can improve insulin sensitivity and glucose uptake via GLUT4 translocation. However, the hypoglycemic effects are a significant safety concern. "
+  • peptides/melanotan-ii.mdx
+      regulatoryStatus.status = "research-only" but 1 prose assertion(s) claim approval
+      "Melanotan II acts on melanocortin-4 receptors, which are involved in appetite regulation. Users often report reduced appetite as a side effect. The me"
+  • peptides/semax.mdx
+      regulatoryStatus.status = "research-only" but 1 prose assertion(s) claim approval
+      "Semax has been extensively studied for its nootropic properties, demonstrating improvements in memory, attention, and learning through BDNF and NGF up"
+  • peptides/sermorelin.mdx
+      regulatoryStatus.status = "research-only" but 3 prose assertion(s) claim approval
+      "- Was FDA-approved but discontinued in 2008 for business reasons (not safety concerns)"
+  • peptides/thymosin-alpha-1.mdx
+      regulatoryStatus.status = "research-only" but 1 prose assertion(s) claim approval
+      "Evidence-graded review of thymosin alpha-1 covering 12 citations. Immune peptide approved in 35+ countries for hepatitis and cancer adjunct. Updated F"
+
+PASS: no blocking staleness findings.
+Advice-voice self-test: 44/44
+
+Scanned 932 files.
+
+FAIL: 1 passage(s) read as instruction rather than description
+  by pattern: {"should-directive":1}
+  files affected: 1
+
+    1  blog/fda-tightens-peptide-compounding-rules.mdx
+         [should-directive] body
+         "Individuals should consult qualified"
+
+Written to .planning/citation-audit/medical-advice.json
+REAL_BUILD_EXIT=1

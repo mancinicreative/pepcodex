@@ -3,6 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import TableOfContents from '../components/TableOfContents.astro';
 import BreadcrumbSchema from '../components/SEO/BreadcrumbSchema.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
+import AppWaitlistCTA from '../components/AppWaitlistCTA.astro';
 
 interface Source {
   id: string;
@@ -199,6 +200,8 @@ const breadcrumbItems = [
         </div>
       </aside>
     </div>
+
+    <AppWaitlistCTA context="safety" />
 
     <!-- Newsletter CTA -->
     <div class="mt-12">

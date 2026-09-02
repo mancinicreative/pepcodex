@@ -1,10 +1,10 @@
-# Trial Triage — 2026-08-17
+# Trial Triage — 2026-09-01
 
-464 trial records · 423 unique NCTs
+478 trial records · 437 unique NCTs
 
 | class | n | meaning |
 |---|---|---|
-| `OK` | 448 | drug matches and title matches |
+| `OK` | 462 | drug matches and title matches |
 | `COMPARATOR` | 10 | drug does NOT match but title is plausible -> possible comparator, needs judgment |
 | `FOREIGN_REGISTRY` | 5 | valid id in a non-CT.gov registry -> verify separately, do NOT delete |
 | `AUTOFIX_TITLE` | 1 | drug matches, stored title wrong -> safe to overwrite from CT.gov |

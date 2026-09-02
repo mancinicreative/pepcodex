@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SearchBar from '../components/SearchBar.astro';
 import PeptideCard from '../components/PeptideCard.astro';
+import BlogCard from '../components/BlogCard.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
 import Vial from '../components/Vial.astro';
 import EvidenceBadge from '../components/EvidenceBadge.astro';
@@ -23,6 +24,17 @@ const topPeptideSlugs = [
 ];
 const featuredPeptides = topPeptideSlugs
   .map(slug => peptides.find(p => p.slug === slug))
+  .filter(Boolean);
+
+// Existing briefings only — CONTENT-PLAN §8. Not new URLs.
+const featuredBriefSlugs = [
+  'semax-neuroprotection-stroke',
+  'semaglutide-vs-tirzepatide-2026',
+  'dsip-sleep-quality-study',
+  'is-bpc-157-safe',
+];
+const featuredBriefs = featuredBriefSlugs
+  .map((slug) => blogPosts.find((p) => p.slug === slug))
   .filter(Boolean);
 
 // The "drawers" — categories A–F with live specimen counts
@@ -134,6 +146,36 @@ const issue = 'Spring 2026';
             evidenceStrength={peptide.data.evidenceStrength}
             summary={peptide.data.summary}
             aliases={peptide.data.aliases}
+          />
+        ))}
+      </div>
+    </section>
+  )}
+
+  {featuredBriefs.length > 0 && (
+    <section class="py-10 md:py-14" style="border-top: 1px solid var(--border-c);">
+      <div class="flex items-end justify-between gap-4 mb-2">
+        <div class="section-header mb-0">
+          <span class="section-header__bar"></span>
+          <h2 class="section-header__title">Featured briefings</h2>
+        </div>
+        <a href="/blog" class="eyebrow inline-flex items-center gap-1 hover:text-[color:var(--primary-c)] transition-colors" style="color: var(--ink-dim);">
+          All briefings
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <p class="eyebrow mb-8" style="color: var(--ink-dim);">Existing posts · click-depth 1 from home</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {featuredBriefs.map((post) => (
+          <BlogCard
+            title={post.data.title}
+            slug={post.slug}
+            category={post.data.category}
+            publishDate={post.data.publishDate}
+            excerpt={post.data.excerpt}
+            author={post.data.author}
+            tags={post.data.tags}
           />
         ))}
       </div>

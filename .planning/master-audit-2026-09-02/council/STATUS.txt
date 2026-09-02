@@ -1,0 +1,25 @@
+COMPLETE
+
+Council Judge / Red-Team Auditor
+Date: 2026-09-02
+Mode: AUDIT ONLY. No site edits. No outreach. No enrollments.
+
+Combined audit verdict: FAIL (see SCORECARD.md, JUDGE-REPORT.md)
+Judge work: COMPLETE
+
+Inventory IDs reconciled: 1343/1343 (frozen INVENTORY-SUMMARY.json)
+Every Audit A/B/C finding has a Judge disposition in DISPOSITIONS.json
+All CRITICAL and HIGH findings independently re-checked against files and/or live/NCBI/FDA sources
+≥20% of remaining (non-critical/high) findings sampled; expanded after A-001 count error and C-007 Category-2 mismatch
+
+Visible unknowns (do not invent):
+- GSC/GA4 live pull blocked (invalid_rapt)
+- DailyMed HTML DNS failed; boxed-warning text from FDA press/label PDFs
+- Whether Featured clinic SKU has ever taken money (advertising policy: current sponsors none)
+- PCAC July 2026 official vote tally / 503B bulks final determination
+- CagriSema FDA decision after 2025-12-18 NDA
+- HTTP status of every repo-not-in-live URL (one material live-200 miss documented: /blog/cagrilintide-semaglutide-approval)
+- Production git SHA / Vercel deployment ID
+- Whether gtag network hit fires before consent (HTML source order only)
+
+Did not: modify src/, public/, data/, vercel.json; contact clinics; enroll in affiliates; submit forms; purchase; invent citations or metrics.

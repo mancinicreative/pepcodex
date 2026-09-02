@@ -1,0 +1,2170 @@
+{
+  "generatedAt": "2026-09-02T22:17:48.839Z",
+  "auditor": "Integrity Auditor packet I Wave 1",
+  "recommendation": "FREEZE leftover-compare MDX editors",
+  "judgePause": {
+    "TICK37": "UNCLOSED — on-disk judge/L4-TICK37-iter1.md stamps KEEP; do not treat as official KEEP",
+    "TICK60plus": "UNCLOSED — implementer notes exist through TICK76; no Quality Judge files for TICK60+"
+  },
+  "tickClaimsVsDisk": {
+    "cleanedNoTotalSources": [
+      "5-amino-1mq-vs-amycretin",
+      "5-amino-1mq-vs-aod-9604",
+      "5-amino-1mq-vs-cagrilintide",
+      "5-amino-1mq-vs-cagrisema",
+      "5-amino-1mq-vs-ct-388",
+      "5-amino-1mq-vs-liraglutide",
+      "5-amino-1mq-vs-maritide",
+      "5-amino-1mq-vs-mazdutide",
+      "5-amino-1mq-vs-semaglutide",
+      "5-amino-1mq-vs-tirzepatide",
+      "aod-9604-vs-cagrilintide",
+      "aod-9604-vs-cagrisema",
+      "aod-9604-vs-ct-388",
+      "aod-9604-vs-mk-677",
+      "aod-9604-vs-orforglipron",
+      "aod-9604-vs-semaglutide",
+      "aod-9604-vs-tirzepatide"
+    ],
+    "claimedInFlightStillLeftover": {
+      "TICK71": "aod-9604-vs-liraglutide",
+      "TICK72": "5-amino-1mq-vs-orforglipron",
+      "TICK73": "5-amino-1mq-vs-pemvidutide",
+      "TICK74": "5-amino-1mq-vs-vk2735",
+      "TICK75": "5-amino-1mq-vs-retatrutide",
+      "TICK76": "5-amino-1mq-vs-survodutide"
+    },
+    "leftoverUnclaimedInFamily": [
+      "5-amino-1mq-vs-slu-pp-332",
+      "aod-9604-vs-slu-pp-332",
+      "aod-9604-vs-mazdutide",
+      "aod-9604-vs-maritide",
+      "aod-9604-vs-pemvidutide",
+      "aod-9604-vs-retatrutide",
+      "aod-9604-vs-survodutide",
+      "aod-9604-vs-vk2735"
+    ]
+  },
+  "gsc": {
+    "pulledAt": "2026-09-02T22:04:55.783Z",
+    "apexWindow": {
+      "first": "2026-01-27",
+      "last": "2026-08-31",
+      "days": 217,
+      "totals": {
+        "clicks": 84,
+        "impressions": 32357,
+        "ctr": 0.26,
+        "position": 24.4
+      }
+    },
+    "wwwWindow": {
+      "first": "2026-05-28",
+      "last": "2026-08-31",
+      "days": 96,
+      "totals": {
+        "clicks": 171,
+        "impressions": 47722,
+        "ctr": 0.358,
+        "position": 32.3
+      }
+    },
+    "source": [
+      ".planning/data/v2/gsc-pepcodex-com-page.json",
+      ".planning/data/v2/gsc-www-pepcodex-com-page.json"
+    ],
+    "usedQueryExport": false,
+    "note": "Do not add apex+www into one CTR. Host migration overlap. Rank by page clicks."
+  },
+  "counts": {
+    "allCompares": 269,
+    "leftoverTotalSources": 152,
+    "leftoverWithAnyClicks": 19,
+    "leftoverSilent": 133,
+    "leftoverWithImpressions": 66,
+    "family5aminoAod": 31,
+    "familyLeftover": 14,
+    "familyCleanedNoTotalSources": 17,
+    "familyLeftoverWithClicks": 2,
+    "familyCleanedWithClicks": 1
+  },
+  "topLeftoverByClicks": [
+    {
+      "slug": "cagrilintide-vs-survodutide",
+      "lastUpdated": "2026-02-12",
+      "silent": false,
+      "family": "other",
+      "apex": {
+        "clicks": 6,
+        "impressions": 111,
+        "avgPos": 4.4,
+        "urls": [
+          "https://pepcodex.com/compare/cagrilintide-vs-survodutide",
+          "https://pepcodex.com/compare/cagrilintide-vs-survodutide/"
+        ]
+      },
+      "www": {
+        "clicks": 10,
+        "impressions": 224,
+        "avgPos": 7,
+        "urls": [
+          "https://www.pepcodex.com/compare/cagrilintide-vs-survodutide"
+        ]
+      }
+    },
+    {
+      "slug": "cardiogen-vs-vesugen",
+      "lastUpdated": "2026-02-12",
+      "silent": false,
+      "family": "other",
+      "apex": {
+        "clicks": 8,
+        "impressions": 330,
+        "avgPos": 5.7,
+        "urls": [
+          "https://pepcodex.com/compare/cardiogen-vs-vesugen"
+        ]
+      },
+      "www": {
+        "clicks": 2,
+        "impressions": 186,
+        "avgPos": 10.7,
+        "urls": [
+          "https://www.pepcodex.com/compare/cardiogen-vs-vesugen"
+        ]
+      }
+    },
+    {
+      "slug": "na-semax-amidate-vs-selank",
+      "lastUpdated": "2026-02-12",
+      "silent": false,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 6,
+        "impressions": 281,
+        "avgPos": 7.9,
+        "urls": [
+          "https://www.pepcodex.com/compare/na-semax-amidate-vs-selank"
+        ]
+      }
+    },
+    {
+      "slug": "ovagen-vs-svetinorm",
+      "lastUpdated": "2026-02-12",
+      "silent": false,
+      "family": "other",
+      "apex": {
+        "clicks": 3,
+        "impressions": 54,
+        "avgPos": 5.5,
+        "urls": [
+          "https://pepcodex.com/compare/ovagen-vs-svetinorm"
+        ]
+      },
+      "www": {
+        "clicks": 4,
+        "impressions": 289,
+        "avgPos": 7.7,
+        "urls": [
+          "https://www.pepcodex.com/compare/ovagen-vs-svetinorm"
+        ]
+      }
+    },
+    {
+      "slug": "thymogen-vs-vilon",
+      "lastUpdated": "2026-02-12",
+      "silent": false,
+      "family": "other",
+      "apex": {
+        "clicks": 1,
+        "impressions": 75,
+        "avgPos": 6.7,
+        "urls": [
+          "https://pepcodex.com/compare/thymogen-vs-vilon"
+        ]
+      },
+      "www": {
+        "clicks": 4,
+        "impressions": 98,
+        "avgPos": 12.7,
+        "urls": [
+          "https://www.pepcodex.com/compare/thymogen-vs-vilon"
+        ]
+      }
+    },
+    {
+      "slug": "vilon-vs-vladonix",
+      "lastUpdated": "2026-02-12",
+      "silent": false,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 4,
+        "impressions": 76,
+        "avgPos": 7.3,
+        "urls": [
+          "https://www.pepcodex.com/compare/vilon-vs-vladonix"
+        ]
+      }
+    },
+    {
+      "slug": "epithalon-vs-vesugen",
+      "lastUpdated": "2026-02-12",
+      "silent": false,
+      "family": "other",
+      "apex": {
+        "clicks": 1,
+        "impressions": 45,
+        "avgPos": 8.8,
+        "urls": [
+          "https://pepcodex.com/compare/epithalon-vs-vesugen"
+        ]
+      },
+      "www": {
+        "clicks": 3,
+        "impressions": 50,
+        "avgPos": 19.1,
+        "urls": [
+          "https://www.pepcodex.com/compare/epithalon-vs-vesugen"
+        ]
+      }
+    },
+    {
+      "slug": "5-amino-1mq-vs-slu-pp-332",
+      "lastUpdated": "2026-02-12",
+      "silent": false,
+      "family": "5-amino-1mq",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 3,
+        "impressions": 269,
+        "avgPos": 7.7,
+        "urls": [
+          "https://www.pepcodex.com/compare/5-amino-1mq-vs-slu-pp-332"
+        ]
+      }
+    },
+    {
+      "slug": "aod-9604-vs-slu-pp-332",
+      "lastUpdated": "2026-02-12",
+      "silent": false,
+      "family": "aod-9604",
+      "apex": {
+        "clicks": 2,
+        "impressions": 56,
+        "avgPos": 6.7,
+        "urls": [
+          "https://pepcodex.com/compare/aod-9604-vs-slu-pp-332/"
+        ]
+      },
+      "www": {
+        "clicks": 2,
+        "impressions": 80,
+        "avgPos": 5.2,
+        "urls": [
+          "https://www.pepcodex.com/compare/aod-9604-vs-slu-pp-332"
+        ]
+      }
+    },
+    {
+      "slug": "cagrisema-vs-orforglipron",
+      "lastUpdated": "2026-02-12",
+      "silent": false,
+      "family": "other",
+      "apex": {
+        "clicks": 2,
+        "impressions": 27,
+        "avgPos": 5.7,
+        "urls": [
+          "https://pepcodex.com/compare/cagrisema-vs-orforglipron/"
+        ]
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 38,
+        "avgPos": 10.4,
+        "urls": [
+          "https://www.pepcodex.com/compare/cagrisema-vs-orforglipron"
+        ]
+      }
+    },
+    {
+      "slug": "sigumir-vs-tb-500",
+      "lastUpdated": "2026-02-12",
+      "silent": false,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 2,
+        "impressions": 36,
+        "avgPos": 7.3,
+        "urls": [
+          "https://www.pepcodex.com/compare/sigumir-vs-tb-500"
+        ]
+      }
+    },
+    {
+      "slug": "thymosin-alpha-1-vs-vilon",
+      "lastUpdated": "2026-02-12",
+      "silent": false,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 2,
+        "impressions": 9,
+        "avgPos": 2.9,
+        "urls": [
+          "https://www.pepcodex.com/compare/thymosin-alpha-1-vs-vilon"
+        ]
+      }
+    },
+    {
+      "slug": "cerluten-vs-pinealon",
+      "lastUpdated": "2026-02-12",
+      "silent": false,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 2,
+        "impressions": 6,
+        "avgPos": 2.2,
+        "urls": [
+          "https://www.pepcodex.com/compare/cerluten-vs-pinealon"
+        ]
+      }
+    },
+    {
+      "slug": "maritide-vs-retatrutide",
+      "lastUpdated": "2026-02-12",
+      "silent": false,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 1,
+        "impressions": 110,
+        "avgPos": 9.9,
+        "urls": [
+          "https://www.pepcodex.com/compare/maritide-vs-retatrutide"
+        ]
+      }
+    },
+    {
+      "slug": "epithalon-vs-vilon",
+      "lastUpdated": "2026-02-12",
+      "silent": false,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 19,
+        "avgPos": 7.7,
+        "urls": [
+          "https://pepcodex.com/compare/epithalon-vs-vilon/"
+        ]
+      },
+      "www": {
+        "clicks": 1,
+        "impressions": 45,
+        "avgPos": 13.4,
+        "urls": [
+          "https://www.pepcodex.com/compare/epithalon-vs-vilon"
+        ]
+      }
+    },
+    {
+      "slug": "cagrilintide-vs-mazdutide",
+      "lastUpdated": "2026-02-12",
+      "silent": false,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 1,
+        "impressions": 28,
+        "avgPos": 6.4,
+        "urls": [
+          "https://www.pepcodex.com/compare/cagrilintide-vs-mazdutide"
+        ]
+      }
+    },
+    {
+      "slug": "ct-388-vs-tirzepatide",
+      "lastUpdated": "2026-02-12",
+      "silent": false,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 1,
+        "impressions": 15,
+        "avgPos": 4.6,
+        "urls": [
+          "https://www.pepcodex.com/compare/ct-388-vs-tirzepatide"
+        ]
+      }
+    },
+    {
+      "slug": "prostatilen-vs-thymalin",
+      "lastUpdated": "2026-02-12",
+      "silent": false,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 10,
+        "avgPos": 4,
+        "urls": [
+          "https://pepcodex.com/compare/prostatilen-vs-thymalin"
+        ]
+      },
+      "www": {
+        "clicks": 1,
+        "impressions": 12,
+        "avgPos": 6.3,
+        "urls": [
+          "https://www.pepcodex.com/compare/prostatilen-vs-thymalin"
+        ]
+      }
+    },
+    {
+      "slug": "livagen-vs-ovagen",
+      "lastUpdated": "2026-02-12",
+      "silent": false,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 1,
+        "impressions": 4,
+        "avgPos": 5,
+        "urls": [
+          "https://www.pepcodex.com/compare/livagen-vs-ovagen"
+        ]
+      }
+    }
+  ],
+  "leftoverWithImpressionsOnly": [
+    {
+      "slug": "cortexin-vs-pinealon",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 159,
+        "avgPos": 5.9,
+        "urls": [
+          "https://pepcodex.com/compare/cortexin-vs-pinealon"
+        ]
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      }
+    },
+    {
+      "slug": "kristagen-vs-thymalin",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 67,
+        "avgPos": 3.7,
+        "urls": [
+          "https://pepcodex.com/compare/kristagen-vs-thymalin",
+          "https://pepcodex.com/compare/kristagen-vs-thymalin/"
+        ]
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 3,
+        "avgPos": 4.3,
+        "urls": [
+          "https://www.pepcodex.com/compare/kristagen-vs-thymalin"
+        ]
+      }
+    },
+    {
+      "slug": "cagrisema-vs-survodutide",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 49,
+        "avgPos": 8.4,
+        "urls": [
+          "https://www.pepcodex.com/compare/cagrisema-vs-survodutide"
+        ]
+      }
+    },
+    {
+      "slug": "cagrisema-vs-retatrutide",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 47,
+        "avgPos": 23.6,
+        "urls": [
+          "https://www.pepcodex.com/compare/cagrisema-vs-retatrutide"
+        ]
+      }
+    },
+    {
+      "slug": "pemvidutide-vs-survodutide",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 29,
+        "avgPos": 26.1,
+        "urls": [
+          "https://www.pepcodex.com/compare/pemvidutide-vs-survodutide"
+        ]
+      }
+    },
+    {
+      "slug": "cagrilintide-vs-retatrutide",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 28,
+        "avgPos": 21.9,
+        "urls": [
+          "https://www.pepcodex.com/compare/cagrilintide-vs-retatrutide"
+        ]
+      }
+    },
+    {
+      "slug": "cagrilintide-vs-pemvidutide",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 2,
+        "avgPos": 9,
+        "urls": [
+          "https://pepcodex.com/compare/cagrilintide-vs-pemvidutide/"
+        ]
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 25,
+        "avgPos": 18.8,
+        "urls": [
+          "https://www.pepcodex.com/compare/cagrilintide-vs-pemvidutide"
+        ]
+      }
+    },
+    {
+      "slug": "cagrilintide-vs-liraglutide",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 22,
+        "avgPos": 30.7,
+        "urls": [
+          "https://www.pepcodex.com/compare/cagrilintide-vs-liraglutide"
+        ]
+      }
+    },
+    {
+      "slug": "kristagen-vs-vilon",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 21,
+        "avgPos": 34.1,
+        "urls": [
+          "https://www.pepcodex.com/compare/kristagen-vs-vilon"
+        ]
+      }
+    },
+    {
+      "slug": "bronchogen-vs-epithalon",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 18,
+        "avgPos": 43.9,
+        "urls": [
+          "https://www.pepcodex.com/compare/bronchogen-vs-epithalon"
+        ]
+      }
+    },
+    {
+      "slug": "cagrilintide-vs-orforglipron",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 16,
+        "avgPos": 40.3,
+        "urls": [
+          "https://www.pepcodex.com/compare/cagrilintide-vs-orforglipron"
+        ]
+      }
+    },
+    {
+      "slug": "cerebrolysin-vs-p21",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 15,
+        "avgPos": 11.7,
+        "urls": [
+          "https://pepcodex.com/compare/cerebrolysin-vs-p21"
+        ]
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      }
+    },
+    {
+      "slug": "epithalon-vs-ovagen",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 4,
+        "avgPos": 8.5,
+        "urls": [
+          "https://pepcodex.com/compare/epithalon-vs-ovagen/"
+        ]
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 15,
+        "avgPos": 7.9,
+        "urls": [
+          "https://www.pepcodex.com/compare/epithalon-vs-ovagen"
+        ]
+      }
+    },
+    {
+      "slug": "pancragen-vs-vilon",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 15,
+        "avgPos": 48.9,
+        "urls": [
+          "https://www.pepcodex.com/compare/pancragen-vs-vilon"
+        ]
+      }
+    },
+    {
+      "slug": "bronchogen-vs-vilon",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 14,
+        "avgPos": 43.1,
+        "urls": [
+          "https://www.pepcodex.com/compare/bronchogen-vs-vilon"
+        ]
+      }
+    },
+    {
+      "slug": "epithalon-vs-humanin",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 13,
+        "avgPos": 62.5,
+        "urls": [
+          "https://www.pepcodex.com/compare/epithalon-vs-humanin"
+        ]
+      }
+    },
+    {
+      "slug": "suprefort-vs-vilon",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 13,
+        "avgPos": 6,
+        "urls": [
+          "https://pepcodex.com/compare/suprefort-vs-vilon"
+        ]
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      }
+    },
+    {
+      "slug": "dihexa-vs-p21",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 11,
+        "avgPos": 10.3,
+        "urls": [
+          "https://www.pepcodex.com/compare/dihexa-vs-p21"
+        ]
+      }
+    },
+    {
+      "slug": "thymalin-vs-vilon",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 10,
+        "avgPos": 5.5,
+        "urls": [
+          "https://www.pepcodex.com/compare/thymalin-vs-vilon"
+        ]
+      }
+    },
+    {
+      "slug": "cagrisema-vs-maritide",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 2,
+        "avgPos": 8,
+        "urls": [
+          "https://pepcodex.com/compare/cagrisema-vs-maritide/"
+        ]
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 9,
+        "avgPos": 4.8,
+        "urls": [
+          "https://www.pepcodex.com/compare/cagrisema-vs-maritide"
+        ]
+      }
+    },
+    {
+      "slug": "ct-388-vs-vk2735",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 9,
+        "avgPos": 7.8,
+        "urls": [
+          "https://www.pepcodex.com/compare/ct-388-vs-vk2735"
+        ]
+      }
+    },
+    {
+      "slug": "ovagen-vs-thymalin",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 7,
+        "avgPos": 6.1,
+        "urls": [
+          "https://pepcodex.com/compare/ovagen-vs-thymalin"
+        ]
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      }
+    },
+    {
+      "slug": "ct-388-vs-retatrutide",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 5,
+        "avgPos": 3.6,
+        "urls": [
+          "https://www.pepcodex.com/compare/ct-388-vs-retatrutide"
+        ]
+      }
+    },
+    {
+      "slug": "stamakort-vs-thymalin",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 5,
+        "avgPos": 9.6,
+        "urls": [
+          "https://pepcodex.com/compare/stamakort-vs-thymalin"
+        ]
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      }
+    },
+    {
+      "slug": "bpc-157-vs-chonluten",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 4,
+        "avgPos": 10.5,
+        "urls": [
+          "https://www.pepcodex.com/compare/bpc-157-vs-chonluten"
+        ]
+      }
+    },
+    {
+      "slug": "bpc-157-vs-sigumir",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 4,
+        "avgPos": 5.5,
+        "urls": [
+          "https://www.pepcodex.com/compare/bpc-157-vs-sigumir"
+        ]
+      }
+    },
+    {
+      "slug": "cardiogen-vs-ventfort",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 1,
+        "avgPos": 6,
+        "urls": [
+          "https://pepcodex.com/compare/cardiogen-vs-ventfort/"
+        ]
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 4,
+        "avgPos": 4.3,
+        "urls": [
+          "https://www.pepcodex.com/compare/cardiogen-vs-ventfort"
+        ]
+      }
+    },
+    {
+      "slug": "ghrp-6-vs-sermorelin",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 4,
+        "avgPos": 8.5,
+        "urls": [
+          "https://www.pepcodex.com/compare/ghrp-6-vs-sermorelin"
+        ]
+      }
+    },
+    {
+      "slug": "liraglutide-vs-slu-pp-332",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 4,
+        "avgPos": 8,
+        "urls": [
+          "https://www.pepcodex.com/compare/liraglutide-vs-slu-pp-332"
+        ]
+      }
+    },
+    {
+      "slug": "aod-9604-vs-mazdutide",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "aod-9604",
+      "apex": {
+        "clicks": 0,
+        "impressions": 3,
+        "avgPos": 9,
+        "urls": [
+          "https://pepcodex.com/compare/aod-9604-vs-mazdutide"
+        ]
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      }
+    },
+    {
+      "slug": "cagrilintide-vs-vk2735",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 3,
+        "avgPos": 21.7,
+        "urls": [
+          "https://www.pepcodex.com/compare/cagrilintide-vs-vk2735"
+        ]
+      }
+    },
+    {
+      "slug": "ghrp-2-vs-mk-677",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 3,
+        "avgPos": 7,
+        "urls": [
+          "https://www.pepcodex.com/compare/ghrp-2-vs-mk-677"
+        ]
+      }
+    },
+    {
+      "slug": "cerluten-vs-cortexin",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 2,
+        "avgPos": 4,
+        "urls": [
+          "https://www.pepcodex.com/compare/cerluten-vs-cortexin"
+        ]
+      }
+    },
+    {
+      "slug": "cerluten-vs-selank",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 2,
+        "avgPos": 6.5,
+        "urls": [
+          "https://www.pepcodex.com/compare/cerluten-vs-selank"
+        ]
+      }
+    },
+    {
+      "slug": "epithalon-vs-ventfort",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 2,
+        "avgPos": 52,
+        "urls": [
+          "https://www.pepcodex.com/compare/epithalon-vs-ventfort"
+        ]
+      }
+    },
+    {
+      "slug": "pancragen-vs-suprefort",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 2,
+        "avgPos": 4.5,
+        "urls": [
+          "https://www.pepcodex.com/compare/pancragen-vs-suprefort"
+        ]
+      }
+    },
+    {
+      "slug": "aod-9604-vs-liraglutide",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "aod-9604",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 1,
+        "avgPos": 2,
+        "urls": [
+          "https://www.pepcodex.com/compare/aod-9604-vs-liraglutide"
+        ]
+      }
+    },
+    {
+      "slug": "bronchogen-vs-thymalin",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 1,
+        "avgPos": 6,
+        "urls": [
+          "https://www.pepcodex.com/compare/bronchogen-vs-thymalin"
+        ]
+      }
+    },
+    {
+      "slug": "cagrilintide-vs-maritide",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 1,
+        "avgPos": 100,
+        "urls": [
+          "https://www.pepcodex.com/compare/cagrilintide-vs-maritide"
+        ]
+      }
+    },
+    {
+      "slug": "cagrilintide-vs-slu-pp-332",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 1,
+        "avgPos": 1,
+        "urls": [
+          "https://www.pepcodex.com/compare/cagrilintide-vs-slu-pp-332"
+        ]
+      }
+    },
+    {
+      "slug": "cagrisema-vs-slu-pp-332",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 1,
+        "avgPos": 6,
+        "urls": [
+          "https://www.pepcodex.com/compare/cagrisema-vs-slu-pp-332"
+        ]
+      }
+    },
+    {
+      "slug": "cardiogen-vs-epithalon",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 1,
+        "avgPos": 2,
+        "urls": [
+          "https://www.pepcodex.com/compare/cardiogen-vs-epithalon"
+        ]
+      }
+    },
+    {
+      "slug": "ct-388-vs-semaglutide",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 1,
+        "avgPos": 23,
+        "urls": [
+          "https://www.pepcodex.com/compare/ct-388-vs-semaglutide"
+        ]
+      }
+    },
+    {
+      "slug": "ct-388-vs-slu-pp-332",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 1,
+        "avgPos": 6,
+        "urls": [
+          "https://www.pepcodex.com/compare/ct-388-vs-slu-pp-332"
+        ]
+      }
+    },
+    {
+      "slug": "ghrp-6-vs-mk-677",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 1,
+        "avgPos": 10,
+        "urls": [
+          "https://www.pepcodex.com/compare/ghrp-6-vs-mk-677"
+        ]
+      }
+    },
+    {
+      "slug": "humanin-vs-shlp-6",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 1,
+        "avgPos": 10,
+        "urls": [
+          "https://www.pepcodex.com/compare/humanin-vs-shlp-6"
+        ]
+      }
+    },
+    {
+      "slug": "livagen-vs-thymalin",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "other",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 1,
+        "avgPos": 1,
+        "urls": [
+          "https://www.pepcodex.com/compare/livagen-vs-thymalin"
+        ]
+      }
+    }
+  ],
+  "familyLeftover": [
+    {
+      "slug": "5-amino-1mq-vs-slu-pp-332",
+      "lastUpdated": "2026-02-12",
+      "silent": false,
+      "family": "5-amino-1mq",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 3,
+        "impressions": 269,
+        "avgPos": 7.7,
+        "urls": [
+          "https://www.pepcodex.com/compare/5-amino-1mq-vs-slu-pp-332"
+        ]
+      }
+    },
+    {
+      "slug": "aod-9604-vs-slu-pp-332",
+      "lastUpdated": "2026-02-12",
+      "silent": false,
+      "family": "aod-9604",
+      "apex": {
+        "clicks": 2,
+        "impressions": 56,
+        "avgPos": 6.7,
+        "urls": [
+          "https://pepcodex.com/compare/aod-9604-vs-slu-pp-332/"
+        ]
+      },
+      "www": {
+        "clicks": 2,
+        "impressions": 80,
+        "avgPos": 5.2,
+        "urls": [
+          "https://www.pepcodex.com/compare/aod-9604-vs-slu-pp-332"
+        ]
+      }
+    },
+    {
+      "slug": "aod-9604-vs-mazdutide",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "aod-9604",
+      "apex": {
+        "clicks": 0,
+        "impressions": 3,
+        "avgPos": 9,
+        "urls": [
+          "https://pepcodex.com/compare/aod-9604-vs-mazdutide"
+        ]
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      }
+    },
+    {
+      "slug": "aod-9604-vs-liraglutide",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "aod-9604",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 1,
+        "avgPos": 2,
+        "urls": [
+          "https://www.pepcodex.com/compare/aod-9604-vs-liraglutide"
+        ]
+      }
+    },
+    {
+      "slug": "5-amino-1mq-vs-orforglipron",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "5-amino-1mq",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      }
+    },
+    {
+      "slug": "5-amino-1mq-vs-pemvidutide",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "5-amino-1mq",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      }
+    },
+    {
+      "slug": "5-amino-1mq-vs-retatrutide",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "5-amino-1mq",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      }
+    },
+    {
+      "slug": "5-amino-1mq-vs-survodutide",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "5-amino-1mq",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      }
+    },
+    {
+      "slug": "5-amino-1mq-vs-vk2735",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "5-amino-1mq",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      }
+    },
+    {
+      "slug": "aod-9604-vs-maritide",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "aod-9604",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      }
+    },
+    {
+      "slug": "aod-9604-vs-pemvidutide",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "aod-9604",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      }
+    },
+    {
+      "slug": "aod-9604-vs-retatrutide",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "aod-9604",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      }
+    },
+    {
+      "slug": "aod-9604-vs-survodutide",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "aod-9604",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      }
+    },
+    {
+      "slug": "aod-9604-vs-vk2735",
+      "lastUpdated": "2026-02-12",
+      "silent": true,
+      "family": "aod-9604",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      }
+    }
+  ],
+  "familyCleaned": [
+    {
+      "slug": "5-amino-1mq-vs-aod-9604",
+      "lastUpdated": "2026-09-02",
+      "silent": false,
+      "family": "5-amino-1mq",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 2,
+        "impressions": 133,
+        "avgPos": 5.9,
+        "urls": [
+          "https://www.pepcodex.com/compare/5-amino-1mq-vs-aod-9604"
+        ]
+      }
+    },
+    {
+      "slug": "aod-9604-vs-semaglutide",
+      "lastUpdated": "2026-01-19",
+      "silent": true,
+      "family": "aod-9604",
+      "apex": {
+        "clicks": 0,
+        "impressions": 35,
+        "avgPos": 37.9,
+        "urls": [
+          "https://pepcodex.com/compare/aod-9604-vs-semaglutide"
+        ]
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 164,
+        "avgPos": 24.9,
+        "urls": [
+          "https://www.pepcodex.com/compare/aod-9604-vs-semaglutide"
+        ]
+      }
+    },
+    {
+      "slug": "5-amino-1mq-vs-semaglutide",
+      "lastUpdated": null,
+      "silent": true,
+      "family": "5-amino-1mq",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 75,
+        "avgPos": 8.9,
+        "urls": [
+          "https://www.pepcodex.com/compare/5-amino-1mq-vs-semaglutide"
+        ]
+      }
+    },
+    {
+      "slug": "5-amino-1mq-vs-cagrisema",
+      "lastUpdated": "2026-09-02",
+      "silent": true,
+      "family": "5-amino-1mq",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 44,
+        "avgPos": 5.5,
+        "urls": [
+          "https://www.pepcodex.com/compare/5-amino-1mq-vs-cagrisema"
+        ]
+      }
+    },
+    {
+      "slug": "5-amino-1mq-vs-tirzepatide",
+      "lastUpdated": "2026-09-02",
+      "silent": true,
+      "family": "5-amino-1mq",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 7,
+        "avgPos": 4.4,
+        "urls": [
+          "https://www.pepcodex.com/compare/5-amino-1mq-vs-tirzepatide"
+        ]
+      }
+    },
+    {
+      "slug": "aod-9604-vs-cagrilintide",
+      "lastUpdated": "2026-09-02",
+      "silent": true,
+      "family": "aod-9604",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 5,
+        "avgPos": 4.8,
+        "urls": [
+          "https://www.pepcodex.com/compare/aod-9604-vs-cagrilintide"
+        ]
+      }
+    },
+    {
+      "slug": "5-amino-1mq-vs-liraglutide",
+      "lastUpdated": "2026-09-02",
+      "silent": true,
+      "family": "5-amino-1mq",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 3,
+        "avgPos": 7.7,
+        "urls": [
+          "https://www.pepcodex.com/compare/5-amino-1mq-vs-liraglutide"
+        ]
+      }
+    },
+    {
+      "slug": "aod-9604-vs-mk-677",
+      "lastUpdated": "2026-02-01",
+      "silent": true,
+      "family": "aod-9604",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 1,
+        "avgPos": 2,
+        "urls": [
+          "https://www.pepcodex.com/compare/aod-9604-vs-mk-677"
+        ]
+      }
+    },
+    {
+      "slug": "5-amino-1mq-vs-amycretin",
+      "lastUpdated": "2026-09-02",
+      "silent": true,
+      "family": "5-amino-1mq",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      }
+    },
+    {
+      "slug": "5-amino-1mq-vs-cagrilintide",
+      "lastUpdated": "2026-09-02",
+      "silent": true,
+      "family": "5-amino-1mq",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      }
+    },
+    {
+      "slug": "5-amino-1mq-vs-ct-388",
+      "lastUpdated": "2026-09-02",
+      "silent": true,
+      "family": "5-amino-1mq",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      }
+    },
+    {
+      "slug": "5-amino-1mq-vs-maritide",
+      "lastUpdated": "2026-09-02",
+      "silent": true,
+      "family": "5-amino-1mq",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      }
+    },
+    {
+      "slug": "5-amino-1mq-vs-mazdutide",
+      "lastUpdated": "2026-09-02",
+      "silent": true,
+      "family": "5-amino-1mq",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      }
+    },
+    {
+      "slug": "aod-9604-vs-cagrisema",
+      "lastUpdated": "2026-09-02",
+      "silent": true,
+      "family": "aod-9604",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      }
+    },
+    {
+      "slug": "aod-9604-vs-ct-388",
+      "lastUpdated": "2026-09-02",
+      "silent": true,
+      "family": "aod-9604",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      }
+    },
+    {
+      "slug": "aod-9604-vs-orforglipron",
+      "lastUpdated": "2026-09-02",
+      "silent": true,
+      "family": "aod-9604",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      }
+    },
+    {
+      "slug": "aod-9604-vs-tirzepatide",
+      "lastUpdated": "2026-09-02",
+      "silent": true,
+      "family": "aod-9604",
+      "apex": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      },
+      "www": {
+        "clicks": 0,
+        "impressions": 0,
+        "avgPos": null,
+        "urls": []
+      }
+    }
+  ],
+  "leftoverSilentSlugs": [
+    "cortexin-vs-pinealon",
+    "kristagen-vs-thymalin",
+    "cagrisema-vs-survodutide",
+    "cagrisema-vs-retatrutide",
+    "pemvidutide-vs-survodutide",
+    "cagrilintide-vs-retatrutide",
+    "cagrilintide-vs-pemvidutide",
+    "cagrilintide-vs-liraglutide",
+    "kristagen-vs-vilon",
+    "bronchogen-vs-epithalon",
+    "cagrilintide-vs-orforglipron",
+    "cerebrolysin-vs-p21",
+    "epithalon-vs-ovagen",
+    "pancragen-vs-vilon",
+    "bronchogen-vs-vilon",
+    "epithalon-vs-humanin",
+    "suprefort-vs-vilon",
+    "dihexa-vs-p21",
+    "thymalin-vs-vilon",
+    "cagrisema-vs-maritide",
+    "ct-388-vs-vk2735",
+    "ovagen-vs-thymalin",
+    "ct-388-vs-retatrutide",
+    "stamakort-vs-thymalin",
+    "bpc-157-vs-chonluten",
+    "bpc-157-vs-sigumir",
+    "cardiogen-vs-ventfort",
+    "ghrp-6-vs-sermorelin",
+    "liraglutide-vs-slu-pp-332",
+    "aod-9604-vs-mazdutide",
+    "cagrilintide-vs-vk2735",
+    "ghrp-2-vs-mk-677",
+    "cerluten-vs-cortexin",
+    "cerluten-vs-selank",
+    "epithalon-vs-ventfort",
+    "pancragen-vs-suprefort",
+    "aod-9604-vs-liraglutide",
+    "bronchogen-vs-thymalin",
+    "cagrilintide-vs-maritide",
+    "cagrilintide-vs-slu-pp-332",
+    "cagrisema-vs-slu-pp-332",
+    "cardiogen-vs-epithalon",
+    "ct-388-vs-semaglutide",
+    "ct-388-vs-slu-pp-332",
+    "ghrp-6-vs-mk-677",
+    "humanin-vs-shlp-6",
+    "livagen-vs-thymalin",
+    "5-amino-1mq-vs-orforglipron",
+    "5-amino-1mq-vs-pemvidutide",
+    "5-amino-1mq-vs-retatrutide",
+    "5-amino-1mq-vs-survodutide",
+    "5-amino-1mq-vs-vk2735",
+    "alixorexton-vs-oveporexton",
+    "aod-9604-vs-maritide",
+    "aod-9604-vs-pemvidutide",
+    "aod-9604-vs-retatrutide",
+    "aod-9604-vs-survodutide",
+    "aod-9604-vs-vk2735",
+    "cagrilintide-vs-cagrisema",
+    "cagrilintide-vs-ct-388",
+    "cagrisema-vs-ct-388",
+    "cagrisema-vs-liraglutide",
+    "cagrisema-vs-mazdutide",
+    "cagrisema-vs-pemvidutide",
+    "cagrisema-vs-vk2735",
+    "cardiogen-vs-thymalin",
+    "cerluten-vs-semax",
+    "chonluten-vs-epithalon",
+    "chonluten-vs-stamakort",
+    "chonluten-vs-thymalin",
+    "cjc-1295-vs-tesamorelin",
+    "cortexin-vs-epithalon",
+    "cortexin-vs-retinalamin",
+    "cortexin-vs-selank",
+    "ct-388-vs-liraglutide",
+    "ct-388-vs-maritide",
+    "ct-388-vs-mazdutide",
+    "ct-388-vs-orforglipron",
+    "ct-388-vs-pemvidutide",
+    "ct-388-vs-survodutide",
+    "dihexa-vs-selank",
+    "endoluten-vs-epithalon",
+    "endoluten-vs-pinealon",
+    "endoluten-vs-thymalin",
+    "epithalon-vs-livagen",
+    "epithalon-vs-pancragen",
+    "epithalon-vs-prostatilen",
+    "epithalon-vs-retinalamin",
+    "epithalon-vs-sigumir",
+    "epithalon-vs-stamakort",
+    "epithalon-vs-suprefort",
+    "epithalon-vs-svetinorm",
+    "epithalon-vs-testagen",
+    "foxo4-dri-vs-shlp-6",
+    "hcg-vs-kisspeptin",
+    "kpv-vs-thymosin-alpha-1",
+    "kristagen-vs-thymosin-alpha-1",
+    "liraglutide-vs-maritide",
+    "liraglutide-vs-mazdutide",
+    "liraglutide-vs-orforglipron",
+    "liraglutide-vs-pemvidutide",
+    "liraglutide-vs-retatrutide",
+    "liraglutide-vs-survodutide",
+    "liraglutide-vs-vk2735",
+    "livagen-vs-svetinorm",
+    "livagen-vs-vilon",
+    "maritide-vs-mazdutide",
+    "maritide-vs-orforglipron",
+    "maritide-vs-pemvidutide",
+    "maritide-vs-slu-pp-332",
+    "maritide-vs-survodutide",
+    "maritide-vs-vk2735",
+    "mazdutide-vs-survodutide",
+    "mots-c-vs-shlp-2",
+    "mots-c-vs-shlp-6",
+    "na-selank-amidate-vs-na-semax-amidate",
+    "na-selank-amidate-vs-semax",
+    "p21-vs-semax",
+    "pancragen-vs-thymalin",
+    "pinealon-vs-semax",
+    "prostatilen-vs-vilon",
+    "retinalamin-vs-thymalin",
+    "shlp-2-vs-shlp-6",
+    "shlp-2-vs-ss-31",
+    "testagen-vs-thymalin",
+    "testagen-vs-vilon",
+    "thymalin-vs-vladonix",
+    "thymogen-vs-thymosin-alpha-1",
+    "thymogen-vs-thymulin",
+    "thymogen-vs-vladonix",
+    "thymosin-alpha-1-vs-vladonix",
+    "ventfort-vs-vesugen",
+    "vesugen-vs-vilon"
+  ]
+}

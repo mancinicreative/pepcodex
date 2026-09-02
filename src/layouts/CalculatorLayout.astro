@@ -1,8 +1,10 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from './BaseLayout.astro';
 import ArticleSchema from '../components/SEO/ArticleSchema.astro';
 import BreadcrumbSchema from '../components/SEO/BreadcrumbSchema.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
+import AppWaitlistCTA from '../components/AppWaitlistCTA.astro';
 
 interface Props {
   name: string;
@@ -26,34 +28,39 @@ const {
   metaDescription,
 } = Astro.props;
 
-const siteBase = Astro.site?.toString() || 'https://www.pepcodex.com';
-const breadcrumbItems = [
-  { name: 'Home', url: siteBase },
-  { name: 'Calculators', url: `${siteBase}calculator/` },
-  { name: `${name}`, url: Astro.url.toString() },
-];
+const peptideSlugSet = new Set((await getCollection('peptides')).map((p) => p.slug));
+const peptideHref = peptideSlugSet.has(peptideSlug) ? `/peptides/${peptideSlug}` : null;
+const peptideLabel = name.replace(/\s+Reconstitution Calculator$/i, '');
 
-const articleUrl = Astro.url.toString();
+const siteOrigin = (Astro.site?.toString() || 'https://www.pepcodex.com').replace(/\/$/, '');
+const pagePath = Astro.url.pathname.replace(/\/$/, '') || '/';
+const articleUrl = `${siteOrigin}${pagePath}`;
+
+// No /calculator index exists — do not invent a parent crumb (404 + trailing-slash hop).
+const breadcrumbItems = [
+  { name: 'Home', url: siteOrigin },
+  ...(peptideHref ? [{ name: peptideLabel, url: `${siteOrigin}${peptideHref}` }] : []),
+  { name, url: articleUrl },
+];
 ---
 
 <BaseLayout
   title={metaTitle || name}
-  description={metaDescription || `Research calculator for ${name}. Educational tool only.`}
+  description={metaDescription || `Mass-volume conversion for ${name}. Educational tool only.`}
 >
   <ArticleSchema
     title={metaTitle || `${name}`}
-    description={metaDescription || `Research calculator for ${name}`}
+    description={metaDescription || `Mass-volume conversion for ${name}`}
     url={articleUrl}
     dateModified={lastUpdated}
   />
   <BreadcrumbSchema items={breadcrumbItems} />
 
   <article class="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
-    <!-- Header -->
     <header class="mb-8">
       <div class="flex flex-wrap items-center gap-3 mb-4">
         <span class="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium bg-blue-500/20 text-blue-400 border border-blue-500/30">
-          {calculatorType.charAt(0).toUpperCase() + calculatorType.slice(1)} Calculator
+          {calculatorType.charAt(0).toUpperCase() + calculatorType.slice(1)} conversion
         </span>
         <span class="text-xs" style="color: var(--text-low);">
           Updated {lastUpdated.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
@@ -64,7 +71,6 @@ const articleUrl = Astro.url.toString();
       </h1>
     </header>
 
-    <!-- Disclaimer Banner -->
     <div class="rounded-xl border border-amber-500/20 bg-amber-500/10 p-4 mb-8">
       <div class="flex items-start gap-3">
         <svg class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -74,9 +80,8 @@ const articleUrl = Astro.url.toString();
       </div>
     </div>
 
-    <!-- Calculator Inputs -->
     <div class="rounded-xl border border-white/10 bg-white/5 p-6 mb-8">
-      <h2 class="text-lg font-semibold text-white mb-4">Calculator Inputs</h2>
+      <h2 class="text-lg font-semibold text-white mb-4">Conversion inputs</h2>
       <ul class="space-y-2">
         {inputs.map((input) => (
           <li class="flex items-start gap-3">
@@ -89,25 +94,30 @@ const articleUrl = Astro.url.toString();
       </ul>
     </div>
 
-    <!-- Content -->
     <div class="prose prose-invert max-w-none">
       <slot />
     </div>
 
-    <!-- Back to peptide -->
+    <AppWaitlistCTA context="calculator" />
+
     <div class="mt-12 pt-8 border-t border-white/10">
-      <a
-        href={`/peptides/${peptideSlug}`}
-        class="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors"
-      >
-        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M19 12H5M12 19l-7-7 7-7"/>
-        </svg>
-        View {name.replace(' Reconstitution Calculator', '')} research dossier
-      </a>
+      {peptideHref ? (
+        <a
+          href={peptideHref}
+          class="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors"
+        >
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          View {peptideLabel} research dossier
+        </a>
+      ) : (
+        <span class="text-sm" style="color: var(--text-medium);">
+          View {peptideLabel} research dossier
+        </span>
+      )}
     </div>
 
-    <!-- Newsletter -->
     <div class="mt-12">
       <NewsletterForm />
     </div>

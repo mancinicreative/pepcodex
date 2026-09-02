@@ -1,0 +1,34 @@
+PepCodex master audit — Regulatory and Safety Current-State Researcher
+Access date: 2026-09-02
+Mode: AUDIT ONLY. No site edits. No outreach.
+
+PACK STATUS: COMPLETE (with declared gaps)
+
+Wrote:
+- .planning/master-audit-2026-09-02/regulatory/REPORT.md
+- .planning/master-audit-2026-09-02/regulatory/SOURCES.json
+- .planning/master-audit-2026-09-02/regulatory/STATUS.txt
+
+Coverage of assigned tasks:
+1. FDA compounding laws / 503A / 503B / Category 2 / GLP-1 shortage windows: FETCHED from fda.gov and Federal Register.
+2. FDA compounded GLP-1 safety communication + boxed warnings: FETCHED (FDA GLP-1 page current 2026-09-01; current labels via Drugs@FDA / accessdata label PDFs / FDA Foundayo press). DailyMed host DNS failed on this machine; labels taken from FDA label PDFs and FDA press/Drugs@FDA instead.
+3. Tesamorelin (Egrifta) labeled indication: FETCHED via DailyMed search-index snippet (dailymed.nlm.nih.gov page itself failed DNS). Cross-checked against PepCodex tesamorelin.mdx.
+4. Vyleesi vs melanotan II / PT-141: FETCHED (FDA Vyleesi 2019 approval PR; DailyMed/label PDF excerpts; FDA Category 2 withdrawn table for Melanotan II).
+5. Pipeline status (oral semaglutide 25 mg / Wegovy pill; orforglipron; CagriSema NDA; retatrutide; pemvidutide; survodutide): FETCHED from FDA, Drugs@FDA, company IR/press, NEJM. Not from blogs as primary.
+6. FTC endorsement/influencer/review rules: FETCHED FTC hub + Endorsement Guides FAQ + 16 CFR 465 Q&A + Health Products Compliance Guidance. FTC hub HTML was thin; substance taken from linked FTC resources.
+7. Google helpful content + spam policies: FETCHED. Helpful-content page last updated 2025-12-10 UTC; spam-policies page last updated 2026-08-28 UTC.
+8. Retractions / safety notices: SAMPLED, not exhaustive. PubMed withdrawn BPC-157 paper (PMID 39865815) confirmed. Site-wide PMID-to-retraction scan was NOT run.
+
+Official sources that were inaccessible or incomplete:
+- dailymed.nlm.nih.gov: DNS failure (os error 11002). Workaround: FDA label PDFs on accessdata.fda.gov + DailyMed snippets from search index.
+- FDA drug-shortage database individual product pages: homepage snippets used; live per-SKU shortage table not fully enumerated.
+- FDA PCAC July 23–24, 2026 meeting minutes / vote tally: NOT posted on the FDA meeting page as of content current 2026-08-06. Briefing docs, agenda, questions, roster, and staff presentations ARE posted. Committee vote counts therefore UNKNOWN from official FDA records.
+- 503B GLP-1 exclusion: Federal Register notice 91 FR 23431 (2026-05-01) is a PROPOSAL. Comment period later extended (91 FR 38719, 2026-06-26). No final determination located on 2026-09-02.
+- CagriSema FDA action: company NDA filing confirmed; no FDA approval letter or novel-drug listing through 2026-08-28. Approval status = NOT APPROVED as of available FDA lists; remaining review outcome UNKNOWN.
+- Liraglutide current shortage: FDA shortage homepage still showed “Currently in Shortage” updates dated 2026-08-25 and 2026-08-27, plus a 2026-08-25 discontinuation line. Exact presentation-level status not independently tabulated.
+
+Did not read audit-a, audit-b, or audit-c reports.
+Did not modify src/, public/, data/, or live config.
+Did not contact anyone.
+
+FACT vs inference discipline: regulator decisions are quoted from official pages only. Advisory-committee votes, secondary-press vote counts, and “peptides are legal again” claims are not treated as FDA decisions.

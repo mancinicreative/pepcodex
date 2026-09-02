@@ -1,0 +1,39 @@
+{
+  "slug": "ventfort",
+  "name": "Ventfort",
+  "windowFrom": "2026-02-01",
+  "scannedAt": "2026-09-01",
+  "newPapers": [],
+  "newTrials": [],
+  "updatedTrials": [],
+  "queriedAliases": [
+    {
+      "alias": "Ventfort",
+      "retrieved": 0,
+      "total": 0
+    },
+    {
+      "alias": "Ventfort A-3",
+      "retrieved": 200,
+      "total": 6434
+    }
+  ],
+  "suspectGenericAliases": [
+    {
+      "alias": "Ventfort A-3",
+      "total": 6434,
+      "primaryTotal": 0,
+      "reason": "returns 6434 records where the primary name \"Ventfort\" returns 0; it is naming a category, not this compound"
+    }
+  ],
+  "truncated": {
+    "perAlias": [
+      {
+        "alias": "Ventfort A-3",
+        "retrieved": 200,
+        "total": 6434
+      }
+    ],
+    "note": "Some aliases returned more hits than were retrieved (cap 200). Narrow the window (--days) or raise retmax for full coverage."
+  }
+}

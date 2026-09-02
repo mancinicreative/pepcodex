@@ -1,0 +1,44 @@
+const UA = { "User-Agent": "PepCodex-verify/1.0 (mailto:admin@pepcodex.com)" };
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+async function get(url) {
+  const r = await fetch(url, { headers: UA });
+  const text = await r.text();
+  return { status: r.status, text };
+}
+
+const queries = [
+  ["pemvidutide-generic", 'openfda.generic_name:"pemvidutide"'],
+  ["pemvidutide-brand", 'openfda.brand_name:"pemvidutide"'],
+  ["sema-generic", 'openfda.generic_name:"semaglutide"'],
+  ["ozempic", 'openfda.brand_name:"ozempic"'],
+  ["wegovy", 'openfda.brand_name:"wegovy"'],
+  ["rybelsus", 'openfda.brand_name:"rybelsus"'],
+];
+
+for (const [name, q] of queries) {
+  await sleep(400);
+  try {
+    const url = `https://api.fda.gov/drug/drugsfda.json?search=${encodeURIComponent(q)}&limit=10`;
+    const fda = await get(url);
+    console.log("===== OPENFDA", name, "STATUS", fda.status, "=====");
+    const j = JSON.parse(fda.text);
+    console.log(
+      JSON.stringify(
+        {
+          total: j.meta?.results?.total,
+          error: j.error,
+          apps: (j.results || []).map((r) => ({
+            appl: r.application_number,
+            sponsor: r.sponsor_name,
+            brands: [...new Set((r.products || []).map((p) => p.brand_name))],
+          })),
+        },
+        null,
+        2
+      )
+    );
+  } catch (err) {
+    console.log("===== OPENFDA", name, "FAIL", err.cause?.code || err.message, "=====");
+  }
+}

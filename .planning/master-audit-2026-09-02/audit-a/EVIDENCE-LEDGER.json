@@ -1,0 +1,156 @@
+{
+  "auditor": "Audit A",
+  "access_date": "2026-09-02",
+  "method_note": "Search snippets used only for discovery. Material claims verified via NCBI E-utilities esummary, FDA HTML pages, and live pepcodex.com fetches. Abstracts of STEP/SURMOUNT/ATTAIN were not always opened in full text; title/journal/year/author match is recorded. Failure to find contradictory evidence is stated as such.",
+  "entries": [
+    {
+      "ledger_id": "E-001",
+      "source": "NCBI E-utilities esummary",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=7521621,10401867,15543145,22156923,32156553,30915550&retmode=json",
+      "accessed": "2026-09-02",
+      "what_it_shows": "Protocol BPC-157+TB-500 PMIDs resolve to unrelated papers (cancer pain Philippines; cryptorchidism editorial; ErbB4 neuroblasts; pancreatic portal-vein invasion; coffee-pulp fermentation; Gwyer 2019 review mislabeled as Sikiric 2018 animal).",
+      "used_for_findings": ["A-001"],
+      "status": "VERIFIED CURRENT"
+    },
+    {
+      "ledger_id": "E-002",
+      "source": "NCBI E-utilities esummary",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=16352683,16352684,10604470,6432804,15767617,19723773,9849822&retmode=json",
+      "accessed": "2026-09-02",
+      "what_it_shows": "CJC-1295+ipamorelin protocol: Teichman 16352683 and Raun 9849822 match; 16352684/10604470/6432804/15767617/19723773 do not.",
+      "used_for_findings": ["A-002"],
+      "status": "VERIFIED CURRENT"
+    },
+    {
+      "ledger_id": "E-003",
+      "source": "NCBI E-utilities esummary",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=6432804,10090084,17389806,1914539,7867828,8917653,11159857,18981485&retmode=json",
+      "accessed": "2026-09-02",
+      "what_it_shows": "GH-secretagogue protocol: Nass 18981485 MK-677 2-year RCT matches; Bowers/Prakash/Falutz/Pihoker/Chapman/Veldhuis PMIDs do not.",
+      "used_for_findings": ["A-003"],
+      "status": "VERIFIED CURRENT"
+    },
+    {
+      "ledger_id": "E-004",
+      "source": "NCBI E-utilities esummary",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=33567185,35658024,28110911,27633186,40961952,37952131,38785209,40305708,40162642,40960239,42394981,42251859,27847966,10469335,24355990,19575725&retmode=json",
+      "accessed": "2026-09-02",
+      "what_it_shows": "Core GLP-1 and safety PMIDs on dossiers resolve to the claimed trials/papers (STEP 1, SURMOUNT-1, SUSTAIN 1/6, STEP UP, SELECT, FLOW, ESSENCE, SOUL, ATTAIN-1, Wu 2026 NMA, REIMAGINE 2, Hsieh BPC-157 animal, Malinda Tβ4, Hjuler melanoma, Cousen naevi).",
+      "used_for_findings": ["A-010", "A-012", "A-013", "A-015", "A-020"],
+      "status": "VERIFIED CURRENT"
+    },
+    {
+      "ledger_id": "E-005",
+      "source": "FDA press announcement",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-new-molecular-entity-under-national-priority-voucher-program",
+      "accessed": "2026-09-02",
+      "what_it_shows": "Foundayo (orforglipron) approved 2026-04-01 for chronic weight management; oral once daily; titration 0.8→2.5→5.5 then 9/14.5/17.2 mg; boxed warning thyroid C-cell tumors; MTC/MEN2 contraindication; pulmonary aspiration warning; do not combine with another GLP-1RA.",
+      "used_for_findings": ["A-004", "A-010", "A-021", "A-023"],
+      "status": "VERIFIED CURRENT"
+    },
+    {
+      "ledger_id": "E-006",
+      "source": "FDA compounding safety-risks page",
+      "url": "https://www.fda.gov/drugs/human-drug-compounding/certain-bulk-drug-substances-use-compounding-may-present-significant-safety-risks",
+      "accessed": "2026-09-02",
+      "what_it_shows": "Content current as of 2026-04-22. BPC-157, TB-500 fragment, melanotan II, CJC-1295, ipamorelin, MOTS-c, semax, epitalon appear in nominated-but-withdrawn table with immunogenicity/impurity/no-human-exposure risks. Ipamorelin acetate remains 503B Category 2. Ibutamoren (MK-677) Category 2 CHF signal.",
+      "used_for_findings": ["A-007", "A-008", "A-012", "A-013", "A-015", "A-026"],
+      "status": "VERIFIED CURRENT"
+    },
+    {
+      "ledger_id": "E-007",
+      "source": "FDA Barth syndrome approval",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-grants-accelerated-approval-first-treatment-barth-syndrome",
+      "accessed": "2026-09-02",
+      "what_it_shows": "Forzinity (elamipretide) accelerated approval 2025-09-19 for Barth syndrome ≥30 kg based on knee extensor strength surrogate.",
+      "used_for_findings": ["A-018"],
+      "status": "VERIFIED CURRENT"
+    },
+    {
+      "ledger_id": "E-008",
+      "source": "DailyMed / label text via search (DailyMed hostname DNS failed in-tool)",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ee06186f-2aa3-4990-a760-757579d8f77b",
+      "accessed": "2026-09-02",
+      "what_it_shows": "Wegovy boxed warning: rodent C-cell tumors at clinically relevant exposures; contraindicated in MTC/MEN2; counsel on neck mass, dysphagia, dyspnea, hoarseness. Ozempic label revised 7/2026 same boxed warning. Direct DailyMed fetch failed (DNS); wording taken from search-indexed DailyMed/FDA label excerpts and cross-checked against multiple secondary pages. Treat as PARTIALLY SUPPORTED pending a successful DailyMed/openFDA label pull.",
+      "used_for_findings": ["A-014", "A-022"],
+      "status": "PARTIALLY SUPPORTED"
+    },
+    {
+      "ledger_id": "E-009",
+      "source": "WADA 2026 Prohibited List (secondary reproductions + search)",
+      "url": "https://www.wada-ama.org/",
+      "accessed": "2026-09-02",
+      "what_it_shows": "S0 names BPC-157 as an example non-approved substance. S2 names GHRH analogues (sermorelin, tesamorelin, CJC-1295), GHS (ipamorelin, ibutamoren/MK-677), Tβ4 and TB-500. Independent sports sites state semaglutide/tirzepatide are on the 2026 Monitoring Program, not the Prohibited List. Official PDF was not opened in this increment; GLP-1 monitoring status is therefore PARTIALLY SUPPORTED.",
+      "used_for_findings": ["A-004"],
+      "status": "PARTIALLY SUPPORTED"
+    },
+    {
+      "ledger_id": "E-010",
+      "source": "Live pepcodex.com",
+      "url": "https://www.pepcodex.com/peptides/semaglutide",
+      "accessed": "2026-09-02",
+      "what_it_shows": "Production HTML: FDA Approved chip PLUS 'Not approved for human use by any regulatory agency', 'Limited human clinical trial data', 'Not FDA Approved', 'WADA Prohibited'. Title 95 studies, last revised Apr 13 2026. Quality checklist / Sourcing section present. Nausea 30-45% in body.",
+      "used_for_findings": ["A-004", "A-005", "A-009", "A-014", "A-020", "A-022"],
+      "status": "VERIFIED CURRENT"
+    },
+    {
+      "ledger_id": "E-011",
+      "source": "Live pepcodex.com",
+      "url": "https://www.pepcodex.com/peptides/bpc-157",
+      "accessed": "2026-09-02",
+      "what_it_shows": "Research-chemical quality checklist live. Timeline of rodent observations as 'what to expect'. Synergistic TB-500. Fake NCT PLIVA-IBD-Trials linked to clinicaltrials.gov. 32 sources vs repo 12.",
+      "used_for_findings": ["A-009", "A-013", "A-020"],
+      "status": "VERIFIED CURRENT"
+    },
+    {
+      "ledger_id": "E-012",
+      "source": "Live pepcodex.com",
+      "url": "https://www.pepcodex.com/peptides/orforglipron",
+      "accessed": "2026-09-02",
+      "what_it_shows": "Live still Investigational / NDA submitted / Not FDA Approved / WADA Prohibited. Quality checklist 12/24/36 mg once daily. ATTAIN-1 11.2% at 36 mg (trial figure, treatment-regimen-aligned vs press-release 12.4%). Working tree updated to Foundayo approval but not live.",
+      "used_for_findings": ["A-004", "A-010", "A-020", "A-023"],
+      "status": "VERIFIED CURRENT"
+    },
+    {
+      "ledger_id": "E-013",
+      "source": "Live pepcodex.com",
+      "url": "https://www.pepcodex.com/clinics/miami",
+      "accessed": "2026-09-02",
+      "what_it_shows": "Featured Partner + Verified Vitality Wellness Center, 1234 Brickell, tel 3055550100, website example.com, BPC-157 offered. FAQ vetted providers. Compounding-pharmacy quality criterion. BPC-157 for tissue repair.",
+      "used_for_findings": ["A-006", "A-007", "A-008"],
+      "status": "VERIFIED CURRENT"
+    },
+    {
+      "ledger_id": "E-014",
+      "source": "Inventory freeze",
+      "url": "file://.planning/master-audit-2026-09-02/CLINIC-RECORDS.csv",
+      "accessed": "2026-09-02",
+      "what_it_shows": "52/52 placeholderWebsite; 50/52 verifiedListing true; 10 placeholderPhone.",
+      "used_for_findings": ["A-006"],
+      "status": "VERIFIED CURRENT"
+    },
+    {
+      "ledger_id": "E-015",
+      "source": "FDA PCAC briefing (search + fda.gov/media/193342)",
+      "url": "https://www.fda.gov/media/193342/download",
+      "accessed": "2026-09-02",
+      "what_it_shows": "July 23-24 2026 PCAC: FDA proposing BPC-157 NOT be included on 503A bulks list. Secondary reports of 8-6 committee vote to recommend inclusion; vote is not a listing. Full PDF not line-read; FDA proposal against listing is the staff document claim.",
+      "used_for_findings": ["A-008", "A-026"],
+      "status": "PARTIALLY SUPPORTED"
+    },
+    {
+      "ledger_id": "E-016",
+      "source": "Repo templates",
+      "url": "file://src/layouts/DossierLayout.astro",
+      "accessed": "2026-09-02",
+      "what_it_shows": "Hardcoded DrugSchema legalStatus and SafetyBanner fdaStatus/wadaStatus; safetyInfo never passed from [slug].astro; quality checklist eyebrow 'Sourcing'; faqs prop unused.",
+      "used_for_findings": ["A-004", "A-005", "A-009", "A-023"],
+      "status": "VERIFIED CURRENT"
+    }
+  ],
+  "searches_with_no_contradiction_found": [
+    "No retraction of STEP 1 PMID 33567185, SELECT 37952131, SURMOUNT-1 35658024, ATTAIN-1 40960239, or FLOW 38785209 found in this search.",
+    "No evidence that BPC-157 is FDA-approved as of 2026-09-02.",
+    "No evidence that placeholder Miami clinic NAP data corresponds to a real independently verified practice (contacting clinics was out of authorization)."
+  ]
+}

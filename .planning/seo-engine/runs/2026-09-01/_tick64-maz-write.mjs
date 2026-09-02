@@ -1,0 +1,180 @@
+import fs from "fs";
+
+const body = `---
+title: 5-Amino-1MQ vs Mazdutide
+peptideA: 5-amino-1mq
+peptideB: mazdutide
+category: metabolic
+lastUpdated: 2026-09-02T00:00:00.000Z
+summary: >-
+  Cross-trial comparison of the NNMT inhibitor 5-amino-1-methylquinolinium
+  (5-Amino-1MQ) with mazdutide (GLORY-1 treatment-policy; GLORY-2; US phase
+  2 efficacy estimand). Not a head-to-head RCT. This page found no published
+  human obesity RCT for 5-Amino-1MQ as of 2026-09-02.
+metaTitle: "5-Amino-1MQ vs Mazdutide: Which Has Better Evidence?"
+metaDescription: >-
+  GLORY-1 treatment-policy week 32 −10.09% / −12.55% vs +0.45%. No human
+  obesity RCT percent for 5-Amino-1MQ on this page.
+faqs:
+  - question: What is the main difference between 5-Amino-1MQ and Mazdutide?
+    answer: >-
+      5-Amino-1MQ is the research name for 5-amino-1-methylquinolinium, a
+      small-molecule NNMT inhibitor. Mazdutide is a GLP-1 and glucagon
+      receptor dual agonist with published Phase 3 weight trials in China
+      (GLORY-1, GLORY-2) and a US phase 2 trial. This page does not treat
+      mouse NNMT-inhibitor studies and GLORY-1 as one head-to-head result.
+  - question: 'Which has more clinical evidence, 5-Amino-1MQ or Mazdutide?'
+    answer: >-
+      There is no published head-to-head obesity RCT on this page. PubMed
+      aliases and ClinicalTrials.gov queries on 2026-09-02 returned no human
+      obesity RCT for 5-Amino-1MQ. Mazdutide has published GLORY-1,
+      GLORY-2, and US phase 2 results quoted below. This page does not quote
+      a live source census.
+  - question: Are 5-Amino-1MQ and Mazdutide FDA approved?
+    answer: >-
+      As of 2026-09-02, openFDA drugsfda returned no application for
+      generic_name 5-amino-1mq, 5-amino-1-methylquinolinium, mazdutide,
+      ibi362, or ly3305677. A published Phase 3 paper is not an FDA
+      application. This page does not invent an approval year.
+  - question: Can 5-Amino-1MQ and Mazdutide be used together?
+    answer: >-
+      There is no published clinical trial on this page that randomised
+      5-Amino-1MQ plus mazdutide. Combination safety and efficacy are not
+      established here. This page does not recommend a combination.
+sources:
+  - id: nnmti-dio-mice-pmid-35013352
+    title: >-
+      Reduced calorie diet combined with NNMT inhibition establishes a
+      distinct microbiome in DIO mice
+    url: 'https://pubmed.ncbi.nlm.nih.gov/35013352/'
+    type: journal
+    pmid: '35013352'
+    doi: 10.1038/s41598-021-03670-5
+    verifiedAt: '2026-09-02'
+  - id: glory-1-pmid-40421736
+    title: Once-Weekly Mazdutide in Chinese Adults with Obesity or Overweight
+    url: 'https://pubmed.ncbi.nlm.nih.gov/40421736/'
+    type: journal
+    pmid: '40421736'
+    doi: 10.1056/NEJMoa2411528
+    nctId: NCT05607680
+    verifiedAt: '2026-09-02'
+  - id: glory-2-pmid-42251595
+    title: >-
+      Treatment With 9-mg Mazdutide for Weight Reduction in Chinese Adults
+      With Obesity: The GLORY-2 Randomized Clinical Trial
+    url: 'https://pubmed.ncbi.nlm.nih.gov/42251595/'
+    type: journal
+    pmid: '42251595'
+    doi: 10.1001/jama.2026.8142
+    nctId: NCT06164873
+    verifiedAt: '2026-09-02'
+  - id: mazdutide-us-p2-pmid-42628555
+    title: >-
+      Efficacy and safety of mazdutide in adults with obesity or overweight:
+      a US-based, multicentre, phase 2, randomised, placebo-controlled
+      clinical trial
+    url: 'https://pubmed.ncbi.nlm.nih.gov/42628555/'
+    type: journal
+    pmid: '42628555'
+    doi: 10.1016/S2213-8587(26)00160-9
+    nctId: NCT06124807
+    verifiedAt: '2026-09-02'
+---
+
+## Overview
+
+[5-Amino-1MQ](/peptides/5-amino-1mq) is the research name used on this site for 5-amino-1-methylquinolinium, a small-molecule nicotinamide N-methyltransferase (NNMT) inhibitor. [Mazdutide](/peptides/mazdutide) is Innovent/Eli Lilly's investigational GLP-1 and glucagon receptor dual agonist. The mouse NNMT-inhibitor papers fetched this run, GLORY-1, GLORY-2, and the US phase 2 trial are separate programmes. This page does not collapse them into one efficacy ratio.
+
+Related pages: [5-Amino-1MQ vs semaglutide](/compare/5-amino-1mq-vs-semaglutide) and [mazdutide vs semaglutide](/compare/mazdutide-vs-semaglutide).
+
+## Key Facts
+
+| Aspect | 5-Amino-1MQ | Mazdutide |
+|--------|-------------|-----------|
+| **Class on this page** | NNMT inhibitor (small molecule) [nnmti-dio-mice-pmid-35013352] | GLP-1 / glucagon dual agonist [glory-1-pmid-40421736] |
+| **Human obesity RCT quoted here** | None found in this run | GLORY-1 Phase 3 (n=610; treatment-policy) [glory-1-pmid-40421736] |
+| **Lead figure here** | No RCT percent in a fetched abstract | Week 32 −10.09% / −12.55% vs +0.45% (treatment-policy) [glory-1-pmid-40421736] |
+| **FDA (openFDA drugsfda, 2026-09-02)** | NOT_FOUND | NOT_FOUND |
+
+## Clinical Trial Data
+
+These are not head-to-head RCTs.
+
+### 5-Amino-1MQ — no human obesity RCT on this page
+
+PubMed esearch on 2026-09-02 (per alias, not OR-joined): \`"5-Amino-1MQ"\` count 0; \`"5-amino-1-MQ"\` count 0; \`"5-Amino-1-methylquinolinium"\` count 3 (PMIDs 39067875, 35013352, 33645410). PubMed \`"5-Amino-1MQ" AND "mazdutide"\` and \`"5-amino-1-methylquinolinium" AND "mazdutide"\` each returned 0. ClinicalTrials.gov v2 search for \`5-Amino-1MQ\`, \`5-amino-1-methylquinolinium\`, and \`NNMT 5-amino\` each returned 0 studies (hasResults not applicable).
+
+None of the three PubMed hits is a human obesity RCT. PMID 35013352 is a diet-induced obese (DIO) mouse microbiome paper. The abstract names 5-amino-1-methylquinolinium as the NNMT inhibitor used with a low-fat diet and describes whole-body adiposity and weight loss in mice relative to diet switch alone. The abstract does **not** publish a body-weight percent. This page does not invent one [nnmti-dio-mice-pmid-35013352].
+
+PMID 39067875 title-matched as an NNMT / urothelial bladder cancer CAF paper. It used 5-Amino-1-methylquinolinium iodide in UBC mouse models. It is not an obesity RCT and is not quoted as a weight-change result. PMID 33645410 title did not name 5-amino-1-methylquinolinium; it is a HeLa-cell paper and is not quoted.
+
+This page does not invent a human obesity Phase 3 programme for 5-Amino-1MQ.
+
+### GLORY-1 (NEJM)
+
+PMID 40421736, NCT05607680. Phase 3, double-blind, placebo-controlled trial in China. 610 adults randomly assigned 1:1:1 to mazdutide 4 mg, mazdutide 6 mg, or placebo for 48 weeks. The two primary endpoints were percentage change in body weight from baseline and a weight reduction of at least 5% at **week 32**, assessed with a **treatment-policy** estimand (effects regardless of early discontinuation or initiation of new antiobesity therapies).
+
+At week 32, mean percent change was −10.09% (95% CI −11.15 to −9.04) with 4 mg, −12.55% (95% CI −13.64 to −11.45) with 6 mg, and +0.45% (95% CI −0.61 to 1.52) with placebo; at least 5% loss in 73.9%, 82.0%, and 10.5% (P&lt;0.001 vs placebo). At week 48, mean percent change was −11.00% / −14.01% / +0.30%; at least 15% loss in 35.7%, 49.5%, and 2.0% (P&lt;0.001 vs placebo). This page does not collapse the two mazdutide arms into one percent [glory-1-pmid-40421736].
+
+Adverse events leading to discontinuation: 1.5% (4 mg), 0.5% (6 mg), 1.0% (placebo). Gastrointestinal events were the most frequent and mostly mild to moderate.
+
+ClinicalTrials.gov lists NCT05607680 as COMPLETED Phase 3 (hasResults **false** as of 2026-09-02). Lead sponsor: Innovent Biologics (Suzhou) Co. Ltd. Figures above are from the journal abstract. PubMed \`NCT05607680\` on 2026-09-02 returned PMID 40421736 only.
+
+### GLORY-2 (JAMA)
+
+PMID 42251595, NCT06164873. Phase 3, double-blind, placebo-controlled trial in Chinese adults with obesity (BMI of 30 or higher), with or without type 2 diabetes. 461 participants received study treatment (307 mazdutide 9 mg, 154 placebo) for 60 weeks. Coprimary outcomes were percentage change in body weight from baseline and a weight reduction of at least 5% at week 60. The abstract states that efficacy and safety analyses were performed in participants who received at least one administration of study treatment. The abstract does **not** name a treatment-policy versus efficacy estimand.
+
+At week 60, mean percent change was −16.65% (95% CI −18.19 to −15.12) versus −1.50% (95% CI −3.43 to 0.43); between-group difference −15.15% (95% CI −17.22 to −13.09; P&lt;0.001). At least 5% loss: 84.3% versus 33.1% [glory-2-pmid-42251595].
+
+Adverse events leading to discontinuation: 2.9% versus 0%. Most common events: vomiting 53.1% vs 1.3%; nausea 46.9% vs 3.2%; diarrhea 39.4% vs 6.5%; mostly mild to moderate.
+
+ClinicalTrials.gov lists NCT06164873 as UNKNOWN Phase 3 (hasResults **false** as of 2026-09-02). Lead sponsor: Innovent Biologics (Suzhou) Co. Ltd. Figures above are from the journal abstract. PubMed \`NCT06164873\` on 2026-09-02 returned PMID 42251595 only.
+
+### US phase 2 (Lancet Diabetes & Endocrinology)
+
+PMID 42628555, NCT06124807. US multicentre phase 2; 179 adults without type 2 diabetes randomly allocated to mazdutide 3–6 mg (32), 10 mg (48), 16 mg (51), or placebo (48) for 48 weeks. The **primary endpoint is the 32-week efficacy (hypothetical) estimand**. This is not a treatment-policy number.
+
+At 32 weeks, least-squares mean percent change was −7.3% (3–6 mg), −15.6% (10 mg), and −18.1% (16 mg) versus −0.9% with placebo. Estimated treatment differences versus placebo ranged from −6.5% to −17.2% (P&lt;0.0001, all comparisons). The abstract says additional body-weight reductions were observed at 48 weeks and does **not** publish those 48-week percents. Discontinuation of study treatment due to adverse events was most frequent with 16 mg (20%) [mazdutide-us-p2-pmid-42628555].
+
+ClinicalTrials.gov lists NCT06124807 as COMPLETED Phase 2 (hasResults **true** as of 2026-09-02). Lead sponsor: Eli Lilly and Company. Figures above are from the journal abstract. PubMed \`NCT06124807\` on 2026-09-02 returned PMID 42628555 only.
+
+## Regulatory Status
+
+| Aspect | 5-Amino-1MQ | Mazdutide |
+|--------|-------------|-----------|
+| **FDA (openFDA drugsfda, 2026-09-02)** | NOT_FOUND (\`5-amino-1mq\`; \`5-amino-1-methylquinolinium\`) | NOT_FOUND (\`mazdutide\`; \`ibi362\`; \`ly3305677\`) |
+| **Quoted published study** | DIO mouse microbiome paper; no RCT percent | GLORY-1 treatment-policy; GLORY-2 treated-set; US phase 2 efficacy estimand |
+| **Registered human trial (CT.gov this run)** | 0 studies | NCT05607680 completed; NCT06164873 unknown; NCT06124807 completed |
+
+This page does not invent an approval year or an NMPA letter.
+
+## Summary
+
+| Factor | 5-Amino-1MQ | Mazdutide |
+|--------|-------------|-----------|
+| **Mechanism** | NNMT inhibition (preclinical papers) | GLP-1 / glucagon dual agonist |
+| **Lead figure here** | No human obesity RCT percent | GLORY-1 week 32 treatment-policy −10.09% / −12.55% vs +0.45% |
+| **Availability on this page** | No openFDA application | No openFDA application |
+
+### Key Takeaways
+
+1. **Cross-trial, not head-to-head:** 5-Amino-1MQ has no human obesity RCT on this page; GLORY-1 is a China Phase 3 treatment-policy result. PubMed H2H queries returned 0 on 2026-09-02.
+2. **5-Amino-1MQ:** street-name aliases returned 0; the chemical-name search returned 3 papers, none a human obesity RCT. The DIO mouse abstract names the compound and publishes **no** percent (PMID 35013352). CT.gov queries returned 0 studies as of 2026-09-02.
+3. **GLORY-1:** treatment-policy week 32 **−10.09% / −12.55% vs +0.45%** (PMID 40421736). Arms not collapsed.
+4. **GLORY-2:** −16.65% vs −1.50% at 60 weeks in participants who received at least one administration (PMID 42251595). Estimand not named in the abstract.
+5. **US phase 2:** 32-week **efficacy (hypothetical) estimand** −7.3% / −15.6% / −18.1% vs −0.9% (PMID 42628555). Not a treatment-policy headline.
+6. **openFDA:** no 5-Amino-1MQ application; no mazdutide / IBI362 / LY3305677 application as of 2026-09-02. No invented 5-Amino-1MQ obesity Phase 3.
+
+---
+
+*This comparison is for educational purposes only. 5-Amino-1MQ is investigational on this page. Mazdutide is investigational on this page.*
+`;
+
+const crlf = body.replace(/\r?\n/g, "\r\n");
+const dest = "src/content/comparisons/5-amino-1mq-vs-mazdutide.mdx";
+fs.writeFileSync(dest, crlf, "utf8");
+const text = fs.readFileSync(dest, "utf8");
+const crlfCount = (text.match(/\r\n/g) || []).length;
+const lfOnly = (text.match(/(?<!\r)\n/g) || []).length;
+console.log("wrote", dest, "CRLF", crlfCount, "LF-only", lfOnly);

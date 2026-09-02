@@ -39,6 +39,7 @@ description: Evidence-based sourcing rules for PepCodex content. Use when writin
 - Peptide dossiers: **10+ citations typical**
 - All claims must trace back to cited sources
 - No placeholder or generic source titles
+- **Titles, meta, and excerpts are not a second evidence grade.** Quote only figures that appear in a source fetched (or already on that page's `sources[]`) in this edit. Never round a confidence-interval bound into a headline, never collapse two trials into one percent, never invent enrollment. If the abstract does not contain the number, do not put it in the title. Strip the claim rather than guess.
 
 ## Banned Content
 

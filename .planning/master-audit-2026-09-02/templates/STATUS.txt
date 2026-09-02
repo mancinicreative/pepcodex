@@ -1,0 +1,36 @@
+STATUS: COMPLETE
+AUDIT: templates / schema / accessibility / claim-spreader
+DATE: 2026-09-02
+MODE: read-only; no code modified
+
+READ:
+- All 32 type=template files from INVENTORY-COMPACT.json (TEMPLATE-1266..1297)
+- All src/layouts/*.astro (11 files)
+- All src/components/SEO/*.astro (8 files including JsonLd)
+- DisclaimerBanner, SafetyBanner, ExitIntentPopup, CookieConsent, ClinicCard, FeaturedClinicCard, RatingCard, EvidenceChain, QualityChecklist, AppWaitlistCTA, NewsletterForm, EvidenceBadge, SourcesList, TrialTable, InteractionMatrix, Timeline, SearchModal (mounted from BaseLayout)
+- src/pages/clinics/[city].astro + clinics/index.astro (parent hub copy)
+- src/scripts/analytics.ts
+- src/pages/index.astro
+- src/pages/api/subscribe.ts
+- src/pages/peptides/[slug].astro (wiring of DossierLayout props)
+- src/pages/peptides/[peptide]/[condition].astro (295-page spreader)
+- src/styles/global.css skip-link + tokens
+- public/ listing (no logo.png)
+
+DELIVERABLES:
+- REPORT.md
+- SPREADER-CLAIMS.json (40 claims, quoted)
+- STATUS.txt
+
+NOT DONE (out of scope / blocked):
+- Did not render pages or run graph:check / build
+- Did not audit content-collection prose (peptides/*.mdx FAQ answers except as consumers of templates)
+- Did not verify live HTTP for logo.png 404 (absent from public/)
+- ExitIntentPopup is dead code (0 pages) — audited as a template surface
+- HowToSchema unused — audited as a latent dosing-schema risk
+
+P0:
+- DossierLayout hardcodes Not FDA Approved + WADA Prohibited + Drug legalStatus on all 107 dossiers
+- Clinic city FAQ JSON-LD: verified/vetted, $100-$300, BPC-157 indications, "multiple" clinics when count is 0
+
+INDEPENDENT: did not read Audits A/B/C reports.

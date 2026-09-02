@@ -283,6 +283,7 @@ async function fetchGsc() {
     { name: 'by-query', dimensions: ['query'] },
     { name: 'by-page-query', dimensions: ['page', 'query'] },
     { name: 'by-device', dimensions: ['device'] },
+    { name: 'by-country', dimensions: ['country'] },
   ];
 
   const summary = [];
@@ -364,6 +365,30 @@ async function fetchGa4() {
       dimensions: ['deviceCategory'],
       metrics: ['sessions', 'engagementRate', 'bounceRate'],
       limit: 50,
+    },
+    {
+      name: 'country',
+      dimensions: ['country'],
+      metrics: ['sessions', 'engagedSessions', 'bounceRate', 'averageSessionDuration'],
+      limit: 50,
+    },
+    {
+      name: 'hostname',
+      dimensions: ['hostName'],
+      metrics: ['sessions', 'bounceRate'],
+      limit: 30,
+    },
+    {
+      name: 'sources',
+      dimensions: ['sessionSource'],
+      metrics: ['sessions', 'engagedSessions', 'bounceRate', 'averageSessionDuration'],
+      limit: 80,
+    },
+    {
+      name: 'referrer',
+      dimensions: ['pageReferrer'],
+      metrics: ['sessions', 'bounceRate', 'averageSessionDuration'],
+      limit: 100,
     },
   ];
 

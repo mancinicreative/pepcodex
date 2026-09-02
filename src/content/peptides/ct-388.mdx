@@ -4,20 +4,21 @@ aliases:
   - RG-6912
 category: metabolic
 evidenceStrength: moderate
-lastUpdated: 2026-01-22T00:00:00.000Z
+lastUpdated: 2026-09-02T00:00:00.000Z
 comparators:
   - tirzepatide
   - semaglutide
   - survodutide
 summary: >-
-  A dual GLP-1/GIP receptor agonist (INN enicepatide; also RO7795068) acquired
-  by Roche through the $2.7 billion Carmot Therapeutics acquisition in 2024. The
-  published Phase 1 trial (NCT04838405) showed 4.7-8.0% mean weight loss vs 0.5%
-  placebo over 4 weeks; a more widely reported ~18.8% placebo-adjusted figure at
-  24 weeks comes from an unpublished Phase 1 extension reported via press release.
-  Phase 2 obesity and T2D trials are completed or ongoing and Phase 3 began in
-  2026, positioning it as a competitive obesity therapeutic with a mechanism
-  similar to tirzepatide.
+  Newest window items (scan 2026-01-22 to 2026-09-01, fetched 2026-09-02) are
+  status syncs, not new papers. Scout JSON listed zero PubMed hits for CT-388
+  / RG-6912. Phase 2 obesity NCT06525935 is completed with hasResults false —
+  no treatment-policy percent is quoted. Phase 2 T2D NCT06628362 is active,
+  not recruiting (actual n=447), hasResults false. Phase 3 Enith1
+  (NCT07351045) and Enith2 (NCT07351058) are recruiting. CT.gov names the
+  intervention Enicepatide with other-names CT-388, RO7795068, and RG6640.
+  Existing published Phase 1 figures on this page were not re-fetched in this
+  increment.
 sources:
   count: 12
   human: 6
@@ -25,8 +26,8 @@ sources:
   openAccess: 4
 metaTitle: 'CT-388: Triple Agonist for Obesity Research (2026)'
 metaDescription: >-
-  Evidence-graded review of ct-388 covering 12 citations on metabolic effects.
-  Updated Feb 2026.
+  Evidence-graded review of CT-388 (enicepatide). Phase 2 obesity completed
+  with no posted results; Phase 3 Enith1/Enith2 recruiting. Updated Sep 2026.
 interactions:
   - peptide: tirzepatide
     type: avoid
@@ -150,9 +151,11 @@ conditions:
       The published CT-388 Phase 1 trial (NCT04838405) showed mean weight loss
       of 4.7-8.0% vs 0.5% placebo at 4 weeks. A widely reported ~18.8%
       placebo-adjusted weight loss at 24 weeks comes from an unpublished Phase 1
-      extension (press release, not peer-reviewed). The dual GLP-1/GIP mechanism
-      is the same class as the FDA-approved tirzepatide (Mounjaro/Zepbound).
-      Phase 2 obesity trials (NCT06525935) are completed with results pending.
+      extension (press release, not peer-reviewed). Phase 2 obesity
+      NCT06525935 is completed (actual n=469; primary completion 2025-12-08)
+      with hasResults false as of the 2026-09-02 CT.gov fetch — no Phase 2
+      percent is quoted. Phase 3 Enith1 (NCT07351045) is recruiting
+      (estimated n=2000).
     relevantStudies:
       - '41319798'
       - '32730231'
@@ -168,9 +171,12 @@ conditions:
       The GLP-1/GIP dual agonist mechanism has proven effective for glycemic
       control with tirzepatide. CT-388 is expected to have similar
       glucose-lowering effects through enhanced insulin secretion and improved
-      insulin sensitivity. A Phase 2 T2D trial (NCT06628362) is active and not
-      yet recruiting to completion; published CT-388 glycemic data so far come
-      from the Phase 1 trial (NCT04838405).
+      insulin sensitivity. Phase 2 T2D NCT06628362 is active, not recruiting
+      (actual n=447; last update 2026-06-24) with hasResults false as of
+      2026-09-02 — no HbA1c percent is quoted. Phase 3 Enith2 (NCT07351058)
+      is recruiting (estimated n=1600). Published CT-388 glycemic data on
+      this page still come from the existing Phase 1 record (NCT04838405),
+      which was not re-fetched in this increment.
     relevantStudies:
       - '41319798'
       - '32730231'
@@ -242,10 +248,14 @@ qualityChecklist:
     - Any CT-388 product without Roche/clinical trial involvement
 regulatoryStatus:
   status: investigational
-  lastUpdated: '2026-02-18'
+  lastUpdated: '2026-09-02'
   notes: >-
-    Phase 2 obesity/T2D trials completed or active; Phase 3 program began 2026
-    (Carmot Therapeutics/Roche). GLP-1/GIP dual agonist (INN enicepatide).
+    Still investigational as of 2026-09-02. openFDA drugsfda
+    openfda.generic_name:enicepatide returned 404 / no matches. An unquoted
+    "CT-388" search returned unrelated ANDAs (phenylephrine, levonorgestrel,
+    triamterene) and is not treated as an approval. Phase 2 obesity
+    NCT06525935 completed, hasResults false; Phase 2 T2D NCT06628362 active,
+    not recruiting, hasResults false; Phase 3 Enith1/Enith2 recruiting.
 ratings:
   researchDepth: 3
   globalCoverage: 2
@@ -364,10 +374,22 @@ CT-388 activates two hormone receptors simultaneously to reduce appetite and imp
 
 **Key Research:** Chakravarthy MV et al. (2025) reported the first published CT-388 clinical data, including the Phase 1 trial (NCT04838405). [PMID:41319798](https://pubmed.ncbi.nlm.nih.gov/41319798/) Willard FS et al. (2020) established the mechanistic basis for cAMP-biased GLP-1/GIP dual agonism (in the related agent tirzepatide). [PMID:32730231](https://pubmed.ncbi.nlm.nih.gov/32730231/)
 
+### Trial status (fetched 2026-09-02)
+
+No new PubMed paper named CT-388 or enicepatide in the 2026-01-22 to 2026-09-01 scan. CT.gov records fetched this run all list Enicepatide with other-names CT-388, RO7795068, and RG6640; all have hasResults false.
+
+- NCT06525935 — Phase 2 obesity/overweight with a weight-related comorbidity; completed (actual n=469); primary outcome percent change in body weight to week 48; no results posted.
+- NCT06628362 — Phase 2 overweight/obesity with T2D; active, not recruiting (actual n=447); coprimary body-weight and HbA1c change to week 36; no results posted.
+- Enith1 NCT07351045 — Phase 3 obesity/overweight without T2D; recruiting (estimated n=2000); primary body-weight change at week 72.
+- Enith2 NCT07351058 — Phase 3 obesity/overweight with T2D; recruiting (estimated n=1600); primary body-weight change at week 72.
+- NCT07670416 — Phase 3 China obesity/overweight with or without T2D; recruiting (estimated n=300).
+- NCT07626515 — Phase 1 Chinese PK; recruiting (estimated n=36).
+- ZYNERGY NCT07589686 — Phase 2 petrelintide co-administered with enicepatide; not yet recruiting (estimated n=486). Petrelintide is a combo partner, not a synonym of CT-388.
+
 ### Important Limitations
 
 - CT-388 is investigational and not yet FDA approved
-- Only Phase 1 efficacy data are peer-reviewed (4-week timepoint); the ~18.8% at 24 weeks is from an unpublished press release, and Phase 2/3 results are pending
+- Only Phase 1 efficacy data are peer-reviewed (4-week timepoint); the ~18.8% at 24 weeks is from an unpublished press release; Phase 2 NCT06525935 is completed with hasResults false as of 2026-09-02, so no Phase 2 percent is quoted
 - Specific receptor binding affinities not publicly disclosed
 - Head-to-head comparisons with tirzepatide not yet available
 - Long-term cardiovascular outcomes data not yet established

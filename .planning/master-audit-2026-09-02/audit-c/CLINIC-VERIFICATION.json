@@ -1,0 +1,4057 @@
+{
+  "audit": "C",
+  "date": "2026-09-02",
+  "auditor": "Audit C — directory / affiliate / clinic-acquisition",
+  "last_checked": "2026-09-02",
+  "summary": {
+    "total": 52,
+    "FICTIONAL_PLACEHOLDER": 52,
+    "UNVERIFIED": 0,
+    "SELF-REPORTED": 0,
+    "INDEPENDENTLY_CONFIRMED": 0,
+    "INACCESSIBLE": 0,
+    "independently_web_searched": 11,
+    "example_com_websites": 52,
+    "nanpa_555_phones": 52,
+    "verifiedListing_true": 50,
+    "featured_true": [
+      "Prime Wellness Scottsdale",
+      "Regenerative Health Institute",
+      "Vitality Wellness Center"
+    ],
+    "verifiedListing_false": [
+      "Northwest Peptide & Wellness",
+      "Pacific Integrative Wellness"
+    ],
+    "orphaned_from_city_pages": [
+      "Commonwealth Wellness Center",
+      "Gold Coast Wellness & Peptide Therapy",
+      "Treasure Valley Peptide Institute",
+      "Wasatch Wellness & Peptide Center"
+    ]
+  },
+  "clinics": [
+    {
+      "surface_id": "CLINIC-RECORD-1176",
+      "name": "Alamo Wellness & Peptide Center",
+      "file": "src/content/clinics/alamo-wellness-san-antonio.mdx",
+      "city": "San Antonio",
+      "state": "TX",
+      "fields": {
+        "legal_or_public_name": "Alamo Wellness & Peptide Center",
+        "ownership": null,
+        "address": "18503 Blanco Road, Suite 102",
+        "website": "https://example.com/alamo-wellness",
+        "public_business_contact": "(555) 210-7745",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "TX",
+        "services_offered": [
+          "Peptide Therapy",
+          "Weight Management",
+          "Anti-Aging Medicine",
+          "IV Therapy"
+        ],
+        "peptides_offered": [
+          "Semaglutide",
+          "Tirzepatide",
+          "Sermorelin",
+          "NAD+"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Alamo Wellness & Peptide Center provides comprehensive weight management and anti-aging solutions with a focus on sustainable lifestyle transformation through peptide therapy.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "web_search_name_city",
+          "example.com_probe",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "\"Alamo Wellness & Peptide Center\" San Antonio"
+        ],
+        "notes": "No matching clinic. Nearby different businesses: Alamo Peptides (research-chem vendor, alamopeptides.com) and Alamo Slim Clinic (7800 IH-10 West). Address 18503 Blanco Road not tied to this name.",
+        "evidence_urls": [
+          "https://alamopeptides.com/",
+          "https://www.alamoslimclinic.com/peptide-therapies",
+          "https://example.com/alamo-wellness"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1177",
+      "name": "Aloha Peptide & Longevity",
+      "file": "src/content/clinics/aloha-peptide-honolulu.mdx",
+      "city": "Honolulu",
+      "state": "HI",
+      "fields": {
+        "legal_or_public_name": "Aloha Peptide & Longevity",
+        "ownership": null,
+        "address": "1585 Kapiolani Boulevard, Suite 1540",
+        "website": "https://example.com/aloha-peptide",
+        "public_business_contact": "(555) 808-3352",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "HI",
+        "services_offered": [
+          "Peptide Therapy",
+          "Longevity Medicine",
+          "Sports Medicine",
+          "Anti-Aging Medicine"
+        ],
+        "peptides_offered": [
+          "Epithalon",
+          "NAD+",
+          "BPC-157",
+          "TB-500",
+          "GHK-Cu"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Aloha Peptide & Longevity blends island wellness philosophy with cutting-edge peptide therapeutics for active aging, athletic recovery, and cellular rejuvenation.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/aloha-peptide"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1178",
+      "name": "Atlantic Health & Peptide Therapy",
+      "file": "src/content/clinics/atlantic-health-jacksonville.mdx",
+      "city": "Jacksonville",
+      "state": "FL",
+      "fields": {
+        "legal_or_public_name": "Atlantic Health & Peptide Therapy",
+        "ownership": null,
+        "address": "4450 Hodges Boulevard, Suite 800",
+        "website": "https://example.com/atlantic-health-peptide",
+        "public_business_contact": "(555) 904-5521",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "FL",
+        "services_offered": [
+          "Peptide Therapy",
+          "Regenerative Medicine",
+          "Functional Medicine",
+          "Immune Support"
+        ],
+        "peptides_offered": [
+          "Thymosin Alpha-1",
+          "BPC-157",
+          "TB-500",
+          "GHK-Cu",
+          "NAD+"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Atlantic Health & Peptide Therapy combines regenerative medicine with functional approaches to support immune function, tissue repair, and whole-body wellness.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/atlantic-health-peptide"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1179",
+      "name": "Beacon Wellness & Regenerative Health",
+      "file": "src/content/clinics/beacon-wellness-boston.mdx",
+      "city": "Boston",
+      "state": "MA",
+      "fields": {
+        "legal_or_public_name": "Beacon Wellness & Regenerative Health",
+        "ownership": null,
+        "address": "125 Summer Street, Suite 1700",
+        "website": "https://example.com/beacon-wellness",
+        "public_business_contact": "(555) 617-3392",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "MA",
+        "services_offered": [
+          "Peptide Therapy",
+          "Regenerative Medicine",
+          "Cognitive Enhancement",
+          "Functional Medicine"
+        ],
+        "peptides_offered": [
+          "Semax",
+          "Selank",
+          "BPC-157",
+          "NAD+",
+          "GHK-Cu"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Beacon Wellness & Regenerative Health integrates Harvard-affiliated expertise with innovative peptide protocols for cognitive optimization and tissue regeneration.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "web_search_name_city",
+          "example.com_probe",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "\"Beacon Wellness & Regenerative Health\" Boston peptide"
+        ],
+        "notes": "No matching Boston clinic. HealingMaps 2026 Boston peptide-clinic roundup does not list this name. Description claims \"Harvard-affiliated expertise\" with no named clinician.",
+        "evidence_urls": [
+          "https://healingmaps.com/best-peptide-clinics-in-boston/",
+          "https://example.com/beacon-wellness"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1180",
+      "name": "BioHack Wellness Center",
+      "file": "src/content/clinics/biohack-wellness-denver.mdx",
+      "city": "Denver",
+      "state": "Colorado",
+      "fields": {
+        "legal_or_public_name": "BioHack Wellness Center",
+        "ownership": null,
+        "address": "1600 17th Street, Suite 400",
+        "website": "https://example.com/biohack-wellness",
+        "public_business_contact": "(303) 555-0500",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "Colorado",
+        "services_offered": [
+          "Peptide Therapy",
+          "Biohacking Services",
+          "Altitude Adaptation",
+          "IV Infusions",
+          "Cryotherapy"
+        ],
+        "peptides_offered": [
+          "BPC-157",
+          "Epitalon",
+          "DSIP",
+          "Semax",
+          "Selank"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "BioHack Wellness Center offers cutting-edge peptide therapy and biohacking services in downtown Denver. Our protocols are designed for optimal performance at altitude and beyond.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/biohack-wellness"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 exchange reserved for fiction (NANPA 555-01xx)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1181",
+      "name": "Bluff City Regenerative Health",
+      "file": "src/content/clinics/bluff-city-regenerative-memphis.mdx",
+      "city": "Memphis",
+      "state": "TN",
+      "fields": {
+        "legal_or_public_name": "Bluff City Regenerative Health",
+        "ownership": null,
+        "address": "6215 Humphreys Boulevard, Suite 300",
+        "website": "https://example.com/bluff-city-regenerative",
+        "public_business_contact": "(555) 901-5543",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "TN",
+        "services_offered": [
+          "Peptide Therapy",
+          "Regenerative Medicine",
+          "Functional Medicine",
+          "Anti-Aging Medicine"
+        ],
+        "peptides_offered": [
+          "BPC-157",
+          "TB-500",
+          "GHK-Cu",
+          "NAD+",
+          "Thymosin Alpha-1"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Bluff City Regenerative Health offers integrative regenerative medicine combining peptide therapy with functional approaches for tissue repair and age-related wellness.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/bluff-city-regenerative"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1182",
+      "name": "Brew City Performance & Peptide Clinic",
+      "file": "src/content/clinics/brew-city-performance-milwaukee.mdx",
+      "city": "Milwaukee",
+      "state": "WI",
+      "fields": {
+        "legal_or_public_name": "Brew City Performance & Peptide Clinic",
+        "ownership": null,
+        "address": "330 E Kilbourn Avenue, Suite 1125",
+        "website": "https://example.com/brew-city-performance",
+        "public_business_contact": "(555) 414-8867",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "WI",
+        "services_offered": [
+          "Peptide Therapy",
+          "Sports Medicine",
+          "Regenerative Medicine",
+          "Weight Management"
+        ],
+        "peptides_offered": [
+          "BPC-157",
+          "TB-500",
+          "Semaglutide",
+          "MK-677",
+          "CJC-1295"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Brew City Performance & Peptide Clinic serves athletes and active individuals with comprehensive recovery and body composition protocols using advanced peptide therapeutics.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/brew-city-performance"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1183",
+      "name": "Buckeye Longevity Center",
+      "file": "src/content/clinics/buckeye-longevity-columbus.mdx",
+      "city": "Columbus",
+      "state": "OH",
+      "fields": {
+        "legal_or_public_name": "Buckeye Longevity Center",
+        "ownership": null,
+        "address": "1375 Dublin Road, Suite 300",
+        "website": "https://example.com/buckeye-longevity",
+        "public_business_contact": "(555) 614-3387",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "OH",
+        "services_offered": [
+          "Peptide Therapy",
+          "Longevity Medicine",
+          "Hormone Optimization",
+          "Cognitive Enhancement"
+        ],
+        "peptides_offered": [
+          "Epithalon",
+          "NAD+",
+          "Semax",
+          "CJC-1295",
+          "Ipamorelin"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Buckeye Longevity Center focuses on cellular health and age optimization through cutting-edge peptide therapy and comprehensive longevity assessments.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/buckeye-longevity"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1184",
+      "name": "Capitol City Peptide Clinic",
+      "file": "src/content/clinics/capitol-city-peptide-sacramento.mdx",
+      "city": "Sacramento",
+      "state": "CA",
+      "fields": {
+        "legal_or_public_name": "Capitol City Peptide Clinic",
+        "ownership": null,
+        "address": "1516 J Street, Suite 200",
+        "website": "https://example.com/capitol-city-peptide",
+        "public_business_contact": "(555) 916-5534",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "CA",
+        "services_offered": [
+          "Peptide Therapy",
+          "Functional Medicine",
+          "Weight Management",
+          "Immune Support"
+        ],
+        "peptides_offered": [
+          "Semaglutide",
+          "Tirzepatide",
+          "Thymosin Alpha-1",
+          "BPC-157"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Capitol City Peptide Clinic integrates functional medicine with peptide therapy for comprehensive metabolic health and immune system optimization.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/capitol-city-peptide"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1185",
+      "name": "Cascade Peptide & Functional Medicine",
+      "file": "src/content/clinics/cascade-peptide-portland.mdx",
+      "city": "Portland",
+      "state": "OR",
+      "fields": {
+        "legal_or_public_name": "Cascade Peptide & Functional Medicine",
+        "ownership": null,
+        "address": "1455 NW Irving Street, Suite 400",
+        "website": "https://example.com/cascade-peptide",
+        "public_business_contact": "(555) 503-7729",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "OR",
+        "services_offered": [
+          "Peptide Therapy",
+          "Functional Medicine",
+          "Immune Support",
+          "Anti-Aging Medicine",
+          "IV Therapy"
+        ],
+        "peptides_offered": [
+          "Thymosin Alpha-1",
+          "NAD+",
+          "GHK-Cu",
+          "Epithalon"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Cascade Peptide & Functional Medicine integrates evidence-based peptide protocols with holistic functional medicine approaches for immune optimization and cellular rejuvenation.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/cascade-peptide"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1186",
+      "name": "Chesapeake Peptide & Longevity",
+      "file": "src/content/clinics/chesapeake-peptide-baltimore.mdx",
+      "city": "Baltimore",
+      "state": "MD",
+      "fields": {
+        "legal_or_public_name": "Chesapeake Peptide & Longevity",
+        "ownership": null,
+        "address": "1777 Reisterstown Road, Suite 220",
+        "website": "https://example.com/chesapeake-peptide",
+        "public_business_contact": "(555) 410-3394",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "MD",
+        "services_offered": [
+          "Peptide Therapy",
+          "Longevity Medicine",
+          "Cognitive Enhancement",
+          "Immune Support"
+        ],
+        "peptides_offered": [
+          "NAD+",
+          "Semax",
+          "Epithalon",
+          "Thymosin Alpha-1",
+          "Selank"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Chesapeake Peptide & Longevity specializes in cognitive enhancement and immune optimization through research-backed peptide protocols for executive health and longevity.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/chesapeake-peptide"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1187",
+      "name": "Coastal Longevity & Performance",
+      "file": "src/content/clinics/coastal-longevity-san-diego.mdx",
+      "city": "San Diego",
+      "state": "CA",
+      "fields": {
+        "legal_or_public_name": "Coastal Longevity & Performance",
+        "ownership": null,
+        "address": "4765 Carmel Mountain Road, Suite 200",
+        "website": "https://example.com/coastal-longevity",
+        "public_business_contact": "(555) 619-8842",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "CA",
+        "services_offered": [
+          "Peptide Therapy",
+          "Longevity Medicine",
+          "Anti-Aging Medicine",
+          "IV Therapy",
+          "Immune Support"
+        ],
+        "peptides_offered": [
+          "Epithalon",
+          "NAD+",
+          "Thymosin Alpha-1",
+          "Sermorelin",
+          "GHK-Cu"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Coastal Longevity & Performance offers comprehensive age optimization protocols combining peptide therapy with advanced biomarker tracking. Their concierge-style practice emphasizes preventative medicine and healthspan extension.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/coastal-longevity"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1188",
+      "name": "Commonwealth Wellness Center",
+      "file": "src/content/clinics/commonwealth-wellness-richmond.mdx",
+      "city": "Richmond",
+      "state": "VA",
+      "fields": {
+        "legal_or_public_name": "Commonwealth Wellness Center",
+        "ownership": null,
+        "address": "11800 W Broad Street, Suite 1800",
+        "website": "https://example.com/commonwealth-wellness",
+        "public_business_contact": "(555) 804-7793",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "VA",
+        "services_offered": [
+          "Peptide Therapy",
+          "Bioidentical Hormones",
+          "Anti-Aging Medicine",
+          "Metabolic Health"
+        ],
+        "peptides_offered": [
+          "Sermorelin",
+          "CJC-1295",
+          "Ipamorelin",
+          "Semaglutide",
+          "NAD+"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Commonwealth Wellness Center specializes in personalized age management combining bioidentical hormone replacement with advanced peptide protocols for comprehensive vitality enhancement.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/commonwealth-wellness"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "city \"Richmond\" has no city landing page — record cannot render in /clinics/[city]",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1189",
+      "name": "Crescent City Wellness & Peptide Therapy",
+      "file": "src/content/clinics/crescent-city-wellness-new-orleans.mdx",
+      "city": "New Orleans",
+      "state": "LA",
+      "fields": {
+        "legal_or_public_name": "Crescent City Wellness & Peptide Therapy",
+        "ownership": null,
+        "address": "1515 Poydras Street, Suite 2200",
+        "website": "https://example.com/crescent-city-wellness",
+        "public_business_contact": "(555) 504-8834",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "LA",
+        "services_offered": [
+          "Peptide Therapy",
+          "Regenerative Medicine",
+          "Anti-Aging Medicine",
+          "IV Therapy"
+        ],
+        "peptides_offered": [
+          "NAD+",
+          "GHK-Cu",
+          "BPC-157",
+          "Sermorelin"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Crescent City Wellness & Peptide Therapy combines Southern hospitality with advanced regenerative protocols, specializing in cellular health and anti-aging peptide treatments.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/crescent-city-wellness"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1190",
+      "name": "Derby City Wellness Solutions",
+      "file": "src/content/clinics/derby-city-wellness-louisville.mdx",
+      "city": "Louisville",
+      "state": "KY",
+      "fields": {
+        "legal_or_public_name": "Derby City Wellness Solutions",
+        "ownership": null,
+        "address": "9850 Von Allmen Court, Suite 201",
+        "website": "https://example.com/derby-city-wellness",
+        "public_business_contact": "(555) 502-7789",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "KY",
+        "services_offered": [
+          "Peptide Therapy",
+          "Hormone Optimization",
+          "Weight Management",
+          "Anti-Aging Medicine"
+        ],
+        "peptides_offered": [
+          "Semaglutide",
+          "Tirzepatide",
+          "Sermorelin",
+          "CJC-1295",
+          "Ipamorelin"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Derby City Wellness Solutions focuses on comprehensive hormone balance and weight optimization through personalized peptide therapy and lifestyle medicine integration.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/derby-city-wellness"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1191",
+      "name": "Desert Peak Wellness Institute",
+      "file": "src/content/clinics/desert-peak-wellness-phoenix.mdx",
+      "city": "Phoenix",
+      "state": "AZ",
+      "fields": {
+        "legal_or_public_name": "Desert Peak Wellness Institute",
+        "ownership": null,
+        "address": "2425 E Camelback Road, Suite 150",
+        "website": "https://example.com/desert-peak-wellness",
+        "public_business_contact": "(555) 602-3491",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "AZ",
+        "services_offered": [
+          "Peptide Therapy",
+          "Weight Management",
+          "Metabolic Health",
+          "Hormone Optimization"
+        ],
+        "peptides_offered": [
+          "Semaglutide",
+          "Tirzepatide",
+          "CJC-1295",
+          "Ipamorelin"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Desert Peak Wellness Institute is Arizona's premier metabolic health center, specializing in peptide-based weight management and hormone optimization programs for sustainable wellness transformation.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/desert-peak-wellness"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1192",
+      "name": "Desert Vitality Clinic",
+      "file": "src/content/clinics/desert-vitality-las-vegas.mdx",
+      "city": "Las Vegas",
+      "state": "NV",
+      "fields": {
+        "legal_or_public_name": "Desert Vitality Clinic",
+        "ownership": null,
+        "address": "3773 Howard Hughes Parkway, Suite 500",
+        "website": "https://example.com/desert-vitality",
+        "public_business_contact": "(555) 702-8833",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "NV",
+        "services_offered": [
+          "Peptide Therapy",
+          "Weight Management",
+          "Sexual Health",
+          "Hormone Optimization"
+        ],
+        "peptides_offered": [
+          "Semaglutide",
+          "Tirzepatide",
+          "PT-141",
+          "CJC-1295",
+          "Ipamorelin"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Desert Vitality Clinic specializes in comprehensive weight loss and hormone replacement programs using the latest peptide therapeutics for transformative health outcomes.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/desert-vitality"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1193",
+      "name": "Elite Wellness & Longevity Center",
+      "file": "src/content/clinics/elite-wellness-chicago.mdx",
+      "city": "Chicago",
+      "state": "IL",
+      "fields": {
+        "legal_or_public_name": "Elite Wellness & Longevity Center",
+        "ownership": null,
+        "address": "875 N Michigan Avenue, Suite 3200",
+        "website": "https://example.com/elite-wellness-chicago",
+        "public_business_contact": "(555) 312-4890",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "IL",
+        "services_offered": [
+          "Peptide Therapy",
+          "Longevity Medicine",
+          "Hormone Optimization",
+          "Cognitive Enhancement"
+        ],
+        "peptides_offered": [
+          "Semaglutide",
+          "CJC-1295",
+          "Ipamorelin",
+          "Semax",
+          "NAD+"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Elite Wellness & Longevity Center specializes in evidence-based peptide protocols for executive health and cognitive performance optimization. Their integrative approach combines cutting-edge peptide therapy with comprehensive metabolic assessment.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "web_search_name_city",
+          "example.com_probe",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "\"Elite Wellness & Longevity Center\" \"875 N Michigan\" Chicago peptide"
+        ],
+        "notes": "No matching clinic in the Hancock building. Nearby different entity: Live Well Clinics at 980 N Michigan Ave. HealingMaps Chicago roundup does not list this name.",
+        "evidence_urls": [
+          "https://healingmaps.com/best-peptide-clinics-in-chicago/",
+          "https://peptidealliance.io/chicago/live-well-clinics-chicago",
+          "https://example.com/elite-wellness-chicago"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1194",
+      "name": "Frontier Wellness & Peptide Institute",
+      "file": "src/content/clinics/frontier-wellness-oklahoma-city.mdx",
+      "city": "Oklahoma City",
+      "state": "OK",
+      "fields": {
+        "legal_or_public_name": "Frontier Wellness & Peptide Institute",
+        "ownership": null,
+        "address": "6801 N Broadway Extension, Suite 200",
+        "website": "https://example.com/frontier-wellness",
+        "public_business_contact": "(555) 405-6629",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "OK",
+        "services_offered": [
+          "Peptide Therapy",
+          "Weight Management",
+          "Sports Medicine",
+          "Metabolic Health"
+        ],
+        "peptides_offered": [
+          "Semaglutide",
+          "BPC-157",
+          "TB-500",
+          "CJC-1295"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Frontier Wellness & Peptide Institute provides comprehensive metabolic health and athletic performance solutions through personalized peptide therapy protocols.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/frontier-wellness"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1195",
+      "name": "Gateway Wellness & Performance",
+      "file": "src/content/clinics/gateway-wellness-st-louis.mdx",
+      "city": "St. Louis",
+      "state": "MO",
+      "fields": {
+        "legal_or_public_name": "Gateway Wellness & Performance",
+        "ownership": null,
+        "address": "1034 S Brentwood Boulevard, Suite 1850",
+        "website": "https://example.com/gateway-wellness",
+        "public_business_contact": "(555) 314-8821",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "MO",
+        "services_offered": [
+          "Peptide Therapy",
+          "Sports Medicine",
+          "Weight Management",
+          "Regenerative Medicine"
+        ],
+        "peptides_offered": [
+          "BPC-157",
+          "TB-500",
+          "Semaglutide",
+          "MK-677"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Gateway Wellness & Performance serves athletes and active adults with comprehensive peptide protocols for injury recovery, body composition, and performance optimization.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/gateway-wellness"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1196",
+      "name": "Gold Coast Wellness & Peptide Therapy",
+      "file": "src/content/clinics/gold-coast-wellness-fort-lauderdale.mdx",
+      "city": "Fort Lauderdale",
+      "state": "FL",
+      "fields": {
+        "legal_or_public_name": "Gold Coast Wellness & Peptide Therapy",
+        "ownership": null,
+        "address": "1 E Broward Boulevard, Suite 700",
+        "website": "https://example.com/gold-coast-wellness",
+        "public_business_contact": "(555) 954-6627",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "FL",
+        "services_offered": [
+          "Peptide Therapy",
+          "Anti-Aging Medicine",
+          "Weight Management",
+          "Sexual Health"
+        ],
+        "peptides_offered": [
+          "Semaglutide",
+          "Tirzepatide",
+          "PT-141",
+          "Sermorelin",
+          "NAD+"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Gold Coast Wellness & Peptide Therapy offers comprehensive anti-aging and wellness optimization programs combining weight management, hormone balance, and sexual health enhancement.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/gold-coast-wellness"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "city \"Fort Lauderdale\" has no city landing page — record cannot render in /clinics/[city]",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1197",
+      "name": "Gulf Coast Longevity Institute",
+      "file": "src/content/clinics/gulf-coast-longevity-tampa.mdx",
+      "city": "Tampa",
+      "state": "FL",
+      "fields": {
+        "legal_or_public_name": "Gulf Coast Longevity Institute",
+        "ownership": null,
+        "address": "3280 W Bay to Bay Boulevard, Suite 200",
+        "website": "https://example.com/gulf-coast-longevity",
+        "public_business_contact": "(555) 813-9924",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "FL",
+        "services_offered": [
+          "Peptide Therapy",
+          "Longevity Medicine",
+          "Bioidentical Hormones",
+          "Anti-Aging Medicine"
+        ],
+        "peptides_offered": [
+          "Epithalon",
+          "Sermorelin",
+          "CJC-1295",
+          "Ipamorelin",
+          "NAD+"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Gulf Coast Longevity Institute offers comprehensive age management programs integrating peptide therapy, hormone optimization, and advanced biomarker analysis for healthspan extension.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/gulf-coast-longevity"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1198",
+      "name": "Heartland Peptide & Longevity",
+      "file": "src/content/clinics/heartland-peptide-kansas-city.mdx",
+      "city": "Kansas City",
+      "state": "MO",
+      "fields": {
+        "legal_or_public_name": "Heartland Peptide & Longevity",
+        "ownership": null,
+        "address": "4801 Main Street, Suite 400",
+        "website": "https://example.com/heartland-peptide",
+        "public_business_contact": "(555) 816-3348",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "MO",
+        "services_offered": [
+          "Peptide Therapy",
+          "Longevity Medicine",
+          "Anti-Aging Medicine",
+          "IV Therapy"
+        ],
+        "peptides_offered": [
+          "NAD+",
+          "Epithalon",
+          "Sermorelin",
+          "GHK-Cu",
+          "Thymosin Alpha-1"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Heartland Peptide & Longevity offers comprehensive age management programs combining peptide therapy with IV nutrition for cellular health and vitality enhancement.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/heartland-peptide"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1199",
+      "name": "High Desert Wellness Center",
+      "file": "src/content/clinics/high-desert-wellness-albuquerque.mdx",
+      "city": "Albuquerque",
+      "state": "NM",
+      "fields": {
+        "legal_or_public_name": "High Desert Wellness Center",
+        "ownership": null,
+        "address": "6400 Uptown Boulevard NE, Suite 260",
+        "website": "https://example.com/high-desert-wellness",
+        "public_business_contact": "(555) 505-4423",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "NM",
+        "services_offered": [
+          "Peptide Therapy",
+          "Functional Medicine",
+          "Anti-Aging Medicine",
+          "Hormone Optimization"
+        ],
+        "peptides_offered": [
+          "Sermorelin",
+          "CJC-1295",
+          "Ipamorelin",
+          "NAD+",
+          "GHK-Cu"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "High Desert Wellness Center integrates Southwestern healing traditions with modern peptide therapy for comprehensive hormone optimization and age management.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/high-desert-wellness"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1200",
+      "name": "Keystone Regenerative Medicine",
+      "file": "src/content/clinics/keystone-regenerative-philadelphia.mdx",
+      "city": "Philadelphia",
+      "state": "PA",
+      "fields": {
+        "legal_or_public_name": "Keystone Regenerative Medicine",
+        "ownership": null,
+        "address": "1528 Walnut Street, Suite 600",
+        "website": "https://example.com/keystone-regenerative",
+        "public_business_contact": "(555) 215-7623",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "PA",
+        "services_offered": [
+          "Peptide Therapy",
+          "Regenerative Medicine",
+          "Sports Medicine",
+          "Anti-Aging Medicine"
+        ],
+        "peptides_offered": [
+          "BPC-157",
+          "TB-500",
+          "GHK-Cu",
+          "Thymosin Alpha-1"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Keystone Regenerative Medicine focuses on injury recovery and tissue repair using advanced peptide protocols. Their sports medicine division serves professional athletes and weekend warriors seeking accelerated healing.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/keystone-regenerative"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1201",
+      "name": "Lone Star Peptide Therapy",
+      "file": "src/content/clinics/lone-star-peptide-dallas.mdx",
+      "city": "Dallas",
+      "state": "TX",
+      "fields": {
+        "legal_or_public_name": "Lone Star Peptide Therapy",
+        "ownership": null,
+        "address": "8215 Westchester Drive, Suite 300",
+        "website": "https://example.com/lone-star-peptide",
+        "public_business_contact": "(555) 214-5567",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "TX",
+        "services_offered": [
+          "Peptide Therapy",
+          "Sexual Health",
+          "Hormone Optimization",
+          "Weight Management"
+        ],
+        "peptides_offered": [
+          "PT-141",
+          "Semaglutide",
+          "CJC-1295",
+          "BPC-157"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Lone Star Peptide Therapy specializes in men's and women's hormone optimization and sexual health enhancement through targeted peptide protocols.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/lone-star-peptide"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1202",
+      "name": "Manhattan Peptide Clinic",
+      "file": "src/content/clinics/manhattan-peptide-clinic.mdx",
+      "city": "New York",
+      "state": "New York",
+      "fields": {
+        "legal_or_public_name": "Manhattan Peptide Clinic",
+        "ownership": null,
+        "address": "445 Park Avenue, 9th Floor",
+        "website": "https://example.com/manhattan-peptide",
+        "public_business_contact": "(212) 555-0600",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "New York",
+        "services_offered": [
+          "Peptide Therapy",
+          "Executive Health",
+          "Anti-Aging Medicine",
+          "Metabolic Testing",
+          "Concierge Medicine"
+        ],
+        "peptides_offered": [
+          "Semaglutide",
+          "BPC-157",
+          "NAD+",
+          "Epithalon",
+          "Thymalin"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Manhattan Peptide Clinic provides discreet, personalized peptide therapy for busy professionals. Our Park Avenue location offers comprehensive executive health services with a focus on longevity.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "web_search_name_city",
+          "example.com_probe",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "\"Manhattan Peptide Clinic\" \"Park Avenue\""
+        ],
+        "notes": "No matching clinic at 445 Park Avenue. Real nearby Park Avenue peptide practice is Dr. GolBerg Wellness at 910 Park Avenue.",
+        "evidence_urls": [
+          "https://www.drgolberg.nyc/regenerative-medicine/peptide-therapy-in-park-avenue-ny/",
+          "https://example.com/manhattan-peptide"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 exchange reserved for fiction (NANPA 555-01xx)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1203",
+      "name": "Midwest Longevity Institute",
+      "file": "src/content/clinics/midwest-longevity-omaha.mdx",
+      "city": "Omaha",
+      "state": "NE",
+      "fields": {
+        "legal_or_public_name": "Midwest Longevity Institute",
+        "ownership": null,
+        "address": "17021 Lakeside Hills Plaza, Suite 105",
+        "website": "https://example.com/midwest-longevity",
+        "public_business_contact": "(555) 402-6638",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "NE",
+        "services_offered": [
+          "Peptide Therapy",
+          "Longevity Medicine",
+          "Bioidentical Hormones",
+          "Metabolic Health"
+        ],
+        "peptides_offered": [
+          "Epithalon",
+          "NAD+",
+          "Sermorelin",
+          "Semaglutide",
+          "Thymosin Alpha-1"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Midwest Longevity Institute provides comprehensive age management combining peptide therapy with bioidentical hormone replacement for optimal healthspan and vitality.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/midwest-longevity"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1204",
+      "name": "Midwest Performance & Recovery",
+      "file": "src/content/clinics/midwest-performance-indianapolis.mdx",
+      "city": "Indianapolis",
+      "state": "IN",
+      "fields": {
+        "legal_or_public_name": "Midwest Performance & Recovery",
+        "ownership": null,
+        "address": "8902 N Meridian Street, Suite 150",
+        "website": "https://example.com/midwest-performance",
+        "public_business_contact": "(555) 317-6634",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "IN",
+        "services_offered": [
+          "Peptide Therapy",
+          "Sports Medicine",
+          "Regenerative Medicine",
+          "Anti-Aging Medicine"
+        ],
+        "peptides_offered": [
+          "BPC-157",
+          "TB-500",
+          "CJC-1295",
+          "MK-677",
+          "GHK-Cu"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Midwest Performance & Recovery serves athletes and active individuals with targeted peptide protocols for injury healing, muscle recovery, and performance enhancement.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/midwest-performance"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1205",
+      "name": "Motor City Regenerative Medicine",
+      "file": "src/content/clinics/motor-city-regenerative-detroit.mdx",
+      "city": "Detroit",
+      "state": "MI",
+      "fields": {
+        "legal_or_public_name": "Motor City Regenerative Medicine",
+        "ownership": null,
+        "address": "30445 Northwestern Highway, Suite 350",
+        "website": "https://example.com/motor-city-regenerative",
+        "public_business_contact": "(555) 313-8824",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "MI",
+        "services_offered": [
+          "Peptide Therapy",
+          "Regenerative Medicine",
+          "Sports Medicine",
+          "Functional Medicine"
+        ],
+        "peptides_offered": [
+          "BPC-157",
+          "TB-500",
+          "GHK-Cu",
+          "NAD+",
+          "Sermorelin"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Motor City Regenerative Medicine combines advanced peptide protocols with regenerative approaches for tissue repair, joint health, and athletic recovery.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/motor-city-regenerative"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1206",
+      "name": "Music City Wellness & Regeneration",
+      "file": "src/content/clinics/music-city-wellness-nashville.mdx",
+      "city": "Nashville",
+      "state": "TN",
+      "fields": {
+        "legal_or_public_name": "Music City Wellness & Regeneration",
+        "ownership": null,
+        "address": "1201 Demonbreun Street, Suite 900",
+        "website": "https://example.com/music-city-wellness",
+        "public_business_contact": "(555) 615-4478",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "TN",
+        "services_offered": [
+          "Peptide Therapy",
+          "Sports Medicine",
+          "Regenerative Medicine",
+          "Anti-Aging Medicine"
+        ],
+        "peptides_offered": [
+          "BPC-157",
+          "TB-500",
+          "Sermorelin",
+          "MK-677"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Music City Wellness & Regeneration provides advanced peptide therapy for performers, athletes, and active individuals focused on injury recovery and performance optimization.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/music-city-wellness"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1207",
+      "name": "North Coast Peptide & Wellness",
+      "file": "src/content/clinics/north-coast-peptide-cleveland.mdx",
+      "city": "Cleveland",
+      "state": "OH",
+      "fields": {
+        "legal_or_public_name": "North Coast Peptide & Wellness",
+        "ownership": null,
+        "address": "25001 Chagrin Boulevard, Suite 350",
+        "website": "https://example.com/north-coast-peptide",
+        "public_business_contact": "(555) 216-7792",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "OH",
+        "services_offered": [
+          "Peptide Therapy",
+          "Regenerative Medicine",
+          "Sports Medicine",
+          "Anti-Aging Medicine"
+        ],
+        "peptides_offered": [
+          "BPC-157",
+          "TB-500",
+          "GHK-Cu",
+          "Sermorelin"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "North Coast Peptide & Wellness specializes in injury recovery and tissue regeneration using cutting-edge peptide protocols for athletes and active individuals.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/north-coast-peptide"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1208",
+      "name": "Northwest Peptide & Wellness",
+      "file": "src/content/clinics/northwest-peptide-seattle.mdx",
+      "city": "Seattle",
+      "state": "Washington",
+      "fields": {
+        "legal_or_public_name": "Northwest Peptide & Wellness",
+        "ownership": null,
+        "address": "1200 Madison Street, Suite 300",
+        "website": "https://example.com/northwest-peptide",
+        "public_business_contact": "(206) 555-0900",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "Washington",
+        "services_offered": [
+          "Peptide Therapy",
+          "Naturopathic Medicine",
+          "IV Therapy",
+          "Hormone Balancing",
+          "Sleep Optimization"
+        ],
+        "peptides_offered": [
+          "BPC-157",
+          "DSIP",
+          "CJC-1295",
+          "Ipamorelin",
+          "Selank"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": false,
+        "description": "Northwest Peptide & Wellness integrates peptide therapy with naturopathic principles for whole-body health. Our Seattle clinic specializes in sleep optimization, stress management, and hormone balancing.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "web_search_name_city",
+          "example.com_probe",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "\"Northwest Peptide & Wellness\" Seattle Madison Street"
+        ],
+        "notes": "No matching clinic at 1200 Madison Street. Nearby different entities: Northwest Peptides / NorthWest Peps (research-chem vendors), HealingMaps Seattle list (Flow Wellness, Pinnacle Integrative, etc.).",
+        "evidence_urls": [
+          "https://healingmaps.com/best-peptide-clinics-in-seattle/",
+          "https://northwestpeptides.com/contact-us/",
+          "https://example.com/northwest-peptide"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 exchange reserved for fiction (NANPA 555-01xx)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:false but still example.com/555 placeholder"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1209",
+      "name": "Optimal Performance Medicine",
+      "file": "src/content/clinics/optimal-performance-austin.mdx",
+      "city": "Austin",
+      "state": "Texas",
+      "fields": {
+        "legal_or_public_name": "Optimal Performance Medicine",
+        "ownership": null,
+        "address": "3500 Jefferson St, Suite 200",
+        "website": "https://example.com/optimal-performance",
+        "public_business_contact": "(512) 555-0400",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "Texas",
+        "services_offered": [
+          "Peptide Therapy",
+          "Sports Medicine",
+          "Recovery Protocols",
+          "Hormone Testing",
+          "Performance Optimization"
+        ],
+        "peptides_offered": [
+          "BPC-157",
+          "TB-500",
+          "CJC-1295",
+          "Ipamorelin",
+          "GHK-Cu"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Optimal Performance Medicine serves Austin's active community with evidence-based peptide protocols. We specialize in athletic recovery, injury rehabilitation, and performance enhancement.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/optimal-performance"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 exchange reserved for fiction (NANPA 555-01xx)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1210",
+      "name": "Pacific Integrative Wellness",
+      "file": "src/content/clinics/pacific-wellness-sf.mdx",
+      "city": "San Francisco",
+      "state": "California",
+      "fields": {
+        "legal_or_public_name": "Pacific Integrative Wellness",
+        "ownership": null,
+        "address": "450 Sutter Street, Suite 1200",
+        "website": "https://example.com/pacific-wellness",
+        "public_business_contact": "(415) 555-0700",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "California",
+        "services_offered": [
+          "Peptide Therapy",
+          "Functional Medicine",
+          "Cognitive Enhancement",
+          "Gut Health",
+          "Autoimmune Protocols"
+        ],
+        "peptides_offered": [
+          "BPC-157",
+          "Thymosin Alpha-1",
+          "KPV",
+          "LL-37",
+          "Dihexa"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": false,
+        "description": "Pacific Integrative Wellness combines peptide therapy with functional medicine for comprehensive health optimization. We specialize in gut health, immune support, and cognitive enhancement protocols.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "web_search_name_city",
+          "example.com_probe",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "\"Pacific Integrative Wellness\" \"450 Sutter\" San Francisco"
+        ],
+        "notes": "No matching clinic. Nearby different entity: Pacific Integrative Psychiatry at 447 Sutter Street (psychiatry/sleep, not peptide clinic).",
+        "evidence_urls": [
+          "https://www.psychologytoday.com/us/psychiatrists/pacific-integrative-psychiatry-san-francisco-ca/1776990",
+          "https://example.com/pacific-wellness"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 exchange reserved for fiction (NANPA 555-01xx)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:false but still example.com/555 placeholder"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1211",
+      "name": "Peachtree Wellness & Longevity",
+      "file": "src/content/clinics/peachtree-wellness-atlanta.mdx",
+      "city": "Atlanta",
+      "state": "Georgia",
+      "fields": {
+        "legal_or_public_name": "Peachtree Wellness & Longevity",
+        "ownership": null,
+        "address": "3500 Peachtree Road NE, Suite 400",
+        "website": "https://example.com/peachtree-wellness",
+        "public_business_contact": "(404) 555-1000",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "Georgia",
+        "services_offered": [
+          "Peptide Therapy",
+          "Longevity Medicine",
+          "Hormone Replacement",
+          "Sexual Health",
+          "Aesthetic Services"
+        ],
+        "peptides_offered": [
+          "BPC-157",
+          "PT-141",
+          "Kisspeptin",
+          "Sermorelin",
+          "Tesamorelin"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Peachtree Wellness & Longevity offers comprehensive peptide therapy in the heart of Buckhead. Our experienced team specializes in hormone optimization, sexual health, and anti-aging medicine.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/peachtree-wellness"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 exchange reserved for fiction (NANPA 555-01xx)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1212",
+      "name": "Pikes Peak Wellness & Performance",
+      "file": "src/content/clinics/pikes-peak-wellness-colorado-springs.mdx",
+      "city": "Colorado Springs",
+      "state": "CO",
+      "fields": {
+        "legal_or_public_name": "Pikes Peak Wellness & Performance",
+        "ownership": null,
+        "address": "6071 N Academy Boulevard, Suite 101",
+        "website": "https://example.com/pikes-peak-wellness",
+        "public_business_contact": "(555) 719-3381",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "CO",
+        "services_offered": [
+          "Peptide Therapy",
+          "Sports Medicine",
+          "Altitude Performance",
+          "Regenerative Medicine"
+        ],
+        "peptides_offered": [
+          "BPC-157",
+          "TB-500",
+          "MK-677",
+          "CJC-1295",
+          "Ipamorelin"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Pikes Peak Wellness & Performance specializes in altitude training optimization and athletic recovery through targeted peptide therapy for Colorado's active community.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/pikes-peak-wellness"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1213",
+      "name": "Potomac Peptide & Longevity Center",
+      "file": "src/content/clinics/potomac-peptide-washington-dc.mdx",
+      "city": "Washington",
+      "state": "DC",
+      "fields": {
+        "legal_or_public_name": "Potomac Peptide & Longevity Center",
+        "ownership": null,
+        "address": "1101 Connecticut Avenue NW, Suite 450",
+        "website": "https://example.com/potomac-peptide",
+        "public_business_contact": "(555) 202-5543",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "DC",
+        "services_offered": [
+          "Peptide Therapy",
+          "Longevity Medicine",
+          "Cognitive Enhancement",
+          "Hormone Optimization"
+        ],
+        "peptides_offered": [
+          "Semax",
+          "Selank",
+          "NAD+",
+          "Epithalon",
+          "CJC-1295"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Potomac Peptide & Longevity Center serves DC's high-performance professionals with advanced cognitive enhancement and longevity protocols using research-backed peptides.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/potomac-peptide"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1214",
+      "name": "Prime Wellness Scottsdale",
+      "file": "src/content/clinics/prime-wellness-scottsdale.mdx",
+      "city": "Scottsdale",
+      "state": "Arizona",
+      "fields": {
+        "legal_or_public_name": "Prime Wellness Scottsdale",
+        "ownership": null,
+        "address": "7500 E Doubletree Ranch Rd, Suite 100",
+        "website": "https://example.com/prime-wellness",
+        "public_business_contact": "(480) 555-0300",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "Arizona",
+        "services_offered": [
+          "Peptide Therapy",
+          "Medical Weight Loss",
+          "Hormone Optimization",
+          "Aesthetic Medicine",
+          "Performance Enhancement"
+        ],
+        "peptides_offered": [
+          "Semaglutide",
+          "Tirzepatide",
+          "BPC-157",
+          "PT-141",
+          "Sermorelin"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": true,
+        "verifiedListing": true,
+        "description": "Prime Wellness Scottsdale offers comprehensive peptide therapy in a luxurious setting. Our experienced team specializes in medical weight loss, hormone optimization, and anti-aging protocols.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "web_search_name_city",
+          "example.com_probe",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "\"Prime Wellness Scottsdale\" peptide"
+        ],
+        "notes": "No matching Scottsdale clinic at 7500 E Doubletree Ranch Rd. \"Prime Wellness\" hits a DMV Dermestetics brand; Prime IV Hydration is a different IV chain at Via Linda.",
+        "evidence_urls": [
+          "https://primeivhydration.com/locations/arizona/scottsdale/",
+          "https://example.com/prime-wellness"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 exchange reserved for fiction (NANPA 555-01xx)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1215",
+      "name": "Queen City Peptide Institute",
+      "file": "src/content/clinics/queen-city-peptide-charlotte.mdx",
+      "city": "Charlotte",
+      "state": "NC",
+      "fields": {
+        "legal_or_public_name": "Queen City Peptide Institute",
+        "ownership": null,
+        "address": "4525 Park Road, Suite 210",
+        "website": "https://example.com/queen-city-peptide",
+        "public_business_contact": "(555) 704-9912",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "NC",
+        "services_offered": [
+          "Peptide Therapy",
+          "Metabolic Health",
+          "Bioidentical Hormones",
+          "Weight Management"
+        ],
+        "peptides_offered": [
+          "Semaglutide",
+          "Tirzepatide",
+          "Sermorelin",
+          "BPC-157"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Queen City Peptide Institute offers personalized metabolic health solutions combining peptide therapy with bioidentical hormone replacement for optimal body composition and vitality.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "web_search_name_city",
+          "example.com_probe",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "\"Queen City Peptide Institute\" Charlotte Park Road"
+        ],
+        "notes": "No matching clinic. MyPeptideMatch Charlotte listings do not include this name. \"Queen City Wellness\" appears as a generic name in unrelated local-SEO copy, not this institute.",
+        "evidence_urls": [
+          "https://www.mypeptidematch.com/clinics/north-carolina/charlotte",
+          "https://example.com/queen-city-peptide"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1216",
+      "name": "Queen City Wellness Solutions",
+      "file": "src/content/clinics/queen-city-wellness-cincinnati.mdx",
+      "city": "Cincinnati",
+      "state": "OH",
+      "fields": {
+        "legal_or_public_name": "Queen City Wellness Solutions",
+        "ownership": null,
+        "address": "6170 Este Avenue, Suite 120",
+        "website": "https://example.com/queen-city-wellness-cincy",
+        "public_business_contact": "(555) 513-4429",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "OH",
+        "services_offered": [
+          "Peptide Therapy",
+          "Weight Management",
+          "Hormone Optimization",
+          "Metabolic Health"
+        ],
+        "peptides_offered": [
+          "Semaglutide",
+          "Tirzepatide",
+          "CJC-1295",
+          "Ipamorelin"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Queen City Wellness Solutions focuses on metabolic transformation through comprehensive weight management and hormone optimization programs using advanced peptide therapeutics.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/queen-city-wellness-cincy"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1217",
+      "name": "Regenerative Health Institute",
+      "file": "src/content/clinics/regenerative-health-la.mdx",
+      "city": "Los Angeles",
+      "state": "California",
+      "fields": {
+        "legal_or_public_name": "Regenerative Health Institute",
+        "ownership": null,
+        "address": "9000 Wilshire Blvd, Beverly Hills",
+        "website": "https://example.com/regenerative-health",
+        "public_business_contact": "(310) 555-0200",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "California",
+        "services_offered": [
+          "Peptide Therapy",
+          "Stem Cell Therapy",
+          "Hormone Replacement",
+          "Functional Medicine",
+          "Longevity Protocols"
+        ],
+        "peptides_offered": [
+          "BPC-157",
+          "Thymosin Beta-4",
+          "AOD-9604",
+          "MOTS-c",
+          "Selank"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": true,
+        "verifiedListing": true,
+        "description": "Regenerative Health Institute combines cutting-edge peptide therapy with functional medicine principles. Located in Beverly Hills, we serve clients seeking the latest in longevity and regenerative medicine.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "web_search_name_city",
+          "example.com_probe",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "\"Regenerative Health Institute\" \"9000 Wilshire\" peptide"
+        ],
+        "notes": "No matching Beverly Hills clinic at 9000 Wilshire Blvd. Nearby different entities: Regenerative Medicine LA (Mark Ghalili DO, Sunset Blvd), Regenuva (9025 Wilshire).",
+        "evidence_urls": [
+          "https://checkpeptides.com/clinic/regenerative-medicine-la-mark-ghalili-do-los-angeles/",
+          "https://www.regenuvahealth.com/",
+          "https://example.com/regenerative-health"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 exchange reserved for fiction (NANPA 555-01xx)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1218",
+      "name": "Research Triangle Peptide Clinic",
+      "file": "src/content/clinics/research-triangle-peptide-raleigh.mdx",
+      "city": "Raleigh",
+      "state": "NC",
+      "fields": {
+        "legal_or_public_name": "Research Triangle Peptide Clinic",
+        "ownership": null,
+        "address": "4601 Six Forks Road, Suite 450",
+        "website": "https://example.com/research-triangle-peptide",
+        "public_business_contact": "(555) 919-8876",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "NC",
+        "services_offered": [
+          "Peptide Therapy",
+          "Longevity Medicine",
+          "Immune Support",
+          "Anti-Aging Medicine"
+        ],
+        "peptides_offered": [
+          "Thymosin Alpha-1",
+          "Epithalon",
+          "NAD+",
+          "Sermorelin"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Research Triangle Peptide Clinic leverages the region's scientific expertise to deliver evidence-based peptide protocols for immune enhancement and cellular longevity.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/research-triangle-peptide"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1219",
+      "name": "Silicon Valley Health Optimization",
+      "file": "src/content/clinics/silicon-valley-health-san-jose.mdx",
+      "city": "San Jose",
+      "state": "CA",
+      "fields": {
+        "legal_or_public_name": "Silicon Valley Health Optimization",
+        "ownership": null,
+        "address": "2635 N First Street, Suite 125",
+        "website": "https://example.com/sv-health-optimization",
+        "public_business_contact": "(555) 408-2293",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "CA",
+        "services_offered": [
+          "Peptide Therapy",
+          "Cognitive Enhancement",
+          "Longevity Medicine",
+          "Functional Medicine"
+        ],
+        "peptides_offered": [
+          "Semax",
+          "Selank",
+          "NAD+",
+          "Epithalon",
+          "Ipamorelin"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Silicon Valley Health Optimization caters to high-performing tech professionals seeking cognitive enhancement and stress resilience through nootropic peptides and longevity protocols.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/sv-health-optimization"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1220",
+      "name": "Sonoran Health & Peptide Center",
+      "file": "src/content/clinics/sonoran-health-tucson.mdx",
+      "city": "Tucson",
+      "state": "AZ",
+      "fields": {
+        "legal_or_public_name": "Sonoran Health & Peptide Center",
+        "ownership": null,
+        "address": "5301 E Grant Road, Suite 120",
+        "website": "https://example.com/sonoran-health",
+        "public_business_contact": "(555) 520-4467",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "AZ",
+        "services_offered": [
+          "Peptide Therapy",
+          "Weight Management",
+          "Hormone Optimization",
+          "Functional Medicine"
+        ],
+        "peptides_offered": [
+          "Semaglutide",
+          "Tirzepatide",
+          "CJC-1295",
+          "Ipamorelin",
+          "Sermorelin"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Sonoran Health & Peptide Center delivers functional medicine-based weight management and hormone optimization using evidence-based peptide protocols tailored to desert living.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/sonoran-health"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1221",
+      "name": "Steel City Regenerative Medicine",
+      "file": "src/content/clinics/steel-city-regenerative-pittsburgh.mdx",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "fields": {
+        "legal_or_public_name": "Steel City Regenerative Medicine",
+        "ownership": null,
+        "address": "5875 Forbes Avenue, Suite 250",
+        "website": "https://example.com/steel-city-regenerative",
+        "public_business_contact": "(555) 412-6695",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "PA",
+        "services_offered": [
+          "Peptide Therapy",
+          "Regenerative Medicine",
+          "Anti-Aging Medicine",
+          "Functional Medicine"
+        ],
+        "peptides_offered": [
+          "BPC-157",
+          "TB-500",
+          "GHK-Cu",
+          "NAD+",
+          "Sermorelin"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Steel City Regenerative Medicine combines advanced peptide protocols with integrative medicine approaches for tissue repair, joint health, and age-related wellness optimization.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/steel-city-regenerative"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1222",
+      "name": "Sunshine Health & Peptide Institute",
+      "file": "src/content/clinics/sunshine-health-orlando.mdx",
+      "city": "Orlando",
+      "state": "FL",
+      "fields": {
+        "legal_or_public_name": "Sunshine Health & Peptide Institute",
+        "ownership": null,
+        "address": "7380 W Sand Lake Road, Suite 500",
+        "website": "https://example.com/sunshine-health-peptide",
+        "public_business_contact": "(555) 407-2276",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "FL",
+        "services_offered": [
+          "Peptide Therapy",
+          "Anti-Aging Medicine",
+          "Sexual Health",
+          "Hormone Optimization"
+        ],
+        "peptides_offered": [
+          "PT-141",
+          "CJC-1295",
+          "Ipamorelin",
+          "Sermorelin",
+          "NAD+"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Sunshine Health & Peptide Institute provides comprehensive hormone optimization and anti-aging solutions with specialized protocols for sexual wellness and vitality enhancement.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/sunshine-health-peptide"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1223",
+      "name": "Texas Metabolic Institute",
+      "file": "src/content/clinics/texas-metabolic-houston.mdx",
+      "city": "Houston",
+      "state": "Texas",
+      "fields": {
+        "legal_or_public_name": "Texas Metabolic Institute",
+        "ownership": null,
+        "address": "6550 Fannin Street, Suite 1800",
+        "website": "https://example.com/texas-metabolic",
+        "public_business_contact": "(713) 555-0800",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "Texas",
+        "services_offered": [
+          "Peptide Therapy",
+          "Metabolic Medicine",
+          "Obesity Management",
+          "Diabetes Prevention",
+          "Lipid Management"
+        ],
+        "peptides_offered": [
+          "Semaglutide",
+          "Tirzepatide",
+          "AOD-9604",
+          "Tesamorelin",
+          "MOTS-c"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Texas Metabolic Institute specializes in metabolic health and medical weight loss using the latest peptide therapies. Located near the Texas Medical Center, we offer evidence-based protocols for metabolic optimization.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/texas-metabolic"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 exchange reserved for fiction (NANPA 555-01xx)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1224",
+      "name": "Treasure Valley Peptide Institute",
+      "file": "src/content/clinics/treasure-valley-peptide-boise.mdx",
+      "city": "Boise",
+      "state": "ID",
+      "fields": {
+        "legal_or_public_name": "Treasure Valley Peptide Institute",
+        "ownership": null,
+        "address": "877 W Main Street, Suite 800",
+        "website": "https://example.com/treasure-valley-peptide",
+        "public_business_contact": "(555) 208-7734",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "ID",
+        "services_offered": [
+          "Peptide Therapy",
+          "Longevity Medicine",
+          "Sports Medicine",
+          "Hormone Optimization"
+        ],
+        "peptides_offered": [
+          "Epithalon",
+          "BPC-157",
+          "TB-500",
+          "CJC-1295",
+          "Ipamorelin"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Treasure Valley Peptide Institute specializes in outdoor athlete performance optimization and longevity medicine through personalized peptide therapy protocols tailored to Idaho's active lifestyle.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "web_search_name_city",
+          "example.com_probe",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "\"Treasure Valley Peptide Institute\" Boise"
+        ],
+        "notes": "No matching clinic. Nearby different entities: Treasure Valley Aesthetics & Wellness, Treasure Valley Pain & Hormones, Boise Biologics. HealingMaps Boise list does not include this name.",
+        "evidence_urls": [
+          "https://healingmaps.com/best-peptide-clinics-in-boise/",
+          "https://boisebiologics.com/best-peptide-therapy-boise/",
+          "https://example.com/treasure-valley-peptide"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "city \"Boise\" has no city landing page — record cannot render in /clinics/[city]",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1225",
+      "name": "Twin Cities Peptide & Performance",
+      "file": "src/content/clinics/twin-cities-peptide-minneapolis.mdx",
+      "city": "Minneapolis",
+      "state": "MN",
+      "fields": {
+        "legal_or_public_name": "Twin Cities Peptide & Performance",
+        "ownership": null,
+        "address": "6545 France Avenue South, Suite 350",
+        "website": "https://example.com/twin-cities-peptide",
+        "public_business_contact": "(555) 612-4403",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "MN",
+        "services_offered": [
+          "Peptide Therapy",
+          "Sports Medicine",
+          "Weight Management",
+          "Metabolic Health"
+        ],
+        "peptides_offered": [
+          "Semaglutide",
+          "BPC-157",
+          "TB-500",
+          "CJC-1295"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Twin Cities Peptide & Performance specializes in athletic recovery and metabolic optimization through personalized peptide protocols tailored to active lifestyles.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/twin-cities-peptide"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1226",
+      "name": "Vitality Wellness Center",
+      "file": "src/content/clinics/vitality-wellness-miami.mdx",
+      "city": "Miami",
+      "state": "Florida",
+      "fields": {
+        "legal_or_public_name": "Vitality Wellness Center",
+        "ownership": null,
+        "address": "1234 Brickell Avenue, Suite 500",
+        "website": "https://example.com/vitality-wellness",
+        "public_business_contact": "(305) 555-0100",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "Florida",
+        "services_offered": [
+          "Peptide Therapy",
+          "Hormone Optimization",
+          "IV Therapy",
+          "Weight Management",
+          "Anti-Aging Medicine"
+        ],
+        "peptides_offered": [
+          "BPC-157",
+          "Semaglutide",
+          "Tirzepatide",
+          "CJC-1295",
+          "Ipamorelin"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": true,
+        "verifiedListing": true,
+        "description": "Vitality Wellness Center is Miami's premier destination for peptide therapy and regenerative medicine. Our board-certified physicians specialize in personalized protocols for metabolic health, anti-aging, and performance optimization.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "web_search_name_city",
+          "example.com_probe",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "\"Vitality Wellness Center\" Brickell peptide therapy"
+        ],
+        "notes": "No matching Miami Brickell clinic at 1234 Brickell Avenue. Vitality Wellness peptide programs exist in Idaho/telehealth (vitalityidaho.com, vitalitywellnessmed.com). Real Brickell peptide clinic: Strong Health, 1000 Brickell Plaza.",
+        "evidence_urls": [
+          "https://vitalityidaho.com/peptide-therapy/",
+          "https://www.stronghealth.com/fl/miami/peptide-therapy/",
+          "https://example.com/vitality-wellness"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 exchange reserved for fiction (NANPA 555-01xx)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    },
+    {
+      "surface_id": "CLINIC-RECORD-1227",
+      "name": "Wasatch Wellness & Peptide Center",
+      "file": "src/content/clinics/wasatch-wellness-salt-lake-city.mdx",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "fields": {
+        "legal_or_public_name": "Wasatch Wellness & Peptide Center",
+        "ownership": null,
+        "address": "5296 S Commerce Drive, Suite 100",
+        "website": "https://example.com/wasatch-wellness",
+        "public_business_contact": "(555) 801-7712",
+        "operating_status": null,
+        "professional_licenses": null,
+        "jurisdictions": "UT",
+        "services_offered": [
+          "Peptide Therapy",
+          "Sports Medicine",
+          "Altitude Performance",
+          "Regenerative Medicine"
+        ],
+        "peptides_offered": [
+          "BPC-157",
+          "TB-500",
+          "MK-677",
+          "CJC-1295",
+          "Ipamorelin"
+        ],
+        "claim_origin": "self-written marketing copy in MDX frontmatter; no source, last-checked, or clinician named",
+        "in_person_vs_telehealth": "not stated; street address implies in-person",
+        "prices": null,
+        "insurance": null,
+        "featured": false,
+        "verifiedListing": true,
+        "description": "Wasatch Wellness & Peptide Center specializes in altitude adaptation and recovery protocols for mountain athletes and outdoor enthusiasts using targeted peptide therapy.",
+        "mdx_body": "empty",
+        "schema_fields_missing": [
+          "license",
+          "npi",
+          "clinician_names",
+          "last_checked",
+          "verification_source",
+          "operating_status",
+          "telehealth",
+          "ownership",
+          "prices",
+          "insurance",
+          "hours"
+        ]
+      },
+      "verification_attempt": {
+        "date": "2026-09-02",
+        "methods": [
+          "file_read",
+          "cohort_pattern_match",
+          "example.com_reserved",
+          "555_nanpa_pattern"
+        ],
+        "queries": [
+          "cohort: identical example.com + 555 + empty body + nickname generator"
+        ],
+        "notes": "Not individually web-searched. Record is identical in structure to the independently falsified cohort: IANA-reserved example.com website, 555 telephone, empty MDX body, no license/NPI/last-checked, nickname-style trade name.",
+        "evidence_urls": [
+          "https://example.com/wasatch-wellness"
+        ]
+      },
+      "last_checked": "2026-09-02",
+      "status": "FICTIONAL_PLACEHOLDER",
+      "status_rationale": [
+        "website is https://example.com/... (IANA reserved documentation domain)",
+        "phone uses 555 as area code (not a valid NANPA NPA)",
+        "no matching public business found for independently searched cohort members of the same generator",
+        "city \"Salt Lake City\" has no city landing page — record cannot render in /clinics/[city]",
+        "verifiedListing:true with no verification source or date"
+      ],
+      "duplicates_or_collisions": [],
+      "independently_verified": false
+    }
+  ]
+}

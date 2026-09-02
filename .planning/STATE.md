@@ -1,6 +1,22 @@
 # Project State: PepCodex
 
-*Last updated: 2026-08-17*
+*Last updated: 2026-09-02*
+
+## SEO Engine playbook (2026-09-01) — Wave 2 in progress
+
+Multi-agent SEO + freshness + bot process is written and running:
+
+- Invoke: `.planning/seo-engine/INVOKE.md`
+- Constitution: `.planning/seo-engine/ORCHESTRATOR.md`
+- Loops: `.planning/seo-engine/LOOPS.md`
+- Agent briefs: `.planning/seo-engine/AGENTS.md`
+- Skill: `.claude/skills/seo-engine/SKILL.md`
+
+Gate 0 (live GSC/GA4): **live pull 2026-09-02**, 2026-07-25 **STALE**, whoami **info@pepcodex.com** (`MEASUREMENT.md`: apex 84 clicks / 32,357 impr (217d); www 171 / 47,722 (96d); query export censored; GA4 UNTRUSTED SG 9,009 city 8,294 @ 99.6%/0.19s vs GSC 0 clicks; localhost 655; diagnosis `runs/2026-09-01/BOT-DIAGNOSIS.md`; HEAD still fires gtag). L1 Bot Hunter Wave 1 DONE 2026-09-02 (`BOT-WAF-DRAFT.md` — no Firewall apply). Crawl budget remains the binding constraint — this engine optimizes/refreshs existing URLs; it does not "publish more."
+
+**2026-09-02 engine run (Wave 2 close / integrity):** Gate 0 / W3-M1 / OAuth / `gsc:repull` **UNBLOCKED** — live pull 2026-09-02, 2026-07-25 STALE, whoami info@pepcodex.com (`MEASUREMENT.md`). Graph `GRAPH_EXIT=0`, 1,209 HTML. Cited-only through **TICK22 KEEP** (`judge/L4-TICK22-iter1.md`). TICK20 KEEP (`judge/L4-TICK20-iter1.md`). **TICK19 orforglipron-vs-tirzepatide KEEP** (`judge/L4-TICK19-ORFOR-TIRZ-iter1.md`, 2026-09-02). **TICK21 pemvidutide-vs-tirzepatide KEEP** (`judge/L4-TICK21-iter1.md`, 2026-09-02). **TICK23 tirzepatide-vs-retatrutide KEEP** (`judge/L4-TICK23-iter1.md`, 2026-09-02). **TICK24 pemvidutide-vs-semaglutide KEEP** (`judge/L4-TICK24-iter1.md`, 2026-09-02). **TICK25 retatrutide-vs-survodutide KEEP** (`judge/L4-TICK25-iter1.md`, 2026-09-02). **TICK26 maritide-vs-tirzepatide KEEP** (`judge/L4-TICK26-iter1.md`, 2026-09-02). **TICK27 amycretin-vs-semaglutide KEEP** (`judge/L4-TICK27-iter1.md`, 2026-09-02). **TICK28 survodutide-vs-semaglutide KEEP** (`judge/L4-TICK28-iter1.md`, 2026-09-02). **TICK29 vk2735-vs-tirzepatide KEEP** (`judge/L4-TICK29-iter1.md`, 2026-09-02). **TICK30 cagrilintide-vs-semaglutide KEEP** (`judge/L4-TICK30-iter1.md`, 2026-09-02). **TICK31 retatrutide-vs-semaglutide KEEP** (`judge/L4-TICK31-iter1.md`, 2026-09-02). **TICK32 wegovy-vs-zepbound KEEP** (`judge/L4-TICK32-iter1.md`, 2026-09-02). **TICK33 vk2735-vs-semaglutide KEEP** (`judge/L4-TICK33-iter1.md`, 2026-09-02). **TICK35 mazdutide-vs-semaglutide KEEP** (`judge/L4-TICK35-iter1.md`, 2026-09-02). **TICK36 tirzepatide-vs-semaglutide KEEP** (`judge/L4-TICK36-iter1.md`, 2026-09-02). TICK6-PRICE waits on Lucas. W3-M1 **UNBLOCKED** (`MEASUREMENT.md` 2026-09-02). Net URL **0**. Task list: `.planning/seo-engine/runs/2026-09-01/LOOP-TASKS.md`.
+
+---
 
 ## PHASE 40 — GROWTH ENGINE (active) · plan: `.planning/phases/40-growth-engine/PRD.md`
 

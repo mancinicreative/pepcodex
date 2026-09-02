@@ -1,0 +1,186 @@
+import fs from "fs";
+
+const dest = "src/content/comparisons/5-amino-1mq-vs-survodutide.mdx";
+
+const body = `---
+title: 5-Amino-1MQ vs Survodutide
+peptideA: 5-amino-1mq
+peptideB: survodutide
+category: metabolic
+lastUpdated: 2026-09-02T00:00:00.000Z
+summary: >-
+  Cross-trial comparison of the NNMT inhibitor 5-amino-1-methylquinolinium
+  (5-Amino-1MQ) with SYNCHRONIZE-1 (survodutide, a glucagon/GLP-1 receptor
+  dual agonist). Not a head-to-head RCT. This page found no published human
+  obesity RCT percent for 5-Amino-1MQ as of 2026-09-02.
+metaTitle: "5-Amino-1MQ vs Survodutide: Which Has Better Evidence?"
+metaDescription: >-
+  SYNCHRONIZE-1 treatment-regimen −12.2% and −13.0% vs −5.4% at 76 weeks.
+  No human obesity RCT percent for 5-Amino-1MQ on this page.
+faqs:
+  - question: What is the main difference between 5-Amino-1MQ and Survodutide?
+    answer: >-
+      5-Amino-1MQ is the research name for 5-amino-1-methylquinolinium, a
+      small-molecule NNMT inhibitor. Survodutide is a dual glucagon/GLP-1
+      receptor agonist (also written BI 456906). This page does not treat
+      mouse NNMT-inhibitor studies and SYNCHRONIZE-1 as one head-to-head
+      result.
+  - question: 'Which has more clinical evidence, 5-Amino-1MQ or Survodutide?'
+    answer: >-
+      There is no published head-to-head obesity RCT on this page. PubMed
+      aliases and ClinicalTrials.gov queries on 2026-09-02 returned no human
+      obesity RCT percent for 5-Amino-1MQ. SYNCHRONIZE-1 is a published
+      phase 3 obesity trial of survodutide. This page does not quote a live
+      source census.
+  - question: Are 5-Amino-1MQ and Survodutide FDA approved?
+    answer: >-
+      As of 2026-09-02, openFDA drugsfda returned no application for
+      generic_name 5-amino-1mq, 5-amino-1-methylquinolinium, survodutide,
+      or bi456906. This page does not invent an approval year.
+  - question: Can 5-Amino-1MQ and Survodutide be used together?
+    answer: >-
+      There is no published clinical trial on this page that randomised
+      5-Amino-1MQ plus survodutide. Combination safety and efficacy are not
+      established here. This page does not recommend a combination.
+sources:
+  - id: nnmti-dio-mice-pmid-35013352
+    title: >-
+      Reduced calorie diet combined with NNMT inhibition establishes a
+      distinct microbiome in DIO mice
+    url: 'https://pubmed.ncbi.nlm.nih.gov/35013352/'
+    type: journal
+    pmid: '35013352'
+    doi: 10.1038/s41598-021-03670-5
+    verifiedAt: '2026-09-02'
+  - id: synchronize-1-pmid-42253238
+    title: Survodutide Once Weekly for the Treatment of Adults with Obesity
+    url: 'https://pubmed.ncbi.nlm.nih.gov/42253238/'
+    type: journal
+    pmid: '42253238'
+    doi: 10.1056/NEJMoa2600751
+    nctId: NCT06066515
+    verifiedAt: '2026-09-02'
+  - id: survodutide-p2-pmid-38330987
+    title: Phase 2 obesity trial of survodutide (NCT04667377)
+    url: 'https://pubmed.ncbi.nlm.nih.gov/38330987/'
+    type: journal
+    pmid: '38330987'
+    doi: 10.1016/S2213-8587(23)00356-X
+    nctId: NCT04667377
+    verifiedAt: '2026-09-02'
+  - id: survodutide-t2d-pmid-38095657
+    title: >-
+      Survodutide effects on HbA1c and bodyweight in type 2 diabetes
+      (NCT04153929)
+    url: 'https://pubmed.ncbi.nlm.nih.gov/38095657/'
+    type: journal
+    pmid: '38095657'
+    doi: 10.1007/s00125-023-06053-9
+    nctId: NCT04153929
+    verifiedAt: '2026-09-02'
+  - id: nct06066515
+    title: SYNCHRONIZE-1 (NCT06066515)
+    url: 'https://clinicaltrials.gov/study/NCT06066515'
+    type: trial
+    nctId: NCT06066515
+    verifiedAt: '2026-09-02'
+---
+
+## Overview
+
+[5-Amino-1MQ](/peptides/5-amino-1mq) is the research name used on this site for 5-amino-1-methylquinolinium, a small-molecule nicotinamide N-methyltransferase (NNMT) inhibitor. [Survodutide](/peptides/survodutide) (also written BI 456906) is Boehringer Ingelheim's investigational dual glucagon/GLP-1 receptor agonist. The mouse NNMT-inhibitor papers fetched this run and the published SYNCHRONIZE-1 trial are separate programmes. This page does not collapse them into one efficacy ratio.
+
+Related pages: [survodutide vs tirzepatide](/compare/survodutide-vs-tirzepatide), [survodutide vs semaglutide](/compare/survodutide-vs-semaglutide), and [5-Amino-1MQ vs semaglutide](/compare/5-amino-1mq-vs-semaglutide).
+
+## Key Facts
+
+| Aspect | 5-Amino-1MQ | Survodutide |
+|--------|-------------|-------------|
+| **Class on this page** | NNMT inhibitor (small molecule) [nnmti-dio-mice-pmid-35013352] | Dual glucagon/GLP-1 receptor agonist [synchronize-1-pmid-42253238] |
+| **Human obesity RCT quoted here** | None found in this run | SYNCHRONIZE-1, 76 weeks [synchronize-1-pmid-42253238] |
+| **Lead figure here** | No RCT percent in a fetched abstract | Treatment-regimen −12.2% / −13.0% vs −5.4% [synchronize-1-pmid-42253238] |
+| **FDA (openFDA drugsfda, 2026-09-02)** | NOT_FOUND | NOT_FOUND |
+
+## Clinical Trial Data
+
+These are not head-to-head RCTs. This page does not quote an unsourced 48-week percent table.
+
+### 5-Amino-1MQ — no human obesity RCT percent on this page
+
+PubMed esearch on 2026-09-02 (per alias, not OR-joined): \`"5-Amino-1MQ"\` count 0; \`"5-amino-1-MQ"\` count 0; \`"5-Amino-1-methylquinolinium"\` count 3 (PMIDs 39067875, 35013352, 33645410). PubMed \`"5-Amino-1MQ" AND survodutide\`, \`"5-amino-1-methylquinolinium" AND survodutide\`, and \`"5-Amino-1MQ" AND "SYNCHRONIZE-1"\` each returned 0. ClinicalTrials.gov v2 search for \`5-Amino-1MQ\`, \`5-amino-1-methylquinolinium\`, and \`NNMT 5-amino\` each returned 0 studies (hasResults not applicable) as of 2026-09-02.
+
+None of the three PubMed hits is a human obesity RCT. PMID 35013352 is a diet-induced obese (DIO) mouse microbiome paper. The abstract names 5-amino-1-methylquinolinium as the NNMT inhibitor used with a low-fat diet and describes whole-body adiposity and weight loss in mice relative to diet switch alone. The abstract does **not** publish a body-weight percent. This page does not invent one [nnmti-dio-mice-pmid-35013352].
+
+PMID 39067875 title-matched as an NNMT / urothelial bladder cancer CAF paper. It used 5-Amino-1-methylquinolinium iodide in UBC mouse models. It is not an obesity RCT and is not quoted as a weight-change result. PMID 33645410 title did not name 5-amino-1-methylquinolinium; it is a HeLa-cell paper and is not quoted.
+
+This page does not invent a human obesity Phase 3 programme for 5-Amino-1MQ.
+
+### SYNCHRONIZE-1 (obesity, no diabetes)
+
+PMID 42253238, NCT06066515. Phase 3, double-blind. Adults with BMI 30 or higher, or 27 or higher with at least one obesity-related complication (excluding diabetes), assigned 1:1:1 to once-weekly survodutide 3.6 mg, 6.0 mg, or placebo, plus lifestyle-modification counseling. Among 725 participants (241 on 3.6 mg, 242 on 6.0 mg, 242 on placebo), mean age was 47.1 years; 294 (40.6%) were men. Baseline mean BMI 37.9; mean body weight 108.8 kg.
+
+The primary efficacy analysis used the **treatment-regimen estimand**, which incorporates the effects of any early discontinuation of survodutide or placebo. At week 76, mean body-weight change was −12.2% (95% CI −13.6 to −10.8) with 3.6 mg, −13.0% (95% CI −14.4 to −11.6) with 6.0 mg, and −5.4% (95% CI −6.9 to −4.0) with placebo. At least 5% weight reduction: 72.6%, 71.9%, and 46.3% (P&lt;0.001 for all comparisons with placebo). Gastrointestinal symptoms: 80.9%, 89.7%, and 47.9%. No deaths were reported [synchronize-1-pmid-42253238].
+
+ClinicalTrials.gov lists NCT06066515 as completed Phase 3 (acronym SYNCHRONIZE-1; hasResults **false** as of 2026-09-02). Lead sponsor: Boehringer Ingelheim. Primary completion 2025-12-02 actual. Primary outcomes on the registry are percent change in body weight to week 76 and achievement of ≥5% reduction. An enrollment count was not returned on this run's NCT dump; n=725 is from the journal abstract. PubMed \`NCT06066515\` on 2026-09-02 returned PMIDs 42253238, 41187967, and 39495965; this page quotes 42253238 only.
+
+This page does not quote an unsourced 48-week percent table and does not treat SYNCHRONY (a different PubMed string) as a survodutide trial family.
+
+### Phase 2 obesity trial (not SYNCHRONIZE-1)
+
+PMID 38330987, NCT04667377. 387 enrolled; 386 treated; 46 weeks (not a 48-week table). Planned-treatment mean body-weight change: −6.2% (0.6 mg), −12.5% (2.4 mg), −13.2% (3.6 mg), −14.9% (4.8 mg), −2.8% placebo. Gastrointestinal adverse events in 75% of survodutide recipients vs 42% on placebo [survodutide-p2-pmid-38330987].
+
+ClinicalTrials.gov lists NCT04667377 as completed Phase 2 (hasResults **true** as of 2026-09-02). Primary completion 2022-09-15 actual. Figures above are from the journal abstract.
+
+## Type 2 diabetes (16-week survodutide trial)
+
+PMID 38095657, NCT04153929. Phase 2; 413 randomised; 16 weeks. HbA1c change (percent units): −0.91% (DG1), −1.46% (DG2), −1.71% (DG3), −1.56% (DG4), −1.63% (DG5), −1.68% (DG6). Open-label semaglutide −1.47%. Bodyweight decreased up to −8.7% (95% CI −10.1 to −7.3; DG6) vs −5.3% with semaglutide. Adverse events: 77.8% on survodutide, 52.5% placebo, 52.0% semaglutide [survodutide-t2d-pmid-38095657].
+
+ClinicalTrials.gov lists NCT04153929 as completed Phase 2 (hasResults **true** as of 2026-09-02). Primary completion 2021-10-08 actual.
+
+## Later SYNCHRONIZE records (not quoted as obesity percents)
+
+A 2026-09-02 esearch for \`"survodutide"\` returned count 77 — that list was not dumped onto this page. Title-matched later records included SYNCHRONIZE-MASLD (author correction PMID 42642663), SYNCHRONIZE-CN design/baseline (PMID 42599381), and a SYNCHRONIZE cardiovascular-outcomes design paper (PMID 39453356). This increment did not fetch those full abstracts. This page does not quote a liver-fat percent, a China-programme percent, or a CV-outcome percent.
+
+CT.gov search for survodutide also returned NCT06077864 (completed Phase 3 cardiovascular-safety record; hasResults **false** as of 2026-09-02). That record is not quoted as a result.
+
+## No published head-to-head RCT
+
+A PubMed search on 2026-09-02 for \`"5-Amino-1MQ" AND survodutide\`, \`"5-amino-1-methylquinolinium" AND survodutide\`, and \`"5-Amino-1MQ" AND "SYNCHRONIZE-1"\` each returned 0 records. This page does not invent a head-to-head obesity RCT.
+
+## Regulatory Status
+
+| Aspect | 5-Amino-1MQ | Survodutide |
+|--------|-------------|-------------|
+| **FDA (openFDA drugsfda, 2026-09-02)** | NOT_FOUND (\`5-amino-1mq\`; \`5-amino-1-methylquinolinium\`) | NOT_FOUND (\`survodutide\`; \`bi456906\`) |
+| **Quoted published study** | DIO mouse microbiome paper; no RCT percent | SYNCHRONIZE-1 treatment-regimen 76-week percents |
+| **Registered human trial (CT.gov this run)** | 0 studies | NCT06066515 completed; hasResults false |
+
+This page does not invent an approval year.
+
+## Summary
+
+| Factor | 5-Amino-1MQ | Survodutide |
+|--------|-------------|-------------|
+| **Mechanism** | NNMT inhibition (preclinical papers) | Glucagon / GLP-1 dual agonist |
+| **Lead weight figure here** | No human obesity RCT percent | SYNCHRONIZE-1 76 wk: −12.2% / −13.0% vs −5.4% |
+| **Availability on this page** | No openFDA application | No openFDA application |
+
+### Key Takeaways
+
+1. **Cross-trial, not head-to-head:** 5-Amino-1MQ has no human obesity RCT percent on this page; the quoted survodutide lead is SYNCHRONIZE-1 at 76 weeks. PubMed H2H queries returned 0 on 2026-09-02.
+2. **5-Amino-1MQ:** street-name aliases returned 0; the chemical-name search returned 3 papers, none a human obesity RCT. The DIO mouse abstract names the compound and publishes **no** percent (PMID 35013352). CT.gov queries returned 0 studies as of 2026-09-02.
+3. **SYNCHRONIZE-1:** treatment-regimen **−12.2% / −13.0% vs −5.4%** at 76 weeks (PMID 42253238). This page does not quote an unsourced 48-week percent table and does not treat SYNCHRONY as this programme.
+4. **Phase 2 obesity:** 46 weeks, planned-treatment **−6.2% / −12.5% / −13.2% / −14.9% vs −2.8%** (PMID 38330987). Not a 48-week table.
+5. **openFDA:** no 5-Amino-1MQ application; no survodutide application as of 2026-09-02.
+
+---
+
+*This comparison is for educational purposes only. 5-Amino-1MQ is investigational on this page. Survodutide is investigational on this page.*
+`;
+
+const crlf = body.replace(/\r?\n/g, "\r\n");
+fs.writeFileSync(dest, crlf, "utf8");
+const raw = fs.readFileSync(dest, "utf8");
+const crlfN = (raw.match(/\r\n/g) || []).length;
+const lfOnly = (raw.match(/(?<!\r)\n/g) || []).length;
+console.log("wrote", dest, "CRLF", crlfN, "LF-only", lfOnly, "bytes", raw.length);

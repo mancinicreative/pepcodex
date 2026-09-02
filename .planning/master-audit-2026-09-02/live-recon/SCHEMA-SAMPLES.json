@@ -1,0 +1,316 @@
+{
+  "access_date": "2026-09-02",
+  "fetched_at": "2026-09-02T19:56:17.415Z",
+  "note": "exact_raw is the <script type=application/ld+json> text node. exact_json is JSON.parse of that text.",
+  "pages": [
+    {
+      "url": "https://www.pepcodex.com/",
+      "visible_h1": [
+        "A catalogue of peptides, referenced."
+      ],
+      "schemas": [
+        {
+          "type": "Organization",
+          "exact_json": {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "PepCodex",
+            "url": "https://www.pepcodex.com",
+            "logo": "https://www.pepcodex.com/logo.png",
+            "description": "Evidence-based peptide research library. Comprehensive dossiers with citations, not advice.",
+            "sameAs": []
+          },
+          "exact_raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"PepCodex\",\"url\":\"https://www.pepcodex.com\",\"logo\":\"https://www.pepcodex.com/logo.png\",\"description\":\"Evidence-based peptide research library. Comprehensive dossiers with citations, not advice.\",\"sameAs\":[]}"
+        }
+      ],
+      "schema_vs_visible": {
+        "organization_name": "Matches visible brand 'PepCodex' in header/footer.",
+        "sameAs": "JSON-LD sameAs is []. Visible footer contains href https://www.instagram.com/pepcodex/. Classification: FACT that sameAs is empty and an Instagram profile link is in the footer; INFERENCE that schema omits a visible sameAs target.",
+        "description": "Matches homepage meta description and BaseLayout default."
+      }
+    },
+    {
+      "url": "https://www.pepcodex.com/peptides/semaglutide",
+      "visible_h1": [
+        "Semaglutide"
+      ],
+      "schemas": [
+        {
+          "type": "Organization",
+          "exact_json": {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "PepCodex",
+            "url": "https://www.pepcodex.com",
+            "logo": "https://www.pepcodex.com/logo.png",
+            "description": "Evidence-based peptide research library. Comprehensive dossiers with citations, not advice.",
+            "sameAs": []
+          },
+          "exact_raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"PepCodex\",\"url\":\"https://www.pepcodex.com\",\"logo\":\"https://www.pepcodex.com/logo.png\",\"description\":\"Evidence-based peptide research library. Comprehensive dossiers with citations, not advice.\",\"sameAs\":[]}"
+        },
+        {
+          "type": "Article",
+          "exact_json": {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Semaglutide: Evidence Dossier",
+            "description": "A GLP-1 receptor agonist FDA-approved for type 2 diabetes, obesity, cardiovascular risk reduction, and MASH. Among the most extensively studied peptides with robust Phase 3 data demonstrating significant metabolic, cardiovascular, renal, and hepatic benefits.",
+            "url": "https://www.pepcodex.com/peptides/semaglutide",
+            "datePublished": "2026-04-13T00:00:00.000Z",
+            "dateModified": "2026-04-13T00:00:00.000Z",
+            "author": {
+              "@type": "Organization",
+              "name": "PepCodex",
+              "url": "https://www.pepcodex.com"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "PepCodex",
+              "url": "https://www.pepcodex.com",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.pepcodex.com/logo.png"
+              }
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://www.pepcodex.com/peptides/semaglutide"
+            }
+          },
+          "exact_raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"Semaglutide: Evidence Dossier\",\"description\":\"A GLP-1 receptor agonist FDA-approved for type 2 diabetes, obesity, cardiovascular risk reduction, and MASH. Among the most extensively studied peptides with robust Phase 3 data demonstrating significant metabolic, cardiovascular, renal, and hepatic benefits.\",\"url\":\"https://www.pepcodex.com/peptides/semaglutide\",\"datePublished\":\"2026-04-13T00:00:00.000Z\",\"dateModified\":\"2026-04-13T00:00:00.000Z\",\"author\":{\"@type\":\"Organization\",\"name\":\"PepCodex\",\"url\":\"https://www.pepcodex.com\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"PepCodex\",\"url\":\"https://www.pepcodex.com\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://www.pepcodex.com/logo.png\"}},\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://www.pepcodex.com/peptides/semaglutide\"}}"
+        },
+        {
+          "type": "Drug",
+          "exact_json": {
+            "@context": "https://schema.org",
+            "@type": "Drug",
+            "name": "Semaglutide",
+            "description": "A GLP-1 receptor agonist FDA-approved for type 2 diabetes, obesity, cardiovascular risk reduction, and MASH. Among the most extensively studied peptides with robust Phase 3 data demonstrating significant metabolic, cardiovascular, renal, and hepatic benefits.",
+            "url": "https://www.pepcodex.com/peptides/semaglutide",
+            "alternateName": [
+              "Ozempic",
+              "Wegovy",
+              "Rybelsus",
+              "NN9535"
+            ],
+            "drugClass": {
+              "@type": "DrugClass",
+              "name": "Metabolic"
+            },
+            "administrationRoute": "Subcutaneous injection",
+            "legalStatus": "Research use only - not FDA approved for human use",
+            "additionalProperty": {
+              "@type": "PropertyValue",
+              "name": "Molecular Weight",
+              "value": "4,113.58 Da"
+            }
+          },
+          "exact_raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Drug\",\"name\":\"Semaglutide\",\"description\":\"A GLP-1 receptor agonist FDA-approved for type 2 diabetes, obesity, cardiovascular risk reduction, and MASH. Among the most extensively studied peptides with robust Phase 3 data demonstrating significant metabolic, cardiovascular, renal, and hepatic benefits.\",\"url\":\"https://www.pepcodex.com/peptides/semaglutide\",\"alternateName\":[\"Ozempic\",\"Wegovy\",\"Rybelsus\",\"NN9535\"],\"drugClass\":{\"@type\":\"DrugClass\",\"name\":\"Metabolic\"},\"administrationRoute\":\"Subcutaneous injection\",\"legalStatus\":\"Research use only - not FDA approved for human use\",\"additionalProperty\":{\"@type\":\"PropertyValue\",\"name\":\"Molecular Weight\",\"value\":\"4,113.58 Da\"}}"
+        }
+      ],
+      "schema_vs_visible": {
+        "drug_name": "Matches H1 Semaglutide.",
+        "drug_description": "Matches visible dossier summary language (FDA-approved GLP-1).",
+        "legalStatus": "FACT: Drug.legalStatus is 'Research use only - not FDA approved for human use'. FACT: Drug.description and page meta/title describe FDA approval. FACT: visible badge text 'Not FDA Approved' and 'WADA Prohibited' present in HTML. Schema contradicts its own description field.",
+        "administrationRoute": "Hardcoded 'Subcutaneous injection' in this-branch DrugSchema usage. Rybelsus (oral) is in alternateName. Classification: INFERENCE that route is incomplete for the listed aliases.",
+        "article_dates": "Article datePublished/dateModified 2026-04-13. This-branch frontmatter lastUpdated 2026-08-17. Live title still says 95 studies."
+      }
+    },
+    {
+      "url": "https://www.pepcodex.com/peptides/tirzepatide",
+      "visible_h1": [
+        "Tirzepatide"
+      ],
+      "schemas": [
+        {
+          "type": "Organization",
+          "exact_json": {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "PepCodex",
+            "url": "https://www.pepcodex.com",
+            "logo": "https://www.pepcodex.com/logo.png",
+            "description": "Evidence-based peptide research library. Comprehensive dossiers with citations, not advice.",
+            "sameAs": []
+          },
+          "exact_raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"PepCodex\",\"url\":\"https://www.pepcodex.com\",\"logo\":\"https://www.pepcodex.com/logo.png\",\"description\":\"Evidence-based peptide research library. Comprehensive dossiers with citations, not advice.\",\"sameAs\":[]}"
+        },
+        {
+          "type": "Drug",
+          "exact_json": {
+            "@context": "https://schema.org",
+            "@type": "Drug",
+            "name": "Tirzepatide",
+            "description": "A dual GIP/GLP-1 receptor agonist approved globally for type 2 diabetes (Mounjaro), weight management (Zepbound), and obstructive sleep apnea. Extensive clinical trial data from 30+ countries demonstrates significant effects on glycemic control, body weight, and cardiovascular outcomes.",
+            "url": "https://www.pepcodex.com/peptides/tirzepatide",
+            "alternateName": [
+              "LY3298176",
+              "Mounjaro",
+              "Zepbound"
+            ],
+            "drugClass": {
+              "@type": "DrugClass",
+              "name": "Metabolic"
+            },
+            "administrationRoute": "Subcutaneous injection",
+            "legalStatus": "Research use only - not FDA approved for human use",
+            "additionalProperty": {
+              "@type": "PropertyValue",
+              "name": "Molecular Weight",
+              "value": "4,813.45 Da"
+            }
+          },
+          "exact_raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Drug\",\"name\":\"Tirzepatide\",\"description\":\"A dual GIP/GLP-1 receptor agonist approved globally for type 2 diabetes (Mounjaro), weight management (Zepbound), and obstructive sleep apnea. Extensive clinical trial data from 30+ countries demonstrates significant effects on glycemic control, body weight, and cardiovascular outcomes.\",\"url\":\"https://www.pepcodex.com/peptides/tirzepatide\",\"alternateName\":[\"LY3298176\",\"Mounjaro\",\"Zepbound\"],\"drugClass\":{\"@type\":\"DrugClass\",\"name\":\"Metabolic\"},\"administrationRoute\":\"Subcutaneous injection\",\"legalStatus\":\"Research use only - not FDA approved for human use\",\"additionalProperty\":{\"@type\":\"PropertyValue\",\"name\":\"Molecular Weight\",\"value\":\"4,813.45 Da\"}}"
+        }
+      ],
+      "schema_vs_visible": {
+        "drug_name": "Matches H1 Tirzepatide.",
+        "legalStatus": "Same hardcoded 'Research use only - not FDA approved for human use' while description says approved globally for T2D (Mounjaro), weight management (Zepbound), and OSA."
+      }
+    },
+    {
+      "url": "https://www.pepcodex.com/compare/tirzepatide-vs-semaglutide",
+      "visible_h1": [
+        "Tirzepatide vs Semaglutide"
+      ],
+      "schemas": [
+        {
+          "type": "Organization",
+          "exact_json": {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "PepCodex",
+            "url": "https://www.pepcodex.com",
+            "logo": "https://www.pepcodex.com/logo.png",
+            "description": "Evidence-based peptide research library. Comprehensive dossiers with citations, not advice.",
+            "sameAs": []
+          },
+          "exact_raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"PepCodex\",\"url\":\"https://www.pepcodex.com\",\"logo\":\"https://www.pepcodex.com/logo.png\",\"description\":\"Evidence-based peptide research library. Comprehensive dossiers with citations, not advice.\",\"sameAs\":[]}"
+        },
+        {
+          "type": "FAQPage",
+          "exact_json": {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the main difference between Tirzepatide and Semaglutide?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Both Tirzepatide and Semaglutide are researched in the context of metabolic health, both with High evidence strength."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Which has more clinical evidence, Tirzepatide or Semaglutide?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Tirzepatide has 42 sources (38 human studies), rated High evidence. Semaglutide has 95 sources (78 human studies), rated High evidence."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Are Tirzepatide and Semaglutide FDA approved?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Both Tirzepatide and Semaglutide are FDA-approved for specific indications. Consult prescribing information for approved uses."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can Tirzepatide and Semaglutide be used together?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "There is no published clinical data on the safety or efficacy of using Tirzepatide and Semaglutide together. Without controlled human studies evaluating this combination, the safety profile is unknown. Consult a qualified healthcare provider before considering any peptide regimen."
+                }
+              }
+            ]
+          },
+          "exact_raw": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"What is the main difference between Tirzepatide and Semaglutide?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Both Tirzepatide and Semaglutide are researched in the context of metabolic health, both with High evidence strength.\"}},{\"@type\":\"Question\",\"name\":\"Which has more clinical evidence, Tirzepatide or Semaglutide?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Tirzepatide has 42 sources (38 human studies), rated High evidence. Semaglutide has 95 sources (78 human studies), rated High evidence.\"}},{\"@type\":\"Question\",\"name\":\"Are Tirzepatide and Semaglutide FDA approved?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Both Tirzepatide and Semaglutide are FDA-approved for specific indications. Consult prescribing information for approved uses.\"}},{\"@type\":\"Question\",\"name\":\"Can Tirzepatide and Semaglutide be used together?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"There is no published clinical data on the safety or efficacy of using Tirzepatide and Semaglutide together. Without controlled human studies evaluating this combination, the safety profile is unknown. Consult a qualified healthcare provider before considering any peptide regimen.\"}}]}"
+        }
+      ],
+      "schema_vs_visible": {
+        "faq_in_jsonld": true,
+        "faq_in_visible_body": "FACT: after stripping <script> tags, the FAQ question strings are absent from the HTML body. Visible H2s are Overview / Mechanism Comparison / Clinical Evidence Comparison / Safety Comparison / Key Differences / Which to Choose? / Sources. FAQPage describes content that is not rendered as an on-page FAQ section.",
+        "counts": "FAQ answer cites Tirzepatide 42 sources (38 human) and Semaglutide 95 sources (78 human). This-branch comparison frontmatter says 76/68 and 67/52."
+      }
+    },
+    {
+      "url": "https://www.pepcodex.com/clinics/new-york",
+      "visible_h1": [
+        "Peptide Clinics in New York, New York"
+      ],
+      "schemas": [
+        {
+          "type": "Organization",
+          "exact_json": {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "PepCodex",
+            "url": "https://www.pepcodex.com",
+            "logo": "https://www.pepcodex.com/logo.png",
+            "description": "Evidence-based peptide research library. Comprehensive dossiers with citations, not advice.",
+            "sameAs": []
+          },
+          "exact_raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"PepCodex\",\"url\":\"https://www.pepcodex.com\",\"logo\":\"https://www.pepcodex.com/logo.png\",\"description\":\"Evidence-based peptide research library. Comprehensive dossiers with citations, not advice.\",\"sameAs\":[]}"
+        },
+        {
+          "type": "FAQPage",
+          "exact_json": {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What peptide clinics are available in New York, NY?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "New York has 1 peptide therapy clinics offering services including BPC-157, semaglutide, and growth hormone secretagogues. Use our directory to find verified providers in your area."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I choose a peptide clinic in New York?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "When choosing a peptide clinic in New York, look for licensed medical professionals, quality peptide sourcing from registered compounding pharmacies, comprehensive initial consultations with lab work, and transparent pricing. Verified listings in our directory have been vetted for these criteria."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What peptide therapies are commonly offered in New York?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Peptide clinics in New York typically offer BPC-157 for tissue repair, semaglutide and tirzepatide for metabolic health, CJC-1295 with ipamorelin for growth hormone support, and various other research peptides depending on patient needs."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need a prescription for peptide therapy in New York?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, most peptide therapies require a prescription from a licensed healthcare provider. Reputable peptide clinics in New York will conduct a thorough medical evaluation and order necessary lab work before prescribing any peptide therapy."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much does peptide therapy cost in New York?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Peptide therapy costs in New York vary depending on the specific peptides, dosing, and treatment duration. Initial consultations typically range from $100-$300, with monthly peptide costs varying by type. Contact clinics directly for specific pricing."
+                }
+              }
+            ]
+          },
+          "exact_raw": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"What peptide clinics are available in New York, NY?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"New York has 1 peptide therapy clinics offering services including BPC-157, semaglutide, and growth hormone secretagogues. Use our directory to find verified providers in your area.\"}},{\"@type\":\"Question\",\"name\":\"How do I choose a peptide clinic in New York?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"When choosing a peptide clinic in New York, look for licensed medical professionals, quality peptide sourcing from registered compounding pharmacies, comprehensive initial consultations with lab work, and transparent pricing. Verified listings in our directory have been vetted for these criteria.\"}},{\"@type\":\"Question\",\"name\":\"What peptide therapies are commonly offered in New York?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Peptide clinics in New York typically offer BPC-157 for tissue repair, semaglutide and tirzepatide for metabolic health, CJC-1295 with ipamorelin for growth hormone support, and various other research peptides depending on patient needs.\"}},{\"@type\":\"Question\",\"name\":\"Do I need a prescription for peptide therapy in New York?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes, most peptide therapies require a prescription from a licensed healthcare provider. Reputable peptide clinics in New York will conduct a thorough medical evaluation and order necessary lab work before prescribing any peptide therapy.\"}},{\"@type\":\"Question\",\"name\":\"How much does peptide therapy cost in New York?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Peptide therapy costs in New York vary depending on the specific peptides, dosing, and treatment duration. Initial consultations typically range from $100-$300, with monthly peptide costs varying by type. Contact clinics directly for specific pricing.\"}}]}"
+        }
+      ],
+      "schema_vs_visible": {
+        "faq_visible": "FACT: H2 'FAQs About Peptide Clinics in New York' and the five questions are in the visible HTML, matching FAQPage names.",
+        "grammar": "FAQ answer 'New York has 1 peptide therapy clinics' is visible and in schema (subject-verb disagreement).",
+        "directory_claim": "Answers tell users to use 'our directory' to find 'verified providers'. Live /directory is a coming-soon page. Classification: FACT of the wording; INFERENCE of inconsistency with /directory."
+      }
+    }
+  ]
+}

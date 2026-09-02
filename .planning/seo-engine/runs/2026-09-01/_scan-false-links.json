@@ -1,0 +1,279 @@
+{
+  "collections": {
+    "peptides": 107,
+    "glossary": 215,
+    "comparisons": 269,
+    "blog": 140,
+    "guides": 36,
+    "safety": 31,
+    "protocols": 3,
+    "conditions": 15
+  },
+  "divergences": [
+    {
+      "slug": "amycretin",
+      "name": "Zenagamtide (amycretin)",
+      "derived": "zenagamtide-(amycretin)"
+    },
+    {
+      "slug": "hcg",
+      "name": "Human Chorionic Gonadotropin (hCG)",
+      "derived": "human-chorionic-gonadotropin-(hcg)"
+    },
+    {
+      "slug": "melanotan-i",
+      "name": "Melanotan-1",
+      "derived": "melanotan-1"
+    },
+    {
+      "slug": "mrna-4157",
+      "name": "mRNA-4157/V940",
+      "derived": "mrna-4157/v940"
+    },
+    {
+      "slug": "na-selank-amidate",
+      "name": "N-Acetyl Selank Amidate",
+      "derived": "n-acetyl-selank-amidate"
+    },
+    {
+      "slug": "na-semax-amidate",
+      "name": "N-Acetyl Semax Amidate",
+      "derived": "n-acetyl-semax-amidate"
+    }
+  ],
+  "liveDupes": [],
+  "guidePeptideMiss": [],
+  "safetyMiss": [],
+  "protoMiss": [],
+  "cmpMiss": [],
+  "body": {
+    "guides": {
+      "count": 0,
+      "sample": []
+    },
+    "trailing": {
+      "count": 2,
+      "sample": [
+        {
+          "file": "src/content/peptides/cardiogen.mdx",
+          "url": "/peptides/cartalax/",
+          "line": 329,
+          "kind": "href"
+        },
+        {
+          "file": "src/content/peptides/kristagen.mdx",
+          "url": "/peptides/chonluten/",
+          "line": 388,
+          "kind": "href"
+        }
+      ]
+    },
+    "mdx": {
+      "count": 0,
+      "sample": []
+    },
+    "peptidesMissing": {
+      "count": 0,
+      "sample": []
+    },
+    "glossaryMissing": {
+      "count": 0,
+      "sample": []
+    },
+    "compareMissing": {
+      "count": 0,
+      "sample": []
+    },
+    "safetyMissing": {
+      "count": 0,
+      "sample": []
+    },
+    "guideMissing": {
+      "count": 0,
+      "sample": []
+    },
+    "blogMissing": {
+      "count": 0,
+      "sample": []
+    },
+    "protocolsMissing": {
+      "count": 0,
+      "sample": []
+    }
+  },
+  "tpl": {
+    "guides": {
+      "count": 0,
+      "sample": []
+    },
+    "trailingHtml": {
+      "count": 1,
+      "sample": [
+        {
+          "file": "src/layouts/DossierLayout.astro",
+          "line": 487,
+          "text": "<a href=\"/regulatory-tracker/\" class:list={[\"inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium border mt-4 transition-opacity hover:opacity-80\", regConfig.bg, regConfig.color"
+        }
+      ]
+    },
+    "mdxHref": {
+      "count": 9,
+      "sample": [
+        {
+          "file": "src/pages/clinics/index.astro",
+          "line": 114,
+          "text": "href={`/clinics/${city.id.replace(/\\.mdx?$/, '')}`}"
+        },
+        {
+          "file": "src/pages/clinics/index.astro",
+          "line": 153,
+          "text": "href={`/clinics/${city.id.replace(/\\.mdx?$/, '')}`}"
+        },
+        {
+          "file": "src/pages/clinics/[city].astro",
+          "line": 14,
+          "text": "params: { city: city.id.replace(/\\.mdx?$/, '') },"
+        },
+        {
+          "file": "src/pages/clinics/[city].astro",
+          "line": 43,
+          "text": "{ name: `${name}, ${stateAbbr}`, url: `/clinics/${city.id.replace(/\\.mdx?$/, '')}` }"
+        },
+        {
+          "file": "src/pages/clinics/[city].astro",
+          "line": 364,
+          "text": "href={`/clinics/${nearbyCity.id.replace(/\\.mdx?$/, '')}`}"
+        },
+        {
+          "file": "src/pages/llms-full.txt.ts",
+          "line": 29,
+          "text": "lines.push(`- [${p.data.name}](https://www.pepcodex.com/peptides/${p.id.replace(/\\.mdx?$/, '')}/): ${p.data.summary} (Evidence: ${p.data.evidenceStrength}, Category: ${p.data.category})`);"
+        },
+        {
+          "file": "src/pages/llms-full.txt.ts",
+          "line": 70,
+          "text": "lines.push(`- [${p.data.title}](https://www.pepcodex.com/protocols/${p.id.replace(/\\.mdx?$/, '')}/): ${p.data.description}`);"
+        },
+        {
+          "file": "src/pages/protocols/index.astro",
+          "line": 84,
+          "text": "href={`/protocols/${protocol.id.replace(/\\.mdx?$/, '')}`}"
+        },
+        {
+          "file": "src/pages/regulatory-tracker.astro",
+          "line": 170,
+          "text": "{/* `p.id` retains the .mdx extension and the trailing slash forces a 308 —"
+        }
+      ]
+    },
+    "cityId": {
+      "count": 9,
+      "sample": [
+        {
+          "file": "src/pages/clinics/index.astro",
+          "line": 114,
+          "text": "href={`/clinics/${city.id.replace(/\\.mdx?$/, '')}`}"
+        },
+        {
+          "file": "src/pages/clinics/index.astro",
+          "line": 125,
+          "text": "{clinicCountByCity[city.id] && ("
+        },
+        {
+          "file": "src/pages/clinics/index.astro",
+          "line": 127,
+          "text": "{clinicCountByCity[city.id]} clinics"
+        },
+        {
+          "file": "src/pages/clinics/index.astro",
+          "line": 153,
+          "text": "href={`/clinics/${city.id.replace(/\\.mdx?$/, '')}`}"
+        },
+        {
+          "file": "src/pages/clinics/index.astro",
+          "line": 159,
+          "text": "{clinicCountByCity[city.id] && ("
+        },
+        {
+          "file": "src/pages/clinics/index.astro",
+          "line": 161,
+          "text": "{clinicCountByCity[city.id]}"
+        },
+        {
+          "file": "src/pages/clinics/[city].astro",
+          "line": 14,
+          "text": "params: { city: city.id.replace(/\\.mdx?$/, '') },"
+        },
+        {
+          "file": "src/pages/clinics/[city].astro",
+          "line": 37,
+          "text": ".filter(c => c.data.state === state && c.id !== city.id)"
+        },
+        {
+          "file": "src/pages/clinics/[city].astro",
+          "line": 43,
+          "text": "{ name: `${name}, ${stateAbbr}`, url: `/clinics/${city.id.replace(/\\.mdx?$/, '')}` }"
+        }
+      ]
+    },
+    "protocolSlug": {
+      "count": 1,
+      "sample": [
+        {
+          "file": "src/pages/protocols/index.astro",
+          "line": 81,
+          "text": "{/* `protocol.data.slug` does not exist — the protocols schema has no slug field,"
+        }
+      ]
+    },
+    "currentSlug": {
+      "count": 8,
+      "sample": [
+        {
+          "file": "src/layouts/DossierLayout.astro",
+          "line": 323,
+          "text": "const currentSlug = name.toLowerCase().replace(/\\s+/g, '-');"
+        },
+        {
+          "file": "src/layouts/DossierLayout.astro",
+          "line": 327,
+          "text": "const optionA = `${currentSlug}-vs-${compSlug}`;"
+        },
+        {
+          "file": "src/layouts/DossierLayout.astro",
+          "line": 328,
+          "text": "const optionB = `${compSlug}-vs-${currentSlug}`;"
+        },
+        {
+          "file": "src/layouts/DossierLayout.astro",
+          "line": 345,
+          "text": "// name-derived `currentSlug`, which diverges for 5 dossiers."
+        },
+        {
+          "file": "src/layouts/DossierLayout.astro",
+          "line": 379,
+          "text": "const entryNum = Math.max(1, sortedPeptides.findIndex(p => p.slug === currentSlug) + 1);"
+        },
+        {
+          "file": "src/layouts/DossierLayout.astro",
+          "line": 886,
+          "text": ".filter(p => p.data.category === category && p.slug !== currentSlug && !comparatorSlugs.has(p.slug))"
+        },
+        {
+          "file": "src/layouts/DossierLayout.astro",
+          "line": 969,
+          "text": "{/* Use the REAL collection slug, never `currentSlug` — that is derived from"
+        },
+        {
+          "file": "src/layouts/DossierLayout.astro",
+          "line": 973,
+          "text": "href={`/peptides/${slugProp ?? currentSlug}/${c.slug}`}"
+        }
+      ]
+    },
+    "unguardedPeptideHref": {
+      "count": 0,
+      "sample": []
+    }
+  }
+}

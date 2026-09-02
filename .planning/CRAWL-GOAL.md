@@ -71,6 +71,7 @@ escalate with the partial result. Never stack a change on an unevaluated change.
 | 14 | Regressions must be blocked, not just reported | `--check` gate → `npm run graph:check` | exits 1 on any broken link/orphan/depth>3 | **KEEP** |
 | 15 | Dossiers link comparisons only for *declared* `comparators` — 548 relationships exist, 286 declared, so ~half of /compare/ had no link from either peptide | "Compared With" derived from the collection | lowInbound 319 → **115** | **KEEP** |
 | 16 | Dossiers don't link their own safety profiles | "Safety profile" block | 115 → 113 | **KEEP** |
+| 17 | Trial table used display names (space/slash 404s); `currentSlug` still name-derived; tesamorelin calc orphan | pack `peptideSlug`; `dossierSlug`; tesamorelin dossier inbound | `graph:check` 2026-09-01: broken **0**, GRAPH_EXIT **0**, tesamorelin in:1 depth 3 | **KEEP** |
 
 ### Scoreboard after increment 7
 

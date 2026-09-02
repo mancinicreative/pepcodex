@@ -1,0 +1,63 @@
+LIVE RECON STATUS
+=================
+Access date: 2026-09-02
+Fetched at:  2026-09-02T19:56:17.415Z
+Tree:        feat/scoring-and-freshness @ f1b91e0
+Live:        https://www.pepcodex.com (apex 308 to www)
+Mode:        GET-only. No forms, no accounts, no consent clicks, no intrusive tests.
+
+DELIVERABLES
+------------
+REPORT.md            written
+PROBES.json          29 URLs
+SCHEMA-SAMPLES.json  5 pages (Organization / Drug / FAQ)
+STATUS.txt           this file
+
+PROBED (HTTP)
+-------------
+robots.txt                         200  body recorded
+sitemap-index.xml                  200  body recorded
+sitemap.xml                        307  -> /sitemap-index.xml
+sitemap-0.xml                      200  headers only (locs: frozen 1057)
+llms.txt                           200  body recorded (dated 2026-02-18)
+llms-full.txt                      200  preview only (~199KB)
+/                                  200  head, H1, gtag, consent, schema
+https://www.pepcodex.com           200  headers only
+https://pepcodex.com/              308  -> https://www.pepcodex.com/
+https://pepcodex.com               308  -> https://www.pepcodex.com/
+/fda-notice                        200
+/editorial-policy                  200
+/advertising-policy                200
+/directory                         200  coming soon
+/clinics                           200  meta noindex,follow
+/methodology                       200
+/privacy                           200
+/cookie-policy                     200
+/clinics/new-york                  200  meta noindex,follow; FAQ visible
+/glossary/autophagy                200  meta noindex,follow
+/blog/2025-glp1-year-review        200  LIVE-NOT-IN-REPO; no robots meta
+/blog/orforglipron-beats-oral-semaglutide  200  this-branch would 301; live noindex
+/blog/2025-peptide-approvals-record        200  this-branch would 301; live noindex
+/peptides/semaglutide              200  title 95 studies (repo 67)
+/peptides/tirzepatide              200  title 42 studies (repo 76)
+/compare/tirzepatide-vs-semaglutide 200  FAQ JSON-LD not in visible body
+/calculator/reconstitution/tesamorelin 200  this-branch would 301
+/404                               200  (template URL)
+/this-page-does-not-exist-live-recon-2026-09-02  404
+
+UNVERIFIABLE
+------------
+- Google's actual indexation / crawl of these URLs (GSC live pull blocked)
+- Whether gtag/Vercel Analytics fire a network hit before consent (HTML source only; no browser runtime)
+- HTTP status of the 60 frozen repo-not-in-live URLs (not re-fetched)
+- HTTP status of the 5 LIVE-NOT-IN-REPO blogs that were not individually re-probed (sitemap membership from freeze; 2025-glp1-year-review confirmed 200)
+- Production git SHA / Vercel deployment ID
+- Whether Access-Control-Allow-Origin: * is a Vercel default or a production-only header (not in this-branch vercel.json)
+
+FAILURES
+--------
+None of the assigned GETs failed. No UNVERIFIABLE fetch errors.
+
+MATERIAL PRODUCTION vs BRANCH
+-----------------------------
+Working tree is NOT live. Live still serves blogs and the tesamorelin calculator that this-branch vercel.json redirects. Live dossier titles (95 / 42 studies) do not match this-branch metaTitles (67 / 76). Live llms.txt is stamped 2026-02-18 with trailing slashes.

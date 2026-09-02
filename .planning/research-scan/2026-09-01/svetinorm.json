@@ -1,0 +1,39 @@
+{
+  "slug": "svetinorm",
+  "name": "Svetinorm",
+  "windowFrom": "2026-02-01",
+  "scannedAt": "2026-09-01",
+  "newPapers": [],
+  "newTrials": [],
+  "updatedTrials": [],
+  "queriedAliases": [
+    {
+      "alias": "Svetinorm",
+      "retrieved": 0,
+      "total": 0
+    },
+    {
+      "alias": "Svetinorm A-7",
+      "retrieved": 200,
+      "total": 2971
+    }
+  ],
+  "suspectGenericAliases": [
+    {
+      "alias": "Svetinorm A-7",
+      "total": 2971,
+      "primaryTotal": 0,
+      "reason": "returns 2971 records where the primary name \"Svetinorm\" returns 0; it is naming a category, not this compound"
+    }
+  ],
+  "truncated": {
+    "perAlias": [
+      {
+        "alias": "Svetinorm A-7",
+        "retrieved": 200,
+        "total": 2971
+      }
+    ],
+    "note": "Some aliases returned more hits than were retrieved (cap 200). Narrow the window (--days) or raise retmax for full coverage."
+  }
+}

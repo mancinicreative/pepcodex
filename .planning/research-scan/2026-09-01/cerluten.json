@@ -1,0 +1,39 @@
+{
+  "slug": "cerluten",
+  "name": "Cerluten",
+  "windowFrom": "2026-02-01",
+  "scannedAt": "2026-09-01",
+  "newPapers": [],
+  "newTrials": [],
+  "updatedTrials": [],
+  "queriedAliases": [
+    {
+      "alias": "Cerluten",
+      "retrieved": 0,
+      "total": 0
+    },
+    {
+      "alias": "Cerluten A-5",
+      "retrieved": 200,
+      "total": 5858
+    }
+  ],
+  "suspectGenericAliases": [
+    {
+      "alias": "Cerluten A-5",
+      "total": 5858,
+      "primaryTotal": 0,
+      "reason": "returns 5858 records where the primary name \"Cerluten\" returns 0; it is naming a category, not this compound"
+    }
+  ],
+  "truncated": {
+    "perAlias": [
+      {
+        "alias": "Cerluten A-5",
+        "retrieved": 200,
+        "total": 5858
+      }
+    ],
+    "note": "Some aliases returned more hits than were retrieved (cap 200). Narrow the window (--days) or raise retmax for full coverage."
+  }
+}

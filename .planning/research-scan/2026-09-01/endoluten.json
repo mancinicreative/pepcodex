@@ -1,0 +1,49 @@
+{
+  "slug": "endoluten",
+  "name": "Endoluten",
+  "windowFrom": "2026-02-01",
+  "scannedAt": "2026-09-01",
+  "newPapers": [],
+  "newTrials": [],
+  "updatedTrials": [],
+  "queriedAliases": [
+    {
+      "alias": "Endoluten",
+      "retrieved": 0,
+      "total": 0
+    },
+    {
+      "alias": "Pineal cytamin",
+      "retrieved": 200,
+      "total": 248
+    },
+    {
+      "alias": "Pineal gland peptides",
+      "retrieved": 0,
+      "total": 0
+    },
+    {
+      "alias": "A-8 pineal peptides",
+      "retrieved": 0,
+      "total": 0
+    }
+  ],
+  "suspectGenericAliases": [
+    {
+      "alias": "Pineal cytamin",
+      "total": 248,
+      "primaryTotal": 0,
+      "reason": "returns 248 records where the primary name \"Endoluten\" returns 0; it is naming a category, not this compound"
+    }
+  ],
+  "truncated": {
+    "perAlias": [
+      {
+        "alias": "Pineal cytamin",
+        "retrieved": 200,
+        "total": 248
+      }
+    ],
+    "note": "Some aliases returned more hits than were retrieved (cap 200). Narrow the window (--days) or raise retmax for full coverage."
+  }
+}

@@ -1,0 +1,159 @@
+import fs from "fs";
+
+const body = `---
+title: 5-Amino-1MQ vs Liraglutide
+peptideA: 5-amino-1mq
+peptideB: liraglutide
+category: metabolic
+lastUpdated: 2026-09-02T00:00:00.000Z
+summary: >-
+  Cross-trial comparison of the NNMT inhibitor 5-amino-1-methylquinolinium
+  (5-Amino-1MQ) with liraglutide SCALE weight change in kilograms and LEADER
+  cardiovascular outcomes. Not a head-to-head RCT. This page found no
+  published human obesity RCT for 5-Amino-1MQ as of 2026-09-02.
+metaTitle: "5-Amino-1MQ vs Liraglutide: Which Has Better Evidence?"
+metaDescription: >-
+  SCALE reports −8.4 kg vs −2.8 kg at 56 weeks, not a mean percent. No human
+  obesity RCT percent for 5-Amino-1MQ on this page.
+faqs:
+  - question: What is the main difference between 5-Amino-1MQ and Liraglutide?
+    answer: >-
+      5-Amino-1MQ is the research name for 5-amino-1-methylquinolinium, a
+      small-molecule NNMT inhibitor. Liraglutide is a glucagon-like peptide-1
+      analogue. This page does not treat mouse NNMT-inhibitor studies and
+      SCALE as one head-to-head result.
+  - question: 'Which has more clinical evidence, 5-Amino-1MQ or Liraglutide?'
+    answer: >-
+      There is no published head-to-head obesity RCT on this page. PubMed
+      aliases and ClinicalTrials.gov queries on 2026-09-02 returned no human
+      obesity RCT for 5-Amino-1MQ. Liraglutide has published SCALE weight and
+      LEADER cardiovascular papers. This page does not quote a live source
+      census.
+  - question: Are 5-Amino-1MQ and Liraglutide FDA approved?
+    answer: >-
+      As of 2026-09-02, openFDA drugsfda returned no application for
+      generic_name 5-amino-1mq or 5-amino-1-methylquinolinium. Liraglutide is
+      listed as Victoza (NDA022341, original approval 2010-01-25) and Saxenda
+      (NDA206321, original approval 2014-12-23). A brand name is not a ranking.
+  - question: Can 5-Amino-1MQ and Liraglutide be used together?
+    answer: >-
+      There is no published clinical trial on this page that randomised
+      5-Amino-1MQ plus liraglutide. Combination safety and efficacy are not
+      established here. This page does not recommend a combination.
+sources:
+  - id: nnmti-dio-mice-pmid-35013352
+    title: >-
+      Reduced calorie diet combined with NNMT inhibition establishes a
+      distinct microbiome in DIO mice
+    url: 'https://pubmed.ncbi.nlm.nih.gov/35013352/'
+    type: journal
+    pmid: '35013352'
+    doi: 10.1038/s41598-021-03670-5
+    verifiedAt: '2026-09-02'
+  - id: scale-pmid-26132939
+    title: A Randomized, Controlled Trial of 3.0 mg of Liraglutide in Weight Management
+    url: 'https://pubmed.ncbi.nlm.nih.gov/26132939/'
+    type: journal
+    pmid: '26132939'
+    nctId: NCT01272219
+    doi: 10.1056/NEJMoa1411892
+    verifiedAt: '2026-09-02'
+  - id: leader-pmid-27295427
+    title: Liraglutide and Cardiovascular Outcomes in Type 2 Diabetes
+    url: 'https://pubmed.ncbi.nlm.nih.gov/27295427/'
+    type: journal
+    pmid: '27295427'
+    nctId: NCT01179048
+    doi: 10.1056/NEJMoa1603827
+    verifiedAt: '2026-09-02'
+---
+
+## Overview
+
+[5-Amino-1MQ](/peptides/5-amino-1mq) is the research name used on this site for 5-amino-1-methylquinolinium, a small-molecule nicotinamide N-methyltransferase (NNMT) inhibitor. [Liraglutide](/peptides/liraglutide) is a glucagon-like peptide-1 analogue, listed on openFDA as Victoza and Saxenda. The mouse NNMT-inhibitor papers fetched this run, SCALE, and LEADER are separate programmes. This page does not collapse them into one efficacy ratio.
+
+Related pages: [5-Amino-1MQ vs semaglutide](/compare/5-amino-1mq-vs-semaglutide) and [liraglutide vs semaglutide](/compare/liraglutide-vs-semaglutide).
+
+## Key Facts
+
+| Aspect | 5-Amino-1MQ | Liraglutide |
+|--------|-------------|-------------|
+| **Class on this page** | NNMT inhibitor (small molecule) [nnmti-dio-mice-pmid-35013352] | GLP-1 analogue [scale-pmid-26132939] |
+| **Human obesity RCT quoted here** | None found in this run | SCALE 56-week weight trial [scale-pmid-26132939] |
+| **Lead figure here** | No RCT percent in a fetched abstract | −8.4 kg vs −2.8 kg at 56 weeks (no mean percent in abstract) [scale-pmid-26132939] |
+| **FDA (openFDA drugsfda, 2026-09-02)** | NOT_FOUND | Victoza NDA022341 (ORIG 2010-01-25); Saxenda NDA206321 (ORIG 2014-12-23) |
+
+## Clinical Trial Data
+
+These are not head-to-head RCTs. Do not convert SCALE kilograms into a 5-Amino-1MQ ratio.
+
+### 5-Amino-1MQ — no human obesity RCT on this page
+
+PubMed esearch on 2026-09-02 (per alias, not OR-joined): \`"5-Amino-1MQ"\` count 0; \`"5-amino-1-MQ"\` count 0; \`"5-Amino-1-methylquinolinium"\` count 3 (PMIDs 39067875, 35013352, 33645410). PubMed \`"5-Amino-1MQ" AND "liraglutide"\` and \`"5-amino-1-methylquinolinium" AND "liraglutide"\` each returned 0. ClinicalTrials.gov v2 search for \`5-Amino-1MQ\`, \`5-amino-1-methylquinolinium\`, and \`NNMT 5-amino\` each returned 0 studies (hasResults not applicable).
+
+None of the three PubMed hits is a human obesity RCT. PMID 35013352 is a diet-induced obese (DIO) mouse microbiome paper. The abstract names 5-amino-1-methylquinolinium as the NNMT inhibitor used with a low-fat diet and describes whole-body adiposity and weight loss in mice relative to diet switch alone. The abstract does **not** publish a body-weight percent. This page does not invent one [nnmti-dio-mice-pmid-35013352].
+
+PMID 39067875 title-matched as an NNMT / urothelial bladder cancer CAF paper. It used 5-Amino-1-methylquinolinium iodide in UBC mouse models. It is not an obesity RCT and is not quoted as a weight-change result. PMID 33645410 title did not name 5-amino-1-methylquinolinium; it is a HeLa-cell paper and is not quoted.
+
+This page does not invent a human obesity Phase 3 programme for 5-Amino-1MQ.
+
+### SCALE Obesity and Prediabetes (NEJM)
+
+PMID 26132939, NCT01272219. 56-week, double-blind trial in 3731 participants without type 2 diabetes (BMI at least 30, or at least 27 with treated or untreated dyslipidemia or hypertension). Randomisation 2:1 to once-daily subcutaneous liraglutide 3.0 mg (2487) or placebo (1244); both groups received lifestyle-modification counseling. Coprimary endpoints were change in body weight and the proportions losing at least 5% and more than 10% of initial body weight.
+
+At week 56, mean change was −8.4±7.3 kg versus −2.8±6.5 kg (difference −5.6 kg; 95% CI −6.0 to −5.1; P&lt;0.001, last-observation-carried-forward imputation). At least 5% loss: 63.2% versus 27.1%. More than 10% loss: 33.1% versus 10.6%. The abstract reports kilograms, not a mean percent, and does **not** name a treatment-regimen versus efficacy estimand [scale-pmid-26132939]. Most frequently reported adverse events were mild or moderate nausea and diarrhea. Serious events 6.2% versus 5.0%.
+
+ClinicalTrials.gov lists NCT01272219 as completed Phase 3 (actual enrollment 3731; hasResults **true** as of 2026-09-02). Lead sponsor: Novo Nordisk A/S. Figures above are from the journal abstract. PubMed \`NCT01272219\` on 2026-09-02 returned 7 records; this page quotes PMID 26132939.
+
+### LEADER (NEJM)
+
+PMID 27295427, NCT01179048. 9340 participants with type 2 diabetes and high cardiovascular risk; median follow-up 3.8 years. Primary composite: first death from cardiovascular causes, nonfatal myocardial infarction, or nonfatal stroke.
+
+Primary outcome: 608/4668 (13.0%) versus 694/4672 (14.9%); HR 0.87 (95% CI 0.78–0.97); P&lt;0.001 for noninferiority; P=0.01 for superiority. Cardiovascular death: 219 (4.7%) versus 278 (6.0%); HR 0.78 (95% CI 0.66–0.93). This page does not headline a rounded relative-risk percent [leader-pmid-27295427].
+
+ClinicalTrials.gov lists NCT01179048 as completed Phase 3 (actual enrollment 9341; hasResults **true** as of 2026-09-02). Lead sponsor: Novo Nordisk A/S. Figures above are from the journal abstract.
+
+## No published head-to-head RCT
+
+A PubMed search on 2026-09-02 for \`"5-Amino-1MQ" AND "liraglutide"\` and \`"5-amino-1-methylquinolinium" AND "liraglutide"\` each returned 0 records. This page does not invent a head-to-head obesity RCT.
+
+PMID 26510028 title-matched as a 2015 letter on liraglutide in weight management with no abstract and is not quoted.
+
+## Regulatory Status
+
+| Aspect | 5-Amino-1MQ | Liraglutide |
+|--------|-------------|-------------|
+| **FDA (openFDA drugsfda, 2026-09-02)** | NOT_FOUND (\`5-amino-1mq\`; \`5-amino-1-methylquinolinium\`) | Victoza NDA022341 ORIG AP 2010-01-25; Saxenda NDA206321 ORIG AP 2014-12-23 |
+| **Quoted published study** | DIO mouse microbiome paper; no RCT percent | SCALE kilograms; LEADER hazard ratios |
+| **Registered human trial (CT.gov this run)** | 0 studies | SCALE and LEADER completed Phase 3 |
+
+This page does not invent a 5-Amino-1MQ approval year or an obesity Phase 3.
+
+## Summary
+
+| Factor | 5-Amino-1MQ | Liraglutide |
+|--------|-------------|-------------|
+| **Mechanism** | NNMT inhibition (preclinical papers) | GLP-1 analogue |
+| **Lead weight figure here** | No human obesity RCT percent | SCALE −8.4 kg vs −2.8 kg (56 wk; no mean percent in abstract) |
+| **Availability on this page** | No openFDA application | FDA-approved (Victoza; Saxenda) |
+
+### Key Takeaways
+
+1. **Cross-trial, not head-to-head:** 5-Amino-1MQ has no human obesity RCT on this page; SCALE reports kilograms with LOCF, not a mean percent. PubMed H2H queries returned 0 on 2026-09-02.
+2. **5-Amino-1MQ:** street-name aliases returned 0; the chemical-name search returned 3 papers, none a human obesity RCT. The DIO mouse abstract names the compound and publishes **no** percent (PMID 35013352). CT.gov queries returned 0 studies as of 2026-09-02.
+3. **SCALE:** −8.4 kg vs −2.8 kg at 56 weeks (PMID 26132939). Do not convert those kilograms into a percent.
+4. **LEADER:** quote the hazard ratio 0.87 (95% CI 0.78–0.97), not a rounded relative-risk headline (PMID 27295427).
+5. **openFDA:** no 5-Amino-1MQ application as of 2026-09-02; Victoza ORIG AP 2010-01-25; Saxenda ORIG AP 2014-12-23.
+
+---
+
+*This comparison is for educational purposes only. 5-Amino-1MQ is investigational on this page. Liraglutide products named here are FDA-approved prescription medicines.*
+`;
+
+const crlf = body.replace(/\r?\n/g, "\r\n");
+const dest = "src/content/comparisons/5-amino-1mq-vs-liraglutide.mdx";
+fs.writeFileSync(dest, crlf, "utf8");
+const raw = fs.readFileSync(dest, "utf8");
+const crlfCount = (raw.match(/\r\n/g) || []).length;
+const lfOnly = (raw.match(/(?<!\r)\n/g) || []).length;
+console.log("wrote", dest, "bytes", Buffer.byteLength(raw), "CRLF", crlfCount, "LF-only", lfOnly);

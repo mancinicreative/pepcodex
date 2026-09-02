@@ -107,6 +107,68 @@ const REPORTS = [
       orderBys: [{ metric: { metricName: 'sessions' }, desc: true }],
     },
   },
+  {
+    name: 'ga4-country',
+    body: {
+      dimensions: [{ name: 'country' }],
+      metrics: [
+        { name: 'sessions' }, { name: 'engagedSessions' }, { name: 'bounceRate' },
+        { name: 'averageSessionDuration' },
+      ],
+      orderBys: [{ metric: { metricName: 'sessions' }, desc: true }],
+      limit: 50,
+    },
+  },
+  {
+    name: 'ga4-city',
+    body: {
+      dimensions: [{ name: 'city' }, { name: 'country' }],
+      metrics: [{ name: 'sessions' }, { name: 'bounceRate' }, { name: 'averageSessionDuration' }],
+      orderBys: [{ metric: { metricName: 'sessions' }, desc: true }],
+      limit: 80,
+    },
+  },
+  {
+    name: 'ga4-hostname',
+    body: {
+      dimensions: [{ name: 'hostName' }],
+      metrics: [{ name: 'sessions' }, { name: 'bounceRate' }],
+      orderBys: [{ metric: { metricName: 'sessions' }, desc: true }],
+      limit: 30,
+    },
+  },
+  {
+    name: 'ga4-sources',
+    body: {
+      dimensions: [{ name: 'sessionSource' }],
+      metrics: [
+        { name: 'sessions' }, { name: 'engagedSessions' }, { name: 'bounceRate' },
+        { name: 'averageSessionDuration' },
+      ],
+      orderBys: [{ metric: { metricName: 'sessions' }, desc: true }],
+      limit: 80,
+    },
+  },
+  {
+    name: 'ga4-referrer',
+    body: {
+      dimensions: [{ name: 'pageReferrer' }],
+      metrics: [{ name: 'sessions' }, { name: 'bounceRate' }, { name: 'averageSessionDuration' }],
+      orderBys: [{ metric: { metricName: 'sessions' }, desc: true }],
+      limit: 100,
+    },
+  },
+  {
+    name: 'ga4-new-returning',
+    body: {
+      dimensions: [{ name: 'newVsReturning' }],
+      metrics: [
+        { name: 'sessions' }, { name: 'engagedSessions' }, { name: 'bounceRate' },
+        { name: 'averageSessionDuration' },
+      ],
+      orderBys: [{ metric: { metricName: 'sessions' }, desc: true }],
+    },
+  },
 ];
 
 const main = async () => {

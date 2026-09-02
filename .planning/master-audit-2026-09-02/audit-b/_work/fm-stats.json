@@ -1,0 +1,888 @@
+{
+  "wordStats": {
+    "peptide": {
+      "n": 107,
+      "min": 79,
+      "p25": 242,
+      "median": 270,
+      "p75": 391,
+      "max": 2730,
+      "mean": 422
+    },
+    "peptide-condition": {
+      "n": 295,
+      "min": 204,
+      "p25": 244,
+      "median": 269,
+      "p75": 361,
+      "max": 2730,
+      "mean": 392
+    },
+    "comparison": {
+      "n": 269,
+      "min": 151,
+      "p25": 174,
+      "median": 182,
+      "p75": 815,
+      "max": 1383,
+      "mean": 446
+    },
+    "guide": {
+      "n": 36,
+      "min": 181,
+      "p25": 227,
+      "median": 342,
+      "p75": 404,
+      "max": 798,
+      "mean": 346
+    },
+    "safety": {
+      "n": 31,
+      "min": 188,
+      "p25": 228,
+      "median": 521,
+      "p75": 715,
+      "max": 1740,
+      "mean": 550
+    },
+    "glossary": {
+      "n": 215,
+      "min": 280,
+      "p25": 502,
+      "median": 618,
+      "p75": 780,
+      "max": 1197,
+      "mean": 640
+    },
+    "blog": {
+      "n": 140,
+      "min": 159,
+      "p25": 479,
+      "median": 663,
+      "p75": 865,
+      "max": 2073,
+      "mean": 704
+    },
+    "protocol": {
+      "n": 3,
+      "min": 533,
+      "p25": 533,
+      "median": 696,
+      "p75": 1066,
+      "max": 1066,
+      "mean": 765
+    },
+    "condition": {
+      "n": 15,
+      "min": 159,
+      "p25": 174,
+      "median": 208,
+      "p75": 252,
+      "max": 325,
+      "mean": 215
+    },
+    "calculator": {
+      "n": 4,
+      "min": 334,
+      "p25": 342,
+      "median": 349,
+      "p75": 399,
+      "max": 399,
+      "mean": 356
+    },
+    "city-clinic-page": {
+      "n": 60,
+      "min": 0,
+      "p25": 0,
+      "median": 0,
+      "p75": 0,
+      "max": 0,
+      "mean": 0
+    },
+    "clinic-record": {
+      "n": 52,
+      "min": 0,
+      "p25": 0,
+      "median": 0,
+      "p75": 0,
+      "max": 0,
+      "mean": 0
+    }
+  },
+  "titleDupCount": 88,
+  "titleDup": [
+    {
+      "title": "225Ac-DOTA-LM3",
+      "n": 4,
+      "ids": [
+        "PEPTIDE-0001",
+        "PEPTIDE-CONDITION-0002",
+        "PEPTIDE-CONDITION-0003",
+        "PEPTIDE-CONDITION-0004"
+      ]
+    },
+    {
+      "title": "5-Amino-1MQ",
+      "n": 4,
+      "ids": [
+        "PEPTIDE-0005",
+        "PEPTIDE-CONDITION-0006",
+        "PEPTIDE-CONDITION-0007",
+        "PEPTIDE-CONDITION-0008"
+      ]
+    },
+    {
+      "title": "Abaloparatide",
+      "n": 2,
+      "ids": [
+        "PEPTIDE-0009",
+        "PEPTIDE-CONDITION-0010"
+      ]
+    },
+    {
+      "title": "Alixorexton",
+      "n": 4,
+      "ids": [
+        "PEPTIDE-0011",
+        "PEPTIDE-CONDITION-0012",
+        "PEPTIDE-CONDITION-0013",
+        "PEPTIDE-CONDITION-0014"
+      ]
+    },
+    {
+      "title": "Alpha-Defensins",
+      "n": 4,
+      "ids": [
+        "PEPTIDE-0015",
+        "PEPTIDE-CONDITION-0016",
+        "PEPTIDE-CONDITION-0017",
+        "PEPTIDE-CONDITION-0018"
+      ]
+    },
+    {
+      "title": "Zenagamtide (amycretin)",
+      "n": 4,
+      "ids": [
+        "PEPTIDE-0019",
+        "PEPTIDE-CONDITION-0020",
+        "PEPTIDE-CONDITION-0021",
+        "PEPTIDE-CONDITION-0022"
+      ]
+    },
+    {
+      "title": "AOD-9604",
+      "n": 3,
+      "ids": [
+        "PEPTIDE-0023",
+        "PEPTIDE-CONDITION-0024",
+        "PEPTIDE-CONDITION-0025"
+      ]
+    },
+    {
+      "title": "BPC-157",
+      "n": 4,
+      "ids": [
+        "PEPTIDE-0026",
+        "PEPTIDE-CONDITION-0027",
+        "PEPTIDE-CONDITION-0028",
+        "PEPTIDE-CONDITION-0029"
+      ]
+    },
+    {
+      "title": "Bronchogen",
+      "n": 4,
+      "ids": [
+        "PEPTIDE-0030",
+        "PEPTIDE-CONDITION-0031",
+        "PEPTIDE-CONDITION-0032",
+        "PEPTIDE-CONDITION-0033"
+      ]
+    },
+    {
+      "title": "BT5528",
+      "n": 3,
+      "ids": [
+        "PEPTIDE-0034",
+        "PEPTIDE-CONDITION-0035",
+        "PEPTIDE-CONDITION-0036"
+      ]
+    },
+    {
+      "title": "Cagrilintide",
+      "n": 4,
+      "ids": [
+        "PEPTIDE-0037",
+        "PEPTIDE-CONDITION-0038",
+        "PEPTIDE-CONDITION-0039",
+        "PEPTIDE-CONDITION-0040"
+      ]
+    },
+    {
+      "title": "CagriSema",
+      "n": 4,
+      "ids": [
+        "PEPTIDE-0041",
+        "PEPTIDE-CONDITION-0042",
+        "PEPTIDE-CONDITION-0043",
+        "PEPTIDE-CONDITION-0044"
+      ]
+    },
+    {
+      "title": "Cartalax",
+      "n": 3,
+      "ids": [
+        "PEPTIDE-0046",
+        "PEPTIDE-CONDITION-0047",
+        "PEPTIDE-CONDITION-0048"
+      ]
+    },
+    {
+      "title": "Cerebrolysin",
+      "n": 5,
+      "ids": [
+        "PEPTIDE-0049",
+        "PEPTIDE-CONDITION-0050",
+        "PEPTIDE-CONDITION-0051",
+        "PEPTIDE-CONDITION-0052",
+        "PEPTIDE-CONDITION-0053"
+      ]
+    },
+    {
+      "title": "Chonluten",
+      "n": 4,
+      "ids": [
+        "PEPTIDE-0056",
+        "PEPTIDE-CONDITION-0057",
+        "PEPTIDE-CONDITION-0058",
+        "PEPTIDE-CONDITION-0059"
+      ]
+    },
+    {
+      "title": "CJC-1295",
+      "n": 7,
+      "ids": [
+        "PEPTIDE-0060",
+        "PEPTIDE-CONDITION-0061",
+        "PEPTIDE-CONDITION-0062",
+        "PEPTIDE-CONDITION-0063",
+        "PEPTIDE-CONDITION-0064",
+        "PEPTIDE-CONDITION-0065",
+        "PEPTIDE-CONDITION-0066"
+      ]
+    },
+    {
+      "title": "Cortexin",
+      "n": 4,
+      "ids": [
+        "PEPTIDE-0067",
+        "PEPTIDE-CONDITION-0068",
+        "PEPTIDE-CONDITION-0069",
+        "PEPTIDE-CONDITION-0070"
+      ]
+    },
+    {
+      "title": "CT-388",
+      "n": 4,
+      "ids": [
+        "PEPTIDE-0071",
+        "PEPTIDE-CONDITION-0072",
+        "PEPTIDE-CONDITION-0073",
+        "PEPTIDE-CONDITION-0074"
+      ]
+    },
+    {
+      "title": "Dihexa",
+      "n": 4,
+      "ids": [
+        "PEPTIDE-0075",
+        "PEPTIDE-CONDITION-0076",
+        "PEPTIDE-CONDITION-0077",
+        "PEPTIDE-CONDITION-0078"
+      ]
+    },
+    {
+      "title": "DSIP",
+      "n": 4,
+      "ids": [
+        "PEPTIDE-0079",
+        "PEPTIDE-CONDITION-0080",
+        "PEPTIDE-CONDITION-0081",
+        "PEPTIDE-CONDITION-0082"
+      ]
+    },
+    {
+      "title": "Epithalon",
+      "n": 5,
+      "ids": [
+        "PEPTIDE-0086",
+        "PEPTIDE-CONDITION-0087",
+        "PEPTIDE-CONDITION-0088",
+        "PEPTIDE-CONDITION-0089",
+        "PEPTIDE-CONDITION-0090"
+      ]
+    },
+    {
+      "title": "EVX-01",
+      "n": 2,
+      "ids": [
+        "PEPTIDE-0091",
+        "PEPTIDE-CONDITION-0092"
+      ]
+    },
+    {
+      "title": "Follistatin",
+      "n": 5,
+      "ids": [
+        "PEPTIDE-0094",
+        "PEPTIDE-CONDITION-0095",
+        "PEPTIDE-CONDITION-0096",
+        "PEPTIDE-CONDITION-0097",
+        "PEPTIDE-CONDITION-0098"
+      ]
+    },
+    {
+      "title": "FOXO4-DRI",
+      "n": 4,
+      "ids": [
+        "PEPTIDE-0099",
+        "PEPTIDE-CONDITION-0100",
+        "PEPTIDE-CONDITION-0101",
+        "PEPTIDE-CONDITION-0102"
+      ]
+    },
+    {
+      "title": "GHK-Cu",
+      "n": 6,
+      "ids": [
+        "PEPTIDE-0103",
+        "PEPTIDE-CONDITION-0104",
+        "PEPTIDE-CONDITION-0105",
+        "PEPTIDE-CONDITION-0106",
+        "PEPTIDE-CONDITION-0107",
+        "PEPTIDE-CONDITION-0108"
+      ]
+    },
+    {
+      "title": "GHK",
+      "n": 4,
+      "ids": [
+        "PEPTIDE-0109",
+        "PEPTIDE-CONDITION-0110",
+        "PEPTIDE-CONDITION-0111",
+        "PEPTIDE-CONDITION-0112"
+      ]
+    },
+    {
+      "title": "GHRP-2",
+      "n": 3,
+      "ids": [
+        "PEPTIDE-0113",
+        "PEPTIDE-CONDITION-0114",
+        "PEPTIDE-CONDITION-0115"
+      ]
+    },
+    {
+      "title": "GHRP-6",
+      "n": 4,
+      "ids": [
+        "PEPTIDE-0116",
+        "PEPTIDE-CONDITION-0117",
+        "PEPTIDE-CONDITION-0118",
+        "PEPTIDE-CONDITION-0119"
+      ]
+    },
+    {
+      "title": "Glutathione",
+      "n": 4,
+      "ids": [
+        "PEPTIDE-0120",
+        "PEPTIDE-CONDITION-0121",
+        "PEPTIDE-CONDITION-0122",
+        "PEPTIDE-CONDITION-0123"
+      ]
+    },
+    {
+      "title": "Human Chorionic Gonadotropin (hCG)",
+      "n": 4,
+      "ids": [
+        "PEPTIDE-0124",
+        "PEPTIDE-CONDITION-0125",
+        "PEPTIDE-CONDITION-0126",
+        "PEPTIDE-CONDITION-0127"
+      ]
+    },
+    {
+      "title": "Hexarelin",
+      "n": 4,
+      "ids": [
+        "PEPTIDE-0128",
+        "PEPTIDE-CONDITION-0129",
+        "PEPTIDE-CONDITION-0130",
+        "PEPTIDE-CONDITION-0131"
+      ]
+    },
+    {
+      "title": "HMG",
+      "n": 4,
+      "ids": [
+        "PEPTIDE-0132",
+        "PEPTIDE-CONDITION-0133",
+        "PEPTIDE-CONDITION-0134",
+        "PEPTIDE-CONDITION-0135"
+      ]
+    },
+    {
+      "title": "Humanin",
+      "n": 5,
+      "ids": [
+        "PEPTIDE-0136",
+        "PEPTIDE-CONDITION-0137",
+        "PEPTIDE-CONDITION-0138",
+        "PEPTIDE-CONDITION-0139",
+        "PEPTIDE-CONDITION-0140"
+      ]
+    },
+    {
+      "title": "IGF-1 LR3",
+      "n": 4,
+      "ids": [
+        "PEPTIDE-0141",
+        "PEPTIDE-CONDITION-0142",
+        "PEPTIDE-CONDITION-0143",
+        "PEPTIDE-CONDITION-0144"
+      ]
+    },
+    {
+      "title": "Ipamorelin",
+      "n": 7,
+      "ids": [
+        "PEPTIDE-0145",
+        "PEPTIDE-CONDITION-0146",
+        "PEPTIDE-CONDITION-0147",
+        "PEPTIDE-CONDITION-0148",
+        "PEPTIDE-CONDITION-0149",
+        "PEPTIDE-CONDITION-0150",
+        "PEPTIDE-CONDITION-0151"
+      ]
+    },
+    {
+      "title": "Kisspeptin",
+      "n": 4,
+      "ids": [
+        "PEPTIDE-0152",
+        "PEPTIDE-CONDITION-0153",
+        "PEPTIDE-CONDITION-0154",
+        "PEPTIDE-CONDITION-0155"
+      ]
+    },
+    {
+      "title": "KPV",
+      "n": 5,
+      "ids": [
+        "PEPTIDE-0157",
+        "PEPTIDE-CONDITION-0158",
+        "PEPTIDE-CONDITION-0159",
+        "PEPTIDE-CONDITION-0160",
+        "PEPTIDE-CONDITION-0161"
+      ]
+    },
+    {
+      "title": "Kristagen",
+      "n": 4,
+      "ids": [
+        "PEPTIDE-0162",
+        "PEPTIDE-CONDITION-0163",
+        "PEPTIDE-CONDITION-0164",
+        "PEPTIDE-CONDITION-0165"
+      ]
+    },
+    {
+      "title": "Lactoferricin",
+      "n": 4,
+      "ids": [
+        "PEPTIDE-0166",
+        "PEPTIDE-CONDITION-0167",
+        "PEPTIDE-CONDITION-0168",
+        "PEPTIDE-CONDITION-0169"
+      ]
+    },
+    {
+      "title": "Liraglutide",
+      "n": 4,
+      "ids": [
+        "PEPTIDE-0170",
+        "PEPTIDE-CONDITION-0171",
+        "PEPTIDE-CONDITION-0172",
+        "PEPTIDE-CONDITION-0173"
+      ]
+    }
+  ],
+  "shortTitles": [
+    {
+      "id": "PEPTIDE-0001",
+      "type": "peptide",
+      "title": "225Ac-DOTA-LM3",
+      "len": 14
+    },
+    {
+      "id": "PEPTIDE-0005",
+      "type": "peptide",
+      "title": "5-Amino-1MQ",
+      "len": 11
+    },
+    {
+      "id": "PEPTIDE-0009",
+      "type": "peptide",
+      "title": "Abaloparatide",
+      "len": 13
+    },
+    {
+      "id": "PEPTIDE-0011",
+      "type": "peptide",
+      "title": "Alixorexton",
+      "len": 11
+    },
+    {
+      "id": "PEPTIDE-0015",
+      "type": "peptide",
+      "title": "Alpha-Defensins",
+      "len": 15
+    },
+    {
+      "id": "PEPTIDE-0023",
+      "type": "peptide",
+      "title": "AOD-9604",
+      "len": 8
+    },
+    {
+      "id": "PEPTIDE-0026",
+      "type": "peptide",
+      "title": "BPC-157",
+      "len": 7
+    },
+    {
+      "id": "PEPTIDE-0030",
+      "type": "peptide",
+      "title": "Bronchogen",
+      "len": 10
+    },
+    {
+      "id": "PEPTIDE-0034",
+      "type": "peptide",
+      "title": "BT5528",
+      "len": 6
+    },
+    {
+      "id": "PEPTIDE-0037",
+      "type": "peptide",
+      "title": "Cagrilintide",
+      "len": 12
+    },
+    {
+      "id": "PEPTIDE-0041",
+      "type": "peptide",
+      "title": "CagriSema",
+      "len": 9
+    },
+    {
+      "id": "PEPTIDE-0045",
+      "type": "peptide",
+      "title": "Cardiogen",
+      "len": 9
+    },
+    {
+      "id": "PEPTIDE-0046",
+      "type": "peptide",
+      "title": "Cartalax",
+      "len": 8
+    },
+    {
+      "id": "PEPTIDE-0049",
+      "type": "peptide",
+      "title": "Cerebrolysin",
+      "len": 12
+    },
+    {
+      "id": "PEPTIDE-0054",
+      "type": "peptide",
+      "title": "Cerluten",
+      "len": 8
+    },
+    {
+      "id": "PEPTIDE-0055",
+      "type": "peptide",
+      "title": "Chelohart",
+      "len": 9
+    },
+    {
+      "id": "PEPTIDE-0056",
+      "type": "peptide",
+      "title": "Chonluten",
+      "len": 9
+    },
+    {
+      "id": "PEPTIDE-0060",
+      "type": "peptide",
+      "title": "CJC-1295",
+      "len": 8
+    },
+    {
+      "id": "PEPTIDE-0067",
+      "type": "peptide",
+      "title": "Cortexin",
+      "len": 8
+    },
+    {
+      "id": "PEPTIDE-0071",
+      "type": "peptide",
+      "title": "CT-388",
+      "len": 6
+    },
+    {
+      "id": "PEPTIDE-0075",
+      "type": "peptide",
+      "title": "Dihexa",
+      "len": 6
+    },
+    {
+      "id": "PEPTIDE-0079",
+      "type": "peptide",
+      "title": "DSIP",
+      "len": 4
+    },
+    {
+      "id": "PEPTIDE-0083",
+      "type": "peptide",
+      "title": "Dulaglutide",
+      "len": 11
+    },
+    {
+      "id": "PEPTIDE-0084",
+      "type": "peptide",
+      "title": "Ecnoglutide",
+      "len": 11
+    },
+    {
+      "id": "PEPTIDE-0085",
+      "type": "peptide",
+      "title": "Endoluten",
+      "len": 9
+    },
+    {
+      "id": "PEPTIDE-0086",
+      "type": "peptide",
+      "title": "Epithalon",
+      "len": 9
+    },
+    {
+      "id": "PEPTIDE-0091",
+      "type": "peptide",
+      "title": "EVX-01",
+      "len": 6
+    },
+    {
+      "id": "PEPTIDE-0093",
+      "type": "peptide",
+      "title": "Exenatide",
+      "len": 9
+    },
+    {
+      "id": "PEPTIDE-0094",
+      "type": "peptide",
+      "title": "Follistatin",
+      "len": 11
+    },
+    {
+      "id": "PEPTIDE-0099",
+      "type": "peptide",
+      "title": "FOXO4-DRI",
+      "len": 9
+    }
+  ],
+  "longTitlesCount": 57,
+  "longTitles": [
+    {
+      "id": "BLOG-0954",
+      "type": "blog",
+      "title": "Maritide Phase 2 Results: Monthly Dosing, 12.3-16.2% Weight Loss",
+      "len": 64
+    },
+    {
+      "id": "BLOG-0955",
+      "type": "blog",
+      "title": "Amycretin (Zenagamtide): 24.3% Early Signal, Then Phase 2 Diabetes",
+      "len": 66
+    },
+    {
+      "id": "BLOG-0957",
+      "type": "blog",
+      "title": "Antimicrobial Peptides Show Cancer-Fighting Potential: A Deep Dive into Early Research",
+      "len": 86
+    },
+    {
+      "id": "BLOG-0958",
+      "type": "blog",
+      "title": "AOD-9604: No Approved Indication, No Reconstructed Trial Paper",
+      "len": 62
+    },
+    {
+      "id": "BLOG-0961",
+      "type": "blog",
+      "title": "Best Peptide for Weight Loss 2026: Ranked by Evidence, Not Peak %",
+      "len": 65
+    },
+    {
+      "id": "BLOG-0963",
+      "type": "blog",
+      "title": "BPC-157 Systematic Review: Examining the Musculoskeletal Evidence",
+      "len": 65
+    },
+    {
+      "id": "BLOG-0964",
+      "type": "blog",
+      "title": "BPC-157 and the Gut-Brain Axis: What the Review Literature Claims",
+      "len": 65
+    },
+    {
+      "id": "BLOG-0965",
+      "type": "blog",
+      "title": "Cagrilintide and REDEFINE-1: What the Amylin Data Actually Show",
+      "len": 63
+    },
+    {
+      "id": "BLOG-0969",
+      "type": "blog",
+      "title": "CagriSema Phase 3 REDEFINE 2 Trial Achieves Primary Endpoint in Type 2 Diabetes",
+      "len": 79
+    },
+    {
+      "id": "BLOG-0970",
+      "type": "blog",
+      "title": "The Neoantigen Vaccine With FDA Breakthrough Status Is mRNA, Not Peptide",
+      "len": 72
+    },
+    {
+      "id": "BLOG-0972",
+      "type": "blog",
+      "title": "What the Dihexa Memory Research Actually Shows — and What Was Retracted",
+      "len": 71
+    },
+    {
+      "id": "BLOG-0975",
+      "type": "blog",
+      "title": "FDA Issues Warning on Quality Concerns with Compounded Semaglutide Products",
+      "len": 75
+    },
+    {
+      "id": "BLOG-0978",
+      "type": "blog",
+      "title": "The Semaglutide Shortage: A Dated Record of the Supply Crunch and Its End",
+      "len": 73
+    },
+    {
+      "id": "BLOG-0979",
+      "type": "blog",
+      "title": "BPC-157 and TB-500 Compounding: What FDA Category 2 Pages Say",
+      "len": 61
+    },
+    {
+      "id": "BLOG-0980",
+      "type": "blog",
+      "title": "FLOW Trial Landmark: Semaglutide Kidney Protection, Stopped Early",
+      "len": 65
+    },
+    {
+      "id": "BLOG-0983",
+      "type": "blog",
+      "title": "GLP-1 Agonists and Alcohol Cravings: What the Research Actually Shows",
+      "len": 69
+    },
+    {
+      "id": "BLOG-0984",
+      "type": "blog",
+      "title": "GLP-1 Agonists Linked to Reduced Dementia Risk in Large Observational Study",
+      "len": 75
+    },
+    {
+      "id": "BLOG-0985",
+      "type": "blog",
+      "title": "GLP-1s and Kidney Disease Outcomes: What the FLOW Trial Established",
+      "len": 67
+    },
+    {
+      "id": "BLOG-0986",
+      "type": "blog",
+      "title": "GLP-1 Kidney Protection: Meta-Analyses Confirm a Class Effect",
+      "len": 61
+    },
+    {
+      "id": "BLOG-0987",
+      "type": "blog",
+      "title": "What Predicts GLP-1 Response? The State of the Biomarker Evidence",
+      "len": 65
+    },
+    {
+      "id": "BLOG-0989",
+      "type": "blog",
+      "title": "GLP-1 Shortages Declared Resolved as Manufacturing Capacity Expands",
+      "len": 67
+    },
+    {
+      "id": "BLOG-0992",
+      "type": "blog",
+      "title": "Cold Chain and Peptide Drugs — Where Thermostabilisation Research Stands",
+      "len": 72
+    },
+    {
+      "id": "BLOG-0996",
+      "type": "blog",
+      "title": "Humanin and the Mitochondrial-Derived Peptides: Where the Evidence Stands",
+      "len": 73
+    },
+    {
+      "id": "BLOG-0999",
+      "type": "blog",
+      "title": "Eli Lilly Reports Record Q2 Revenue Surge Driven by Tirzepatide Demand",
+      "len": 70
+    },
+    {
+      "id": "BLOG-1000",
+      "type": "blog",
+      "title": "LL-37 Wound Healing: One RCT Measured Granulation, Not Closure",
+      "len": 62
+    },
+    {
+      "id": "BLOG-1002",
+      "type": "blog",
+      "title": "Microneedle Patches for Peptide Delivery — What Has Reached the Clinic",
+      "len": 70
+    },
+    {
+      "id": "BLOG-1004",
+      "type": "blog",
+      "title": "Designer Natriuretic Peptides for Heart Failure — Where the Field Stands",
+      "len": 72
+    },
+    {
+      "id": "BLOG-1005",
+      "type": "blog",
+      "title": "Growth Hormone Secretagogues — Why Selectivity Is Still the Problem",
+      "len": 67
+    },
+    {
+      "id": "BLOG-1006",
+      "type": "blog",
+      "title": "Novo Nordisk Expands Peptide Manufacturing Capacity with $4.1B Investment",
+      "len": 73
+    },
+    {
+      "id": "BLOG-1007",
+      "type": "blog",
+      "title": "Oral BPC-157 — The Formulation Problem and the State of Development",
+      "len": 67
+    }
+  ],
+  "shortDescCount": 8,
+  "longDescCount": 102,
+  "missingFiles": []
+}

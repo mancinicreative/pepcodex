@@ -1,0 +1,39 @@
+{
+  "slug": "suprefort",
+  "name": "Suprefort",
+  "windowFrom": "2026-02-01",
+  "scannedAt": "2026-09-01",
+  "newPapers": [],
+  "newTrials": [],
+  "updatedTrials": [],
+  "queriedAliases": [
+    {
+      "alias": "Suprefort",
+      "retrieved": 0,
+      "total": 0
+    },
+    {
+      "alias": "Suprefort A-1",
+      "retrieved": 200,
+      "total": 8663
+    }
+  ],
+  "suspectGenericAliases": [
+    {
+      "alias": "Suprefort A-1",
+      "total": 8663,
+      "primaryTotal": 0,
+      "reason": "returns 8663 records where the primary name \"Suprefort\" returns 0; it is naming a category, not this compound"
+    }
+  ],
+  "truncated": {
+    "perAlias": [
+      {
+        "alias": "Suprefort A-1",
+        "retrieved": 200,
+        "total": 8663
+      }
+    ],
+    "note": "Some aliases returned more hits than were retrieved (cap 200). Narrow the window (--days) or raise retmax for full coverage."
+  }
+}

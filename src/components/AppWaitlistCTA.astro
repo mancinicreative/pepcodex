@@ -1,0 +1,47 @@
+---
+import NewsletterForm from './NewsletterForm.astro';
+
+interface Props {
+  context: 'dossier' | 'calculator' | 'safety';
+  peptideName?: string;
+}
+
+const { context, peptideName } = Astro.props;
+
+const copy = {
+  dossier: {
+    heading: 'Track what the trials measured',
+    description: peptideName
+      ? `PepTracker will let you log observations against the ${peptideName} evidence horizon. It does not recommend doses or sources. Join the waitlist — no store listing yet.`
+      : 'PepTracker will let you log observations against what the trials measured. It does not recommend doses or sources. Join the waitlist — no store listing yet.',
+  },
+  calculator: {
+    heading: 'Keep this calculation',
+    description:
+      'A reconstitution result is something you will need again. PepTracker is the app that stores it. Join the waitlist — no store listing yet. It will not tell you what to dose.',
+  },
+  safety: {
+    heading: 'Log what you notice',
+    description:
+      'PepTracker is a local log, not a safety verdict. Join the waitlist to hear when it ships. Report adverse events to a clinician or FDA MedWatch — not to this form.',
+  },
+}[context];
+---
+
+<section
+  class="app-waitlist-cta mt-12 rounded-xl p-6"
+  style="border: 1px solid var(--border-c); background: var(--paper-2);"
+  data-peptracker-waitlist
+>
+  <h2 class="font-serif text-xl mb-2" style="color: var(--ink); font-weight: 500;">{copy.heading}</h2>
+  <p class="text-sm mb-4" style="color: var(--ink-muted);">{copy.description}</p>
+  <NewsletterForm
+    variant="inline"
+    source="peptracker_waitlist"
+    buttonLabel="Join waitlist"
+  />
+  <p class="mt-3 text-xs" style="color: var(--ink-dim);">
+    Same list as the <a href="/newsletter" class="underline hover:text-[color:var(--ink)]">research newsletter</a>.
+    Tagged so we can announce the app without a vendor pitch.
+  </p>
+</section>

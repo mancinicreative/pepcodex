@@ -1,0 +1,39 @@
+{
+  "slug": "vladonix",
+  "name": "Vladonix",
+  "windowFrom": "2026-02-01",
+  "scannedAt": "2026-09-01",
+  "newPapers": [],
+  "newTrials": [],
+  "updatedTrials": [],
+  "queriedAliases": [
+    {
+      "alias": "Vladonix",
+      "retrieved": 0,
+      "total": 0
+    },
+    {
+      "alias": "Vladonix A-6",
+      "retrieved": 200,
+      "total": 3746
+    }
+  ],
+  "suspectGenericAliases": [
+    {
+      "alias": "Vladonix A-6",
+      "total": 3746,
+      "primaryTotal": 0,
+      "reason": "returns 3746 records where the primary name \"Vladonix\" returns 0; it is naming a category, not this compound"
+    }
+  ],
+  "truncated": {
+    "perAlias": [
+      {
+        "alias": "Vladonix A-6",
+        "retrieved": 200,
+        "total": 3746
+      }
+    ],
+    "note": "Some aliases returned more hits than were retrieved (cap 200). Narrow the window (--days) or raise retmax for full coverage."
+  }
+}

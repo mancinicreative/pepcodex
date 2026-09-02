@@ -1,0 +1,25 @@
+INCOMPLETE
+
+Audit B delivered REPORT.md, FINDINGS.json (B-001–B-032), COVERAGE.json (1343/1343 surface_ids), OPPORTUNITIES.json (25), IMPRESSION-SYSTEM.md.
+
+COMPLETE is not claimed. Remaining gaps:
+
+1. GSC and GA4 live pull BLOCKED (invalid_rapt). Current impressions/clicks/CTR/index coverage = BASELINE UNAVAILABLE.
+2. Core Web Vitals / CrUX / Lighthouse not run = BASELINE UNAVAILABLE.
+3. Color-contrast instrumentation (axe) not run = BASELINE UNAVAILABLE.
+4. Production main source tree not checked out; live inferred from 52 HTTP probes + sitemap. Drug schema (B-002) verified in this branch; production dossier JSON-LD legalStatus not view-sourced on every peptide.
+5. Mandate deep-read incomplete:
+   - Named peptides: 3/20 INSPECTED (semaglutide, bpc-157, pancragen); 17/20 frontmatter-sampled only (tirzepatide, retatrutide, tb-500, tesamorelin, semax, epithalon, melanotan-ii, pt-141, orforglipron, cagrilintide, liraglutide, mk-677, ipamorelin, ghk-cu, thymosin-alpha-1, ss-31, mots-c, sermorelin).
+   - Guides: 1/36 full (what-is-bpc-157); 35/36 FM + first/last claim only.
+   - Safety: 1/31 live-probed (bpc-157-safety HTML); 30/31 FM only.
+   - Protocols: 0/3 full body; 3/3 word counts.
+   - Clinic record MDX bodies: 0/52 line-read; 52/52 inventory extra fields sampled.
+   - Templates: 17/32 INSPECTED; 15/32 sampled (ConditionLayout, GlossaryLayout, GuideLayout, HubLayout, ProtocolLayout, SafetyLayout, DisclaimerBanner, SafetyBanner, EvidenceBadge, EvidenceChain, ClinicCard, RatingCard, QualityChecklist, SourcesList, TrialTable among unread).
+   - Source-packs: 46/46 presence-sampled; citation accuracy is Audit A.
+6. Comparisons/glossary/blog/peptide-condition/cities: 100% frontmatter extraction (exceeds 20% sample) but not line-by-line bodies except listed INSPECTED files.
+7. Keyboard accessibility not verified in a real browser (code-only).
+8. Final FDA 503B bulks determination after 2026 comment period not verified.
+9. src/pages/sponsors/ is an empty directory; no sponsor URL in frozen inventory.
+10. Historical GSC (2026-07-24/25) must not be used as current performance.
+
+Coverage table exists. Findings are limited to what was verified. Do not treat this file as COMPLETE.

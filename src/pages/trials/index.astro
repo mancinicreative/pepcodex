@@ -40,6 +40,7 @@ interface Trial {
   startDate?: string;
   completionDate?: string;
   peptide: string;
+  peptideSlug: string;
 }
 
 const sourcePacksDir = path.join(process.cwd(), 'data', 'source-packs');
@@ -53,6 +54,7 @@ try {
       const content = fs.readFileSync(filePath, 'utf-8');
       const sourcePack: SourcePack = JSON.parse(content);
       if (sourcePack.trials && sourcePack.trials.length > 0) {
+        const peptideSlug = file.replace(/\.json$/, '');
         const peptideName = typeof sourcePack.peptide === 'string'
           ? sourcePack.peptide
           : sourcePack.peptide.name;
@@ -67,6 +69,7 @@ try {
           startDate: trial.startDate,
           completionDate: trial.completionDate,
           peptide: peptideName,
+          peptideSlug,
         }));
         allTrials.push(...trialsWithPeptide);
       }
@@ -98,7 +101,8 @@ allTrials.sort((a, b) => {
 
 // Filter dropdown values
 const uniquePhases = [...new Set(allTrials.map(t => t.phase || 'N/A'))].sort();
-const uniquePeptides = [...new Set(allTrials.map(t => t.peptide))].sort();
+const uniquePeptides = [...new Map(allTrials.map((t) => [t.peptideSlug, t.peptide])).entries()]
+  .sort((a, b) => a[1].localeCompare(b[1]));
 
 // Status-group counts for the clickable summary/filter cards
 const lc = (s: string) => (s || '').toLowerCase();
@@ -189,8 +193,8 @@ const statusCards = [
         style="background: var(--paper-2); border: 1px solid var(--border-c); color: var(--ink);"
       >
         <option value="all">All Peptides</option>
-        {uniquePeptides.map(peptide => (
-          <option value={peptide.toLowerCase()}>{peptide}</option>
+        {uniquePeptides.map(([slug, label]) => (
+          <option value={slug}>{label}</option>
         ))}
       </select>
       <button

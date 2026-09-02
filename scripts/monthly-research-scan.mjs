@@ -206,16 +206,10 @@ for (const p of dossiers) {
   }
 
   const worklist = path.join(OUT, `${p.slug}.json`);
-  if (out.newPapers.length || out.newTrials.length || out.updatedTrials.length) {
-    fs.writeFileSync(worklist, JSON.stringify(out, null, 2));
-  } else if (fs.existsSync(worklist)) {
-    // A nothing-found result must REMOVE any earlier worklist for this peptide, not silently leave
-    // it behind. Both runs write into the same dated directory, so a re-run after a matcher fix
-    // would otherwise leave the superseded file sitting there looking current — which is how a
-    // scan that correctly found nothing still hands an agent 29 papers about vasoactive intestinal
-    // peptide to write up. Absence of findings is itself a finding and must overwrite.
-    fs.unlinkSync(worklist);
-  }
+  // Always write: a quiet window is a finding. Unlinking (or skipping) leaves a hole that
+  // looks like "this peptide was never scanned" and, on a re-run in the same dated dir,
+  // can leave a superseded noisy worklist looking current.
+  fs.writeFileSync(worklist, JSON.stringify(out, null, 2));
   summary.push({ slug: p.slug, from: out.windowFrom, papers: out.newPapers.length, truncated: !!out.truncated,
     newTrials: out.newTrials.length, updatedTrials: out.updatedTrials.length });
   process.stdout.write(`\r  scanned ${summary.length}/${dossiers.length}  (${p.slug})            `);

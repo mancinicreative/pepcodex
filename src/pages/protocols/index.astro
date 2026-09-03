@@ -1,8 +1,18 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import {
+  isPublishedProtocol,
+  protocolCollectionSlug,
+} from '../../lib/unpublished-protocols';
 
-const protocols = await getCollection('protocols');
+const protocols = (await getCollection('protocols')).filter(isPublishedProtocol);
+const peptideSlugs = new Set(
+  (await getCollection('peptides')).map((p) => p.id.replace(/\.mdx?$/, ''))
+);
+const parentDossiers = ['bpc-157', 'cjc-1295', 'ipamorelin', 'mk-677'].filter((slug) =>
+  peptideSlugs.has(slug)
+);
 
 // Sort by title
 const sortedProtocols = protocols.sort((a, b) =>
@@ -63,12 +73,27 @@ function getStudyTypeCounts(studies: Array<{ studyType: string }>) {
         <div>
           <h4 class="font-bold mb-1" style="color: var(--primary-c);">Research Documentation, Not Protocols</h4>
           <p class="text-sm leading-relaxed" style="color: var(--ink-muted);">
-            These pages document <strong style="color: var(--ink);">what researchers have studied</strong> in peer-reviewed literature. Doses mentioned are those used <strong style="color: var(--ink);">in specific studies</strong>, not recommendations. This is educational content about research findings, not treatment guidance.
+            This hub lists published multi-peptide research overviews only. Combination pages that attached human dose tables to the wrong papers were unpublished. This is educational content about research findings, not treatment guidance.
           </p>
         </div>
       </div>
     </div>
 
+    {sortedProtocols.length === 0 ? (
+    <div class="mb-8 glass-card-default p-6">
+      <p class="text-sm leading-relaxed" style="color: var(--ink-muted);">
+        No multi-peptide research overviews are published. See the parent dossiers:
+        {parentDossiers.map((slug, i) => (
+          <>
+            {i > 0 ? ', ' : ' '}
+            <a href={`/peptides/${slug}`} class="text-primary hover:underline">{slug}</a>
+          </>
+        ))}
+        .
+      </p>
+    </div>
+    ) : (
+    <>
     <p class="mb-8" style="color: var(--ink-muted);">
       Showing <span class="font-bold" style="color: var(--ink);">{sortedProtocols.length}</span> research overviews
     </p>
@@ -76,12 +101,10 @@ function getStudyTypeCounts(studies: Array<{ studyType: string }>) {
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-1">
       {sortedProtocols.map((protocol) => {
         const studyCounts = getStudyTypeCounts(protocol.data.studies);
+        const protocolSlug = protocolCollectionSlug(protocol);
         return (
           <a
-            {/* `protocol.data.slug` does not exist — the protocols schema has no slug field,
-                so every card linked to /protocols/undefined (a live 404) and left all three
-                protocol pages orphaned. Mirror getStaticPaths in [slug].astro exactly. */}
-            href={`/protocols/${protocol.id.replace(/\.mdx?$/, '')}`}
+            href={`/protocols/${protocolSlug}`}
             class="glass-card-interactive p-6 group"
           >
             <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
@@ -137,8 +160,10 @@ function getStudyTypeCounts(studies: Array<{ studyType: string }>) {
         );
       })}
     </div>
+    </>
+    )}
 
-    <!-- Legend -->
+    {sortedProtocols.length > 0 && (
     <div class="mt-12 glass-card-default p-6">
       <h3 class="font-bold mb-4" style="color: var(--ink);">Study Type Legend</h3>
       <div class="flex flex-wrap gap-4">
@@ -160,6 +185,7 @@ function getStudyTypeCounts(studies: Array<{ studyType: string }>) {
         </div>
       </div>
     </div>
+    )}
 
     <!-- Disclaimer -->
     <div class="mt-8 rounded-xl p-6" style="border: 2px solid var(--primary-border); background: var(--primary-soft);">

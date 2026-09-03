@@ -25,6 +25,21 @@
       "statusCode": 301
     },
     {
+      "source": "/protocols/bpc-157-tb-500",
+      "destination": "/peptides/bpc-157",
+      "statusCode": 301
+    },
+    {
+      "source": "/protocols/cjc-1295-ipamorelin",
+      "destination": "/peptides/cjc-1295",
+      "statusCode": 301
+    },
+    {
+      "source": "/protocols/gh-secretagogue-combinations",
+      "destination": "/peptides/mk-677",
+      "statusCode": 301
+    },
+    {
       "source": "/clinics/honolulu.mdx",
       "destination": "/clinics/honolulu",
       "statusCode": 301
@@ -187,12 +202,53 @@
   ],
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/clinics",
       "headers": [
         {
           "key": "X-Robots-Tag",
-          "value": "index, follow"
-        },
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
+      "source": "/clinics/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
+      "source": "/directory",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
+      "source": "/404",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
+      "source": "/glossary/:slug(a1c|adverse-event|aggregation|apoptosis|autophagy|bioavailability|black-box-warning|cohort-study|contraindication|cytokine|degradation|ec50|gene-expression|gmp|growth-hormone|ic50|insulin-resistance|isoelectric-point|molecular-weight|oxidation|oxidative-stress|pharmacodynamics|pharmacokinetics|phase-3-trial|phase-i-trial|phase-ii-trial|phase-iii-trial|phosphorylation|placebo-controlled|placebo|purity|randomized-controlled-trial|statistical-significance|systematic-review|telomerase)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
         {
           "key": "X-Frame-Options",
           "value": "DENY"

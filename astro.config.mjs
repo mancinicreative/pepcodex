@@ -106,6 +106,13 @@ function noindexedGlossaryUrls() {
 
 const SITEMAP_EXCLUDE = new Set([
   'https://www.pepcodex.com/glossary/off-label',
+  // W0-3 — unpublished protocol pages (wrong PMIDs + human dose tables).
+  // noindex alone does not save crawl budget; drop them from the sitemap.
+  'https://www.pepcodex.com/protocols/bpc-157-tb-500',
+  'https://www.pepcodex.com/protocols/cjc-1295-ipamorelin',
+  'https://www.pepcodex.com/protocols/gh-secretagogue-combinations',
+  // W0-5 — /directory is a noindex holding page, not a clinic finder.
+  'https://www.pepcodex.com/directory',
   ...noindexedGlossaryUrls(),
   ...noindexedBlogUrls(),
 ]);

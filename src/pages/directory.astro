@@ -2,105 +2,54 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
+{/* W0-5: holding page. Not a clinic finder. noindex + sitemap drop — noindex
+    alone does not save crawl budget (astro.config.mjs SITEMAP_EXCLUDE). */}
 <BaseLayout
-  title="Directory - Coming Soon"
-  description="Trusted health clinics, telehealth providers, and resources for peptide therapy. Coming soon to PepCodex."
+  robots="noindex"
+  title="Directory"
+  description="PepCodex does not list clinics or providers. This page is a placeholder, not a clinic directory."
 >
-  <!-- Hero Section -->
   <div class="relative">
     <div class="mx-auto max-w-4xl px-4 py-20 sm:px-6 lg:px-8">
-      <!-- Header -->
       <div class="text-center mb-12">
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6" style="background: rgba(203,135,52,0.12); border: 1px solid var(--compound); color: #9a6418;">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <polyline points="12 6 12 12 16 14"/>
-          </svg>
-          Coming Soon
-        </div>
         <h1 class="font-serif text-5xl md:text-6xl tracking-tight" style="color: var(--ink); font-weight: 500;">
-          Trusted <span style="color: var(--primary-c);">Directory</span>
+          Directory
         </h1>
         <p class="mt-6 text-xl max-w-2xl mx-auto leading-relaxed" style="color: var(--ink-muted);">
-          A curated list of verified health clinics, telehealth providers, and peptide therapy resources.
+          PepCodex does not list clinics or providers. This is not a clinic finder.
         </p>
       </div>
 
-      <!-- Coming Soon Card -->
       <div class="max-w-2xl mx-auto">
         <div class="glass-card relative overflow-hidden p-8">
           <div class="relative">
-            <h2 class="font-serif text-2xl mb-4" style="color: var(--ink); font-weight: 500;">What's Coming</h2>
-
-            <div class="space-y-4 mb-8">
-              <div class="flex items-start gap-3">
-                <div class="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center" style="background: rgba(20,118,74,0.12); border: 1px solid var(--research);">
-                  <svg class="w-4 h-4" style="color: var(--research);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="font-semibold" style="color: var(--ink);">Verified Health Clinics</h3>
-                  <p class="text-sm mt-1" style="color: var(--ink-muted);">Trusted clinics offering legitimate peptide therapy with proper medical oversight.</p>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-3">
-                <div class="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center" style="background: var(--primary-soft); border: 1px solid var(--primary-border);">
-                  <svg class="w-4 h-4" style="color: var(--primary-c);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
-                    <path d="M12 18h.01"/>
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="font-semibold" style="color: var(--ink);">Telehealth Providers</h3>
-                  <p class="text-sm mt-1" style="color: var(--ink-muted);">Remote consultations with licensed physicians specializing in peptide protocols.</p>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-3">
-                <div class="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center" style="background: var(--primary-soft); border: 1px solid var(--primary-border);">
-                  <svg class="w-4 h-4" style="color: var(--primary-c);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="font-semibold" style="color: var(--ink);">Educational Resources</h3>
-                  <p class="text-sm mt-1" style="color: var(--ink-muted);">Guides, courses, and materials to deepen your understanding of peptide science.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="pt-6" style="border-top: 1px solid var(--border-c);">
-              <h3 class="text-lg font-semibold mb-3" style="color: var(--ink);">Want to be listed?</h3>
-              <p class="text-sm mb-4" style="color: var(--ink-muted);">
-                If you're a clinic, telehealth provider, or resource that wants to be included in our directory, we'd love to hear from you.
-              </p>
-              <a
-                href="/contact"
-                class="inline-flex items-center gap-2 btn btn-cobalt btn-md"
-              >
-                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                  <polyline points="22,6 12,13 2,6"/>
-                </svg>
-                Contact Us
-              </a>
-            </div>
+            <p class="leading-relaxed mb-6" style="color: var(--ink-muted);">
+              There are no clinic listings on this site. Placeholder records were removed.
+              City pages under Clinics are empty shells and are not an endorsement of any provider.
+            </p>
+            <p class="leading-relaxed mb-8" style="color: var(--ink-muted);">
+              PepCodex is a research library. Use the peptide dossiers, trial tracker, and methodology pages.
+            </p>
+            <ul class="space-y-3">
+              <li>
+                <a href="/peptides" class="inline-flex items-center gap-2 btn btn-cobalt btn-md">
+                  Peptide dossiers
+                </a>
+              </li>
+              <li>
+                <a href="/trials" class="transition-colors hover:text-[color:var(--primary-c)]" style="color: var(--ink-muted);">
+                  Clinical trial tracker
+                </a>
+              </li>
+              <li>
+                <a href="/methodology" class="transition-colors hover:text-[color:var(--primary-c)]" style="color: var(--ink-muted);">
+                  Methodology
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <!-- Newsletter CTA -->
-  <div class="mx-auto max-w-4xl px-4 pb-20 sm:px-6 lg:px-8">
-    <div class="relative glass-card-default p-8 text-center">
-      <h3 class="font-serif text-xl mb-3" style="color: var(--ink); font-weight: 500;">Get Notified When We Launch</h3>
-      <p class="mb-6" style="color: var(--ink-muted);">Subscribe to our newsletter and be the first to know when the directory goes live.</p>
-      <a href="/newsletter" class="btn btn-cobalt btn-md">
-        Subscribe to Newsletter
-      </a>
     </div>
   </div>
 </BaseLayout>

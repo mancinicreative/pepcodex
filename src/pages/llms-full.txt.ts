@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
+import { isPublishedProtocol } from '../lib/unpublished-protocols';
 
 export const GET: APIRoute = async () => {
   const [peptides, comparisons, glossary, guides, blog, safety, protocols] = await Promise.all([
@@ -62,12 +63,14 @@ export const GET: APIRoute = async () => {
     lines.push(`- [${s.data.title}](https://www.pepcodex.com/safety/${s.id.replace(/\.mdx?$/, '')}/): ${s.data.summary}`);
   }
 
-  // Protocols
-  lines.push('');
-  lines.push('## Research Protocols');
-  lines.push('');
-  for (const p of protocols.sort((a, b) => a.data.title.localeCompare(b.data.title))) {
-    lines.push(`- [${p.data.title}](https://www.pepcodex.com/protocols/${p.id.replace(/\.mdx?$/, '')}/): ${p.data.description}`);
+  const publishedProtocols = protocols.filter(isPublishedProtocol);
+  if (publishedProtocols.length > 0) {
+    lines.push('');
+    lines.push('## Research Protocols');
+    lines.push('');
+    for (const p of publishedProtocols.sort((a, b) => a.data.title.localeCompare(b.data.title))) {
+      lines.push(`- [${p.data.title}](https://www.pepcodex.com/protocols/${p.id.replace(/\.mdx?$/, '')}/): ${p.data.description}`);
+    }
   }
 
   // Blog posts
@@ -85,7 +88,6 @@ export const GET: APIRoute = async () => {
   lines.push('');
   lines.push('- [Methodology](https://www.pepcodex.com/methodology/): How PepCodex evaluates evidence');
   lines.push('- [Clinical Trial Tracker](https://www.pepcodex.com/trials/): Live tracker of peptide clinical trials');
-  lines.push('- [Clinic Directory](https://www.pepcodex.com/directory/): US peptide clinic finder');
   lines.push('- [Newsletter](https://www.pepcodex.com/newsletter/): Weekly peptide research digest');
 
   return new Response(lines.join('\n'), {

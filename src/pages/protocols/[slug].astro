@@ -1,13 +1,25 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
 import ProtocolLayout from '../../layouts/ProtocolLayout.astro';
+import {
+  isPublishedProtocol,
+  protocolCollectionSlug,
+  UNPUBLISHED_PROTOCOL_REDIRECTS,
+} from '../../lib/unpublished-protocols';
 
 export async function getStaticPaths() {
-  const protocols = await getCollection('protocols');
+  const protocols = (await getCollection('protocols')).filter(isPublishedProtocol);
   return protocols.map((protocol) => ({
-    params: { slug: protocol.id.replace(/\.mdx?$/, '') },
+    params: { slug: protocolCollectionSlug(protocol) },
     props: { protocol },
   }));
+}
+
+const unpublishedDest = Astro.params.slug
+  ? UNPUBLISHED_PROTOCOL_REDIRECTS[Astro.params.slug]
+  : undefined;
+if (unpublishedDest) {
+  return Astro.redirect(unpublishedDest, 301);
 }
 
 // Support both static and SSR modes
@@ -17,7 +29,7 @@ if (!protocol) {
   protocol = await getEntry('protocols', slug as string);
 }
 
-if (!protocol) {
+if (!protocol || !isPublishedProtocol(protocol)) {
   return Astro.redirect('/404');
 }
 

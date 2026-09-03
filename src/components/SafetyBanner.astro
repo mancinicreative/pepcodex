@@ -16,7 +16,7 @@ const {
   peptideName,
   evidenceStrength,
   keyWarnings = [],
-  fdaStatus = 'Not FDA approved',
+  fdaStatus,
   wadaStatus
 } = Astro.props;
 
@@ -29,13 +29,15 @@ const evidenceColors = {
 
 const config = evidenceColors[evidenceStrength];
 
-const defaultWarnings = [
-  'Not approved for human use by any regulatory agency',
-  'Limited human clinical trial data',
-  'Consult a healthcare provider before use',
-];
+const warnings = keyWarnings;
 
-const warnings = keyWarnings.length > 0 ? keyWarnings : defaultWarnings;
+const fdaTone = fdaStatus === 'FDA Approved'
+  ? { bg: 'rgba(20,118,74,0.10)', border: 'rgba(20,118,74,0.28)', color: 'var(--research)' }
+  : fdaStatus === 'Investigational'
+    ? { bg: 'var(--primary-soft)', border: 'rgba(11,81,127,0.28)', color: 'var(--primary-c)' }
+    : fdaStatus === 'Compounding Restricted'
+      ? { bg: 'rgba(203,135,52,0.12)', border: 'rgba(203,135,52,0.32)', color: '#9a6418' }
+      : { bg: 'rgba(185,61,66,0.10)', border: 'rgba(185,61,66,0.28)', color: 'var(--danger)' };
 ---
 
 <div class={`safety-banner rounded-xl p-4 mb-8`} style={`background: ${config.tint}; border: 1px solid ${config.border}; border-left: 3px solid ${config.accent};`}>
@@ -66,16 +68,20 @@ const warnings = keyWarnings.length > 0 ? keyWarnings : defaultWarnings;
       ))}
     </div>
 
-    <!-- Status Badges -->
-    <div class="flex items-center gap-2 shrink-0">
-      <span class="px-2.5 py-1 rounded-lg text-xs font-semibold" style="background: rgba(185,61,66,0.10); border: 1px solid rgba(185,61,66,0.28); color: var(--danger);">
-        {fdaStatus}
-      </span>
-      {wadaStatus && (
-        <span class="px-2.5 py-1 rounded-lg text-xs font-semibold" style="background: rgba(203,135,52,0.12); border: 1px solid rgba(203,135,52,0.32); color: #9a6418;">
-          {wadaStatus}
-        </span>
-      )}
-    </div>
+    <!-- Status Badges — only when the page passed a real label -->
+    {(fdaStatus || wadaStatus) && (
+      <div class="flex items-center gap-2 shrink-0">
+        {fdaStatus && (
+          <span class="px-2.5 py-1 rounded-lg text-xs font-semibold" style={`background: ${fdaTone.bg}; border: 1px solid ${fdaTone.border}; color: ${fdaTone.color};`}>
+            {fdaStatus}
+          </span>
+        )}
+        {wadaStatus && (
+          <span class="px-2.5 py-1 rounded-lg text-xs font-semibold" style="background: rgba(203,135,52,0.12); border: 1px solid rgba(203,135,52,0.32); color: #9a6418;">
+            {wadaStatus}
+          </span>
+        )}
+      </div>
+    )}
   </div>
 </div>

@@ -9,13 +9,11 @@ interface Props {
   website?: string;
   services: string[];
   peptides?: string[];
-  verifiedListing?: boolean;
   description?: string;
 }
 
 const {
   name,
-  slug,
   city,
   state,
   address,
@@ -23,33 +21,16 @@ const {
   website,
   services,
   peptides = [],
-  verifiedListing = false,
   description
 } = Astro.props;
 ---
 
 <div class="glass-card group relative block h-full overflow-hidden" style="border: 1px solid var(--border-strong);">
-  <!-- Featured badge ribbon -->
-  <div class="absolute top-0 right-0 z-20">
-    <div class="text-xs font-bold uppercase tracking-wider px-4 py-1 transform rotate-0 shadow-[var(--shadow-card)]" style="background: var(--primary-c); color: var(--paper); font-family: var(--font-mono);">
-      Featured
-    </div>
-  </div>
-
   <div class="relative z-10 p-6 flex flex-col h-full">
-    <!-- Header with name and verified badge -->
-    <div class="flex items-start justify-between gap-4 mb-3 pr-16">
+    <div class="flex items-start justify-between gap-4 mb-3">
       <h3 class="text-2xl text-primary transition-colors" style="font-family: var(--font-serif); font-weight: 500;">
         {name}
       </h3>
-      {verifiedListing && (
-        <span class="badge badge--success flex items-center gap-1 shrink-0">
-          <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="20 6 9 17 4 12" />
-          </svg>
-          Verified
-        </span>
-      )}
     </div>
 
     <!-- Location -->
@@ -75,7 +56,7 @@ const {
       </p>
     )}
 
-    <!-- Services - show all for featured -->
+    <!-- Services -->
     <div class="mb-4">
       <p class="eyebrow mb-2">Services</p>
       <div class="flex flex-wrap gap-1.5">
@@ -87,7 +68,7 @@ const {
       </div>
     </div>
 
-    <!-- Peptides offered - show all for featured -->
+    <!-- Peptides offered -->
     {peptides.length > 0 && (
       <div class="mb-4">
         <p class="eyebrow mb-2">Peptides Offered</p>
@@ -101,7 +82,7 @@ const {
       </div>
     )}
 
-    <!-- Contact Actions - more prominent for featured -->
+    <!-- Contact Actions -->
     <div class="mt-auto pt-4 flex flex-wrap gap-3" style="border-top: 1px solid var(--border-glass);">
       {phone && (
         <a

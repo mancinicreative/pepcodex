@@ -24,7 +24,6 @@ For term definitions:
 - Methodology: https://www.pepcodex.com/methodology/
 - Clinical Trial Tracker: https://www.pepcodex.com/trials/
 - Regulatory Tracker: https://www.pepcodex.com/regulatory-tracker/
-- Clinic Directory: https://www.pepcodex.com/directory/
 - Blog: https://www.pepcodex.com/blog/
 
 ## Peptide Dossiers (92)

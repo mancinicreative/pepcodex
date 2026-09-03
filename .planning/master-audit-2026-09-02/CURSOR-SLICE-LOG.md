@@ -537,11 +537,80 @@ Live GET of `/clinics/new-york` still sends whatever `main` has until this `verc
 
 ## Next slice (unblocked)
 
-**W0-8 · Two template lies** — delete “Generally safe to combine based on known mechanisms.” from `InteractionMatrix.astro`; stop inferring approval from `evidenceStrength` on `src/pages/peptides/[peptide]/[condition].astro`. Does not collide with `vercel.json`. Then **W0-9**. Do not start Wave 1.
+**W0-8 · Two template lies** — done this session (see below). Then **W0-9**.
 
 ## Blockers
 
 - **Live `curl -sI` `/clinics/new-york` and `/glossary/autophagy`** — **blocked on Lucas**. Source no longer sends sitewide `index, follow`; pepcodex.com still will until `main` ships the same headers.
+- **Production hotfix PR** — clean worktree from `origin/main`, commit, push, Lucas merge. Not this session. Do not merge this branch.
+- **WAF apply** — still Lucas.
+- **TICK37 KEEP** — UNCLOSED; do not Grok-stamp.
+
+---
+
+# W0-8 · Two template lies
+
+**Agent:** implementer (this session)
+**Plan:** `.planning/master-audit-2026-09-02/CURSOR-IMPLEMENTATION-PLAN.md` · Wave 0 · **W0-8** (HANDOFF T-08)
+**Branch:** `feat/scoring-and-freshness` (dirty). Did **not** checkout `origin/main`. Did **not** live-GET pepcodex.com.
+**Commit:** none (Lucas did not ask; parallel pusher may snapshot W0-7 only). **Judge / KEEP:** none.
+**Status:** **done** (source-level). Live HTML GET still **blocked on Lucas**.
+
+## Why this slice
+
+Compatible rows stamped every interaction as “Generally safe to combine based on known mechanisms” with no citation. Peptide-condition pages (×295) inferred FDA/regulatory approval from `evidenceStrength` high/moderate. Approval is `regulatoryStatus` / fetched letters only. Dropped the approval sentence rather than flattening indication-specific labels (Tesamorelin HIV-lipodystrophy, SS-31 Barth, PT-141 HSDD).
+
+## What changed
+
+- `InteractionMatrix.astro`: deleted unused typeConfig copy for compatible (“Generally safe to combine based on known mechanisms”) and synergistic (“May enhance effects when combined”). Same unsourced combination-safety voice. Caution/avoid descriptions unused in HTML; left (not safety-to-combine claims). No clone of the matrix component (glossary `drug-interaction.mdx` is a definition page, not a template).
+- `[peptide]/[condition].astro`: dropped `{evidenceStrength === 'high' || 'moderate' ? 'may have' : 'has not received'} regulatory approval for some indications…`. Disclaimer is research-summary + not medical advice + consult a provider. Did **not** invent condition-level FDA copy.
+
+Did **not** edit `vercel.json`. Did **not** edit `BaseLayout.astro`. Net URL: **0**. No lastUpdated bumps. No W0-9.
+
+## Files touched
+
+- `src/components/InteractionMatrix.astro`
+- `src/pages/peptides/[peptide]/[condition].astro`
+- `.planning/master-audit-2026-09-02/CURSOR-SLICE-LOG.md` (this append)
+
+## Commands actually run
+
+```text
+git branch --show-current
+git status -sb
+Select-String -LiteralPath src\components\InteractionMatrix.astro -Pattern "Generally safe to combine|safe to combine|known mechanisms|May enhance effects when combined|description:"
+Select-String -LiteralPath src\pages\peptides\[peptide]\[condition].astro -Pattern "may have|has not received|regulatory approval|evidenceStrength === 'high'"
+Get-ChildItem src -Recurse -Include *.astro,*.ts,*.tsx,*.js | Select-String "Generally safe to combine|safe to combine based on known mechanisms"
+Get-ChildItem src -Recurse -Include *.astro,*.ts,*.tsx,*.js | Select-String "regulatory approval for some indications"
+Get-ChildItem src -Recurse -Include *.astro,*.ts,*.tsx,*.js | Select-String "has not received"
+Get-ChildItem src -Recurse -Filter "*Interaction*"
+git diff --stat -- src/components/InteractionMatrix.astro src/pages/peptides/[peptide]/[condition].astro
+```
+
+Did **not** run `astro build` / `graph:check` / Quality Judge. Did **not** curl production. Did **not** start W0-9 (different files: DossierLayout quality section, QualityChecklist, orforglipron.mdx).
+
+## Check results (source, not rendered HTML)
+
+| Check | Result |
+|---|---|
+| `Generally safe to combine` in `src/**/*.{astro,ts,tsx,js}` | **0** |
+| `safe to combine based on known mechanisms` | **0** |
+| `May enhance effects when combined` | **0** |
+| `regulatory approval for some indications` | **0** |
+| `has not received` in templates | **0** |
+| evidenceStrength → approval ternary | **gone** |
+| InteractionMatrix clones | **none** (only this `.astro` + glossary term) |
+| `vercel.json` / BaseLayout gtag skip | **untouched** |
+
+Local GET of a peptide-condition page is **not** done this slice.
+
+## Next slice (unblocked)
+
+**W0-9 · Sourcing / dosing checklist** — remove eyebrow **Sourcing** and “Clear dosing instructions (12mg, 24mg, or 36mg)” / buy-guide copy from `DossierLayout.astro` quality section, `QualityChecklist.astro`, and `orforglipron.mdx` if present. Do not add Foundayo 36 mg. Then Wave 0 acceptance / production PR — not this session. Do not start Wave 1.
+
+## Blockers
+
+- **Live GET of a peptide-condition URL on production `main`** — **blocked on Lucas**. Source no longer infers approval from evidence grade; pepcodex.com still will until the same templates ship on `main`.
 - **Production hotfix PR** — clean worktree from `origin/main`, commit, push, Lucas merge. Not this session. Do not merge this branch.
 - **WAF apply** — still Lucas.
 - **TICK37 KEEP** — UNCLOSED; do not Grok-stamp.

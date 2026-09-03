@@ -615,3 +615,78 @@ Local GET of a peptide-condition page is **not** done this slice.
 - **WAF apply** — still Lucas.
 - **TICK37 KEEP** — UNCLOSED; do not Grok-stamp.
 
+---
+
+# W0-9 · Sourcing / dosing checklist
+
+**Agent:** implementer (this session)
+**Plan:** `.planning/master-audit-2026-09-02/CURSOR-IMPLEMENTATION-PLAN.md` · Wave 0 · **W0-9** (HANDOFF T-09)
+**Branch:** `feat/scoring-and-freshness` (dirty). Did **not** checkout `origin/main`. Did **not** live-GET pepcodex.com.
+**Commit:** none (Lucas did not ask; parallel pusher may snapshot W0-8). **Judge / KEEP:** none.
+**Status:** **done** (source-level). Live HTML GET still **blocked on Lucas**.
+
+## Why this slice
+
+Dossier pages rendered a **Sourcing** quality checklist (buy-guide / product-eval traffic lights). Orforglipron listed “Clear dosing instructions (12mg, 24mg, or 36mg once daily)” plus non-Lilly / research-chem supplier warnings. Editorial policy already bans sourcing and dosing. Wave 0 deletes the instruction list. Did **not** add Foundayo 36 mg (label max is 17.2 mg if a dose is mentioned at all). Trial-arm 36 mg in ATTAIN-1 keyFindings left as published trial data, not a shopping checklist.
+
+## What changed
+
+- `DossierLayout.astro`: removed QualityChecklist import, prop, nav item, and the `id="quality-checklist"` section (eyebrow **Sourcing**). Evidence grading (`evidenceStrength` / High–Very Low) and the methodology disclaimer stay.
+- Deleted `QualityChecklist.astro` (unused after unmount).
+- `[slug].astro`: stopped passing `qualityChecklist` (glue).
+- `orforglipron.mdx`: deleted the `qualityChecklist` block. Body limitation “Daily dosing required…” → “Daily oral tablet…” so `qa-banned-content` on the touched file is clean. No lastUpdated bump. No Foundayo 36 mg added.
+
+Schema `qualityChecklist` stays optional in `config.ts` so other dossiers still parse. Their frontmatter checklists no longer render (UI gone). Not a leftover census.
+
+Did **not** edit `vercel.json`. Did **not** edit `BaseLayout.astro`. Did **not** reopen W0-8 InteractionMatrix / peptide-condition ternary. Net URL: **0**.
+
+## Files touched
+
+- `src/layouts/DossierLayout.astro`
+- `src/components/QualityChecklist.astro` — deleted
+- `src/pages/peptides/[slug].astro`
+- `src/content/peptides/orforglipron.mdx`
+- `.planning/master-audit-2026-09-02/CURSOR-SLICE-LOG.md` (this append)
+
+## Commands actually run
+
+```text
+git branch --show-current
+git status -sb
+Select-String qualityChecklist / QualityChecklist / Sourcing / Clear dosing (layout, slug, orforglipron, src/**/*.astro)
+node scripts/qa-banned-content.js src/content/peptides/orforglipron.mdx
+npm run qa:advice
+git diff --stat -- src/components/QualityChecklist.astro src/layouts/DossierLayout.astro src/pages/peptides/[slug].astro src/content/peptides/orforglipron.mdx
+```
+
+Did **not** run `astro build` / `graph:check` / Quality Judge. Did **not** curl production. Did **not** start Wave 1 (plan: Wave 1 only after Wave 0 is on production; next items are compare/homepage/snippet work, not small glue in these files).
+
+## Check results (source, not rendered HTML)
+
+| Check | Result |
+|---|---|
+| `QualityChecklist.astro` | **deleted** |
+| `QualityChecklist` imports in `src/**/*.{astro,ts,tsx,js}` | **0** (schema field remains optional) |
+| eyebrow **Sourcing** / Quality checklist section | **gone** |
+| orforglipron `qualityChecklist` / `12mg, 24mg, or 36mg` shopping list | **gone** |
+| Foundayo 36 mg added | **no** |
+| evidence grading + disclaimer in DossierLayout | **kept** |
+| qa-banned-content `orforglipron.mdx` | **PASS** |
+| qa:advice (`qa-medical-advice.mjs`, 877 files) | **PASS** |
+| `vercel.json` / BaseLayout gtag skip | **untouched** |
+
+Local GET of `/peptides/orforglipron` HTML is **not** done this slice.
+
+## Next slice
+
+Wave 0 source work on this branch is complete (W0-1…W0-9). **Do not start Wave 1** until Wave 0 is on production.
+
+**Next:** production hotfix PR from `origin/main` (Lucas ships). Live GET acceptance still fails until the same files are on `main`. Wave 1 item 1 after that: protect click-winning `/compare/*` (do not 301 the GSC winners).
+
+## Blockers
+
+- **Live GET of `/peptides/orforglipron` on production `main`** — **blocked on Lucas**. Source has no sourcing checklist; pepcodex.com still will until the same layout/MDX ship on `main`.
+- **Production hotfix PR** — clean worktree from `origin/main`, commit, push, Lucas merge. Not this session. Do not merge this branch.
+- **WAF apply** — still Lucas.
+- **TICK37 KEEP** — UNCLOSED; do not Grok-stamp.
+

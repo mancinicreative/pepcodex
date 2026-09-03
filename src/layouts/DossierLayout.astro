@@ -17,7 +17,6 @@ import OverviewSection from '../components/OverviewSection.astro';
 import EvidenceChain from '../components/EvidenceChain.astro';
 import InteractionMatrix from '../components/InteractionMatrix.astro';
 import Timeline from '../components/Timeline.astro';
-import QualityChecklist from '../components/QualityChecklist.astro';
 import RatingCard from '../components/RatingCard.astro';
 import Vial from '../components/Vial.astro';
 import TrialTable from '../components/TrialTable.astro';
@@ -91,13 +90,6 @@ interface TimelineEntry {
   source?: string;
 }
 
-// Quality Checklist for evaluating peptide products
-interface QualityChecklistData {
-  goodSigns: string[];
-  warningSigns: string[];
-  badSigns: string[];
-}
-
 // FAQ item for schema markup
 interface FAQItem {
   question: string;
@@ -158,8 +150,6 @@ interface Props {
   interactions?: Interaction[];
   // NEW: Timeline for "What to Expect" section
   timeline?: TimelineEntry[];
-  // NEW: Quality checklist for product evaluation
-  qualityChecklist?: QualityChecklistData;
   // NEW: FAQ items for schema markup (Phase 24)
   faqs?: FAQItem[];
   // Regulatory status
@@ -203,7 +193,6 @@ const {
   evidenceChainedBenefits,
   interactions = [],
   timeline,
-  qualityChecklist,
   faqs = [],
   regulatoryStatus,
   ratings,
@@ -301,7 +290,7 @@ const hasAnecdotal = Boolean(anecdotalReports && (((anecdotalReports.positive ||
 const hasLimitations = limitations.length > 0;
 
 // Section navigation - CONSOLIDATED STRUCTURE
-// Order: Overview (includes molecular) → Mechanism → Evidence → Timeline → Quality → Interactions → References
+// Order: Overview (includes molecular) → Mechanism → Evidence → Timeline → Interactions → References
 const allSections = [
   { id: 'overview', label: 'Overview', always: true },
   { id: 'mechanism-of-action', label: 'Mechanism', always: true },
@@ -310,7 +299,6 @@ const allSections = [
   { id: 'limitations', label: 'Critique', requires: 'limitations' },
   { id: 'trials', label: 'Trials', requires: 'trials' },
   { id: 'timeline', label: 'Timeline', requires: 'timeline' },
-  { id: 'quality-checklist', label: 'Quality', requires: 'qualityChecklist' },
   { id: 'peptide-interactions', label: 'Interactions', requires: 'interactions' },
   { id: 'references', label: 'References', always: true },
 ];
@@ -320,7 +308,6 @@ const dataAvailability: Record<string, boolean> = {
   timeline: Boolean(timeline && timeline.length > 0),
   evidenceChainedBenefits: Boolean(evidenceChainedBenefits && evidenceChainedBenefits.length > 0),
   interactions: Boolean(interactions && interactions.length > 0),
-  qualityChecklist: Boolean(qualityChecklist),
   limitations: hasLimitations,
   trials: hasTrials,
   anecdotal: hasAnecdotal,
@@ -740,16 +727,6 @@ const clinicalPct = sources.count ? Math.round((sources.human / sources.count) *
           <SectionAside roman={romanById.get('timeline')} eyebrow="What to expect" title="Timeline of observations" note="Phases observed in published studies. Individual responses vary." />
           <div class="dossier-body">
             <Timeline timeline={timeline} peptideName={name} hideHeader />
-          </div>
-        </section>
-      )}
-
-      <!-- Quality checklist -->
-      {qualityChecklist && (
-        <section id="quality-checklist" class="dossier-section">
-          <SectionAside roman={romanById.get('quality-checklist')} eyebrow="Sourcing" title="Quality checklist" note="Visual indicators for evaluating product quality." />
-          <div class="dossier-body">
-            <QualityChecklist checklist={qualityChecklist} peptideName={name} hideHeader />
           </div>
         </section>
       )}

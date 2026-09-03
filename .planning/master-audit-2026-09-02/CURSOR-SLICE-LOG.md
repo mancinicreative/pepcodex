@@ -477,3 +477,72 @@ Local GET of calculator HTML is **not** done this slice.
 - Leftover refill frozen.
 - Blocked on Lucas: Other Models, TICK6-PRICE, WAF/GA4 Admin, production ship.
 
+---
+
+# W0-7 · Sitewide `X-Robots-Tag: index, follow`
+
+**Agent:** implementer (this session)
+**Plan:** `.planning/master-audit-2026-09-02/CURSOR-IMPLEMENTATION-PLAN.md` · Wave 0 · **W0-7** (HANDOFF T-07 / B-001)
+**Branch:** `feat/scoring-and-freshness` (dirty). Did **not** checkout `origin/main`. Did **not** live-GET pepcodex.com as acceptance.
+**Commit:** none (Lucas did not ask; pusher in parallel — leave dirty). **Judge / KEEP:** none.
+**Status:** **done** (source-level). Live `curl -sI` on production still **blocked on Lucas**.
+
+## Why this slice
+
+Blanket `vercel.json` `/(.*)` `X-Robots-Tag: index, follow` fought HTML `noindex, follow` on clinics / directory / generic glossary / 404. GSC 2026-09-02 still showed 16 clinic URLs with impressions after HTML noindex. Homepage must stay indexable. Never `nofollow`.
+
+## What changed
+
+- Deleted `X-Robots-Tag: index, follow` from the sitewide `/(.*)` header block. Security headers (frame, nosniff, referrer, permissions, HSTS, CSP) stay on `/(.*)`.
+- Emit `X-Robots-Tag: noindex, follow` **only** on noindex routes: `/clinics`, `/clinics/:path*`, `/directory`, `/404`, and the 35 glossary slugs with `noindex: true` (including `/glossary/autophagy`). Homepage `/` is not in that list.
+- Did **not** edit `BaseLayout.astro` (localhost gtag skip left intact). HTML still emits `<meta name="robots" content="noindex, follow">` when `robots="noindex"`.
+
+Net URL: **0**. No WAF. No W0-8. No leftover census.
+
+## Files touched
+
+- `vercel.json` (headers only)
+- `.planning/master-audit-2026-09-02/CURSOR-SLICE-LOG.md` (this append)
+
+No `BaseLayout.astro`. No lastUpdated bumps. No new URLs.
+
+## Commands actually run
+
+```text
+git branch --show-current
+git status -sb
+Select-String -Path vercel.json -Pattern "X-Robots-Tag|robots"
+Get-ChildItem src\content\glossary\*.mdx | noindex: true slugs
+node -e require('./vercel.json')  (X-Robots-Tag table; BLANKET_X_ROBOTS=ABSENT)
+node compare glossary frontmatter vs vercel :slug() list (35/35, missing=[], extra=[])
+Select-String scoped: vercel.json + BaseLayout + clinics + directory + 404
+```
+
+Did **not** run `astro build` / `graph:check` / Quality Judge. Did **not** curl production. Did **not** start W0-8 (vercel.json just changed; W0-8 is templates, not headers — still held to one slice).
+
+## Check results (source, not live headers)
+
+| Check | Result |
+|---|---|
+| `/(.*)` `X-Robots-Tag: index, follow` | **gone** (`BLANKET_X_ROBOTS=ABSENT`) |
+| Remaining `X-Robots-Tag` values | **5** sources, all `noindex, follow` |
+| `nofollow` in vercel headers | **0** |
+| Homepage in noindex header sources | **no** |
+| Glossary noindex slugs vs vercel list | **35 / 35** |
+| HTML meta `noindex, follow` | **kept** (BaseLayout) |
+| Clinics / directory / 404 `robots="noindex"` | **kept** |
+| Localhost gtag skip | **untouched** |
+
+Live GET of `/clinics/new-york` still sends whatever `main` has until this `vercel.json` ships.
+
+## Next slice (unblocked)
+
+**W0-8 · Two template lies** — delete “Generally safe to combine based on known mechanisms.” from `InteractionMatrix.astro`; stop inferring approval from `evidenceStrength` on `src/pages/peptides/[peptide]/[condition].astro`. Does not collide with `vercel.json`. Then **W0-9**. Do not start Wave 1.
+
+## Blockers
+
+- **Live `curl -sI` `/clinics/new-york` and `/glossary/autophagy`** — **blocked on Lucas**. Source no longer sends sitewide `index, follow`; pepcodex.com still will until `main` ships the same headers.
+- **Production hotfix PR** — clean worktree from `origin/main`, commit, push, Lucas merge. Not this session. Do not merge this branch.
+- **WAF apply** — still Lucas.
+- **TICK37 KEEP** — UNCLOSED; do not Grok-stamp.
+

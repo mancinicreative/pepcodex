@@ -20,8 +20,16 @@ const STRICT = process.argv.includes('--strict');
 const ROOT = path.join('src', 'content');
 const COLLECTIONS = ['blog', 'peptides', 'comparisons', 'safety', 'guides', 'protocols', 'conditions'];
 
-// DOIs are `10.<registrant>/<suffix>`. Stop at whitespace, quotes, or closing markup.
-const DOI_IN_URL = /https?:\/\/[^\s'"]*?\/(10\.\d{4,9}\/[^\s'"<>)]+)/gi;
+// DOIs are `10.<registrant>/<suffix>`. Elsevier PII suffixes contain parentheses
+// (10.1016/S2213-8587(26)00125-7). Do not stop the capture at `)` — that truncated
+// Lancet url: DOIs, Crossref-404'd the stubs, and failed Vercel prebuild after PR #10.
+const DOI_IN_URL = /https?:\/\/[^\s'"]*?\/(10\.\d{4,9}\/[^\s'"<>]+)/gi;
+const countChar = (str, ch) => str.split(ch).length - 1;
+const trimDoi = (s) => {
+  let d = String(s || '').replace(/[.,;]+$/, '');
+  while (d.endsWith(')') && countChar(d, '(') < countChar(d, ')')) d = d.slice(0, -1);
+  return d;
+};
 
 const found = new Map(); // doi -> Set("collection/file")
 
@@ -33,7 +41,7 @@ for (const col of COLLECTIONS) {
     const fm = raw.split(/\r?\n---\r?\n/)[0];
     for (const m of fm.matchAll(DOI_IN_URL)) {
       // Trim trailing punctuation that commonly rides along in URLs.
-      const doi = m[1].replace(/[.,;)]+$/, '');
+      const doi = trimDoi(m[1]);
       if (!found.has(doi)) found.set(doi, new Set());
       found.get(doi).add(`${col}/${file}`);
     }

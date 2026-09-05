@@ -1,0 +1,288 @@
+---
+const title = 'BPC-157 Dossier Preview · PepCodex';
+const description = 'Private noindex preview route for the PepTracker-inspired PepCodex dossier template direction.';
+
+const evidence = [
+  { label: 'Overall verdict', value: 'Limited', note: 'High public interest; clinical certainty remains low.' },
+  { label: 'Human evidence', value: 'Very low', note: 'Sparse, early, and not enough for confident use claims.' },
+  { label: 'Preclinical signal', value: 'Moderate', note: 'Coherent rodent literature, but translational risk is high.' },
+  { label: 'Safety confidence', value: 'Low', note: 'Long-term human safety and receptor biology are unresolved.' },
+];
+
+const sections = [
+  { id: 'summary', name: 'Summary', desc: 'What the evidence can and cannot support.' },
+  { id: 'evidence', name: 'Evidence', desc: 'Human, animal, and mechanistic source hierarchy.' },
+  { id: 'concerns', name: 'Concerns', desc: 'Where the online narrative overreaches.' },
+  { id: 'citations', name: 'Sources', desc: 'Primary literature and revision trail.' },
+];
+
+const concerns = [
+  'No agreed receptor target or validated clinical mechanism.',
+  'Human data remains thin relative to online adoption.',
+  'Most compelling effects are preclinical and context-specific.',
+  'Long-term safety confidence is low, especially outside controlled research settings.',
+];
+
+const sourceRows = [
+  { type: 'Human', strength: 'Very low', count: '3', note: 'Sparse clinical context; not enough for broad efficacy claims.' },
+  { type: 'Animal', strength: 'Moderate', count: '41', note: 'Main source of repair and gut-protection narrative.' },
+  { type: 'Mechanistic', strength: 'Low', count: '28', note: 'Hypothesis-building, not confirmation.' },
+  { type: 'Safety', strength: 'Low', count: '9', note: 'Insufficient long-horizon risk characterization.' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="preview-ribbon">
+      <strong>Dossier preview</strong>
+      <span>Noindex route · not wired into production navigation · exact PepCodex mockup surface tokens.</span>
+      <a href="/design-preview/peptracker-style">Catalogue preview</a>
+    </div>
+
+    <header class="masthead">
+      <div class="masthead-inner">
+        <nav class="masthead-left" aria-label="Primary">
+          <a href="/design-preview/peptracker-style">Catalogue</a>
+          <a href="#evidence">Evidence</a>
+          <a href="#citations">Sources</a>
+        </nav>
+        <a class="brand" href="/design-preview/peptracker-style" aria-label="PepCodex preview catalogue">
+          <span>❧</span><strong>PEPCODEX</strong><span>❧</span>
+        </a>
+        <nav class="masthead-right" aria-label="Dossier actions">
+          <a href="#tracker">Watch</a>
+          <a href="#method">Methodology</a>
+          <a class="kbd" href="#top">⌘K</a>
+        </nav>
+      </div>
+      <div class="dateline">
+        <span>Drawer B / Recovery</span>
+        <span>BPC-157 specimen record</span>
+        <span>Last reviewed · May 2026</span>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="dossier-head" aria-labelledby="dossier-title">
+        <div class="record-id">
+          <span>Record B-017</span>
+          <span>Specimen sheet</span>
+        </div>
+        <div class="title-block">
+          <p class="eyebrow">Recovery peptide · research dossier</p>
+          <h1 id="dossier-title">BPC-<em>157</em></h1>
+          <p class="lede">A popular tissue-repair peptide with a strong preclinical story, weak human certainty, and safety questions that deserve more visual weight than the hype usually gives them.</p>
+          <div class="action-row">
+            <a class="btn primary" href="#tracker">Watch this dossier</a>
+            <a class="btn ghost" href="#concerns">Review concerns</a>
+          </div>
+        </div>
+        <aside class="snapshot-card" aria-label="Evidence snapshot">
+          <p class="eyebrow">Evidence snapshot</p>
+          <div class="snapshot-grid">
+            {evidence.map(item => (
+              <div>
+                <span>{item.label}</span>
+                <strong>{item.value}</strong>
+                <p>{item.note}</p>
+              </div>
+            ))}
+          </div>
+        </aside>
+      </section>
+
+      <section class="quick-nav" aria-label="Dossier sections">
+        {sections.map(section => (
+          <a href={`#${section.id}`}>
+            <strong>{section.name}</strong>
+            <span>{section.desc}</span>
+          </a>
+        ))}
+      </section>
+
+      <section class="content-grid" id="summary">
+        <article class="paper-card verdict-card">
+          <p class="eyebrow">Bottom line</p>
+          <h2>Interesting biology. Not enough human evidence for certainty.</h2>
+          <p>BPC-157 is a good example of where PepCodex can be visually useful: users need the promise, limitations, safety uncertainty, and source trail in the same view. The dossier template should make uncertainty feel designed, not buried.</p>
+          <div class="verdict-strip">
+            <span>Evidence D</span>
+            <span>Safety 4/5 uncertainty</span>
+            <span>Watch recommended</span>
+          </div>
+        </article>
+
+        <aside class="paper-card watch-card" id="tracker">
+          <span class="status-chip">PepTracker boundary</span>
+          <h3>Public evidence here. Personal protocol tools stay in the app.</h3>
+          <p>Use the dossier to capture intent, then invite users to watch updates, save records, and join app access. Do not publish calculator-style utility on the public page.</p>
+          <button type="button">Join app waitlist</button>
+        </aside>
+      </section>
+
+      <section class="paper-card source-card" id="evidence">
+        <div class="section-head">
+          <p class="eyebrow">Source weighting</p>
+          <h2>Evidence by source class</h2>
+          <p>Keep the PepTracker dashboard feel, but make it editorial: each metric explains what kind of confidence it creates.</p>
+        </div>
+        <div class="source-table">
+          {sourceRows.map(row => (
+            <div class="source-row">
+              <strong>{row.type}</strong>
+              <span>{row.strength}</span>
+              <span>{row.count} sources</span>
+              <p>{row.note}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-grid" id="concerns">
+        <article class="paper-card concern-card">
+          <p class="eyebrow">Counter-evidence</p>
+          <h2>Where the case weakens</h2>
+          <div class="concern-list">
+            {concerns.map((concern, i) => (
+              <div><span>{String(i + 1).padStart(2, '0')}</span><p>{concern}</p></div>
+            ))}
+          </div>
+        </article>
+        <article class="paper-card method-card" id="method">
+          <p class="eyebrow">How to read this dossier</p>
+          <h2>Evidence strength and safety confidence are separate.</h2>
+          <p>A strong biological signal does not automatically mean strong human evidence or low safety uncertainty. PepCodex separates those questions so the page does not collapse nuance into one misleading score.</p>
+          <ul>
+            <li>A–E evidence grade by claim/outcome.</li>
+            <li>1–5 safety uncertainty scale.</li>
+            <li>Revision log and source count near the top.</li>
+            <li>App CTA as “watch/track,” not dosing guidance.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="paper-card citations" id="citations">
+        <p class="eyebrow">Sources and revisions</p>
+        <h2>Sources, revisions, and update trail</h2>
+        <p>Each dossier should make its maintenance visible: cited sources, evidence changes, safety updates, and the latest review date. The public action is to watch the record; personal tools stay inside PepTracker.</p>
+      </section>
+    </main>
+  </body>
+</html>
+
+<style>
+  :root {
+    --bg: #F6F1E7;
+    --bg-grad: radial-gradient(ellipse 80% 60% at 20% 0%, oklch(0.78 0.04 70 / 0.30), transparent 60%), radial-gradient(ellipse 70% 50% at 100% 100%, oklch(0.82 0.05 55 / 0.20), transparent 60%), #F6F1E7;
+    --paper: #FBF7EE;
+    --paper-2: #EFE8D8;
+    --paper-3: #E0D7C2;
+    --border: #DBD2BC;
+    --border-strong: #BFB59C;
+    --rule: #E5DBC4;
+    --ink: #1F1A12;
+    --ink-muted: #5C5341;
+    --ink-dim: #8E8567;
+    --primary: oklch(0.42 0.10 245);
+    --primary-deep: oklch(0.30 0.10 245);
+    --primary-soft: oklch(0.42 0.10 245 / 0.10);
+    --primary-border: oklch(0.42 0.10 245 / 0.26);
+    --primary-grad: linear-gradient(135deg, oklch(0.50 0.11 248) 0%, oklch(0.34 0.09 240) 100%);
+    --hero-grad: linear-gradient(135deg, oklch(0.42 0.10 245) 0%, oklch(0.46 0.08 200) 100%);
+    --amber: oklch(0.66 0.13 60);
+    --amber-soft: oklch(0.66 0.13 60 / 0.16);
+    --amber-border: oklch(0.66 0.13 60 / 0.34);
+    --bad: oklch(0.54 0.16 22);
+    --bad-soft: oklch(0.54 0.16 22 / 0.10);
+    --sans: "Inter", -apple-system, system-ui, sans-serif;
+    --mono: "JetBrains Mono", "SF Mono", ui-monospace, Menlo, monospace;
+    --shadow-card: 0 1px 0 rgba(31,26,18,0.02), 0 2px 6px rgba(31,26,18,0.04);
+    --shadow-raise: 0 12px 30px rgba(31,26,18,0.10);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg-grad); background-attachment: fixed; color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; line-height: 1.55; }
+  a { color: inherit; text-decoration: none; }
+  button, input { font: inherit; }
+  .preview-ribbon { position: sticky; top: 0; z-index: 40; display: flex; gap: 14px; justify-content: center; align-items: center; padding: 10px 18px; background: var(--ink); color: var(--paper); font-family: var(--mono); font-size: 11px; letter-spacing: .04em; text-transform: uppercase; }
+  .preview-ribbon span { color: rgba(251,247,238,.72); text-transform: none; letter-spacing: 0; }
+  .preview-ribbon a { border-bottom: 1px solid rgba(255,255,255,.45); }
+  .masthead { border-top: 3px solid var(--ink); border-bottom: 1px solid var(--border); background: color-mix(in oklch, var(--bg) 92%, transparent); }
+  .masthead-inner { max-width: 1240px; margin: 0 auto; padding: 14px 32px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px; }
+  .masthead nav { display: flex; gap: 22px; align-items: center; font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: var(--ink-muted); }
+  .masthead-right { justify-content: flex-end; }
+  .brand { display: inline-flex; align-items: center; gap: 14px; font-weight: 800; letter-spacing: -.4px; }
+  .brand span { color: var(--amber); font-family: Georgia, serif; font-style: italic; font-weight: 400; }
+  .kbd { border: 1px solid var(--border); border-radius: 6px; padding: 4px 8px; background: var(--paper); }
+  .dateline { max-width: 1240px; margin: 0 auto; padding: 8px 32px; display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid var(--border); font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: var(--ink-muted); }
+  main { max-width: 1240px; margin: 0 auto; padding: 40px 32px 100px; }
+  .eyebrow { font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: var(--ink-muted); margin: 0 0 14px; }
+  h1, h2, h3, p { margin-top: 0; }
+  .dossier-head { display: grid; grid-template-columns: 160px minmax(0, 1fr) 430px; gap: 34px; align-items: start; padding-bottom: 28px; border-bottom: 2px solid var(--ink); }
+  .record-id { display: grid; gap: 10px; font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: 1.4px; color: var(--ink-muted); text-transform: uppercase; }
+  h1 { font-size: clamp(72px, 13vw, 168px); line-height: .82; letter-spacing: -.08em; margin: 0 0 20px; }
+  h1 em { font-family: Georgia, serif; font-weight: 400; color: var(--primary); letter-spacing: -.06em; }
+  .lede { font-size: clamp(18px, 2vw, 23px); color: var(--ink-muted); max-width: 760px; }
+  .action-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+  .btn, button { border: 0; border-radius: 999px; padding: 13px 17px; font-weight: 800; font-size: 13px; cursor: pointer; }
+  .btn.primary, button { background: var(--primary-grad); color: white; }
+  .btn.ghost { border: 1px solid var(--border-strong); background: transparent; color: var(--ink); }
+  .snapshot-card, .paper-card, .quick-nav a { background: color-mix(in oklch, var(--paper) 94%, white); border: 1px solid var(--border); border-radius: 24px; box-shadow: var(--shadow-card); }
+  .snapshot-card { padding: 20px; }
+  .snapshot-grid { display: grid; gap: 10px; }
+  .snapshot-grid div { padding: 13px; border-radius: 16px; background: var(--paper-2); border: 1px solid var(--border); }
+  .snapshot-grid span { display: block; font-family: var(--mono); font-size: 9px; font-weight: 700; letter-spacing: 1.3px; text-transform: uppercase; color: var(--ink-dim); }
+  .snapshot-grid strong { display: block; margin: 5px 0; font-size: 22px; letter-spacing: -.04em; }
+  .snapshot-grid p { color: var(--ink-muted); font-size: 13px; margin: 0; }
+  .quick-nav { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 24px 0; }
+  .quick-nav a { padding: 16px; position: relative; }
+  .quick-nav a::after { content: "→"; position: absolute; right: 16px; top: 16px; color: var(--ink-dim); font-weight: 800; }
+  .quick-nav strong { display: block; font-size: 18px; letter-spacing: -.03em; }
+  .quick-nav span { display: block; color: var(--ink-muted); font-size: 13px; margin-top: 4px; }
+  .content-grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 18px; margin-top: 18px; }
+  .paper-card { padding: 26px; }
+  .paper-card h2 { font-size: clamp(34px, 4vw, 58px); line-height: .95; letter-spacing: -.06em; margin-bottom: 16px; }
+  .paper-card p, li { color: var(--ink-muted); }
+  .verdict-strip { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+  .verdict-strip span, .status-chip { display: inline-flex; padding: 7px 10px; border-radius: 999px; background: var(--amber-soft); border: 1px solid var(--amber-border); color: var(--ink); font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; }
+  .watch-card { background: linear-gradient(160deg, color-mix(in oklch, var(--paper) 92%, white), var(--paper-2)); }
+  .watch-card h3 { font-size: 25px; line-height: 1.08; letter-spacing: -.04em; }
+  .source-card { margin-top: 18px; }
+  .section-head { max-width: 760px; margin-bottom: 20px; }
+  .source-table { display: grid; gap: 10px; }
+  .source-row { display: grid; grid-template-columns: 140px 130px 110px 1fr; gap: 14px; align-items: center; padding: 14px; border-radius: 16px; background: var(--paper-2); border: 1px solid var(--border); }
+  .source-row strong { font-size: 18px; }
+  .source-row span { font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-muted); }
+  .source-row p { margin: 0; font-size: 14px; }
+  .concern-list { display: grid; gap: 10px; }
+  .concern-list div { display: flex; gap: 12px; padding: 13px; border-radius: 16px; background: var(--bad-soft); border: 1px solid color-mix(in oklch, var(--bad) 28%, transparent); }
+  .concern-list span { font-family: var(--mono); font-size: 11px; font-weight: 800; color: var(--bad); }
+  .concern-list p { margin: 0; color: var(--ink); }
+  .citations { margin-top: 18px; }
+  @media (max-width: 980px) {
+    .masthead-inner, .dossier-head, .content-grid { grid-template-columns: 1fr; }
+    .masthead nav, .dateline { flex-wrap: wrap; justify-content: center; }
+    .quick-nav { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .preview-ribbon { align-items: flex-start; flex-direction: column; }
+    main { padding: 34px 16px 72px; }
+    .masthead-inner { padding: 14px 16px; }
+    .dateline { padding: 8px 16px; justify-content: flex-start; }
+    h1 { font-size: 72px; }
+    .quick-nav, .source-row { grid-template-columns: 1fr; }
+    .paper-card, .snapshot-card { padding: 20px; border-radius: 20px; }
+    .action-row { flex-direction: column; }
+  }
+</style>

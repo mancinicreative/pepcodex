@@ -77,6 +77,68 @@ const scoringSchema = z.object({
   notes: z.string().optional(),
 });
 
+// Numeric-score review only; no default or automatic promotion of historical scores.
+// Assessed is deliberately unsupported until an exact payload-bound review contract exists.
+const recordedText = z.string().refine(value => value.trim().length > 0, 'Must not be blank');
+const reviewCalendarDate = z.string().refine(value => {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+  const parsed = new Date(value + 'T00:00:00.000Z');
+  return Number.isFinite(parsed.getTime()) && parsed.toISOString().slice(0, 10) === value;
+}, 'Use a valid recorded YYYY-MM-DD date; omit when unknown');
+const reviewContext = z.object({
+  compoundFormulation: recordedText.optional(),
+  indication: recordedText.optional(),
+  population: recordedText.optional(),
+  comparator: recordedText.optional(),
+  outcome: recordedText.optional(),
+  timepoint: recordedText.optional(),
+}).strict();
+const scoreReviewCommon = {
+  summary: recordedText,
+  updatedAt: reviewCalendarDate.optional(),
+  context: reviewContext.optional(),
+};
+const scoreReviewSchema = z.discriminatedUnion('status', [
+  z.object({ ...scoreReviewCommon, status: z.literal('unreviewed') }).strict(),
+  z.object({ ...scoreReviewCommon, status: z.literal('under-review') }).strict(),
+  z.object({
+    ...scoreReviewCommon,
+    status: z.literal('withheld'),
+    reasons: z.array(z.enum(['study-identity', 'indirect-evidence', 'incomplete-assessment',
+      'correction-unresolved', 'community-provenance', 'rubric-unresolved'])).min(1),
+  }).strict(),
+]);
+export type Ratings = z.infer<typeof ratingsSchema>;
+export type Scoring = z.infer<typeof scoringSchema>;
+export type ScoreReview = z.infer<typeof scoreReviewSchema>;
+
+// Explicit selected-publication presentation; no legacy record receives a default.
+const evidenceDisplaySchema = z.object({
+  version: z.literal(1),
+  subjectId: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
+  sourceReviewId: recordedText,
+  clinicalCertainty: z.literal('not-formally-graded'),
+  headline: recordedText,
+  clinicalMeaning: recordedText,
+  selection: z.object({
+    unit: z.literal('publications'),
+    total: z.number().int().nonnegative(),
+    categories: z.array(z.object({
+      key: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
+      label: recordedText,
+      count: z.number().int().nonnegative(),
+    }).strict()).min(1),
+    caveat: recordedText,
+  }).strict(),
+  registry: z.object({ status: z.literal('unverified'), acceptedIds: z.array(z.string()).max(0) }).strict(),
+}).strict().superRefine((value, ctx) => {
+  if (new Set(value.selection.categories.map(row => row.key)).size !== value.selection.categories.length)
+    ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'Duplicate publication category', path: ['selection', 'categories'] });
+  if (value.selection.categories.reduce((sum, row) => sum + row.count, 0) !== value.selection.total)
+    ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'Publication categories must account for selected total', path: ['selection'] });
+});
+export type EvidenceDisplay = z.infer<typeof evidenceDisplaySchema>;
+
 const peptides = defineCollection({
   type: 'content',
   schema: z.object({
@@ -99,7 +161,9 @@ const peptides = defineCollection({
       count: z.number(),
       human: z.number(),
       preclinical: z.number(),
-      openAccess: z.number(),
+      openAccess: z.number().optional(),
+      context: z.string().optional(),
+      verdict: z.string().optional(),
     }),
     // Anecdotal community reports
     anecdotalReports: z.object({
@@ -200,8 +264,19 @@ const peptides = defineCollection({
     ratings: ratingsSchema.optional(),
     // NEW: two-axis scoring (rubric v2.4 — see docs/scoring-rubric.md)
     scoring: scoringSchema.optional(),
+    scoreReview: scoreReviewSchema.optional(),
+    evidenceDisplay: evidenceDisplaySchema.optional(),
     // SEO fields
     ...seoFields,
+  }).superRefine((value, ctx) => {
+    if (!value.evidenceDisplay && value.sources.openAccess === undefined)
+      ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'Legacy sources require recorded openAccess', path: ['sources', 'openAccess'] });
+    if (value.evidenceDisplay) {
+      if (value.sources.count !== value.evidenceDisplay.selection.total)
+        ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'Selected publication total does not match adopted source count', path: ['sources', 'count'] });
+      if (value.scoreReview?.status !== 'withheld')
+        ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'This selected presentation requires explicit numeric withholding', path: ['scoreReview'] });
+    }
   }),
 });
 

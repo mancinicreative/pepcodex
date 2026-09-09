@@ -17,6 +17,8 @@ import EvidenceChain from '../components/EvidenceChain.astro';
 import InteractionMatrix from '../components/InteractionMatrix.astro';
 import Timeline from '../components/Timeline.astro';
 import RatingCard from '../components/RatingCard.astro';
+import { loadEvidencePresentation } from '../lib/evidence-binding';
+import type { Ratings, Scoring, ScoreReview, EvidenceDisplay } from '../content/config';
 import Vial from '../components/Vial.astro';
 import TrialTable from '../components/TrialTable.astro';
 import SectionAside from '../components/SectionAside.astro';
@@ -126,7 +128,9 @@ interface Props {
     count: number;
     human: number;
     preclinical: number;
-    openAccess: number;
+    openAccess?: number;
+    context?: string;
+    verdict?: string;
   };
   comparators: string[];
   // Condition sub-pages generated from this dossier's frontmatter. Linking them here is
@@ -157,17 +161,10 @@ interface Props {
     lastUpdated?: Date;
     notes?: string;
   };
-  // NEW: Multi-dimension ratings (optional — backward compat with existing dossiers)
-  ratings?: {
-    researchDepth: number;
-    globalCoverage: number;
-    mechanismPlausibility: number;
-    overall: number;
-    lastReviewed: Date;
-    reviewNotes?: string;
-  };
-  // NEW: two-axis scoring (rubric v2.4) — preferred when present
-  scoring?: any;
+  ratings?: Ratings;
+  scoring?: Scoring;
+  scoreReview?: ScoreReview;
+  evidenceDisplay?: EvidenceDisplay;
   metaTitle?: string;
   metaDescription?: string;
 }
@@ -196,6 +193,7 @@ const {
   regulatoryStatus,
   ratings,
   scoring,
+  scoreReview,
   metaTitle,
   metaDescription,
   safetyInfo: safetyInfoProp,
@@ -248,7 +246,8 @@ const evidenceConfig: Record<string, { dots: number; label: string; color: strin
   'very-low': { dots: 1, label: 'Very Low Evidence', color: 'var(--danger)' },
 };
 
-const currentEvidence = evidenceConfig[evidenceStrength];
+const presentation = loadEvidencePresentation(Astro.props.slug as string, Astro.props);
+const currentEvidence = presentation.selected ? { dots: 0, label: presentation.label, color: presentation.color } : evidenceConfig[evidenceStrength];
 
 const regulatoryConfig: Record<string, { label: string; color: string; bg: string; border: string }> = {
   'approved': { label: 'FDA Approved', color: 'text-[color:var(--research)]', bg: 'bg-[rgba(20,118,74,0.10)]', border: 'border-[rgba(20,118,74,0.30)]' },
@@ -266,7 +265,7 @@ const dossierSlug = (Astro.props.slug as string) || name.toLowerCase().replace(/
 let peptideTrials: any[] = [];
 try {
   const packPath = path.join(process.cwd(), 'data', 'source-packs', `${dossierSlug}.json`);
-  if (fs.existsSync(packPath)) {
+  if (!presentation.selected && fs.existsSync(packPath)) {
     const pack = JSON.parse(fs.readFileSync(packPath, 'utf-8'));
     peptideTrials = (pack.trials || []).map((t: any) => ({
       nctId: t.nctId || t.id || 'Unknown',
@@ -332,7 +331,7 @@ const romanById = new Map(sections.map(s => [s.id, s.roman]));
 const methodologyRoman = toRomanNav(sections.length + 1);
 
 // Tags from category and evidence
-const tags = [categoryLabels[category], currentEvidence.label, `${sources.count} Sources`];
+const tags = [categoryLabels[category], currentEvidence.label, presentation.selected ? presentation.countText : `${sources.count} Sources`];
 
 // Build comparison lookup: find actual comparison slugs for this peptide
 const allComparisons = await getCollection('comparisons');
@@ -408,7 +407,7 @@ if (_lastDash > 0 && /\d/.test(name.slice(_lastDash + 1))) {
 
 // Verdict descriptor from real source mix
 const _humanN = sources.human || 0;
-const verdictLine = _humanN === 0
+const verdictLine = presentation.selected ? presentation.display!.headline : _humanN === 0
   ? 'Preclinical evidence only'
   : _humanN >= 3
     ? `${_humanN} human studies`
@@ -483,7 +482,7 @@ const clinicalPct = sources.count ? Math.round((sources.human / sources.count) *
       <span class="inline-flex items-center gap-1.5"><span class="signal-dot signal-dot--research"></span>Now reading</span>
       <span>Entry <span style="color: var(--ink);">{String(entryNum).padStart(3, '0')}</span> / {totalEntries}</span>
       {lastRevised && <span>Last revised <span style="color: var(--ink);">{lastRevised}</span></span>}
-      <span><span style="color: var(--ink);">{sources.count}</span> sources</span>
+      <span><span style="color: var(--ink);">{sources.count}</span> {presentation.selected ? 'selected publications' : 'sources'}</span>
       {comparisonCount > 0 && <a href="#compare" class="transition-colors hover:text-[color:var(--ink)]"><span style="color: var(--ink);">{comparisonCount}</span> comparisons</a>}
       <a href="/methodology" class="transition-colors hover:text-[color:var(--ink)] md:ml-auto">Methodology →</a>
     </div>
@@ -503,7 +502,7 @@ const clinicalPct = sources.count ? Math.round((sources.human / sources.count) *
 
         {/* Regulatory badge */}
         {regConfig && (
-          <a href="/regulatory-tracker/" class:list={["inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium border mt-4 transition-opacity hover:opacity-80", regConfig.bg, regConfig.color, regConfig.border]} style="font-family: var(--font-mono);">
+          <a href="/regulatory-tracker" class:list={["inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium border mt-4 transition-opacity hover:opacity-80", regConfig.bg, regConfig.color, regConfig.border]} style="font-family: var(--font-mono);">
             <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               {regulatoryStatus!.status === 'approved' ? (
                 <><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></>
@@ -537,20 +536,30 @@ const clinicalPct = sources.count ? Math.round((sources.human / sources.count) *
 
           <div class="flex items-start justify-between">
             <span class="eyebrow">Research evidence</span>
-            <Vial strength={evidenceStrength} size="lg" />
+            <Vial presentation={presentation} strength={evidenceStrength} size="lg" />
           </div>
 
           <!-- Verdict -->
           <div class="mt-3 flex items-center gap-3">
-            <div class="flex gap-1.5">
+            {!presentation.selected && <div class="flex gap-1.5">
               {[1, 2, 3, 4].map((n) => (
                 <span class="w-2.5 h-2.5 rounded-full" style={`background: ${n <= currentEvidence.dots ? currentEvidence.color : 'var(--border-strong)'}`}></span>
               ))}
-            </div>
+            </div>}
             <span class="font-serif text-2xl" style="color: var(--ink); font-weight: 500;">{currentEvidence.label.replace(' Evidence', '')}</span>
           </div>
           <p class="mt-1.5 eyebrow" style="color: var(--ink-dim);">{verdictLine}</p>
 
+          {presentation.selected ? (
+            <div class="mt-5 space-y-3" data-selected-publications>
+              <p class="text-sm">{presentation.display!.clinicalMeaning}</p>
+              <h3 class="eyebrow">Selected publications</h3>
+              <p class="text-sm">{presentation.display!.selection.total} publications in this selection</p>
+              <ul class="text-sm space-y-1">{presentation.display!.selection.categories.map(row => <li>{row.count} {row.label}</li>)}</ul>
+              <p class="text-xs" style="color: var(--ink-muted);">{presentation.display!.selection.caveat}</p>
+              <p class="text-xs" style="color: var(--ink-muted);">Registry listings have not been verified for this peptide.</p>
+            </div>
+          ) : (<>
           <!-- Evidence mix — real share of the cited source base -->
           <dl class="mt-6 space-y-3.5">
             {[
@@ -570,9 +579,11 @@ const clinicalPct = sources.count ? Math.round((sources.human / sources.count) *
           </dl>
           <p class="mt-3 eyebrow" style="color: var(--ink-dim); font-size: 0.62rem;">Based on {sources.count} cited sources</p>
 
-          {(scoring || ratings) && (
+          </>)}
+
+          {(scoreReview || scoring || ratings) && (
             <div class="mt-5 pt-5" style="border-top: 1px solid var(--border-c);">
-              <RatingCard scoring={scoring} ratings={ratings} />
+              <RatingCard scoring={scoring} ratings={ratings} scoreReview={scoreReview} />
             </div>
           )}
 
@@ -597,6 +608,7 @@ const clinicalPct = sources.count ? Math.round((sources.human / sources.count) *
 
     <!-- Safety Banner — labels from regulatoryStatus / safetyInfo, not sitewide stamps -->
     <SafetyBanner
+      presentation={presentation}
       peptideName={name}
       evidenceStrength={evidenceStrength}
       keyWarnings={derivedWarnings}
@@ -612,6 +624,7 @@ const clinicalPct = sources.count ? Math.round((sources.human / sources.count) *
         <SectionAside roman={romanById.get('overview')} eyebrow="Identification" title="Overview" note={`What is ${name}, and what does the research say?`} />
         <div class="dossier-body">
           <OverviewSection
+            presentation={presentation}
             peptideName={name}
             summary={summary}
             aliases={aliases}
@@ -741,14 +754,17 @@ const clinicalPct = sources.count ? Math.round((sources.human / sources.count) *
 
       <!-- References -->
       <section id="references" class="dossier-section">
-        <SectionAside roman={romanById.get('references')} eyebrow="Sources" title="Cited works" note="Every factual claim traces back to a citation." />
+        <SectionAside roman={romanById.get('references')} eyebrow="Sources" title="Cited works" note={presentation.selected ? 'Read each claim alongside its linked source and stated limitations.' : 'Every factual claim traces back to a citation.'} />
         <div class="dossier-body">
                 <div class="panel-inset p-6">
+                  {presentation.selected ? <p class="mb-6">{presentation.countText}. {presentation.display!.selection.caveat}</p> : (<>
                   <div class="flex flex-wrap items-center gap-3 mb-6">
                     <span class="badge badge--success">{sources.count} Sources</span>
                     <span class="badge badge--primary">{sources.human} Human</span>
                     <span class="badge badge--warning">{sources.preclinical} Preclinical</span>
                   </div>
+
+                  </>)}
 
                   {evidenceChainedBenefits && evidenceChainedBenefits.length > 0 && (
                     <div class="space-y-4">
@@ -809,7 +825,7 @@ const clinicalPct = sources.count ? Math.round((sources.human / sources.count) *
                   )}
 
                   <p class="mt-6 text-sm" style="color: var(--ink-dim);">
-                    Full reference list available on request. All citations link to PubMed for verification.
+                    {presentation.selected ? 'Use the source links in the research discussion above to inspect the referenced records.' : 'Full reference list available on request. All citations link to PubMed for verification.'}
                   </p>
                 </div>
         </div>
@@ -817,11 +833,11 @@ const clinicalPct = sources.count ? Math.round((sources.human / sources.count) *
 
       <!-- Methodology + disclaimer -->
       <section id="methodology-note" class="dossier-section">
-        <SectionAside roman={methodologyRoman} eyebrow="How we rate" title="On reading this entry" note="How evidence strength is assessed across every entry." />
+        <SectionAside roman={methodologyRoman} eyebrow="How we rate" title="On reading this entry" note={presentation.selected ? "How to interpret this reviewed selection." : "How evidence strength is assessed across every entry."} />
         <div class="dossier-body">
           <div class="panel-inset p-6">
             <p class="mb-4" style="color: var(--ink-muted);">
-              This dossier synthesizes available evidence from peer-reviewed literature, regulatory documents, and clinical trial registries. Evidence strength ratings follow a modified GRADE approach.
+              {presentation.selected ? 'This entry describes a qualitatively reviewed publication selection. Clinical certainty has not been formally graded, and a numerical evidence score remains pending review. Model, preparation and reporting limits are retained in the source discussion.' : "This dossier synthesizes available evidence from peer-reviewed literature, regulatory documents, and clinical trial registries. Evidence strength ratings follow a modified GRADE approach."}
             </p>
             <p style="color: var(--ink-muted);">
               For complete methodology details, see our <a href="/methodology" class="font-medium text-primary hover:underline">Methodology page</a>.
@@ -907,6 +923,7 @@ const clinicalPct = sources.count ? Math.round((sources.human / sources.count) *
                 slug={p.slug}
                 category={p.data.category}
                 evidenceStrength={p.data.evidenceStrength}
+                presentation={loadEvidencePresentation(p.slug, p.data)}
                 summary={p.data.summary}
                 aliases={p.data.aliases}
               />
@@ -967,7 +984,7 @@ const clinicalPct = sources.count ? Math.round((sources.human / sources.count) *
     {conditions.length > 0 && (
       <section class="mt-12">
         <div class="flex items-center justify-between pb-4 mb-8" style="border-bottom: 1px solid var(--border-c);">
-          <h2 class="font-serif text-2xl" style="color: var(--ink); font-weight: 500;">Conditions Studied</h2>
+          <h2 class="font-serif text-2xl" style="color: var(--ink); font-weight: 500;">{presentation.selected ? 'Research topics and limitations' : 'Conditions Studied'}</h2>
           <span class="font-mono text-xs uppercase tracking-wider" style="color: var(--ink-3);">
             {conditions.length} {conditions.length === 1 ? 'entry' : 'entries'}
           </span>

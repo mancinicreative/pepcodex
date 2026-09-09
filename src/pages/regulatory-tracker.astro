@@ -1,4 +1,5 @@
 ---
+import { loadEvidencePresentation } from '../lib/evidence-binding';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import BreadcrumbSchema from '../components/SEO/BreadcrumbSchema.astro';
@@ -190,13 +191,14 @@ const categoryLabels: Record<string, string> = {
                     <span
                       class="text-xs font-medium"
                       style={
-                        p.data.evidenceStrength === 'high' ? 'color: var(--research);' :
+                        loadEvidencePresentation(p.slug, p.data).selected ? 'color: var(--ink-muted);' :
+                  p.data.evidenceStrength === 'high' ? 'color: var(--research);' :
                         p.data.evidenceStrength === 'moderate' ? 'color: var(--primary-c);' :
                         p.data.evidenceStrength === 'low' ? 'color: #9a6418;' :
                         'color: var(--ink-dim);'
                       }
                     >
-                      {p.data.evidenceStrength.charAt(0).toUpperCase() + p.data.evidenceStrength.slice(1)}
+                      {loadEvidencePresentation(p.slug, p.data).selected ? loadEvidencePresentation(p.slug, p.data).label : p.data.evidenceStrength.charAt(0).toUpperCase() + p.data.evidenceStrength.slice(1)}
                     </span>
                   </td>
                   <td class="px-4 py-3 hidden md:table-cell">

@@ -1,4 +1,6 @@
 ---
+import { loadEvidencePresentation } from '../../../lib/evidence-binding';
+import { resolveCitation } from '../../../utils/citation';
 import { getCollection, getEntry } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../../components/SEO/BreadcrumbSchema.astro';
@@ -73,9 +75,10 @@ const relatedPeptidesWithCondition = condition.relatedPeptides
     )
   : [];
 
+const presentation = loadEvidencePresentation(peptide.slug, peptide.data);
 // SEO
 const pageTitle = `${peptide.data.name} for ${condition.name}: Research Overview`;
-const metaDescription = `Evidence-based research on ${peptide.data.name} for ${condition.name}. Scientific studies, mechanisms, and findings from peer-reviewed literature.`;
+const metaDescription = presentation.selected ? `Research context and limitations for ${peptide.data.name} and ${condition.name}. Clinical certainty has not been formally graded.` : `Evidence-based research on ${peptide.data.name} for ${condition.name}. Scientific studies, mechanisms, and findings from peer-reviewed literature.`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 // Breadcrumb data
@@ -94,7 +97,7 @@ const evidenceConfig: Record<string, { color: string; label: string }> = {
   'very-low': { color: 'var(--danger)', label: 'Very Low Evidence' },
 };
 
-const currentEvidence = evidenceConfig[peptide.data.evidenceStrength];
+const currentEvidence = presentation.selected ? presentation : evidenceConfig[peptide.data.evidenceStrength];
 ---
 
 <BaseLayout title={pageTitle} description={metaDescription}>
@@ -140,7 +143,7 @@ const currentEvidence = evidenceConfig[peptide.data.evidenceStrength];
       </h1>
 
       <p class="text-xl max-w-3xl leading-relaxed" style="color: var(--ink-muted);">
-        An evidence-based overview of research examining {peptide.data.name} in the context of {condition.name.toLowerCase()}. This page synthesizes findings from peer-reviewed literature.
+        {presentation.selected ? `Research context and limitations for ${peptide.data.name} and ${condition.name.toLowerCase()}. Clinical certainty has not been formally graded.` : <>An evidence-based overview of research examining {peptide.data.name} in the context of {condition.name.toLowerCase()}. This page synthesizes findings from peer-reviewed literature.</>}
       </p>
     </header>
 
@@ -186,22 +189,25 @@ const currentEvidence = evidenceConfig[peptide.data.evidenceStrength];
                 </svg>
               </div>
               <h2 class="font-serif text-2xl" style="color: var(--ink); font-weight: 500;">
-                Referenced Studies
+                {presentation.selected ? 'Referenced publications' : 'Referenced Studies'}
               </h2>
             </div>
 
             <div class="space-y-3">
-              {condition.relevantStudies.map((pmid: string) => (
+              {condition.relevantStudies.map((pmid: string) => {
+                const citation = presentation.selected ? resolveCitation(pmid) : { href: `https://pubmed.ncbi.nlm.nih.gov/${pmid}/`, kind: 'pmid', source: pmid };
+                if (!citation.href) return <span class="text-sm">Unresolved reference: {pmid}</span>;
+                return (
                 <a
-                  href={`https://pubmed.ncbi.nlm.nih.gov/${pmid}/`}
+                  href={citation.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   class="flex items-center justify-between p-4 rounded-xl transition-all group hover:border-[color:var(--primary-border)]"
                   style="background: var(--paper-2); border: 1px solid var(--border-c);"
                 >
                   <div class="flex items-center gap-3">
-                    <span class="text-xs font-mono px-2 py-1 rounded" style="color: var(--ink-dim); background: var(--paper);">PMID</span>
-                    <span class="font-medium group-hover:text-[color:var(--primary-c)] transition-colors" style="color: var(--ink);">{pmid}</span>
+                    <span class="text-xs font-mono px-2 py-1 rounded" style="color: var(--ink-dim); background: var(--paper);">{citation.kind.toUpperCase()}</span>
+                    <span class="font-medium group-hover:text-[color:var(--primary-c)] transition-colors" style="color: var(--ink);">{citation.source}</span>
                   </div>
                   <svg class="w-4 h-4 group-hover:text-[color:var(--primary-c)] transition-colors" style="color: var(--ink-dim);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
@@ -209,11 +215,11 @@ const currentEvidence = evidenceConfig[peptide.data.evidenceStrength];
                     <line x1="10" y1="14" x2="21" y2="3"/>
                   </svg>
                 </a>
-              ))}
+              );})}
             </div>
 
             <p class="mt-4 text-sm" style="color: var(--ink-dim);">
-              Click any PMID to view the full study on PubMed.
+              {presentation.selected ? 'Open a reference to inspect its source record. A citation does not establish a clinical benefit.' : 'Click any PMID to view the full study on PubMed.'}
             </p>
           </section>
         )}
@@ -292,7 +298,7 @@ const currentEvidence = evidenceConfig[peptide.data.evidenceStrength];
             </a>
             {condition.relevantStudies && condition.relevantStudies.length > 0 && (
               <a href="#referenced-studies" class="block text-sm hover:text-primary transition-colors py-1" style="color: var(--ink);">
-                Referenced Studies ({condition.relevantStudies.length})
+                {presentation.selected ? 'Referenced publications' : 'Referenced Studies'} ({condition.relevantStudies.length})
               </a>
             )}
             {relatedPeptidesWithCondition.length > 0 && (
@@ -304,7 +310,7 @@ const currentEvidence = evidenceConfig[peptide.data.evidenceStrength];
 
           <div class="mt-6 pt-6" style="border-top: 1px solid var(--border-c);">
             <h3 class="text-sm font-bold uppercase tracking-wider mb-4" style="color: var(--ink-muted);">
-              Other Conditions Studied
+              {presentation.selected ? 'Other research topics and limitations' : 'Other Conditions Studied'}
             </h3>
             <nav class="space-y-2 max-h-64 overflow-y-auto scrollbar-thin">
               {allConditions.filter((c: Condition) => c.slug !== condition.slug).map((c: Condition) => (

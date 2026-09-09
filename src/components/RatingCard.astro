@@ -1,20 +1,42 @@
 ---
+import type { Ratings, Scoring, ScoreReview } from '../content/config';
 interface Props {
-  // NEW two-axis scoring (rubric v2.4) — preferred when present
-  scoring?: any;
-  // LEGACY 1–5 ratings — fallback for un-migrated dossiers
-  ratings?: {
-    researchDepth: number;
-    globalCoverage: number;
-    mechanismPlausibility: number;
-    anecdotalEvidence: number;
-    overall: number;
-    lastReviewed: Date;
-    reviewNotes?: string;
-  };
+  scoring?: Scoring;
+  ratings?: Ratings;
+  scoreReview?: ScoreReview;
 }
 
-const { scoring, ratings } = Astro.props;
+const { scoring: recordedScoring, ratings: recordedRatings, scoreReview } = Astro.props;
+// Schema validation is the normal entry point; direct component callers must
+// not turn an explicit malformed review into permission to show old numbers.
+if (scoreReview !== undefined && (!scoreReview || typeof scoreReview !== 'object' || Array.isArray(scoreReview)
+  || !['unreviewed', 'under-review', 'withheld'].includes(scoreReview.status)
+  || typeof scoreReview.summary !== 'string' || !scoreReview.summary.trim()
+  || (scoreReview.status === 'withheld' && (!Array.isArray(scoreReview.reasons) || !scoreReview.reasons.length)))) {
+  throw new Error('Invalid numeric assessment review metadata');
+}
+// Any explicit review record blocks both historical formats, including at runtime.
+const scoring = scoreReview !== undefined ? undefined : recordedScoring;
+const ratings = scoreReview !== undefined ? undefined : recordedRatings;
+const statusLabels: Record<ScoreReview['status'], string> = {
+  unreviewed: 'Numeric assessment unreviewed',
+  'under-review': 'Numeric assessment under review',
+  withheld: 'Evidence score pending review',
+};
+const reasonLabels = {
+  'study-identity': 'Study identity requires review',
+  'indirect-evidence': 'Evidence applicability requires review',
+  'incomplete-assessment': 'Assessment incomplete',
+  'correction-unresolved': 'Correction unresolved',
+  'community-provenance': 'Community provenance requires review',
+  'rubric-unresolved': 'Scoring method unresolved',
+};
+const contextFields = [
+  ['compoundFormulation', 'Compound / formulation'], ['indication', 'Indication'],
+  ['population', 'Population'], ['comparator', 'Comparator'],
+  ['outcome', 'Outcome'], ['timepoint', 'Timepoint'],
+] as const;
+const communityCaveat = 'Community usage signal; not evidence of efficacy or safety. Provenance is not established by this score.';
 
 // ---- Two-axis (preferred) ----
 const evLabelMap: Record<string, string> = {
@@ -43,10 +65,16 @@ const effBasisLabel =
   eff?.basis === 'community-reported'
     ? 'community-reported · not clinically demonstrated'
     : eff?.basis === 'clinical'
-    ? 'clinically demonstrated'
+    ? 'based on clinical studies'
     : '';
+const effDescription =
+  eff?.basis === 'clinical'
+    ? 'Clinical-study effect summary; outcomes depend on population and endpoint. This score is not a probability of benefit or a safety rating.'
+    : eff?.basis === 'community-reported'
+    ? 'Summary of community reports; clinical effectiveness and safety are not established by this score.'
+    : 'Effectiveness is not established by the available evidence. This is not a safety assessment or recommendation.';
 const scoredFormatted = scoring?.lastScored
-  ? new Date(scoring.lastScored).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
+  ? new Date(scoring.lastScored).toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' })
   : '';
 
 // ---- Legacy 1–5 (fallback, unchanged behaviour) ----
@@ -71,7 +99,7 @@ const overallPalette = ratings
 const overallColor = overallPalette.color;
 const toPercent = (v: number) => `${(v / 5) * 100}%`;
 const lastReviewedFormatted = ratings
-  ? ratings.lastReviewed.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
+  ? ratings.lastReviewed.toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' })
   : '';
 const dimensions = ratings
   ? [
@@ -82,6 +110,31 @@ const dimensions = ratings
     ]
   : [];
 ---
+
+{scoreReview ? (
+  <section class="space-y-3" data-score-state={scoreReview.status} aria-label="Numeric assessment status">
+    <h3 class="eyebrow">{statusLabels[scoreReview.status] ?? 'Numeric assessment unavailable'}</h3>
+    <p class="text-sm leading-relaxed">{scoreReview.summary}</p>
+    <p class="text-xs" style="color: var(--ink-muted);">This is a limitation of the numeric assessment, not a measured absence of benefit. It does not re-review the separately recorded catalogue classification or establish efficacy or safety.</p>
+    {scoreReview.status === 'withheld' && (
+      <ul class="text-xs list-disc pl-4">{scoreReview.reasons.map(reason => <li>{reasonLabels[reason]}</li>)}</ul>
+    )}
+    <dl class="text-xs space-y-1" aria-label="Recorded assessment context">
+      {contextFields.filter(([key]) => scoreReview.context?.[key]).map(([key, label]) => <div><dt class="inline font-semibold">{label}: </dt><dd class="inline">{scoreReview.context?.[key]}</dd></div>)}
+    </dl>
+    {scoreReview.updatedAt && <p class="text-xs">Status date: <time datetime={scoreReview.updatedAt}>{scoreReview.updatedAt}</time></p>}
+    <a href="/methodology#how-we-rate" class="text-xs" style="color: var(--primary-c);">Scoring context and limitations</a>
+  </section>
+) : null}
+{(scoring || ratings) && (
+  <div class="mb-3 space-y-2" data-score-state="historical">
+    <p class="text-xs leading-relaxed"><strong>Historical editorial rating.</strong> No completed numerical assessment is established by this record. These scores are not formal GRADE assessments, measured treatment effects, or safety ratings.</p>
+    <dl class="text-xs space-y-1" aria-label="Recorded historical score context">
+      <div><dt class="inline font-semibold">Recorded primary indication: </dt><dd class="inline">{scoring?.effectiveness.primaryIndication?.trim() ? scoring.effectiveness.primaryIndication : 'Not recorded'}</dd></div>
+      <div><dt class="inline font-semibold">Compound / formulation, population, comparator, outcome and timepoint for the numeric assessment: </dt><dd class="inline">Not recorded in this score record</dd></div>
+    </dl>
+  </div>
+)}
 
 {scoring ? (
   <div class="space-y-4">
@@ -101,14 +154,15 @@ const dimensions = ratings
 
     <div class="space-y-3">
       {evDims.map((dim) => (
-        <div>
+        <div class={dim.label === 'Community Experience' ? 'community-score pt-2 border-t border-dashed' : undefined}>
           <div class="flex justify-between items-baseline text-xs mb-1">
             <span style="color: var(--ink-muted);">{dim.label}</span>
             <span class="font-mono" style="color: var(--ink);">{dim.v}/100</span>
           </div>
-          <div class="h-1.5 rounded-full" style="background: var(--paper-2);">
-            <div class="h-full rounded-full" style={`width: ${dim.v}%; background: var(--primary-c);`}></div>
+          <div class={dim.label === 'Community Experience' ? 'h-1 rounded-full' : 'h-1.5 rounded-full'} style="background: var(--paper-2);">
+            <div class="h-full rounded-full" style={`width: ${dim.v}%; background: ${dim.label === 'Community Experience' ? 'var(--ink-dim)' : 'var(--primary-c)'};`}></div>
           </div>
+          {dim.label === 'Community Experience' && <p class="text-xs mt-1" style="color: var(--ink-muted);">{communityCaveat}</p>}
         </div>
       ))}
     </div>
@@ -126,11 +180,11 @@ const dimensions = ratings
       </div>
       {effBasisLabel && (
         <p class="text-xs italic mt-0.5" style="color: var(--ink-dim);">
-          {effBasisLabel}{eff.confidence ? ` · ${eff.confidence} confidence` : ''}
+          {effBasisLabel}{eff?.confidence ? ` · ${eff.confidence} confidence` : ''}
         </p>
       )}
       <p class="text-xs mt-1" style="color: var(--ink-dim);">
-        Demonstrated effect magnitude — not a recommendation or safety claim.
+        {effDescription}
       </p>
     </div>
 
@@ -161,17 +215,18 @@ const dimensions = ratings
     <!-- Progress bars -->
     <div class="space-y-3">
       {dimensions.map((dim) => (
-        <div>
+        <div class={dim.label === 'Community Experience' ? 'community-score pt-2 border-t border-dashed' : undefined}>
           <div class="flex justify-between items-baseline text-xs mb-1">
             <span style="color: var(--ink-muted);">{dim.label}</span>
             <span class="font-mono" style="color: var(--ink);">{dim.value}/5</span>
           </div>
-          <div class="h-1.5 rounded-full" style="background: var(--paper-2);">
+          <div class={dim.label === 'Community Experience' ? 'h-1 rounded-full' : 'h-1.5 rounded-full'} style="background: var(--paper-2);">
             <div
               class="h-full rounded-full"
-              style={`width: ${toPercent(dim.value)}; background: ${overallColor};`}
+              style={`width: ${toPercent(dim.value)}; background: ${dim.label === 'Community Experience' ? 'var(--ink-dim)' : overallColor};`}
             ></div>
           </div>
+          {dim.label === 'Community Experience' && <p class="text-xs mt-1" style="color: var(--ink-muted);">{communityCaveat}</p>}
         </div>
       ))}
     </div>

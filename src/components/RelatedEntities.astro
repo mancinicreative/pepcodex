@@ -1,4 +1,5 @@
 ---
+import { loadEvidencePresentation } from '../lib/evidence-binding';
 /**
  * RelatedEntities Component
  * Displays internal links to related content for SEO and user navigation.
@@ -121,7 +122,7 @@ const categoryLabels: Record<string, string> = {
                 {peptide.data.name}
               </h3>
               <p class="text-xs text-[color:var(--ink-muted)] mt-1">
-                {categoryLabels[peptide.data.category]} · {peptide.data.evidenceStrength} evidence
+                {categoryLabels[peptide.data.category]} · {loadEvidencePresentation(peptide.slug, peptide.data).selected ? loadEvidencePresentation(peptide.slug, peptide.data).label : `${peptide.data.evidenceStrength} evidence`}
               </p>
             </div>
           </div>

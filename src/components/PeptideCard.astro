@@ -1,18 +1,20 @@
 ---
+import type { EvidencePresentation } from '../lib/evidence-presentation';
 import EvidenceBadge from './EvidenceBadge.astro';
 import Vial from './Vial.astro';
 
 interface Props {
+  presentation?: EvidencePresentation;
   name: string;
   slug: string;
   category: string;
-  compoundType?: 'peptide' | 'small-molecule' | 'mrna' | 'protein' | 'glycoprotein';
+  compoundType?: 'peptide' | 'bioregulator' | 'small-molecule' | 'mrna' | 'protein' | 'glycoprotein';
   evidenceStrength: 'high' | 'moderate' | 'low' | 'very-low';
   summary: string;
   aliases?: string[];
 }
 
-const { name, slug, category, compoundType = 'peptide', evidenceStrength, summary, aliases = [] } = Astro.props;
+const { presentation, name, slug, category, compoundType = 'peptide', evidenceStrength, summary, aliases = [] } = Astro.props;
 
 const categoryLabels: Record<string, string> = {
   'metabolic': 'Metabolic',
@@ -25,6 +27,7 @@ const categoryLabels: Record<string, string> = {
 };
 
 const compoundTypeLabels: Record<string, string> = {
+  'bioregulator': 'Bioregulator',
   'small-molecule': 'Small Molecule',
   'mrna': 'mRNA',
   'protein': 'Protein',
@@ -55,7 +58,7 @@ if (_lastDash > 0 && /\d/.test(name.slice(_lastDash + 1))) {
           {namePrefix}{nameSuffix && <em style="color: var(--primary-c);">{nameSuffix}</em>}
         </h3>
       </div>
-      <Vial strength={evidenceStrength} size="md" class="shrink-0 -mt-1" />
+      <Vial presentation={presentation} strength={evidenceStrength} size="md" class="shrink-0 -mt-1" />
     </div>
 
     <!-- Aliases -->
@@ -73,7 +76,7 @@ if (_lastDash > 0 && /\d/.test(name.slice(_lastDash + 1))) {
     <!-- Footer -->
     <div class="pt-4 mt-4 flex items-center justify-between gap-2" style="border-top: 1px solid var(--border-c);">
       <div class="flex flex-wrap items-center gap-2">
-        <EvidenceBadge strength={evidenceStrength} showLabel={false} />
+        <EvidenceBadge presentation={presentation} strength={evidenceStrength} showLabel={false} />
         {showCompoundType && (
           <span class="badge badge--muted">{compoundTypeLabels[compoundType]}</span>
         )}

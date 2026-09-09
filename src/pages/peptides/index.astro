@@ -1,4 +1,5 @@
 ---
+import { loadEvidencePresentation } from '../../lib/evidence-binding';
 import HubLayout from '../../layouts/HubLayout.astro';
 import SearchBar from '../../components/SearchBar.astro';
 import PeptideCard from '../../components/PeptideCard.astro';
@@ -22,7 +23,7 @@ const grouped = peptides.reduce((acc, peptide) => {
 
 const letters = Object.keys(grouped).sort();
 const categories = ['metabolic', 'repair-recovery', 'hormonal', 'longevity'];
-const evidenceLevels = ['high', 'moderate', 'low', 'very-low'];
+const evidenceLevels = ['high', 'moderate', 'low', 'very-low', ...(peptides.some(p => loadEvidencePresentation(p.slug, p.data).selected) ? ['not-formally-graded'] : [])];
 const compoundTypes = [
   { value: 'peptide', label: 'Peptide' },
   { value: 'bioregulator', label: 'Bioregulator' },
@@ -34,7 +35,7 @@ const compoundTypes = [
 
 // Per-value facet counts (total available per value — faceted-browse style; ClinicalTrials.gov/PubChem)
 const countBy = (key: 'category' | 'evidenceStrength' | 'compoundType', val: string) =>
-  peptides.filter((p) => (p.data as any)[key] === val).length;
+  peptides.filter((p) => (key === 'evidenceStrength' ? loadEvidencePresentation(p.slug, p.data).filterKey : (p.data as any)[key]) === val).length;
 ---
 
 <HubLayout
@@ -83,7 +84,7 @@ const countBy = (key: 'category' | 'evidenceStrength' | 'compoundType', val: str
             data-filter="evidence"
             data-value={level}
           >
-            {level.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())} <span class="ml-1 text-[0.7rem] opacity-55" style="font-family: var(--font-mono);">{countBy('evidenceStrength', level)}</span>
+            {level === 'not-formally-graded' ? 'Clinical certainty not formally graded' : level.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())} <span class="ml-1 text-[0.7rem] opacity-55" style="font-family: var(--font-mono);">{countBy('evidenceStrength', level)}</span>
           </button>
         ))}
       </div>
@@ -150,7 +151,7 @@ const countBy = (key: 'category' | 'evidenceStrength' | 'compoundType', val: str
             <div
               class="peptide-item"
               data-category={peptide.data.category}
-              data-evidence={peptide.data.evidenceStrength}
+              data-evidence={loadEvidencePresentation(peptide.slug, peptide.data).filterKey}
               data-compound={peptide.data.compoundType || 'peptide'}
               data-name={peptide.data.name.toLowerCase()}
             >
@@ -159,7 +160,7 @@ const countBy = (key: 'category' | 'evidenceStrength' | 'compoundType', val: str
                 slug={peptide.slug}
                 category={peptide.data.category}
                 compoundType={peptide.data.compoundType || 'peptide'}
-                evidenceStrength={peptide.data.evidenceStrength}
+                evidenceStrength={peptide.data.evidenceStrength} presentation={loadEvidencePresentation(peptide.slug, peptide.data)}
                 summary={peptide.data.summary}
                 aliases={peptide.data.aliases}
               />

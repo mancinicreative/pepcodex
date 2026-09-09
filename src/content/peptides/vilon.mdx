@@ -1,168 +1,50 @@
 ---
+scoreReview: {"status":"withheld","summary":"Limited human reports, uncertain cohort independence, objective null findings and adverse animal results preclude carrying forward an unreviewed benefit score.","reasons":["indirect-evidence","incomplete-assessment"]}
+evidenceDisplay: {"version":1,"subjectId":"vilon","sourceReviewId":"testagen-vilon-display-2026-09-09","clinicalCertainty":"not-formally-graded","headline":"Laboratory studies and limited human reports","clinicalMeaning":"Human-containing documents do not establish five independent trials or consistent clinical benefit. Model-specific adverse findings and reporting limits remain visible.","selection":{"unit":"publications","total":25,"categories":[{"key":"human-containing-reports","label":"Human-containing reports","count":5},{"key":"preclinical-experimental-reports","label":"Preclinical experimental reports","count":17},{"key":"context-documents","label":"Context documents","count":3}],"caveat":"Do not present the 20% human-document share as a clinical evidence-strength score or the 68% preclinical share as direct efficacy evidence."},"registry":{"status":"unverified","acceptedIds":[]}}
 name: Vilon
 aliases:
   - KE
   - Lys-Glu
-  - Dilysine
   - KE dipeptide
 category: immune
 bioregulatorType: synthetic
 compoundType: bioregulator
 evidenceStrength: low
-lastUpdated: 2026-02-01T00:00:00.000Z
+lastUpdated: 2026-09-09T00:00:00.000Z
 comparators:
   - thymalin
   - thymogen
   - thymosin-alpha-1
 summary: >-
-  A synthetic dipeptide (Lys-Glu) developed by Russian scientist Vladimir
-  Khavinson as part of the peptide bioregulation framework. Claimed to support
-  thymus gland function and immune modulation. No Western clinical validation
-  exists; all research originates from Russian institutes.
+  Lys-Glu (KE) dipeptide with limited human adjunct-treatment reports and
+  experimental cell and animal research. Clinical benefit and safety remain
+  uncertain; animal findings include both favorable and adverse outcomes.
 sources:
-  count: 15
-  human: 2
-  preclinical: 10
-  openAccess: 5
-metaTitle: 'Vilon: Thymic Bioregulator Research (2026)'
+  count: 25
+  human: 5
+  preclinical: 17
+  context: >-
+    25 selected publications: 5 human-containing reports, 17 experimental
+    preclinical reports and 3 review/synthesis documents. Human-containing
+    reports are not five authenticated independent trials. Cultures, mixtures
+    and potentially overlapping animal programmes retain their model-specific
+    limits.
+  verdict: Limited human reports; clinical benefit very uncertain
+metaTitle: 'Vilon: Human Reports, Preclinical Findings and Limits (2026)'
 metaDescription: >-
-  Evidence-graded review of vilon covering 15 citations on immune function.
-  Updated Feb 2026.
-interactions:
-  - peptide: thymalin
-    type: compatible
-    description: >-
-      Both target thymus function - thymalin is a complex thymic extract while
-      Vilon is a simplified synthetic dipeptide. May have overlapping mechanisms
-      in immune modulation.
-  - peptide: thymogen
-    type: compatible
-    description: >-
-      Fellow thymic bioregulator peptides from Russian research. Thymogen (EW)
-      and Vilon (KE) represent different dipeptide approaches to thymus support.
-  - peptide: thymosin-alpha-1
-    type: compatible
-    description: >-
-      Both target immune function - Ta1 is a 28-amino acid peptide with FDA
-      orphan drug status, while Vilon is a minimal dipeptide approach. Different
-      evidence quality levels.
-  - peptide: epithalon
-    type: compatible
-    description: >-
-      Both Khavinson bioregulator peptides with distinct targets - Vilon for
-      thymus/immune, epithalon for pineal/longevity. Often used together in
-      Russian protocols.
-  - peptide: selank
-    type: compatible
-    description: >-
-      Both Russian peptides with immune-related effects - Selank primarily
-      anxiolytic with secondary immune modulation, Vilon specifically targets
-      thymic function.
-molecularInfo:
-  weight: 275.30 Da
-  chainLength: 2
-  type: Dipeptide
-  sequence: KE
-  aminoAcids:
-    - code: K
-      name: Lysine
-      position: 1
-      property: positive
-    - code: E
-      name: Glutamic Acid
-      position: 2
-      property: negative
-evidenceChainedBenefits:
-  - mechanism:
-      action: Thymus gland stimulation promoting T-cell maturation and differentiation
-      confidence: emerging
-      directStudies: 4
-    benefit:
-      claim: support immune system function
-      qualifier: may
-    evidence:
-      level: very-low
-      humanStudies: 1
-      animalStudies: 3
-      cellStudies: 2
-      keyFindings:
-        - study: Khavinson VK et al. 2002
-          type: in-vitro
-          finding: >-
-            Vilon produced the most potent comitogenic effect on mouse
-            thymocyte proliferation and modulated the activity of interleukin-1
-          pmid: '12420072'
-        - study: Raikhlin NT et al. 2004
-          type: in-vitro
-          finding: >-
-            Vilon stimulated nucleolar (ribosomal protein synthesis) activity in
-            cultured human thymocytes and promoted their transformation into
-            proliferating blast cells
-          pmid: '15455093'
-  - mechanism:
-      action: Epigenetic modulation via chromatin interaction in immune cells
-      confidence: emerging
-      directStudies: 3
-    benefit:
-      claim: restore age-related decline in immune gene expression
-      qualifier: suggested to
-    evidence:
-      level: very-low
-      humanStudies: 1
-      animalStudies: 2
-      cellStudies: 2
-      keyFindings:
-        - study: Lezhava T et al. 2004
-          type: in-vitro
-          finding: >-
-            Vilon induced deheterochromatinization (decondensation) of chromatin
-            in cultured lymphocytes from elderly subjects, reactivating
-            ribosomal genes
-          pmid: '15105581'
-        - study: Anisimov SV et al. 2002
-          type: animal
-          finding: >-
-            Vilon treatment in mice was associated with changes in tissue gene
-            expression patterns by cDNA-microarray analysis
-          pmid: '12360356'
-  - mechanism:
-      action: Cytokine modulation affecting inflammatory balance
-      confidence: emerging
-      directStudies: 2
-    benefit:
-      claim: modulate inflammatory responses
-      qualifier: may
-    evidence:
-      level: very-low
-      humanStudies: 0
-      animalStudies: 2
-      cellStudies: 1
-      keyFindings:
-        - study: Barabanova SV et al. 2008
-          type: animal
-          finding: >-
-            Vilon administration affected interleukin-2 (IL-2) protein
-            expression in rat brain (hypothalamic) tissue
-          pmid: '18264770'
-        - study: Ashapkin V et al. 2020
-          type: in-vitro
-          finding: >-
-            KE peptide at nanomolar concentrations modulated expression of
-            aging- and immune-related genes (including NF-kappaB) in cultured
-            human cells
-          pmid: '32399807'
+  Vilon evidence review covering limited human reports, mixed animal safety
+  findings, cell-specific mechanisms and unresolved clinical benefit.
 conditions:
   - slug: immune-support
     name: Immune Support
     researchSummary: >-
-      Vilon is marketed primarily for immune support based on claimed thymus
-      gland stimulation and T-cell modulation. Russian research reports
-      restoration of thymic architecture and immune cell function in aged
-      animals. No controlled human clinical trials have evaluated immune
-      outcomes in healthy or immunocompromised populations.
+      Human adjunct-treatment reports include immune or hemostatic markers, but
+      incomplete methods and safety reporting do not establish a general
+      immune-support indication. Thymic culture findings are not patient thymus
+      regeneration. PMID:18306698; PMID:15455093.
     relevantStudies:
+      - '18306698'
       - '15455093'
-      - '18264770'
     relatedPeptides:
       - thymalin
       - thymogen
@@ -170,226 +52,94 @@ conditions:
   - slug: thymus-function
     name: Thymus Function
     researchSummary: >-
-      The thymus gland atrophies with age, reducing T-cell production. Vilon is
-      proposed to counteract this involution through direct thymic stimulation.
-      Russian animal studies show structural restoration of thymic tissue, but
-      translation to human thymic regeneration is completely unconfirmed.
+      Mouse thymocytes and human thymic-cell cultures show laboratory changes.
+      These findings do not demonstrate restoration of thymic architecture or
+      function in treated people. PMID:12420072; PMID:15455093; PMID:33342107.
     relevantStudies:
+      - '12420072'
       - '15455093'
-      - '12360356'
+      - '33342107'
     relatedPeptides:
       - thymalin
       - thymogen
   - slug: immunosenescence
     name: Immunosenescence
     researchSummary: >-
-      Age-related immune decline (immunosenescence) is a proposed target for
-      Vilon. Russian preclinical studies suggest potential to restore immune
-      parameters in aged animals. No human clinical trials have evaluated
-      effects on age-related immune decline.
+      Old-donor lymphocyte cultures and cell-aging models show selective,
+      state-dependent changes rather than demonstrated reversal of human
+      immunosenescence. Clinical benefit remains very uncertain. PMID:15105581;
+      PMID:32399807; PMID:37042594.
     relevantStudies:
-      - '15455093'
       - '15105581'
+      - '32399807'
+      - '37042594'
     relatedPeptides:
       - thymosin-alpha-1
       - thymalin
-timeline:
-  - period: Week 1-2
-    effects: >-
-      Based on preclinical data: Initial interactions with thymic tissue may
-      begin. In vitro studies suggest rapid cellular uptake and chromatin
-      interaction. Any immune parameter changes would not be detectable this
-      early.
-    source: 'PMID:15455093'
-  - period: Week 2-4
-    effects: >-
-      Russian protocols suggest continued treatment during this period. Animal
-      studies show progressive changes in thymic architecture over weeks. Gene
-      expression modifications may develop.
-    source: 'PMID:12360356'
-  - period: Week 4-8
-    effects: >-
-      In aged-mouse studies, extended vilon treatment was associated with lowered
-      biological age, extended lifespan, and reduced spontaneous-tumour incidence
-      in CBA mice. Human response timeline is unknown.
-    source: 'PMID:11140587'
-  - period: Week 8+
-    effects: >-
-      Long-term effects based on Russian animal studies using cyclical treatment
-      protocols. Optimal human treatment duration and cycling are not
-      established. Sustained immune benefits are unconfirmed.
-faqs:
-  - question: What is Vilon?
-    answer: >-
-      Vilon is a synthetic dipeptide (Lys-Glu or KE) developed by Russian
-      scientist Vladimir Khavinson as part of the peptide bioregulation
-      framework. It is claimed to support thymus gland function and immune
-      modulation.
-  - question: Is Vilon FDA approved?
-    answer: >-
-      No, Vilon is not approved by the FDA or any Western regulatory agency. It
-      has never undergone controlled human clinical trials outside of Russia.
-      All research originates from Russian institutes.
-  - question: What is the evidence for Vilon?
-    answer: >-
-      Evidence is very low quality, consisting entirely of Russian preclinical
-      studies and limited observational human research. No independent Western
-      validation exists. No controlled human clinical trials have evaluated
-      immune outcomes.
-  - question: How does Vilon compare to Thymosin Alpha-1?
-    answer: >-
-      Thymosin alpha-1 is a 28-amino acid peptide with FDA orphan drug
-      designation and extensive clinical research. Vilon is a simple dipeptide
-      with only Russian preclinical data. The evidence quality difference is
-      substantial.
-  - question: Is Vilon research legitimate?
-    answer: >-
-      All Vilon research originates from Russian institutes, primarily the St.
-      Petersburg Institute of Bioregulation and Gerontology. No independent
-      Western replication has been conducted. The proposed mechanisms are
-      biologically plausible but clinically unvalidated.
-qualityChecklist:
-  goodSigns:
-    - White lyophilized powder
-    - Dissolves readily in bacteriostatic water
-    - 'Clear, colorless solution after reconstitution'
-    - Certificate of analysis showing >98% purity
-    - HPLC verification of sequence
-    - Mass spectrometry confirmation (~275 Da)
-    - Proper vacuum seal on vial
-  warningSigns:
-    - Off-white or slightly discolored powder
-    - Slow dissolution time
-    - No third-party testing verification
-    - Purity between 95-98%
-    - Unclear manufacturing source
-  badSigns:
-    - Yellow or brown discoloration
-    - Visible particles after reconstitution
-    - Cloudy solution
-    - No certificate of analysis
-    - Unusual odor
-    - Compromised seal or packaging
-    - Cannot verify source authenticity
 regulatoryStatus:
   status: research-only
-  lastUpdated: '2026-02-18'
+  lastUpdated: '2026-09-09'
   notes: >-
-    Not FDA-approved. Khavinson bioregulator peptide for immune system.
-    Synthetic dipeptide.
-ratings:
-  researchDepth: 1
-  globalCoverage: 1
-  mechanismPlausibility: 2
-  overall: 1.3
-  lastReviewed: 2026-04-13T00:00:00.000Z
-  reviewNotes: >-
-    Anchor peptide for very-low evidence tier. Russian-only synthetic dipeptide
-    (Lys-Glu) from Khavinson lab; all research from Russian institutes. Minimal
-    published research even by Russian bioregulator standards. No Western
-    replication; immune bioregulation mechanism is purely theoretical.
-  anecdotalEvidence: 1
-scoring:
-  rubricVersion: "2.4"
-  evidence:
-    researchDepth: 17
-    mechanism: 36
-    plausibility: 57
-    globalCoverage: 26
-    communityExperience: 21
-    overall: 31
-    label: "preliminary"
-  effectiveness:
-    basis: "not-established"
-    primaryIndication: "Immune support / thymic bioregulation"
-  lastScored: 2026-06-27
-  citations:
-    - "PMID:12420072"
-    - "PMID:15455093"
-    - "PMID:15105581"
-    - "PMID:12360356"
-    - "PMID:18264770"
-    - "PMID:32399807"
-    - "PMID:11140587"
-  notes: >-
-    Research Depth 17: best human-relevant evidence is ex-vivo only — Vilon
-    stimulated human thymocyte/NOR ribosomal activity and blast transformation
-    (15455093) and reactivated chromatin in cultured lymphocytes from old donors
-    (15105581); no in-vivo human study exists, so 1A caps at animal-data tier (6),
-    high RoB (1B 2), human N<50 (1C 1), indirect surrogate endpoints (1D 3), with
-    a modest multi-model preclinical program (1E 5). Mechanism 36: target only
-    inferred (proposed direct DNA/chromatin binding, no Ki/IC50 or knockout; 2A
-    10), proximal signaling partly mapped (sphingomyelin pathway 12420072,
-    gene-expression shifts incl. NF-kB 32399807; 2B 12), limited dose-response
-    (2C 6), confirmed in in-vivo mammals (2D 8). Plausibility 57: mechanism ->
-    surrogate established but surrogate -> immune benefit inferred (3A 16),
-    coherent with immunosenescence biology (3B 20), same-class short-peptide
-    analogy (3C 14), but moderately broad immune+longevity+oncostatic claim (3D 7).
-    Global Coverage 26: nearly all work from the Khavinson/St. Petersburg cluster
-    with one partial Georgian collaboration (4A 8), narrow geographic/institutional
-    breadth (4B 8), ~15 studies (4C 10), no governance review anywhere (4D 0).
-    Community Experience 21: negligible documented real-world use (5A 4), limited
-    track record (5B 7), no reports to assess consistency (5C 4), no recurring
-    adverse signal but minimal exposure (5D 6). Effectiveness not established: no
-    quantified human efficacy estimate and no meaningful community effect signal.
-anecdotalReports:
-  positive: []
-  negative: []
-  communityNotes: No meaningful community discussion or user reports available.
-mechanismPathways:
-  - name: 'Thymus Stimulation Pathway'
-    label: 'Immune Support'
-    steps:
-      - 'Vilon (KE)'
-      - 'Thymus Gland Interaction'
-      - 'Thymocyte Proliferation'
-      - 'T-Cell Maturation & Differentiation'
-    outcome: 'Enhanced T-Cell Mediated Immunity'
-    outcomeSignal: research
-  - name: 'Epigenetic Modulation Pathway'
-    label: 'Gene Expression'
-    steps:
-      - 'Vilon'
-      - 'Nuclear Penetration'
-      - 'Chromatin/Histone Interaction'
-      - 'Heterochromatin Decondensation'
-    outcome: 'Immune Gene Expression Changes'
-    outcomeSignal: research
+    Research-only is catalogue framing, not a verified legal classification in
+    every jurisdiction. No complete regulatory inventory was assessed.
+    Author-reported supplement notifications or free-sale statements were not
+    independently authenticated and are not verified drug approvals.
 ---
+Vilon is the dipeptide Lys-Glu, abbreviated KE. It is not dilysine (Lys-Lys). The selected literature includes human adjunct-treatment reports as well as animal and cell experiments, but it does not establish a reliable clinical benefit-risk profile or human rejuvenation effect. [PMID:17152731](https://pubmed.ncbi.nlm.nih.gov/17152731/) [PMID:37782636](https://pubmed.ncbi.nlm.nih.gov/37782636/)
 
-The proposed mechanisms of Vilon are based entirely on Russian research. No independent Western validation or controlled human clinical trials exist.
+### Evidence scope
 
-### How It Works (Simplified)
+This bibliography selects **25 publications: five human-containing reports, 17 preclinical experimental reports and three review or synthesis documents**. Twenty-two have PubMed identities; three are publisher PDFs. Human donor cells remain preclinical material, and mixed-peptide experiments are not isolated Vilon efficacy studies. Publication counts are not counts of independent trials or unique participants. Some reports may reuse cohorts; no combined participant total is asserted. This is a bounded selection, not a complete Vilon literature census.
 
-Vilon targets immune function through thymus gland modulation:
+Clinical certainty has not been formally graded. Clinical benefit remains very uncertain. Numerical and legacy scores are withheld pending full reassessment; discovery of human reports does not itself justify a score increase. Open-access coverage for the complete selection is unknown.
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-8">
-  <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
-    <div class="font-semibold text-[color:var(--ink)] mb-2">Thymus Stimulation</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Proposed to stimulate thymus gland function, promoting thymocyte proliferation and T-cell maturation that typically decline with age.</p>
-  </div>
-  <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
-    <div class="font-semibold text-[color:var(--ink)] mb-2">Chromatin Interaction</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Short peptides like KE are claimed to penetrate cell nuclei and interact with DNA/chromatin, potentially affecting immune-related gene expression.</p>
-  </div>
-  <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
-    <div class="font-semibold text-[color:var(--ink)] mb-2">T-Cell Modulation</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Russian studies claim effects on T-cell subpopulations, including helper and cytotoxic T-cells, though mechanisms are not well characterized.</p>
-  </div>
-  <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
-    <div class="font-semibold text-[color:var(--ink)] mb-2">Cytokine Effects</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Proposed to modulate cytokine production including IL-2 and interferons, potentially affecting inflammatory and immune responses.</p>
-  </div>
-</div>
+### Human reports: findings and substantial limitations
 
-**Note:** These pathways are theoretical constructs based on Russian preclinical research. No independent Western validation confirms these mechanisms in humans.
+**Type 1 diabetes:** Two older reports describe Vilon added to complex treatment. The 2006 record is indexed as a Randomized Controlled Trial, but its inspected abstract does not describe the randomization method, concealment, blinding or sample size. It reports coagulation and fibrinolysis findings, with a **less pronounced response in elderly patients with severe disease**. The 2007 report discusses hemostasis, immune markers and insulin requirements without usable numerical effect estimates or an adverse-event denominator. These observations do not establish prevention of thrombosis or mortality, and they do not provide guidance for changing insulin treatment. The two publications have unknown cohort overlap and are not proven independent replications. [PMID:17152731](https://pubmed.ncbi.nlm.nih.gov/17152731/) [PMID:18306698](https://pubmed.ncbi.nlm.nih.gov/18306698/)
 
-### Important Limitations
+**Colorectal cancer:** A 2005 report, indexed as a Controlled Clinical Trial, describes adjunct Vilon in complex radical treatment of elderly patients with stage III colorectal cancer. Its abstract offers preliminary survival and complication claims without event counts, comparator details, reliable effect estimates or uncertainty. It cannot establish the incremental effect of Vilon separately from the accompanying cancer treatments; randomization is not established by that indexing. [PMID:16075684](https://pubmed.ncbi.nlm.nih.gov/16075684/)
 
-- 100% of research from Russian institutes (primarily St. Petersburg Institute of Bioregulation and Gerontology)
-- No independent Western replication or validation studies
-- No controlled human clinical trials demonstrating immune benefits
-- Mechanism of action for a simple dipeptide affecting thymus function is not fully characterized
-- Pharmacokinetics, bioavailability, and optimal dosing in humans are unknown
-- Comparison to established immunomodulators (like Thymosin alpha-1) shows substantial evidence gap
-- Translation from animal studies to human immune benefits is **completely unconfirmed**
+**Post-infection convalescence:** A November 10, 2022 Mini Review, *The Effect of Short Peptides on Increasing the Reserve Capacity of the Human Body*, contains a reported 520-person Vilon account with 276 assigned to Vilon and 244 to placebo. Calling the article a review does not erase this human administration account, but stated random assignment is not verified trial conduct. Allocation, blinding, product composition, background care, participant flow and analysis methods are inadequately characterized. Its immune-marker table marks within-group changes from baseline, not a between-arm treatment effect; the separate symptom table includes control comparisons but lacks adequate validation and bias safeguards. An unexplained normalization percentage is not accepted as an efficacy estimate. The preceding Epitalon cohort is a different intervention. [Publisher report, EC Clinical and Medical Case Reports 5.11 (2022):98–105](https://ecronicon.net/assets/eccmc/pdf/ECCMC-05-00667.pdf)
+
+**Atrophic gastritis:** *Prospects for the Use of Dipeptide in Patients with Chronic Atrophic Gastritis*, published May 23, 2022, describes 98 people allocated 49/49 in an open prospective study using an envelope method. Vilon was adjunctive to standard eradication treatment, not tested as monotherapy. Envelope concealment, participant flow and product characterization remain insufficiently documented. **Gastric pH changes were not statistically significant in either arm.** Without numerical pH results and precision, that null finding establishes neither restoration of acidity nor equivalence. The symptom table's significance marks compare with baseline, not directly between arms. [Publisher report, EC Gastroenterology and Digestive System 9.6 (2022):01–05](https://ecronicon.net/assets/ecgds/pdf/ECGDS-09-00909.pdf)
+
+That gastritis report also contains unresolved symptom-reporting inconsistencies. Under its stated 0–3 scale and 49-person denominator, 33 complete appetite resolutions would permit a maximum final mean of 48/49, below the printed 1.11; 27 fullness resolutions would permit a maximum of 66/49, below the printed 1.88. These conditional inconsistencies require clarification, not guessed corrected values or assumptions about their cause. No response percentage is accepted here. The gastritis and convalescence publications describe distinct study accounts, but do not establish 618 unique people or independent replication. [Gastritis report](https://ecronicon.net/assets/ecgds/pdf/ECGDS-09-00909.pdf) [Convalescence report](https://ecronicon.net/assets/eccmc/pdf/ECCMC-05-00667.pdf)
+
+**Dental review context:** The May 22, 2025 review *Prospects for the Use of Short Peptides in Dentistry* summarizes older Vilon-related material; it is not a new clinical trial. Its 269-person account depends on incompletely separated earlier Vilon and Epithalamin-plus-Vilon references whose originals remain unread. A 615-person mixed-peptide gel account and a 118-person Thymogen/Epithalamin account are not native-Vilon cohorts. Two indexed review/synthesis publications likewise discuss multiple bioregulators rather than adding independently verified Vilon trials. [Publisher review, EC Clinical and Medical Case Reports 8.6 (2025):01–06](https://ecronicon.net/assets/eccmc/pdf/ECCMC-08-01028.pdf) [PMID:24003726](https://pubmed.ncbi.nlm.nih.gov/24003726/) [PMID:32362097](https://pubmed.ncbi.nlm.nih.gov/32362097/)
+
+### Safety and conflicting animal findings
+
+Human safety remains insufficiently characterized. A statement that no adverse effects were identified in a report is not structured adverse-event surveillance or proof of long-term safety. The older abstracts lack usable safety denominators, and the publisher accounts do not provide adequate systematic ascertainment. [PMID:17152731](https://pubmed.ncbi.nlm.nih.gov/17152731/) [PMID:16075684](https://pubmed.ncbi.nlm.nih.gov/16075684/) [Convalescence report](https://ecronicon.net/assets/eccmc/pdf/ECCMC-05-00667.pdf) [Gastritis report](https://ecronicon.net/assets/ecgds/pdf/ECGDS-09-00909.pdf)
+
+Animal findings point in different directions. A female CBA mouse study reported longer lifespan and fewer spontaneous neoplasms, but no effect on estrous or free-radical measures. In contrast, a female HER2/neu mouse study reported **increased mammary-cancer incidence, shorter tumour latency and more cumulative tumours with Vilon**. Favorable Epitalon findings in that experiment belong to another peptide. These results do not predict a human cancer effect, but they preclude a blanket benign or anticancer characterization. [PMID:11140587](https://pubmed.ncbi.nlm.nih.gov/11140587/) [PMID:12209581](https://pubmed.ncbi.nlm.nih.gov/12209581/)
+
+A Lewis lung carcinoma mouse experiment reported increased survival with Vilon alone but **reduced survival with synchronous Vilon and cyclophosphane**. Separate rat-explant results in the same report are not the mouse survival endpoint. This is model-specific combination evidence, not a quantified human interaction or an administration recommendation. [PMID:14743610](https://pubmed.ncbi.nlm.nih.gov/14743610/)
+
+Other reports describe reduced chemically induced bladder tumours in rats and reduced carcinogen-associated tumours in mice. In the latter, the reported proportions are restricted to animals surviving until first tumour detection, not a verified whole-cohort analysis. Related animal programmes may overlap, so distinct publication identities do not prove independent replication. [PMID:11586406](https://pubmed.ncbi.nlm.nih.gov/11586406/) [PMID:16308980](https://pubmed.ncbi.nlm.nih.gov/16308980/)
+
+### Mechanisms: measured models, not clinical regeneration
+
+Mouse thymocyte experiments examined proliferation and sphingomyelinase signaling. Human thymic-cell cultures examined nucleolar-organizer proteins and proliferative changes. Neither is evidence of a regenerated thymus in treated people. A separate microarray study measured mouse-heart gene expression, including a Vilon/Epithalon combination arm, rather than thymic architecture. Rat hypothalamic c-Fos and IL-2 patterns depended on stress and adaptation; they do not establish a general increase in peripheral IL-2. [PMID:12420072](https://pubmed.ncbi.nlm.nih.gov/12420072/) [PMID:15455093](https://pubmed.ncbi.nlm.nih.gov/15455093/) [PMID:12360356](https://pubmed.ncbi.nlm.nih.gov/12360356/) [PMID:18264770](https://pubmed.ncbi.nlm.nih.gov/18264770/)
+
+Cultured old-donor lymphocytes showed selective chromatin changes; the Vilon report explicitly excludes pericentromeric structural heterochromatin decondensation. Broader multi-peptide chromatin descriptions do not erase that exception. The 2023 lymphocyte paper is also a culture study, not a human rejuvenation trial. [PMID:15105581](https://pubmed.ncbi.nlm.nih.gov/15105581/) [PMID:33526740](https://pubmed.ncbi.nlm.nih.gov/33526740/) [PMID:37042594](https://pubmed.ncbi.nlm.nih.gov/37042594/)
+
+In embryonic mesenchymal-cell aging models, KE increased FOXO1 expression in stationary aging but not passage aging, and stimulated NFκB gene expression. These directions cannot all be labeled anti-inflammatory benefit. A 2023 mesenchymal-cell report measured SIRT1/PARP1/PARP2 changes and included DNA-docking hypotheses. A thymic-cell study measured mitochondrial staining and ribosomal-protein expression, not restored mitochondrial function in treated people. [PMID:32399807](https://pubmed.ncbi.nlm.nih.gov/32399807/) [PMID:37782636](https://pubmed.ncbi.nlm.nih.gov/37782636/) [PMID:33342107](https://pubmed.ncbi.nlm.nih.gov/33342107/)
+
+The periodontal-ligament stem-cell paper tested several peptides, including KE, but its abstract highlights KED and a mixture. Those findings cannot establish KE-alone neuronal differentiation. [PMID:30791821](https://pubmed.ncbi.nlm.nih.gov/30791821/)
+
+The 2022 inflammatory-cell paper tested Vilon separately as P2 among five preparations, using leukemia-derived THP-1 cells, macrophage differentiation and endothelial-cell adhesion assays. Vilon alone had little ERK1/2 modulation; inflammatory stimulation changed responses. Reported macrophage TNF/IL-6 and adhesion reductions are culture findings, while Chonluten-specific monocyte results belong to another preparation. The nuclear microscopy tracks **STAT1 protein, not directly labeled Vilon**. The statistical description gives three independent experiments and mean±SD; it does not establish a human sample size. Italian and Russian affiliations contradict a Russian-only research description but do not prove independent replication. [PMID:35408963](https://pubmed.ncbi.nlm.nih.gov/35408963/)
+
+### Identity, registration and unanswered questions
+
+The similarly named registry result NCT02580799 is a non-interventional HER2 pathology-sample concordance study with no Vilon intervention; it supplies no peptide trial evidence. A query-specific exclusion is not proof that no Vilon trial exists elsewhere. [Registry record](https://clinicaltrials.gov/study/NCT02580799)
+
+The research inventory separately holds PMID29322736 because its title and abstract conflict, and excludes a ViLoN network algorithm. Neither is included in the 25-publication selection. No preparation-specific molecular mass, purity, absorption or clinical availability is inferred from the KE identity. No DOI is printed in the three inspected publisher PDFs; no external DOI-registration census was performed, and none is invented here.
+
+**Are there human studies?** Yes: this selection includes five human-containing reports, with substantial methods, provenance, product and reporting limitations. They are not five independently authenticated trials and do not establish an immune-support or rejuvenation indication.
+
+**Are combinations safe or beneficial?** That is not established for people by this review. Animal combination experiments exist, including an adverse survival finding; shared mechanisms or different tissue labels do not establish human compatibility. [PMID:12360356](https://pubmed.ncbi.nlm.nih.gov/12360356/) [PMID:14743610](https://pubmed.ncbi.nlm.nih.gov/14743610/)
+
+No complete regulatory or community-use inventory was assessed. Author-reported supplement notification or free-sale statements are not independently verified drug approvals. Research-only catalogue framing does not establish a legal classification in every jurisdiction. Remaining needs include older clinical full methods, cohort provenance, reliable outcome estimates and human safety ascertainment.
+
+This dossier is educational research information, not medical advice or instructions for obtaining or using a peptide.
+

@@ -1,4 +1,5 @@
 ---
+import { loadEvidencePresentation } from '../../lib/evidence-binding';
 import { getCollection, getEntry } from 'astro:content';
 import ComparisonLayout from '../../layouts/ComparisonLayout.astro';
 
@@ -33,6 +34,7 @@ function getPeptideDisplay(slug: string) {
     name: data?.name || slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
     slug,
     evidenceStrength: data?.evidenceStrength || 'low' as const,
+    presentation: loadEvidencePresentation(slug, data || { evidenceStrength: 'low' }),
   };
 }
 

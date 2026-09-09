@@ -1,4 +1,5 @@
 ---
+import { loadEvidencePresentation } from '../lib/evidence-binding';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SearchBar from '../components/SearchBar.astro';
 import PeptideCard from '../components/PeptideCard.astro';
@@ -38,7 +39,7 @@ const evidenceRank: Record<string, number> = { 'high': 4, 'moderate': 3, 'low': 
 const drawers = drawerDefs.map(d => {
   const inDrawer = peptides.filter(p => p.data.category === d.slug);
   const top = [...inDrawer]
-    .sort((a, b) => (evidenceRank[b.data.evidenceStrength] - evidenceRank[a.data.evidenceStrength]) || a.data.name.localeCompare(b.data.name))
+    .sort((a, b) => ((evidenceRank[loadEvidencePresentation(b.slug, b.data).filterKey] ?? 0) - (evidenceRank[loadEvidencePresentation(a.slug, a.data).filterKey] ?? 0)) || a.data.name.localeCompare(b.data.name))
     .slice(0, 4);
   return { ...d, count: inDrawer.length, top };
 });
@@ -47,7 +48,7 @@ const maxDrawerCount = Math.max(...drawers.map(d => d.count), 1);
 const sourceCount = peptides.reduce((sum, p) => sum + p.data.sources.count, 0);
 const stats = [
   { value: `${peptides.length}`, label: 'Dossiers', description: 'In-depth research profiles' },
-  { value: sourceCount.toLocaleString(), label: 'Cited sources', description: 'Peer-reviewed papers' },
+  { value: sourceCount.toLocaleString(), label: 'Recorded source counts', description: 'Dossier totals; references may overlap' },
   { value: `${comparisons.length}`, label: 'Comparisons', description: 'Head-to-head analyses' },
   { value: `${blogPosts.length}`, label: 'Briefings', description: 'Research updates' },
 ];
@@ -65,7 +66,7 @@ const issue = 'Spring 2026';
           A catalogue of <em class="italic" style="color: var(--primary-c);">peptides,</em> referenced.
         </h1>
         <p class="mt-6 max-w-xl text-lg leading-relaxed" style="color: var(--ink-muted);">
-          {peptides.length} dossiers. {sourceCount.toLocaleString()} cited sources. Distilled, classified,
+          {peptides.length} dossiers. {sourceCount.toLocaleString()} source references reported across dossiers. Distilled, classified,
           and indexed — so you can read the evidence, not the marketing.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
@@ -91,7 +92,7 @@ const issue = 'Spring 2026';
           {[
             ['Issue', issue],
             ['Dossiers', `${peptides.length}`],
-            ['Cited sources', sourceCount.toLocaleString()],
+            ['Recorded source counts', sourceCount.toLocaleString()],
             ['Comparisons', `${comparisons.length}`],
           ].map(([k, v]) => (
             <div class="flex items-center justify-between gap-3 pb-2" style="border-bottom: 1px solid var(--border-c);">
@@ -131,7 +132,7 @@ const issue = 'Spring 2026';
             slug={peptide.slug}
             category={peptide.data.category}
             compoundType={peptide.data.compoundType}
-            evidenceStrength={peptide.data.evidenceStrength}
+            evidenceStrength={peptide.data.evidenceStrength} presentation={loadEvidencePresentation(peptide.slug, peptide.data)}
             summary={peptide.data.summary}
             aliases={peptide.data.aliases}
           />
@@ -174,7 +175,7 @@ const issue = 'Spring 2026';
                   <div class="font-serif text-[1rem] leading-tight transition-colors group-hover:text-[color:var(--primary-c)]" style="color: var(--ink);">{p.data.name}</div>
                   <div class="mt-0.5 text-xs line-clamp-1" style="color: var(--ink-dim);">{p.data.summary}</div>
                 </div>
-                <div class="flex-none pt-0.5"><EvidenceBadge strength={p.data.evidenceStrength} showLabel={false} /></div>
+                <div class="flex-none pt-0.5"><EvidenceBadge presentation={loadEvidencePresentation(p.slug, p.data)} strength={p.data.evidenceStrength} showLabel={false} /></div>
               </a>
             ))}
             {d.count === 0 && <p class="py-2.5 text-sm" style="color: var(--ink-dim);">No specimens catalogued yet.</p>}

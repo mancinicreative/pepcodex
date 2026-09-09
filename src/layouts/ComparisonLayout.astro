@@ -1,4 +1,5 @@
 ---
+import type { EvidencePresentation } from '../lib/evidence-presentation';
 import BaseLayout from './BaseLayout.astro';
 import EvidenceBadge from '../components/EvidenceBadge.astro';
 import FAQSchema from '../components/SEO/FAQSchema.astro';
@@ -16,11 +17,13 @@ interface Props {
     name: string;
     slug: string;
     evidenceStrength: 'high' | 'moderate' | 'low' | 'very-low';
+    presentation?: EvidencePresentation;
   };
   peptideB: {
     name: string;
     slug: string;
     evidenceStrength: 'high' | 'moderate' | 'low' | 'very-low';
+    presentation?: EvidencePresentation;
   };
   category: string;
   lastUpdated: Date;
@@ -96,7 +99,7 @@ const breadcrumbItems = [
       <div class="glass-card p-6">
         <div class="flex items-center justify-between mb-4">
           <h2 class="text-2xl" style="font-family: var(--font-serif); font-weight: 500; color: var(--ink);">{peptideA.name}</h2>
-          <EvidenceBadge strength={peptideA.evidenceStrength} />
+          <EvidenceBadge presentation={peptideA.presentation} strength={peptideA.evidenceStrength} />
         </div>
         <a
           href={`/peptides/${peptideA.slug}`}
@@ -113,7 +116,7 @@ const breadcrumbItems = [
       <div class="glass-card p-6">
         <div class="flex items-center justify-between mb-4">
           <h2 class="text-2xl" style="font-family: var(--font-serif); font-weight: 500; color: var(--ink);">{peptideB.name}</h2>
-          <EvidenceBadge strength={peptideB.evidenceStrength} />
+          <EvidenceBadge presentation={peptideB.presentation} strength={peptideB.evidenceStrength} />
         </div>
         <a
           href={`/peptides/${peptideB.slug}`}

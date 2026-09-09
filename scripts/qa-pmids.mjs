@@ -27,7 +27,24 @@ const addNct = (id, file) => {
   if (!nctFiles.has(id)) nctFiles.set(id, new Set());
   nctFiles.get(id).add(file);
 };
-const addDoi = (id, file) => {
+// Adapt the existing qa-url-dois prose boundary rule. DOI suffixes can contain
+// balanced parentheses and internal punctuation; only prose delimiters are removed.
+const trimProseDoi = (value) => {
+  let doi = value;
+  let previous;
+  do {
+    previous = doi;
+    doi = doi.replace(/[.,;]+$/, '');
+    while (doi.endsWith(')') && doi.split('(').length < doi.split(')').length) doi = doi.slice(0, -1);
+    // Angle-autolink closers are prose boundaries; paired angles may be part of
+    // a DOI suffix (including SICI identifiers) and must not truncate the token.
+    while (doi.endsWith('>') && doi.split('<').length < doi.split('>').length) doi = doi.slice(0, -1);
+  } while (doi !== previous);
+  return doi;
+};
+const addDoi = (id, file, prose = false) => {
+  if (prose) id = trimProseDoi(id);
+  if (!/^10\.\d{4,9}\/\S+$/.test(id)) return;
   if (!doiFiles.has(id)) doiFiles.set(id, new Set());
   doiFiles.get(id).add(file);
 };
@@ -59,8 +76,12 @@ function walk(node, file, key) {
     for (const mm of s.matchAll(/NCT\d{8}/gi)) addNct(mm[0], file);
     // DOIs: a standalone field value, or one with explicit DOI:/doi.org context (avoids prose false hits).
     const doiM = s.match(/^(?:DOI:\s*)?(10\.\d{4,9}\/\S+)$/i);
-    if (doiM) addDoi(doiM[1], file);
-    for (const mm of s.matchAll(/(?:doi\.org\/|DOI:\s*)(10\.\d{4,9}\/[^\s"')\]]+)/gi)) addDoi(mm[1], file);
+    const doiUrlM = CITATION_KEYS.has(key) && s.match(/^https?:\/\/(?:dx\.)?doi\.org\/(10\.\d{4,9}\/\S+)$/i);
+    // Exact standalone citation values retain their recorded suffix. Prose has
+    // boundary punctuation; do not collect a second, conflicting form of the same token.
+    if (doiM) addDoi(doiM[1], file, !CITATION_KEYS.has(key));
+    if (doiUrlM) addDoi(doiUrlM[1], file);
+    if (!doiM && !doiUrlM) for (const mm of s.matchAll(/(?:doi\.org\/|DOI:\s*)(10\.\d{4,9}\/[^\s"'\]]+)/gi)) addDoi(mm[1], file, true);
     if (CITATION_KEYS.has(key) && s && !isResolvableCitation(s)) badCites.push({ file, key, value: s });
     return;
   }
@@ -74,7 +95,7 @@ for (const file of files) {
   // Body: PMID:123 and pubmed.ncbi.nlm.nih.gov/123
   for (const m of content.matchAll(/(?:PMID:?\s*|pubmed\.ncbi\.nlm\.nih\.gov\/)(\d{6,9})/gi)) add(m[1], file);
   for (const m of content.matchAll(/\bNCT\d{8}\b/gi)) addNct(m[0], file);
-  for (const m of content.matchAll(/(?:doi\.org\/|DOI:\s*)(10\.\d{4,9}\/[^\s"')\]]+)/gi)) addDoi(m[1], file);
+  for (const m of content.matchAll(/(?:doi\.org\/|DOI:\s*)(10\.\d{4,9}\/[^\s"'\]]+)/gi)) addDoi(m[1], file, true);
 }
 
 // Placeholder/free-text values in citation fields are a worklist for the citation-verification

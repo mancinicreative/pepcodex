@@ -69,11 +69,12 @@ const sizeClasses = {
     content: string;
     keyTerms?: string[];
     url: string;
+    presentation?: { selected: boolean; countText: string };
     sources: {
       count: number;
-      human: number;
-      preclinical: number;
-      openAccess: number;
+      human?: number;
+      preclinical?: number;
+      openAccess?: number;
     };
   }
 
@@ -290,26 +291,29 @@ const sizeClasses = {
   function escapeHtml(text: string): string {
     const div = document.createElement('div');
     div.textContent = text;
-    return div.innerHTML;
+    // Text-node serialization leaves quotes literal; this helper also feeds HTML attributes.
+    return div.innerHTML.replaceAll('"', '&quot;').replaceAll("'", '&#39;');
   }
 
   // Restrict rendered links to internal, root-relative URLs.
   function safeInternalUrl(url: string): string {
-    return typeof url === 'string' && url.startsWith('/') && !url.startsWith('//') ? url : '/';
+    return typeof url === 'string' && url.startsWith('/') && !url.startsWith('//')
+      && !/[\\\u0000-\u001F\u007F"']/.test(url) ? url : '/';
   }
 
-  // Highlight query terms in text
+  // Match raw text once, then escape each segment. Never search escaped entities or our markup.
   function highlightTerms(text: string, query: string): string {
-    const escaped = escapeHtml(text);
-    const words = query.toLowerCase().split(/\s+/).filter(w => w.length > 1);
-    let result = escaped;
-
-    for (const word of words) {
-      const regex = new RegExp(`(${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
-      result = result.replace(regex, '<mark class="bg-[var(--primary-soft)] text-[color:var(--ink)] px-0.5 rounded">$1</mark>');
+    const words = [...new Set(query.toLowerCase().split(/\s+/).filter(w => w.length > 1))]
+      .sort((a, b) => b.length - a.length);
+    if (!words.length) return escapeHtml(text);
+    const regex = new RegExp(words.map(word => word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|'), 'gi');
+    let result = '', offset = 0;
+    for (const match of text.matchAll(regex)) {
+      result += escapeHtml(text.slice(offset, match.index));
+      result += `<mark class="bg-[var(--primary-soft)] text-[color:var(--ink)] px-0.5 rounded">${escapeHtml(match[0])}</mark>`;
+      offset = match.index + match[0].length;
     }
-
-    return result;
+    return result + escapeHtml(text.slice(offset));
   }
 
   // Render search results
@@ -325,7 +329,8 @@ const sizeClasses = {
 
     return results.map(({ peptide, matchType, matchContext }) => {
       const cat = categoryConfig[peptide.category] || categoryConfig['other'];
-      const evidence = evidenceConfig[peptide.evidenceStrength] || evidenceConfig['low'];
+      const selectedEvidence = peptide.evidenceStrength === 'not-formally-graded' || peptide.presentation?.selected === true;
+      const selectedCount = typeof peptide.presentation?.countText === 'string' ? peptide.presentation.countText : 'Publication details unavailable';
 
       // Match type indicator
       const matchBadge = matchType === 'content'
@@ -359,9 +364,9 @@ const sizeClasses = {
               ${highlightTerms(displayText, query)}
             </div>
             <div class="flex items-center gap-3 text-xs text-[color:var(--ink-dim)]" style="text-align: left;">
-              <span>${peptide.sources.count} sources</span>
-              <span>·</span>
-              <span>${peptide.sources.human} human studies</span>
+              ${selectedEvidence ? `<span>${escapeHtml(selectedCount)}</span><span>Clinical certainty not formally graded</span>` : `<span>${peptide.sources.count} sources</span>
+              <span>&middot;</span>
+              <span>${peptide.sources.human} human studies</span>`}
               ${matchBadge}
             </div>
           </a>

@@ -1,4 +1,5 @@
 ---
+import { loadEvidencePresentation } from '../lib/evidence-binding';
 import BaseLayout from './BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import BreadcrumbSchema from '../components/SEO/BreadcrumbSchema.astro';
@@ -41,9 +42,10 @@ const peptidesForCondition = allPeptides.filter(peptide => {
 });
 
 // Sort by evidence strength
-const evidenceOrder = { 'high': 0, 'moderate': 1, 'low': 2, 'very-low': 3 };
+const includesSelected = peptidesForCondition.some(p => loadEvidencePresentation(p.slug, p.data).selected);
+const evidenceOrder: Record<string, number> = { 'high': 0, 'moderate': 1, 'low': 2, 'very-low': 3 };
 peptidesForCondition.sort((a, b) =>
-  evidenceOrder[a.data.evidenceStrength] - evidenceOrder[b.data.evidenceStrength]
+  (evidenceOrder[loadEvidencePresentation(a.slug, a.data).filterKey] ?? 4) - (evidenceOrder[loadEvidencePresentation(b.slug, b.data).filterKey] ?? 4)
 );
 
 // Category-specific accent colors — neutralized to cobalt accent
@@ -106,7 +108,7 @@ const allConditionHubs = await getCollection('conditions');
           {category.replace('-', ' & ')}
         </span>
         <span class="text-sm text-[color:var(--ink-muted)]">
-          {peptidesForCondition.length} peptide{peptidesForCondition.length !== 1 ? 's' : ''} studied
+          {peptidesForCondition.length} peptide{peptidesForCondition.length !== 1 ? 's' : ''} {includesSelected ? 'with research context' : 'studied'}
         </span>
       </div>
 
@@ -163,7 +165,7 @@ const allConditionHubs = await getCollection('conditions');
               </svg>
             </div>
             <h2 class="text-2xl" style="font-family: var(--font-serif); font-weight: 500; color: var(--ink);">
-              Peptides Studied for {conditionName}
+              {includesSelected ? 'Research context and limitations' : 'Peptides Studied'} for {conditionName}
             </h2>
           </div>
 
@@ -175,7 +177,8 @@ const allConditionHubs = await getCollection('conditions');
                     c.slug === conditionSlug ||
                     c.name?.toLowerCase().includes(conditionSlug.replace(/-/g, ' '))
                 );
-                const evidence = evidenceConfig[peptide.data.evidenceStrength];
+                const presentation = loadEvidencePresentation(peptide.slug, peptide.data);
+                const evidence = presentation.selected ? presentation : evidenceConfig[peptide.data.evidenceStrength];
 
                 return (
                   <a
@@ -201,7 +204,7 @@ const allConditionHubs = await getCollection('conditions');
 
                     <div class="flex items-center justify-between">
                       <span class="text-xs text-[color:var(--ink-dim)]">
-                        {peptide.data.sources.human > 0
+                        {presentation.selected ? 'Dossier: ' + presentation.countText : peptide.data.sources.human > 0
                           ? `${peptide.data.sources.human} human studies`
                           : `${peptide.data.sources.preclinical} preclinical studies`
                         }

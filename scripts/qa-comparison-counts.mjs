@@ -57,18 +57,31 @@ for (const f of fs.readdirSync('src/content/comparisons').filter((x) => x.endsWi
 
   const rows = [
     ['Total Sources', A.s.count, B.s.count],
+    ['Source identifiers', A.s.count, B.s.count],
+    ['Sources in dossier', A.s.count, B.s.count],
     ['Human Studies', A.s.human, B.s.human],
+    ['Human-tagged identifiers', A.s.human, B.s.human],
+    ['Human evidence entries', A.s.human, B.s.human],
     ['Preclinical Studies', A.s.preclinical, B.s.preclinical],
+    ['Preclinical-tagged identifiers', A.s.preclinical, B.s.preclinical],
+    ['Preclinical evidence entries', A.s.preclinical, B.s.preclinical],
   ];
   for (const [label, a, b] of rows) {
-    for (const m of t.matchAll(new RegExp(`\\| \\*\\*${esc(label)}\\*\\* \\| (\\d+) \\| (\\d+) \\|`, 'g'))) {
+    // Only explicit inventory labels can retain parenthetical source context.
+    // Legacy qualified study rows may describe observational/biomarker studies,
+    // which are not interchangeable with the dossier's identifier counts.
+    const inventoryLabel = /identifiers$|entries$/.test(label) || label === 'Sources in dossier';
+    const qualifier = inventoryLabel ? '(?: \\([^|]*\\))?' : '';
+    for (const m of t.matchAll(new RegExp(`\\| \\*\\*${esc(label)}\\*\\* \\| (\\d+)${qualifier} \\| (\\d+)${qualifier} \\|`, 'g'))) {
       if (+m[1] !== a || +m[2] !== b) problems.push(`${f}: "${label}" row ${m[1]}/${m[2]}; dossiers ${a}/${b}`);
     }
   }
 }
 
 console.log(`Comparison counts: ${checked} pages checked against their dossiers.`);
-if (!problems.length) { console.log('PASS: every printed count matches its dossier.'); process.exit(0); }
+// Only the explicitly recognized table/prose formats are checked here. Custom
+// trial rows and other narrative counts still need independent source review.
+if (!problems.length) { console.log('PASS: recognized count references match their dossiers.'); process.exit(0); }
 console.error(`\n${STRICT ? 'FAIL' : 'WARN'}: ${problems.length} mismatch(es)\n`);
 problems.slice(0, 40).forEach((p) => console.error(`  • ${p}`));
 if (problems.length > 40) console.error(`  ... and ${problems.length - 40} more`);

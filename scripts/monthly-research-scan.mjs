@@ -1,236 +1,205 @@
-/**
- * Monthly research scan: find everything published or registered about our peptides in a window,
- * and emit a per-peptide worklist for the content agents.
- *
- * DESIGN: discovery is deterministic, judgment is not. This script does ONLY the mechanical part —
- * asking PubMed and ClinicalTrials.gov what is new — so agents never have to guess what exists and
- * can never "remember" a paper into being. Every item it emits carries a real, resolving identifier
- * fetched from the registry in this run. Agents then decide what is worth writing about.
- *
- * Windowing is per-peptide: each dossier's own `lastUpdated` is the natural floor, so a dossier that
- * has been current since March isn't re-reviewed against six months of noise. `--days N` overrides.
- *
- * Usage:
- *   node scripts/monthly-research-scan.mjs                 # since each dossier's lastUpdated
- *   node scripts/monthly-research-scan.mjs --days 30       # fixed 30-day window
- *   node scripts/monthly-research-scan.mjs --slug bpc-157  # single peptide
- *
- * Output: .planning/research-scan/<date>/<slug>.json  +  SUMMARY.md
+/** Research surveillance CLI. Contract: docs/research-surveillance.md.
+ * No content writes. Failed/partial scans exit nonzero and cannot advance subject watermarks.
  */
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
+import { randomUUID, createHash } from 'node:crypto';
 import matter from 'gray-matter';
-import { isRelevant, isDistinctive } from '../verification/matchers.mjs';
-import { searchPerAlias } from '../verification/pubmed.mjs';
+import { scanSubject, renderSummary, shiftDate, validateImpactPacket } from '../verification/research-surveillance.mjs';
 
 const args = process.argv.slice(2);
-const DAYS = args.includes('--days') ? Number(args[args.indexOf('--days') + 1]) : null;
-const ONLY = args.includes('--slug') ? args[args.indexOf('--slug') + 1] : null;
-const TODAY = new Date().toISOString().slice(0, 10);
-const OUT = path.join('.planning/research-scan', TODAY);
-const UA = { 'User-Agent': 'PepCodex-scan/1.0 (mailto:admin@pepcodex.com)' };
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-const MATCH_ALIASES = JSON.parse(fs.readFileSync('data/trial-match-aliases.json', 'utf-8'));
-
-async function fetchT(url, ms = 30000) {
-  const ctrl = new AbortController();
-  const t = setTimeout(() => ctrl.abort(), ms);
-  try { return await fetch(url, { headers: UA, signal: ctrl.signal }); }
-  finally { clearTimeout(t); }
-}
-
-// --- what we already cite, so the scan reports only what is genuinely NEW ---
-const known = { pmid: new Set(), nct: new Set() };
-function harvest(node) {
-  if (node == null || typeof node !== 'object') return;
-  if (Array.isArray(node)) return node.forEach(harvest);
-  for (const [k, v] of Object.entries(node)) {
-    if (typeof v === 'string') {
-      if (/^\d{6,9}$/.test(v) && /pmid|id/i.test(k)) known.pmid.add(v);
-      for (const m of v.matchAll(/NCT\d{8}/gi)) known.nct.add(m[0].toUpperCase());
-      const pm = v.match(/^PMID:?\s*(\d{6,9})$/i); if (pm) known.pmid.add(pm[1]);
-    } else harvest(v);
-  }
-}
-for (const f of fs.readdirSync('data/source-packs').filter((x) => x.endsWith('.json'))) {
-  harvest(JSON.parse(fs.readFileSync(`data/source-packs/${f}`, 'utf-8')));
-}
-for (const f of fs.readdirSync('src/content/peptides').filter((x) => x.endsWith('.mdx'))) {
-  harvest(matter(fs.readFileSync(`src/content/peptides/${f}`, 'utf-8')).data);
-}
-console.log(`Already cited: ${known.pmid.size} PMIDs · ${known.nct.size} NCTs`);
-
-// --- peptides in scope ---
-const dossiers = fs.readdirSync('src/content/peptides').filter((x) => x.endsWith('.mdx'))
-  .map((f) => {
-    const d = matter(fs.readFileSync(`src/content/peptides/${f}`, 'utf-8')).data;
-    return { slug: f.replace(/\.mdx$/, ''), name: d.name || f, lastUpdated: d.lastUpdated ? new Date(d.lastUpdated) : null,
-      aliases: [...new Set([d.name, ...(d.aliases || []), ...(MATCH_ALIASES[f.replace(/\.mdx$/, '')] || [])])].filter(Boolean) };
-  })
-  .filter((p) => !ONLY || p.slug === ONLY);
-
-const windowStart = (p) => {
-  if (DAYS) return new Date(Date.now() - DAYS * 864e5);
-  return p.lastUpdated || new Date(Date.now() - 30 * 864e5);
+const value = name => {
+  const index = args.indexOf(name);
+  if (index < 0) return null;
+  if (!args[index + 1] || args[index + 1].startsWith('--')) throw new Error(`Missing ${name} value`);
+  return args[index + 1];
 };
-const fmt = (d) => d.toISOString().slice(0, 10).replace(/-/g, '/');
+const integer = (name, fallback) => {
+  const v = value(name);
+  if (v === null) return fallback;
+  if (!/^\d+$/.test(v) || Number(v) < 1 || Number(v) > 36500) throw new Error(`${name} requires a positive integer <= 36500`);
+  return Number(v);
+};
+const today = new Date().toISOString().slice(0,10);
+const end = value('--end') || shiftDate(today, -1), days = integer('--days', null), only = value('--slug');
+const knownLimit = integer('--known-limit', 100), recheckDays = integer('--recheck-days', 30);
+if (!/^\d{4}-\d{2}-\d{2}$/.test(end) || !Number.isFinite(Date.parse(end)) || new Date(end).toISOString().slice(0,10) !== end || end >= today) throw new Error('--end must be a real completed UTC day before today');
+const allowed = new Set(['--end', '--days', '--slug', '--known-limit', '--recheck-days', '--out', '--manifest-file', '--request-id']);
+for (let i = 0; i < args.length; i += 2) if (!allowed.has(args[i])) throw new Error(`Unknown argument ${args[i]}`);
+const root = path.resolve(value('--out') || '.planning/research-scan');
+const manifestFile = value('--manifest-file') ? path.resolve(value('--manifest-file')) : null;
+const requestId = value('--request-id');
+if (Boolean(manifestFile) !== Boolean(requestId) || (requestId && !/^[a-zA-Z0-9_-]{16,100}$/.test(requestId))) throw new Error('--manifest-file and a unique --request-id (16-100 safe characters) must be supplied together');
+if (manifestFile && fs.existsSync(manifestFile)) throw new Error('Invocation manifest already exists; use a fresh request ID and manifest path');
+const sha256 = body => createHash('sha256').update(body).digest('hex');
+fs.mkdirSync(root, { recursive: true });
+const lockPath = path.join(root, '.scanner.lock');
+let lock;
+try { lock = fs.openSync(lockPath, 'wx'); }
+catch { throw new Error(`Scanner lock exists at ${lockPath}. Verify its recorded process before removing a stale lock; do not run simultaneous scans.`); }
+fs.writeFileSync(lock, JSON.stringify({ pid: process.pid, startedAt: new Date().toISOString() }));
 
-fs.mkdirSync(OUT, { recursive: true });
-const summary = [];
-
-for (const p of dossiers) {
-  const from = windowStart(p);
-  // Query terms: distinctive aliases only, and NEVER ORed into a single query. A generic phrase
-  // ("gastric peptide") matches papers about other compounds, and PubMed silently term-splits an
-  // unmatched quoted phrase inside an OR — six selank aliases returning 0/0/0/2/2/0 alone returned
-  // 28,694 combined. searchPerAlias asks one at a time and unions the ids.
-  const searchTerms = (p.aliases.filter(isDistinctive).length ? p.aliases.filter(isDistinctive) : [p.name]);
-  const out = { slug: p.slug, name: p.name, windowFrom: from.toISOString().slice(0, 10), scannedAt: TODAY,
-    newPapers: [], newTrials: [], updatedTrials: [] };
-
-  // --- PubMed: papers entered since the window ---
-  let ids = [];
-  try {
-    const RETMAX = 200;
-    const dateFilter = `("${fmt(from)}"[EDAT] : "3000"[EDAT])`;
-    const res = await searchPerAlias(searchTerms, { retmax: RETMAX, sort: 'date', filter: dateFilter, primary: p.name });
-    ids = res.ids;
-    out.queriedAliases = res.perAlias;
-    // Aliases that returned far more than the primary name are naming a category, not this
-    // compound. Their results are discarded before anything reaches the worklist, and the alias is
-    // reported so the dossier's alias list can be corrected at source.
-    if (res.suspectGeneric.length) out.suspectGenericAliases = res.suspectGeneric;
-    // Never let a cap look like completeness. A truncated window that says nothing reads as
-    // "everything was covered", which is the quiet version of a false claim.
-    if (res.truncated.length) {
-      out.truncated = { perAlias: res.truncated,
-        note: `Some aliases returned more hits than were retrieved (cap ${RETMAX}). Narrow the window (--days) or raise retmax for full coverage.` };
-    }
-    if (res.anyFailed) out.partialQuery = true;
-    const fresh = ids.filter((id) => !known.pmid.has(id));
-    if (fresh.length) {
-      // RELEVANCE FILTER — do not trust the query. Uses the CANONICAL matcher from
-      // verification/matchers.mjs rather than a local copy. This filter was previously
-      // reimplemented here, and the local copy did not have the generic-phrase guard that
-      // isDistinctive adds, so long-but-meaningless aliases like "gastric peptide" would still
-      // have passed papers about entirely different compounds into the worklist.
-      const names = [...new Set([String(p.name), p.slug.replace(/-/g, ' '), ...p.aliases])];
-      const text = {};
-      for (let k = 0; k < fresh.length; k += 100) {
-        try {
-          const ef = await fetchT(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&retmode=xml&rettype=abstract&id=${fresh.slice(k, k + 100).join(',')}`);
-          if (ef.ok) {
-            const xml = await ef.text();
-            for (const c of xml.split(/<PubmedArticle[ >]/).slice(1)) {
-              const pm = (c.match(/<PMID[^>]*>(\d+)<\/PMID>/) || [])[1];
-              if (pm) text[pm] = c.replace(/<[^>]+>/g, ' ').toLowerCase();
-            }
-          }
-        } catch (e) { /* fall back to title-only below */ }
-        await sleep(400);
-      }
-      /* esummary MUST be batched, and its failures must be loud.
-       *
-       * This was one call carrying every fresh PMID in the query string, while the efetch loop
-       * directly above it batched at 100. Glutathione produced ~900 fresh ids, the URL blew past
-       * the length NCBI accepts, the request failed, `result` came back empty — and the scan
-       * reported "0 new papers" for a compound with 1,808 records in the window. No error, no
-       * warning: a failed request rendered as an absence of findings, which is the single most
-       * dangerous way for a discovery step to break, because nothing downstream can tell the
-       * difference between "quiet window" and "we never asked".
-       */
-      const j = {};
-      const uids = [];
-      let summaryFailures = 0;
-      for (let k = 0; k < fresh.length; k += 100) {
-        const batch = fresh.slice(k, k + 100);
-        try {
-          const su = await fetchT(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&retmode=json&id=${batch.join(',')}`);
-          if (!su.ok) { summaryFailures++; continue; }
-          const r = (await su.json()).result || {};
-          for (const id of r.uids || []) { j[id] = r[id]; uids.push(id); }
-        } catch { summaryFailures++; }
-        await sleep(380);
-      }
-      if (summaryFailures) {
-        out.partialQuery = true;
-        out.summaryBatchesFailed = summaryFailures;
-        out.notes = [...(out.notes || []), `${summaryFailures} esummary batch(es) failed — this worklist is INCOMPLETE. Re-run before treating it as coverage.`];
-      }
-      for (const id of uids) {
-        if (!j[id] || j[id].error) continue;
-        const hay = text[id] || String(j[id].title || '').toLowerCase();
-        if (!isRelevant(names, hay)) { out.filteredOut = (out.filteredOut || 0) + 1; continue; }
-        const aid = (j[id].articleids || []).find((a) => a.idtype === 'doi');
-        out.newPapers.push({ pmid: id, doi: aid ? aid.value : null, title: j[id].title || '',
-          journal: j[id].fulljournalname || j[id].source || '', pubdate: j[id].pubdate || '',
-          firstAuthor: ((j[id].authors || [])[0] || {}).name || '',
-          pubTypes: (j[id].pubtype || []) });
-      }
-      await sleep(380);
-    }
-  } catch (e) { out.pubmedError = e.message; }
-
-  // --- ClinicalTrials.gov: registrations updated since the window ---
-  try {
-    const url = `https://clinicaltrials.gov/api/v2/studies?query.intr=${encodeURIComponent(p.name)}`
-      + `&filter.advanced=${encodeURIComponent(`AREA[LastUpdatePostDate]RANGE[${from.toISOString().slice(0, 10)},MAX]`)}`
-      + `&fields=NCTId,BriefTitle,Acronym,OverallStatus,Phase,EnrollmentCount,Condition,InterventionName,LastUpdatePostDate,StartDate`
-      + `&pageSize=40`;
-    const res = await fetchT(url);
-    if (res.ok) {
-      for (const st of ((await res.json()).studies || [])) {
-        const ps = st.protocolSection, idm = ps.identificationModule;
-        const rec = { nctId: idm.nctId, title: idm.briefTitle || '', acronym: idm.acronym || '',
-          status: ps.statusModule?.overallStatus || '', phase: (ps.designModule?.phases || []).join('/'),
-          enrollment: ps.designModule?.enrollmentInfo?.count ?? null,
-          conditions: ps.conditionsModule?.conditions || [],
-          interventions: (ps.armsInterventionsModule?.interventions || []).map((x) => x.name || ''),
-          lastUpdate: ps.statusModule?.lastUpdatePostDateStruct?.date || '' };
-        (known.nct.has(rec.nctId.toUpperCase()) ? out.updatedTrials : out.newTrials).push(rec);
-      }
-    }
-  } catch (e) { out.ctgovError = e.message; }
-  await sleep(320);
-
-  /* SILENT-ZERO GUARD.
-   *
-   * "The registry returned ids, none of them survived, and none were even filtered" is not a quiet
-   * window — it is the signature of a request that failed without saying so. It is exactly what
-   * glutathione looked like when the unbatched esummary call was silently rejected: 1,808 records
-   * in the window, 0 reported, 0 filtered, no error anywhere. Downstream, that is indistinguishable
-   * from genuine absence, so it has to be caught here or not at all. */
-  if (ids.length && !out.newPapers.length && !out.filteredOut && !out.partialQuery) {
-    out.silentZero = true;
-    out.notes = [...(out.notes || []), `SUSPECT: ${ids.length} record(s) retrieved but 0 reported and 0 filtered. A discovery step failed without raising an error. Do NOT treat this as "nothing new".`];
-  }
-
-  const worklist = path.join(OUT, `${p.slug}.json`);
-  // Always write: a quiet window is a finding. Unlinking (or skipping) leaves a hole that
-  // looks like "this peptide was never scanned" and, on a re-run in the same dated dir,
-  // can leave a superseded noisy worklist looking current.
-  fs.writeFileSync(worklist, JSON.stringify(out, null, 2));
-  summary.push({ slug: p.slug, from: out.windowFrom, papers: out.newPapers.length, truncated: !!out.truncated,
-    newTrials: out.newTrials.length, updatedTrials: out.updatedTrials.length });
-  process.stdout.write(`\r  scanned ${summary.length}/${dossiers.length}  (${p.slug})            `);
+function atomicJSON(file, content) {
+  const tmp = `${file}.${randomUUID()}.tmp`;
+  fs.writeFileSync(tmp, JSON.stringify(content, null, 2));
+  fs.renameSync(tmp, file);
 }
-console.log('');
+function readJSON(file, fallback) { return fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : fallback; }
+function publishPacket(file, packet) {
+  const validateExisting = () => {
+    let existing;
+    try { existing = JSON.parse(fs.readFileSync(file, 'utf8')); }
+    catch { throw new Error(`Corrupt existing impact packet: ${file}. Preserve it for investigation; no scanner state advanced.`); }
+    validateImpactPacket(existing, packet);
+  };
+  if (fs.existsSync(file)) { validateExisting(); return; }
+  const tmp = `${file}.${randomUUID()}.tmp`;
+  let descriptor;
+  try {
+    descriptor = fs.openSync(tmp, 'wx');
+    fs.writeFileSync(descriptor, JSON.stringify(packet, null, 2));
+    fs.fsyncSync(descriptor);
+    fs.closeSync(descriptor); descriptor = undefined;
+    // A same-directory hard link publishes a completely written inode atomically and cannot
+    // replace an existing packet. Interrupted writes can leave only an unreferenced temp file.
+    try { fs.linkSync(tmp, file); }
+    catch (e) { if (e.code !== 'EEXIST') throw e; validateExisting(); }
+  } finally {
+    if (descriptor !== undefined) fs.closeSync(descriptor);
+    if (fs.existsSync(tmp)) fs.unlinkSync(tmp);
+  }
+}
+function walk(dir) { return fs.readdirSync(dir, { withFileTypes: true }).flatMap(x => x.isDirectory() ? walk(path.join(dir,x.name)) : [path.join(dir,x.name)]); }
+function identifiers(text) {
+  const pmids = new Set(), ncts = new Set();
+  for (const m of text.matchAll(/(?:PMID\s*[:=]?\s*|pubmed\.ncbi\.nlm\.nih\.gov\/|["']?pmid["']?\s*:\s*["']?)(\d{1,9})/gi)) pmids.add(m[1]);
+  for (const m of text.matchAll(/NCT\d{8}/gi)) ncts.add(m[0].toUpperCase());
+  for (const m of text.matchAll(/["'](?:pubmedId|pmid|id)["']\s*:\s*["'](\d{6,9})["']/gi)) pmids.add(m[1]);
+  return { pmids: [...pmids], ncts: [...ncts] };
+}
 
-summary.sort((a, b) => (b.papers + b.newTrials) - (a.papers + a.newTrials));
-const totals = summary.reduce((a, s) => ({ papers: a.papers + s.papers, newTrials: a.newTrials + s.newTrials, updated: a.updated + s.updatedTrials }), { papers: 0, newTrials: 0, updated: 0 });
-
-const L = [`# Monthly Research Scan — ${TODAY}`, '',
-  `Peptides scanned: **${dossiers.length}** · new papers: **${totals.papers}** · new trials: **${totals.newTrials}** · updated trials: **${totals.updated}**`, '',
-  'Window per peptide is its dossier `lastUpdated` unless `--days` was passed. Only identifiers NOT',
-  'already cited anywhere in the repo are listed as new. Every item was fetched from the registry in',
-  'this run, so each carries a real, resolving id.', '',
-  '| peptide | since | new papers | new trials | updated trials |', '|---|---|---|---|---|',
-  ...summary.filter((s) => s.papers || s.newTrials || s.updatedTrials)
-    .map((s) => `| \`${s.slug}\` | ${s.from} | ${s.papers} | ${s.newTrials} | ${s.updatedTrials} |`)];
-fs.writeFileSync(path.join(OUT, 'SUMMARY.md'), L.join('\n'));
-
-console.log(`\n=== SCAN COMPLETE ===`);
-console.log(`  peptides ${dossiers.length} · new papers ${totals.papers} · new trials ${totals.newTrials} · updated trials ${totals.updated}`);
-console.log(`  worklists: ${OUT}/`);
-console.log('\ntop by volume:');
-summary.slice(0, 15).forEach((s) => console.log(`  ${s.slug.padEnd(18)} papers ${String(s.papers).padStart(3)} · new trials ${String(s.newTrials).padStart(2)} · updated ${String(s.updatedTrials).padStart(2)}`));
+try {
+  const runId = `${new Date().toISOString().replace(/[:.]/g,'-')}-${randomUUID().slice(0,8)}`;
+  const dateDir = path.join(root, today), runDir = path.join(dateDir, runId), rawDir = path.join(runDir, 'raw');
+  fs.mkdirSync(rawDir, { recursive: true });
+  const stateFile = path.join(root, 'state-v2.json');
+  const previous = readJSON(stateFile, { schemaVersion: 2, subjects: {} });
+  if (previous.schemaVersion !== 2 || !previous.subjects) throw new Error('Unsupported scanner state; preserve it and migrate explicitly');
+  const nextState = structuredClone(previous);
+  const trialAliases = readJSON('data/trial-match-aliases.json', {});
+  const evidence = readJSON('data/research-alias-evidence.json', {});
+  const referenceFiles = {};
+  for (const file of [...walk('src/content'), ...walk('data/source-packs')].filter(f => /\.(mdx?|json)$/.test(f))) {
+    const ids = identifiers(fs.readFileSync(file, 'utf8'));
+    for (const id of [...ids.pmids, ...ids.ncts]) (referenceFiles[id] ||= []).push(file.replaceAll('\\', '/'));
+  }
+  const dossiers = fs.readdirSync('src/content/peptides').filter(f => f.endsWith('.mdx')).map(f => {
+    const slug = f.replace(/\.mdx$/, ''), text = fs.readFileSync(path.join('src/content/peptides', f), 'utf8'), data = matter(text).data;
+    const packFile = path.join('data/source-packs', `${slug}.json`);
+    const known = identifiers(text + '\n' + (fs.existsSync(packFile) ? fs.readFileSync(packFile, 'utf8') : ''));
+    return { slug, name: data.name || slug, aliases: [...new Set([...(data.aliases || []), ...(trialAliases[slug] || [])])], knownPmids: known.pmids, knownNcts: known.ncts,
+      knownAcrossSitePmids: Object.keys(referenceFiles).filter(id => /^\d+$/.test(id)),
+      knownAcrossSiteNcts: Object.keys(referenceFiles).filter(id => /^NCT/.test(id)), referenceFiles };
+  }).filter(s => !only || s.slug === only);
+  if (!dossiers.length) throw new Error(`No dossier matched --slug ${only}`);
+  let sequence = 0, lastRequest = 0;
+  const provenance = new WeakMap();
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+  const request = async (url, format) => {
+    let lastError;
+    for (let attempt = 1; attempt <= 3; attempt++) {
+      const wait = Math.max(0, 400 - (Date.now() - lastRequest));
+      if (wait) await sleep(wait);
+      const number = String(++sequence).padStart(6, '0'), startedAt = new Date().toISOString();
+      const rawFile = path.join(rawDir, `${number}.${format === 'json' ? 'json' : 'xml'}`);
+      lastRequest = Date.now();
+      try {
+        const response = await fetch(url, { headers: { 'User-Agent': 'PepCodex-surveillance/2.0 (mailto:admin@pepcodex.com)' }, signal: AbortSignal.timeout(30000) });
+        const body = await response.text();
+        fs.writeFileSync(rawFile, body);
+        const completedAt = new Date().toISOString(), responseSha256 = sha256(body);
+        fs.writeFileSync(path.join(rawDir, `${number}.request.json`), JSON.stringify({ url, attempt, startedAt, status: response.status, completedAt, responseSha256 }, null, 2));
+        if (!response.ok) {
+          lastError = new Error(`HTTP ${response.status} from ${new URL(url).hostname}; raw ${number}`);
+          if (![429,500,502,503,504].includes(response.status)) throw lastError;
+        } else {
+          if (format !== 'json') return body;
+          const parsed = JSON.parse(body);
+          const remember = (record, recordLocator) => {
+            if (record && typeof record === 'object') provenance.set(record, { sourceUrl: url, retrievedAt: completedAt,
+              responseSha256, rawFile: path.relative(runDir, rawFile).replaceAll('\\', '/'), recordLocator,
+              nctId: record.protocolSection?.identificationModule?.nctId ?? null });
+          };
+          remember(parsed, '$');
+          if (Array.isArray(parsed?.studies)) parsed.studies.forEach((record, index) => remember(record, `$.studies[${index}]`));
+          return parsed;
+        }
+      } catch (error) {
+        lastError = error;
+        if (!fs.existsSync(path.join(rawDir, `${number}.request.json`))) fs.writeFileSync(path.join(rawDir, `${number}.request.json`), JSON.stringify({ url, attempt, startedAt, error: error.message }, null, 2));
+        if (/HTTP (?!429|500|502|503|504)\d+/.test(error.message)) throw error;
+      }
+      if (attempt < 3) await sleep(attempt * 1000);
+    }
+    throw lastError;
+  };
+  request.provenanceFor = record => provenance.get(record) ?? null;
+  const outputs = [];
+  fs.writeFileSync(path.join(runDir, 'inventory.json'), JSON.stringify({ totalDossiers: fs.readdirSync('src/content/peptides').filter(f => f.endsWith('.mdx')).length,
+    attemptedSubjects: dossiers.map(s => s.slug), citedReferenceIdsAcrossSite: Object.keys(referenceFiles).length,
+    knownIdScope: 'Per-subject dossier and matching source pack. Other surfaces are dependency locators, not a claim that all their citations were rechecked.' }, null, 2));
+  for (const subject of dossiers) {
+    const { output, nextState: subjectState } = await scanSubject(subject, previous.subjects[subject.slug] || {}, { request, end, days, knownLimit, recheckDays, aliasEvidence: evidence[subject.slug] || [] });
+    output.runId = runId; output.scannedAt = new Date().toISOString();
+    outputs.push(output);
+    nextState.subjects[subject.slug] = subjectState;
+    console.log(`${subject.slug}: ${output.status}; ${output.impactPackets.length} review packets; ${output.errors.length} errors`);
+  }
+  const queueDir = path.join(root, 'impact-queue'); fs.mkdirSync(queueDir, { recursive: true });
+  let persistenceError = null;
+  try {
+    for (const output of outputs) for (const packet of output.impactPackets) {
+      publishPacket(path.join(queueDir, `${packet.packetId}.json`), { ...packet, runId, coverageStatus: output.status });
+    }
+  } catch (e) {
+    persistenceError = e.message;
+    for (const output of outputs) {
+      output.errors.push({ source: 'impact-queue', error: persistenceError });
+      output.status = output.status === 'FAILED' ? 'FAILED' : 'PARTIAL';
+      output.partialQuery = true; output.watermarksAdvanced = false;
+    }
+  }
+  for (const output of outputs) {
+    fs.writeFileSync(path.join(runDir, `${output.slug}.json`), JSON.stringify(output, null, 2));
+    atomicJSON(path.join(dateDir, `${output.slug}.json`), output);
+  }
+  const summary = renderSummary(outputs, runId, end);
+  fs.writeFileSync(path.join(runDir, 'SUMMARY.md'), summary);
+  fs.writeFileSync(path.join(dateDir, 'SUMMARY.md'), summary);
+  const complete = !persistenceError && outputs.every(o => o.status.startsWith('SUCCESS_'));
+  const manifest = { schemaVersion: 2, handoffVersion: 1, requestId, runId, runDir, end, days,
+    inventorySha256: sha256(fs.readFileSync(path.join(runDir, 'inventory.json'))),
+    requestedScope: { slug: only, knownLimit, recheckDays }, completedAt: new Date().toISOString(), complete, persistenceError,
+    exitCode: complete ? 0 : 1, subjects: outputs.map(o => ({ slug: o.slug, status: o.status, watermarksAdvanced: o.watermarksAdvanced,
+      outputFile: `${o.slug}.json`, outputSha256: sha256(fs.readFileSync(path.join(runDir, `${o.slug}.json`))) })), rawRequests: sequence };
+  fs.writeFileSync(path.join(runDir, 'manifest.json'), JSON.stringify(manifest, null, 2));
+  if (manifestFile) {
+    fs.mkdirSync(path.dirname(manifestFile), { recursive: true });
+    const temp = `${manifestFile}.${randomUUID()}.tmp`;
+    try {
+      fs.writeFileSync(temp, JSON.stringify(manifest, null, 2), { flag: 'wx' });
+      fs.linkSync(temp, manifestFile); // Exclusive atomic handoff; never consume/replace a previous invocation.
+    } finally { if (fs.existsSync(temp)) fs.unlinkSync(temp); }
+  }
+  // Publish the invocation before state advancement: an unavailable handoff destination must
+  // not consume the observation. Consumers still require the completed subprocess exit code,
+  // since a later state/pointer error or interruption can leave a published handoff uncommitted.
+  if (!persistenceError) atomicJSON(stateFile, nextState);
+  atomicJSON(path.join(root, 'latest-attempt.json'), manifest);
+  if (complete) atomicJSON(path.join(root, 'latest-successful.json'), manifest);
+  console.log(`Run ${complete ? 'complete for declared scope' : 'INCOMPLETE'}: ${runDir}`);
+  process.exitCode = complete ? 0 : 1;
+} finally {
+  fs.closeSync(lock);
+  fs.unlinkSync(lockPath);
+}

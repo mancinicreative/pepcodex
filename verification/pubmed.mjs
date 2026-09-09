@@ -99,10 +99,8 @@ export async function searchPerAlias(aliases, { retmax = 200, sort = 'relevance'
    * "intestinal", so chonluten's alias "Intestinal peptide" sailed through and returned 29 papers
    * about vasoactive intestinal peptide, NDNF interneurons and Lactobacillus.
    *
-   * So ask the data instead of a list. An alias that names the SAME compound as the primary name
-   * cannot return wildly more records than the primary name does — if it returns 29 where the
-   * primary returns 0, it is naming a category, not this compound. This needs no vocabulary, and it
-   * catches words nobody thought to enumerate.
+   * Treat count imbalance as a quarantine signal for semantic review. A genuine development code
+   * can be more common than a newer primary name, so the ratio alone does not establish identity.
    *
    * Only applied when a primary name is supplied and did not itself fail, and only above an
    * absolute floor so that small honest differences between spellings are left alone.
@@ -116,7 +114,7 @@ export async function searchPerAlias(aliases, { retmax = 200, sort = 'relevance'
         if (x.alias === primary) continue;
         if (x.total > limit) {
           suspectGeneric.push({ alias: x.alias, total: x.total, primaryTotal: base.total,
-            reason: `returns ${x.total} records where the primary name "${primary}" returns ${base.total}; it is naming a category, not this compound` });
+            reason: `returns ${x.total} records where the primary name "${primary}" returns ${base.total}; quarantined for identity review, not proof of a wrong alias` });
           delete idsByAlias[x.alias];
         }
       }
@@ -126,6 +124,124 @@ export async function searchPerAlias(aliases, { retmax = 200, sort = 'relevance'
   const ids = new Set();
   for (const arr of Object.values(idsByAlias)) arr.forEach((i) => ids.add(i));
   return { ids: [...ids], idsByAlias, perAlias, truncated, suspectGeneric, anyFailed };
+}
+
+/** Complete bounded surveillance search. Injectable transport also records raw responses in the CLI.
+ * PubMed supports CRDT (record creation) and LR (completed record revision), not a publication-date
+ * proxy. Queries exceeding PubMed's 10,000 UID limit are explicitly incomplete, never quiet zeros.
+ */
+export async function searchSurveillance({ alias, field, from, to, request, pageSize = 200 }) {
+  if (!['crdt', 'lr'].includes(field)) throw new Error(`Unsupported surveillance date field: ${field}`);
+  if (/["\[\]]/.test(alias)) throw new Error('Alias contains query syntax; identity review required');
+  const term = `"${alias}" AND ("${from.replaceAll('-', '/')}"[${field}] : "${to.replaceAll('-', '/')}"[${field}])`;
+  const ids = new Set(), pages = [];
+  let total = null, error = null;
+  try {
+    do {
+      const start = ids.size;
+      const url = new URL(`${EUTILS}/esearch.fcgi`);
+      Object.entries({ db: 'pubmed', retmode: 'json', retmax: pageSize, retstart: start, sort: 'pub date', term }).forEach(([k,v]) => url.searchParams.set(k, String(v)));
+      const j = await request(url.href, 'json');
+      const r = j.esearchresult;
+      if (!r || !/^\d+$/.test(String(r.count)) || !Array.isArray(r.idlist) || j.error || r.ERROR) throw new Error('Invalid ESearch response');
+      const count = Number(r.count);
+      pages.push({ start, count, retrieved: r.idlist.length, queryTranslation: r.querytranslation ?? null, warnings: r.warninglist ?? null, errors: r.errorlist ?? null });
+      if (total !== null && count !== total) throw new Error('Search count changed during pagination; repeat bounded window');
+      total = count;
+      if (r.errorlist && Object.values(r.errorlist).some(x => Array.isArray(x) ? x.length : Boolean(x))) throw new Error('ESearch query translation error; review raw response');
+      for (const id of r.idlist) {
+        if (!/^\d{1,9}$/.test(String(id))) throw new Error('Malformed PMID in ESearch');
+        ids.add(String(id));
+      }
+      if (ids.size >= total) break;
+      if (ids.size === start) throw new Error('ESearch pagination stalled or omitted records');
+      if (ids.size >= 10000 || start + pageSize >= 10000) throw new Error('PubMed 10,000 UID cap; partition this window before claiming coverage');
+    } while (true);
+  } catch (e) { error = e.message; }
+  return { alias, field, term, from, to, ids: [...ids], total, pages, complete: !error && ids.size === total, error };
+}
+
+const xmlText = (s = '') => s.replace(/<[^>]*>/g, ' ').replace(/&#(x[0-9a-f]+|\d+);/gi, (_, n) => String.fromCodePoint(n[0].toLowerCase() === 'x' ? parseInt(n.slice(1), 16) : Number(n))).replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
+const element = (s, tag) => (s.match(new RegExp(`<${tag}(?:\\s[^>]*)?>([\\s\\S]*?)<\\/${tag}>`)) || [])[1] || '';
+
+// Direct-child scope prevents book editors or authors of nested references from being assigned
+// to a chapter. Ignore comments/CDATA and quoted angle brackets while tracking element depth.
+function directChildren(source, tag) {
+  const found = [];
+  let depth = 0, current = null;
+  for (const m of source.matchAll(/<!--[\s\S]*?-->|<!\[CDATA\[[\s\S]*?\]\]>|<\?[\s\S]*?\?>|<((?:[^>"']|"[^"]*"|'[^']*')+)>/g)) {
+    if (!m[1] || m[1].startsWith('!')) continue;
+    const token = m[1].trim(), closing = token.startsWith('/');
+    const name = (token.match(/^\/?([\w:.-]+)/) || [])[1];
+    if (closing) {
+      depth--;
+      if (depth === 0 && current && name === tag) {
+        found.push({ openTag: current.openTag, inner: source.slice(current.start, m.index) }); current = null;
+      }
+    } else if (!token.endsWith('/')) {
+      if (depth === 0 && name === tag) current = { openTag: token, start: m.index + m[0].length };
+      depth++;
+    }
+  }
+  return found;
+}
+
+/** Parse each fetched article independently, including correction/retraction relationships.
+ * Missing or unsupported records remain missing, allowing the caller to fail coverage explicitly.
+ */
+export function parseSurveillanceRecords(xml) {
+  if (!/<PubmedArticleSet(?:\s|>)/.test(xml) || !/<\/PubmedArticleSet>/.test(xml)) throw new Error('Incomplete PubMed XML document');
+  const records = {};
+  for (const match of xml.matchAll(/<(PubmedArticle|PubmedBookArticle)(?:\s[^>]*)?>([\s\S]*?)<\/\1>/g)) {
+    const book = match[1] === 'PubmedBookArticle';
+    const c = match[2], citation = element(c, book ? 'BookDocument' : 'MedlineCitation'), article = book ? citation : element(citation, 'Article');
+    const pmid = xmlText(element(citation, 'PMID'));
+    if (!/^\d{1,9}$/.test(pmid) || !article || !xmlText(element(article, 'ArticleTitle'))) continue;
+    const relationships = [...citation.matchAll(/<CommentsCorrections\s+([^>]*)>([\s\S]*?)<\/CommentsCorrections>/g)].map(m => ({
+      type: (m[1].match(/RefType=["']([^"']+)/) || [])[1] || 'UNKNOWN',
+      pmid: xmlText(element(m[2], 'PMID')) || null, note: xmlText(element(m[2], 'Note')), refSource: xmlText(element(m[2], 'RefSource')),
+    })).sort((a,b) => JSON.stringify(a).localeCompare(JSON.stringify(b)));
+    const date = book ? element(citation, 'ContributionDate') : element(article, 'PubDate');
+    const authorLists = directChildren(article, 'AuthorList');
+    const authorList = book ? authorLists.find(list => {
+      const type = (list.openTag.match(/\bType=["']([^"']+)["']/i) || [])[1];
+      return !type || type.toLowerCase() === 'authors';
+    }) : authorLists[0];
+    const author = directChildren(authorList?.inner || '', 'Author')[0]?.inner || '';
+    const firstAuthor = xmlText(element(author, 'CollectiveName')) || [xmlText(element(author, 'LastName')), xmlText(element(author, 'Initials'))].filter(Boolean).join(' ');
+    const ownIds = element(element(c, book ? 'PubmedBookData' : 'PubmedData'), 'ArticleIdList');
+    records[pmid] = { pmid, recordType: match[1], title: xmlText(element(article, 'ArticleTitle')), abstract: xmlText(element(article, 'Abstract')),
+      abstractAvailable: Boolean(element(article, 'Abstract')), journal: book ? '' : xmlText(element(element(article, 'Journal'), 'Title')),
+      bookTitle: book ? xmlText(element(element(citation, 'Book'), 'BookTitle')) : null,
+      publicationDates: { issueDate: book ? null : xmlText(date), electronicDate: book ? null : xmlText(element(article, 'ArticleDate')),
+        bookEditionDate: book ? xmlText(element(element(citation, 'Book'), 'PubDate')) : null, contributionDate: book ? xmlText(date) : null },
+      pubdate: xmlText(date), firstAuthor, firstAuthorStatus: firstAuthor ? 'present' : 'unknown',
+      doi: xmlText((ownIds.match(/<ArticleId\s+IdType=["']doi["'][^>]*>([\s\S]*?)<\/ArticleId>/i) || [])[1]) || null,
+      pubTypes: [...article.matchAll(/<PublicationType[^>]*>([\s\S]*?)<\/PublicationType>/g)].map(m => xmlText(m[1])).sort(), relationships,
+      revised: xmlText(element(citation, 'DateRevised')),
+    };
+  }
+  return records;
+}
+
+export async function fetchSurveillanceRecords(ids, { request, batch = 100 } = {}) {
+  const records = {}, failures = [];
+  const unique = [...new Set(ids)];
+  for (let k = 0; k < unique.length; k += batch) {
+    const slice = unique.slice(k, k + batch);
+    try {
+      const xml = await request(`${EUTILS}/efetch.fcgi?db=pubmed&retmode=xml&rettype=abstract&id=${slice.join(',')}`, 'text');
+      Object.assign(records, parseSurveillanceRecords(xml));
+      const missing = slice.filter(id => !records[id]);
+      if (missing.length) {
+        const unsupported = [...xml.matchAll(/<PubmedBookArticle(?:\s[^>]*)?>([\s\S]*?)<\/PubmedBookArticle>/g)]
+          .map(m => xmlText(element(element(m[1], 'BookDocument'), 'PMID'))).filter(id => missing.includes(id));
+        failures.push({ requested: slice, missing, unsupported,
+          error: unsupported.length ? 'UNSUPPORTED_OR_MALFORMED_RECORD: PubmedBookArticle; inspect retained raw XML' : 'Missing PubMed records in successful HTTP response' });
+      }
+    } catch (e) { failures.push({ requested: slice, missing: slice, error: e.message }); }
+  }
+  return { records, failures, complete: failures.length === 0 && unique.every(id => records[id]) };
 }
 
 /** Fetch title/abstract/metadata for PMIDs, in batches. Missing ids simply do not appear. */

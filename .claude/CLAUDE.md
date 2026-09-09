@@ -1,5 +1,13 @@
 # PepCodex Project Guidelines
 
+## September 5, 2026 execution update
+
+Lucas has authorized the SEO, factual-accuracy, research-freshness and affiliate-readiness repair program. The dated traffic and indexing figures below are historical observations, not a refreshed baseline or proof that crawl budget alone causes non-indexing. Evaluate technical access, canonical selection, content usefulness and factual support separately. Missing rows in a censored Search Console export are unknown observations, not proof of zero demand or that Google never crawled a URL.
+
+Prefer improving existing URLs and preserve the branch/release rules. Affiliate research and a disabled local pilot are in scope; partner activation, enrollment and production release still need their concrete reviewed prerequisites. Numeric evidence scores do not establish probability of benefit. Scanner success describes only its declared query and known-ID scope, never all-site factual certification.
+
+Current repair implementation and unresolved gates: `.planning/growth-program/runs/2026-09-05-integration/STATUS.md`. Shared Google authentication setup: `.planning/GOOGLE-API-SETUP.md`.
+
 ## Current Status (2026-08-22)
 
 - **What this is:** pepcodex.com — owned traffic for PepTracker. **Not a third company.**
@@ -83,9 +91,9 @@ correct in review and still leaves pages unreachable — that has already happen
 
 ## Search/analytics data (live, repeatable)
 
-Auth is keyless: user ADC → IAM `generateAccessToken` impersonating
-`pepcodex-reader@wired-dahlia-496320-e6.iam.gserviceaccount.com` (org policy blocks SA keys;
-gcloud's shared OAuth client refuses non-Cloud scopes). Setup: `.planning/GOOGLE-API-SETUP.md`.
+Auth defaults to direct desktop user ADC with explicit read-only Google scopes.
+IAM impersonation is an optional, explicitly configured mode; service-account keys and
+implicit credential overrides are rejected. Setup and renewal: `.planning/GOOGLE-API-SETUP.md`.
 
 ```bash
 npm run gsc:whoami   # which Google account am I?

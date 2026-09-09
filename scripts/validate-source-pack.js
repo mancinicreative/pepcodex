@@ -10,7 +10,8 @@ import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import { readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { fileURLToPath, pathToFileURL } from 'url';
+import { summarizeSourceCounts, isDocumentSource } from './lib/source-records.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -46,7 +47,14 @@ export function validateSourcePack(packPath) {
     };
   }
 
-  // Validate against schema
+  return validateSourcePackData(sourcePack, validate);
+}
+
+export function validateSourcePackData(sourcePack, compiled) {
+  const ajv = new Ajv({ allErrors: true });
+  addFormats(ajv);
+  const validate = compiled || ajv.compile(schema);
+  // Shape validation does not establish official-host authenticity or claim support.
   const valid = validate(sourcePack);
   const errors = validate.errors || [];
 
@@ -60,11 +68,19 @@ export function validateSourcePack(packPath) {
     keyword: err.keyword,
     params: err.params
   }));
+  const sourceCounts = summarizeSourceCounts(Array.isArray(sourcePack?.sources) ? sourcePack.sources.filter(s => s && typeof s === 'object') : []);
+  if (Array.isArray(sourcePack?.sources) && sourcePack.sources.some(isDocumentSource) && sourcePack.metadata?.sourceCounts) {
+    for (const field of ['human', 'preclinical']) {
+      if (sourcePack.metadata.sourceCounts[field] !== sourceCounts[field]) formattedErrors.push({ path: `/metadata/sourceCounts/${field}`, keyword: 'sourceClassification', message: 'Count must exclude regulatory/reference documents and agree with explicitly classified research records.' });
+    }
+  }
 
   return {
-    valid: valid && duplicates.length === 0,
+    valid: valid && duplicates.length === 0 && formattedErrors.length === 0,
     errors: formattedErrors,
-    duplicates
+    duplicates,
+    verification: 'NOT_ASSESSED: schema validity is not source identity, current status or claim support',
+    computedSourceCounts: sourceCounts
   };
 }
 
@@ -74,7 +90,7 @@ export function validateSourcePack(packPath) {
  * @returns {Array} - Array of duplicate IDs found
  */
 function checkDuplicateIds(sourcePack) {
-  if (!sourcePack.sources || !Array.isArray(sourcePack.sources)) {
+  if (!sourcePack?.sources || !Array.isArray(sourcePack.sources)) {
     return [];
   }
 
@@ -82,7 +98,7 @@ function checkDuplicateIds(sourcePack) {
   const duplicates = [];
 
   for (const source of sourcePack.sources) {
-    if (source.id) {
+    if (source?.id) {
       if (seen.has(source.id)) {
         duplicates.push(source.id);
       } else {
@@ -105,7 +121,7 @@ function printResults(result, filePath) {
   console.log('='.repeat(60) + '\n');
 
   if (result.valid) {
-    console.log('[PASS] Source pack is valid!\n');
+    console.log('[PASS] Source pack shape is valid. Source identity, authority, current status and claim support are NOT assessed.\n');
   } else {
     console.log('[FAIL] Source pack has validation errors:\n');
 
@@ -131,7 +147,7 @@ function printResults(result, filePath) {
 }
 
 // CLI execution
-if (process.argv[1] && process.argv[1].includes('validate-source-pack')) {
+if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   const args = process.argv.slice(2);
 
   if (args.length === 0) {

@@ -163,8 +163,11 @@ const glossarySlugs = new Set((await getCollection('glossary')).map((g) => g.slu
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
             </svg>
             <time datetime={publishDate.toISOString()}>
-              {publishDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+              {publishDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}
             </time>
+            {lastUpdated && lastUpdated.getTime() !== publishDate.getTime() && (
+              <span>Updated: <time datetime={lastUpdated.toISOString()}>{lastUpdated.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}</time></span>
+            )}
           </div>
           <div class="flex items-center gap-2">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -187,9 +190,9 @@ const glossarySlugs = new Set((await getCollection('glossary')).map((g) => g.slu
       </div>
     </header>
 
-    <div class="grid gap-8 lg:grid-cols-[1fr,280px]">
+    <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_280px]">
       <!-- Main content -->
-      <div class="prose prose-invert prose-lg max-w-none">
+      <div class="prose prose-invert prose-lg max-w-none" data-toc-content>
         <slot />
 
         <!-- Sources Section -->

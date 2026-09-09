@@ -1,28 +1,30 @@
 // Crawl-graph diagnostic loop.
 //
 // Builds the internal link graph from the BUILT output, computes click-depth from the
-// homepage, joins it to real GSC index status, and emits a prioritised worklist of the
-// pages Google cannot or will not reach. Snapshots each run so successive runs show
-// whether the situation is improving.
+// homepage, optionally joins a dated GSC page export, and emits linking diagnostics.
+// Impressions are observed search exposure, not index status. Snapshots distinguish
+// graph changes from measurement changes; neither proves a causal traffic increase.
 //
 //   npm run build && node scripts/crawl-graph.mjs
 //   node scripts/crawl-graph.mjs --compare      # diff against the previous snapshot
 //   node scripts/crawl-graph.mjs --top=40
 //
-// Why click-depth: Google allocates crawl by perceived importance, and depth from the
-// homepage is one of the strongest proxies it uses. Pages >3 clicks deep on a
-// low-authority domain are routinely never fetched — which is exactly this site's problem.
+// The site's <=3 click policy is a local regression guard, not proof of Google crawl behavior.
 import fs from 'fs';
 import path from 'path';
+import { loadMeasurement, pageMeasurement, comparableMeasurement, digest } from './crawl-graph-measurement.mjs';
 
-const DIST = path.join('dist', 'client');
-const V2 = path.join('.planning', 'data', 'v2');
-const SNAPDIR = path.join(V2, 'graph-snapshots');
+// Data inputs are read-only. Select exactly one dated property, for example:
+// --data-dir=.planning/data/runs/<run>-gsc --property=https://www.pepcodex.com/
+// Without a valid measurement input, graph-only checks still run with UNKNOWN metrics.
+const option = (name) => process.argv.find((arg) => arg.startsWith(`--${name}=`))?.slice(name.length + 3);
+const DIST = option('dist') ?? path.join('dist', 'client');
+const DATA = option('data-dir') ?? path.join('.planning', 'data', 'v2');
+const OUTPUT = option('output-dir') ?? path.join('.planning', 'data', 'graph');
+const SNAPDIR = path.join(OUTPUT, 'graph-snapshots');
 const TOP = Number((process.argv.find((a) => a.startsWith('--top=')) || '').split('=')[1]) || 25;
 const COMPARE = process.argv.includes('--compare');
 
-const load = (p) => (fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf-8')) : []);
-const norm = (u) => u.replace(/^https?:\/\/(www\.)?pepcodex\.com/, '').replace(/\/$/, '') || '/';
 
 // ---------- 1. build the graph ----------
 function walk(dir, out = []) {
@@ -95,19 +97,10 @@ while (frontier.length) {
 }
 
 // ---------- 3. join to real search data ----------
-const seen = new Map(); // path -> {impressions, clicks}
-for (const tag of ['pepcodex-com', 'www-pepcodex-com']) {
-  for (const r of load(path.join(V2, `gsc-${tag}-page.json`))) {
-    const k = norm(r.page);
-    const cur = seen.get(k) ?? { i: 0, c: 0 };
-    cur.i += r.impressions;
-    cur.c += r.clicks;
-    seen.set(k, cur);
-  }
-}
+const search = loadMeasurement({ dataDir: DATA, property: option('property') });
+const { seen: _seen, ...measurement } = search;
 
 const rows = [...nodes.entries()].map(([p, n]) => {
-  const s = seen.get(p);
   return {
     path: p,
     depth: depth.get(p) ?? null, // null = unreachable by link from home
@@ -115,9 +108,7 @@ const rows = [...nodes.entries()].map(([p, n]) => {
     outbound: n.out.size,
     words: n.words,
     noindex: n.noindex,
-    impressions: s?.i ?? 0,
-    clicks: s?.c ?? 0,
-    silent: !s || s.i === 0,
+    ...pageMeasurement(search, p),
   };
 });
 
@@ -140,8 +131,10 @@ for (const r of indexable) {
 const byDepth = {};
 for (const r of indexable) {
   const k = r.depth === null ? 'unreachable' : String(r.depth);
-  byDepth[k] ??= { n: 0, silent: 0, impr: 0 };
+  byDepth[k] ??= { n: 0, observed: 0, unknown: 0, silent: 0, impr: 0 };
   byDepth[k].n++;
+  if (r.impressions === null) byDepth[k].unknown++;
+  else byDepth[k].observed++;
   if (r.silent) byDepth[k].silent++;
   byDepth[k].impr += r.impressions;
 }
@@ -149,15 +142,19 @@ for (const r of indexable) {
 console.log('================ CRAWL GRAPH ================');
 console.log(`pages in build      ${rows.length}`);
 console.log(`indexable           ${indexable.length}   (noindex: ${rows.length - indexable.length})`);
-console.log(`silent (0 impr)     ${indexable.filter((r) => r.silent).length}`);
+console.log(`measurement         ${measurement.status}: ${measurement.reason}`);
+if (measurement.scope) console.log(`scope               ${JSON.stringify(measurement.scope)}`);
+if (measurement.provenance.legacyScopeAssumptions) console.log(`legacy provenance   ${measurement.provenance.legacyScopeAssumptions}`);
+console.log(`observed zero impr  ${search.seen.size ? indexable.filter((r) => r.silent === true).length : 'UNKNOWN (no observed rows)'}`);
+console.log(`unknown impressions ${indexable.filter((r) => r.impressions === null).length}`);
 
 console.log('\n---- CLICK DEPTH vs SILENCE (the core signal) ----');
-console.log('DEPTH         PAGES   SILENT   % silent   IMPRESSIONS');
+console.log('DEPTH         PAGES  UNKNOWN  ZERO  % zero observed  OBSERVED IMPRESSIONS');
 for (const k of Object.keys(byDepth).sort((a, b) => (a === 'unreachable' ? 1 : b === 'unreachable' ? -1 : +a - +b))) {
   const v = byDepth[k];
   console.log(
-    String(k).padEnd(13) + String(v.n).padStart(6) + String(v.silent).padStart(9) +
-      String(((v.silent / v.n) * 100).toFixed(0) + '%').padStart(11) + String(v.impr).padStart(14)
+    String(k).padEnd(13) + String(v.n).padStart(6) + String(v.unknown).padStart(9) + String(v.silent).padStart(6) +
+      String(v.observed ? ((v.silent / v.observed) * 100).toFixed(0) + '%' : 'UNKNOWN').padStart(18) + String(v.observed ? v.impr : 'UNKNOWN').padStart(22)
   );
 }
 
@@ -182,7 +179,8 @@ const line = (l, a) => console.log(`  ${l.padEnd(42)} ${String(a.length).padStar
 line('orphans (0 inbound links)', orphans);
 line('unreachable from homepage by links', unreachable);
 line('deep (>=4 clicks from home)', deep);
-line('silent AND deep/unreachable', silentDeep);
+if (indexable.some((r) => r.impressions !== null)) line('observed zero AND deep/unreachable', silentDeep);
+else console.log('  observed zero AND deep/unreachable        UNKNOWN');
 line('dead ends (<=1 outbound link)', deadEnds);
 line('thin (<300 words)', thin);
 
@@ -210,32 +208,42 @@ fs.mkdirSync(SNAPDIR, { recursive: true });
 const summary = {
   pages: rows.length,
   indexable: indexable.length,
-  silent: indexable.filter((r) => r.silent).length,
+  observedPages: rows.filter((r) => r.impressions !== null).length,
+  unknownPages: rows.filter((r) => r.impressions === null).length,
+  silent: indexable.some((r) => r.impressions !== null) ? indexable.filter((r) => r.silent === true).length : null,
   brokenTargets: broken.size,
   brokenLinkInstances: brokenTotal,
   lowInbound: indexable.filter((r) => r.inbound <= 2).length,
   orphans: orphans.length,
   unreachable: unreachable.length,
   deep: deep.length,
-  silentDeep: silentDeep.length,
+  silentDeep: indexable.some((r) => r.impressions !== null) ? silentDeep.length : null,
   medianDepth: (() => {
     const d = indexable.map((r) => r.depth).filter((x) => x !== null).sort((a, b) => a - b);
     return d.length ? d[Math.floor(d.length / 2)] : null;
   })(),
-  totalImpressions: rows.reduce((a, r) => a + r.impressions, 0),
-  totalClicks: rows.reduce((a, r) => a + r.clicks, 0),
+  // Observed built-page sums, never property totals or a complete cohort baseline.
+  observedImpressions: rows.some((r) => r.impressions !== null) ? rows.reduce((a, r) => a + (r.impressions ?? 0), 0) : null,
+  observedClicks: rows.some((r) => r.clicks !== null) ? rows.reduce((a, r) => a + (r.clicks ?? 0), 0) : null,
 };
 
-const stamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
-fs.writeFileSync(path.join(SNAPDIR, `graph-${stamp}.json`), JSON.stringify({ summary, rows }, null, 2));
-fs.writeFileSync(path.join(V2, 'graph-latest.json'), JSON.stringify({ summary, rows }, null, 2));
+const stamp = new Date().toISOString().replace(/[:.]/g, '-');
+const snapshot = { schemaVersion: 2, generatedAt: new Date().toISOString(), graphCohort: digest(JSON.stringify(rows.map((r) => [r.path, r.noindex]).sort())), measurement, summary, rows };
+const previousFiles = fs.readdirSync(SNAPDIR).filter((f) => f.endsWith('.json')).sort();
+fs.writeFileSync(path.join(SNAPDIR, `graph-${stamp}.json`), JSON.stringify(snapshot, null, 2));
+fs.writeFileSync(path.join(OUTPUT, 'graph-latest.json'), JSON.stringify(snapshot, null, 2));
 
 if (COMPARE) {
-  const snaps = fs.readdirSync(SNAPDIR).filter((f) => f.endsWith('.json')).sort();
-  if (snaps.length >= 2) {
-    const prev = JSON.parse(fs.readFileSync(path.join(SNAPDIR, snaps.at(-2)), 'utf-8')).summary;
-    console.log(`\n---- CHANGE vs ${snaps.at(-2)} ----`);
+  if (previousFiles.length) {
+    const previous = JSON.parse(fs.readFileSync(path.join(SNAPDIR, previousFiles.at(-1)), 'utf-8'));
+    const prev = previous.summary;
+    const comparable = comparableMeasurement(previous, snapshot);
+    const analyticsKeys = new Set(['silent', 'silentDeep', 'observedPages', 'unknownPages', 'observedImpressions', 'observedClicks']);
+    console.log(`\n---- CHANGE vs ${previousFiles.at(-1)} ----`);
+    if (!comparable) console.log('  Measurement comparison SKIPPED: unavailable or different property/window/scope/page cohort. Graph changes only.');
+    else console.log('  Same-window measurement changes describe observed export coverage, not click growth caused by this graph change.');
     for (const k of Object.keys(summary)) {
+      if (!comparable && analyticsKeys.has(k)) continue;
       const a = prev[k], b = summary[k];
       if (typeof a !== 'number' || typeof b !== 'number' || a === b) continue;
       const d = b - a;
@@ -244,8 +252,8 @@ if (COMPARE) {
         'silent', 'orphans', 'unreachable', 'deep', 'silentDeep', 'medianDepth',
         'brokenTargets', 'brokenLinkInstances', 'lowInbound',
       ];
-      const good = lowerIsBetter.includes(k) ? d < 0 : d > 0;
-      console.log(`  ${k.padEnd(20)} ${String(a).padStart(6)} -> ${String(b).padStart(6)}  ${d > 0 ? '+' : ''}${d}  ${good ? 'better' : 'WORSE'}`);
+      const direction = analyticsKeys.has(k) || !lowerIsBetter.includes(k) ? 'changed' : d < 0 ? 'better' : 'WORSE';
+      console.log(`  ${k.padEnd(20)} ${String(a).padStart(6)} -> ${String(b).padStart(6)}  ${d > 0 ? '+' : ''}${d}  ${direction}`);
     }
   } else {
     console.log('\n(only one snapshot so far — run again after changes to see a trend)');
@@ -261,6 +269,7 @@ console.log('re-run after any linking change with --compare to see whether it he
 // reached production by looking correct in review.
 if (process.argv.includes('--check')) {
   const failures = [];
+  if (!nodes.has('/')) failures.push('homepage is missing from the built HTML graph');
   if (broken.size > 0) {
     failures.push(`${brokenTotal} broken internal link(s) across ${broken.size} dead target(s)`);
     [...broken.entries()].slice(0, 10).forEach(([t, s]) => failures.push(`    ${t}  <- ${[...s][0]}`));
@@ -274,11 +283,20 @@ if (process.argv.includes('--check')) {
     realOrphans.slice(0, 10).forEach((r) => failures.push(`    ${r.path}`));
   }
   if (deep.length) failures.push(`${deep.length} page(s) more than 3 clicks from the homepage`);
+  const realUnreachable = unreachable.filter((r) => !INTENTIONAL_ORPHANS.has(r.path) && !/^\/google[0-9a-f]+\.html$/.test(r.path));
+  if (realUnreachable.length) {
+    failures.push(`${realUnreachable.length} page(s) unreachable from homepage (including isolated link cycles)`);
+    realUnreachable.slice(0, 10).forEach((r) => failures.push(`    ${r.path}`));
+  }
 
   if (failures.length) {
     console.error('\n❌ GRAPH CHECK FAILED');
     failures.forEach((f) => console.error(`  ${f}`));
     process.exit(1);
   }
-  console.log('\n✅ GRAPH CHECK PASSED — no broken links, no orphans, nothing deeper than 3 clicks');
+  console.log('\n✅ GRAPH CHECK PASSED — no broken links, no unintended orphans/unreachable pages, nothing deeper than 3 clicks');
+}
+if (process.argv.includes('--require-measurement') && measurement.status !== 'AVAILABLE') {
+  console.error(`\nMEASUREMENT CHECK FAILED: ${measurement.status}`);
+  process.exitCode = 1;
 }

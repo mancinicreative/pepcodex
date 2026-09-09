@@ -3,11 +3,9 @@
  * or an agent.
  *
  * This is the deterministic half of the system. It discovers, verifies and measures; it never
- * writes content. Everything it emits carries an identifier fetched from a registry during the run,
- * so the agents that consume its output can only choose among real things. That separation is the
- * structural defence against the fabrication class this whole codebase exists to prevent: an agent
- * that both searches and writes can produce a citation that fits its narrative, and an agent that
- * can only pick from a fetched worklist cannot.
+ * writes content. Registry records are review candidates, not verified studies: a fetched record
+ * can contain erroneous or explicitly fictional descriptions. Integrity warnings and raw provenance
+ * must survive the discovery handoff; specialist review is required before any evidence use.
  *
  * THE GRAPH
  *
@@ -40,9 +38,10 @@
 import { execSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
+import { discoveryDays, runResearchDiscovery } from './lib/research-discovery-result.mjs';
 
 const args = process.argv.slice(2);
-const DAYS = args.includes('--days') ? args[args.indexOf('--days') + 1] : '60';
+const DAYS = discoveryDays(args.includes('--days') ? args[args.indexOf('--days') + 1] : 60);
 const OFFLINE = args.includes('--offline');
 const HEAL = args.includes('--heal');
 const TODAY = new Date().toISOString().slice(0, 10);
@@ -124,16 +123,15 @@ if (!conv) report.escalate.push({ gate: 'ledger', findings: 'did not converge �
 
 // ── Layer 3 ────────────────────────────────────────────────────────────────────────────────────
 banner(3, `DISCOVERY — ${DAYS}-day window`);
-const scan = run(`node scripts/monthly-research-scan.mjs --days ${DAYS}`, { allowFail: true });
-const tot = scan.out.match(/peptides (\d+) · new papers (\d+) · new trials (\d+) · updated trials (\d+)/);
-if (tot) {
-  console.log(`  covered peptides : ${tot[2]} new papers · ${tot[3]} new trials · ${tot[4]} updated`);
-  report.dispatch.push({ agent: 'Evidence', input: `.planning/research-scan/${TODAY}/`, papers: +tot[2] });
-  report.dispatch.push({ agent: 'Trials', input: `.planning/research-scan/${TODAY}/`, trials: +tot[3] + +tot[4] });
+const discovery = runResearchDiscovery({ days: DAYS });
+report.discovery = discovery;
+report.dispatch.push(...discovery.dispatch);
+console.log(`  discovery: ${discovery.status}; ${discovery.counts?.reviewPackets ?? 'unknown'} review packets`);
+if (!discovery.ok) report.escalate.push({ gate: 'discovery', findings: discovery.errors.join('; '), manifestFile: discovery.manifestFile });
+for (const coverage of discovery.coverage) if (coverage.quarantinedAliases.length) {
+  report.learn.push({ signal: 'aliases require identity review', subject: coverage.slug, count: coverage.quarantinedAliases.length,
+    findings: coverage.quarantinedAliases });
 }
-// Anything flagged by the scan's own guards is a LEARN signal, not a content finding.
-const suspect = (scan.out.match(/suspectGenericAliases/g) || []).length;
-if (suspect) report.learn.push({ signal: 'suspect generic aliases dropped by the scan', count: suspect });
 
 const gaps = run(`node scripts/discover-coverage-gaps.mjs --days ${DAYS}`, { allowFail: true });
 const gapN = (gaps.out.match(/Candidates with no dossier \(>= \d+ refs\): (\d+)/) || [])[1];
@@ -156,3 +154,4 @@ report.escalate.forEach((e) => console.log(`    escalate: ${e.gate} — ${e.find
 report.learn.forEach((l) => console.log(`    learn:    ${l.signal} (${l.count})`));
 console.log(`\nState: .planning/loop/${TODAY}.json`);
 console.log('Worklists are inputs for the specialist agents; this script never writes content.');
+if (!discovery.ok) process.exitCode = 1;

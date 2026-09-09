@@ -78,7 +78,7 @@ const readingTime = Math.ceil(excerpt.length / 200) + 5;
         {categoryLabels[category] || category}
       </span>
       <span class="text-xs" style="color: var(--ink-dim); font-family: var(--font-mono);">
-        {publishDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+        {publishDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}
       </span>
     </div>
 

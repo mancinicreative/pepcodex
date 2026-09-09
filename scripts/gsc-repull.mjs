@@ -1,119 +1,111 @@
-// Honest GSC re-pull: detects the REAL date range rather than assuming, and pulls the
-// dimensions the first pass missed (device, country, searchAppearance, page+query).
-//
-//   node scripts/gsc-repull.mjs
-//
-// Writes .planning/data/v2/gsc-<prop>-<cut>.json
-import fs from 'fs';
-import path from 'path';
-import { mintToken } from './gsc-probe.mjs';
+// Daily final-data exports with an equal preceding comparison window.
+import path from 'node:path';
+import { pathToFileURL } from 'node:url';
+import { exportOptions, createExport, propertyTag, collectGsc, exportRequest, safeError, shiftDate, comparisonWindows, publishSuccessful } from './lib/analytics-export.mjs';
 
-const OUT = path.join('.planning', 'data', 'v2');
-const ymd = (d) => d.toISOString().slice(0, 10);
+export const GSC_CUTS = [
+  ['totals', []], ['date', ['date']], ['page', ['page']], ['query', ['query']],
+  ['device', ['device']], ['country', ['country']], ['appearance', ['searchAppearance']],
+  ['date-device', ['date', 'device']], ['page-device', ['page', 'device']],
+  ['page-query', ['page', 'query']], ['page-date', ['page', 'date']],
+  ['page-date-device-country', ['page', 'date', 'device', 'country']],
+];
 
-async function query(token, siteUrl, body) {
-  const url = `https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(siteUrl)}/searchAnalytics/query`;
-  const res = await fetch(url, {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify(body),
-  });
-  const j = await res.json();
-  if (j.error) throw new Error(`${j.error.code} ${j.error.message}`);
-  return j.rows ?? [];
+// Aggregate only matching dimensions within one property, cut and window.
+// Position is impression-weighted; CTR is recomputed, never averaged.
+function summarize(rows, dimensions) {
+  const groups = new Map();
+  for (const row of rows) {
+    const key = JSON.stringify(row.keys ?? []);
+    const entry = groups.get(key) ?? { ...Object.fromEntries(dimensions.map((dim, i) => [dim, row.keys[i]])), clicks: 0, impressions: 0, positionNumerator: 0 };
+    entry.clicks += row.clicks; entry.impressions += row.impressions; entry.positionNumerator += row.position * row.impressions;
+    groups.set(key, entry);
+  }
+  return [...groups.values()].map(({ positionNumerator, ...row }) => ({ ...row, ctr: row.impressions ? row.clicks / row.impressions * 100 : 0, position: row.impressions ? positionNumerator / row.impressions : 0 }));
 }
 
-// Ask for a deliberately over-wide window, then read back what Google actually returned.
-async function realRange(token, site) {
-  const rows = await query(token, site, {
-    startDate: '2024-01-01',
-    endDate: ymd(new Date()),
-    dimensions: ['date'],
-    rowLimit: 25000,
-  });
-  if (!rows.length) return null;
-  const dates = rows.map((r) => r.keys[0]).sort();
-  return { first: dates[0], last: dates.at(-1), days: dates.length };
-}
-
-const flat = (rows, dims) =>
-  rows.map((r) => {
-    const o = {};
-    dims.forEach((d, i) => (o[d] = r.keys[i]));
-    o.clicks = r.clicks;
-    o.impressions = r.impressions;
-    o.ctr = +(r.ctr * 100).toFixed(3);
-    o.position = +r.position.toFixed(1);
-    return o;
-  });
-
-const slug = (s) =>
-  s.replace(/^sc-domain:/, 'domain-').replace(/^https?:\/\//, '').replace(/[^a-z0-9]+/gi, '-').replace(/-+$/, '').toLowerCase();
-
-const main = async () => {
-  fs.mkdirSync(OUT, { recursive: true });
-  const token = await mintToken();
-
-  const sites = await fetch('https://www.googleapis.com/webmasters/v3/sites', {
-    headers: { Authorization: `Bearer ${token}` },
-  }).then((r) => r.json());
-  const props = (sites.siteEntry ?? []).map((e) => e.siteUrl);
-
-  const manifest = { pulledAt: new Date().toISOString(), properties: {} };
-
-  for (const site of props) {
-    const tag = slug(site);
-    const range = await realRange(token, site);
-    if (!range) {
-      console.log(`\n### ${site} — NO DATA`);
-      continue;
-    }
-    console.log(`\n### ${site}`);
-    console.log(`    REAL data range: ${range.first} -> ${range.last}  (${range.days} days with data)`);
-    manifest.properties[site] = range;
-
-    const dates = { startDate: range.first, endDate: range.last };
-    const cuts = [
-      ['page', ['page']],
-      ['query', ['query']],
-      ['date', ['date']],
-      ['device', ['device']],
-      ['country', ['country']],
-      ['appearance', ['searchAppearance']],
-      ['date-device', ['date', 'device']],
-      ['page-device', ['page', 'device']],
-      ['page-query', ['page', 'query']],
-    ];
-
-    for (const [name, dims] of cuts) {
-      try {
-        const rows = await query(token, site, { ...dates, dimensions: dims, rowLimit: 25000, dataState: 'final' });
-        const data = flat(rows, dims);
-        fs.writeFileSync(path.join(OUT, `gsc-${tag}-${name}.json`), JSON.stringify(data, null, 2));
-        const i = data.reduce((a, r) => a + r.impressions, 0);
-        const c = data.reduce((a, r) => a + r.clicks, 0);
-        console.log(`    ${name.padEnd(12)} ${String(data.length).padStart(5)} rows   impr ${String(i).padStart(6)}  clicks ${String(c).padStart(4)}`);
-      } catch (e) {
-        console.log(`    ${name.padEnd(12)} FAILED: ${String(e.message).slice(0, 80)}`);
+export async function runGsc(options, dependencies = {}) {
+  const site = options.site ?? 'https://www.pepcodex.com/';
+  if (!['https://www.pepcodex.com/', 'https://pepcodex.com/', 'sc-domain:pepcodex.com'].includes(site)) throw new Error('Select an exact PepCodex GSC property with --site.');
+  if (options.property) throw new Error('GSC uses --site, not --property.');
+  const run = createExport('gsc', options);
+  Object.assign(run.manifest.scope, { site, type: 'web', dataState: 'final', timezone: 'America/Los_Angeles' });
+  run.manifest.windows = comparisonWindows(options);
+  run.manifest.limitations = ['COMPLETE means all required API requests succeeded below exposed limits, not an exhaustive census.', 'GSC exposes at most 50,000 daily rows per site/search type; hitting this cap fails the cut.', 'Query privacy and internal top-row exclusions remain.', 'Absent rows are unknown; empty daily responses are recorded explicitly.', 'Page aggregation is distinct from property totals; appearance types can overlap.'];
+  const property = { requested: run.manifest.windows.current, cuts: {}, previous: { requested: run.manifest.windows.previous, cuts: {} } };
+  run.manifest.properties = { [site]: property };
+  run.checkpoint();
+  let stage = 'authentication', activeCut;
+  try {
+    const request = await exportRequest(dependencies);
+    stage = 'property_access';
+    const sites = await request('https://www.googleapis.com/webmasters/v3/sites');
+    run.write('raw/sites.json', { fetchedAt: new Date().toISOString(), response: sites });
+    const access = sites.siteEntry?.find(entry => entry.siteUrl === site);
+    if (!access) throw new Error('Selected property is not visible.');
+    property.permissionLevel = access.permissionLevel;
+    const url = `https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(site)}/searchAnalytics/query`;
+    for (const [windowName, dates] of Object.entries(run.manifest.windows)) {
+      const details = windowName === 'current' ? property : property.previous;
+      const prefix = windowName === 'current' ? '' : 'previous-';
+      const collectCut = async (name, dimensions, filters = []) => {
+        const cut = details.cuts[name] = { status: 'RUNNING', dimensions, filters, daily: [], rows: 0, exposedDailyRowCap: 50000 };
+        activeCut = cut;
+        const combined = [], aggregations = new Set();
+        for (let day = dates.startDate; day <= dates.endDate; day = shiftDate(day, 1)) {
+          stage = `${windowName}/${name}/${day}`;
+          const daily = { date: day, status: 'RUNNING', rows: 0, pages: 0 };
+          cut.daily.push(daily); run.checkpoint();
+          const body = { startDate: day, endDate: day, dimensions, type: 'web', dataState: 'final', aggregationType: 'auto', ...(filters.length ? { dimensionFilterGroups: [{ groupType: 'and', filters }] } : {}) };
+          try {
+            const result = await collectGsc(query => request(url, query), body, {
+              maxPages: options.maxPages,
+              onPage: (page, query, response) => {
+                run.write(`raw/${prefix}${name}-${day}-${page}.json`, { fetchedAt: new Date().toISOString(), request: query, response });
+                daily.pages++; daily.rows += response?.rows?.length ?? 0;
+              },
+            });
+            if (dimensions.includes('date') && result.rows.some(row => row.keys[dimensions.indexOf('date')] !== day)) throw new Error('GSC date row lies outside the requested day.');
+            if (result.responseAggregationType) aggregations.add(result.responseAggregationType);
+            if (aggregations.size > 1) throw new Error('GSC aggregation changed between days.');
+            combined.push(...result.rows);
+            daily.status = 'COMPLETE';
+          } catch (error) { daily.status = 'INCOMPLETE'; throw error; }
+        }
+        const rows = summarize(combined, dimensions);
+        Object.assign(cut, { status: 'COMPLETE', ...run.write(`gsc-${propertyTag(site)}-${prefix}${name}.json`, rows), rows: rows.length, pages: cut.daily.reduce((sum, day) => sum + day.pages, 0), responseAggregationType: [...aggregations][0] ?? null, aggregationMethod: 'sum daily counts; recompute CTR; impression-weight position' });
+        run.checkpoint();
+        return rows;
+      };
+      for (const [name, dimensions] of GSC_CUTS) {
+        const rows = await collectCut(name, dimensions);
+        if (name === 'totals') details.totals = rows[0] ?? { clicks: 0, impressions: 0, ctr: null, position: null };
+        if (name === 'date') { const days = rows.map(row => row.date).sort(); Object.assign(details, { first: days[0] ?? null, last: days.at(-1) ?? null, days: days.length }); }
+        if (name === 'appearance') {
+          // Discover supported types first; then filter each type independently.
+          for (const [index, row] of rows.entries()) {
+            const filters = [{ dimension: 'searchAppearance', operator: 'equals', expression: row.searchAppearance }];
+            await collectCut(`appearance-${index}-page-query`, ['page', 'query'], filters);
+          }
+        }
       }
     }
-
-    const tot = await query(token, site, { ...dates, dimensions: [], dataState: 'final' });
-    if (tot.length) {
-      const t = tot[0];
-      manifest.properties[site].totals = {
-        clicks: t.clicks, impressions: t.impressions,
-        ctr: +(t.ctr * 100).toFixed(3), position: +t.position.toFixed(1),
-      };
-      console.log(`    TOTALS       clicks=${t.clicks} impressions=${t.impressions} ctr=${(t.ctr * 100).toFixed(2)}% pos=${t.position.toFixed(1)}`);
-    }
+    run.manifest.status = 'COMPLETE';
+  } catch (error) {
+    run.manifest.status = activeCut ? 'INCOMPLETE' : 'FAILED';
+    if (activeCut) activeCut.status = 'INCOMPLETE';
+    run.manifest.errors.push({ stage, ...safeError(error) });
   }
+  run.manifest.finishedAt = new Date().toISOString(); run.checkpoint();
+  if (run.manifest.status === 'COMPLETE') publishSuccessful(run, site);
+  console.log(`${run.manifest.status}: ${run.out}`);
+  return run;
+}
 
-  fs.writeFileSync(path.join(OUT, 'manifest.json'), JSON.stringify(manifest, null, 2));
-  console.log(`\nwrote ${OUT}/  (manifest.json records the REAL date ranges)`);
-};
-
-main().catch((e) => {
-  console.error('FAILED:', String(e.message ?? e).split('\n')[0]);
-  process.exit(1);
-});
+if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
+  try {
+    (await import('./lib/google-auth.mjs')).loadEnvironment();
+    const run = await runGsc(exportOptions(process.argv.slice(2)));
+    if (run.manifest.status !== 'COMPLETE') { console.error(run.manifest.errors); process.exitCode = 1; }
+  } catch (error) { console.error(safeError(error).message); process.exitCode = 1; }
+}

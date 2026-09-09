@@ -4,6 +4,7 @@ import OrganizationSchema from '../components/SEO/OrganizationSchema.astro';
 import DisclaimerBanner from '../components/DisclaimerBanner.astro';
 import CookieConsent from '../components/CookieConsent.astro';
 import SearchModal from '../components/SearchModal.astro';
+import { initializeAnalytics } from '../scripts/analytics-bootstrap.mjs';
 
 interface Props {
   title: string;
@@ -34,6 +35,13 @@ const pageTitle = brandedTitle.length <= 60 ? brandedTitle : title;
 // received a measurement ID with a literal newline in it. Trimming at the read makes this
 // immune to whitespace in the env var rather than depending on the dashboard staying clean.
 const GA_TRACKING_ID = import.meta.env.PUBLIC_GA_TRACKING_ID?.trim();
+const analyticsConfig = {
+  measurementId: GA_TRACKING_ID,
+  environment: process.env.VERCEL_ENV || 'local',
+  hostnames: ['www.pepcodex.com'],
+  pagePath: Astro.url.pathname,
+};
+const analyticsBootstrap = `(${initializeAnalytics.toString()})(${JSON.stringify(analyticsConfig).replace(/</g, '\\u003c')}, window);`;
 
 // Get current path for nav highlighting
 const currentPath = Astro.url.pathname;
@@ -81,23 +89,8 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={ogImage || `${Astro.site}og-default.png`} />
 
-    <!-- Google Analytics 4: skip localhost so `astro dev` does not inflate GA4 (~667 sessions historically). -->
-    {GA_TRACKING_ID && (
-      <script is:inline define:vars={{ GA_TRACKING_ID }}>
-        (function () {
-          var h = location.hostname;
-          if (h === 'localhost' || h === '127.0.0.1') return;
-          var s = document.createElement('script');
-          s.async = true;
-          s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_TRACKING_ID;
-          document.head.appendChild(s);
-          window.dataLayer = window.dataLayer || [];
-          window.gtag = function gtag(){ window.dataLayer.push(arguments); };
-          window.gtag('js', new Date());
-          window.gtag('config', GA_TRACKING_ID);
-        })();
-      </script>
-    )}
+    <!-- Consent is established synchronously before any measurement configuration. -->
+    <script is:inline set:html={analyticsBootstrap} />
   </head>
   <body class="min-h-screen antialiased">
     <!-- Skip to main content -->
@@ -393,6 +386,7 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
             <a href="/privacy" class="transition-colors hover:text-[color:var(--ink-paper)]">Privacy</a>
             <a href="/terms" class="transition-colors hover:text-[color:var(--ink-paper)]">Terms</a>
             <a href="/cookie-policy" class="transition-colors hover:text-[color:var(--ink-paper)]">Cookie Policy</a>
+            <button type="button" data-cookie-preferences class="transition-colors hover:text-[color:var(--ink-paper)]">Cookie preferences</button>
             <span class="italic" style="font-family: var(--font-serif);">Set in Geist &amp; Newsreader.</span>
           </div>
         </div>
@@ -400,10 +394,6 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
     </footer>
 
     <!-- Analytics -->
-    <script>
-      import { inject } from '@vercel/analytics';
-      inject();
-    </script>
     <script>
       import '../scripts/analytics';
     </script>

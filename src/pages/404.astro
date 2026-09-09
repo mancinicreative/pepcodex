@@ -145,24 +145,8 @@ const categoryLabels: Record<string, string> = {
 </BaseLayout>
 
 <script>
-  // Track 404 error with the attempted URL for analytics
-  (function() {
-    const attemptedUrl = window.location.pathname + window.location.search;
-    const referrer = document.referrer || 'direct';
-
-    // Send to GA4 as custom event
-    if (typeof gtag === 'function') {
-      gtag('event', '404_error', {
-        'page_path': attemptedUrl,
-        'page_referrer': referrer,
-        'page_location': window.location.href,
-        'path_segment': attemptedUrl.split('/')[1] || 'root'
-      });
-    }
-
-    // Also log to console for debugging
-    console.log('404 Error:', { attemptedUrl, referrer });
-  })();
+  // A failed URL may contain private free text. Count the outcome without its URL.
+  window.pepcodexAnalytics?.track('page_not_found', { page_type: '404' });
 
   // Basic search redirect
   const searchInput = document.getElementById('search-404') as HTMLInputElement;

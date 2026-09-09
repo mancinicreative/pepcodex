@@ -203,6 +203,7 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
       return new Response(
         JSON.stringify({
           success: true,
+          subscriptionStatus: 'accepted',
           message: 'Successfully subscribed! Check your email.',
         }),
         { status: 200, headers: corsHeaders(origin) }
@@ -214,6 +215,7 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
       return new Response(
         JSON.stringify({
           success: true,
+          subscriptionStatus: 'existing',
           message: 'You are already subscribed!',
         }),
         { status: 200, headers: corsHeaders(origin) }
@@ -221,8 +223,7 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
     }
 
     // Other errors
-    const errorText = await response.text();
-    console.error('Beehiiv API error:', response.status, errorText);
+    console.error('Beehiiv API request failed:', response.status);
     return new Response(
       JSON.stringify({
         success: false,
@@ -230,8 +231,8 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
       }),
       { status: 500, headers: corsHeaders(origin) }
     );
-  } catch (error) {
-    console.error('Subscribe error:', error);
+  } catch {
+    console.error('Newsletter request failed');
     return new Response(
       JSON.stringify({
         success: false,

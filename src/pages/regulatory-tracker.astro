@@ -48,9 +48,9 @@ const lastUpdatedDate = sorted
   .map((d) => new Date(d as any))
   .sort((a, b) => b.getTime() - a.getTime())[0];
 const lastUpdatedLabel = lastUpdatedDate
-  ? lastUpdatedDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
+  ? lastUpdatedDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' })
   : '';
-const trackerDescription = `Track FDA approval status, clinical trial phases, and regulatory changes for ${trackedCount} peptides${lastUpdatedLabel ? `. Updated ${lastUpdatedLabel}` : ''}.`;
+const trackerDescription = `Recorded regulatory information for ${trackedCount} peptides${lastUpdatedLabel ? `. Latest dated entry: ${lastUpdatedLabel}` : ''}. Coverage is incomplete; check the linked dossiers for references and recorded dates.`;
 
 const categoryLabels: Record<string, string> = {
   'metabolic': 'Metabolic',
@@ -84,7 +84,10 @@ const categoryLabels: Record<string, string> = {
         Peptide Regulatory Tracker
       </h1>
       <p class="text-lg leading-relaxed max-w-3xl" style="color: var(--ink-muted);">
-        FDA approval status and regulatory classification for {sorted.length} peptides. Updated as regulatory changes occur.
+        Recorded regulatory information from {sorted.length} dossiers. Coverage is incomplete; check the linked dossiers for references and recorded dates.
+      </p>
+      <p class="mt-3 max-w-3xl text-sm leading-relaxed" style="color: var(--ink-muted);">
+        A peptide is listed only when its dossier contains a regulatory record. Absence from this tracker does not establish approval, legal availability, or safety. An update to one entry does not mean every entry has been rechecked.
       </p>
       <div class="mt-5">
         <TrackerSwitcher active="regulatory" />

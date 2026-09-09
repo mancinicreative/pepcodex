@@ -1,34 +1,8 @@
-// Pulls GA4 behavioural data using the impersonated service-account token.
-//   node scripts/ga4-pull.mjs [--months=16]
-import fs from 'fs';
-import path from 'path';
-import { mintToken } from './gsc-probe.mjs';
-
-const OUT = path.join('.planning', 'data');
-const PROPERTY = process.env.GA4_PROPERTY_ID || '521749549';
-const MONTHS = Math.min(
-  Number((process.argv.slice(2).find((a) => a.startsWith('--months=')) || '').split('=')[1]) || 16,
-  16
-);
-
-const ymd = (d) => d.toISOString().slice(0, 10);
-const end = new Date();
-const start = new Date(end);
-start.setMonth(start.getMonth() - MONTHS);
-
-async function runReport(token, body) {
-  const res = await fetch(
-    `https://analyticsdata.googleapis.com/v1beta/properties/${PROPERTY}:runReport`,
-    {
-      method: 'POST',
-      headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ dateRanges: [{ startDate: ymd(start), endDate: ymd(end) }], ...body }),
-    }
-  );
-  const j = await res.json();
-  if (j.error) throw new Error(`${j.error.code} ${j.error.message}`);
-  return j;
-}
+// Dated, non-overwriting GA4 exports. Raw response metadata stays with every page.
+// npm run ga4:pull -- --start=2026-08-04 --end=2026-08-31 --property=521749549
+import path from 'node:path';
+import { pathToFileURL } from 'node:url';
+import { exportOptions, createExport, collectGa4, exportRequest, safeError, comparisonWindows, publishSuccessful } from './lib/analytics-export.mjs';
 
 function toRows(j) {
   const dims = (j.dimensionHeaders || []).map((h) => h.name);
@@ -44,21 +18,10 @@ function toRows(j) {
   });
 }
 
-function writeCsv(name, rows) {
-  if (!rows.length) return;
-  const cols = Object.keys(rows[0]);
-  const esc = (v) => {
-    const s = String(v ?? '');
-    return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
-  };
-  fs.writeFileSync(
-    path.join(OUT, `${name}.csv`),
-    [cols.join(','), ...rows.map((r) => cols.map((c) => esc(r[c])).join(','))].join('\n')
-  );
-  fs.writeFileSync(path.join(OUT, `${name}.json`), JSON.stringify(rows, null, 2));
-}
-
-const REPORTS = [
+export const REPORTS = [
+  { name: 'ga4-totals', body: { dimensions: [], metrics: [{ name: 'sessions' }, { name: 'engagedSessions' }, { name: 'screenPageViews' }] } },
+  { name: 'ga4-daily', body: { dimensions: [{ name: 'date' }], metrics: [{ name: 'sessions' }, { name: 'engagedSessions' }], orderBys: [{ dimension: { dimensionName: 'date' } }] } },
+  { name: 'ga4-hostname-channel-device-country', body: { dimensions: ['hostName', 'sessionDefaultChannelGroup', 'sessionSource', 'deviceCategory', 'country'].map(name => ({ name })), metrics: ['sessions', 'engagedSessions', 'bounceRate', 'averageSessionDuration'].map(name => ({ name })) } },
   {
     name: 'ga4-monthly',
     body: {
@@ -171,24 +134,61 @@ const REPORTS = [
   },
 ];
 
-const main = async () => {
-  fs.mkdirSync(OUT, { recursive: true });
-  const token = await mintToken();
-  console.log(`GA4 property ${PROPERTY}   window ${ymd(start)} -> ${ymd(end)}\n`);
-
-  for (const r of REPORTS) {
-    try {
-      const rows = toRows(await runReport(token, r.body));
-      writeCsv(r.name, rows);
-      console.log(`  ${r.name.padEnd(20)} ${String(rows.length).padStart(4)} rows`);
-    } catch (e) {
-      console.log(`  ${r.name.padEnd(20)} FAILED: ${String(e.message).slice(0, 100)}`);
+export async function runGa4(options, dependencies = {}) {
+  const property = options.property ?? process.env.GA4_PROPERTY_ID ?? '521749549';
+  if (!/^\d+$/.test(property)) throw new Error('GA4 --property must be a numeric property ID.');
+  if (options.site) throw new Error('GA4 uses --property, not --site.');
+  const run = createExport('ga4', options);
+  Object.assign(run.manifest.scope, { property, timezone: null });
+  run.manifest.reports = {};
+  run.manifest.windows = comparisonWindows(options);
+  run.manifest.limitations = ['Hostname filtering does not identify humans.', 'No country or source channel excluded.', 'Full page metadata preserves thresholding, sampling and data-loss signals.', 'Session attribution can differ across dimension scopes; do not subtract independent cuts.'];
+  run.checkpoint();
+  let stage = 'authentication';
+  try {
+    const request = await exportRequest(dependencies);
+    const productionReports = REPORTS.filter(r => ['ga4-totals', 'ga4-daily', 'ga4-channels', 'ga4-landing-pages'].includes(r.name)).map(r => ({
+      name: r.name + '-www', body: { ...r.body, dimensionFilter: { filter: { fieldName: 'hostName', stringFilter: { matchType: 'EXACT', value: 'www.pepcodex.com', caseSensitive: false } } } },
+    }));
+    for (const [windowName, dates] of Object.entries(run.manifest.windows)) {
+    for (const sourceReport of [...REPORTS, ...productionReports]) {
+      const report = { ...sourceReport, name: (windowName === 'current' ? '' : 'previous-') + sourceReport.name };
+      stage = report.name;
+      const { limit: _oldLimit, ...reportBody } = report.body;
+      const body = { ...reportBody, dateRanges: [dates], returnPropertyQuota: true };
+      const result = await collectGa4(query => request(`https://analyticsdata.googleapis.com/v1beta/properties/${property}:runReport`, query), body, {
+        maxPages: options.maxPages,
+        onPage: (page, query, response) => run.write(`raw/${report.name}-${page}.json`, { fetchedAt: new Date().toISOString(), request: query, response }),
+      });
+      const rows = toRows(result);
+      const file = run.write(report.name + '.json', rows); // [] is a valid recorded empty report
+      run.manifest.reports[report.name] = { status: 'COMPLETE', ...file, rowCount: result.rowCount ?? 0, pages: result.pages, dimensions: body.dimensions, metrics: body.metrics, filter: body.dimensionFilter ?? null, metadata: result.metadata ?? null, metadataPages: result.metadataPages };
+      if (result.metadata?.timeZone) {
+        if (run.manifest.scope.timezone && run.manifest.scope.timezone !== result.metadata.timeZone) throw new Error('GA4 timezone changed between reports.');
+        run.manifest.scope.timezone = result.metadata.timeZone;
+      }
+      Object.assign(run.manifest.reports[report.name], { window: windowName, dateRange: dates, metadataPages: result.metadataPages });
+      run.checkpoint();
+      console.log(`${report.name}: ${rows.length} rows (${result.pages} requests)`);
     }
+    }
+    run.manifest.status = 'COMPLETE';
+  } catch (error) {
+    run.manifest.status = Object.keys(run.manifest.reports).length ? 'INCOMPLETE' : 'FAILED';
+    if (stage !== 'authentication') run.manifest.reports[stage] = { status: 'FAILED' };
+    run.manifest.errors.push({ stage, ...safeError(error) });
   }
-  console.log(`\nwrote ${OUT}/ga4-*.{json,csv}`);
-};
+  run.manifest.finishedAt = new Date().toISOString(); run.checkpoint();
+  if (run.manifest.status === 'COMPLETE') publishSuccessful(run, property);
+  console.log(`${run.manifest.status}: ${run.out}`);
+  return run;
+}
 
-main().catch((e) => {
-  console.error('FAILED:', String(e.message ?? e).split('\n')[0]);
-  process.exit(1);
-});
+if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
+  try {
+    (await import('./lib/google-auth.mjs')).loadEnvironment();
+    const options = exportOptions(process.argv.slice(2));
+    const run = await runGa4(options);
+    if (run.manifest.status !== 'COMPLETE') { console.error(run.manifest.errors); process.exitCode = 1; }
+  } catch (error) { console.error(safeError(error).message); process.exitCode = 1; }
+}

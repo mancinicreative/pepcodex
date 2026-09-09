@@ -1,78 +1,52 @@
-// Mints an impersonated service-account token and reports what it can actually reach.
-// Auth chain: user ADC (cloud-platform) -> IAM generateAccessToken -> SA token with
-// webmasters/analytics scopes. No SA key needed (org policy blocks those).
-import path from 'path';
-import { GoogleAuth } from 'google-auth-library';
-
-const SA_EMAIL =
-  process.env.PEPCODEX_SA ||
-  'pepcodex-reader@wired-dahlia-496320-e6.iam.gserviceaccount.com';
-const SCOPES = [
-  'https://www.googleapis.com/auth/webmasters.readonly',
-  'https://www.googleapis.com/auth/analytics.readonly',
-];
-
-export async function mintToken() {
-  const auth = new GoogleAuth({ scopes: ['https://www.googleapis.com/auth/cloud-platform'] });
-  const client = await auth.getClient();
-  const res = await client.request({
-    url: `https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/${SA_EMAIL}:generateAccessToken`,
-    method: 'POST',
-    data: { scope: SCOPES, lifetime: '3600s' },
-  });
-  return res.data.accessToken;
-}
-
-async function main() {
-  const token = await mintToken();
-  console.log(`token minted (${token.length} chars)\n`);
-
-  const info = await fetch(`https://oauth2.googleapis.com/tokeninfo?access_token=${token}`).then((r) => r.json());
-  console.log('scopes on token:');
-  (info.scope || '').split(' ').filter(Boolean).forEach((s) => console.log('  ' + s));
-
-  console.log('\n=== SEARCH CONSOLE PROPERTIES VISIBLE ===');
-  const sites = await fetch('https://www.googleapis.com/webmasters/v3/sites', {
-    headers: { Authorization: `Bearer ${token}` },
-  }).then((r) => r.json());
-
-  if (sites.error) {
-    console.log('  ERROR', sites.error.code, sites.error.message);
-  } else if (!sites.siteEntry?.length) {
-    console.log('  (none — service account not yet added as a user on any property)');
-  } else {
-    sites.siteEntry.forEach((e) => console.log(`  ${e.permissionLevel.padEnd(16)} ${e.siteUrl}`));
+// Shared read-only access probe; exporters and URL inspection use this same module.
+import path from 'node:path';
+import { pathToFileURL } from 'node:url';
+import { createGoogleAccess, classifyGoogleError, loadEnvironment, safeError } from './lib/google-auth.mjs';
+loadEnvironment();
+let accessPromise;
+export const googleAccess = () => accessPromise ??= createGoogleAccess();
+export const mintToken = async () => (await googleAccess()).token();
+export async function probe({ identityOnly = false, sitesOnly = false } = {}) {
+  const access = await googleAccess();
+  const report = { checkedAt: new Date().toISOString(), mode: access.mode, requestedScopes: access.requestedScopes, grantedScopes: access.grantedScopes, checks: {} };
+  try {
+    const user = await access.request('https://www.googleapis.com/oauth2/v2/userinfo');
+    report.checks.identity = { status: 'SUCCESS', email: user.email ?? null };
+  } catch (error) {
+    report.checks.identity = { status: 'UNAVAILABLE', ...classifyGoogleError(error) };
+    if (['REAUTH_REQUIRED', 'TOKEN_REJECTED'].includes(report.checks.identity.code)) throw error;
   }
-
-  console.log('\n=== GA4 PROPERTIES VISIBLE ===');
-  const admin = await fetch('https://analyticsadmin.googleapis.com/v1beta/accountSummaries', {
-    headers: { Authorization: `Bearer ${token}` },
-  }).then((r) => r.json());
-
-  if (admin.error) {
-    console.log(`  ${admin.error.code} ${admin.error.status}`);
-    if (/SERVICE_DISABLED|has not been used/.test(admin.error.message)) {
-      console.log('  (Analytics Admin API not enabled — enable analyticsadmin.googleapis.com to auto-discover)');
-    } else {
-      console.log('  ' + admin.error.message.slice(0, 160));
+  if (!identityOnly) {
+    try {
+      const data = await access.request('https://www.googleapis.com/webmasters/v3/sites');
+      report.checks.gsc = { status: 'SUCCESS', properties: data.siteEntry ?? [] };
+      if (!sitesOnly) {
+        const sites = (process.env.GSC_SITE_URLS || 'https://pepcodex.com/,https://www.pepcodex.com/').split(',').map(s => s.trim()).filter(Boolean);
+        report.checks.gsc.reads = [];
+        const end = new Date(Date.now() - 4 * 86400000).toISOString().slice(0, 10);
+        for (const site of sites) {
+          if (!data.siteEntry?.some(entry => entry.siteUrl === site)) throw safeError('PROPERTY_PERMISSION', 'An expected GSC property is not visible. Check GSC_SITE_URLS and owner access.', 403);
+          const sample = await access.request(`https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(site)}/searchAnalytics/query`, { startDate: end, endDate: end, dimensions: [], dataState: 'final', type: 'web', rowLimit: 1 });
+          report.checks.gsc.reads.push({ site, date: end, status: 'SUCCESS', rows: sample.rows?.length ?? 0 });
+        }
+      }
+    } catch (error) {
+      report.checks.gsc = { ...report.checks.gsc, status: 'FAILED', ...classifyGoogleError(error) };
+      if (['REAUTH_REQUIRED', 'TOKEN_REJECTED'].includes(report.checks.gsc.code)) throw error;
     }
-  } else if (!admin.accountSummaries?.length) {
-    console.log('  (none — service account not yet added in GA4 Property access management)');
-  } else {
-    for (const a of admin.accountSummaries) {
-      console.log(`  account: ${a.displayName}`);
-      (a.propertySummaries || []).forEach((p) =>
-        console.log(`     ${p.property.padEnd(28)} ${p.displayName}`)
-      );
+    if (!sitesOnly) {
+      try {
+        const property = process.env.GA4_PROPERTY_ID || '521749549';
+        if (!/^\d+$/.test(property)) throw safeError('CLI_CONFIGURATION', 'Expected a numeric GA4 property ID, not a measurement ID.');
+        const data = await access.request(`https://analyticsdata.googleapis.com/v1beta/properties/${property}:runReport`, { dateRanges: [{ startDate: '7daysAgo', endDate: '3daysAgo' }], metrics: [{ name: 'sessions' }], limit: '1' });
+        report.checks.ga4 = { status: 'SUCCESS', property, rowCount: data.rowCount ?? 0, metadata: data.metadata ?? null };
+      } catch (error) { report.checks.ga4 = { status: 'FAILED', ...classifyGoogleError(error) }; }
     }
   }
+  report.status = identityOnly ? report.checks.identity.status : Object.entries(report.checks).filter(([key]) => key !== 'identity').every(([,value]) => value.status === 'SUCCESS') ? 'SUCCESS' : 'FAILED';
+  return report;
 }
-
-// Only run the probe when invoked directly — other scripts import mintToken().
-const invokedDirectly = process.argv[1] && import.meta.url.endsWith(path.basename(process.argv[1]));
-if (invokedDirectly) {
-  main().catch((e) => {
-    console.error('FAILED:', String(e.message ?? e).split('\n')[0]);
-    process.exit(1);
-  });
+if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
+  try { const report = await probe(); console.log(JSON.stringify(report, null, 2)); if (report.status !== 'SUCCESS') process.exitCode = 1; }
+  catch (error) { console.error(JSON.stringify(classifyGoogleError(error))); process.exitCode = 1; }
 }

@@ -6,18 +6,19 @@
  * it the highest-leverage surface to clean before adding new claims on top.
  *
  * For each record we ask three separate questions, because they have different remedies:
- *   1. Does the PMID resolve?                        no  -> DEAD, delete
+ *   1. Does the PMID resolve?                        no  -> UNVERIFIED, investigate
  *   2. Is the paper about this peptide?              no  -> UNRELATED, the citation is void
  *   3. Do stored title/journal/year/doi match it?    no  -> METADATA_WRONG, repairable from PubMed
  *
- * A stored DOI is only trustworthy when PubMed agrees; PubMed's articleids is authoritative and is
- * used both to check and to repair.
+ * PubMed metadata is an identity candidate, not verification of claim support. Official
+ * documents and non-PubMed research need their own authority review, never a phantom verdict.
  *
  * Output: .planning/citation-audit/source-verification.json + SOURCE-VERIFICATION.md
  * Usage:  node scripts/verify-pack-sources.mjs
  */
 import fs from 'fs';
 import path from 'path';
+import { classifyBeforePubmed, sourcePmid, sourceDoi, sourceFingerprint } from './lib/source-records.mjs';
 
 const DIR = 'data/source-packs';
 const OUT_DIR = '.planning/citation-audit';
@@ -42,30 +43,40 @@ const sim = (a, b) => {
 };
 
 const records = [];
+let malformedSources = false;
 for (const f of fs.readdirSync(DIR).filter((x) => x.endsWith('.json'))) {
   const slug = f.replace(/\.json$/, '');
   const pack = JSON.parse(fs.readFileSync(path.join(DIR, f), 'utf-8'));
-  (pack.sources || []).forEach((s, i) => {
+  if (pack.sources !== undefined && !Array.isArray(pack.sources)) {
+    malformedSources = true;
+    records.push({ slug, file: `${DIR}/${f}`, index: null, preclassification: 'MALFORMED_SOURCE_ARRAY', pmid: null, title: '' });
+  }
+  (Array.isArray(pack.sources) ? pack.sources : []).forEach((s, i) => {
+    const preclassification = classifyBeforePubmed(s);
+    if (preclassification === 'MALFORMED_SOURCE') malformedSources = true;
     records.push({
       slug, file: `${DIR}/${f}`, index: i,
-      pmid: s.pmid ? String(s.pmid).trim() : null,
-      doi: s.doi ? String(s.doi).trim() : null,
-      title: s.title || '', journal: s.journal || '', year: s.year || '',
+      pmid: sourcePmid(s), doi: sourceDoi(s),
+      sourceType: s?.type || null, sourceFingerprint: sourceFingerprint(s),
+      preclassification,
+      officialUrl: s?.officialUrl || null, authority: s?.authority || null,
+      title: s?.title || '', journal: s?.journal || '', year: s?.year || '',
     });
   });
 }
-const ids = [...new Set(records.filter((r) => /^\d{6,9}$/.test(r.pmid || '')).map((r) => r.pmid))];
+const ids = [...new Set(records.filter((r) => /^\d{1,9}$/.test(r.pmid || '')).map((r) => r.pmid))];
 console.log(`Sources: ${records.length} records across ${new Set(records.map((r) => r.slug)).size} packs · ${ids.length} unique PMIDs`);
 
 // --- PubMed ground truth ---
 const meta = {};
-let incomplete = false;
+let incomplete = malformedSources;
 for (let i = 0; i < ids.length; i += 150) {
   const b = ids.slice(i, i + 150);
   try {
     const res = await fetchT(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&retmode=json&id=${b.join(',')}`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const j = (await res.json()).result || {};
+    if (b.some(id => !j[id] || j[id].error)) incomplete = true;
     for (const id of j.uids || []) {
       if (!j[id] || j[id].error) continue;
       const aid = (j[id].articleids || []).find((a) => a.idtype === 'doi');
@@ -83,9 +94,9 @@ const out = [];
 for (const r of records) {
   const aliases = [r.slug, r.slug.replace(/-/g, ' '), ...(MATCH_ALIASES[r.slug] || [])]
     .map((s) => s.toLowerCase()).filter((s) => s.length >= 3);
-  if (!/^\d{6,9}$/.test(r.pmid || '')) { out.push({ ...r, klass: 'NO_PMID' }); continue; }
+  if (r.preclassification) { out.push({ ...r, klass: r.preclassification, claimSupport: 'NOT_ASSESSED' }); continue; }
   const m = meta[r.pmid];
-  if (!m) { out.push({ ...r, klass: incomplete ? 'UNVERIFIED' : 'DEAD' }); continue; }
+  if (!m) { incomplete = true; out.push({ ...r, klass: 'UNVERIFIED', claimSupport: 'NOT_ASSESSED' }); continue; }
 
   const titleSim = sim(r.title, m.title);
   // Topical test on the real paper's own title: does it name the peptide or a known alias?
@@ -97,7 +108,7 @@ for (const r of records) {
   else if (onTopic) klass = 'METADATA_WRONG';   // right paper, invented title/journal/year
   else klass = 'UNRELATED';                      // the PMID is not this paper at all
 
-  out.push({ ...r, klass, titleSim: +titleSim.toFixed(2), onTopic, doiOk,
+  out.push({ ...r, klass, claimSupport: 'NOT_ASSESSED', identityReview: 'REQUIRED', titleSim: +titleSim.toFixed(2), onTopic, doiOk,
     realTitle: m.title, realJournal: m.journal, realYear: m.year, realDoi: m.doi, realAuthors: m.authors });
 }
 
@@ -114,7 +125,7 @@ console.log('\n=== PER PACK ===');
 for (const [k, v] of Object.entries(perPack)) {
   const bad = (v.UNRELATED || 0) + (v.DEAD || 0);
   const tot = Object.values(v).reduce((x, y) => x + y, 0);
-  console.log(`${k.padEnd(14)} ${String(tot).padStart(3)} records  ${JSON.stringify(v)}${bad / tot >= 0.8 ? '   <-- WHOLESALE FABRICATION' : ''}`);
+  console.log(`${k.padEnd(14)} ${String(tot).padStart(3)} records  ${JSON.stringify(v)}${bad / tot >= 0.8 ? '   <-- IDENTITY REVIEW REQUIRED' : ''}`);
 }
-if (incomplete) { console.error('\nFAIL: PubMed coverage incomplete.'); process.exit(1); }
+if (incomplete) { console.error('\nFAIL: PubMed coverage incomplete or malformed source records.'); process.exit(1); }
 console.log(`\nWrote ${OUT_DIR}/source-verification.json`);

@@ -4,6 +4,8 @@ interface Props {
 }
 
 const { data } = Astro.props;
+// A literal closing script tag in source text must remain JSON data, not HTML.
+const serialized = JSON.stringify(data).replace(/</g, '\\u003c');
 ---
 
-<script type="application/ld+json" set:html={JSON.stringify(data)} />
+<script type="application/ld+json" set:html={serialized} />

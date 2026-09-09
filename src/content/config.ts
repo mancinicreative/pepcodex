@@ -114,7 +114,9 @@ const peptides = defineCollection({
       count: z.number(),
       human: z.number(),
       preclinical: z.number(),
-      openAccess: z.number(),
+      openAccess: z.number().optional(),
+      context: z.string().optional(),
+      verdict: z.string().optional(),
     }),
     // Anecdotal community reports
     anecdotalReports: z.object({

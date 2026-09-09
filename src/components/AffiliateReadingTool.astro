@@ -1,0 +1,33 @@
+---
+import { affiliatePilot, approvedPilotUrl } from '../config/affiliate-pilot.mjs';
+
+// A single existing-page slot. With unresolved evidence this emits no module or link.
+const href = Astro.url.pathname === '/guide/how-to-read-peptide-research'
+  ? approvedPilotUrl(affiliatePilot)
+  : null;
+---
+
+{href && (
+  <aside class="reading-tool" aria-labelledby="reading-tool-title" data-growth-pilot="reading_guide">
+    <h2 id="reading-tool-title">Keep notes with a paper</h2>
+    <p>
+      Use a plain document for your reading notes. If you want PDF annotations in a
+      reading app, compare Readwise Reader's current features, limitations and price
+      before choosing a tool.
+    </p>
+    <p class="disclosure">PepCodex may earn a commission if you buy through the following link.</p>
+    <a href={href} rel="sponsored noreferrer" referrerpolicy="no-referrer" data-growth-outbound="readwise">
+      View Readwise Reader
+    </a>
+    <p>You can use the worksheet without buying anything.</p>
+  </aside>
+)}
+
+<style>
+  .reading-tool { margin-block: 2rem; padding: 1.25rem; border: 1px solid var(--border-c); border-radius: .75rem; background: var(--paper-2); }
+  .reading-tool h2 { margin-top: 0; }
+  .reading-tool p { margin-block: .75rem; }
+  .disclosure { font-weight: 600; }
+  .reading-tool a { display: inline-block; padding-block: .5rem; text-decoration: underline; text-underline-offset: .2em; }
+  .reading-tool a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+</style>

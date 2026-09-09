@@ -1,6 +1,7 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
 import GuideLayout from '../../layouts/GuideLayout.astro';
+import AffiliateReadingTool from '../../components/AffiliateReadingTool.astro';
 
 export async function getStaticPaths() {
   const guides = await getCollection('guides');
@@ -35,4 +36,5 @@ const { Content } = await guide.render();
   metaDescription={guide.data.metaDescription}
 >
   <Content />
+  <AffiliateReadingTool />
 </GuideLayout>

@@ -1,131 +1,147 @@
-// Diagnoses WHY pages are invisible in search, using the GSC URL Inspection API.
-// Quantifies coverage first (sitemap vs pages with any impression), then inspects a
-// stratified sample of silent pages to get Google's own verdict per URL.
-//
-//   node scripts/gsc-index-diagnose.mjs [--sample=60]
-//
-// URL Inspection is rate-limited (~2000/day, 600/min) so we sample rather than sweep.
-import fs from 'fs';
-import path from 'path';
-import { mintToken } from './gsc-probe.mjs';
+// Read-only inspection of an explicit sample against one GSC URL-prefix property.
+// node scripts/gsc-index-diagnose.mjs --sample-file=sample-30.csv --site=https://www.pepcodex.com/
+import fs from 'node:fs';
+import path from 'node:path';
+import { createHash } from 'node:crypto';
+import { pathToFileURL } from 'node:url';
+import { createExport, exportRequest, safeError } from './lib/analytics-export.mjs';
 
-const V2 = path.join('.planning', 'data', 'v2');
-const SITE = 'https://www.pepcodex.com/'; // inspect against the CURRENT property
-const SAMPLE = Number((process.argv.slice(2).find((a) => a.startsWith('--sample=')) || '').split('=')[1]) || 60;
-
-const load = (p) => (fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf-8')) : []);
-const norm = (u) => u.replace(/^https?:\/\/(www\.)?pepcodex\.com/, '').replace(/\/$/, '') || '/';
-const section = (p) => {
-  const parts = p.split('/').filter(Boolean);
-  return parts.length ? `/${parts[0]}/` : '/(home)';
-};
-
-async function inspect(token, url) {
-  const res = await fetch('https://searchconsole.googleapis.com/v1/urlInspection/index:inspect', {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ inspectionUrl: url, siteUrl: SITE }),
-  });
-  const j = await res.json();
-  if (j.error) return { error: `${j.error.code} ${j.error.message.slice(0, 90)}` };
-  const r = j.inspectionResult?.indexStatusResult ?? {};
-  return {
-    verdict: r.verdict,
-    coverageState: r.coverageState,
-    robotsTxtState: r.robotsTxtState,
-    indexingState: r.indexingState,
-    pageFetchState: r.pageFetchState,
-    lastCrawlTime: r.lastCrawlTime,
-    googleCanonical: r.googleCanonical,
-    userCanonical: r.userCanonical,
-    referringUrls: (r.referringUrls || []).length,
-  };
+export const INSPECTION_ENDPOINT = 'https://searchconsole.googleapis.com/v1/urlInspection/index:inspect';
+export function inspectionOptions(args) {
+  const values = {};
+  for (const arg of args) {
+    const match = arg.match(/^--(sample-file|site|out|max-urls)=(.+)$/);
+    if (!match || values[match[1]] !== undefined) throw new Error('Invalid or duplicate inspection option.');
+    values[match[1]] = match[2];
+  }
+  if (!values['sample-file'] || !values.site) throw new Error('An explicit sample file and property are required.');
+  const maxUrls = Number(values['max-urls'] ?? 200);
+  if (!Number.isInteger(maxUrls) || maxUrls < 1 || maxUrls > 2000) throw new Error('max-urls must be an integer from 1 to 2000.');
+  return { sampleFile: values['sample-file'], site: values.site, out: values.out, maxUrls };
 }
 
-const main = async () => {
-  const token = await mintToken();
+// RFC4180-style quoted fields, escaped quotes and embedded newlines. No eval or
+// spreadsheet interpretation: only the exact url and optional sample_id columns.
+export function parseSampleCsv(input) {
+  const text = input.replace(/^\uFEFF/, ''), records = [];
+  let row = [], value = '', quoted = false, closed = false;
+  const finishField = () => { row.push(value); value = ''; closed = false; };
+  const finishRow = () => { finishField(); if (row.some(field => field !== '')) records.push(row); row = []; };
+  for (let i = 0; i < text.length; i++) {
+    const char = text[i];
+    if (quoted) {
+      if (char === '"' && text[i + 1] === '"') { value += '"'; i++; }
+      else if (char === '"') { quoted = false; closed = true; }
+      else value += char;
+    } else if (char === ',' || char === '\n' || char === '\r') {
+      if (char === ',') finishField();
+      else { if (char === '\r' && text[i + 1] === '\n') i++; finishRow(); }
+    } else if (closed) throw new Error('Unexpected text after a quoted CSV field.');
+    else if (char === '"') { if (value) throw new Error('Unexpected quote in a CSV field.'); quoted = true; }
+    else value += char;
+  }
+  if (quoted) throw new Error('Unclosed CSV quote.');
+  if (value || row.length || closed) finishRow();
+  const headers = records.shift()?.map(header => header.trim().toLowerCase());
+  if (!headers || new Set(headers).size !== headers.length || !headers.includes('url')) throw new Error('CSV needs one unambiguous url column.');
+  return records.map(record => {
+    if (record.length !== headers.length) throw new Error('CSV row width differs from header.');
+    return Object.fromEntries(headers.map((header, i) => [header, record[i]]));
+  });
+}
 
-  // ---------- coverage ----------
-  const crawl = load(path.join('.planning', 'data', 'crawl-baseline.json'));
-  const seen = new Set();
-  for (const tag of ['pepcodex-com', 'www-pepcodex-com']) {
-    for (const r of load(path.join(V2, `gsc-${tag}-page.json`))) {
-      if (r.impressions > 0) seen.add(norm(r.page));
+export function loadInspectionSample(options) {
+  if (!['https://www.pepcodex.com/', 'https://pepcodex.com/'].includes(options.site)) throw new Error('Choose one exact supported URL-prefix property.');
+  if (!Number.isInteger(options.maxUrls ?? 200) || (options.maxUrls ?? 200) < 1 || (options.maxUrls ?? 200) > 2000) throw new Error('Invalid maximum sample size.');
+  const inputFile = path.resolve(options.sampleFile), bytes = fs.readFileSync(inputFile);
+  const text = bytes.toString('utf8').replace(/^\uFEFF/, '');
+  const extension = path.extname(inputFile).toLowerCase();
+  const parsed = extension === '.csv' ? parseSampleCsv(text) : extension === '.json' ? JSON.parse(text) : null;
+  if (!Array.isArray(parsed) || !parsed.length || parsed.length > (options.maxUrls ?? 200)) throw new Error('Provide a nonempty CSV/JSON array within max-urls; the sample is never truncated.');
+  const seen = new Set(), ids = new Set();
+  const rows = parsed.map((record, index) => {
+    const value = typeof record === 'string' ? record : record?.url;
+    if (typeof value !== 'string') throw new Error('Sample URL must be a string.');
+    const url = value.trim(), parsedUrl = new URL(url);
+    if (parsedUrl.href !== url || !url.startsWith(options.site) || parsedUrl.origin + '/' !== options.site || parsedUrl.username || parsedUrl.password || parsedUrl.hash) throw new Error('Sample URLs must be exact absolute URLs inside the selected property, without fragments or credentials.');
+    if (seen.has(url)) throw new Error('Duplicate sample URL.');
+    seen.add(url);
+    const sampleId = typeof record === 'object' && record?.sample_id ? record.sample_id : String(index + 1);
+    if (typeof sampleId !== 'string' || ids.has(sampleId)) throw new Error('Sample IDs must be unique strings.');
+    ids.add(sampleId);
+    return { sampleId, url };
+  });
+  return { inputFile, bytes, extension, sha256: createHash('sha256').update(bytes).digest('hex'), rows };
+}
+
+export function inspectionFields(response) {
+  const result = response?.inspectionResult?.indexStatusResult;
+  if (!result || typeof result !== 'object' || Array.isArray(result)) return { status: 'UNAVAILABLE', reason: 'INDEX_STATUS_NOT_RETURNED' };
+  const fields = ['verdict', 'coverageState', 'robotsTxtState', 'indexingState', 'pageFetchState', 'lastCrawlTime', 'googleCanonical', 'userCanonical'];
+  if (fields.some(key => result[key] !== undefined && typeof result[key] !== 'string') || (result.referringUrls !== undefined && (!Array.isArray(result.referringUrls) || result.referringUrls.some(url => typeof url !== 'string')))) return { status: 'UNAVAILABLE', reason: 'MALFORMED_INDEX_STATUS' };
+  if (result.verdict !== undefined && !['VERDICT_UNSPECIFIED', 'PASS', 'PARTIAL', 'FAIL', 'NEUTRAL'].includes(result.verdict)) return { status: 'UNAVAILABLE', reason: 'MALFORMED_INDEX_VERDICT' };
+  if (result.lastCrawlTime && !Number.isFinite(Date.parse(result.lastCrawlTime))) return { status: 'UNAVAILABLE', reason: 'MALFORMED_CRAWL_TIMESTAMP' };
+  const informative = ['PASS', 'PARTIAL', 'FAIL', 'NEUTRAL'].includes(result.verdict) || Boolean(result.coverageState?.trim());
+  if (!informative) return { status: 'UNAVAILABLE', reason: 'INDEX_STATUS_UNSPECIFIED' };
+  return { status: 'OBSERVED', ...Object.fromEntries(fields.map(key => [key, result[key] || null])), referringUrls: result.referringUrls ?? null };
+}
+
+export async function runInspection(options, dependencies = {}) {
+  const sample = loadInspectionSample(options); // No network or output before validating the entire sample.
+  const run = createExport('url-inspection', options);
+  Object.assign(run.manifest.scope, { site: options.site, languageCode: 'en-US', sampling: 'explicit-file', selectedUrls: sample.rows.length });
+  run.manifest.input = { file: sample.inputFile, sha256: sample.sha256, preservedFile: `raw/sample-input${sample.extension}` };
+  fs.writeFileSync(path.join(run.out, run.manifest.input.preservedFile), sample.bytes, { flag: 'wx' });
+  run.manifest.limitations = ['Google indexed-version information, not a live URL test.', 'Explicit sample only; not an index census or random population estimate.', 'Missing crawl timestamps remain unknown, never interpreted as never crawled.', 'No historical search metrics are loaded, joined or inferred.', 'No indexing submission or account changes.'];
+  const results = sample.rows.map(row => ({ ...row, status: 'NOT_ATTEMPTED' }));
+  const checkpoint = () => { run.manifest.results = run.write('index-inspection.json', results); run.checkpoint(); };
+  checkpoint();
+  let stage = 'authentication';
+  try {
+    const request = await exportRequest(dependencies);
+    for (const [index, row] of results.entries()) {
+      stage = `inspection-${index + 1}`;
+      const body = { inspectionUrl: row.url, siteUrl: options.site, languageCode: 'en-US' };
+      try {
+        const response = await request(INSPECTION_ENDPOINT, body);
+        // Shared transport already rejects error responses. Enforce the same
+        // boundary for injected transports before preserving successful raw data.
+        if (response?.error) {
+          const status = Number(response.error.code);
+          throw Object.assign(new Error('Inspection API returned an error.'), Number.isInteger(status) && status >= 100 && status <= 599 ? { status } : {});
+        }
+        row.fetchedAt = new Date().toISOString();
+        row.raw = run.write(`raw/inspection-${index + 1}.json`, { fetchedAt: row.fetchedAt, request: body, response });
+        Object.assign(row, inspectionFields(response));
+      } catch (error) {
+        row.status = 'ERROR'; row.error = safeError(error);
+        run.manifest.errors.push({ stage, ...row.error });
+        const fatal = ['REAUTH_REQUIRED', 'MISSING_SCOPE', 'TOKEN_REJECTED', 'PROPERTY_PERMISSION', 'RATE_LIMITED', 'RUNTIME_OR_CREDENTIAL_FILE', 'NETWORK_TIMEOUT', 'SERVICE_UNAVAILABLE', 'AUTH_CONFIGURATION', 'API_DISABLED', 'QUOTA_PROJECT'].includes(row.error.code) || [401, 403, 429].includes(row.error.code) || (typeof row.error.code === 'number' && row.error.code >= 500);
+        if (fatal) { run.manifest.stoppedReason = row.error.code; checkpoint(); break; }
+      }
+      checkpoint();
+      console.log(`${index + 1}/${results.length}: ${row.status}`);
     }
+  } catch (error) {
+    run.manifest.errors.push({ stage, ...safeError(error) });
   }
-  const all = crawl.map((r) => norm(r.url));
-  const silent = all.filter((u) => !seen.has(u));
+  const counts = Object.fromEntries(['OBSERVED', 'UNAVAILABLE', 'ERROR', 'NOT_ATTEMPTED'].map(status => [status, results.filter(row => row.status === status).length]));
+  run.manifest.counts = counts;
+  run.manifest.status = counts.OBSERVED === results.length ? 'COMPLETE' : counts.OBSERVED || counts.UNAVAILABLE ? 'INCOMPLETE' : 'FAILED';
+  run.manifest.finishedAt = new Date().toISOString(); checkpoint();
+  console.log(`${run.manifest.status}: ${run.out}`);
+  return run;
+}
 
-  console.log('================ COVERAGE ================');
-  console.log(`pages in sitemap/crawl : ${all.length}`);
-  console.log(`with >=1 impression    : ${all.length - silent.length}  (${(((all.length - silent.length) / all.length) * 100).toFixed(1)}%)`);
-  console.log(`NEVER seen in search   : ${silent.length}  (${((silent.length / all.length) * 100).toFixed(1)}%)`);
-
-  const bySec = {};
-  for (const u of all) {
-    const s = section(u);
-    bySec[s] ??= { total: 0, silent: 0 };
-    bySec[s].total++;
-    if (!seen.has(u)) bySec[s].silent++;
+if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
+  try {
+    const options = inspectionOptions(process.argv.slice(2));
+    (await import('./lib/google-auth.mjs')).loadEnvironment();
+    const run = await runInspection(options);
+    if (run.manifest.status !== 'COMPLETE') process.exitCode = 1;
+  } catch (error) {
+    console.error(safeError(error));
+    console.error('Usage: --sample-file=sample.csv|sample.json --site=https://www.pepcodex.com/ [--out=NEW_DIRECTORY] [--max-urls=200]');
+    process.exitCode = 1;
   }
-  console.log('\nSECTION          TOTAL  SILENT   % silent');
-  Object.entries(bySec)
-    .filter(([, v]) => v.total >= 3)
-    .sort((a, b) => b[1].silent - a[1].silent)
-    .forEach(([s, v]) =>
-      console.log(s.padEnd(16) + String(v.total).padStart(6) + String(v.silent).padStart(8) + String(((v.silent / v.total) * 100).toFixed(0) + '%').padStart(11))
-    );
-
-  // ---------- stratified sample of silent pages ----------
-  const bucket = {};
-  for (const u of silent) (bucket[section(u)] ??= []).push(u);
-  const picks = [];
-  const sections = Object.keys(bucket);
-  let i = 0;
-  while (picks.length < Math.min(SAMPLE, silent.length)) {
-    const s = sections[i % sections.length];
-    const b = bucket[s];
-    if (b && b.length) picks.push(b.shift());
-    i++;
-    if (i > silent.length * 2) break;
-  }
-
-  console.log(`\n================ INSPECTING ${picks.length} SILENT PAGES ================`);
-  const results = [];
-  for (const [n, u] of picks.entries()) {
-    const url = `https://www.pepcodex.com${u}`;
-    const r = await inspect(token, url);
-    results.push({ url: u, ...r });
-    if (r.error) console.log(`  ${String(n + 1).padStart(3)}. ERROR ${r.error}`);
-    else console.log(`  ${String(n + 1).padStart(3)}. ${String(r.coverageState || r.verdict || '?').padEnd(42)} ${u.slice(0, 46)}`);
-  }
-
-  fs.writeFileSync(path.join(V2, 'index-inspection.json'), JSON.stringify(results, null, 2));
-
-  // ---------- verdict tally ----------
-  console.log('\n================ WHY THEY ARE INVISIBLE ================');
-  const tally = {};
-  for (const r of results) {
-    const k = r.error ? `ERROR: ${r.error}` : r.coverageState || r.verdict || 'unknown';
-    tally[k] = (tally[k] || 0) + 1;
-  }
-  Object.entries(tally)
-    .sort((a, b) => b[1] - a[1])
-    .forEach(([k, v]) => console.log(`  ${String(v).padStart(4)}  ${k}`));
-
-  const canonMismatch = results.filter((r) => r.googleCanonical && r.userCanonical && r.googleCanonical !== r.userCanonical);
-  if (canonMismatch.length) {
-    console.log(`\n  CANONICAL DISAGREEMENTS (Google picked a different URL): ${canonMismatch.length}`);
-    canonMismatch.slice(0, 6).forEach((r) => console.log(`    ${r.url}\n      you: ${r.userCanonical}\n      Google: ${r.googleCanonical}`));
-  }
-
-  const never = results.filter((r) => !r.lastCrawlTime && !r.error);
-  console.log(`\n  never crawled at all: ${never.length} of ${results.length}`);
-
-  console.log(`\nwrote ${V2}/index-inspection.json`);
-};
-
-main().catch((e) => {
-  console.error('FAILED:', String(e.message ?? e).split('\n')[0]);
-  process.exit(1);
-});
+}

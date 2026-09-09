@@ -16,7 +16,9 @@
 
     if (!tocList || !article) return;
 
-    const headings = article.querySelectorAll('h2, h3');
+    const content = article.querySelector('[data-toc-content]') || article;
+    const headings = Array.from(content.querySelectorAll('h2, h3'))
+      .filter(heading => !heading.closest('aside, #toc'));
 
     headings.forEach((heading, index) => {
       // Ensure heading has an ID

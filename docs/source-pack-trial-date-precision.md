@@ -1,0 +1,11 @@
+# Source-pack trial date precision
+
+Trial `startDate` and `completionDate` preserve the recorded calendar precision. Accepted string forms are `YYYY`, `YYYY-MM` and a calendar-valid `YYYY-MM-DD`; completion also retains its existing null allowance. Fields remain optional. Year/month forms cover positive four-digit years; impossible months and dates, timestamps, numeric values and unknown-value objects are rejected. The original full-date validator branch is unchanged, including its existing edge-year behavior.
+
+Validation never pads a missing month/day, rewrites the string, changes a timestamp or marks a trial current. `2028-03` means only March 2028; it does not establish March 1 or March 31. Calendar precision and estimated/actual date type are separate facts. Missing completion type must not be interpreted as actual completion.
+
+The patch changes only the two trial date field contracts. It does not relax document publication/effective dates, research publication years, required identifiers or other source-pack rules. The source-pack validator still reports identity, current status and claim support as NOT_ASSESSED.
+
+Run `node --test scripts/source-pack-partial-dates.test.mjs`. The three committed fixtures are exact unmodified snapshots of Ecnoglutide, Pemvidutide and Oveporexton packs taken during the September 5, 2026 pilot. They are structural fixtures, not a current-source reference dataset. The two month values and existing passing control are preserved; no dates or source facts were corrected by this change.
+
+TrialTable's existing formatter displays a year as a year and month precision as a month/year label; its internal day-1 anchor is for month formatting only and is neither displayed as a known day nor persisted. Full-date display remains month/year as before. The trials index's existing sort uses JavaScript dates, which treats a partial date as the start of its interval. That ordering does not prove one trial finishes before another when date ranges overlap. A precision-aware sort policy is separate work. Registry import/repair tools preserve raw strings but have separate endpoint/type-provenance limitations; this schema change does not certify their semantics.

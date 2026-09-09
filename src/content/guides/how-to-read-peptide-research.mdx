@@ -1,62 +1,103 @@
 ---
 title: "How to Read Peptide Research"
 category: "other"
-lastUpdated: 2026-01-28
+lastUpdated: 2026-09-09T10:14:45.893Z
 summary: "A practical guide to evaluating peptide research claims and understanding what studies actually show."
 relatedTerms: ["clinical-trials", "evidence-levels", "peer-review", "study-design"]
 metaTitle: "How to Read Peptide Research (2026 Guide)"
 metaDescription: "Learn to critically evaluate peptide research claims - what to look for, red flags to watch, and questions to ask."
+sources:
+  - id: "pmid-40228832"
+    title: "CONSORT 2025 explanation and elaboration: updated guideline for reporting randomised trials"
+    url: "https://doi.org/10.1136/bmj-2024-081124"
+    type: "journal"
+    pmid: "40228832"
+    doi: "10.1136/bmj-2024-081124"
+    verifiedAt: "2026-09-05"
+  - id: "grade-working-group-criteria"
+    title: "GRADE Working Group: Criteria for applying or using GRADE"
+    url: "https://www.gradeworkinggroup.org/"
+    verifiedAt: "2026-09-05"
+  - id: consort-2025
+    title: "CONSORT 2025 statement: updated guideline for reporting randomised trials"
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11995449/"
+    type: journal
+    doi: "10.1136/bmj-2024-081123"
+    verifiedAt: "2026-09-05"
+  - id: cochrane-handbook-15
+    title: "Cochrane Handbook, Chapter 15: Interpreting results and drawing conclusions (version 6.5, 2024; chapter updated August 2023)"
+    url: "https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-15"
+    verifiedAt: "2026-09-05"
 ---
 
-## Why Research Literacy Matters
+## Start with the claim
 
-The peptide space is filled with bold claims. Learning to evaluate research helps you separate promising science from marketing hype.
+Write down the claim you want to check. Then identify the exact molecule, who or what was studied, the comparison, the outcome, and the follow-up period. Keep those details beside the claim as you read.
 
-## Key Questions to Ask
+## Copy this reading note
 
-When you encounter a peptide claim, ask:
+Use a plain document or notebook. No account or submission is needed for the worksheet.
 
-1. **Was this studied in humans?** Animal studies don't predict human outcomes reliably.
-2. **How many people were studied?** Small studies (under 50) are preliminary.
-3. **Who funded the research?** Industry funding isn't disqualifying but warrants scrutiny.
-4. **Was it peer-reviewed?** Published in reputable journals with expert review.
-5. **Has it been replicated?** Single studies, even good ones, need confirmation.
+```text
+Claim I am checking:
+Paper title and link:
+Publication date; correction notice; date I read it:
+Material available: abstract / full paper / supplement / protocol
 
-## Red Flags to Watch
+Question: What comparison is being investigated?
+Population: Who or what was studied? Who was excluded?
+Setting: Where did the study happen?
+Intervention and comparator:
+Design: How were groups formed? Who was blinded?
+Outcome: What exactly was measured, in which units?
+Timepoint: When was that outcome measured?
+Analysis: Who was included, and how were missing data handled?
+Result: Each group's result and denominator, then the comparison.
+Absolute result and relative result, if applicable:
+Uncertainty: Reported interval and important unmeasured outcomes.
+Applicability: How does this setting differ from my question?
+Funding, author interests and funder's role:
+Other relevant studies or conflicting findings to check:
 
-| Red Flag | Why It Matters |
-|----------|---------------|
-| "Studies show..." without citations | Vague claims often misrepresent research |
-| Only rodent studies cited | Rodent results often don't translate |
-| Single research group | Findings need independent replication |
-| Unpublished "internal data" | No external verification possible |
-| Dramatic effect sizes | Real biology rarely shows 10x improvements |
+My bounded summary:
+What this paper does not establish:
+Open questions; next source to read:
+Passage/table/figure supporting each factual note:
+```
 
-## Understanding Study Types
+For a randomized trial, compare your note with the report's eligibility, outcome, analysis, participant-flow and limitation sections. [CONSORT's checklist](https://pmc.ncbi.nlm.nih.gov/articles/PMC11995449/#tbl1) asks authors to report these details. A missing detail remains a question; do not fill it from a trial's name or phase.
 
-### Strongest Evidence
-- **Randomized Controlled Trials (RCTs)** - Gold standard for efficacy
-- **Systematic Reviews** - Analyze multiple studies together
-- **Phase 3 Trials** - Large-scale human testing
+## Questions for a randomized trial
 
-### Weaker Evidence
-- **Observational Studies** - Show correlation, not causation
-- **Case Reports** - Individual stories, not patterns
-- **Animal Studies** - Useful for mechanisms, not human predictions
-- **In Vitro Studies** - Lab dish results rarely apply to whole organisms
+Use these reading prompts with the original report:
 
-## Practical Tips
+1. **What was planned?** Check the registration, protocol, and primary outcome against the reported results.
+2. **How was the sample size justified?** Read the assumptions behind it, not just the participant count.
+3. **Who contributed results?** Look for the numbers assigned to each group and included in the analysis.
+4. **How uncertain is the estimate?** Read the effect estimate alongside its confidence interval.
+5. **How were harms collected?** Check the definitions, assessment methods, and follow-up.
+6. **Who funded and conducted the work?** Read the funder's role and the authors' conflict disclosures alongside the methods.
 
-1. **Find the original paper** - Don't rely on summaries or marketing
-2. **Read the methods section** - How was the study designed?
-3. **Check the limitations** - Authors usually acknowledge weaknesses
-4. **Look for replication** - Has anyone else found the same thing?
-5. **Consider the source** - University research vs. company marketing
+These prompts draw on [CONSORT 2025, Table 1 and Item 16a](https://eprints.gla.ac.uk/350055/1/350055.pdf). Sample-size planning depends on the study question and design assumptions; a fixed cutoff such as 50 participants is not a substitute for that appraisal. CONSORT is reporting guidance, not a quality score or an automatic pass/fail test.
 
-## When Claims Sound Too Good
+## Keep the number attached to its meaning
 
-If a peptide is claimed to fix multiple unrelated problems with no side effects, be skeptical. Real medications have tradeoffs and specific uses.
+Record the measure as the authors report it. A difference in event percentages is an absolute difference; a risk ratio compares the risks by division. Do not silently exchange these measures. For continuous measurements, retain the units and whether the result is a final value or change from baseline. See [Cochrane Chapter 15, sections 15.4–15.5](https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-15).
 
----
+A confidence interval expresses statistical uncertainty under the analysis assumptions. Its width depends on more than participant count, including outcome variability or the number of events. A result that does not meet a statistical-significance threshold does not by itself establish no effect. Read the estimate and interval together. [Cochrane Chapter 15, section 15.3](https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-15).
 
-*This guide helps you evaluate claims. It's not a substitute for medical advice.*
+## Look beyond the design label
+
+Name the study design, then ask whether it addresses the particular claim. For a laboratory or animal experiment, record that setting explicitly instead of rewriting the result as a human outcome.
+
+For an assessment of a body of evidence, look for an explanation of bias, precision, consistency, and relevance. The [GRADE Working Group's criteria](https://www.gradeworkinggroup.org/) call for considering these factors and assessing evidence for specified outcomes. A design label alone does not provide that assessment.
+
+**Evidence grade for this worksheet: not assigned.** This methods guide does not assess a body of peptide evidence. If you record a grade from another review, also record its outcome, population, rationale and date; do not turn it into a blanket score for a compound.
+
+## Keep a short reading note
+
+Record the source link, the claim, the measured outcome, and the limitations you identified. Mark unanswered questions as unanswered. When reading a second paper, check whether its population and outcome match before treating it as confirmation of the same claim.
+
+[Read the worked PARACHUTE example](/blog/how-to-read-peptide-research) to see a filled-in reading note.
+
+*These are educational reading prompts, not a validated PepCodex appraisal tool or medical advice.*

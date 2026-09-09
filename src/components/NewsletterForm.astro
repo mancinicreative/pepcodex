@@ -27,10 +27,11 @@ const {
     <input type="hidden" name="source" value={source} />
     <input
       type="email"
+      aria-label="Email address"
       name="email"
       placeholder="your@email.com"
       required
-      class="flex-1 rounded-xl px-4 py-2 text-sm text-[color:var(--ink)] placeholder-[color:var(--ink-dim)] outline-none focus:border-[color:var(--primary-c)] focus:ring-2 focus:ring-[var(--primary-c)]/20"
+      class="min-w-0 flex-1 rounded-xl px-4 py-2 text-sm text-[color:var(--ink)] placeholder-[color:var(--ink-dim)] outline-none focus:border-[color:var(--primary-c)] focus:ring-2 focus:ring-[var(--primary-c)]/20"
       style="background: var(--paper); border: 1px solid var(--border-c);"
     />
     <button
@@ -47,7 +48,7 @@ const {
     <h3 class="text-lg font-semibold" style="color: var(--text-high);">{heading}</h3>
     <p class="mt-2 text-sm" style="color: var(--text-medium);">{description}</p>
     <form
-      class="mt-4 flex gap-2"
+      class="mt-4 flex flex-col gap-2 sm:flex-row"
       action="/api/subscribe"
       method="POST"
       data-newsletter-form
@@ -56,10 +57,11 @@ const {
       <input type="hidden" name="source" value={source} />
       <input
         type="email"
+        aria-label="Email address"
         name="email"
         placeholder="your@email.com"
         required
-        class="flex-1 rounded-xl px-4 py-2 text-sm text-[color:var(--ink)] placeholder-[color:var(--ink-dim)] outline-none focus:border-[color:var(--primary-c)] focus:ring-2 focus:ring-[var(--primary-c)]/20"
+        class="min-w-0 flex-1 rounded-xl px-4 py-2 text-sm text-[color:var(--ink)] placeholder-[color:var(--ink-dim)] outline-none focus:border-[color:var(--primary-c)] focus:ring-2 focus:ring-[var(--primary-c)]/20"
         style="background: var(--paper); border: 1px solid var(--border-c);"
       />
       <button
@@ -91,10 +93,11 @@ const {
         <input type="hidden" name="source" value={source} />
         <input
           type="email"
+          aria-label="Email address"
           name="email"
           placeholder="your@email.com"
           required
-          class="flex-1 rounded-xl px-4 py-3 text-[color:var(--ink)] placeholder-[color:var(--ink-dim)] outline-none focus:border-[color:var(--primary-c)] focus:ring-2 focus:ring-[var(--primary-c)]/20"
+          class="min-w-0 flex-1 rounded-xl px-4 py-3 text-[color:var(--ink)] placeholder-[color:var(--ink-dim)] outline-none focus:border-[color:var(--primary-c)] focus:ring-2 focus:ring-[var(--primary-c)]/20"
           style="background: var(--paper); border: 1px solid var(--border-c);"
         />
         <button
@@ -111,9 +114,14 @@ const {
 
 <script>
   document.querySelectorAll('[data-newsletter-form]').forEach(form => {
+    let pending = false;
+    let accepted = false;
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      if (pending || accepted) return;
       const formEl = e.target as HTMLFormElement;
+      if (!formEl.reportValidity()) return;
+      pending = true;
       const formData = new FormData(formEl);
       const email = formData.get('email');
       const website = formData.get('website');
@@ -135,7 +143,13 @@ const {
 
         const data = await res.json();
 
-        if (data.success) {
+        if (res.ok && data.success === true) {
+          accepted = true;
+          if (!website && data.subscriptionStatus === 'accepted') window.pepcodexAnalytics?.track('generate_lead', {
+            lead_type: 'newsletter',
+            lead_stage: 'request_accepted',
+            page_path: window.location.pathname,
+          });
           // Success - show confirmation message without injecting API text as HTML
           formEl.replaceChildren();
           const successEl = document.createElement('p');
@@ -170,6 +184,8 @@ const {
         errorEl.className = 'text-[color:var(--danger)] text-sm mt-2';
         errorEl.textContent = 'Something went wrong. Please try again.';
         formEl.appendChild(errorEl);
+      } finally {
+        pending = false;
       }
     });
   });

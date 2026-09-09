@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
+import type { EvidenceInventorySources } from '../../lib/evidence-inventory';
 
 // Pre-render at build time so search works with static output
 export const prerender = true;
@@ -14,12 +15,7 @@ interface PeptideSearchItem {
   content: string;
   keyTerms: string[];
   url: string;
-  sources: {
-    count: number;
-    human: number;
-    preclinical: number;
-    openAccess: number;
-  };
+  sources?: EvidenceInventorySources | null;
 }
 
 // Extract key medical terms from content for better condition searching
@@ -111,7 +107,7 @@ export const GET: APIRoute = async () => {
 
     const searchIndex: PeptideSearchItem[] = await Promise.all(
       peptides
-        .filter(peptide => peptide?.data?.summary && peptide?.data?.sources)
+        .filter(peptide => peptide?.data?.summary)
         .map(async (peptide) => {
           // Get the raw body content for searching
           const rawContent = peptide.body || '';
@@ -130,7 +126,7 @@ export const GET: APIRoute = async () => {
             content: plainContent,
             keyTerms,
             url: `/peptides/${peptide.slug}`,
-            sources: peptide.data.sources || { count: 0, human: 0, preclinical: 0, openAccess: 0 },
+            sources: peptide.data.sources,
           };
         })
     );

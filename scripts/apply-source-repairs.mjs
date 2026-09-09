@@ -1,103 +1,94 @@
 /**
- * Apply repairs to data/source-packs/*.json `sources[]`.
- *
- * DECISION TABLE:
- *   OK                    -> keep, stamp provenance
- *   DOI_WRONG             -> replace the DOI with PubMed's (authoritative via articleids)
- *   METADATA_WRONG        -> right paper, invented title/journal/year -> overwrite all from PubMed
- *   RESOLVED (by corpus)  -> attach the verified PMID/DOI and PubMed's real title/journal/year
- *   REVIEW / PHANTOM      -> DELETE. The stored identifier is fabricated AND no paper matching the
- *                            stored title exists in that peptide's PubMed corpus. Kept records are
- *                            read by content agents as verified input, so an unverifiable record is
- *                            actively harmful; sources[] renders nowhere, so removal costs no page.
- *   UNRELATED (unresolved)-> DELETE, same reasoning.
- *
- * Everything deleted is written to a re-sourcing worklist so the claim can be re-cited properly
- * rather than quietly vanishing.
- *
- * Dry-run by default. Pass --apply to write.
+ * Prepare source-pack metadata repairs; --apply only applies individually reviewed,
+ * fingerprint-matched corrections. Fuzzy/absent/missing results never delete records.
+ * Shape and metadata checks are distinct from verification of a scientific claim.
  */
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
+import { decideSourceRepair, safeSourcePackPath, summarizeSourceCounts } from './lib/source-records.mjs';
 
 const APPLY = process.argv.includes('--apply');
 const OUT_DIR = '.planning/citation-audit';
-const verification = JSON.parse(fs.readFileSync(path.join(OUT_DIR, 'source-verification.json'), 'utf-8'));
-const resolution = JSON.parse(fs.readFileSync(path.join(OUT_DIR, 'source-resolution.json'), 'utf-8'));
-
-const key = (r) => `${r.file}#${r.index}`;
-const resolved = new Map();
-for (const r of resolution) resolved.set(key(r), r);
-
-const TODAY = new Date().toISOString().slice(0, 10);
-const decisions = [];
-for (const v of verification) {
-  const res = resolved.get(key(v));
-  if (v.klass === 'OK') decisions.push({ ...v, action: 'KEEP' });
-  else if (v.klass === 'DOI_WRONG') decisions.push({ ...v, action: 'FIX_DOI' });
-  else if (v.klass === 'METADATA_WRONG') decisions.push({ ...v, action: 'FIX_META' });
-  else if (res?.verdict === 'RESOLVED') decisions.push({ ...v, action: 'ATTACH', match: res.match });
-  else decisions.push({ ...v, action: 'DELETE', why: res ? `${v.klass}/${res.verdict}` : v.klass });
-}
-
-const byFile = {};
-for (const d of decisions) (byFile[d.file] ||= []).push(d);
-
-const worklist = [];
-let kept = 0, fixedDoi = 0, fixedMeta = 0, attached = 0, deleted = 0;
-
-for (const [file, items] of Object.entries(byFile)) {
-  const pack = JSON.parse(fs.readFileSync(file, 'utf-8'));
-  const sources = pack.sources || [];
-  const drop = new Set();
-
-  for (const it of items) {
-    const s = sources[it.index];
-    if (!s) continue;
-    if (it.action === 'DELETE') {
-      drop.add(it.index);
-      deleted++;
-      worklist.push({ slug: it.slug, title: it.title, storedPmid: it.pmid, storedDoi: it.doi, why: it.why });
-      continue;
-    }
-    if (it.action === 'KEEP') { kept++; }
-    if (it.action === 'FIX_DOI') {
-      if (it.realDoi) { s.doi = it.realDoi; fixedDoi++; } else { delete s.doi; fixedDoi++; }
-    }
-    if (it.action === 'FIX_META') {
-      if (it.realTitle) s.title = it.realTitle;
-      if (it.realJournal) s.journal = it.realJournal;
-      if (it.realYear) s.year = Number(it.realYear) || it.realYear;
-      if (it.realAuthors) s.authors = it.realAuthors;
-      if (it.realDoi) s.doi = it.realDoi; else delete s.doi;
-      fixedMeta++;
-    }
-    if (it.action === 'ATTACH') {
-      s.pmid = it.match.pmid;
-      s.title = it.match.title;
-      if (it.match.journal) s.journal = it.match.journal;
-      if (it.match.year) s.year = Number(it.match.year) || it.match.year;
-      if (it.match.authors) s.authors = it.match.authors;
-      if (it.match.doi) s.doi = it.match.doi; else delete s.doi;
-      attached++;
-    }
-    s.verifiedAt = TODAY;
-    s.verifiedAgainst = 'pubmed/esummary';
+const verification = JSON.parse(fs.readFileSync(path.join(OUT_DIR, 'source-verification.json'), 'utf8'));
+const resolution = JSON.parse(fs.readFileSync(path.join(OUT_DIR, 'source-resolution.json'), 'utf8'));
+const key = record => {
+  if (!Number.isSafeInteger(record.index) || record.index < 0) throw new Error('Audit source index must be a nonnegative integer.');
+  const file = safeSourcePackPath(record.file);
+  return `${process.platform === 'win32' ? file.toLowerCase() : file}#${record.index}`;
+};
+function assertUnique(records, label) {
+  const seen = new Set();
+  for (const record of records) {
+    const id = key(record);
+    if (seen.has(id)) throw new Error(`Duplicate ${label} source target; no repair was applied.`);
+    seen.add(id);
   }
-
-  pack.sources = sources.filter((_, i) => !drop.has(i));
-  if (pack.metadata?.sourceCounts) delete pack.metadata.sourceCounts; // stale, contradicted the array
-  if (APPLY) fs.writeFileSync(file, JSON.stringify(pack, null, 2) + '\n');
 }
-
-console.log(`${APPLY ? 'APPLIED' : 'DRY RUN'} — kept ${kept} · doi fixed ${fixedDoi} · metadata fixed ${fixedMeta} · pmid attached ${attached} · deleted ${deleted}`);
-console.log('\nper pack:');
-for (const [file, items] of Object.entries(byFile)) {
-  const c = items.reduce((a, i) => ((a[i.action] = (a[i.action] || 0) + 1), a), {});
-  console.log(`  ${path.basename(file).padEnd(20)} ${JSON.stringify(c)}`);
+// Independent approvals for the same original record cannot be composed into an
+// unreviewed combined mutation. Reject aliases too, before touching any pack.
+assertUnique(verification, 'verification');
+assertUnique(resolution, 'resolution');
+const resolved = new Map(resolution.map(record => [key(record), record]));
+const packs = new Map();
+const decisions = [];
+for (const record of verification) {
+  const file = safeSourcePackPath(record.file);
+  if (!packs.has(file)) packs.set(file, JSON.parse(fs.readFileSync(file, 'utf8')));
+  const source = packs.get(file).sources?.[record.index];
+  if (!source) { decisions.push({ ...record, action: 'REVIEW', why: 'Source index no longer exists.' }); continue; }
+  decisions.push({ ...record, ...decideSourceRepair(record, resolved.get(key(record)), source) });
+}
+const changed = new Set();
+const counts = {};
+for (const decision of decisions) {
+  counts[decision.action] = (counts[decision.action] || 0) + 1;
+  if (!['FIX_DOI', 'FIX_META', 'ATTACH'].includes(decision.action)) continue;
+  const file = safeSourcePackPath(decision.file);
+  const source = packs.get(file).sources[decision.index];
+  if (decision.action === 'FIX_DOI') {
+    source.doi = decision.realDoi;
+    if (/^DOI:/i.test(source.id || '')) source.id = `DOI:${decision.realDoi}`;
+  }
+  if (decision.action === 'FIX_META') {
+    source.title = decision.realTitle;
+    if (decision.realJournal) source.journal = decision.realJournal;
+    if (/^\d{4}$/.test(String(decision.realYear))) source.year = Number(decision.realYear);
+    if (decision.realAuthors) source.authors = source.type ? decision.realAuthors.split('; ') : decision.realAuthors;
+    if (decision.realDoi) {
+      source.doi = decision.realDoi;
+      if (/^DOI:/i.test(source.id || '')) source.id = `DOI:${decision.realDoi}`;
+    }
+  }
+  if (decision.action === 'ATTACH') {
+    source.pmid = decision.match.pmid;
+    if (/^PMID:/i.test(source.id || '')) source.id = `PMID:${decision.match.pmid}`;
+    source.title = decision.match.title;
+    if (decision.match.journal) source.journal = decision.match.journal;
+    if (/^\d{4}$/.test(String(decision.match.year))) source.year = Number(decision.match.year);
+    if (decision.match.authors) source.authors = source.type ? decision.match.authors.split('; ') : decision.match.authors;
+    if (decision.match.doi) {
+      source.doi = decision.match.doi;
+      if (/^DOI:/i.test(source.id || '')) source.id = `DOI:${decision.match.doi}`;
+    }
+  }
+  source.metadataReview = { appliedAt: new Date().toISOString(), reviewer: decision.review.reviewer, authorityUrl: decision.review.authorityUrl, supportLocator: decision.review.supportLocator, sourceFingerprint: decision.review.sourceFingerprint, proposedRepairFingerprint: decision.review.proposedRepairFingerprint, claimSupport: 'NOT_ASSESSED' };
+  const reviewedAt = decision.review.reviewedAt;
+  const date = typeof reviewedAt === 'string' && reviewedAt.match(/^(\d{4})-(\d{2})-(\d{2})T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/);
+  if (date && Number.isFinite(Date.parse(reviewedAt)) && new Date(Date.UTC(Number(date[1]), Number(date[2]) - 1, Number(date[3]))).toISOString().slice(0, 10) === reviewedAt.slice(0, 10)) source.metadataReview.reviewedAt = reviewedAt;
+  changed.add(file);
 }
 if (APPLY) {
-  fs.writeFileSync(path.join(OUT_DIR, 'sources-to-recite.json'), JSON.stringify(worklist, null, 2));
-  console.log(`\nWrote ${OUT_DIR}/sources-to-recite.json (${worklist.length} claims needing a real citation)`);
+  for (const file of changed) {
+    const pack = packs.get(file);
+    if (pack.metadata?.sourceCounts) pack.metadata.sourceCounts = summarizeSourceCounts(pack.sources);
+    fs.writeFileSync(file, JSON.stringify(pack, null, 2) + '\n');
+  }
 }
-if (!APPLY) console.log('\nNo files written. Re-run with --apply.');
+fs.mkdirSync(OUT_DIR, { recursive: true });
+const plan = { checkedAt: new Date().toISOString(), mode: APPLY ? 'APPLY_REVIEWED_METADATA' : 'DRY_RUN', counts, changedFiles: APPLY ? [...changed] : [], proposedFiles: [...changed], deletionAllowed: false, claimSupport: 'NOT_ASSESSED', decisions };
+fs.writeFileSync(path.join(OUT_DIR, 'source-repair-plan.json'), JSON.stringify(plan, null, 2) + '\n');
+console.log(`${plan.mode}: ${JSON.stringify(counts)}; ${changed.size} reviewed metadata repair file(s); no sources deleted.`);
+if (decisions.some(d => ['REVIEW', 'DOCUMENT_REVIEW'].includes(d.action))) {
+  console.error('REVIEW_REQUIRED: unresolved records remain preserved. Read source-repair-plan.json; no full verification is claimed.');
+  process.exitCode = 1;
+}

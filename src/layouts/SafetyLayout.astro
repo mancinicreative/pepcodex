@@ -70,7 +70,7 @@ const breadcrumbItems = [
         </p>
 
         <p class="mt-4 text-sm text-[color:var(--ink-muted)]">
-          Last updated: {lastUpdated.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+          Last updated: {lastUpdated.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}
         </p>
       </div>
     </header>

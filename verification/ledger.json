@@ -24914,16 +24914,12 @@
           "where": "frontmatter.sources[3].pmid"
         },
         {
-          "file": "src/content/peptides/semaglutide.mdx",
-          "where": "frontmatter.timeline[4].source"
+          "file": "data/source-packs/semaglutide.json",
+          "where": "$.coreLibrary.primaryStudies[4].id"
         },
         {
           "file": "src/content/peptides/semaglutide.mdx",
           "where": "frontmatter.scoring.citations[7]"
-        },
-        {
-          "file": "data/source-packs/semaglutide.json",
-          "where": "$.coreLibrary.primaryStudies[4].id"
         }
       ],
       "verdict": "exists",
@@ -30646,6 +30642,22 @@
         {
           "file": "data/source-packs/cagrilintide.json",
           "where": "$.coreLibrary.primaryStudies[2].id"
+        },
+        {
+          "file": "src/content/peptides/semaglutide.mdx",
+          "where": "frontmatter.timeline[4].source"
+        },
+        {
+          "file": "src/content/peptides/semaglutide.mdx",
+          "where": "frontmatter.faqs[4].answer"
+        },
+        {
+          "file": "src/content/peptides/semaglutide.mdx",
+          "where": "body"
+        },
+        {
+          "file": "src/content/peptides/semaglutide.mdx",
+          "where": "body"
         }
       ],
       "verdict": "exists",

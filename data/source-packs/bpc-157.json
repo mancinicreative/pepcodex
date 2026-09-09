@@ -12,16 +12,18 @@
   "coreLibrary": {
     "primaryStudies": [
       {
-        "citation": "Lee JV, Burgess MS. Safety of Intravenous Infusion of BPC157 in Humans: A Pilot Study. J Pers Med. 2025;15(3):131.",
+        "citation": "Lee E, Burgess K. Safety of Intravenous Infusion of BPC157 in Humans: A Pilot Study. Altern Ther Health Med. 2025 Sep;31(5):20-24.",
         "year": 2025,
         "studyType": "Human Pilot Study",
-        "population": "2 healthy adults",
-        "keyFindings": "IV infusions up to 20mg well tolerated; no adverse events; no changes in cardiac, hepatic, renal, or metabolic biomarkers",
-        "access": "open",
+        "population": "Two adults, both previously exposed to intravenous BPC-157; no control group",
+        "keyFindings": "No reported adverse effects or measurable changes in tested biomarkers during three-day observation. This uncontrolled pilot does not establish general safety, long-term safety or clinical efficacy.",
         "region": "USA",
-        "verified": false,
-        "needsVerification": true,
-        "note": "Identifier resolved to a different paper than this citation describes; removed as unverifiable. Do not cite until re-verified."
+        "verified": true,
+        "needsVerification": false,
+        "note": "Corrected authors, journal and pagination against PMID:40131143. Abstract and bibliography reviewed; full text unavailable in this pass. Author verification only; independent review required.",
+        "id": "PMID:40131143",
+        "verifiedAt": "2026-09-05",
+        "verifiedAgainst": "PubMed XML; raw/2026-09-05T20-11-23.638Z/5.txt"
       },
       {
         "citation": "Vasireddi N, et al. Emerging Use of BPC-157 in Orthopaedic Sports Medicine: A Systematic Review. Am J Sports Med. 2025.",
@@ -208,14 +210,16 @@
       },
       {
         "citation": "Hsieh MJ, Liu HT, Wang CN, et al. Therapeutic potential of pro-angiogenic BPC157 is associated with VEGFR2 activation and up-regulation. J Mol Med. 2017;95(3):323-333.",
-        "id": "PMID:28013436",
+        "id": "PMID:27847966",
         "doi": "10.1007/s00109-016-1488-y",
         "year": 2017,
         "studyType": "Preclinical/In vitro",
         "population": "Rat ischemic model; endothelial cells",
-        "keyFindings": "BPC-157 activates VEGFR2; promotes angiogenesis via PI3K-Akt-eNOS pathway; accelerates ischemic wound healing",
+        "keyFindings": "VEGFR2 expression/internalization and Akt/eNOS signaling in endothelial-cell experiments; angiogenesis-related findings in chick membrane and rat hind-limb ischemia models. Not clinical wound-healing evidence.",
         "access": "paywalled",
-        "region": "Taiwan"
+        "region": "Taiwan",
+        "verifiedAt": "2026-09-05",
+        "verifiedAgainst": "PubMed PMID:27847966 abstract and bibliography"
       },
       {
         "citation": "Huang T, Zhang K, Sun L, et al. Body protection compound-157 enhances alkali-burn wound healing in vivo and promotes proliferation, migration, and angiogenesis in vitro. Drug Des Devel Ther. 2015;9:2485-2499.",
@@ -380,7 +384,7 @@
       "enrollment": 42,
       "sponsor": "Diagen Ltd",
       "location": "Europe",
-      "notes": "Cancelled in 2016; no results ever published; enrollment completed but data not disclosed",
+      "notes": "Historical registration retained. Current registry status, actual enrollment and publication of results were not reverified in the September 5, 2026 correction; no cancellation or lifetime publication-absence conclusion is made.",
       "conditions": [
         "Healthy Volunteers"
       ],
@@ -408,13 +412,68 @@
       "startDate": "2026-02-02",
       "completionDate": "2027-02-14",
       "nctId": "NCT07437547"
+    },
+    {
+      "nctId": "NCT07752381",
+      "title": "A Clinical Trial to Evaluate the Effects of Peptide Gummies on Markers of Inflammation, Physical Performance, and Recovery",
+      "phase": "not-applicable",
+      "status": "completed",
+      "enrollment": 40,
+      "enrollmentType": "actual",
+      "sponsor": "Parlay Wellness",
+      "conditions": [
+        "Musculoskeletal Inflammation",
+        "Exercise-Induced Muscle Damage",
+        "Post-Exercise Recovery",
+        "Musculoskeletal Pain"
+      ],
+      "interventions": [
+        "Parlay Recover Peptide Gummies"
+      ],
+      "startDate": "2025-09-01",
+      "startDateType": "actual",
+      "completionDate": "2025-11-01",
+      "completionDateType": "actual",
+      "firstPosted": "2026-08-07",
+      "lastUpdatePosted": "2026-08-07",
+      "hasResults": false,
+      "verifiedAt": "2026-09-05",
+      "verifiedAgainst": "ClinicalTrials.gov API v2; raw/2026-09-05T20-05-20.436Z/0030.txt",
+      "notes": "Single-arm, unmasked, product-specific study; 40 actual participants per registry. Completed November 2025, first registered August 2026. No results posted at September 5, 2026 check. Sponsor says branded gummies contain BPC-157; composition and benefit are not independently established by registration."
+    },
+    {
+      "nctId": "NCT07803250",
+      "title": "Impact of BPC-157 on Recovery From Rotator Cuff Repair Surgery",
+      "phase": "1",
+      "status": "not-yet-recruiting",
+      "enrollment": 30,
+      "enrollmentType": "estimated",
+      "sponsor": "University of Arkansas",
+      "conditions": [
+        "Rotator Cuff Tear"
+      ],
+      "interventions": [
+        "BPC-157",
+        "Sham (No Treatment)"
+      ],
+      "startDate": "2027-01-01",
+      "startDateType": "estimated",
+      "completionDate": "2027-08-01",
+      "completionDateType": "estimated",
+      "firstPosted": "2026-09-03",
+      "lastUpdatePosted": "2026-09-03",
+      "hasResults": false,
+      "verifiedAt": "2026-09-05",
+      "verifiedAgainst": "ClinicalTrials.gov API v2; raw/2026-09-05T20-05-20.436Z/0030.txt",
+      "notes": "Planned study; no results posted at September 5, 2026 check. Structured enrollment estimates 30, while summary says 20. Structured masking is quadruple but summary says double-blind. Control arm describes saline injections, whereas intervention description says no treatment or placebo injections. Retain these unresolved record conflicts; registration is not efficacy or approval evidence.",
+      "enrollmentTarget": 30
     }
   ],
   "evidenceSummary": {
     "humanEvidence": "VERY LOW",
     "preclinicalEvidence": "STRONG",
-    "regulatoryStatus": "Not approved; FDA Category 2 bulk drug (2023); banned in sports (WADA/USADA)",
-    "keyLimitation": "Decades of promising animal data but only 2-3 small pilot human studies; cancelled Phase I trial; majority of research from single Croatian group",
+    "regulatoryStatus": "FDA May 2026 evaluation reported no approved BPC-157 product. FDA safety page checked September 5, 2026 lists BPC-157 under withdrawn nominations and retains safety concerns; this is not a final compounding decision.",
+    "keyLimitation": "The reviewed human pilot is small and uncontrolled; laboratory findings cannot establish patient benefit. A complete review of historical trials and publications remains pending.",
     "independentReplication": "Limited - Taiwanese and Chinese groups have published supportive findings; UK independent review exists",
     "researchConcentration": "Estimated 80%+ of publications from Zagreb research group (Sikiric et al.)"
   },

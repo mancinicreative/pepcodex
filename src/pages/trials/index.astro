@@ -18,6 +18,7 @@ interface SourcePackTrial {
   enrollmentTarget?: number;
   startDate?: string;
   completionDate?: string;
+  completionDateType?: string;
 }
 
 interface SourcePack {
@@ -39,6 +40,7 @@ interface Trial {
   enrollmentTarget?: number;
   startDate?: string;
   completionDate?: string;
+  completionDateType?: string;
   peptide: string;
   peptideSlug: string;
 }
@@ -68,6 +70,7 @@ try {
           enrollmentTarget: trial.enrollmentTarget,
           startDate: trial.startDate,
           completionDate: trial.completionDate,
+          completionDateType: trial.completionDateType,
           peptide: peptideName,
           peptideSlug,
         }));

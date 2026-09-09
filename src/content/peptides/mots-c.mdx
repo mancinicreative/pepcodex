@@ -2,61 +2,37 @@
 name: MOTS-c
 aliases:
   - Mitochondrial ORF of the 12S rRNA type-c
-  - Mitochondrial-derived peptide
   - MOTS-C peptide
 category: longevity
-evidenceStrength: low
-lastUpdated: 2026-01-31T00:00:00.000Z
+evidenceStrength: very-low
+lastUpdated: "2026-09-05T00:00:00.000Z"
 comparators:
   - humanin
   - shlp-2
   - epithalon
 summary: >-
-  A 16-amino acid mitochondrial-derived peptide encoded in mtDNA that targets
-  AMPK/mTOR pathways for metabolic regulation. Preclinical studies show exercise
-  mimetic and geroprotective effects. Lower MOTS-c levels found in T2D patients.
-  No clinical trials yet conducted in humans.
+  A 16-amino-acid mitochondrial-derived peptide studied in cells, animals, and human
+  biomarker research. These findings do not establish benefits from administering native
+  MOTS-c to people. A trial-registry entry requires separate scrutiny of whether the
+  described study is actually being conducted.
 sources:
-  count: 8
-  human: 0
+  count: 12
+  human: 4
   preclinical: 5
-  openAccess: 8
-metaTitle: 'MOTS-c: 8 Studies Reviewed (2026)'
+  verdict: Preclinical and indirect human evidence
+  context: >-
+    Twelve cited publications: four primary reports with human biomarker observations,
+    five preclinical reports, two reviews, and one hypothesis paper. Mixed human/animal
+    reports are counted once under human evidence. Human observations are not native
+    MOTS-c treatment trials; registry entries and regulatory documents are excluded.
+metaTitle: "MOTS-c: Human Evidence, Trial Records and Safety"
 metaDescription: >-
-  Evidence-graded review of mots-c covering 8 citations. Mitochondrial peptide
-  linked to exercise mimicry and metabolic health. Updated Feb 2026.
-interactions:
-  - peptide: humanin
-    type: synergistic
-    description: >-
-      Both are mitochondria-derived peptides with complementary mechanisms.
-      MOTS-c focuses on metabolic regulation via AMPK while humanin provides
-      cytoprotection. May offer combined longevity benefits.
-  - peptide: shlp-2
-    type: compatible
-    description: >-
-      Both are MDPs encoded in mtDNA. Different target pathways - MOTS-c for
-      metabolism, SHLP-2 for mitochondrial function. No interaction studies
-      available.
-  - peptide: epithalon
-    type: compatible
-    description: >-
-      Different longevity mechanisms - MOTS-c targets AMPK/mTOR metabolic
-      pathways while epithalon targets telomerase. No known interactions.
-  - peptide: ss-31
-    type: compatible
-    description: >-
-      Both target mitochondrial function. SS-31 stabilizes cardiolipin while
-      MOTS-c signals through AMPK. Potentially complementary mechanisms.
-  - peptide: semaglutide
-    type: caution
-    description: >-
-      Both affect glucose metabolism. MOTS-c activates AMPK while semaglutide is
-      a GLP-1 agonist. Combined effects on blood sugar warrant monitoring.
+  MOTS-c evidence reviewed: human biomarker findings, mouse and cell experiments,
+  conflicting results, registry verification limits, and FDA safety concerns.
 molecularInfo:
-  weight: '2,174.56 Da'
+  weight: 2,174.6 Da (free base)
   chainLength: 16
-  type: Mitochondria-Derived Peptide (MDP)
+  type: Mitochondria-derived peptide (native free base)
   sequence: MRWQEMGYIFYPRKLR
   aminoAcids:
     - code: M
@@ -87,7 +63,7 @@ molecularInfo:
       name: Glycine
       position: 7
       property: polar
-    - code: 'Y'
+    - code: "Y"
       name: Tyrosine
       position: 8
       property: polar
@@ -99,7 +75,7 @@ molecularInfo:
       name: Phenylalanine
       position: 10
       property: hydrophobic
-    - code: 'Y'
+    - code: "Y"
       name: Tyrosine
       position: 11
       property: polar
@@ -123,129 +99,32 @@ molecularInfo:
       name: Arginine
       position: 16
       property: positive
-evidenceChainedBenefits:
-  - mechanism:
-      action: AMPK activation shifting cells from growth to maintenance/repair mode
-      confidence: supported
-      directStudies: 12
-    benefit:
-      claim: improve glucose metabolism and insulin sensitivity
-      qualifier: appears to
-    evidence:
-      level: low
-      humanStudies: 0
-      animalStudies: 10
-      cellStudies: 8
-      keyFindings:
-        - study: Lee C et al. 2015
-          type: animal
-          finding: >-
-            MOTS-c prevented diet-induced obesity and improved glucose tolerance
-            in mice via AMPK activation
-          pmid: '25738459'
-        - study: Ming W et al. 2016
-          type: animal
-          finding: >-
-            MOTS-c suppressed ovariectomy-induced bone loss in mice via
-            AMPK-dependent inhibition of osteoclastogenesis
-          pmid: '27237975'
-  - mechanism:
-      action: mTOR suppression via AMPK activation increasing autophagy
-      confidence: supported
-      directStudies: 8
-    benefit:
-      claim: provide geroprotective effects in aging models
-      qualifier: may
-    evidence:
-      level: low
-      humanStudies: 0
-      animalStudies: 6
-      cellStudies: 5
-      keyFindings:
-        - study: Reynolds JC et al. 2021
-          type: animal
-          finding: >-
-            Late-life (23.5 mo.) intermittent MOTS-c treatment increased
-            physical capacity and healthspan in old (22-month) mice
-          pmid: '33473109'
-        - study: Kong BS et al. 2025
-          type: animal
-          finding: >-
-            MOTS-c reduced pancreatic islet senescence and improved glucose
-            intolerance in aged and diabetic mice
-          pmid: '40855115'
-  - mechanism:
-      action: >-
-        Nuclear translocation and Nrf2-ARE pathway activation for antioxidant
-        response
-      confidence: emerging
-      directStudies: 5
-    benefit:
-      claim: mimic exercise-induced metabolic adaptations
-      qualifier: suggested to
-    evidence:
-      level: low
-      humanStudies: 2
-      animalStudies: 6
-      cellStudies: 4
-      keyFindings:
-        - study: Reynolds JC et al. 2021
-          type: human-observational
-          finding: >-
-            Exercise induces endogenous MOTS-c expression in human skeletal
-            muscle and in circulation, suggesting it mediates exercise benefits
-          pmid: '33473109'
-        - study: Kim KH et al. 2018
-          type: in-vitro
-          finding: >-
-            MOTS-c translocates to the nucleus under metabolic stress and
-            regulates antioxidant response element genes via NRF2
-          pmid: '29983246'
-  - mechanism:
-      action: Folate-methionine cycle modulation affecting one-carbon metabolism
-      confidence: emerging
-      directStudies: 3
-    benefit:
-      claim: regulate cellular energy homeostasis
-      qualifier: suggested to
-    evidence:
-      level: very-low
-      humanStudies: 0
-      animalStudies: 3
-      cellStudies: 4
-      keyFindings:
-        - study: Lee C et al. 2015
-          type: in-vitro
-          finding: >-
-            MOTS-c inhibits the folate cycle and de novo purine biosynthesis,
-            leading to AMPK activation
-          pmid: '25738459'
 conditions:
   - slug: metabolic-syndrome
     name: Metabolic Syndrome
     researchSummary: >-
-      MOTS-c activates AMPK and improves glucose metabolism in preclinical
-      models. Human observational studies show lower circulating MOTS-c in Type
-      2 diabetes patients. No interventional trials have tested whether MOTS-c
-      supplementation improves metabolic outcomes.
+      MOTS-c improved metabolic measures in mouse experiments. Human studies measured
+      endogenous concentrations rather than administering the peptide. A meta-analysis
+      found lower circulating levels in type 2 diabetes but higher levels in obesity, so
+      these associations do not establish a universal deficiency or treatment benefit.
     relevantStudies:
-      - '25738459'
-      - '40855115'
-      - '39160573'
+      - "25738459"
+      - "40855115"
+      - "39160573"
     relatedPeptides:
       - semaglutide
       - tirzepatide
   - slug: aging
     name: Aging & Longevity
     researchSummary: >-
-      MOTS-c levels decline with age in both mice and humans. Late-life
-      treatment improved physical function in aged mice. The K14Q variant is
-      associated with longevity in Japanese populations. No human therapeutic
-      trials have been conducted.
+      A mouse study reported improved late-life physical capacity. In healthy men, plasma
+      MOTS-c declined with age while skeletal-muscle expression increased. An early paper
+      proposed a possible longevity role for a mitochondrial variant; that hypothesis is
+      not evidence that administering MOTS-c extends human life.
     relevantStudies:
-      - '33473109'
-      - '26289118'
-      - '32182209'
+      - "33473109"
+      - "32182209"
+      - "26289118"
     relatedPeptides:
       - humanin
       - epithalon
@@ -253,230 +132,110 @@ conditions:
   - slug: exercise-mimetic
     name: Exercise Mimetic
     researchSummary: >-
-      MOTS-c activates the same AMPK pathways as exercise and produces similar
-      metabolic improvements in mice. Exercise increases circulating MOTS-c in
-      humans. Whether supplementation can substitute for exercise is untested.
+      Mouse experiments and human measurements of exercise-related MOTS-c have motivated
+      an exercise-mimetic hypothesis. Human findings vary: a 2026 study reported absent or
+      modest changes in circulating mitochondrial peptides after exercise. The cited
+      observations do not show that native MOTS-c administration reproduces exercise
+      benefits in people.
     relevantStudies:
-      - '33473109'
-      - '25738459'
+      - "33473109"
+      - "42349896"
+      - "42640735"
     relatedPeptides:
       - humanin
-timeline:
-  - period: Acute
-    effects: >-
-      MOTS-c activates AMPK rapidly in cellular models. Nuclear translocation
-      occurs under metabolic stress. Acute effects on glucose uptake observed in
-      vitro within hours.
-    source: 'PMID:25738459'
-  - period: Days to weeks
-    effects: >-
-      Mouse studies typically administer MOTS-c for days to weeks. Metabolic
-      improvements (glucose tolerance, insulin sensitivity) observed within 1-2
-      weeks of treatment. Exercise increases circulating MOTS-c acutely.
-    source: 'PMID:27237975'
-  - period: Long-term
-    effects: >-
-      Endogenous MOTS-c levels decline with age. Chronic effects of exogenous
-      administration not characterized in long-term studies. No human
-      pharmacokinetic data available for chronic dosing.
-    source: 'PMID:33473109'
 faqs:
   - question: What is MOTS-c?
     answer: >-
-      MOTS-c is a 16-amino acid mitochondria-derived peptide discovered in 2015,
-      encoded within mitochondrial DNA. It functions as a metabolic regulator
-      that activates AMPK pathways, producing effects similar to exercise in
-      preclinical models.
-  - question: Is MOTS-c FDA approved?
+      MOTS-c is a 16-amino-acid peptide encoded within the mitochondrial 12S rRNA region.
+      Cell and animal experiments investigate its metabolic and stress-response functions.
+      Its presence in the body does not establish the effects or safety of an administered
+      product.
+  - question: What human evidence is available for native MOTS-c?
     answer: >-
-      No, MOTS-c is not FDA-approved and has never been tested in human clinical
-      trials. All therapeutic data comes from mouse studies and cell culture
-      experiments. It is currently a research-stage compound only.
-  - question: What is the evidence for MOTS-c?
+      The cited human research measures endogenous MOTS-c during aging, disease, or
+      exercise. It does not demonstrate benefit from administering the peptide. A registry
+      entry describing native MOTS-c is discussed separately because actual study conduct
+      and product identity have not been independently verified.
+  - question: Does MOTS-c replace exercise or slow human aging?
     answer: >-
-      Evidence is low quality, consisting entirely of preclinical studies. Mouse
-      research shows improved glucose tolerance and late-life physical function
-      benefits. Human observational studies show MOTS-c levels decline with age
-      and are lower in diabetic patients.
-  - question: Does MOTS-c mimic exercise?
+      The cited evidence does not establish either effect in people. Mouse
+      physical-performance findings, human biomarker measurements, and hypotheses about
+      longevity answer different questions from a controlled human treatment study.
+  - question: Are all MOTS-c experiments positive?
     answer: >-
-      In mouse models, MOTS-c activates the same AMPK pathways as exercise and
-      produces similar metabolic improvements. Exercise increases circulating
-      MOTS-c in humans. However, whether supplementation can substitute for
-      exercise is completely untested.
-  - question: Why do MOTS-c levels decline with age?
-    answer: >-
-      MOTS-c is encoded in mitochondrial DNA, and mitochondrial function
-      declines with age. Lower circulating MOTS-c levels are associated with
-      metabolic dysfunction, leading researchers to hypothesize that restoration
-      could provide anti-aging benefits.
-qualityChecklist:
-  goodSigns:
-    - White to off-white lyophilized powder
-    - Complete dissolution in sterile water
-    - Certificate of analysis showing >95% purity
-    - HPLC and mass spectrometry verification
-    - Proper vacuum seal on vial
-    - Clear manufacturing source documentation
-  warningSigns:
-    - Slightly off-white coloration
-    - Slow dissolution time
-    - No third-party testing verification
-    - Purity below 95%
-    - Limited stability data
-  badSigns:
-    - 'Discolored powder (yellow, brown)'
-    - Particles or cloudiness after dissolution
-    - No certificate of analysis
-    - Cannot verify source or identity
-    - Compromised vial seal
-    - Claims of clinical efficacy (no human trials exist)
+      No. A 2026 study found that MOTS-c activated AMPK in human donor-derived stromal
+      cells but increased senescence-related signals and impaired reparative function in
+      the associated mouse experiments. These preclinical findings show that pathway
+      activation does not guarantee a useful effect.
 regulatoryStatus:
   status: research-only
-  lastUpdated: '2026-08-06'
+  lastUpdated: "2026-09-05"
   notes: >-
-    Not currently in FDA's Category 2; FDA records the nomination of "MOTs-C"
-    as withdrawn by the nominator (FDA, "Certain Bulk Drug Substances for Use
-    in Compounding that May Present Significant Safety Risks"; page content
-    current as of 22 April 2026). Withdrawal is not a reclassification to
-    Category 1 and does not place the substance on the 503A Bulks List. FDA's
-    Pharmacy Compounding Advisory Committee discussed MOTs-C-related bulk drug
-    substances for possible inclusion on the 503A Bulks List on 23 July 2026,
-    evaluating use in obesity and osteoporosis (91 FR 20465, 16 April 2026).
-    No final rule adding it to the 503A Bulks List has been published. Not
-    FDA-approved. Mitochondrial-derived peptide. Preclinical research on
-    metabolism and exercise mimetics.
-ratings:
-  researchDepth: 2
-  globalCoverage: 2
-  mechanismPlausibility: 3
-  overall: 2.45
-  lastReviewed: 2026-04-13T00:00:00.000Z
-  reviewNotes: >-
-    Mitochondria-derived metabolic peptide with growing international interest
-    and small human dataset; AMPK activation mechanism is supported by
-    preclinical data but human validation is early-stage.
-  anecdotalEvidence: 3
-scoring:
-  rubricVersion: "2.4"
-  evidence:
-    researchDepth: 50
-    mechanism: 61
-    plausibility: 71
-    globalCoverage: 64
-    communityExperience: 51
-    overall: 59
-    label: "early-limited"
-  effectiveness:
-    basis: "community-reported"
-    score: 23
-    confidence: "very-low"
-    primaryIndication: "Metabolic / exercise-mimetic support"
-  lastScored: 2026-06-27
-  citations:
-    - "PMID:25738459"
-    - "PMID:33473109"
-    - "PMID:29983246"
-    - "PMID:27237975"
-    - "PMID:40855115"
-    - "PMID:39160573"
-    - "PMID:32182209"
-    - "PMID:26289118"
-  notes: >-
-    Research Depth 50: best human evidence is observational only - a competent
-    meta-analysis of 7 case-control/cross-sectional studies (n=602, 39160573)
-    plus human skeletal-muscle aging data (32182209) measuring endogenous
-    circulating MOTS-c, with no interventional trial of exogenous MOTS-c (1A 22
-    for >=2 observational studies; 1B 7 no RCT, only observational meta-analysis
-    with high heterogeneity; 1C 8 total human N 300-1,000; 1D 4 biomarker-
-    association is indirect for the supplementation use case; 1E 9 extensive
-    independently-replicated preclinical program). Mechanism 61: AMPK-dependence
-    is functionally confirmed by AMPK-inhibitor abolition (27237975) and NRF2-ARE
-    binding shown by Co-IP (29983246), but no primary cell-surface receptor /
-    measured binding affinity is identified, capping 2A at 20; downstream AMPK->
-    mTOR/autophagy/GLUT4 and nuclear NRF2 chain well mapped (2B 20), in-vivo
-    dose-response across models (2C 12, 2D 9). Plausibility 71: mechanism->
-    surrogate established and surrogate->benefit inferred (3A 24), coherent with
-    canonical AMPK/exercise biology and supported by lower MOTS-c in T2D (3B 21),
-    humanin + AMPK-activator class analogy (3C 16), claims scoped to the AMPK
-    mechanism (3D 10). Global Coverage 64: now robustly replicated by independent
-    groups across the USA, China, Korea, Japan, NZ, Spain and India (4A 24, 4B 22),
-    20-100 diverse studies (4C 18), but no regulatory review anywhere (4D 0).
-    Community Experience 51: niche-but-persistent longevity-community use over
-    ~3-7 years with broadly consistent but subtle, hard-to-verify themes and no
-    recurring adverse signal (5A 14, 5B 15, 5C 11, 5D 11). Effectiveness basis
-    community-reported (very-low): no quantified human efficacy estimate exists,
-    only a thin, subtle community effect signal (CR1 8, CR2 9, CR3 6 = 23/50).
-anecdotalReports:
-  positive:
-    - Improved exercise capacity and energy reported
-    - Metabolic benefits and improved insulin sensitivity noted
-    - Theoretical longevity benefits from mitochondrial targeting
-    - Well-tolerated in community reports
-  negative:
-    - Effects subtle and difficult to verify objectively
-    - Limited availability and high cost
-    - Very few human studies to guide expectations
-    - Long-term effects completely unknown
-  communityNotes: >-
-    Growing interest in longevity community. Often discussed alongside other
-    mitochondrial peptides.
-mechanismPathways:
-  - name: AMPK Activation Pathway
-    label: Primary Mechanism
-    steps:
-      - MOTS-c
-      - Cytoplasmic accumulation
-      - AMPK activation
-    branches:
-      - outcome: Increased glucose uptake (GLUT4)
-      - outcome: Enhanced fatty acid oxidation
-      - outcome: Inhibition of gluconeogenesis
-      - node: mTOR suppression
-        outcome: Autophagy activation
-  - name: Nuclear Gene Regulation
-    label: Transcriptional Effects
-    steps:
-      - MOTS-c
-      - Nuclear translocation (under stress)
-      - Nrf2-ARE pathway
-    branches:
-      - outcome: Antioxidant gene expression
-      - outcome: Metabolic reprogramming
-      - outcome: Stress resistance genes
+    FDA’s May 2026 briefing states that neither MOTS-c free base nor acetate is a
+    component of an FDA-approved drug. The FDA safety page reviewed September 5 lists
+    MOTs-C among withdrawn nominations and describes unresolved safety concerns. Advisory
+    review and nomination withdrawal are not drug approval.
+limitations:
+  - Human biomarker associations do not establish effects of administering native MOTS-c.
+  - >-
+    Experimental findings are context-dependent, including negative functional results in
+    donor-cell and mouse research.
+  - >-
+    A registry listing does not independently establish recruitment, actual
+    administration, product identity, or outcomes.
+  - >-
+    Analogue and combination-platform findings are not interchangeable with native MOTS-c
+    evidence.
 ---
 
-MOTS-c is a mitochondria-derived peptide (MDP) discovered in 2015, encoded within the 12S rRNA gene of mitochondrial DNA. It functions as a metabolic regulator that coordinates cellular and whole-body energy homeostasis.
+MOTS-c was described in a 2015 paper as a 16-amino-acid peptide encoded within mitochondrial 12S rRNA. The experiments connected it with cellular metabolism and mouse insulin resistance. They did not establish therapeutic effects in people. [PMID:25738459](https://pubmed.ncbi.nlm.nih.gov/25738459/)
 
-### How It Works (Simplified)
+The molecular display describes the native free-base sequence; the reported mass is rounded to the precision in the [FDA’s May 2026 briefing](https://www.fda.gov/media/193347/download). This identification does not apply interchangeably to salts, engineered analogues, or formulated products.
 
-MOTS-c acts as an "exercise mimetic" through metabolic pathway activation:
+## What the evidence actually measures
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-8">
-  <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
-    <div class="font-semibold text-[color:var(--ink)] mb-2">AMPK Activation</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Activates the "master metabolic regulator" AMPK, shifting cells from growth mode to maintenance and repair - the same pathway activated by exercise.</p>
-  </div>
-  <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
-    <div class="font-semibold text-[color:var(--ink)] mb-2">mTOR Suppression</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Indirectly inhibits mTOR through AMPK, promoting autophagy (cellular cleanup) and reducing growth signaling - a key longevity pathway.</p>
-  </div>
-  <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
-    <div class="font-semibold text-[color:var(--ink)] mb-2">Nuclear Translocation</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Uniquely enters the nucleus under stress to directly regulate gene expression, activating antioxidant response genes via the Nrf2 pathway.</p>
-  </div>
-  <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
-    <div class="font-semibold text-[color:var(--ink)] mb-2">Glucose Metabolism</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Improves glucose uptake and insulin sensitivity, reduces gluconeogenesis, and enhances fatty acid oxidation - mimicking exercise effects.</p>
-  </div>
-</div>
+The very-low evidence grade describes clinical benefit from administering native MOTS-c. Human biomarker findings and cell/animal results are described separately below.
 
-**Key Research:** Lee C et al. (2015) discovered MOTS-c and characterized its AMPK-dependent metabolic effects in Cell Metabolism. [PMID:25738459](https://pubmed.ncbi.nlm.nih.gov/25738459/)
+The 12-publication inventory contains four primary reports with human biomarker observations, five preclinical reports, two reviews, and one hypothesis paper. Two of the human-observation papers also contain animal experiments; each publication is counted once. Registry records and regulatory documents are not included in these publication counts.
 
-### Important Limitations
+### Human biomarkers: association is not a treatment effect
 
-- **No clinical trials** — All therapeutic data is preclinical (mouse models)
-- **No receptor identified** — Mechanism of AMPK activation not fully understood
-- **Most studies from one lab** — Cohen lab produces majority of research
-- **Mouse-human translation uncertain** — Metabolic differences between species
-- **Long-term effects unknown** — Chronic mTOR suppression could have consequences
+An observational study in healthy men found lower circulating MOTS-c with age but higher skeletal-muscle expression in older groups. A general claim that MOTS-c declines in every tissue would misrepresent these findings. [PMID:32182209](https://pubmed.ncbi.nlm.nih.gov/32182209/)
+
+A 2024 meta-analysis combined six case-control studies and one cross-sectional study, involving 602 participants. Its subgroup findings differed: circulating MOTS-c was lower in type 2 diabetes and higher in obesity. Neither direction demonstrates that restoring or increasing the peptide would improve health. [PMID:39160573](https://pubmed.ncbi.nlm.nih.gov/39160573/)
+
+Exercise findings also vary. The 2021 physical-performance paper reported exercise-related increases in endogenous human MOTS-c; the administered-peptide experiments in that paper were in mice. A 2026 study of people with cerebral palsy and typically developing comparison groups found comparable basal mitochondrial-peptide levels and absent or modest exercise-related changes. [PMID:33473109](https://pubmed.ncbi.nlm.nih.gov/33473109/) [PMID:42349896](https://pubmed.ncbi.nlm.nih.gov/42349896/)
+
+A 2026 systematic review included nine studies of exercise and mitochondrial-derived peptides. It described a limited, heterogeneous evidence base. Those are not nine clinical trials administering native MOTS-c. [PMID:42640735](https://pubmed.ncbi.nlm.nih.gov/42640735/)
+
+### Cell and animal experiments
+
+- The original metabolic study reported effects on folate and purine metabolism, AMPK activation, and prevention of diet-induced insulin resistance and obesity in mice. [PMID:25738459](https://pubmed.ncbi.nlm.nih.gov/25738459/)
+- A separate mouse study reported reduced ovariectomy-associated bone loss. An AMPK inhibitor partly reduced the observed cellular effect; the paper does not establish a practical timeline for human metabolic benefit. [PMID:27237975](https://pubmed.ncbi.nlm.nih.gov/27237975/)
+- Cell experiments connected metabolic stress with nuclear translocation of MOTS-c and interaction with antioxidant-response transcription factors, including NRF2. These findings do not establish antioxidant benefit in patients. [PMID:29983246](https://pubmed.ncbi.nlm.nih.gov/29983246/)
+- A 2025 report combined mouse/islet experiments on senescence and glucose intolerance with a comparison of endogenous circulating MOTS-c in people with and without type 2 diabetes. Its human measurements were not peptide treatment outcomes. [PMID:40855115](https://pubmed.ncbi.nlm.nih.gov/40855115/)
+- An August 2026 eLife report described host-defense findings in cells and a mouse infection model. These are not clinical infection-treatment results. [PMID:42611943](https://pubmed.ncbi.nlm.nih.gov/42611943/)
+
+### An important negative result
+
+In June 2026, researchers studied adipose-derived mesenchymal stromal cells from six donors with obesity and six lean donors. MOTS-c activated AMPK but reduced proliferation and increased senescence-related and inflammatory signals. In a mouse kidney-injury model, pretreatment failed to restore the reparative effects of cells from donors with obesity and blunted the effects of cells from lean donors. Pathway activation therefore did not translate into improved repair in this setting. These results do not establish a patient adverse-event rate. [PMID:42324588](https://pubmed.ncbi.nlm.nih.gov/42324588/)
+
+## Aging and the longevity hypothesis
+
+The 2021 paper described improved physical capacity in mice, including experiments started late in life. This is distinct from demonstrating longer life or better physical function after native MOTS-c administration in humans. [PMID:33473109](https://pubmed.ncbi.nlm.nih.gov/33473109/)
+
+An earlier paper proposed that a mitochondrial variant in the MOTS-c-encoding region might help explain exceptional longevity in Japanese populations. It was a hypothesis, not evidence that the variant causes longevity or that administered MOTS-c extends human life. [PMID:26289118](https://pubmed.ncbi.nlm.nih.gov/26289118/)
+
+## Trial records require separate verification
+
+The record [NCT07505745](https://clinicaltrials.gov/study/NCT07505745), retrieved September 5, 2026, describes a Phase 2 MOTS-c study and labels it recruiting, with an estimated 120 participants. Its last posted update is April 1, 2026, and no results are posted in the record. Those fields do not independently verify recruitment, administration, or outcomes.
+
+There is an additional reason for caution: another record naming the same sponsor, Hudson Biotech, explicitly describes its TB-500 study as fictional. The MOTS-c entry does not contain that statement. This shared sponsor context is a verification concern, not proof that the MOTS-c entry is fictional. Its conduct and product identity remain unverified in this review. [NCT07487363](https://clinicaltrials.gov/study/NCT07487363)
+
+Two other records answer different questions. [NCT07678073](https://clinicaltrials.gov/study/NCT07678073) compares anesthetic approaches in renal transplantation and measures MOTS-c as a biomarker; it does not administer MOTS-c. [NCT03998514](https://clinicaltrials.gov/study/NCT03998514) concerns CB4211, which the [sponsor identifies as a MOTS-c analogue](https://www.sec.gov/Archives/edgar/data/1522602/000121390018006921/f8k052918ex99-1_cohbar.htm); it cannot supply native MOTS-c treatment or pharmacokinetic evidence.
+
+## Safety and regulatory context
+
+The [FDA safety page](https://www.fda.gov/drugs/human-drug-compounding/certain-bulk-drug-substances-use-compounding-may-present-significant-safety-risks) reviewed September 5, 2026 lists MOTs-C among withdrawn nominations and describes human safety-data gaps and immunogenicity and product-characterization concerns. The [May 2026 advisory briefing](https://www.fda.gov/media/193347/download) is not a final compounding determination.
+
+See the [MOTS-c safety review](/safety/mots-c-safety) and the [trial-record explainer](/blog/motsc-human-trials). This dossier summarizes research; it does not establish clinical benefit, safety, or treatment recommendations.

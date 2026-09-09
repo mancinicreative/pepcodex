@@ -2,7 +2,7 @@
 /**
  * CookieConsent.astro
  *
- * A GDPR/ePrivacy compliant cookie consent popup that appears on first visit.
+ * Cookie preferences shown on first visit; analytics uses basic consent mode.
  * Users can accept all cookies, decline non-essential cookies, or manage preferences.
  *
  * Uses localStorage to remember user's consent choice.
@@ -113,13 +113,15 @@
                   type="checkbox"
                   id="analytics-toggle"
                   class="sr-only peer"
-                  checked
+                  aria-label="Allow analytics cookies"
                 />
                 <div class="w-11 h-6 bg-[color:var(--sand)] peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-[var(--primary-c)] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-[color:var(--ink-paper)] after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[color:var(--ink-paper)] after:border after:border-[color:var(--border-strong)] peer-checked:after:border-[color:var(--ink-paper)] after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[var(--primary-c)]"></div>
               </label>
             </div>
           </div>
         </div>
+
+        <button id="save-cookie-preferences" type="button" class="hidden w-full mb-3 text-sm text-primary">Save preferences</button>
 
         <!-- Show/Hide Details Toggle -->
         <button
@@ -170,17 +172,11 @@
   }
 
   const STORAGE_KEY = 'pepcodex_cookie_consent';
+  let previousFocus: HTMLElement | null = null;
+  let previousOverflow = '';
 
   function getStoredConsent(): CookieConsent | null {
-    try {
-      const stored = localStorage.getItem(STORAGE_KEY);
-      if (stored) {
-        return JSON.parse(stored);
-      }
-    } catch (e) {
-      // localStorage not available or parsing failed
-    }
-    return null;
+    return window.pepcodexAnalytics?.readConsent() || null;
   }
 
   function setConsent(consent: CookieConsent): void {
@@ -192,34 +188,21 @@
   }
 
   function applyConsent(consent: CookieConsent): void {
-    // Google Analytics consent mode
-    if (typeof window.gtag === 'function') {
-      window.gtag('consent', 'update', {
-        'analytics_storage': consent.analytics ? 'granted' : 'denied'
-      });
-    }
-
-    // If analytics was denied, try to remove GA cookies
-    if (!consent.analytics) {
-      // Delete GA cookies
-      const cookies = document.cookie.split(';');
-      cookies.forEach(cookie => {
-        const name = cookie.split('=')[0].trim();
-        if (name.startsWith('_ga') || name.startsWith('_gid') || name.startsWith('_gat')) {
-          document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;`;
-          document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=.${window.location.hostname};`;
-        }
-      });
-    }
+    window.pepcodexAnalytics?.setConsent(consent.analytics);
   }
 
   function showConsentPopup(): void {
     const popup = document.getElementById('cookie-consent');
     if (popup) {
+      if (!popup.classList.contains('hidden')) return;
+      previousFocus = document.activeElement as HTMLElement | null;
+      previousOverflow = document.body.style.overflow;
+      const analyticsToggle = document.getElementById('analytics-toggle') as HTMLInputElement | null;
+      if (analyticsToggle) analyticsToggle.checked = getStoredConsent()?.analytics === true;
       popup.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
 
-      // Focus trap
+      // Move focus into the dialog; the key handler keeps it inside while open.
       const firstFocusable = popup.querySelector('button, [href], input') as HTMLElement;
       if (firstFocusable) {
         firstFocusable.focus();
@@ -231,28 +214,16 @@
     const popup = document.getElementById('cookie-consent');
     if (popup) {
       popup.classList.add('hidden');
-      document.body.style.overflow = '';
+      document.body.style.overflow = previousOverflow;
+      previousFocus?.focus();
     }
   }
 
   function initCookieConsent(): void {
     const existingConsent = getStoredConsent();
 
-    // If consent already given, apply it and don't show popup
-    if (existingConsent) {
-      applyConsent(existingConsent);
-      return;
-    }
-
-    // Set initial consent mode to denied until user consents
-    if (typeof window.gtag === 'function') {
-      window.gtag('consent', 'default', {
-        'analytics_storage': 'denied'
-      });
-    }
-
-    // Show the popup
-    showConsentPopup();
+    if (existingConsent) applyConsent(existingConsent);
+    else showConsentPopup();
 
     // Get UI elements
     const acceptBtn = document.getElementById('accept-cookies');
@@ -262,12 +233,24 @@
     const toggleText = document.getElementById('details-toggle-text');
     const toggleIcon = document.getElementById('details-toggle-icon');
     const analyticsToggle = document.getElementById('analytics-toggle') as HTMLInputElement;
+    const saveBtn = document.getElementById('save-cookie-preferences');
+    if (analyticsToggle) analyticsToggle.checked = existingConsent?.analytics === true;
+    document.querySelectorAll('[data-cookie-preferences]').forEach(button => {
+      button.addEventListener('click', showConsentPopup);
+    });
+    saveBtn?.addEventListener('click', () => {
+      const consent = { essential: true, analytics: analyticsToggle?.checked === true, timestamp: Date.now() };
+      setConsent(consent);
+      applyConsent(consent);
+      hideConsentPopup();
+    });
 
     // Toggle details visibility
     if (toggleBtn && detailsSection && toggleText && toggleIcon) {
       toggleBtn.addEventListener('click', () => {
         const isHidden = detailsSection.classList.contains('hidden');
         detailsSection.classList.toggle('hidden');
+        saveBtn?.classList.toggle('hidden', !isHidden);
         toggleText.textContent = isHidden ? 'Hide cookie details' : 'Show cookie details';
         toggleIcon.style.transform = isHidden ? 'rotate(180deg)' : '';
       });
@@ -290,7 +273,6 @@
     // Decline non-essential (save preferences from toggles)
     if (declineBtn) {
       declineBtn.addEventListener('click', () => {
-        const analyticsEnabled = analyticsToggle ? analyticsToggle.checked : false;
         const consent: CookieConsent = {
           essential: true,
           analytics: false, // Essential only means no analytics
@@ -302,10 +284,18 @@
       });
     }
 
-    // Handle escape key
+    // Escape leaves the current consent unchanged; the footer can reopen preferences.
     document.addEventListener('keydown', (e) => {
+      const popup = document.getElementById('cookie-consent');
+      if (!popup || popup.classList.contains('hidden')) return;
       if (e.key === 'Escape') {
-        // Don't close on escape - user must make a choice
+        hideConsentPopup();
+      } else if (e.key === 'Tab') {
+        const controls = Array.from(popup.querySelectorAll<HTMLElement>('button, [href], input'))
+          .filter(el => !el.closest('.hidden') && !el.hasAttribute('disabled'));
+        const first = controls[0], last = controls[controls.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last?.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first?.focus(); }
       }
     });
   }

@@ -1,102 +1,79 @@
 ---
-title: "How PepCodex Reads a Peptide Paper"
+title: "Reading a Paper in Context: The PARACHUTE Trial"
 publishDate: 2025-08-30T00:00:00.000Z
-lastUpdated: 2026-09-02T00:00:00.000Z
-author: PepCodex Research Team
+lastUpdated: 2026-09-05T21:27:01.760Z
+author: PepCodex
 category: guide
 tags:
   - research
   - methodology
   - critical-thinking
-  - evidence
-  - studies
 excerpt: >-
-  The research-literacy primer lives on the guide that already earns PAGE
-  impressions. This page is how PepCodex reads a paper — estimand first, topical
-  match, and what a Low grade does not mean.
+  A worked reading note on the published PARACHUTE trial: compare the study
+  setting with its headline, keep the outcome and denominator together, and
+  follow the journal's correction notice.
 relatedPeptides: []
-relatedGlossary:
-  - clinical-trial
-  - peer-review
-  - double-blind
-difficulty: intermediate
-metaTitle: "How PepCodex Reads a Peptide Paper"
-metaDescription: >-
-  How PepCodex reads a peptide paper: estimand first, topical match, and why
-  the primer lives on the guide. Waitlist, not a store.
+relatedGlossary: []
+difficulty: beginner
+metaTitle: "Reading a Paper in Context: The PARACHUTE Trial"
+metaDescription: "A worked research-reading example showing how setting, outcome definitions, uncertainty and a correction notice change the interpretation of a trial."
 sources:
-  - id: pmid-16060722
-    title: 'Why most published research findings are false (Ioannidis, PLoS Medicine)'
-    url: 'https://pubmed.ncbi.nlm.nih.gov/16060722/'
+  - id: pmid-30545967
+    title: "Parachute use to prevent death and major trauma when jumping from aircraft: randomized controlled trial"
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6298200/"
     type: journal
-  - id: pmid-24639079
-    title: >-
-      Increasing value and reducing waste in research design, conduct, and
-      analysis (Lancet series)
-    url: 'https://pubmed.ncbi.nlm.nih.gov/24411645/'
+    pmid: "30545967"
+    doi: "10.1136/bmj.k5094"
+    verifiedAt: "2026-09-05"
+  - id: doi-10.1136-bmj.k5343
+    title: "Correction: Parachute use to prevent death and major trauma when jumping from aircraft: randomized controlled trial"
+    url: "https://www.bmj.com/content/363/bmj.k5343"
     type: journal
-    pmid: '24411645'
-    doi: 10.1016/S0140-6736(13)62227-8
-    verifiedAt: '2026-07-25'
-  - id: grade-handbook
-    title: GRADE Handbook for Grading Quality of Evidence
-    url: 'https://gdt.gradepro.org/app/handbook/handbook.html'
-    type: regulatory
+    doi: "10.1136/bmj.k5343"
+    verifiedAt: "2026-09-05"
+  - id: cochrane-handbook-15
+    title: "Cochrane Handbook, Chapter 15: Interpreting results and drawing conclusions (version 6.5, 2024; chapter updated August 2023)"
+    url: "https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-15"
+    verifiedAt: "2026-09-05"
 ---
 
-## How PepCodex Reads a Peptide Paper
+## Read the setting before the conclusion
 
-The red-flag primer is the [how to read peptide research guide](/guide/how-to-read-peptide-research) — that URL already earns PAGE impressions. This post is the funnel: how we read a paper onto a dossier grade, not a second checklist.
+The [PARACHUTE paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC6298200/) appeared in the BMJ's 2018 Christmas collection. Its participants jumped from stationary aircraft near the ground. This makes it a useful editorial example of a question to bring to peptide papers: does the study setting match the claim being made?
 
-We lead with the treatment-policy number when the paper reports one. We require the peptide named in the title or abstract before we attach a PMID. A Low grade means the human evidence is thin, not that "it does not work."
+This is an exercise in reading a report, not a peptide study or guidance on parachute use. Keep the [blank reading worksheet](/guide/how-to-read-peptide-research) beside it.
 
-## Key Questions to Ask
+## A filled-in reading note
 
-When you encounter a peptide claim, ask:
+The following details come from the [paper's Methods, Results and Table 1](https://pmc.ncbi.nlm.nih.gov/articles/PMC6298200/).
 
-1. **Was this studied in humans?** Animal studies don't predict human outcomes reliably.
-2. **How many people were studied?** Small studies (under 50) are preliminary.
-3. **Who funded the research?** Industry funding isn't disqualifying but warrants scrutiny.
-4. **Was it peer-reviewed?** Published in reputable journals with expert review.
-5. **Has it been replicated?** Single studies, even good ones, need confirmation.
+| Field | What the report says |
+| --- | --- |
+| Question | Parachute versus empty backpack for preventing death or major trauma after an aircraft jump. |
+| Participants | 92 screened; 23 randomized. Table 1 lists 11 in the parachute group and 12 in control; a Results paragraph reverses those arm counts. |
+| Setting | Enrolled participants jumped from a mean height of 0.6 metres; aircraft speed was zero. |
+| Design and analysis | Randomized, unblinded; intention-to-treat analysis. |
+| Primary outcome | Death or major traumatic injury (Injury Severity Score above 15), within five minutes of impact. |
+| Observed outcome | Zero primary-outcome events in either group. |
 
-## Red Flags to Watch
+## What can be calculated, and what remains open
 
-| Red Flag | Why It Matters |
-|----------|---------------|
-| "Studies show..." without citations | Vague claims often misrepresent research |
-| Only rodent studies cited | Rodent results often don't translate |
-| Single research group | Findings need independent replication |
-| Unpublished "internal data" | No external verification possible |
-| Dramatic effect sizes | Real biology rarely shows 10x improvements |
+The arm-count discrepancy remains unresolved in the records we inspected. Using Table 1's arm counts, our arithmetic is **0/11 minus 0/12 = 0 percentage points**. Reversing the denominators would still give zero here because neither group had an event. This is the observed absolute difference, not proof of equivalence. The unadjusted risk ratio would require dividing zero by zero and is undefined; we do not replace it with 1 or call it a 0% relative reduction.
 
-## Understanding Study Types
+The authors reported no confidence interval for the binary outcome contrast. We have not calculated a replacement interval. Their reporting choice does not establish that every statistical method is incapable of producing an interval.
 
-### Strongest Evidence
-- **Randomized Controlled Trials (RCTs)** - Gold standard for efficacy
-- **Systematic Reviews** - Analyze multiple studies together
-- **Phase 3 Trials** - Large-scale human testing
+The missing high-altitude setting is central to our reading. This experiment does not answer the question of parachute benefit during high-altitude flight. More generally, a statistically non-significant result alone does not demonstrate absence of effect; see [Cochrane Chapter 15, sections 15.2–15.3](https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-15).
 
-### Weaker Evidence
-- **Observational Studies** - Show correlation, not causation
-- **Case Reports** - Individual stories, not patterns
-- **Animal Studies** - Useful for mechanisms, not human predictions
-- **In Vitro Studies** - Lab dish results rarely apply to whole organisms
+**Evidence grade: not assigned.** This is a reading note on one report, not a body-of-evidence assessment. We do not infer a high, moderate, low or very-low certainty grade for peptide outcomes from it.
 
-## Practical Tips
+## Follow the correction trail
 
-1. **Find the original paper** - Don't rely on summaries or marketing
-2. **Read the methods section** - How was the study designed?
-3. **Check the limitations** - Authors usually acknowledge weaknesses
-4. **Look for replication** - Has anyone else found the same thing?
-5. **Consider the source** - University research vs. company marketing
+The [journal correction dated December 18, 2018](https://www.bmj.com/content/363/bmj.k5343) amended the Methods sentence defining statistical significance to a P value below 0.05. This correction addresses the significance threshold, not the conflicting arm counts. Keep the correction with the original paper; its DOI is a different identifier.
 
-## When Claims Sound Too Good
+For your own note, keep three entries: the original claim, the passage that changes its interpretation, and your revised summary. Our revised summary here is: **the observed result belongs to the near-ground setting actually studied.** It supplies no result about a peptide.
 
-If a peptide is claimed to fix multiple unrelated problems with no side effects, be skeptical. Real medications have tradeoffs and specific uses.
+## Continue with your own paper
 
----
+Copy the [worksheet](/guide/how-to-read-peptide-research) into a plain document. Add your paper's link, one supported finding and one unanswered question. No signup is needed to use either reading aid.
 
-*This page is how PepCodex reads a paper. It is not a substitute for medical advice.*
-
-PepTracker is on a waitlist — not in stores. It will not tell you what to take. If you want a place to keep reading papers against the same grades, [join the waitlist](/newsletter).
+*Educational example only. This article does not provide medical advice, treatment recommendations or instructions for an aircraft jump.*

@@ -3,8 +3,8 @@
  * Loaded in BaseLayout — tracks key user interactions.
  */
 
-declare global {
-  function gtag(...args: unknown[]): void;
+function track(name: string, params: Record<string, unknown>) {
+  window.pepcodexAnalytics?.track(name, params);
 }
 
 // Track search usage (Pagefind)
@@ -20,7 +20,8 @@ function trackSearch() {
     clearTimeout(debounce);
     debounce = setTimeout(() => {
       if (searchInput.value.length >= 3) {
-        gtag('event', 'search', { search_term: searchInput.value });
+        // Free text can contain personal health information; measure use, not the query.
+        track('site_search_used', {});
       }
     }, 1000);
   });
@@ -32,16 +33,7 @@ function trackComparisons() {
     link.addEventListener('click', () => {
       const href = (link as HTMLAnchorElement).pathname;
       const comparison = href.split('/compare/')[1]?.replace(/\/$/, '') || 'unknown';
-      gtag('event', 'comparison_click', { comparison_slug: comparison });
-    });
-  });
-}
-
-// Track newsletter signups
-function trackNewsletter() {
-  document.querySelectorAll('form[action*="subscribe"], form[action*="newsletter"], [data-newsletter-form]').forEach((form) => {
-    form.addEventListener('submit', () => {
-      gtag('event', 'newsletter_signup', { location: window.location.pathname });
+      track('comparison_click', { comparison_slug: comparison });
     });
   });
 }
@@ -50,10 +42,10 @@ function trackNewsletter() {
 function trackExternalLinks() {
   document.querySelectorAll('a[href^="http"]').forEach((link) => {
     const anchor = link as HTMLAnchorElement;
-    if (anchor.hostname === window.location.hostname) return;
+    if (anchor.hostname === window.location.hostname || anchor.relList.contains('sponsored')) return;
     anchor.addEventListener('click', () => {
-      gtag('event', 'external_link_click', {
-        link_url: anchor.href,
+      track('external_link_click', {
+        link_url: anchor.origin + anchor.pathname,
         link_domain: anchor.hostname,
         page_path: window.location.pathname,
       });
@@ -74,7 +66,7 @@ function trackScrollDepth() {
     for (const milestone of milestones) {
       if (percent >= milestone && !reached.has(milestone)) {
         reached.add(milestone);
-        gtag('event', 'scroll_depth', {
+        track('scroll_depth', {
           depth_percent: milestone,
           page_path: window.location.pathname,
         });
@@ -96,10 +88,8 @@ function trackScrollDepth() {
 
 // Initialize all tracking after DOM is ready
 function init() {
-  if (typeof gtag === 'undefined') return;
   trackSearch();
   trackComparisons();
-  trackNewsletter();
   trackExternalLinks();
   trackScrollDepth();
 }

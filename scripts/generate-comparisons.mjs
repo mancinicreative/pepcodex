@@ -218,7 +218,8 @@ function findInteraction(pepA, pepB) {
 function buildOverview(pepA, pepB) {
   // Extract first sentence from each summary
   const firstSentence = (s) => {
-    const match = s.match(/^[^.]+\./);
+    // A decimal point is not a sentence boundary (for example "$2.7 billion").
+    const match = s.match(/^[\s\S]*?[.!?](?=\s|$)/);
     return match ? match[0].trim() : s.trim();
   };
 
@@ -243,9 +244,9 @@ function buildEvidenceTable(pepA, pepB) {
     `| Aspect | ${pepA.name} | ${pepB.name} |`,
     '|--------|' + '-'.repeat(pepA.name.length + 2) + '|' + '-'.repeat(pepB.name.length + 2) + '|',
     `| **Evidence Level** | ${labelA} | ${labelB} |`,
-    `| **Human Studies** | ${pepA.sources.human} | ${pepB.sources.human} |`,
-    `| **Preclinical Studies** | ${pepA.sources.preclinical} | ${pepB.sources.preclinical} |`,
-    `| **Total Sources** | ${pepA.sources.count} | ${pepB.sources.count} |`,
+    `| **Human evidence entries** | ${pepA.sources.human} | ${pepB.sources.human} |`,
+    `| **Preclinical evidence entries** | ${pepA.sources.preclinical} | ${pepB.sources.preclinical} |`,
+    `| **Sources in dossier** | ${pepA.sources.count} | ${pepB.sources.count} |`,
   ].join('\n');
 }
 
@@ -259,8 +260,8 @@ function buildKeyDifferences(pepA, pepB) {
     '|--------|' + '-'.repeat(pepA.name.length + 2) + '|' + '-'.repeat(pepB.name.length + 2) + '|',
     `| **Category** | ${catLabelA} | ${catLabelB} |`,
     `| **Evidence Strength** | ${EVIDENCE_LABELS[pepA.evidenceStrength] || pepA.evidenceStrength} | ${EVIDENCE_LABELS[pepB.evidenceStrength] || pepB.evidenceStrength} |`,
-    `| **Total Sources** | ${pepA.sources.count} | ${pepB.sources.count} |`,
-    `| **Human Studies** | ${pepA.sources.human} | ${pepB.sources.human} |`,
+    `| **Sources in dossier** | ${pepA.sources.count} | ${pepB.sources.count} |`,
+    `| **Human evidence entries** | ${pepA.sources.human} | ${pepB.sources.human} |`,
   ];
 
   return rows.join('\n');
@@ -303,30 +304,17 @@ function generateFaqs(pepA, pepB) {
 
   const faqs = [];
 
-  // FAQ 1: Main difference
-  let diffAnswer;
-  if (pepA.category === pepB.category) {
-    diffAnswer = `Both ${pepA.name} and ${pepB.name} are categorized under ${catLabelA}, but they differ in evidence strength. ${pepA.name} has ${labelA} evidence (${pepA.sources.count} sources), while ${pepB.name} has ${labelB} evidence (${pepB.sources.count} sources).`;
-  } else {
-    diffAnswer = `${pepA.name} is a ${catLabelA} peptide while ${pepB.name} is a ${catLabelB} peptide. ${pepA.name} has ${labelA} evidence (${pepA.sources.count} sources) and ${pepB.name} has ${labelB} evidence (${pepB.sources.count} sources).`;
-  }
+  // FAQ 1: Report dossier metadata without inventing a categorical difference.
   faqs.push({
-    question: `What is the main difference between ${pepA.name} and ${pepB.name}?`,
-    answer: diffAnswer,
+    question: `How are ${pepA.name} and ${pepB.name} categorized in their dossiers?`,
+    answer: `${pepA.name} is listed under ${catLabelA} with a ${labelA} evidence grade. ${pepB.name} is listed under ${catLabelB} with a ${labelB} evidence grade. These are the recorded dossier classifications.`,
   });
 
-  // FAQ 2: Clinical evidence comparison
-  let evidenceAnswer;
-  if (pepA.sources.human > pepB.sources.human) {
-    evidenceAnswer = `${pepA.name} has more clinical evidence with ${pepA.sources.human} human studies compared to ${pepB.sources.human} for ${pepB.name}. Overall, ${pepA.name} has ${labelA} evidence strength while ${pepB.name} has ${labelB}.`;
-  } else if (pepB.sources.human > pepA.sources.human) {
-    evidenceAnswer = `${pepB.name} has more clinical evidence with ${pepB.sources.human} human studies compared to ${pepA.sources.human} for ${pepA.name}. Overall, ${pepB.name} has ${labelB} evidence strength while ${pepA.name} has ${labelA}.`;
-  } else {
-    evidenceAnswer = `Both have similar numbers of human studies (${pepA.sources.human} each). ${pepA.name} has ${labelA} evidence strength and ${pepB.name} has ${labelB}.`;
-  }
+  // FAQ 2: Inventory size cannot supply a clinical-evidence ranking.
+  // Numeric inventory values already appear in the source-count tables below.
   faqs.push({
-    question: `Which has more clinical evidence, ${pepA.name} or ${pepB.name}?`,
-    answer: evidenceAnswer,
+    question: `Does a larger source count establish stronger clinical evidence?`,
+    answer: `Source counts alone do not establish which peptide has stronger clinical evidence. The separate dossiers for ${pepA.name} and ${pepB.name} link to their cited sources; interpretation requires reviewing the study populations, outcomes and limitations.`,
   });
 
   // FAQ 3: FDA approval
@@ -393,6 +381,8 @@ function buildMdx(pepA, pepB, category) {
     '## Evidence Comparison',
     '',
     buildEvidenceTable(pepA, pepB),
+    '',
+    'These are recorded dossier inventory counts. Reports and registry entries must be linked to the underlying studies before they can be treated as independent studies; counts alone do not compare clinical benefit. See [Cochrane Handbook, Chapter 5](https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-05), sections 5.1–5.3.',
     '',
     '## Key Differences',
     '',

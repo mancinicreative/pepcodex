@@ -106,14 +106,14 @@ const breadcrumbItems = [
         )}
 
         <p class="mt-4 text-sm text-[color:var(--ink-muted)]">
-          Last updated: {lastUpdated.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+          Last updated: {lastUpdated.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}
         </p>
       </div>
     </header>
 
-    <div class="grid gap-8 lg:grid-cols-[1fr,250px]">
+    <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_250px]">
       <!-- Main content -->
-      <div class="prose prose-invert prose-lg max-w-none">
+      <div class="prose prose-invert prose-lg max-w-none" data-toc-content>
         <slot />
 
         <!-- Sources Section -->
@@ -217,7 +217,7 @@ const breadcrumbItems = [
     <!-- Disclaimer -->
     <div class="mt-12 rounded-xl border border-[rgba(203,135,52,0.32)] bg-[rgba(203,135,52,0.12)] p-6">
       <p class="text-[#9a6418] text-sm">
-        <strong class="text-[#9a6418]">Disclaimer:</strong> This educational guide does not constitute medical advice. The information presented is based on current research but should not be used for diagnosis, treatment, or prevention of any disease. Always consult a qualified healthcare provider before making health decisions.
+        <strong class="text-[#9a6418]">Disclaimer:</strong> This educational guide does not constitute medical advice and should not be used for diagnosis, treatment, or prevention of any disease. Always consult a qualified healthcare provider before making health decisions.
       </p>
     </div>
   </article>

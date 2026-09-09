@@ -16,32 +16,71 @@
  * Usage:
  *   node scripts/refresh-comparison-counts.mjs            # dry run
  *   node scripts/refresh-comparison-counts.mjs --apply
+ *   node scripts/refresh-comparison-counts.mjs --apply --file reviewed-pair.mdx
+ *
+ * A semantic preflight rejects the whole selected apply batch before any write
+ * when known unsafe FAQ wording or unresolved pair metadata needs review.
+ * Explicit --file batches are limited to ten; a dry run remains read-only.
  */
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { inspectComparisonSemantics } from './lib/comparison-semantics.mjs';
 
 const APPLY = process.argv.includes('--apply');
 const PEP = 'src/content/peptides';
 const CMP = 'src/content/comparisons';
+const selected = [];
+for (let i = 2; i < process.argv.length; i++) {
+  if (process.argv[i] === '--apply') continue;
+  if (process.argv[i] !== '--file' || !/^[a-z0-9-]+\.mdx$/.test(process.argv[i + 1] || '')) throw new Error('Use --apply and/or --file <comparison-slug.mdx>.');
+  selected.push(process.argv[++i]);
+}
+if (new Set(selected).size > 10) throw new Error('Explicit review batches are limited to ten comparison files.');
+const files = [...new Set(selected.length ? selected : fs.readdirSync(CMP).filter(x => x.endsWith('.mdx')))];
 
 const dossiers = new Map();
 for (const f of fs.readdirSync(PEP).filter((x) => x.endsWith('.mdx'))) {
   const d = matter(fs.readFileSync(path.join(PEP, f), 'utf-8')).data;
-  dossiers.set(f.replace(/\.mdx$/, ''), { name: d.name, sources: d.sources || { count: 0, human: 0, preclinical: 0 } });
+  dossiers.set(f.replace(/\.mdx$/, ''), { name: d.name, sources: d.sources });
 }
+
+const validCounts = P => P?.sources && ['count', 'human', 'preclinical'].every(field => Number.isSafeInteger(P.sources[field]) && P.sources[field] >= 0);
 
 const esc = (s) => String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 let changedFiles = 0, edits = 0;
 const missing = new Set();
 
-for (const f of fs.readdirSync(CMP).filter((x) => x.endsWith('.mdx'))) {
+// Validate the entire requested batch before the first write. Updating numbers
+// inside legacy winner/tie prose can preserve or create a false statement.
+// Repair its wording through the reviewed content workflow, then refresh counts.
+const semanticProblems = [];
+for (const file of files) {
+  const page = matter(fs.readFileSync(path.join(CMP, file), 'utf-8')).data;
+  const A = dossiers.get(page.peptideA), B = dossiers.get(page.peptideB);
+  for (const finding of inspectComparisonSemantics(page, A, B)) {
+    semanticProblems.push(`${file}: ${finding.code}: ${finding.detail}`);
+  }
+  if ((A && !validCounts(A)) || (B && !validCounts(B))) semanticProblems.push(`${file}: SOURCE_COUNTS_INVALID: Required dossier count fields must be nonnegative safe integers; unavailable counts are not zero.`);
+}
+if (semanticProblems.length) {
+  console.error(`SEMANTIC_REVIEW_REQUIRED: ${semanticProblems.length} signal(s) in the selected batch.`);
+  semanticProblems.slice(0, 20).forEach(problem => console.error(`  ${problem}`));
+  if (semanticProblems.length > 20) console.error('Use qa-comparison-semantics.mjs --json for the complete review queue.');
+  if (APPLY) {
+    console.error('No comparison files written. Repair/review the flagged wording or pair metadata before refreshing this batch.');
+    process.exit(1);
+  }
+}
+
+for (const f of files) {
   const p = path.join(CMP, f);
   const raw = fs.readFileSync(p, 'utf-8');
   const fm = matter(raw);
   const A = dossiers.get(fm.data.peptideA);
   const B = dossiers.get(fm.data.peptideB);
   if (!A || !B) { missing.add(`${f} (${fm.data.peptideA} / ${fm.data.peptideB})`); continue; }
+  if (!validCounts(A) || !validCounts(B)) continue;
 
   const ws = (s) => s.split(' ').map(esc).join('\\s+');
   /* The peptide NAME can itself wrap mid-phrase inside a YAML block scalar — "Melanotan
@@ -56,12 +95,22 @@ for (const f of fs.readdirSync(CMP).filter((x) => x.endsWith('.mdx'))) {
 
   // Table rows — the generator emits these with a fixed label and two numeric cells.
   const row = (label, a, b) => {
-    const re = new RegExp(`(\\|\\s*\\*\\*${esc(label)}\\*\\*\\s*\\|\\s*)\\d+(\\s*\\|\\s*)\\d+(\\s*\\|)`, 'g');
+    // Parent-only context is supported on explicit inventory rows. Never convert
+    // a qualified observational/RCT study count into an identifier count.
+    const inventoryLabel = /identifiers$|entries$/.test(label) || label === 'Sources in dossier';
+    const qualifier = inventoryLabel ? '(?:[ \\t]+\\([^|\\r\\n]*\\))?' : '';
+    const re = new RegExp(`(\\|\\s*\\*\\*${esc(label)}\\*\\*\\s*\\|\\s*)\\d+(${qualifier}\\s*\\|\\s*)\\d+(${qualifier}\\s*\\|)`, 'g');
     out = out.replace(re, `$1${a}$2${b}$3`);
   };
   row('Human Studies', A.sources.human, B.sources.human);
+  row('Human-tagged identifiers', A.sources.human, B.sources.human);
+  row('Human evidence entries', A.sources.human, B.sources.human);
   row('Preclinical Studies', A.sources.preclinical, B.sources.preclinical);
+  row('Preclinical-tagged identifiers', A.sources.preclinical, B.sources.preclinical);
+  row('Preclinical evidence entries', A.sources.preclinical, B.sources.preclinical);
   row('Total Sources', A.sources.count, B.sources.count);
+  row('Source identifiers', A.sources.count, B.sources.count);
+  row('Sources in dossier', A.sources.count, B.sources.count);
 
   // "- **Name:** <label> evidence with N total sources (M human)"
   for (const P of [A, B]) {

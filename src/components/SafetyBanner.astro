@@ -1,10 +1,12 @@
 ---
+import type { EvidencePresentation } from '../lib/evidence-presentation';
 /**
  * SafetyBanner.astro
  * Prominent safety warning displayed at the top of dossier pages
  */
 
 interface Props {
+  presentation?: EvidencePresentation;
   peptideName: string;
   evidenceStrength: 'high' | 'moderate' | 'low' | 'very-low';
   keyWarnings?: string[];
@@ -13,6 +15,7 @@ interface Props {
 }
 
 const {
+  presentation,
   peptideName,
   evidenceStrength,
   keyWarnings = [],
@@ -27,7 +30,7 @@ const evidenceColors = {
   'very-low': { tint: 'rgba(185,61,66,0.10)', border: 'rgba(185,61,66,0.28)', accent: 'var(--danger)', text: 'var(--danger)', icon: '!!' },
 };
 
-const config = evidenceColors[evidenceStrength];
+const config = presentation?.selected ? { tint: 'var(--paper-2)', border: 'var(--border-c)', accent: 'var(--ink-muted)', text: 'var(--ink-muted)', icon: '—' } : evidenceColors[evidenceStrength];
 
 const warnings = keyWarnings;
 
@@ -49,7 +52,7 @@ const fdaTone = fdaStatus === 'FDA Approved'
       </div>
       <div>
         <div class="eyebrow text-[10px]">Evidence Level</div>
-        <div class="font-bold capitalize" style={`color: ${config.text};`}>{evidenceStrength.replace('-', ' ')}</div>
+        <div class="font-bold capitalize" style={`color: ${config.text};`}>{presentation?.selected ? presentation.label : evidenceStrength.replace('-', ' ')}</div>
       </div>
     </div>
 

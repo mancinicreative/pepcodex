@@ -1,3 +1,4 @@
+import { loadEvidencePresentation } from '../lib/evidence-binding';
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { isPublishedProtocol } from '../lib/unpublished-protocols';
@@ -27,7 +28,7 @@ export const GET: APIRoute = async () => {
   lines.push('## Peptide Dossiers');
   lines.push('');
   for (const p of peptides.sort((a, b) => a.data.name.localeCompare(b.data.name))) {
-    lines.push(`- [${p.data.name}](https://www.pepcodex.com/peptides/${p.id.replace(/\.mdx?$/, '')}/): ${p.data.summary} (Evidence: ${p.data.evidenceStrength}, Category: ${p.data.category})`);
+    lines.push(`- [${p.data.name}](https://www.pepcodex.com/peptides/${p.id.replace(/\.mdx?$/, '')}/): ${p.data.summary} (Evidence: ${loadEvidencePresentation(p.slug, p.data).selected ? loadEvidencePresentation(p.slug, p.data).label : p.data.evidenceStrength}, Category: ${p.data.category})`);
   }
 
   // Comparisons

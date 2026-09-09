@@ -1,4 +1,5 @@
 ---
+import type { EvidencePresentation } from '../lib/evidence-presentation';
 import AnnotatedVial from './AnnotatedVial.astro';
 
 interface AminoAcid {
@@ -21,6 +22,7 @@ interface MolecularInfo {
 }
 
 interface Props {
+  presentation?: EvidencePresentation;
   peptideName: string;
   summary: string;
   aliases?: string[];
@@ -30,7 +32,7 @@ interface Props {
   hideHeader?: boolean;
 }
 
-const { peptideName, summary, aliases = [], category, molecularInfo, evidenceStrength = 'low', hideHeader = false } = Astro.props;
+const { presentation, peptideName, summary, aliases = [], category, molecularInfo, evidenceStrength = 'low', hideHeader = false } = Astro.props;
 
 // Property colors for amino acids (biochemical property categorization)
 const propertyColors = {
@@ -66,7 +68,7 @@ const propertyColors = {
       <div class={molecularInfo ? 'grid md:grid-cols-[210px_1fr] gap-6 items-start' : ''}>
         {molecularInfo && (
           <div class="flex justify-center md:justify-start md:border-r md:border-[color:var(--border-c)] md:pr-6">
-            <AnnotatedVial strength={evidenceStrength} chainLength={molecularInfo.chainLength} weight={molecularInfo.weight} />
+            <AnnotatedVial presentation={presentation} strength={evidenceStrength} chainLength={molecularInfo.chainLength} weight={molecularInfo.weight} />
           </div>
         )}
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">

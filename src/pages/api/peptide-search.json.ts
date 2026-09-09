@@ -1,3 +1,5 @@
+import { loadEvidencePresentation } from '../../lib/evidence-binding';
+import type { EvidencePresentation } from '../../lib/evidence-presentation';
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 
@@ -14,11 +16,15 @@ interface PeptideSearchItem {
   content: string;
   keyTerms: string[];
   url: string;
+  presentation?: EvidencePresentation;
   sources: {
     count: number;
-    human: number;
-    preclinical: number;
-    openAccess: number;
+    unit?: 'publications';
+    categories?: { key: string; label: string; count: number }[];
+    caveat?: string;
+    human?: number;
+    preclinical?: number;
+    openAccess?: number;
   };
 }
 
@@ -120,17 +126,19 @@ export const GET: APIRoute = async () => {
           // Extract key medical terms from content
           const keyTerms = extractKeyTerms(rawContent + ' ' + (peptide.data.summary || ''));
 
+          const presentation = loadEvidencePresentation(peptide.slug, peptide.data);
           return {
             slug: peptide.slug,
             name: peptide.data.name,
             aliases: peptide.data.aliases || [],
             category: peptide.data.category,
-            evidenceStrength: peptide.data.evidenceStrength,
+            evidenceStrength: presentation.selected ? presentation.filterKey : peptide.data.evidenceStrength,
+            ...(presentation.selected ? { presentation } : {}),
             summary: peptide.data.summary || '',
             content: plainContent,
             keyTerms,
             url: `/peptides/${peptide.slug}`,
-            sources: peptide.data.sources || { count: 0, human: 0, preclinical: 0, openAccess: 0 },
+            sources: presentation.selected ? { count: presentation.display!.selection.total, unit: 'publications', categories: presentation.display!.selection.categories, caveat: presentation.display!.selection.caveat } : peptide.data.sources || { count: 0, human: 0, preclinical: 0, openAccess: 0 },
           };
         })
     );

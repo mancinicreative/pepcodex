@@ -1,10 +1,12 @@
 ---
+import type { EvidencePresentation } from '../lib/evidence-presentation';
 interface Props {
+  presentation?: EvidencePresentation;
   strength: 'high' | 'moderate' | 'low' | 'very-low';
   showLabel?: boolean;
 }
 
-const { strength, showLabel = true } = Astro.props;
+const { presentation, strength, showLabel = true } = Astro.props;
 
 const config = {
   'high': {
@@ -41,7 +43,9 @@ const config = {
   },
 };
 
-const { color, tint, border, icon, label } = config[strength];
+const { color, tint, border, icon, label } = presentation?.selected
+  ? { color: presentation.color, tint: 'var(--paper-2)', border: 'var(--border-c)', icon: '', label: presentation.label }
+  : config[strength];
 ---
 
 <div class="relative inline-flex items-center">
@@ -52,6 +56,6 @@ const { color, tint, border, icon, label } = config[strength];
     aria-label={`Evidence strength: ${label}`}
   >
     <span class="text-[11px] tracking-tight" aria-hidden="true">{icon}</span>
-    {showLabel && <span>{label}</span>}
+    {(showLabel || presentation?.selected) && <span>{label}</span>}
   </span>
 </div>

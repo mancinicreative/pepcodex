@@ -1,4 +1,5 @@
 ---
+import { loadEvidencePresentation } from '../lib/evidence-binding';
 import HubLayout from '../layouts/HubLayout.astro';
 import PeptideCard from '../components/PeptideCard.astro';
 import { getCollection } from 'astro:content';
@@ -47,7 +48,7 @@ const cytaminPeptides = bioregulatorPeptides.filter(p => p.data.bioregulatorType
             name={peptide.data.name}
             slug={peptide.slug}
             category={peptide.data.category}
-            evidenceStrength={peptide.data.evidenceStrength}
+            evidenceStrength={peptide.data.evidenceStrength} presentation={loadEvidencePresentation(peptide.slug, peptide.data)}
             summary={peptide.data.summary}
             aliases={peptide.data.aliases}
           />
@@ -71,7 +72,7 @@ const cytaminPeptides = bioregulatorPeptides.filter(p => p.data.bioregulatorType
             name={peptide.data.name}
             slug={peptide.slug}
             category={peptide.data.category}
-            evidenceStrength={peptide.data.evidenceStrength}
+            evidenceStrength={peptide.data.evidenceStrength} presentation={loadEvidencePresentation(peptide.slug, peptide.data)}
             summary={peptide.data.summary}
             aliases={peptide.data.aliases}
           />
@@ -94,7 +95,7 @@ const cytaminPeptides = bioregulatorPeptides.filter(p => p.data.bioregulatorType
             name={peptide.data.name}
             slug={peptide.slug}
             category={peptide.data.category}
-            evidenceStrength={peptide.data.evidenceStrength}
+            evidenceStrength={peptide.data.evidenceStrength} presentation={loadEvidencePresentation(peptide.slug, peptide.data)}
             summary={peptide.data.summary}
             aliases={peptide.data.aliases}
           />

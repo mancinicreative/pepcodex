@@ -1,0 +1,17 @@
+import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import {fileURLToPath} from 'node:url';import {transform} from 'esbuild';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),source=fs.readFileSync(path.join(root,'src/components/RelatedEntities.astro'),'utf8');const start=source.indexOf('import { getCollection'),end=source.indexOf('const hasContent');assert.ok(start>=0&&end>start);
+const code=(await transform(source.slice(start,end).replace("import { getCollection } from 'astro:content';",''),{loader:'ts',format:'esm'})).code;const AF=Object.getPrototypeOf(async function(){}).constructor;const select=new AF('Astro','getCollection',code+'return guidesToShow.map(g=>g.slug);');
+const e=(slug,peptide='semaglutide')=>({slug,data:{peptide}}),guides=['what-is-wegovy','what-is-rybelsus','what-is-semaglutide','what-is-ozempic'].map(s=>e(s)),perm=a=>a.length?a.flatMap((x,i)=>perm(a.filter((_,j)=>i!==j)).map(rest=>[x,...rest])):[[]];
+const run=(route,entries,props={currentPeptide:'semaglutide'})=>select({url:new URL(route,'https://www.pepcodex.com'),props},async name=>name==='guides'?entries:[]);
+const expected={ '/guide/what-is-ozempic':['what-is-semaglutide','what-is-rybelsus'], '/guide/what-is-rybelsus':['what-is-semaglutide','what-is-ozempic'], '/guide/what-is-wegovy':['what-is-semaglutide','what-is-ozempic'], '/guide/what-is-semaglutide':['what-is-ozempic','what-is-rybelsus'], '/peptides/semaglutide':['what-is-semaglutide','what-is-ozempic']};
+let cases=0;for(const entries of perm(guides))for(const [route,wanted] of Object.entries(expected))for(const suffix of ['', '/', '?source=test']){assert.deepEqual(await run(route+suffix,entries),wanted,'Preferred general guide and current-guide exclusion must both hold');cases++;}
+for(const entries of perm(guides)){assert.deepEqual(await run('/guide/what-is-rybelsus',entries,{currentPeptide:'semaglutide',relatedGuides:['what-is-wegovy','missing','what-is-ozempic']}),['what-is-wegovy','what-is-ozempic']);cases++;}
+for(const entries of [guides.filter(x=>x.slug!=='what-is-semaglutide'),guides.map(x=>x.slug==='what-is-semaglutide'?e(x.slug,'other'):x)]){assert.deepEqual(await run('/guide/what-is-rybelsus',entries),['what-is-ozempic','what-is-wegovy'],'Absent/mismatched preference falls back without inventing a link');cases++;}
+assert.deepEqual(await run('/guide/what-is-semaglutide',[e('what-is-semaglutide')]),[]);cases++;
+assert.deepEqual(await run('/peptides/semaglutide',[e('what-is-semaglutide')]),['what-is-semaglutide']);cases++;
+assert.deepEqual(await run('/guide/self',[]),[]);cases++;
+assert.deepEqual(await run('/guide/self',[e('self'),e('only')]),['only']);cases++;
+assert.deepEqual(await run('/guide/self',[e('z','other'),e('a','other'),e('self','other')],{currentPeptide:'other'}),['a','z'],'Other subjects retain stable selection without semaglutide preference');cases++;
+assert.deepEqual(await run('/guide/self',[e('what-is-semaglutide','other')]),[]);cases++;
+assert.deepEqual(await run('/guide/what-is-rybelsus',guides,{currentPeptide:'semaglutide',relatedGuides:['what-is-rybelsus','what-is-semaglutide']}),['what-is-rybelsus','what-is-semaglutide'],'Explicit authored lists retain their existing behavior');cases++;
+console.log(JSON.stringify({status:'PASS',cases,readingPaths:expected,scope:'Actual inferred-guide selectors and explicit override preservation. No full render, graph, clinical or release acceptance.'},null,2));

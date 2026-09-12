@@ -511,9 +511,8 @@
 
         modalResultsList.innerHTML = results.map((result: any) => `
           <li>
-            <a href="${escapeHtml(safeInternalUrl(result.url))}" class="modal-result-link block p-4 hover:bg-[color:var(--paper-2)] transition-colors outline-none focus:bg-[color:var(--paper-2)]">
+            <a href="${escapeHtml(safeInternalUrl(result.url).replace(/\/$/, '') || '/')}" class="modal-result-link block p-4 hover:bg-[color:var(--paper-2)] transition-colors outline-none focus:bg-[color:var(--paper-2)]">
               <div class="font-medium text-[color:var(--ink)]">${escapeHtml(result.meta?.title || 'Untitled')}</div>
-              <div class="mt-1 text-sm text-[color:var(--ink-dim)] line-clamp-2">${escapeHtml(result.excerpt || '')}</div>
             </a>
           </li>
         `).join('');

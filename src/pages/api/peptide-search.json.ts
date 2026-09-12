@@ -118,6 +118,9 @@ export const GET: APIRoute = async () => {
     const searchIndex: PeptideSearchItem[] = await Promise.all(
       peptides
         .filter(peptide => peptide?.data?.summary && peptide?.data?.sources)
+        // Astro collection enumeration follows filesystem order; sort by slug so
+        // equal-scoring search results stay deterministic across build machines.
+        .sort((a, b) => a.slug < b.slug ? -1 : a.slug > b.slug ? 1 : 0)
         .map(async (peptide) => {
           // Get the raw body content for searching
           const rawContent = peptide.body || '';

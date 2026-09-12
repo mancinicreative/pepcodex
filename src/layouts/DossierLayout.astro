@@ -910,6 +910,7 @@ const clinicalPct = sources.count ? Math.round((sources.human / sources.count) *
       const comparatorSlugs = new Set(comparators.map(c => c.toLowerCase().replace(/\s+/g, '-')));
       const related = allPeptides
         .filter(p => p.data.category === category && p.slug !== currentSlug && !comparatorSlugs.has(p.slug))
+        .sort((a, b) => a.slug < b.slug ? -1 : a.slug > b.slug ? 1 : 0)
         .slice(0, 6);
       return related.length > 0 ? (
         <section class="mt-12">

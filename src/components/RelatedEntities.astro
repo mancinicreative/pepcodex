@@ -46,6 +46,7 @@ if (relatedPeptides.length > 0) {
   // Filter by category, excluding current
   peptidesToShow = allPeptides
     .filter(p => p.data.category === category && p.slug !== currentPeptide)
+    .sort((a, b) => a.slug < b.slug ? -1 : a.slug > b.slug ? 1 : 0)
     .slice(0, maxItems);
 } else if (currentPeptide) {
   // Get comparators from current peptide
@@ -58,6 +59,9 @@ if (relatedPeptides.length > 0) {
   }
 }
 
+// Current route excludes self-links from inferred guide selections.
+const currentPath = Astro.url.pathname.replace(/\/$/, '');
+
 // Get related guides
 let guidesToShow: typeof allGuides = [];
 
@@ -67,9 +71,13 @@ if (relatedGuides.length > 0) {
     .filter((g): g is NonNullable<typeof g> => g !== undefined)
     .slice(0, 2);
 } else if (currentPeptide) {
-  // Find guides about this peptide
+  // Authored navigation priority: general introduction before brand-specific guides.
+  // The subject filter below keeps absent or mismatched preferences out of the list.
+  const preferredGuide = currentPeptide === 'semaglutide' ? 'what-is-semaglutide' : undefined;
   guidesToShow = allGuides
-    .filter(g => g.data.peptide === currentPeptide)
+    .filter(g => g.data.peptide === currentPeptide && `/guide/${g.slug}` !== currentPath)
+    .sort((a, b) => Number(b.slug === preferredGuide) - Number(a.slug === preferredGuide) ||
+      (a.slug < b.slug ? -1 : a.slug > b.slug ? 1 : 0))
     .slice(0, 2);
 }
 
@@ -79,6 +87,7 @@ let comparisonsToShow: typeof allComparisons = [];
 if (currentPeptide) {
   comparisonsToShow = allComparisons
     .filter(c => c.data.peptideA === currentPeptide || c.data.peptideB === currentPeptide)
+    .sort((a, b) => a.slug < b.slug ? -1 : a.slug > b.slug ? 1 : 0)
     .slice(0, 2);
 }
 

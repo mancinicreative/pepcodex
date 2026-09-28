@@ -5,6 +5,7 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import vercel from '@astrojs/vercel';
 import rehypeAutoGlossary from './plugins/rehype-auto-glossary.mjs';
+import pagefindSearch from './plugins/pagefind-search.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import matter from 'gray-matter';
@@ -128,7 +129,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  integrations: [mdx(), sitemap({
+  integrations: [mdx(), pagefindSearch(), sitemap({
     // /clinics/ is deindexed (see src/pages/clinics/[city].astro) — keep it out of the
     // sitemap too, since a noindex tag alone still costs a crawl to discover.
     filter: (page) =>

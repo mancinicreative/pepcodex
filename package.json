@@ -7,7 +7,6 @@
     "check": "node scripts/validate-cross-links.mjs && node scripts/qa-seo.mjs && node scripts/qa-scoring.mjs && node scripts/qa-pmids.mjs --strict && node scripts/qa-source-identifiers.mjs --strict && node scripts/qa-citation-keys.mjs --strict && node scripts/qa-url-dois.mjs --strict && node scripts/qa-source-titles.mjs --strict",
     "prebuild": "npm run check",
     "build": "astro build",
-    "postbuild": "npx pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro",
     "validate-links": "node scripts/validate-cross-links.mjs",

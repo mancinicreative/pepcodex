@@ -6,7 +6,7 @@ aliases:
   - NN2211
 category: metabolic
 evidenceStrength: high
-lastUpdated: 2026-01-22T00:00:00.000Z
+lastUpdated: 2026-09-28T00:00:00.000Z
 comparators:
   - semaglutide
   - tirzepatide
@@ -17,28 +17,30 @@ summary: >-
   therapeutic class with proven cardiovascular benefits in the landmark LEADER
   trial.
 sources:
-  count: 72
-  human: 58
-  preclinical: 14
-  openAccess: 52
-metaTitle: 'Liraglutide: 72 Studies Reviewed (2026)'
+  count: 22
+  human: 8
+  preclinical: 1
+  openAccess: 5
+  context: "22 visible records: 15 publications, 4 registrations and 3 regulatory, label or monitoring records. The human count is 8 direct primary publications (8 intervention and 0 observational), with 7 distinct intervention populations. Publications and registrations may describe the same trial; secondary analyses do not create new trial populations. Open-access counts are confirmed scholarly full texts."
+  verdict: "Human clinical evidence is specific to the product, population and outcome studied; it does not establish benefit for every condition listed."
+metaTitle: 'Liraglutide: LEADER, SCALE and Product Labels (2026)'
 metaDescription: >-
-  Evidence-graded review of liraglutide covering 72 citations. FDA-approved
-  GLP-1 for obesity (Saxenda) and T2D (Victoza). Updated Feb 2026.
+  Evidence review of liraglutide clinical evidence and product labels. FDA-approved
+  GLP-1 for weight reduction (Saxenda) and T2D (Victoza), with a
+  Victoza-specific CV indication. Updated Sep 2026.
 interactions:
   - peptide: semaglutide
     type: avoid
     description: >-
-      Both are GLP-1 receptor agonists. Concurrent use would result in
-      overlapping mechanisms and increased risk of adverse effects including
-      severe nausea, vomiting, and potential hypoglycemia. Never combine
-      GLP-1RAs.
+      Saxenda labeling does not recommend concomitant use with another GLP-1
+      receptor agonist. Overlapping effects are expected, but the magnitude of
+      added harm or benefit has not been established in a combination trial.
   - peptide: tirzepatide
     type: avoid
     description: >-
-      Tirzepatide is a dual GIP/GLP-1 agonist. Combining with liraglutide would
-      cause receptor overstimulation, severe GI effects, and no additional
-      therapeutic benefit. Choose one or the other.
+      Tirzepatide activates GLP-1 receptors; Saxenda and Zepbound labels do
+      not recommend combination with another GLP-1 receptor agonist. A
+      quantitative safety or efficacy effect is not established.
   - peptide: exenatide
     type: avoid
     description: >-
@@ -49,25 +51,24 @@ interactions:
     type: caution
     description: >-
       Both affect GI function. BPC-157 is gastroprotective while liraglutide
-      slows gastric emptying. Unclear if effects interact; monitor GI symptoms
-      if combined.
+      slows gastric emptying. Whether the effects interact is unclear.
   - peptide: ipamorelin
-    type: compatible
+    type: caution
     description: >-
-      Different mechanisms (GLP-1 vs GHRP). Ipamorelin stimulates GH release
-      while liraglutide affects glucose and satiety. No known direct
-      interactions.
+      No direct human combination study establishes safety. Distinct receptor
+      targets do not demonstrate compatibility, and GH signaling can affect
+      glucose metabolism.
   - peptide: tesamorelin
-    type: compatible
+    type: caution
     description: >-
-      Tesamorelin is a GHRH analog targeting GH secretion. Different mechanism
-      from liraglutide's GLP-1 agonism. Both may reduce visceral fat through
-      different pathways.
+      No direct human combination study establishes safety or additive benefit.
+      Tesamorelin can alter glucose metabolism, relevant when liraglutide is
+      used for diabetes.
 molecularInfo:
   weight: '3,751 Da'
   chainLength: 31
   type: GLP-1 analog
-  sequence: HAEGTFTSDVSSYLEGQAAKEFIAWLVKGRG
+  sequence: HAEGTFTSDVSSYLEGQAAKEFIAWLVRGRG
   aminoAcids:
     - code: H
       name: Histidine
@@ -146,9 +147,9 @@ molecularInfo:
       position: 19
       property: hydrophobic
     - code: K
-      name: Lysine
+      name: Lysine (palmitoylated via glutamyl spacer)
       position: 20
-      property: positive
+      property: modified
     - code: E
       name: Glutamic Acid
       position: 21
@@ -177,8 +178,8 @@ molecularInfo:
       name: Valine
       position: 27
       property: hydrophobic
-    - code: K
-      name: Lysine
+    - code: R
+      name: Arginine
       position: 28
       property: positive
     - code: G
@@ -199,15 +200,15 @@ evidenceChainedBenefits:
         GLP-1 receptor activation on pancreatic beta cells stimulating
         glucose-dependent insulin secretion
       confidence: established
-      directStudies: 45
+      directStudies: 1
     benefit:
       claim: improve glycemic control in type 2 diabetes
       qualifier: shown to
     evidence:
       level: high
-      humanStudies: 32
-      animalStudies: 8
-      cellStudies: 5
+      humanStudies: 1
+      animalStudies: 0
+      cellStudies: 0
       keyFindings:
         - study: LEAD-6 Trial 2009
           type: human-rct
@@ -221,20 +222,31 @@ evidenceChainedBenefits:
             Glucose-dependent insulin-stimulating action of GLP-1 underlies the
             low hypoglycemia risk of GLP-1 receptor agonists
           pmid: '14968296'
+        - study: Sun Y et al. 2026
+          type: human-rct
+          finding: >-
+            Randomised trial of 7-day intensive therapy in overweight or obese
+            adults with type 2 diabetes: the fixed-ratio insulin
+            degludec/liraglutide (IDegLira) arm reached higher time in range
+            (84.03% vs 74.67%, P=0.007) and lower mean glucose (8.26 vs 9.74
+            mmol/L) than insulin glargine, with 65.1% vs 36.5% achieving
+            high-quality glycemic control (P=0.001) and targets reached in 3.1
+            vs 5.0 days (P<0.001)
+          pmid: '42439957'
   - mechanism:
       action: >-
         Activation of GLP-1 receptors in hypothalamus reducing appetite and
         increasing satiety signaling
       confidence: established
-      directStudies: 28
+      directStudies: 2
     benefit:
       claim: reduce body weight in obesity
       qualifier: shown to
     evidence:
       level: high
-      humanStudies: 18
-      animalStudies: 6
-      cellStudies: 4
+      humanStudies: 1
+      animalStudies: 1
+      cellStudies: 0
       keyFindings:
         - study: SCALE Obesity Trial 2015
           type: human-rct
@@ -246,20 +258,52 @@ evidenceChainedBenefits:
           type: animal
           finding: GLP-1R on POMC/CART neurons in the arcuate nucleus mediates liraglutide-induced weight loss
           pmid: '25202980'
+        - study: Kishi T et al. 2026
+          type: meta-analysis
+          finding: >-
+            Network meta-analysis of 9 RCTs (595 participants, 83.9%
+            schizophrenia spectrum disorders) found once-daily subcutaneous
+            liraglutide reduced body weight versus control (SMD -0.945, 95% CI
+            -1.784 to -0.106), alongside reductions in waist circumference and
+            HbA1c and lower serious adverse event incidence, but higher nausea,
+            vomiting and constipation. Weekly semaglutide showed the larger
+            estimate (SMD -2.101)
+          pmid: '42420255'
+        - study: Soliman AT et al. 2026
+          type: review
+          finding: >-
+            Systematic review of 7 pivotal RCTs and 6 meta-analyses (901
+            participants aged 6 to under 18 years) reported liraglutide 3.0
+            mg/day improved BMI standard deviation score in adolescents and
+            younger children (second to semaglutide 2.4 mg/week for BMI
+            reduction), and liraglutide 1.8 mg/day significantly improved HbA1c
+            versus placebo in youth-onset type 2 diabetes. No significant
+            adverse effects on linear growth or pubertal progression were
+            reported
+          pmid: '42365860'
+        - study: Nong K et al. 2026
+          type: meta-analysis
+          finding: >-
+            BMJ network meta-analysis of 262 randomised trials (99,791
+            participants, 19 drugs) placed liraglutide among the obesity drugs
+            with the highest discontinuation because of adverse events (risk
+            ratios 1.9 to 4.2 across that group), on moderate-to-high certainty
+            evidence
+          pmid: '42419792'
   - mechanism:
       action: >-
-        Multifactorial cardiovascular effects including blood pressure reduction
-        and anti-inflammatory actions
-      confidence: established
-      directStudies: 22
+        GLP-1 receptor agonism; the pathway to fewer cardiovascular events in
+        LEADER is unresolved
+      confidence: supported
+      directStudies: 2
     benefit:
       claim: reduce cardiovascular events in high-risk T2D patients
       qualifier: shown to
     evidence:
       level: high
-      humanStudies: 15
-      animalStudies: 5
-      cellStudies: 2
+      humanStudies: 2
+      animalStudies: 0
+      cellStudies: 0
       keyFindings:
         - study: LEADER Trial 2016
           type: human-rct
@@ -271,17 +315,28 @@ evidenceChainedBenefits:
           type: human-rct
           finding: Liraglutide's cardiovascular benefit in LEADER was consistent in patients with and without a history of heart failure
           pmid: '32164886'
+        - study: Sandsdal RM et al. 2026
+          type: human-rct
+          finding: >-
+            Prespecified secondary analysis of the S-LiTE trial (130 adults with
+            obesity randomised to 52 weeks of weight-loss maintenance with
+            exercise and/or liraglutide): exercise, alone or combined with
+            liraglutide, reduced carotid intima-media thickness and
+            pro-inflammatory interleukin-6 and interferon-gamma, and the
+            combination improved endothelial biomarkers (sICAM-1, sVCAM-1,
+            tPA). Liraglutide alone showed no such vascular improvements
+          pmid: '42342869'
   - mechanism:
       action: Delayed gastric emptying reducing postprandial glucose excursions
       confidence: established
-      directStudies: 12
+      directStudies: 1
     benefit:
       claim: reduce postprandial blood glucose spikes
       qualifier: shown to
     evidence:
       level: high
-      humanStudies: 10
-      animalStudies: 2
+      humanStudies: 1
+      animalStudies: 0
       cellStudies: 0
       keyFindings:
         - study: Meier JJ et al. 2015
@@ -300,10 +355,13 @@ conditions:
   - slug: type-2-diabetes
     name: Type 2 Diabetes
     researchSummary: >-
-      Liraglutide is FDA-approved for glycemic control in type 2 diabetes. The
-      LEAD program (6 Phase 3 RCTs, >4,000 patients) demonstrated HbA1c
-      reductions of 1.0-1.5% with weight loss rather than weight gain. LEADER
-      trial (N=9,340) showed 13% reduction in major cardiovascular events.
+      Victoza is FDA-approved for glycemic control in type 2 diabetes from age
+      10 years. In the cited two-year LEAD-3 follow-up, HbA1c fell by 0.6 and
+      0.9 percentage points with the two liraglutide groups versus 0.3 points
+      with glimepiride. LEAD-6 found a larger HbA1c reduction than its tested
+      twice-daily exenatide comparator. LEADER (N=9,340) found a 13% relative
+      reduction in major adverse cardiovascular events in its high-risk T2D
+      population; it is a different endpoint and cohort.
     relevantStudies:
       - '19515413'
       - '27295427'
@@ -315,14 +373,16 @@ conditions:
   - slug: obesity
     name: Obesity
     researchSummary: >-
-      Liraglutide 3.0mg (Saxenda) is FDA-approved for chronic weight management.
-      SCALE trials demonstrated 8% average weight loss at 56 weeks, with 63%
-      achieving clinically significant (>5%) weight loss. Also approved for
-      adolescents 12-17 years.
+      Saxenda is FDA-approved for long-term weight reduction in adults with
+      obesity or overweight plus a weight-related comorbidity, and in youths
+      aged 12 years or older with obesity and body weight above 60 kg.
+      In the cited adult SCALE trial, mean body-weight reduction was about 8%
+      at 56 weeks and 63% achieved at least 5% weight reduction. A separate
+      adolescent trial supports the labeled age-12-and-older obesity indication;
+      adult SCALE percentages should not be transferred to that population.
     relevantStudies:
       - '26132939'
       - '32233338'
-      - '9449682'
     relatedPeptides:
       - semaglutide
       - tirzepatide
@@ -331,40 +391,15 @@ conditions:
     researchSummary: >-
       LEADER trial demonstrated 13% reduction in MACE (cardiovascular death,
       non-fatal MI, non-fatal stroke) and 22% reduction in cardiovascular death
-      in T2D patients with high CV risk. FDA label includes indication for CV
-      risk reduction.
+      in adults with T2D at high CV risk. Victoza's FDA label includes major
+      adverse CV event reduction for adults with T2D and established CV disease;
+      Saxenda does not carry that indication.
     relevantStudies:
       - '27295427'
       - '32164886'
-      - '31422062'
     relatedPeptides:
       - semaglutide
       - tirzepatide
-timeline:
-  - period: Week 1-2
-    effects: >-
-      Initial dose titration phase. Most patients experience transient nausea
-      (25-40%) which typically improves. Early appetite suppression and reduced
-      food intake begin. Blood glucose effects start within days.
-    source: 'PMID:19515413'
-  - period: Week 2-4
-    effects: >-
-      GI side effects diminish as tolerance develops. Weight loss becomes
-      measurable (1-2 kg). HbA1c begins declining. Patients should reach target
-      dose (1.8mg or 3.0mg) by end of this period.
-    source: 'PMID:21205128'
-  - period: Week 4-12
-    effects: >-
-      Steady weight loss continues. HbA1c reduction of 0.5-1.0% typically
-      achieved. Full appetite suppression effects established. Most GI
-      tolerability issues resolved.
-    source: 'PMID:26132939'
-  - period: Week 12-56
-    effects: >-
-      Maximum weight loss typically reached around weeks 40-56 (average 8% with
-      3.0mg dose). HbA1c maintained at 1.0-1.5% below baseline. Cardiovascular
-      benefits emerge with longer-term use.
-    source: 'PMID:27295427'
 faqs:
   - question: What is liraglutide?
     answer: >-
@@ -374,9 +409,11 @@ faqs:
       management.
   - question: Is liraglutide FDA approved?
     answer: >-
-      Yes, liraglutide has two FDA approvals: Victoza (1.8mg) for type 2
-      diabetes since 2010, and Saxenda (3.0mg) for chronic weight management
-      since 2014. It also has an indication for cardiovascular risk reduction.
+      Yes. Victoza is approved for type 2 diabetes in adults and patients aged
+      10 years and older and for major adverse CV event reduction in adults
+      with T2D and established CV disease. Saxenda is approved for adult weight
+      reduction and for obesity in eligible youths aged 12 years and older.
+      The products' indications are not interchangeable.
   - question: What is the evidence for liraglutide?
     answer: >-
       Liraglutide has extensive high-quality evidence from the LEAD program (6
@@ -386,97 +423,32 @@ faqs:
   - question: How does liraglutide compare to semaglutide?
     answer: >-
       Both are GLP-1 agonists, but liraglutide requires daily injection while
-      semaglutide is weekly. Semaglutide generally produces greater weight loss,
+      injectable semaglutide is weekly and oral semaglutide is daily.
+      Semaglutide generally produces greater weight loss in direct comparisons,
       though liraglutide has a longer safety track record.
   - question: What are common side effects of liraglutide?
     answer: >-
       The most common side effects are gastrointestinal, including nausea
       (25-40% initially), vomiting, and diarrhea. These typically improve during
       the dose titration period over 4-5 weeks.
-qualityChecklist:
-  goodSigns:
-    - FDA-approved pharmaceutical product (Victoza or Saxenda)
-    - Prescription obtained through licensed healthcare provider
-    - Clear solution in pre-filled pen device
-    - 'Proper storage at 2-8C before first use, room temperature after'
-    - Within expiration date with intact packaging
-    - Manufacturer lot number traceable
-  warningSigns:
-    - Product not in original manufacturer packaging
-    - Stored outside recommended temperature range
-    - Obtained without valid prescription
-    - Significantly below market price (potential counterfeit)
-    - Approaching expiration date
-  badSigns:
-    - 'Cloudy, discolored, or particulate-containing solution'
-    - Compounded or non-FDA-approved formulation
-    - Frozen product (should never be frozen)
-    - No manufacturer information or batch tracking
-    - Purchased from unverified international sources
-    - Damaged pen device or compromised seal
 regulatoryStatus:
   status: approved
-  lastUpdated: '2026-02-18'
-  notes: FDA-approved as Victoza (T2D) and Saxenda (weight management).
-ratings:
-  researchDepth: 5
-  globalCoverage: 5
-  mechanismPlausibility: 5
-  overall: 5
-  lastReviewed: 2026-04-13T00:00:00.000Z
-  reviewNotes: >-
-    Calibration anchor: FDA-approved GLP-1 receptor agonist with LEADER and
-    SCALE global Phase 3 trials, cardiovascular outcome data, and fully
-    established incretin mechanism.
-  anecdotalEvidence: 5
-scoring:
-  rubricVersion: "2.4"
-  evidence:
-    researchDepth: 97
-    mechanism: 96
-    plausibility: 96
-    globalCoverage: 97
-    communityExperience: 85
-    overall: 95
-    label: "well-evidenced"
-  effectiveness:
-    basis: "clinical"
-    score: 62
-    confidence: "high"
-    primaryIndication: "Obesity / chronic weight management and type 2 diabetes"
-  lastScored: 2026-06-27
-  citations:
-    - "PMID:27295427"
-    - "PMID:26132939"
-    - "PMID:19515413"
-    - "PMID:25202980"
-    - "PMID:32164886"
-    - "PMID:25887358"
+  lastUpdated: '2026-09-28'
   notes: >-
-    Research Depth 97 (1A35/1B24/1C15/1D15/1E8): meta-analyses of multiple
-    low-RoB Phase 3 RCTs — LEADER (27295427, double-blind, N=9,340), SCALE
-    (26132939, double-blind, N=3,731), the 6-trial LEAD program (>4,000) and
-    LEAD-6 (19515413, 15-country active-comparator) — total human N far exceeds
-    1,000 with direct population/route/outcome match; substantial but not
-    extensive preclinical base caps 1E. Mechanism 96 (2A40/2B28/2C18/2D10):
-    GLP-1R binding plus functional confirmation and neuron-specific
-    POMC/CART GLP-1R mediation of weight loss (Secher 25202980), full
-    target-to-effect pathway, in-vivo monotonic dose-response (1.8mg vs 3.0mg).
-    Plausibility 96 (3A38/3B25/3C20/3D13): full mechanism->surrogate->clinical
-    chain proven for HbA1c, weight and MACE (LEADER 27295427), fully coherent
-    with incretin physiology, multiple same-class analogues (semaglutide,
-    tirzepatide, exenatide) reproduce the effect. Global Coverage 97
-    (4A34/4B24/4C24/4D15): reproduced across many independent groups and
-    countries, >100 studies, multi-regulator approval. Community Experience 85
-    (5A30/5B30/5C16/5D9): >7 years population-level use since 2010, broadly
-    consistent reports, but recurring titration GI plus a rodent thyroid
-    C-cell boxed warning and rare pancreatitis cap 5D. Effectiveness basis
-    clinical (high): SCALE 8.4kg vs 2.8kg placebo (~5.6% placebo-adjusted),
-    63% achieve >=5% and 33% >10% weight loss, exceeding the ~5% MCID on hard
-    patient-relevant outcomes; superior to placebo and non-inferior/superior
-    to exenatide (LEAD-6) but modest versus newer agents (semaglutide,
-    tirzepatide) head-to-head, placing it mid-tier on comparative
-    effectiveness.
+    FDA-approved as Victoza (NDA 022341, approved 25 Jan 2010) for glycemic
+    control in adults and pediatric patients aged 10+ with type 2 diabetes and
+    for reducing major adverse cardiovascular events in adults with T2D and
+    established cardiovascular disease; and as Saxenda (NDA 206321, approved
+    23 Dec 2014) for chronic weight management in adults and in patients aged
+    12+ over 60 kg with obesity. Also a component of Xultophy 100/3.6 (BLA
+    208583, insulin degludec/liraglutide). Generic liraglutide injections are
+    approved under multiple ANDAs, the earliest ANDA 215503 (Hikma, 23 Dec
+    2024). The FDA Saxenda label file for NDA 206321/S-024 contains a
+    February 2026 prescribing-information revision and June 2026 revised
+    Instructions for Use. The current PI explicitly records removal of the
+    suicidal-behavior warning in February 2026 and pregnancy from section 4
+    contraindications in May 2025; pregnancy remains a section 8 fetal-risk
+    warning. Checked against FDA label on 2026-09-28.
 anecdotalReports:
   positive:
     - Moderate appetite suppression with well-characterized profile
@@ -516,6 +488,8 @@ mechanismPathways:
 
 Liraglutide is an FDA-approved GLP-1 receptor agonist with extensive human clinical trial data. Its mechanisms are well-characterized through over 15 years of clinical use.
 
+The 31-letter displayed backbone sequence is shorthand: the lysine at position 20 of that sequence (Lys26 in GLP-1 numbering) bears a C16 palmitoyl group through a glutamyl spacer, and position 28 is arginine, not lysine. The [NIH substance record](https://gsrs.ncats.nih.gov/ginas/app/beta/substances/839I73S42A) and [FDA Saxenda label](https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/206321s024lbl.pdf) describe the modified molecule.
+
 ### How It Works (Simplified)
 
 Liraglutide mimics the natural incretin hormone GLP-1 with modifications that extend its action:
@@ -535,14 +509,19 @@ Liraglutide mimics the natural incretin hormone GLP-1 with modifications that ex
   </div>
   <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
     <div class="font-semibold text-[color:var(--ink)] mb-2">Cardiovascular Protection</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Provides multifactorial CV benefits through blood pressure reduction, anti-inflammatory effects, and potential direct cardioprotection.</p>
+    <p class="text-sm text-[color:var(--ink-muted)]">LEADER demonstrated fewer major CV events in adults with type 2 diabetes at high CV risk. The relative contribution of blood pressure, weight, and direct tissue effects was not isolated.</p>
   </div>
 </div>
 
 **Key Research:** Marso SP et al. (LEADER Trial, 2016) demonstrated 13% reduction in major adverse cardiovascular events in high-risk T2D patients. [PMID:27295427](https://pubmed.ncbi.nlm.nih.gov/27295427/)
 
+### Current US label scope
+
+The [FDA Saxenda label file](https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/206321s024lbl.pdf) for NDA 206321/S-024 includes prescribing information revised February 2026 and Instructions for Use revised June 2026. Its listed recent changes include removal of the suicidal-behavior-and-ideation warning in February 2026 and removal of pregnancy from the contraindications section in May 2025; section 8 still says Saxenda may cause fetal harm and directs discontinuation when pregnancy is recognized. Removal of a warning does not establish that every psychiatric outcome has been ruled out. The label also warns of severe GI reactions, acute kidney injury due to volume depletion, hypoglycemia (including pediatric events), and pulmonary aspiration during anesthesia or deep sedation. [Victoza's US label](https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5a9ef4ea-c76a-4d34-a604-27c5b505f5a4) separately carries the LEADER-based CV indication for adults with type 2 diabetes and established cardiovascular disease.
+
 ### Important Limitations
 
+- The Saxenda and Victoza indications are product-specific; LEADER's CV event result does not confer a CV indication on Saxenda
 - Common GI side effects (nausea, vomiting) especially during titration
 - Requires daily subcutaneous injection (less convenient than weekly alternatives)
 - Boxed warning for thyroid C-cell tumors (based on rodent studies; human relevance uncertain)

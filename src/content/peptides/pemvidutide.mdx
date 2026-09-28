@@ -5,26 +5,28 @@ aliases:
   - GLP-1/Glucagon Dual Agonist
 category: metabolic
 evidenceStrength: moderate
-lastUpdated: 2026-01-22T00:00:00.000Z
+lastUpdated: 2026-09-28T00:00:00.000Z
 comparators:
   - semaglutide
   - tirzepatide
   - survodutide
 summary: >-
-  A dual GLP-1/glucagon receptor agonist developed by Altimmune showing 15.6%
-  weight loss at 48 weeks with a high proportion of fat mass lost. Phase 2
-  trials completed for obesity (MOMENTUM) and MASH (IMPACT), with the IMPACT
-  trial meeting its MASH-resolution primary endpoint (52% at 1.8 mg vs 20%
-  placebo at 24 weeks). FDA Fast Track designation for MASH.
+  Investigational GLP-1/glucagon dual agonist. The published IMPACT Phase 2b
+  trial met its 24-week MASH-resolution endpoint but not its fibrosis-improvement
+  co-primary endpoint. Phase 3 PERFORMA in MASH has begun. Altimmune also
+  reported positive Phase 2 RECLAIM alcohol-use-disorder toplines in July 2026;
+  these sponsor results are not yet a peer-reviewed paper or FDA approval.
 sources:
-  count: 28
-  human: 12
-  preclinical: 8
-  openAccess: 22
-metaTitle: 'Pemvidutide: 28 Studies Reviewed (2026)'
+  count: 12
+  human: 3
+  preclinical: 0
+  openAccess: 1
+  context: "12 deduplicated reader-visible evidence records: 3 direct primary human publications, 0 direct primary preclinical publications and 1 verified scholarly open full texts. Registrations, sponsor or regulator records, reviews and protocols have different evidentiary roles from direct primary papers; a publication and registration may describe the same trial, and post-hoc or substudy reports may reuse a population."
+  verdict: "Published IMPACT findings retain both MASH-resolution and fibrosis endpoints; MOMENTUM and RECLAIM sponsor claims remain separate from published efficacy."
+metaTitle: "Pemvidutide: MASH and AUD Trial Evidence (2026)"
 metaDescription: >-
-  Evidence-graded review of pemvidutide covering 28 citations. GLP-1/glucagon
-  dual agonist in Phase 2 for MASH. Updated Feb 2026.
+  Evidence review of pemvidutide covering published MASH trials and sponsor
+  reported AUD results. Phase 3 PERFORMA has begun. Updated Sep 2026.
 interactions:
   - peptide: semaglutide
     type: caution
@@ -35,26 +37,24 @@ interactions:
   - peptide: tirzepatide
     type: avoid
     description: >-
-      Both are incretin-based dual agonists targeting overlapping receptor
-      systems. Combining would create redundant and potentially dangerous
-      receptor overstimulation.
+      Both agents activate GLP-1 receptors. No pemvidutide/tirzepatide
+      combination trial was identified, so clinical effects and safety are
+      unknown; receptor overstimulation is a theoretical concern.
   - peptide: survodutide
     type: avoid
     description: >-
-      Both are GLP-1/glucagon dual agonists with nearly identical mechanisms. No
-      rationale for combination; risk of adverse effects from receptor
-      overstimulation.
+      Both are investigational GLP-1/glucagon dual agonists. Their concurrent
+      use has not been studied, so the risk magnitude is unknown.
   - peptide: bpc-157
-    type: compatible
+    type: caution
     description: >-
-      Different mechanisms of action. BPC-157 focuses on tissue repair while
-      pemvidutide targets metabolic pathways. No known contraindications.
+      No clinical co-administration study was identified; compatibility and
+      any protective effect are unestablished.
   - peptide: tb-500
-    type: compatible
+    type: caution
     description: >-
-      Non-overlapping mechanisms. TB-500 targets tissue repair and cell
-      migration while pemvidutide modulates metabolic function. No interaction
-      data available.
+      No clinical co-administration study was identified, so interaction and
+      safety are unknown.
 molecularInfo:
   weight: '~7,000 Da (with PEG)'
   chainLength: 30
@@ -103,39 +103,49 @@ molecularInfo:
       property: hydrophobic
 evidenceChainedBenefits:
   - mechanism:
-      action: GLP-1 receptor agonism reducing appetite and slowing gastric emptying
-      confidence: established
-      directStudies: 12
+      action: GLP-1 receptor agonism plausibly contributing to weight reduction
+      confidence: supported
+      directStudies: 2
     benefit:
-      claim: reduce body weight through decreased caloric intake
+      claim: reduce body weight in MASLD trials
       qualifier: shown to
     evidence:
       level: high
-      humanStudies: 4
-      animalStudies: 6
-      cellStudies: 2
+      humanStudies: 2
+      animalStudies: 0
+      cellStudies: 0
       keyFindings:
-        - study: MOMENTUM Phase 2b (48-week)
+        - study: Browne A et al. 2024 (12-week MASLD trial)
           type: human-rct
-          finding: 15.6% weight loss at highest dose (2.4mg) vs 2.3% placebo
-          pmid: NCT05295875
-        - study: MOMENTUM Phase 2b (24-week)
+          finding: >-
+            Maximal mean weight reduction was 4.3% at 12 weeks in the 1.8 mg
+            group; this was a MASLD trial, not MOMENTUM
+          pmid: '39002641'
+        - study: Browne A et al. 2025 (same MASLD cohort, 24-week extension)
           type: human-rct
-          finding: 10.3% weight loss at 24 weeks with 1.8mg dose
-          pmid: NCT05295875
+          finding: >-
+            Mean bodyweight reduction was 6.2% at week 24 in the extension
+            population; these patients overlap the 12-week report
+          pmid: '41113119'
   - mechanism:
-      action: Glucagon receptor agonism promoting hepatic lipid oxidation
-      confidence: established
-      directStudies: 8
+      action: GLP-1/glucagon receptor activity associated with measured liver-fat and histology outcomes; receptor-specific mediation was not isolated
+      confidence: supported
+      directStudies: 3
     benefit:
       claim: reduce liver fat content and resolve MASH
       qualifier: shown to
     evidence:
       level: high
-      humanStudies: 2
-      animalStudies: 4
-      cellStudies: 2
+      humanStudies: 3
+      animalStudies: 0
+      cellStudies: 0
       keyFindings:
+        - study: Browne A et al. 2024 (12-week MASLD trial)
+          type: human-rct
+          finding: >-
+            Relative liver-fat reduction ranged from 46.6% to 68.5% across
+            pemvidutide groups versus 4.4% with placebo at week 12
+          pmid: '39002641'
         - study: IMPACT Phase 2 (24-week)
           type: human-rct
           finding: >-
@@ -143,74 +153,34 @@ evidenceChainedBenefits:
             20% placebo at 24 weeks; the co-primary fibrosis-improvement endpoint
             was not met at this timepoint
           pmid: '41237796'
+        - study: 'Rajab I et al. 2026 (GRADE meta-analysis of pemvidutide RCTs)'
+          type: meta-analysis
+          finding: >-
+            Pooled pemvidutide versus placebo in adults with MASLD/MASH. At 12
+            weeks, liver-fat-content mean difference −52.90 (95% CI −71.60 to
+            −34.20) and body-weight mean difference −3.50 (95% CI −5.00 to
+            −2.00). At 24 weeks, liver-fat-content mean difference −45.51 (95%
+            CI −52.70 to −38.33), ALT −18.09 (95% CI −30.12 to −6.06), AST
+            −13.02 (95% CI −21.84 to −4.20), ELF −0.44 (95% CI −0.77 to −0.11).
+            Pooled MDs, not a single-trial treatment-policy percent. The
+            abstract does not report a fibrosis-histology responder rate.
+          pmid: '41879841'
         - study: 'MASLD 24-week extension (Browne et al. 2025)'
           type: human-rct
           finding: >-
             75-76% relative reduction in liver fat content by MRI-PDFF at 24
             weeks (1.8-2.4 mg) vs 14% placebo
           pmid: '41113119'
-  - mechanism:
-      action: >-
-        Balanced dual agonism preferentially targeting fat stores via
-        glucagon-driven lipolysis
-      confidence: supported
-      directStudies: 4
-    benefit:
-      claim: preserve lean muscle mass during weight loss
-      qualifier: appears to
-    evidence:
-      level: moderate
-      humanStudies: 2
-      animalStudies: 2
-      cellStudies: 0
-      keyFindings:
-        - study: MOMENTUM body composition substudy
-          type: human-rct
-          finding: >-
-            78% of weight lost was fat mass vs typical 65-70% with GLP-1-only
-            drugs
-          pmid: NCT05295875
-        - study: Finan B et al. 2014
-          type: animal
-          finding: >-
-            Unimolecular agonism at glucagon (with GLP-1/GIP) proved superior to
-            dual coagonists for reducing body weight and reversing hepatic
-            steatosis in rodent obesity models
-          pmid: '25485909'
-  - mechanism:
-      action: Glucagon-mediated increase in energy expenditure and thermogenesis
-      confidence: supported
-      directStudies: 5
-    benefit:
-      claim: increase metabolic rate
-      qualifier: may
-    evidence:
-      level: moderate
-      humanStudies: 1
-      animalStudies: 4
-      cellStudies: 2
-      keyFindings:
-        - study: Ambery P et al. 2018
-          type: human-rct
-          finding: >-
-            Balanced GLP-1/glucagon receptor dual agonism produced clinically
-            meaningful weight loss and improved glycaemic control vs placebo in
-            type 2 diabetes
-          pmid: '29945727'
-        - study: Beiroa D et al. 2014
-          type: animal
-          finding: >-
-            Incretin (GLP-1) receptor agonism stimulates brown adipose tissue
-            thermogenesis and adipocyte browning in mice
-          pmid: '24917578'
 conditions:
   - slug: obesity
     name: Obesity
     researchSummary: >-
-      Phase 2b MOMENTUM trial demonstrated 15.6% weight loss at 48 weeks with
-      2.4mg dose. Weight loss trajectory had not plateaued, suggesting continued
-      benefit with longer treatment. 78% of weight lost was fat mass, superior
-      to GLP-1-only agents.
+      Altimmune reported 15.6% mean weight reduction at 48 weeks in one
+      MOMENTUM phase 2b obesity arm. That sponsor result is not a cited
+      peer-reviewed obesity efficacy publication. Separate published MASLD
+      reports measured 12- and 24-week weight changes in another population.
+      Body-composition findings were exploratory and do not establish
+      superiority to GLP-1-only agents without a head-to-head trial.
     relevantStudies:
       - NCT05295875
     relatedPeptides:
@@ -222,20 +192,29 @@ conditions:
       Phase 2 IMPACT trial (NCT05989711) met its MASH-resolution primary
       endpoint at 24 weeks: 52% MASH resolution without fibrosis worsening at
       1.8 mg vs 20% placebo (and 58% at 1.2 mg). The co-primary
-      fibrosis-improvement endpoint was not met at 24 weeks. FDA Fast Track
-      designation granted November 2022.
+      fibrosis-improvement endpoint was not met at 24 weeks. CT.gov status
+      checked 2026-09-28: COMPLETED, n=212 actual, hasResults false (published
+      figures remain PMID 41237796). Phase 3 PERFORMA (NCT07795164) is
+      recruiting (estimated n=1800; primary outcomes include a clinical-outcome
+      event and histologic MASH-resolution / fibrosis-improvement co-responses).
+      Rajab 2026 (PMID 41879841) pooled earlier MASLD/MASH RCTs (12-week
+      liver-fat MD −52.90). FDA Fast Track designation granted November 2022.
     relevantStudies:
+      - '41237796'
       - NCT05989711
+      - NCT07795164
+      - '41879841'
     relatedPeptides:
       - semaglutide
       - survodutide
   - slug: metabolic-syndrome
     name: Metabolic Syndrome
     researchSummary: >-
-      Trials demonstrated improvements across metabolic parameters including
-      blood pressure (-3 to -5 mmHg systolic), lipid profile (LDL and
-      triglycerides decreased, HDL increased), and liver enzymes. Type 2
-      diabetes population not yet studied but planned for Phase 3.
+      The cited obesity and MASH registrations do not establish a
+      metabolic-syndrome treatment effect. Cardiometabolic markers have been
+      measured in separate pemvidutide studies, but a prespecified clinical
+      metabolic-syndrome endpoint and cardiovascular-outcome benefit have not
+      been established here.
     relevantStudies:
       - NCT05295875
       - NCT05989711
@@ -243,124 +222,30 @@ conditions:
       - tirzepatide
       - semaglutide
 timeline:
-  - period: Week 1-4
+  - period: Week 12, MASLD trial
     effects: >-
-      Titration phase beginning at 0.6mg weekly. Initial appetite suppression
-      and satiety effects. Common GI side effects (nausea, diarrhea) typically
-      most pronounced during this period but improve with continued use.
-    source: NCT05295875
-  - period: Week 4-12
+      Published group averages showed relative liver-fat reduction of 46.6%
+      to 68.5% across pemvidutide arms versus 4.4% with placebo. This is a
+      different population from the MOMENTUM obesity trial.
+    source: 'PMID:39002641'
+  - period: Week 24, IMPACT MASH trial
     effects: >-
-      Dose escalation to maintenance dose (1.8-2.4mg). Progressive weight loss
-      averaging 1-2% body weight per month. Liver fat reduction begins. GI
-      tolerability improves.
-    source: NCT05295875
-  - period: Week 12-24
-    effects: >-
-      Sustained weight loss reaching approximately 10% at 24 weeks with 1.8mg
-      dose. Significant improvements in liver enzymes. Metabolic parameters
-      (lipids, blood pressure) show measurable improvement.
-    source: NCT05295875
-  - period: Week 24-48
-    effects: >-
-      Continued weight loss to 15.6% at 48 weeks in the obesity trial. In the
-      separate IMPACT MASH trial, MASH resolution without fibrosis worsening was
-      observed in 52% of patients at 1.8 mg (vs 20% placebo) by the 24-week
-      biopsy; the co-primary fibrosis-improvement endpoint was not met at 24
-      weeks. Weight loss trajectory not yet plateaued, suggesting further benefit
-      with extended treatment.
-    source: NCT05989711
-qualityChecklist:
-  goodSigns:
-    - Manufactured under GMP conditions for clinical trials
-    - 'Clear, colorless solution in prefilled syringe or vial'
-    - Proper cold chain storage (refrigerated 2-8°C)
-    - Within expiration date with proper lot documentation
-    - No visible particulates or discoloration
-  warningSigns:
-    - Storage outside recommended temperature range
-    - Approaching expiration date
-    - Minor cloudiness that clears on gentle swirling
-  badSigns:
-    - Visible particles or precipitate in solution
-    - Yellow or brown discoloration
-    - Frozen product (may damage peptide structure)
-    - Compromised packaging or broken seals
-    - Sourced outside regulated clinical trial or pharmacy
+      Biopsy-confirmed MASH resolution without worsening fibrosis met its
+      primary endpoint, while the co-primary fibrosis-improvement endpoint
+      did not. These are trial-level outcomes, not an individual timeline.
+    source: 'PMID:41237796'
 regulatoryStatus:
   status: investigational
-  lastUpdated: '2026-02-18'
+  lastUpdated: '2026-09-28'
   notes: >-
-    Phase 2 clinical trials for obesity and MASH (Altimmune). GLP-1/glucagon
-    dual agonist.
-ratings:
-  researchDepth: 3
-  globalCoverage: 3
-  mechanismPlausibility: 3
-  overall: 2.85
-  lastReviewed: 2026-04-13T00:00:00.000Z
-  reviewNotes: >-
-    Altimmune Phase 2 GLP-1/glucagon dual agonist with promising MASH data;
-    established incretin and glucagon receptor mechanisms support plausibility
-    with growing multinational dataset.
-  anecdotalEvidence: 2
-scoring:
-  rubricVersion: "2.4"
-  evidence:
-    researchDepth: 88
-    mechanism: 93
-    plausibility: 88
-    globalCoverage: 49
-    communityExperience: 32
-    overall: 75
-    label: "emerging"
-  effectiveness:
-    basis: "clinical"
-    score: 73
-    confidence: "moderate"
-    primaryIndication: "MASH / obesity (metabolic)"
-  lastScored: 2026-06-27
-  citations:
-    - "PMID:41237796"
-    - "PMID:39002641"
-    - "PMID:41113119"
-    - "PMID:41879841"
-    - "PMID:41352959"
-    - "PMID:25485909"
-    - "PMID:29945727"
-    - "PMID:24917578"
-  notes: >-
-    Research Depth 88: multiple double-blind placebo-controlled Phase 2b RCTs —
-    IMPACT MASH (41237796, Lancet, n=212), MASLD 12-wk (39002641, J Hepatol,
-    n=94) and 24-wk extension (41113119, JHEP Rep, n=64), plus MOMENTUM obesity —
-    now topped by a GRADE-assessed meta-analysis of pemvidutide RCTs (41879841);
-    total human N in the 300-1,000 band; direct population/route/outcome match;
-    moderate pemvidutide-specific preclinical foundation (1E). 1B held mid-band
-    (22) because the meta-analysis is single/recent and the fibrosis-improvement
-    co-primary was not met at 24 wk. Mechanism 93: GLP-1R + GCGR are validated
-    targets with functional and loss-of-function confirmation for the class
-    (Finan triagonist KO/blockade 25485909), full target-to-effect pathway, and
-    monotonic human dose-response (1.2/1.8/2.4 mg) plus in-vivo BAT thermogenesis
-    (24917578). Plausibility 88: near-full mechanism->surrogate (liver fat,
-    weight)->clinical (MASH resolution) chain, fully coherent with hepatic/
-    metabolic biology, multiple same-class analogues (survodutide, tirzepatide,
-    retatrutide); minor deduction as fibrosis/hard outcomes not yet met and the
-    claim spans several metabolic systems. Global Coverage 49: pivotal trials are
-    Altimmune-sponsored (single sponsor) at US/Australia sites, but an
-    independent meta-analysis and multi-country reviews exist; ~12
-    pemvidutide-specific studies; FDA Fast Track + trial registration (4D=5, not
-    yet approved). Community Experience 32: niche, recent investigational use
-    only, limited but broadly consistent reports, no recurring adverse signal.
-    Effectiveness basis clinical (moderate): MOMENTUM 15.6% vs 2.3% placebo
-    weight loss and IMPACT ~52-58% vs 20% placebo MASH resolution far exceed
-    their MCIDs (large effect), but evidence is Phase 2b, single-sponsor, with
-    the fibrosis co-primary missed at 24 wk and no head-to-head vs resmetirom.
-anecdotalReports:
-  positive: []
-  negative: []
-  communityNotes: >-
-    Limited community discussion. Most reports come from niche enthusiast
-    circles.
+    Not FDA-approved; no marketing application was verified; no application appears
+    in Drugs@FDA (openFDA drugsfda, checked 2026-08-06). Altimmune reports FDA
+    Breakthrough Therapy and Fast Track designations for MASH —
+    development-stage designations, not approvals, and not a finding that the
+    drug works. PERFORMA Phase 3 in MASH began in July 2026. Altimmune reported
+    RECLAIM Phase 2 AUD topline results on 28 July 2026; the registry had no
+    results table on 2 September 2026, which does not negate a sponsor release.
+    RESTORE Phase 2 in alcohol-associated liver disease remains underway.
 mechanismPathways:
   - name: 'GLP-1 Receptor Pathway'
     label: 'Appetite & Insulin'
@@ -376,17 +261,17 @@ mechanismPathways:
     steps:
       - 'Pemvidutide'
       - 'GCGR activation'
-      - 'Liver: Fat oxidation ↑, lipogenesis'
-      - 'Adipose: Lipolysis ↑, thermogenesis ↑'
-    outcome: 'Energy expenditure: 10-15% increase'
+      - 'Liver: lipid-metabolism effects hypothesized'
+      - 'Adipose: thermogenic contribution unproven in humans'
+    outcome: 'Human energy-expenditure effect not quantified'
     outcomeSignal: research
 ---
 
-The mechanisms of pemvidutide are well-characterized through Phase 2b clinical trials and extensive preclinical research on GLP-1/glucagon dual agonism.
+Pemvidutide activates GLP-1 and glucagon receptors. Clinical trials measure weight and liver outcomes but do not isolate how much each receptor pathway contributes in people.
 
 ### How It Works (Simplified)
 
-Pemvidutide activates TWO hormone receptors simultaneously for enhanced metabolic effects:
+Pemvidutide activates two hormone receptors:
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-8">
   <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
@@ -395,24 +280,32 @@ Pemvidutide activates TWO hormone receptors simultaneously for enhanced metaboli
   </div>
   <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
     <div class="font-semibold text-[color:var(--ink)] mb-2">Liver Fat Burning</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Glucagon receptor activation directly tells liver cells to oxidize fat, reducing steatosis and improving MASH.</p>
+    <p class="text-sm text-[color:var(--ink-muted)]">Glucagon-receptor signalling may affect hepatic lipid metabolism. Liver-fat and MASH outcomes were measured, but their specific causal pathway was not isolated.</p>
   </div>
   <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
     <div class="font-semibold text-[color:var(--ink)] mb-2">Metabolic Boost</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Glucagon increases energy expenditure and thermogenesis, burning more calories at rest.</p>
+    <p class="text-sm text-[color:var(--ink-muted)]">A contribution from energy expenditure is biologically plausible; its magnitude in people receiving pemvidutide was not established by the cited efficacy trials.</p>
   </div>
   <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
     <div class="font-semibold text-[color:var(--ink)] mb-2">Muscle Preservation</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Balanced dual agonism preferentially targets fat stores, preserving 78% fat mass loss vs typical 65-70%.</p>
+    <p class="text-sm text-[color:var(--ink-muted)]">Body-composition analyses in MOMENTUM are exploratory; no head-to-head trial established greater fat-mass selectivity than a GLP-1-only medicine.</p>
   </div>
 </div>
 
-**Key Research:** MOMENTUM (NCT05295875) and IMPACT (NCT05989711) Phase 2 trials demonstrated consistent efficacy. [Altimmune 2024]
+**Key Research:** The published IMPACT phase 2b trial reported more MASH resolution without worsening of fibrosis at 24 weeks, but did not meet its separate conventional-histology fibrosis co-primary endpoint ([PMID:41237796](https://pubmed.ncbi.nlm.nih.gov/41237796/)). MOMENTUM obesity results are sponsor-reported and identified by its [trial registration](https://clinicaltrials.gov/study/NCT05295875); the registration is not a peer-reviewed results paper.
+
+### MASH and alcohol use disorder updates
+
+In the published IMPACT Phase 2b trial of 212 adults with biopsy-confirmed MASH and F2–F3 fibrosis, MASH resolution without worsening of fibrosis at 24 weeks was more frequent with pemvidutide than placebo. The separate co-primary endpoint of fibrosis improvement without worsening of MASH was **not statistically significant** in the conventional histology analysis ([PMID:41237796](https://pubmed.ncbi.nlm.nih.gov/41237796/)). [Altimmune's 48-week update](https://ir.altimmune.com/node/17411) described changes in non-invasive fibrosis markers and further weight reduction, but these are sponsor toplines and do not turn the missed 24-week biopsy endpoint into a positive one. Altimmune says the PERFORMA Phase 3 MASH trial began in July 2026 ([August 2026 corporate update](https://ir.altimmune.com/news-releases/news-release-details/altimmune-announces-second-quarter-2026-financial-results-and)); trial registration is a study plan, not an efficacy result.
+
+In RECLAIM (NCT06987513), a separate Phase 2 trial in about 100 adults with moderate-to-severe alcohol use disorder, [Altimmune reported on 28 July 2026](https://ir.altimmune.com/news-releases/news-release-details/altimmune-announces-positive-topline-results-reclaim-phase-2) a week-24 mean reduction of 4.20 heavy drinking days per week from baseline with pemvidutide versus 2.75 with placebo (difference 1.45 days, p=0.0014). The company also reported a two-level WHO risk-drinking reduction in 64.4% versus 34.8% and zero heavy drinking days during weeks 21–24 in 42.2% versus 17.4%. These are **sponsor-reported toplines**, with no peer-reviewed RECLAIM paper or posted registry results table verified here. FDA Fast Track for AUD and Breakthrough Therapy for MASH are development designations, not approval or an agency determination of efficacy.
 
 ### Important Limitations
 
-- Phase 2b data only; Phase 3 confirmatory trials pending
+- Phase 3 PERFORMA (NCT07795164) has begun, but there is no Phase 3 efficacy result
+- RECLAIM AUD results are sponsor toplines pending detailed peer review and registry posting
+- A missing ClinicalTrials.gov results table does not negate the sponsor's RECLAIM topline, but limits independent detail
+- RESTORE ALD (NCT07009860) active, not recruiting — no results
 - No head-to-head comparisons with approved agents
-- Type 2 diabetes population not yet studied
-- Long-term safety and durability beyond 48 weeks unknown
-- All trials sponsored by single company (Altimmune)
+- Long-term safety and durability beyond the published Phase 2 window unknown
+- Registrational and Phase 2 programs remain Altimmune-sponsored

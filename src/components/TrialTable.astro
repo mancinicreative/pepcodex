@@ -1,4 +1,5 @@
 ---
+import { formatTrialCompletion, trialStatusKey } from '../lib/trial-display.mjs';
 interface Trial {
   nctId: string;
   title: string;
@@ -9,6 +10,7 @@ interface Trial {
   enrollmentTarget?: number;
   startDate?: string;
   completionDate?: string;
+  completionDateType?: string;
   peptide: string;
 }
 
@@ -37,15 +39,11 @@ const statusColors: Record<string, string> = {
 };
 
 function getStatusStyle(status: string): string {
-  const key = status.toLowerCase();
+  const key = trialStatusKey(status);
   return statusColors[key] || NEUTRAL;
 }
 
-function formatDate(dateStr?: string): string {
-  if (!dateStr) return '-';
-  const date = new Date(dateStr);
-  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
-}
+const formatDate = formatTrialCompletion;
 ---
 
 <div class="overflow-x-auto ledger-scroll">
@@ -85,7 +83,7 @@ function formatDate(dateStr?: string): string {
           return (
             <tr class="trial-row transition-colors"
                 style="border-top: 1px solid var(--border-c);"
-                data-status={trial.status.toLowerCase()}
+                data-status={trialStatusKey(trial.status)}
                 data-phase={trial.phase}
                 data-peptide={trial.peptide.toLowerCase()}>
               <td class="px-4 py-4 whitespace-nowrap">
@@ -124,7 +122,7 @@ function formatDate(dateStr?: string): string {
                 </span>
               </td>
               <td class="px-4 py-4 whitespace-nowrap text-sm" style="color: var(--ink-muted);">
-                {formatDate(trial.completionDate)}
+                {formatDate(trial.completionDate, trial.completionDateType)}
               </td>
             </tr>
           );
@@ -141,7 +139,7 @@ function formatDate(dateStr?: string): string {
     return (
       <div class="rounded-lg border p-4 trial-card transition-colors"
            style="border-color: var(--border-c); background: var(--paper);"
-           data-status={trial.status.toLowerCase()}
+           data-status={trialStatusKey(trial.status)}
            data-phase={trial.phase}
            data-peptide={trial.peptide.toLowerCase()}>
         <div class="flex items-start justify-between gap-2">
@@ -170,7 +168,7 @@ function formatDate(dateStr?: string): string {
             </a>
           </span>
           <span>Phase {trial.phase}</span>
-          <span>Est. {formatDate(trial.completionDate)}</span>
+          <span>Completion: {formatDate(trial.completionDate, trial.completionDateType)}</span>
         </div>
       </div>
     );

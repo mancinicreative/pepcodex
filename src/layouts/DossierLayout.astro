@@ -7,7 +7,7 @@ import BaseLayout from './BaseLayout.astro';
 import ArticleSchema from '../components/SEO/ArticleSchema.astro';
 import BreadcrumbSchema from '../components/SEO/BreadcrumbSchema.astro';
 import FAQSchema from '../components/SEO/FAQSchema.astro';
-import DrugSchema from '../components/SEO/DrugSchema.astro';
+import MedicalWebPageSchema from '../components/SEO/MedicalWebPageSchema.astro';
 import RelatedEntities from '../components/RelatedEntities.astro';
 import PeptideCard from '../components/PeptideCard.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
@@ -226,8 +226,6 @@ const derivedWarnings =
     : noteWarning
       ? [noteWarning]
       : [];
-const emitDrugSchema = regulatoryStatus?.status === 'approved';
-const administrationRoute = molecularInfo?.routes;
 
 const categoryLabels: Record<string, string> = {
   'metabolic': 'Metabolic',
@@ -439,17 +437,12 @@ const clinicalPct = sources.count ? Math.round((sources.human / sources.count) *
   />
   <BreadcrumbSchema items={breadcrumbItems} />
   {faqs && faqs.length > 0 && <FAQSchema items={faqs} />}
-  {emitDrugSchema && (
-    <DrugSchema
-      name={name}
-      alternateName={aliases}
-      description={summary}
-      drugClass={categoryLabels[category]}
-      administrationRoute={administrationRoute}
-      molecularWeight={molecularInfo?.weight}
-      url={articleUrl}
-    />
-  )}
+  <MedicalWebPageSchema
+    name={name}
+    alternateName={aliases}
+    description={summary}
+    url={articleUrl}
+  />
 
   <div class="max-w-7xl mx-auto pb-20">
     <!-- Breadcrumb + actions -->

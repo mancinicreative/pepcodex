@@ -1,0 +1,27 @@
+---
+import JsonLd from './JsonLd.astro';
+
+interface Props {
+  name: string;
+  alternateName?: string[];
+  description: string;
+  url: string;
+}
+
+const { name, alternateName = [], description, url } = Astro.props;
+const pageData = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalWebPage',
+  '@id': url,
+  name,
+  description,
+  url,
+  about: {
+    '@type': 'Thing',
+    name,
+    ...(alternateName.length > 0 && { alternateName }),
+  },
+};
+---
+
+<JsonLd data={pageData} />

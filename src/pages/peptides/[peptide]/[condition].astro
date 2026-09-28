@@ -1,6 +1,6 @@
 ---
 import { loadEvidencePresentation } from '../../../lib/evidence-binding';
-import { resolveCitation } from '../../../utils/citation';
+import { resolveConditionReference } from '../../../lib/condition-reference.mjs';
 import { getCollection, getEntry } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../../components/SEO/BreadcrumbSchema.astro';
@@ -76,9 +76,11 @@ const relatedPeptidesWithCondition = condition.relatedPeptides
   : [];
 
 const presentation = loadEvidencePresentation(peptide.slug, peptide.data);
+const hasNonPmidReference = (condition.relevantStudies ?? []).some((reference: string) => resolveConditionReference(reference)?.kind !== 'pmid');
+const legacyReferenceLabel = hasNonPmidReference ? 'References' : 'Referenced Studies';
 // SEO
 const pageTitle = `${peptide.data.name} for ${condition.name}: Research Overview`;
-const metaDescription = presentation.selected ? `Research context and limitations for ${peptide.data.name} and ${condition.name}. Clinical certainty has not been formally graded.` : `Evidence-based research on ${peptide.data.name} for ${condition.name}. Scientific studies, mechanisms, and findings from peer-reviewed literature.`;
+const metaDescription = presentation.selected ? `Research context and limitations for ${peptide.data.name} and ${condition.name}. Clinical certainty has not been formally graded.` : hasNonPmidReference ? `Research and source records on ${peptide.data.name} for ${condition.name}, including findings and limitations.` : `Evidence-based research on ${peptide.data.name} for ${condition.name}. Scientific studies, mechanisms, and findings from peer-reviewed literature.`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 // Breadcrumb data
@@ -143,7 +145,7 @@ const currentEvidence = presentation.selected ? presentation : evidenceConfig[pe
       </h1>
 
       <p class="text-xl max-w-3xl leading-relaxed" style="color: var(--ink-muted);">
-        {presentation.selected ? `Research context and limitations for ${peptide.data.name} and ${condition.name.toLowerCase()}. Clinical certainty has not been formally graded.` : <>An evidence-based overview of research examining {peptide.data.name} in the context of {condition.name.toLowerCase()}. This page synthesizes findings from peer-reviewed literature.</>}
+        {presentation.selected ? `Research context and limitations for ${peptide.data.name} and ${condition.name.toLowerCase()}. Clinical certainty has not been formally graded.` : hasNonPmidReference ? <>An overview of research and source records on {peptide.data.name} in the context of {condition.name.toLowerCase()}.</> : <>An evidence-based overview of research examining {peptide.data.name} in the context of {condition.name.toLowerCase()}. This page synthesizes findings from peer-reviewed literature.</>}
       </p>
     </header>
 
@@ -189,14 +191,14 @@ const currentEvidence = presentation.selected ? presentation : evidenceConfig[pe
                 </svg>
               </div>
               <h2 class="font-serif text-2xl" style="color: var(--ink); font-weight: 500;">
-                {presentation.selected ? 'Referenced publications' : 'Referenced Studies'}
+                {presentation.selected ? 'Referenced publications' : legacyReferenceLabel}
               </h2>
             </div>
 
             <div class="space-y-3">
-              {condition.relevantStudies.map((pmid: string) => {
-                const citation = presentation.selected ? resolveCitation(pmid) : { href: `https://pubmed.ncbi.nlm.nih.gov/${pmid}/`, kind: 'pmid', source: pmid };
-                if (!citation.href) return <span class="text-sm">Unresolved reference: {pmid}</span>;
+              {condition.relevantStudies.map((reference: string) => {
+                const citation = resolveConditionReference(reference);
+                if (!citation) return <span class="text-sm">Unresolved reference: {reference}</span>;
                 return (
                 <a
                   href={citation.href}
@@ -219,7 +221,7 @@ const currentEvidence = presentation.selected ? presentation : evidenceConfig[pe
             </div>
 
             <p class="mt-4 text-sm" style="color: var(--ink-dim);">
-              {presentation.selected ? 'Open a reference to inspect its source record. A citation does not establish a clinical benefit.' : 'Click any PMID to view the full study on PubMed.'}
+              {presentation.selected || hasNonPmidReference ? 'Open a reference to inspect its source record. A citation does not establish a clinical benefit.' : 'Click any PMID to view the full study on PubMed.'}
             </p>
           </section>
         )}
@@ -298,7 +300,7 @@ const currentEvidence = presentation.selected ? presentation : evidenceConfig[pe
             </a>
             {condition.relevantStudies && condition.relevantStudies.length > 0 && (
               <a href="#referenced-studies" class="block text-sm hover:text-primary transition-colors py-1" style="color: var(--ink);">
-                {presentation.selected ? 'Referenced publications' : 'Referenced Studies'} ({condition.relevantStudies.length})
+                {presentation.selected ? 'Referenced publications' : legacyReferenceLabel} ({condition.relevantStudies.length})
               </a>
             )}
             {relatedPeptidesWithCondition.length > 0 && (

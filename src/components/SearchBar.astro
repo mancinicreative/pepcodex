@@ -437,9 +437,8 @@ const sizeClasses = {
         if (searchResultsList) {
           searchResultsList.innerHTML = results.map((result: any) => `
             <li>
-              <a href="${escapeHtml(safeInternalUrl(result.url))}" class="block p-4 hover:bg-[color:var(--paper-2)] transition-colors">
+              <a href="${escapeHtml(safeInternalUrl(result.url).replace(/\/$/, '') || '/')}" class="block p-4 hover:bg-[color:var(--paper-2)] transition-colors">
                 <div class="font-medium text-[color:var(--ink)]">${escapeHtml(result.meta?.title || 'Untitled')}</div>
-                <div class="mt-1 text-sm text-[var(--muted-foreground)] line-clamp-2">${escapeHtml(result.excerpt || '')}</div>
               </a>
             </li>
           `).join('');

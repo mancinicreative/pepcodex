@@ -72,35 +72,38 @@ for(const status of ['unreviewed','under-review','withheld'])test(`${status} sup
     assert.match(html,new RegExp(`data-score-state="${status}"`));assert.doesNotMatch(html,/Not recorded/);assert.match(html,/not a measured absence of benefit/);assert.match(html,/does not re-review the separately recorded catalogue classification/);
   }
 });
-test('historical scoring keeps exact numbers, indication and basis caveat; absent context and review stay explicit',async()=>{
-  const html=await renderCard({scoring,ratings});const words=textOf(html);
-  assert.match(words,/Historical editorial rating/);assert.match(words,/Recorded primary indication:.*Recorded indication/);assert.match(words,/Not recorded in this score record/);assert.match(words,/outcomes depend on population and endpoint/);
-  for(const value of [71,72,73,74,75,76,67])assert.ok(words.includes(String(value)));
-  assert.doesNotMatch(html,/Historical legacy note/);assert.match(html,/Scored August 2025/);
-});
-test('historical legacy and neither payload retain migration behavior; no historical rating is fabricated',async()=>{
-  const html=await renderCard({ratings});assert.match(textOf(html),/Historical editorial rating/);assert.match(textOf(html),/3.4/);assert.match(textOf(html),/Recorded primary indication:.*Not recorded/);assert.match(html,/Last reviewed September 2025/);
+test('stored four-part and two-axis numbers remain unreviewed with no explicit review record',async()=>{
+  for(const payload of [{scoring,ratings},{scoring},{ratings}]){
+    const html=await renderCard(payload);noScores(html);
+    assert.match(html,/data-score-state="unreviewed"/);
+    assert.match(textOf(html),/A historical numeric score is recorded/);
+    assert.match(textOf(html),/not a measured absence of benefit/);
+    assert.doesNotMatch(html,/71|76|67|3\.4|Recorded indication|Not Established/);
+  }
   assert.equal((await renderCard({})).trim(),'');
 });
-test('community dimension caveat is adjacent and visually subordinate in both numeric formats without changing its value',async()=>{
-  for(const payload of [{scoring},{ratings}]){
-    const all=nodes(await renderCard(payload));const dimension=all.find(n=>hasClass(n,'community-score'));assert.ok(dimension);
-    assert.match(text(dimension),/Community Experience.*Community usage signal; not evidence of efficacy or safety/s);
-    const descendants=[];function walk(n){descendants.push(n);for(const c of n.childNodes||[])walk(c);}walk(dimension);
-    assert.ok(descendants.some(n=>hasClass(n,'h-1')));assert.ok(descendants.some(n=>(attr(n,'style')||'').includes('background: var(--ink-dim)')));
-    assert.ok(text(dimension).includes(payload.scoring?'75/100':'5/5'));
+test('effectiveness basis and community reports cannot bypass review through a stored scoring block',async()=>{
+  for(const effectiveness of [
+    {basis:'clinical',score:67,confidence:'moderate'},
+    {basis:'community-reported',score:42,confidence:'low'},
+    {basis:'not-established'},
+  ]){
+    const html=await renderCard({scoring:{...scoring,effectiveness}});noScores(html);
+    assert.doesNotMatch(html,/community-reported|clinically demonstrated|Not Established|Community Experience/);
   }
 });
-test('Not Established and community reported effectiveness remain distinct from editorial status',async()=>{
-  const html=await renderCard({scoring:{...scoring,effectiveness:{basis:'not-established'}}});assert.match(html,/Not Established/);assert.match(html,/data-score-state="historical"/);assert.doesNotMatch(html,/Evidence score pending review/);
-  const community=await renderCard({scoring:{...scoring,effectiveness:{basis:'community-reported',score:67,confidence:'low'}}});assert.match(community,/community-reported · not clinically demonstrated/);assert.match(community,/Summary of community reports/);
+test('methodology records the original four dimensions and does not claim a reviewed score',()=>{
+  const source=read('src/pages/methodology.astro');
+  for(const part of ['Research Depth · 35%','Global Coverage · 20%','Mechanism Plausibility · 30%','Community Experience · 15%'])assert.ok(source.includes(part));
+  assert.match(source,/Neither stored\s+format is automatically promoted to a current numeric assessment/);
+  assert.doesNotMatch(source,/Every compound receives <strong>two independent scores<\/strong>/);
 });
-test('actual rendering escapes summary and every context field including hostile primary indication',async()=>{
+test('actual rendering escapes explicit summary and context while stored indications remain hidden',async()=>{
   const hostile='<img src=x onerror="alert(1)"> & <script>alert(2)</script>';
   const context=Object.fromEntries(['compoundFormulation','indication','population','comparator','outcome','timepoint'].map(k=>[k,hostile]));
   const html=await renderCard({scoring,ratings,scoreReview:{...review('withheld'),summary:hostile,context,updatedAt:'2024-02-29'}});noScores(html);
-  const all=nodes(html);assert.equal(all.filter(n=>n.tagName==='img'||n.tagName==='script').length,0);assert.equal(all.filter(n=>n.nodeName==='#text'&&n.value===hostile).length,7);assert.ok(all.some(n=>n.tagName==='time'&&attr(n,'datetime')==='2024-02-29'));
-  const old=await renderCard({scoring:{...scoring,effectiveness:{...scoring.effectiveness,primaryIndication:hostile}}});assert.equal(nodes(old).filter(n=>n.tagName==='img'||n.tagName==='script').length,0);assert.ok(textOf(old).includes(hostile));
+  const all=nodes(html);assert.equal(all.filter(n=>n.tagName==='img'||n.tagName==='script').length,0);assert.equal(all.filter(n=>n.nodeName==='#text'&&n.value===hostile).length,6);assert.ok(all.some(n=>n.tagName==='time'&&attr(n,'datetime')==='2024-02-29'));
+  const old=await renderCard({scoring:{...scoring,effectiveness:{...scoring.effectiveness,primaryIndication:hostile}}});noScores(old);assert.doesNotMatch(old,/onerror|alert\(2\)/);
 });
 test('schema-derived rating props replace any and include review at route and layout mount',()=>{
   for(const file of ['src/components/RatingCard.astro','src/layouts/DossierLayout.astro']){const source=read(file);assert.match(source,/import type \{ Ratings, Scoring, ScoreReview(?:, EvidenceDisplay)? \}/);assert.match(source,/scoreReview\?: ScoreReview/);assert.doesNotMatch(source,/scoring\?: any/);}
@@ -112,8 +115,8 @@ test('schema-derived rating props replace any and include review at route and la
 // Astro children are slot stubs, collections empty, filesystem reads disabled.
 const fsUrl=asModule('export default {existsSync:()=>false};');
 const citationUrl=asModule('export const resolveCitation=()=>({});');
-const trialUrl=asModule('export const toTrialDisplay=()=>{throw new Error("Unexpected source-pack ingestion")};');
-const layoutUrl=await compile(read('src/layouts/DossierLayout.astro'),'DossierLayout.astro',{'../components/RatingCard.astro':cardUrl,'node:fs':fsUrl,'../utils/citation':citationUrl,'../lib/trial-display':trialUrl,'../lib/evidence-binding':asModule('export const loadEvidencePresentation=()=>({selected:false});')});
+const trialUrl=asModule('export const isNctId=()=>false;export const trialPeptidePresentation=()=>({});');
+const layoutUrl=await compile(read('src/layouts/DossierLayout.astro'),'DossierLayout.astro',{'../components/RatingCard.astro':cardUrl,'node:fs':fsUrl,'../utils/citation':citationUrl,'../lib/trial-display.mjs':trialUrl,'../lib/evidence-binding':asModule('export const loadEvidencePresentation=()=>({selected:false});')});
 const routeUrl=await compile(read('src/pages/peptides/[slug].astro'),'peptide-route.astro',{'../../layouts/DossierLayout.astro':layoutUrl});
 const Route=(await import(routeUrl)).default;
 test('full actual route → layout → card retains schema-parsed status, suppresses fallback and mounts without scores',async()=>{
@@ -124,4 +127,12 @@ test('full actual route → layout → card retains schema-parsed status, suppre
     assert.doesNotMatch(html,/Historical scoring note|Historical legacy note|Evidence Score|Overall Score|Historical editorial rating/);
     assert.ok(nodes(html).some(n=>n.tagName==='span'&&text(n).trim()==='High'),'Separately recorded catalogue classification preserved');
   }
+});
+test('full route with stored numbers and no review record remains score-free',async()=>{
+  const data=parsed({scoring,ratings});
+  const html=await container.renderToString(Route,{props:{peptide:{slug:'fixture',data,render:async()=>({Content:(await import(slotUrl)).default})}},request:new Request('https://www.pepcodex.com/peptides/fixture')});
+  const panel=nodes(html).find(n=>attr(n,'data-score-state')==='unreviewed');assert.ok(panel);
+  assert.match(text(panel),/Numeric assessment unreviewed/);
+  assert.doesNotMatch(html,/Historical scoring note|Historical legacy note|Evidence Score|Overall Score|Historical editorial rating|71\/100|3\.4\/5/);
+  assert.ok(nodes(html).some(n=>n.tagName==='span'&&text(n).trim()==='High'));
 });

@@ -41,6 +41,10 @@ if (!existsSync(packPath)) {
   console.error(`No source pack at ${packPath}. This script only refreshes existing packs.`);
   process.exit(1);
 }
+if (slug === 'tb-500' && APPLY) {
+  console.error('TB-500 automatic refresh is disabled: this pack contains parent thymosin beta-4 registries that require molecule-scoped review before updating.');
+  process.exit(1);
+}
 const pack = JSON.parse(readFileSync(packPath, 'utf8'));
 pack.trials = Array.isArray(pack.trials) ? pack.trials : [];
 
@@ -88,7 +92,8 @@ const fetched = studies.map((st) => {
     conditions: ps.conditionsModule?.conditions || [],
     interventions: (ps.armsInterventionsModule?.interventions || []).map((i) => i.name).filter(Boolean),
     startDate: ps.statusModule?.startDateStruct?.date,
-    completionDate: ps.statusModule?.primaryCompletionDateStruct?.date,
+    completionDate: ps.statusModule?.completionDateStruct?.date,
+    completionDateType: ps.statusModule?.completionDateStruct?.type,
   };
 }).filter((t) => t.id && (phaseFilter.length === 0 || t._phaseNums.some((n) => phaseFilter.includes(n))));
 
@@ -106,22 +111,27 @@ for (const f of fetched) {
   const nct = f.id.toUpperCase();
   if (byId.has(nct)) {
     const t = byId.get(nct);
-    const before = JSON.stringify([t.status, t.phase, t.completionDate, t.startDate, (t.conditions || []).length]);
+    const before = JSON.stringify([t.status, t.phase, t.completionDate, t.completionDateType, t.startDate, (t.conditions || []).length]);
     t.status = f.status;
     t.phase = f.phase;
     if (f.enrollment != null) t.enrollment = f.enrollment;
     if (f.conditions.length) t.conditions = f.conditions;
     if (f.interventions.length) t.interventions = f.interventions;
     if (f.startDate) t.startDate = f.startDate;
-    if (f.completionDate) t.completionDate = f.completionDate;
-    if (before !== JSON.stringify([t.status, t.phase, t.completionDate, t.startDate, (t.conditions || []).length])) updated.push(nct);
+    if (f.completionDate) {
+      t.completionDate = f.completionDate;
+      if (f.completionDateType) t.completionDateType = f.completionDateType;
+      else delete t.completionDateType;
+    }
+    if (before !== JSON.stringify([t.status, t.phase, t.completionDate, t.completionDateType, t.startDate, (t.conditions || []).length])) updated.push(nct);
   } else {
     newQueue.push(f);
   }
 }
 // newest first, capped
 newQueue.sort((a, b) => String(b.startDate || '').localeCompare(String(a.startDate || '')));
-const toAdd = newQueue.slice(0, maxAdd);
+// TB-500 is a fragment of thymosin beta-4; broad alias matches need molecule review.
+const toAdd = slug === 'tb-500' ? [] : newQueue.slice(0, maxAdd);
 for (const f of toAdd) {
   delete f._phaseNums;
   pack.trials.push(f);
@@ -133,7 +143,8 @@ const today = new Date().toISOString().slice(0, 10);
 // ---- report ----
 console.log(`${APPLY ? 'APPLIED' : 'DRY RUN'}  ·  ${slug}   query.intr="${query}"${phaseFilter.length ? `  phase=${phaseFilter.join('/')}` : ''}`);
 console.log(`  CT.gov total interventional: ${data.totalCount}   fetched+matched: ${fetched.length}`);
-console.log(`  pack before: ${byId.size}   updated: ${updated.length}   added: ${added.length}${skipped > 0 ? `   (skipped ${skipped} over --max-add ${maxAdd})` : ''}   pack after: ${pack.trials.length}`);
+console.log(`  pack before: ${byId.size}   updated: ${updated.length}   added: ${added.length}${skipped > 0 && slug !== 'tb-500' ? `   (skipped ${skipped} over --max-add ${maxAdd})` : ''}   pack after: ${pack.trials.length}`);
+if (slug === 'tb-500' && newQueue.length) console.log(`  ${newQueue.length} new TB-500/parent-thymosin matches require molecule review before insertion`);
 if (updated.length) console.log(`  updated: ${updated.join(', ')}`);
 if (added.length) console.log(`  added:   ${added.join(', ')}`);
 

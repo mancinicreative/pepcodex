@@ -14,10 +14,24 @@ export function trialStatusKey(value) {
 
 export function formatTrialCompletion(value, dateType) {
   const label = formatTrialMonth(value);
-  return label !== '-' && dateType === 'ESTIMATED' ? `${label} (estimated)` : label;
+  if (label === '-') return label;
+  if (dateType === 'ESTIMATED') return `${label} (estimated)`;
+  if (dateType === 'ACTUAL') return label;
+  return `${label} (date type unverified)`;
 }
 
 // Historical summaries and other registries are not ClinicalTrials.gov IDs.
 export function isNctId(value) {
   return typeof value === 'string' && /^NCT\d{8}$/.test(value);
+}
+
+// Parent thymosin beta-4 registrations in the TB-500 pack are context, not TB-500 trials.
+export function trialPeptidePresentation(packSlug, peptideName, nctId) {
+  if (packSlug === 'tb-500') {
+    if (nctId === 'NCT02668055') {
+      return { label: 'TB4-labelled scaffold (identity unverified)', href: null };
+    }
+    return { label: 'Thymosin beta-4 (parent; not TB-500)', href: null };
+  }
+  return { label: peptideName, href: `/peptides/${packSlug}` };
 }

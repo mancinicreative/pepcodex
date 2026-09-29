@@ -21,7 +21,7 @@ import { loadEvidencePresentation } from '../lib/evidence-binding';
 import type { Ratings, Scoring, ScoreReview, EvidenceDisplay } from '../content/config';
 import Vial from '../components/Vial.astro';
 import TrialTable from '../components/TrialTable.astro';
-import { isNctId } from '../lib/trial-display.mjs';
+import { isNctId, trialPeptidePresentation } from '../lib/trial-display.mjs';
 import SectionAside from '../components/SectionAside.astro';
 import MechanismPathways from '../components/MechanismPathways.astro';
 
@@ -266,19 +266,23 @@ try {
   const packPath = path.join(process.cwd(), 'data', 'source-packs', `${dossierSlug}.json`);
   if (!presentation.selected && fs.existsSync(packPath)) {
     const pack = JSON.parse(fs.readFileSync(packPath, 'utf-8'));
-    peptideTrials = (pack.trials || []).filter((t: any) => isNctId(t.nctId || t.id)).map((t: any) => ({
-      nctId: t.nctId || t.id || 'Unknown',
-      title: t.title,
-      status: t.status || 'unknown',
-      phase: t.phase || 'N/A',
-      conditions: t.conditions || [],
-      interventions: t.interventions || [],
-      enrollmentTarget: t.enrollmentTarget,
-      startDate: t.startDate,
-      completionDate: t.completionDate,
-      completionDateType: t.completionDateType,
-      peptide: name,
-    }));
+    peptideTrials = (pack.trials || []).filter((t: any) => isNctId(t.nctId || t.id)).map((t: any) => {
+        const trialPresentation = trialPeptidePresentation(dossierSlug, name, t.nctId || t.id);
+        return {
+          nctId: t.nctId || t.id || 'Unknown',
+          title: t.title,
+          status: t.status || 'unknown',
+          phase: t.phase || 'N/A',
+          conditions: t.conditions || [],
+          interventions: t.interventions || [],
+          enrollmentTarget: t.enrollmentTarget,
+          startDate: t.startDate,
+          completionDate: t.completionDate,
+          completionDateType: t.completionDateType,
+          peptide: trialPresentation.label,
+          peptideHref: trialPresentation.href,
+        };
+    });
   }
 } catch (e) { peptideTrials = []; }
 

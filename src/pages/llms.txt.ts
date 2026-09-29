@@ -40,6 +40,7 @@ For term definitions:
 - Glutathione: https://www.pepcodex.com/peptides/glutathione/ — Master antioxidant tripeptide. GRAS status.
 
 ### Investigational (Active Clinical Trials)
+- MK-677 / LUM-201: https://www.pepcodex.com/peptides/mk-677/ — Investigational oral, non-peptide GH secretagogue. Recruiting Phase 3 pediatric growth-hormone-deficiency trial NCT06948214; clinical benefit and approval are not established.
 - Retatrutide: https://www.pepcodex.com/peptides/retatrutide/ — Triple GIP/GLP-1/glucagon agonist. Phase 3 (Eli Lilly).
 - CagriSema: https://www.pepcodex.com/peptides/cagrisema/ — Cagrilintide + semaglutide combo. Phase 3 (Novo Nordisk).
 - Survodutide: https://www.pepcodex.com/peptides/survodutide/ — GLP-1/glucagon dual agonist. Phase 3 (Boehringer).
@@ -65,7 +66,6 @@ For term definitions:
 ### Research-Only (Popular)
 - BPC-157: https://www.pepcodex.com/peptides/bpc-157/ — Gastric peptide studied for tissue repair. Preclinical only.
 - TB-500: https://www.pepcodex.com/peptides/tb-500/ — Thymosin beta-4 fragment for tissue repair. No human data.
-- MK-677: https://www.pepcodex.com/peptides/mk-677/ — Oral GH secretagogue (ibutamoren). Phase 2 completed.
 - Ipamorelin: https://www.pepcodex.com/peptides/ipamorelin/ — GH secretagogue. Selective, limited clinical data.
 - CJC-1295: https://www.pepcodex.com/peptides/cjc-1295/ — GHRH analog with extended half-life. Not approved.
 - GHK-Cu: https://www.pepcodex.com/peptides/ghk-cu/ — Copper peptide for skin/wound healing. Moderate evidence.

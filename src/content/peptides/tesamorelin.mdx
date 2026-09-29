@@ -7,62 +7,57 @@ aliases:
   - TH9507
 category: hormonal
 evidenceStrength: high
-lastUpdated: 2026-01-22T00:00:00.000Z
+lastUpdated: 2026-09-28
 comparators:
   - sermorelin
   - cjc-1295
   - somatropin
 summary: >-
-  An FDA-approved GHRH analog for reducing visceral fat in HIV-associated
-  lipodystrophy. One of few GH-releasing peptides with regulatory approval and
-  Phase 3 data.
-sources:
-  count: 52
-  human: 35
-  preclinical: 4
-  openAccess: 42
-metaTitle: 'Tesamorelin: FDA Status, Contraindications & Fat Regain'
+  Tesamorelin is a GHRH analog approved in the United States as EGRIFTA WR and
+  EGRIFTA SV to reduce excess abdominal fat in adults with HIV-associated
+  lipodystrophy. The strongest clinical evidence concerns CT-measured visceral
+  adipose tissue (VAT) in that population; liver and cognitive outcomes have
+  narrower or inconclusive evidence.
+metaTitle: 'Tesamorelin: HIV Visceral Fat Evidence and FDA Safety'
 metaDescription: >-
-  Phase 3 data: 15.2% trunk fat reduction vs +5.0% placebo. Why visceral fat
-  returns after stopping, plus documented contraindications. 52 sources graded.
-interactions:
-  - peptide: ipamorelin
-    type: synergistic
-    description: >-
-      GHRH+GHRP synergy is well-established. Tesamorelin (GHRH) and ipamorelin
-      (GHRP) act through complementary pathways for enhanced GH release.
-    source: '9186309'
-  - peptide: ghrp-6
-    type: synergistic
-    description: >-
-      Classic GHRH+GHRP combination. Tesamorelin amplifies while GHRP-6
-      initiates GH pulse. Greater combined effect than either alone.
-  - peptide: ghrp-2
-    type: synergistic
-    description: >-
-      Synergistic GH release through complementary GHRH and GHRP pathways. No
-      direct combination studies with tesamorelin specifically.
-  - peptide: sermorelin
-    type: avoid
-    description: >-
-      Both are GHRH analogs acting on the same receptor. No benefit to
-      combining; may cause receptor desensitization.
-  - peptide: cjc-1295
-    type: avoid
-    description: >-
-      Both are GHRH analogs with identical mechanism. Use one or the other, not
-      both.
-  - peptide: semaglutide
-    type: caution
-    description: >-
-      Tesamorelin increases GH which can affect glucose homeostasis. Monitor
-      blood glucose carefully in diabetic patients.
-    source: '25038357'
-  - peptide: tirzepatide
-    type: caution
-    description: >-
-      GH elevation may impact glucose metabolism. Monitor carefully if combined
-      with incretin-based therapies.
+  FDA-approved for excess abdominal fat in adults with HIV lipodystrophy.
+  Review the 26-week visceral-fat trials, exploratory liver findings, and
+  current EGRIFTA WR safety labeling.
+sources:
+  count: 35
+  human: 13
+  openAccess: 6
+  preclinical: 0
+  context: >-
+    Thirty-five distinct cited records comprise 13 human publications, 20
+    official ClinicalTrials.gov records, and two regulatory label records.
+    The human publications comprise eight trial
+    reports, one pooled analysis of two pivotal trials, three secondary analyses
+    of the HIV fatty-liver trial, and one tesamorelin-specific meta-analysis.
+    Overlapping participants are not counted as separate trials. The FDA label
+    and ClinicalTrials.gov records are additional regulatory and registry
+    records, not publications. Six publication full texts were confirmed free
+    in PMC; openAccess is a conservative verified minimum, not an
+    exhaustive availability assessment. The legacy 52/35/4/42 totals could not be
+    reproduced from the existing source pack and were withdrawn.
+  verdict: >-
+    High evidence applies to VAT reduction in adults with HIV-associated
+    lipodystrophy; it does not grade liver disease, cognition, anti-aging, or
+    general weight loss as established uses.
+scoreReview:
+  status: withheld
+  summary: >-
+    Historical numeric scores and community claims depend on an unverified
+    52-source denominator, overlapping pivotal publications, indirect GH-axis
+    evidence, and unreviewed community provenance. Re-score only after a
+    payload-bound rubric audit.
+  updatedAt: '2026-09-28'
+  reasons:
+    - study-identity
+    - indirect-evidence
+    - incomplete-assessment
+    - community-provenance
+    - rubric-unresolved
 molecularInfo:
   weight: '5,135.87 Da'
   chainLength: 44
@@ -252,496 +247,428 @@ molecularInfo:
 evidenceChainedBenefits:
   - mechanism:
       action: >-
-        GHRH receptor agonism stimulating pulsatile growth hormone release from
-        pituitary somatotrophs
+        Tesamorelin binds pituitary GHRH receptors and increases endogenous
+        growth hormone and IGF-1; the pivotal endpoint is CT-measured VAT.
       confidence: established
-      directStudies: 12
+      directStudies: 2
     benefit:
-      claim: reduce visceral adipose tissue in HIV-associated lipodystrophy
+      claim: reduce excess visceral abdominal fat in adults with HIV lipodystrophy
       qualifier: shown to
     evidence:
       level: high
-      humanStudies: 12
-      animalStudies: 2
-      cellStudies: 1
+      humanStudies: 2
+      animalStudies: 0
+      cellStudies: 0
       keyFindings:
-        - study: Falutz J et al. NEJM 2007
+        - study: Falutz et al., N Engl J Med, 2007
           type: human-rct
           finding: >-
-            Phase 3 trial (n=412) demonstrated 15.2% reduction in trunk fat vs
-            5.0% increase with placebo over 26 weeks
+            In 412 randomized adults with HIV and excess abdominal fat, VAT
+            changed -15.2% with tesamorelin versus +5.0% with placebo at week
+            26; this percentage is VAT, not trunk fat.
           pmid: '18057338'
-        - study: Falutz J et al. 2010
+        - study: Falutz et al., J Acquir Immune Defic Syndr, 2010
           type: human-rct
           finding: >-
-            Pooled analysis of Phase 3 trials (n=806) showed mean VAT reduction
-            of 27.7 cm² vs placebo
+            In the other pivotal study of 404 randomized adults, VAT changed
+            -10.9% (-21 cm2) versus -0.6% (-1 cm2) during the first six months.
+            VAT reduction was rapidly lost after switching to placebo.
+          pmid: '20101189'
+        - study: Falutz et al., J Clin Endocrinol Metab, 2010
+          type: meta-analysis
+          finding: >-
+            A pooled report of the same two pivotal trials (806 randomized)
+            found changes of -24 versus +2 cm2 at week 26, a -15.4% treatment
+            effect; these participants are not additional to the two trials.
           pmid: '20554713'
   - mechanism:
       action: >-
-        GH-mediated hepatic lipolysis and reduction of intrahepatic lipid
-        accumulation
+        GH-axis activation changes body composition, but the clinical
+        consequence of lean-mass change is not established by these trials.
       confidence: supported
-      directStudies: 5
+      directStudies: 2
     benefit:
-      claim: reduce hepatic fat in NAFLD/NASH
-      qualifier: appears to
-    evidence:
-      level: moderate
-      humanStudies: 4
-      animalStudies: 0
-      cellStudies: 0
-      keyFindings:
-        - study: Fourman LT et al. Lancet HIV 2019
-          type: human-rct
-          finding: >-
-            12-month RCT showed 37% relative reduction in liver fat fraction;
-            35% achieved HFF <5% vs 4% placebo
-          pmid: '31611038'
-        - study: Fourman LT et al. Clin Infect Dis 2021
-          type: human-rct
-          finding: >-
-            In the 12-month tesamorelin NAFLD trial, 38% of placebo-treated
-            participants had hepatic fibrosis progression, against which
-            tesamorelin was protective
-          pmid: '32270862'
-  - mechanism:
-      action: >-
-        Restoration of physiologic IGF-1 levels and GH pulsatility improving
-        metabolic signaling
-      confidence: established
-      directStudies: 8
-    benefit:
-      claim: improve body composition with increased lean mass
+      claim: increase measured lean body mass in the pivotal HIV trials
       qualifier: shown to
     evidence:
-      level: high
-      humanStudies: 8
-      animalStudies: 1
-      cellStudies: 0
-      keyFindings:
-        - study: Sivakumar T et al. HIV Med 2011
-          type: meta-analysis
-          finding: >-
-            Meta-analysis of 10 RCTs (n=1511) showed GH-axis treatments
-            (including tesamorelin) increased lean body mass by 1.31 kg vs
-            placebo
-          pmid: '21265979'
-        - study: Koutkia P et al. JAMA 2004
-          type: human-rct
-          finding: >-
-            Early GHRH RCT in HIV lipodystrophy showed significant IGF-1
-            increase (104 vs 6 ng/mL) with increased lean body mass and
-            reduced trunk/visceral fat
-          pmid: '15249570'
-  - mechanism:
-      action: >-
-        Improved hepatic oxidative phosphorylation and decreased inflammatory
-        gene expression
-      confidence: supported
-      directStudies: 3
-    benefit:
-      claim: prevent hepatic fibrosis progression
-      qualifier: appears to
-    evidence:
       level: moderate
-      humanStudies: 3
+      humanStudies: 2
       animalStudies: 0
       cellStudies: 0
       keyFindings:
-        - study: Fourman LT et al. JCI Insight 2020
+        - study: FDA EGRIFTA WR prescribing information, 2025
+          type: review
+          finding: >-
+            The two older-formulation pivotal trials reported mean lean-body-
+            mass increases of 1.3 and 1.2 kg with tesamorelin at week 26,
+            compared with -0.2 and -0.03 kg with placebo.
+  - mechanism:
+      action: >-
+        Liver-fat imaging and biopsy outcomes were investigated in a small
+        randomized HIV-associated NAFLD trial.
+      confidence: supported
+      directStudies: 1
+    benefit:
+      claim: reduce hepatic fat fraction in adults with HIV-associated NAFLD
+      qualifier: appears to
+    evidence:
+      level: low
+      humanStudies: 1
+      animalStudies: 0
+      cellStudies: 0
+      keyFindings:
+        - study: Stanley et al., Lancet HIV, 2019
+          type: human-rct
+          finding: >-
+            In a 12-month trial with 60 treated participants, the between-group
+            absolute hepatic-fat-fraction effect was -4.1 percentage points;
+            35% versus 4% had HFF below 5%. These are HIV-associated NAFLD
+            findings, not an FDA liver indication.
+          pmid: '31611038'
+        - study: Stanley et al., JAMA, 2014
+          type: human-rct
+          finding: >-
+            A preliminary 50-person HIV trial found a modest liver-fat
+            difference after six months; it was not a non-HIV MASH trial.
+          pmid: '25038357'
+  - mechanism:
+      action: >-
+        Paired liver-biopsy and blood-marker analyses from the same HIV-NAFLD
+        trial described pathway changes; they do not add independent cohorts.
+      confidence: supported
+      directStudies: 1
+    benefit:
+      claim: reduce observed fibrosis progression over one year in the HIV-NAFLD trial
+      qualifier: appears to
+    evidence:
+      level: low
+      humanStudies: 1
+      animalStudies: 0
+      cellStudies: 0
+      keyFindings:
+        - study: Stanley et al., Lancet HIV, 2019
+          type: human-rct
+          finding: >-
+            Among participants with paired biopsies, progression occurred in
+            2/19 tesamorelin recipients and 9/24 placebo recipients; existing
+            fibrosis did not significantly improve. This small secondary
+            histologic finding needs replication.
+          pmid: '31611038'
+        - study: Fourman et al., JCI Insight, 2020
           type: human-observational
           finding: >-
-            Hepatic transcriptomic analysis revealed tesamorelin increased
-            oxidative phosphorylation gene sets and decreased inflammation/tissue
-            repair signatures
+            Paired biopsies showed altered hepatic oxidative-phosphorylation,
+            inflammation, and tissue-repair gene sets in the same trial.
           pmid: '32701508'
-        - study: Fourman LT et al. Sci Rep 2021
+        - study: Fourman et al., Scientific Reports, 2021
           type: human-observational
           finding: >-
-            Proteomic analysis showed tesamorelin reduced pro-inflammatory and
-            pro-fibrotic mediators (VEGFA, TGFB1, CSF1) versus placebo
+            A focused plasma-protein analysis of that trial found changes in
+            VEGFA, TGFB1, and CSF1; these biomarkers do not prove clinical
+            benefit or an independent treatment effect on fibrosis.
           pmid: '34006921'
 conditions:
   - slug: hiv-lipodystrophy
     name: HIV Lipodystrophy
-    researchSummary: >
-      Tesamorelin is FDA-approved specifically for HIV-associated lipodystrophy,
-      making it one of the few peptides with regulatory approval for a defined
-      medical condition. Phase 3 trials demonstrated significant reduction in
-      visceral adipose tissue (VAT) with a mean difference of -27.7 cm² compared
-      to placebo.
-
-
-      The pooled analysis of pivotal trials (n=806) showed consistent efficacy
-      across multiple endpoints including trunk fat reduction, IGF-1
-      normalization, and metabolic improvements. The mechanism addresses the
-      reduced GH secretion and GH pulse amplitude seen in HIV patients on
-      antiretroviral therapy.
-
-
-      Long-term extension data confirm durability of effects with continued
-      treatment, though VAT returns to near-baseline within weeks of
-      discontinuation, requiring chronic therapy for maintained benefits.
+    researchSummary: >-
+      The current FDA indication is reduction of excess abdominal fat in
+      HIV-infected adults with lipodystrophy. Two pivotal 26-week placebo-
+      controlled trials measured VAT by CT. The FDA label reports between-group
+      VAT differences of -31 and -21 cm2 for the older EGRIFTA formulation;
+      the pooled publication combines the same trials rather than adding 806
+      independent participants. Continuation maintained VAT reduction to week
+      52, whereas switching to placebo led to rapid loss of the initial effect.
+      Long-term cardiovascular benefit has not been established.
     relevantStudies:
       - '18057338'
+      - '20101189'
       - '20554713'
-      - '25038357'
     relatedPeptides:
       - sermorelin
       - cjc-1295
   - slug: visceral-fat-reduction
     name: Visceral Fat Reduction
-    researchSummary: >
-      Tesamorelin specifically targets visceral adipose tissue (VAT) - the
-      dangerous fat around organs - while having minimal effect on subcutaneous
-      fat. This selective action makes it unique among fat-reduction therapies
-      and addresses a particularly harmful fat compartment.
-
-
-      Clinical trials consistently show 15-27 cm² reductions in VAT measured by
-      CT imaging. The mechanism relates to differential GH receptor expression:
-      visceral fat has high GH receptor density and lipolytic sensitivity, while
-      subcutaneous fat is relatively resistant.
-
-
-      The targeting of visceral fat is clinically significant because VAT is
-      more strongly associated with cardiovascular disease, insulin resistance,
-      and inflammatory markers than subcutaneous fat, making the selective
-      action therapeutically valuable.
+    researchSummary: >-
+      In adults with HIV-associated lipodystrophy, VAT is the directly studied
+      and approved endpoint. The 2007 pivotal trial reported -15.2% versus
+      +5.0% VAT change at 26 weeks; the other pivotal trial reported -10.9%
+      versus -0.6%. Abdominal subcutaneous fat did not change significantly in
+      the pooled trial. A separate small study in 60 abdominally obese adults
+      with reduced GH secretion also reported a VAT difference, but does not
+      establish a general obesity indication or long-term cardiovascular
+      benefit.
     relevantStudies:
       - '18057338'
-      - '20554713'
-      - '25038357'
+      - '20101189'
+      - '23015655'
     relatedPeptides:
       - sermorelin
       - cjc-1295
       - ipamorelin
   - slug: fatty-liver-disease
     name: Fatty Liver Disease
-    researchSummary: >
-      Tesamorelin has shown remarkable efficacy in reducing hepatic fat in
-      clinical trials, with Phase 2 data demonstrating a 37% relative reduction
-      in liver fat fraction (HFF) compared to placebo. In treated patients, 35%
-      achieved HFF below 5% (normalized), versus only 4% with placebo.
-
-
-      Beyond fat reduction, tesamorelin prevented fibrosis progression in
-      NAFLD/NASH patients, suggesting potential disease-modifying effects.
-      Hepatic transcriptomic analysis revealed improved oxidative
-      phosphorylation and decreased inflammatory markers.
-
-
-      The FDA approved Phase 3 NASH development in December 2020 for patients
-      with biopsy-confirmed NASH, and trials are ongoing. If successful,
-      tesamorelin could become a first-in-class approved therapy for this liver
-      disease.
+    researchSummary: >-
+      In a small 12-month randomized trial in people with HIV and NAFLD,
+      tesamorelin lowered hepatic fat fraction relative to placebo by an
+      estimated 4.1 percentage points; 35% versus 4% had HFF below 5%.
+      Fibrosis progression was less frequent in the paired-biopsy subset, but
+      existing fibrosis did not significantly improve. Gene and protein
+      analyses came from the same cohort. A separate completed study in adults
+      with obesity and fatty liver without HIV (NCT03375788) posted results in
+      2025; the registry reports median liver-fat changes of -5.3% in 18
+      analyzed tesamorelin participants versus +3.6% in 16 placebo participants
+      at 12 months. This small registry result does not establish clinical
+      liver benefit. Tesamorelin is not FDA-approved for fatty liver disease.
     relevantStudies:
+      - '25038357'
       - '31611038'
       - '32701508'
-      - '32270862'
       - '34006921'
     relatedPeptides:
       - semaglutide
       - tirzepatide
   - slug: growth-hormone-optimization
     name: Growth Hormone Optimization
-    researchSummary: >
-      Tesamorelin restores physiologic GH pulsatility rather than providing
-      continuous GH levels, distinguishing it from exogenous GH replacement.
-      This preserves natural feedback systems and may offer safety advantages
-      including maintained overnight GH patterns and preserved somatostatin
-      regulation.
-
-
-      Clinical trials consistently show mean IGF-1 increases of approximately
-      81% from baseline, normalizing levels in GH-insufficient populations. The
-      pulsatile release pattern mimics natural physiology better than direct GH
-      injection.
-
-
-      The GHRH receptor agonist mechanism ensures that GH release remains under
-      physiologic control, potentially reducing risks of IGF-1 excess and
-      GH-related side effects compared to supraphysiologic GH dosing.
+    researchSummary: >-
+      Tesamorelin is a GHRH-receptor agonist that stimulates pituitary GH
+      secretion and raises IGF-1. The 2007 pivotal trial reported an 81.0%
+      IGF-1 rise versus a 5.0% fall on placebo at week 26. This biomarker
+      finding does not demonstrate safer GH replacement or a general
+      "optimization" indication. The EGRIFTA WR label warns that sustained
+      IGF-1 elevation has unknown effects and calls for monitoring.
     relevantStudies:
       - '18057338'
       - '20554713'
-      - '25038357'
     relatedPeptides:
       - sermorelin
       - cjc-1295
       - ipamorelin
   - slug: body-composition
     name: Body Composition
-    researchSummary: >
-      Tesamorelin improves body composition by simultaneously reducing visceral
-      fat and increasing lean body mass. Clinical trials show approximately 1.4
-      kg increase in lean mass alongside significant VAT reduction, reflecting
-      the dual anabolic and lipolytic effects of restored GH pulsatility.
-
-
-      The body composition changes occur without significant effect on total
-      body weight or subcutaneous fat, representing a recomposition rather than
-      simple weight loss. This is particularly relevant for HIV patients who
-      often have preserved or increased subcutaneous fat alongside visceral
-      accumulation.
-
-
-      Long-term data confirm maintenance of improved body composition with
-      continued treatment, though effects reverse upon discontinuation,
-      indicating the need for ongoing therapy.
+    researchSummary: >-
+      The pivotal HIV trials measured less VAT and modestly higher lean body
+      mass at week 26. The FDA label reports lean-mass changes of +1.3 and
+      +1.2 kg in the two tesamorelin arms versus -0.2 and -0.03 kg with
+      placebo. Body weight remained approximately neutral; EGRIFTA WR is not
+      indicated for weight management. A 2026 meta-analysis pooled overlapping
+      trials, so its participant count must not be added to the pivotal
+      studies. Clinical outcomes from the lean-mass change remain uncertain.
     relevantStudies:
       - '18057338'
-      - '20554713'
-      - '25038357'
+      - '20101189'
+      - '41545261'
     relatedPeptides:
       - sermorelin
       - ipamorelin
       - mk-677
   - slug: cognitive-function
     name: Cognitive Function
-    researchSummary: >
-      The TEAME trial investigated tesamorelin for cognitive function in
-      HIV-positive individuals with abdominal obesity, hypothesizing that
-      visceral adiposity contributes to neuroinflammation and reduced IGF-1,
-      impairing cognition.
-
-
-      Results showed a trend toward cognitive improvement (p=0.060) but did not
-      reach statistical significance between groups. Significant reductions in
-      waist circumference (-2.7 cm) were achieved, suggesting the intervention
-      worked mechanistically but cognitive effects may require longer duration.
-
-
-      The study was underpowered and lacked a true placebo arm, leaving the
-      cognitive hypothesis incompletely tested. Further research is needed to
-      determine whether sustained VAT reduction translates to cognitive
-      benefits.
+    researchSummary: >-
+      A 73-participant open-label phase 2 trial in virally suppressed adults
+      with HIV, abdominal obesity, and neurocognitive impairment compared
+      tesamorelin with standard care for six months. The between-group
+      cognitive difference was not significant (P=.673), despite a smaller
+      waist circumference. An older 152-person placebo-controlled trial of
+      GHRH/tesamorelin in older adults with normal cognition or mild cognitive
+      impairment reported a favorable cognitive signal, but it used a different
+      population. A 2026 placebo-controlled pilot of 22 adults found no
+      significant direct changes in its study measures after 10 weeks. Neither
+      trial establishes an approved cognitive indication.
     relevantStudies:
       - '39813152'
+      - '22869065'
+      - '42382101'
     relatedPeptides:
       - semax
       - selank
 timeline:
-  - period: Week 1-4
+  - period: Week 26 in pivotal trials
     effects: >-
-      Based on clinical trials: IGF-1 levels increase by ~81% from baseline.
-      Visceral fat reduction begins. Initial lipolytic effects on trunk fat
-      measurable by imaging.
-    source: 'PMID:18057338'
-  - period: Week 4-12
+      CT-measured VAT was lower than placebo in two randomized HIV
+      lipodystrophy trials. Trunk-fat and lean-mass measures also changed, but
+      these are distinct endpoints.
+    source: 'PMID:18057338; PMID:20101189; FDA EGRIFTA WR label section 14'
+  - period: Week 52 extension
     effects: >-
-      Continued VAT reduction - Phase 3 trials showed 15.2% trunk fat reduction
-      by week 12. Lean mass may increase (~1.4 kg). Body composition
-      improvements become clinically apparent.
-    source: 'PMID:20554713'
-  - period: Week 12-26
-    effects: >-
-      Sustained effects with continued treatment. Mean VAT reduction of 27.7 cm²
-      vs placebo in pooled Phase 3 analysis. Hepatic fat reduction observed in
-      NAFLD studies.
-    source: 'PMID:20554713'
-  - period: Week 26+
-    effects: >-
-      Long-term extension data confirms durability with continued dosing.
-      Effects reverse within weeks of discontinuation - chronic treatment
-      required for maintained benefits.
-    source: 'PMID:25038357'
+      In participants continuing tesamorelin, VAT reduction was maintained;
+      those switched to placebo rapidly lost the earlier VAT improvement.
+      These are extension observations, not a personal response schedule.
+    source: 'PMID:20101189; PMID:20554713'
 faqs:
   - question: What is tesamorelin?
     answer: >-
-      Tesamorelin is an FDA-approved GHRH (growth hormone-releasing hormone)
-      analog that stimulates the pituitary gland to release growth hormone in
-      natural pulses. It is marketed as Egrifta for the treatment of
-      HIV-associated lipodystrophy.
+      A synthetic 44-amino-acid GHRH analog with an N-terminal hexenoyl group.
+      It stimulates pituitary GH release and raises IGF-1. FDA labeling limits
+      its approved use to excess abdominal fat in adults with HIV lipodystrophy.
   - question: Is tesamorelin FDA approved?
     answer: >-
-      Yes, tesamorelin is FDA-approved under the brand name Egrifta specifically
-      for reducing excess abdominal fat (visceral adipose tissue) in
-      HIV-infected patients with lipodystrophy.
-  - question: What is the evidence for tesamorelin?
+      Yes. EGRIFTA WR and EGRIFTA SV are FDA-approved for reducing excess
+      abdominal fat in HIV-infected adults with lipodystrophy. They are
+      distinct formulations with different preparation and storage rules and
+      are not substitutable. Neither is indicated for weight management.
+  - question: What is the strongest clinical evidence?
     answer: >-
-      Tesamorelin has high-quality evidence from Phase 3 clinical trials
-      involving over 800 patients. Studies demonstrated a mean 27.7 cm2
-      reduction in visceral fat compared to placebo over 26 weeks.
-  - question: How does tesamorelin differ from growth hormone?
+      Two 26-week randomized trials in HIV-associated lipodystrophy support
+      reduction of CT-measured visceral fat. Their pooled report covers the
+      same 806 randomized participants, not a third study.
+  - question: Does tesamorelin treat fatty liver disease or improve cognition?
     answer: >-
-      Unlike direct growth hormone injection, tesamorelin stimulates your body's
-      own pituitary gland to release GH in natural pulses, which preserves
-      physiologic feedback systems and may offer safety advantages.
-  - question: What happens when you stop tesamorelin?
+      Small HIV-associated fatty-liver studies found imaging and limited
+      biopsy signals, and a small non-HIV study has registry-posted results.
+      No liver indication is approved. In a 73-person HIV cognition trial,
+      the between-group cognitive result was not significant.
+  - question: What happens after treatment stops?
     answer: >-
-      Effects do not persist after discontinuation. Clinical trials showed that
-      visceral fat returns to near-baseline levels within weeks of stopping
-      treatment, requiring chronic therapy for maintained benefits.
-qualityChecklist:
-  goodSigns:
-    - FDA-approved Egrifta obtained through licensed pharmacy
-    - Proper pharmaceutical packaging and storage
-    - White lyophilized powder in multi-use vial
-    - Clear solution after reconstitution with provided diluent
-    - Valid prescription from licensed healthcare provider
-    - Lot number and expiration date visible
-  warningSigns:
-    - Compounded tesamorelin instead of FDA-approved product
-    - Research-grade product without pharmaceutical standards
-    - Off-white coloration of powder
-    - Significantly lower price than market rate
-  badSigns:
-    - Yellow or brown discoloration
-    - Particles or cloudiness after reconstitution
-    - No prescription required
-    - Product from unverified source
-    - Missing lot numbers or expiration dates
-    - Compromised packaging or seals
+      In the pivotal trial extensions, patients who switched from tesamorelin
+      to placebo rapidly lost the initial VAT improvement. Long-term outcomes
+      after discontinuation remain uncertain.
 regulatoryStatus:
   status: approved
-  lastUpdated: '2026-02-18'
-  notes: FDA-approved as Egrifta for HIV-associated lipodystrophy.
-ratings:
-  researchDepth: 4
-  globalCoverage: 3
-  mechanismPlausibility: 4
-  overall: 3.65
-  lastReviewed: 2026-04-13T00:00:00.000Z
-  reviewNotes: >-
-    Anchor peptide for FDA-approved, US-centric trials. GHRH analog (Egrifta)
-    FDA-approved for HIV-associated lipodystrophy. Substantial US-led clinical
-    trial program; GHRH receptor agonism and GH secretion mechanism is
-    well-characterized. Primarily US research with limited global replication.
-  anecdotalEvidence: 3
-scoring:
-  rubricVersion: "2.4"
-  evidence:
-    researchDepth: 86
-    mechanism: 85
-    plausibility: 89
-    globalCoverage: 57
-    communityExperience: 70
-    overall: 80
-    label: "well-evidenced"
-  effectiveness:
-    basis: "clinical"
-    score: 59
-    confidence: "high"
-    primaryIndication: "HIV-associated lipodystrophy / visceral fat reduction"
-  lastScored: 2026-06-27
-  citations:
-    - "PMID:18057338"
-    - "PMID:20554713"
-    - "PMID:21265979"
-    - "PMID:31611038"
-    - "PMID:32270862"
-    - "PMID:15249570"
-    - "PMID:39813152"
+  lastUpdated: '2026-09-28'
   notes: >-
-    Research Depth 86: systematic review of 10 RCTs incl. tesamorelin (Sivakumar
-    21265979, n=1511, all low RoB) sits at the SR-of-RCTs tier (1A 33); pivotal
-    low-RoB Phase 3 RCTs (Falutz NEJM 18057338 n=412; pooled 20554713 n=806) plus
-    that SR give 1B 22, total human N >1,000 (1C 13) with direct
-    population/route/outcome match (1D 14); preclinical program is modest
-    (only ~4 preclinical sources) so 1E 4. Mechanism 85: GHRH-R is a named,
-    functionally-validated class target (2A 35) with the full Gas->cAMP/PKA->GH
-    ->hepatic IGF-1 / adipocyte-lipolysis chain mapped (2B 26), human 1mg-vs-2mg
-    in-vivo dose-response (2C 14, 2D 10). Plausibility 89: full mechanism->IGF-1
-    surrogate->CT-measured VAT clinical outcome each supported (3A 36), coherent
-    with GH/adipose physiology (3B 24), multiple same-class GHRH agents replicate
-    GH release (3C 18), claim mostly scoped but several downstream effects
-    asserted (3D 11). Global Coverage 57: replication concentrated in the
-    Grinspoon/MGH + Theratechnologies (Canada) cluster (4A 16), 2-3 core
-    countries (4B 13), ~52 studies across lipodystrophy/NAFLD/cognition angles
-    (4C 18), FDA + Health Canada approval (4D 10). Community Experience 70:
-    broad-but-niche anti-aging/clinic use (5A 20), >7-yr track record since 2010
-    approval (5B 26), broadly consistent reports (5C 14), only minor
-    injection-site/glucose-monitoring signals (5D 10). Effectiveness basis
-    clinical (high): ~15-18% treatment-effect VAT reduction and liver-fat
-    normalization (35% vs 4% to HFF<5%, 31611038) exceed MCID on a largely
-    surrogate/imaging endpoint, superior to placebo with no head-to-head active
-    comparator for the indication.
-anecdotalReports:
-  positive:
-    - Effective visceral fat reduction with clinical backing
-    - FDA-approved status provides confidence in safety
-    - Improved body composition without significant muscle loss
-    - Cognitive benefits reported in aging populations
-  negative:
-    - Expensive even through anti-aging clinics
-    - Injection site reactions common
-    - Effects reverse after discontinuation
-    - Insurance coverage limited to HIV lipodystrophy indication
-  communityNotes: >-
-    Gaining popularity in anti-aging clinics. FDA approval (Egrifta) gives it
-    more legitimacy than research peptides.
+    US EGRIFTA WR labeling revised March 2025: reduction of excess abdominal
+    fat in HIV-infected adults with lipodystrophy only. Long-term
+    cardiovascular safety has not been established; not indicated for weight
+    management. WR and SV formulations are not substitutable.
 mechanismPathways:
-  - name: 'GHRH Receptor Signaling'
-    label: 'GH Release'
+  - name: GHRH receptor signaling
+    label: GH release
     steps:
-      - 'Tesamorelin'
-      - 'GHRH-R binding'
-      - 'Gαs activation'
-      - 'Adenylyl cyclase'
-      - '↑cAMP'
-      - 'PKA activation'
-      - 'GH gene transcription + vesicle exocytosis'
-    outcome: 'Pulsatile GH release'
+      - Tesamorelin
+      - Pituitary GHRH receptor stimulation
+      - Endogenous GH release
+      - Increased IGF-1
+    outcome: GH and IGF-1 rise; IGF-1 elevation requires safety monitoring
     outcomeSignal: research
-  - name: 'GH Metabolic Effects'
-    label: 'Fat Reduction'
+  - name: VAT outcome in the pivotal HIV trials
+    label: Imaging endpoint
     steps:
-      - 'GH release'
-      - 'Adipocyte GH receptor binding'
-      - 'HSL activation'
-      - 'Triglyceride hydrolysis'
-      - 'Preferential visceral fat mobilization'
-    outcome: 'VAT (15-27 cm²)'
+      - Tesamorelin exposure in randomized adults with HIV lipodystrophy
+      - CT measurement at 26 weeks
+    outcome: Lower visceral adipose tissue than placebo
     outcomeSignal: research
-  - name: 'Hepatic IGF-1 Axis'
-    label: 'Anabolic Signaling'
-    steps:
-      - 'GH'
-      - 'Hepatic GH receptor'
-      - 'JAK2/STAT5'
-      - 'IGF-1 gene transcription'
-      - '↑IGF-1 (~81%)'
-    outcome: 'Lean mass preservation'
-    outcomeSignal: research
+limitations:
+  - >-
+    FDA approval and high-grade evidence are restricted to reducing excess
+    abdominal fat in adults with HIV-associated lipodystrophy.
+  - >-
+    Long-term cardiovascular safety and clinical benefit from VAT change are
+    unestablished in the FDA label; EGRIFTA WR is weight neutral.
+  - >-
+    Elevated IGF-1, glucose intolerance/diabetes, fluid retention,
+    hypersensitivity, injection-site reactions, and neoplasm precautions are
+    material safety issues in the current label.
+  - >-
+    Liver and cognitive publications include small populations, secondary
+    analyses, and an inconclusive between-group cognition result.
 ---
 
-Tesamorelin is a modified version of GHRH (growth hormone-releasing hormone) with FDA approval for HIV-associated lipodystrophy. It works by stimulating your pituitary gland to release growth hormone in natural pulses, targeting visceral fat specifically.
+Tesamorelin is a synthetic GHRH analog. The strongest direct evidence is for
+reducing CT-measured visceral abdominal fat in adults with HIV-associated
+lipodystrophy, the population named in the US EGRIFTA WR indication. In the
+2007 pivotal trial, VAT changed -15.2% with tesamorelin and +5.0% with placebo
+at 26 weeks. Those figures describe **VAT, not trunk fat**. The second pivotal
+trial and the pooled analysis support the same population and endpoint; the
+pooled report reuses the trial participants. [FDA label](https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/022505s020lbl.pdf),
+[PMID:18057338](https://pubmed.ncbi.nlm.nih.gov/18057338/),
+[PMID:20101189](https://pubmed.ncbi.nlm.nih.gov/20101189/),
+[PMID:20554713](https://pubmed.ncbi.nlm.nih.gov/20554713/).
 
-### How It Works (Simplified)
+### How it works and what was measured
 
-Tesamorelin works by mimicking the body's natural GHRH signal to release growth hormone:
+The FDA label describes receptor binding, pulsatile endogenous GH release,
+and increases in IGF-1. The pivotal trials then measured VAT by CT. This
+supports the causal chain through an imaging endpoint in the indicated
+population; it does not establish better cardiovascular outcomes or safer GH
+replacement. The 2007 trial's 81% IGF-1 increase is a biomarker result from
+that trial, not a general expected response. [FDA label, sections 12 and
+14](https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/022505s020lbl.pdf),
+[PMID:18057338](https://pubmed.ncbi.nlm.nih.gov/18057338/).
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-8">
-  <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
-    <div class="font-semibold text-[color:var(--ink)] mb-2">Pituitary Stimulation</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Binds to GHRH receptors on pituitary somatotrophs, triggering natural GH release in physiologic pulses rather than continuous elevation.</p>
-  </div>
-  <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
-    <div class="font-semibold text-[color:var(--ink)] mb-2">Visceral Fat Targeting</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">GH preferentially mobilizes visceral fat due to higher receptor density and lipolytic sensitivity, sparing subcutaneous fat depots.</p>
-  </div>
-  <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
-    <div class="font-semibold text-[color:var(--ink)] mb-2">IGF-1 Restoration</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Hepatic GH signaling increases IGF-1 production by ~81%, normalizing levels and supporting anabolic and metabolic functions.</p>
-  </div>
-  <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
-    <div class="font-semibold text-[color:var(--ink)] mb-2">Hepatic Effects</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Reduces liver fat accumulation and improves hepatic oxidative phosphorylation, with evidence of fibrosis prevention in NAFLD.</p>
-  </div>
-</div>
+### Findings outside the approved indication
 
-**Key Research:** Falutz J et al. (2007) Phase 3 trial demonstrating 15.2% trunk fat reduction vs 5.0% increase with placebo. [PMID:18057338](https://pubmed.ncbi.nlm.nih.gov/18057338/)
+In a 60-person randomized study of abdominal obesity with reduced GH
+secretion, VAT fell relative to placebo. This does not establish an indication
+for general obesity. In a separate HIV-associated NAFLD trial, hepatic fat
+fraction fell over 12 months and fibrosis progression was less frequent in a
+small paired-biopsy subset. Related transcriptomic and proteomic publications
+analyzed the same trial, not new patient cohorts. A completed non-HIV fatty
+liver study has posted registry results, with only 18 and 16 participants in
+the two primary outcome analyses; the clinical importance needs independent
+review. Tesamorelin is not FDA-approved for fatty liver disease.
+[PMID:23015655](https://pubmed.ncbi.nlm.nih.gov/23015655/),
+[PMID:25038357](https://pubmed.ncbi.nlm.nih.gov/25038357/),
+[PMID:31611038](https://pubmed.ncbi.nlm.nih.gov/31611038/),
+[PMID:32701508](https://pubmed.ncbi.nlm.nih.gov/32701508/),
+[PMID:32270862](https://pubmed.ncbi.nlm.nih.gov/32270862/),
+[PMID:34006921](https://pubmed.ncbi.nlm.nih.gov/34006921/),
+[NCT03375788](https://clinicaltrials.gov/study/NCT03375788).
 
-### Important Limitations
+A 73-person open-label HIV cognition trial reported no significant
+between-group cognitive benefit at six months (P=.673). An earlier trial in
+older adults reported a favorable signal, but a 2026 placebo-controlled
+22-person pilot found no significant direct changes in its study measures.
+Neither establishes a cognitive indication.
+[PMID:39813152](https://pubmed.ncbi.nlm.nih.gov/39813152/),
+[PMID:22869065](https://pubmed.ncbi.nlm.nih.gov/22869065/),
+[PMID:42382101](https://pubmed.ncbi.nlm.nih.gov/42382101/).
 
-- Effects **do not persist** after discontinuation - VAT returns within weeks
-- **Not approved** for general weight loss, anti-aging, or athletic performance
-- May impair glucose tolerance - **monitor blood glucose**
-- Contraindicated with active malignancy due to GH/IGF-1 effects
-- Short half-life (26-38 min) requires daily administration
+### Safety and regulatory limits
 
-### Research Tools
+The March 2025 EGRIFTA WR label lists contraindications for hypothalamic-
+pituitary-axis disruption, active malignancy, known hypersensitivity, and
+pregnancy. It warns about persistent IGF-1 elevation, glucose intolerance or
+diabetes, fluid retention, hypersensitivity, injection-site reactions, and
+acute critical illness. It identifies potential interactions with drugs
+metabolized by CYP450 enzymes and with glucocorticoid replacement. The label
+does not provide tesamorelin-specific evidence for combining it with other
+GH secretagogues or incretin therapies. EGRIFTA WR and SV are distinct,
+non-substitutable formulations. [FDA EGRIFTA WR label](https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/022505s020lbl.pdf).
 
-- [Tesamorelin Reconstitution Calculator](/calculator/reconstitution/tesamorelin) — calculate concentration from vial mass and diluent volume (educational tool only)
+This page summarizes research and labeling. It does not provide treatment,
+dosing, preparation, or purchasing guidance.
+
+### Selected source records
+
+The source count above is **35 distinct cited records**: 13 publications,
+20 real ClinicalTrials.gov records, the FDA WR label, and its current
+DailyMed set. The 13 publications are not 13 independent
+trials. The key primary records are the [2007 pivotal trial](https://pubmed.ncbi.nlm.nih.gov/18057338/),
+[2010 second pivotal trial](https://pubmed.ncbi.nlm.nih.gov/20101189/),
+[pooled pivotal report](https://pubmed.ncbi.nlm.nih.gov/20554713/),
+[non-HIV obesity trial](https://pubmed.ncbi.nlm.nih.gov/23015655/),
+[2014 HIV liver-fat trial](https://pubmed.ncbi.nlm.nih.gov/25038357/),
+[2019 HIV-NAFLD trial](https://pubmed.ncbi.nlm.nih.gov/31611038/),
+[HIV cognition trial](https://pubmed.ncbi.nlm.nih.gov/39813152/),
+[older-adult cognition trial](https://pubmed.ncbi.nlm.nih.gov/22869065/), and
+[2026 cognition pilot](https://pubmed.ncbi.nlm.nih.gov/42382101/).
+The selected follow-up analyses are the [HIV-NAFLD fibrosis
+predictor](https://pubmed.ncbi.nlm.nih.gov/32270862/), [biopsy-transcriptomic](https://pubmed.ncbi.nlm.nih.gov/32701508/),
+and [plasma-proteomic](https://pubmed.ncbi.nlm.nih.gov/34006921/) reports. A
+[2026 tesamorelin-specific meta-analysis](https://pubmed.ncbi.nlm.nih.gov/41545261/)
+combines earlier trials and is not an independent cohort. The [FDA EGRIFTA WR
+label](https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/022505s020lbl.pdf)
+and [current DailyMed WR set](https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=839334d3-8c1d-4c26-9036-2ab524a6ea75)
+are two versioned regulatory label records. The 20 official registry records
+below are counted once each and are distinct from the 13 publications.
+
+
+
+
+### Official registry record links
+
+These 20 non-mock records are linked for provenance. Their statuses and dates
+can change; a registry listing alone is not clinical outcome evidence.
+NCT07481734 is excluded because its brief title and detailed description identify a
+mock study.
+
+[NCT00123253](https://clinicaltrials.gov/study/NCT00123253), [NCT00257712](https://clinicaltrials.gov/study/NCT00257712), [NCT00608023](https://clinicaltrials.gov/study/NCT00608023), [NCT00675506](https://clinicaltrials.gov/study/NCT00675506), [NCT00795210](https://clinicaltrials.gov/study/NCT00795210),
+[NCT00850564](https://clinicaltrials.gov/study/NCT00850564), [NCT01263717](https://clinicaltrials.gov/study/NCT01263717), [NCT01264497](https://clinicaltrials.gov/study/NCT01264497), [NCT01388920](https://clinicaltrials.gov/study/NCT01388920), [NCT01591902](https://clinicaltrials.gov/study/NCT01591902),
+[NCT01632592](https://clinicaltrials.gov/study/NCT01632592), [NCT02012556](https://clinicaltrials.gov/study/NCT02012556), [NCT02196831](https://clinicaltrials.gov/study/NCT02196831), [NCT02553603](https://clinicaltrials.gov/study/NCT02553603), [NCT02572323](https://clinicaltrials.gov/study/NCT02572323),
+[NCT02931474](https://clinicaltrials.gov/study/NCT02931474), [NCT03150511](https://clinicaltrials.gov/study/NCT03150511), [NCT03226821](https://clinicaltrials.gov/study/NCT03226821), [NCT03375788](https://clinicaltrials.gov/study/NCT03375788), [NCT06554717](https://clinicaltrials.gov/study/NCT06554717).
+
+### Related research tool
+
+[Tesamorelin concentration calculator](/calculator/reconstitution/tesamorelin)
+provides educational mass-volume arithmetic only; it does not select a dose
+or provide a treatment schedule.

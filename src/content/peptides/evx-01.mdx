@@ -3,323 +3,183 @@ name: EVX-01
 aliases:
   - EVX01
   - Evaxion EVX-01
-  - AI-Immunology Neoantigen Vaccine
 category: other
-evidenceStrength: moderate
-lastUpdated: 2026-01-22T00:00:00.000Z
+compoundType: peptide
+evidenceStrength: low
+lastUpdated: 2026-09-29
 comparators:
   - mRNA-4157
 summary: >-
-  A personalized neoantigen peptide vaccine developed by Evaxion Biotech using
-  AI-driven neoantigen prediction. Phase 1/2 data in melanoma showed a 67%
-  objective response rate (8/12; 6 partial, 2 complete) when combined with
-  anti-PD-1 therapy, with neoantigen-specific T-cell responses detected in all
-  patients. Distinct from mRNA-based approaches like mRNA-4157.
-sources:
-  count: 18
-  human: 12
-  preclinical: 6
-  openAccess: 14
-metaTitle: 'EVX-01: Personalized Cancer Vaccine Research (2026)'
+  EVX-01 is an investigational, patient-specific neoantigen peptide vaccine
+  studied with anti-PD-1 therapy in advanced melanoma. Two small single-arm
+  cohorts show vaccine-specific T-cell responses and observed tumor responses,
+  but they cannot establish how much EVX-01 adds to checkpoint treatment.
+metaTitle: 'EVX-01: Melanoma Vaccine Trials and Evidence Limits'
 metaDescription: >-
-  Evidence-graded review of evx-01 covering 18 citations. Personalized
-  neoantigen vaccine for melanoma adjunct therapy. Updated Feb 2026.
-interactions:
-  - peptide: mrna-4157
-    type: compatible
-    description: >-
-      Alternative neoantigen vaccine platform (mRNA vs peptide). Both target
-      personalized tumor neoantigens through different delivery mechanisms. Not
-      typically combined.
-  - peptide: pembrolizumab
-    type: synergistic
-    description: >-
-      EVX-01 is designed for combination with anti-PD-1 therapy. Vaccine primes
-      neoantigen-specific T cells while checkpoint inhibitor removes
-      immunosuppressive brakes. Phase 1 data from this combination.
-molecularInfo:
-  weight: Variable (patient-specific)
-  chainLength: 0
-  type: Personalized synthetic long peptide (SLP) vaccine
-  sequence: N/A (small molecule)
-  aminoAcids: []
+  Review EVX-01's published phase 1 immune-response results, the separate
+  single-arm phase 2 registry and conference report, and what efficacy remains
+  unproven in melanoma.
+regulatoryStatus:
+  status: investigational
+  lastUpdated: '2026-09-29'
+  notes: >-
+    EVX-01 is a clinical-stage personalized peptide vaccine. NCT03715985 is
+    a first-in-human phase 1/2 study with an old registry status of unknown;
+    NCT05309421 is a phase 2 single-arm study listed as active, not recruiting
+    in its latest posted official record (2025-09-22). Neither registration
+    is a product approval or a controlled efficacy result.
+sources:
+  count: 8
+  human: 2
+  preclinical: 0
+  openAccess: 2
+  context: >-
+    Eight linked records are three PubMed publications, two official trial
+    registrations, one 2026 AACR sponsor poster, and two dated sponsor updates.
+    The 2022 first-five-person report and 2024 twelve-person report concern
+    overlapping NCT03715985 participants; the 2022 KEYNOTE-D36 publication is
+    a phase 2 design paper, not results. The 2025 sponsor release and 2026
+    poster describe the same NCT05309421 cohort. The displayed Human 2
+    (25% of eight records) counts the two overlapping Phase 1 outcome
+    publications, not two independent cohorts. The selected records describe
+    two distinct clinical cohorts overall; the Phase 2 cohort appears in
+    registration, conference-poster and sponsor-update records rather than
+    a peer-reviewed outcome publication. The poster's 101/118
+    individual-neoantigen analysis covered 13 of its 15
+    immune-assayed participants. Two
+    outcome-publication full texts were confirmed free in PMC; openAccess is
+    that verified minimum, not an exhaustive audit of all eight records.
+    The inherited 18/12/6/14 counts could not be reconstructed from linked
+    distinct records and have been withdrawn.
+  verdict: >-
+    EVX-01-specific T-cell responses are documented in small human cohorts;
+    a clinical benefit added to anti-PD-1 treatment has not been established.
+scoreReview:
+  status: withheld
+  summary: >-
+    The inherited numeric evidence and effectiveness scores use unverified
+    source counts, overlap the first-five-person and twelve-person reports,
+    and compare uncontrolled combination outcomes with historical anti-PD-1
+    results. A current payload-bound rubric audit is needed before scoring.
+  updatedAt: '2026-09-29'
+  reasons:
+    - study-identity
+    - incomplete-assessment
+    - correction-unresolved
+    - community-provenance
+    - rubric-unresolved
+limitations:
+  - >-
+    No cited randomized comparison separates EVX-01's contribution from
+    anti-PD-1 therapy. Observed response rates are not a treatment-effect
+    estimate for the vaccine.
+  - >-
+    Phase 1 was designed primarily for safety and tolerability. The later
+    phase 2 trial is open-label and single-arm; its response and immune data
+    cited here are conference and sponsor reports rather than a peer-reviewed
+    phase 2 outcomes publication.
+  - >-
+    The phase 2 registry records 17 enrolled participants, while the cited
+    clinical poster reports response analysis in 16, immune analysis in 15,
+    and individual-neoantigen analysis in 13 of those 15. These denominators
+    have different scopes.
+  - >-
+    Personalized vaccine composition varies by patient; there is no single
+    EVX-01 peptide sequence or fixed molecular weight to display.
 evidenceChainedBenefits:
   - mechanism:
       action: >-
-        AI-driven neoantigen prediction via PIONEER platform for personalized
-        tumor targeting
+        Patient-specific tumor mutations are selected by the PIONEER platform
+        for a peptide vaccine intended to elicit neoantigen-reactive T cells.
       confidence: supported
-      directStudies: 4
+      directStudies: 2
     benefit:
-      claim: generate tumor-specific T-cell responses
+      claim: elicit measurable vaccine-specific T-cell responses in studied melanoma participants
       qualifier: shown to
     evidence:
-      level: moderate
-      humanStudies: 12
-      animalStudies: 4
-      cellStudies: 2
-      keyFindings:
-        - study: Mørk SK et al. 2024 (NCT03715985 dose-escalation)
-          type: human-observational
-          finding: >-
-            EVX-01-specific T-cell responses detected in all 12 treated patients
-            (100%), with both CD4+ and CD8+ responses; CD4+ responses dominated
-          pmid: '38782542'
-        - study: Mørk SK et al. 2024 (NCT03715985 dose-escalation)
-          type: human-observational
-          finding: >-
-            Magnitude of IFN-gamma ELISpot responses correlated with individual
-            peptide dose across the three dose-escalation cohorts
-          pmid: '38782542'
-  - mechanism:
-      action: >-
-        Synthetic long peptide (SLP) design enabling both CD4+ and CD8+ T-cell
-        activation
-      confidence: supported
-      directStudies: 3
-    benefit:
-      claim: improve anti-tumor immune response durability
-      qualifier: appears to
-    evidence:
-      level: moderate
-      humanStudies: 12
-      animalStudies: 2
-      cellStudies: 1
-      keyFindings:
-        - study: Mørk SK et al. 2024 (NCT03715985 dose-escalation)
-          type: human-observational
-          finding: >-
-            Vaccine-induced T-cell responses persisted for up to 14 months from
-            the last vaccination, though reactive-cell frequency decreased over
-            time
-          pmid: '38782542'
-        - study: Ott PA et al. 2017
-          type: human-observational
-          finding: >-
-            Long peptide neoantigen vaccines induce durable poly-functional
-            T-cell responses
-          pmid: '28678778'
-  - mechanism:
-      action: >-
-        Combination with anti-PD-1 checkpoint inhibition removing T-cell
-        suppression
-      confidence: supported
-      directStudies: 5
-    benefit:
-      claim: enhance clinical response rates in melanoma
-      qualifier: appears to
-    evidence:
-      level: moderate
-      humanStudies: 12
-      animalStudies: 3
+      level: low
+      humanStudies: 2
+      animalStudies: 0
       cellStudies: 0
       keyFindings:
-        - study: Mørk SK et al. 2024 (NCT03715985 dose-escalation)
+        - study: 'Mørk et al., J Immunother Cancer, 2024, NCT03715985'
           type: human-observational
           finding: >-
-            67% objective response rate (8/12: 6 partial, 2 complete) in
-            anti-PD-1-treated patients; all 4 patients at the highest dose
-            level responded (1 complete, 3 partial)
+            All 12 treated participants had assay-detected vaccine-specific
+            CD4+ and/or CD8+ responses. This uncontrolled combination study
+            did not test whether immune responses improved survival.
           pmid: '38782542'
-        - study: Mørk SK et al. 2024 (NCT03715985 dose-escalation)
+        - study: 'Evaxion AACR 2026 poster, NCT05309421, not peer reviewed'
           type: human-observational
           finding: >-
-            2 of 12 patients (17%) achieved a complete response; one patient had
-            an ongoing durable response (CR continuing past 16 months)
-          pmid: '38782542'
+            The sponsor reported responses in all 15 immune-assayed patients;
+            its individual-neoantigen analysis in 13 of those 15 found 101
+            immunogenic among 118 tested neoantigens. These are laboratory
+            endpoints from a separate single-arm cohort.
 conditions:
   - slug: melanoma
     name: Melanoma
     researchSummary: >-
-      EVX-01 has been evaluated in a Phase 1/2 trial (NCT03715985, NeoPepVac)
-      in advanced solid tumors including melanoma, with anti-PD-1 therapy. In
-      the 12 metastatic-melanoma patients, a 67% objective response rate was
-      observed (8/12: 6 partial, 2 complete responses), with 100% T-cell
-      immunogenicity. All evidence is from a single small open-label trial.
+      The first-in-human NCT03715985 study enrolled 12 patients with metastatic
+      melanoma receiving anti-PD-1 therapy; its primary endpoint was safety.
+      The 2024 paper reported 8 objective responses among 12 patients (six
+      partial, two complete) and vaccine-specific T-cell responses in all 12.
+      The 2022 interim report described the first five participants of this
+      same cohort, not another five-patient trial. The distinct NCT05309421
+      phase 2 study enrolled 17 checkpoint-inhibitor-naive patients with
+      unresectable or metastatic melanoma and used a 12-week pembrolizumab
+      run-in. A sponsor's AACR 2026 poster reported 12 objective responses
+      among 16 analyzed participants and immune results in 15. The phase 2
+      primary response-conversion endpoint was not formally analyzed in the
+      2025 sponsor account. Neither single-arm study proves EVX-01 improves
+      outcomes beyond anti-PD-1 therapy; EVX-01 remains investigational.
     relevantStudies:
       - NCT03715985
-      - '28678778'
-      - '28678784'
+      - NCT05309421
+      - '35036074'
+      - '38782542'
+      - '36047545'
     relatedPeptides:
       - mRNA-4157
-timeline:
-  - period: Week 1-4
-    effects: >-
-      Initial vaccination series (weeks 1, 2, 3, 4). Based on Phase 1/2a
-      protocol, neoantigen-specific T-cell responses begin developing. Early
-      immune priming occurs.
-    source: NCT03715985
-  - period: Week 4-14
-    effects: >-
-      Continued vaccination schedule (weeks 6, 8, 11, 14). T-cell expansion and
-      maturation. Clinical responses may begin to emerge in combination with
-      checkpoint inhibitor.
-    source: NCT03715985
-  - period: Week 14-26
-    effects: >-
-      Maintenance vaccinations (weeks 20, 26). In Phase 1/2a, objective
-      responses were typically evident by week 12-24. Durable T-cell memory
-      formation.
-    source: NCT03715985
-  - period: 6+ months
-    effects: >-
-      In the Phase 1/2 trial, most responses were not durable: one patient had
-      an ongoing complete response (continuing past 16 months) while the
-      remaining responders eventually progressed. Vaccine-induced T-cell
-      responses were still detectable up to 14 months after the last
-      vaccination, though their frequency declined over time.
-    source: NCT03715985
-qualityChecklist:
-  goodSigns:
-    - Manufactured under GMP conditions by qualified facility
-    - Patient-specific formulation based on tumor sequencing
-    - Administered through clinical trial with proper oversight
-    - Certificate of analysis provided for each batch
-    - Proper cold chain maintained during storage and transport
-    - Administered with validated adjuvant system
-  warningSigns:
-    - Manufacturing timeline exceeding 8 weeks from biopsy
-    - Fewer than 10 neoantigens included in formulation
-    - Adjuvant system different from validated protocol
-    - Storage conditions outside 2-8C range
-  badSigns:
-    - Not administered through approved clinical trial
-    - No tumor sequencing verification
-    - Missing certificate of analysis
-    - Unknown or unvalidated manufacturing source
-    - No adjuvant included with peptide formulation
-    - >-
-      Claims of 'off-the-shelf' neoantigen vaccine (contradicts personalized
-      approach)
-regulatoryStatus:
-  status: investigational
-  lastUpdated: '2026-02-18'
-  notes: >-
-    Phase 1 clinical trials for cancer (Evaxion Biotech). AI-designed
-    personalized cancer vaccine.
-ratings:
-  researchDepth: 3
-  globalCoverage: 3
-  mechanismPlausibility: 3
-  overall: 2.7
-  lastReviewed: 2026-04-13T00:00:00.000Z
-  reviewNotes: >-
-    Phase 2 NSCLC peptide vaccine with multi-country trials and clear HER-2
-    targeting mechanism.
-  anecdotalEvidence: 1
-scoring:
-  rubricVersion: "2.4"
-  evidence:
-    researchDepth: 38
-    mechanism: 77
-    plausibility: 85
-    globalCoverage: 33
-    communityExperience: 17
-    overall: 51
-    label: "early-limited"
-  effectiveness:
-    basis: "clinical"
-    score: 55
-    confidence: "very-low"
-    primaryIndication: "Advanced/metastatic melanoma (with anti-PD-1)"
-  lastScored: 2026-06-27
-  citations:
-    - "PMID:38782542"
-    - "PMID:35036074"
-    - "PMID:36047545"
-    - "PMID:28678778"
-    - "PMID:28678784"
-    - "NCT03715985"
-  notes: >-
-    Research Depth 38: single uncontrolled open-label Phase 1/2a (NCT03715985,
-    reported in 35036074 interim n=5 and 38782542 dose-escalation n=12, 1A=15);
-    high risk of bias from single-arm historical-control design (1B=5); total
-    human N ~17 well under 50 (1C=2); direct match to melanoma population/route/
-    outcome (1D=12); modest peptide+CAF09b adjuvant preclinical base (1E=4).
-    Mechanism 77: patient-specific neoantigens presented on MHC-I/II with
-    functional confirmation via measured CD4+/CD8+ ELISpot responses, no
-    knockout (2A=30); class antigen->DC->MHC->T-cell->tumor pathway mapped
-    (2B=24); IFN-gamma magnitude correlated with peptide dose in vivo in humans
-    (2C=13); confirmed in vivo human (2D=10). Plausibility 85: mechanism->
-    surrogate (T-cell response) established and surrogate->clinical ORR observed
-    though inferred (3A=30); fully coherent with tumor immunology (3B=24);
-    multiple same-class neoantigen vaccines show the analogous effect (Ott 2017
-    28678778; Sahin 2017 28678784) (3C=18); tightly scoped single-indication
-    claim (3D=13). Global Coverage 33: EVX-01 itself is a single Evaxion-led
-    program/one pivotal trial (4A=10); multi-country clinical sites incl.
-    KEYNOTE-D36 protocol 36047545 / NCT05309421 (4B=12); <5 EVX-01-specific
-    publications (4C=6); investigational trial registration (4D=5). Community
-    Experience 17: clinical-only investigational agent with negligible
-    documented real-world use (5A=3), short track record (5B=6), no notable
-    recurring adverse signal over limited trial exposure (5D=8). Effectiveness
-    basis clinical (very-low): ORR 67% (8/12) with 17% CR (2/12) vs historical
-    ~40% pembrolizumab monotherapy, patient-relevant response endpoints, but a
-    single-arm n=12 open-label trial with historical control only and no
-    head-to-head comparator caps confidence.
-    Reconciled 2026-06-27 to corrected evidence (PMID 38782542): CR rate
-    corrected 25%->17% and fabricated multi-year durability stats removed (now
-    "most responses not durable, one ongoing CR past 16mo"); effectiveness
-    58->55 (E1/E3 secondary-outcome strength down, primary 67% ORR intact).
-    Evidence axis unchanged — corrections were citation-link fixes to the same
-    n=12 trial at the same tier; overall 51 holds.
-anecdotalReports:
-  positive: []
-  negative: []
-  communityNotes: No meaningful community discussion or user reports available.
-mechanismPathways:
-  - name: 'Neoantigen Identification Pipeline'
-    label: 'AI-Driven Target Selection'
-    steps:
-      - 'Tumor Biopsy'
-      - 'WES + RNA-Seq'
-      - 'Mutation Calling'
-      - 'PIONEER AI Analysis'
-      - 'MHC binding + Immunogenicity scoring'
-    outcome: 'Top 10-15 neoantigen peptides selected'
-    outcomeSignal: research
-  - name: 'Immune Response Generation'
-    label: 'T-Cell Activation'
-    steps:
-      - 'EVX-01 + Adjuvant'
-      - 'DC Uptake'
-      - 'Lymph Node Migration'
-      - 'MHC Presentation'
-      - 'CD8+ and CD4+ T-Cell Priming'
-    outcome: 'Tumor Trafficking + Killing'
-    outcomeSignal: research
+faqs:
+  - question: Is EVX-01 an approved melanoma treatment?
+    answer: >-
+      No. EVX-01 is an investigational patient-specific peptide vaccine. Its
+      published phase 1 work and phase 2 registry describe clinical research,
+      not a product approval.
+  - question: Did EVX-01 improve the response rate beyond pembrolizumab?
+    answer: >-
+      That has not been established. The reported responses occurred in
+      single-arm studies with anti-PD-1 treatment and no randomized
+      pembrolizumab-only comparison. The phase 2 participants received
+      pembrolizumab before EVX-01 was added.
+  - question: What is known from the newer phase 2 study?
+    answer: >-
+      The official registry lists 17 actual enrollees. The 2026 sponsor
+      conference poster reported 12 objective responses among 16 analyzed
+      participants and vaccine-specific immune responses in 15 assayed
+      participants. These are preliminary, differently denominated findings,
+      not peer-reviewed proof of additive clinical benefit.
 ---
 
-The proposed mechanisms of EVX-01 are based on Phase 1/2a clinical data and established neoantigen vaccine immunology. The personalized approach uses AI-driven prediction to identify patient-specific tumor targets.
+EVX-01 is a **personalized peptide mixture**, not a single fixed-sequence peptide. Evaxion's PIONEER platform selects tumor-specific neoantigens from each person's tumor and normal-tissue data. The selected peptides are formulated with an adjuvant for clinical investigation. EVX-01 is a peptide platform; the related mRNA-4157 page describes a different platform, not a head-to-head comparator. ([First-in-human study](https://pubmed.ncbi.nlm.nih.gov/35036074/), [phase 2 design paper](https://pubmed.ncbi.nlm.nih.gov/36047545/))
 
-### How It Works (Simplified)
+### What the peer-reviewed study found
 
-EVX-01 is a personalized cancer vaccine that trains the immune system to attack tumor-specific targets:
+NCT03715985 was a first-in-human, open-label phase 1/2 study of EVX-01 **added to anti-PD-1 treatment**. Safety and tolerability were its primary objective. A 2022 paper described the first five participants; the 2024 dose-escalation publication expanded the report to 12, so those papers do not represent independent cohorts. The first-five-person report recorded vaccine manufacture in 48–55 days and treatment initiation within 60 days of baseline biopsy; this is observed feasibility in that study, not a guaranteed turnaround. In the later report, all 12 had vaccine-specific T-cell responses measured in laboratory assays; 8 of 12 had an observed objective tumor response, including six partial and two complete responses. Without a concurrent anti-PD-1-only arm, that 8/12 observation cannot quantify EVX-01's added clinical benefit. ([2022 interim report](https://pubmed.ncbi.nlm.nih.gov/35036074/), [2024 dose-escalation report](https://pubmed.ncbi.nlm.nih.gov/38782542/), [official study record](https://clinicaltrials.gov/study/NCT03715985))
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-8">
-  <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
-    <div class="font-semibold text-[color:var(--ink)] mb-2">AI Target Selection</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">PIONEER platform analyzes tumor DNA to predict which mutations will generate immunogenic neoantigens unique to your cancer.</p>
-  </div>
-  <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
-    <div class="font-semibold text-[color:var(--ink)] mb-2">Dendritic Cell Uptake</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Long peptides are taken up by dendritic cells at injection site, processed, and presented on MHC-I and MHC-II molecules.</p>
-  </div>
-  <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
-    <div class="font-semibold text-[color:var(--ink)] mb-2">T-Cell Priming</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Both CD8+ cytotoxic and CD4+ helper T cells are activated, creating a coordinated immune response against tumor neoantigens.</p>
-  </div>
-  <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
-    <div class="font-semibold text-[color:var(--ink)] mb-2">Checkpoint Synergy</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Combined with anti-PD-1 therapy, vaccine-primed T cells can effectively attack tumor cells without immunosuppressive brakes.</p>
-  </div>
-</div>
+### What is newer, and how strong is it?
 
-**Key Research:** The Phase 1/2 trial (NCT03715985) demonstrated 100% T-cell immunogenicity and a 67% objective response rate (8/12; 6 partial, 2 complete) in melanoma when combined with anti-PD-1 therapy.
+The separate KEYNOTE-D36 phase 2 registration, NCT05309421, describes an open-label, single-arm study in adults with unresectable or metastatic melanoma who were checkpoint-inhibitor naïve. Pembrolizumab preceded the first EVX-01 administration by 12 weeks; the registered primary endpoint concerns improvement in best overall response after that initial treatment. The official record lists **17 actual enrollees**, is marked **active, not recruiting**, and was last posted on **September 22, 2025**. It has no posted results section in the checked API record. ([Trial design paper](https://pubmed.ncbi.nlm.nih.gov/36047545/), [official study record](https://clinicaltrials.gov/study/NCT05309421))
 
-### Important Limitations
+In an **April 2026 AACR poster**, Evaxion reported 12 objective responses among **16 clinically analyzed** phase 2 participants (75%) and vaccine-specific immune responses in **15 assayed** participants. An individual-neoantigen analysis in **13 of those 15** found **101 immunogenic among 118 tested neoantigens**. These are sponsor-reported conference results, not a peer-reviewed phase 2 outcomes publication or a randomized comparison. Evaxion's October 2025 release explicitly said the registered primary response-conversion endpoint was **not formally analyzed** because enrollment fell below the original plan. Its August 2026 business update discussed planned further follow-up rather than a new published outcome analysis. Do not pool the 12-person phase 1 results with the 16-person phase 2 response subset or treat immune and tumor-response denominators as interchangeable. ([AACR 2026 poster](https://evaxion.ai/wp-content/uploads/2026/04/EVX01_AACR2026_Poster_FINAL_20260408_forupload.pdf), [October 2025 sponsor release](https://evaxion.ai/investors/press-releases/?id=10646&press_release_pdf=1), [August 2026 sponsor update](https://evaxion.gcs-web.com/news-releases/news-release-details/evaxion-announces-business-update-and-second-quarter-2026))
 
-- Single-arm Phase 1/2a trial with only 12 evaluable patients
-- No randomized comparison to pembrolizumab alone
-- Historical control comparison has inherent limitations
-- Personalized manufacturing adds 6-8 weeks from biopsy to first dose
-- Scalability and cost-effectiveness not yet demonstrated
+### Why the response numbers need restraint
+
+These studies show that EVX-01 can be manufactured for individual participants and is associated with measurable neoantigen-specific immune responses. They do **not** establish that it raises response rates, extends survival, or is safer than anti-PD-1 treatment alone. The 2024 publication did not use a randomized control arm; the phase 2 data currently cited are from a sponsor conference poster and company releases. A historical pembrolizumab response rate cannot substitute for a concurrent comparison. ([2024 dose-escalation report](https://pubmed.ncbi.nlm.nih.gov/38782542/), [official phase 2 record](https://clinicaltrials.gov/study/NCT05309421), [AACR 2026 poster](https://evaxion.ai/wp-content/uploads/2026/04/EVX01_AACR2026_Poster_FINAL_20260408_forupload.pdf))
+
+### Sources and record boundaries
+
+The eight distinct linked records are the [2022 first-five-person report](https://pubmed.ncbi.nlm.nih.gov/35036074/), [2024 dose-escalation report](https://pubmed.ncbi.nlm.nih.gov/38782542/), [2022 KEYNOTE-D36 design paper](https://pubmed.ncbi.nlm.nih.gov/36047545/), [NCT03715985](https://clinicaltrials.gov/study/NCT03715985), [NCT05309421](https://clinicaltrials.gov/study/NCT05309421), [AACR 2026 sponsor poster](https://evaxion.ai/wp-content/uploads/2026/04/EVX01_AACR2026_Poster_FINAL_20260408_forupload.pdf), [October 2025 sponsor release](https://evaxion.ai/investors/press-releases/?id=10646&press_release_pdf=1), and [August 2026 sponsor update](https://evaxion.gcs-web.com/news-releases/news-release-details/evaxion-announces-business-update-and-second-quarter-2026). The papers and sponsor reports reuse participants within each study. A linked record is not an independent efficacy trial.
+
+*This is an evidence summary of investigational research, not medical advice or a treatment recommendation.*

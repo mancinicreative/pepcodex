@@ -2,6 +2,7 @@
 import BaseLayout from './BaseLayout.astro';
 import ArticleSchema from '../components/SEO/ArticleSchema.astro';
 import BreadcrumbSchema from '../components/SEO/BreadcrumbSchema.astro';
+import DefinedTermSchema from '../components/SEO/DefinedTermSchema.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
 import { getCollection } from 'astro:content';
 
@@ -55,6 +56,10 @@ const breadcrumbItems = [
 ];
 
 const articleUrl = Astro.url.toString();
+const definedTermUrl = new URL(Astro.url.pathname, Astro.site).toString();
+const glossaryUrl = new URL('/glossary', Astro.site).toString();
+// The off-label URL is retired by a 301 to /glossary/off-label-use.
+const hasDefinedTermSchema = !noindex && Astro.url.pathname !== '/glossary/off-label';
 
 // Get related peptide data for linking
 const allPeptides = await getCollection('peptides');
@@ -82,6 +87,14 @@ const relatedTermData = relatedTerms
     dateModified={lastUpdated}
   />
   <BreadcrumbSchema items={breadcrumbItems} />
+  {hasDefinedTermSchema && (
+    <DefinedTermSchema
+      term={term}
+      definition={definition}
+      url={definedTermUrl}
+      glossaryUrl={glossaryUrl}
+    />
+  )}
 
   <article class="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
     <!-- Back Link -->

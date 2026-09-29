@@ -1,0 +1,24 @@
+---
+import JsonLd from './JsonLd.astro';
+
+interface Props {
+  term: string;
+  definition: string;
+  url: string;
+  glossaryUrl: string;
+}
+
+const { term, definition, url, glossaryUrl } = Astro.props;
+
+const definedTermData = {
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTerm',
+  name: term,
+  // The visible definition box renders this same sentence from the same fields.
+  description: `${term} ${definition}`.trim(),
+  url,
+  inDefinedTermSet: glossaryUrl,
+};
+---
+
+<JsonLd data={definedTermData} />

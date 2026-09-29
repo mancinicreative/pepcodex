@@ -2,62 +2,33 @@
 name: Humanin
 aliases:
   - HN
-  - HNG
-  - S14G-Humanin
   - HN peptide
-  - Colivelin
 category: longevity
-evidenceStrength: moderate
-lastUpdated: 2026-01-28T00:00:00.000Z
+evidenceStrength: low
+lastUpdated: 2026-09-28T00:00:00.000Z
 comparators:
   - mots-c
   - ss-31
   - epithalon
 summary: >-
   A 24-amino acid mitochondria-derived peptide (MDP) discovered in 2001 that
-  shows cytoprotective, anti-apoptotic, and neuroprotective effects in
-  preclinical studies. Represents a novel class of signaling molecules encoded
-  within mitochondrial DNA. Extensive academic research with emerging interest
-  in aging, metabolic disease, and neurodegeneration, but no approved clinical
-  applications.
+  shows cytoprotective effects in cell and animal studies. Human studies mostly
+  measure endogenous humanin levels; associations with aging or disease do not
+  show that administered humanin is beneficial or safe. HNG and colivelin are
+  modified analogues, not interchangeable names for native humanin.
 sources:
-  count: 50
-  human: 10
-  preclinical: 40
-  openAccess: 20
+  count: 9
+  human: 5
+  preclinical: 2
+  openAccess: 7
   note: Human studies are biomarker/correlational; no therapeutic trials completed
-metaTitle: 'Humanin: 50 Studies Reviewed (2026)'
+  context: "Nine cited publications: five human biomarker or observational papers, two direct preclinical papers, and two contextual or secondary papers. Mixed human/model reports are counted once in the human bucket. The human count does not represent trials administering humanin."
+  verdict: "Human biomarker associations do not establish therapeutic benefit from administering humanin."
+metaTitle: 'Humanin: Preclinical and Biomarker Evidence (2026)'
 metaDescription: >-
-  Evidence-graded review of humanin covering 50 citations. Mitochondrial-derived
-  peptide linked to neuroprotection and aging. Updated Feb 2026.
-interactions:
-  - peptide: mots-c
-    type: synergistic
-    description: >-
-      Both are mitochondria-derived peptides with complementary mechanisms.
-      Humanin is cytoprotective while MOTS-c is metabolic. May provide
-      synergistic longevity benefits through different pathways.
-  - peptide: ss-31
-    type: compatible
-    description: >-
-      Both target mitochondrial function. SS-31 acts on cardiolipin while
-      humanin signals through FPRL receptors. Non-overlapping mechanisms with
-      potential complementary benefits.
-  - peptide: epithalon
-    type: compatible
-    description: >-
-      Different anti-aging mechanisms - humanin provides cytoprotection while
-      epithalon targets telomerase. No known interactions.
-  - peptide: bpc-157
-    type: compatible
-    description: >-
-      Different protective mechanisms - humanin acts on apoptosis pathways while
-      BPC-157 promotes angiogenesis and tissue repair.
-  - peptide: cerebrolysin
-    type: compatible
-    description: >-
-      Both have neuroprotective properties through different mechanisms. Humanin
-      inhibits apoptosis while cerebrolysin provides neurotrophic factors.
+  Distinguishes native humanin, modified analogues, and human biomarker
+  associations from direct administration evidence. Updated September 2026.
+interactions: []
 molecularInfo:
   weight: '2,687.17 Da'
   chainLength: 24
@@ -166,15 +137,15 @@ evidenceChainedBenefits:
         FPRL1/2 receptor binding activating ERK1/2 and STAT3 anti-apoptotic
         signaling
       confidence: established
-      directStudies: 15
+      directStudies: 2
     benefit:
       claim: protect cells from apoptotic death
       qualifier: shown to
     evidence:
-      level: moderate
+      level: low
       humanStudies: 0
-      animalStudies: 20
-      cellStudies: 25
+      animalStudies: 0
+      cellStudies: 2
       keyFindings:
         - study: Hashimoto Y et al. 2001
           type: in-vitro
@@ -189,89 +160,35 @@ evidenceChainedBenefits:
             permeabilization (Nature)
           pmid: '12732850'
   - mechanism:
-      action: Direct BAX and Bid binding blocking mitochondrial apoptosis cascade
-      confidence: established
-      directStudies: 8
-    benefit:
-      claim: provide neuroprotection in disease models
-      qualifier: appears to
-    evidence:
-      level: moderate
-      humanStudies: 0
-      animalStudies: 15
-      cellStudies: 12
-      keyFindings:
-        - study: Wu M et al. 2017
-          type: animal
-          finding: >-
-            Humanin derivative colivelin reduced amyloid-beta deposition and
-            improved memory in APP/PS1 transgenic mice
-          pmid: '28731445'
-        - study: Niikura T et al. 2002
-          type: review
-          finding: >-
-            Reviewed humanin suppressing neuronal death from multiple
-            Alzheimer's-relevant insults (FAD mutants and amyloid-beta)
-          pmid: '12391601'
-  - mechanism:
-      action: Improved mitochondrial function and reduced oxidative stress
+      action: Central insulin-action signaling studied in rats
       confidence: supported
-      directStudies: 10
+      directStudies: 1
     benefit:
-      claim: improve metabolic function
+      claim: alter insulin sensitivity in rats
       qualifier: may
     evidence:
       level: low
-      humanStudies: 5
-      animalStudies: 12
-      cellStudies: 8
+      humanStudies: 0
+      animalStudies: 1
+      cellStudies: 0
       keyFindings:
-        - study: Ramanjaneya M et al. 2019
-          type: human-observational
-          finding: >-
-            Serum humanin is lower in type 2 diabetes and correlates inversely
-            with age and HbA1c
-          pmid: '31214116'
         - study: Muzumdar RH et al. 2009
           type: animal
           finding: >-
-            Humanin improved insulin sensitivity and a potent analog lowered
-            blood glucose in Zucker diabetic fatty rats
+            Native humanin improved insulin sensitivity after central infusion
+            in rats; a separate potent HNGF6A analogue lowered glucose in
+            Zucker diabetic fatty rats. The paper also measured endogenous
+            plasma humanin in people, not a human intervention.
           pmid: '19623253'
-  - mechanism:
-      action: IGFBP-3 binding modulating IGF signaling pathway
-      confidence: supported
-      directStudies: 6
-    benefit:
-      claim: modulate aging-related signaling pathways
-      qualifier: suggested to
-    evidence:
-      level: low
-      humanStudies: 8
-      animalStudies: 6
-      cellStudies: 5
-      keyFindings:
-        - study: Cobb LJ et al. 2016
-          type: in-vitro
-          finding: >-
-            Humanin-related mitochondrial-derived peptides regulate apoptosis,
-            insulin sensitivity, and inflammation, and decline with age
-          pmid: '27070352'
-        - study: Kim SJ et al. 2020
-          type: review
-          finding: >-
-            Comprehensive review of humanin as biomarker in aging and disease
-            states
-          pmid: '32910336'
 conditions:
   - slug: neurodegeneration
     name: Neurodegeneration
     researchSummary: >-
-      Humanin was discovered specifically for its ability to protect neurons
-      from Alzheimer's-related death. Preclinical studies show protection
-      against amyloid-beta toxicity, reduced pathology in transgenic mice, and
-      broad neuroprotective effects. All evidence is preclinical; no human
-      therapeutic trials completed.
+      Native humanin protected cells from Alzheimer-related injury in early
+      laboratory experiments. The cited transgenic-mouse study used colivelin,
+      a synthetic humanin derivative, rather than native humanin. Neither
+      model establishes a neurodegenerative-disease treatment in people; no
+      human therapeutic trial is cited.
     relevantStudies:
       - '11717357'
       - '12732850'
@@ -283,10 +200,10 @@ conditions:
   - slug: metabolic-health
     name: Metabolic Health
     researchSummary: >-
-      Human biomarker studies show humanin levels decline with age and correlate
-      inversely with diabetes, obesity, and insulin resistance. Animal studies
-      with potent HNG analog show metabolic improvements. Human therapeutic
-      trials are needed.
+      Human studies report context-dependent associations between endogenous
+      humanin levels and metabolic measures. Animal studies with humanin or
+      the modified HNG analogue are separate intervention evidence. No human
+      therapeutic effect has been established.
     relevantStudies:
       - '31214116'
       - '19623253'
@@ -296,13 +213,14 @@ conditions:
   - slug: aging
     name: Aging & Longevity
     researchSummary: >-
-      As a mitochondria-derived peptide, humanin levels decline with age.
-      Biomarker studies associate higher levels with longevity phenotypes and
-      preserved health. Whether supplementation can reverse age-related decline
-      is untested in humans.
+      One study found higher endogenous humanin levels among a small group of
+      centenarians' offspring than controls, while another measured plasma
+      humanin across older populations and disease groups. These observations
+      do not show that administering native humanin extends human life. Mouse
+      lifespan experiments in the first study used the modified HNG analogue.
     relevantStudies:
-      - '27070352'
-      - '32910336'
+      - '32575074'
+      - '33131010'
     relatedPeptides:
       - mots-c
       - epithalon
@@ -318,111 +236,14 @@ conditions:
       - '20651283'
     relatedPeptides:
       - ss-31
-timeline:
-  - period: Acute
-    effects: >-
-      Humanin binds FPRL receptors rapidly, activating ERK1/2 and STAT3
-      signaling within minutes. Anti-apoptotic effects are immediate in cellular
-      models. In vivo distribution and kinetics not fully characterized.
-    source: 'PMID:11717357'
-  - period: Days to weeks
-    effects: >-
-      Preclinical studies typically administer humanin or HNG for days to weeks.
-      Neuroprotective effects in AD models observed over weeks of treatment.
-      Metabolic improvements in diabetic mice seen within weeks.
-    source: 'PMID:28731445'
-  - period: Long-term
-    effects: >-
-      Endogenous humanin levels decline with age (from higher levels in youth to
-      lower in elderly). Long-term effects of exogenous supplementation are not
-      characterized. No human chronic administration data available.
-    source: 'PMID:31214116'
-qualityChecklist:
-  goodSigns:
-    - White to off-white lyophilized powder
-    - Complete dissolution in appropriate solvent
-    - Certificate of analysis showing >95% purity
-    - HPLC verification of identity
-    - Mass spectrometry confirmation
-    - Proper vacuum seal on vial
-  warningSigns:
-    - Slightly off-white coloration
-    - Slow dissolution time
-    - No third-party testing verification
-    - Purity below 95%
-    - Limited supplier documentation
-  badSigns:
-    - 'Discolored powder (yellow, brown)'
-    - Particles or cloudiness after dissolution
-    - No certificate of analysis
-    - Cannot verify source or identity
-    - Compromised vial seal
 regulatoryStatus:
   status: research-only
-  lastUpdated: '2026-02-18'
+  lastUpdated: '2026-09-28'
   notes: >-
     Not FDA-approved. Mitochondrial-derived peptide. Preclinical research on
-    neuroprotection and metabolic health.
-ratings:
-  researchDepth: 3
-  globalCoverage: 2
-  mechanismPlausibility: 3
-  overall: 2.65
-  lastReviewed: 2026-04-13T00:00:00.000Z
-  reviewNotes: >-
-    Emerging mitochondrial peptide with growing international interest;
-    FPRL2/GP78 signaling mechanism proposed with some supporting data but
-    predominantly preclinical.
-  anecdotalEvidence: 2
-scoring:
-  rubricVersion: "2.4"
-  evidence:
-    researchDepth: 49
-    mechanism: 87
-    plausibility: 72
-    globalCoverage: 72
-    communityExperience: 33
-    overall: 62
-    label: "emerging"
-  effectiveness:
-    basis: "not-established"
-    primaryIndication: "Neuroprotection / mitochondrial cytoprotection"
-  lastScored: 2026-06-27
-  citations:
-    - "PMID:12732850"
-    - "PMID:11717357"
-    - "PMID:28731445"
-    - "PMID:19623253"
-    - "PMID:20651283"
-    - "PMID:31214116"
-    - "PMID:27070352"
-    - "PMID:32910336"
-  notes: >-
-    Research Depth 49: highest human tier is controlled observational biomarker
-    work (Ramanjaneya 2019 n=225, 31214116; multiple correlational MDP studies),
-    no RCTs and no therapeutic trials (1A 22); best human evidence is
-    correlational with high RoB for causal claims (1B 5); total human N in the
-    low-hundreds (1C 7); human data are surrogate biomarkers in the right
-    population but not direct therapeutic outcomes (1D 6); offset by an extensive,
-    independently replicated 20+ year preclinical program across cell/mouse/rat
-    neuro, metabolic and cardiac models (1E 9). Mechanism 87: named, validated
-    targets — FPRL1/2 receptor signaling (ERK1/2, STAT3) and direct BAX binding
-    with siRNA-knockdown functional confirmation (Guo 2003 Nature, 12732850)
-    (2A 38); downstream pathway largely mapped (2B 24); dose-dependent HNG effect
-    in vivo (Muzumdar 2010 cardiac I/R, 20651283) (2C 15); confirmed in mammalian
-    in-vivo models (2D 10). Plausibility 72: mechanism->surrogate biomarker
-    established, surrogate->human clinical benefit still inferred (3A 26); coherent
-    with mitochondrial/apoptosis/aging biology (3B 22); strong class analogy from
-    MOTS-c and SHLPs (Cobb 2016, 27070352) (3C 17); but claims span neuro, metabolic,
-    cardiac and aging systems, lowering specificity (3D 7). Global Coverage 72:
-    independently reproduced across Keio (Japan), USC/Einstein/Mayo (USA), China,
-    Qatar and Italy groups (4A 28, 4B 22); >100 studies and still growing (4C 22);
-    no regulatory recognition anywhere (4D 0). Community Experience 33: negligible
-    documented real-world use confined to niche enthusiast circles (5A 7, 5B 7,
-    5C 8), no notable adverse signal over limited exposure (5D 11). Effectiveness
-    not established: no quantified human efficacy estimate (all human data are
-    correlational biomarkers, no therapeutic trials) and no meaningful community
-    effect signal.
+    neuroprotection and metabolic health. No FDA-approved humanin product or
+    established human administration benefit was identified; analogue and
+    endogenous-biomarker findings do not establish product safety.
 anecdotalReports:
   positive: []
   negative: []
@@ -452,37 +273,14 @@ mechanismPathways:
     outcomeSignal: research
 ---
 
-Humanin is a mitochondria-derived peptide (MDP) discovered in 2001 through its ability to rescue cells from Alzheimer's-related death. It represents a novel class of signaling molecules encoded within mitochondrial DNA.
+Humanin is a 24-amino-acid peptide first identified in cell models of Alzheimer-related toxicity. **Native humanin, the stronger S14G-humanin/HNG analogue and colivelin are distinct research interventions.** Findings from one should not be silently credited to another.
 
-### How It Works (Simplified)
+### Mechanism and intervention studies
 
-Humanin protects cells through multiple complementary mechanisms:
+In cell experiments, humanin suppressed apoptosis induced by Alzheimer-related insults. Guo and colleagues later showed interaction with BAX and reduced BAX movement to mitochondria, with knockdown experiments supporting a role for endogenous humanin in that model. These are mechanistic findings, not evidence of neuroprotection in patients. [PMID:11717357](https://pubmed.ncbi.nlm.nih.gov/11717357/) · [PMID:12732850](https://pubmed.ncbi.nlm.nih.gov/12732850/)
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-8">
-  <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
-    <div class="font-semibold text-[color:var(--ink)] mb-2">Receptor Signaling</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Binds FPRL1/2 receptors, activating ERK1/2 and STAT3 pathways that promote cell survival and inhibit apoptosis.</p>
-  </div>
-  <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
-    <div class="font-semibold text-[color:var(--ink)] mb-2">BAX Binding</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Directly binds pro-apoptotic BAX protein, preventing mitochondrial permeabilization and blocking the death cascade.</p>
-  </div>
-  <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
-    <div class="font-semibold text-[color:var(--ink)] mb-2">Mitochondrial Support</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Improves mitochondrial function, reduces oxidative stress, and prevents cytochrome c release from damaged mitochondria.</p>
-  </div>
-  <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
-    <div class="font-semibold text-[color:var(--ink)] mb-2">IGF Modulation</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Binds IGFBP-3 to modulate insulin-like growth factor signaling, with implications for metabolism and aging.</p>
-  </div>
-</div>
+Animal work includes studies of native humanin and modified analogues. A 2020 study reported healthspan-related readouts after HNG treatment in middle-aged mice, alongside correlations of endogenous humanin with longevity-related phenotypes in animals and higher levels in children of centenarians. The mouse intervention and human observational findings answer different questions. They do not show that administering humanin extends human life. [PMID:32575074](https://pubmed.ncbi.nlm.nih.gov/32575074/)
 
-**Key Research:** Hashimoto Y et al. (2001) characterized humanin's ability to rescue cells from familial Alzheimer's disease (FAD) gene toxicity and amyloid-beta. [PMID:11717357](https://pubmed.ncbi.nlm.nih.gov/11717357/)
+### Human associations and clinical gap
 
-### Important Limitations
-
-- **No therapeutic trials** — Despite 20+ years of research, no human treatment studies
-- **Complex biology** — Multiple mechanisms complicate drug development
-- **Cancer question** — Anti-apoptotic effects could theoretically promote tumor survival
-- **Delivery challenges** — Peptide stability and pharmacokinetics not optimized
-- **All human data correlative** — Biomarker studies, not cause-and-effect
+Human studies have measured circulating or muscle humanin after disease, aging or exercise exposures. Their directions vary by population: one study reported positive correlations with age in healthy subjects, and a hemodialysis cohort reported a U-shaped association with adverse outcomes. Such biomarker associations cannot establish a therapeutic effect from giving humanin. No controlled human treatment trial or approved humanin product was identified; administration safety and peptide-combination effects remain unknown. [PMID:33131010](https://pubmed.ncbi.nlm.nih.gov/33131010/) · [PMID:39102184](https://pubmed.ncbi.nlm.nih.gov/39102184/)

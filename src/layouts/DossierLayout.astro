@@ -21,6 +21,7 @@ import { loadEvidencePresentation } from '../lib/evidence-binding';
 import type { Ratings, Scoring, ScoreReview, EvidenceDisplay } from '../content/config';
 import Vial from '../components/Vial.astro';
 import TrialTable from '../components/TrialTable.astro';
+import { isNctId } from '../lib/trial-display.mjs';
 import SectionAside from '../components/SectionAside.astro';
 import MechanismPathways from '../components/MechanismPathways.astro';
 
@@ -265,7 +266,7 @@ try {
   const packPath = path.join(process.cwd(), 'data', 'source-packs', `${dossierSlug}.json`);
   if (!presentation.selected && fs.existsSync(packPath)) {
     const pack = JSON.parse(fs.readFileSync(packPath, 'utf-8'));
-    peptideTrials = (pack.trials || []).map((t: any) => ({
+    peptideTrials = (pack.trials || []).filter((t: any) => isNctId(t.nctId || t.id)).map((t: any) => ({
       nctId: t.nctId || t.id || 'Unknown',
       title: t.title,
       status: t.status || 'unknown',
@@ -275,6 +276,7 @@ try {
       enrollmentTarget: t.enrollmentTarget,
       startDate: t.startDate,
       completionDate: t.completionDate,
+      completionDateType: t.completionDateType,
       peptide: name,
     }));
   }
@@ -719,7 +721,7 @@ const clinicalPct = sources.count ? Math.round((sources.human / sources.count) *
       <!-- What is being studied now (clinical trials) -->
       {hasTrials && (
         <section id="trials" class="dossier-section">
-          <SectionAside roman={romanById.get('trials')} eyebrow="Clinical trials" title="What is being studied now" note={`Registered human trials involving ${name}, from ClinicalTrials.gov.`} />
+          <SectionAside roman={romanById.get('trials')} eyebrow="Clinical trials" title="What is being studied now" note={dossierSlug === 'tb-500' ? 'Registered trials of parent thymosin beta-4; these are not human trials of the TB-500 fragment.' : `Registered human trials involving ${name}, from ClinicalTrials.gov.`} />
           <div class="dossier-body">
             <div class="glass-card overflow-hidden">
               <TrialTable trials={peptideTrials} />
@@ -833,7 +835,7 @@ const clinicalPct = sources.count ? Math.round((sources.human / sources.count) *
         <div class="dossier-body">
           <div class="panel-inset p-6">
             <p class="mb-4" style="color: var(--ink-muted);">
-              {presentation.selected ? 'This entry describes a qualitatively reviewed publication selection. Clinical certainty has not been formally graded, and a numerical evidence score remains pending review. Model, preparation and reporting limits are retained in the source discussion.' : "This dossier synthesizes available evidence from peer-reviewed literature, regulatory documents, and clinical trial registries. Evidence strength ratings follow a modified GRADE approach."}
+              {presentation.selected ? 'This entry describes a qualitatively reviewed publication selection. Clinical certainty has not been formally graded, and a numerical evidence score remains pending review. Model, preparation and reporting limits are retained in the source discussion.' : "This dossier synthesizes available evidence from peer-reviewed literature, regulatory documents, and clinical trial registries. Evidence strength labels summarize the cited material for this entry and should be read alongside its population, model, and study limitations."}
             </p>
             <p style="color: var(--ink-muted);">
               For complete methodology details, see our <a href="/methodology" class="font-medium text-primary hover:underline">Methodology page</a>.

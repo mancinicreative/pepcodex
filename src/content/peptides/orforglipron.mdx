@@ -6,51 +6,56 @@ aliases:
 category: metabolic
 compoundType: small-molecule
 evidenceStrength: high
-lastUpdated: 2026-04-13T00:00:00.000Z
+lastUpdated: 2026-09-28T00:00:00.000Z
 comparators:
   - semaglutide
   - tirzepatide
 summary: >-
-  The first oral small-molecule (non-peptide) GLP-1 receptor agonist. NDA
-  submitted to FDA. ATTAIN trials showed 11.2% weight loss at 72 weeks. No
-  food/water restrictions unlike oral semaglutide. Phase 3 data in 9,000+
-  patients.
+  Oral small-molecule GLP-1 receptor agonist approved by the US FDA on 1 April
+  2026 as Foundayo for chronic weight management in eligible adults. The July
+  2026 FDA label advises against use with another GLP-1 agonist and lists
+  specific drug interactions. Type 2 diabetes remains an unapproved use,
+  despite published Phase 3 ACHIEVE trials.
 sources:
-  count: 20
-  human: 18
-  preclinical: 2
-  openAccess: 16
-metaTitle: 'Orforglipron: 20 Studies Reviewed (2026)'
+  count: 43
+  human: 10
+  preclinical: 1
+  openAccess: 5
+  context: "43 deduplicated reader-visible evidence records: 10 direct primary human publications, 1 direct primary preclinical publications and 5 verified scholarly open full texts. Registrations, sponsor or regulator records, reviews and protocols have different evidentiary roles from direct primary papers; a publication and registration may describe the same trial, and post-hoc or substudy reports may reuse a population."
+  verdict: "The US weight-management approval does not establish a type 2 diabetes indication. Direct publications include analyses of overlapping trial populations; registrations are not independent outcome publications."
+metaTitle: "Orforglipron: FDA-Approved Foundayo Evidence (2026)"
 metaDescription: >-
-  Evidence-graded review of orforglipron covering 20 citations. Oral non-peptide
-  GLP-1 agonist in Phase 3 trials. Updated Feb 2026.
+  Evidence review of orforglipron covering clinical studies and the US FDA
+  Foundayo label for chronic weight management. Updated Sep 2026.
 interactions:
   - peptide: semaglutide
     type: caution
     description: >-
-      Both are GLP-1 receptor agonists. Concurrent use would result in redundant
-      mechanisms and increased risk of GI side effects. Not recommended to
-      combine.
+      The FDA Foundayo label says concomitant use with another GLP-1 receptor
+      agonist is not recommended. Semaglutide is one such agonist.
   - peptide: tirzepatide
     type: avoid
     description: >-
-      Tirzepatide is a dual GIP/GLP-1 agonist. Combining with orforglipron would
-      cause overlapping GLP-1 receptor activation. Contraindicated.
+      Tirzepatide activates GLP-1 as well as GIP receptors. The Foundayo label
+      does not recommend concomitant use with another GLP-1 agonist; it does
+      not list tirzepatide itself as a formal contraindication.
   - peptide: retatrutide
     type: avoid
     description: >-
-      Retatrutide is a triple GIP/GLP-1/glucagon agonist. Concurrent GLP-1
-      receptor activation contraindicated.
+      Retatrutide is an investigational triple agonist that includes GLP-1
+      activity. Concomitant use was not evaluated; the Foundayo label advises
+      against another GLP-1 agonist rather than listing this as a formal
+      contraindication.
   - peptide: bpc-157
     type: caution
     description: >-
-      Both affect GI function. BPC-157 is gastroprotective while orforglipron
-      slows gastric emptying. Monitor GI symptoms if combined.
+      No clinical interaction study with BPC-157 was identified, and a
+      protective gastrointestinal effect is not established here.
   - peptide: 5-amino-1mq
-    type: compatible
+    type: caution
     description: >-
-      Different mechanisms of action. 5-Amino-1MQ inhibits NNMT for metabolic
-      effects while orforglipron acts on GLP-1R. No known interactions.
+      No clinical co-administration study was identified. Different proposed
+      mechanisms do not establish compatibility.
 molecularInfo:
   weight: 882.97 Da
   chainLength: 0
@@ -60,18 +65,18 @@ molecularInfo:
 evidenceChainedBenefits:
   - mechanism:
       action: >-
-        Biased GLP-1 receptor agonism favoring cAMP signaling over beta-arrestin
-        recruitment
-      confidence: established
-      directStudies: 12
+        GLP-1 receptor agonism associated with measured body-weight reduction;
+        biased-signalling contribution was not isolated by these clinical trials
+      confidence: supported
+      directStudies: 4
     benefit:
       claim: reduce body weight in adults with obesity
       qualifier: shown to
     evidence:
       level: high
-      humanStudies: 6
-      animalStudies: 4
-      cellStudies: 3
+      humanStudies: 4
+      animalStudies: 0
+      cellStudies: 0
       keyFindings:
         - study: Wharton S et al. NEJM 2025
           type: human-rct
@@ -79,76 +84,148 @@ evidenceChainedBenefits:
             ATTAIN-1: 11.2% weight loss at 72 weeks with 36mg dose vs 2.1%
             placebo in 3,127 patients
           pmid: '40960239'
-        - study: ATTAIN-2 Lancet 2025
+        - study: Horn DB et al. ATTAIN-2, Lancet 2025 online
           type: human-rct
           finding: >-
             9.6% weight loss in adults with obesity and T2D at 72 weeks with
             36mg dose
-          doi: 10.1016/S0140-6736(25)02165-8
+          pmid: '41275875'
+        - study: Wharton S et al. 2023 (phase 2)
+          type: human-rct
+          finding: >-
+            At 36 weeks, body-weight reduction ranged from 9.4% to 14.7%
+            across orforglipron groups versus 2.3% with placebo
+          pmid: '37351564'
+        - study: Hageen AW et al. 2026
+          type: meta-analysis
+          finding: >-
+            Network meta-analysis of 6 RCTs (4,878 participants) across
+            orforglipron 3, 12, 24, 36 and 45mg found dose-ordered weight
+            reduction, greatest at 45mg (SMD -1.71kg at 12 weeks; MD -8.81kg at
+            26 weeks; MD -12.13kg at 36 weeks vs placebo), with 24-45mg raising
+            the odds of reaching 5%, 10% and 15% weight loss at 26 weeks.
+            Treatment-emergent adverse events also rose with dose
+          pmid: '42487237'
+        - study: 'Horn DB et al. 2026 (ATTAIN-1 and ATTAIN-2 post hoc, age >=65)'
+          type: human-observational
+          finding: >-
+            Post hoc subgroup of the 616 randomised participants aged 65 or
+            older across both ATTAIN trials. At week 72, weight change in
+            ATTAIN-1 ran from -7.9% to -13.0% across the three strengths versus
+            -1.6% with placebo, and in ATTAIN-2 from -7.5% to -12.2% versus
+            -2.3%. Results were comparable to participants under 65. Post hoc
+            subgroup analysis, not a prespecified test
+          pmid: '42577069'
+        - study: Nong K et al. 2026
+          type: meta-analysis
+          finding: >-
+            BMJ network meta-analysis of 262 randomised trials (99,791
+            participants, 19 drugs) estimated orforglipron at -9.9% body weight
+            versus lifestyle modification at one year (95% CI -12.4% to -7.5%),
+            below tirzepatide, CagriSema and oral semaglutide. Orforglipron was
+            among the agents with the highest discontinuation for adverse
+            events (risk ratios 1.9 to 4.2 across that group), elevated
+            gastrointestinal events (3.1 to 4.2) and increased fatigue (risk
+            ratio 3.4; 100 more per 1000 people over one year)
+          pmid: '42419792'
   - mechanism:
-      action: GLP-1 receptor activation enhancing glucose-dependent insulin secretion
-      confidence: established
-      directStudies: 8
+      action: GLP-1 receptor activity associated with measured HbA1c improvement; insulin mediation was not separately quantified in these outcome trials
+      confidence: supported
+      directStudies: 5
     benefit:
       claim: improve glycemic control in type 2 diabetes
       qualifier: shown to
     evidence:
       level: high
       humanStudies: 5
-      animalStudies: 3
-      cellStudies: 2
+      animalStudies: 0
+      cellStudies: 0
       keyFindings:
-        - study: ATTAIN-2 Lancet 2025
+        - study: 'Welch M et al. Lancet 2026 (ACHIEVE-2; NCT06192108)'
+          type: human-rct
+          finding: >-
+            40-week phase 3 non-inferiority trial against dapagliflozin 10 mg in
+            962 adults with type 2 diabetes on metformin. On the
+            treatment-regimen estimand, the trial's primary estimand, HbA1c fell
+            1.23%, 1.50% and 1.56% across the three orforglipron strengths
+            versus 0.81% with dapagliflozin; all were non-inferior against a
+            0.3% margin and the differences favoured orforglipron. Mild to
+            moderate gastrointestinal events occurred in 46-54% of orforglipron
+            participants versus 12% on dapagliflozin
+          pmid: '42259339'
+        - study: 'Giorgino F et al. JAMA 2026 (ACHIEVE-5; NCT06109311)'
+          type: human-rct
+          finding: >-
+            40-week phase 3 trial of orforglipron added to titrated insulin
+            glargine in 546 adults with long-standing type 2 diabetes (median
+            duration 14.6 years, mean baseline HbA1c 8.50%). HbA1c fell 1.58%,
+            1.88% and 1.82% across the three strengths versus 0.79% with
+            placebo, and mean body weight fell 2.6%, 4.8% and 5.4% versus a 0.2%
+            gain. Clinically significant hypoglycaemia was not increased versus
+            placebo
+          pmid: '42251769'
+        - study: Rosenstock J et al. 2025 (ACHIEVE-1)
+          type: human-rct
+          finding: >-
+            In 559 adults with early type 2 diabetes, HbA1c changed by -1.24,
+            -1.47 and -1.48 percentage points across orforglipron groups versus
+            -0.41 points with placebo at 40 weeks
+          pmid: '40544435'
+        - study: Horn DB et al. ATTAIN-2, Lancet 2025 online
           type: human-rct
           finding: >-
             All prespecified weight and cardiometabolic measures, including
             HbA1c, statistically significantly improved with orforglipron vs
             placebo at 72 weeks
-          doi: 10.1016/S0140-6736(25)02165-8
-        - study: Pratt E et al. Diabetes Obes Metab 2023
+          pmid: '41275875'
+        - study: Frias JP et al. Lancet 2023 (phase 2 T2D)
           type: human-rct
           finding: >-
-            Phase 1 demonstrated dose-proportional pharmacokinetics, decreased
-            fasting glucose, and a long half-life supporting once-daily dosing
-          pmid: '37344954'
-  - mechanism:
-      action: Reduced appetite signaling via hypothalamic GLP-1 receptor activation
-      confidence: supported
-      directStudies: 6
-    benefit:
-      claim: reduce appetite and caloric intake
-      qualifier: appears to
-    evidence:
-      level: moderate
-      humanStudies: 4
-      animalStudies: 4
-      cellStudies: 2
-      keyFindings:
-        - study: Phase 2 NEJM 2023
-          type: human-rct
+            Randomized dose-response trial in adults with type 2 diabetes
+            demonstrated HbA1c reduction against placebo at 26 weeks
+          pmid: '37369232'
+        - study: Hageen AW et al. 2026
+          type: meta-analysis
           finding: >-
-            36-week treatment led to 9.4% to 14.7% weight loss across doses vs
-            2.3% placebo, with improvement in all weight-related and
-            cardiometabolic measures
-          pmid: '37351564'
-        - study: Sloop KW et al. Sci Transl Med 2024
-          type: in-vitro
+            In the same 6-RCT network meta-analysis (4,878 participants),
+            glycemic outcomes improved across all orforglipron doses, with the
+            largest HbA1c reduction at 45mg (-1.65%, 95% CI -1.98 to -1.32) and
+            the largest fasting glucose improvement at 36mg
+          pmid: '42487237'
+        - study: Wu X et al. 2026
+          type: meta-analysis
           finding: >-
-            High-affinity, selective GLP-1R agonism with low intrinsic efficacy
-            and negligible beta-arrestin recruitment
-          pmid: '39693407'
+            Bayesian network meta-analysis of 102 RCTs (98,693 patients with
+            type 2 diabetes) across 15 incretin-based therapies ranked
+            tirzepatide, orforglipron and semaglutide best for glycemic
+            control; higher doses improved efficacy but increased adverse
+            events, with orforglipron 45mg identified as balancing benefit and
+            tolerability
+          pmid: '42394981'
+        - study: Li L et al. 2026
+          type: meta-analysis
+          finding: >-
+            Meta-analysis of 10 RCTs of oral small-molecule GLP-1 receptor
+            agonists in type 2 diabetes or obesity reported reductions in body
+            weight (MD -3.93kg, 95% CI -4.78 to -3.09), BMI (-2.39), waist
+            circumference (-4.62) and HbA1c (-0.94%, 95% CI -1.09 to -0.79),
+            with raised overall adverse events (RR 2.75, 95% CI 2.41 to 3.15)
+            but no increase in serious adverse events (RR 1.15, 95% CI 0.93 to
+            1.43). Estimates are class-level for oral small-molecule agents,
+            not orforglipron-specific
+          pmid: '42483679'
   - mechanism:
-      action: Systemic anti-inflammatory effects via GLP-1 receptor signaling
+      action: GLP-1 receptor agonism associated with cardiometabolic-marker changes
       confidence: emerging
-      directStudies: 3
+      directStudies: 2
     benefit:
       claim: improve cardiometabolic risk markers
       qualifier: may
     evidence:
       level: moderate
-      humanStudies: 3
-      animalStudies: 2
-      cellStudies: 1
+      humanStudies: 2
+      animalStudies: 0
+      cellStudies: 0
       keyFindings:
         - study: ATTAIN-1 NEJM 2025
           type: human-rct
@@ -156,19 +233,18 @@ evidenceChainedBenefits:
             Significant improvements in non-HDL cholesterol, systolic blood
             pressure, triglycerides, and waist circumference vs placebo
           pmid: '40960239'
-        - study: ATTAIN-2 Lancet 2025
+        - study: Horn DB et al. ATTAIN-2, Lancet 2025 online
           type: human-rct
           finding: Clinically meaningful benefits across cardiovascular risk factors
-          doi: 10.1016/S0140-6736(25)02165-8
+          pmid: '41275875'
 conditions:
   - slug: obesity
     name: Obesity
     researchSummary: >-
-      Orforglipron has demonstrated significant weight loss efficacy in large
-      Phase 3 trials. ATTAIN-1 showed 11.2% weight loss at 72 weeks with the
-      36mg dose compared to 2.1% with placebo in 3,127 adults with obesity. This
-      represents the first oral non-peptide GLP-1 agonist to show comparable
-      efficacy to injectable alternatives.
+      Orforglipron produced weight loss in Phase 3 obesity trials. ATTAIN-1
+      reported 11.2% mean weight reduction at 72 weeks with its highest studied
+      strength versus 2.1% with placebo in 3,127 adults with obesity. These
+      trials do not establish equivalence to injectable agents.
     relevantStudies:
       - '40960239'
       - '37351564'
@@ -182,10 +258,20 @@ conditions:
       diabetes, showing statistically significant improvements in HbA1c and all
       prespecified weight and cardiometabolic measures with the 36mg dose vs
       placebo at 72 weeks. The oral administration without food restrictions
-      offers practical advantages over existing therapies.
+      offers practical advantages over existing therapies. Two further phase 3
+      trials published in 2026 extend the diabetes evidence: ACHIEVE-2 tested
+      orforglipron against dapagliflozin as an add-on to metformin and met
+      non-inferiority on the treatment-regimen estimand, and ACHIEVE-5 tested it
+      as an add-on to titrated insulin glargine. ACHIEVE-J (PMID 42607698) is an
+      open-label Phase 3 safety trial (n=401, 52 weeks), not a weight-loss
+      headline; the abstract does not report a treatment-regimen HbA1c or
+      weight-change figure. Orforglipron remains unapproved for type 2 diabetes.
     relevantStudies:
+      - '42259339'
+      - '42251769'
+      - '42607698'
       - '41275875'
-      - '37344954'
+      - '40544435'
     relatedPeptides:
       - semaglutide
       - tirzepatide
@@ -203,116 +289,42 @@ conditions:
       - tirzepatide
       - retatrutide
 timeline:
-  - period: Week 1-4
+  - period: Week 26, phase 2 obesity trial
     effects: >-
-      Initial titration period. GI side effects (nausea, vomiting, diarrhea)
-      most common during dose escalation. Appetite reduction typically begins
-      within first weeks.
+      Mean body-weight reduction ranged from 8.6% to 12.6% across studied
+      strengths versus 2.0% with placebo in adults without diabetes.
     source: 'PMID:37351564'
-  - period: Week 4-12
+  - period: Week 36, phase 2 obesity trial
     effects: >-
-      Progressive weight loss observed. Phase 2 data showed approximately 5-7%
-      weight loss by week 12 at higher doses. Glycemic improvements evident in
-      diabetic patients.
+      Mean body-weight reduction ranged from 9.4% to 14.7% across studied
+      strengths versus 2.3% with placebo in adults without diabetes.
     source: 'PMID:37351564'
-  - period: Week 12-36
+  - period: Week 72, ATTAIN-1
     effects: >-
-      Continued weight loss trajectory. Phase 2 showed 9.4% to 14.7% weight
-      loss across doses at 36 weeks (vs 2.3% placebo). GI tolerability generally
-      improves after initial weeks.
-    source: 'PMID:37351564'
-  - period: Week 36-72
-    effects: >-
-      Phase 3 ATTAIN trials demonstrated 11.2% weight loss at 72 weeks in
-      obesity (ATTAIN-1) and 9.6% in obesity with T2D (ATTAIN-2). Sustained
-      metabolic benefits observed.
+      Mean body-weight reduction was 11.2% with the highest studied strength
+      versus 2.1% with placebo in adults with obesity without diabetes.
     source: 'PMID:40960239'
+  - period: Week 72, ATTAIN-2
+    effects: >-
+      Mean body-weight reduction was up to 9.6% with the highest studied
+      strength in adults with obesity and type 2 diabetes; this is a different
+      trial population from ATTAIN-1.
+    source: 'PMID:41275875'
 regulatoryStatus:
-  status: investigational
-  lastUpdated: '2026-02-18'
+  status: approved
+  lastUpdated: '2026-09-28'
   notes: >-
-    Phase 3 clinical trials for obesity and T2D (Eli Lilly). Oral non-peptide
-    GLP-1 agonist.
-ratings:
-  researchDepth: 4
-  globalCoverage: 4
-  mechanismPlausibility: 4
-  overall: 3.85
-  lastReviewed: 2026-04-13T00:00:00.000Z
-  reviewNotes: >-
-    Eli Lilly oral non-peptide GLP-1 agonist with Phase 3 global trials and
-    established GLP-1R mechanism; multinational program with strong human data
-    and FDA NDA submission anticipated.
-  anecdotalEvidence: 3
-scoring:
-  rubricVersion: "2.4"
-  evidence:
-    researchDepth: 85
-    mechanism: 96
-    plausibility: 92
-    globalCoverage: 63
-    communityExperience: 32
-    overall: 77
-    label: "emerging"
-  effectiveness:
-    basis: "clinical"
-    score: 83
-    confidence: "high"
-    primaryIndication: "Obesity / chronic weight management"
-  lastScored: 2026-06-27
-  citations:
-    - "PMID:40960239"
-    - "PMID:37351564"
-    - "PMID:37344954"
-    - "PMID:39693407"
-    - "PMID:42259339"
-    - "PMID:42251769"
-    - "PMID:42338042"
-  notes: >-
-    Research Depth 85: 1A 30 (>=2 independent multinational double-blind Phase 3
-    RCTs — ATTAIN-1 40960239 N=3,127, ATTAIN-2, ACHIEVE-2 42259339, ACHIEVE-5
-    42251769); 1B 21 (multiple low-RoB placebo/active-controlled RCTs plus
-    moderate-confidence living NMAs); 1C 15 (total human N >>1,000, Phase 3
-    pooled hepatic set 42338042 N=11,220, narrow CIs); 1D 14 (direct
-    obesity/T2D population, oral route, weight/HbA1c outcomes); 1E 5 (modest
-    preclinical program — Sloop 39693407 plus a few animal/in-vitro studies).
-    Mechanism 96: 2A 40 (GLP-1R high-affinity binding Ki=1 nM, cAMP functional
-    confirmation, and CRISPR-sensitized rat GLP-1R knock-in confirming target
-    engagement — 39693407); 2B 28 (full GLP-1R->Gs->cAMP->physiology chain,
-    textbook class pathway); 2C 18 (monotonic dose-response across Phase 1/2/3
-    and in-vivo); 2D 10 (confirmed in in-vivo mammalian models). Plausibility
-    92: 3A 34 (mechanism->surrogate->clinical chain supported for weight/glycemia;
-    hard CV outcomes pending ACHIEVE-CVOT); 3B 24 (fully coherent with GLP-1
-    pathophysiology); 3C 20 (multiple same-class agents — semaglutide,
-    tirzepatide, liraglutide — reliably produce the effect); 3D 14 (tightly
-    scoped metabolic claim). Global Coverage 63: 4A 20 (single sponsor Eli Lilly
-    but multi-country/multi-site, now synthesized by independent academic NMAs);
-    4B 20 (US, Brazil, China, Japan, Romania, Canada, Spain, Saudi Arabia, and
-    more); 4C 18 (~20-plus studies, broad and rapidly growing); 4D 5 (NDA
-    submitted / FDA Priority Review — under formal regulatory investigation, not
-    yet approved anywhere). Community Experience 32: 5A 14 (broad but speculative
-    pre-launch discussion); 5B 4 (<1 year, not marketed); 5C 8 (consistent
-    anticipation themes but no actual usage experience); 5D 6 (no substantial
-    real-world exposure yet). Effectiveness basis clinical (high): ATTAIN-1
-    11.2% vs 2.1% placebo at 72 weeks (E1 26 large effect; E2 23 far exceeds
-    ~5% MCID, 36% achieved >=15% / 18% >=20%; E3 12 weight is functional/
-    near-patient-relevant, CV morbidity-mortality pending; E4 22 top-tier among
-    oral agents with ACHIEVE-2 head-to-head superiority over dapagliflozin,
-    though injectable semaglutide 7.2mg and tirzepatide remain superior).
-anecdotalReports:
-  positive:
-    - Oral GLP-1 pill format generating significant community excitement
-    - Potential to democratize access vs injectable alternatives
-    - Daily pill convenience preferred by needle-averse community members
-    - FDA Priority Review status builds confidence
-  negative:
-    - Not yet available — all discussion is speculative
-    - Daily dosing less convenient than weekly injectables
-    - Lower efficacy than leading injectable options in trials
-    - Cost and insurance coverage unknown
-  communityNotes: >-
-    High anticipation in weight management communities. Oral format could be a
-    game-changer for access.
+    FDA-approved 1 April 2026 as Foundayo (NDA 220934, Eli Lilly) for chronic
+    weight management in adults with obesity, or overweight with at least one
+    weight-related comorbid condition, alongside a reduced-calorie diet and
+    increased physical activity. First non-peptide oral GLP-1 receptor agonist
+    approved. Not approved for type 2 diabetes; the ACHIEVE type 2 diabetes
+    program remains under development. The FDA's revised July 2026 label for
+    NDA 220934 (supplement 003) was inspected on 28 September 2026. It says
+    concomitant use with another GLP-1 receptor agonist is not recommended,
+    and lists interactions involving strong CYP3A4 inhibitors/inducers and
+    simvastatin. Formal contraindications are MTC or MEN 2 personal/family
+    history and known serious hypersensitivity, not tirzepatide by name.
 mechanismPathways:
   - name: 'GLP-1 Receptor Activation'
     label: 'Biased Signaling'
@@ -322,15 +334,16 @@ mechanismPathways:
       - 'Gs protein coupling'
       - 'cAMP accumulation'
       - 'Reduced beta-arrestin'
-    outcome: 'Sustained receptor activity'
+    outcome: 'Biased signalling observed preclinically; clinical implication uncertain'
     outcomeSignal: research
   - name: 'Metabolic Effects'
     label: 'Weight & Glucose'
     steps:
       - 'GLP-1R activation'
-      - 'Hypothalamus ('
-      - 'appetite) + Pancreas (↑insulin) + Stomach ('
-    outcome: 'emptying)'
+      - 'Brain appetite pathways'
+      - 'Pancreatic glucose-dependent insulin secretion'
+      - 'Delayed gastric emptying'
+    outcome: 'Measured weight and glycaemic effects'
     outcomeSignal: research
 ---
 
@@ -347,15 +360,15 @@ Orforglipron achieves similar metabolic effects to injectable GLP-1 drugs, but i
   </div>
   <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
     <div class="font-semibold text-[color:var(--ink)] mb-2">Appetite Control</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Acts on hypothalamic GLP-1 receptors to reduce hunger signals, leading to decreased caloric intake and sustained weight loss.</p>
+    <p class="text-sm text-[color:var(--ink-muted)]">GLP-1 receptor signalling can affect appetite. Trials establish weight loss with orforglipron, but do not quantify a hypothalamic or calorie-intake mechanism.</p>
   </div>
   <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
     <div class="font-semibold text-[color:var(--ink)] mb-2">Insulin Enhancement</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Enhances glucose-dependent insulin secretion from pancreatic beta cells, improving blood sugar control without hypoglycemia risk.</p>
+    <p class="text-sm text-[color:var(--ink-muted)]">Enhances glucose-dependent insulin secretion. Hypoglycaemia remains possible, especially with insulin or an insulin secretagogue, as the FDA label warns.</p>
   </div>
   <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
     <div class="font-semibold text-[color:var(--ink)] mb-2">Oral Stability</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Unlike peptide GLP-1 drugs, this small molecule survives stomach acid and absorbs efficiently without food restrictions.</p>
+    <p class="text-sm text-[color:var(--ink-muted)]">The approved oral small-molecule formulation can be taken without regard to food according to its FDA label.</p>
   </div>
 </div>
 
@@ -367,12 +380,26 @@ Orforglipron achieves similar metabolic effects to injectable GLP-1 drugs, but i
 
 **Head-to-Head Data:** A head-to-head comparison with oral semaglutide published in The Lancet (February 2026) provided direct comparative efficacy data, positioning orforglipron competitively in the oral GLP-1 landscape.
 
-**Regulatory Status:** Eli Lilly submitted orforglipron for FDA review with Priority Review designation, with a regulatory decision expected in 2026. If approved, it would be the first non-peptide oral GLP-1 receptor agonist, potentially offering advantages in manufacturing scalability and cost.
+**ACHIEVE-2 — against an oral SGLT2 inhibitor:** ACHIEVE-2, published in The Lancet on 8 June 2026, randomised 962 adults with type 2 diabetes inadequately controlled on metformin to one of three orforglipron strengths or dapagliflozin 10 mg, across 73 sites in six countries for 40 weeks ([PMID:42259339](https://pubmed.ncbi.nlm.nih.gov/42259339/), NCT06192108). The primary analysis used the **treatment-regimen estimand**, which the paper names as primary with the efficacy estimand considered supportive. From a mean baseline HbA1c of 8.14%, HbA1c fell 1.23%, 1.50% and 1.56% across the ascending orforglipron strengths against 0.81% with dapagliflozin; every strength was non-inferior against the prespecified 0.3% margin, with estimated differences of -0.42% (95% CI -0.62 to -0.23), -0.70% (-0.90 to -0.49) and -0.75% (-0.96 to -0.55). The trade-off appears in tolerability: mild-to-moderate gastrointestinal events affected 46 to 54% of orforglipron participants against 12% of the dapagliflozin group. The trial was open-label between the two drugs, with orforglipron strength blinded.
+
+**ACHIEVE-5 — added to basal insulin:** ACHIEVE-5, published in JAMA on 4 August 2026, tested orforglipron alongside titrated insulin glargine in 546 adults at 72 sites across five countries ([PMID:42251769](https://pubmed.ncbi.nlm.nih.gov/42251769/), NCT06109311). This was a long-standing-diabetes population — median duration 14.6 years, mean baseline HbA1c 8.50%. At week 40, HbA1c fell 1.58%, 1.88% and 1.82% across the three strengths against 0.79% with placebo, and mean body weight fell 2.6%, 4.8% and 5.4% against a 0.2% gain on placebo. Clinically significant hypoglycaemia was not increased against placebo, which matters in a population already on insulin.
+
+**ACHIEVE-J — open-label Phase 3 safety, not a weight-loss headline:** ACHIEVE-J ([PMID:42607698](https://pubmed.ncbi.nlm.nih.gov/42607698/), NCT06010004) randomised 401 Japanese adults with type 2 diabetes (n=132 / 135 / 134 across three strengths) for 52 weeks. The primary endpoint was safety, not efficacy. 339 participants (85%) had at least one treatment-emergent adverse event (81%, 84% and 88% across strengths). Discontinuations due to an adverse event were 5%, 8% and 14%. Gastrointestinal symptoms were the most common events leading to discontinuation. Level 2 hypoglycaemia occurred in 2% of two of the three groups; no level 3 events. The abstract does not report a treatment-regimen HbA1c or weight-change figure, so none is stated here. This is not a weight-loss headline and does not change the Foundayo chronic-weight-management indication versus unapproved type 2 diabetes use, nor is it a head-to-head against [semaglutide](/peptides/semaglutide).
+
+**Hepatic safety across the phase 3 programme:** A pooled analysis of seven phase 3 trials covering 11,220 participants, published in June 2026, examined liver signals over up to 104 weeks ([PMID:42338042](https://pubmed.ncbi.nlm.nih.gov/42338042/)). Orforglipron was associated with mean reductions in ALT and AST. Six orforglipron participants (0.1%) and six comparator participants (0.1%) met the aminotransferase and bilirubin thresholds that trigger a Hy's Law review; alternative causes accounted for all of the orforglipron cases, and none met drug-induced liver injury criteria. Hepatic adverse events were balanced against pooled comparators. The trials excluded people whose baseline aminotransferases were already substantially elevated, so this analysis speaks to a population screened for liver health.
+
+**ATTAIN-1 registry results and the two estimands:** ClinicalTrials.gov posted the ATTAIN-1 results on 14 August 2026 (NCT05869903). The posted primary outcome — a mean body-weight change of -12.35% at the highest strength against -0.87% on placebo — is calculated on data collected only up to study-drug discontinuation, which is the efficacy estimand. The published NEJM figure of 11.2% against 2.1% is the treatment-regimen estimand, which keeps every randomised participant in the analysis. Both come from the same trial and both are correct; this page leads with the published treatment-regimen figure, and the registry number is the one that has circulated as "12.4%".
+
+**Older adults:** A post hoc subgroup analysis pooled the 616 participants aged 65 or over from ATTAIN-1 and ATTAIN-2 ([PMID:42577069](https://pubmed.ncbi.nlm.nih.gov/42577069/)). Week-72 weight change ran from -7.9% to -13.0% across strengths in ATTAIN-1 and from -7.5% to -12.2% in ATTAIN-2, against -1.6% and -2.3% on placebo. Results were comparable to participants under 65. This is a post hoc analysis, so it generates a reasonable expectation rather than a tested one.
+
+**US regulatory status:** The FDA approved orforglipron on 1 April 2026 under NDA 220934, marketed as Foundayo. The indication is chronic weight management — reducing excess body weight and maintaining weight reduction long term in adults with obesity, or in adults with overweight who have at least one weight-related comorbid condition — in combination with a reduced-calorie diet and increased physical activity. The [FDA's July 2026 revised prescribing label](https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/220934s003lbl.pdf) advises against concomitant use with another GLP-1 receptor agonist; this is a limitation of use, **not** a formal contraindication. The label's contraindications concern personal or family history of medullary thyroid carcinoma, MEN 2, and serious hypersensitivity. It also identifies interactions with strong CYP3A4 inhibitors and inducers, simvastatin, and possible absorption effects for other oral medicines. Orforglipron is **not** FDA-approved for type 2 diabetes. Approval in other jurisdictions was not established in this review.
 
 ### Important Limitations
 
 - Long-term cardiovascular outcomes data still pending (ACHIEVE-CVOT ongoing)
-- Not yet FDA-approved (NDA submitted, Priority Review granted)
-- GI side effects occur in 25-35% of patients (similar to injectable GLP-1 class)
+- Approved only for chronic weight management; type 2 diabetes remains an unapproved use, despite the ACHIEVE-2 and ACHIEVE-5 phase 3 results. ACHIEVE-J is an open-label safety trial, not an efficacy readout
+- The revised US FDA label is available, but this review did not compare every line with the original April 2026 label
+- The two weight-loss figures reported for ATTAIN-1, 11.2% and 12.35%, are the same result under two estimands and should not be quoted side by side as though they were separate findings
+- Gastrointestinal adverse-event rates vary by trial and comparator; ACHIEVE-2 reported gastrointestinal events in 46–54% of orforglipron groups versus 12% with dapagliflozin
 - Daily oral tablet (unlike weekly injectable alternatives)
-- Optimal use in combination with lifestyle modifications
+- The approved indication is adjunctive to a reduced-calorie diet and increased physical activity

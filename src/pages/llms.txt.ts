@@ -57,7 +57,7 @@ For term definitions:
 - Sulanemadlin: https://www.pepcodex.com/peptides/sulanemadlin/ — MDM2/MDMX inhibitor peptide. Phase 2.
 - BT5528: https://www.pepcodex.com/peptides/bt5528/ — Bicycle toxin conjugate for EphA2+ tumors. Phase 1/2.
 - 225Ac-DOTA-LM3: https://www.pepcodex.com/peptides/225ac-dota-lm3/ — Alpha-emitting PSMA radiopharmaceutical. Phase 1/2.
-- EVX-01: https://www.pepcodex.com/peptides/evx-01/ — AI-designed neoantigen cancer vaccine. Phase 1.
+- EVX-01: https://www.pepcodex.com/peptides/evx-01/ — Investigational personalized neoantigen peptide vaccine. Phase 1/2 and single-arm Phase 2; added clinical benefit unproven.
 - Zelenectide Pevedotin: https://www.pepcodex.com/peptides/zelenectide-pevedotin/ — Nectin-4 bicycle drug conjugate. Phase 2/3.
 - Oveporexton: https://www.pepcodex.com/peptides/oveporexton/ — Oral OX2R agonist for narcolepsy. Phase 3 (Takeda).
 - Alixorexton: https://www.pepcodex.com/peptides/alixorexton/ — Oral OX2R agonist for narcolepsy. Phase 2 (Alkermes).

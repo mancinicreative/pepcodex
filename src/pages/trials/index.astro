@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../components/SEO/BreadcrumbSchema.astro';
 import TrackerSwitcher from '../../components/TrackerSwitcher.astro';
 import TrialTable from '../../components/TrialTable.astro';
-import { trialStatusKey, isNctId } from '../../lib/trial-display.mjs';
+import { trialStatusKey, isNctId, trialPeptidePresentation } from '../../lib/trial-display.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -43,6 +43,7 @@ interface Trial {
   completionDate?: string;
   completionDateType?: string;
   peptide: string;
+  peptideHref?: string | null;
 }
 
 const sourcePacksDir = path.join(process.cwd(), 'data', 'source-packs');
@@ -59,19 +60,23 @@ try {
         const peptideName = typeof sourcePack.peptide === 'string'
           ? sourcePack.peptide
           : sourcePack.peptide.name;
-        const trialsWithPeptide = sourcePack.trials.filter(trial => isNctId(trial.nctId || trial.id)).map(trial => ({
-          nctId: trial.nctId || trial.id || 'Unknown',
-          title: trial.title,
-          status: trial.status || 'unknown',
-          phase: trial.phase || 'N/A',
-          conditions: trial.conditions || [],
-          interventions: trial.interventions || [],
-          enrollmentTarget: trial.enrollmentTarget,
-          startDate: trial.startDate,
-          completionDate: trial.completionDate,
-          completionDateType: trial.completionDateType,
-          peptide: peptideName,
-        }));
+        const trialsWithPeptide = sourcePack.trials.filter(trial => isNctId(trial.nctId || trial.id)).map(trial => {
+            const presentation = trialPeptidePresentation(file.slice(0, -'.json'.length), peptideName, trial.nctId || trial.id);
+            return {
+              nctId: trial.nctId || trial.id || 'Unknown',
+              title: trial.title,
+              status: trial.status || 'unknown',
+              phase: trial.phase || 'N/A',
+              conditions: trial.conditions || [],
+              interventions: trial.interventions || [],
+              enrollmentTarget: trial.enrollmentTarget,
+              startDate: trial.startDate,
+              completionDate: trial.completionDate,
+              completionDateType: trial.completionDateType,
+              peptide: presentation.label,
+              peptideHref: presentation.href,
+            };
+        });
         allTrials.push(...trialsWithPeptide);
       }
     }
@@ -141,7 +146,7 @@ const statusCards = [
         Clinical Trial Tracker
       </h1>
       <p class="text-lg leading-relaxed max-w-3xl" style="color: var(--ink-muted);">
-        {allTrials.length} trial entries across {uniquePeptides.length} peptides, with ClinicalTrials.gov registration links. One registration may appear under more than one peptide; counts describe entries, not independent studies.
+        {allTrials.length} trial entries across {uniquePeptides.length} compound labels, with ClinicalTrials.gov registration links. Parent thymosin beta-4 entries are labelled separately from TB-500; counts describe entries, not independent studies.
       </p>
       <div class="mt-5">
         <TrackerSwitcher active="trials" />

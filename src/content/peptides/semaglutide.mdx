@@ -7,69 +7,68 @@ aliases:
   - NN9535
 category: metabolic
 evidenceStrength: high
-lastUpdated: 2026-04-13T00:00:00.000Z
+lastUpdated: 2026-09-28T00:00:00.000Z
 comparators:
   - tirzepatide
   - liraglutide
 summary: >-
-  A GLP-1 receptor agonist FDA-approved for type 2 diabetes, obesity,
-  cardiovascular risk reduction, and MASH. Among the most extensively studied
-  peptides with robust Phase 3 data demonstrating significant metabolic,
-  cardiovascular, renal, and hepatic benefits.
+  A GLP-1 receptor agonist with US approvals that differ by product and route:
+  diabetes products for type 2 diabetes, Wegovy for weight and cardiovascular
+  risk reduction, and Wegovy injection under accelerated approval for
+  noncirrhotic MASH with F2-F3 fibrosis in adults.
 sources:
-  count: 95
-  human: 78
-  preclinical: 17
-  openAccess: 68
-metaTitle: "Semaglutide: Research and Evidence"
+  count: 80
+  human: 22
+  preclinical: 0
+  openAccess: 8
+  context: "80 visible records: 31 publications, 46 registrations and 3 regulatory, label or monitoring records. The human count is 22 direct primary publications (21 intervention and 1 observational), with 19 distinct intervention populations. Publications and registrations may describe the same trial; secondary analyses do not create new trial populations. Open-access counts are confirmed scholarly full texts."
+  verdict: "Human clinical evidence is specific to the product, population and outcome studied; it does not establish benefit for every condition listed."
+metaTitle: 'Semaglutide: STEP, SELECT and Product Labels (2026)'
 metaDescription: >-
-  Evidence-graded review of semaglutide covering 95 citations. FDA-approved
-  GLP-1 for weight loss, T2D, and cardiovascular risk reduction. Updated Feb
-  2026.
+  Evidence review of semaglutide clinical evidence and product labels. FDA-approved
+  GLP-1 for weight reduction, T2D, and selected cardiovascular and kidney
+  outcomes. Updated Sep 2026.
 interactions:
   - peptide: tirzepatide
     type: avoid
     description: >-
-      Do not combine. Both are incretin-based therapies acting on overlapping
-      pathways. Concurrent use would provide redundant GLP-1 agonism with
-      increased risk of severe GI adverse events and hypoglycemia without proven
-      additional benefit.
+      Wegovy labeling does not recommend concomitant use with another GLP-1
+      receptor agonist; tirzepatide also activates GLP-1 receptors. Added
+      efficacy or the magnitude of added harm from combining them has not been
+      established in a controlled trial.
   - peptide: liraglutide
     type: avoid
     description: >-
-      Do not combine. Both are GLP-1 receptor agonists with identical mechanism
-      of action. No clinical rationale for combination; would increase adverse
-      event risk.
+      Wegovy labeling does not recommend concomitant use with another GLP-1
+      receptor agonist. This is an unstudied combination with overlapping
+      effects; a precise incremental risk has not been established.
   - peptide: tesamorelin
     type: caution
     description: >-
       Both affect metabolic parameters. Tesamorelin increases GH which may
-      affect glucose homeostasis. Monitor blood glucose closely if considering
-      combination in diabetic patients.
+      affect glucose homeostasis, the basis of the caution in diabetes.
     source: '18057338'
   - peptide: bpc-157
     type: caution
     description: >-
       Both affect GI function. BPC-157 is gastroprotective while semaglutide
-      delays gastric emptying. Theoretical interaction unclear; monitor GI
-      symptoms.
+      delays gastric emptying. The theoretical interaction is unclear.
   - peptide: ipamorelin
     type: caution
     description: >-
       GH secretagogues may affect glucose metabolism. Semaglutide treats
-      diabetes while GH can be diabetogenic. Monitor glucose parameters if
-      combined.
+      diabetes while GH can be diabetogenic.
   - peptide: mk-677
     type: caution
     description: >-
       MK-677 increases GH and IGF-1, which can impair glucose tolerance. May
-      counteract semaglutide's glycemic benefits. Monitor blood glucose closely.
+      counteract semaglutide's glycemic benefits.
     source: '9467534'
 molecularInfo:
   weight: '4,113.58 Da'
   chainLength: 31
   type: Modified GLP-1 Analog
-  sequence: HAEGTFTSDVSSYLEGQAAKEFIAWLVKGR
+  sequence: HAEGTFTSDVSSYLEGQAAKEFIAWLVRGRG
   aminoAcids:
     - code: H
       name: Histidine
@@ -148,9 +147,9 @@ molecularInfo:
       position: 19
       property: hydrophobic
     - code: K
-      name: Lysine
+      name: Lysine (C18 diacid acylated via linker)
       position: 20
-      property: positive
+      property: modified
     - code: E
       name: Glutamic Acid
       position: 21
@@ -179,8 +178,8 @@ molecularInfo:
       name: Valine
       position: 27
       property: hydrophobic
-    - code: K
-      name: Lysine
+    - code: R
+      name: Arginine
       position: 28
       property: positive
     - code: G
@@ -191,23 +190,23 @@ molecularInfo:
       name: Arginine
       position: 30
       property: positive
-    - code: K*
-      name: Lysine-C18 diacid
+    - code: G
+      name: Glycine
       position: 31
-      property: modified
+      property: polar
 evidenceChainedBenefits:
   - mechanism:
       action: GLP-1R activation triggering glucose-dependent insulin secretion
       confidence: established
-      directStudies: 50
+      directStudies: 2
     benefit:
       claim: significantly reduce HbA1c in type 2 diabetes
       qualifier: shown to
     evidence:
       level: high
-      humanStudies: 25
-      animalStudies: 10
-      cellStudies: 5
+      humanStudies: 2
+      animalStudies: 0
+      cellStudies: 0
       keyFindings:
         - study: Sorli C et al. 2017 (SUSTAIN 1)
           type: human-rct
@@ -219,18 +218,74 @@ evidenceChainedBenefits:
           type: human-rct
           finding: 26% reduction in MACE in T2D patients at high CV risk
           pmid: '27633186'
+        - study: Wu X et al. 2026
+          type: meta-analysis
+          finding: >-
+            Bayesian network meta-analysis of 102 RCTs (98,693 patients with
+            type 2 diabetes) across 15 incretin-based therapies ranked
+            tirzepatide, orforglipron and semaglutide best for glycemic
+            control, with retatrutide best for weight loss; hypoglycemia risk
+            was low and the most common adverse events were mild, transient
+            gastrointestinal reactions
+          pmid: '42394981'
+        - study: 'Buse JB et al. 2026 (REIMAGINE 2, phase 3; NCT06065540)'
+          type: human-rct
+          finding: >-
+            Semaglutide 2.4 mg and 1.0 mg served as active comparators against
+            the cagrilintide-semaglutide combination in 2,713 adults with type 2
+            diabetes across 30 countries, 68 weeks. On the efficacy estimand,
+            HbA1c fell 1.75 percentage points with semaglutide 2.4 mg versus
+            1.91 with the combination, a difference of 0.16 points (95% CI 0.05
+            to 0.27). Adverse events were reported in 81.2% of the semaglutide
+            2.4 mg group versus 86.9% on the combination
+          pmid: '42251859'
+        - study: 'Damen JAA et al. 2026 (ACP living systematic review)'
+          type: meta-analysis
+          finding: >-
+            Living systematic review and network meta-analysis for the American
+            College of Physicians, 69 studies and 112,511 participants.
+            Semaglutide and tirzepatide produced the greatest weight loss versus
+            placebo or lifestyle intervention, and semaglutide probably reduced
+            mortality and major adverse cardiovascular events. The authors rate
+            the evidence for mortality, MACE and serious adverse events as
+            limited and note that direct head-to-head comparisons were scarce
+          pmid: '42296503'
+        - study: 'Michalak W et al. 2026 (indirect comparison vs orforglipron)'
+          type: meta-analysis
+          finding: >-
+            Population-adjusted indirect treatment comparison of oral
+            semaglutide 25 mg against orforglipron 36 mg, built from individual
+            patient data in OASIS 4 and aggregate data from ATTAIN-1. Oral
+            semaglutide showed greater weight loss by 3.2 percentage points on
+            the treatment-regimen estimand (95% CI -5.9 to -0.4) and 3.0 points
+            on the efficacy estimand (95% CI -5.8 to -0.3), with fewer
+            discontinuations. This is an indirect comparison funded and authored
+            by the manufacturer of one of the two compounds, not a head-to-head
+            trial
+          pmid: '42225305'
+        - study: Soliman AT et al. 2026
+          type: review
+          finding: >-
+            Systematic review of 7 pivotal RCTs and 6 meta-analyses (901
+            participants aged 6 to under 18 years) found semaglutide 2.4mg/week
+            produced the greatest BMI reduction of any GLP-1 receptor agonist
+            in adolescents with obesity. Gastrointestinal events, mainly nausea
+            and vomiting, were the most frequent adverse effects, and no
+            significant effects on linear growth or pubertal progression were
+            reported
+          pmid: '42365860'
   - mechanism:
-      action: Central appetite suppression via hypothalamic POMC/CART activation
+      action: GLP-1 receptor agonism with reduced appetite; specific human neural circuits are unresolved
       confidence: established
-      directStudies: 20
+      directStudies: 2
     benefit:
       claim: produce clinically meaningful weight loss
       qualifier: shown to
     evidence:
       level: high
-      humanStudies: 15
-      animalStudies: 8
-      cellStudies: 3
+      humanStudies: 2
+      animalStudies: 0
+      cellStudies: 0
       keyFindings:
         - study: Wilding JPH et al. 2021 (STEP 1)
           type: human-rct
@@ -240,18 +295,40 @@ evidenceChainedBenefits:
           type: human-rct
           finding: 20.7% weight loss with higher 7.2mg dose at 72 weeks
           pmid: '40961952'
+        - study: Nong K et al. 2026
+          type: meta-analysis
+          finding: >-
+            BMJ network meta-analysis of 262 randomised trials (99,791
+            participants, 19 drugs) estimated -10.9% weight loss with oral
+            semaglutide (95% CI -12.7% to -9.1%) and -9.8% with subcutaneous
+            semaglutide (-10.6% to -9.1%) versus lifestyle modification at one
+            year — below tirzepatide (-14.9%) and CagriSema (-14.8%). Weight
+            loss was larger in longer trials, an effect shown only for
+            subcutaneous semaglutide
+          pmid: '42419792'
+        - study: Kishi T et al. 2026
+          type: meta-analysis
+          finding: >-
+            Network meta-analysis of 9 RCTs (595 participants, 83.9%
+            schizophrenia spectrum disorders) found weekly subcutaneous
+            semaglutide gave the largest weight reduction versus control
+            (SMD -2.101, 95% CI -2.978 to -1.224), with reduced BMI, waist
+            circumference, fasting plasma glucose and HbA1c but higher nausea,
+            vomiting and constipation. Ranking is uncertain given sparse
+            networks and predominantly indirect evidence
+          pmid: '42420255'
   - mechanism:
-      action: Reduction of systemic inflammation and metabolic improvement
+      action: GLP-1 receptor agonism; the pathway to fewer cardiovascular events is unresolved
       confidence: established
-      directStudies: 15
+      directStudies: 1
     benefit:
-      claim: reduce major adverse cardiovascular events in obesity
+      claim: reduce major adverse cardiovascular events in adults with established CVD and overweight or obesity without diabetes
       qualifier: shown to
     evidence:
       level: high
-      humanStudies: 2
-      animalStudies: 5
-      cellStudies: 2
+      humanStudies: 1
+      animalStudies: 0
+      cellStudies: 0
       keyFindings:
         - study: Lincoff AM et al. 2023 (SELECT)
           type: human-rct
@@ -263,18 +340,28 @@ evidenceChainedBenefits:
           type: human-rct
           finding: '14% CV benefit with oral semaglutide in T2D (N=9,650)'
           pmid: '40162642'
+        - study: Nong K et al. 2026
+          type: meta-analysis
+          finding: >-
+            Across 262 randomised trials of 19 obesity drugs, subcutaneous
+            semaglutide was the only agent associated with reduced all-cause
+            mortality (risk ratio 0.81, 95% CI 0.72 to 0.93) and myocardial
+            infarction (0.72, 0.61 to 0.85), and reduced heart failure risk
+            (0.43, 0.21 to 0.84). The authors note these estimates are largely
+            informed by cardiovascular outcome trials in high-risk populations
+          pmid: '42419792'
   - mechanism:
-      action: Renal hemodynamic effects and natriuresis
+      action: GLP-1 receptor agonism; the pathway to kidney protection is unresolved
       confidence: supported
-      directStudies: 8
+      directStudies: 1
     benefit:
       claim: slow kidney disease progression in T2D with CKD
       qualifier: shown to
     evidence:
       level: high
       humanStudies: 1
-      animalStudies: 4
-      cellStudies: 2
+      animalStudies: 0
+      cellStudies: 0
       keyFindings:
         - study: Perkovic V et al. 2024 (FLOW)
           type: human-rct
@@ -282,18 +369,30 @@ evidenceChainedBenefits:
             24% reduction in kidney disease progression composite (N=3,533);
             trial stopped early for efficacy
           pmid: '38785209'
+        - study: Huang R et al. 2026
+          type: meta-analysis
+          finding: >-
+            Meta-analysis of 10 trials (26,088 participants) found GLP-1
+            receptor agonists lowered urinary albumin-to-creatinine ratio by
+            27.94% overall (95% CI -37.72% to -18.15%; moderate certainty)
+            alongside -5.85kg body weight (95% CI -7.78 to -3.92; high
+            certainty). The reduction was precise in type 2 diabetes (-25.70%,
+            I2=0%) and directionally similar but imprecise without diabetes
+            (-30.93%, I2=96%). Estimates are class-level, not
+            semaglutide-specific
+          pmid: '42424036'
   - mechanism:
-      action: Hepatic fat reduction and metabolic improvement
+      action: GLP-1 receptor agonism; the pathway to MASH histologic response is unresolved
       confidence: established
-      directStudies: 6
+      directStudies: 2
     benefit:
-      claim: resolve MASH and improve liver fibrosis
+      claim: improve MASH histology, including a fibrosis response in ESSENCE
       qualifier: shown to
     evidence:
       level: high
       humanStudies: 2
-      animalStudies: 3
-      cellStudies: 2
+      animalStudies: 0
+      cellStudies: 0
       keyFindings:
         - study: Sanyal AJ et al. 2025 (ESSENCE)
           type: human-rct
@@ -316,19 +415,21 @@ conditions:
 
       The mechanism involves GLP-1 receptor activation in appetite-regulating
       brain regions, reducing hunger and increasing satiety. Higher dose studies
-      (STEP UP, 7.2mg) achieved 20.7% weight loss. Approximately 50% of
-      participants achieve 15% or greater weight loss.
+      (STEP UP, 7.2mg) reported 20.7% mean weight loss under its efficacy
+      estimand in adults with obesity; that estimate should not be generalized
+      across formulations, populations, or estimands.
 
       Semaglutide represents a significant advance in pharmacological obesity
-      treatment. In the exploratory STEP 1 extension (327 participants), the
-      semaglutide group regained about two-thirds of its prior mean weight loss
-      in the year after semaglutide and lifestyle intervention were discontinued
-      (PMID:35441470).
+      treatment. In the STEP 1 extension subset, participants regained about
+      two-thirds of their prior weight loss during one year after semaglutide
+      and structured lifestyle intervention stopped. STEP 4 was a separate
+      randomized withdrawal trial.
     relevantStudies:
       - '33567185'
       - '40961952'
       - '33755728'
       - '37385278'
+      - '35441470'
     relatedPeptides:
       - tirzepatide
       - liraglutide
@@ -346,10 +447,11 @@ conditions:
       reduction. The STEP-HFpEF trial showed benefits in obese patients with
       heart failure with preserved ejection fraction.
 
-      The SELECT trial (N=17,604) proved that semaglutide reduces cardiovascular
-      events by 20% in obese individuals with established cardiovascular disease
-      but without diabetes, leading to an additional FDA approval for
-      cardiovascular risk reduction in obesity.
+      SELECT (N=17,604) found a 20% relative reduction in its major adverse
+      cardiovascular-event composite among adults with overweight or obesity,
+      established cardiovascular disease, and no diabetes. Wegovy injection
+      subsequently gained a US cardiovascular risk-reduction indication for
+      adults meeting its labeled population criteria.
     relevantStudies:
       - '33567185'
       - '37952131'
@@ -363,8 +465,9 @@ conditions:
     name: Type 2 Diabetes
     researchSummary: >-
       Semaglutide was first FDA-approved for type 2 diabetes in 2017 (as
-      Ozempic). The SUSTAIN clinical trial program demonstrated HbA1c reductions
-      of 1.0-1.8% across various comparator studies.
+      Ozempic). In placebo-controlled SUSTAIN 1, HbA1c fell by 1.45 and 1.55
+      percentage points in the two semaglutide groups at 30 weeks, versus 0.02
+      points with placebo (PMID:28110911). Those values are trial-specific.
 
       The drug improves glycemic control through multiple mechanisms:
       glucose-dependent insulin secretion, glucagon suppression, and delayed
@@ -391,13 +494,14 @@ conditions:
       inflammatory markers. Clinical trials consistently show improvements in
       these interconnected metabolic parameters.
 
-      Beyond weight loss, semaglutide reduces systolic blood pressure by 2-5
-      mmHg and improves lipid profiles. Inflammatory markers (hsCRP, IL-6)
-      decrease significantly, reflecting improved metabolic health.
+      Trial populations have shown improvements in weight, glycemia, blood
+      pressure, and some lipid measures. The size of each change depends on
+      the population, comparator, and formulation; the cited outcome trials
+      do not establish a specific IL-6 effect as a mediator.
 
-      The comprehensive benefits on metabolic syndrome components may explain
-      semaglutide's cardiovascular and renal protection, as demonstrated in
-      SELECT and FLOW trials. These effects extend beyond simple weight loss.
+      SELECT and FLOW measured cardiovascular and kidney outcomes in distinct
+      populations. Improvements in metabolic-syndrome components may
+      contribute, but those trials do not isolate the mechanism of benefit.
     relevantStudies:
       - '37952131'
       - '38785209'
@@ -407,23 +511,25 @@ conditions:
   - slug: appetite-control
     name: Appetite Control
     researchSummary: >-
-      Semaglutide's weight loss efficacy is primarily mediated through central
-      appetite suppression. The drug activates GLP-1 receptors in the
-      hypothalamus, specifically affecting POMC/CART (satiety) and NPY/AgRP
-      (hunger) neuronal pathways.
+      Reduced energy intake is one measured contributor to semaglutide-related
+      weight loss. Specific POMC/CART and NPY/AgRP circuit effects are supported
+      mainly by preclinical GLP-1 receptor research and should not be presented
+      as a demonstrated human semaglutide mechanism.
 
-      Clinical studies demonstrate 20-35% reduction in caloric intake. Patients
-      report reduced hunger, increased fullness, and decreased food cravings.
-      The drug also delays gastric emptying, prolonging post-meal satiety.
+      In one 20-week randomized mechanistic trial of 72 adults with obesity,
+      ad libitum lunch intake was 35% lower with 2.4 mg injection than placebo
+      (PMID:33269530). This meal-test result is not an estimate of daily intake
+      across all patients. Participants also reported less hunger and greater
+      fullness.
+      Gastric-emptying effects can vary by study and time on treatment, so they
+      should not be treated as the sole explanation for sustained weight loss.
 
-      These appetite effects are sustained during treatment but reverse after
-      discontinuation, which is why weight regain occurs when the drug is
-      stopped. This suggests semaglutide is managing appetite rather than
-      permanently resetting hunger signals.
+      In the STEP 1 extension, weight regained after semaglutide and structured
+      lifestyle intervention stopped. That follow-up does not isolate a single
+      appetite mechanism or prove a permanent change in hunger signaling.
     relevantStudies:
-      - '25202980'
-      - '33567185'
       - '33269530'
+      - '35441470'
     relatedPeptides:
       - tirzepatide
       - liraglutide
@@ -455,15 +561,15 @@ conditions:
   - slug: kidney-disease
     name: Kidney Disease
     researchSummary: >-
-      The FLOW trial (N=3,533) demonstrated that semaglutide reduces kidney
-      disease progression by 24% in patients with type 2 diabetes and chronic
-      kidney disease. This is the first GLP-1 receptor agonist to show
-      kidney-specific outcomes benefit.
+      In FLOW (N=3,533), semaglutide lowered the prespecified major kidney
+      disease-event composite by 24% relative to placebo in patients with
+      type 2 diabetes and chronic kidney disease (HR 0.76).
 
       The trial was stopped early for efficacy. Semaglutide reduced the
-      composite endpoint of kidney failure, sustained 50% eGFR decline, and
-      kidney-related death. Benefits were consistent across baseline kidney
-      function levels.
+      composite endpoint of kidney failure, sustained 50% eGFR decline, or
+      death from kidney-related or cardiovascular causes. Subgroup estimates
+      should not be read as proof of an identical effect at every level of
+      baseline kidney function.
 
       The mechanism of kidney protection may involve improved glycemic control,
       blood pressure reduction, weight loss, and reduced inflammation.
@@ -479,17 +585,17 @@ conditions:
     researchSummary: >-
       Semaglutide received FDA approval for metabolic dysfunction-associated
       steatohepatitis (MASH) with liver fibrosis in August 2025. The ESSENCE
-      trial showed 62.9% of patients achieved MASH resolution versus 34.3% with
-      placebo, and 36.8% showed fibrosis improvement versus 22.4%.
+      interim histology analysis found MASH resolution without fibrosis
+      worsening in 62.9% versus 34.3% with placebo and at least one stage of
+      fibrosis improvement without MASH worsening in 36.8% versus 22.4%.
 
-      The mechanism involves weight loss and metabolic improvement reducing
-      hepatic fat accumulation and inflammation. The liver, relieved of excess
-      caloric storage burden, can heal and reverse inflammatory damage.
+      The mechanism in human MASH is not fully established; weight loss and
+      other GLP-1-mediated pathways may contribute. Histologic improvements at
+      week 72 do not yet establish long-term clinical outcomes.
 
-      This represents a major advance as MASH previously had limited treatment
-      options. The approval covers patients with moderate-to-advanced fibrosis
-      (F2-F3). Long-term outcomes from the ongoing 240-week ESSENCE trial are
-      awaited.
+      The US accelerated approval is specifically for Wegovy injection in
+      adults with noncirrhotic MASH and F2-F3 fibrosis. Confirmation of clinical
+      benefit remains pending from the ongoing ESSENCE trial.
     relevantStudies:
       - '40305708'
       - '33185364'
@@ -505,14 +611,15 @@ conditions:
       demonstrated improved symptoms, physical function, and quality of life
       measures.
 
-      The SELECT trial subanalysis of 4,286 patients with prevalent heart
-      failure showed semaglutide improved cardiovascular outcomes (MACE HR
-      0.72), cardiovascular death (HR 0.76), and all-cause death (HR 0.81).
-      Benefits were consistent across both HFrEF and HFpEF subtypes.
+      In a prespecified SELECT analysis of 4,286 participants with a history
+      of investigator-defined heart failure and established cardiovascular
+      disease, the MACE hazard ratio was 0.72, cardiovascular death HR 0.76,
+      and all-cause death HR 0.81 (95% CI 0.66-1.00). The analysis found no
+      clear interaction by heart-failure phenotype; it was not a dedicated
+      trial of treatment for reduced-ejection-fraction heart failure.
 
-      For patients with obesity and heart failure, semaglutide may provide
-      cardiovascular protection through weight loss, reduced inflammation,
-      improved metabolic health, and potentially direct cardiac effects.
+      Weight loss and metabolic changes are plausible contributors, but these
+      studies do not establish which mechanism produced the observed effects.
     relevantStudies:
       - '37622681'
       - '38587233'
@@ -528,63 +635,28 @@ conditions:
       treatment recommendation for OSA.
 
       Tirzepatide, a related GLP-1/GIP dual agonist, received FDA approval for
-      moderate-to-severe OSA in obesity (December 2024), suggesting GLP-1-based
-      therapies have potential in this indication. The weight loss achieved with
-      semaglutide (15-21%) exceeds thresholds typically associated with sleep
-      apnea improvement.
+      moderate-to-severe OSA in adults with obesity (December 2024), but this
+      other drug's result and weight loss in semaglutide obesity trials cannot
+      establish semaglutide efficacy for OSA.
 
       Dedicated clinical trials of semaglutide for sleep apnea would be needed
       to establish direct efficacy in this indication.
-    relevantStudies:
-      - '33567185'
-      - '40961952'
+    relevantStudies: []
     relatedPeptides:
       - tirzepatide
-timeline:
-  - period: Week 1-4
-    effects: >-
-      Initial titration period. Studies show GI side effects (nausea 30-45%) are
-      most common during dose escalation. Early appetite reduction begins. HbA1c
-      improvements start becoming measurable. Weight loss typically 2-4% by week
-      4.
-    source: 'PMID:33567185'
-  - period: Week 4-12
-    effects: >-
-      Continued dose escalation toward maintenance dose. GI tolerability
-      typically improves as body adapts. Weight loss accelerates to 5-8%. Blood
-      glucose improvements become more pronounced.
-    source: 'PMID:33567185'
-  - period: Week 12-28
-    effects: >-
-      Approaching full therapeutic effect. STEP 1 showed approximately 10-12%
-      weight loss by week 20. HbA1c reductions of 1.0-1.5% typical in diabetes
-      trials. Blood pressure begins to improve.
-    source: 'PMID:33567185'
-  - period: Week 28-52
-    effects: >-
-      Near-maximum weight loss achieved. STEP 1 showed 14.9% mean weight loss at
-      68 weeks. Cardiovascular markers improve. MASH patients show liver enzyme
-      improvements.
-    source: 'PMID:33567185'
-  - period: Week 52+
-    effects: >-
-      Weight loss typically plateaus and is maintained with continued use. STEP
-      5 showed maintenance at 2 years. In the exploratory STEP 1 extension
-      (327 participants), the semaglutide group regained about two-thirds of its
-      prior mean weight loss in the year after semaglutide and lifestyle
-      intervention were discontinued.
-    source: 'PMID:35441470'
 faqs:
   - question: What is semaglutide?
     answer: >-
-      Semaglutide is a GLP-1 receptor agonist FDA-approved for type 2 diabetes
-      (Ozempic, Rybelsus), chronic weight management (Wegovy), cardiovascular
-      risk reduction in obesity, and MASH with liver fibrosis.
+      Semaglutide is a GLP-1 receptor agonist in several FDA-approved products.
+      Indications differ: Ozempic injection and Rybelsus/Ozempic tablets address
+      type 2 diabetes; Wegovy injection and tablets have weight and selected CV
+      risk indications, while only Wegovy injection has a MASH indication.
   - question: Is semaglutide FDA approved?
     answer: >-
-      Yes. Semaglutide is FDA-approved under multiple brand names: Ozempic
-      (diabetes), Wegovy (weight management), and Rybelsus (oral diabetes
-      formulation).
+      Yes. Ozempic and Rybelsus are diabetes products; Wegovy injection and
+      tablets have adult weight and CV risk indications. Wegovy injection also
+      has pediatric obesity and accelerated adult MASH indications. Approval
+      does not extend to compounded versions.
   - question: How effective is semaglutide for weight loss?
     answer: >-
       In the STEP 1 trial, semaglutide achieved 14.9% mean weight loss versus
@@ -597,107 +669,45 @@ faqs:
       with continued use.
   - question: Does weight return after stopping semaglutide?
     answer: >-
-      In the exploratory STEP 1 extension (327 participants), the semaglutide
-      group regained about two-thirds of its prior mean weight loss in the year
-      after semaglutide and lifestyle intervention were discontinued
-      (PMID:35441470). This describes the extension group, not a prediction for
-      every individual.
-qualityChecklist:
-  goodSigns:
-    - Obtained through licensed pharmacy or authorized healthcare provider
-    - 'Brand name product (Ozempic, Wegovy, Rybelsus) with intact packaging'
-    - 'Clear, colorless solution in pre-filled pen (injectable forms)'
-    - Proper refrigeration before first use (36-46F / 2-8C)
-    - Expiration date clearly visible and not passed
-    - Manufacturer lot number traceable
-  warningSigns:
-    - Compounded product (quality may vary by pharmacy)
-    - Product requires reconstitution (legitimate products are pre-filled)
-    - Significantly lower cost than market rate
-    - Shipped without cold pack or temperature indicator
-    - Unclear source or chain of custody
-  badSigns:
-    - 'Visible particles, cloudiness, or discoloration in solution'
-    - Packaging appears tampered with or resealed
-    - No prescription required for purchase
-    - Product labeled from country not authorized for distribution
-    - Missing or illegible lot numbers/expiration dates
-    - Pen mechanism damaged or non-functional
-    - Unusual smell or appearance
+      In the STEP 1 extension subset, participants regained about two-thirds
+      of their prior weight loss one year after both treatment and structured
+      lifestyle intervention stopped. STEP 4 was a separate randomized
+      withdrawal trial.
 regulatoryStatus:
   status: approved
-  lastUpdated: '2026-02-18'
+  lastUpdated: '2026-09-28'
   notes: >-
-    FDA-approved as Ozempic (T2D), Wegovy (weight management), and Rybelsus
-    (oral T2D). Compounded versions restricted since 2024.
-ratings:
-  researchDepth: 5
-  globalCoverage: 5
-  mechanismPlausibility: 5
-  overall: 5
-  lastReviewed: 2026-04-13T00:00:00.000Z
-  reviewNotes: >-
-    Anchor peptide: top-tier evidence. Multiple global Phase 3 RCT programs
-    (SUSTAIN, STEP, SELECT, FLOW, ESSENCE) with tens of thousands of
-    participants across 40+ countries. GLP-1 receptor agonism is a
-    textbook-level established mechanism. FDA-approved for T2D, obesity, CV risk
-    reduction, and kidney disease.
-  anecdotalEvidence: 5
-scoring:
-  rubricVersion: "2.4"
-  evidence:
-    researchDepth: 100
-    mechanism: 100
-    plausibility: 98
-    globalCoverage: 100
-    communityExperience: 92
-    overall: 98
-    label: "well-evidenced"
-  effectiveness:
-    basis: "clinical"
-    score: 91
-    confidence: "high"
-    primaryIndication: "Obesity / chronic weight management"
-  lastScored: 2026-05-29
-  citations:
-    - "PMID:33567185"
-    - "PMID:40961952"
-    - "PMID:27633186"
-    - "PMID:37952131"
-    - "PMID:40162642"
-    - "PMID:38785209"
-    - "PMID:40305708"
-    - "PMID:33755728"
-  notes: >-
-    Research Depth 100: meta-analyses of multiple large low-RoB Phase 3 RCTs
-    (SUSTAIN 27633186, STEP 33567185, SELECT 37952131 N=17,604) with total
-    human N far exceeding 1,000 and direct population/route/outcome match.
-    Mechanism 100: GLP-1R binding plus functional and knockout/antagonist
-    confirmation, full target-to-effect pathway, in-vivo dose-response
-    (STEP UP 40961952). Plausibility 98: full mechanism->surrogate->clinical
-    chain proven across metabolic, CV (37952131/40162642), renal (38785209)
-    and hepatic (40305708) outcomes, with class analogues; minor deduction for
-    multi-system breadth. Global Coverage 100: reproduced across many
-    independent groups/40+ countries, >100 studies, multi-regulator approval.
-    Community Experience 92: large multi-year population-level use, highly
-    consistent reports, but recurring GI and a documented AKI signal cap 5D.
-    Effectiveness basis clinical (high): STEP 1 14.9% vs 2.4% placebo, far
-    exceeds the ~5% MCID, hard patient-relevant outcomes, top-tier vs active
-    comparators though edged head-to-head by tirzepatide.
+    FDA-approved products have distinct indications (current Wegovy FDA label
+    checked 2026-09-28).
+    Ozempic injection (NDA 209637, approved 5 Dec 2017): type 2 diabetes,
+    major adverse cardiovascular event reduction in T2D with established
+    cardiovascular disease, and reduction of sustained eGFR decline, end-stage
+    kidney disease and CV death in T2D with chronic kidney disease. Rybelsus
+    and Ozempic tablets (NDA 213051): type 2 diabetes and MACE reduction in
+    adults with T2D at high risk. Wegovy injection (NDA 215256) is labeled for
+    weight reduction in adults and adolescents aged 12+, MACE reduction in
+    adults with established cardiovascular disease and overweight or obesity,
+    and accelerated approval for adults with noncirrhotic MASH and F2-F3
+    fibrosis. Wegovy tablets (NDA 218316) are labeled for adult weight
+    reduction and CV risk reduction in adults with established CV disease and
+    overweight or obesity; they are not labeled for pediatric use or MASH.
+    Wegovy HD 7.2 mg injection is a labeled option for additional adult weight
+    reduction, not for pediatric use, CV risk reduction, or MASH. Compounded
+    semaglutide is not an FDA-approved product.
 anecdotalReports:
   positive:
     - Significant appetite suppression reported within first week
     - Reduced food noise and cravings consistently cited
     - Improved relationship with food and reduced binge eating
-    - Cardiovascular improvements noted by users with comorbidities
+    - Some users report improved metabolic measurements; self-reports do not establish cardiovascular event benefit
   negative:
     - Nausea and GI distress common during dose escalation
-    - Muscle loss reported without resistance training
+    - Some users express concern about lean-mass loss during weight reduction; anecdotes cannot quantify muscle loss
     - Fatigue and low energy during initial weeks
     - Hair thinning reported by some users during rapid weight loss
   communityNotes: >-
-    Most discussed peptide online. r/semaglutide has 200K+ members. Extensive
-    patient community feedback.
+    Community reports describe treatment experiences but are unverified and
+    cannot establish adverse-event rates or clinical outcomes.
 mechanismPathways:
   - name: GLP-1R Signaling Cascade
     label: Primary Mechanism
@@ -721,6 +731,8 @@ mechanismPathways:
 
 Semaglutide is a selective GLP-1 receptor agonist with extensive Phase 3 clinical trial data supporting its mechanisms in humans.
 
+The displayed 31-residue backbone is a sequence shorthand, not the complete chemical structure: residue 2 is aminoisobutyric acid (Aib), residue 20 is the lysine acylated through a linker with a C18 fatty diacid, and residue 28 is arginine. NIH's [substance record](https://gsrs.ncats.nih.gov/ginas/app/beta/substances/53AXN4NNHX) and the [FDA Wegovy label](https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/215256s031,218316s00lbl.pdf) identify these structural features.
+
 ### How It Works (Simplified)
 
 Semaglutide mimics GLP-1, a natural hormone released after eating, producing multiple therapeutic effects:
@@ -728,11 +740,11 @@ Semaglutide mimics GLP-1, a natural hormone released after eating, producing mul
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-8">
   <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
     <div class="font-semibold text-[color:var(--ink)] mb-2">GLP-1 Receptor Activation</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Binds to GLP-1 receptors on pancreatic beta cells, triggering glucose-dependent insulin release. Only works when blood sugar is elevated, minimizing hypoglycemia risk.</p>
+    <p class="text-sm text-[color:var(--ink-muted)]">Activates GLP-1 receptors and increases insulin secretion in a glucose-dependent manner. Hypoglycemia remains a labeled risk, especially with insulin or an insulin secretagogue.</p>
   </div>
   <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
     <div class="font-semibold text-[color:var(--ink)] mb-2">Appetite Suppression</div>
-    <p class="text-sm text-[color:var(--ink-muted)]">Acts on hypothalamic hunger centers, activating satiety pathways (POMC/CART) while suppressing hunger signals (NPY/AgRP). Reduces caloric intake by 20-35%.</p>
+    <p class="text-sm text-[color:var(--ink-muted)]">A 20-week randomized meal-test study in 72 adults with obesity found 35% lower ad libitum lunch intake with 2.4 mg injection than placebo; the result is specific to that test and population.</p>
   </div>
   <div class="bg-[color:var(--primary-soft)] rounded-lg p-5 border border-[color:var(--primary-border)]">
     <div class="font-semibold text-[color:var(--ink)] mb-2">Glucose Regulation</div>
@@ -744,24 +756,35 @@ Semaglutide mimics GLP-1, a natural hormone released after eating, producing mul
   </div>
 </div>
 
-**Key Research:** SUSTAIN and STEP Phase 3 programs demonstrated these mechanisms translate to clinically meaningful outcomes in over 20,000 patients. [PMID:33567185](https://pubmed.ncbi.nlm.nih.gov/33567185/)
+**Key Research:** STEP 1 randomized 1,961 adults with overweight or obesity to injectable semaglutide 2.4 mg or placebo and reported 14.9% versus 2.4% mean weight reduction at 68 weeks ([PMID:33567185](https://pubmed.ncbi.nlm.nih.gov/33567185/)). A separate 72-person mechanistic study measured lower ad libitum lunch intake ([PMID:33269530](https://pubmed.ncbi.nlm.nih.gov/33269530/)); it was not an outcomes trial.
 
 ### 2025-2026 Developments
 
-**Oral Wegovy Approval:** The FDA approved oral semaglutide 25mg (Wegovy) in December 2025, marking the first oral GLP-1 formulation approved for chronic weight management at a launch price of approximately $149/month.
+**Oral Wegovy and Wegovy HD:** The current [FDA Wegovy label](https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/215256s031,218316s00lbl.pdf) distinguishes 25 mg oral tablets, labeled for adult weight reduction and for major cardiovascular event reduction in adults with established cardiovascular disease and overweight or obesity, from the injection. Wegovy HD 7.2 mg injection is labeled for additional weight reduction in selected adults. The tablet and 7.2 mg injection have not established safety and effectiveness for pediatric use or MASH; 7.2 mg is not the labeled cardiovascular or MASH maintenance dose. In STEP UP, 7.2 mg produced 20.7% mean weight loss under the efficacy estimand; the [FDA label](https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/215256s031,218316s00lbl.pdf) also reports dysesthesia in 22% at 7.2 mg, 6% at 2.4 mg, and 0.3% with placebo across its higher-dose trials. These are indication- and dose-specific results.
 
-**MASH Indication:** Semaglutide received FDA approval for metabolic dysfunction-associated steatohepatitis (MASH), expanding its therapeutic indications beyond diabetes and obesity.
+**MASH Indication:** Wegovy **injection** received US accelerated approval for adults with noncirrhotic MASH and F2-F3 fibrosis on the basis of histologic MASH and fibrosis endpoints. The [FDA label](https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/215256s031,218316s00lbl.pdf) says continued approval may depend on confirmatory clinical benefit; oral Wegovy has no MASH indication.
 
-**Safety Signal — Acute Kidney Injury:** A 2025 disproportionality analysis of the FDA Adverse Event Reporting System (FAERS) found that semaglutide carried a reporting signal for acute kidney injury, typically attributed to dehydration from GI adverse events; the authors recommend ensuring hydration and renal monitoring when initiating therapy (PMID: 41227073).
+**Acute kidney injury:** The [FDA label](https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/215256s031,218316s00lbl.pdf) warns of acute kidney injury due to volume depletion, including with persistent GI adverse reactions. A FAERS disproportionality signal ([PMID:41227073](https://pubmed.ncbi.nlm.nih.gov/41227073/)) cannot estimate incidence or establish causation.
 
-**Patent Landscape:** The core semaglutide compound patent expired in March 2026 across several major markets including India, Canada, China, Brazil, and Turkey, with 40+ biosimilar applications filed in India alone.
+**Anti-doping status:** WADA's [2026 Monitoring Program](https://www.wada-ama.org/sites/default/files/2025-09/2026_list_monitoring_program_en_final_clean_september_2025.pdf) lists markers of semaglutide and tirzepatide in and out of competition. Monitoring is expressly for substances outside the Prohibited List and is not a prohibition.
+
+**Head-to-head against a combination product (REIMAGINE 2).** REIMAGINE 2, published on 7 June 2026, put semaglutide 2.4 mg and 1.0 mg directly against cagrilintide-semaglutide and against cagrilintide alone in 2,713 adults with type 2 diabetes across 30 countries over 68 weeks ([PMID:42251859](https://pubmed.ncbi.nlm.nih.gov/42251859/), NCT06065540). On the efficacy estimand, which the paper names as primary, HbA1c fell 1.91 percentage points on the combination against 1.75 on semaglutide 2.4 mg. The difference of 0.16 percentage points (95% CI 0.05 to 0.27) reached statistical significance. Read from semaglutide's side, that is the size of the gap a second mechanism opened over semaglutide alone in this population, and it came with more adverse events: 86.9% versus 81.2%.
+
+**Indirect comparison with orforglipron.** A population-adjusted indirect treatment comparison built oral semaglutide 25 mg against orforglipron 36 mg using individual patient data from OASIS 4 and aggregate data from ATTAIN-1 ([PMID:42225305](https://pubmed.ncbi.nlm.nih.gov/42225305/)). It reported greater weight loss with oral semaglutide by 3.2 percentage points on the treatment-regimen estimand (95% CI -5.9 to -0.4) and 3.0 points on the efficacy estimand (95% CI -5.8 to -0.3), and higher discontinuation with orforglipron. Two caveats belong beside that result: the analysis is indirect, comparing arms from separate trials rather than randomised head-to-head, and it was funded and authored by the manufacturer of the winning compound.
+
+**STEP 12 — semaglutide 2.4 mg in Chinese adults.** STEP 12 was a phase 3b trial at 19 sites across mainland China and Taiwan, published in Lancet Diabetes & Endocrinology on 10 August 2026 ([PMID:42575111](https://pubmed.ncbi.nlm.nih.gov/42575111/), NCT06041217). It enrolled 242 adults at locally defined BMI thresholds — 24 to under 28 with a weight-related comorbidity, or 28 to under 30 — randomised 2:1 to semaglutide 2.4 mg or placebo for 44 weeks. Body weight fell 12.1% versus 2.2%, an estimated treatment difference of 9.9 percentage points (95% CI -11.8 to -8.0), and 80.5% versus 24.4% reached at least 5% reduction. The BMI entry thresholds are lower than in the Western STEP trials, which is the point of the trial and also the limit on transferring its numbers.
+
+**OASIS 2 — oral semaglutide 50 mg in an East Asian population.** OASIS 2 was a 68-week phase 3a trial in Japan and South Korea, published in JAMA Internal Medicine in October 2025 ([PMID:40758358](https://pubmed.ncbi.nlm.nih.gov/40758358/), NCT05132088). Of 201 participants, about a quarter had type 2 diabetes. Body weight fell 14.3% versus 1.3% on placebo, an estimated treatment difference of 13.07 percentage points (95% CI -15.61 to -10.52), and 84.3% versus 17.2% reached at least 5% reduction. Gastrointestinal adverse events were reported by 63.4% of the semaglutide group.
+
+**REALYSE — registry results only.** REALYSE (NCT05035082, phase 4, n=1,018) posted results to ClinicalTrials.gov on 10 August 2026. A dateless PubMed search on 17 August 2026 for both the registration number and the trial name returned no indexed publication, so no figures are quoted from it here.
 
 ### Important Limitations
 
+- The favourable indirect comparison against orforglipron was authored and funded by semaglutide's manufacturer, and indirect comparisons cannot substitute for a head-to-head trial
 - **Common GI side effects:** Nausea (30-45%), vomiting, diarrhea, and constipation, especially during dose titration
 - **Boxed warning:** Thyroid C-cell tumors observed in rodents; contraindicated in personal/family history of medullary thyroid carcinoma (MTC) or MEN2
-- **Gallbladder disease:** Increased risk (~2.5%) associated with rapid weight loss
-- **Pancreatitis:** Rare (~0.3%) but requires discontinuation if suspected
-- **Pregnancy:** Contraindicated; discontinue at least 2 months before planned conception
-- **Weight regain:** In the exploratory STEP 1 extension (327 participants), the semaglutide group regained about two-thirds of its prior mean weight loss in the year after semaglutide and lifestyle intervention were discontinued. [STEP 1 extension](https://pubmed.ncbi.nlm.nih.gov/35441470/).
-- **Muscle mass:** ~30% of weight lost is lean mass; resistance training recommended
+- **Gallbladder disease:** A labeled warning; trial incidence varies by product, dose, population, and event definition.
+- **Pancreatitis:** A labeled warning; the FDA label directs discontinuation if suspected. Trial rates vary by product and population.
+- **Pregnancy:** Wegovy is not contraindicated under label section 4 for pregnancy, but the label's instructions differ by indication: discontinue when pregnancy is recognized for weight or CV indications; for MASH, use only if the potential benefit justifies fetal risk. Its preconception language also depends on indication.
+- **Weight regain:** About two-thirds of prior loss returned within one year in the STEP 1 extension subset after drug and structured lifestyle intervention stopped ([PMID:35441470](https://pubmed.ncbi.nlm.nih.gov/35441470/)); this estimate is not from STEP 4.
+- **Body composition:** Trial lean-mass changes depend on the measurement and population; a universal percentage of weight lost as muscle is not established here.

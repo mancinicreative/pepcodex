@@ -612,9 +612,8 @@
   },
   "trials": [
     {
-      "id": "NCT03856047",
       "nctId": "NCT03856047",
-      "title": "Phase 2 Cagrilintide Monotherapy for Weight Management",
+      "title": "Research Study Investigating How Well NNC0174-0833 Works in People Suffering From Overweight or Obesity.",
       "phase": "2",
       "status": "completed",
       "endpoints": [
@@ -622,47 +621,89 @@
         "safety"
       ],
       "enrollment": 706,
-      "completionDate": "2020"
+      "completionDate": "2021-03-25",
+      "enrollmentTarget": 706,
+      "conditions": [
+        "Overweight",
+        "Obesity"
+      ],
+      "interventions": [
+        "NNC0174-0833",
+        "Placebo (NNC0174-0833)",
+        "Liraglutide 3.0 mg",
+        "Placebo (Liraglutide 3.0 mg)"
+      ],
+      "startDate": "2019-03-01",
+      "verifiedAt": "2026-07-24",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2",
+      "completionDateType": "ACTUAL"
     },
     {
-      "id": "NCT04163354",
-      "nctId": "NCT04163354",
-      "title": "Phase 1b Cagrilintide + Semaglutide Combination PK/PD",
-      "phase": "1",
+      "nctId": "NCT06409130",
+      "title": "Effects of NNC0194-0499, Cagrilintide, and Semaglutide Alone or in Combinations on Liver Damage and Alcohol Use in People With Alcohol-related Liver Disease",
+      "phase": "2",
       "status": "completed",
       "endpoints": [
         "PK parameters",
         "safety",
         "weight change"
       ],
-      "enrollment": 96,
-      "completionDate": "2020"
+      "completionDate": "2026-01-12",
+      "enrollmentTarget": 270,
+      "conditions": [
+        "Alcohol-related Liver Disease"
+      ],
+      "interventions": [
+        "NNC0194-0499",
+        "Semaglutide",
+        "NNC0194-0499 placebo",
+        "Semaglutide placebo (Group A)",
+        "Cagrilintide + semaglutide",
+        "Cagrilintide",
+        "Cagrilintide placebo",
+        "Semaglutide placebo (Group B)"
+      ],
+      "startDate": "2024-05-20",
+      "verifiedAt": "2026-09-01",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2",
+      "enrollment": 270,
+      "completionDateType": "ACTUAL"
     },
     {
-      "id": "NCT04940078",
       "nctId": "NCT04940078",
-      "title": "Phase 2 CagriSema in Type 2 Diabetes",
-      "phase": "2",
+      "title": "A Research Study to Compare Blood Levels of Cagrilintide and Semaglutide After Combined Versus Separate Injections in People With Overweight or Obesity",
+      "phase": "1",
       "status": "completed",
       "endpoints": [
         "HbA1c change",
         "weight change"
       ],
-      "enrollment": 92,
-      "completionDate": "2022"
+      "completionDate": "2022-02-16",
+      "enrollmentTarget": 40,
+      "conditions": [
+        "Obesity & Overweight"
+      ],
+      "interventions": [
+        "Cagrilintide",
+        "semaglutide",
+        "Cagrilintide and semaglutide"
+      ],
+      "startDate": "2021-07-07",
+      "verifiedAt": "2026-09-01",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2",
+      "enrollment": 40,
+      "completionDateType": "ACTUAL"
     },
     {
-      "id": "NCT05567796",
       "nctId": "NCT05567796",
-      "title": "REDEFINE 1: CagriSema vs Semaglutide in Obesity",
+      "title": "A Research Study to See How Well CagriSema Helps People With Excess Body Weight Lose Weight",
       "phase": "3",
-      "status": "active",
+      "status": "active not recruiting",
       "endpoints": [
         "percent weight change",
         "weight loss responders"
       ],
       "enrollment": 3400,
-      "expectedCompletion": "2025",
       "conditions": [
         "Obesity"
       ],
@@ -673,12 +714,15 @@
         "Placebo semaglutide"
       ],
       "startDate": "2022-11-01",
-      "completionDate": "2024-10-30"
+      "completionDate": "2026-10-19",
+      "verifiedAt": "2026-09-01",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2",
+      "enrollmentTarget": 3400,
+      "completionDateType": "ESTIMATED"
     },
     {
-      "id": "NCT05394519",
       "nctId": "NCT05394519",
-      "title": "REDEFINE 2: CagriSema in Obesity with T2D",
+      "title": "A Research Study to See How Well CagriSema Helps People With Type 2 Diabetes and Excess Body Weight Lose Weight",
       "phase": "3",
       "status": "completed",
       "endpoints": [
@@ -686,7 +730,6 @@
         "HbA1c change"
       ],
       "enrollment": 1200,
-      "expectedCompletion": "2025",
       "conditions": [
         "Overweight",
         "Obesity",
@@ -699,39 +742,14 @@
         "Placebo semaglutide"
       ],
       "startDate": "2023-02-01",
-      "completionDate": "2025-01-28"
+      "completionDate": "2025-02-03",
+      "completionDateType": "ACTUAL"
     },
     {
-      "id": "NCT06024720",
-      "nctId": "NCT06024720",
-      "title": "REDEFINE 3: CagriSema vs Tirzepatide",
-      "phase": "3",
-      "status": "active",
-      "endpoints": [
-        "percent weight change"
-      ],
-      "enrollment": 2000,
-      "expectedCompletion": "2025-2026"
-    },
-    {
-      "id": "NCT05803421",
-      "nctId": "NCT05803421",
-      "title": "REDEFINE CVOT: CagriSema Cardiovascular Outcomes",
-      "phase": "3",
-      "status": "recruiting",
-      "endpoints": [
-        "MACE",
-        "CV death"
-      ],
-      "enrollment": 10000,
-      "expectedCompletion": "2029"
-    },
-    {
-      "id": "NCT07357740",
       "title": "A Research Study to Compare Two Different Versions of Injectable CagriSema in People With Type 2 Diabetes",
       "phase": "2",
-      "status": "not yet recruiting",
-      "enrollment": 400,
+      "status": "withdrawn",
+      "enrollment": 0,
       "conditions": [
         "Diabetes Mellitus, Type 2"
       ],
@@ -740,13 +758,16 @@
         "Placebo CagriSema"
       ],
       "startDate": "2026-08-27",
-      "completionDate": "2027-08-25"
+      "completionDate": "2027-10-13",
+      "nctId": "NCT07357740",
+      "verifiedAt": "2026-07-25",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2",
+      "completionDateType": "ESTIMATED"
     },
     {
-      "id": "NCT07282613",
       "title": "A Research Study to See How Much CagriSema Lowers Blood Sugar and Body Weight Compared to Placebo in Children and Adolescents With Type 2 Diabetes",
       "phase": "3",
-      "status": "not yet recruiting",
+      "status": "recruiting",
       "enrollment": 80,
       "conditions": [
         "Diabetes Mellitus, Type 2"
@@ -756,32 +777,15 @@
         "Placebo matched to CagriSema (Cagrilintide B and Semaglutide I)"
       ],
       "startDate": "2026-08-04",
-      "completionDate": "2029-09-07"
+      "completionDate": "2030-03-30",
+      "nctId": "NCT07282613",
+      "completionDateType": "ESTIMATED"
     },
     {
-      "id": "NCT07589686",
-      "title": "A Dose-Finding Study of Petrelintide With Enicepatide (RO7795068) in Adults With Obesity or Overweight",
-      "phase": "2",
-      "status": "not yet recruiting",
-      "enrollment": 486,
-      "conditions": [
-        "Obesity or Overweight"
-      ],
-      "interventions": [
-        "Petrelintide",
-        "Enicepatide",
-        "Petrelintide-matching Placebo",
-        "Enicepatide-matching Placebo"
-      ],
-      "startDate": "2026-06-30",
-      "completionDate": "2027-11-12"
-    },
-    {
-      "id": "NCT07357766",
       "title": "A Research Study to Compare Different Versions of Injectable CagriSema and Placebo in People With Excess Body Weight",
       "phase": "3",
-      "status": "not yet recruiting",
-      "enrollment": 1400,
+      "status": "withdrawn",
+      "enrollment": 0,
       "conditions": [
         "Overweight",
         "Obesity"
@@ -791,10 +795,13 @@
         "Placebo CagriSema"
       ],
       "startDate": "2026-06-22",
-      "completionDate": "2027-11-29"
+      "completionDate": "2028-01-17",
+      "nctId": "NCT07357766",
+      "verifiedAt": "2026-07-25",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2",
+      "completionDateType": "ESTIMATED"
     },
     {
-      "id": "NCT07564414",
       "title": "A Research Study to Look at How Two Different Doses of CagriSema and One Dose of Semaglutide Help People Living With Obesity With or Without Type 2 Diabetes Lose Weight",
       "phase": "3",
       "status": "recruiting",
@@ -808,10 +815,14 @@
         "Semaglutide"
       ],
       "startDate": "2026-05-21",
-      "completionDate": "2028-02-23"
+      "completionDate": "2028-04-19",
+      "nctId": "NCT07564414",
+      "verifiedAt": "2026-09-01",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2",
+      "enrollmentTarget": 2500,
+      "completionDateType": "ESTIMATED"
     },
     {
-      "id": "NCT07253285",
       "title": "A Research Study on How Well Cagrilintide and CagriSema Work in Children and Adolescents With Excess Body Weight",
       "phase": "3",
       "status": "recruiting",
@@ -827,13 +838,17 @@
         "Placebo semaglutide"
       ],
       "startDate": "2026-01-08",
-      "completionDate": "2030-03-20"
+      "completionDate": "2033-09-20",
+      "nctId": "NCT07253285",
+      "verifiedAt": "2026-09-01",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2",
+      "enrollmentTarget": 460,
+      "completionDateType": "ESTIMATED"
     },
     {
-      "id": "NCT07220642",
       "title": "Weight Loss in People Living With Overweight or Obesity Following Treatment With Cagrilintide",
       "phase": "3",
-      "status": "active",
+      "status": "active not recruiting",
       "enrollment": 300,
       "conditions": [
         "Obesity",
@@ -844,13 +859,16 @@
         "Placebo"
       ],
       "startDate": "2025-11-05",
-      "completionDate": "2027-05-11"
+      "completionDate": "2027-06-29",
+      "nctId": "NCT07220642",
+      "verifiedAt": "2026-07-25",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2",
+      "completionDateType": "ESTIMATED"
     },
     {
-      "id": "NCT07220759",
       "title": "Weight Loss in People Living With Overweight or Obesity and Type 2 Diabetes Following Treatment With Cagrilintide",
       "phase": "3",
-      "status": "active",
+      "status": "active not recruiting",
       "enrollment": 330,
       "conditions": [
         "Overweight",
@@ -862,13 +880,14 @@
         "Placebo (matched to Cagrilintide)"
       ],
       "startDate": "2025-11-05",
-      "completionDate": "2027-05-12"
+      "completionDate": "2027-06-30",
+      "nctId": "NCT07220759",
+      "completionDateType": "ESTIMATED"
     },
     {
-      "id": "NCT07011667",
       "title": "A Research Study to Look at How Well CagriSema Helps People Living With Obesity Lose Weight and Maintain Weight Loss in the Long-term",
       "phase": "3",
-      "status": "active",
+      "status": "active not recruiting",
       "enrollment": 609,
       "conditions": [
         "Obesity"
@@ -878,47 +897,16 @@
         "Placebo matched to CagriSema (Cagrilintide B and Semaglutide I)"
       ],
       "startDate": "2025-06-03",
-      "completionDate": "2027-03-01"
+      "completionDate": "2028-10-17",
+      "nctId": "NCT07011667",
+      "verifiedAt": "2026-07-25",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2",
+      "completionDateType": "ESTIMATED"
     },
     {
-      "id": "NCT06926842",
-      "title": "Efficacy and Safety of Petrelintide in Participants With Overweight or Obesity and Type 2 Diabetes (ZUPREME 2)",
-      "phase": "2",
-      "status": "active",
-      "enrollment": 221,
-      "conditions": [
-        "Overweight",
-        "Type 2 Diabetes",
-        "Obesity"
-      ],
-      "interventions": [
-        "Petrelintide",
-        "Placebo"
-      ],
-      "startDate": "2025-04-22",
-      "completionDate": "2026-08-13"
-    },
-    {
-      "id": "NCT06951854",
-      "title": "Phase II Clinical Trial to Evaluate the Efficacy and Safety of NV01-A02 in Children With Autism Spectrum Disorder",
-      "phase": "2",
-      "status": "recruiting",
-      "enrollment": 105,
-      "conditions": [
-        "Autism Spectrum Disorder (ASD"
-      ],
-      "interventions": [
-        "Drug: NV01-A02",
-        "Drug: Placebo (ZP8396)"
-      ],
-      "startDate": "2025-04-01",
-      "completionDate": "2025-09-01"
-    },
-    {
-      "id": "NCT06780449",
       "title": "A Research Study to Look Into the Long-term Effect on Weight Loss of CagriSema in People With Obesity",
       "phase": "3",
-      "status": "active",
+      "status": "active not recruiting",
       "enrollment": 400,
       "conditions": [
         "Obesity"
@@ -930,13 +918,14 @@
         "Placebo semaglutide"
       ],
       "startDate": "2025-02-10",
-      "completionDate": "2028-08-28"
+      "completionDate": "2028-10-31",
+      "nctId": "NCT06780449",
+      "completionDateType": "ESTIMATED"
     },
     {
-      "id": "NCT06797869",
       "title": "A Research Study to Investigate the Effects of CagriSema Compared to Placebo in People With Type 2 Diabetes and Painful Diabetic Peripheral Neuropathy",
       "phase": "2",
-      "status": "active",
+      "status": "completed",
       "enrollment": 142,
       "conditions": [
         "Diabetes Mellitus, Type 2",
@@ -947,13 +936,14 @@
         "Placebo matched to CagriSema (Cagrilintide B and Semaglutide I)"
       ],
       "startDate": "2025-01-29",
-      "completionDate": "2026-08-21"
+      "completionDate": "2026-08-05",
+      "nctId": "NCT06797869",
+      "completionDateType": "ACTUAL"
     },
     {
-      "id": "NCT06534411",
       "title": "A Research Study to See How Much CagriSema Lowers Blood Sugar and Body Weight Compared to Tirzepatide in People With Type 2 Diabetes Treated With Metformin, SGLT2 Inhibitor or Both",
       "phase": "3",
-      "status": "active",
+      "status": "completed",
       "enrollment": 1023,
       "conditions": [
         "Diabetes Mellitus, Type 2"
@@ -964,7 +954,181 @@
         "Tirzepatide"
       ],
       "startDate": "2024-11-05",
-      "completionDate": "2026-06-02"
+      "completionDate": "2026-07-09",
+      "nctId": "NCT06534411",
+      "verifiedAt": "2026-07-25",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2",
+      "completionDateType": "ACTUAL"
+    },
+    {
+      "nctId": "NCT07607587",
+      "title": "Evaluation of the Tolerability of Cagrilintide in Participants Not Tolerating GLP-1-RA Therapies Due to Gastrointestinal Adverse Events",
+      "phase": "1",
+      "status": "recruiting",
+      "enrollment": 114,
+      "enrollmentTarget": 114,
+      "conditions": [
+        "Obesity",
+        "Overweight"
+      ],
+      "interventions": [
+        "Cagrilintide",
+        "Placebo (matched to Cagrilintide)"
+      ],
+      "verifiedAt": "2026-09-01",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2",
+      "startDate": "2026-05-29",
+      "completionDate": "2027-11-19",
+      "completionDateType": "ESTIMATED"
+    },
+    {
+      "nctId": "NCT06065540",
+      "title": "A Research Study to See How Well CagriSema Compared to Semaglutide, Cagrilintide and Placebo Lowers Blood Sugar and Body Weight in People With Type 2 Diabetes Treated With Metformin With or Without an SGLT2 Inhibitor",
+      "phase": "3",
+      "status": "completed",
+      "enrollment": 2734,
+      "enrollmentTarget": 2734,
+      "conditions": [
+        "Type 2 Diabetes Mellitus"
+      ],
+      "interventions": [
+        "Cagrilintide",
+        "Semaglutide",
+        "Placebo cagrilintide",
+        "Placebo semaglutide"
+      ],
+      "verifiedAt": "2026-09-01",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2",
+      "startDate": "2023-09-27",
+      "completionDate": "2026-01-06",
+      "completionDateType": "ACTUAL"
+    },
+    {
+      "nctId": "NCT05669755",
+      "title": "REDEFINE 3: A Research Study to See the Effects of CagriSema in People Living With Diseases in the Heart and Blood Vessels",
+      "phase": "3",
+      "status": "active not recruiting",
+      "enrollment": 7101,
+      "enrollmentTarget": 7101,
+      "conditions": [
+        "Cardiovascular Disease"
+      ],
+      "interventions": [
+        "Cagrilintide",
+        "Semaglutide",
+        "Placebo"
+      ],
+      "verifiedAt": "2026-09-01",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2",
+      "startDate": "2023-03-01",
+      "completionDate": "2027-10-14",
+      "completionDateType": "ESTIMATED"
+    },
+    {
+      "nctId": "NCT07597018",
+      "title": "A Research Study to Compare Blood Levels of Cagrilintide After Multiple Doses of Different Versions of Cagrilintide in Adults With Overweight or Obesity",
+      "phase": "1",
+      "status": "recruiting",
+      "enrollment": 234,
+      "enrollmentTarget": 234,
+      "conditions": [
+        "Obesity",
+        "Overweight"
+      ],
+      "interventions": [
+        "Cagrilintide D",
+        "Cagrilintide B and placebo semaglutide I"
+      ],
+      "verifiedAt": "2026-09-01",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2",
+      "startDate": "2026-05-18",
+      "completionDate": "2027-06-01",
+      "completionDateType": "ESTIMATED"
+    },
+    {
+      "nctId": "NCT07605052",
+      "title": "A Research Study to Compare Blood Levels of Two Different Versions of Cagrilintide in Adults With Excess Body Weight",
+      "phase": "1",
+      "status": "completed",
+      "enrollment": 50,
+      "enrollmentTarget": 50,
+      "conditions": [
+        "Overweight",
+        "Obesity"
+      ],
+      "interventions": [
+        "Cagrilintide B",
+        "Cagrilintide D"
+      ],
+      "verifiedAt": "2026-09-01",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2",
+      "startDate": "2026-05-20",
+      "completionDate": "2026-08-19",
+      "completionDateType": "ACTUAL"
+    },
+    {
+      "nctId": "NCT07745504",
+      "title": "A Research Study to Compare Two Different Versions of Injectable Cagrilintide and Placebo in People With Excess Body Weight",
+      "phase": "3",
+      "status": "recruiting",
+      "enrollment": 285,
+      "enrollmentTarget": 285,
+      "conditions": [
+        "Overweight",
+        "Obesity"
+      ],
+      "interventions": [
+        "Cagrilintide",
+        "Placebo cagrilintide",
+        "Placebo semaglutide"
+      ],
+      "startDate": "2026-08-04",
+      "completionDate": "2027-07-06",
+      "verifiedAt": "2026-09-01",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2",
+      "completionDateType": "ESTIMATED"
+    },
+    {
+      "nctId": "NCT06716307",
+      "title": "A Research Study to Compare Blood Levels of Cagrilintide and Semaglutide After Single Doses of Different Versions of Injectable CagriSema in Adults With Overweight or Obesity",
+      "status": "completed",
+      "phase": "1",
+      "conditions": [
+        "Obesity"
+      ],
+      "interventions": [
+        "CagriSema (cagrilintide B and semaglutide I)",
+        "CagriSema A"
+      ],
+      "enrollmentTarget": 18,
+      "enrollment": 18,
+      "startDate": "2024-12-02",
+      "completionDate": "2025-03-28",
+      "verifiedAt": "2026-09-01",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2",
+      "completionDateType": "ACTUAL"
+    },
+    {
+      "nctId": "NCT06719011",
+      "title": "A Study on How NNC0174-1213 Works in People With Overweight or Obesity.",
+      "status": "completed",
+      "phase": "1",
+      "conditions": [
+        "Obesity",
+        "Overweight"
+      ],
+      "interventions": [
+        "NNC0174-1213 A",
+        "Cagrilintide B",
+        "Placebo A (NNC0174 1213 A)"
+      ],
+      "enrollmentTarget": 178,
+      "enrollment": 178,
+      "startDate": "2024-12-03",
+      "completionDate": "2026-07-20",
+      "verifiedAt": "2026-09-01",
+      "verifiedAgainst": "clinicaltrials.gov/api/v2",
+      "completionDateType": "ACTUAL"
     }
   ],
   "evidenceSummary": {

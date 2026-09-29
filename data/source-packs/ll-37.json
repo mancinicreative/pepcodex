@@ -1,6 +1,6 @@
 {
   "peptide": "ll-37",
-  "aliases": ["LL-37", "Cathelicidin", "hCAP18", "Human Cationic Antimicrobial Peptide 18", "CAMP", "FALL-39", "CAP18"],
+  "aliases": ["LL-37", "LL37", "Human cathelicidin antimicrobial peptide LL-37"],
   "generated": "2026-01-22",
   "category": "antimicrobial",
   "coreLibrary": {
@@ -18,14 +18,14 @@
       },
       {
         "citation": "Agerberth B, Gunne H, Odeberg J, et al. FALL-39, a putative human peptide antibiotic, is cysteine-free and expressed in bone marrow and testis. Proc Natl Acad Sci USA. 1995;92(1):195-199.",
-        "id": "PMID:7816817",
+        "id": "PMID:7529412",
         "doi": "10.1073/pnas.92.1.195",
         "year": 1995,
         "studyType": "Discovery",
-        "population": "Human tissues",
-        "keyFindings": "Initial discovery of the human cathelicidin gene; identified FALL-39 (later renamed LL-37); cysteine-free structure unique among antimicrobial peptides",
+        "population": "Human bone marrow and testis expression; synthetic 39-residue peptide tested in vitro",
+        "keyFindings": "Predicted FALL-39 from human bone-marrow cDNA; the 39-residue peptide was synthesized and tested against bacteria. Later work isolated mature 37-residue LL-37, which is not the same peptide.",
         "access": "open",
-        "institution": "Karolinska Institute, Sweden"
+        "institution": "Stockholm University, Sweden"
       },
       {
         "citation": "Zanetti M, Gennaro R, Romeo D. Cathelicidins: a novel protein family with a common proregion and a variable C-terminal antimicrobial domain. FEBS Lett. 1995;374(1):1-5.",
@@ -157,12 +157,12 @@
       },
       {
         "citation": "Ramos R, Silva JP, Rodrigues AC, et al. Wound healing activity of the human antimicrobial peptide LL37. Peptides. 2011;32(7):1469-1476.",
-        "id": "PMID:21524674",
+        "id": "PMID:21693141",
         "doi": "10.1016/j.peptides.2011.06.005",
         "year": 2011,
         "studyType": "In vitro/In vivo",
         "population": "Cell cultures and mouse model",
-        "keyFindings": "LL-37 promotes keratinocyte and fibroblast migration; accelerates wound closure in vivo; EGFR transactivation mechanism",
+        "keyFindings": "Recombinant P-LL37 affected macrophage activation and endothelial-cell proliferation, migration and tubule formation; topical synthetic or recombinant LL37 increased vascularization and re-epithelialization in dexamethasone-treated mice, not in a human treatment trial.",
         "access": "paywalled"
       },
       {
@@ -186,16 +186,16 @@
       },
       {
         "citation": "Nell MJ, Tjabringa GS, Wafelman AR, et al. Development of novel LL-37 derived antimicrobial peptides with LPS and LTA neutralizing and antimicrobial activities for therapeutic application. Peptides. 2006;27(4):649-660.",
-        "id": "PMID:16243426",
+        "id": "PMID:16274847",
         "doi": "10.1016/j.peptides.2005.09.016",
         "year": 2006,
         "studyType": "Drug Development",
-        "keyFindings": "LL-37 derivatives (P60.4Ac, P60) with enhanced activity and stability; neutralize endotoxin; reduced cytotoxicity; therapeutic candidates",
+        "keyFindings": "LL-37-derived peptides were compared in laboratory antimicrobial, LPS/LTA-neutralization and toxicity assays; P60.4 was a 24-residue derivative, not native LL-37 or a clinical outcome.",
         "access": "paywalled"
       },
       {
         "citation": "Groenink J, Walgreen-Weterings E, van 't Hof W, et al. Cationic amphipathic peptides, derived from bovine and human lactoferrins, with antimicrobial activity against oral pathogens. FEMS Microbiol Lett. 1999;179(2):217-222.",
-        "id": "PMID:10518717",
+        "id": "PMID:10518718",
         "doi": "10.1111/j.1574-6968.1999.tb08730.x",
         "year": 1999,
         "studyType": "In vitro",
@@ -242,7 +242,7 @@
       },
       {
         "citation": "Fabisiak A, Murawska N, Fichna J. LL-37: Cathelicidin-related antimicrobial peptide with pleiotropic activity. Pharmacol Rep. 2016;68(4):802-808.",
-        "id": "PMID:27117375",
+        "id": "PMID:27117377",
         "doi": "10.1016/j.pharep.2016.03.015",
         "year": 2016,
         "studyType": "Review",
@@ -252,10 +252,8 @@
     ]
   },
   "trials": [
-    {"id": "NCT02225366", "title": "LL-37 for Treatment of Venous Leg Ulcers", "phase": "1/2", "status": "Completed", "enrollment": 34, "notes": "Safety and efficacy of topical LL-37 in chronic venous leg ulcers"},
-    {"id": "NCT01211470", "title": "LL-37 in Melanoma", "phase": "1/2", "status": "Completed", "enrollment": 16, "notes": "Intratumoral LL-37 for malignant melanoma immunotherapy"},
-    {"id": "NCT04098562", "title": "Antimicrobial Peptide in Atopic Dermatitis", "phase": "2", "status": "Unknown", "notes": "Topical formulations for atopic dermatitis"},
-    {"id": "NCT02530736", "title": "Omiganan for Rosacea", "phase": "3", "status": "Completed", "notes": "Related antimicrobial peptide therapeutic for LL-37-associated skin condition"}
+    {"id": "NCT02225366", "title": "Induction of Antitumor Response in Melanoma Patients Using the Antimicrobial Peptide LL37", "phase": "1/2", "status": "completed", "enrollment": 4, "startDate": "2015-07-08", "startDateType": "ACTUAL", "completionDate": "2020-11-24", "completionDateType": "ACTUAL", "lastUpdateDate": "2021-12-09", "notes": "Single-group intratumoral melanoma study with posted registry results dated 2021-12-09. Outcome denominators are two and one; no separate journal outcome paper was identified. These data do not establish antitumor efficacy or general safety."},
+    {"id": "NCT04098562", "title": "The Efficacy of LL-37 Cream on Aerobic Bacteria Colonization Pattern, Inflammation Response: Interleukin 1α (IL-1α) and Tumor Necrosis Factor α (TNF-α), and Healing Rate of Diabetic Foot Ulcers", "phase": "2", "status": "unknown", "enrollment": 40, "startDate": "2019-10", "startDateType": "ESTIMATED", "completionDate": "2020-01", "completionDateType": "ESTIMATED", "lastUpdateDate": "2019-09-25", "notes": "The estimated enrollment and dates are from the stale official registry record. The 2023 publication PMID 37480520 reports this same diabetic-foot-ulcer population; publication does not update registry status."}
   ],
   "evidenceSummary": {
     "humanEvidence": "MODERATE",
@@ -267,9 +265,9 @@
     "discoveredBy": "Birgitta Agerberth, Gudmundur H. Gudmundsson, and colleagues",
     "institution": "Karolinska Institute, Stockholm, Sweden",
     "year": 1995,
-    "originalName": "FALL-39",
-    "renamedTo": "LL-37",
-    "renameReason": "Named for 37 amino acids starting with two leucines (LL)"
+    "historicalPredictedPeptide": "FALL-39 (39 residues)",
+    "maturePeptide": "LL-37 (37 residues)",
+    "relationship": "The earlier predicted sequence and later isolated mature granulocyte peptide are distinct; FALL-39 is not an alternate name for mature LL-37."
   },
   "structuralData": {
     "sequence": "LLGDFFRKSKEKIGKEFKRIVQRIKDFLRNLVPRTES",

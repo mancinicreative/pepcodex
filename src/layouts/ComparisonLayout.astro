@@ -88,18 +88,25 @@ const breadcrumbItems = [
         </p>
 
         <p class="mt-4 text-sm" style="color: var(--ink-dim);">
-          Last updated: {lastUpdated.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+          Last updated: {lastUpdated.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}
         </p>
       </div>
     </header>
 
-    <!-- Peptide comparison header cards -->
+    <!-- Dossier context; these labels are not comparative treatment grades. -->
+    <p class="mb-4 text-sm" style="color: var(--ink-muted);">
+      Dossier labels summarize each dossier's research scope. They do not establish
+      comparative treatment benefit or safety. Read the comparison below in that context.
+    </p>
     <div class="grid gap-6 md:grid-cols-2 mb-8">
       <!-- Peptide A -->
       <div class="glass-card p-6">
-        <div class="flex items-center justify-between mb-4">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
           <h2 class="text-2xl" style="font-family: var(--font-serif); font-weight: 500; color: var(--ink);">{peptideA.name}</h2>
-          <EvidenceBadge presentation={peptideA.presentation} strength={peptideA.evidenceStrength} />
+          <div class="text-right">
+            <p class="mb-1 text-xs" style="color: var(--ink-muted);">Dossier overview</p>
+            <EvidenceBadge presentation={peptideA.presentation} strength={peptideA.evidenceStrength} />
+          </div>
         </div>
         <a
           href={`/peptides/${peptideA.slug}`}
@@ -114,9 +121,12 @@ const breadcrumbItems = [
 
       <!-- Peptide B -->
       <div class="glass-card p-6">
-        <div class="flex items-center justify-between mb-4">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
           <h2 class="text-2xl" style="font-family: var(--font-serif); font-weight: 500; color: var(--ink);">{peptideB.name}</h2>
-          <EvidenceBadge presentation={peptideB.presentation} strength={peptideB.evidenceStrength} />
+          <div class="text-right">
+            <p class="mb-1 text-xs" style="color: var(--ink-muted);">Dossier overview</p>
+            <EvidenceBadge presentation={peptideB.presentation} strength={peptideB.evidenceStrength} />
+          </div>
         </div>
         <a
           href={`/peptides/${peptideB.slug}`}

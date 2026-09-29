@@ -158,122 +158,45 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <h2 id="how-we-rate">How We Rate Peptides</h2>
       <p>
-        Every compound receives <strong>two independent scores</strong>: an <strong>Evidence Score</strong>
-        (how well-proven it is) and an <strong>Effectiveness Score</strong> (how large the demonstrated
-        effect is). They are shown together — a compound can be highly effective but lightly proven, or
-        modestly effective but definitively proven. Every criterion is grounded in established
-        evidence-grading frameworks (GRADE, Oxford CEBM, Cochrane Risk of Bias, Bradford Hill, FDA
-        Real-World Evidence), and the scores reflect the <em>science</em> — not a compound's legal or
-        regulatory status.
+        PepCodex's earlier 1–5 rating used <strong>four parts</strong> after Community Experience was added.
+        The stored values are historical editorial assessments. They are not formal GRADE ratings,
+        measured treatment effects, safety ratings, or recommendations.
       </p>
 
-      <h3>Evidence Score — the five dimensions</h3>
-
+      <h3>The four-part rating</h3>
       <div class="not-prose my-6 space-y-4">
         <div class="rounded-xl p-5" style="border: 1px solid var(--border-c); background: var(--paper-2);">
-          <div class="flex items-start gap-4">
-            <div class="shrink-0 rounded-lg px-2.5 py-1 text-xs font-bold uppercase tracking-wider" style="background: var(--primary-soft); border: 1px solid var(--primary-border); color: var(--primary-c);">30%</div>
-            <div>
-              <p class="font-semibold mb-1" style="color: var(--ink);">Research Depth</p>
-              <p class="text-sm text-[color:var(--ink-muted)]">Rigour and quality of the best human evidence — study design, risk of bias, sample size, directness — plus a small credit for the preclinical foundation.</p>
-            </div>
-          </div>
+          <p class="font-semibold mb-1" style="color: var(--ink);">Research Depth · 35%</p>
+          <p class="text-sm text-[color:var(--ink-muted)]">The quantity and quality of the research recorded for the compound.</p>
         </div>
         <div class="rounded-xl p-5" style="border: 1px solid var(--border-c); background: var(--paper-2);">
-          <div class="flex items-start gap-4">
-            <div class="shrink-0 rounded-lg px-2.5 py-1 text-xs font-bold uppercase tracking-wider" style="background: var(--primary-soft); border: 1px solid var(--primary-border); color: var(--primary-c);">20%</div>
-            <div>
-              <p class="font-semibold mb-1" style="color: var(--ink);">Mechanism</p>
-              <p class="text-sm text-[color:var(--ink-muted)]">How well-characterised the molecular mechanism of action is — target identification, pathway mapping, dose–response.</p>
-            </div>
-          </div>
+          <p class="font-semibold mb-1" style="color: var(--ink);">Global Coverage · 20%</p>
+          <p class="text-sm text-[color:var(--ink-muted)]">The geographic breadth and independence of the recorded research.</p>
         </div>
         <div class="rounded-xl p-5" style="border: 1px solid var(--border-c); background: var(--paper-2);">
-          <div class="flex items-start gap-4">
-            <div class="shrink-0 rounded-lg px-2.5 py-1 text-xs font-bold uppercase tracking-wider" style="background: var(--primary-soft); border: 1px solid var(--primary-border); color: var(--primary-c);">20%</div>
-            <div>
-              <p class="font-semibold mb-1" style="color: var(--ink);">Plausibility</p>
-              <p class="text-sm text-[color:var(--ink-muted)]">Whether the claimed benefits actually follow from that mechanism — coherence, biological precedent — versus a speculative leap.</p>
-            </div>
-          </div>
+          <p class="font-semibold mb-1" style="color: var(--ink);">Mechanism Plausibility · 30%</p>
+          <p class="text-sm text-[color:var(--ink-muted)]">How well the proposed mechanism and its link to the claimed effect were supported.</p>
         </div>
         <div class="rounded-xl p-5" style="border: 1px solid var(--border-c); background: var(--paper-2);">
-          <div class="flex items-start gap-4">
-            <div class="shrink-0 rounded-lg px-2.5 py-1 text-xs font-bold uppercase tracking-wider" style="background: var(--primary-soft); border: 1px solid var(--primary-border); color: var(--primary-c);">15%</div>
-            <div>
-              <p class="font-semibold mb-1" style="color: var(--ink);">Global Coverage</p>
-              <p class="text-sm text-[color:var(--ink-muted)]">How widely and independently it's been studied worldwide — independent replication, geographic breadth, volume of literature.</p>
-            </div>
-          </div>
-        </div>
-        <div class="rounded-xl p-5" style="border: 1px solid var(--border-c); background: var(--paper-2);">
-          <div class="flex items-start gap-4">
-            <div class="shrink-0 rounded-lg px-2.5 py-1 text-xs font-bold uppercase tracking-wider" style="background: var(--primary-soft); border: 1px solid var(--primary-border); color: var(--primary-c);">15%</div>
-            <div>
-              <p class="font-semibold mb-1" style="color: var(--ink);">Community Experience</p>
-              <p class="text-sm text-[color:var(--ink-muted)]">A real-world usage signal — scale, longevity, and consistency of user reports. Not evidence of efficacy or safety.</p>
-            </div>
-          </div>
+          <p class="font-semibold mb-1" style="color: var(--ink);">Community Experience · 15%</p>
+          <p class="text-sm text-[color:var(--ink-muted)]">A record of reported use. Community reports do not establish efficacy or safety.</p>
         </div>
       </div>
-
-      <h3>Effectiveness Score</h3>
       <p>
-        Scored separately, this measures the <strong>magnitude of the demonstrated effect</strong> for a
-        compound's primary use — graded from effect-size statistics (Cohen's d, NNT) and clinical
-        meaningfulness (MCID), relative to placebo and the best existing option. It carries one of three
-        bases: <strong>clinically demonstrated</strong> (from human trials), <strong>community-reported</strong>
-        (from consistent real-world use, capped and clearly labelled when no clinical data exists), or
-        <strong>Not Established</strong>. It describes effect size — <em>not</em> a recommendation,
-        endorsement, or safety claim.
+        The historical overall rating combined those four parts with the weights shown above.
+        A later draft stored separate 0–100 Evidence and Effectiveness scores. Neither stored
+        format is automatically promoted to a current numeric assessment.
       </p>
 
-      <h3>Evidence composite</h3>
+      <h3>Current assessment policy</h3>
       <p>
-        The Evidence Score is a weighted average out of 100: <strong>(Research Depth × 0.30) + (Mechanism × 0.20) + (Plausibility × 0.20) + (Global Coverage × 0.15) + (Community Experience × 0.15)</strong>. Research depth is the single heaviest factor, but mechanism, plausibility and real-world use together let a sound, widely-used compound score fairly even without large Western trials.
+        A numeric assessment requires a compound-specific review of the source identities and
+        the formulation, indication, population, comparator, outcome, and timepoint it describes.
+        Until that review is documented and bound to the assessed record, the dossier shows a
+        review status instead of historical numbers. A withheld or unreviewed score does not mean
+        that benefit is absent. The catalogue evidence classification shown elsewhere on the site
+        is a separate editorial field and is not a four-part or two-axis score.
       </p>
-
-      <h3>Score Thresholds</h3>
-
-      <div class="not-prose my-6 overflow-x-auto">
-        <table class="w-full text-sm border-collapse">
-          <thead>
-            <tr style="border-bottom: 1px solid var(--border-c);">
-              <th class="text-left py-3 pr-6 font-medium uppercase tracking-wider text-xs" style="color: var(--ink-dim);">Evidence Score</th>
-              <th class="text-left py-3 pr-6 font-medium uppercase tracking-wider text-xs" style="color: var(--ink-dim);">Label</th>
-              <th class="text-left py-3 font-medium uppercase tracking-wider text-xs" style="color: var(--ink-dim);">Meaning</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-bottom: 1px solid var(--border-c);">
-              <td class="py-3 pr-6 font-mono font-semibold" style="color: var(--research);">80 – 100</td>
-              <td class="py-3 pr-6"><span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold" style="background: rgba(20,118,74,0.14); border: 1px solid rgba(20,118,74,0.32); color: var(--research);">Well-evidenced</span></td>
-              <td class="py-3 text-[color:var(--ink-muted)]">Extensive human trials, broad independent research, established mechanism</td>
-            </tr>
-            <tr style="border-bottom: 1px solid var(--border-c);">
-              <td class="py-3 pr-6 font-mono font-semibold" style="color: var(--primary-c);">60 – 79</td>
-              <td class="py-3 pr-6"><span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold" style="background: var(--primary-soft); border: 1px solid var(--primary-border); color: var(--primary-c);">Emerging / moderate</span></td>
-              <td class="py-3 text-[color:var(--ink-muted)]">Real human data and a sound mechanism; not yet definitive</td>
-            </tr>
-            <tr style="border-bottom: 1px solid var(--border-c);">
-              <td class="py-3 pr-6 font-mono font-semibold" style="color: #9a6418;">40 – 59</td>
-              <td class="py-3 pr-6"><span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold" style="background: rgba(203,135,52,0.12); border: 1px solid rgba(203,135,52,0.32); color: #9a6418;">Early / limited</span></td>
-              <td class="py-3 text-[color:var(--ink-muted)]">Limited human data; mechanism and/or real-world use carry it</td>
-            </tr>
-            <tr style="border-bottom: 1px solid var(--border-c);">
-              <td class="py-3 pr-6 font-mono font-semibold" style="color: var(--danger);">20 – 39</td>
-              <td class="py-3 pr-6"><span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold" style="background: rgba(185,61,66,0.12); border: 1px solid rgba(185,61,66,0.32); color: var(--danger);">Preliminary</span></td>
-              <td class="py-3 text-[color:var(--ink-muted)]">Mostly preclinical or sparse human data</td>
-            </tr>
-            <tr style="border-bottom: 1px solid var(--border-c);">
-              <td class="py-3 pr-6 font-mono font-semibold" style="color: var(--ink-dim);">0 – 19</td>
-              <td class="py-3 pr-6"><span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold" style="background: var(--paper-2); border: 1px solid var(--border-c); color: var(--ink-dim);">Insufficient</span></td>
-              <td class="py-3 text-[color:var(--ink-muted)]">Theoretical or minimal data, single-source</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
       <h2 id="feedback">Feedback & Corrections</h2>
       <p>
         If you find an error, outdated information, or have a source we should include, please

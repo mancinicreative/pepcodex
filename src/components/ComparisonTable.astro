@@ -1,0 +1,19 @@
+---
+const props = Astro.props;
+---
+
+<div class="comparison-table-scroll" role="region" aria-label="Comparison table" tabindex="0">
+  <table {...props}><slot /></table>
+</div>
+
+<style>
+  .comparison-table-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .comparison-table-scroll:focus-visible {
+    outline: 2px solid var(--primary-c);
+    outline-offset: 3px;
+  }
+</style>

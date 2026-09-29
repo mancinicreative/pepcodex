@@ -2,6 +2,7 @@
 import { loadEvidencePresentation } from '../../lib/evidence-binding';
 import { getCollection, getEntry } from 'astro:content';
 import ComparisonLayout from '../../layouts/ComparisonLayout.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
 
 export async function getStaticPaths() {
   const comparisons = await getCollection('comparisons');
@@ -53,5 +54,5 @@ const peptideB = getPeptideDisplay(comparison.data.peptideB);
   metaTitle={comparison.data.metaTitle}
   metaDescription={comparison.data.metaDescription}
 >
-  <Content />
+  <Content components={{ table: ComparisonTable }} />
 </ComparisonLayout>
